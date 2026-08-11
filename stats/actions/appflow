@@ -22,9 +22,9 @@ appflow:ResetConnectorMetadataCache;Write
 appflow:RunFlow;Write
 appflow:StartFlow;Write
 appflow:StopFlow;Write
-appflow:TagResource;Tagging
+appflow:TagResource;Tagging, Write
 appflow:UnRegisterConnector;Write
-appflow:UntagResource;Tagging
+appflow:UntagResource;Tagging, Write
 appflow:UpdateConnectorProfile;Write
 appflow:UpdateConnectorRegistration;Write
 appflow:UpdateFlow;Write

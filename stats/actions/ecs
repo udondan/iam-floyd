@@ -1,4 +1,4 @@
-ecs:AllowVendedLogDeliveryForResource;Permissions management
+ecs:AllowVendedLogDeliveryForResource;Permissions management, Write
 ecs:ContinueServiceDeployment;Write
 ecs:CreateCapacityProvider;Write
 ecs:CreateCluster;Write
@@ -66,8 +66,8 @@ ecs:StopTask;Write
 ecs:SubmitAttachmentStateChanges;Write
 ecs:SubmitContainerStateChange;Write
 ecs:SubmitTaskStateChange;Write
-ecs:TagResource;Tagging
-ecs:UntagResource;Tagging
+ecs:TagResource;Tagging, Write
+ecs:UntagResource;Tagging, Write
 ecs:UpdateCapacityProvider;Write
 ecs:UpdateCluster;Write
 ecs:UpdateClusterSettings;Write

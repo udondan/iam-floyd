@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [iotanalytics](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotanalytics.html).
+ * Statement provider for service [iotanalytics](https://docs.aws.amazon.com/service-authorization/latest/reference/list_iotanalytics.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Iotanalytics extends PolicyStatement {
   public servicePrefix = 'iotanalytics';
 
   /**
-   * Statement provider for service [iotanalytics](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotanalytics.html).
+   * Statement provider for service [iotanalytics](https://docs.aws.amazon.com/service-authorization/latest/reference/list_iotanalytics.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -45,10 +45,6 @@ export class Iotanalytics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateChannel.html
    */
   public toCreateChannel() {
@@ -59,10 +55,6 @@ export class Iotanalytics extends PolicyStatement {
    * Creates a dataset
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDataset.html
    */
@@ -86,10 +78,6 @@ export class Iotanalytics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDatastore.html
    */
   public toCreateDatastore() {
@@ -100,10 +88,6 @@ export class Iotanalytics extends PolicyStatement {
    * Creates a pipeline
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreatePipeline.html
    */
@@ -345,11 +329,7 @@ export class Iotanalytics extends PolicyStatement {
   /**
    * Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_TagResource.html
    */
@@ -360,11 +340,7 @@ export class Iotanalytics extends PolicyStatement {
   /**
    * Removes the given tags (metadata) from the resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UntagResource.html
    */
@@ -432,6 +408,8 @@ export class Iotanalytics extends PolicyStatement {
       'DeletePipeline',
       'PutLoggingOptions',
       'StartPipelineReprocessing',
+      'TagResource',
+      'UntagResource',
       'UpdateChannel',
       'UpdateDataset',
       'UpdateDatastore',
@@ -543,12 +521,33 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toBatchPutMessage()
+   * - .toCancelPipelineReprocessing()
    * - .toCreateChannel()
    * - .toCreateDataset()
+   * - .toCreateDatasetContent()
    * - .toCreateDatastore()
    * - .toCreatePipeline()
+   * - .toDeleteChannel()
+   * - .toDeleteDataset()
+   * - .toDeleteDatasetContent()
+   * - .toDeleteDatastore()
+   * - .toDeletePipeline()
+   * - .toDescribeChannel()
+   * - .toDescribeDataset()
+   * - .toDescribeDatastore()
+   * - .toDescribePipeline()
+   * - .toGetDatasetContent()
+   * - .toListDatasetContents()
+   * - .toListTagsForResource()
+   * - .toSampleChannelData()
+   * - .toStartPipelineReprocessing()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateChannel()
+   * - .toUpdateDataset()
+   * - .toUpdateDatastore()
+   * - .toUpdatePipeline()
    *
    * Applies to resource types:
    * - channel
@@ -570,12 +569,33 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toBatchPutMessage()
+   * - .toCancelPipelineReprocessing()
    * - .toCreateChannel()
    * - .toCreateDataset()
+   * - .toCreateDatasetContent()
    * - .toCreateDatastore()
    * - .toCreatePipeline()
+   * - .toDeleteChannel()
+   * - .toDeleteDataset()
+   * - .toDeleteDatasetContent()
+   * - .toDeleteDatastore()
+   * - .toDeletePipeline()
+   * - .toDescribeChannel()
+   * - .toDescribeDataset()
+   * - .toDescribeDatastore()
+   * - .toDescribePipeline()
+   * - .toGetDatasetContent()
+   * - .toListDatasetContents()
+   * - .toListTagsForResource()
+   * - .toSampleChannelData()
+   * - .toStartPipelineReprocessing()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateChannel()
+   * - .toUpdateDataset()
+   * - .toUpdateDatastore()
+   * - .toUpdatePipeline()
    *
    * Applies to resource types:
    * - channel
@@ -594,6 +614,35 @@ export class Iotanalytics extends PolicyStatement {
    * Filters access by the tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/userguide/tagging.html#tagging-iam
+   *
+   * Applies to actions:
+   * - .toBatchPutMessage()
+   * - .toCancelPipelineReprocessing()
+   * - .toCreateChannel()
+   * - .toCreateDataset()
+   * - .toCreateDatasetContent()
+   * - .toCreateDatastore()
+   * - .toCreatePipeline()
+   * - .toDeleteChannel()
+   * - .toDeleteDataset()
+   * - .toDeleteDatasetContent()
+   * - .toDeleteDatastore()
+   * - .toDeletePipeline()
+   * - .toDescribeChannel()
+   * - .toDescribeDataset()
+   * - .toDescribeDatastore()
+   * - .toDescribePipeline()
+   * - .toGetDatasetContent()
+   * - .toListDatasetContents()
+   * - .toListTagsForResource()
+   * - .toSampleChannelData()
+   * - .toStartPipelineReprocessing()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateChannel()
+   * - .toUpdateDataset()
+   * - .toUpdateDatastore()
+   * - .toUpdatePipeline()
    *
    * Applies to resource types:
    * - channel

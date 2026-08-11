@@ -1,4 +1,4 @@
-sns:AddPermission;Permissions management
+sns:AddPermission;Permissions management, Write
 sns:CheckIfPhoneNumberIsOptedOut;Read
 sns:ConfirmSubscription;Write
 sns:CreatePlatformApplication;Write
@@ -28,14 +28,14 @@ sns:ListTopics;List
 sns:OptInPhoneNumber;Write
 sns:Publish;Write
 sns:PutDataProtectionPolicy;Write
-sns:RemovePermission;Permissions management
+sns:RemovePermission;Permissions management, Write
 sns:SetEndpointAttributes;Write
 sns:SetPlatformApplicationAttributes;Write
 sns:SetSMSAttributes;Write
 sns:SetSubscriptionAttributes;Write
-sns:SetTopicAttributes;Permissions management
+sns:SetTopicAttributes;Permissions management, Write
 sns:Subscribe;Write
-sns:TagResource;Tagging
+sns:TagResource;Tagging, Write
 sns:Unsubscribe;Write
-sns:UntagResource;Tagging
+sns:UntagResource;Tagging, Write
 sns:VerifySMSSandboxPhoneNumber;Write

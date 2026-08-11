@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [iottwinmaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiottwinmaker.html).
+ * Statement provider for service [iottwinmaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_iottwinmaker.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Iottwinmaker extends PolicyStatement {
   public servicePrefix = 'iottwinmaker';
 
   /**
-   * Statement provider for service [iottwinmaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiottwinmaker.html).
+   * Statement provider for service [iottwinmaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_iottwinmaker.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -22,11 +22,6 @@ export class Iottwinmaker extends PolicyStatement {
    * Grants permission to set values for multiple time series properties
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - iottwinmaker:GetComponentType
-   * - iottwinmaker:GetEntity
-   * - iottwinmaker:GetWorkspace
    *
    * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_BatchPutPropertyValues.html
    */
@@ -50,10 +45,6 @@ export class Iottwinmaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateComponentType.html
    */
   public toCreateComponentType() {
@@ -64,10 +55,6 @@ export class Iottwinmaker extends PolicyStatement {
    * Grants permission to create an entity
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateEntity.html
    */
@@ -91,10 +78,6 @@ export class Iottwinmaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateScene.html
    */
   public toCreateScene() {
@@ -105,10 +88,6 @@ export class Iottwinmaker extends PolicyStatement {
    * Grants permission to create a sync job
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateSyncJob.html
    */
@@ -246,11 +225,6 @@ export class Iottwinmaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - iottwinmaker:GetComponentType
-   * - iottwinmaker:GetEntity
-   * - iottwinmaker:GetWorkspace
-   *
    * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_GetPropertyValue.html
    */
   public toGetPropertyValue() {
@@ -261,11 +235,6 @@ export class Iottwinmaker extends PolicyStatement {
    * Grants permission to retrieve the time series value history
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - iottwinmaker:GetComponentType
-   * - iottwinmaker:GetEntity
-   * - iottwinmaker:GetWorkspace
    *
    * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_GetPropertyValueHistory.html
    */
@@ -399,9 +368,6 @@ export class Iottwinmaker extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -422,11 +388,7 @@ export class Iottwinmaker extends PolicyStatement {
   /**
    * Grants permission to tag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_TagResource.html
    */
@@ -437,10 +399,7 @@ export class Iottwinmaker extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_UntagResource.html
    */
@@ -518,6 +477,8 @@ export class Iottwinmaker extends PolicyStatement {
       'DeleteScene',
       'DeleteSyncJob',
       'DeleteWorkspace',
+      'TagResource',
+      'UntagResource',
       'UpdateComponentType',
       'UpdateEntity',
       'UpdatePricingPlan',
@@ -555,11 +516,12 @@ export class Iottwinmaker extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type workspace to the statement
+   * Adds a resource of type componentType to the statement
    *
-   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateWorkspace.html
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateComponentType.html
    *
    * @param workspaceId - Identifier for the workspaceId.
+   * @param componentTypeId - Identifier for the componentTypeId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -567,8 +529,8 @@ export class Iottwinmaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onWorkspace(workspaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iottwinmaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspace/${ workspaceId }`);
+  public onComponentType(workspaceId: string, componentTypeId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iottwinmaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspace/${ workspaceId }/component-type/${ componentTypeId }`);
   }
 
   /**
@@ -590,21 +552,17 @@ export class Iottwinmaker extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type componentType to the statement
+   * Adds a resource of type metadataTransferJob to the statement
    *
-   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateComponentType.html
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateMetadataTransferJob.html
    *
-   * @param workspaceId - Identifier for the workspaceId.
-   * @param componentTypeId - Identifier for the componentTypeId.
+   * @param metadataTransferJobId - Identifier for the metadataTransferJobId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
-  public onComponentType(workspaceId: string, componentTypeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iottwinmaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspace/${ workspaceId }/component-type/${ componentTypeId }`);
+  public onMetadataTransferJob(metadataTransferJobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iottwinmaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:metadata-transfer-job/${ metadataTransferJobId }`);
   }
 
   /**
@@ -644,17 +602,20 @@ export class Iottwinmaker extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type metadataTransferJob to the statement
+   * Adds a resource of type workspace to the statement
    *
-   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateMetadataTransferJob.html
+   * https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateWorkspace.html
    *
-   * @param metadataTransferJobId - Identifier for the metadataTransferJobId.
+   * @param workspaceId - Identifier for the workspaceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onMetadataTransferJob(metadataTransferJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iottwinmaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:metadata-transfer-job/${ metadataTransferJobId }`);
+  public onWorkspace(workspaceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iottwinmaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspace/${ workspaceId }`);
   }
 
   /**
@@ -684,14 +645,45 @@ export class Iottwinmaker extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toBatchPutPropertyValues()
+   * - .toCreateComponentType()
+   * - .toCreateEntity()
+   * - .toCreateScene()
+   * - .toCreateSyncJob()
+   * - .toDeleteComponentType()
+   * - .toDeleteEntity()
+   * - .toDeleteScene()
+   * - .toDeleteSyncJob()
+   * - .toDeleteWorkspace()
+   * - .toExecuteQuery()
+   * - .toGetComponentType()
+   * - .toGetEntity()
+   * - .toGetPropertyValue()
+   * - .toGetPropertyValueHistory()
+   * - .toGetScene()
+   * - .toGetSyncJob()
+   * - .toGetWorkspace()
+   * - .toListComponentTypes()
+   * - .toListComponents()
+   * - .toListEntities()
+   * - .toListProperties()
+   * - .toListScenes()
+   * - .toListSyncJobs()
+   * - .toListSyncResources()
    * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateComponentType()
+   * - .toUpdateEntity()
+   * - .toUpdateScene()
+   * - .toUpdateWorkspace()
    *
    * Applies to resource types:
-   * - workspace
-   * - entity
    * - componentType
+   * - entity
    * - scene
    * - syncJob
+   * - workspace
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

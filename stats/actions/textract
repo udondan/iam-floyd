@@ -20,6 +20,6 @@ textract:StartDocumentAnalysis;Write
 textract:StartDocumentTextDetection;Write
 textract:StartExpenseAnalysis;Write
 textract:StartLendingAnalysis;Write
-textract:TagResource;Tagging
-textract:UntagResource;Tagging
+textract:TagResource;Tagging, Write
+textract:UntagResource;Tagging, Write
 textract:UpdateAdapter;Write

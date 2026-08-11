@@ -66,8 +66,8 @@ inspector2:SendCisSessionTelemetry;Write
 inspector2:StartCisSession;Write
 inspector2:StartCodeSecurityScan;Write
 inspector2:StopCisSession;Write
-inspector2:TagResource;Tagging
-inspector2:UntagResource;Tagging
+inspector2:TagResource;Tagging, Write
+inspector2:UntagResource;Tagging, Write
 inspector2:UpdateCisScanConfiguration;Write
 inspector2:UpdateCodeSecurityIntegration;Write
 inspector2:UpdateCodeSecurityScanConfiguration;Write

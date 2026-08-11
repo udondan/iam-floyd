@@ -22,7 +22,7 @@ medialive:CreateNodeRegistrationScript;Write
 medialive:CreatePartnerInput;Write
 medialive:CreateSdiSource;Write
 medialive:CreateSignalMap;Write
-medialive:CreateTags;Tagging
+medialive:CreateTags;Tagging, Write
 medialive:DeleteChannel;Write
 medialive:DeleteChannelPlacementGroup;Write
 medialive:DeleteCloudWatchAlarmTemplate;Write
@@ -40,7 +40,7 @@ medialive:DeleteReservation;Write
 medialive:DeleteSchedule;Write
 medialive:DeleteSdiSource;Write
 medialive:DeleteSignalMap;Write
-medialive:DeleteTags;Tagging
+medialive:DeleteTags;Tagging, Write
 medialive:DescribeAccountConfiguration;Read
 medialive:DescribeChannel;Read
 medialive:DescribeChannelPlacementGroup;Read

@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [config](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html).
+ * Statement provider for service [config](https://docs.aws.amazon.com/service-authorization/latest/reference/list_config.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Config extends PolicyStatement {
   public servicePrefix = 'config';
 
   /**
-   * Statement provider for service [config](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html).
+   * Statement provider for service [config](https://docs.aws.amazon.com/service-authorization/latest/reference/list_config.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -221,9 +221,6 @@ export class Config extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifConfigurationRecorderServicePrincipal()
-   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html
    */
   public toDeleteServiceLinkedConfigurationRecorder() {
@@ -356,9 +353,6 @@ export class Config extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifConfigurationRecorderServicePrincipal()
-   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html
    */
   public toDescribeConfigurationRecorderStatus() {
@@ -369,9 +363,6 @@ export class Config extends PolicyStatement {
    * Grants permission to return the names of one or more specified configuration recorders
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifConfigurationRecorderServicePrincipal()
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html
    */
@@ -857,10 +848,6 @@ export class Config extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutAggregationAuthorization.html
    */
   public toPutAggregationAuthorization() {
@@ -871,10 +858,6 @@ export class Config extends PolicyStatement {
    * Grants permission to add or update an AWS Config rule for evaluating whether your AWS resources comply with your desired configurations
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html
    */
@@ -887,15 +870,6 @@ export class Config extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - organizations:EnableAWSServiceAccess
-   * - organizations:ListDelegatedAdministrators
-   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationAggregator.html
    */
   public toPutConfigurationAggregator() {
@@ -906,13 +880,6 @@ export class Config extends PolicyStatement {
    * Grants permission to create or update a customer managed configuration recorder to record the selected resource configurations
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationRecorder.html
    */
@@ -925,13 +892,6 @@ export class Config extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   * - iam:PassRole
-   * - s3:GetObject
-   * - s3:ListBucket
-   * - ssm:GetDocument
-   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html
    */
   public toPutConformancePack() {
@@ -942,13 +902,6 @@ export class Config extends PolicyStatement {
    * Grants permission to create a connector configuration that contains provider identity information, as well as other optional provider-specific information required for third-party recording
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html
    */
@@ -994,12 +947,6 @@ export class Config extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   * - iam:PassRole
-   * - organizations:EnableAWSServiceAccess
-   * - organizations:ListDelegatedAdministrators
-   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConfigRule.html
    */
   public toPutOrganizationConfigRule() {
@@ -1011,13 +958,6 @@ export class Config extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   * - iam:PassRole
-   * - organizations:EnableAWSServiceAccess
-   * - organizations:ListDelegatedAdministrators
-   * - s3:GetObject
-   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConformancePack.html
    */
   public toPutOrganizationConformancePack() {
@@ -1028,9 +968,6 @@ export class Config extends PolicyStatement {
    * Grants permission to add or update the remediation configuration with a specific AWS Config rule with the selected target or action
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutRemediationConfigurations.html
    */
@@ -1081,10 +1018,6 @@ export class Config extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifConfigurationRecorderServicePrincipal()
    *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   * - iam:PassRole
-   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html
    */
   public toPutServiceLinkedConfigurationRecorder() {
@@ -1096,10 +1029,6 @@ export class Config extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutStoredQuery.html
    */
   public toPutStoredQuery() {
@@ -1110,14 +1039,6 @@ export class Config extends PolicyStatement {
    * Grants permission to create or update a service-linked configuration recorder for a third-party provider linked to a specific AWS partner service
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifConfigurationRecorderServicePrincipal()
-   *
-   * Dependent actions:
-   * - config:GetConnector
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html
    */
@@ -1174,9 +1095,6 @@ export class Config extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iam:PassRole
-   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_StartRemediationExecution.html
    */
   public toStartRemediationExecution() {
@@ -1187,9 +1105,6 @@ export class Config extends PolicyStatement {
    * Grants permission to evaluate your resource details against the AWS Config rules in your account
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - cloudformation:DescribeType
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_StartResourceEvaluation.html
    */
@@ -1211,11 +1126,7 @@ export class Config extends PolicyStatement {
   /**
    * Grants permission to associate the specified tags to a resource with the specified resourceArn
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html
    */
@@ -1226,10 +1137,7 @@ export class Config extends PolicyStatement {
   /**
    * Grants permission to delete specified tags from a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html
    */
@@ -1280,7 +1188,9 @@ export class Config extends PolicyStatement {
       'StartConfigurationRecorder',
       'StartRemediationExecution',
       'StartResourceEvaluation',
-      'StopConfigurationRecorder'
+      'StopConfigurationRecorder',
+      'TagResource',
+      'UntagResource'
     ],
     Read: [
       'BatchGetAggregateResourceConfig',
@@ -1369,6 +1279,23 @@ export class Config extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type ConfigRule to the statement
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_ConfigRule.html
+   *
+   * @param configRuleId - Identifier for the configRuleId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConfigRule(configRuleId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:config-rule/${ configRuleId }`);
+  }
+
+  /**
    * Adds a resource of type ConfigurationAggregator to the statement
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_ConfigurationAggregator.html
@@ -1386,11 +1313,12 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type ConfigRule to the statement
+   * Adds a resource of type ConfigurationRecorder to the statement
    *
-   * https://docs.aws.amazon.com/config/latest/APIReference/API_ConfigRule.html
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_ConfigurationRecorder.html
    *
-   * @param configRuleId - Identifier for the configRuleId.
+   * @param recorderName - Identifier for the recorderName.
+   * @param recorderId - Identifier for the recorderId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1398,8 +1326,8 @@ export class Config extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onConfigRule(configRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:config-rule/${ configRuleId }`);
+  public onConfigurationRecorder(recorderName: string, recorderId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configuration-recorder/${ recorderName }/${ recorderId }`);
   }
 
   /**
@@ -1418,6 +1346,25 @@ export class Config extends PolicyStatement {
    */
   public onConformancePack(conformancePackName: string, conformancePackId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:conformance-pack/${ conformancePackName }/${ conformancePackId }`);
+  }
+
+  /**
+   * Adds a resource of type Connector to the statement
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_Connector.html
+   *
+   * @param provider - Identifier for the provider.
+   * @param providerId - Identifier for the providerId.
+   * @param connectorId - Identifier for the connectorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnector(provider: string, providerId: string, connectorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ provider }/${ providerId }/${ connectorId }`);
   }
 
   /**
@@ -1487,43 +1434,6 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type ConfigurationRecorder to the statement
-   *
-   * https://docs.aws.amazon.com/config/latest/APIReference/API_ConfigurationRecorder.html
-   *
-   * @param recorderName - Identifier for the recorderName.
-   * @param recorderId - Identifier for the recorderId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onConfigurationRecorder(recorderName: string, recorderId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configuration-recorder/${ recorderName }/${ recorderId }`);
-  }
-
-  /**
-   * Adds a resource of type Connector to the statement
-   *
-   * https://docs.aws.amazon.com/config/latest/APIReference/API_Connector.html
-   *
-   * @param provider - Identifier for the provider.
-   * @param providerId - Identifier for the providerId.
-   * @param connectorId - Identifier for the connectorId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onConnector(provider: string, providerId: string, connectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ provider }/${ providerId }/${ connectorId }`);
-  }
-
-  /**
    * Filters access by the allowed set of values for each of the tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1552,16 +1462,71 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toAssociateResourceTypes()
+   * - .toBatchGetAggregateResourceConfig()
+   * - .toDeleteAggregationAuthorization()
+   * - .toDeleteConfigRule()
+   * - .toDeleteConfigurationAggregator()
+   * - .toDeleteConfigurationRecorder()
+   * - .toDeleteConformancePack()
+   * - .toDeleteConnector()
+   * - .toDeleteEvaluationResults()
+   * - .toDeleteOrganizationConfigRule()
+   * - .toDeleteOrganizationConformancePack()
+   * - .toDeleteServiceLinkedConfigurationRecorder()
+   * - .toDeleteStoredQuery()
+   * - .toDescribeAggregateComplianceByConfigRules()
+   * - .toDescribeAggregateComplianceByConformancePacks()
+   * - .toDescribeConfigurationAggregatorSourcesStatus()
+   * - .toDescribeConfigurationRecorderStatus()
+   * - .toDescribeConfigurationRecorders()
+   * - .toDescribeConformancePackCompliance()
+   * - .toDisassociateResourceTypes()
+   * - .toGetAggregateComplianceDetailsByConfigRule()
+   * - .toGetAggregateConfigRuleComplianceSummary()
+   * - .toGetAggregateConformancePackComplianceSummary()
+   * - .toGetAggregateDiscoveredResourceCounts()
+   * - .toGetAggregateResourceConfig()
+   * - .toGetComplianceDetailsByConfigRule()
+   * - .toGetConformancePackComplianceDetails()
+   * - .toGetConformancePackComplianceSummary()
+   * - .toGetConnector()
+   * - .toGetCustomRulePolicy()
+   * - .toGetOrganizationConfigRuleDetailedStatus()
+   * - .toGetOrganizationConformancePackDetailedStatus()
+   * - .toGetOrganizationCustomRulePolicy()
+   * - .toGetStoredQuery()
+   * - .toListAggregateDiscoveredResources()
+   * - .toListTagsForResource()
+   * - .toPutAggregationAuthorization()
+   * - .toPutConfigRule()
+   * - .toPutConfigurationAggregator()
+   * - .toPutConfigurationRecorder()
+   * - .toPutConformancePack()
+   * - .toPutConnector()
+   * - .toPutExternalEvaluation()
+   * - .toPutOrganizationConfigRule()
+   * - .toPutOrganizationConformancePack()
+   * - .toPutStoredQuery()
+   * - .toPutThirdPartyServiceLinkedConfigurationRecorder()
+   * - .toSelectAggregateResourceConfig()
+   * - .toStartConfigRulesEvaluation()
+   * - .toStartConfigurationRecorder()
+   * - .toStopConfigurationRecorder()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
    * Applies to resource types:
    * - AggregationAuthorization
-   * - ConfigurationAggregator
    * - ConfigRule
+   * - ConfigurationAggregator
+   * - ConfigurationRecorder
    * - ConformancePack
+   * - Connector
    * - OrganizationConfigRule
    * - OrganizationConformancePack
    * - StoredQuery
-   * - ConfigurationRecorder
-   * - Connector
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

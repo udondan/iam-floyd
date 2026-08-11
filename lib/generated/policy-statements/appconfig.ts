@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [appconfig](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappconfig.html).
+ * Statement provider for service [appconfig](https://docs.aws.amazon.com/service-authorization/latest/reference/list_appconfig.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Appconfig extends PolicyStatement {
   public servicePrefix = 'appconfig';
 
   /**
-   * Statement provider for service [appconfig](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappconfig.html).
+   * Statement provider for service [appconfig](https://docs.aws.amazon.com/service-authorization/latest/reference/list_appconfig.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -38,10 +38,6 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateConfigurationProfile.html
    */
   public toCreateConfigurationProfile() {
@@ -67,10 +63,6 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to create an environment
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateEnvironment.html
    */
@@ -212,9 +204,6 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetApplication.html
    */
   public toGetApplication() {
@@ -225,9 +214,6 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to view details about a configuration
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetConfiguration.html
    */
@@ -240,9 +226,6 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetConfigurationProfile.html
    */
   public toGetConfigurationProfile() {
@@ -253,9 +236,6 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to view details about a deployment
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetDeployment.html
    */
@@ -268,9 +248,6 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetDeploymentStrategy.html
    */
   public toGetDeploymentStrategy() {
@@ -281,9 +258,6 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to view details about an environment
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetEnvironment.html
    */
@@ -296,9 +270,6 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetExtension.html
    */
   public toGetExtension() {
@@ -309,9 +280,6 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to view details about an extension association
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetExtensionAssociation.html
    */
@@ -334,9 +302,6 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to retrieve a deployed configuration
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html
    */
@@ -437,9 +402,6 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -451,9 +413,6 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html
    */
   public toStartConfigurationSession() {
@@ -464,10 +423,6 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to initiate a deployment
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StartDeployment.html
    */
@@ -489,12 +444,7 @@ export class Appconfig extends PolicyStatement {
   /**
    * Grants permission to tag an appconfig resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_TagResource.html
    */
@@ -505,10 +455,7 @@ export class Appconfig extends PolicyStatement {
   /**
    * Grants permission to untag an appconfig resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UntagResource.html
    */
@@ -532,9 +479,6 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateApplication.html
    */
   public toUpdateApplication() {
@@ -545,9 +489,6 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to modify a configuration profile
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateConfigurationProfile.html
    */
@@ -560,9 +501,6 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateDeploymentStrategy.html
    */
   public toUpdateDeploymentStrategy() {
@@ -573,9 +511,6 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to modify an environment
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateEnvironment.html
    */
@@ -588,9 +523,6 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateExtension.html
    */
   public toUpdateExtension() {
@@ -601,9 +533,6 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to modify an extension association
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateExtensionAssociation.html
    */
@@ -641,6 +570,8 @@ export class Appconfig extends PolicyStatement {
       'StartConfigurationSession',
       'StartDeployment',
       'StopDeployment',
+      'TagResource',
+      'UntagResource',
       'UpdateAccountSettings',
       'UpdateApplication',
       'UpdateConfigurationProfile',
@@ -698,12 +629,13 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type environment to the statement
+   * Adds a resource of type configuration to the statement
    *
-   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-environment.html
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/retrieving-feature-flags.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param environmentId - Identifier for the environmentId.
+   * @param configurationProfileId - Identifier for the configurationProfileId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -711,8 +643,8 @@ export class Appconfig extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onEnvironment(applicationId: string, environmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appconfig:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/environment/${ environmentId }`);
+  public onConfiguration(applicationId: string, environmentId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appconfig:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/environment/${ environmentId }/configuration/${ configurationProfileId }`);
   }
 
   /**
@@ -731,23 +663,6 @@ export class Appconfig extends PolicyStatement {
    */
   public onConfigurationprofile(applicationId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:appconfig:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/configurationprofile/${ configurationProfileId }`);
-  }
-
-  /**
-   * Adds a resource of type deploymentstrategy to the statement
-   *
-   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-deployment-strategy.html
-   *
-   * @param deploymentStrategyId - Identifier for the deploymentStrategyId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDeploymentstrategy(deploymentStrategyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appconfig:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deploymentstrategy/${ deploymentStrategyId }`);
   }
 
   /**
@@ -770,28 +685,11 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type hostedconfigurationversion to the statement
+   * Adds a resource of type deploymentstrategy to the statement
    *
-   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-profile.html
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-deployment-strategy.html
    *
-   * @param applicationId - Identifier for the applicationId.
-   * @param configurationProfileId - Identifier for the configurationProfileId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onHostedconfigurationversion(applicationId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appconfig:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/configurationprofile/${ configurationProfileId }`);
-  }
-
-  /**
-   * Adds a resource of type configuration to the statement
-   *
-   * https://docs.aws.amazon.com/appconfig/latest/userguide/retrieving-feature-flags.html
-   *
-   * @param applicationId - Identifier for the applicationId.
-   * @param environmentId - Identifier for the environmentId.
-   * @param configurationProfileId - Identifier for the configurationProfileId.
+   * @param deploymentStrategyId - Identifier for the deploymentStrategyId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -799,8 +697,26 @@ export class Appconfig extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onConfiguration(applicationId: string, environmentId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appconfig:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/environment/${ environmentId }/configuration/${ configurationProfileId }`);
+  public onDeploymentstrategy(deploymentStrategyId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appconfig:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deploymentstrategy/${ deploymentStrategyId }`);
+  }
+
+  /**
+   * Adds a resource of type environment to the statement
+   *
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-environment.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param environmentId - Identifier for the environmentId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEnvironment(applicationId: string, environmentId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appconfig:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/environment/${ environmentId }`);
   }
 
   /**
@@ -839,6 +755,21 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type hostedconfigurationversion to the statement
+   *
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-profile.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param configurationProfileId - Identifier for the configurationProfileId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onHostedconfigurationversion(applicationId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appconfig:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/configurationprofile/${ configurationProfileId }`);
+  }
+
+  /**
    * Filters access by the allowed set of values for a specified tag
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
@@ -867,6 +798,16 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
    *
    * Applies to actions:
+   * - .toCreateConfigurationProfile()
+   * - .toCreateEnvironment()
+   * - .toCreateHostedConfigurationVersion()
+   * - .toDeleteApplication()
+   * - .toDeleteConfigurationProfile()
+   * - .toDeleteDeploymentStrategy()
+   * - .toDeleteEnvironment()
+   * - .toDeleteExtension()
+   * - .toDeleteExtensionAssociation()
+   * - .toDeleteHostedConfigurationVersion()
    * - .toGetApplication()
    * - .toGetConfiguration()
    * - .toGetConfigurationProfile()
@@ -875,24 +816,33 @@ export class Appconfig extends PolicyStatement {
    * - .toGetEnvironment()
    * - .toGetExtension()
    * - .toGetExtensionAssociation()
+   * - .toGetHostedConfigurationVersion()
    * - .toGetLatestConfiguration()
+   * - .toListConfigurationProfiles()
+   * - .toListDeployments()
+   * - .toListEnvironments()
+   * - .toListHostedConfigurationVersions()
    * - .toListTagsForResource()
    * - .toStartConfigurationSession()
+   * - .toStartDeployment()
+   * - .toStopDeployment()
    * - .toTagResource()
+   * - .toUntagResource()
    * - .toUpdateApplication()
    * - .toUpdateConfigurationProfile()
    * - .toUpdateDeploymentStrategy()
    * - .toUpdateEnvironment()
    * - .toUpdateExtension()
    * - .toUpdateExtensionAssociation()
+   * - .toValidateConfiguration()
    *
    * Applies to resource types:
    * - application
-   * - environment
-   * - configurationprofile
-   * - deploymentstrategy
-   * - deployment
    * - configuration
+   * - configurationprofile
+   * - deployment
+   * - deploymentstrategy
+   * - environment
    * - extension
    * - extensionassociation
    *

@@ -10,6 +10,6 @@ oam:ListLinks;Read
 oam:ListSinks;Read
 oam:ListTagsForResource;Read
 oam:PutSinkPolicy;Write
-oam:TagResource;Tagging
-oam:UntagResource;Tagging
+oam:TagResource;Tagging, Write
+oam:UntagResource;Tagging, Write
 oam:UpdateLink;Write

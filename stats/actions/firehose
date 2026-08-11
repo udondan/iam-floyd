@@ -7,6 +7,6 @@ firehose:PutRecord;Write
 firehose:PutRecordBatch;Write
 firehose:StartDeliveryStreamEncryption;Write
 firehose:StopDeliveryStreamEncryption;Write
-firehose:TagDeliveryStream;Tagging
-firehose:UntagDeliveryStream;Tagging
+firehose:TagDeliveryStream;Tagging, Write
+firehose:UntagDeliveryStream;Tagging, Write
 firehose:UpdateDestination;Write

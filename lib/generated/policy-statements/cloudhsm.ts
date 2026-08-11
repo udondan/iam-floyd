@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [cloudhsm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudhsm.html).
+ * Statement provider for service [cloudhsm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudhsm.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Cloudhsm extends PolicyStatement {
   public servicePrefix = 'cloudhsm';
 
   /**
-   * Statement provider for service [cloudhsm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudhsm.html).
+   * Statement provider for service [cloudhsm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudhsm.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,15 +23,6 @@ export class Cloudhsm extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - cloudhsm:CopyBackupToRegion
-   * - cloudhsm:TagResource
-   * - cloudhsm:UntagResource
-   *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CopyBackupToRegion.html
    */
   public toCopyBackupToRegion() {
@@ -43,20 +34,6 @@ export class Cloudhsm extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - cloudhsm:TagResource
-   * - ec2:AuthorizeSecurityGroupEgress
-   * - ec2:AuthorizeSecurityGroupIngress
-   * - ec2:CreateSecurityGroup
-   * - ec2:DescribeSecurityGroups
-   * - ec2:DescribeSubnets
-   * - ec2:RevokeSecurityGroupEgress
-   * - iam:CreateServiceLinkedRole
-   *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateCluster.html
    */
   public toCreateCluster() {
@@ -67,17 +44,6 @@ export class Cloudhsm extends PolicyStatement {
    * Grants permission to create a new hardware security module (HSM) in the specified AWS CloudHSM cluster
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - ec2:AuthorizeSecurityGroupEgress
-   * - ec2:AuthorizeSecurityGroupIngress
-   * - ec2:CreateNetworkInterface
-   * - ec2:CreateSecurityGroup
-   * - ec2:DeleteNetworkInterface
-   * - ec2:DescribeNetworkInterfaces
-   * - ec2:DescribeSecurityGroups
-   * - ec2:DescribeSubnets
-   * - ec2:RevokeSecurityGroupEgress
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html
    */
@@ -101,10 +67,6 @@ export class Cloudhsm extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - ec2:DeleteNetworkInterface
-   * - ec2:DeleteSecurityGroup
-   *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteCluster.html
    */
   public toDeleteCluster() {
@@ -116,9 +78,6 @@ export class Cloudhsm extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - ec2:DeleteNetworkInterface
-   *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteHsm.html
    */
   public toDeleteHsm() {
@@ -128,7 +87,7 @@ export class Cloudhsm extends PolicyStatement {
   /**
    * Grants permission to delete the policy attached to CloudHSM resources
    *
-   * Access Level: Write
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteResourcePolicy.html
    */
@@ -207,9 +166,6 @@ export class Cloudhsm extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - ec2:DescribeSubnets
-   *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_ModifyCluster.html
    */
   public toModifyCluster() {
@@ -219,7 +175,7 @@ export class Cloudhsm extends PolicyStatement {
   /**
    * Grants permission to attach a policy to an AWS CloudHSM resource
    *
-   * Access Level: Write
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_PutResourcePolicy.html
    */
@@ -241,11 +197,7 @@ export class Cloudhsm extends PolicyStatement {
   /**
    * Grants permission to add or overwrite one or more tags for the specified AWS CloudHSM cluster
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_TagResource.html
    */
@@ -256,10 +208,7 @@ export class Cloudhsm extends PolicyStatement {
   /**
    * Grants permission to remove the specified tag or tags from the specified AWS CloudHSM cluster
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_UntagResource.html
    */
@@ -280,7 +229,13 @@ export class Cloudhsm extends PolicyStatement {
       'ModifyBackupAttributes',
       'ModifyCluster',
       'PutResourcePolicy',
-      'RestoreBackup'
+      'RestoreBackup',
+      'TagResource',
+      'UntagResource'
+    ],
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'PutResourcePolicy'
     ],
     Read: [
       'DescribeBackups',
@@ -350,6 +305,23 @@ export class Cloudhsm extends PolicyStatement {
    * Filters access by tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCopyBackupToRegion()
+   * - .toCreateCluster()
+   * - .toCreateHsm()
+   * - .toDeleteBackup()
+   * - .toDeleteCluster()
+   * - .toDeleteResourcePolicy()
+   * - .toGetResourcePolicy()
+   * - .toInitializeCluster()
+   * - .toListTags()
+   * - .toModifyBackupAttributes()
+   * - .toModifyCluster()
+   * - .toPutResourcePolicy()
+   * - .toRestoreBackup()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * Applies to resource types:
    * - backup

@@ -18,10 +18,10 @@ backup:DeleteBackupAccessPoint;Write
 backup:DeleteBackupPlan;Write
 backup:DeleteBackupSelection;Write
 backup:DeleteBackupVault;Write
-backup:DeleteBackupVaultAccessPolicy;Permissions management
+backup:DeleteBackupVaultAccessPolicy;Permissions management, Write
 backup:DeleteBackupVaultLockConfiguration;Write
 backup:DeleteBackupVaultNotifications;Write
-backup:DeleteBackupVaultSharingPolicy;Permissions management
+backup:DeleteBackupVaultSharingPolicy;Permissions management, Write
 backup:DeleteFramework;Write
 backup:DeleteRecoveryPoint;Write
 backup:DeleteReportPlan;Write
@@ -73,7 +73,7 @@ backup:ListCopyJobSummaries;List
 backup:ListCopyJobs;List
 backup:ListFrameworks;List
 backup:ListIndexedRecoveryPoints;List
-backup:ListIndexedRecoveryPointsForSearch;Permissions management
+backup:ListIndexedRecoveryPointsForSearch;Permissions management, Write
 backup:ListLegalHolds;List
 backup:ListProtectedResources;List
 backup:ListProtectedResourcesByBackupVault;List
@@ -92,21 +92,21 @@ backup:ListScanJobSummaries;List
 backup:ListScanJobs;List
 backup:ListTags;Read
 backup:ListTieringConfigurations;List
-backup:PutBackupVaultAccessPolicy;Permissions management
+backup:PutBackupVaultAccessPolicy;Permissions management, Write
 backup:PutBackupVaultLockConfiguration;Write
 backup:PutBackupVaultNotifications;Write
-backup:PutBackupVaultSharingPolicy;Permissions management
+backup:PutBackupVaultSharingPolicy;Permissions management, Write
 backup:PutRestoreValidationResult;Write
 backup:RevokeRestoreAccessBackupVault;Write
-backup:SearchRecoveryPoint;Permissions management
+backup:SearchRecoveryPoint;Permissions management, Write
 backup:StartBackupJob;Write
 backup:StartCopyJob;Write
 backup:StartReportJob;Write
 backup:StartRestoreJob;Write
 backup:StartScanJob;Write
 backup:StopBackupJob;Write
-backup:TagResource;Tagging
-backup:UntagResource;Tagging
+backup:TagResource;Tagging, Write
+backup:UntagResource;Tagging, Write
 backup:UpdateBackupPlan;Write
 backup:UpdateFramework;Write
 backup:UpdateGlobalSettings;Write

@@ -64,9 +64,9 @@ macie2:ListTagsForResource;Read
 macie2:PutClassificationExportConfiguration;Write
 macie2:PutFindingsPublicationConfiguration;Write
 macie2:SearchResources;Read
-macie2:TagResource;Tagging
+macie2:TagResource;Tagging, Write
 macie2:TestCustomDataIdentifier;Write
-macie2:UntagResource;Tagging
+macie2:UntagResource;Tagging, Write
 macie2:UpdateAllowList;Write
 macie2:UpdateAutomatedDiscoveryConfiguration;Write
 macie2:UpdateClassificationJob;Write

@@ -43,9 +43,9 @@ swf:SignalWorkflowExecution;Write
 swf:StartChildWorkflowExecution;Write
 swf:StartTimer;Write
 swf:StartWorkflowExecution;Write
-swf:TagResource;Tagging
+swf:TagResource;Tagging, Write
 swf:TerminateWorkflowExecution;Write
 swf:UndeprecateActivityType;Write
 swf:UndeprecateDomain;Write
 swf:UndeprecateWorkflowType;Write
-swf:UntagResource;Tagging
+swf:UntagResource;Tagging, Write

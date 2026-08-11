@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [wafv2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswafv2.html).
+ * Statement provider for service [wafv2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_wafv2.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Wafv2 extends PolicyStatement {
   public servicePrefix = 'wafv2';
 
   /**
-   * Statement provider for service [wafv2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswafv2.html).
+   * Statement provider for service [wafv2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_wafv2.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -22,20 +22,6 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to associate a WebACL with a resource
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - amplify:AssociateWebACL
-   * - apigateway:SetWebACL
-   * - apprunner:AssociateWebAcl
-   * - appsync:AssociateWebACL
-   * - appsync:SetWebACL
-   * - bedrock-agentcore:GatewayAssociateWebACL
-   * - cognito-idp:AssociateWebACL
-   * - ec2:AssociateVerifiedAccessInstanceWebAcl
-   * - elasticloadbalancing:CreateWebACLAssociation
-   * - elasticloadbalancing:SetWebAcl
-   * - wafv2:GetPermissionPolicy
-   * - wafv2:PutPermissionPolicy
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html
    */
@@ -70,13 +56,6 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - wafv2:TagResource
-   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateIPSet.html
    */
   public toCreateIPSet() {
@@ -87,13 +66,6 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to create a RegexPatternSet
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - wafv2:TagResource
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRegexPatternSet.html
    */
@@ -106,13 +78,6 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - wafv2:TagResource
-   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRuleGroup.html
    */
   public toCreateRuleGroup() {
@@ -123,13 +88,6 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to create a WebACL
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - wafv2:TagResource
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateWebACL.html
    */
@@ -175,9 +133,6 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLogScope()
-   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteLoggingConfiguration.html
    */
   public toDeleteLoggingConfiguration() {
@@ -187,7 +142,7 @@ export class Wafv2 extends PolicyStatement {
   /**
    * Grants permission to delete the PermissionPolicy on a RuleGroup
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeletePermissionPolicy.html
    */
@@ -262,33 +217,9 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate Firewall Manager from a WebACL
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateFirewallManager.html
-   */
-  public toDisassociateFirewallManager() {
-    return this.to('DisassociateFirewallManager');
-  }
-
-  /**
    * Grants permission to disassociate a WebACL from an application resource
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - amplify:DisassociateWebACL
-   * - apigateway:SetWebACL
-   * - apprunner:DisassociateWebAcl
-   * - appsync:DisassociateWebACL
-   * - appsync:SetWebACL
-   * - bedrock-agentcore:GatewayDisassociateWebACL
-   * - cognito-idp:DisassociateWebACL
-   * - ec2:DisassociateVerifiedAccessInstanceWebAcl
-   * - elasticloadbalancing:DeleteWebACLAssociation
-   * - elasticloadbalancing:SetWebAcl
-   * - wafv2:PutPermissionPolicy
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateWebACL.html
    */
@@ -323,9 +254,6 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetIPSet.html
    */
   public toGetIPSet() {
@@ -336,10 +264,6 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to retrieve LoggingConfiguration for a WebACL
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifLogScope()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetLoggingConfiguration.html
    */
@@ -385,9 +309,6 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRateBasedStatementManagedKeys.html
    */
   public toGetRateBasedStatementManagedKeys() {
@@ -398,9 +319,6 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to retrieve details about a RegexPatternSet
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRegexPatternSet.html
    */
@@ -446,9 +364,6 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRuleGroup.html
    */
   public toGetRuleGroup() {
@@ -482,9 +397,6 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACL.html
    */
   public toGetWebACL() {
@@ -495,16 +407,6 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to retrieve the WebACL that's associated with a resource
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - amplify:GetWebACLForResource
-   * - apprunner:DescribeWebAclForService
-   * - appsync:GetWebACLForResource
-   * - bedrock-agentcore:GatewayGetWebACLForResource
-   * - cognito-idp:GetWebACLForResource
-   * - ec2:GetVerifiedAccessInstanceWebAcl
-   * - elasticloadbalancing:GetLoadBalancerWebACL
-   * - wafv2:GetWebACL
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACLForResource.html
    */
@@ -608,15 +510,6 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - amplify:ListResourcesForWebACL
-   * - apprunner:ListAssociatedServicesForWebAcl
-   * - appsync:ListResourcesForWebACL
-   * - bedrock-agentcore:GatewayListResourcesForWebACL
-   * - cognito-idp:ListResourcesForWebACL
-   * - ec2:DescribeVerifiedAccessInstanceWebAclAssociations
-   * - elasticloadbalancing:DescribeWebACLAssociation
-   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListResourcesForWebACL.html
    */
   public toListResourcesForWebACL() {
@@ -650,9 +543,6 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -671,27 +561,9 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create FirewallManagedRulesGroups in a WebACL
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutFirewallManagerRuleGroups.html
-   */
-  public toPutFirewallManagerRuleGroups() {
-    return this.to('PutFirewallManagerRuleGroups');
-  }
-
-  /**
    * Grants permission to enable a LoggingConfiguration, to start logging for a web ACL
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLogScope()
-   * - .ifLogDestinationResource()
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutLoggingConfiguration.html
    */
@@ -713,7 +585,7 @@ export class Wafv2 extends PolicyStatement {
   /**
    * Grants permission to attach an IAM policy to a resource, used to share rule groups between accounts
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutPermissionPolicy.html
    */
@@ -724,12 +596,7 @@ export class Wafv2 extends PolicyStatement {
   /**
    * Grants permission to associate tags with a AWS resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_TagResource.html
    */
@@ -740,10 +607,7 @@ export class Wafv2 extends PolicyStatement {
   /**
    * Grants permission to disassociate tags from an AWS resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UntagResource.html
    */
@@ -755,9 +619,6 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to update an IPSet
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateIPSet.html
    */
@@ -781,9 +642,6 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRegexPatternSet.html
    */
   public toUpdateRegexPatternSet() {
@@ -794,9 +652,6 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to update a RuleGroup
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRuleGroup.html
    */
@@ -809,13 +664,32 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateWebACL.html
    */
   public toUpdateWebACL() {
     return this.to('UpdateWebACL');
+  }
+
+  /**
+   * Grants permission to disassociate Firewall Manager from a WebACL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateFirewallManager.html
+   */
+  public toDisassociateFirewallManager() {
+    return this.to('DisassociateFirewallManager');
+  }
+
+  /**
+   * Grants permission to create FirewallManagedRulesGroups in a WebACL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutFirewallManagerRuleGroups.html
+   */
+  public toPutFirewallManagerRuleGroups() {
+    return this.to('PutFirewallManagerRuleGroups');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -830,19 +704,23 @@ export class Wafv2 extends PolicyStatement {
       'DeleteFirewallManagerRuleGroups',
       'DeleteIPSet',
       'DeleteLoggingConfiguration',
+      'DeletePermissionPolicy',
       'DeleteRegexPatternSet',
       'DeleteRuleGroup',
       'DeleteWebACL',
-      'DisassociateFirewallManager',
       'DisassociateWebACL',
-      'PutFirewallManagerRuleGroups',
       'PutLoggingConfiguration',
       'PutManagedRuleSetVersions',
+      'PutPermissionPolicy',
+      'TagResource',
+      'UntagResource',
       'UpdateIPSet',
       'UpdateManagedRuleSetVersionExpiryDate',
       'UpdateRegexPatternSet',
       'UpdateRuleGroup',
-      'UpdateWebACL'
+      'UpdateWebACL',
+      'DisassociateFirewallManager',
+      'PutFirewallManagerRuleGroups'
     ],
     Read: [
       'CheckCapacity',
@@ -893,22 +771,75 @@ export class Wafv2 extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type webacl to the statement
+   * Adds a resource of type agentcore-gateway to the statement
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
    *
-   * @param scope - Identifier for the scope.
-   * @param name - Identifier for the name.
-   * @param id - Identifier for the id.
+   * @param gatewayId - Identifier for the gatewayId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
-  public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:wafv2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ scope }/webacl/${ name }/${ id }`);
+  public onAgentcoreGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }`);
+  }
+
+  /**
+   * Adds a resource of type amplify-app to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAmplifyApp(appId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:amplify:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }`);
+  }
+
+  /**
+   * Adds a resource of type apigateway to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param stageName - Identifier for the stageName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onApigateway(apiId: string, stageName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/restapis/${ apiId }/stages/${ stageName }`);
+  }
+
+  /**
+   * Adds a resource of type apprunner to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
+   *
+   * @param serviceName - Identifier for the serviceName.
+   * @param serviceId - Identifier for the serviceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onApprunner(serviceName: string, serviceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apprunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceName }/${ serviceId }`);
+  }
+
+  /**
+   * Adds a resource of type appsync to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
+   *
+   * @param graphQLAPIId - Identifier for the graphQLAPIId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAppsync(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }`);
   }
 
   /**
@@ -931,6 +862,21 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type loadbalancer/app/ to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
+   *
+   * @param loadBalancerName - Identifier for the loadBalancerName.
+   * @param loadBalancerId - Identifier for the loadBalancerId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
+  }
+
+  /**
    * Adds a resource of type managedruleset to the statement
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ManagedRuleSet.html
@@ -944,25 +890,6 @@ export class Wafv2 extends PolicyStatement {
    */
   public onManagedruleset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:wafv2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ scope }/managedruleset/${ name }/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type rulegroup to the statement
-   *
-   * https://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html
-   *
-   * @param scope - Identifier for the scope.
-   * @param name - Identifier for the name.
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onRulegroup(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:wafv2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ scope }/rulegroup/${ name }/${ id }`);
   }
 
   /**
@@ -985,47 +912,22 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type loadbalancer/app/ to the statement
+   * Adds a resource of type rulegroup to the statement
    *
-   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html
    *
-   * @param loadBalancerName - Identifier for the loadBalancerName.
-   * @param loadBalancerId - Identifier for the loadBalancerId.
+   * @param scope - Identifier for the scope.
+   * @param name - Identifier for the name.
+   * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
-  }
-
-  /**
-   * Adds a resource of type apigateway to the statement
-   *
-   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
-   *
-   * @param apiId - Identifier for the apiId.
-   * @param stageName - Identifier for the stageName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onApigateway(apiId: string, stageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/restapis/${ apiId }/stages/${ stageName }`);
-  }
-
-  /**
-   * Adds a resource of type appsync to the statement
-   *
-   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
-   *
-   * @param graphQLAPIId - Identifier for the graphQLAPIId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAppsync(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }`);
+  public onRulegroup(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wafv2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ scope }/rulegroup/${ name }/${ id }`);
   }
 
   /**
@@ -1043,21 +945,6 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type apprunner to the statement
-   *
-   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
-   *
-   * @param serviceName - Identifier for the serviceName.
-   * @param serviceId - Identifier for the serviceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onApprunner(serviceName: string, serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:apprunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceName }/${ serviceId }`);
-  }
-
-  /**
    * Adds a resource of type verified-access-instance to the statement
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
@@ -1072,31 +959,22 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type amplify-app to the statement
+   * Adds a resource of type webacl to the statement
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
    *
-   * @param appId - Identifier for the appId.
+   * @param scope - Identifier for the scope.
+   * @param name - Identifier for the name.
+   * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAmplifyApp(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:amplify:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }`);
-  }
-
-  /**
-   * Adds a resource of type agentcore-gateway to the statement
    *
-   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
-   *
-   * @param gatewayId - Identifier for the gatewayId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onAgentcoreGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }`);
+  public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wafv2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ scope }/webacl/${ name }/${ id }`);
   }
 
   /**
@@ -1125,24 +1003,47 @@ export class Wafv2 extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toAssociateWebACL()
+   * - .toCreateIPSet()
+   * - .toCreateRegexPatternSet()
+   * - .toCreateRuleGroup()
+   * - .toCreateWebACL()
+   * - .toDeleteFirewallManagerRuleGroups()
+   * - .toDeleteIPSet()
+   * - .toDeleteLoggingConfiguration()
+   * - .toDeletePermissionPolicy()
+   * - .toDeleteRegexPatternSet()
+   * - .toDeleteRuleGroup()
+   * - .toDeleteWebACL()
    * - .toGetIPSet()
    * - .toGetLoggingConfiguration()
+   * - .toGetPermissionPolicy()
    * - .toGetRateBasedStatementManagedKeys()
    * - .toGetRegexPatternSet()
    * - .toGetRuleGroup()
+   * - .toGetSampledRequests()
+   * - .toGetTopPathStatisticsByTraffic()
    * - .toGetWebACL()
+   * - .toGetWebACLForResource()
+   * - .toListResourcesForWebACL()
    * - .toListTagsForResource()
+   * - .toPutLoggingConfiguration()
+   * - .toPutManagedRuleSetVersions()
+   * - .toPutPermissionPolicy()
    * - .toTagResource()
+   * - .toUntagResource()
    * - .toUpdateIPSet()
    * - .toUpdateRegexPatternSet()
    * - .toUpdateRuleGroup()
    * - .toUpdateWebACL()
+   * - .toDisassociateFirewallManager()
+   * - .toPutFirewallManagerRuleGroups()
    *
    * Applies to resource types:
-   * - webacl
    * - ipset
-   * - rulegroup
    * - regexpatternset
+   * - rulegroup
+   * - webacl
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

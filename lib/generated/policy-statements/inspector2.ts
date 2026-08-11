@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [inspector2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html).
+ * Statement provider for service [inspector2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector2.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Inspector2 extends PolicyStatement {
   public servicePrefix = 'inspector2';
 
   /**
-   * Statement provider for service [inspector2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html).
+   * Statement provider for service [inspector2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector2.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -144,11 +144,6 @@ export class Inspector2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateCisScanConfiguration.html
    */
   public toCreateCisScanConfiguration() {
@@ -159,10 +154,6 @@ export class Inspector2 extends PolicyStatement {
    * Grants permission to create a code security integration with a source code repository provider
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateCodeSecurityIntegration.html
    */
@@ -175,10 +166,6 @@ export class Inspector2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateCodeSecurityScanConfiguration.html
    */
   public toCreateCodeSecurityScanConfiguration() {
@@ -190,10 +177,6 @@ export class Inspector2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateConnector.html
    */
   public toCreateConnector() {
@@ -204,10 +187,6 @@ export class Inspector2 extends PolicyStatement {
    * Grants permission to create and define the settings for a findings filter
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateFilter.html
    */
@@ -241,9 +220,6 @@ export class Inspector2 extends PolicyStatement {
    * Grants permission to delete a CIS scan configuration
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteCisScanConfiguration.html
    */
@@ -793,12 +769,7 @@ export class Inspector2 extends PolicyStatement {
   /**
    * Grants permission to add or update the tags for an Amazon Inspector resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/inspector/v2/APIReference/API_TagResource.html
    */
@@ -809,11 +780,7 @@ export class Inspector2 extends PolicyStatement {
   /**
    * Grants permission to remove tags from an Amazon Inspector resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/inspector/v2/APIReference/API_UntagResource.html
    */
@@ -826,9 +793,6 @@ export class Inspector2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateCisScanConfiguration.html
    */
   public toUpdateCisScanConfiguration() {
@@ -840,9 +804,6 @@ export class Inspector2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateCodeSecurityIntegration.html
    */
   public toUpdateCodeSecurityIntegration() {
@@ -853,9 +814,6 @@ export class Inspector2 extends PolicyStatement {
    * Grants permission to update an existing code security scan configuration
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateCodeSecurityScanConfiguration.html
    */
@@ -878,11 +836,6 @@ export class Inspector2 extends PolicyStatement {
    * Grants permission to update a connector configured for scanning resources from a third-party cloud provider
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateConnector.html
    */
@@ -927,10 +880,6 @@ export class Inspector2 extends PolicyStatement {
    * Grants permission to update the settings for a findings filter
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateFilter.html
    */
@@ -991,6 +940,8 @@ export class Inspector2 extends PolicyStatement {
       'StartCisSession',
       'StartCodeSecurityScan',
       'StopCisSession',
+      'TagResource',
+      'UntagResource',
       'UpdateCisScanConfiguration',
       'UpdateCodeSecurityIntegration',
       'UpdateCodeSecurityScanConfiguration',
@@ -1053,6 +1004,76 @@ export class Inspector2 extends PolicyStatement {
   };
 
   /**
+   * Adds a resource of type CIS Scan Configuration to the statement
+   *
+   * https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+   *
+   * @param ownerId - Identifier for the ownerId.
+   * @param cISScanConfigurationId - Identifier for the cISScanConfigurationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCISScanConfiguration(ownerId: string, cISScanConfigurationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:inspector2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:owner/${ ownerId }/cis-configuration/${ cISScanConfigurationId }`);
+  }
+
+  /**
+   * Adds a resource of type Code Security Integration to the statement
+   *
+   * https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+   *
+   * @param codeSecurityIntegrationId - Identifier for the codeSecurityIntegrationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCodeSecurityIntegration(codeSecurityIntegrationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:inspector2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:codesecurity-integration/${ codeSecurityIntegrationId }`);
+  }
+
+  /**
+   * Adds a resource of type Code Security Scan Configuration to the statement
+   *
+   * https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+   *
+   * @param ownerId - Identifier for the ownerId.
+   * @param codeSecurityScanConfigurationId - Identifier for the codeSecurityScanConfigurationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCodeSecurityScanConfiguration(ownerId: string, codeSecurityScanConfigurationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:inspector2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:owner/${ ownerId }/codesecurity-configuration/${ codeSecurityScanConfigurationId }`);
+  }
+
+  /**
+   * Adds a resource of type Connector to the statement
+   *
+   * https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+   *
+   * @param connectorId - Identifier for the connectorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnector(connectorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:inspector2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ connectorId }`);
+  }
+
+  /**
    * Adds a resource of type Filter to the statement
    *
    * https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
@@ -1085,76 +1106,6 @@ export class Inspector2 extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type CIS Scan Configuration to the statement
-   *
-   * https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
-   *
-   * @param ownerId - Identifier for the ownerId.
-   * @param cISScanConfigurationId - Identifier for the cISScanConfigurationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCISScanConfiguration(ownerId: string, cISScanConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:inspector2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:owner/${ ownerId }/cis-configuration/${ cISScanConfigurationId }`);
-  }
-
-  /**
-   * Adds a resource of type Code Security Scan Configuration to the statement
-   *
-   * https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
-   *
-   * @param ownerId - Identifier for the ownerId.
-   * @param codeSecurityScanConfigurationId - Identifier for the codeSecurityScanConfigurationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCodeSecurityScanConfiguration(ownerId: string, codeSecurityScanConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:inspector2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:owner/${ ownerId }/codesecurity-configuration/${ codeSecurityScanConfigurationId }`);
-  }
-
-  /**
-   * Adds a resource of type Code Security Integration to the statement
-   *
-   * https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
-   *
-   * @param codeSecurityIntegrationId - Identifier for the codeSecurityIntegrationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCodeSecurityIntegration(codeSecurityIntegrationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:inspector2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:codesecurity-integration/${ codeSecurityIntegrationId }`);
-  }
-
-  /**
-   * Adds a resource of type Connector to the statement
-   *
-   * https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
-   *
-   * @param connectorId - Identifier for the connectorId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onConnector(connectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:inspector2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ connectorId }`);
-  }
-
-  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1184,20 +1135,29 @@ export class Inspector2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateCisScanConfiguration()
+   * - .toCreateCodeSecurityIntegration()
+   * - .toCreateCodeSecurityScanConfiguration()
+   * - .toCreateConnector()
+   * - .toCreateFilter()
    * - .toDeleteCisScanConfiguration()
+   * - .toDeleteCodeSecurityIntegration()
+   * - .toDeleteCodeSecurityScanConfiguration()
+   * - .toDeleteConnector()
+   * - .toDeleteFilter()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateCisScanConfiguration()
    * - .toUpdateCodeSecurityIntegration()
    * - .toUpdateCodeSecurityScanConfiguration()
    * - .toUpdateConnector()
+   * - .toUpdateFilter()
    *
    * Applies to resource types:
-   * - Filter
    * - CIS Scan Configuration
-   * - Code Security Scan Configuration
    * - Code Security Integration
+   * - Code Security Scan Configuration
    * - Connector
+   * - Filter
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

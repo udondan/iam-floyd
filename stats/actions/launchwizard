@@ -34,7 +34,7 @@ launchwizard:ListWorkloadDeploymentPatterns;List
 launchwizard:ListWorkloads;List
 launchwizard:PutSettingsSet;Write
 launchwizard:StartProvisioning;Write
-launchwizard:TagResource;Tagging
-launchwizard:UntagResource;Tagging
+launchwizard:TagResource;Tagging, Write
+launchwizard:UntagResource;Tagging, Write
 launchwizard:UpdateDeployment;Write
 launchwizard:UpdateSettingsSet;Write

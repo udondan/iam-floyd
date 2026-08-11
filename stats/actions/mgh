@@ -42,5 +42,5 @@ mgh:NotifyApplicationState;Write
 mgh:NotifyMigrationTaskState;Write
 mgh:PutResourceAttributes;Write
 mgh:RejectConnection;Write
-mgh:TagResource;Tagging
-mgh:UntagResource;Tagging
+mgh:TagResource;Tagging, Write
+mgh:UntagResource;Tagging, Write

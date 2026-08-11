@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [freertos](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfreertos.html).
+ * Statement provider for service [freertos](https://docs.aws.amazon.com/service-authorization/latest/reference/list_freertos.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Freertos extends PolicyStatement {
   public servicePrefix = 'freertos';
 
   /**
-   * Statement provider for service [freertos](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfreertos.html).
+   * Statement provider for service [freertos](https://docs.aws.amazon.com/service-authorization/latest/reference/list_freertos.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -22,10 +22,6 @@ export class Freertos extends PolicyStatement {
    * Grants permission to create a software configuration
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
@@ -330,6 +326,13 @@ export class Freertos extends PolicyStatement {
    * Filters access by tag key component attached to an Amazon FreeRTOS resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateSoftwareConfiguration()
+   * - .toDeleteSoftwareConfiguration()
+   * - .toDescribeSoftwareConfiguration()
+   * - .toDescribeSubscription()
+   * - .toUpdateSoftwareConfiguration()
    *
    * Applies to resource types:
    * - configuration

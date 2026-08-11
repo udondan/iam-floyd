@@ -48,12 +48,12 @@ cleanrooms-ml:ListTrainedModelInferenceJobs;List
 cleanrooms-ml:ListTrainedModelVersions;List
 cleanrooms-ml:ListTrainedModels;List
 cleanrooms-ml:ListTrainingDatasets;List
-cleanrooms-ml:PutConfiguredAudienceModelPolicy;Permissions management
+cleanrooms-ml:PutConfiguredAudienceModelPolicy;Permissions management, Write
 cleanrooms-ml:PutMLConfiguration;Write
 cleanrooms-ml:StartAudienceExportJob;Write
 cleanrooms-ml:StartAudienceGenerationJob;Write
 cleanrooms-ml:StartTrainedModelExportJob;Write
 cleanrooms-ml:StartTrainedModelInferenceJob;Write
-cleanrooms-ml:TagResource;Tagging
-cleanrooms-ml:UnTagResource;Tagging
+cleanrooms-ml:TagResource;Tagging, Write
+cleanrooms-ml:UnTagResource;Tagging, Write
 cleanrooms-ml:UpdateConfiguredAudienceModel;Write

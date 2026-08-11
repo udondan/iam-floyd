@@ -2,10 +2,10 @@ redshift:AcceptReservedNodeExchange;Write
 redshift:AddPartner;Write
 redshift:AssociateDataShareConsumer;Write
 redshift:AuthorizeClusterSecurityGroupIngress;Write
-redshift:AuthorizeDataShare;Permissions management
-redshift:AuthorizeEndpointAccess;Permissions management
+redshift:AuthorizeDataShare;Permissions management, Write
+redshift:AuthorizeEndpointAccess;Permissions management, Write
 redshift:AuthorizeInboundIntegration;Write
-redshift:AuthorizeSnapshotAccess;Permissions management
+redshift:AuthorizeSnapshotAccess;Permissions management, Write
 redshift:BatchDeleteClusterSnapshots;Write
 redshift:BatchModifyClusterSnapshots;Write
 redshift:CancelQuery;Write
@@ -18,7 +18,7 @@ redshift:CreateClusterParameterGroup;Write
 redshift:CreateClusterSecurityGroup;Write
 redshift:CreateClusterSnapshot;Write
 redshift:CreateClusterSubnetGroup;Write
-redshift:CreateClusterUser;Permissions management
+redshift:CreateClusterUser;Permissions management, Write
 redshift:CreateCustomDomainAssociation;Write
 redshift:CreateEndpointAccess;Write
 redshift:CreateEventSubscription;Write
@@ -30,11 +30,11 @@ redshift:CreateQev2IdcApplication;Write
 redshift:CreateRedshiftIdcApplication;Write
 redshift:CreateSavedQuery;Write
 redshift:CreateScheduledAction;Write
-redshift:CreateSnapshotCopyGrant;Permissions management
+redshift:CreateSnapshotCopyGrant;Permissions management, Write
 redshift:CreateSnapshotSchedule;Write
-redshift:CreateTags;Tagging
+redshift:CreateTags;Tagging, Write
 redshift:CreateUsageLimit;Write
-redshift:DeauthorizeDataShare;Permissions management
+redshift:DeauthorizeDataShare;Permissions management, Write
 redshift:DeleteAuthenticationProfile;Write
 redshift:DeleteCluster;Write
 redshift:DeleteClusterParameterGroup;Write
@@ -50,12 +50,12 @@ redshift:DeleteIntegration;Write
 redshift:DeletePartner;Write
 redshift:DeleteQev2IdcApplication;Write
 redshift:DeleteRedshiftIdcApplication;Write
-redshift:DeleteResourcePolicy;Permissions management
+redshift:DeleteResourcePolicy;Permissions management, Write
 redshift:DeleteSavedQueries;Write
 redshift:DeleteScheduledAction;Write
 redshift:DeleteSnapshotCopyGrant;Write
 redshift:DeleteSnapshotSchedule;Write
-redshift:DeleteTags;Tagging
+redshift:DeleteTags;Tagging, Write
 redshift:DeleteUsageLimit;Write
 redshift:DeregisterNamespace;Write
 redshift:DescribeAccountAttributes;Read
@@ -118,7 +118,7 @@ redshift:GetIdentityCenterAuthToken;Read
 redshift:GetReservedNodeExchangeConfigurationOptions;Read
 redshift:GetReservedNodeExchangeOfferings;Read
 redshift:GetResourcePolicy;Read
-redshift:JoinGroup;Permissions management
+redshift:JoinGroup;Permissions management, Write
 redshift:ListDatabases;List
 redshift:ListRecommendations;List
 redshift:ListSavedQueries;List
@@ -129,7 +129,7 @@ redshift:ModifyAuthenticationProfile;Write
 redshift:ModifyAutonomicsDenylist;Write
 redshift:ModifyCluster;Write
 redshift:ModifyClusterDbRevision;Write
-redshift:ModifyClusterIamRoles;Permissions management
+redshift:ModifyClusterIamRoles;Permissions management, Write
 redshift:ModifyClusterMaintenance;Write
 redshift:ModifyClusterParameterGroup;Write
 redshift:ModifyClusterSnapshot;Write
@@ -148,18 +148,18 @@ redshift:ModifySnapshotSchedule;Write
 redshift:ModifyUsageLimit;Write
 redshift:PauseCluster;Write
 redshift:PurchaseReservedNodeOffering;Write
-redshift:PutResourcePolicy;Permissions management
+redshift:PutResourcePolicy;Permissions management, Write
 redshift:RebootCluster;Write
 redshift:RegisterNamespace;Write
-redshift:RejectDataShare;Permissions management
+redshift:RejectDataShare;Permissions management, Write
 redshift:ResetClusterParameterGroup;Write
 redshift:ResizeCluster;Write
 redshift:RestoreFromClusterSnapshot;Write
 redshift:RestoreTableFromClusterSnapshot;Write
 redshift:ResumeCluster;Write
 redshift:RevokeClusterSecurityGroupIngress;Write
-redshift:RevokeEndpointAccess;Permissions management
-redshift:RevokeSnapshotAccess;Permissions management
+redshift:RevokeEndpointAccess;Permissions management, Write
+redshift:RevokeSnapshotAccess;Permissions management, Write
 redshift:RotateEncryptionKey;Write
 redshift:UpdatePartnerStatus;Write
 redshift:ViewQueriesFromConsole;List

@@ -1,4 +1,4 @@
-route53globalresolver:AllowVendedLogDeliveryForResource;Permissions management
+route53globalresolver:AllowVendedLogDeliveryForResource;Permissions management, Write
 route53globalresolver:AssociateHostedZone;Write
 route53globalresolver:BatchCreateFirewallRule;Write
 route53globalresolver:BatchDeleteFirewallRule;Write
@@ -37,8 +37,8 @@ route53globalresolver:ListGlobalResolvers;List
 route53globalresolver:ListHostedZoneAssociations;List
 route53globalresolver:ListManagedFirewallDomainLists;List
 route53globalresolver:ListTagsForResource;Write
-route53globalresolver:TagResource;Tagging
-route53globalresolver:UntagResource;Tagging
+route53globalresolver:TagResource;Tagging, Write
+route53globalresolver:UntagResource;Tagging, Write
 route53globalresolver:UpdateAccessSource;Write
 route53globalresolver:UpdateAccessToken;Write
 route53globalresolver:UpdateDNSView;Write

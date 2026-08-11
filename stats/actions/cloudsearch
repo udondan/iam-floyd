@@ -1,4 +1,4 @@
-cloudsearch:AddTags;Tagging
+cloudsearch:AddTags;Tagging, Write
 cloudsearch:BuildSuggesters;Write
 cloudsearch:CreateDomain;Write
 cloudsearch:DefineAnalysisScheme;Write
@@ -22,11 +22,11 @@ cloudsearch:DescribeSuggesters;Read
 cloudsearch:IndexDocuments;Write
 cloudsearch:ListDomainNames;List
 cloudsearch:ListTags;Read
-cloudsearch:RemoveTags;Tagging
+cloudsearch:RemoveTags;Tagging, Write
 cloudsearch:UpdateAvailabilityOptions;Write
 cloudsearch:UpdateDomainEndpointOptions;Write
 cloudsearch:UpdateScalingParameters;Write
-cloudsearch:UpdateServiceAccessPolicies;Permissions management
+cloudsearch:UpdateServiceAccessPolicies;Permissions management, Write
 cloudsearch:document;Write
 cloudsearch:search;Read
 cloudsearch:suggest;Read

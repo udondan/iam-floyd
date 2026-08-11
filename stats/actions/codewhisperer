@@ -1,4 +1,4 @@
-codewhisperer:AllowVendedLogDeliveryForResource;Permissions management
+codewhisperer:AllowVendedLogDeliveryForResource;Permissions management, Write
 codewhisperer:AssociateCustomizationPermission;Write
 codewhisperer:CreateCustomization;Write
 codewhisperer:CreateProfile;Write
@@ -12,7 +12,7 @@ codewhisperer:ListCustomizationVersions;List
 codewhisperer:ListCustomizations;List
 codewhisperer:ListProfiles;List
 codewhisperer:ListTagsForResource;List
-codewhisperer:TagResource;Tagging
-codewhisperer:UntagResource;Tagging
+codewhisperer:TagResource;Tagging, Write
+codewhisperer:UntagResource;Tagging, Write
 codewhisperer:UpdateCustomization;Write
 codewhisperer:UpdateProfile;Write

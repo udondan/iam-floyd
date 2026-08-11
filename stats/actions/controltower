@@ -57,8 +57,8 @@ controltower:ResetEnabledBaseline;Write
 controltower:ResetEnabledControl;Write
 controltower:ResetLandingZone;Write
 controltower:SetupLandingZone;Write
-controltower:TagResource;Tagging
-controltower:UntagResource;Tagging
+controltower:TagResource;Tagging, Write
+controltower:UntagResource;Tagging, Write
 controltower:UpdateAccountFactoryConfig;Write
 controltower:UpdateEnabledBaseline;Write
 controltower:UpdateEnabledControl;Write

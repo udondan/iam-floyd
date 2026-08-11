@@ -32,7 +32,7 @@ neptune-graph:StartExportTask;Write
 neptune-graph:StartGraph;Write
 neptune-graph:StartImportTask;Write
 neptune-graph:StopGraph;Write
-neptune-graph:TagResource;Tagging
-neptune-graph:UntagResource;Tagging
+neptune-graph:TagResource;Tagging, Write
+neptune-graph:UntagResource;Tagging, Write
 neptune-graph:UpdateGraph;Write
 neptune-graph:WriteDataViaQuery;Write

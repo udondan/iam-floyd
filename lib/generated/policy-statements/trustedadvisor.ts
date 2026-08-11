@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement } from '../../shared';
 
 /**
- * Statement provider for service [trustedadvisor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstrustedadvisor.html).
+ * Statement provider for service [trustedadvisor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_trustedadvisor.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Trustedadvisor extends PolicyStatement {
   public servicePrefix = 'trustedadvisor';
 
   /**
-   * Statement provider for service [trustedadvisor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstrustedadvisor.html).
+   * Statement provider for service [trustedadvisor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_trustedadvisor.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -41,28 +41,6 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view the AWS Support plan and various AWS Trusted Advisor preferences
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toDescribeAccount() {
-    return this.to('DescribeAccount');
-  }
-
-  /**
-   * Grants permission to view if the AWS account has enabled or disabled AWS Trusted Advisor
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toDescribeAccountAccess() {
-    return this.to('DescribeAccountAccess');
-  }
-
-  /**
    * Grants permission to view details for the check items
    *
    * Access Level: Read
@@ -82,17 +60,6 @@ export class Trustedadvisor extends PolicyStatement {
    */
   public toDescribeCheckRefreshStatuses() {
     return this.to('DescribeCheckRefreshStatuses');
-  }
-
-  /**
-   * Grants permission to view the results and changed statuses for checks in the last 30 days
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toDescribeCheckStatusHistoryChanges() {
-    return this.to('DescribeCheckStatusHistoryChanges');
   }
 
   /**
@@ -129,50 +96,6 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view the notification preferences for the AWS account
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toDescribeNotificationPreferences() {
-    return this.to('DescribeNotificationPreferences');
-  }
-
-  /**
-   * Grants permission to view if the AWS account meets the requirements to enable the organizational view feature
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toDescribeOrganization() {
-    return this.to('DescribeOrganization');
-  }
-
-  /**
-   * Grants permission to view the linked AWS accounts that are in the organization
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toDescribeOrganizationAccounts() {
-    return this.to('DescribeOrganizationAccounts');
-  }
-
-  /**
-   * Grants permission to view details for organizational view reports, such as the report name, runtime, date created, status, and format
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toDescribeReports() {
-    return this.to('DescribeReports');
-  }
-
-  /**
    * Grants permission to view risk details in AWS Trusted Advisor Priority
    *
    * Access Level: Read
@@ -206,17 +129,6 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view information about organizational view reports, such as the AWS Regions, check categories, check names, and resource statuses
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toDescribeServiceMetadata() {
-    return this.to('DescribeServiceMetadata');
-  }
-
-  /**
    * Grants permission to download a file that contains details about the risk in AWS Trusted Advisor Priority
    *
    * Access Level: Read
@@ -225,28 +137,6 @@ export class Trustedadvisor extends PolicyStatement {
    */
   public toDownloadRisk() {
     return this.to('DownloadRisk');
-  }
-
-  /**
-   * Grants permission to exclude recommendations for AWS Trusted Advisor checks
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toExcludeCheckItems() {
-    return this.to('ExcludeCheckItems');
-  }
-
-  /**
-   * Grants permission to create a report for AWS Trusted Advisor checks in your organization
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toGenerateReport() {
-    return this.to('GenerateReport');
   }
 
   /**
@@ -269,28 +159,6 @@ export class Trustedadvisor extends PolicyStatement {
    */
   public toGetRecommendation() {
     return this.to('GetRecommendation');
-  }
-
-  /**
-   * Grants permission to include recommendations for AWS Trusted Advisor checks
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toIncludeCheckItems() {
-    return this.to('IncludeCheckItems');
-  }
-
-  /**
-   * Grants permission to view, in the Trusted Advisor console, all of the accounts in an AWS organization that are contained by a root or organizational unit (OU)
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toListAccountsForParent() {
-    return this.to('ListAccountsForParent');
   }
 
   /**
@@ -338,17 +206,6 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view, in the Trusted Advisor console, all of the organizational units (OUs) in a parent organizational unit or root
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toListOrganizationalUnitsForParent() {
-    return this.to('ListOrganizationalUnitsForParent');
-  }
-
-  /**
    * Grants permission to list Resources of a Recommendation
    *
    * Access Level: List
@@ -371,14 +228,14 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view, in the Trusted Advisor console, all of the roots that are defined in an AWS organization
+   * Grants permission to list Recommendation of a Resource
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   * https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html
    */
-  public toListRoots() {
-    return this.to('ListRoots');
+  public toListRecommendationsForResource() {
+    return this.to('ListRecommendationsForResource');
   }
 
   /**
@@ -393,28 +250,6 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable or disable AWS Trusted Advisor for the account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toSetAccountAccess() {
-    return this.to('SetAccountAccess');
-  }
-
-  /**
-   * Grants permission to enable the organizational view feature for AWS Trusted Advisor
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toSetOrganizationAccess() {
-    return this.to('SetOrganizationAccess');
-  }
-
-  /**
    * Grants permission to create or update your email notification preferences for Trusted Advisor Priority
    *
    * Access Level: Write
@@ -423,17 +258,6 @@ export class Trustedadvisor extends PolicyStatement {
    */
   public toUpdateNotificationConfigurations() {
     return this.to('UpdateNotificationConfigurations');
-  }
-
-  /**
-   * Grants permission to update notification preferences for AWS Trusted Advisor
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toUpdateNotificationPreferences() {
-    return this.to('UpdateNotificationPreferences');
   }
 
   /**
@@ -469,42 +293,229 @@ export class Trustedadvisor extends PolicyStatement {
     return this.to('UpdateRiskStatus');
   }
 
+  /**
+   * Grants permission to view the AWS Support plan and various AWS Trusted Advisor preferences
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toDescribeAccount() {
+    return this.to('DescribeAccount');
+  }
+
+  /**
+   * Grants permission to view if the AWS account has enabled or disabled AWS Trusted Advisor
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toDescribeAccountAccess() {
+    return this.to('DescribeAccountAccess');
+  }
+
+  /**
+   * Grants permission to view the results and changed statuses for checks in the last 30 days
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toDescribeCheckStatusHistoryChanges() {
+    return this.to('DescribeCheckStatusHistoryChanges');
+  }
+
+  /**
+   * Grants permission to view the notification preferences for the AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toDescribeNotificationPreferences() {
+    return this.to('DescribeNotificationPreferences');
+  }
+
+  /**
+   * Grants permission to view if the AWS account meets the requirements to enable the organizational view feature
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toDescribeOrganization() {
+    return this.to('DescribeOrganization');
+  }
+
+  /**
+   * Grants permission to view the linked AWS accounts that are in the organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toDescribeOrganizationAccounts() {
+    return this.to('DescribeOrganizationAccounts');
+  }
+
+  /**
+   * Grants permission to view details for organizational view reports, such as the report name, runtime, date created, status, and format
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toDescribeReports() {
+    return this.to('DescribeReports');
+  }
+
+  /**
+   * Grants permission to view information about organizational view reports, such as the AWS Regions, check categories, check names, and resource statuses
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toDescribeServiceMetadata() {
+    return this.to('DescribeServiceMetadata');
+  }
+
+  /**
+   * Grants permission to exclude recommendations for AWS Trusted Advisor checks
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toExcludeCheckItems() {
+    return this.to('ExcludeCheckItems');
+  }
+
+  /**
+   * Grants permission to create a report for AWS Trusted Advisor checks in your organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toGenerateReport() {
+    return this.to('GenerateReport');
+  }
+
+  /**
+   * Grants permission to include recommendations for AWS Trusted Advisor checks
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toIncludeCheckItems() {
+    return this.to('IncludeCheckItems');
+  }
+
+  /**
+   * Grants permission to view, in the Trusted Advisor console, all of the accounts in an AWS organization that are contained by a root or organizational unit (OU)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toListAccountsForParent() {
+    return this.to('ListAccountsForParent');
+  }
+
+  /**
+   * Grants permission to view, in the Trusted Advisor console, all of the organizational units (OUs) in a parent organizational unit or root
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toListOrganizationalUnitsForParent() {
+    return this.to('ListOrganizationalUnitsForParent');
+  }
+
+  /**
+   * Grants permission to view, in the Trusted Advisor console, all of the roots that are defined in an AWS organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toListRoots() {
+    return this.to('ListRoots');
+  }
+
+  /**
+   * Grants permission to enable or disable AWS Trusted Advisor for the account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toSetAccountAccess() {
+    return this.to('SetAccountAccess');
+  }
+
+  /**
+   * Grants permission to enable the organizational view feature for AWS Trusted Advisor
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toSetOrganizationAccess() {
+    return this.to('SetOrganizationAccess');
+  }
+
+  /**
+   * Grants permission to update notification preferences for AWS Trusted Advisor
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toUpdateNotificationPreferences() {
+    return this.to('UpdateNotificationPreferences');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchUpdateRecommendationResourceExclusion',
       'DeleteNotificationConfigurationForDelegatedAdmin',
+      'RefreshCheck',
+      'UpdateNotificationConfigurations',
+      'UpdateOrganizationRecommendationLifecycle',
+      'UpdateRecommendationLifecycle',
+      'UpdateRiskStatus',
       'ExcludeCheckItems',
       'GenerateReport',
       'IncludeCheckItems',
-      'RefreshCheck',
       'SetAccountAccess',
       'SetOrganizationAccess',
-      'UpdateNotificationConfigurations',
-      'UpdateNotificationPreferences',
-      'UpdateOrganizationRecommendationLifecycle',
-      'UpdateRecommendationLifecycle',
-      'UpdateRiskStatus'
+      'UpdateNotificationPreferences'
     ],
     Read: [
-      'DescribeAccount',
-      'DescribeAccountAccess',
       'DescribeCheckItems',
       'DescribeCheckRefreshStatuses',
-      'DescribeCheckStatusHistoryChanges',
       'DescribeCheckSummaries',
       'DescribeChecks',
       'DescribeNotificationConfigurations',
+      'DescribeRisk',
+      'DescribeRiskResources',
+      'DescribeRisks',
+      'DownloadRisk',
+      'GetOrganizationRecommendation',
+      'GetRecommendation',
+      'DescribeAccount',
+      'DescribeAccountAccess',
+      'DescribeCheckStatusHistoryChanges',
       'DescribeNotificationPreferences',
       'DescribeOrganization',
       'DescribeOrganizationAccounts',
       'DescribeReports',
-      'DescribeRisk',
-      'DescribeRiskResources',
-      'DescribeRisks',
       'DescribeServiceMetadata',
-      'DownloadRisk',
-      'GetOrganizationRecommendation',
-      'GetRecommendation',
       'ListAccountsForParent',
       'ListOrganizationalUnitsForParent',
       'ListRoots'
@@ -515,7 +526,8 @@ export class Trustedadvisor extends PolicyStatement {
       'ListOrganizationRecommendationResources',
       'ListOrganizationRecommendations',
       'ListRecommendationResources',
-      'ListRecommendations'
+      'ListRecommendations',
+      'ListRecommendationsForResource'
     ]
   };
 

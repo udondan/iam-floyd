@@ -31,8 +31,8 @@ shield:ListProtectionGroups;List
 shield:ListProtections;List
 shield:ListResourcesInProtectionGroup;List
 shield:ListTagsForResource;Read
-shield:TagResource;Tagging
-shield:UntagResource;Tagging
+shield:TagResource;Tagging, Write
+shield:UntagResource;Tagging, Write
 shield:UpdateApplicationLayerAutomaticResponse;Write
 shield:UpdateEmergencyContactSettings;Write
 shield:UpdateProtectionGroup;Write

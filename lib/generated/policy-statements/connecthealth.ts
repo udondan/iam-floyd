@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [health-agent](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html).
+ * Statement provider for service [health-agent](https://docs.aws.amazon.com/service-authorization/latest/reference/list_connecthealth.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class HealthAgent extends PolicyStatement {
   public servicePrefix = 'health-agent';
 
   /**
-   * Statement provider for service [health-agent](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html).
+   * Statement provider for service [health-agent](https://docs.aws.amazon.com/service-authorization/latest/reference/list_connecthealth.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -30,28 +30,6 @@ export class HealthAgent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to cancel an appointment
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toCancelAppointment() {
-    return this.to('CancelAppointment');
-  }
-
-  /**
-   * Grants permission to create a new agent with an initial version in DRAFT state
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toCreateAgent() {
-    return this.to('CreateAgent');
-  }
-
-  /**
    * Grants permission to create a new domain for managing HealthAgent resources
    *
    * Access Level: Write
@@ -60,36 +38,10 @@ export class HealthAgent extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - health-agent:TagResource
-   * - iam:PassRole
-   *
    * https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_CreateDomain.html
    */
   public toCreateDomain() {
     return this.to('CreateDomain');
-  }
-
-  /**
-   * Grants permission to create a new integration for a domain
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toCreateIntegration() {
-    return this.to('CreateIntegration');
-  }
-
-  /**
-   * Grants permission to create a new session with specified agent configurations
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toCreateSession() {
-    return this.to('CreateSession');
   }
 
   /**
@@ -115,17 +67,6 @@ export class HealthAgent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an agent configuration and all its versions
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toDeleteAgent() {
-    return this.to('DeleteAgent');
-  }
-
-  /**
    * Grants permission to delete a domain and all associated resources
    *
    * Access Level: Write
@@ -134,39 +75,6 @@ export class HealthAgent extends PolicyStatement {
    */
   public toDeleteDomain() {
     return this.to('DeleteDomain');
-  }
-
-  /**
-   * Grants permission to delete an integration
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toDeleteIntegration() {
-    return this.to('DeleteIntegration');
-  }
-
-  /**
-   * Grants permission to retrieve an agent configuration, defaulting to the most recent version if not specified
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toGetAgent() {
-    return this.to('GetAgent');
-  }
-
-  /**
-   * Grants permission to retrieve the care team provider of a patient
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toGetCareTeamProvider() {
-    return this.to('GetCareTeamProvider');
   }
 
   /**
@@ -192,17 +100,6 @@ export class HealthAgent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get an existing integration
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toGetIntegration() {
-    return this.to('GetIntegration');
-  }
-
-  /**
    * Grants permission to retrieve details about an existing Medical Scribe listening session
    *
    * Access Level: Read
@@ -211,17 +108,6 @@ export class HealthAgent extends PolicyStatement {
    */
   public toGetMedicalScribeListeningSession() {
     return this.to('GetMedicalScribeListeningSession');
-  }
-
-  /**
-   * Grants permission to retrieve patient information
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toGetPatient() {
-    return this.to('GetPatient');
   }
 
   /**
@@ -236,28 +122,6 @@ export class HealthAgent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve practitioner information
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toGetPractitioner() {
-    return this.to('GetPractitioner');
-  }
-
-  /**
-   * Grants permission to retrieve structured session context including attributes and collected data
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toGetSessionContext() {
-    return this.to('GetSessionContext');
-  }
-
-  /**
    * Grants permission to retrieve information about a subscription
    *
    * Access Level: Read
@@ -269,39 +133,6 @@ export class HealthAgent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to invoke an agent within a session with streaming response support
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toInvokeAgent() {
-    return this.to('InvokeAgent');
-  }
-
-  /**
-   * Grants permission to list all agents in a domain
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toListAgents() {
-    return this.to('ListAgents');
-  }
-
-  /**
-   * Grants permission to list available appointment slots
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toListAppointmentSlots() {
-    return this.to('ListAppointmentSlots');
-  }
-
-  /**
    * Grants permission to list domains for a given account
    *
    * Access Level: List
@@ -310,50 +141,6 @@ export class HealthAgent extends PolicyStatement {
    */
   public toListDomains() {
     return this.to('ListDomains');
-  }
-
-  /**
-   * Grants permission to list integrations for a domain
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toListIntegrations() {
-    return this.to('ListIntegrations');
-  }
-
-  /**
-   * Grants permission to list patient appointments
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toListPatientAppointments() {
-    return this.to('ListPatientAppointments');
-  }
-
-  /**
-   * Grants permission to list patient insurance coverages
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toListPatientInsuranceCoverages() {
-    return this.to('ListPatientInsuranceCoverages');
-  }
-
-  /**
-   * Grants permission to retrieve active providers available for scheduling appointments with a patient
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
-   */
-  public toListProviders() {
-    return this.to('ListProviders');
   }
 
   /**
@@ -390,6 +177,270 @@ export class HealthAgent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a new Medical Scribe listening session for real-time audio transcription
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_StartMedicalScribeListeningSession.html
+   */
+  public toStartMedicalScribeListeningSession() {
+    return this.to('StartMedicalScribeListeningSession');
+  }
+
+  /**
+   * Grants permission to start a new patient insights job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_StartPatientInsightsJob.html
+   */
+  public toStartPatientInsightsJob() {
+    return this.to('StartPatientInsightsJob');
+  }
+
+  /**
+   * Grants permission to add the specified tags to the specified resource
+   *
+   * Access Level: Tagging, Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove the tags identified by the TagKeys list from a resource
+   *
+   * Access Level: Tagging, Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to cancel an appointment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toCancelAppointment() {
+    return this.to('CancelAppointment');
+  }
+
+  /**
+   * Grants permission to create a new agent with an initial version in DRAFT state
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toCreateAgent() {
+    return this.to('CreateAgent');
+  }
+
+  /**
+   * Grants permission to create a new integration for a domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toCreateIntegration() {
+    return this.to('CreateIntegration');
+  }
+
+  /**
+   * Grants permission to create a new session with specified agent configurations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toCreateSession() {
+    return this.to('CreateSession');
+  }
+
+  /**
+   * Grants permission to delete an agent configuration and all its versions
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toDeleteAgent() {
+    return this.to('DeleteAgent');
+  }
+
+  /**
+   * Grants permission to delete an integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toDeleteIntegration() {
+    return this.to('DeleteIntegration');
+  }
+
+  /**
+   * Grants permission to retrieve an agent configuration, defaulting to the most recent version if not specified
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toGetAgent() {
+    return this.to('GetAgent');
+  }
+
+  /**
+   * Grants permission to retrieve the care team provider of a patient
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toGetCareTeamProvider() {
+    return this.to('GetCareTeamProvider');
+  }
+
+  /**
+   * Grants permission to get an existing integration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toGetIntegration() {
+    return this.to('GetIntegration');
+  }
+
+  /**
+   * Grants permission to retrieve patient information
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toGetPatient() {
+    return this.to('GetPatient');
+  }
+
+  /**
+   * Grants permission to retrieve practitioner information
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toGetPractitioner() {
+    return this.to('GetPractitioner');
+  }
+
+  /**
+   * Grants permission to retrieve structured session context including attributes and collected data
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toGetSessionContext() {
+    return this.to('GetSessionContext');
+  }
+
+  /**
+   * Grants permission to invoke an agent within a session with streaming response support
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toInvokeAgent() {
+    return this.to('InvokeAgent');
+  }
+
+  /**
+   * Grants permission to list all agents in a domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toListAgents() {
+    return this.to('ListAgents');
+  }
+
+  /**
+   * Grants permission to list available appointment slots
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toListAppointmentSlots() {
+    return this.to('ListAppointmentSlots');
+  }
+
+  /**
+   * Grants permission to list integrations for a domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toListIntegrations() {
+    return this.to('ListIntegrations');
+  }
+
+  /**
+   * Grants permission to list patient appointments
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toListPatientAppointments() {
+    return this.to('ListPatientAppointments');
+  }
+
+  /**
+   * Grants permission to list patient insurance coverages
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toListPatientInsuranceCoverages() {
+    return this.to('ListPatientInsuranceCoverages');
+  }
+
+  /**
+   * Grants permission to list patient medications
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toListPatientMedications() {
+    return this.to('ListPatientMedications');
+  }
+
+  /**
+   * Grants permission to retrieve active providers available for scheduling appointments with a patient
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toListProviders() {
+    return this.to('ListProviders');
+  }
+
+  /**
    * Grants permission to match a patient
    *
    * Access Level: Read
@@ -423,6 +474,17 @@ export class HealthAgent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reset a patient MyChart password via email or SMS
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toResetPassword() {
+    return this.to('ResetPassword');
+  }
+
+  /**
    * Grants permission to schedule an appointment for a patient
    *
    * Access Level: Write
@@ -434,54 +496,14 @@ export class HealthAgent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a new Medical Scribe listening session for real-time audio transcription
+   * Grants permission to submit a medication renewal for a patient
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_StartMedicalScribeListeningSession.html
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
    */
-  public toStartMedicalScribeListeningSession() {
-    return this.to('StartMedicalScribeListeningSession');
-  }
-
-  /**
-   * Grants permission to start a new patient insights job
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_StartPatientInsightsJob.html
-   */
-  public toStartPatientInsightsJob() {
-    return this.to('StartPatientInsightsJob');
-  }
-
-  /**
-   * Grants permission to add the specified tags to the specified resource
-   *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_TagResource.html
-   */
-  public toTagResource() {
-    return this.to('TagResource');
-  }
-
-  /**
-   * Grants permission to remove the tags identified by the TagKeys list from a resource
-   *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_UntagResource.html
-   */
-  public toUntagResource() {
-    return this.to('UntagResource');
+  public toSubmitMedicationRenewal() {
+    return this.to('SubmitMedicationRenewal');
   }
 
   /**
@@ -520,57 +542,80 @@ export class HealthAgent extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ActivateSubscription',
-      'CancelAppointment',
-      'CreateAgent',
       'CreateDomain',
-      'CreateIntegration',
-      'CreateSession',
       'CreateSubscription',
       'DeactivateSubscription',
-      'DeleteAgent',
       'DeleteDomain',
+      'StartMedicalScribeListeningSession',
+      'StartPatientInsightsJob',
+      'TagResource',
+      'UntagResource',
+      'CancelAppointment',
+      'CreateAgent',
+      'CreateIntegration',
+      'CreateSession',
+      'DeleteAgent',
       'DeleteIntegration',
       'InvokeAgent',
       'PublishAgent',
       'RescheduleAppointment',
+      'ResetPassword',
       'ScheduleAppointment',
-      'StartMedicalScribeListeningSession',
-      'StartPatientInsightsJob',
+      'SubmitMedicationRenewal',
       'UpdateAgent',
       'UpdateIntegration',
       'UpdateSession'
     ],
     Read: [
-      'GetAgent',
-      'GetCareTeamProvider',
       'GetDomain',
       'GetDomainAnalytics',
-      'GetIntegration',
       'GetMedicalScribeListeningSession',
-      'GetPatient',
       'GetPatientInsightsJob',
+      'GetSubscription',
+      'GetAgent',
+      'GetCareTeamProvider',
+      'GetIntegration',
+      'GetPatient',
       'GetPractitioner',
       'GetSessionContext',
-      'GetSubscription',
       'ListAppointmentSlots',
       'ListPatientAppointments',
       'ListPatientInsuranceCoverages',
+      'ListPatientMedications',
       'ListProviders',
       'MatchPatient'
     ],
     List: [
-      'ListAgents',
       'ListDomains',
-      'ListIntegrations',
       'ListSessionRecords',
       'ListSubscriptions',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'ListAgents',
+      'ListIntegrations'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type Agent to the statement
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/agent-customization.html
+   *
+   * @param domainId - Identifier for the domainId.
+   * @param agentId - Identifier for the agentId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAgent(domainId: string, agentId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:health-agent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }/agent/${ agentId }`);
+  }
 
   /**
    * Adds a resource of type Domain to the statement
@@ -587,42 +632,6 @@ export class HealthAgent extends PolicyStatement {
    */
   public onDomain(domainId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:health-agent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }`);
-  }
-
-  /**
-   * Adds a resource of type PatientInsightsJob to the statement
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-insights.html
-   *
-   * @param domainId - Identifier for the domainId.
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onPatientInsightsJob(domainId: string, jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:health-agent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }/patient-insights-job/${ jobId }`);
-  }
-
-  /**
-   * Adds a resource of type Subscription to the statement
-   *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/ambient-documentation.html#al-subscription-management
-   *
-   * @param domainId - Identifier for the domainId.
-   * @param subscriptionId - Identifier for the subscriptionId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onSubscription(domainId: string, subscriptionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:health-agent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }/subscription/${ subscriptionId }`);
   }
 
   /**
@@ -644,12 +653,12 @@ export class HealthAgent extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type Agent to the statement
+   * Adds a resource of type PatientInsightsJob to the statement
    *
-   * https://docs.aws.amazon.com/connecthealth/latest/userguide/agent-customization.html
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-insights.html
    *
    * @param domainId - Identifier for the domainId.
-   * @param agentId - Identifier for the agentId.
+   * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -657,8 +666,8 @@ export class HealthAgent extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onAgent(domainId: string, agentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:health-agent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }/agent/${ agentId }`);
+  public onPatientInsightsJob(domainId: string, jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:health-agent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }/patient-insights-job/${ jobId }`);
   }
 
   /**
@@ -677,6 +686,24 @@ export class HealthAgent extends PolicyStatement {
    */
   public onSession(domainId: string, sessionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:health-agent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }/session/${ sessionId }`);
+  }
+
+  /**
+   * Adds a resource of type Subscription to the statement
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/ambient-documentation.html#al-subscription-management
+   *
+   * @param domainId - Identifier for the domainId.
+   * @param subscriptionId - Identifier for the subscriptionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSubscription(domainId: string, subscriptionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:health-agent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }/subscription/${ subscriptionId }`);
   }
 
   /**
@@ -702,15 +729,59 @@ export class HealthAgent extends PolicyStatement {
    * https://docs.aws.amazon.com/connecthealth/latest/userguide/security-iam-service-with-iam.htmlsecurity-iam-service-with-iam.html#security-iam-service-with-iam-tags
    *
    * Applies to actions:
+   * - .toActivateSubscription()
+   * - .toCreateSubscription()
+   * - .toDeactivateSubscription()
+   * - .toDeleteDomain()
+   * - .toGetDomain()
+   * - .toGetDomainAnalytics()
+   * - .toGetMedicalScribeListeningSession()
+   * - .toGetPatientInsightsJob()
+   * - .toGetSubscription()
+   * - .toListSessionRecords()
+   * - .toListSubscriptions()
+   * - .toListTagsForResource()
+   * - .toStartMedicalScribeListeningSession()
+   * - .toStartPatientInsightsJob()
    * - .toTagResource()
+   * - .toUntagResource()
+   * - .toCancelAppointment()
+   * - .toCreateAgent()
+   * - .toCreateIntegration()
+   * - .toCreateSession()
+   * - .toDeleteAgent()
+   * - .toDeleteIntegration()
+   * - .toGetAgent()
+   * - .toGetCareTeamProvider()
+   * - .toGetIntegration()
+   * - .toGetPatient()
+   * - .toGetPractitioner()
+   * - .toGetSessionContext()
+   * - .toInvokeAgent()
+   * - .toListAgents()
+   * - .toListAppointmentSlots()
+   * - .toListIntegrations()
+   * - .toListPatientAppointments()
+   * - .toListPatientInsuranceCoverages()
+   * - .toListPatientMedications()
+   * - .toListProviders()
+   * - .toMatchPatient()
+   * - .toPublishAgent()
+   * - .toRescheduleAppointment()
+   * - .toResetPassword()
+   * - .toScheduleAppointment()
+   * - .toSubmitMedicationRenewal()
+   * - .toUpdateAgent()
+   * - .toUpdateIntegration()
+   * - .toUpdateSession()
    *
    * Applies to resource types:
-   * - Domain
-   * - PatientInsightsJob
-   * - Subscription
-   * - Integration
    * - Agent
+   * - Domain
+   * - Integration
+   * - PatientInsightsJob
    * - Session
+   * - Subscription
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

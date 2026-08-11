@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [qbusiness](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html).
+ * Statement provider for service [qbusiness](https://docs.aws.amazon.com/service-authorization/latest/reference/list_qbusiness.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Qbusiness extends PolicyStatement {
   public servicePrefix = 'qbusiness';
 
   /**
-   * Statement provider for service [qbusiness](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html).
+   * Statement provider for service [qbusiness](https://docs.aws.amazon.com/service-authorization/latest/reference/list_qbusiness.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,24 +19,9 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to configure vended log delivery for Amazon Q Business application resource
-   *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public toAllowVendedLogDeliveryForResource() {
-    return this.to('AllowVendedLogDeliveryForResource');
-  }
-
-  /**
    * Grants permission to associate resource based policy statement to the application
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - qbusiness:PutResourcePolicy
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_AssociatePermission.html
    */
@@ -141,10 +126,6 @@ export class Qbusiness extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateChatResponseConfiguration.html
    */
   public toCreateChatResponseConfiguration() {
@@ -156,13 +137,6 @@ export class Qbusiness extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - qbusiness:CreateDataAccessorWithTti
-   *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataAccessor.html
    */
   public toCreateDataAccessor() {
@@ -170,24 +144,9 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create AWS IAM Identity center Trusted Token Issuer based DataAccessor to the application
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataAccessor.html
-   */
-  public toCreateDataAccessorWithTti() {
-    return this.to('CreateDataAccessorWithTti');
-  }
-
-  /**
    * Grants permission to create a data source for a given application and index
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataSource.html
    */
@@ -200,10 +159,6 @@ export class Qbusiness extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateIndex.html
    */
   public toCreateIndex() {
@@ -214,10 +169,6 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to create a new integration for a Q Business application
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateIntegration.html
    */
@@ -230,10 +181,6 @@ export class Qbusiness extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreatePlugin.html
    */
   public toCreatePlugin() {
@@ -245,10 +192,6 @@ export class Qbusiness extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateRetriever.html
    */
   public toCreateRetriever() {
@@ -259,10 +202,6 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to create a subscription
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifIdentitystoreUserId()
-   * - .ifIdentitystoreGroupId()
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateSubscription.html
    */
@@ -285,10 +224,6 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to create a web experience for a given application
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateWebExperience.html
    */
@@ -451,21 +386,9 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disable the ACL crawl while creating the Amazon Q Business data source resource
-   *
-   * Access Level: Write
-   */
-  public toDisableAclOnDataSource() {
-    return this.to('DisableAclOnDataSource');
-  }
-
-  /**
    * Grants permission to disassociate resource based policy statement to the application
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - qbusiness:PutResourcePolicy
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DisassociatePermission.html
    */
@@ -881,17 +804,6 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to put resource based policy statement to the application
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_AssociatePermission.html
-   */
-  public toPutResourcePolicy() {
-    return this.to('PutResourcePolicy');
-  }
-
-  /**
    * Grants permission to search relevant content from the Amazon Q Business Application
    *
    * Access Level: Read
@@ -938,11 +850,7 @@ export class Qbusiness extends PolicyStatement {
   /**
    * Grants permission to tag a resource with given key value pairs
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_TagResource.html
    */
@@ -953,10 +861,7 @@ export class Qbusiness extends PolicyStatement {
   /**
    * Grants permission to remove the tag with the given key from a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UntagResource.html
    */
@@ -1096,10 +1001,47 @@ export class Qbusiness extends PolicyStatement {
     return this.to('UpdateWebExperience');
   }
 
+  /**
+   * Grants permission to configure vended log delivery for Amazon Q Business application resource
+   *
+   * Access Level: Permissions management, Write
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
+   * Grants permission to create AWS IAM Identity center Trusted Token Issuer based DataAccessor to the application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataAccessor.html
+   */
+  public toCreateDataAccessorWithTti() {
+    return this.to('CreateDataAccessorWithTti');
+  }
+
+  /**
+   * Grants permission to disable the ACL crawl while creating the Amazon Q Business data source resource
+   *
+   * Access Level: Write
+   */
+  public toDisableAclOnDataSource() {
+    return this.to('DisableAclOnDataSource');
+  }
+
+  /**
+   * Grants permission to put resource based policy statement to the application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_AssociatePermission.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
   protected accessLevelList: AccessLevelList = {
-    'Permissions management': [
-      'AllowVendedLogDeliveryForResource'
-    ],
     Write: [
       'AssociatePermission',
       'BatchDeleteDocument',
@@ -1109,7 +1051,6 @@ export class Qbusiness extends PolicyStatement {
       'CreateApplication',
       'CreateChatResponseConfiguration',
       'CreateDataAccessor',
-      'CreateDataAccessorWithTti',
       'CreateDataSource',
       'CreateIndex',
       'CreateIntegration',
@@ -1132,14 +1073,14 @@ export class Qbusiness extends PolicyStatement {
       'DeleteRetriever',
       'DeleteUser',
       'DeleteWebExperience',
-      'DisableAclOnDataSource',
       'DisassociatePermission',
       'PutFeedback',
       'PutGroup',
-      'PutResourcePolicy',
       'StartDataSourceSyncJob',
       'StartDeployment',
       'StopDataSourceSyncJob',
+      'TagResource',
+      'UntagResource',
       'UpdateApplication',
       'UpdateChatControlsConfiguration',
       'UpdateChatResponseConfiguration',
@@ -1151,7 +1092,11 @@ export class Qbusiness extends PolicyStatement {
       'UpdateRetriever',
       'UpdateSubscription',
       'UpdateUser',
-      'UpdateWebExperience'
+      'UpdateWebExperience',
+      'AllowVendedLogDeliveryForResource',
+      'CreateDataAccessorWithTti',
+      'DisableAclOnDataSource',
+      'PutResourcePolicy'
     ],
     Read: [
       'Chat',
@@ -1199,6 +1144,9 @@ export class Qbusiness extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
     ]
   };
 
@@ -1220,12 +1168,12 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type integration to the statement
+   * Adds a resource of type chat-response-configuration to the statement
    *
-   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/create-integration.html
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/response-customization.html
    *
    * @param applicationId - Identifier for the applicationId.
-   * @param integrationId - Identifier for the integrationId.
+   * @param chatResponseConfigurationId - Identifier for the chatResponseConfigurationId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1233,17 +1181,17 @@ export class Qbusiness extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onIntegration(applicationId: string, integrationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/integration/${ integrationId }`);
+  public onChatResponseConfiguration(applicationId: string, chatResponseConfigurationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/chat-response-configuration/${ chatResponseConfigurationId }`);
   }
 
   /**
-   * Adds a resource of type retriever to the statement
+   * Adds a resource of type data-accessor to the statement
    *
-   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/select-retriever.html
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/data-accessors.html
    *
    * @param applicationId - Identifier for the applicationId.
-   * @param retrieverId - Identifier for the retrieverId.
+   * @param dataAccessorId - Identifier for the dataAccessorId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1251,26 +1199,8 @@ export class Qbusiness extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onRetriever(applicationId: string, retrieverId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/retriever/${ retrieverId }`);
-  }
-
-  /**
-   * Adds a resource of type index to the statement
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/select-retriever.html
-   *
-   * @param applicationId - Identifier for the applicationId.
-   * @param indexId - Identifier for the indexId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onIndex(applicationId: string, indexId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/index/${ indexId }`);
+  public onDataAccessor(applicationId: string, dataAccessorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/data-accessor/${ dataAccessorId }`);
   }
 
   /**
@@ -1293,6 +1223,42 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type index to the statement
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/select-retriever.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param indexId - Identifier for the indexId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIndex(applicationId: string, indexId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/index/${ indexId }`);
+  }
+
+  /**
+   * Adds a resource of type integration to the statement
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/create-integration.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param integrationId - Identifier for the integrationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIntegration(applicationId: string, integrationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/integration/${ integrationId }`);
+  }
+
+  /**
    * Adds a resource of type plugin to the statement
    *
    * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/plugins.html
@@ -1311,12 +1277,12 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type web-experience to the statement
+   * Adds a resource of type retriever to the statement
    *
-   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/select-retriever.html
    *
    * @param applicationId - Identifier for the applicationId.
-   * @param webExperienceId - Identifier for the webExperienceId.
+   * @param retrieverId - Identifier for the retrieverId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1324,8 +1290,8 @@ export class Qbusiness extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onWebExperience(applicationId: string, webExperienceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/web-experience/${ webExperienceId }`);
+  public onRetriever(applicationId: string, retrieverId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/retriever/${ retrieverId }`);
   }
 
   /**
@@ -1344,12 +1310,12 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type data-accessor to the statement
+   * Adds a resource of type web-experience to the statement
    *
-   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/data-accessors.html
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html
    *
    * @param applicationId - Identifier for the applicationId.
-   * @param dataAccessorId - Identifier for the dataAccessorId.
+   * @param webExperienceId - Identifier for the webExperienceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1357,26 +1323,8 @@ export class Qbusiness extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDataAccessor(applicationId: string, dataAccessorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/data-accessor/${ dataAccessorId }`);
-  }
-
-  /**
-   * Adds a resource of type chat-response-configuration to the statement
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/response-customization.html
-   *
-   * @param applicationId - Identifier for the applicationId.
-   * @param chatResponseConfigurationId - Identifier for the chatResponseConfigurationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onChatResponseConfiguration(applicationId: string, chatResponseConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/chat-response-configuration/${ chatResponseConfigurationId }`);
+  public onWebExperience(applicationId: string, webExperienceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/web-experience/${ webExperienceId }`);
   }
 
   /**
@@ -1410,18 +1358,106 @@ export class Qbusiness extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toAssociatePermission()
+   * - .toBatchDeleteDocument()
+   * - .toBatchPutDocument()
+   * - .toCancelSubscription()
+   * - .toChat()
+   * - .toChatSync()
+   * - .toCheckDocumentAccess()
+   * - .toCreateAnonymousWebExperienceUrl()
+   * - .toCreateChatResponseConfiguration()
+   * - .toCreateDataAccessor()
+   * - .toCreateDataSource()
+   * - .toCreateIndex()
+   * - .toCreateIntegration()
+   * - .toCreatePlugin()
+   * - .toCreateRetriever()
+   * - .toCreateSubscription()
+   * - .toCreateUser()
+   * - .toCreateWebExperience()
+   * - .toDeleteApplication()
+   * - .toDeleteAttachment()
+   * - .toDeleteChatControlsConfiguration()
+   * - .toDeleteChatResponseConfiguration()
+   * - .toDeleteConversation()
+   * - .toDeleteDataAccessor()
+   * - .toDeleteDataSource()
+   * - .toDeleteGroup()
+   * - .toDeleteIndex()
+   * - .toDeleteIntegration()
+   * - .toDeletePlugin()
+   * - .toDeleteRetriever()
+   * - .toDeleteUser()
+   * - .toDeleteWebExperience()
+   * - .toDisassociatePermission()
+   * - .toGetApplication()
+   * - .toGetChatControlsConfiguration()
+   * - .toGetChatResponseConfiguration()
+   * - .toGetDataAccessor()
+   * - .toGetDataSource()
+   * - .toGetDocumentContent()
+   * - .toGetGroup()
+   * - .toGetIndex()
+   * - .toGetIntegration()
+   * - .toGetMedia()
+   * - .toGetPlugin()
+   * - .toGetPolicy()
+   * - .toGetRetriever()
+   * - .toGetUser()
+   * - .toGetWebExperience()
+   * - .toListAttachments()
+   * - .toListChatResponseConfigurations()
+   * - .toListConversations()
+   * - .toListDataAccessors()
+   * - .toListDataSourceSyncJobs()
+   * - .toListDataSources()
+   * - .toListDocuments()
+   * - .toListGroups()
+   * - .toListIndices()
+   * - .toListIntegrations()
+   * - .toListMessages()
+   * - .toListPluginActions()
+   * - .toListPlugins()
+   * - .toListRetrievers()
+   * - .toListSubscriptions()
+   * - .toListTagsForResource()
+   * - .toListWebExperiences()
+   * - .toPutFeedback()
+   * - .toPutGroup()
+   * - .toSearchRelevantContent()
+   * - .toStartDataSourceSyncJob()
+   * - .toStartDeployment()
+   * - .toStopDataSourceSyncJob()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateApplication()
+   * - .toUpdateChatControlsConfiguration()
+   * - .toUpdateChatResponseConfiguration()
+   * - .toUpdateDataAccessor()
+   * - .toUpdateDataSource()
+   * - .toUpdateIndex()
+   * - .toUpdateIntegration()
+   * - .toUpdatePlugin()
+   * - .toUpdateRetriever()
+   * - .toUpdateSubscription()
+   * - .toUpdateUser()
+   * - .toUpdateWebExperience()
    * - .toAllowVendedLogDeliveryForResource()
+   * - .toCreateDataAccessorWithTti()
+   * - .toDisableAclOnDataSource()
+   * - .toPutResourcePolicy()
    *
    * Applies to resource types:
    * - application
-   * - integration
-   * - retriever
-   * - index
-   * - data-source
-   * - plugin
-   * - web-experience
-   * - data-accessor
    * - chat-response-configuration
+   * - data-accessor
+   * - data-source
+   * - index
+   * - integration
+   * - plugin
+   * - retriever
+   * - web-experience
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

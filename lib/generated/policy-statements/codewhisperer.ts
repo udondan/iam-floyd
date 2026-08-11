@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [codewhisperer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncodewhisperer.html).
+ * Statement provider for service [codewhisperer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codewhisperer.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Codewhisperer extends PolicyStatement {
   public servicePrefix = 'codewhisperer';
 
   /**
-   * Statement provider for service [codewhisperer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncodewhisperer.html).
+   * Statement provider for service [codewhisperer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codewhisperer.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -21,10 +21,7 @@ export class Codewhisperer extends PolicyStatement {
   /**
    * Grants permission to configure vended log delivery for CodeWhisperer customization resource
    *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/monitoring-overview.html
    */
@@ -37,9 +34,6 @@ export class Codewhisperer extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html
    */
   public toAssociateCustomizationPermission() {
@@ -50,10 +44,6 @@ export class Codewhisperer extends PolicyStatement {
    * Grants permission to invoke CreateCustomization on CodeWhisperer
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html
    */
@@ -66,10 +56,6 @@ export class Codewhisperer extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html
    */
   public toCreateProfile() {
@@ -80,9 +66,6 @@ export class Codewhisperer extends PolicyStatement {
    * Grants permission to invoke DeleteCustomization on CodeWhisperer
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html
    */
@@ -95,9 +78,6 @@ export class Codewhisperer extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html
    */
   public toDeleteProfile() {
@@ -108,9 +88,6 @@ export class Codewhisperer extends PolicyStatement {
    * Grants permission to invoke DisassociateCustomizationPermission on CodeWhisperer
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html
    */
@@ -134,9 +111,6 @@ export class Codewhisperer extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html
    */
   public toGetCustomization() {
@@ -148,9 +122,6 @@ export class Codewhisperer extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html
    */
   public toListCustomizationPermissions() {
@@ -161,9 +132,6 @@ export class Codewhisperer extends PolicyStatement {
    * Grants permission to invoke ListCustomizationVersions on CodeWhisperer
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html
    */
@@ -198,9 +166,6 @@ export class Codewhisperer extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html
    */
   public toListTagsForResource() {
@@ -210,12 +175,7 @@ export class Codewhisperer extends PolicyStatement {
   /**
    * Grants permission to invoke TagResource on CodeWhisperer
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html
    */
@@ -226,11 +186,7 @@ export class Codewhisperer extends PolicyStatement {
   /**
    * Grants permission to invoke UntagResource on CodeWhisperer
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html
    */
@@ -243,9 +199,6 @@ export class Codewhisperer extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html
    */
   public toUpdateCustomization() {
@@ -256,9 +209,6 @@ export class Codewhisperer extends PolicyStatement {
    * Grants permission to invoke UpdateProfile on CodeWhisperer
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html
    */
@@ -271,12 +221,15 @@ export class Codewhisperer extends PolicyStatement {
       'AllowVendedLogDeliveryForResource'
     ],
     Write: [
+      'AllowVendedLogDeliveryForResource',
       'AssociateCustomizationPermission',
       'CreateCustomization',
       'CreateProfile',
       'DeleteCustomization',
       'DeleteProfile',
       'DisassociateCustomizationPermission',
+      'TagResource',
+      'UntagResource',
       'UpdateCustomization',
       'UpdateProfile'
     ],
@@ -298,23 +251,6 @@ export class Codewhisperer extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type profile to the statement
-   *
-   * https://docs.aws.amazon.com/codewhisperer/latest/userguide/as-whisper-admin.html#about-profiles
-   *
-   * @param identifier - Identifier for the identifier.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onProfile(identifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:codewhisperer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:profile/${ identifier }`);
-  }
-
-  /**
    * Adds a resource of type customization to the statement
    *
    * https://docs.aws.amazon.com/codewhisperer/latest/userguide/as-whisper-admin.html#about-customizations
@@ -329,6 +265,23 @@ export class Codewhisperer extends PolicyStatement {
    */
   public onCustomization(identifier: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:codewhisperer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:customization/${ identifier }`);
+  }
+
+  /**
+   * Adds a resource of type profile to the statement
+   *
+   * https://docs.aws.amazon.com/codewhisperer/latest/userguide/as-whisper-admin.html#about-profiles
+   *
+   * @param identifier - Identifier for the identifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProfile(identifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codewhisperer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:profile/${ identifier }`);
   }
 
   /**
@@ -357,12 +310,15 @@ export class Codewhisperer extends PolicyStatement {
    * Applies to actions:
    * - .toAllowVendedLogDeliveryForResource()
    * - .toAssociateCustomizationPermission()
+   * - .toCreateCustomization()
+   * - .toCreateProfile()
    * - .toDeleteCustomization()
    * - .toDeleteProfile()
    * - .toDisassociateCustomizationPermission()
    * - .toGetCustomization()
    * - .toListCustomizationPermissions()
    * - .toListCustomizationVersions()
+   * - .toListCustomizations()
    * - .toListTagsForResource()
    * - .toTagResource()
    * - .toUntagResource()
@@ -370,8 +326,8 @@ export class Codewhisperer extends PolicyStatement {
    * - .toUpdateProfile()
    *
    * Applies to resource types:
-   * - profile
    * - customization
+   * - profile
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

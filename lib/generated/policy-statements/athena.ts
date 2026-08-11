@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [athena](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonathena.html).
+ * Statement provider for service [athena](https://docs.aws.amazon.com/service-authorization/latest/reference/list_athena.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Athena extends PolicyStatement {
   public servicePrefix = 'athena';
 
   /**
-   * Statement provider for service [athena](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonathena.html).
+   * Statement provider for service [athena](https://docs.aws.amazon.com/service-authorization/latest/reference/list_athena.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -78,10 +78,6 @@ export class Athena extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateCapacityReservation.html
    */
   public toCreateCapacityReservation() {
@@ -92,10 +88,6 @@ export class Athena extends PolicyStatement {
    * Grants permission to create a datacatalog
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateDataCatalog.html
    */
@@ -151,10 +143,6 @@ export class Athena extends PolicyStatement {
    * Grants permission to create a workgroup
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateWorkGroup.html
    */
@@ -783,10 +771,6 @@ export class Athena extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_StartSession.html
    */
   public toStartSession() {
@@ -818,11 +802,7 @@ export class Athena extends PolicyStatement {
   /**
    * Grants permission to add a tag to a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_TagResource.html
    */
@@ -844,10 +824,7 @@ export class Athena extends PolicyStatement {
   /**
    * Grants permission to remove a tag from a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_UntagResource.html
    */
@@ -995,7 +972,9 @@ export class Athena extends PolicyStatement {
       'StartSession',
       'StopCalculationExecution',
       'StopQueryExecution',
+      'TagResource',
       'TerminateSession',
+      'UntagResource',
       'UpdateCapacityReservation',
       'UpdateDataCatalog',
       'UpdateNamedQuery',
@@ -1025,40 +1004,6 @@ export class Athena extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type datacatalog to the statement
-   *
-   * https://docs.aws.amazon.com/athena/latest/ug/datacatalogs-example-policies.html
-   *
-   * @param dataCatalogName - Identifier for the dataCatalogName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDatacatalog(dataCatalogName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:athena:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:datacatalog/${ dataCatalogName }`);
-  }
-
-  /**
-   * Adds a resource of type workgroup to the statement
-   *
-   * https://docs.aws.amazon.com/athena/latest/ug/example-policies-workgroup.html
-   *
-   * @param workGroupName - Identifier for the workGroupName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onWorkgroup(workGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:athena:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workgroup/${ workGroupName }`);
-  }
-
-  /**
    * Adds a resource of type capacity-reservation to the statement
    *
    * https://docs.aws.amazon.com/athena/latest/ug/example-policies-capacity-reservations.html
@@ -1073,6 +1018,23 @@ export class Athena extends PolicyStatement {
    */
   public onCapacityReservation(capacityReservationName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:athena:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:capacity-reservation/${ capacityReservationName }`);
+  }
+
+  /**
+   * Adds a resource of type datacatalog to the statement
+   *
+   * https://docs.aws.amazon.com/athena/latest/ug/datacatalogs-example-policies.html
+   *
+   * @param dataCatalogName - Identifier for the dataCatalogName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDatacatalog(dataCatalogName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:athena:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:datacatalog/${ dataCatalogName }`);
   }
 
   /**
@@ -1091,6 +1053,23 @@ export class Athena extends PolicyStatement {
    */
   public onSession(workGroupName: string, sessionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:athena:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workgroup/${ workGroupName }/session/${ sessionId }`);
+  }
+
+  /**
+   * Adds a resource of type workgroup to the statement
+   *
+   * https://docs.aws.amazon.com/athena/latest/ug/example-policies-workgroup.html
+   *
+   * @param workGroupName - Identifier for the workGroupName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorkgroup(workGroupName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:athena:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workgroup/${ workGroupName }`);
   }
 
   /**
@@ -1118,11 +1097,79 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toBatchGetNamedQuery()
+   * - .toBatchGetPreparedStatement()
+   * - .toBatchGetQueryExecution()
+   * - .toCancelCapacityReservation()
+   * - .toCancelQueryExecution()
+   * - .toCreateCapacityReservation()
+   * - .toCreateDataCatalog()
+   * - .toCreateNamedQuery()
+   * - .toCreateNotebook()
+   * - .toCreatePreparedStatement()
+   * - .toCreatePresignedNotebookUrl()
+   * - .toCreateWorkGroup()
+   * - .toDeleteCapacityReservation()
+   * - .toDeleteDataCatalog()
+   * - .toDeleteNamedQuery()
+   * - .toDeleteNotebook()
+   * - .toDeletePreparedStatement()
+   * - .toDeleteWorkGroup()
+   * - .toExportNotebook()
+   * - .toGetCalculationExecution()
+   * - .toGetCalculationExecutionCode()
+   * - .toGetCalculationExecutionStatus()
+   * - .toGetCapacityAssignmentConfiguration()
+   * - .toGetCapacityReservation()
+   * - .toGetDataCatalog()
+   * - .toGetDatabase()
+   * - .toGetNamedQuery()
+   * - .toGetNotebookMetadata()
+   * - .toGetPreparedStatement()
+   * - .toGetQueryExecution()
+   * - .toGetQueryResults()
+   * - .toGetQueryResultsStream()
+   * - .toGetQueryRuntimeStatistics()
+   * - .toGetResourceDashboard()
+   * - .toGetSession()
+   * - .toGetSessionEndpoint()
+   * - .toGetSessionStatus()
+   * - .toGetTableMetadata()
+   * - .toGetWorkGroup()
+   * - .toImportNotebook()
+   * - .toListCalculationExecutions()
+   * - .toListDatabases()
+   * - .toListNamedQueries()
+   * - .toListNotebookMetadata()
+   * - .toListNotebookSessions()
+   * - .toListPreparedStatements()
+   * - .toListQueryExecutions()
+   * - .toListSessions()
+   * - .toListTableMetadata()
+   * - .toListTagsForResource()
+   * - .toPutCapacityAssignmentConfiguration()
+   * - .toStartCalculationExecution()
+   * - .toStartQueryExecution()
+   * - .toStartSession()
+   * - .toStopCalculationExecution()
+   * - .toStopQueryExecution()
+   * - .toTagResource()
+   * - .toTerminateSession()
+   * - .toUntagResource()
+   * - .toUpdateCapacityReservation()
+   * - .toUpdateDataCatalog()
+   * - .toUpdateNamedQuery()
+   * - .toUpdateNotebook()
+   * - .toUpdateNotebookMetadata()
+   * - .toUpdatePreparedStatement()
+   * - .toUpdateWorkGroup()
+   *
    * Applies to resource types:
-   * - datacatalog
-   * - workgroup
    * - capacity-reservation
+   * - datacatalog
    * - session
+   * - workgroup
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

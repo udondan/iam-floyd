@@ -270,13 +270,13 @@ chime:StopSpeakerSearchTask;Write
 chime:StopVoiceToneAnalysisTask;Write
 chime:SubmitSupportRequest;Write
 chime:SuspendUsers;Write
-chime:TagAttendee;Tagging
-chime:TagMeeting;Tagging
-chime:TagResource;Tagging
+chime:TagAttendee;Tagging, Write
+chime:TagMeeting;Tagging, Write
+chime:TagResource;Tagging, Write
 chime:UnauthorizeDirectory;Write
-chime:UntagAttendee;Tagging
-chime:UntagMeeting;Tagging
-chime:UntagResource;Tagging
+chime:UntagAttendee;Tagging, Write
+chime:UntagMeeting;Tagging, Write
+chime:UntagResource;Tagging, Write
 chime:UpdateAccount;Write
 chime:UpdateAccountOpenIdConfig;Write
 chime:UpdateAccountResource;Write

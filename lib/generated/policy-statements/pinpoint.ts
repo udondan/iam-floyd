@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [mobiletargeting](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpinpoint.html).
+ * Statement provider for service [mobiletargeting](https://docs.aws.amazon.com/service-authorization/latest/reference/list_pinpoint.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Mobiletargeting extends PolicyStatement {
   public servicePrefix = 'mobiletargeting';
 
   /**
-   * Statement provider for service [mobiletargeting](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpinpoint.html).
+   * Statement provider for service [mobiletargeting](https://docs.aws.amazon.com/service-authorization/latest/reference/list_pinpoint.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,11 +23,6 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps.html#CreateApp
    */
   public toCreateApp() {
@@ -39,11 +34,6 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns.html#CreateCampaign
    */
   public toCreateCampaign() {
@@ -54,11 +44,6 @@ export class Mobiletargeting extends PolicyStatement {
    * Grants permission to create an email template
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#CreateEmailTemplate
    */
@@ -93,11 +78,6 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-inapp.html#CreateInAppTemplate
    */
   public toCreateInAppTemplate() {
@@ -109,11 +89,6 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys.html#CreateJourney
    */
   public toCreateJourney() {
@@ -124,11 +99,6 @@ export class Mobiletargeting extends PolicyStatement {
    * Grants permission to create a push notification template
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-push.html#CreatePushTemplate
    */
@@ -152,11 +122,6 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-segments.html#CreateSegment
    */
   public toCreateSegment() {
@@ -168,11 +133,6 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-sms.html#CreateSmsTemplate
    */
   public toCreateSmsTemplate() {
@@ -183,11 +143,6 @@ export class Mobiletargeting extends PolicyStatement {
    * Grants permission to create a voice message template
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-voice.html#CreateVoiceTemplate
    */
@@ -867,15 +822,6 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Grants permission to mobiletargeting:GetReports
-   *
-   * Access Level: Read
-   */
-  public toGetReports() {
-    return this.to('GetReports');
-  }
-
-  /**
    * Grants permission to retrieve information about a specific segment
    *
    * Access Level: Read
@@ -1120,11 +1066,7 @@ export class Mobiletargeting extends PolicyStatement {
   /**
    * Grants permission to add tags to a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html#TagResource
    */
@@ -1135,11 +1077,7 @@ export class Mobiletargeting extends PolicyStatement {
   /**
    * Grants permission to remove tags from a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html#UntagResource
    */
@@ -1229,10 +1167,6 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#UpdateCampaign
    */
   public toUpdateCampaign() {
@@ -1254,10 +1188,6 @@ export class Mobiletargeting extends PolicyStatement {
    * Grants permission to update a specific email template under the same version or generate a new version
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#UpdateEmailTemplate
    */
@@ -1303,10 +1233,6 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-inapp.html#UpdateInAppTemplate
    */
   public toUpdateInAppTemplate() {
@@ -1317,10 +1243,6 @@ export class Mobiletargeting extends PolicyStatement {
    * Grants permission to update a specific journey
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id.html#UpdateJourney
    */
@@ -1333,10 +1255,6 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-state.html#UpdateJourneyState
    */
   public toUpdateJourneyState() {
@@ -1347,10 +1265,6 @@ export class Mobiletargeting extends PolicyStatement {
    * Grants permission to update a specific push notification template under the same version or generate a new version
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-push.html#UpdatePushTemplate
    */
@@ -1374,10 +1288,6 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-segments-segment-id.html#UpdateSegment
    */
   public toUpdateSegment() {
@@ -1399,10 +1309,6 @@ export class Mobiletargeting extends PolicyStatement {
    * Grants permission to update a specific sms message template under the same version or generate a new version
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-sms.html#UpdateSmsTemplate
    */
@@ -1437,10 +1343,6 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-voice.html#UpdateVoiceTemplate
    */
   public toUpdateVoiceTemplate() {
@@ -1456,6 +1358,15 @@ export class Mobiletargeting extends PolicyStatement {
    */
   public toVerifyOTPMessage() {
     return this.to('VerifyOTPMessage');
+  }
+
+  /**
+   * Grants permission to mobiletargeting:GetReports
+   *
+   * Access Level: Read
+   */
+  public toGetReports() {
+    return this.to('GetReports');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -1501,6 +1412,8 @@ export class Mobiletargeting extends PolicyStatement {
       'SendMessages',
       'SendOTPMessage',
       'SendUsersMessages',
+      'TagResource',
+      'UntagResource',
       'UpdateAdmChannel',
       'UpdateApnsChannel',
       'UpdateApnsSandboxChannel',
@@ -1557,7 +1470,6 @@ export class Mobiletargeting extends PolicyStatement {
       'GetJourneyRunExecutionMetrics',
       'GetPushTemplate',
       'GetRecommenderConfiguration',
-      'GetReports',
       'GetSegment',
       'GetSegmentVersion',
       'GetSmsChannel',
@@ -1566,7 +1478,8 @@ export class Mobiletargeting extends PolicyStatement {
       'GetVoiceChannel',
       'GetVoiceTemplate',
       'ListTagsForResource',
-      'PhoneNumberValidate'
+      'PhoneNumberValidate',
+      'GetReports'
     ],
     List: [
       'GetApplicationSettings',
@@ -1610,6 +1523,21 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type application-metrics to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-kpis-daterange-kpi-name.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param kpiName - Identifier for the kpiName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onApplicationMetrics(appId: string, kpiName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/kpis/daterange/${ kpiName }`);
+  }
+
+  /**
    * Adds a resource of type apps to the statement
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps.html
@@ -1621,6 +1549,21 @@ export class Mobiletargeting extends PolicyStatement {
    */
   public onApps(resourceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type attribute to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-attributes-attribute-type.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param attributeType - Identifier for the attributeType.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAttribute(appId: string, attributeType: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/attributes/${ attributeType }`);
   }
 
   /**
@@ -1642,6 +1585,124 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type campaign-metrics to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id-kpis-daterange-kpi-name.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param campaignId - Identifier for the campaignId.
+   * @param kpiName - Identifier for the kpiName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onCampaignMetrics(appId: string, campaignId: string, kpiName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/campaigns/${ campaignId }/kpis/daterange/${ kpiName }`);
+  }
+
+  /**
+   * Adds a resource of type channel to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param channelType - Identifier for the channelType.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onChannel(appId: string, channelType: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/channels/${ channelType }`);
+  }
+
+  /**
+   * Adds a resource of type channels to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onChannels(appId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/channels`);
+  }
+
+  /**
+   * Adds a resource of type endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param endpointId - Identifier for the endpointId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onEndpoint(appId: string, endpointId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/endpoints/${ endpointId }`);
+  }
+
+  /**
+   * Adds a resource of type event-stream to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-eventstream.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onEventStream(appId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/eventstream`);
+  }
+
+  /**
+   * Adds a resource of type events to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-events.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onEvents(appId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/events`);
+  }
+
+  /**
+   * Adds a resource of type export-job to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-jobs-export-job-id.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onExportJob(appId: string, jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/jobs/export/${ jobId }`);
+  }
+
+  /**
+   * Adds a resource of type import-job to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-jobs-import-job-id.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onImportJob(appId: string, jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/jobs/import/${ jobId }`);
+  }
+
+  /**
    * Adds a resource of type journey to the statement
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id.html
@@ -1660,6 +1721,53 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type journey-execution-activity-metrics to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-activities-journey-activity-id-execution-metrics.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param journeyId - Identifier for the journeyId.
+   * @param journeyActivityId - Identifier for the journeyActivityId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onJourneyExecutionActivityMetrics(appId: string, journeyId: string, journeyActivityId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/journeys/${ journeyId }/activities/${ journeyActivityId }/execution-metrics`);
+  }
+
+  /**
+   * Adds a resource of type journey-execution-metrics to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-execution-metrics.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param journeyId - Identifier for the journeyId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onJourneyExecutionMetrics(appId: string, journeyId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/journeys/${ journeyId }/execution-metrics`);
+  }
+
+  /**
+   * Adds a resource of type journey-metrics to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-kpis-daterange-kpi-name.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param journeyId - Identifier for the journeyId.
+   * @param kpiName - Identifier for the kpiName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onJourneyMetrics(appId: string, journeyId: string, kpiName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/journeys/${ journeyId }/kpis/daterange/${ kpiName }`);
+  }
+
+  /**
    * Adds a resource of type journeys to the statement
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys.html
@@ -1671,6 +1779,88 @@ export class Mobiletargeting extends PolicyStatement {
    */
   public onJourneys(appId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/journeys`);
+  }
+
+  /**
+   * Adds a resource of type messages to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onMessages(appId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/messages`);
+  }
+
+  /**
+   * Adds a resource of type otp to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-verify-otp.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onOtp(appId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/otp`);
+  }
+
+  /**
+   * Adds a resource of type phone-number-validate to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/phone-number-validate.html
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onPhoneNumberValidate(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:phone/number/validate`);
+  }
+
+  /**
+   * Adds a resource of type recommender to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders.html
+   *
+   * @param recommenderId - Identifier for the recommenderId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRecommender(recommenderId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recommenders/${ recommenderId }`);
+  }
+
+  /**
+   * Adds a resource of type recommenders to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRecommenders(resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recommenders/${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type reports to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/reports.html
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onReports(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:reports`);
   }
 
   /**
@@ -1723,161 +1913,6 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type recommender to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders.html
-   *
-   * @param recommenderId - Identifier for the recommenderId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onRecommender(recommenderId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recommenders/${ recommenderId }`);
-  }
-
-  /**
-   * Adds a resource of type recommenders to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders.html
-   *
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onRecommenders(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recommenders/${ resourceName }`);
-  }
-
-  /**
-   * Adds a resource of type phone-number-validate to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/phone-number-validate.html
-   *
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onPhoneNumberValidate(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:phone/number/validate`);
-  }
-
-  /**
-   * Adds a resource of type channels to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onChannels(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/channels`);
-  }
-
-  /**
-   * Adds a resource of type channel to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param channelType - Identifier for the channelType.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onChannel(appId: string, channelType: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/channels/${ channelType }`);
-  }
-
-  /**
-   * Adds a resource of type event-stream to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-eventstream.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onEventStream(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/eventstream`);
-  }
-
-  /**
-   * Adds a resource of type events to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-events.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onEvents(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/events`);
-  }
-
-  /**
-   * Adds a resource of type messages to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onMessages(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/messages`);
-  }
-
-  /**
-   * Adds a resource of type verify-otp to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-verify-otp.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onVerifyOtp(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/verify-otp`);
-  }
-
-  /**
-   * Adds a resource of type otp to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-verify-otp.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onOtp(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/otp`);
-  }
-
-  /**
-   * Adds a resource of type attribute to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-attributes-attribute-type.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param attributeType - Identifier for the attributeType.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAttribute(appId: string, attributeType: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/attributes/${ attributeType }`);
-  }
-
-  /**
    * Adds a resource of type user to the statement
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-users-user-id.html
@@ -1893,139 +1928,17 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type endpoint to the statement
+   * Adds a resource of type verify-otp to the statement
    *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param endpointId - Identifier for the endpointId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onEndpoint(appId: string, endpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/endpoints/${ endpointId }`);
-  }
-
-  /**
-   * Adds a resource of type import-job to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-jobs-import-job-id.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-verify-otp.html
    *
    * @param appId - Identifier for the appId.
-   * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onImportJob(appId: string, jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/jobs/import/${ jobId }`);
-  }
-
-  /**
-   * Adds a resource of type export-job to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-jobs-export-job-id.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onExportJob(appId: string, jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/jobs/export/${ jobId }`);
-  }
-
-  /**
-   * Adds a resource of type application-metrics to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-kpis-daterange-kpi-name.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param kpiName - Identifier for the kpiName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onApplicationMetrics(appId: string, kpiName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/kpis/daterange/${ kpiName }`);
-  }
-
-  /**
-   * Adds a resource of type campaign-metrics to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id-kpis-daterange-kpi-name.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param campaignId - Identifier for the campaignId.
-   * @param kpiName - Identifier for the kpiName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onCampaignMetrics(appId: string, campaignId: string, kpiName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/campaigns/${ campaignId }/kpis/daterange/${ kpiName }`);
-  }
-
-  /**
-   * Adds a resource of type journey-metrics to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-kpis-daterange-kpi-name.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param journeyId - Identifier for the journeyId.
-   * @param kpiName - Identifier for the kpiName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onJourneyMetrics(appId: string, journeyId: string, kpiName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/journeys/${ journeyId }/kpis/daterange/${ kpiName }`);
-  }
-
-  /**
-   * Adds a resource of type journey-execution-metrics to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-execution-metrics.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param journeyId - Identifier for the journeyId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onJourneyExecutionMetrics(appId: string, journeyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/journeys/${ journeyId }/execution-metrics`);
-  }
-
-  /**
-   * Adds a resource of type journey-execution-activity-metrics to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-activities-journey-activity-id-execution-metrics.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param journeyId - Identifier for the journeyId.
-   * @param journeyActivityId - Identifier for the journeyActivityId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onJourneyExecutionActivityMetrics(appId: string, journeyId: string, journeyActivityId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/journeys/${ journeyId }/activities/${ journeyActivityId }/execution-metrics`);
-  }
-
-  /**
-   * Adds a resource of type reports to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference/reports.html
-   *
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onReports(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:reports`);
+  public onVerifyOtp(appId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/verify-otp`);
   }
 
   /**
@@ -2072,12 +1985,65 @@ export class Mobiletargeting extends PolicyStatement {
    * - .toCreateApp()
    * - .toCreateCampaign()
    * - .toCreateEmailTemplate()
+   * - .toCreateExportJob()
+   * - .toCreateImportJob()
    * - .toCreateInAppTemplate()
    * - .toCreateJourney()
    * - .toCreatePushTemplate()
    * - .toCreateSegment()
    * - .toCreateSmsTemplate()
    * - .toCreateVoiceTemplate()
+   * - .toDeleteApp()
+   * - .toDeleteCampaign()
+   * - .toDeleteEmailTemplate()
+   * - .toDeleteInAppTemplate()
+   * - .toDeleteJourney()
+   * - .toDeletePushTemplate()
+   * - .toDeleteSegment()
+   * - .toDeleteSmsTemplate()
+   * - .toDeleteVoiceTemplate()
+   * - .toGetApp()
+   * - .toGetApplicationSettings()
+   * - .toGetCampaign()
+   * - .toGetCampaignActivities()
+   * - .toGetCampaignVersion()
+   * - .toGetCampaignVersions()
+   * - .toGetCampaigns()
+   * - .toGetEmailTemplate()
+   * - .toGetExportJobs()
+   * - .toGetImportJobs()
+   * - .toGetInAppMessages()
+   * - .toGetInAppTemplate()
+   * - .toGetJourney()
+   * - .toGetJourneyRunExecutionActivityMetrics()
+   * - .toGetJourneyRunExecutionMetrics()
+   * - .toGetJourneyRuns()
+   * - .toGetPushTemplate()
+   * - .toGetSegment()
+   * - .toGetSegmentExportJobs()
+   * - .toGetSegmentImportJobs()
+   * - .toGetSegmentVersion()
+   * - .toGetSegmentVersions()
+   * - .toGetSegments()
+   * - .toGetSmsTemplate()
+   * - .toGetVoiceTemplate()
+   * - .toListJourneys()
+   * - .toListTagsForResource()
+   * - .toListTemplateVersions()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateApplicationSettings()
+   * - .toUpdateCampaign()
+   * - .toUpdateEmailTemplate()
+   * - .toUpdateEndpointsBatch()
+   * - .toUpdateInAppTemplate()
+   * - .toUpdateJourney()
+   * - .toUpdateJourneyState()
+   * - .toUpdatePushTemplate()
+   * - .toUpdateSegment()
+   * - .toUpdateSmsTemplate()
+   * - .toUpdateTemplateActiveVersion()
+   * - .toUpdateVoiceTemplate()
    *
    * Applies to resource types:
    * - app

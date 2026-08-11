@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [outposts](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsoutposts.html).
+ * Statement provider for service [outposts](https://docs.aws.amazon.com/service-authorization/latest/reference/list_outposts.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Outposts extends PolicyStatement {
   public servicePrefix = 'outposts';
 
   /**
-   * Statement provider for service [outposts](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsoutposts.html).
+   * Statement provider for service [outposts](https://docs.aws.amazon.com/service-authorization/latest/reference/list_outposts.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -55,11 +55,6 @@ export class Outposts extends PolicyStatement {
    * Grants permission to create an Outpost
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateOutpost.html
    */
@@ -438,11 +433,7 @@ export class Outposts extends PolicyStatement {
   /**
    * Grants permission to tag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_TagResource.html
    */
@@ -453,10 +444,7 @@ export class Outposts extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_UntagResource.html
    */
@@ -534,6 +522,8 @@ export class Outposts extends PolicyStatement {
       'DeleteSite',
       'StartCapacityTask',
       'StartConnection',
+      'TagResource',
+      'UntagResource',
       'UpdateOutpost',
       'UpdateQuote',
       'UpdateSite',
@@ -632,8 +622,33 @@ export class Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html
    *
    * Applies to actions:
+   * - .toCancelCapacityTask()
+   * - .toCreateOrder()
    * - .toCreateOutpost()
+   * - .toCreatePrivateConnectivityConfig()
+   * - .toCreateRenewal()
    * - .toCreateSite()
+   * - .toDeleteOutpost()
+   * - .toDeleteSite()
+   * - .toGetCapacityTask()
+   * - .toGetOutpost()
+   * - .toGetOutpostBillingInformation()
+   * - .toGetOutpostInstanceTypes()
+   * - .toGetOutpostSupportedInstanceTypes()
+   * - .toGetPrivateConnectivityConfig()
+   * - .toGetRenewalPricing()
+   * - .toGetSite()
+   * - .toGetSiteAddress()
+   * - .toListAssetInstances()
+   * - .toListAssets()
+   * - .toListBlockingInstancesForCapacityTask()
+   * - .toStartCapacityTask()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateOutpost()
+   * - .toUpdateSite()
+   * - .toUpdateSiteAddress()
+   * - .toUpdateSiteRackPhysicalProperties()
    *
    * Applies to resource types:
    * - outpost

@@ -35,8 +35,8 @@ apprunner:ListVpcIngressConnections;List
 apprunner:PauseService;Write
 apprunner:ResumeService;Write
 apprunner:StartDeployment;Write
-apprunner:TagResource;Tagging
-apprunner:UntagResource;Tagging
+apprunner:TagResource;Tagging, Write
+apprunner:UntagResource;Tagging, Write
 apprunner:UpdateDefaultAutoScalingConfiguration;Write
 apprunner:UpdateService;Write
 apprunner:UpdateVpcIngressConnection;Write

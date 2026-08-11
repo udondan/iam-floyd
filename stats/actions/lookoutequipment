@@ -40,8 +40,8 @@ lookoutequipment:StartInferenceScheduler;Write
 lookoutequipment:StartRetrainingScheduler;Write
 lookoutequipment:StopInferenceScheduler;Write
 lookoutequipment:StopRetrainingScheduler;Write
-lookoutequipment:TagResource;Tagging
-lookoutequipment:UntagResource;Tagging
+lookoutequipment:TagResource;Tagging, Write
+lookoutequipment:UntagResource;Tagging, Write
 lookoutequipment:UpdateActiveModelVersion;Write
 lookoutequipment:UpdateInferenceScheduler;Write
 lookoutequipment:UpdateLabelGroup;Write

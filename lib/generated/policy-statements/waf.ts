@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [waf](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswaf.html).
+ * Statement provider for service [waf](https://docs.aws.amazon.com/service-authorization/latest/reference/list_waf.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Waf extends PolicyStatement {
   public servicePrefix = 'waf';
 
   /**
-   * Statement provider for service [waf](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswaf.html).
+   * Statement provider for service [waf](https://docs.aws.amazon.com/service-authorization/latest/reference/list_waf.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -56,10 +56,6 @@ export class Waf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateRateBasedRule.html
    */
   public toCreateRateBasedRule() {
@@ -93,10 +89,6 @@ export class Waf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateRule.html
    */
   public toCreateRule() {
@@ -107,10 +99,6 @@ export class Waf extends PolicyStatement {
    * Grants permission to create a RuleGroup, which is a collection of predefined rules that you can use in a WebACL
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateRuleGroup.html
    */
@@ -143,11 +131,7 @@ export class Waf extends PolicyStatement {
   /**
    * Grants permission to create a WebACL, which contains rules for filtering web requests
    *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateWebACL.html
    */
@@ -159,9 +143,6 @@ export class Waf extends PolicyStatement {
    * Grants permission to create a CloudFormation web ACL template in an S3 bucket for the purposes of migrating the web ACL from AWS WAF Classic to AWS WAF v2
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - s3:PutObject
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateWebACLMigrationStack.html
    */
@@ -227,7 +208,7 @@ export class Waf extends PolicyStatement {
   /**
    * Grants permission to delete an IAM policy from a rule group
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeletePermissionPolicy.html
    */
@@ -315,7 +296,7 @@ export class Waf extends PolicyStatement {
   /**
    * Grants permission to delete a WebACL
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeleteWebACL.html
    */
@@ -713,9 +694,6 @@ export class Waf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_PutLoggingConfiguration.html
    */
   public toPutLoggingConfiguration() {
@@ -725,7 +703,7 @@ export class Waf extends PolicyStatement {
   /**
    * Grants permission to attach an IAM policy to a rule group, to share the rule group between accounts
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_PutPermissionPolicy.html
    */
@@ -736,11 +714,7 @@ export class Waf extends PolicyStatement {
   /**
    * Grants permission to add a Tag to a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_TagResource.html
    */
@@ -751,10 +725,7 @@ export class Waf extends PolicyStatement {
   /**
    * Grants permission to remove a Tag from a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UntagResource.html
    */
@@ -875,7 +846,7 @@ export class Waf extends PolicyStatement {
   /**
    * Grants permission to insert or delete ActivatedRule objects in a WebACL
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UpdateWebACL.html
    */
@@ -906,12 +877,14 @@ export class Waf extends PolicyStatement {
       'CreateRuleGroup',
       'CreateSizeConstraintSet',
       'CreateSqlInjectionMatchSet',
+      'CreateWebACL',
       'CreateWebACLMigrationStack',
       'CreateXssMatchSet',
       'DeleteByteMatchSet',
       'DeleteGeoMatchSet',
       'DeleteIPSet',
       'DeleteLoggingConfiguration',
+      'DeletePermissionPolicy',
       'DeleteRateBasedRule',
       'DeleteRegexMatchSet',
       'DeleteRegexPatternSet',
@@ -919,8 +892,12 @@ export class Waf extends PolicyStatement {
       'DeleteRuleGroup',
       'DeleteSizeConstraintSet',
       'DeleteSqlInjectionMatchSet',
+      'DeleteWebACL',
       'DeleteXssMatchSet',
       'PutLoggingConfiguration',
+      'PutPermissionPolicy',
+      'TagResource',
+      'UntagResource',
       'UpdateByteMatchSet',
       'UpdateGeoMatchSet',
       'UpdateIPSet',
@@ -931,6 +908,7 @@ export class Waf extends PolicyStatement {
       'UpdateRuleGroup',
       'UpdateSizeConstraintSet',
       'UpdateSqlInjectionMatchSet',
+      'UpdateWebACL',
       'UpdateXssMatchSet'
     ],
     'Permissions management': [
@@ -998,6 +976,19 @@ export class Waf extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type geomatchset to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GeoMatchSet.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onGeomatchset(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:waf::${ account ?? this.defaultAccount }:geomatchset/${ id }`);
+  }
+
+  /**
    * Adds a resource of type ipset to the statement
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_IPSet.html
@@ -1027,6 +1018,32 @@ export class Waf extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type regexmatchset to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_RegexMatchSet.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRegexmatchset(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:waf::${ account ?? this.defaultAccount }:regexmatch/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type regexpatternset to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_RegexPatternSet.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRegexpatternset(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:waf::${ account ?? this.defaultAccount }:regexpatternset/${ id }`);
+  }
+
+  /**
    * Adds a resource of type rule to the statement
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_Rule.html
@@ -1040,6 +1057,22 @@ export class Waf extends PolicyStatement {
    */
   public onRule(id: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:waf::${ account ?? this.defaultAccount }:rule/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type rulegroup to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_RuleGroup.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRulegroup(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:waf::${ account ?? this.defaultAccount }:rulegroup/${ id }`);
   }
 
   /**
@@ -1098,61 +1131,6 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type regexmatchset to the statement
-   *
-   * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_RegexMatchSet.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onRegexmatchset(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:waf::${ account ?? this.defaultAccount }:regexmatch/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type regexpatternset to the statement
-   *
-   * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_RegexPatternSet.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onRegexpatternset(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:waf::${ account ?? this.defaultAccount }:regexpatternset/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type geomatchset to the statement
-   *
-   * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GeoMatchSet.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onGeomatchset(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:waf::${ account ?? this.defaultAccount }:geomatchset/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type rulegroup to the statement
-   *
-   * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_RuleGroup.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onRulegroup(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:waf::${ account ?? this.defaultAccount }:rulegroup/${ id }`);
-  }
-
-  /**
    * Filters actions based on the allowed set of values for each of the tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1177,11 +1155,41 @@ export class Waf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toCreateRateBasedRule()
+   * - .toCreateRule()
+   * - .toCreateRuleGroup()
+   * - .toCreateWebACL()
+   * - .toCreateWebACLMigrationStack()
+   * - .toDeleteLoggingConfiguration()
+   * - .toDeletePermissionPolicy()
+   * - .toDeleteRateBasedRule()
+   * - .toDeleteRule()
+   * - .toDeleteRuleGroup()
+   * - .toDeleteWebACL()
+   * - .toGetLoggingConfiguration()
+   * - .toGetPermissionPolicy()
+   * - .toGetRateBasedRule()
+   * - .toGetRateBasedRuleManagedKeys()
+   * - .toGetRule()
+   * - .toGetRuleGroup()
+   * - .toGetSampledRequests()
+   * - .toGetWebACL()
+   * - .toListTagsForResource()
+   * - .toPutLoggingConfiguration()
+   * - .toPutPermissionPolicy()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateRateBasedRule()
+   * - .toUpdateRule()
+   * - .toUpdateRuleGroup()
+   * - .toUpdateWebACL()
+   *
    * Applies to resource types:
    * - ratebasedrule
    * - rule
-   * - webacl
    * - rulegroup
+   * - webacl
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

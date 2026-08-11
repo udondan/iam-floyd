@@ -55,8 +55,8 @@ redshift-serverless:RestoreFromRecoveryPoint;Write
 redshift-serverless:RestoreFromSnapshot;Write
 redshift-serverless:RestoreTableFromRecoveryPoint;Write
 redshift-serverless:RestoreTableFromSnapshot;Write
-redshift-serverless:TagResource;Tagging
-redshift-serverless:UntagResource;Tagging
+redshift-serverless:TagResource;Tagging, Write
+redshift-serverless:UntagResource;Tagging, Write
 redshift-serverless:UpdateAutonomicsDenylist;Write
 redshift-serverless:UpdateCustomDomainAssociation;Write
 redshift-serverless:UpdateEndpointAccess;Write

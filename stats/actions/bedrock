@@ -1,5 +1,5 @@
 bedrock:AgenticRetrieveStream;Read
-bedrock:AllowVendedLogDeliveryForResource;Permissions management
+bedrock:AllowVendedLogDeliveryForResource;Permissions management, Write
 bedrock:ApplyGuardrail;Read
 bedrock:AssociateAgentCollaborator;Write
 bedrock:AssociateAgentKnowledgeBase;Write
@@ -229,8 +229,8 @@ bedrock:StopFlowExecution;Write
 bedrock:StopIngestionJob;Write
 bedrock:StopModelCustomizationJob;Write
 bedrock:StopModelInvocationJob;Write
-bedrock:TagResource;Tagging
-bedrock:UntagResource;Tagging
+bedrock:TagResource;Tagging, Write
+bedrock:UntagResource;Tagging, Write
 bedrock:UpdateAgent;Write
 bedrock:UpdateAgentActionGroup;Write
 bedrock:UpdateAgentAlias;Write

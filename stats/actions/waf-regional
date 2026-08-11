@@ -9,14 +9,14 @@ waf-regional:CreateRule;Write
 waf-regional:CreateRuleGroup;Write
 waf-regional:CreateSizeConstraintSet;Write
 waf-regional:CreateSqlInjectionMatchSet;Write
-waf-regional:CreateWebACL;Permissions management
+waf-regional:CreateWebACL;Permissions management, Write
 waf-regional:CreateWebACLMigrationStack;Write
 waf-regional:CreateXssMatchSet;Write
 waf-regional:DeleteByteMatchSet;Write
 waf-regional:DeleteGeoMatchSet;Write
 waf-regional:DeleteIPSet;Write
 waf-regional:DeleteLoggingConfiguration;Write
-waf-regional:DeletePermissionPolicy;Permissions management
+waf-regional:DeletePermissionPolicy;Permissions management, Write
 waf-regional:DeleteRateBasedRule;Write
 waf-regional:DeleteRegexMatchSet;Write
 waf-regional:DeleteRegexPatternSet;Write
@@ -24,7 +24,7 @@ waf-regional:DeleteRule;Write
 waf-regional:DeleteRuleGroup;Write
 waf-regional:DeleteSizeConstraintSet;Write
 waf-regional:DeleteSqlInjectionMatchSet;Write
-waf-regional:DeleteWebACL;Permissions management
+waf-regional:DeleteWebACL;Permissions management, Write
 waf-regional:DeleteXssMatchSet;Write
 waf-regional:DisassociateWebACL;Write
 waf-regional:GetByteMatchSet;Read
@@ -64,9 +64,9 @@ waf-regional:ListTagsForResource;Read
 waf-regional:ListWebACLs;List
 waf-regional:ListXssMatchSets;List
 waf-regional:PutLoggingConfiguration;Write
-waf-regional:PutPermissionPolicy;Permissions management
-waf-regional:TagResource;Tagging
-waf-regional:UntagResource;Tagging
+waf-regional:PutPermissionPolicy;Permissions management, Write
+waf-regional:TagResource;Tagging, Write
+waf-regional:UntagResource;Tagging, Write
 waf-regional:UpdateByteMatchSet;Write
 waf-regional:UpdateGeoMatchSet;Write
 waf-regional:UpdateIPSet;Write
@@ -77,5 +77,5 @@ waf-regional:UpdateRule;Write
 waf-regional:UpdateRuleGroup;Write
 waf-regional:UpdateSizeConstraintSet;Write
 waf-regional:UpdateSqlInjectionMatchSet;Write
-waf-regional:UpdateWebACL;Permissions management
+waf-regional:UpdateWebACL;Permissions management, Write
 waf-regional:UpdateXssMatchSet;Write

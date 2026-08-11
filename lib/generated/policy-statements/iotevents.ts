@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [iotevents](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotevents.html).
+ * Statement provider for service [iotevents](https://docs.aws.amazon.com/service-authorization/latest/reference/list_iotevents.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Iotevents extends PolicyStatement {
   public servicePrefix = 'iotevents';
 
   /**
-   * Statement provider for service [iotevents](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotevents.html).
+   * Statement provider for service [iotevents](https://docs.aws.amazon.com/service-authorization/latest/reference/list_iotevents.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -111,10 +111,6 @@ export class Iotevents extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html
    */
   public toCreateAlarmModel() {
@@ -126,10 +122,6 @@ export class Iotevents extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html
    */
   public toCreateDetectorModel() {
@@ -140,10 +132,6 @@ export class Iotevents extends PolicyStatement {
    * Grants permission to create an Input in IotEvents
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateInput.html
    */
@@ -396,11 +384,7 @@ export class Iotevents extends PolicyStatement {
   /**
    * Grants permission to adds to or modifies the tags of the given resource.Tags are metadata which can be used to manage a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_TagResource.html
    */
@@ -411,10 +395,7 @@ export class Iotevents extends PolicyStatement {
   /**
    * Grants permission to remove the given tags (metadata) from the resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_UntagResource.html
    */
@@ -484,6 +465,8 @@ export class Iotevents extends PolicyStatement {
       'DeleteInput',
       'PutLoggingOptions',
       'StartDetectorModelAnalysis',
+      'TagResource',
+      'UntagResource',
       'UpdateAlarmModel',
       'UpdateDetectorModel',
       'UpdateInput',
@@ -517,23 +500,6 @@ export class Iotevents extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type detectorModel to the statement
-   *
-   * https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-getting-started.html
-   *
-   * @param detectorModelName - Identifier for the detectorModelName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDetectorModel(detectorModelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iotevents:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detectorModel/${ detectorModelName }`);
-  }
-
-  /**
    * Adds a resource of type alarmModel to the statement
    *
    * https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-getting-started.html
@@ -548,6 +514,23 @@ export class Iotevents extends PolicyStatement {
    */
   public onAlarmModel(alarmModelName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:iotevents:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:alarmModel/${ alarmModelName }`);
+  }
+
+  /**
+   * Adds a resource of type detectorModel to the statement
+   *
+   * https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-getting-started.html
+   *
+   * @param detectorModelName - Identifier for the detectorModelName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDetectorModel(detectorModelName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotevents:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detectorModel/${ detectorModelName }`);
   }
 
   /**
@@ -591,9 +574,41 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toBatchAcknowledgeAlarm()
+   * - .toBatchDeleteDetector()
+   * - .toBatchDisableAlarm()
+   * - .toBatchEnableAlarm()
+   * - .toBatchPutMessage()
+   * - .toBatchResetAlarm()
+   * - .toBatchSnoozeAlarm()
+   * - .toBatchUpdateDetector()
+   * - .toCreateAlarmModel()
+   * - .toCreateDetectorModel()
+   * - .toCreateInput()
+   * - .toDeleteAlarmModel()
+   * - .toDeleteDetectorModel()
+   * - .toDeleteInput()
+   * - .toDescribeAlarm()
+   * - .toDescribeAlarmModel()
+   * - .toDescribeDetector()
+   * - .toDescribeDetectorModel()
+   * - .toDescribeInput()
+   * - .toListAlarmModelVersions()
+   * - .toListAlarms()
+   * - .toListDetectorModelVersions()
+   * - .toListDetectors()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAlarmModel()
+   * - .toUpdateDetectorModel()
+   * - .toUpdateInput()
+   * - .toUpdateInputRouting()
+   *
    * Applies to resource types:
-   * - detectorModel
    * - alarmModel
+   * - detectorModel
    * - input
    *
    * @param tagKey The tag key to check

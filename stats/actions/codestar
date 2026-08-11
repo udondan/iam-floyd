@@ -1,12 +1,12 @@
-codestar:AssociateTeamMember;Permissions management
-codestar:CreateProject;Permissions management
+codestar:AssociateTeamMember;Permissions management, Write
+codestar:CreateProject;Permissions management, Write
 codestar:CreateUserProfile;Write
 codestar:DeleteExtendedAccess;Write
-codestar:DeleteProject;Permissions management
+codestar:DeleteProject;Permissions management, Write
 codestar:DeleteUserProfile;Write
 codestar:DescribeProject;Read
 codestar:DescribeUserProfile;Read
-codestar:DisassociateTeamMember;Permissions management
+codestar:DisassociateTeamMember;Permissions management, Write
 codestar:GetExtendedAccess;Read
 codestar:ListProjects;List
 codestar:ListResources;List
@@ -14,9 +14,9 @@ codestar:ListTagsForProject;List
 codestar:ListTeamMembers;List
 codestar:ListUserProfiles;List
 codestar:PutExtendedAccess;Write
-codestar:TagProject;Tagging
-codestar:UntagProject;Tagging
+codestar:TagProject;Tagging, Write
+codestar:UntagProject;Tagging, Write
 codestar:UpdateProject;Write
-codestar:UpdateTeamMember;Permissions management
+codestar:UpdateTeamMember;Permissions management, Write
 codestar:UpdateUserProfile;Write
 codestar:VerifyServiceRole;List

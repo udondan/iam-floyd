@@ -31,8 +31,8 @@ groundstation:ListSatellites;List
 groundstation:ListTagsForResource;Read
 groundstation:RegisterAgent;Write
 groundstation:ReserveContact;Write
-groundstation:TagResource;Tagging
-groundstation:UntagResource;Tagging
+groundstation:TagResource;Tagging, Write
+groundstation:UntagResource;Tagging, Write
 groundstation:UpdateAgentStatus;Write
 groundstation:UpdateConfig;Write
 groundstation:UpdateContact;Write

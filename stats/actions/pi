@@ -10,5 +10,5 @@ pi:ListAvailableResourceMetrics;Read
 pi:ListPerformanceAnalysisReportRecommendations;List
 pi:ListPerformanceAnalysisReports;List
 pi:ListTagsForResource;List
-pi:TagResource;Tagging
-pi:UntagResource;Tagging
+pi:TagResource;Tagging, Write
+pi:UntagResource;Tagging, Write

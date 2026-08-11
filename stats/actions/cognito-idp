@@ -11,6 +11,7 @@ cognito-idp:AdminEnableUser;Write
 cognito-idp:AdminForgetDevice;Write
 cognito-idp:AdminGetDevice;Read
 cognito-idp:AdminGetUser;Read
+cognito-idp:AdminGetUserAuthFactors;Read
 cognito-idp:AdminInitiateAuth;Write
 cognito-idp:AdminLinkProviderForUser;Write
 cognito-idp:AdminListDevices;List
@@ -72,6 +73,7 @@ cognito-idp:GetDevice;Read
 cognito-idp:GetGroup;Read
 cognito-idp:GetIdentityProviderByIdentifier;Read
 cognito-idp:GetLogDeliveryConfiguration;Read
+cognito-idp:GetProvisionedLimit;Read
 cognito-idp:GetSigningCertificate;Read
 cognito-idp:GetTokensFromRefreshToken;Write
 cognito-idp:GetUICustomization;Read
@@ -107,13 +109,14 @@ cognito-idp:SetUserSettings;Write
 cognito-idp:SignUp;Write
 cognito-idp:StartUserImportJob;Write
 cognito-idp:StopUserImportJob;Write
-cognito-idp:TagResource;Tagging
-cognito-idp:UntagResource;Tagging
+cognito-idp:TagResource;Tagging, Write
+cognito-idp:UntagResource;Tagging, Write
 cognito-idp:UpdateAuthEventFeedback;Write
 cognito-idp:UpdateDeviceStatus;Write
 cognito-idp:UpdateGroup;Write
 cognito-idp:UpdateIdentityProvider;Write
 cognito-idp:UpdateManagedLoginBranding;Write
+cognito-idp:UpdateProvisionedLimit;Write
 cognito-idp:UpdateResourceServer;Write
 cognito-idp:UpdateTerms;Write
 cognito-idp:UpdateUserAttributes;Write

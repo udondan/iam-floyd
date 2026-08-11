@@ -1,7 +1,7 @@
 billing:AssociateSourceViews;Write
 billing:CreateBillingView;Write
 billing:DeleteBillingView;Write
-billing:DeleteResourcePolicy;Permissions management
+billing:DeleteResourcePolicy;Permissions management, Write
 billing:DisassociateSourceViews;Write
 billing:GetBillingData;Read
 billing:GetBillingDetails;Read
@@ -12,19 +12,20 @@ billing:GetBillingViewData;Read
 billing:GetContractInformation;Read
 billing:GetCreditAllocationHistory;Read
 billing:GetCredits;Read
-billing:GetCumulativeTracking;Read
+billing:GetEnterpriseSupportChargeSummary;Read
+billing:GetEnterpriseSupportContractDetails;Read
 billing:GetIAMAccessPreference;Read
-billing:GetMonthlyTracking;Read
-billing:GetResourcePolicy;Permissions management
+billing:GetResourcePolicy;Permissions management, Write
 billing:GetSellerOfRecord;Read
 billing:ListBillingViews;Read
+billing:ListEnterpriseSupportLinkedAccountCharges;List
 billing:ListSourceViewsForBillingView;List
 billing:ListTagsForResource;Read
 billing:PutContractInformation;Write
-billing:PutResourcePolicy;Permissions management
+billing:PutResourcePolicy;Permissions management, Write
 billing:RedeemCredits;Write
-billing:TagResource;Tagging
-billing:UntagResource;Tagging
+billing:TagResource;Tagging, Write
+billing:UntagResource;Tagging, Write
 billing:UpdateBillingPreferences;Write
 billing:UpdateBillingView;Write
 billing:UpdateIAMAccessPreference;Write

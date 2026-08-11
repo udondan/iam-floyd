@@ -1,3 +1,4 @@
+kafka:channel
 kafka:cluster
 kafka:configuration
 kafka:group

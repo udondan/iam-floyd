@@ -70,7 +70,7 @@ rekognition:StartStreamProcessor;Write
 rekognition:StartTextDetection;Write
 rekognition:StopProjectVersion;Write
 rekognition:StopStreamProcessor;Write
-rekognition:TagResource;Tagging
-rekognition:UntagResource;Tagging
+rekognition:TagResource;Tagging, Write
+rekognition:UntagResource;Tagging, Write
 rekognition:UpdateDatasetEntries;Write
 rekognition:UpdateStreamProcessor;Write

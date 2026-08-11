@@ -5,6 +5,6 @@ pipes:ListPipes;List
 pipes:ListTagsForResource;Read
 pipes:StartPipe;Write
 pipes:StopPipe;Write
-pipes:TagResource;Tagging
-pipes:UntagResource;Tagging
+pipes:TagResource;Tagging, Write
+pipes:UntagResource;Tagging, Write
 pipes:UpdatePipe;Write

@@ -4,7 +4,7 @@ rbin:GetRule;Read
 rbin:ListRules;Read
 rbin:ListTagsForResource;Read
 rbin:LockRule;Write
-rbin:TagResource;Tagging
+rbin:TagResource;Tagging, Write
 rbin:UnlockRule;Write
-rbin:UntagResource;Tagging
+rbin:UntagResource;Tagging, Write
 rbin:UpdateRule;Write
