@@ -451,6 +451,114 @@ export class Swf extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to cancel a previously started timer and record a TimerCanceled event in the history
+   *
+   * Access Level: Write
+   */
+  public toCancelTimer() {
+    return this.to('CancelTimer');
+  }
+
+  /**
+   * Grants permission to close the workflow execution and record a WorkflowExecutionCanceled event in the history
+   *
+   * Access Level: Write
+   */
+  public toCancelWorkflowExecution() {
+    return this.to('CancelWorkflowExecution');
+  }
+
+  /**
+   * Grants permission to close the workflow execution and record a WorkflowExecutionCompleted event in the history
+   *
+   * Access Level: Write
+   */
+  public toCompleteWorkflowExecution() {
+    return this.to('CompleteWorkflowExecution');
+  }
+
+  /**
+   * Grants permission to close the workflow execution and start a new workflow execution of the same type using the same workflow ID and a unique run Id
+   *
+   * Access Level: Write
+   */
+  public toContinueAsNewWorkflowExecution() {
+    return this.to('ContinueAsNewWorkflowExecution');
+  }
+
+  /**
+   * Grants permission to close the workflow execution and record a WorkflowExecutionFailed event in the history
+   *
+   * Access Level: Write
+   */
+  public toFailWorkflowExecution() {
+    return this.to('FailWorkflowExecution');
+  }
+
+  /**
+   * Grants permission to record a MarkerRecorded event in the history
+   *
+   * Access Level: Write
+   */
+  public toRecordMarker() {
+    return this.to('RecordMarker');
+  }
+
+  /**
+   * Grants permission to attempt to cancel a previously scheduled activity task
+   *
+   * Access Level: Write
+   */
+  public toRequestCancelActivityTask() {
+    return this.to('RequestCancelActivityTask');
+  }
+
+  /**
+   * Grants permission to request that a request be made to cancel the specified external workflow execution
+   *
+   * Access Level: Write
+   */
+  public toRequestCancelExternalWorkflowExecution() {
+    return this.to('RequestCancelExternalWorkflowExecution');
+  }
+
+  /**
+   * Grants permission to schedule an activity task
+   *
+   * Access Level: Write
+   */
+  public toScheduleActivityTask() {
+    return this.to('ScheduleActivityTask');
+  }
+
+  /**
+   * Grants permission to request a signal to be delivered to the specified external workflow execution and records
+   *
+   * Access Level: Write
+   */
+  public toSignalExternalWorkflowExecution() {
+    return this.to('SignalExternalWorkflowExecution');
+  }
+
+  /**
+   * Grants permission to request that a child workflow execution be started
+   *
+   * Access Level: Write
+   */
+  public toStartChildWorkflowExecution() {
+    return this.to('StartChildWorkflowExecution');
+  }
+
+  /**
+   * Grants permission to start a timer for a workflow execution
+   *
+   * Access Level: Write
+   */
+  public toStartTimer() {
+    return this.to('StartTimer');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'CountClosedWorkflowExecutions',
@@ -487,7 +595,19 @@ export class Swf extends PolicyStatement {
       'UndeprecateActivityType',
       'UndeprecateDomain',
       'UndeprecateWorkflowType',
-      'UntagResource'
+      'UntagResource',
+      'CancelTimer',
+      'CancelWorkflowExecution',
+      'CompleteWorkflowExecution',
+      'ContinueAsNewWorkflowExecution',
+      'FailWorkflowExecution',
+      'RecordMarker',
+      'RequestCancelActivityTask',
+      'RequestCancelExternalWorkflowExecution',
+      'ScheduleActivityTask',
+      'SignalExternalWorkflowExecution',
+      'StartChildWorkflowExecution',
+      'StartTimer'
     ],
     List: [
       'ListActivityTypes',
@@ -579,6 +699,18 @@ export class Swf extends PolicyStatement {
    * - .toUndeprecateDomain()
    * - .toUndeprecateWorkflowType()
    * - .toUntagResource()
+   * - .toCancelTimer()
+   * - .toCancelWorkflowExecution()
+   * - .toCompleteWorkflowExecution()
+   * - .toContinueAsNewWorkflowExecution()
+   * - .toFailWorkflowExecution()
+   * - .toRecordMarker()
+   * - .toRequestCancelActivityTask()
+   * - .toRequestCancelExternalWorkflowExecution()
+   * - .toScheduleActivityTask()
+   * - .toSignalExternalWorkflowExecution()
+   * - .toStartChildWorkflowExecution()
+   * - .toStartTimer()
    *
    * Applies to resource types:
    * - domain

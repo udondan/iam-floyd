@@ -678,6 +678,72 @@ export class Cloudtrail extends PolicyStatement {
     return this.to('UpdateTrail');
   }
 
+  /**
+   * Grants permission to create a service-linked channel that specifies the settings for delivery of log data to an AWS service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html#slc-service-events
+   */
+  public toCreateServiceLinkedChannel() {
+    return this.to('CreateServiceLinkedChannel');
+  }
+
+  /**
+   * Grants permission to delete a service-linked channel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html#slc-service-events
+   */
+  public toDeleteServiceLinkedChannel() {
+    return this.to('DeleteServiceLinkedChannel');
+  }
+
+  /**
+   * Grants permission to generate a results summary for specified queries using the CloudTrail natural language generator
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-results-summary.html
+   */
+  public toGenerateQueryResultsSummary() {
+    return this.to('GenerateQueryResultsSummary');
+  }
+
+  /**
+   * Grants permission to list settings for the service-linked channel
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html#slc-service-events
+   */
+  public toGetServiceLinkedChannel() {
+    return this.to('GetServiceLinkedChannel');
+  }
+
+  /**
+   * Grants permission to list service-linked channels associated with the current region for a specified account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html#slc-service-events
+   */
+  public toListServiceLinkedChannels() {
+    return this.to('ListServiceLinkedChannels');
+  }
+
+  /**
+   * Grants permission to update the service-linked channel settings for delivery of log data to an AWS service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html#slc-service-events
+   */
+  public toUpdateServiceLinkedChannel() {
+    return this.to('UpdateServiceLinkedChannel');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddTags',
@@ -717,7 +783,10 @@ export class Cloudtrail extends PolicyStatement {
       'UpdateChannel',
       'UpdateDashboard',
       'UpdateEventDataStore',
-      'UpdateTrail'
+      'UpdateTrail',
+      'CreateServiceLinkedChannel',
+      'DeleteServiceLinkedChannel',
+      'UpdateServiceLinkedChannel'
     ],
     Read: [
       'DescribeQuery',
@@ -738,7 +807,9 @@ export class Cloudtrail extends PolicyStatement {
       'ListPublicKeys',
       'ListTags',
       'LookupEvents',
-      'SearchSampleQueries'
+      'SearchSampleQueries',
+      'GenerateQueryResultsSummary',
+      'GetServiceLinkedChannel'
     ],
     List: [
       'ListChannels',
@@ -747,7 +818,8 @@ export class Cloudtrail extends PolicyStatement {
       'ListImports',
       'ListInsightsData',
       'ListQueries',
-      'ListTrails'
+      'ListTrails',
+      'ListServiceLinkedChannels'
     ]
   };
 
@@ -890,6 +962,11 @@ export class Cloudtrail extends PolicyStatement {
    * - .toUpdateDashboard()
    * - .toUpdateEventDataStore()
    * - .toUpdateTrail()
+   * - .toCreateServiceLinkedChannel()
+   * - .toDeleteServiceLinkedChannel()
+   * - .toGenerateQueryResultsSummary()
+   * - .toGetServiceLinkedChannel()
+   * - .toUpdateServiceLinkedChannel()
    *
    * Applies to resource types:
    * - channel

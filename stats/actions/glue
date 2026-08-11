@@ -1,3 +1,5 @@
+glue:AccessDataQualityRuntimeConfiguration;Read
+glue:AuthorizeInboundIntegration;Write
 glue:BatchCreatePartition;Write
 glue:BatchDeleteConnection;Write
 glue:BatchDeletePartition;Write
@@ -31,6 +33,7 @@ glue:CreateDataQualityRuleset;Write
 glue:CreateDatabase;Write
 glue:CreateDevEndpoint;Write
 glue:CreateGlueIdentityCenterConfiguration;Write
+glue:CreateInboundIntegration;Write
 glue:CreateIntegration;Write
 glue:CreateIntegrationResourceProperty;Write
 glue:CreateIntegrationTableProperties;Write
@@ -217,6 +220,8 @@ glue:ListWorkflows;List
 glue:ManagedConnector;Permissions management, Write
 glue:ModifyIntegration;Write
 glue:NotifyEvent;Write
+glue:PassConnection;Write
+glue:PublishDataQuality;Write
 glue:PutDataCatalogEncryptionSettings;Write
 glue:PutDataQualityProfileAnnotation;Write
 glue:PutDataQualityStatisticAnnotation;Write
@@ -296,3 +301,4 @@ glue:UpdateUserDefinedFunction;Write
 glue:UpdateWorkflow;Write
 glue:UpgradeJob;Write
 glue:UseGlueStudio;Permissions management, Write
+glue:UseMLTransforms;Write

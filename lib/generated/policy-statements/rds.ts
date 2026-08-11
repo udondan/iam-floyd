@@ -1826,6 +1826,61 @@ export class Rds extends PolicyStatement {
     return this.to('SwitchoverReadReplica');
   }
 
+  /**
+   * Grants permission to copy a custom engine version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html
+   */
+  public toCopyCustomDBEngineVersion() {
+    return this.to('CopyCustomDBEngineVersion');
+  }
+
+  /**
+   * Grants permission to access a resource in the remote Region when executing cross-Region operations, such as cross-Region snapshot copy or cross-Region read replica creation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   */
+  public toCrossRegionCommunication() {
+    return this.to('CrossRegionCommunication');
+  }
+
+  /**
+   * Grants permission to return information about recommendation groups
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/USER_Recommendations.html
+   */
+  public toDescribeRecommendationGroups() {
+    return this.to('DescribeRecommendationGroups');
+  }
+
+  /**
+   * Grants permission to return information about recommendations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/USER_Recommendations.html
+   */
+  public toDescribeRecommendations() {
+    return this.to('DescribeRecommendations');
+  }
+
+  /**
+   * Grants permission to modify recommendation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/USER_Recommendations.html
+   */
+  public toModifyRecommendation() {
+    return this.to('ModifyRecommendation');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddRoleToDBCluster',
@@ -1942,7 +1997,10 @@ export class Rds extends PolicyStatement {
       'StopDBInstanceAutomatedBackupsReplication',
       'SwitchoverBlueGreenDeployment',
       'SwitchoverGlobalCluster',
-      'SwitchoverReadReplica'
+      'SwitchoverReadReplica',
+      'CopyCustomDBEngineVersion',
+      'CrossRegionCommunication',
+      'ModifyRecommendation'
     ],
     Tagging: [
       'AddTagsToResource',
@@ -2002,7 +2060,9 @@ export class Rds extends PolicyStatement {
     Read: [
       'DownloadCompleteDBLogFile',
       'DownloadDBLogFilePortion',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'DescribeRecommendationGroups',
+      'DescribeRecommendations'
     ]
   };
 
@@ -2638,6 +2698,8 @@ export class Rds extends PolicyStatement {
    * - .toSwitchoverBlueGreenDeployment()
    * - .toSwitchoverGlobalCluster()
    * - .toSwitchoverReadReplica()
+   * - .toCopyCustomDBEngineVersion()
+   * - .toCrossRegionCommunication()
    *
    * Applies to resource types:
    * - auto-backup
@@ -2806,6 +2868,7 @@ export class Rds extends PolicyStatement {
    * - .toStopDBInstance()
    * - .toStopDBInstanceAutomatedBackupsReplication()
    * - .toSwitchoverReadReplica()
+   * - .toCrossRegionCommunication()
    *
    * Applies to resource types:
    * - db
@@ -2867,6 +2930,7 @@ export class Rds extends PolicyStatement {
    * - .toStopDBInstance()
    * - .toStopDBInstanceAutomatedBackupsReplication()
    * - .toSwitchoverReadReplica()
+   * - .toCrossRegionCommunication()
    *
    * Applies to resource types:
    * - db
@@ -2928,6 +2992,7 @@ export class Rds extends PolicyStatement {
    * - .toStopDBInstance()
    * - .toStopDBInstanceAutomatedBackupsReplication()
    * - .toSwitchoverReadReplica()
+   * - .toCrossRegionCommunication()
    *
    * Applies to resource types:
    * - db
@@ -3026,6 +3091,7 @@ export class Rds extends PolicyStatement {
    * - .toStopDBInstance()
    * - .toStopDBInstanceAutomatedBackupsReplication()
    * - .toSwitchoverReadReplica()
+   * - .toCrossRegionCommunication()
    *
    * Applies to resource types:
    * - db
@@ -3088,6 +3154,7 @@ export class Rds extends PolicyStatement {
    * - .toStopDBInstance()
    * - .toStopDBInstanceAutomatedBackupsReplication()
    * - .toSwitchoverReadReplica()
+   * - .toCrossRegionCommunication()
    *
    * Applies to resource types:
    * - db
@@ -3168,6 +3235,7 @@ export class Rds extends PolicyStatement {
    * - .toStopDBInstance()
    * - .toStopDBInstanceAutomatedBackupsReplication()
    * - .toSwitchoverReadReplica()
+   * - .toCrossRegionCommunication()
    *
    * Applies to resource types:
    * - db
@@ -3230,6 +3298,7 @@ export class Rds extends PolicyStatement {
    * - .toStopDBInstance()
    * - .toStopDBInstanceAutomatedBackupsReplication()
    * - .toSwitchoverReadReplica()
+   * - .toCrossRegionCommunication()
    *
    * Applies to resource types:
    * - db
@@ -3320,6 +3389,7 @@ export class Rds extends PolicyStatement {
    * - .toStopDBInstance()
    * - .toStopDBInstanceAutomatedBackupsReplication()
    * - .toSwitchoverReadReplica()
+   * - .toCrossRegionCommunication()
    *
    * Applies to resource types:
    * - db
@@ -3384,6 +3454,7 @@ export class Rds extends PolicyStatement {
    * - .toRestoreDBClusterFromSnapshot()
    * - .toRestoreDBInstanceFromDBSnapshot()
    * - .toStartExportTask()
+   * - .toCrossRegionCommunication()
    *
    * Applies to resource types:
    * - cluster-snapshot
@@ -3506,6 +3577,7 @@ export class Rds extends PolicyStatement {
    * - .toStopDBInstance()
    * - .toStopDBInstanceAutomatedBackupsReplication()
    * - .toSwitchoverReadReplica()
+   * - .toCrossRegionCommunication()
    *
    * Applies to resource types:
    * - db
@@ -3741,6 +3813,7 @@ export class Rds extends PolicyStatement {
    * - .toRestoreDBInstanceFromDBSnapshot()
    * - .toStartExportTask()
    * - .toStopDBInstance()
+   * - .toCrossRegionCommunication()
    *
    * Applies to resource types:
    * - snapshot

@@ -260,6 +260,39 @@ export class Lookoutvision extends PolicyStatement {
     return this.to('UpdateDatasetEntries');
   }
 
+  /**
+   * Grants permission to provides state information about a running anomaly detection job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lookout-for-vision/latest/developer-guide/trial-detection.html
+   */
+  public toDescribeTrialDetection() {
+    return this.to('DescribeTrialDetection');
+  }
+
+  /**
+   * Grants permission to list all anomaly detection jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lookout-for-vision/latest/developer-guide/trial-detection.html
+   */
+  public toListTrialDetections() {
+    return this.to('ListTrialDetections');
+  }
+
+  /**
+   * Grants permission to start bulk detection of anomalies for a set of images stored in an S3 bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-vision/latest/developer-guide/trial-detection.html
+   */
+  public toStartTrialDetection() {
+    return this.to('StartTrialDetection');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateDataset',
@@ -274,7 +307,8 @@ export class Lookoutvision extends PolicyStatement {
       'StopModel',
       'TagResource',
       'UntagResource',
-      'UpdateDatasetEntries'
+      'UpdateDatasetEntries',
+      'StartTrialDetection'
     ],
     Read: [
       'DescribeDataset',
@@ -282,12 +316,14 @@ export class Lookoutvision extends PolicyStatement {
       'DescribeModelPackagingJob',
       'DescribeProject',
       'ListDatasetEntries',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'DescribeTrialDetection'
     ],
     List: [
       'ListModelPackagingJobs',
       'ListModels',
-      'ListProjects'
+      'ListProjects',
+      'ListTrialDetections'
     ],
     Tagging: [
       'TagResource',

@@ -8,6 +8,7 @@ codedeploy:BatchGetDeployments;Read
 codedeploy:BatchGetOnPremisesInstances;Read
 codedeploy:ContinueDeployment;Write
 codedeploy:CreateApplication;Write
+codedeploy:CreateCloudFormationDeployment;Write
 codedeploy:CreateDeployment;Write
 codedeploy:CreateDeploymentConfig;Write
 codedeploy:CreateDeploymentGroup;Write

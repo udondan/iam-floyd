@@ -337,6 +337,39 @@ export class Cloudsearch extends PolicyStatement {
     return this.to('UpdateServiceAccessPolicies');
   }
 
+  /**
+   * Allows access to the document service operations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions
+   */
+  public toDocument() {
+    return this.to('document');
+  }
+
+  /**
+   * Allows access to the search operations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions
+   */
+  public toSearch() {
+    return this.to('search');
+  }
+
+  /**
+   * Allows access to the suggest operations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions
+   */
+  public toSuggest() {
+    return this.to('suggest');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddTags',
@@ -360,7 +393,8 @@ export class Cloudsearch extends PolicyStatement {
       'UpdateAvailabilityOptions',
       'UpdateDomainEndpointOptions',
       'UpdateScalingParameters',
-      'UpdateServiceAccessPolicies'
+      'UpdateServiceAccessPolicies',
+      'document'
     ],
     Read: [
       'DescribeAnalysisSchemes',
@@ -371,7 +405,9 @@ export class Cloudsearch extends PolicyStatement {
       'DescribeScalingParameters',
       'DescribeServiceAccessPolicies',
       'DescribeSuggesters',
-      'ListTags'
+      'ListTags',
+      'search',
+      'suggest'
     ],
     List: [
       'DescribeDomains',

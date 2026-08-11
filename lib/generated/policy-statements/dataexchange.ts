@@ -425,6 +425,39 @@ export class Dataexchange extends PolicyStatement {
     return this.to('UpdateRevision');
   }
 
+  /**
+   * Grants permission to create an asset (for example, in a Job)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   */
+  public toCreateAsset() {
+    return this.to('CreateAsset');
+  }
+
+  /**
+   * Grants permission to publish a data set to a product
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   */
+  public toPublishDataSet() {
+    return this.to('PublishDataSet');
+  }
+
+  /**
+   * Grants permission to publish a data set to a data grant
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   */
+  public toPublishToDataGrant() {
+    return this.to('PublishToDataGrant');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptDataGrant',
@@ -448,7 +481,10 @@ export class Dataexchange extends PolicyStatement {
       'UpdateAsset',
       'UpdateDataSet',
       'UpdateEventAction',
-      'UpdateRevision'
+      'UpdateRevision',
+      'CreateAsset',
+      'PublishDataSet',
+      'PublishToDataGrant'
     ],
     Read: [
       'GetAsset',
@@ -633,6 +669,8 @@ export class Dataexchange extends PolicyStatement {
    * - .toCreateEventAction()
    * - .toCreateRevision()
    * - .toTagResource()
+   * - .toCreateAsset()
+   * - .toPublishToDataGrant()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -676,6 +714,9 @@ export class Dataexchange extends PolicyStatement {
    * - .toUpdateDataSet()
    * - .toUpdateEventAction()
    * - .toUpdateRevision()
+   * - .toCreateAsset()
+   * - .toPublishDataSet()
+   * - .toPublishToDataGrant()
    *
    * Applies to resource types:
    * - assets
@@ -704,6 +745,8 @@ export class Dataexchange extends PolicyStatement {
    * - .toCreateRevision()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toCreateAsset()
+   * - .toPublishToDataGrant()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

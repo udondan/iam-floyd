@@ -1,3 +1,4 @@
+aidevops:AllowVendedLogDeliveryForResource;Permissions management, Write
 aidevops:AssociateService;Write
 aidevops:CreateAccessToken;Write
 aidevops:CreateAgentSpace;Write

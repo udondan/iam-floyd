@@ -454,6 +454,50 @@ export class Xray extends PolicyStatement {
     return this.to('UpdateTraceSegmentDestination');
   }
 
+  /**
+   * Grants permission to retrieve metadata for a list of traces specified by ID
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/xray/latest/devguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-console
+   */
+  public toBatchGetTraceSummaryById() {
+    return this.to('BatchGetTraceSummaryById');
+  }
+
+  /**
+   * Grants permission to retrieve distinct service graphs for one or more specific trace IDs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/xray/latest/devguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-console
+   */
+  public toGetDistinctTraceGraphs() {
+    return this.to('GetDistinctTraceGraphs');
+  }
+
+  /**
+   * Grants permission to share X-Ray resources with a monitoring account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions
+   */
+  public toLink() {
+    return this.to('Link');
+  }
+
+  /**
+   * Grants permission to upload spans to AWS X-Ray to be indexed
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/xray/latest/devguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-console
+   */
+  public toPutSpansForIndexing() {
+    return this.to('PutSpansForIndexing');
+  }
+
   protected accessLevelList: AccessLevelList = {
     List: [
       'BatchGetTraces',
@@ -480,7 +524,9 @@ export class Xray extends PolicyStatement {
       'GetTraceGraph',
       'GetTraceSegmentDestination',
       'GetTraceSummaries',
-      'StartTraceRetrieval'
+      'StartTraceRetrieval',
+      'BatchGetTraceSummaryById',
+      'GetDistinctTraceGraphs'
     ],
     Write: [
       'CreateGroup',
@@ -498,7 +544,9 @@ export class Xray extends PolicyStatement {
       'UpdateGroup',
       'UpdateIndexingRule',
       'UpdateSamplingRule',
-      'UpdateTraceSegmentDestination'
+      'UpdateTraceSegmentDestination',
+      'Link',
+      'PutSpansForIndexing'
     ],
     'Permissions management': [
       'PutEncryptionConfig'

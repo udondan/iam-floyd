@@ -143,13 +143,25 @@ export class Supportauthz extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to register a KMS key to use for a support permit
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/support-authorization-getting-started.html
+   */
+  public toRegisterKey() {
+    return this.to('RegisterKey');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateSupportPermit',
       'DeleteSupportPermit',
       'RejectSupportPermitRequest',
       'TagResource',
-      'UntagResource'
+      'UntagResource',
+      'RegisterKey'
     ],
     Read: [
       'GetAction',

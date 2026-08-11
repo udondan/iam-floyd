@@ -1,4 +1,5 @@
 account:AcceptPrimaryEmailUpdate;Write
+account:CloseAccount;Write
 account:DeleteAlternateContact;Write
 account:DisableRegion;Write
 account:EnableRegion;Write

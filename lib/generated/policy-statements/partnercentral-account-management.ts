@@ -40,10 +40,67 @@ export class PartnercentralAccountManagement extends PolicyStatement {
     return this.to('DisassociatePartnerUser');
   }
 
+  /**
+   * Grants permission to Single Sign-On from AWS Partner Central into Legacy Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLegacyPartnerCentralRole()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html
+   */
+  public toAccessLegacyPartnerCentral() {
+    return this.to('AccessLegacyPartnerCentral');
+  }
+
+  /**
+   * Grants permission to Single Sign-On from AWS Partner Central into Marketing Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifMarketingCentralRole()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html
+   */
+  public toAccessMarketingCentral() {
+    return this.to('AccessMarketingCentral');
+  }
+
+  /**
+   * Grants permission to Single Sign-On from AWS Partner Central into ProServe Tools
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifProServeRole()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html
+   */
+  public toAccessProServeTools() {
+    return this.to('AccessProServeTools');
+  }
+
+  /**
+   * Grants permission to associate Partner account to AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html
+   */
+  public toAssociatePartnerAccount() {
+    return this.to('AssociatePartnerAccount');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociatePartnerUser',
-      'DisassociatePartnerUser'
+      'DisassociatePartnerUser',
+      'AccessLegacyPartnerCentral',
+      'AccessMarketingCentral',
+      'AccessProServeTools',
+      'AssociatePartnerAccount'
     ]
   };
 
@@ -51,6 +108,9 @@ export class PartnercentralAccountManagement extends PolicyStatement {
    * Filters access by the Legacy Partner Central role
    *
    * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html
+   *
+   * Applies to actions:
+   * - .toAccessLegacyPartnerCentral()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -64,6 +124,9 @@ export class PartnercentralAccountManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html
    *
+   * Applies to actions:
+   * - .toAccessMarketingCentral()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -75,6 +138,9 @@ export class PartnercentralAccountManagement extends PolicyStatement {
    * Filters access by ProServe Tools role
    *
    * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html
+   *
+   * Applies to actions:
+   * - .toAccessProServeTools()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

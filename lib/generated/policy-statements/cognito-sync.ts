@@ -205,6 +205,24 @@ export class CognitoSync extends PolicyStatement {
     return this.to('UpdateRecords');
   }
 
+  /**
+   * Grants permission to query records
+   *
+   * Access Level: Read
+   */
+  public toQueryRecords() {
+    return this.to('QueryRecords');
+  }
+
+  /**
+   * Grants permission to configure datasets
+   *
+   * Access Level: Write
+   */
+  public toSetDatasetConfiguration() {
+    return this.to('SetDatasetConfiguration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BulkPublish',
@@ -214,7 +232,8 @@ export class CognitoSync extends PolicyStatement {
       'SetIdentityPoolConfiguration',
       'SubscribeToDataset',
       'UnsubscribeFromDataset',
-      'UpdateRecords'
+      'UpdateRecords',
+      'SetDatasetConfiguration'
     ],
     Read: [
       'DescribeDataset',
@@ -224,7 +243,8 @@ export class CognitoSync extends PolicyStatement {
       'GetCognitoEvents',
       'GetIdentityPoolConfiguration',
       'ListIdentityPoolUsage',
-      'ListRecords'
+      'ListRecords',
+      'QueryRecords'
     ],
     List: [
       'ListDatasets'

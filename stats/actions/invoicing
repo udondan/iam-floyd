@@ -3,17 +3,22 @@ invoicing:CreateInvoiceUnit;Write
 invoicing:CreateProcurementPortalPreference;Write
 invoicing:DeleteInvoiceUnit;Write
 invoicing:DeleteProcurementPortalPreference;Write
+invoicing:GetInvoiceCorrection;Read
+invoicing:GetInvoiceEmailDeliveryPreferences;Read
 invoicing:GetInvoicePDF;Read
 invoicing:GetInvoiceUnit;Read
 invoicing:GetProcurementPortalPreference;Read
+invoicing:ListInvoiceCorrections;List
 invoicing:ListInvoiceSummaries;Read
 invoicing:ListInvoiceUnits;List
 invoicing:ListProcurementPortalPreferences;List
 invoicing:ListProcurementPortalSuppliers;List
 invoicing:ListProcurementPortals;List
 invoicing:ListTagsForResource;Read
+invoicing:PutInvoiceEmailDeliveryPreferences;Write
 invoicing:PutProcurementPortalPreference;Write
 invoicing:SendProcurementPortalValidation;Write
+invoicing:StartInvoiceCorrection;Write
 invoicing:TagResource;Tagging, Write
 invoicing:UntagResource;Tagging, Write
 invoicing:UpdateInvoiceUnit;Write

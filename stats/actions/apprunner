@@ -1,4 +1,5 @@
 apprunner:AssociateCustomDomain;Write
+apprunner:AssociateWebAcl;Write
 apprunner:CreateAutoScalingConfiguration;Write
 apprunner:CreateConnection;Write
 apprunner:CreateObservabilityConfiguration;Write
@@ -18,7 +19,10 @@ apprunner:DescribeOperation;Read
 apprunner:DescribeService;Read
 apprunner:DescribeVpcConnector;Read
 apprunner:DescribeVpcIngressConnection;Read
+apprunner:DescribeWebAclForService;Read
 apprunner:DisassociateCustomDomain;Write
+apprunner:DisassociateWebAcl;Write
+apprunner:ListAssociatedServicesForWebAcl;List
 apprunner:ListAutoScalingConfigurations;List
 apprunner:ListConnections;List
 apprunner:ListObservabilityConfigurations;List

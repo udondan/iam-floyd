@@ -73,17 +73,41 @@ export class Freetier extends PolicyStatement {
     return this.to('UpgradeAccountPlan');
   }
 
+  /**
+   * Grants permission to get free tier alert preference (email address)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/tracking-free-tier-usage.html
+   */
+  public toGetFreeTierAlertPreference() {
+    return this.to('GetFreeTierAlertPreference');
+  }
+
+  /**
+   * Grants permission to set free tier alert preference (email address)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/tracking-free-tier-usage.html
+   */
+  public toPutFreeTierAlertPreference() {
+    return this.to('PutFreeTierAlertPreference');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'GetAccountActivity',
       'GetAccountPlanState',
-      'GetFreeTierUsage'
+      'GetFreeTierUsage',
+      'GetFreeTierAlertPreference'
     ],
     List: [
       'ListAccountActivities'
     ],
     Write: [
-      'UpgradeAccountPlan'
+      'UpgradeAccountPlan',
+      'PutFreeTierAlertPreference'
     ]
   };
 }

@@ -238,6 +238,39 @@ export class Tax extends PolicyStatement {
     return this.to('UpdateExemptions');
   }
 
+  /**
+   * Grants permission to view/download tax documents/forms
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toGetTaxInfoReportingDocument() {
+    return this.to('GetTaxInfoReportingDocument');
+  }
+
+  /**
+   * Grants permission to retrieve tax interview data
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html
+   */
+  public toGetTaxInterview() {
+    return this.to('GetTaxInterview');
+  }
+
+  /**
+   * Grants permission to update tax interview data
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html
+   */
+  public toPutTaxInterview() {
+    return this.to('PutTaxInterview');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchDeleteTaxRegistration',
@@ -249,7 +282,8 @@ export class Tax extends PolicyStatement {
       'PutSupplementalTaxRegistration',
       'PutTaxInheritance',
       'PutTaxRegistration',
-      'UpdateExemptions'
+      'UpdateExemptions',
+      'PutTaxInterview'
     ],
     Read: [
       'GetDocument',
@@ -261,7 +295,9 @@ export class Tax extends PolicyStatement {
       'ListDocuments',
       'ListSupplementalTaxRegistrations',
       'ListTaxRegistrations',
-      'ListWithholdingEligibleInvoices'
+      'ListWithholdingEligibleInvoices',
+      'GetTaxInfoReportingDocument',
+      'GetTaxInterview'
     ]
   };
 }

@@ -1,3 +1,5 @@
+vpc-lattice:AssociateViaAWSService;Permissions management, Write
+vpc-lattice:AssociateViaAWSServiceEventsAndStates;Permissions management, Write
 vpc-lattice:CreateAccessLogSubscription;Write
 vpc-lattice:CreateListener;Write
 vpc-lattice:CreateResourceConfiguration;Write
@@ -8,6 +10,7 @@ vpc-lattice:CreateServiceNetwork;Write
 vpc-lattice:CreateServiceNetworkResourceAssociation;Write
 vpc-lattice:CreateServiceNetworkServiceAssociation;Write
 vpc-lattice:CreateServiceNetworkVpcAssociation;Write
+vpc-lattice:CreateServiceNetworkVpcEndpointAssociation;Permissions management, Write
 vpc-lattice:CreateTargetGroup;Write
 vpc-lattice:DeleteAccessLogSubscription;Write
 vpc-lattice:DeleteAuthPolicy;Permissions management, Write

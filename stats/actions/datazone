@@ -4,10 +4,12 @@ datazone:AddEntityOwner;Write
 datazone:AddPolicyGrant;Permissions management, Write
 datazone:AssociateEnvironmentRole;Write
 datazone:AssociateGovernedTerms;Write
+datazone:BatchDeleteLinkedTypes;Write
 datazone:BatchGetAttributesMetadata;Read
 datazone:BatchGetCell;Read
 datazone:BatchGetCellRun;Read
 datazone:BatchPutAttributesMetadata;Write
+datazone:BatchPutLinkedTypes;Write
 datazone:CancelMessage;Write
 datazone:CancelMetadataGenerationRun;Write
 datazone:CancelSubscription;Write
@@ -55,6 +57,7 @@ datazone:DeleteDataProduct;Write
 datazone:DeleteDataSource;Write
 datazone:DeleteDesignation;Write
 datazone:DeleteDomain;Write
+datazone:DeleteDomainSharingPolicy;Permissions management, Write
 datazone:DeleteDomainUnit;Write
 datazone:DeleteEnvironment;Write
 datazone:DeleteEnvironmentAction;Write
@@ -95,9 +98,12 @@ datazone:GetDataSource;Read
 datazone:GetDataSourceRun;Read
 datazone:GetDesignation;Read
 datazone:GetDomain;Read
+datazone:GetDomainExecutionRoleCredentials;Read
+datazone:GetDomainSharingPolicy;Read
 datazone:GetDomainUnit;Read
 datazone:GetEnvironment;Read
 datazone:GetEnvironmentAction;Read
+datazone:GetEnvironmentActionLink;Read
 datazone:GetEnvironmentBlueprint;Read
 datazone:GetEnvironmentBlueprintConfiguration;Read
 datazone:GetEnvironmentCredentials;Read
@@ -120,6 +126,7 @@ datazone:GetProject;Read
 datazone:GetProjectProfile;Read
 datazone:GetRule;Read
 datazone:GetSubscription;Read
+datazone:GetSubscriptionEligibility;Read
 datazone:GetSubscriptionGrant;Read
 datazone:GetSubscriptionRequestDetails;Read
 datazone:GetSubscriptionTarget;Read
@@ -143,6 +150,7 @@ datazone:ListDomainUnitsForParent;List
 datazone:ListDomains;List
 datazone:ListEntityOwners;List
 datazone:ListEnvironmentActions;List
+datazone:ListEnvironmentBlueprintConfigurationSummaries;List
 datazone:ListEnvironmentBlueprintConfigurations;List
 datazone:ListEnvironmentBlueprints;List
 datazone:ListEnvironmentProfiles;List
@@ -151,6 +159,7 @@ datazone:ListGroupsForUser;List
 datazone:ListJobRuns;List
 datazone:ListLineageEvents;List
 datazone:ListLineageNodeHistory;List
+datazone:ListLinkedTypes;List
 datazone:ListMetadataGenerationRuns;List
 datazone:ListNotebookRuns;List
 datazone:ListNotebooks;List
@@ -166,12 +175,16 @@ datazone:ListSubscriptionTargets;List
 datazone:ListSubscriptions;List
 datazone:ListTagsForResource;Read
 datazone:ListTimeSeriesDataPoints;List
+datazone:ListWarehouseMetadata;List
 datazone:PostLineageEvent;Write
 datazone:PostTimeSeriesDataPoints;Write
+datazone:ProvisionDomain;Write
 datazone:PutCellRunResult;Write
 datazone:PutDataExportConfiguration;Write
+datazone:PutDomainSharingPolicy;Permissions management, Write
 datazone:PutEnvironmentBlueprintConfiguration;Write
 datazone:QueryGraph;List
+datazone:RefreshToken;Write
 datazone:RejectPredictions;Write
 datazone:RejectSubscriptionRequest;Write
 datazone:RemoveEntityOwner;Write
@@ -180,9 +193,13 @@ datazone:RevokeSubscription;Permissions management, Write
 datazone:Search;List
 datazone:SearchGroupProfiles;List
 datazone:SearchListings;List
+datazone:SearchRules;List
 datazone:SearchTypes;List
 datazone:SearchUserProfiles;List
 datazone:SendMessage;Write
+datazone:SsoLogin;Write
+datazone:SsoLogout;Write
+datazone:StartAccountBootstrapAction;Write
 datazone:StartCompute;Write
 datazone:StartConversation;Write
 datazone:StartDataSourceRun;Write
@@ -204,12 +221,15 @@ datazone:UpdateCell;Write
 datazone:UpdateCellRun;Write
 datazone:UpdateConnection;Write
 datazone:UpdateDataSource;Write
+datazone:UpdateDataSourceRunActivities;Write
 datazone:UpdateDesignation;Write
 datazone:UpdateDomain;Write
 datazone:UpdateDomainUnit;Write
 datazone:UpdateEnvironment;Write
 datazone:UpdateEnvironmentAction;Write
 datazone:UpdateEnvironmentBlueprint;Write
+datazone:UpdateEnvironmentConfiguration;Write
+datazone:UpdateEnvironmentDeploymentStatus;Write
 datazone:UpdateEnvironmentProfile;Write
 datazone:UpdateGlossary;Write
 datazone:UpdateGlossaryTerm;Write
@@ -222,4 +242,5 @@ datazone:UpdateSubscriptionGrantStatus;Write
 datazone:UpdateSubscriptionRequest;Write
 datazone:UpdateSubscriptionTarget;Write
 datazone:UpdateUserProfile;Write
+datazone:ValidatePassRole;Write
 datazone:ValidatePolicy;Read

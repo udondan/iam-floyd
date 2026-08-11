@@ -16,6 +16,7 @@ wafv2:DeleteWebACL;Write
 wafv2:DescribeAllManagedProducts;Read
 wafv2:DescribeManagedProductsByVendor;Read
 wafv2:DescribeManagedRuleGroup;Read
+wafv2:DisassociateFirewallManager;Write
 wafv2:DisassociateWebACL;Write
 wafv2:GenerateMobileSdkReleaseUrl;Read
 wafv2:GetDecryptedAPIKey;Read
@@ -47,6 +48,7 @@ wafv2:ListRuleGroups;List
 wafv2:ListSettlementRecords;List
 wafv2:ListTagsForResource;Read
 wafv2:ListWebACLs;List
+wafv2:PutFirewallManagerRuleGroups;Write
 wafv2:PutLoggingConfiguration;Write
 wafv2:PutManagedRuleSetVersions;Write
 wafv2:PutPermissionPolicy;Permissions management, Write

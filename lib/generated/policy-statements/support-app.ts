@@ -128,6 +128,39 @@ export class Supportapp extends PolicyStatement {
     return this.to('UpdateSlackChannelConfiguration');
   }
 
+  /**
+   * Grants permission to list all public Slack channels in a workspace that have invited the AWS Support App
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/slack-authorization-permissions.html
+   */
+  public toDescribeSlackChannels() {
+    return this.to('DescribeSlackChannels');
+  }
+
+  /**
+   * Grants permission to get parameters for the Slack OAuth code, which the AWS Support App uses to authorize the workspace
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/slack-authorization-permissions.html
+   */
+  public toGetSlackOauthParameters() {
+    return this.to('GetSlackOauthParameters');
+  }
+
+  /**
+   * Grants permission to redeem the Slack OAuth code, which the AWS Support App uses to authorize the workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/slack-authorization-permissions.html
+   */
+  public toRedeemSlackOauthCode() {
+    return this.to('RedeemSlackOauthCode');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateSlackChannelConfiguration',
@@ -136,12 +169,15 @@ export class Supportapp extends PolicyStatement {
       'DeleteSlackWorkspaceConfiguration',
       'PutAccountAlias',
       'RegisterSlackWorkspaceForOrganization',
-      'UpdateSlackChannelConfiguration'
+      'UpdateSlackChannelConfiguration',
+      'RedeemSlackOauthCode'
     ],
     Read: [
       'GetAccountAlias',
       'ListSlackChannelConfigurations',
-      'ListSlackWorkspaceConfigurations'
+      'ListSlackWorkspaceConfigurations',
+      'DescribeSlackChannels',
+      'GetSlackOauthParameters'
     ]
   };
 }

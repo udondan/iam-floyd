@@ -2100,6 +2100,28 @@ export class S3 extends PolicyStatement {
     return this.to('UpdateStorageLensGroup');
   }
 
+  /**
+   * Grants permission to initiate the replication process by setting replication status of an object to pending
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
+   */
+  public toInitiateReplication() {
+    return this.to('InitiateReplication');
+  }
+
+  /**
+   * Grants permission to pause S3 Replication from target source buckets to destination buckets
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#bucket-pause-replication
+   */
+  public toPauseReplication() {
+    return this.to('PauseReplication');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AbortMultipartUpload',
@@ -2195,7 +2217,9 @@ export class S3 extends PolicyStatement {
       'UpdateJobPriority',
       'UpdateJobStatus',
       'UpdateObjectEncryption',
-      'UpdateStorageLensGroup'
+      'UpdateStorageLensGroup',
+      'InitiateReplication',
+      'PauseReplication'
     ],
     Read: [
       'AllowVendedLogDeliveryForResource',
@@ -2779,6 +2803,8 @@ export class S3 extends PolicyStatement {
    * - .toUpdateJobStatus()
    * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
+   * - .toInitiateReplication()
+   * - .toPauseReplication()
    *
    * Applies to resource types:
    * - accessgrant
@@ -3196,6 +3222,8 @@ export class S3 extends PolicyStatement {
    * - .toUpdateBucketMetadataInventoryTableConfiguration()
    * - .toUpdateBucketMetadataJournalTableConfiguration()
    * - .toUpdateObjectEncryption()
+   * - .toInitiateReplication()
+   * - .toPauseReplication()
    *
    * Applies to resource types:
    * - accesspointobject
@@ -3752,6 +3780,8 @@ export class S3 extends PolicyStatement {
    * - .toUpdateJobStatus()
    * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
+   * - .toInitiateReplication()
+   * - .toPauseReplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3942,6 +3972,7 @@ export class S3 extends PolicyStatement {
    * - .toUpdateJobStatus()
    * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
+   * - .toPauseReplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -4148,6 +4179,7 @@ export class S3 extends PolicyStatement {
    * - .toUpdateJobStatus()
    * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
+   * - .toPauseReplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4191,6 +4223,9 @@ export class S3 extends PolicyStatement {
    * Filters access by a specific replication destination region for targeted buckets of the AWS FIS action aws:s3:bucket-pause-replication
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html
+   *
+   * Applies to actions:
+   * - .toPauseReplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4594,6 +4629,7 @@ export class S3 extends PolicyStatement {
    * - .toUpdateJobStatus()
    * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
+   * - .toPauseReplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -4784,6 +4820,7 @@ export class S3 extends PolicyStatement {
    * - .toUpdateJobStatus()
    * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
+   * - .toPauseReplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -5025,6 +5062,7 @@ export class S3 extends PolicyStatement {
    * - .toUpdateJobStatus()
    * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
+   * - .toPauseReplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

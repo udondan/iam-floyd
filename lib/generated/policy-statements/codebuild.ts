@@ -674,6 +674,94 @@ export class Codebuild extends PolicyStatement {
     return this.to('UpdateWebhook');
   }
 
+  /**
+   * Grants permission to add or update information about a report
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public toBatchPutCodeCoverages() {
+    return this.to('BatchPutCodeCoverages');
+  }
+
+  /**
+   * Grants permission to add or update information about a report
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public toBatchPutTestCases() {
+    return this.to('BatchPutTestCases');
+  }
+
+  /**
+   * Grants permission to create a report. A report is created when tests specified in the buildspec file for a report groups run during the build of a project
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public toCreateReport() {
+    return this.to('CreateReport');
+  }
+
+  /**
+   * Grants permission to delete an OAuth token from a connected third-party OAuth provider. Only used in the AWS CodeBuild console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public toDeleteOAuthToken() {
+    return this.to('DeleteOAuthToken');
+  }
+
+  /**
+   * Grants permission to list connected third-party OAuth providers. Only used in the AWS CodeBuild console
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public toListConnectedOAuthAccounts() {
+    return this.to('ListConnectedOAuthAccounts');
+  }
+
+  /**
+   * Grants permission to list source code repositories from a connected third-party OAuth provider. Only used in the AWS CodeBuild console
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public toListRepositories() {
+    return this.to('ListRepositories');
+  }
+
+  /**
+   * Grants permission to save an OAuth token from a connected third-party OAuth provider. Only used in the AWS CodeBuild console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public toPersistOAuthToken() {
+    return this.to('PersistOAuthToken');
+  }
+
+  /**
+   * Grants permission to update information about a report
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public toUpdateReport() {
+    return this.to('UpdateReport');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchDeleteBuilds',
@@ -706,7 +794,13 @@ export class Codebuild extends PolicyStatement {
       'UpdateProject',
       'UpdateProjectVisibility',
       'UpdateReportGroup',
-      'UpdateWebhook'
+      'UpdateWebhook',
+      'BatchPutCodeCoverages',
+      'BatchPutTestCases',
+      'CreateReport',
+      'DeleteOAuthToken',
+      'PersistOAuthToken',
+      'UpdateReport'
     ],
     Read: [
       'BatchGetBuildBatches',
@@ -742,7 +836,9 @@ export class Codebuild extends PolicyStatement {
       'ListSandboxesForProject',
       'ListSharedProjects',
       'ListSharedReportGroups',
-      'ListSourceCredentials'
+      'ListSourceCredentials',
+      'ListConnectedOAuthAccounts',
+      'ListRepositories'
     ]
   };
 
@@ -918,6 +1014,10 @@ export class Codebuild extends PolicyStatement {
    * - .toUpdateProjectVisibility()
    * - .toUpdateReportGroup()
    * - .toUpdateWebhook()
+   * - .toBatchPutCodeCoverages()
+   * - .toBatchPutTestCases()
+   * - .toCreateReport()
+   * - .toUpdateReport()
    *
    * Applies to resource types:
    * - project

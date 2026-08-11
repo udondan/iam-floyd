@@ -9,6 +9,7 @@ shield:DeleteProtection;Write
 shield:DeleteProtectionGroup;Write
 shield:DeleteSubscription;Write
 shield:DescribeAttack;Read
+shield:DescribeAttackContributors;Read
 shield:DescribeAttackStatistics;Read
 shield:DescribeDRTAccess;Read
 shield:DescribeEmergencyContactSettings;Read
@@ -22,8 +23,10 @@ shield:DisassociateDRTRole;Write
 shield:DisassociateHealthCheck;Write
 shield:EnableApplicationLayerAutomaticResponse;Write
 shield:EnableProactiveEngagement;Write
+shield:GetGlobalThreatData;Read
 shield:GetSubscriptionState;Read
 shield:ListAttacks;List
+shield:ListMitigations;List
 shield:ListProtectionGroups;List
 shield:ListProtections;List
 shield:ListResourcesInProtectionGroup;List

@@ -4001,6 +4001,94 @@ export class Connect extends PolicyStatement {
     return this.to('UpdateWorkspaceVisibility');
   }
 
+  /**
+   * Grants permission to associate a Customer Profiles domain for an existing Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toAssociateCustomerProfilesDomain() {
+    return this.to('AssociateCustomerProfilesDomain');
+  }
+
+  /**
+   * Grants permission to describe the status of forecasting, planning, and scheduling integration on an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html
+   */
+  public toDescribeForecastingPlanningSchedulingIntegration() {
+    return this.to('DescribeForecastingPlanningSchedulingIntegration');
+  }
+
+  /**
+   * Grants permission to disassociate a Customer Profiles domain for an existing Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toDisassociateCustomerProfilesDomain() {
+    return this.to('DisassociateCustomerProfilesDomain');
+  }
+
+  /**
+   * Grants permission to send integration events using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/whatsapp-integration.html
+   */
+  public toSendIntegrationEvent() {
+    return this.to('SendIntegrationEvent');
+  }
+
+  /**
+   * Grants permission to send outbound chat messages using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html
+   */
+  public toSendOutboundChatMessage() {
+    return this.to('SendOutboundChatMessage');
+  }
+
+  /**
+   * Grants permission to send outbound web notifications using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SendOutboundWebNotification.html
+   */
+  public toSendOutboundWebNotification() {
+    return this.to('SendOutboundWebNotification');
+  }
+
+  /**
+   * Grants permission to enable forecasting, planning, and scheduling integration on an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html
+   */
+  public toStartForecastingPlanningSchedulingIntegration() {
+    return this.to('StartForecastingPlanningSchedulingIntegration');
+  }
+
+  /**
+   * Grants permission to disable forecasting, planning, and scheduling integration on an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html
+   */
+  public toStopForecastingPlanningSchedulingIntegration() {
+    return this.to('StopForecastingPlanningSchedulingIntegration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ActivateEvaluationForm',
@@ -4222,7 +4310,14 @@ export class Connect extends PolicyStatement {
       'UpdateWorkspaceMetadata',
       'UpdateWorkspacePage',
       'UpdateWorkspaceTheme',
-      'UpdateWorkspaceVisibility'
+      'UpdateWorkspaceVisibility',
+      'AssociateCustomerProfilesDomain',
+      'DisassociateCustomerProfilesDomain',
+      'SendIntegrationEvent',
+      'SendOutboundChatMessage',
+      'SendOutboundWebNotification',
+      'StartForecastingPlanningSchedulingIntegration',
+      'StopForecastingPlanningSchedulingIntegration'
     ],
     Read: [
       'BatchDescribeDataTableValue',
@@ -4300,7 +4395,8 @@ export class Connect extends PolicyStatement {
       'SearchUsers',
       'SearchViews',
       'SearchWorkspaceAssociations',
-      'SearchWorkspaces'
+      'SearchWorkspaces',
+      'DescribeForecastingPlanningSchedulingIntegration'
     ],
     List: [
       'BatchGetFlowAssociation',
@@ -5494,6 +5590,13 @@ export class Connect extends PolicyStatement {
    * - .toUpdateWorkspacePage()
    * - .toUpdateWorkspaceTheme()
    * - .toUpdateWorkspaceVisibility()
+   * - .toAssociateCustomerProfilesDomain()
+   * - .toDescribeForecastingPlanningSchedulingIntegration()
+   * - .toDisassociateCustomerProfilesDomain()
+   * - .toSendOutboundChatMessage()
+   * - .toSendOutboundWebNotification()
+   * - .toStartForecastingPlanningSchedulingIntegration()
+   * - .toStopForecastingPlanningSchedulingIntegration()
    *
    * Applies to resource types:
    * - agent-status
@@ -6067,6 +6170,11 @@ export class Connect extends PolicyStatement {
    * - .toUpdateWorkspacePage()
    * - .toUpdateWorkspaceTheme()
    * - .toUpdateWorkspaceVisibility()
+   * - .toDescribeForecastingPlanningSchedulingIntegration()
+   * - .toSendOutboundChatMessage()
+   * - .toSendOutboundWebNotification()
+   * - .toStartForecastingPlanningSchedulingIntegration()
+   * - .toStopForecastingPlanningSchedulingIntegration()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -6236,6 +6344,7 @@ export class Connect extends PolicyStatement {
    *
    * Applies to actions:
    * - .toStartOutboundChatContact()
+   * - .toSendOutboundChatMessage()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

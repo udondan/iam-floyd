@@ -1217,6 +1217,116 @@ export class Backup extends PolicyStatement {
     return this.to('UpdateTieringConfiguration');
   }
 
+  /**
+   * Grants permission to copy from a backup vault
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/vaults.html.html
+   */
+  public toCopyFromBackupVault() {
+    return this.to('CopyFromBackupVault');
+  }
+
+  /**
+   * Grants permission to copy into a backup vault
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/vaults.html
+   */
+  public toCopyIntoBackupVault() {
+    return this.to('CopyIntoBackupVault');
+  }
+
+  /**
+   * Grants permission to create a new access point for backup instant access
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-instant-access.html
+   */
+  public toCreateBackupAccessPoint() {
+    return this.to('CreateBackupAccessPoint');
+  }
+
+  /**
+   * Grants permission to delete the access point
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-instant-access.html
+   */
+  public toDeleteBackupAccessPoint() {
+    return this.to('DeleteBackupAccessPoint');
+  }
+
+  /**
+   * Grants permission to delete backup vault sharing policy
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/logicallyairgappedvault.html
+   */
+  public toDeleteBackupVaultSharingPolicy() {
+    return this.to('DeleteBackupVaultSharingPolicy');
+  }
+
+  /**
+   * Grants permission to return information about the specified access point
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-instant-access.html
+   */
+  public toDescribeBackupAccessPoint() {
+    return this.to('DescribeBackupAccessPoint');
+  }
+
+  /**
+   * Grants permission to get backup vault sharing policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/logicallyairgappedvault.html
+   */
+  public toGetBackupVaultSharingPolicy() {
+    return this.to('GetBackupVaultSharingPolicy');
+  }
+
+  /**
+   * Grants permission to list indexed recovery points to search
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListIndexedRecoveryPointsForSearch.html
+   */
+  public toListIndexedRecoveryPointsForSearch() {
+    return this.to('ListIndexedRecoveryPointsForSearch');
+  }
+
+  /**
+   * Grants permission to add a sharing policy to the backup vault
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/logicallyairgappedvault.html
+   */
+  public toPutBackupVaultSharingPolicy() {
+    return this.to('PutBackupVaultSharingPolicy');
+  }
+
+  /**
+   * Grants permission to search a recovery point
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_SearchRecoveryPoint.html
+   */
+  public toSearchRecoveryPoint() {
+    return this.to('SearchRecoveryPoint');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateBackupVaultMpaApprovalTeam',
@@ -1269,11 +1379,23 @@ export class Backup extends PolicyStatement {
       'UpdateReportPlan',
       'UpdateRestoreTestingPlan',
       'UpdateRestoreTestingSelection',
-      'UpdateTieringConfiguration'
+      'UpdateTieringConfiguration',
+      'CopyFromBackupVault',
+      'CopyIntoBackupVault',
+      'CreateBackupAccessPoint',
+      'DeleteBackupAccessPoint',
+      'DeleteBackupVaultSharingPolicy',
+      'ListIndexedRecoveryPointsForSearch',
+      'PutBackupVaultSharingPolicy',
+      'SearchRecoveryPoint'
     ],
     'Permissions management': [
       'DeleteBackupVaultAccessPolicy',
-      'PutBackupVaultAccessPolicy'
+      'PutBackupVaultAccessPolicy',
+      'DeleteBackupVaultSharingPolicy',
+      'ListIndexedRecoveryPointsForSearch',
+      'PutBackupVaultSharingPolicy',
+      'SearchRecoveryPoint'
     ],
     Read: [
       'DescribeBackupJob',
@@ -1305,7 +1427,9 @@ export class Backup extends PolicyStatement {
       'GetRestoreTestingSelection',
       'GetSupportedResourceTypes',
       'GetTieringConfiguration',
-      'ListTags'
+      'ListTags',
+      'DescribeBackupAccessPoint',
+      'GetBackupVaultSharingPolicy'
     ],
     List: [
       'ListBackupJobSummaries',
@@ -1499,6 +1623,7 @@ export class Backup extends PolicyStatement {
    * - .toCreateRestoreTestingPlan()
    * - .toCreateTieringConfiguration()
    * - .toTagResource()
+   * - .toCopyIntoBackupVault()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1584,6 +1709,13 @@ export class Backup extends PolicyStatement {
    * - .toUpdateRestoreTestingPlan()
    * - .toUpdateRestoreTestingSelection()
    * - .toUpdateTieringConfiguration()
+   * - .toCopyFromBackupVault()
+   * - .toCopyIntoBackupVault()
+   * - .toCreateBackupAccessPoint()
+   * - .toDeleteBackupVaultSharingPolicy()
+   * - .toGetBackupVaultSharingPolicy()
+   * - .toPutBackupVaultSharingPolicy()
+   * - .toSearchRecoveryPoint()
    *
    * Applies to resource types:
    * - backupPlan
@@ -1648,6 +1780,9 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys
    *
+   * Applies to actions:
+   * - .toCopyFromBackupVault()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1659,6 +1794,9 @@ export class Backup extends PolicyStatement {
    * Filters access by the ARN of a backup vault
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys
+   *
+   * Applies to actions:
+   * - .toCopyFromBackupVault()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`

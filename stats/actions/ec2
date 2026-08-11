@@ -33,11 +33,14 @@ ec2:AssociateTransitGatewayMulticastDomain;Write
 ec2:AssociateTransitGatewayPolicyTable;Write
 ec2:AssociateTransitGatewayRouteTable;Write
 ec2:AssociateTrunkInterface;Write
+ec2:AssociateVerifiedAccessInstanceWebAcl;Write
 ec2:AssociateVpcCidrBlock;Write
+ec2:AttachApplianceToNatGateway;Permissions management, Write
 ec2:AttachClassicLinkVpc;Write
 ec2:AttachImageWatermark;Write
 ec2:AttachInternetGateway;Write
 ec2:AttachNetworkInterface;Write
+ec2:AttachResourcesToPlacementGroup;Permissions management, Write
 ec2:AttachVerifiedAccessTrustProvider;Write
 ec2:AttachVolume;Write
 ec2:AttachVpnGateway;Write
@@ -71,6 +74,7 @@ ec2:CreateClientVpnEndpoint;Write
 ec2:CreateClientVpnRoute;Write
 ec2:CreateCoipCidr;Write
 ec2:CreateCoipPool;Write
+ec2:CreateCoipPoolPermission;Permissions management, Write
 ec2:CreateCustomerGateway;Write
 ec2:CreateDefaultSubnet;Write
 ec2:CreateDefaultVpc;Write
@@ -100,6 +104,7 @@ ec2:CreateLaunchTemplate;Write
 ec2:CreateLaunchTemplateVersion;Write
 ec2:CreateLocalGatewayRoute;Write
 ec2:CreateLocalGatewayRouteTable;Write
+ec2:CreateLocalGatewayRouteTablePermission;Permissions management, Write
 ec2:CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation;Write
 ec2:CreateLocalGatewayRouteTableVpcAssociation;Write
 ec2:CreateLocalGatewayVirtualInterface;Write
@@ -113,6 +118,7 @@ ec2:CreateNetworkInsightsAccessScope;Write
 ec2:CreateNetworkInsightsPath;Write
 ec2:CreateNetworkInterface;Write
 ec2:CreateNetworkInterfacePermission;Permissions management, Write
+ec2:CreateOdbNetworkPeering;Permissions management, Write
 ec2:CreatePlacementGroup;Write
 ec2:CreatePublicIpv4Pool;Write
 ec2:CreateReplaceRootVolumeTask;Write
@@ -172,6 +178,7 @@ ec2:DeleteClientVpnEndpoint;Write
 ec2:DeleteClientVpnRoute;Write
 ec2:DeleteCoipCidr;Write
 ec2:DeleteCoipPool;Write
+ec2:DeleteCoipPoolPermission;Permissions management, Write
 ec2:DeleteCustomerGateway;Write
 ec2:DeleteDhcpOptions;Write
 ec2:DeleteEgressOnlyInternetGateway;Write
@@ -195,6 +202,7 @@ ec2:DeleteLaunchTemplate;Write
 ec2:DeleteLaunchTemplateVersions;Write
 ec2:DeleteLocalGatewayRoute;Write
 ec2:DeleteLocalGatewayRouteTable;Write
+ec2:DeleteLocalGatewayRouteTablePermission;Permissions management, Write
 ec2:DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation;Write
 ec2:DeleteLocalGatewayRouteTableVpcAssociation;Write
 ec2:DeleteLocalGatewayVirtualInterface;Write
@@ -209,9 +217,11 @@ ec2:DeleteNetworkInsightsAnalysis;Write
 ec2:DeleteNetworkInsightsPath;Write
 ec2:DeleteNetworkInterface;Write
 ec2:DeleteNetworkInterfacePermission;Permissions management, Write
+ec2:DeleteOdbNetworkPeering;Permissions management, Write
 ec2:DeletePlacementGroup;Write
 ec2:DeletePublicIpv4Pool;Write
 ec2:DeleteQueuedReservedInstances;Write
+ec2:DeleteResourcePolicy;Permissions management, Write
 ec2:DeleteRoute;Write
 ec2:DeleteRouteServer;Write
 ec2:DeleteRouteServerEndpoint;Write
@@ -353,6 +363,7 @@ ec2:DescribeIpv6Pools;List
 ec2:DescribeKeyPairs;List
 ec2:DescribeLaunchTemplateVersions;List
 ec2:DescribeLaunchTemplates;List
+ec2:DescribeLocalGatewayRouteTablePermissions;List
 ec2:DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations;List
 ec2:DescribeLocalGatewayRouteTableVpcAssociations;List
 ec2:DescribeLocalGatewayRouteTables;List
@@ -430,6 +441,7 @@ ec2:DescribeTrunkInterfaceAssociations;List
 ec2:DescribeVerifiedAccessEndpoints;List
 ec2:DescribeVerifiedAccessGroups;List
 ec2:DescribeVerifiedAccessInstanceLoggingConfigurations;List
+ec2:DescribeVerifiedAccessInstanceWebAclAssociations;List
 ec2:DescribeVerifiedAccessInstances;List
 ec2:DescribeVerifiedAccessTrustProviders;List
 ec2:DescribeVolumeAttribute;List
@@ -454,10 +466,12 @@ ec2:DescribeVpcs;List
 ec2:DescribeVpnConcentrators;List
 ec2:DescribeVpnConnections;List
 ec2:DescribeVpnGateways;List
+ec2:DetachApplianceFromNatGateway;Permissions management, Write
 ec2:DetachClassicLinkVpc;Write
 ec2:DetachImageWatermark;Write
 ec2:DetachInternetGateway;Write
 ec2:DetachNetworkInterface;Write
+ec2:DetachResourcesFromPlacementGroup;Permissions management, Write
 ec2:DetachVerifiedAccessTrustProvider;Write
 ec2:DetachVolume;Write
 ec2:DetachVpnGateway;Write
@@ -499,6 +513,7 @@ ec2:DisassociateTransitGatewayMulticastDomain;Write
 ec2:DisassociateTransitGatewayPolicyTable;Write
 ec2:DisassociateTransitGatewayRouteTable;Write
 ec2:DisassociateTrunkInterface;Write
+ec2:DisassociateVerifiedAccessInstanceWebAcl;Write
 ec2:DisassociateVpcCidrBlock;Write
 ec2:EnableAddressTransfer;Write
 ec2:EnableAllowedImagesSettings;Write
@@ -575,6 +590,7 @@ ec2:GetNetworkInsightsAccessScopeAnalysisFindings;Read
 ec2:GetNetworkInsightsAccessScopeContent;Read
 ec2:GetPasswordData;Read
 ec2:GetReservedInstancesExchangeQuote;Read
+ec2:GetResourcePolicy;Read
 ec2:GetRouteServerAssociations;Read
 ec2:GetRouteServerPropagations;Read
 ec2:GetRouteServerRoutingDatabase;Read
@@ -594,16 +610,20 @@ ec2:GetTransitGatewayRouteTablePropagations;List
 ec2:GetVerifiedAccessEndpointPolicy;List
 ec2:GetVerifiedAccessEndpointTargets;List
 ec2:GetVerifiedAccessGroupPolicy;List
+ec2:GetVerifiedAccessInstanceWebAcl;List
 ec2:GetVpcResourcesBlockingEncryptionEnforcement;List
 ec2:GetVpnConnectionDeviceSampleConfiguration;List
 ec2:GetVpnConnectionDeviceTypes;List
 ec2:GetVpnTunnelReplacementStatus;List
+ec2:ImportByoipCidrToIpam;Write
 ec2:ImportClientVpnClientCertificateRevocationList;Write
 ec2:ImportImage;Write
 ec2:ImportInstance;Write
 ec2:ImportKeyPair;Write
 ec2:ImportSnapshot;Write
 ec2:ImportVolume;Write
+ec2:InjectApiError;Write
+ec2:InjectVolumeIOLatency;Write
 ec2:ListImagesInRecycleBin;List
 ec2:ListSnapshotsInRecycleBin;List
 ec2:ListVolumesInRecycleBin;List
@@ -647,6 +667,7 @@ ec2:ModifyLocalGatewayRoute;Write
 ec2:ModifyManagedPrefixList;Write
 ec2:ModifyManagedResourceVisibility;Write
 ec2:ModifyNetworkInterfaceAttribute;Write
+ec2:ModifyOdbNetworkPeering;Permissions management, Write
 ec2:ModifyPrivateDnsNameOptions;Write
 ec2:ModifyPublicIpDnsNameOptions;Write
 ec2:ModifyReservedInstances;Write
@@ -691,6 +712,7 @@ ec2:MonitorInstances;Write
 ec2:MoveAddressToVpc;Write
 ec2:MoveByoipCidrToIpam;Write
 ec2:MoveCapacityReservationInstances;Write
+ec2:PauseVolumeIO;Write
 ec2:ProvisionByoipCidr;Write
 ec2:ProvisionIpamByoasn;Write
 ec2:ProvisionIpamPoolCidr;Write
@@ -700,6 +722,7 @@ ec2:PurchaseCapacityBlockExtension;Write
 ec2:PurchaseHostReservation;Write
 ec2:PurchaseReservedInstancesOffering;Write
 ec2:PurchaseScheduledInstances;Write
+ec2:PutResourcePolicy;Permissions management, Write
 ec2:RebootInstances;Write
 ec2:RegisterImage;Write
 ec2:RegisterInstanceEventNotificationAttributes;Write
@@ -748,6 +771,7 @@ ec2:SearchLocalGatewayRoutes;List
 ec2:SearchTransitGatewayMulticastGroups;List
 ec2:SearchTransitGatewayRoutes;List
 ec2:SendDiagnosticInterrupt;Write
+ec2:SendSpotInstanceInterruptions;Write
 ec2:StartDeclarativePoliciesReport;Read
 ec2:StartInstances;Write
 ec2:StartNetworkInsightsAccessScopeAnalysis;Write

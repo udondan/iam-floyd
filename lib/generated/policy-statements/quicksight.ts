@@ -3210,6 +3210,461 @@ export class Quicksight extends PolicyStatement {
     return this.to('UpdateVPCConnection');
   }
 
+  /**
+   * Grants permission to enable setting default access to AWS resources
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/accessing-data-sources.html
+   */
+  public toAccountConfigurations() {
+    return this.to('AccountConfigurations');
+  }
+
+  /**
+   * Grants permission to configure log delivery for QuickSuite instance
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
+   * Grants permission to get user preferences
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toBatchGetPreferences() {
+    return this.to('BatchGetPreferences');
+  }
+
+  /**
+   * Grants permission to update user preferences
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toBatchUpdatePreferences() {
+    return this.to('BatchUpdatePreferences');
+  }
+
+  /**
+   * Grants permission to provision Amazon QuickSight administrators, authors, and readers
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toCreateAdmin() {
+    return this.to('CreateAdmin');
+  }
+
+  /**
+   * Grants permission to create a QuickSight email customization template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
+   */
+  public toCreateEmailCustomizationTemplate() {
+    return this.to('CreateEmailCustomizationTemplate');
+  }
+
+  /**
+   * Grants permission to create an extension access
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toCreateExtensionAccess() {
+    return this.to('CreateExtensionAccess');
+  }
+
+  /**
+   * Grants permission to provision Amazon QuickSight readers
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toCreateReader() {
+    return this.to('CreateReader');
+  }
+
+  /**
+   * Grants permission to provision Amazon QuickSight authors and readers
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toCreateUser() {
+    return this.to('CreateUser');
+  }
+
+  /**
+   * Grants permission to delete a QuickSight email customization template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
+   */
+  public toDeleteEmailCustomizationTemplate() {
+    return this.to('DeleteEmailCustomizationTemplate');
+  }
+
+  /**
+   * Grants permission to delete an extension access
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toDeleteExtensionAccess() {
+    return this.to('DeleteExtensionAccess');
+  }
+
+  /**
+   * Grants permission to describe chat configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toDescribeChatConfiguration() {
+    return this.to('DescribeChatConfiguration');
+  }
+
+  /**
+   * Grants permission to describe a QuickSight email customization template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
+   */
+  public toDescribeEmailCustomizationTemplate() {
+    return this.to('DescribeEmailCustomizationTemplate');
+  }
+
+  /**
+   * Grants permission to describe an extension access
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toDescribeExtensionAccess() {
+    return this.to('DescribeExtensionAccess');
+  }
+
+  /**
+   * Grants permission to describe index capacity
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toDescribeQuickIndexCapacity() {
+    return this.to('DescribeQuickIndexCapacity');
+  }
+
+  /**
+   * Grants permission to get a URL used to embed a QuickSight Dashboard for a user not registered with QuickSight
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toGetAnonymousUserEmbedUrl() {
+    return this.to('GetAnonymousUserEmbedUrl');
+  }
+
+  /**
+   * Grants permission to get an auth code representing a QuickSight user
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toGetAuthCode() {
+    return this.to('GetAuthCode');
+  }
+
+  /**
+   * Grants permission to get information about the custom permissions in an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toGetCustomPermissionsSummary() {
+    return this.to('GetCustomPermissionsSummary');
+  }
+
+  /**
+   * Grants permission to use Amazon QuickSight, in Enterprise edition, to identify and display the Microsoft Active Directory (Microsoft Active Directory) directory groups that are mapped to roles in Amazon QuickSight
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toGetGroupMapping() {
+    return this.to('GetGroupMapping');
+  }
+
+  /**
+   * Grants permission to list all registered customer managed keys
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/key-management.html
+   */
+  public toListCustomerManagedKeys() {
+    return this.to('ListCustomerManagedKeys');
+  }
+
+  /**
+   * Grants permission to list extension accesses
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toListExtensionAccesses() {
+    return this.to('ListExtensionAccesses');
+  }
+
+  /**
+   * Grants permission to list a user's KMS keys
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/key-management.html
+   */
+  public toListKMSKeysForUser() {
+    return this.to('ListKMSKeysForUser');
+  }
+
+  /**
+   * Grants permission to list users index capacity
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toListUsersIndexCapacity() {
+    return this.to('ListUsersIndexCapacity');
+  }
+
+  /**
+   * Grants permission to use a dataset for a template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-api-overview.html
+   */
+  public toPassDataSet() {
+    return this.to('PassDataSet');
+  }
+
+  /**
+   * Grants permission to use a data source for a data set
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-api-overview.html
+   */
+  public toPassDataSource() {
+    return this.to('PassDataSource');
+  }
+
+  /**
+   * Grants permission to use a topic for a template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-api-overview.html
+   */
+  public toPassTopic() {
+    return this.to('PassTopic');
+  }
+
+  /**
+   * Grants permission to get QuickSuite usage metrics
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toQuickSuiteUsageMetrics() {
+    return this.to('QuickSuiteUsageMetrics');
+  }
+
+  /**
+   * Grants permission to register a customer managed key
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/key-management.html
+   */
+  public toRegisterCustomerManagedKey() {
+    return this.to('RegisterCustomerManagedKey');
+  }
+
+  /**
+   * Grants permission to remove a customer managed key
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/key-management.html
+   */
+  public toRemoveCustomerManagedKey() {
+    return this.to('RemoveCustomerManagedKey');
+  }
+
+  /**
+   * Grants permission to manage scoping policies for permissions to AWS resources
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/accessing-data-sources.html
+   */
+  public toScopeDownPolicy() {
+    return this.to('ScopeDownPolicy');
+  }
+
+  /**
+   * Grants permission to use Amazon QuickSight, in Enterprise edition, to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toSearchDirectoryGroups() {
+    return this.to('SearchDirectoryGroups');
+  }
+
+  /**
+   * Grants permission to search the QuickSight users belonging to this account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toSearchUsers() {
+    return this.to('SearchUsers');
+  }
+
+  /**
+   * Grants permission to use Amazon QuickSight, in Enterprise edition, to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toSetGroupMapping() {
+    return this.to('SetGroupMapping');
+  }
+
+  /**
+   * Grants permission to subscribe to Amazon QuickSight, and also to allow the user to upgrade the subscription to Enterprise edition
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDirectoryType()
+   * - .ifEdition()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toSubscribe() {
+    return this.to('Subscribe');
+  }
+
+  /**
+   * Grants permission to unpublish a flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toUnpublishFlow() {
+    return this.to('UnpublishFlow');
+  }
+
+  /**
+   * Grants permission to unsubscribe from Amazon QuickSight, which permanently deletes all users and their resources from Amazon QuickSight
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toUnsubscribe() {
+    return this.to('Unsubscribe');
+  }
+
+  /**
+   * Grants permission to update chat configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toUpdateChatConfiguration() {
+    return this.to('UpdateChatConfiguration');
+  }
+
+  /**
+   * Grants permission to update a QuickSight email customization template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
+   */
+  public toUpdateEmailCustomizationTemplate() {
+    return this.to('UpdateEmailCustomizationTemplate');
+  }
+
+  /**
+   * Grants permission to update an extension access
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toUpdateExtensionAccess() {
+    return this.to('UpdateExtensionAccess');
+  }
+
+  /**
+   * Grants permission to update index capacity
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toUpdateQuickIndexCapacity() {
+    return this.to('UpdateQuickIndexCapacity');
+  }
+
+  /**
+   * Grants permission to update resource-level permissions in QuickSight
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html
+   */
+  public toUpdateResourcePermissions() {
+    return this.to('UpdateResourcePermissions');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchAssignLimitsProfile',
@@ -3367,7 +3822,29 @@ export class Quicksight extends PolicyStatement {
       'UpdateTopicRefreshSchedule',
       'UpdateUser',
       'UpdateUserCustomPermission',
-      'UpdateVPCConnection'
+      'UpdateVPCConnection',
+      'AccountConfigurations',
+      'AllowVendedLogDeliveryForResource',
+      'BatchUpdatePreferences',
+      'CreateAdmin',
+      'CreateEmailCustomizationTemplate',
+      'CreateExtensionAccess',
+      'CreateReader',
+      'CreateUser',
+      'DeleteEmailCustomizationTemplate',
+      'DeleteExtensionAccess',
+      'RegisterCustomerManagedKey',
+      'RemoveCustomerManagedKey',
+      'ScopeDownPolicy',
+      'SetGroupMapping',
+      'Subscribe',
+      'UnpublishFlow',
+      'Unsubscribe',
+      'UpdateChatConfiguration',
+      'UpdateEmailCustomizationTemplate',
+      'UpdateExtensionAccess',
+      'UpdateQuickIndexCapacity',
+      'UpdateResourcePermissions'
     ],
     Read: [
       'DescribeAccountCustomPermission',
@@ -3440,7 +3917,20 @@ export class Quicksight extends PolicyStatement {
       'ListFolderMembers',
       'ListTagsForResource',
       'PredictQAResults',
-      'SearchFolders'
+      'SearchFolders',
+      'BatchGetPreferences',
+      'DescribeChatConfiguration',
+      'DescribeEmailCustomizationTemplate',
+      'DescribeExtensionAccess',
+      'DescribeQuickIndexCapacity',
+      'GetAnonymousUserEmbedUrl',
+      'GetAuthCode',
+      'GetCustomPermissionsSummary',
+      'GetGroupMapping',
+      'PassDataSet',
+      'PassDataSource',
+      'PassTopic',
+      'QuickSuiteUsageMetrics'
     ],
     'Permissions management': [
       'DescribeAutomationGroupPermissions',
@@ -3461,7 +3951,8 @@ export class Quicksight extends PolicyStatement {
       'UpdateSpacePermissions',
       'UpdateTemplatePermissions',
       'UpdateThemePermissions',
-      'UpdateTopicPermissions'
+      'UpdateTopicPermissions',
+      'AllowVendedLogDeliveryForResource'
     ],
     List: [
       'ListActionConnectors',
@@ -3521,7 +4012,13 @@ export class Quicksight extends PolicyStatement {
       'SearchGroups',
       'SearchKnowledgeBases',
       'SearchSpaces',
-      'SearchTopics'
+      'SearchTopics',
+      'ListCustomerManagedKeys',
+      'ListExtensionAccesses',
+      'ListKMSKeysForUser',
+      'ListUsersIndexCapacity',
+      'SearchDirectoryGroups',
+      'SearchUsers'
     ],
     Tagging: [
       'TagResource',
@@ -4165,6 +4662,10 @@ export class Quicksight extends PolicyStatement {
    * - .toUpdateTopic()
    * - .toUpdateTopicPermissions()
    * - .toUpdateVPCConnection()
+   * - .toCreateEmailCustomizationTemplate()
+   * - .toPassDataSet()
+   * - .toPassDataSource()
+   * - .toPassTopic()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -4343,6 +4844,19 @@ export class Quicksight extends PolicyStatement {
    * - .toUpdateUser()
    * - .toUpdateUserCustomPermission()
    * - .toUpdateVPCConnection()
+   * - .toCreateAdmin()
+   * - .toCreateEmailCustomizationTemplate()
+   * - .toCreateReader()
+   * - .toCreateUser()
+   * - .toDeleteEmailCustomizationTemplate()
+   * - .toDescribeEmailCustomizationTemplate()
+   * - .toGetAuthCode()
+   * - .toPassDataSet()
+   * - .toPassDataSource()
+   * - .toPassTopic()
+   * - .toSearchUsers()
+   * - .toUnpublishFlow()
+   * - .toUpdateEmailCustomizationTemplate()
    *
    * Applies to resource types:
    * - actionconnector
@@ -4438,6 +4952,10 @@ export class Quicksight extends PolicyStatement {
    * - .toUpdateTopic()
    * - .toUpdateTopicPermissions()
    * - .toUpdateVPCConnection()
+   * - .toCreateEmailCustomizationTemplate()
+   * - .toPassDataSet()
+   * - .toPassDataSource()
+   * - .toPassTopic()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4470,6 +4988,7 @@ export class Quicksight extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAccountSubscription()
+   * - .toSubscribe()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4485,6 +5004,7 @@ export class Quicksight extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAccountSubscription()
+   * - .toSubscribe()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

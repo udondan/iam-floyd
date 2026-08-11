@@ -226,6 +226,28 @@ export class Route53profiles extends PolicyStatement {
     return this.to('UpdateProfileResourceAssociation');
   }
 
+  /**
+   * Grants permission to read the RAM access control policy for a Profile
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/sharing-profiles.html
+   */
+  public toGetProfilePolicy() {
+    return this.to('GetProfilePolicy');
+  }
+
+  /**
+   * Grants permission to define the RAM access control policy for a Profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/sharing-profiles.html
+   */
+  public toPutProfilePolicy() {
+    return this.to('PutProfilePolicy');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateProfile',
@@ -236,12 +258,14 @@ export class Route53profiles extends PolicyStatement {
       'DisassociateResourceFromProfile',
       'TagResource',
       'UntagResource',
-      'UpdateProfileResourceAssociation'
+      'UpdateProfileResourceAssociation',
+      'PutProfilePolicy'
     ],
     Read: [
       'GetProfile',
       'GetProfileAssociation',
-      'GetProfileResourceAssociation'
+      'GetProfileResourceAssociation',
+      'GetProfilePolicy'
     ],
     List: [
       'ListProfileAssociations',
@@ -315,6 +339,8 @@ export class Route53profiles extends PolicyStatement {
    * Applies to actions:
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toGetProfilePolicy()
+   * - .toPutProfilePolicy()
    *
    * Applies to resource types:
    * - profile

@@ -546,6 +546,94 @@ export class Fsx extends PolicyStatement {
     return this.to('UpdateVolume');
   }
 
+  /**
+   * Grants permission to associate a File Gateway instance with an Amazon FSx for Windows File Server file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html
+   */
+  public toAssociateFileGateway() {
+    return this.to('AssociateFileGateway');
+  }
+
+  /**
+   * Grants permission to allow deletion of an FSx for ONTAP SnapLock Enterprise volume that contains WORM (write once, read many) files with active retention periods
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#bypass-enterprise
+   */
+  public toBypassSnaplockEnterpriseRetention() {
+    return this.to('BypassSnaplockEnterpriseRetention');
+  }
+
+  /**
+   * Grants permission to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and GetResourcePolicy are also required
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to describe the File Gateway instances associated with an Amazon FSx for Windows File Server file system
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html
+   */
+  public toDescribeAssociatedFileGateways() {
+    return this.to('DescribeAssociatedFileGateways');
+  }
+
+  /**
+   * Grants permission to disassociate a File Gateway instance from an Amazon FSx for Windows File Server file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html
+   */
+  public toDisassociateFileGateway() {
+    return this.to('DisassociateFileGateway');
+  }
+
+  /**
+   * Grants permission to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and DeleteResourcePolicy are also required
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to manage backup principal associations through AWS Backup
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopyBackup.html
+   */
+  public toManageBackupPrincipalAssociations() {
+    return this.to('ManageBackupPrincipalAssociations');
+  }
+
+  /**
+   * Grants permission to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). DeleteResourcePolicy and GetResourcePolicy are also required
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateFileSystemAliases',
@@ -583,7 +671,14 @@ export class Fsx extends PolicyStatement {
       'UpdateSharedVpcConfiguration',
       'UpdateSnapshot',
       'UpdateStorageVirtualMachine',
-      'UpdateVolume'
+      'UpdateVolume',
+      'AssociateFileGateway',
+      'BypassSnaplockEnterpriseRetention',
+      'DeleteResourcePolicy',
+      'DisassociateFileGateway',
+      'GetResourcePolicy',
+      'ManageBackupPrincipalAssociations',
+      'PutResourcePolicy'
     ],
     Read: [
       'DescribeBackups',
@@ -597,11 +692,19 @@ export class Fsx extends PolicyStatement {
       'DescribeSnapshots',
       'DescribeStorageVirtualMachines',
       'DescribeVolumes',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'DescribeAssociatedFileGateways'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'BypassSnaplockEnterpriseRetention',
+      'DeleteResourcePolicy',
+      'GetResourcePolicy',
+      'ManageBackupPrincipalAssociations',
+      'PutResourcePolicy'
     ]
   };
 
@@ -817,6 +920,14 @@ export class Fsx extends PolicyStatement {
    * - .toUpdateSnapshot()
    * - .toUpdateStorageVirtualMachine()
    * - .toUpdateVolume()
+   * - .toAssociateFileGateway()
+   * - .toBypassSnaplockEnterpriseRetention()
+   * - .toDeleteResourcePolicy()
+   * - .toDescribeAssociatedFileGateways()
+   * - .toDisassociateFileGateway()
+   * - .toGetResourcePolicy()
+   * - .toManageBackupPrincipalAssociations()
+   * - .toPutResourcePolicy()
    *
    * Applies to resource types:
    * - association

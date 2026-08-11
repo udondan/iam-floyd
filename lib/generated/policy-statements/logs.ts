@@ -1305,6 +1305,171 @@ export class Logs extends PolicyStatement {
     return this.to('UpdateScheduledQuery');
   }
 
+  /**
+   * Grants permission to authenticate requests using bearer token
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html
+   */
+  public toCallWithBearerToken() {
+    return this.to('CallWithBearerToken');
+  }
+
+  /**
+   * Grants permission to create the log delivery
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html
+   */
+  public toCreateLogDelivery() {
+    return this.to('CreateLogDelivery');
+  }
+
+  /**
+   * Grants permission to delete the log delivery information for specified log delivery
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html
+   */
+  public toDeleteLogDelivery() {
+    return this.to('DeleteLogDelivery');
+  }
+
+  /**
+   * Grants permission to delete telemetry pipeline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toDeletePipelineRule() {
+    return this.to('DeletePipelineRule');
+  }
+
+  /**
+   * Grants permission to get the log delivery information for specified log delivery
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html
+   */
+  public toGetLogDelivery() {
+    return this.to('GetLogDelivery');
+  }
+
+  /**
+   * Grants permission to deliver log events to S3 Tables
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toIntegrateWithS3Table() {
+    return this.to('IntegrateWithS3Table');
+  }
+
+  /**
+   * Grants permission to share CloudWatch resources with a monitoring account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions
+   */
+  public toLink() {
+    return this.to('Link');
+  }
+
+  /**
+   * Grants permission to retrieve all the entities that are associated with log group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toListEntitiesForLogGroup() {
+    return this.to('ListEntitiesForLogGroup');
+  }
+
+  /**
+   * Grants permission to list all the log deliveries for specified account and/or log source
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html
+   */
+  public toListLogDeliveries() {
+    return this.to('ListLogDeliveries');
+  }
+
+  /**
+   * Grants permission to retrieve all the log groups that are associated with entity
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toListLogGroupsForEntity() {
+    return this.to('ListLogGroupsForEntity');
+  }
+
+  /**
+   * Grants permission to process and transform log events through pipeline transformers before storage
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toProcessWithPipeline() {
+    return this.to('ProcessWithPipeline');
+  }
+
+  /**
+   * Grants permission to create telemetry pipeline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toPutPipelineRule() {
+    return this.to('PutPipelineRule');
+  }
+
+  /**
+   * Grants permission to stop a Live Tail session that is in progress
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs_LiveTail.html
+   */
+  public toStopLiveTail() {
+    return this.to('StopLiveTail');
+  }
+
+  /**
+   * Grants permission to fetch unmasked log events that have been redacted with a data protection policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html
+   */
+  public toUnmask() {
+    return this.to('Unmask');
+  }
+
+  /**
+   * Grants permission to update the log delivery information for specified log delivery
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html
+   */
+  public toUpdateLogDelivery() {
+    return this.to('UpdateLogDelivery');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateKmsKey',
@@ -1370,7 +1535,16 @@ export class Logs extends PolicyStatement {
       'UpdateDeliveryConfiguration',
       'UpdateLogAnomalyDetector',
       'UpdateLookupTable',
-      'UpdateScheduledQuery'
+      'UpdateScheduledQuery',
+      'CallWithBearerToken',
+      'CreateLogDelivery',
+      'DeleteLogDelivery',
+      'DeletePipelineRule',
+      'IntegrateWithS3Table',
+      'Link',
+      'ProcessWithPipeline',
+      'PutPipelineRule',
+      'UpdateLogDelivery'
     ],
     'Permissions management': [
       'DeleteResourcePolicy',
@@ -1406,7 +1580,10 @@ export class Logs extends PolicyStatement {
       'ListSourcesForS3TableIntegration',
       'ListSyslogConfigurations',
       'ListTagsForResource',
-      'ListTagsLogGroup'
+      'ListTagsLogGroup',
+      'ListEntitiesForLogGroup',
+      'ListLogDeliveries',
+      'ListLogGroupsForEntity'
     ],
     Read: [
       'FilterLogEvents',
@@ -1431,7 +1608,10 @@ export class Logs extends PolicyStatement {
       'StartQuery',
       'StopQuery',
       'TestMetricFilter',
-      'TestTransformer'
+      'TestTransformer',
+      'GetLogDelivery',
+      'StopLiveTail',
+      'Unmask'
     ],
     Tagging: [
       'TagLogGroup',
@@ -1699,6 +1879,9 @@ export class Logs extends PolicyStatement {
    * - .toUpdateLogAnomalyDetector()
    * - .toUpdateLookupTable()
    * - .toUpdateScheduledQuery()
+   * - .toIntegrateWithS3Table()
+   * - .toProcessWithPipeline()
+   * - .toUnmask()
    *
    * Applies to resource types:
    * - anomaly-detector
@@ -1781,6 +1964,10 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html
    *
+   * Applies to actions:
+   * - .toIntegrateWithS3Table()
+   * - .toProcessWithPipeline()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1792,6 +1979,10 @@ export class Logs extends PolicyStatement {
    * Filters access by the data source type passed in the request
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html
+   *
+   * Applies to actions:
+   * - .toIntegrateWithS3Table()
+   * - .toProcessWithPipeline()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

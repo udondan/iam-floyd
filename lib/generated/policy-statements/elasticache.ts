@@ -854,6 +854,17 @@ export class Elasticache extends PolicyStatement {
     return this.to('TestMigration');
   }
 
+  /**
+   * Grants permission to test an AZ power interruption for an ElastiCache resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#elasticache-actions-reference
+   */
+  public toInterruptClusterAzPower() {
+    return this.to('InterruptClusterAzPower');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddTagsToResource',
@@ -914,7 +925,8 @@ export class Elasticache extends PolicyStatement {
       'RevokeCacheSecurityGroupIngress',
       'StartMigration',
       'TestFailover',
-      'TestMigration'
+      'TestMigration',
+      'InterruptClusterAzPower'
     ],
     List: [
       'DescribeCacheClusters',
@@ -1285,6 +1297,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - cluster
@@ -1376,6 +1389,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - cluster
@@ -1467,6 +1481,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - cluster
@@ -1524,6 +1539,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - globalreplicationgroup
@@ -1575,6 +1591,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - cluster
@@ -1623,6 +1640,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - globalreplicationgroup
@@ -1674,6 +1692,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - cluster
@@ -1733,6 +1752,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - cluster
@@ -1783,6 +1803,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - globalreplicationgroup
@@ -1849,6 +1870,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - replicationgroup
@@ -1906,6 +1928,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - cluster
@@ -1966,6 +1989,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - cluster
@@ -2029,6 +2053,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - globalreplicationgroup
@@ -2192,6 +2217,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - cluster
@@ -2240,6 +2266,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - globalreplicationgroup
@@ -2288,6 +2315,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - globalreplicationgroup
@@ -2346,6 +2374,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - cluster
@@ -2396,6 +2425,7 @@ export class Elasticache extends PolicyStatement {
    * - .toStartMigration()
    * - .toTestFailover()
    * - .toTestMigration()
+   * - .toInterruptClusterAzPower()
    *
    * Applies to resource types:
    * - globalreplicationgroup

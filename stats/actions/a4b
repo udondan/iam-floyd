@@ -5,6 +5,7 @@ a4b:AssociateDeviceWithRoom;Write
 a4b:AssociateSkillGroupWithRoom;Write
 a4b:AssociateSkillWithSkillGroup;Write
 a4b:AssociateSkillWithUsers;Write
+a4b:CompleteRegistration;Write
 a4b:CreateAddressBook;Write
 a4b:CreateBusinessReportSchedule;Write
 a4b:CreateConferenceProvider;Write
@@ -59,10 +60,12 @@ a4b:ListSkillsStoreSkillsByCategory;List
 a4b:ListSmartHomeAppliances;List
 a4b:ListTags;Read
 a4b:PutConferencePreference;Write
+a4b:PutDeviceSetupEvents;Write
 a4b:PutInvitationConfiguration;Write
 a4b:PutRoomSkillParameter;Write
 a4b:PutSkillAuthorization;Write
 a4b:RegisterAVSDevice;Write
+a4b:RegisterDevice;Write
 a4b:RejectSkill;Write
 a4b:ResolveRoom;Read
 a4b:RevokeInvitation;Write

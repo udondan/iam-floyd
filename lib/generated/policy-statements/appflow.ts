@@ -301,6 +301,70 @@ export class Appflow extends PolicyStatement {
     return this.to('UpdateFlow');
   }
 
+  /**
+   * Grants permission to describe all fields for an object in a login profile configured in Amazon AppFlow (Console Only)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
+   */
+  public toDescribeConnectorFields() {
+    return this.to('DescribeConnectorFields');
+  }
+
+  /**
+   * Grants permission to describe all flow executions for a flow configured in Amazon AppFlow (Console Only)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
+   */
+  public toDescribeFlowExecution() {
+    return this.to('DescribeFlowExecution');
+  }
+
+  /**
+   * Grants permission to describe all flows configured in Amazon AppFlow (Console Only)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
+   */
+  public toDescribeFlows() {
+    return this.to('DescribeFlows');
+  }
+
+  /**
+   * Grants permission to list all objects for a login profile configured in Amazon AppFlow (Console Only)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
+   */
+  public toListConnectorFields() {
+    return this.to('ListConnectorFields');
+  }
+
+  /**
+   * Grants permission to run a flow configured in Amazon AppFlow (Console Only)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
+   */
+  public toRunFlow() {
+    return this.to('RunFlow');
+  }
+
+  /**
+   * Grants permission to use a connector profile while creating a flow in Amazon AppFlow
+   *
+   * Access Level: Write
+   */
+  public toUseConnectorProfile() {
+    return this.to('UseConnectorProfile');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelFlowExecutions',
@@ -317,7 +381,9 @@ export class Appflow extends PolicyStatement {
       'UntagResource',
       'UpdateConnectorProfile',
       'UpdateConnectorRegistration',
-      'UpdateFlow'
+      'UpdateFlow',
+      'RunFlow',
+      'UseConnectorProfile'
     ],
     Read: [
       'DescribeConnector',
@@ -326,7 +392,11 @@ export class Appflow extends PolicyStatement {
       'DescribeConnectors',
       'DescribeFlow',
       'DescribeFlowExecutionRecords',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'DescribeConnectorFields',
+      'DescribeFlowExecution',
+      'DescribeFlows',
+      'ListConnectorFields'
     ],
     List: [
       'ListConnectorEntities',
@@ -428,6 +498,8 @@ export class Appflow extends PolicyStatement {
    * - .toUntagResource()
    * - .toUpdateConnectorRegistration()
    * - .toUpdateFlow()
+   * - .toDescribeFlowExecution()
+   * - .toRunFlow()
    *
    * Applies to resource types:
    * - connector

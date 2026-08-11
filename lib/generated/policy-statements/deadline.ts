@@ -1316,6 +1316,28 @@ export class Deadline extends PolicyStatement {
     return this.to('UpdateWorkerSchedule');
   }
 
+  /**
+   * Grants permission to get the latest version of an application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html
+   */
+  public toGetApplicationVersion() {
+    return this.to('GetApplicationVersion');
+  }
+
+  /**
+   * Grants permission to read job template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/working-with-deadline-monitor.html
+   */
+  public toGetJobTemplate() {
+    return this.to('GetJobTemplate');
+  }
+
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AssociateMemberToFarm',
@@ -1418,7 +1440,9 @@ export class Deadline extends PolicyStatement {
       'SearchSteps',
       'SearchTasks',
       'SearchWorkers',
-      'StartSessionsStatisticsAggregation'
+      'StartSessionsStatisticsAggregation',
+      'GetApplicationVersion',
+      'GetJobTemplate'
     ],
     List: [
       'ListAvailableMeteredProducts',
@@ -1778,6 +1802,8 @@ export class Deadline extends PolicyStatement {
    * - .toUpdateTask()
    * - .toUpdateWorker()
    * - .toUpdateWorkerSchedule()
+   * - .toGetApplicationVersion()
+   * - .toGetJobTemplate()
    *
    * Applies to resource types:
    * - budget
@@ -1968,6 +1994,7 @@ export class Deadline extends PolicyStatement {
    * - .toUpdateTask()
    * - .toUpdateWorker()
    * - .toUpdateWorkerSchedule()
+   * - .toGetJobTemplate()
    *
    * Applies to resource types:
    * - budget
@@ -2069,6 +2096,7 @@ export class Deadline extends PolicyStatement {
    * - .toUpdateSession()
    * - .toUpdateStep()
    * - .toUpdateTask()
+   * - .toGetJobTemplate()
    *
    * Applies to resource types:
    * - job
@@ -2180,6 +2208,7 @@ export class Deadline extends PolicyStatement {
    * - .toUpdateSession()
    * - .toUpdateStep()
    * - .toUpdateTask()
+   * - .toGetJobTemplate()
    *
    * Applies to resource types:
    * - job

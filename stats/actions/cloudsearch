@@ -27,3 +27,6 @@ cloudsearch:UpdateAvailabilityOptions;Write
 cloudsearch:UpdateDomainEndpointOptions;Write
 cloudsearch:UpdateScalingParameters;Write
 cloudsearch:UpdateServiceAccessPolicies;Permissions management, Write
+cloudsearch:document;Write
+cloudsearch:search;Read
+cloudsearch:suggest;Read

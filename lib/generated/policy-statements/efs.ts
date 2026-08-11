@@ -364,6 +364,83 @@ export class Elasticfilesystem extends PolicyStatement {
     return this.to('UpdateFileSystemProtection');
   }
 
+  /**
+   * Grants permission to start a backup job for an existing file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/efs-backup-solutions.html
+   */
+  public toBackup() {
+    return this.to('Backup');
+  }
+
+  /**
+   * Grants permission to allow an NFS client read-access to a file system
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html
+   */
+  public toClientMount() {
+    return this.to('ClientMount');
+  }
+
+  /**
+   * Grants permission to allow an NFS client root-access to a file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html
+   */
+  public toClientRootAccess() {
+    return this.to('ClientRootAccess');
+  }
+
+  /**
+   * Grants permission to allow an NFS client write-access to a file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html
+   */
+  public toClientWrite() {
+    return this.to('ClientWrite');
+  }
+
+  /**
+   * Grants permission to read file system data for replication
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html
+   */
+  public toReplicationRead() {
+    return this.to('ReplicationRead');
+  }
+
+  /**
+   * Grants permission to replicate data to a file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html
+   */
+  public toReplicationWrite() {
+    return this.to('ReplicationWrite');
+  }
+
+  /**
+   * Grants permission to start a restore job for a backup of a file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/efs-backup-solutions.html
+   */
+  public toRestore() {
+    return this.to('Restore');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateAccessPoint',
@@ -385,7 +462,12 @@ export class Elasticfilesystem extends PolicyStatement {
       'TagResource',
       'UntagResource',
       'UpdateFileSystem',
-      'UpdateFileSystemProtection'
+      'UpdateFileSystemProtection',
+      'Backup',
+      'ClientRootAccess',
+      'ClientWrite',
+      'ReplicationWrite',
+      'Restore'
     ],
     Tagging: [
       'CreateTags',
@@ -410,7 +492,9 @@ export class Elasticfilesystem extends PolicyStatement {
       'DescribeMountTargetSecurityGroups',
       'DescribeMountTargets',
       'DescribeTags',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'ClientMount',
+      'ReplicationRead'
     ]
   };
 
@@ -501,6 +585,13 @@ export class Elasticfilesystem extends PolicyStatement {
    * - .toUntagResource()
    * - .toUpdateFileSystem()
    * - .toUpdateFileSystemProtection()
+   * - .toBackup()
+   * - .toClientMount()
+   * - .toClientRootAccess()
+   * - .toClientWrite()
+   * - .toReplicationRead()
+   * - .toReplicationWrite()
+   * - .toRestore()
    *
    * Applies to resource types:
    * - access-point
@@ -539,6 +630,11 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html
    *
+   * Applies to actions:
+   * - .toClientMount()
+   * - .toClientRootAccess()
+   * - .toClientWrite()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
@@ -550,6 +646,11 @@ export class Elasticfilesystem extends PolicyStatement {
    * Filters access by whether the file system is accessed via mount targets
    *
    * https://docs.aws.amazon.com/efs/latest/ug/mounting-fs.html
+   *
+   * Applies to actions:
+   * - .toClientMount()
+   * - .toClientRootAccess()
+   * - .toClientWrite()
    *
    * @param value `true` or `false`. **Default:** `true`
    */

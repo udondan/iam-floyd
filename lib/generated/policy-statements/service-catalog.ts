@@ -1347,6 +1347,39 @@ export class Servicecatalog extends PolicyStatement {
     return this.to('UpdateTagOption');
   }
 
+  /**
+   * Grants permission to delete a resource-based policy for the specified resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/arguide/sharing-definitions.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to get a resource-based policy for the specified resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/arguide/sharing-definitions.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to add a resource-based policy for the specified resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/arguide/sharing-definitions.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptPortfolioShare',
@@ -1412,7 +1445,9 @@ export class Servicecatalog extends PolicyStatement {
       'UpdateProvisionedProductProperties',
       'UpdateProvisioningArtifact',
       'UpdateServiceAction',
-      'UpdateTagOption'
+      'UpdateTagOption',
+      'DeleteResourcePolicy',
+      'PutResourcePolicy'
     ],
     'Permissions management': [
       'CreatePortfolioShare',
@@ -1441,7 +1476,8 @@ export class Servicecatalog extends PolicyStatement {
       'GetAttributeGroup',
       'GetConfiguration',
       'GetProvisionedProductOutputs',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'GetResourcePolicy'
     ],
     List: [
       'DescribePortfolioShares',
@@ -1629,6 +1665,9 @@ export class Servicecatalog extends PolicyStatement {
    * - .toUpdatePortfolioShare()
    * - .toUpdateProduct()
    * - .toUpdateProvisioningArtifact()
+   * - .toDeleteResourcePolicy()
+   * - .toGetResourcePolicy()
+   * - .toPutResourcePolicy()
    *
    * Applies to resource types:
    * - Application

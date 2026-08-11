@@ -40,10 +40,12 @@ deadline:DisassociateMemberFromFarm;Permissions management, Write
 deadline:DisassociateMemberFromFleet;Permissions management, Write
 deadline:DisassociateMemberFromJob;Permissions management, Write
 deadline:DisassociateMemberFromQueue;Permissions management, Write
+deadline:GetApplicationVersion;Read
 deadline:GetBudget;Read
 deadline:GetFarm;Read
 deadline:GetFleet;Read
 deadline:GetJob;Read
+deadline:GetJobTemplate;Read
 deadline:GetLicenseEndpoint;Read
 deadline:GetLimit;Read
 deadline:GetMonitor;Read

@@ -645,6 +645,39 @@ export class Events extends PolicyStatement {
     return this.to('UpdateEventBus');
   }
 
+  /**
+   * Grants permission to configure vended log delivery for EventBridge
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
+   * Grants permission to invoke an api destination
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html
+   */
+  public toInvokeApiDestination() {
+    return this.to('InvokeApiDestination');
+  }
+
+  /**
+   * Grants permission to retrieve credentials from a connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html
+   */
+  public toRetrieveConnectionCredentials() {
+    return this.to('RetrieveConnectionCredentials');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ActivateEventSource',
@@ -680,7 +713,10 @@ export class Events extends PolicyStatement {
       'UpdateArchive',
       'UpdateConnection',
       'UpdateEndpoint',
-      'UpdateEventBus'
+      'UpdateEventBus',
+      'AllowVendedLogDeliveryForResource',
+      'InvokeApiDestination',
+      'RetrieveConnectionCredentials'
     ],
     Read: [
       'DescribeApiDestination',
@@ -976,6 +1012,7 @@ export class Events extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateEventBus()
+   * - .toAllowVendedLogDeliveryForResource()
    *
    * Applies to resource types:
    * - event-bus

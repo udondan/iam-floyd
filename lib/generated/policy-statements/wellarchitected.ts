@@ -1087,6 +1087,17 @@ export class Wellarchitected extends PolicyStatement {
     return this.to('UpgradeReviewTemplateLensReview');
   }
 
+  /**
+   * Grants permission to configure the integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/setting-up-jira.html
+   */
+  public toConfigureIntegration() {
+    return this.to('ConfigureIntegration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateLenses',
@@ -1138,7 +1149,8 @@ export class Wellarchitected extends PolicyStatement {
       'UpdateWorkloadShare',
       'UpgradeLensReview',
       'UpgradeProfileVersion',
-      'UpgradeReviewTemplateLensReview'
+      'UpgradeReviewTemplateLensReview',
+      'ConfigureIntegration'
     ],
     Read: [
       'ExportLens',

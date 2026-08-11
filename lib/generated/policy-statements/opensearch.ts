@@ -117,13 +117,37 @@ export class Opensearch extends PolicyStatement {
     return this.to('SubmitAutoOptimizeJob');
   }
 
+  /**
+   * Grants permission to access OpenSearch Application
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/
+   */
+  public toApplicationAccessAll() {
+    return this.to('ApplicationAccessAll');
+  }
+
+  /**
+   * Grants permission to view the login page of an OpenSearch Application
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/
+   */
+  public toViewLoginPage() {
+    return this.to('ViewLoginPage');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelAutoOptimizeJob',
       'CancelDirectQuery',
       'DeleteAutoOptimizeJob',
       'StartDirectQuery',
-      'SubmitAutoOptimizeJob'
+      'SubmitAutoOptimizeJob',
+      'ApplicationAccessAll',
+      'ViewLoginPage'
     ],
     Read: [
       'GetAutoOptimizeJob',
@@ -132,6 +156,10 @@ export class Opensearch extends PolicyStatement {
     ],
     List: [
       'ListAutoOptimizeJobs'
+    ],
+    'Permissions management': [
+      'ApplicationAccessAll',
+      'ViewLoginPage'
     ]
   };
 

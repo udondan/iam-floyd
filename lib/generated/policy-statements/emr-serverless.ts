@@ -264,6 +264,39 @@ export class EmrServerless extends PolicyStatement {
     return this.to('UpdateApplication');
   }
 
+  /**
+   * Grants permission to execute interactive workloads on an application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/interactive-workloads.html
+   */
+  public toAccessInteractiveEndpoints() {
+    return this.to('AccessInteractiveEndpoints');
+  }
+
+  /**
+   * Grants permission to execute interactive workloads on Livy Endpoint enabled on an EMR Serverless Application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/interactive-workloads-livy-endpoints.html
+   */
+  public toAccessLivyEndpoints() {
+    return this.to('AccessLivyEndpoints');
+  }
+
+  /**
+   * Grants permission to access system profile logs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/logging-monitoring.html
+   */
+  public toAccessSystemProfileLogs() {
+    return this.to('AccessSystemProfileLogs');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelJobRun',
@@ -276,7 +309,10 @@ export class EmrServerless extends PolicyStatement {
       'TagResource',
       'TerminateSession',
       'UntagResource',
-      'UpdateApplication'
+      'UpdateApplication',
+      'AccessInteractiveEndpoints',
+      'AccessLivyEndpoints',
+      'AccessSystemProfileLogs'
     ],
     Read: [
       'GetApplication',
@@ -397,6 +433,9 @@ export class EmrServerless extends PolicyStatement {
    * - .toTerminateSession()
    * - .toUntagResource()
    * - .toUpdateApplication()
+   * - .toAccessInteractiveEndpoints()
+   * - .toAccessLivyEndpoints()
+   * - .toAccessSystemProfileLogs()
    *
    * Applies to resource types:
    * - application

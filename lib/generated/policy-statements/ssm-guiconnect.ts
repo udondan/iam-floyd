@@ -51,13 +51,63 @@ export class SsmGuiconnect extends PolicyStatement {
     return this.to('UpdateConnectionRecordingPreferences');
   }
 
+  /**
+   * Grants permission to terminate a GUI Connect connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html
+   */
+  public toCancelConnection() {
+    return this.to('CancelConnection');
+  }
+
+  /**
+   * Grants permission to get the metadata for a GUI Connect connection
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html
+   */
+  public toGetConnection() {
+    return this.to('GetConnection');
+  }
+
+  /**
+   * Grants permission to list the metadata for GUI Connect connections
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html
+   */
+  public toListConnections() {
+    return this.to('ListConnections');
+  }
+
+  /**
+   * Grants permission to start a GUI Connect connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html
+   */
+  public toStartConnection() {
+    return this.to('StartConnection');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'DeleteConnectionRecordingPreferences',
-      'UpdateConnectionRecordingPreferences'
+      'UpdateConnectionRecordingPreferences',
+      'CancelConnection',
+      'StartConnection'
     ],
     Read: [
-      'GetConnectionRecordingPreferences'
+      'GetConnectionRecordingPreferences',
+      'GetConnection'
+    ],
+    List: [
+      'ListConnections'
     ]
   };
 }

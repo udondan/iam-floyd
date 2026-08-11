@@ -7,5 +7,10 @@ sts:GetAccessKeyInfo;Read
 sts:GetCallerIdentity;Read
 sts:GetDelegatedAccessToken;Write
 sts:GetFederationToken;Write
+sts:GetServiceBearerToken;Read
 sts:GetSessionToken;Read
 sts:GetWebIdentityToken;Write
+sts:SetContext;Write
+sts:SetSourceIdentity;Write
+sts:TagGetWebIdentityToken;Tagging, Write
+sts:TagSession;Tagging, Write

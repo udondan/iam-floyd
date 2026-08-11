@@ -101,6 +101,7 @@ s3:GetStorageLensConfiguration;Read
 s3:GetStorageLensConfigurationTagging;Read
 s3:GetStorageLensDashboard;Read
 s3:GetStorageLensGroup;Read
+s3:InitiateReplication;Write
 s3:ListAccessGrants;List
 s3:ListAccessGrantsInstances;List
 s3:ListAccessGrantsLocations;List
@@ -120,6 +121,7 @@ s3:ListStorageLensConfigurations;List
 s3:ListStorageLensGroups;List
 s3:ListTagsForResource;List
 s3:ObjectOwnerOverrideToBucketOwner;Permissions management, Write
+s3:PauseReplication;Write
 s3:PutAccelerateConfiguration;Write
 s3:PutAccessGrantsInstanceResourcePolicy;Permissions management, Write
 s3:PutAccessPointConfigurationForObjectLambda;Write

@@ -1360,6 +1360,15 @@ export class Mobiletargeting extends PolicyStatement {
     return this.to('VerifyOTPMessage');
   }
 
+  /**
+   * Grants permission to mobiletargeting:GetReports
+   *
+   * Access Level: Read
+   */
+  public toGetReports() {
+    return this.to('GetReports');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateApp',
@@ -1469,7 +1478,8 @@ export class Mobiletargeting extends PolicyStatement {
       'GetVoiceChannel',
       'GetVoiceTemplate',
       'ListTagsForResource',
-      'PhoneNumberValidate'
+      'PhoneNumberValidate',
+      'GetReports'
     ],
     List: [
       'GetApplicationSettings',

@@ -1084,6 +1084,15 @@ export class Wisdom extends PolicyStatement {
     return this.to('UpdateSessionData');
   }
 
+  /**
+   * Grants permission to configure vended log delivery for an assistant
+   *
+   * Access Level: Permissions management, Write
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ActivateMessageTemplate',
@@ -1138,7 +1147,8 @@ export class Wisdom extends PolicyStatement {
       'UpdateMessageTemplateMetadata',
       'UpdateQuickResponse',
       'UpdateSession',
-      'UpdateSessionData'
+      'UpdateSessionData',
+      'AllowVendedLogDeliveryForResource'
     ],
     Read: [
       'GetAIAgent',
@@ -1188,6 +1198,9 @@ export class Wisdom extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
     ]
   };
 
@@ -1504,6 +1517,7 @@ export class Wisdom extends PolicyStatement {
    * - .toUpdateQuickResponse()
    * - .toUpdateSession()
    * - .toUpdateSessionData()
+   * - .toAllowVendedLogDeliveryForResource()
    *
    * Applies to resource types:
    * - AIAgent

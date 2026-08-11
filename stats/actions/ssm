@@ -67,6 +67,7 @@ ssm:DisassociateOpsItemRelatedItem;Write
 ssm:ExecuteAPI;Read
 ssm:GetAccessToken;Read
 ssm:GetAutomationExecution;Read
+ssm:GetCalendar;Read
 ssm:GetCalendarState;Read
 ssm:GetCloudConnector;Read
 ssm:GetCommandInvocation;Read
@@ -82,6 +83,7 @@ ssm:GetMaintenanceWindowExecution;Read
 ssm:GetMaintenanceWindowExecutionTask;Read
 ssm:GetMaintenanceWindowExecutionTaskInvocation;Read
 ssm:GetMaintenanceWindowTask;Read
+ssm:GetManifest;Read
 ssm:GetOpsItem;Read
 ssm:GetOpsMetadata;Read
 ssm:GetOpsSummary;Read
@@ -115,7 +117,9 @@ ssm:ListResourceComplianceSummaries;List
 ssm:ListResourceDataSync;List
 ssm:ListTagsForResource;List
 ssm:ModifyDocumentPermission;Permissions management, Write
+ssm:PutCalendar;Write
 ssm:PutComplianceItems;Write
+ssm:PutConfigurePackageResult;Read
 ssm:PutInventory;Write
 ssm:PutParameter;Write
 ssm:PutResourcePolicy;Permissions management, Write
@@ -144,6 +148,7 @@ ssm:UpdateCloudConnector;Write
 ssm:UpdateDocument;Write
 ssm:UpdateDocumentDefaultVersion;Write
 ssm:UpdateDocumentMetadata;Write
+ssm:UpdateInstanceAssociationStatus;Write
 ssm:UpdateInstanceInformation;Write
 ssm:UpdateMaintenanceWindow;Write
 ssm:UpdateMaintenanceWindowTarget;Write

@@ -1,4 +1,6 @@
 bedrock-agentcore:AddDatasetExamples;Write
+bedrock-agentcore:AllowVendedLogDeliveryForResource;Permissions management, Write
+bedrock-agentcore:AuthorizeAction;Permissions management, Write
 bedrock-agentcore:BatchCreateMemoryRecords;Write
 bedrock-agentcore:BatchDeleteMemoryRecords;Write
 bedrock-agentcore:BatchUpdateMemoryRecords;Write
@@ -70,6 +72,10 @@ bedrock-agentcore:DeleteRegistryRecord;Write
 bedrock-agentcore:DeleteResourcePolicy;Write
 bedrock-agentcore:DeleteWorkloadIdentity;Write
 bedrock-agentcore:Evaluate;Write
+bedrock-agentcore:GatewayAssociateWebACL;Write
+bedrock-agentcore:GatewayDisassociateWebACL;Write
+bedrock-agentcore:GatewayGetWebACLForResource;Read
+bedrock-agentcore:GatewayListResourcesForWebACL;List
 bedrock-agentcore:GetABTest;Read
 bedrock-agentcore:GetAgentCard;Read
 bedrock-agentcore:GetAgentRuntime;Read
@@ -126,8 +132,10 @@ bedrock-agentcore:InvokeAgentRuntimeForUser;Write
 bedrock-agentcore:InvokeAgentRuntimeWithWebSocketStream;Write
 bedrock-agentcore:InvokeAgentRuntimeWithWebSocketStreamForUser;Write
 bedrock-agentcore:InvokeCodeInterpreter;Write
+bedrock-agentcore:InvokeGateway;Permissions management, Write
 bedrock-agentcore:InvokeHarness;Write
 bedrock-agentcore:InvokeRegistryMcp;Read
+bedrock-agentcore:InvokeWebSearch;Permissions management, Write
 bedrock-agentcore:ListABTests;List
 bedrock-agentcore:ListActors;List
 bedrock-agentcore:ListAgentRuntimeEndpoints;List
@@ -176,6 +184,9 @@ bedrock-agentcore:ListRegistryRecords;List
 bedrock-agentcore:ListSessions;List
 bedrock-agentcore:ListTagsForResource;List
 bedrock-agentcore:ListWorkloadIdentities;Read
+bedrock-agentcore:ManageAdminPolicy;Permissions management, Write
+bedrock-agentcore:ManageResourceScopedPolicy;Permissions management, Write
+bedrock-agentcore:PartiallyAuthorizeActions;Permissions management, Write
 bedrock-agentcore:ProcessPayment;Write
 bedrock-agentcore:PutResourcePolicy;Write
 bedrock-agentcore:RetrieveMemoryRecords;List
@@ -193,6 +204,7 @@ bedrock-agentcore:StopBrowserSession;Write
 bedrock-agentcore:StopCodeInterpreterSession;Write
 bedrock-agentcore:StopRuntimeSession;Write
 bedrock-agentcore:SubmitRegistryRecordForApproval;Write
+bedrock-agentcore:SynchronizeGatewayTargets;Permissions management, Write
 bedrock-agentcore:TagResource;Tagging, Write
 bedrock-agentcore:UntagResource;Tagging, Write
 bedrock-agentcore:UpdateABTest;Write

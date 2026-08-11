@@ -11,6 +11,7 @@ cloudformation:CreateStack;Write
 cloudformation:CreateStackInstances;Write
 cloudformation:CreateStackRefactor;Write
 cloudformation:CreateStackSet;Write
+cloudformation:CreateUploadBucket;Write
 cloudformation:DeactivateOrganizationsAccess;Write
 cloudformation:DeactivateType;Write
 cloudformation:DeleteChangeSet;Write

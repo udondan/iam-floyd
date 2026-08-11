@@ -1,14 +1,18 @@
 ds:AcceptSharedDirectory;Write
+ds:AccessDSData;Permissions management, Write
 ds:AddIpRoutes;Write
 ds:AddRegion;Write
 ds:AddTagsToResource;Tagging, Write
+ds:AuthorizeApplication;Write
 ds:CancelSchemaExtension;Write
+ds:CheckAlias;Read
 ds:ConnectDirectory;Write
 ds:CreateAlias;Write
 ds:CreateComputer;Write
 ds:CreateConditionalForwarder;Write
 ds:CreateDirectory;Write
 ds:CreateHybridAD;Write
+ds:CreateIdentityPoolDirectory;Write
 ds:CreateLogSubscription;Write
 ds:CreateMicrosoftAD;Write
 ds:CreateSnapshot;Write
@@ -43,16 +47,20 @@ ds:DisableClientAuthentication;Write
 ds:DisableDirectoryDataAccess;Write
 ds:DisableLDAPS;Write
 ds:DisableRadius;Write
+ds:DisableRoleAccess;Write
 ds:DisableSso;Write
 ds:EnableCAEnrollmentPolicy;Write
 ds:EnableClientAuthentication;Write
 ds:EnableDirectoryDataAccess;Write
 ds:EnableLDAPS;Write
 ds:EnableRadius;Write
+ds:EnableRoleAccess;Write
 ds:EnableSso;Write
+ds:GetAuthorizedApplicationDetails;Read
 ds:GetDirectoryLimits;Read
 ds:GetSnapshotLimits;Read
 ds:ListADAssessments;List
+ds:ListAuthorizedApplications;Read
 ds:ListCertificates;List
 ds:ListIpRoutes;Read
 ds:ListLogSubscriptions;Read
@@ -69,8 +77,11 @@ ds:RestoreFromSnapshot;Write
 ds:ShareDirectory;Write
 ds:StartADAssessment;Write
 ds:StartSchemaExtension;Write
+ds:UnauthorizeApplication;Write
 ds:UnshareDirectory;Write
+ds:UpdateAuthorizedApplication;Write
 ds:UpdateConditionalForwarder;Write
+ds:UpdateDirectory;Write
 ds:UpdateDirectorySetup;Write
 ds:UpdateHybridAD;Write
 ds:UpdateNumberOfDomainControllers;Write

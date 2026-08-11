@@ -2067,6 +2067,17 @@ export class Iam extends PolicyStatement {
     return this.to('UploadSigningCertificate');
   }
 
+  /**
+   * Grants permission to pass a role to a service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html
+   */
+  public toPassRole() {
+    return this.to('PassRole');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptDelegationRequest',
@@ -2179,7 +2190,8 @@ export class Iam extends PolicyStatement {
       'UploadCloudFrontPublicKey',
       'UploadSSHPublicKey',
       'UploadServerCertificate',
-      'UploadSigningCertificate'
+      'UploadSigningCertificate',
+      'PassRole'
     ],
     'Permissions management': [
       'AttachGroupPolicy',
@@ -2674,6 +2686,7 @@ export class Iam extends PolicyStatement {
    * - .toUploadSSHPublicKey()
    * - .toUploadServerCertificate()
    * - .toUploadSigningCertificate()
+   * - .toPassRole()
    *
    * Applies to resource types:
    * - instance-profile
@@ -2750,6 +2763,9 @@ export class Iam extends PolicyStatement {
    * Filters access by the resource that the role will be used on behalf of
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_AssociatedResourceArn
+   *
+   * Applies to actions:
+   * - .toPassRole()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -2877,6 +2893,9 @@ export class Iam extends PolicyStatement {
    * Filters access by the AWS service to which this role is passed
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PassedToService
+   *
+   * Applies to actions:
+   * - .toPassRole()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3031,6 +3050,7 @@ export class Iam extends PolicyStatement {
    * - .toUpdateUser()
    * - .toUploadSSHPublicKey()
    * - .toUploadSigningCertificate()
+   * - .toPassRole()
    *
    * Applies to resource types:
    * - role

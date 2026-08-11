@@ -783,6 +783,28 @@ export class Eks extends PolicyStatement {
     return this.to('UpdatePodIdentityAssociation');
   }
 
+  /**
+   * Grants permission to view Kubernetes objects via AWS EKS console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/view-workloads.html
+   */
+  public toAccessKubernetesApi() {
+    return this.to('AccessKubernetesApi');
+  }
+
+  /**
+   * Grants permission to modify Kubernetes objects via AWS console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/mutate-workloads.html
+   */
+  public toMutateViaKubernetesApi() {
+    return this.to('MutateViaKubernetesApi');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateAccessPolicy',
@@ -820,7 +842,8 @@ export class Eks extends PolicyStatement {
       'UpdateEksAnywhereSubscription',
       'UpdateNodegroupConfig',
       'UpdateNodegroupVersion',
-      'UpdatePodIdentityAssociation'
+      'UpdatePodIdentityAssociation',
+      'MutateViaKubernetesApi'
     ],
     Read: [
       'DescribeAccessEntry',
@@ -840,7 +863,8 @@ export class Eks extends PolicyStatement {
       'DescribeUpdate',
       'ListDashboardData',
       'ListDashboardResources',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'AccessKubernetesApi'
     ],
     List: [
       'ListAccessEntries',
@@ -1157,6 +1181,8 @@ export class Eks extends PolicyStatement {
    * - .toUpdateNodegroupConfig()
    * - .toUpdateNodegroupVersion()
    * - .toUpdatePodIdentityAssociation()
+   * - .toAccessKubernetesApi()
+   * - .toMutateViaKubernetesApi()
    *
    * Applies to resource types:
    * - access-entry

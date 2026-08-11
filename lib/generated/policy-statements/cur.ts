@@ -95,17 +95,77 @@ export class Cur extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to get Bills CSV report
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cur/latest/userguide/security.html#user-permissions
+   */
+  public toGetClassicReport() {
+    return this.to('GetClassicReport');
+  }
+
+  /**
+   * Grants permission to get the classic report enablement status for Usage Reports
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cur/latest/userguide/security.html#user-permissions
+   */
+  public toGetClassicReportPreferences() {
+    return this.to('GetClassicReportPreferences');
+  }
+
+  /**
+   * Grants permission to get list of AWS services, usage type and operation for the Usage Report workflow. Allows or denies download of usage reports too
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cur/latest/userguide/security.html#user-permissions
+   */
+  public toGetUsageReport() {
+    return this.to('GetUsageReport');
+  }
+
+  /**
+   * Grants permission to enable classic reports
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cur/latest/userguide/security.html#user-permissions
+   */
+  public toPutClassicReportPreferences() {
+    return this.to('PutClassicReportPreferences');
+  }
+
+  /**
+   * Grants permission to validates if the s3 bucket exists with appropriate permissions for CUR delivery
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cur/latest/userguide/security.html#user-permissions
+   */
+  public toValidateReportDestination() {
+    return this.to('ValidateReportDestination');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'DeleteReportDefinition',
       'ModifyReportDefinition',
       'PutReportDefinition',
       'TagResource',
-      'UntagResource'
+      'UntagResource',
+      'PutClassicReportPreferences'
     ],
     Read: [
       'DescribeReportDefinitions',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'GetClassicReport',
+      'GetClassicReportPreferences',
+      'GetUsageReport',
+      'ValidateReportDestination'
     ],
     Tagging: [
       'TagResource',

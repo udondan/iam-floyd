@@ -1150,6 +1150,399 @@ export class Mgn extends PolicyStatement {
     return this.to('UpdateWave');
   }
 
+  /**
+   * Grants permission to create volume snapshot group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toBatchCreateVolumeSnapshotGroupForMgn() {
+    return this.to('BatchCreateVolumeSnapshotGroupForMgn');
+  }
+
+  /**
+   * Grants permission to batch delete snapshot request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toBatchDeleteSnapshotRequestForMgn() {
+    return this.to('BatchDeleteSnapshotRequestForMgn');
+  }
+
+  /**
+   * Grants permission to create vcenter client
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toCreateVcenterClientForMgn() {
+    return this.to('CreateVcenterClientForMgn');
+  }
+
+  /**
+   * Grants permission to describe replication server associations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toDescribeReplicationServerAssociationsForMgn() {
+    return this.to('DescribeReplicationServerAssociationsForMgn');
+  }
+
+  /**
+   * Grants permission to describe snapshots requests
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toDescribeSnapshotRequestsForMgn() {
+    return this.to('DescribeSnapshotRequestsForMgn');
+  }
+
+  /**
+   * Grants permission to get agent command
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toGetAgentCommandForMgn() {
+    return this.to('GetAgentCommandForMgn');
+  }
+
+  /**
+   * Grants permission to get agent confirmed resume info
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toGetAgentConfirmedResumeInfoForMgn() {
+    return this.to('GetAgentConfirmedResumeInfoForMgn');
+  }
+
+  /**
+   * Grants permission to get agent installation assets
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toGetAgentInstallationAssetsForMgn() {
+    return this.to('GetAgentInstallationAssetsForMgn');
+  }
+
+  /**
+   * Grants permission to get agent replication info
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toGetAgentReplicationInfoForMgn() {
+    return this.to('GetAgentReplicationInfoForMgn');
+  }
+
+  /**
+   * Grants permission to get agent runtime configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toGetAgentRuntimeConfigurationForMgn() {
+    return this.to('GetAgentRuntimeConfigurationForMgn');
+  }
+
+  /**
+   * Grants permission to get agent snapshots credits
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toGetAgentSnapshotCreditsForMgn() {
+    return this.to('GetAgentSnapshotCreditsForMgn');
+  }
+
+  /**
+   * Grants permission to get channel commands
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toGetChannelCommandsForMgn() {
+    return this.to('GetChannelCommandsForMgn');
+  }
+
+  /**
+   * Grants permission to get vcenter client commands
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toGetVcenterClientCommandsForMgn() {
+    return this.to('GetVcenterClientCommandsForMgn');
+  }
+
+  /**
+   * Grants permission to issue a client certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toIssueClientCertificateForMgn() {
+    return this.to('IssueClientCertificateForMgn');
+  }
+
+  /**
+   * Grants permission to notify agent authentication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toNotifyAgentAuthenticationForMgn() {
+    return this.to('NotifyAgentAuthenticationForMgn');
+  }
+
+  /**
+   * Grants permission to notify agent is connected
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toNotifyAgentConnectedForMgn() {
+    return this.to('NotifyAgentConnectedForMgn');
+  }
+
+  /**
+   * Grants permission to notify agent is disconnected
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toNotifyAgentDisconnectedForMgn() {
+    return this.to('NotifyAgentDisconnectedForMgn');
+  }
+
+  /**
+   * Grants permission to notify agent replication progress
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toNotifyAgentReplicationProgressForMgn() {
+    return this.to('NotifyAgentReplicationProgressForMgn');
+  }
+
+  /**
+   * Grants permission to notify vcenter client started
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toNotifyVcenterClientStartedForMgn() {
+    return this.to('NotifyVcenterClientStartedForMgn');
+  }
+
+  /**
+   * Grants permission to register agent
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toRegisterAgentForMgn() {
+    return this.to('RegisterAgentForMgn');
+  }
+
+  /**
+   * Grants permission to send agent logs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toSendAgentLogsForMgn() {
+    return this.to('SendAgentLogsForMgn');
+  }
+
+  /**
+   * Grants permission to send agent metrics
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toSendAgentMetricsForMgn() {
+    return this.to('SendAgentMetricsForMgn');
+  }
+
+  /**
+   * Grants permission to send channel command result
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toSendChannelCommandResultForMgn() {
+    return this.to('SendChannelCommandResultForMgn');
+  }
+
+  /**
+   * Grants permission to send client logs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toSendClientLogsForMgn() {
+    return this.to('SendClientLogsForMgn');
+  }
+
+  /**
+   * Grants permission to send client metrics
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toSendClientMetricsForMgn() {
+    return this.to('SendClientMetricsForMgn');
+  }
+
+  /**
+   * Grants permission to send vcenter client command result
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toSendVcenterClientCommandResultForMgn() {
+    return this.to('SendVcenterClientCommandResultForMgn');
+  }
+
+  /**
+   * Grants permission to send vcenter client logs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toSendVcenterClientLogsForMgn() {
+    return this.to('SendVcenterClientLogsForMgn');
+  }
+
+  /**
+   * Grants permission to send vcenter client metrics
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toSendVcenterClientMetricsForMgn() {
+    return this.to('SendVcenterClientMetricsForMgn');
+  }
+
+  /**
+   * Grants permission to start snapshot group requests
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toStartSnapshotGroupForMgn() {
+    return this.to('StartSnapshotGroupForMgn');
+  }
+
+  /**
+   * Grants permission to update agent backlog
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toUpdateAgentBacklogForMgn() {
+    return this.to('UpdateAgentBacklogForMgn');
+  }
+
+  /**
+   * Grants permission to update agent conversion info
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toUpdateAgentConversionInfoForMgn() {
+    return this.to('UpdateAgentConversionInfoForMgn');
+  }
+
+  /**
+   * Grants permission to update agent replication info
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toUpdateAgentReplicationInfoForMgn() {
+    return this.to('UpdateAgentReplicationInfoForMgn');
+  }
+
+  /**
+   * Grants permission to update agent replication process state
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toUpdateAgentReplicationProcessStateForMgn() {
+    return this.to('UpdateAgentReplicationProcessStateForMgn');
+  }
+
+  /**
+   * Grants permission to update agent source properties
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toUpdateAgentSourcePropertiesForMgn() {
+    return this.to('UpdateAgentSourcePropertiesForMgn');
+  }
+
+  /**
+   * Grants permission to verify client role
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toVerifyClientRoleForMgn() {
+    return this.to('VerifyClientRoleForMgn');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ArchiveApplication',
@@ -1215,7 +1608,31 @@ export class Mgn extends PolicyStatement {
       'UpdateReplicationConfigurationTemplate',
       'UpdateSourceServer',
       'UpdateSourceServerReplicationType',
-      'UpdateWave'
+      'UpdateWave',
+      'BatchCreateVolumeSnapshotGroupForMgn',
+      'BatchDeleteSnapshotRequestForMgn',
+      'CreateVcenterClientForMgn',
+      'IssueClientCertificateForMgn',
+      'NotifyAgentAuthenticationForMgn',
+      'NotifyAgentConnectedForMgn',
+      'NotifyAgentDisconnectedForMgn',
+      'NotifyAgentReplicationProgressForMgn',
+      'NotifyVcenterClientStartedForMgn',
+      'RegisterAgentForMgn',
+      'SendAgentLogsForMgn',
+      'SendAgentMetricsForMgn',
+      'SendChannelCommandResultForMgn',
+      'SendClientLogsForMgn',
+      'SendClientMetricsForMgn',
+      'SendVcenterClientCommandResultForMgn',
+      'SendVcenterClientLogsForMgn',
+      'SendVcenterClientMetricsForMgn',
+      'StartSnapshotGroupForMgn',
+      'UpdateAgentBacklogForMgn',
+      'UpdateAgentConversionInfoForMgn',
+      'UpdateAgentReplicationInfoForMgn',
+      'UpdateAgentReplicationProcessStateForMgn',
+      'UpdateAgentSourcePropertiesForMgn'
     ],
     Read: [
       'DescribeJobLogItems',
@@ -1225,7 +1642,18 @@ export class Mgn extends PolicyStatement {
       'GetNetworkMigrationMapperSegmentConstruct',
       'GetReplicationConfiguration',
       'ListConnectors',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'DescribeReplicationServerAssociationsForMgn',
+      'DescribeSnapshotRequestsForMgn',
+      'GetAgentCommandForMgn',
+      'GetAgentConfirmedResumeInfoForMgn',
+      'GetAgentInstallationAssetsForMgn',
+      'GetAgentReplicationInfoForMgn',
+      'GetAgentRuntimeConfigurationForMgn',
+      'GetAgentSnapshotCreditsForMgn',
+      'GetChannelCommandsForMgn',
+      'GetVcenterClientCommandsForMgn',
+      'VerifyClientRoleForMgn'
     ],
     List: [
       'DescribeJobs',
@@ -1468,6 +1896,8 @@ export class Mgn extends PolicyStatement {
    * - .toStartTest()
    * - .toTagResource()
    * - .toTerminateTargetInstances()
+   * - .toCreateVcenterClientForMgn()
+   * - .toRegisterAgentForMgn()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1557,6 +1987,29 @@ export class Mgn extends PolicyStatement {
    * - .toUpdateSourceServer()
    * - .toUpdateSourceServerReplicationType()
    * - .toUpdateWave()
+   * - .toBatchCreateVolumeSnapshotGroupForMgn()
+   * - .toGetAgentCommandForMgn()
+   * - .toGetAgentConfirmedResumeInfoForMgn()
+   * - .toGetAgentReplicationInfoForMgn()
+   * - .toGetAgentRuntimeConfigurationForMgn()
+   * - .toGetAgentSnapshotCreditsForMgn()
+   * - .toGetVcenterClientCommandsForMgn()
+   * - .toIssueClientCertificateForMgn()
+   * - .toNotifyAgentAuthenticationForMgn()
+   * - .toNotifyAgentConnectedForMgn()
+   * - .toNotifyAgentDisconnectedForMgn()
+   * - .toNotifyAgentReplicationProgressForMgn()
+   * - .toNotifyVcenterClientStartedForMgn()
+   * - .toSendAgentLogsForMgn()
+   * - .toSendAgentMetricsForMgn()
+   * - .toSendVcenterClientCommandResultForMgn()
+   * - .toSendVcenterClientLogsForMgn()
+   * - .toSendVcenterClientMetricsForMgn()
+   * - .toUpdateAgentBacklogForMgn()
+   * - .toUpdateAgentConversionInfoForMgn()
+   * - .toUpdateAgentReplicationInfoForMgn()
+   * - .toUpdateAgentReplicationProcessStateForMgn()
+   * - .toUpdateAgentSourcePropertiesForMgn()
    *
    * Applies to resource types:
    * - ApplicationResource
@@ -1598,6 +2051,8 @@ export class Mgn extends PolicyStatement {
    * - .toTagResource()
    * - .toTerminateTargetInstances()
    * - .toUntagResource()
+   * - .toCreateVcenterClientForMgn()
+   * - .toRegisterAgentForMgn()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

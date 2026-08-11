@@ -1,11 +1,13 @@
 logs:AssociateKmsKey;Write
 logs:AssociateSourceToS3TableIntegration;Write
+logs:CallWithBearerToken;Write
 logs:CancelExportTask;Write
 logs:CancelImportTask;Write
 logs:CreateDelivery;Write
 logs:CreateExportTask;Write
 logs:CreateImportTask;Write
 logs:CreateLogAnomalyDetector;Write
+logs:CreateLogDelivery;Write
 logs:CreateLogGroup;Write
 logs:CreateLogStream;Write
 logs:CreateLookupTable;Write
@@ -20,10 +22,12 @@ logs:DeleteDestination;Write
 logs:DeleteIndexPolicy;Write
 logs:DeleteIntegration;Write
 logs:DeleteLogAnomalyDetector;Write
+logs:DeleteLogDelivery;Write
 logs:DeleteLogGroup;Write
 logs:DeleteLogStream;Write
 logs:DeleteLookupTable;Write
 logs:DeleteMetricFilter;Write
+logs:DeletePipelineRule;Write
 logs:DeleteQueryDefinition;Write
 logs:DeleteResourcePolicy;Permissions management, Write
 logs:DeleteRetentionPolicy;Write
@@ -60,6 +64,7 @@ logs:GetDeliveryDestinationPolicy;Read
 logs:GetDeliverySource;Read
 logs:GetIntegration;Read
 logs:GetLogAnomalyDetector;Read
+logs:GetLogDelivery;Read
 logs:GetLogEvents;Read
 logs:GetLogFields;Read
 logs:GetLogGroupFields;Read
@@ -70,17 +75,23 @@ logs:GetScheduledQuery;Read
 logs:GetScheduledQueryHistory;Read
 logs:GetStorageTierPolicy;Read
 logs:GetTransformer;Read
+logs:IntegrateWithS3Table;Write
+logs:Link;Write
 logs:ListAggregateLogGroupSummaries;List
 logs:ListAnomalies;List
+logs:ListEntitiesForLogGroup;List
 logs:ListIntegrations;List
 logs:ListLogAnomalyDetectors;List
+logs:ListLogDeliveries;List
 logs:ListLogGroups;List
+logs:ListLogGroupsForEntity;List
 logs:ListLogGroupsForQuery;List
 logs:ListScheduledQueries;List
 logs:ListSourcesForS3TableIntegration;List
 logs:ListSyslogConfigurations;List
 logs:ListTagsForResource;List
 logs:ListTagsLogGroup;List
+logs:ProcessWithPipeline;Write
 logs:PutAccountPolicy;Write
 logs:PutBearerTokenAuthentication;Write
 logs:PutDataProtectionPolicy;Write
@@ -94,6 +105,7 @@ logs:PutIntegration;Write
 logs:PutLogEvents;Write
 logs:PutLogGroupDeletionProtection;Write
 logs:PutMetricFilter;Write
+logs:PutPipelineRule;Write
 logs:PutQueryDefinition;Write
 logs:PutResourcePolicy;Permissions management, Write
 logs:PutRetentionPolicy;Write
@@ -103,15 +115,18 @@ logs:PutSyslogConfiguration;Write
 logs:PutTransformer;Write
 logs:StartLiveTail;Read
 logs:StartQuery;Read
+logs:StopLiveTail;Read
 logs:StopQuery;Read
 logs:TagLogGroup;Tagging, Write
 logs:TagResource;Tagging, Write
 logs:TestMetricFilter;Read
 logs:TestTransformer;Read
+logs:Unmask;Read
 logs:UntagLogGroup;Tagging, Write
 logs:UntagResource;Tagging, Write
 logs:UpdateAnomaly;Write
 logs:UpdateDeliveryConfiguration;Write
 logs:UpdateLogAnomalyDetector;Write
+logs:UpdateLogDelivery;Write
 logs:UpdateLookupTable;Write
 logs:UpdateScheduledQuery;Write

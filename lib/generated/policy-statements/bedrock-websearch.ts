@@ -40,10 +40,22 @@ export class BedrockWebsearch extends PolicyStatement {
     return this.to('InvokeSearch');
   }
 
+  /**
+   * Grants permission to retrieve content from external web sites outside the AWS boundary
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/userguide/security-web-search.html#security-web-search-actions
+   */
+  public toExternalWebAccess() {
+    return this.to('ExternalWebAccess');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'InvokeFetch',
-      'InvokeSearch'
+      'InvokeSearch',
+      'ExternalWebAccess'
     ]
   };
 

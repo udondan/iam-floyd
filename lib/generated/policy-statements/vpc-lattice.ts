@@ -822,6 +822,33 @@ export class VpcLattice extends PolicyStatement {
     return this.to('UpdateTargetGroup');
   }
 
+  /**
+   * Grants permission to associate a resource configuration through any AWS service managed networks
+   *
+   * Access Level: Permissions management, Write
+   */
+  public toAssociateViaAWSService() {
+    return this.to('AssociateViaAWSService');
+  }
+
+  /**
+   * Grants permission to associate a resource configuration through Amazon EventBridge and AWS Step Functions service networks
+   *
+   * Access Level: Permissions management, Write
+   */
+  public toAssociateViaAWSServiceEventsAndStates() {
+    return this.to('AssociateViaAWSServiceEventsAndStates');
+  }
+
+  /**
+   * Grants permission to create an association between a service network and VPC endpoint
+   *
+   * Access Level: Permissions management, Write
+   */
+  public toCreateServiceNetworkVpcEndpointAssociation() {
+    return this.to('CreateServiceNetworkVpcEndpointAssociation');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateAccessLogSubscription',
@@ -865,11 +892,17 @@ export class VpcLattice extends PolicyStatement {
       'UpdateService',
       'UpdateServiceNetwork',
       'UpdateServiceNetworkVpcAssociation',
-      'UpdateTargetGroup'
+      'UpdateTargetGroup',
+      'AssociateViaAWSService',
+      'AssociateViaAWSServiceEventsAndStates',
+      'CreateServiceNetworkVpcEndpointAssociation'
     ],
     'Permissions management': [
       'DeleteAuthPolicy',
-      'PutAuthPolicy'
+      'PutAuthPolicy',
+      'AssociateViaAWSService',
+      'AssociateViaAWSServiceEventsAndStates',
+      'CreateServiceNetworkVpcEndpointAssociation'
     ],
     Read: [
       'GetAccessLogSubscription',

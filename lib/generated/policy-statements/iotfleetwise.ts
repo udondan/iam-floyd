@@ -623,6 +623,17 @@ export class Iotfleetwise extends PolicyStatement {
     return this.to('UpdateVehicle');
   }
 
+  /**
+   * Grants permission to generate the payload for running a command on a vehicle
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/controlling-access.html#generate-command-payload
+   */
+  public toGenerateCommandPayload() {
+    return this.to('GenerateCommandPayload');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateVehicleFleet',
@@ -654,7 +665,8 @@ export class Iotfleetwise extends PolicyStatement {
       'UpdateModelManifest',
       'UpdateSignalCatalog',
       'UpdateStateTemplate',
-      'UpdateVehicle'
+      'UpdateVehicle',
+      'GenerateCommandPayload'
     ],
     Read: [
       'GetCampaign',
@@ -688,6 +700,9 @@ export class Iotfleetwise extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'GenerateCommandPayload'
     ]
   };
 
@@ -882,6 +897,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .toUpdateSignalCatalog()
    * - .toUpdateStateTemplate()
    * - .toUpdateVehicle()
+   * - .toGenerateCommandPayload()
    *
    * Applies to resource types:
    * - campaign
@@ -943,6 +959,9 @@ export class Iotfleetwise extends PolicyStatement {
    * Filters access by fully qualified signal names
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleetwise.html
+   *
+   * Applies to actions:
+   * - .toGenerateCommandPayload()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -710,6 +710,237 @@ export class Elasticmapreduce extends PolicyStatement {
     return this.to('UpdateStudioSessionMapping');
   }
 
+  /**
+   * Grants permission to attach an EMR notebook to a compute engine
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
+   */
+  public toAttachEditor() {
+    return this.to('AttachEditor');
+  }
+
+  /**
+   * Grants permission to create an EMR notebook
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-create.html
+   */
+  public toCreateEditor() {
+    return this.to('CreateEditor');
+  }
+
+  /**
+   * Grants permission to create an EMR notebook repository
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
+   */
+  public toCreateRepository() {
+    return this.to('CreateRepository');
+  }
+
+  /**
+   * Grants permission to delete an EMR notebook
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-deleting
+   */
+  public toDeleteEditor() {
+    return this.to('DeleteEditor');
+  }
+
+  /**
+   * Grants permission to delete an EMR notebook repository
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
+   */
+  public toDeleteRepository() {
+    return this.to('DeleteRepository');
+  }
+
+  /**
+   * Grants permission to block an identity from opening a collaborative workspace
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
+   */
+  public toDeleteWorkspaceAccess() {
+    return this.to('DeleteWorkspaceAccess');
+  }
+
+  /**
+   * Grants permission to view information about a notebook, including status, user, role, tags, location, and more
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
+   */
+  public toDescribeEditor() {
+    return this.to('DescribeEditor');
+  }
+
+  /**
+   * Grants permission to describe an EMR notebook repository
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
+   */
+  public toDescribeRepository() {
+    return this.to('DescribeRepository');
+  }
+
+  /**
+   * Grants permission to detach an EMR notebook from a compute engine
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
+   */
+  public toDetachEditor() {
+    return this.to('DetachEditor');
+  }
+
+  /**
+   * Grants permission to link an EMR notebook repository to EMR notebooks
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
+   */
+  public toLinkRepository() {
+    return this.to('LinkRepository');
+  }
+
+  /**
+   * Grants permission to list summary information for accessible EMR notebooks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
+   */
+  public toListEditors() {
+    return this.to('ListEditors');
+  }
+
+  /**
+   * Grants permission to list existing EMR notebook repositories
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
+   */
+  public toListRepositories() {
+    return this.to('ListRepositories');
+  }
+
+  /**
+   * Grants permission to list identities that are granted access to a workspace
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
+   */
+  public toListWorkspaceAccessIdentities() {
+    return this.to('ListWorkspaceAccessIdentities');
+  }
+
+  /**
+   * Grants permission to launch the Jupyter notebook editor for an EMR notebook from within the console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
+   */
+  public toOpenEditorInConsole() {
+    return this.to('OpenEditorInConsole');
+  }
+
+  /**
+   * Grants permission to allow an identity to open a collaborative workspace
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
+   */
+  public toPutWorkspaceAccess() {
+    return this.to('PutWorkspaceAccess');
+  }
+
+  /**
+   * Grants permission to start an EMR notebook
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
+   */
+  public toStartEditor() {
+    return this.to('StartEditor');
+  }
+
+  /**
+   * Grants permission to shut down an EMR notebook
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html
+   */
+  public toStopEditor() {
+    return this.to('StopEditor');
+  }
+
+  /**
+   * Grants permission to unlink an EMR notebook repository from EMR notebooks
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
+   */
+  public toUnlinkRepository() {
+    return this.to('UnlinkRepository');
+  }
+
+  /**
+   * Grants permission to update an EMR notebook
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
+   */
+  public toUpdateEditor() {
+    return this.to('UpdateEditor');
+  }
+
+  /**
+   * Grants permission to update an EMR notebook repository
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
+   */
+  public toUpdateRepository() {
+    return this.to('UpdateRepository');
+  }
+
+  /**
+   * Grants permission to use the EMR console to view events from all clusters
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticmapreduce.html
+   */
+  public toViewEventsFromAllClustersInConsole() {
+    return this.to('ViewEventsFromAllClustersInConsole');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AccessAllEventLogs',
@@ -749,7 +980,22 @@ export class Elasticmapreduce extends PolicyStatement {
       'StopNotebookExecution',
       'TerminateJobFlows',
       'UpdateStudio',
-      'UpdateStudioSessionMapping'
+      'UpdateStudioSessionMapping',
+      'AttachEditor',
+      'CreateEditor',
+      'CreateRepository',
+      'DeleteEditor',
+      'DeleteRepository',
+      'DeleteWorkspaceAccess',
+      'DetachEditor',
+      'LinkRepository',
+      'OpenEditorInConsole',
+      'PutWorkspaceAccess',
+      'StartEditor',
+      'StopEditor',
+      'UnlinkRepository',
+      'UpdateEditor',
+      'UpdateRepository'
     ],
     Tagging: [
       'AddTags',
@@ -772,7 +1018,9 @@ export class Elasticmapreduce extends PolicyStatement {
       'ListInstanceFleets',
       'ListInstanceGroups',
       'ListInstances',
-      'ListSteps'
+      'ListSteps',
+      'DescribeEditor',
+      'DescribeRepository'
     ],
     List: [
       'ListClusters',
@@ -781,10 +1029,16 @@ export class Elasticmapreduce extends PolicyStatement {
       'ListSecurityConfigurations',
       'ListStudioSessionMappings',
       'ListStudios',
-      'ListSupportedInstanceTypes'
+      'ListSupportedInstanceTypes',
+      'ListEditors',
+      'ListRepositories',
+      'ListWorkspaceAccessIdentities',
+      'ViewEventsFromAllClustersInConsole'
     ],
     'Permissions management': [
-      'PutBlockPublicAccessConfiguration'
+      'PutBlockPublicAccessConfiguration',
+      'DeleteWorkspaceAccess',
+      'PutWorkspaceAccess'
     ]
   };
 
@@ -870,6 +1124,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .toCreateStudio()
    * - .toRunJobFlow()
    * - .toStartNotebookExecution()
+   * - .toCreateEditor()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -932,6 +1187,18 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .toTerminateJobFlows()
    * - .toUpdateStudio()
    * - .toUpdateStudioSessionMapping()
+   * - .toAttachEditor()
+   * - .toCreateEditor()
+   * - .toDeleteEditor()
+   * - .toDeleteWorkspaceAccess()
+   * - .toDescribeEditor()
+   * - .toDetachEditor()
+   * - .toListWorkspaceAccessIdentities()
+   * - .toOpenEditorInConsole()
+   * - .toPutWorkspaceAccess()
+   * - .toStartEditor()
+   * - .toStopEditor()
+   * - .toUpdateEditor()
    *
    * Applies to resource types:
    * - cluster
@@ -958,6 +1225,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .toRemoveTags()
    * - .toRunJobFlow()
    * - .toStartNotebookExecution()
+   * - .toCreateEditor()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -993,6 +1261,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .toCreateStudio()
    * - .toRunJobFlow()
    * - .toStartNotebookExecution()
+   * - .toCreateEditor()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1055,6 +1324,18 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .toTerminateJobFlows()
    * - .toUpdateStudio()
    * - .toUpdateStudioSessionMapping()
+   * - .toAttachEditor()
+   * - .toCreateEditor()
+   * - .toDeleteEditor()
+   * - .toDeleteWorkspaceAccess()
+   * - .toDescribeEditor()
+   * - .toDetachEditor()
+   * - .toListWorkspaceAccessIdentities()
+   * - .toOpenEditorInConsole()
+   * - .toPutWorkspaceAccess()
+   * - .toStartEditor()
+   * - .toStopEditor()
+   * - .toUpdateEditor()
    *
    * Applies to resource types:
    * - cluster

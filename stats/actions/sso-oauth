@@ -1,1 +1,3 @@
 sso-oauth:CreateTokenWithIAM;Write
+sso-oauth:IntrospectTokenWithIAM;Write
+sso-oauth:RevokeTokenWithIAM;Write

@@ -388,6 +388,17 @@ export class Applicationinsights extends PolicyStatement {
     return this.to('UpdateWorkload');
   }
 
+  /**
+   * Grants permission to share Application Insights resources with a monitoring account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions
+   */
+  public toLink() {
+    return this.to('Link');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddWorkload',
@@ -405,7 +416,8 @@ export class Applicationinsights extends PolicyStatement {
       'UpdateComponentConfiguration',
       'UpdateLogPattern',
       'UpdateProblem',
-      'UpdateWorkload'
+      'UpdateWorkload',
+      'Link'
     ],
     Read: [
       'DescribeApplication',

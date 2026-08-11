@@ -436,6 +436,50 @@ export class Apprunner extends PolicyStatement {
     return this.to('UpdateVpcIngressConnection');
   }
 
+  /**
+   * Grants permission to associate the service with an AWS WAF web ACL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html
+   */
+  public toAssociateWebAcl() {
+    return this.to('AssociateWebAcl');
+  }
+
+  /**
+   * Grants permission to get the AWS WAF web ACL that is associated with an AWS App Runner service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html
+   */
+  public toDescribeWebAclForService() {
+    return this.to('DescribeWebAclForService');
+  }
+
+  /**
+   * Grants permission to disassociate the service with an AWS WAF web ACL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html
+   */
+  public toDisassociateWebAcl() {
+    return this.to('DisassociateWebAcl');
+  }
+
+  /**
+   * Grants permission to list the services that are associated with an AWS WAF web ACL
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html
+   */
+  public toListAssociatedServicesForWebAcl() {
+    return this.to('ListAssociatedServicesForWebAcl');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateCustomDomain',
@@ -459,7 +503,9 @@ export class Apprunner extends PolicyStatement {
       'UntagResource',
       'UpdateDefaultAutoScalingConfiguration',
       'UpdateService',
-      'UpdateVpcIngressConnection'
+      'UpdateVpcIngressConnection',
+      'AssociateWebAcl',
+      'DisassociateWebAcl'
     ],
     Read: [
       'DescribeAutoScalingConfiguration',
@@ -469,7 +515,8 @@ export class Apprunner extends PolicyStatement {
       'DescribeService',
       'DescribeVpcConnector',
       'DescribeVpcIngressConnection',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'DescribeWebAclForService'
     ],
     List: [
       'ListAutoScalingConfigurations',
@@ -479,7 +526,8 @@ export class Apprunner extends PolicyStatement {
       'ListServices',
       'ListServicesForAutoScalingConfiguration',
       'ListVpcConnectors',
-      'ListVpcIngressConnections'
+      'ListVpcIngressConnections',
+      'ListAssociatedServicesForWebAcl'
     ],
     Tagging: [
       'TagResource',
@@ -753,6 +801,9 @@ export class Apprunner extends PolicyStatement {
    * - .toUpdateDefaultAutoScalingConfiguration()
    * - .toUpdateService()
    * - .toUpdateVpcIngressConnection()
+   * - .toAssociateWebAcl()
+   * - .toDescribeWebAclForService()
+   * - .toDisassociateWebAcl()
    *
    * Applies to resource types:
    * - autoscalingconfiguration

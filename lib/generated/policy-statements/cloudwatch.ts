@@ -659,6 +659,116 @@ export class Cloudwatch extends PolicyStatement {
     return this.to('UpdateServiceLevelObjective');
   }
 
+  /**
+   * Grants permission to make API calls to CloudWatch using bearer token authentication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toCallWithBearerToken() {
+    return this.to('CallWithBearerToken');
+  }
+
+  /**
+   * Grants permission to delete a pipeline rule for CloudWatch pipelines for OTel metric processing
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toDeletePipelineRule() {
+    return this.to('DeletePipelineRule');
+  }
+
+  /**
+   * Grants permission to retrieve the status of OTel Enrichment of vended metrics for PromQL querying
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toGetOTelEnrichment() {
+    return this.to('GetOTelEnrichment');
+  }
+
+  /**
+   * Grants permission to retrieve service data
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toGetServiceData() {
+    return this.to('GetServiceData');
+  }
+
+  /**
+   * Grants permission to retrieve a CloudWatch topology discovery status
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toGetTopologyDiscoveryStatus() {
+    return this.to('GetTopologyDiscoveryStatus');
+  }
+
+  /**
+   * Grants permission to share CloudWatch resources with a monitoring account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions
+   */
+  public toLink() {
+    return this.to('Link');
+  }
+
+  /**
+   * Grants permission to retrieve all the entities that are emitting a given metric
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toListEntitiesForMetric() {
+    return this.to('ListEntitiesForMetric');
+  }
+
+  /**
+   * Grants permission to create or update a pipeline rule for CloudWatch pipelines for OTel metric processing
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toPutPipelineRule() {
+    return this.to('PutPipelineRule');
+  }
+
+  /**
+   * Grants permission to enable OTel Enrichment of vended metrics for PromQL querying
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toStartOTelEnrichment() {
+    return this.to('StartOTelEnrichment');
+  }
+
+  /**
+   * Grants permission to disable OTel Enrichment of vended metrics for PromQL querying
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toStopOTelEnrichment() {
+    return this.to('StopOTelEnrichment');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'BatchGetServiceLevelIndicatorReport',
@@ -681,7 +791,10 @@ export class Cloudwatch extends PolicyStatement {
       'GetService',
       'GetServiceLevelObjective',
       'GetTopologyMap',
-      'ListManagedInsightRules'
+      'ListManagedInsightRules',
+      'GetOTelEnrichment',
+      'GetServiceData',
+      'GetTopologyDiscoveryStatus'
     ],
     Write: [
       'CreateServiceLevelObjective',
@@ -712,7 +825,13 @@ export class Cloudwatch extends PolicyStatement {
       'StopMetricStreams',
       'TagResource',
       'UntagResource',
-      'UpdateServiceLevelObjective'
+      'UpdateServiceLevelObjective',
+      'CallWithBearerToken',
+      'DeletePipelineRule',
+      'Link',
+      'PutPipelineRule',
+      'StartOTelEnrichment',
+      'StopOTelEnrichment'
     ],
     List: [
       'ListAlarmMuteRules',
@@ -721,7 +840,8 @@ export class Cloudwatch extends PolicyStatement {
       'ListMetrics',
       'ListServiceLevelObjectives',
       'ListServices',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'ListEntitiesForMetric'
     ],
     Tagging: [
       'TagResource',
@@ -935,6 +1055,9 @@ export class Cloudwatch extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateServiceLevelObjective()
+   * - .toDeletePipelineRule()
+   * - .toGetServiceData()
+   * - .toPutPipelineRule()
    *
    * Applies to resource types:
    * - alarm

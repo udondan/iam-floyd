@@ -1241,12 +1241,80 @@ export class Lambda extends PolicyStatement {
     return this.to('UpdateNetworkConnector');
   }
 
+  /**
+   * Grants permission to connect to a Lambda MicroVM via HTTP (VPC Endpoint only)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html
+   */
+  public toConnectMicrovm() {
+    return this.to('ConnectMicrovm');
+  }
+
+  /**
+   * Grants permission to disable replication for a Lambda@Edge function
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html
+   */
+  public toDisableReplication() {
+    return this.to('DisableReplication');
+  }
+
+  /**
+   * Grants permission to enable replication for a Lambda@Edge function
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html
+   */
+  public toEnableReplication() {
+    return this.to('EnableReplication');
+  }
+
+  /**
+   * Grants permission to invoke an AWS Lambda function through url
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_InvokeFunctionUrl.html
+   */
+  public toInvokeFunctionUrl() {
+    return this.to('InvokeFunctionUrl');
+  }
+
+  /**
+   * Grants permission to pass an AWS Lambda capacity provider to a service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html
+   */
+  public toPassCapacityProvider() {
+    return this.to('PassCapacityProvider');
+  }
+
+  /**
+   * Grants permission to pass an AWS Lambda network connector to a service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html
+   */
+  public toPassNetworkConnector() {
+    return this.to('PassNetworkConnector');
+  }
+
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AddLayerVersionPermission',
       'AddPermission',
       'RemoveLayerVersionPermission',
-      'RemovePermission'
+      'RemovePermission',
+      'DisableReplication',
+      'EnableReplication'
     ],
     Write: [
       'AddLayerVersionPermission',
@@ -1310,7 +1378,13 @@ export class Lambda extends PolicyStatement {
       'UpdateFunctionUrlConfig',
       'UpdateMicrovmImage',
       'UpdateMicrovmImageVersion',
-      'UpdateNetworkConnector'
+      'UpdateNetworkConnector',
+      'ConnectMicrovm',
+      'DisableReplication',
+      'EnableReplication',
+      'InvokeFunctionUrl',
+      'PassCapacityProvider',
+      'PassNetworkConnector'
     ],
     Read: [
       'GetAccountSettings',
@@ -1675,6 +1749,10 @@ export class Lambda extends PolicyStatement {
    * - .toUpdateMicrovmImage()
    * - .toUpdateMicrovmImageVersion()
    * - .toUpdateNetworkConnector()
+   * - .toDisableReplication()
+   * - .toEnableReplication()
+   * - .toInvokeFunctionUrl()
+   * - .toPassCapacityProvider()
    *
    * Applies to resource types:
    * - capacityProvider
@@ -1740,6 +1818,7 @@ export class Lambda extends PolicyStatement {
    *
    * Applies to actions:
    * - .toInvokeFunction()
+   * - .toInvokeFunctionUrl()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1762,6 +1841,7 @@ export class Lambda extends PolicyStatement {
    * - .toGetFunctionUrlConfig()
    * - .toUpdateEventSourceMapping()
    * - .toUpdateFunctionUrlConfig()
+   * - .toInvokeFunctionUrl()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -1783,6 +1863,7 @@ export class Lambda extends PolicyStatement {
    * - .toListFunctionUrlConfigs()
    * - .toRemovePermission()
    * - .toUpdateFunctionUrlConfig()
+   * - .toInvokeFunctionUrl()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -1357,6 +1357,78 @@ export class Dms extends PolicyStatement {
     return this.to('UpdateSubscriptionsToEventBridge');
   }
 
+  /**
+   * Grants permission to DMS to create resources for zero-ETL integrations with self managed databases
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toCreateOutboundIntegration() {
+    return this.to('CreateOutboundIntegration');
+  }
+
+  /**
+   * Grants permission to list the AWS DMS attributes for a metadata model assessment action items. Note. Despite this action requires StartMetadataModelImport, the latter does not currently authorize the described Schema Conversion operation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toListMetadataModelAssessmentActionItems() {
+    return this.to('ListMetadataModelAssessmentActionItems');
+  }
+
+  /**
+   * Grants permission to modify the name and description of the specified Fleet Advisor collector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toModifyFleetAdvisorCollector() {
+    return this.to('ModifyFleetAdvisorCollector');
+  }
+
+  /**
+   * Grants permission to modify the status of the specified Fleet Advisor collector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toModifyFleetAdvisorCollectorStatuses() {
+    return this.to('ModifyFleetAdvisorCollectorStatuses');
+  }
+
+  /**
+   * Grants permission to DMS to modify resources for zero-ETL integrations with self managed databases
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toModifyOutboundIntegration() {
+    return this.to('ModifyOutboundIntegration');
+  }
+
+  /**
+   * Grants permission to upload files to your Amazon S3 bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toUploadFileMetadataList() {
+    return this.to('UploadFileMetadataList');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddTagsToResource',
@@ -1431,7 +1503,12 @@ export class Dms extends PolicyStatement {
       'UpdateDataProvider',
       'UpdateInstanceProfile',
       'UpdateMigrationProject',
-      'UpdateSubscriptionsToEventBridge'
+      'UpdateSubscriptionsToEventBridge',
+      'CreateOutboundIntegration',
+      'ModifyFleetAdvisorCollector',
+      'ModifyFleetAdvisorCollectorStatuses',
+      'ModifyOutboundIntegration',
+      'UploadFileMetadataList'
     ],
     Read: [
       'DescribeAccountAttributes',
@@ -1482,7 +1559,8 @@ export class Dms extends PolicyStatement {
       'ListMetadataModelExports',
       'ListMigrationProjects',
       'ListTagsForResource',
-      'TestConnection'
+      'TestConnection',
+      'ListMetadataModelAssessmentActionItems'
     ]
   };
 
@@ -1739,6 +1817,7 @@ export class Dms extends PolicyStatement {
    * - .toCreateReplicationTask()
    * - .toImportCertificate()
    * - .toRemoveTagsFromResource()
+   * - .toCreateOutboundIntegration()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1837,6 +1916,8 @@ export class Dms extends PolicyStatement {
    * - .toUpdateDataProvider()
    * - .toUpdateInstanceProfile()
    * - .toUpdateMigrationProject()
+   * - .toCreateOutboundIntegration()
+   * - .toListMetadataModelAssessmentActionItems()
    *
    * Applies to resource types:
    * - Certificate
@@ -1881,6 +1962,7 @@ export class Dms extends PolicyStatement {
    * - .toDescribeReplicationInstanceTaskLogs()
    * - .toImportCertificate()
    * - .toRemoveTagsFromResource()
+   * - .toCreateOutboundIntegration()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -2120,6 +2202,7 @@ export class Dms extends PolicyStatement {
    * - .toStartMetadataModelImport()
    * - .toUpdateConversionConfiguration()
    * - .toUpdateMigrationProject()
+   * - .toListMetadataModelAssessmentActionItems()
    *
    * Applies to resource types:
    * - MigrationProject
@@ -2209,6 +2292,7 @@ export class Dms extends PolicyStatement {
    * - .toCreateReplicationInstance()
    * - .toCreateReplicationSubnetGroup()
    * - .toCreateReplicationTask()
+   * - .toCreateOutboundIntegration()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

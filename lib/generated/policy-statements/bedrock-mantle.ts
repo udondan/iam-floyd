@@ -417,6 +417,18 @@ export class BedrockMantle extends PolicyStatement {
     return this.to('UpdateReservation');
   }
 
+  /**
+   * Grants permission to make API calls using bearer token authentication
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifBearerTokenType()
+   */
+  public toCallWithBearerToken() {
+    return this.to('CallWithBearerToken');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ArchiveProject',
@@ -458,7 +470,8 @@ export class BedrockMantle extends PolicyStatement {
       'ListFineTuningJobs',
       'ListModels',
       'ListProjects',
-      'ListReservations'
+      'ListReservations',
+      'CallWithBearerToken'
     ],
     Tagging: [
       'TagResource',
@@ -613,6 +626,9 @@ export class BedrockMantle extends PolicyStatement {
    * Filters access by the Short-term or Long-term bearer tokens
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockmantle.html#amazonbedrockmantle-policy-keys
+   *
+   * Applies to actions:
+   * - .toCallWithBearerToken()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

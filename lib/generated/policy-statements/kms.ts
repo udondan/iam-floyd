@@ -713,6 +713,17 @@ export class Kms extends PolicyStatement {
     return this.to('VerifyMac');
   }
 
+  /**
+   * Controls access to internal APIs that synchronize multi-Region keys
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-auth.html#multi-region-auth-slr
+   */
+  public toSynchronizeMultiRegionKey() {
+    return this.to('SynchronizeMultiRegionKey');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelKeyDeletion',
@@ -755,7 +766,8 @@ export class Kms extends PolicyStatement {
       'UpdateKeyDescription',
       'UpdatePrimaryRegion',
       'Verify',
-      'VerifyMac'
+      'VerifyMac',
+      'SynchronizeMultiRegionKey'
     ],
     'Permissions management': [
       'CreateGrant',
@@ -892,6 +904,7 @@ export class Kms extends PolicyStatement {
    * - .toUpdatePrimaryRegion()
    * - .toVerify()
    * - .toVerifyMac()
+   * - .toSynchronizeMultiRegionKey()
    *
    * Applies to resource types:
    * - key
@@ -1284,6 +1297,7 @@ export class Kms extends PolicyStatement {
    * - .toUpdatePrimaryRegion()
    * - .toVerify()
    * - .toVerifyMac()
+   * - .toSynchronizeMultiRegionKey()
    *
    * Applies to resource types:
    * - key
@@ -1346,6 +1360,7 @@ export class Kms extends PolicyStatement {
    * - .toUpdatePrimaryRegion()
    * - .toVerify()
    * - .toVerifyMac()
+   * - .toSynchronizeMultiRegionKey()
    *
    * Applies to resource types:
    * - key
@@ -1408,6 +1423,7 @@ export class Kms extends PolicyStatement {
    * - .toUpdatePrimaryRegion()
    * - .toVerify()
    * - .toVerifyMac()
+   * - .toSynchronizeMultiRegionKey()
    *
    * Applies to resource types:
    * - key
@@ -1502,6 +1518,7 @@ export class Kms extends PolicyStatement {
    * - .toUpdatePrimaryRegion()
    * - .toVerify()
    * - .toVerifyMac()
+   * - .toSynchronizeMultiRegionKey()
    *
    * Applies to resource types:
    * - key
@@ -1563,6 +1580,7 @@ export class Kms extends PolicyStatement {
    * - .toUpdatePrimaryRegion()
    * - .toVerify()
    * - .toVerifyMac()
+   * - .toSynchronizeMultiRegionKey()
    *
    * Applies to resource types:
    * - key
@@ -1717,6 +1735,7 @@ export class Kms extends PolicyStatement {
    * - .toUpdatePrimaryRegion()
    * - .toVerify()
    * - .toVerifyMac()
+   * - .toSynchronizeMultiRegionKey()
    *
    * Applies to resource types:
    * - key

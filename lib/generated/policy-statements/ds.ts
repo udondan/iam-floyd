@@ -917,6 +917,131 @@ export class Ds extends PolicyStatement {
     return this.to('VerifyTrust');
   }
 
+  /**
+   * Grants permission to access directory data using the Directory Service Data API
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toAccessDSData() {
+    return this.to('AccessDSData');
+  }
+
+  /**
+   * Grants permission to authorize an application for your AWS Directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toAuthorizeApplication() {
+    return this.to('AuthorizeApplication');
+  }
+
+  /**
+   * Grants permission to verify that the alias is available for use
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toCheckAlias() {
+    return this.to('CheckAlias');
+  }
+
+  /**
+   * Grants permission to create an IdentityPool Directory in the AWS cloud
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toCreateIdentityPoolDirectory() {
+    return this.to('CreateIdentityPoolDirectory');
+  }
+
+  /**
+   * Grants permission to disable AWS Management Console access for identity in your AWS Directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toDisableRoleAccess() {
+    return this.to('DisableRoleAccess');
+  }
+
+  /**
+   * Grants permission to enable AWS Management Console access for identity in your AWS Directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toEnableRoleAccess() {
+    return this.to('EnableRoleAccess');
+  }
+
+  /**
+   * Grants permission to retrieve the details of the authorized applications on a directory
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toGetAuthorizedApplicationDetails() {
+    return this.to('GetAuthorizedApplicationDetails');
+  }
+
+  /**
+   * Grants permission to obtain the AWS applications authorized for a directory
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toListAuthorizedApplications() {
+    return this.to('ListAuthorizedApplications');
+  }
+
+  /**
+   * Grants permission to unauthorize an application from your AWS Directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toUnauthorizeApplication() {
+    return this.to('UnauthorizeApplication');
+  }
+
+  /**
+   * Grants permission to update an authorized application for your AWS Directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toUpdateAuthorizedApplication() {
+    return this.to('UpdateAuthorizedApplication');
+  }
+
+  /**
+   * Grants permission to update the configurations like service account credentials or DNS server IP addresses for the specified directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toUpdateDirectory() {
+    return this.to('UpdateDirectory');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptSharedDirectory',
@@ -972,7 +1097,15 @@ export class Ds extends PolicyStatement {
       'UpdateNumberOfDomainControllers',
       'UpdateRadius',
       'UpdateSettings',
-      'UpdateTrust'
+      'UpdateTrust',
+      'AccessDSData',
+      'AuthorizeApplication',
+      'CreateIdentityPoolDirectory',
+      'DisableRoleAccess',
+      'EnableRoleAccess',
+      'UnauthorizeApplication',
+      'UpdateAuthorizedApplication',
+      'UpdateDirectory'
     ],
     Tagging: [
       'AddTagsToResource',
@@ -1000,13 +1133,19 @@ export class Ds extends PolicyStatement {
       'ListIpRoutes',
       'ListLogSubscriptions',
       'ListTagsForResource',
-      'VerifyTrust'
+      'VerifyTrust',
+      'CheckAlias',
+      'GetAuthorizedApplicationDetails',
+      'ListAuthorizedApplications'
     ],
     List: [
       'DescribeDirectories',
       'ListADAssessments',
       'ListCertificates',
       'ListSchemaExtensions'
+    ],
+    'Permissions management': [
+      'AccessDSData'
     ]
   };
 
@@ -1039,6 +1178,7 @@ export class Ds extends PolicyStatement {
    * - .toCreateHybridAD()
    * - .toCreateMicrosoftAD()
    * - .toRemoveTagsFromResource()
+   * - .toCreateIdentityPoolDirectory()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1124,6 +1264,15 @@ export class Ds extends PolicyStatement {
    * - .toUpdateSettings()
    * - .toUpdateTrust()
    * - .toVerifyTrust()
+   * - .toAccessDSData()
+   * - .toAuthorizeApplication()
+   * - .toDisableRoleAccess()
+   * - .toEnableRoleAccess()
+   * - .toGetAuthorizedApplicationDetails()
+   * - .toListAuthorizedApplications()
+   * - .toUnauthorizeApplication()
+   * - .toUpdateAuthorizedApplication()
+   * - .toUpdateDirectory()
    *
    * Applies to resource types:
    * - directory
@@ -1148,6 +1297,7 @@ export class Ds extends PolicyStatement {
    * - .toCreateHybridAD()
    * - .toCreateMicrosoftAD()
    * - .toRemoveTagsFromResource()
+   * - .toCreateIdentityPoolDirectory()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

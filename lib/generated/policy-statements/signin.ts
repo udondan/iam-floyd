@@ -183,6 +183,17 @@ export class Signin extends PolicyStatement {
     return this.to('RevokeOAuth2Token');
   }
 
+  /**
+   * Grants permission to create an AWS account through the AWS Management Console sign-up flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/console-private-access.html
+   */
+  public toCreateAccount() {
+    return this.to('CreateAccount');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'Authenticate',
@@ -199,7 +210,8 @@ export class Signin extends PolicyStatement {
       'DeleteResourcePermissionStatement',
       'PutConsoleAuthorizationConfiguration',
       'PutResourcePermissionStatement',
-      'RevokeOAuth2Token'
+      'RevokeOAuth2Token',
+      'CreateAccount'
     ],
     List: [
       'ListResourcePermissionStatements',

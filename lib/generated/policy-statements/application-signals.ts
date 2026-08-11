@@ -363,6 +363,17 @@ export class ApplicationSignals extends PolicyStatement {
     return this.to('UpdateServiceLevelObjective');
   }
 
+  /**
+   * Grants permission to share Application Signals resources with a monitoring account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions
+   */
+  public toLink() {
+    return this.to('Link');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchDeleteInstrumentationConfigurations',
@@ -377,7 +388,8 @@ export class ApplicationSignals extends PolicyStatement {
       'StartDiscovery',
       'TagResource',
       'UntagResource',
-      'UpdateServiceLevelObjective'
+      'UpdateServiceLevelObjective',
+      'Link'
     ],
     Read: [
       'BatchGetServiceLevelObjectiveBudgetReport',

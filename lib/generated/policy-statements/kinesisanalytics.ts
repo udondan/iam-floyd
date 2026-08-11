@@ -198,6 +198,17 @@ export class Kinesisanalytics extends PolicyStatement {
     return this.to('UpdateApplication');
   }
 
+  /**
+   * Grants permission to Kinesis Data Analytics console to display stream results for Kinesis Data Analytics SQL runtime applications
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/api-permissions-reference.html#api-permissions-reference-gas
+   */
+  public toGetApplicationState() {
+    return this.to('GetApplicationState');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddApplicationInput',
@@ -216,7 +227,8 @@ export class Kinesisanalytics extends PolicyStatement {
     Read: [
       'DescribeApplication',
       'DiscoverInputSchema',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'GetApplicationState'
     ],
     List: [
       'ListApplications'
@@ -280,6 +292,7 @@ export class Kinesisanalytics extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateApplication()
+   * - .toGetApplicationState()
    *
    * Applies to resource types:
    * - application

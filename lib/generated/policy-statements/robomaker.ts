@@ -677,6 +677,24 @@ export class Robomaker extends PolicyStatement {
     return this.to('UpdateWorldTemplate');
   }
 
+  /**
+   * Lists supported availability zones
+   *
+   * Access Level: List
+   */
+  public toListSupportedAvailabilityZones() {
+    return this.to('ListSupportedAvailabilityZones');
+  }
+
+  /**
+   * Report the deployment status for an individual robot
+   *
+   * Access Level: Write
+   */
+  public toUpdateRobotDeployment() {
+    return this.to('UpdateRobotDeployment');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchDeleteWorlds',
@@ -710,7 +728,8 @@ export class Robomaker extends PolicyStatement {
       'UntagResource',
       'UpdateRobotApplication',
       'UpdateSimulationApplication',
-      'UpdateWorldTemplate'
+      'UpdateWorldTemplate',
+      'UpdateRobotDeployment'
     ],
     Read: [
       'BatchDescribeSimulationJob',
@@ -739,7 +758,8 @@ export class Robomaker extends PolicyStatement {
       'ListWorldExportJobs',
       'ListWorldGenerationJobs',
       'ListWorldTemplates',
-      'ListWorlds'
+      'ListWorlds',
+      'ListSupportedAvailabilityZones'
     ],
     Tagging: [
       'TagResource',

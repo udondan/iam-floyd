@@ -19,6 +19,7 @@ s3tables:GetTableBucketMetricsConfiguration;Read
 s3tables:GetTableBucketPolicy;Read
 s3tables:GetTableBucketReplication;Read
 s3tables:GetTableBucketStorageClass;Read
+s3tables:GetTableData;Read
 s3tables:GetTableEncryption;Read
 s3tables:GetTableMaintenanceConfiguration;Read
 s3tables:GetTableMaintenanceJobStatus;Read
@@ -39,6 +40,8 @@ s3tables:PutTableBucketMetricsConfiguration;Write
 s3tables:PutTableBucketPolicy;Permissions management, Write
 s3tables:PutTableBucketReplication;Write
 s3tables:PutTableBucketStorageClass;Write
+s3tables:PutTableData;Write
+s3tables:PutTableEncryption;Write
 s3tables:PutTableMaintenanceConfiguration;Write
 s3tables:PutTablePolicy;Permissions management, Write
 s3tables:PutTableRecordExpirationConfiguration;Write

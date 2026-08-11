@@ -1118,6 +1118,50 @@ export class Cleanrooms extends PolicyStatement {
     return this.to('UpdateProtectedQuery');
   }
 
+  /**
+   * Grants permission to access a collaboration in the context of Clean Rooms ML custom models
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/ml-behaviors-byom.html#ml-behaviors-byom-membership-collaboration-access
+   */
+  public toPassCollaboration() {
+    return this.to('PassCollaboration');
+  }
+
+  /**
+   * Grants permission to access a membership in the context of Clean Rooms ML custom models
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/ml-behaviors-byom.html#ml-behaviors-byom-membership-collaboration-access
+   */
+  public toPassMembership() {
+    return this.to('PassMembership');
+  }
+
+  /**
+   * Grants permission to update the allowed columns of an existing configured table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html
+   */
+  public toUpdateConfiguredTableAllowedColumns() {
+    return this.to('UpdateConfiguredTableAllowedColumns');
+  }
+
+  /**
+   * Grants permission to update the table reference of an existing configured table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html
+   */
+  public toUpdateConfiguredTableReference() {
+    return this.to('UpdateConfiguredTableReference');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'BatchGetCollaborationAnalysisTemplate',
@@ -1145,7 +1189,9 @@ export class Cleanrooms extends PolicyStatement {
       'GetProtectedQuery',
       'GetSchema',
       'GetSchemaAnalysisRule',
-      'PreviewPrivacyImpact'
+      'PreviewPrivacyImpact',
+      'PassCollaboration',
+      'PassMembership'
     ],
     Write: [
       'CreateAnalysisTemplate',
@@ -1198,7 +1244,9 @@ export class Cleanrooms extends PolicyStatement {
       'UpdateMembership',
       'UpdatePrivacyBudgetTemplate',
       'UpdateProtectedJob',
-      'UpdateProtectedQuery'
+      'UpdateProtectedQuery',
+      'UpdateConfiguredTableAllowedColumns',
+      'UpdateConfiguredTableReference'
     ],
     List: [
       'ListAnalysisTemplates',
@@ -1539,6 +1587,10 @@ export class Cleanrooms extends PolicyStatement {
    * - .toUpdatePrivacyBudgetTemplate()
    * - .toUpdateProtectedJob()
    * - .toUpdateProtectedQuery()
+   * - .toPassCollaboration()
+   * - .toPassMembership()
+   * - .toUpdateConfiguredTableAllowedColumns()
+   * - .toUpdateConfiguredTableReference()
    *
    * Applies to resource types:
    * - analysistemplate

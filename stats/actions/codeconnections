@@ -7,7 +7,10 @@ codeconnections:DeleteHost;Write
 codeconnections:DeleteRepositoryLink;Write
 codeconnections:DeleteSyncConfiguration;Write
 codeconnections:GetConnection;Read
+codeconnections:GetConnectionToken;Read
 codeconnections:GetHost;Read
+codeconnections:GetIndividualAccessToken;Read
+codeconnections:GetInstallationUrl;Read
 codeconnections:GetRepositoryLink;Read
 codeconnections:GetRepositorySyncStatus;Read
 codeconnections:GetResourceSyncStatus;Read
@@ -15,10 +18,16 @@ codeconnections:GetSyncBlockerSummary;Read
 codeconnections:GetSyncConfiguration;Read
 codeconnections:ListConnections;List
 codeconnections:ListHosts;List
+codeconnections:ListInstallationTargets;List
 codeconnections:ListRepositoryLinks;List
 codeconnections:ListRepositorySyncDefinitions;List
 codeconnections:ListSyncConfigurations;List
 codeconnections:ListTagsForResource;List
+codeconnections:PassConnection;Read
+codeconnections:PassRepository;Read
+codeconnections:RegisterAppCode;Read
+codeconnections:StartAppRegistrationHandshake;Read
+codeconnections:StartOAuthHandshake;Read
 codeconnections:TagResource;Tagging, Write
 codeconnections:UntagResource;Tagging, Write
 codeconnections:UpdateConnectionInstallation;Write
@@ -26,3 +35,4 @@ codeconnections:UpdateHost;Write
 codeconnections:UpdateRepositoryLink;Write
 codeconnections:UpdateSyncBlocker;Write
 codeconnections:UpdateSyncConfiguration;Write
+codeconnections:UseConnection;Read

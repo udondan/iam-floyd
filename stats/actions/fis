@@ -9,6 +9,9 @@ fis:GetExperimentTemplate;Read
 fis:GetSafetyLever;Read
 fis:GetTargetAccountConfiguration;Read
 fis:GetTargetResourceType;Read
+fis:InjectApiInternalError;Write
+fis:InjectApiThrottleError;Write
+fis:InjectApiUnavailableError;Write
 fis:ListActions;List
 fis:ListExperimentResolvedTargets;List
 fis:ListExperimentTargetAccountConfigurations;List

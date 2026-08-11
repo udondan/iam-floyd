@@ -253,6 +253,39 @@ export class S3files extends PolicyStatement {
     return this.to('UpdateMountTarget');
   }
 
+  /**
+   * Grants permission to allow an NFS client read-access to a file system
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-client-authorization.html
+   */
+  public toClientMount() {
+    return this.to('ClientMount');
+  }
+
+  /**
+   * Grants permission to allow an NFS client root-access to a file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-client-authorization.html
+   */
+  public toClientRootAccess() {
+    return this.to('ClientRootAccess');
+  }
+
+  /**
+   * Grants permission to allow an NFS client write-access to a file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-client-authorization.html
+   */
+  public toClientWrite() {
+    return this.to('ClientWrite');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateAccessPoint',
@@ -266,7 +299,9 @@ export class S3files extends PolicyStatement {
       'PutSynchronizationConfiguration',
       'TagResource',
       'UntagResource',
-      'UpdateMountTarget'
+      'UpdateMountTarget',
+      'ClientRootAccess',
+      'ClientWrite'
     ],
     'Permissions management': [
       'DeleteFileSystemPolicy',
@@ -278,7 +313,8 @@ export class S3files extends PolicyStatement {
       'GetFileSystemPolicy',
       'GetMountTarget',
       'GetSynchronizationConfiguration',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'ClientMount'
     ],
     List: [
       'ListAccessPoints',
@@ -370,6 +406,9 @@ export class S3files extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateMountTarget()
+   * - .toClientMount()
+   * - .toClientRootAccess()
+   * - .toClientWrite()
    *
    * Applies to resource types:
    * - access-point
@@ -405,6 +444,11 @@ export class S3files extends PolicyStatement {
    * Filters access by the ARN of the access point used to mount the file system
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-access-points.html
+   *
+   * Applies to actions:
+   * - .toClientMount()
+   * - .toClientRootAccess()
+   * - .toClientWrite()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`

@@ -14,6 +14,7 @@ profile:CreateRecommenderSchema;Write
 profile:CreateSegmentDefinition;Write
 profile:CreateSegmentEstimate;Write
 profile:CreateSegmentSnapshot;Write
+profile:CreateSnapshot;Write
 profile:CreateUploadJob;Write
 profile:DeleteCalculatedAttributeDefinition;Write
 profile:DeleteDomain;Write
@@ -57,6 +58,7 @@ profile:GetSegmentEstimate;Read
 profile:GetSegmentMembership;Read
 profile:GetSegmentSnapshot;Read
 profile:GetSimilarProfiles;List
+profile:GetSnapshot;Read
 profile:GetUploadJob;Read
 profile:GetUploadJobPath;Read
 profile:GetWorkflow;Read

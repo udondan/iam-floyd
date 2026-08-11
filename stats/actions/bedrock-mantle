@@ -1,5 +1,6 @@
 bedrock-mantle:ArchiveProject;Write
 bedrock-mantle:AssociateCustomizedModel;Write
+bedrock-mantle:CallWithBearerToken;List
 bedrock-mantle:CancelFineTuningJob;Write
 bedrock-mantle:CancelInference;Write
 bedrock-mantle:CreateCustomizedModel;Write

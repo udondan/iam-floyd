@@ -1,3 +1,6 @@
+s3files:ClientMount;Read
+s3files:ClientRootAccess;Write
+s3files:ClientWrite;Write
 s3files:CreateAccessPoint;Write
 s3files:CreateFileSystem;Write
 s3files:CreateMountTarget;Write

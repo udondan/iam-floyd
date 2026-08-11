@@ -5,6 +5,7 @@ aws-external-anthropic:ArchiveSession;Write
 aws-external-anthropic:ArchiveVault;Write
 aws-external-anthropic:ArchiveWorkspace;Write
 aws-external-anthropic:AssumeConsole;Write
+aws-external-anthropic:CallWithBearerToken;List
 aws-external-anthropic:CancelBatchInference;Write
 aws-external-anthropic:CountTokens;Write
 aws-external-anthropic:CreateAgent;Write

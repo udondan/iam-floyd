@@ -678,6 +678,17 @@ export class SesMailmanager extends PolicyStatement {
     return this.to('UpdateTrafficPolicy');
   }
 
+  /**
+   * Grants permission to configure vended log delivery for Mail Manager resources
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/ses/latest/dg/eb-policies.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateAddonInstance',
@@ -711,7 +722,8 @@ export class SesMailmanager extends PolicyStatement {
       'UpdateIngressPoint',
       'UpdateRelay',
       'UpdateRuleSet',
-      'UpdateTrafficPolicy'
+      'UpdateTrafficPolicy',
+      'AllowVendedLogDeliveryForResource'
     ],
     Read: [
       'GetAddonInstance',
@@ -748,6 +760,9 @@ export class SesMailmanager extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
     ]
   };
 
@@ -968,6 +983,7 @@ export class SesMailmanager extends PolicyStatement {
    * - .toUpdateRelay()
    * - .toUpdateRuleSet()
    * - .toUpdateTrafficPolicy()
+   * - .toAllowVendedLogDeliveryForResource()
    *
    * Applies to resource types:
    * - addon-instance
@@ -1039,6 +1055,7 @@ export class SesMailmanager extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateIngressPoint()
+   * - .toAllowVendedLogDeliveryForResource()
    *
    * Applies to resource types:
    * - mailmanager-ingress-point

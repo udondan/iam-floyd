@@ -301,6 +301,26 @@ export class Mq extends PolicyStatement {
     return this.to('UpdateUser');
   }
 
+  /**
+   * Grants permission to create a replica broker
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post
+   */
+  public toCreateReplicaBroker() {
+    return this.to('CreateReplicaBroker');
+  }
+
+  /**
+   * Grants permission to update RabbitMQ broker authentication and authorization configuration
+   *
+   * Access Level: Write
+   */
+  public toUpdateBrokerAccessConfiguration() {
+    return this.to('UpdateBrokerAccessConfiguration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateBroker',
@@ -315,7 +335,9 @@ export class Mq extends PolicyStatement {
       'RebootBroker',
       'UpdateBroker',
       'UpdateConfiguration',
-      'UpdateUser'
+      'UpdateUser',
+      'CreateReplicaBroker',
+      'UpdateBrokerAccessConfiguration'
     ],
     Tagging: [
       'CreateTags',
@@ -417,6 +439,8 @@ export class Mq extends PolicyStatement {
    * - .toUpdateBroker()
    * - .toUpdateConfiguration()
    * - .toUpdateUser()
+   * - .toCreateReplicaBroker()
+   * - .toUpdateBrokerAccessConfiguration()
    *
    * Applies to resource types:
    * - brokers

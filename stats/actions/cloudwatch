@@ -1,5 +1,6 @@
 cloudwatch:BatchGetServiceLevelIndicatorReport;Read
 cloudwatch:BatchGetServiceLevelObjectiveBudgetReport;Read
+cloudwatch:CallWithBearerToken;Write
 cloudwatch:CreateServiceLevelObjective;Write
 cloudwatch:DeleteAlarmMuteRule;Write
 cloudwatch:DeleteAlarms;Write
@@ -7,6 +8,7 @@ cloudwatch:DeleteAnomalyDetector;Write
 cloudwatch:DeleteDashboards;Write
 cloudwatch:DeleteInsightRules;Write
 cloudwatch:DeleteMetricStream;Write
+cloudwatch:DeletePipelineRule;Write
 cloudwatch:DeleteServiceLevelObjective;Write
 cloudwatch:DescribeAlarmHistory;Read
 cloudwatch:DescribeAlarms;Read
@@ -28,11 +30,16 @@ cloudwatch:GetMetricData;Read
 cloudwatch:GetMetricStatistics;Read
 cloudwatch:GetMetricStream;Read
 cloudwatch:GetMetricWidgetImage;Read
+cloudwatch:GetOTelEnrichment;Read
 cloudwatch:GetService;Read
+cloudwatch:GetServiceData;Read
 cloudwatch:GetServiceLevelObjective;Read
+cloudwatch:GetTopologyDiscoveryStatus;Read
 cloudwatch:GetTopologyMap;Read
+cloudwatch:Link;Write
 cloudwatch:ListAlarmMuteRules;List
 cloudwatch:ListDashboards;List
+cloudwatch:ListEntitiesForMetric;List
 cloudwatch:ListManagedInsightRules;Read
 cloudwatch:ListMetricStreams;List
 cloudwatch:ListMetrics;List
@@ -49,9 +56,12 @@ cloudwatch:PutManagedInsightRules;Write
 cloudwatch:PutMetricAlarm;Write
 cloudwatch:PutMetricData;Write
 cloudwatch:PutMetricStream;Write
+cloudwatch:PutPipelineRule;Write
 cloudwatch:SetAlarmState;Write
 cloudwatch:StartMetricStreams;Write
+cloudwatch:StartOTelEnrichment;Write
 cloudwatch:StopMetricStreams;Write
+cloudwatch:StopOTelEnrichment;Write
 cloudwatch:TagResource;Tagging, Write
 cloudwatch:UntagResource;Tagging, Write
 cloudwatch:UpdateServiceLevelObjective;Write

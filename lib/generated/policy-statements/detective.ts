@@ -342,6 +342,83 @@ export class Detective extends PolicyStatement {
     return this.to('UpdateOrganizationConfiguration');
   }
 
+  /**
+   * Grants permission to retrieve a behavior graph's eligibility for a free trial period
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/adminguide/free-trial-overview.html
+   */
+  public toGetFreeTrialEligibility() {
+    return this.to('GetFreeTrialEligibility');
+  }
+
+  /**
+   * Grants permission to retrieve the data ingestion state of a behavior graph
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/adminguide/detective-source-data-about.html
+   */
+  public toGetGraphIngestState() {
+    return this.to('GetGraphIngestState');
+  }
+
+  /**
+   * Grants permission to retrieve information about Amazon Detective's pricing
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/adminguide/usage-projected-cost-calculation.html
+   */
+  public toGetPricingInformation() {
+    return this.to('GetPricingInformation');
+  }
+
+  /**
+   * Grants permission to list usage information of a behavior graph
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/adminguide/tracking-usage-logging.html
+   */
+  public toGetUsageInformation() {
+    return this.to('GetUsageInformation');
+  }
+
+  /**
+   * Grants permission to invoke Detective's Assistant
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/userguide/finding-groups-summary.html
+   */
+  public toInvokeAssistant() {
+    return this.to('InvokeAssistant');
+  }
+
+  /**
+   * Grants permission to retrieve high volume entities whose relationships cannot be stored by Detective
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/detective/latest/userguide/high-volume-entities.html
+   */
+  public toListHighDegreeEntities() {
+    return this.to('ListHighDegreeEntities');
+  }
+
+  /**
+   * Grants permission to search the data stored in a behavior graph
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/userguide/detective-search.html
+   */
+  public toSearchGraph() {
+    return this.to('SearchGraph');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptInvitation',
@@ -366,7 +443,13 @@ export class Detective extends PolicyStatement {
       'BatchGetMembershipDatasources',
       'DescribeOrganizationConfiguration',
       'GetInvestigation',
-      'GetMembers'
+      'GetMembers',
+      'GetFreeTrialEligibility',
+      'GetGraphIngestState',
+      'GetPricingInformation',
+      'GetUsageInformation',
+      'InvokeAssistant',
+      'SearchGraph'
     ],
     List: [
       'ListDatasourcePackages',
@@ -376,7 +459,8 @@ export class Detective extends PolicyStatement {
       'ListInvitations',
       'ListMembers',
       'ListOrganizationAdminAccount',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'ListHighDegreeEntities'
     ],
     Tagging: [
       'TagResource',
@@ -447,6 +531,12 @@ export class Detective extends PolicyStatement {
    * - .toUpdateDatasourcePackages()
    * - .toUpdateInvestigationState()
    * - .toUpdateOrganizationConfiguration()
+   * - .toGetFreeTrialEligibility()
+   * - .toGetGraphIngestState()
+   * - .toGetUsageInformation()
+   * - .toInvokeAssistant()
+   * - .toListHighDegreeEntities()
+   * - .toSearchGraph()
    *
    * Applies to resource types:
    * - Graph

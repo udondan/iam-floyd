@@ -1,5 +1,6 @@
 mq:CreateBroker;Write
 mq:CreateConfiguration;Write
+mq:CreateReplicaBroker;Write
 mq:CreateTags;Tagging, Write
 mq:CreateUser;Write
 mq:DeleteBroker;Write
@@ -21,5 +22,6 @@ mq:ListUsers;List
 mq:Promote;Write
 mq:RebootBroker;Write
 mq:UpdateBroker;Write
+mq:UpdateBrokerAccessConfiguration;Write
 mq:UpdateConfiguration;Write
 mq:UpdateUser;Write

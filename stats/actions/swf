@@ -1,3 +1,7 @@
+swf:CancelTimer;Write
+swf:CancelWorkflowExecution;Write
+swf:CompleteWorkflowExecution;Write
+swf:ContinueAsNewWorkflowExecution;Write
 swf:CountClosedWorkflowExecutions;Read
 swf:CountOpenWorkflowExecutions;Read
 swf:CountPendingActivityTasks;Read
@@ -11,6 +15,7 @@ swf:DescribeActivityType;Read
 swf:DescribeDomain;Read
 swf:DescribeWorkflowExecution;Read
 swf:DescribeWorkflowType;Read
+swf:FailWorkflowExecution;Write
 swf:GetWorkflowExecutionHistory;Read
 swf:ListActivityTypes;List
 swf:ListClosedWorkflowExecutions;List
@@ -21,15 +26,22 @@ swf:ListWorkflowTypes;List
 swf:PollForActivityTask;Write
 swf:PollForDecisionTask;Write
 swf:RecordActivityTaskHeartbeat;Write
+swf:RecordMarker;Write
 swf:RegisterActivityType;Write
 swf:RegisterDomain;Write
 swf:RegisterWorkflowType;Write
+swf:RequestCancelActivityTask;Write
+swf:RequestCancelExternalWorkflowExecution;Write
 swf:RequestCancelWorkflowExecution;Write
 swf:RespondActivityTaskCanceled;Write
 swf:RespondActivityTaskCompleted;Write
 swf:RespondActivityTaskFailed;Write
 swf:RespondDecisionTaskCompleted;Write
+swf:ScheduleActivityTask;Write
+swf:SignalExternalWorkflowExecution;Write
 swf:SignalWorkflowExecution;Write
+swf:StartChildWorkflowExecution;Write
+swf:StartTimer;Write
 swf:StartWorkflowExecution;Write
 swf:TagResource;Tagging, Write
 swf:TerminateWorkflowExecution;Write

@@ -1,10 +1,13 @@
 securityhub:AcceptAdministratorInvitation;Write
 securityhub:AcceptInvitation;Write
+securityhub:AllowVendedLogDeliveryForResource;Permissions management, Write
 securityhub:BatchDeleteAutomationRules;Write
 securityhub:BatchDisableStandards;Write
 securityhub:BatchEnableStandards;Write
 securityhub:BatchGetAutomationRules;Read
 securityhub:BatchGetConfigurationPolicyAssociations;Read
+securityhub:BatchGetControlEvaluations;Read
+securityhub:BatchGetEnabledRegionsV2;Read
 securityhub:BatchGetSecurityControls;Read
 securityhub:BatchGetStandardsControlAssociations;Read
 securityhub:BatchImportFindings;Write
@@ -56,6 +59,7 @@ securityhub:EnableSecurityHub;Write
 securityhub:EnableSecurityHubFeatureV2;Write
 securityhub:EnableSecurityHubV2;Write
 securityhub:GenerateRecommendedPolicyV2;Write
+securityhub:GetAdhocInsightResults;Read
 securityhub:GetAdministratorAccount;Read
 securityhub:GetAggregatorV2;Read
 securityhub:GetAutomationRuleV2;Read
@@ -63,11 +67,16 @@ securityhub:GetConfigurationPolicy;Read
 securityhub:GetConfigurationPolicyAssociation;Read
 securityhub:GetConnector;Read
 securityhub:GetConnectorV2;Read
+securityhub:GetControlFindingSummary;Read
+securityhub:GetCoverageStatisticsV2;Read
 securityhub:GetEnabledStandards;List
 securityhub:GetFindingAggregator;Read
 securityhub:GetFindingHistory;Read
 securityhub:GetFindings;Read
 securityhub:GetFindingsTrendsV2;Read
+securityhub:GetFreeTrialEndDate;Read
+securityhub:GetFreeTrialUsage;Read
+securityhub:GetInsightFindingTrend;Read
 securityhub:GetInsightResults;Read
 securityhub:GetInsights;List
 securityhub:GetInvitationsCount;Read
@@ -78,7 +87,10 @@ securityhub:GetResourcesStatisticsV2;Read
 securityhub:GetResourcesTrendsV2;Read
 securityhub:GetResourcesV2;Read
 securityhub:GetSecurityControlDefinition;Read
+securityhub:GetUsage;Read
+securityhub:GetUsageV2;Read
 securityhub:InviteMembers;Write
+securityhub:ListAccountUsageV2;List
 securityhub:ListAggregatorsV2;List
 securityhub:ListAutomationRules;List
 securityhub:ListAutomationRulesV2;List
@@ -86,6 +98,7 @@ securityhub:ListConfigurationPolicies;List
 securityhub:ListConfigurationPolicyAssociations;List
 securityhub:ListConnectors;List
 securityhub:ListConnectorsV2;List
+securityhub:ListControlEvaluationSummaries;Read
 securityhub:ListEnabledProductsForImport;List
 securityhub:ListFindingAggregators;List
 securityhub:ListInvitations;List
@@ -94,6 +107,8 @@ securityhub:ListOrganizationAdminAccounts;List
 securityhub:ListSecurityControlDefinitions;List
 securityhub:ListStandardsControlAssociations;List
 securityhub:ListTagsForResource;Read
+securityhub:SendFindingEvents;Read
+securityhub:SendInsightEvents;Read
 securityhub:StartConfigurationPolicyAssociation;Write
 securityhub:StartConfigurationPolicyDisassociation;Write
 securityhub:TagResource;Tagging, Write

@@ -392,6 +392,61 @@ export class Qapps extends PolicyStatement {
     return this.to('UpdateQAppSessionMetadata');
   }
 
+  /**
+   * Grants permission to copy Q App in the Q Business application environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html
+   */
+  public toCopyQApp() {
+    return this.to('CopyQApp');
+  }
+
+  /**
+   * Grants permission to create a library item review in the Q Business application environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html
+   */
+  public toCreateLibraryItemReview() {
+    return this.to('CreateLibraryItemReview');
+  }
+
+  /**
+   * Grants permission to subscribe to a Q App event bus topic in the Q Business application environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html
+   */
+  public toCreateSubscriptionToken() {
+    return this.to('CreateSubscriptionToken');
+  }
+
+  /**
+   * Grants permission to predict problem statement from conversation log in the Q Business application environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html
+   */
+  public toPredictProblemStatementFromConversation() {
+    return this.to('PredictProblemStatementFromConversation');
+  }
+
+  /**
+   * Grants permission to predict Q App metadata from problem statement in the Q Business application environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html
+   */
+  public toPredictQAppFromProblemStatement() {
+    return this.to('PredictQAppFromProblemStatement');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateLibraryItemReview',
@@ -417,7 +472,12 @@ export class Qapps extends PolicyStatement {
       'UpdateQApp',
       'UpdateQAppPermissions',
       'UpdateQAppSession',
-      'UpdateQAppSessionMetadata'
+      'UpdateQAppSessionMetadata',
+      'CopyQApp',
+      'CreateLibraryItemReview',
+      'CreateSubscriptionToken',
+      'PredictProblemStatementFromConversation',
+      'PredictQAppFromProblemStatement'
     ],
     Read: [
       'DescribeQAppPermissions',
@@ -540,6 +600,8 @@ export class Qapps extends PolicyStatement {
    * - .toUpdateQAppPermissions()
    * - .toUpdateQAppSession()
    * - .toUpdateQAppSessionMetadata()
+   * - .toCopyQApp()
+   * - .toCreateLibraryItemReview()
    *
    * Applies to resource types:
    * - qapp
@@ -596,6 +658,8 @@ export class Qapps extends PolicyStatement {
    * - .toUpdateQApp()
    * - .toUpdateQAppPermissions()
    * - .toUpdateQAppSession()
+   * - .toCopyQApp()
+   * - .toCreateLibraryItemReview()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -646,6 +710,8 @@ export class Qapps extends PolicyStatement {
    * - .toUpdateQApp()
    * - .toUpdateQAppPermissions()
    * - .toUpdateQAppSession()
+   * - .toCopyQApp()
+   * - .toCreateLibraryItemReview()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

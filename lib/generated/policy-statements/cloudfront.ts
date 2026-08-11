@@ -1873,6 +1873,94 @@ export class Cloudfront extends PolicyStatement {
     return this.to('VerifyDnsConfiguration');
   }
 
+  /**
+   * Grants permission to configure vended log delivery for a distribution
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-logs-infrastructure-V2-service-specific
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
+   * Grants permission to create a new savings plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toCreateSavingsPlan() {
+    return this.to('CreateSavingsPlan');
+  }
+
+  /**
+   * Grants permission to get a savings plan
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toGetSavingsPlan() {
+    return this.to('GetSavingsPlan');
+  }
+
+  /**
+   * Grants permission to list the distributions associated a Lambda function
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toListDistributionsByLambdaFunction() {
+    return this.to('ListDistributionsByLambdaFunction');
+  }
+
+  /**
+   * Grants permission to list CloudFront rate cards for the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toListRateCards() {
+    return this.to('ListRateCards');
+  }
+
+  /**
+   * Grants permission to list savings plans in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toListSavingsPlans() {
+    return this.to('ListSavingsPlans');
+  }
+
+  /**
+   * Grants permission to list CloudFront usage
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toListUsages() {
+    return this.to('ListUsages');
+  }
+
+  /**
+   * Grants permission to update a savings plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toUpdateSavingsPlan() {
+    return this.to('UpdateSavingsPlan');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateAlias',
@@ -1958,7 +2046,10 @@ export class Cloudfront extends PolicyStatement {
       'UpdateResponseHeadersPolicy',
       'UpdateStreamingDistribution',
       'UpdateTrustStore',
-      'UpdateVpcOrigin'
+      'UpdateVpcOrigin',
+      'AllowVendedLogDeliveryForResource',
+      'CreateSavingsPlan',
+      'UpdateSavingsPlan'
     ],
     Read: [
       'DescribeConnectionFunction',
@@ -2004,7 +2095,8 @@ export class Cloudfront extends PolicyStatement {
       'GetTrustStore',
       'GetVpcOrigin',
       'ListTagsForResource',
-      'VerifyDnsConfiguration'
+      'VerifyDnsConfiguration',
+      'GetSavingsPlan'
     ],
     List: [
       'ListAnycastIpLists',
@@ -2043,11 +2135,18 @@ export class Cloudfront extends PolicyStatement {
       'ListResponseHeadersPolicies',
       'ListStreamingDistributions',
       'ListTrustStores',
-      'ListVpcOrigins'
+      'ListVpcOrigins',
+      'ListDistributionsByLambdaFunction',
+      'ListRateCards',
+      'ListSavingsPlans',
+      'ListUsages'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
     ]
   };
 
@@ -2426,6 +2525,7 @@ export class Cloudfront extends PolicyStatement {
    * - .toUpdateTrustStore()
    * - .toUpdateVpcOrigin()
    * - .toVerifyDnsConfiguration()
+   * - .toAllowVendedLogDeliveryForResource()
    *
    * Applies to resource types:
    * - anycast-ip-list

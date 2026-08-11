@@ -568,6 +568,39 @@ export class S3tables extends PolicyStatement {
     return this.to('UpdateTableMetadataLocation');
   }
 
+  /**
+   * Grants permission to read metadata and data objects from a table storage endpoint using S3 APIs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.html#s3-tables-actions
+   */
+  public toGetTableData() {
+    return this.to('GetTableData');
+  }
+
+  /**
+   * Grants permission to write metadata and data objects to a table storage endpoint using S3 APIs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.html#s3-tables-actions
+   */
+  public toPutTableData() {
+    return this.to('PutTableData');
+  }
+
+  /**
+   * Grants permission to put encryption configuration on a table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.html#s3-tables-actions
+   */
+  public toPutTableEncryption() {
+    return this.to('PutTableEncryption');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateNamespace',
@@ -596,7 +629,9 @@ export class S3tables extends PolicyStatement {
       'RenameTable',
       'TagResource',
       'UntagResource',
-      'UpdateTableMetadataLocation'
+      'UpdateTableMetadataLocation',
+      'PutTableData',
+      'PutTableEncryption'
     ],
     'Permissions management': [
       'DeleteTableBucketPolicy',
@@ -623,7 +658,8 @@ export class S3tables extends PolicyStatement {
       'GetTableRecordExpirationJobStatus',
       'GetTableReplication',
       'GetTableReplicationStatus',
-      'GetTableStorageClass'
+      'GetTableStorageClass',
+      'GetTableData'
     ],
     List: [
       'ListNamespaces',
@@ -749,6 +785,9 @@ export class S3tables extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateTableMetadataLocation()
+   * - .toGetTableData()
+   * - .toPutTableData()
+   * - .toPutTableEncryption()
    *
    * Applies to resource types:
    * - Table
@@ -789,6 +828,7 @@ export class S3tables extends PolicyStatement {
    * - .toCreateTable()
    * - .toCreateTableBucket()
    * - .toPutTableBucketEncryption()
+   * - .toPutTableEncryption()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -806,6 +846,7 @@ export class S3tables extends PolicyStatement {
    * - .toCreateTable()
    * - .toCreateTableBucket()
    * - .toPutTableBucketEncryption()
+   * - .toPutTableEncryption()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -885,6 +926,9 @@ export class S3tables extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateTableMetadataLocation()
+   * - .toGetTableData()
+   * - .toPutTableData()
+   * - .toPutTableEncryption()
    *
    * Applies to resource types:
    * - Table
@@ -932,6 +976,9 @@ export class S3tables extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateTableMetadataLocation()
+   * - .toGetTableData()
+   * - .toPutTableData()
+   * - .toPutTableEncryption()
    *
    * Applies to resource types:
    * - Table
@@ -973,6 +1020,9 @@ export class S3tables extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateTableMetadataLocation()
+   * - .toGetTableData()
+   * - .toPutTableData()
+   * - .toPutTableEncryption()
    *
    * Applies to resource types:
    * - Table

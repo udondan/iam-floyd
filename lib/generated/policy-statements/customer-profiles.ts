@@ -1206,6 +1206,24 @@ export class Profile extends PolicyStatement {
     return this.to('UpdateRecommender');
   }
 
+  /**
+   * Grants permission to create a snapshot in the domain
+   *
+   * Access Level: Write
+   */
+  public toCreateSnapshot() {
+    return this.to('CreateSnapshot');
+  }
+
+  /**
+   * Grants permission to get a snapshot in the domain
+   *
+   * Access Level: Read
+   */
+  public toGetSnapshot() {
+    return this.to('GetSnapshot');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddProfileKey',
@@ -1255,7 +1273,8 @@ export class Profile extends PolicyStatement {
       'UpdateDomainLayout',
       'UpdateEventTrigger',
       'UpdateProfile',
-      'UpdateRecommender'
+      'UpdateRecommender',
+      'CreateSnapshot'
     ],
     Read: [
       'BatchGetCalculatedAttributeForProfile',
@@ -1289,7 +1308,8 @@ export class Profile extends PolicyStatement {
       'GetWorkflow',
       'GetWorkflowSteps',
       'ListTagsForResource',
-      'SearchProfiles'
+      'SearchProfiles',
+      'GetSnapshot'
     ],
     List: [
       'GetMatches',
@@ -1680,6 +1700,8 @@ export class Profile extends PolicyStatement {
    * - .toUpdateEventTrigger()
    * - .toUpdateProfile()
    * - .toUpdateRecommender()
+   * - .toCreateSnapshot()
+   * - .toGetSnapshot()
    *
    * Applies to resource types:
    * - calculated-attributes

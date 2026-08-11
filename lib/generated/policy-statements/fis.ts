@@ -304,6 +304,39 @@ export class Fis extends PolicyStatement {
     return this.to('UpdateTargetAccountConfiguration');
   }
 
+  /**
+   * Grants permission to inject an API internal error on the provided AWS service from an FIS Experiment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#fis-actions-reference-fis
+   */
+  public toInjectApiInternalError() {
+    return this.to('InjectApiInternalError');
+  }
+
+  /**
+   * Grants permission to inject an API throttle error on the provided AWS service from an FIS Experiment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#fis-actions-reference-fis
+   */
+  public toInjectApiThrottleError() {
+    return this.to('InjectApiThrottleError');
+  }
+
+  /**
+   * Grants permission to inject an API unavailable error on the provided AWS service from an FIS Experiment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#fis-actions-reference-fis
+   */
+  public toInjectApiUnavailableError() {
+    return this.to('InjectApiUnavailableError');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateExperimentTemplate',
@@ -316,7 +349,10 @@ export class Fis extends PolicyStatement {
       'UntagResource',
       'UpdateExperimentTemplate',
       'UpdateSafetyLeverState',
-      'UpdateTargetAccountConfiguration'
+      'UpdateTargetAccountConfiguration',
+      'InjectApiInternalError',
+      'InjectApiThrottleError',
+      'InjectApiUnavailableError'
     ],
     Read: [
       'GetAction',
@@ -452,6 +488,9 @@ export class Fis extends PolicyStatement {
    * - .toUntagResource()
    * - .toUpdateExperimentTemplate()
    * - .toUpdateTargetAccountConfiguration()
+   * - .toInjectApiInternalError()
+   * - .toInjectApiThrottleError()
+   * - .toInjectApiUnavailableError()
    *
    * Applies to resource types:
    * - action
@@ -490,6 +529,11 @@ export class Fis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fis/latest/userguide/security_iam_service-with-iam.html
    *
+   * Applies to actions:
+   * - .toInjectApiInternalError()
+   * - .toInjectApiThrottleError()
+   * - .toInjectApiUnavailableError()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -501,6 +545,11 @@ export class Fis extends PolicyStatement {
    * Filters access by the percentage of calls being affected by the AWS FIS action
    *
    * https://docs.aws.amazon.com/fis/latest/userguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toInjectApiInternalError()
+   * - .toInjectApiThrottleError()
+   * - .toInjectApiUnavailableError()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -514,6 +563,11 @@ export class Fis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fis/latest/userguide/security_iam_service-with-iam.html
    *
+   * Applies to actions:
+   * - .toInjectApiInternalError()
+   * - .toInjectApiThrottleError()
+   * - .toInjectApiUnavailableError()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -525,6 +579,11 @@ export class Fis extends PolicyStatement {
    * Filters access by the list of resource ARNs being targeted by the AWS FIS action
    *
    * https://docs.aws.amazon.com/fis/latest/userguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toInjectApiInternalError()
+   * - .toInjectApiThrottleError()
+   * - .toInjectApiUnavailableError()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -1,3 +1,4 @@
+route53globalresolver:AllowVendedLogDeliveryForResource;Permissions management, Write
 route53globalresolver:AssociateHostedZone;Write
 route53globalresolver:BatchCreateFirewallRule;Write
 route53globalresolver:BatchDeleteFirewallRule;Write

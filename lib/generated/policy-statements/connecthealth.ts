@@ -220,6 +220,325 @@ export class HealthAgent extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to cancel an appointment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toCancelAppointment() {
+    return this.to('CancelAppointment');
+  }
+
+  /**
+   * Grants permission to create a new agent with an initial version in DRAFT state
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toCreateAgent() {
+    return this.to('CreateAgent');
+  }
+
+  /**
+   * Grants permission to create a new integration for a domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toCreateIntegration() {
+    return this.to('CreateIntegration');
+  }
+
+  /**
+   * Grants permission to create a new session with specified agent configurations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toCreateSession() {
+    return this.to('CreateSession');
+  }
+
+  /**
+   * Grants permission to delete an agent configuration and all its versions
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toDeleteAgent() {
+    return this.to('DeleteAgent');
+  }
+
+  /**
+   * Grants permission to delete an integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toDeleteIntegration() {
+    return this.to('DeleteIntegration');
+  }
+
+  /**
+   * Grants permission to retrieve an agent configuration, defaulting to the most recent version if not specified
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toGetAgent() {
+    return this.to('GetAgent');
+  }
+
+  /**
+   * Grants permission to retrieve the care team provider of a patient
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toGetCareTeamProvider() {
+    return this.to('GetCareTeamProvider');
+  }
+
+  /**
+   * Grants permission to get an existing integration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toGetIntegration() {
+    return this.to('GetIntegration');
+  }
+
+  /**
+   * Grants permission to retrieve patient information
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toGetPatient() {
+    return this.to('GetPatient');
+  }
+
+  /**
+   * Grants permission to retrieve practitioner information
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toGetPractitioner() {
+    return this.to('GetPractitioner');
+  }
+
+  /**
+   * Grants permission to retrieve structured session context including attributes and collected data
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toGetSessionContext() {
+    return this.to('GetSessionContext');
+  }
+
+  /**
+   * Grants permission to invoke an agent within a session with streaming response support
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toInvokeAgent() {
+    return this.to('InvokeAgent');
+  }
+
+  /**
+   * Grants permission to list all agents in a domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toListAgents() {
+    return this.to('ListAgents');
+  }
+
+  /**
+   * Grants permission to list available appointment slots
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toListAppointmentSlots() {
+    return this.to('ListAppointmentSlots');
+  }
+
+  /**
+   * Grants permission to list integrations for a domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toListIntegrations() {
+    return this.to('ListIntegrations');
+  }
+
+  /**
+   * Grants permission to list patient appointments
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toListPatientAppointments() {
+    return this.to('ListPatientAppointments');
+  }
+
+  /**
+   * Grants permission to list patient insurance coverages
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toListPatientInsuranceCoverages() {
+    return this.to('ListPatientInsuranceCoverages');
+  }
+
+  /**
+   * Grants permission to list patient medications
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toListPatientMedications() {
+    return this.to('ListPatientMedications');
+  }
+
+  /**
+   * Grants permission to retrieve active providers available for scheduling appointments with a patient
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toListProviders() {
+    return this.to('ListProviders');
+  }
+
+  /**
+   * Grants permission to match a patient
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toMatchPatient() {
+    return this.to('MatchPatient');
+  }
+
+  /**
+   * Grants permission to publish an agent configuration version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toPublishAgent() {
+    return this.to('PublishAgent');
+  }
+
+  /**
+   * Grants permission to reschedule an appointment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toRescheduleAppointment() {
+    return this.to('RescheduleAppointment');
+  }
+
+  /**
+   * Grants permission to reset a patient MyChart password via email or SMS
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toResetPassword() {
+    return this.to('ResetPassword');
+  }
+
+  /**
+   * Grants permission to schedule an appointment for a patient
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toScheduleAppointment() {
+    return this.to('ScheduleAppointment');
+  }
+
+  /**
+   * Grants permission to submit a medication renewal for a patient
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toSubmitMedicationRenewal() {
+    return this.to('SubmitMedicationRenewal');
+  }
+
+  /**
+   * Grants permission to update a draft agent configuration, creating a new draft version if none exists
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toUpdateAgent() {
+    return this.to('UpdateAgent');
+  }
+
+  /**
+   * Grants permission to update an existing integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toUpdateIntegration() {
+    return this.to('UpdateIntegration');
+  }
+
+  /**
+   * Grants permission to update session attributes such as departmentId and appointmentType
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html
+   */
+  public toUpdateSession() {
+    return this.to('UpdateSession');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ActivateSubscription',
@@ -230,20 +549,49 @@ export class HealthAgent extends PolicyStatement {
       'StartMedicalScribeListeningSession',
       'StartPatientInsightsJob',
       'TagResource',
-      'UntagResource'
+      'UntagResource',
+      'CancelAppointment',
+      'CreateAgent',
+      'CreateIntegration',
+      'CreateSession',
+      'DeleteAgent',
+      'DeleteIntegration',
+      'InvokeAgent',
+      'PublishAgent',
+      'RescheduleAppointment',
+      'ResetPassword',
+      'ScheduleAppointment',
+      'SubmitMedicationRenewal',
+      'UpdateAgent',
+      'UpdateIntegration',
+      'UpdateSession'
     ],
     Read: [
       'GetDomain',
       'GetDomainAnalytics',
       'GetMedicalScribeListeningSession',
       'GetPatientInsightsJob',
-      'GetSubscription'
+      'GetSubscription',
+      'GetAgent',
+      'GetCareTeamProvider',
+      'GetIntegration',
+      'GetPatient',
+      'GetPractitioner',
+      'GetSessionContext',
+      'ListAppointmentSlots',
+      'ListPatientAppointments',
+      'ListPatientInsuranceCoverages',
+      'ListPatientMedications',
+      'ListProviders',
+      'MatchPatient'
     ],
     List: [
       'ListDomains',
       'ListSessionRecords',
       'ListSubscriptions',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'ListAgents',
+      'ListIntegrations'
     ],
     Tagging: [
       'TagResource',
@@ -397,6 +745,35 @@ export class HealthAgent extends PolicyStatement {
    * - .toStartPatientInsightsJob()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toCancelAppointment()
+   * - .toCreateAgent()
+   * - .toCreateIntegration()
+   * - .toCreateSession()
+   * - .toDeleteAgent()
+   * - .toDeleteIntegration()
+   * - .toGetAgent()
+   * - .toGetCareTeamProvider()
+   * - .toGetIntegration()
+   * - .toGetPatient()
+   * - .toGetPractitioner()
+   * - .toGetSessionContext()
+   * - .toInvokeAgent()
+   * - .toListAgents()
+   * - .toListAppointmentSlots()
+   * - .toListIntegrations()
+   * - .toListPatientAppointments()
+   * - .toListPatientInsuranceCoverages()
+   * - .toListPatientMedications()
+   * - .toListProviders()
+   * - .toMatchPatient()
+   * - .toPublishAgent()
+   * - .toRescheduleAppointment()
+   * - .toResetPassword()
+   * - .toScheduleAppointment()
+   * - .toSubmitMedicationRenewal()
+   * - .toUpdateAgent()
+   * - .toUpdateIntegration()
+   * - .toUpdateSession()
    *
    * Applies to resource types:
    * - Agent

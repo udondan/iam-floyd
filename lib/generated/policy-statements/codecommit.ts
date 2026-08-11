@@ -887,6 +887,127 @@ export class Codecommit extends PolicyStatement {
     return this.to('UpdateRepositoryName');
   }
 
+  /**
+   * Grants permission to return information about one or more pull requests in an AWS CodeCommit repository
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-pr
+   */
+  public toBatchGetPullRequests() {
+    return this.to('BatchGetPullRequests');
+  }
+
+  /**
+   * Grants permission to cancel the uploading of an archive to a pipeline in AWS CodePipeline
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-acp
+   */
+  public toCancelUploadArchive() {
+    return this.to('CancelUploadArchive');
+  }
+
+  /**
+   * Grants permission to get information about the history of commits in a repository
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
+   */
+  public toGetCommitHistory() {
+    return this.to('GetCommitHistory');
+  }
+
+  /**
+   * Grants permission to get information about the difference between commits in the context of a potential merge
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-pr
+   */
+  public toGetCommitsFromMergeBase() {
+    return this.to('GetCommitsFromMergeBase');
+  }
+
+  /**
+   * Grants permission to resolve blobs, trees, and commits to their identifier
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
+   */
+  public toGetObjectIdentifier() {
+    return this.to('GetObjectIdentifier');
+  }
+
+  /**
+   * Grants permission to get details about references in an AWS CodeCommit repository; does not control Git reference actions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
+   */
+  public toGetReferences() {
+    return this.to('GetReferences');
+  }
+
+  /**
+   * Grants permission to view the contents of a specified tree in an AWS CodeCommit repository from the AWS CodeCommit console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
+   */
+  public toGetTree() {
+    return this.to('GetTree');
+  }
+
+  /**
+   * Grants permission to get status information about an archive upload to a pipeline in AWS CodePipeline
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-acp
+   */
+  public toGetUploadArchiveStatus() {
+    return this.to('GetUploadArchiveStatus');
+  }
+
+  /**
+   * Grants permission to pull information from an AWS CodeCommit repository to a local repo
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-git
+   */
+  public toGitPull() {
+    return this.to('GitPull');
+  }
+
+  /**
+   * Grants permission to push information from a local repo to an AWS CodeCommit repository
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-git
+   */
+  public toGitPush() {
+    return this.to('GitPush');
+  }
+
+  /**
+   * Grants permission to the service role for AWS CodePipeline to upload repository changes into a pipeline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-acp
+   */
+  public toUploadArchive() {
+    return this.to('UploadArchive');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateApprovalRuleTemplateWithRepository',
@@ -934,7 +1055,9 @@ export class Codecommit extends PolicyStatement {
       'UpdatePullRequestTitle',
       'UpdateRepositoryDescription',
       'UpdateRepositoryEncryptionKey',
-      'UpdateRepositoryName'
+      'UpdateRepositoryName',
+      'GitPush',
+      'UploadArchive'
     ],
     Read: [
       'BatchDescribeMergeConflicts',
@@ -961,7 +1084,16 @@ export class Codecommit extends PolicyStatement {
       'GetPullRequestApprovalStates',
       'GetPullRequestOverrideState',
       'GetRepository',
-      'GetRepositoryTriggers'
+      'GetRepositoryTriggers',
+      'BatchGetPullRequests',
+      'CancelUploadArchive',
+      'GetCommitHistory',
+      'GetCommitsFromMergeBase',
+      'GetObjectIdentifier',
+      'GetReferences',
+      'GetTree',
+      'GetUploadArchiveStatus',
+      'GitPull'
     ],
     List: [
       'ListApprovalRuleTemplates',
@@ -1089,6 +1221,17 @@ export class Codecommit extends PolicyStatement {
    * - .toUpdateRepositoryDescription()
    * - .toUpdateRepositoryEncryptionKey()
    * - .toUpdateRepositoryName()
+   * - .toBatchGetPullRequests()
+   * - .toCancelUploadArchive()
+   * - .toGetCommitHistory()
+   * - .toGetCommitsFromMergeBase()
+   * - .toGetObjectIdentifier()
+   * - .toGetReferences()
+   * - .toGetTree()
+   * - .toGetUploadArchiveStatus()
+   * - .toGitPull()
+   * - .toGitPush()
+   * - .toUploadArchive()
    *
    * Applies to resource types:
    * - repository
@@ -1137,6 +1280,7 @@ export class Codecommit extends PolicyStatement {
    * - .toMergePullRequestBySquash()
    * - .toMergePullRequestByThreeWay()
    * - .toPutFile()
+   * - .toGitPush()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

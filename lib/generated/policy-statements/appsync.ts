@@ -892,6 +892,105 @@ export class Appsync extends PolicyStatement {
     return this.to('UpdateType');
   }
 
+  /**
+   * Grants permission to associate a web ACL and a resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html
+   */
+  public toAssociateWebACL() {
+    return this.to('AssociateWebACL');
+  }
+
+  /**
+   * Grants permission to remove a resource policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/merge-api.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to disassociate a web ACL and a resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html
+   */
+  public toDisassociateWebACL() {
+    return this.to('DisassociateWebACL');
+  }
+
+  /**
+   * Grants permission to read a resource policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/merge-api.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to get associated web ACLs for a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html
+   */
+  public toGetWebACLForResource() {
+    return this.to('GetWebACLForResource');
+  }
+
+  /**
+   * Grants permission to send a GraphQL query to a GraphQL API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/security-authz.html#aws-iam-authorization
+   */
+  public toGraphQL() {
+    return this.to('GraphQL');
+  }
+
+  /**
+   * Grants permission to get associated resources for a web ACL
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html
+   */
+  public toListResourcesForWebACL() {
+    return this.to('ListResourcesForWebACL');
+  }
+
+  /**
+   * Grants permission to set a resource policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/merge-api.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
+   * Grants permission to send a GraphQL query to a source API of a merged API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/using-your-api.html
+   */
+  public toSourceGraphQL() {
+    return this.to('SourceGraphQL');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateApi',
@@ -941,7 +1040,13 @@ export class Appsync extends PolicyStatement {
       'UpdateGraphqlApi',
       'UpdateResolver',
       'UpdateSourceApiAssociation',
-      'UpdateType'
+      'UpdateType',
+      'AssociateWebACL',
+      'DeleteResourcePolicy',
+      'DisassociateWebACL',
+      'GraphQL',
+      'PutResourcePolicy',
+      'SourceGraphQL'
     ],
     Read: [
       'EvaluateCode',
@@ -961,7 +1066,9 @@ export class Appsync extends PolicyStatement {
       'GetSchemaCreationStatus',
       'GetSourceApiAssociation',
       'GetType',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'GetResourcePolicy',
+      'GetWebACLForResource'
     ],
     List: [
       'ListApiKeys',
@@ -975,7 +1082,8 @@ export class Appsync extends PolicyStatement {
       'ListResolversByFunction',
       'ListSourceApiAssociations',
       'ListTypes',
-      'ListTypesByAssociation'
+      'ListTypesByAssociation',
+      'ListResourcesForWebACL'
     ],
     'Permissions management': [
       'SetWebACL'
@@ -1214,6 +1322,11 @@ export class Appsync extends PolicyStatement {
    * - .toUpdateChannelNamespace()
    * - .toUpdateDomainName()
    * - .toUpdateGraphqlApi()
+   * - .toAssociateWebACL()
+   * - .toDisassociateWebACL()
+   * - .toGetWebACLForResource()
+   * - .toGraphQL()
+   * - .toSourceGraphQL()
    *
    * Applies to resource types:
    * - api

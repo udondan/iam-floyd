@@ -54,6 +54,7 @@ elasticache:ExportServerlessCacheSnapshot;Write
 elasticache:FailoverGlobalReplicationGroup;Write
 elasticache:IncreaseNodeGroupsInGlobalReplicationGroup;Write
 elasticache:IncreaseReplicaCount;Write
+elasticache:InterruptClusterAzPower;Write
 elasticache:ListAllowedNodeTypeModifications;List
 elasticache:ListTagsForResource;Read
 elasticache:ModifyCacheCluster;Write

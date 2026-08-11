@@ -10,6 +10,7 @@ application-signals:GetInstrumentationConfiguration;Read
 application-signals:GetInstrumentationConfigurationStatus;Read
 application-signals:GetService;Read
 application-signals:GetServiceLevelObjective;Read
+application-signals:Link;Write
 application-signals:ListAuditFindings;List
 application-signals:ListEntityEvents;List
 application-signals:ListGroupingAttributeDefinitions;List

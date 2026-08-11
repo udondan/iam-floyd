@@ -269,6 +269,39 @@ export class Mpa extends PolicyStatement {
     return this.to('UpdateApprovalTeam');
   }
 
+  /**
+   * Grants permission to delete a resource policy
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/mpa/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to create or update policies for a resource
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/mpa/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
+   * Grants permission to start an approval session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mpa/latest/APIReference/API_StartSessionInternal.html
+   */
+  public toStartSession() {
+    return this.to('StartSession');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelSession',
@@ -280,7 +313,10 @@ export class Mpa extends PolicyStatement {
       'StartApprovalTeamBaseline',
       'TagResource',
       'UntagResource',
-      'UpdateApprovalTeam'
+      'UpdateApprovalTeam',
+      'DeleteResourcePolicy',
+      'PutResourcePolicy',
+      'StartSession'
     ],
     Read: [
       'GetApprovalTeam',
@@ -301,6 +337,10 @@ export class Mpa extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'PutResourcePolicy'
     ]
   };
 
@@ -392,6 +432,7 @@ export class Mpa extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateApprovalTeam()
+   * - .toStartSession()
    *
    * Applies to resource types:
    * - approval-team
@@ -432,6 +473,7 @@ export class Mpa extends PolicyStatement {
    * Applies to actions:
    * - .toCancelSession()
    * - .toGetSession()
+   * - .toStartSession()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -448,6 +490,7 @@ export class Mpa extends PolicyStatement {
    * Applies to actions:
    * - .toCancelSession()
    * - .toGetSession()
+   * - .toStartSession()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

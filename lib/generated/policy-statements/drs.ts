@@ -584,6 +584,450 @@ export class Drs extends PolicyStatement {
     return this.to('UpdateReplicationConfigurationTemplate');
   }
 
+  /**
+   * Grants permission to get associate failback client to recovery instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toAssociateFailbackClientToRecoveryInstanceForDrs() {
+    return this.to('AssociateFailbackClientToRecoveryInstanceForDrs');
+  }
+
+  /**
+   * Grants permission to batch create volume snapshot group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toBatchCreateVolumeSnapshotGroupForDrs() {
+    return this.to('BatchCreateVolumeSnapshotGroupForDrs');
+  }
+
+  /**
+   * Grants permission to batch delete snapshot request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toBatchDeleteSnapshotRequestForDrs() {
+    return this.to('BatchDeleteSnapshotRequestForDrs');
+  }
+
+  /**
+   * Grants permission to create converted snapshot
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toCreateConvertedSnapshotForDrs() {
+    return this.to('CreateConvertedSnapshotForDrs');
+  }
+
+  /**
+   * Grants permission to create recovery instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toCreateRecoveryInstanceForDrs() {
+    return this.to('CreateRecoveryInstanceForDrs');
+  }
+
+  /**
+   * Grants permission to create a source server
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toCreateSourceServerForDrs() {
+    return this.to('CreateSourceServerForDrs');
+  }
+
+  /**
+   * Grants permission to describe replication server associations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toDescribeReplicationServerAssociationsForDrs() {
+    return this.to('DescribeReplicationServerAssociationsForDrs');
+  }
+
+  /**
+   * Grants permission to describe snapshot requests
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toDescribeSnapshotRequestsForDrs() {
+    return this.to('DescribeSnapshotRequestsForDrs');
+  }
+
+  /**
+   * Grants permission to get agent command
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toGetAgentCommandForDrs() {
+    return this.to('GetAgentCommandForDrs');
+  }
+
+  /**
+   * Grants permission to get agent confirmed resume info
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toGetAgentConfirmedResumeInfoForDrs() {
+    return this.to('GetAgentConfirmedResumeInfoForDrs');
+  }
+
+  /**
+   * Grants permission to get agent installation assets
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toGetAgentInstallationAssetsForDrs() {
+    return this.to('GetAgentInstallationAssetsForDrs');
+  }
+
+  /**
+   * Grants permission to get agent replication info
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toGetAgentReplicationInfoForDrs() {
+    return this.to('GetAgentReplicationInfoForDrs');
+  }
+
+  /**
+   * Grants permission to get agent runtime configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toGetAgentRuntimeConfigurationForDrs() {
+    return this.to('GetAgentRuntimeConfigurationForDrs');
+  }
+
+  /**
+   * Grants permission to get agent snapshot credits
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toGetAgentSnapshotCreditsForDrs() {
+    return this.to('GetAgentSnapshotCreditsForDrs');
+  }
+
+  /**
+   * Grants permission to get channel commands
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toGetChannelCommandsForDrs() {
+    return this.to('GetChannelCommandsForDrs');
+  }
+
+  /**
+   * Grants permission to get failback command
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toGetFailbackCommandForDrs() {
+    return this.to('GetFailbackCommandForDrs');
+  }
+
+  /**
+   * Grants permission to get failback launch requested
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toGetFailbackLaunchRequestedForDrs() {
+    return this.to('GetFailbackLaunchRequestedForDrs');
+  }
+
+  /**
+   * Grants permission to get suggested failback client device mapping
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toGetSuggestedFailbackClientDeviceMappingForDrs() {
+    return this.to('GetSuggestedFailbackClientDeviceMappingForDrs');
+  }
+
+  /**
+   * Grants permission to issue an agent certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toIssueAgentCertificateForDrs() {
+    return this.to('IssueAgentCertificateForDrs');
+  }
+
+  /**
+   * Grants permission to notify agent authentication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toNotifyAgentAuthenticationForDrs() {
+    return this.to('NotifyAgentAuthenticationForDrs');
+  }
+
+  /**
+   * Grants permission to notify agent is connected
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toNotifyAgentConnectedForDrs() {
+    return this.to('NotifyAgentConnectedForDrs');
+  }
+
+  /**
+   * Grants permission to notify agent is disconnected
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toNotifyAgentDisconnectedForDrs() {
+    return this.to('NotifyAgentDisconnectedForDrs');
+  }
+
+  /**
+   * Grants permission to notify agent replication progress
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toNotifyAgentReplicationProgressForDrs() {
+    return this.to('NotifyAgentReplicationProgressForDrs');
+  }
+
+  /**
+   * Grants permission to notify consistency attained
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toNotifyConsistencyAttainedForDrs() {
+    return this.to('NotifyConsistencyAttainedForDrs');
+  }
+
+  /**
+   * Grants permission to notify replication server authentication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toNotifyReplicationServerAuthenticationForDrs() {
+    return this.to('NotifyReplicationServerAuthenticationForDrs');
+  }
+
+  /**
+   * Grants permission to notify replicator volume events
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toNotifyVolumeEventForDrs() {
+    return this.to('NotifyVolumeEventForDrs');
+  }
+
+  /**
+   * Grants permission to send agent logs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toSendAgentLogsForDrs() {
+    return this.to('SendAgentLogsForDrs');
+  }
+
+  /**
+   * Grants permission to send agent metrics
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toSendAgentMetricsForDrs() {
+    return this.to('SendAgentMetricsForDrs');
+  }
+
+  /**
+   * Grants permission to send channel command result
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toSendChannelCommandResultForDrs() {
+    return this.to('SendChannelCommandResultForDrs');
+  }
+
+  /**
+   * Grants permission to send client logs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toSendClientLogsForDrs() {
+    return this.to('SendClientLogsForDrs');
+  }
+
+  /**
+   * Grants permission to send client metrics
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toSendClientMetricsForDrs() {
+    return this.to('SendClientMetricsForDrs');
+  }
+
+  /**
+   * Grants permission to send volume throughput statistics
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toSendVolumeStatsForDrs() {
+    return this.to('SendVolumeStatsForDrs');
+  }
+
+  /**
+   * Grants permission to update agent backlog
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toUpdateAgentBacklogForDrs() {
+    return this.to('UpdateAgentBacklogForDrs');
+  }
+
+  /**
+   * Grants permission to update agent conversion info
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toUpdateAgentConversionInfoForDrs() {
+    return this.to('UpdateAgentConversionInfoForDrs');
+  }
+
+  /**
+   * Grants permission to update agent replication info
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toUpdateAgentReplicationInfoForDrs() {
+    return this.to('UpdateAgentReplicationInfoForDrs');
+  }
+
+  /**
+   * Grants permission to update agent replication process state
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toUpdateAgentReplicationProcessStateForDrs() {
+    return this.to('UpdateAgentReplicationProcessStateForDrs');
+  }
+
+  /**
+   * Grants permission to update agent source properties
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toUpdateAgentSourcePropertiesForDrs() {
+    return this.to('UpdateAgentSourcePropertiesForDrs');
+  }
+
+  /**
+   * Grants permission to update failback client device mapping
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toUpdateFailbackClientDeviceMappingForDrs() {
+    return this.to('UpdateFailbackClientDeviceMappingForDrs');
+  }
+
+  /**
+   * Grants permission to update failback client last seen
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toUpdateFailbackClientLastSeenForDrs() {
+    return this.to('UpdateFailbackClientLastSeenForDrs');
+  }
+
+  /**
+   * Grants permission to update a replication certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
+   */
+  public toUpdateReplicationCertificateForDrs() {
+    return this.to('UpdateReplicationCertificateForDrs');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateSourceNetworkStack',
@@ -620,7 +1064,35 @@ export class Drs extends PolicyStatement {
       'UpdateLaunchConfiguration',
       'UpdateLaunchConfigurationTemplate',
       'UpdateReplicationConfiguration',
-      'UpdateReplicationConfigurationTemplate'
+      'UpdateReplicationConfigurationTemplate',
+      'AssociateFailbackClientToRecoveryInstanceForDrs',
+      'BatchCreateVolumeSnapshotGroupForDrs',
+      'BatchDeleteSnapshotRequestForDrs',
+      'CreateConvertedSnapshotForDrs',
+      'CreateRecoveryInstanceForDrs',
+      'CreateSourceServerForDrs',
+      'IssueAgentCertificateForDrs',
+      'NotifyAgentAuthenticationForDrs',
+      'NotifyAgentConnectedForDrs',
+      'NotifyAgentDisconnectedForDrs',
+      'NotifyAgentReplicationProgressForDrs',
+      'NotifyConsistencyAttainedForDrs',
+      'NotifyReplicationServerAuthenticationForDrs',
+      'NotifyVolumeEventForDrs',
+      'SendAgentLogsForDrs',
+      'SendAgentMetricsForDrs',
+      'SendChannelCommandResultForDrs',
+      'SendClientLogsForDrs',
+      'SendClientMetricsForDrs',
+      'SendVolumeStatsForDrs',
+      'UpdateAgentBacklogForDrs',
+      'UpdateAgentConversionInfoForDrs',
+      'UpdateAgentReplicationInfoForDrs',
+      'UpdateAgentReplicationProcessStateForDrs',
+      'UpdateAgentSourcePropertiesForDrs',
+      'UpdateFailbackClientDeviceMappingForDrs',
+      'UpdateFailbackClientLastSeenForDrs',
+      'UpdateReplicationCertificateForDrs'
     ],
     Read: [
       'DescribeJobLogItems',
@@ -637,7 +1109,19 @@ export class Drs extends PolicyStatement {
       'ListExtensibleSourceServers',
       'ListLaunchActions',
       'ListStagingAccounts',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'DescribeReplicationServerAssociationsForDrs',
+      'DescribeSnapshotRequestsForDrs',
+      'GetAgentCommandForDrs',
+      'GetAgentConfirmedResumeInfoForDrs',
+      'GetAgentInstallationAssetsForDrs',
+      'GetAgentReplicationInfoForDrs',
+      'GetAgentRuntimeConfigurationForDrs',
+      'GetAgentSnapshotCreditsForDrs',
+      'GetChannelCommandsForDrs',
+      'GetFailbackCommandForDrs',
+      'GetFailbackLaunchRequestedForDrs',
+      'GetSuggestedFailbackClientDeviceMappingForDrs'
     ],
     Tagging: [
       'TagResource',
@@ -766,6 +1250,9 @@ export class Drs extends PolicyStatement {
    * - .toStartSourceNetworkRecovery()
    * - .toTagResource()
    * - .toTerminateRecoveryInstances()
+   * - .toCreateConvertedSnapshotForDrs()
+   * - .toCreateRecoveryInstanceForDrs()
+   * - .toCreateSourceServerForDrs()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -817,6 +1304,37 @@ export class Drs extends PolicyStatement {
    * - .toUpdateLaunchConfigurationTemplate()
    * - .toUpdateReplicationConfiguration()
    * - .toUpdateReplicationConfigurationTemplate()
+   * - .toAssociateFailbackClientToRecoveryInstanceForDrs()
+   * - .toBatchCreateVolumeSnapshotGroupForDrs()
+   * - .toCreateConvertedSnapshotForDrs()
+   * - .toCreateRecoveryInstanceForDrs()
+   * - .toGetAgentCommandForDrs()
+   * - .toGetAgentConfirmedResumeInfoForDrs()
+   * - .toGetAgentReplicationInfoForDrs()
+   * - .toGetAgentRuntimeConfigurationForDrs()
+   * - .toGetAgentSnapshotCreditsForDrs()
+   * - .toGetFailbackCommandForDrs()
+   * - .toGetFailbackLaunchRequestedForDrs()
+   * - .toGetSuggestedFailbackClientDeviceMappingForDrs()
+   * - .toIssueAgentCertificateForDrs()
+   * - .toNotifyAgentAuthenticationForDrs()
+   * - .toNotifyAgentConnectedForDrs()
+   * - .toNotifyAgentDisconnectedForDrs()
+   * - .toNotifyAgentReplicationProgressForDrs()
+   * - .toNotifyConsistencyAttainedForDrs()
+   * - .toNotifyReplicationServerAuthenticationForDrs()
+   * - .toNotifyVolumeEventForDrs()
+   * - .toSendAgentLogsForDrs()
+   * - .toSendAgentMetricsForDrs()
+   * - .toSendVolumeStatsForDrs()
+   * - .toUpdateAgentBacklogForDrs()
+   * - .toUpdateAgentConversionInfoForDrs()
+   * - .toUpdateAgentReplicationInfoForDrs()
+   * - .toUpdateAgentReplicationProcessStateForDrs()
+   * - .toUpdateAgentSourcePropertiesForDrs()
+   * - .toUpdateFailbackClientDeviceMappingForDrs()
+   * - .toUpdateFailbackClientLastSeenForDrs()
+   * - .toUpdateReplicationCertificateForDrs()
    *
    * Applies to resource types:
    * - JobResource
@@ -853,6 +1371,9 @@ export class Drs extends PolicyStatement {
    * - .toTagResource()
    * - .toTerminateRecoveryInstances()
    * - .toUntagResource()
+   * - .toCreateConvertedSnapshotForDrs()
+   * - .toCreateRecoveryInstanceForDrs()
+   * - .toCreateSourceServerForDrs()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -892,6 +1413,33 @@ export class Drs extends PolicyStatement {
    * - .toTerminateRecoveryInstances()
    * - .toUntagResource()
    * - .toUpdateFailbackReplicationConfiguration()
+   * - .toAssociateFailbackClientToRecoveryInstanceForDrs()
+   * - .toBatchCreateVolumeSnapshotGroupForDrs()
+   * - .toGetAgentCommandForDrs()
+   * - .toGetAgentConfirmedResumeInfoForDrs()
+   * - .toGetAgentReplicationInfoForDrs()
+   * - .toGetAgentRuntimeConfigurationForDrs()
+   * - .toGetAgentSnapshotCreditsForDrs()
+   * - .toGetFailbackCommandForDrs()
+   * - .toGetFailbackLaunchRequestedForDrs()
+   * - .toGetSuggestedFailbackClientDeviceMappingForDrs()
+   * - .toIssueAgentCertificateForDrs()
+   * - .toNotifyAgentAuthenticationForDrs()
+   * - .toNotifyAgentConnectedForDrs()
+   * - .toNotifyAgentDisconnectedForDrs()
+   * - .toNotifyAgentReplicationProgressForDrs()
+   * - .toNotifyConsistencyAttainedForDrs()
+   * - .toNotifyReplicationServerAuthenticationForDrs()
+   * - .toSendAgentLogsForDrs()
+   * - .toSendAgentMetricsForDrs()
+   * - .toUpdateAgentBacklogForDrs()
+   * - .toUpdateAgentConversionInfoForDrs()
+   * - .toUpdateAgentReplicationInfoForDrs()
+   * - .toUpdateAgentReplicationProcessStateForDrs()
+   * - .toUpdateAgentSourcePropertiesForDrs()
+   * - .toUpdateFailbackClientDeviceMappingForDrs()
+   * - .toUpdateFailbackClientLastSeenForDrs()
+   * - .toUpdateReplicationCertificateForDrs()
    *
    * Applies to resource types:
    * - RecoveryInstanceResource

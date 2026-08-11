@@ -14,6 +14,7 @@ iotfleetwise:DeleteSignalCatalog;Write
 iotfleetwise:DeleteStateTemplate;Write
 iotfleetwise:DeleteVehicle;Write
 iotfleetwise:DisassociateVehicleFleet;Write
+iotfleetwise:GenerateCommandPayload;Permissions management, Write
 iotfleetwise:GetCampaign;Read
 iotfleetwise:GetDecoderManifest;Read
 iotfleetwise:GetEncryptionConfiguration;Read

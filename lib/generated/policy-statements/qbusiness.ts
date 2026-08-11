@@ -1001,6 +1001,46 @@ export class Qbusiness extends PolicyStatement {
     return this.to('UpdateWebExperience');
   }
 
+  /**
+   * Grants permission to configure vended log delivery for Amazon Q Business application resource
+   *
+   * Access Level: Permissions management, Write
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
+   * Grants permission to create AWS IAM Identity center Trusted Token Issuer based DataAccessor to the application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataAccessor.html
+   */
+  public toCreateDataAccessorWithTti() {
+    return this.to('CreateDataAccessorWithTti');
+  }
+
+  /**
+   * Grants permission to disable the ACL crawl while creating the Amazon Q Business data source resource
+   *
+   * Access Level: Write
+   */
+  public toDisableAclOnDataSource() {
+    return this.to('DisableAclOnDataSource');
+  }
+
+  /**
+   * Grants permission to put resource based policy statement to the application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_AssociatePermission.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociatePermission',
@@ -1052,7 +1092,11 @@ export class Qbusiness extends PolicyStatement {
       'UpdateRetriever',
       'UpdateSubscription',
       'UpdateUser',
-      'UpdateWebExperience'
+      'UpdateWebExperience',
+      'AllowVendedLogDeliveryForResource',
+      'CreateDataAccessorWithTti',
+      'DisableAclOnDataSource',
+      'PutResourcePolicy'
     ],
     Read: [
       'Chat',
@@ -1100,6 +1144,9 @@ export class Qbusiness extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
     ]
   };
 
@@ -1396,6 +1443,10 @@ export class Qbusiness extends PolicyStatement {
    * - .toUpdateSubscription()
    * - .toUpdateUser()
    * - .toUpdateWebExperience()
+   * - .toAllowVendedLogDeliveryForResource()
+   * - .toCreateDataAccessorWithTti()
+   * - .toDisableAclOnDataSource()
+   * - .toPutResourcePolicy()
    *
    * Applies to resource types:
    * - application

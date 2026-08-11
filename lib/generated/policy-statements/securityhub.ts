@@ -1285,6 +1285,171 @@ export class Securityhub extends PolicyStatement {
     return this.to('UpdateStandardsControl');
   }
 
+  /**
+   * Grants permission to log delivery for resources
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AllowVendedLogDeliveryForResource.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
+   * Grants permission to get the enablement and compliance status of controls, the findings count for controls, and the overall security score for controls on the Security Hub console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/iam-permissions-controls-standards.html
+   */
+  public toBatchGetControlEvaluations() {
+    return this.to('BatchGetControlEvaluations');
+  }
+
+  /**
+   * Grants permission to retrieve Security Hub enabled regions for accounts in an organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchGetEnabledRegionsV2.html
+   */
+  public toBatchGetEnabledRegionsV2() {
+    return this.to('BatchGetEnabledRegionsV2');
+  }
+
+  /**
+   * Grants permission to retrieve aggregated statistical data about the findings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingStatisticsV2.html
+   */
+  public toGetAdhocInsightResults() {
+    return this.to('GetAdhocInsightResults');
+  }
+
+  /**
+   * Grants permission to retrieve a security score and counts of finding and control statuses for a security standard
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetControlFindingSummary.html
+   */
+  public toGetControlFindingSummary() {
+    return this.to('GetControlFindingSummary');
+  }
+
+  /**
+   * Grants permission to retrieve Security Hub coverage statistics in an organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetCoverageStatisticsV2.html
+   */
+  public toGetCoverageStatisticsV2() {
+    return this.to('GetCoverageStatisticsV2');
+  }
+
+  /**
+   * Grants permission to retrieve the end date for an account's free trial of Security Hub
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFreeTrialEndDate.html
+   */
+  public toGetFreeTrialEndDate() {
+    return this.to('GetFreeTrialEndDate');
+  }
+
+  /**
+   * Grants permission to retrieve information about Security Hub usage during the free trial period
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFreeTrialUsage.html
+   */
+  public toGetFreeTrialUsage() {
+    return this.to('GetFreeTrialUsage');
+  }
+
+  /**
+   * Grants permission to retrieve an insight finding trend from Security Hub in order to generate a graph
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsightFindingTrend.html
+   */
+  public toGetInsightFindingTrend() {
+    return this.to('GetInsightFindingTrend');
+  }
+
+  /**
+   * Grants permission to retrieve information about Security Hub usage by accounts
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetUsage.html
+   */
+  public toGetUsage() {
+    return this.to('GetUsage');
+  }
+
+  /**
+   * Grants permission to retrieve information about Security Hub usage for an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetUsageV2.html
+   */
+  public toGetUsageV2() {
+    return this.to('GetUsageV2');
+  }
+
+  /**
+   * Grants permission to retrieve a list of Security Hub usage for accounts in an organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListAccountUsageV2.html
+   */
+  public toListAccountUsageV2() {
+    return this.to('ListAccountUsageV2');
+  }
+
+  /**
+   * Grants permission to retrieve a list of controls for a standard, including the control IDs, statuses and finding counts
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListControlEvaluationSummaries.html
+   */
+  public toListControlEvaluationSummaries() {
+    return this.to('ListControlEvaluationSummaries');
+  }
+
+  /**
+   * Grants permission to use a custom action to send Security Hub findings to Amazon EventBridge
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_SendFindingEvents.html
+   */
+  public toSendFindingEvents() {
+    return this.to('SendFindingEvents');
+  }
+
+  /**
+   * Grants permission to use a custom action to send Security Hub insights to Amazon EventBridge
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_SendInsightEvents.html
+   */
+  public toSendInsightEvents() {
+    return this.to('SendInsightEvents');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptAdministratorInvitation',
@@ -1350,7 +1515,8 @@ export class Securityhub extends PolicyStatement {
       'UpdateOrganizationConfiguration',
       'UpdateSecurityControl',
       'UpdateSecurityHubConfiguration',
-      'UpdateStandardsControl'
+      'UpdateStandardsControl',
+      'AllowVendedLogDeliveryForResource'
     ],
     Read: [
       'BatchGetAutomationRules',
@@ -1385,7 +1551,20 @@ export class Securityhub extends PolicyStatement {
       'GetResourcesTrendsV2',
       'GetResourcesV2',
       'GetSecurityControlDefinition',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'BatchGetControlEvaluations',
+      'BatchGetEnabledRegionsV2',
+      'GetAdhocInsightResults',
+      'GetControlFindingSummary',
+      'GetCoverageStatisticsV2',
+      'GetFreeTrialEndDate',
+      'GetFreeTrialUsage',
+      'GetInsightFindingTrend',
+      'GetUsage',
+      'GetUsageV2',
+      'ListControlEvaluationSummaries',
+      'SendFindingEvents',
+      'SendInsightEvents'
     ],
     List: [
       'GetEnabledStandards',
@@ -1403,11 +1582,15 @@ export class Securityhub extends PolicyStatement {
       'ListMembers',
       'ListOrganizationAdminAccounts',
       'ListSecurityControlDefinitions',
-      'ListStandardsControlAssociations'
+      'ListStandardsControlAssociations',
+      'ListAccountUsageV2'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
     ]
   };
 
@@ -1684,6 +1867,21 @@ export class Securityhub extends PolicyStatement {
    * - .toUpdateOrganizationConfiguration()
    * - .toUpdateSecurityHubConfiguration()
    * - .toUpdateStandardsControl()
+   * - .toAllowVendedLogDeliveryForResource()
+   * - .toBatchGetControlEvaluations()
+   * - .toBatchGetEnabledRegionsV2()
+   * - .toGetAdhocInsightResults()
+   * - .toGetControlFindingSummary()
+   * - .toGetCoverageStatisticsV2()
+   * - .toGetFreeTrialEndDate()
+   * - .toGetFreeTrialUsage()
+   * - .toGetInsightFindingTrend()
+   * - .toGetUsage()
+   * - .toGetUsageV2()
+   * - .toListAccountUsageV2()
+   * - .toListControlEvaluationSummaries()
+   * - .toSendFindingEvents()
+   * - .toSendInsightEvents()
    *
    * Applies to resource types:
    * - aggregatorv2

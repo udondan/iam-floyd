@@ -3316,6 +3316,68 @@ export class Glue extends PolicyStatement {
     return this.to('UseGlueStudio');
   }
 
+  /**
+   * Grants permission to retrieve runtime configuration for Data Quality features
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html
+   */
+  public toAccessDataQualityRuntimeConfiguration() {
+    return this.to('AccessDataQualityRuntimeConfiguration');
+  }
+
+  /**
+   * Grants permission to Glue to continuously validate that the target Arn can receive data replicated from the source ARN
+   *
+   * Access Level: Write
+   */
+  public toAuthorizeInboundIntegration() {
+    return this.to('AuthorizeInboundIntegration');
+  }
+
+  /**
+   * Grants permission to the source principal to create an inbound integration for data to be replicated from the source into the target
+   *
+   * Access Level: Write
+   */
+  public toCreateInboundIntegration() {
+    return this.to('CreateInboundIntegration');
+  }
+
+  /**
+   * Grants permission to pass glue connection name in input for APIs that require them
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-CreateConnection
+   */
+  public toPassConnection() {
+    return this.to('PassConnection');
+  }
+
+  /**
+   * Grants permission to publish Data Quality results
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html
+   */
+  public toPublishDataQuality() {
+    return this.to('PublishDataQuality');
+  }
+
+  /**
+   * Grants permission to use an ML Transform from within a Glue ETL Script
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html
+   */
+  public toUseMLTransforms() {
+    return this.to('UseMLTransforms');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchCreatePartition',
@@ -3498,7 +3560,12 @@ export class Glue extends PolicyStatement {
       'UpdateUserDefinedFunction',
       'UpdateWorkflow',
       'UpgradeJob',
-      'UseGlueStudio'
+      'UseGlueStudio',
+      'AuthorizeInboundIntegration',
+      'CreateInboundIntegration',
+      'PassConnection',
+      'PublishDataQuality',
+      'UseMLTransforms'
     ],
     Read: [
       'BatchGetBlueprints',
@@ -3590,7 +3657,8 @@ export class Glue extends PolicyStatement {
       'GetWorkflowRunProperties',
       'GetWorkflowRuns',
       'ListColumnStatisticsTaskRuns',
-      'SearchTables'
+      'SearchTables',
+      'AccessDataQualityRuntimeConfiguration'
     ],
     'Permissions management': [
       'BatchGetStageFiles',
@@ -4321,6 +4389,10 @@ export class Glue extends PolicyStatement {
    * - .toUpdateUserDefinedFunction()
    * - .toUpdateWorkflow()
    * - .toUpgradeJob()
+   * - .toAuthorizeInboundIntegration()
+   * - .toPassConnection()
+   * - .toPublishDataQuality()
+   * - .toUseMLTransforms()
    *
    * Applies to resource types:
    * - blueprint

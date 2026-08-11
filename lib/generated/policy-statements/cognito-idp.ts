@@ -1387,6 +1387,42 @@ export class CognitoIdp extends PolicyStatement {
     return this.to('VerifyUserAttribute');
   }
 
+  /**
+   * Grants permission to associate the user pool with an AWS WAF web ACL
+   *
+   * Access Level: Write
+   */
+  public toAssociateWebACL() {
+    return this.to('AssociateWebACL');
+  }
+
+  /**
+   * Grants permission to disassociate the user pool with an AWS WAF web ACL
+   *
+   * Access Level: Write
+   */
+  public toDisassociateWebACL() {
+    return this.to('DisassociateWebACL');
+  }
+
+  /**
+   * Grants permission to get the AWS WAF web ACL that is associated with an Amazon Cognito user pool
+   *
+   * Access Level: Read
+   */
+  public toGetWebACLForResource() {
+    return this.to('GetWebACLForResource');
+  }
+
+  /**
+   * Grants permission to list the user pools that are associated with an AWS WAF web ACL
+   *
+   * Access Level: List
+   */
+  public toListResourcesForWebACL() {
+    return this.to('ListResourcesForWebACL');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddCustomAttributes',
@@ -1472,7 +1508,9 @@ export class CognitoIdp extends PolicyStatement {
       'UpdateUserPoolDomain',
       'UpdateUserPoolReplica',
       'VerifySoftwareToken',
-      'VerifyUserAttribute'
+      'VerifyUserAttribute',
+      'AssociateWebACL',
+      'DisassociateWebACL'
     ],
     Read: [
       'AdminGetDevice',
@@ -1499,7 +1537,8 @@ export class CognitoIdp extends PolicyStatement {
       'GetUICustomization',
       'GetUser',
       'GetUserAttributeVerificationCode',
-      'GetUserPoolMfaConfig'
+      'GetUserPoolMfaConfig',
+      'GetWebACLForResource'
     ],
     List: [
       'AdminListDevices',
@@ -1516,7 +1555,8 @@ export class CognitoIdp extends PolicyStatement {
       'ListUserPoolReplicas',
       'ListUserPools',
       'ListUsers',
-      'ListUsersInGroup'
+      'ListUsersInGroup',
+      'ListResourcesForWebACL'
     ],
     Tagging: [
       'TagResource',
@@ -1675,6 +1715,9 @@ export class CognitoIdp extends PolicyStatement {
    * - .toUpdateUserPoolClient()
    * - .toUpdateUserPoolDomain()
    * - .toUpdateUserPoolReplica()
+   * - .toAssociateWebACL()
+   * - .toDisassociateWebACL()
+   * - .toGetWebACLForResource()
    *
    * Applies to resource types:
    * - userpool

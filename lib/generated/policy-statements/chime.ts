@@ -3498,6 +3498,58 @@ export class Chime extends PolicyStatement {
     return this.to('ValidateE911Address');
   }
 
+  /**
+   * Grants permission to associate the specified Amazon Connect instance with an Amazon Chime Voice Connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions
+   */
+  public toAssociateVoiceConnectorConnect() {
+    return this.to('AssociateVoiceConnectorConnect');
+  }
+
+  /**
+   * Grants permission to create an Amazon Connect Analytics Connector in the AWS account (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html
+   */
+  public toCreateConnectAnalyticsConnector() {
+    return this.to('CreateConnectAnalyticsConnector');
+  }
+
+  /**
+   * Grants permission to create an Amazon Connect Call Transfer Connector in the AWS account (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html
+   */
+  public toCreateConnectCallTransferConnector() {
+    return this.to('CreateConnectCallTransferConnector');
+  }
+
+  /**
+   * Grants permission to disassociate the Amazon Connect instance from the specified Amazon Chime Voice Connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions
+   */
+  public toDisassociateVoiceConnectorConnect() {
+    return this.to('DisassociateVoiceConnectorConnect');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptDelegate',
@@ -3691,7 +3743,11 @@ export class Chime extends PolicyStatement {
       'UpdateVoiceConnector',
       'UpdateVoiceConnectorGroup',
       'UpdateVoiceProfile',
-      'UpdateVoiceProfileDomain'
+      'UpdateVoiceProfileDomain',
+      'AssociateVoiceConnectorConnect',
+      'CreateConnectAnalyticsConnector',
+      'CreateConnectCallTransferConnector',
+      'DisassociateVoiceConnectorConnect'
     ],
     Read: [
       'DescribeAppInstance',
@@ -4074,6 +4130,8 @@ export class Chime extends PolicyStatement {
    * - .toCreateVoiceProfileDomain()
    * - .toTagMeeting()
    * - .toTagResource()
+   * - .toCreateConnectAnalyticsConnector()
+   * - .toCreateConnectCallTransferConnector()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -4303,6 +4361,8 @@ export class Chime extends PolicyStatement {
    * - .toTagMeeting()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toCreateConnectAnalyticsConnector()
+   * - .toCreateConnectCallTransferConnector()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -5,6 +5,7 @@ forecast:CreateDatasetImportJob;Write
 forecast:CreateExplainability;Write
 forecast:CreateExplainabilityExport;Write
 forecast:CreateForecast;Write
+forecast:CreateForecastEndpoint;Write
 forecast:CreateForecastExportJob;Write
 forecast:CreateMonitor;Write
 forecast:CreatePredictor;Write
@@ -18,6 +19,7 @@ forecast:DeleteDatasetImportJob;Write
 forecast:DeleteExplainability;Write
 forecast:DeleteExplainabilityExport;Write
 forecast:DeleteForecast;Write
+forecast:DeleteForecastEndpoint;Write
 forecast:DeleteForecastExportJob;Write
 forecast:DeleteMonitor;Write
 forecast:DeletePredictor;Write
@@ -33,6 +35,7 @@ forecast:DescribeDatasetImportJob;Read
 forecast:DescribeExplainability;Read
 forecast:DescribeExplainabilityExport;Read
 forecast:DescribeForecast;Read
+forecast:DescribeForecastEndpoint;Read
 forecast:DescribeForecastExportJob;Read
 forecast:DescribeMonitor;Read
 forecast:DescribePredictor;Read
@@ -41,6 +44,8 @@ forecast:DescribeWhatIfAnalysis;Read
 forecast:DescribeWhatIfForecast;Read
 forecast:DescribeWhatIfForecastExport;Read
 forecast:GetAccuracyMetrics;Read
+forecast:GetRecentForecastContext;Read
+forecast:InvokeForecastEndpoint;Read
 forecast:ListDatasetGroups;Read
 forecast:ListDatasetImportJobs;Read
 forecast:ListDatasets;Read

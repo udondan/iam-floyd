@@ -343,6 +343,131 @@ export class Codeconnections extends PolicyStatement {
     return this.to('UpdateSyncConfiguration');
   }
 
+  /**
+   * Grants permission to get a Connection token to call provider actions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-getconnectiontoken
+   */
+  public toGetConnectionToken() {
+    return this.to('GetConnectionToken');
+  }
+
+  /**
+   * Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifProviderType()
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
+   */
+  public toGetIndividualAccessToken() {
+    return this.to('GetIndividualAccessToken');
+  }
+
+  /**
+   * Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifProviderType()
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
+   */
+  public toGetInstallationUrl() {
+    return this.to('GetInstallationUrl');
+  }
+
+  /**
+   * Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
+   */
+  public toListInstallationTargets() {
+    return this.to('ListInstallationTargets');
+  }
+
+  /**
+   * Grants permission to pass a Connection resource to an AWS service that accepts a Connection ARN as input, such as codepipeline:CreatePipeline
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-passconnection
+   */
+  public toPassConnection() {
+    return this.to('PassConnection');
+  }
+
+  /**
+   * Grants permission to pass a repository link resource to an AWS service that accepts a RepositoryLinkId as input, such as codeconnections:CreateSyncConfiguration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-passrepository
+   */
+  public toPassRepository() {
+    return this.to('PassRepository');
+  }
+
+  /**
+   * Grants permission to associate a third party server, such as a GitHub Enterprise Server instance, with a Host
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifHostArn()
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#connections-permissions-actions-host-registration
+   */
+  public toRegisterAppCode() {
+    return this.to('RegisterAppCode');
+  }
+
+  /**
+   * Grants permission to associate a third party server, such as a GitHub Enterprise Server instance, with a Host
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifHostArn()
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#connections-permissions-actions-host-registration
+   */
+  public toStartAppRegistrationHandshake() {
+    return this.to('StartAppRegistrationHandshake');
+  }
+
+  /**
+   * Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifProviderType()
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
+   */
+  public toStartOAuthHandshake() {
+    return this.to('StartOAuthHandshake');
+  }
+
+  /**
+   * Grants permission to use a Connection resource to call provider actions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
+   */
+  public toUseConnection() {
+    return this.to('UseConnection');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateConnection',
@@ -368,7 +493,16 @@ export class Codeconnections extends PolicyStatement {
       'GetRepositorySyncStatus',
       'GetResourceSyncStatus',
       'GetSyncBlockerSummary',
-      'GetSyncConfiguration'
+      'GetSyncConfiguration',
+      'GetConnectionToken',
+      'GetIndividualAccessToken',
+      'GetInstallationUrl',
+      'PassConnection',
+      'PassRepository',
+      'RegisterAppCode',
+      'StartAppRegistrationHandshake',
+      'StartOAuthHandshake',
+      'UseConnection'
     ],
     List: [
       'ListConnections',
@@ -376,7 +510,8 @@ export class Codeconnections extends PolicyStatement {
       'ListRepositoryLinks',
       'ListRepositorySyncDefinitions',
       'ListSyncConfigurations',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'ListInstallationTargets'
     ],
     Tagging: [
       'TagResource',
@@ -476,6 +611,10 @@ export class Codeconnections extends PolicyStatement {
    * - .toUpdateConnectionInstallation()
    * - .toUpdateHost()
    * - .toUpdateRepositoryLink()
+   * - .toGetConnectionToken()
+   * - .toPassConnection()
+   * - .toPassRepository()
+   * - .toUseConnection()
    *
    * Applies to resource types:
    * - Connection
@@ -531,6 +670,9 @@ export class Codeconnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
    *
+   * Applies to actions:
+   * - .toUseConnection()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -543,6 +685,9 @@ export class Codeconnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
    *
+   * Applies to actions:
+   * - .toUseConnection()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -554,6 +699,10 @@ export class Codeconnections extends PolicyStatement {
    * Filters access by the host resource associated with the connection used in the request
    *
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-hosts
+   *
+   * Applies to actions:
+   * - .toRegisterAppCode()
+   * - .toStartAppRegistrationHandshake()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -582,6 +731,9 @@ export class Codeconnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
    *
+   * Applies to actions:
+   * - .toUseConnection()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -593,6 +745,10 @@ export class Codeconnections extends PolicyStatement {
    * Filters access by the service to which the principal is allowed to pass a Connection or RepositoryLink
    *
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-passconnection
+   *
+   * Applies to actions:
+   * - .toPassConnection()
+   * - .toPassRepository()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -606,6 +762,9 @@ export class Codeconnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-access
    *
+   * Applies to actions:
+   * - .toUseConnection()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -617,6 +776,9 @@ export class Codeconnections extends PolicyStatement {
    * Filters access by the write permissions of a provider action in a UseConnection request. Valid types include read_only and read_write
    *
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
+   *
+   * Applies to actions:
+   * - .toUseConnection()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -633,6 +795,9 @@ export class Codeconnections extends PolicyStatement {
    * Applies to actions:
    * - .toCreateConnection()
    * - .toCreateHost()
+   * - .toGetIndividualAccessToken()
+   * - .toGetInstallationUrl()
+   * - .toStartOAuthHandshake()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -661,6 +826,9 @@ export class Codeconnections extends PolicyStatement {
    * Filters access by the repository name that is passed in the request. Applies only to UseConnection requests for access to repositories owned by a specific user
    *
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
+   *
+   * Applies to actions:
+   * - .toUseConnection()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

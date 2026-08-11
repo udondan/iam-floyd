@@ -235,6 +235,28 @@ export class Datapipeline extends PolicyStatement {
     return this.to('ValidatePipelineDefinition');
   }
 
+  /**
+   * Grants permission to call GetAccountLimits
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetAccountLimits.html
+   */
+  public toGetAccountLimits() {
+    return this.to('GetAccountLimits');
+  }
+
+  /**
+   * Grants permission to call PutAccountLimits
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutAccountLimits.html
+   */
+  public toPutAccountLimits() {
+    return this.to('PutAccountLimits');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ActivatePipeline',
@@ -248,7 +270,8 @@ export class Datapipeline extends PolicyStatement {
       'ReportTaskProgress',
       'ReportTaskRunnerHeartbeat',
       'SetStatus',
-      'SetTaskStatus'
+      'SetTaskStatus',
+      'PutAccountLimits'
     ],
     Tagging: [
       'AddTags',
@@ -263,7 +286,8 @@ export class Datapipeline extends PolicyStatement {
       'ValidatePipelineDefinition'
     ],
     List: [
-      'ListPipelines'
+      'ListPipelines',
+      'GetAccountLimits'
     ]
   };
 

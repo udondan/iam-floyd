@@ -737,6 +737,61 @@ export class Forecast extends PolicyStatement {
     return this.to('UpdateDatasetGroup');
   }
 
+  /**
+   * Grants permission to create an endpoint using a Predictor resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   */
+  public toCreateForecastEndpoint() {
+    return this.to('CreateForecastEndpoint');
+  }
+
+  /**
+   * Grants permission to delete an endpoint resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   */
+  public toDeleteForecastEndpoint() {
+    return this.to('DeleteForecastEndpoint');
+  }
+
+  /**
+   * Grants permission to describe an endpoint resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   */
+  public toDescribeForecastEndpoint() {
+    return this.to('DescribeForecastEndpoint');
+  }
+
+  /**
+   * Grants permission to get the forecast context of a timeseries for an endpoint
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   */
+  public toGetRecentForecastContext() {
+    return this.to('GetRecentForecastContext');
+  }
+
+  /**
+   * Grants permission to invoke the endpoint to get forecast for a timeseries
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   */
+  public toInvokeForecastEndpoint() {
+    return this.to('InvokeForecastEndpoint');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateAutoPredictor',
@@ -771,7 +826,9 @@ export class Forecast extends PolicyStatement {
       'StopResource',
       'TagResource',
       'UntagResource',
-      'UpdateDatasetGroup'
+      'UpdateDatasetGroup',
+      'CreateForecastEndpoint',
+      'DeleteForecastEndpoint'
     ],
     Read: [
       'DescribeAutoPredictor',
@@ -805,7 +862,10 @@ export class Forecast extends PolicyStatement {
       'ListWhatIfForecastExports',
       'ListWhatIfForecasts',
       'QueryForecast',
-      'QueryWhatIfForecast'
+      'QueryWhatIfForecast',
+      'DescribeForecastEndpoint',
+      'GetRecentForecastContext',
+      'InvokeForecastEndpoint'
     ],
     Tagging: [
       'TagResource',
@@ -1086,6 +1146,7 @@ export class Forecast extends PolicyStatement {
    * - .toResumeResource()
    * - .toStopResource()
    * - .toTagResource()
+   * - .toCreateForecastEndpoint()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1152,6 +1213,11 @@ export class Forecast extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateDatasetGroup()
+   * - .toCreateForecastEndpoint()
+   * - .toDeleteForecastEndpoint()
+   * - .toDescribeForecastEndpoint()
+   * - .toGetRecentForecastContext()
+   * - .toInvokeForecastEndpoint()
    *
    * Applies to resource types:
    * - dataset
@@ -1201,6 +1267,7 @@ export class Forecast extends PolicyStatement {
    * - .toStopResource()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toCreateForecastEndpoint()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -6,6 +6,7 @@ supportauthz:ListActions;List
 supportauthz:ListSupportPermitRequests;List
 supportauthz:ListSupportPermits;List
 supportauthz:ListTagsForResource;Read
+supportauthz:RegisterKey;Write
 supportauthz:RejectSupportPermitRequest;Write
 supportauthz:TagResource;Tagging, Write
 supportauthz:UntagResource;Tagging, Write

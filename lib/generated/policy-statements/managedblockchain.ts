@@ -367,6 +367,39 @@ export class Managedblockchain extends PolicyStatement {
     return this.to('VoteOnProposal');
   }
 
+  /**
+   * Grants permission to send HTTP GET requests to an Ethereum node
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/security_iam_id-based-policy-examples.html
+   */
+  public toGET() {
+    return this.to('GET');
+  }
+
+  /**
+   * Grants permission to create WebSocket connections to an Ethereum node
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/security_iam_id-based-policy-examples.html
+   */
+  public toInvoke() {
+    return this.to('Invoke');
+  }
+
+  /**
+   * Grants permission to send HTTP POST requests to an Ethereum node
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/security_iam_id-based-policy-examples.html
+   */
+  public toPOST() {
+    return this.to('POST');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateAccessor',
@@ -382,7 +415,10 @@ export class Managedblockchain extends PolicyStatement {
       'UntagResource',
       'UpdateMember',
       'UpdateNode',
-      'VoteOnProposal'
+      'VoteOnProposal',
+      'GET',
+      'Invoke',
+      'POST'
     ],
     Read: [
       'GetAccessor',
@@ -408,6 +444,11 @@ export class Managedblockchain extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'GET',
+      'Invoke',
+      'POST'
     ]
   };
 

@@ -1,11 +1,16 @@
 app-integrations:CreateApplication;Write
+app-integrations:CreateApplicationAssociation;Write
 app-integrations:CreateDataIntegration;Write
 app-integrations:CreateDataIntegrationAssociation;Write
 app-integrations:CreateDataIntegrationSchedule;Write
 app-integrations:CreateEventIntegration;Write
+app-integrations:CreateEventIntegrationAssociation;Write
 app-integrations:DeleteApplication;Write
+app-integrations:DeleteApplicationAssociation;Write
 app-integrations:DeleteDataIntegration;Write
+app-integrations:DeleteDataIntegrationAssociation;Write
 app-integrations:DeleteEventIntegration;Write
+app-integrations:DeleteEventIntegrationAssociation;Write
 app-integrations:GetApplication;Read
 app-integrations:GetDataIntegration;Read
 app-integrations:GetDataIntegrationExecution;Read

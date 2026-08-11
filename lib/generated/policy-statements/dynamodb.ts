@@ -689,6 +689,197 @@ export class Dynamodb extends PolicyStatement {
     return this.to('UpdateTimeToLive');
   }
 
+  /**
+   * Grants permission to create multi account global table replica
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html
+   */
+  public toAssociateTableReplica() {
+    return this.to('AssociateTableReplica');
+  }
+
+  /**
+   * Grants permission to add a Witness to a Global Table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
+   */
+  public toCreateGlobalTableWitness() {
+    return this.to('CreateGlobalTableWitness');
+  }
+
+  /**
+   * Grants permission to add a new replica table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
+   */
+  public toCreateTableReplica() {
+    return this.to('CreateTableReplica');
+  }
+
+  /**
+   * Grants permission to remove a Witness from a Global Table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
+   */
+  public toDeleteGlobalTableWitness() {
+    return this.to('DeleteGlobalTableWitness');
+  }
+
+  /**
+   * Grants permission to delete a replica table and all of its items
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
+   */
+  public toDeleteTableReplica() {
+    return this.to('DeleteTableReplica');
+  }
+
+  /**
+   * Grants permission to describe one or more of the Reserved Capacity purchased
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/iam-policy-prevent-purchase-reserved-capacity.html
+   */
+  public toDescribeReservedCapacity() {
+    return this.to('DescribeReservedCapacity');
+  }
+
+  /**
+   * Grants permission to describe Reserved Capacity offerings that are available for purchase
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/iam-policy-prevent-purchase-reserved-capacity.html
+   */
+  public toDescribeReservedCapacityOfferings() {
+    return this.to('DescribeReservedCapacityOfferings');
+  }
+
+  /**
+   * Grants permission to view the status of Attribute Based Access Control for the account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/abac-enable-ddb.html
+   */
+  public toGetAbacStatus() {
+    return this.to('GetAbacStatus');
+  }
+
+  /**
+   * Grants permission to start experiments on a Global Table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifFisActionId()
+   * - .ifFisTargetArns()
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
+   */
+  public toInjectError() {
+    return this.to('InjectError');
+  }
+
+  /**
+   * Grants permission to purchases reserved capacity for use with your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/iam-policy-prevent-purchase-reserved-capacity.html
+   */
+  public toPurchaseReservedCapacityOfferings() {
+    return this.to('PurchaseReservedCapacityOfferings');
+  }
+
+  /**
+   * Grants permission to read data from a multi account global table replica
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html
+   */
+  public toReadDataForReplication() {
+    return this.to('ReadDataForReplication');
+  }
+
+  /**
+   * Grants permission to configure settings for a multi account global table replica
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html
+   */
+  public toReplicateSettings() {
+    return this.to('ReplicateSettings');
+  }
+
+  /**
+   * Grants permission to create a new table from recovery point on AWS Backup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsageNotesAWS.html
+   */
+  public toRestoreTableFromAwsBackup() {
+    return this.to('RestoreTableFromAwsBackup');
+  }
+
+  /**
+   * Grants permission to create a backup on AWS Backup with advanced features enabled
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsageNotesAWS.html
+   */
+  public toStartAwsBackupJob() {
+    return this.to('StartAwsBackupJob');
+  }
+
+  /**
+   * Grants permission to update the status of Attribute Based Access Control for the account
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/abac-enable-ddb.html
+   */
+  public toUpdateAbacStatus() {
+    return this.to('UpdateAbacStatus');
+  }
+
+  /**
+   * Grants permission to update version of the specified global table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html
+   */
+  public toUpdateGlobalTableVersion() {
+    return this.to('UpdateGlobalTableVersion');
+  }
+
+  /**
+   * Grants permission to write data to a multi account global table replica
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html
+   */
+  public toWriteDataForReplication() {
+    return this.to('WriteDataForReplication');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'BatchGetItem',
@@ -715,7 +906,11 @@ export class Dynamodb extends PolicyStatement {
       'ListTagsOfResource',
       'PartiQLSelect',
       'Query',
-      'Scan'
+      'Scan',
+      'DescribeReservedCapacity',
+      'DescribeReservedCapacityOfferings',
+      'GetAbacStatus',
+      'ReadDataForReplication'
     ],
     Write: [
       'BatchWriteItem',
@@ -747,11 +942,25 @@ export class Dynamodb extends PolicyStatement {
       'UpdateKinesisStreamingDestination',
       'UpdateTable',
       'UpdateTableReplicaAutoScaling',
-      'UpdateTimeToLive'
+      'UpdateTimeToLive',
+      'AssociateTableReplica',
+      'CreateGlobalTableWitness',
+      'CreateTableReplica',
+      'DeleteGlobalTableWitness',
+      'DeleteTableReplica',
+      'InjectError',
+      'PurchaseReservedCapacityOfferings',
+      'ReplicateSettings',
+      'RestoreTableFromAwsBackup',
+      'StartAwsBackupJob',
+      'UpdateAbacStatus',
+      'UpdateGlobalTableVersion',
+      'WriteDataForReplication'
     ],
     'Permissions management': [
       'DeleteResourcePolicy',
-      'PutResourcePolicy'
+      'PutResourcePolicy',
+      'UpdateAbacStatus'
     ],
     List: [
       'ListBackups',
@@ -943,6 +1152,17 @@ export class Dynamodb extends PolicyStatement {
    * - .toUpdateTable()
    * - .toUpdateTableReplicaAutoScaling()
    * - .toUpdateTimeToLive()
+   * - .toAssociateTableReplica()
+   * - .toCreateGlobalTableWitness()
+   * - .toCreateTableReplica()
+   * - .toDeleteGlobalTableWitness()
+   * - .toDeleteTableReplica()
+   * - .toReadDataForReplication()
+   * - .toReplicateSettings()
+   * - .toRestoreTableFromAwsBackup()
+   * - .toStartAwsBackupJob()
+   * - .toUpdateGlobalTableVersion()
+   * - .toWriteDataForReplication()
    *
    * Applies to resource types:
    * - index
@@ -1037,6 +1257,9 @@ export class Dynamodb extends PolicyStatement {
   /**
    * Filters access by the ID of an AWS FIS action
    *
+   * Applies to actions:
+   * - .toInjectError()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1046,6 +1269,9 @@ export class Dynamodb extends PolicyStatement {
 
   /**
    * Filters access by the ARN of an AWS FIS target
+   *
+   * Applies to actions:
+   * - .toInjectError()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`

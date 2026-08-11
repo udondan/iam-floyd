@@ -12,6 +12,7 @@ dms:CreateEventSubscription;Write
 dms:CreateFleetAdvisorCollector;Write
 dms:CreateInstanceProfile;Write
 dms:CreateMigrationProject;Write
+dms:CreateOutboundIntegration;Write
 dms:CreateReplicationConfig;Write
 dms:CreateReplicationInstance;Write
 dms:CreateReplicationSubnetGroup;Write
@@ -76,6 +77,7 @@ dms:ImportCertificate;Write
 dms:ListDataProviders;Read
 dms:ListExtensionPacks;Read
 dms:ListInstanceProfiles;Read
+dms:ListMetadataModelAssessmentActionItems;Read
 dms:ListMetadataModelAssessments;Read
 dms:ListMetadataModelConversions;Read
 dms:ListMetadataModelExports;Read
@@ -84,6 +86,9 @@ dms:ListTagsForResource;Read
 dms:ModifyDataMigration;Write
 dms:ModifyEndpoint;Write
 dms:ModifyEventSubscription;Write
+dms:ModifyFleetAdvisorCollector;Write
+dms:ModifyFleetAdvisorCollectorStatuses;Write
+dms:ModifyOutboundIntegration;Write
 dms:ModifyReplicationConfig;Write
 dms:ModifyReplicationInstance;Write
 dms:ModifyReplicationSubnetGroup;Write
@@ -116,3 +121,4 @@ dms:UpdateDataProvider;Write
 dms:UpdateInstanceProfile;Write
 dms:UpdateMigrationProject;Write
 dms:UpdateSubscriptionsToEventBridge;Write
+dms:UploadFileMetadataList;Write

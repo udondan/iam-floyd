@@ -557,6 +557,28 @@ export class Nimble extends PolicyStatement {
     return this.to('UpdateStudioComponent');
   }
 
+  /**
+   * Grants permission to allow Nimble Studio portal to show the appropriate features for this account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html
+   */
+  public toGetFeatureMap() {
+    return this.to('GetFeatureMap');
+  }
+
+  /**
+   * Grants permission to report metrics and logs for the Nimble Studio portal to monitor application health
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html
+   */
+  public toPutStudioLogEvents() {
+    return this.to('PutStudioLogEvents');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptEulas',
@@ -584,7 +606,8 @@ export class Nimble extends PolicyStatement {
       'UpdateLaunchProfileMember',
       'UpdateStreamingImage',
       'UpdateStudio',
-      'UpdateStudioComponent'
+      'UpdateStudioComponent',
+      'PutStudioLogEvents'
     ],
     Read: [
       'GetEula',
@@ -609,7 +632,8 @@ export class Nimble extends PolicyStatement {
       'ListStudioComponents',
       'ListStudioMembers',
       'ListStudios',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'GetFeatureMap'
     ],
     Tagging: [
       'TagResource',
@@ -819,6 +843,7 @@ export class Nimble extends PolicyStatement {
    * - .toUpdateStreamingImage()
    * - .toUpdateStudio()
    * - .toUpdateStudioComponent()
+   * - .toPutStudioLogEvents()
    *
    * Applies to resource types:
    * - launch-profile
@@ -886,6 +911,7 @@ export class Nimble extends PolicyStatement {
    * - .toUpdateStreamingImage()
    * - .toUpdateStudio()
    * - .toUpdateStudioComponent()
+   * - .toPutStudioLogEvents()
    *
    * Applies to resource types:
    * - launch-profile
@@ -953,6 +979,7 @@ export class Nimble extends PolicyStatement {
    * - .toUpdateStreamingImage()
    * - .toUpdateStudio()
    * - .toUpdateStudioComponent()
+   * - .toPutStudioLogEvents()
    *
    * Applies to resource types:
    * - launch-profile
@@ -1108,6 +1135,7 @@ export class Nimble extends PolicyStatement {
    * - .toUpdateStreamingImage()
    * - .toUpdateStudio()
    * - .toUpdateStudioComponent()
+   * - .toPutStudioLogEvents()
    *
    * Applies to resource types:
    * - eula-acceptance

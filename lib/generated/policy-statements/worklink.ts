@@ -385,6 +385,17 @@ export class Worklink extends PolicyStatement {
     return this.to('UpdateIdentityProviderConfiguration');
   }
 
+  /**
+   * Grants permission to list devices for an Amazon WorkLink fleet
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/worklink/latest/ag/manage-devices.html
+   */
+  public toSearchEntity() {
+    return this.to('SearchEntity');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateDomain',
@@ -423,7 +434,8 @@ export class Worklink extends PolicyStatement {
       'ListDomains',
       'ListFleets',
       'ListWebsiteAuthorizationProviders',
-      'ListWebsiteCertificateAuthorities'
+      'ListWebsiteCertificateAuthorities',
+      'SearchEntity'
     ],
     Tagging: [
       'TagResource',
@@ -501,6 +513,7 @@ export class Worklink extends PolicyStatement {
    * - .toUpdateDomainMetadata()
    * - .toUpdateFleetMetadata()
    * - .toUpdateIdentityProviderConfiguration()
+   * - .toSearchEntity()
    *
    * Applies to resource types:
    * - fleet

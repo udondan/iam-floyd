@@ -649,6 +649,28 @@ export class Finspace extends PolicyStatement {
     return this.to('UpdateUser');
   }
 
+  /**
+   * Grants permission to connect to a kdb cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/finspace/latest/userguide/interacting-with-kdb-clusters.html
+   */
+  public toConnectKxCluster() {
+    return this.to('ConnectKxCluster');
+  }
+
+  /**
+   * Grants permission to mount a database to a kdb cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-managed-kdb-db.html
+   */
+  public toMountKxDatabase() {
+    return this.to('MountKxDatabase');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateEnvironment',
@@ -683,7 +705,9 @@ export class Finspace extends PolicyStatement {
       'UpdateKxEnvironmentNetwork',
       'UpdateKxUser',
       'UpdateKxVolume',
-      'UpdateUser'
+      'UpdateUser',
+      'ConnectKxCluster',
+      'MountKxDatabase'
     ],
     Read: [
       'GetEnvironment',
@@ -965,6 +989,8 @@ export class Finspace extends PolicyStatement {
    * - .toUpdateKxUser()
    * - .toUpdateKxVolume()
    * - .toUpdateUser()
+   * - .toConnectKxCluster()
+   * - .toMountKxDatabase()
    *
    * Applies to resource types:
    * - environment

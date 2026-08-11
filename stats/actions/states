@@ -13,6 +13,7 @@ states:DescribeStateMachineAlias;Read
 states:DescribeStateMachineForExecution;Read
 states:GetActivityTask;Write
 states:GetExecutionHistory;Read
+states:InvokeHTTPEndpoint;Write
 states:ListActivities;List
 states:ListExecutions;List
 states:ListMapRuns;List
@@ -22,6 +23,7 @@ states:ListStateMachines;List
 states:ListTagsForResource;List
 states:PublishStateMachineVersion;Write
 states:RedriveExecution;Write
+states:RevealSecrets;Read
 states:SendTaskFailure;Write
 states:SendTaskHeartbeat;Write
 states:SendTaskSuccess;Write

@@ -1,5 +1,6 @@
 ssm-contacts:AcceptPage;Write
 ssm-contacts:ActivateContactChannel;Write
+ssm-contacts:AssociateContact;Permissions management, Write
 ssm-contacts:CreateContact;Write
 ssm-contacts:CreateContactChannel;Write
 ssm-contacts:CreateRotation;Write

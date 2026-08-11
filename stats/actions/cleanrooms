@@ -75,6 +75,8 @@ cleanrooms:ListProtectedJobs;List
 cleanrooms:ListProtectedQueries;List
 cleanrooms:ListSchemas;List
 cleanrooms:ListTagsForResource;List
+cleanrooms:PassCollaboration;Read
+cleanrooms:PassMembership;Read
 cleanrooms:PopulateIdMappingTable;Write
 cleanrooms:PopulateIntermediateTable;Write
 cleanrooms:PreviewPrivacyImpact;Read
@@ -87,9 +89,11 @@ cleanrooms:UpdateCollaboration;Write
 cleanrooms:UpdateCollaborationChangeRequest;Write
 cleanrooms:UpdateConfiguredAudienceModelAssociation;Write
 cleanrooms:UpdateConfiguredTable;Write
+cleanrooms:UpdateConfiguredTableAllowedColumns;Write
 cleanrooms:UpdateConfiguredTableAnalysisRule;Write
 cleanrooms:UpdateConfiguredTableAssociation;Write
 cleanrooms:UpdateConfiguredTableAssociationAnalysisRule;Write
+cleanrooms:UpdateConfiguredTableReference;Write
 cleanrooms:UpdateIdMappingTable;Write
 cleanrooms:UpdateIdNamespaceAssociation;Write
 cleanrooms:UpdateIntermediateTable;Write

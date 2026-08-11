@@ -209,6 +209,83 @@ export class Payments extends PolicyStatement {
     return this.to('UpdateFinancingApplication');
   }
 
+  /**
+   * Grants permission to delete a payment instrument
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toDeletePaymentInstrument() {
+    return this.to('DeletePaymentInstrument');
+  }
+
+  /**
+   * Grants permission to get payment status of invoices
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toGetPaymentStatus() {
+    return this.to('GetPaymentStatus');
+  }
+
+  /**
+   * Grants permission to list payment instrument metadata
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toListPaymentInstruments() {
+    return this.to('ListPaymentInstruments');
+  }
+
+  /**
+   * Grants permission to get payment preferences (preferred payment currency, preferred payment method, etc.)
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toListPaymentPreferences() {
+    return this.to('ListPaymentPreferences');
+  }
+
+  /**
+   * Grants permission to make a payment, authenticate a payment, verify a payment method, and generate a funding request document for Advance Pay
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toMakePayment() {
+    return this.to('MakePayment');
+  }
+
+  /**
+   * Grants permission to update a payment instrument
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toUpdatePaymentInstrument() {
+    return this.to('UpdatePaymentInstrument');
+  }
+
+  /**
+   * Grants permission to update payment preferences (preferred payment currency, preferred payment method, etc.)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toUpdatePaymentPreferences() {
+    return this.to('UpdatePaymentPreferences');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptFinancingApplicationTerms',
@@ -216,13 +293,18 @@ export class Payments extends PolicyStatement {
       'CreatePaymentInstrument',
       'TagResource',
       'UntagResource',
-      'UpdateFinancingApplication'
+      'UpdateFinancingApplication',
+      'DeletePaymentInstrument',
+      'MakePayment',
+      'UpdatePaymentInstrument',
+      'UpdatePaymentPreferences'
     ],
     Read: [
       'GetFinancingApplication',
       'GetFinancingLine',
       'GetFinancingLineWithdrawal',
-      'GetFinancingOption'
+      'GetFinancingOption',
+      'GetPaymentStatus'
     ],
     List: [
       'GetPaymentInstrument',
@@ -231,7 +313,9 @@ export class Payments extends PolicyStatement {
       'ListFinancingLines',
       'ListPaymentProgramOptions',
       'ListPaymentProgramStatus',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'ListPaymentInstruments',
+      'ListPaymentPreferences'
     ],
     Tagging: [
       'TagResource',

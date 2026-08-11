@@ -367,6 +367,39 @@ export class Servicediscovery extends PolicyStatement {
     return this.to('UpdateServiceAttributes');
   }
 
+  /**
+   * Grants permission to delete the RAM access control policy for a namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to read the RAM access control policy for a namespace
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to define the RAM access control policy for a namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateHttpNamespace',
@@ -385,7 +418,9 @@ export class Servicediscovery extends PolicyStatement {
       'UpdatePrivateDnsNamespace',
       'UpdatePublicDnsNamespace',
       'UpdateService',
-      'UpdateServiceAttributes'
+      'UpdateServiceAttributes',
+      'DeleteResourcePolicy',
+      'PutResourcePolicy'
     ],
     Read: [
       'DiscoverInstances',
@@ -399,7 +434,8 @@ export class Servicediscovery extends PolicyStatement {
       'ListInstances',
       'ListNamespaces',
       'ListServices',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'GetResourcePolicy'
     ],
     List: [
       'ListOperations'
@@ -491,6 +527,9 @@ export class Servicediscovery extends PolicyStatement {
    * - .toUpdatePublicDnsNamespace()
    * - .toUpdateService()
    * - .toUpdateServiceAttributes()
+   * - .toDeleteResourcePolicy()
+   * - .toGetResourcePolicy()
+   * - .toPutResourcePolicy()
    *
    * Applies to resource types:
    * - namespace

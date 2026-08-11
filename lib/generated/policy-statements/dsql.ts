@@ -293,6 +293,65 @@ export class Dsql extends PolicyStatement {
     return this.to('UpdateStream');
   }
 
+  /**
+   * Grants permission to add a peer cluster to a multi-Region cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html
+   */
+  public toAddPeerCluster() {
+    return this.to('AddPeerCluster');
+  }
+
+  /**
+   * Grants permission to inject errors in targeted clusters
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifFisActionId()
+   * - .ifFisTargetArns()
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
+   */
+  public toInjectError() {
+    return this.to('InjectError');
+  }
+
+  /**
+   * Grants permission to update multi-Region properties of a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html
+   */
+  public toPutMultiRegionProperties() {
+    return this.to('PutMultiRegionProperties');
+  }
+
+  /**
+   * Grants permission to configure and update the witness Region of a multi-Region cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html
+   */
+  public toPutWitnessRegion() {
+    return this.to('PutWitnessRegion');
+  }
+
+  /**
+   * Grants permission to remove a peer cluster from a multi-Region cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_UpdateCluster.html
+   */
+  public toRemovePeerCluster() {
+    return this.to('RemovePeerCluster');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateCluster',
@@ -310,7 +369,12 @@ export class Dsql extends PolicyStatement {
       'TagResource',
       'UntagResource',
       'UpdateCluster',
-      'UpdateStream'
+      'UpdateStream',
+      'AddPeerCluster',
+      'InjectError',
+      'PutMultiRegionProperties',
+      'PutWitnessRegion',
+      'RemovePeerCluster'
     ],
     Read: [
       'GetBackupJob',
@@ -414,6 +478,10 @@ export class Dsql extends PolicyStatement {
    * - .toUntagResource()
    * - .toUpdateCluster()
    * - .toUpdateStream()
+   * - .toAddPeerCluster()
+   * - .toPutMultiRegionProperties()
+   * - .toPutWitnessRegion()
+   * - .toRemovePeerCluster()
    *
    * Applies to resource types:
    * - Cluster
@@ -450,6 +518,9 @@ export class Dsql extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
    *
+   * Applies to actions:
+   * - .toInjectError()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -461,6 +532,9 @@ export class Dsql extends PolicyStatement {
    * Filters access by the ARN of an AWS FIS target
    *
    * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
+   *
+   * Applies to actions:
+   * - .toInjectError()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -477,6 +551,7 @@ export class Dsql extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCluster()
    * - .toUpdateCluster()
+   * - .toPutWitnessRegion()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

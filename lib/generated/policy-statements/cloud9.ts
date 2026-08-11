@@ -170,6 +170,191 @@ export class Cloud9 extends PolicyStatement {
     return this.to('UpdateEnvironmentMembership');
   }
 
+  /**
+   * Grants permission to start the Amazon EC2 instance that your AWS Cloud9 IDE connects to
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toActivateEC2Remote() {
+    return this.to('ActivateEC2Remote');
+  }
+
+  /**
+   * Grants permission to create an AWS Cloud9 SSH development environment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifEnvironmentName()
+   * - .ifOwnerArn()
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toCreateEnvironmentSSH() {
+    return this.to('CreateEnvironmentSSH');
+  }
+
+  /**
+   * Grants permission to create an authentication token that allows a connection between the AWS Cloud9 IDE and the user's environment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toCreateEnvironmentToken() {
+    return this.to('CreateEnvironmentToken');
+  }
+
+  /**
+   * Grants permission to get details about the connection to the EC2 development environment, including host, user, and port
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toDescribeEC2Remote() {
+    return this.to('DescribeEC2Remote');
+  }
+
+  /**
+   * Grants permission to get details about the connection to the SSH development environment, including host, user, and port
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toDescribeSSHRemote() {
+    return this.to('DescribeSSHRemote');
+  }
+
+  /**
+   * Grants permission to get configuration information that's used to initialize the AWS Cloud9 IDE
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toGetEnvironmentConfig() {
+    return this.to('GetEnvironmentConfig');
+  }
+
+  /**
+   * Grants permission to get the AWS Cloud9 IDE settings for a specified development environment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toGetEnvironmentSettings() {
+    return this.to('GetEnvironmentSettings');
+  }
+
+  /**
+   * Grants permission to get the AWS Cloud9 IDE settings for a specified environment member
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toGetMembershipSettings() {
+    return this.to('GetMembershipSettings');
+  }
+
+  /**
+   * Grants permission to get the migration experience for a cloud9 user
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toGetMigrationExperiences() {
+    return this.to('GetMigrationExperiences');
+  }
+
+  /**
+   * Grants permission to get the user's public SSH key, which is used by AWS Cloud9 to connect to SSH development environments
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifUserArn()
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toGetUserPublicKey() {
+    return this.to('GetUserPublicKey');
+  }
+
+  /**
+   * Grants permission to get the AWS Cloud9 IDE settings for a specified user
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toGetUserSettings() {
+    return this.to('GetUserSettings');
+  }
+
+  /**
+   * Grants permission to set AWS managed temporary credentials on the Amazon EC2 instance that's used by the AWS Cloud9 integrated development environment (IDE)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toModifyTemporaryCredentialsOnEnvironmentEC2() {
+    return this.to('ModifyTemporaryCredentialsOnEnvironmentEC2');
+  }
+
+  /**
+   * Grants permission to update the AWS Cloud9 IDE settings for a specified development environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toUpdateEnvironmentSettings() {
+    return this.to('UpdateEnvironmentSettings');
+  }
+
+  /**
+   * Grants permission to update the AWS Cloud9 IDE settings for a specified environment member
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toUpdateMembershipSettings() {
+    return this.to('UpdateMembershipSettings');
+  }
+
+  /**
+   * Grants permission to update details about the connection to the SSH development environment, including host, user, and port
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toUpdateSSHRemote() {
+    return this.to('UpdateSSHRemote');
+  }
+
+  /**
+   * Grants permission to update IDE-specific settings of an AWS Cloud9 user
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
+   */
+  public toUpdateUserSettings() {
+    return this.to('UpdateUserSettings');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateEnvironmentEC2',
@@ -179,14 +364,30 @@ export class Cloud9 extends PolicyStatement {
       'TagResource',
       'UntagResource',
       'UpdateEnvironment',
-      'UpdateEnvironmentMembership'
+      'UpdateEnvironmentMembership',
+      'ActivateEC2Remote',
+      'CreateEnvironmentSSH',
+      'ModifyTemporaryCredentialsOnEnvironmentEC2',
+      'UpdateEnvironmentSettings',
+      'UpdateMembershipSettings',
+      'UpdateSSHRemote',
+      'UpdateUserSettings'
     ],
     Read: [
       'DescribeEnvironmentMemberships',
       'DescribeEnvironmentStatus',
       'DescribeEnvironments',
       'ListEnvironments',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'CreateEnvironmentToken',
+      'DescribeEC2Remote',
+      'DescribeSSHRemote',
+      'GetEnvironmentConfig',
+      'GetEnvironmentSettings',
+      'GetMembershipSettings',
+      'GetMigrationExperiences',
+      'GetUserPublicKey',
+      'GetUserSettings'
     ],
     Tagging: [
       'TagResource',
@@ -219,6 +420,7 @@ export class Cloud9 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateEnvironmentEC2()
    * - .toTagResource()
+   * - .toCreateEnvironmentSSH()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -245,6 +447,17 @@ export class Cloud9 extends PolicyStatement {
    * - .toUntagResource()
    * - .toUpdateEnvironment()
    * - .toUpdateEnvironmentMembership()
+   * - .toActivateEC2Remote()
+   * - .toCreateEnvironmentToken()
+   * - .toDescribeEC2Remote()
+   * - .toDescribeSSHRemote()
+   * - .toGetEnvironmentConfig()
+   * - .toGetEnvironmentSettings()
+   * - .toGetMembershipSettings()
+   * - .toModifyTemporaryCredentialsOnEnvironmentEC2()
+   * - .toUpdateEnvironmentSettings()
+   * - .toUpdateMembershipSettings()
+   * - .toUpdateSSHRemote()
    *
    * Applies to resource types:
    * - environment
@@ -266,6 +479,7 @@ export class Cloud9 extends PolicyStatement {
    * - .toCreateEnvironmentEC2()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toCreateEnvironmentSSH()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -299,6 +513,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateEnvironmentEC2()
+   * - .toCreateEnvironmentSSH()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -329,6 +544,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateEnvironmentEC2()
+   * - .toCreateEnvironmentSSH()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -379,6 +595,7 @@ export class Cloud9 extends PolicyStatement {
    * - .toDeleteEnvironmentMembership()
    * - .toDescribeEnvironmentMemberships()
    * - .toUpdateEnvironmentMembership()
+   * - .toGetUserPublicKey()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`

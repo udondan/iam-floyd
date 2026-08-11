@@ -12,7 +12,10 @@ partnercentral:CancelConnection;Write
 partnercentral:CancelConnectionInvitation;Write
 partnercentral:CancelProfileUpdateTask;Write
 partnercentral:CreateBenefitApplication;Write
+partnercentral:CreateBusinessPlan;Write
 partnercentral:CreateChannelHandshake;Write
+partnercentral:CreateCollaborationChannelMembers;Write
+partnercentral:CreateCollaborationChannelRequest;Write
 partnercentral:CreateConnectionInvitation;Write
 partnercentral:CreateEngagement;Write
 partnercentral:CreateEngagementContext;Write
@@ -32,11 +35,14 @@ partnercentral:DeleteResourceSnapshotJob;Write
 partnercentral:DisassociateAwsTrainingCertificationEmailDomain;Write
 partnercentral:DisassociateBenefitApplicationResource;Write
 partnercentral:DisassociateOpportunity;Write
+partnercentral:EnrollInPartnerPath;Write
 partnercentral:GetAllianceLeadContact;Read
 partnercentral:GetAwsOpportunitySummary;Read
 partnercentral:GetBenefit;Read
 partnercentral:GetBenefitAllocation;Read
 partnercentral:GetBenefitApplication;Read
+partnercentral:GetBusinessPlan;Read
+partnercentral:GetCollaborationChannel;Read
 partnercentral:GetConnection;Read
 partnercentral:GetConnectionInvitation;Read
 partnercentral:GetConnectionPreferences;Read
@@ -47,8 +53,10 @@ partnercentral:GetMarketplaceRevenueShareAllocation;Read
 partnercentral:GetOpportunity;Read
 partnercentral:GetPartner;Read
 partnercentral:GetPartnerDashboard;Read
+partnercentral:GetPartnerProfile;Read
 partnercentral:GetProfileUpdateTask;Read
 partnercentral:GetProfileVisibility;Read
+partnercentral:GetProgramManagementAccount;Read
 partnercentral:GetProspectingFromEngagementTask;Read
 partnercentral:GetQualificationsAssociationDetails;Read
 partnercentral:GetQualificationsAssociationTask;Read
@@ -64,7 +72,9 @@ partnercentral:GetVerification;Read
 partnercentral:ListBenefitAllocations;List
 partnercentral:ListBenefitApplications;List
 partnercentral:ListBenefits;List
+partnercentral:ListBusinessPlans;List
 partnercentral:ListChannelHandshakes;List
+partnercentral:ListCollaborationChannels;List
 partnercentral:ListConnectionInvitations;List
 partnercentral:ListConnections;List
 partnercentral:ListEngagementByAcceptingInvitationTasks;List
@@ -77,6 +87,7 @@ partnercentral:ListMarketplaceRevenueShareAllocations;List
 partnercentral:ListMarketplaceRevenueShares;List
 partnercentral:ListOpportunities;List
 partnercentral:ListOpportunityFromEngagementTasks;List
+partnercentral:ListPartnerPaths;List
 partnercentral:ListPartners;List
 partnercentral:ListProgramManagementAccounts;List
 partnercentral:ListProspectingFromEngagementTasks;List
@@ -88,12 +99,14 @@ partnercentral:ListRevenueAttributions;List
 partnercentral:ListSolutions;List
 partnercentral:ListTagsForResource;Read
 partnercentral:PutAllianceLeadContact;Write
+partnercentral:PutBusinessPlan;Write
 partnercentral:PutProfileVisibility;Write
 partnercentral:PutSellingSystemSettings;Write
 partnercentral:RecallBenefitApplication;Write
 partnercentral:RejectChannelHandshake;Write
 partnercentral:RejectConnectionInvitation;Write
 partnercentral:RejectEngagementInvitation;Write
+partnercentral:SearchPartnerProfiles;List
 partnercentral:SendEmailVerificationCode;Write
 partnercentral:StartEngagementByAcceptingInvitationTask;Write
 partnercentral:StartEngagementFromOpportunityTask;Write
@@ -118,3 +131,4 @@ partnercentral:UpdateOpportunity;Write
 partnercentral:UpdateProgramManagementAccount;Write
 partnercentral:UpdateRelationship;Write
 partnercentral:UpdateRevenueAttribution;Write
+partnercentral:UseSession;Write

@@ -271,6 +271,61 @@ export class Invoicing extends PolicyStatement {
     return this.to('VerifyProcurementPortalValidation');
   }
 
+  /**
+   * Grants permission to get Invoice Correction
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_GetInvoiceCorrection.html
+   */
+  public toGetInvoiceCorrection() {
+    return this.to('GetInvoiceCorrection');
+  }
+
+  /**
+   * Grants permission to get Invoice Email Delivery Preferences
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   */
+  public toGetInvoiceEmailDeliveryPreferences() {
+    return this.to('GetInvoiceEmailDeliveryPreferences');
+  }
+
+  /**
+   * Grants permission to list Invoice Corrections
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_ListInvoiceCorrections.html
+   */
+  public toListInvoiceCorrections() {
+    return this.to('ListInvoiceCorrections');
+  }
+
+  /**
+   * Grants permission to put Invoice Email Delivery Preferences
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   */
+  public toPutInvoiceEmailDeliveryPreferences() {
+    return this.to('PutInvoiceEmailDeliveryPreferences');
+  }
+
+  /**
+   * Grants permission to start Invoice Correction
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_StartInvoiceCorrection.html
+   */
+  public toStartInvoiceCorrection() {
+    return this.to('StartInvoiceCorrection');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'BatchGetInvoiceProfile',
@@ -278,7 +333,9 @@ export class Invoicing extends PolicyStatement {
       'GetInvoiceUnit',
       'GetProcurementPortalPreference',
       'ListInvoiceSummaries',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'GetInvoiceCorrection',
+      'GetInvoiceEmailDeliveryPreferences'
     ],
     Write: [
       'CreateInvoiceUnit',
@@ -291,13 +348,16 @@ export class Invoicing extends PolicyStatement {
       'UntagResource',
       'UpdateInvoiceUnit',
       'UpdateProcurementPortalPreferenceStatus',
-      'VerifyProcurementPortalValidation'
+      'VerifyProcurementPortalValidation',
+      'PutInvoiceEmailDeliveryPreferences',
+      'StartInvoiceCorrection'
     ],
     List: [
       'ListInvoiceUnits',
       'ListProcurementPortalPreferences',
       'ListProcurementPortalSuppliers',
-      'ListProcurementPortals'
+      'ListProcurementPortals',
+      'ListInvoiceCorrections'
     ],
     Tagging: [
       'TagResource',

@@ -2748,6 +2748,119 @@ export class Bedrock extends PolicyStatement {
     return this.to('ValidateFlowDefinition');
   }
 
+  /**
+   * Grants permission to configure vended log delivery for a knowledge base
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
+   * Grants permission to use 3rd party platform to store knowledge data
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifThirdPartyKnowledgeBaseCredentialsSecretArn()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toAssociateThirdPartyKnowledgeBase() {
+    return this.to('AssociateThirdPartyKnowledgeBase');
+  }
+
+  /**
+   * Deletes a previously created Bedrock resource policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to retrieve blueprint recommendation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toGetBlueprintRecommendation() {
+    return this.to('GetBlueprintRecommendation');
+  }
+
+  /**
+   * Gets the resource policy document for a Bedrock resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetResourePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to invoke an Automated Reasoning policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toInvokeAutomatedReasoningPolicy() {
+    return this.to('InvokeAutomatedReasoningPolicy');
+  }
+
+  /**
+   * Grants permission to invoke blueprint recommendations asynchronously
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toInvokeBlueprintRecommendationAsync() {
+    return this.to('InvokeBlueprintRecommendationAsync');
+  }
+
+  /**
+   * Grants permission to use the conversational builder which aids in building supported bedrock resources
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/userguide/agents-create-cb.html
+   */
+  public toInvokeBuilder() {
+    return this.to('InvokeBuilder');
+  }
+
+  /**
+   * Adds a resource policy for a Bedrock resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
+   * Grants permission to render an existing prompt or its version
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toRenderPrompt() {
+    return this.to('RenderPrompt');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'AgenticRetrieveStream',
@@ -2823,7 +2936,11 @@ export class Bedrock extends PolicyStatement {
       'ListTagsForResource',
       'OptimizePrompt',
       'Retrieve',
-      'ValidateFlowDefinition'
+      'ValidateFlowDefinition',
+      'GetBlueprintRecommendation',
+      'GetResourcePolicy',
+      'InvokeAutomatedReasoningPolicy',
+      'RenderPrompt'
     ],
     Write: [
       'AssociateAgentCollaborator',
@@ -2950,7 +3067,13 @@ export class Bedrock extends PolicyStatement {
       'UpdateMarketplaceModelEndpoint',
       'UpdatePrompt',
       'UpdateProvisionedModelThroughput',
-      'UpdateSession'
+      'UpdateSession',
+      'AllowVendedLogDeliveryForResource',
+      'AssociateThirdPartyKnowledgeBase',
+      'DeleteResourcePolicy',
+      'InvokeBlueprintRecommendationAsync',
+      'InvokeBuilder',
+      'PutResourcePolicy'
     ],
     List: [
       'ListAdvancedPromptOptimizationJobs',
@@ -3003,6 +3126,9 @@ export class Bedrock extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
     ]
   };
 
@@ -3686,6 +3812,7 @@ export class Bedrock extends PolicyStatement {
    * - .toInvokeDataAutomationLibraryIngestionJob()
    * - .toInvokeModel()
    * - .toTagResource()
+   * - .toPutResourcePolicy()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3880,6 +4007,12 @@ export class Bedrock extends PolicyStatement {
    * - .toUpdatePrompt()
    * - .toUpdateProvisionedModelThroughput()
    * - .toUpdateSession()
+   * - .toAllowVendedLogDeliveryForResource()
+   * - .toDeleteResourcePolicy()
+   * - .toGetResourcePolicy()
+   * - .toInvokeAutomatedReasoningPolicy()
+   * - .toPutResourcePolicy()
+   * - .toRenderPrompt()
    *
    * Applies to resource types:
    * - advanced-prompt-optimization-job
@@ -3961,6 +4094,7 @@ export class Bedrock extends PolicyStatement {
    * - .toInvokeModel()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toPutResourcePolicy()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4082,6 +4216,9 @@ export class Bedrock extends PolicyStatement {
    * Filters access by the secretArn containing the credentials of the third party platform
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toAssociateThirdPartyKnowledgeBase()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`

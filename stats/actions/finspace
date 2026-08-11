@@ -1,3 +1,4 @@
+finspace:ConnectKxCluster;Write
 finspace:CreateEnvironment;Write
 finspace:CreateKxChangeset;Write
 finspace:CreateKxCluster;Write
@@ -42,6 +43,7 @@ finspace:ListKxVolumes;List
 finspace:ListTagsForResource;List
 finspace:ListUsers;List
 finspace:LoadSampleDataSetGroupIntoEnvironment;Write
+finspace:MountKxDatabase;Write
 finspace:ResetUserPassword;Write
 finspace:TagResource;Tagging, Write
 finspace:UntagResource;Tagging, Write

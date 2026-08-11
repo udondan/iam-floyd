@@ -883,6 +883,50 @@ export class Ecs extends PolicyStatement {
     return this.to('UpdateTaskSet');
   }
 
+  /**
+   * Grants permission to allow vended log delivery for a specified resource
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/action-logs-getting-started.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
+   * Grants permission to an agent to connect with the Amazon ECS service to report status and get commands
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/instance_IAM_role.html
+   */
+  public toPoll() {
+    return this.to('Poll');
+  }
+
+  /**
+   * Grants permission to collect system logs from the container instances
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#cloudtrail-data-events
+   */
+  public toPutSystemLogEvents() {
+    return this.to('PutSystemLogEvents');
+  }
+
+  /**
+   * Grants permission to start a telemetry session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#enable_cloudwatch
+   */
+  public toStartTelemetrySession() {
+    return this.to('StartTelemetrySession');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ContinueServiceDeployment',
@@ -932,7 +976,11 @@ export class Ecs extends PolicyStatement {
       'UpdateService',
       'UpdateServicePrimaryTaskSet',
       'UpdateTaskProtection',
-      'UpdateTaskSet'
+      'UpdateTaskSet',
+      'AllowVendedLogDeliveryForResource',
+      'Poll',
+      'PutSystemLogEvents',
+      'StartTelemetrySession'
     ],
     Read: [
       'DescribeCapacityProviders',
@@ -970,6 +1018,9 @@ export class Ecs extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
     ]
   };
 
@@ -1322,6 +1373,10 @@ export class Ecs extends PolicyStatement {
    * - .toUpdateServicePrimaryTaskSet()
    * - .toUpdateTaskProtection()
    * - .toUpdateTaskSet()
+   * - .toAllowVendedLogDeliveryForResource()
+   * - .toPoll()
+   * - .toPutSystemLogEvents()
+   * - .toStartTelemetrySession()
    *
    * Applies to resource types:
    * - capacity-provider
@@ -1447,6 +1502,10 @@ export class Ecs extends PolicyStatement {
    * - .toUpdateServicePrimaryTaskSet()
    * - .toUpdateTaskProtection()
    * - .toUpdateTaskSet()
+   * - .toAllowVendedLogDeliveryForResource()
+   * - .toPoll()
+   * - .toPutSystemLogEvents()
+   * - .toStartTelemetrySession()
    *
    * Applies to resource types:
    * - capacity-provider
@@ -1511,6 +1570,7 @@ export class Ecs extends PolicyStatement {
    * - .toRunTask()
    * - .toUpdateDaemon()
    * - .toUpdateService()
+   * - .toPutSystemLogEvents()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -1567,6 +1627,9 @@ export class Ecs extends PolicyStatement {
    * - .toUpdateServicePrimaryTaskSet()
    * - .toUpdateTaskProtection()
    * - .toUpdateTaskSet()
+   * - .toPoll()
+   * - .toPutSystemLogEvents()
+   * - .toStartTelemetrySession()
    *
    * Applies to resource types:
    * - daemon

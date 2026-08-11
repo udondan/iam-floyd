@@ -425,6 +425,28 @@ export class States extends PolicyStatement {
     return this.to('ValidateStateMachineDefinition');
   }
 
+  /**
+   * Grants permission to invoke the HTTP Task state
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/dg/connect-third-party-apis.html
+   */
+  public toInvokeHTTPEndpoint() {
+    return this.to('InvokeHTTPEndpoint');
+  }
+
+  /**
+   * Grants permission to reveal sensitive data from an execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html
+   */
+  public toRevealSecrets() {
+    return this.to('RevealSecrets');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateActivity',
@@ -448,7 +470,8 @@ export class States extends PolicyStatement {
       'UntagResource',
       'UpdateMapRun',
       'UpdateStateMachine',
-      'UpdateStateMachineAlias'
+      'UpdateStateMachineAlias',
+      'InvokeHTTPEndpoint'
     ],
     Read: [
       'DescribeActivity',
@@ -458,7 +481,8 @@ export class States extends PolicyStatement {
       'DescribeStateMachineAlias',
       'DescribeStateMachineForExecution',
       'GetExecutionHistory',
-      'ValidateStateMachineDefinition'
+      'ValidateStateMachineDefinition',
+      'RevealSecrets'
     ],
     List: [
       'ListActivities',

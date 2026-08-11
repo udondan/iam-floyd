@@ -670,6 +670,28 @@ export class Wafv2 extends PolicyStatement {
     return this.to('UpdateWebACL');
   }
 
+  /**
+   * Grants permission to disassociate Firewall Manager from a WebACL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateFirewallManager.html
+   */
+  public toDisassociateFirewallManager() {
+    return this.to('DisassociateFirewallManager');
+  }
+
+  /**
+   * Grants permission to create FirewallManagedRulesGroups in a WebACL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutFirewallManagerRuleGroups.html
+   */
+  public toPutFirewallManagerRuleGroups() {
+    return this.to('PutFirewallManagerRuleGroups');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateWebACL',
@@ -696,7 +718,9 @@ export class Wafv2 extends PolicyStatement {
       'UpdateManagedRuleSetVersionExpiryDate',
       'UpdateRegexPatternSet',
       'UpdateRuleGroup',
-      'UpdateWebACL'
+      'UpdateWebACL',
+      'DisassociateFirewallManager',
+      'PutFirewallManagerRuleGroups'
     ],
     Read: [
       'CheckCapacity',
@@ -1012,6 +1036,8 @@ export class Wafv2 extends PolicyStatement {
    * - .toUpdateRegexPatternSet()
    * - .toUpdateRuleGroup()
    * - .toUpdateWebACL()
+   * - .toDisassociateFirewallManager()
+   * - .toPutFirewallManagerRuleGroups()
    *
    * Applies to resource types:
    * - ipset

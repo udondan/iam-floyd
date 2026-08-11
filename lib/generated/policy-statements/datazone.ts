@@ -2047,6 +2047,195 @@ export class Datazone extends PolicyStatement {
     return this.to('ValidatePolicy');
   }
 
+  /**
+   * Grants permission to remove linked type items from an Amazon DataZone Domain
+   *
+   * Access Level: Write
+   */
+  public toBatchDeleteLinkedTypes() {
+    return this.to('BatchDeleteLinkedTypes');
+  }
+
+  /**
+   * Grants permission to put linked type items to an Amazon DataZone Domain
+   *
+   * Access Level: Write
+   */
+  public toBatchPutLinkedTypes() {
+    return this.to('BatchPutLinkedTypes');
+  }
+
+  /**
+   * Grants permission to delete a resource policy for a DataZone Domain
+   *
+   * Access Level: Permissions management, Write
+   */
+  public toDeleteDomainSharingPolicy() {
+    return this.to('DeleteDomainSharingPolicy');
+  }
+
+  /**
+   * Grants permission to use features that require access to domain execution role credentials
+   *
+   * Access Level: Read
+   */
+  public toGetDomainExecutionRoleCredentials() {
+    return this.to('GetDomainExecutionRoleCredentials');
+  }
+
+  /**
+   * Grants permission to retrieve a resource policy for a DataZone Domain
+   *
+   * Access Level: Read
+   */
+  public toGetDomainSharingPolicy() {
+    return this.to('GetDomainSharingPolicy');
+  }
+
+  /**
+   * Grants permission to get environment action link
+   *
+   * Access Level: Read
+   */
+  public toGetEnvironmentActionLink() {
+    return this.to('GetEnvironmentActionLink');
+  }
+
+  /**
+   * Grants permission to get subscription eligibilty
+   *
+   * Access Level: Read
+   */
+  public toGetSubscriptionEligibility() {
+    return this.to('GetSubscriptionEligibility');
+  }
+
+  /**
+   * Grants permission to list environment blueprint configuration summaries
+   *
+   * Access Level: List
+   */
+  public toListEnvironmentBlueprintConfigurationSummaries() {
+    return this.to('ListEnvironmentBlueprintConfigurationSummaries');
+  }
+
+  /**
+   * Grants permission to list linked type items linked to an Amazon DataZone Domain
+   *
+   * Access Level: List
+   */
+  public toListLinkedTypes() {
+    return this.to('ListLinkedTypes');
+  }
+
+  /**
+   * Grants permission to list available Manager Secrets
+   *
+   * Access Level: List
+   */
+  public toListWarehouseMetadata() {
+    return this.to('ListWarehouseMetadata');
+  }
+
+  /**
+   * Grants permission to provision domain with default project setup
+   *
+   * Access Level: Write
+   */
+  public toProvisionDomain() {
+    return this.to('ProvisionDomain');
+  }
+
+  /**
+   * Grants permission to add a resource policy for a DataZone Domain
+   *
+   * Access Level: Permissions management, Write
+   */
+  public toPutDomainSharingPolicy() {
+    return this.to('PutDomainSharingPolicy');
+  }
+
+  /**
+   * Grants permission to refresh token
+   *
+   * Access Level: Write
+   */
+  public toRefreshToken() {
+    return this.to('RefreshToken');
+  }
+
+  /**
+   * Grants permission to search rules
+   *
+   * Access Level: List
+   */
+  public toSearchRules() {
+    return this.to('SearchRules');
+  }
+
+  /**
+   * Grants permission to login using SSO
+   *
+   * Access Level: Write
+   */
+  public toSsoLogin() {
+    return this.to('SsoLogin');
+  }
+
+  /**
+   * Grants permission to logout as SSO user
+   *
+   * Access Level: Write
+   */
+  public toSsoLogout() {
+    return this.to('SsoLogout');
+  }
+
+  /**
+   * Grants permission to start account bootstrap action for a domain
+   *
+   * Access Level: Write
+   */
+  public toStartAccountBootstrapAction() {
+    return this.to('StartAccountBootstrapAction');
+  }
+
+  /**
+   * Grants permission to update data source run activities
+   *
+   * Access Level: Write
+   */
+  public toUpdateDataSourceRunActivities() {
+    return this.to('UpdateDataSourceRunActivities');
+  }
+
+  /**
+   * Grants permission to update environment configuration
+   *
+   * Access Level: Write
+   */
+  public toUpdateEnvironmentConfiguration() {
+    return this.to('UpdateEnvironmentConfiguration');
+  }
+
+  /**
+   * Grants permission to update status of the Environment deployment
+   *
+   * Access Level: Write
+   */
+  public toUpdateEnvironmentDeploymentStatus() {
+    return this.to('UpdateEnvironmentDeploymentStatus');
+  }
+
+  /**
+   * Grants permission to validate pass role
+   *
+   * Access Level: Write
+   */
+  public toValidatePassRole() {
+    return this.to('ValidatePassRole');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptPredictions',
@@ -2176,13 +2365,28 @@ export class Datazone extends PolicyStatement {
       'UpdateSubscriptionGrantStatus',
       'UpdateSubscriptionRequest',
       'UpdateSubscriptionTarget',
-      'UpdateUserProfile'
+      'UpdateUserProfile',
+      'BatchDeleteLinkedTypes',
+      'BatchPutLinkedTypes',
+      'DeleteDomainSharingPolicy',
+      'ProvisionDomain',
+      'PutDomainSharingPolicy',
+      'RefreshToken',
+      'SsoLogin',
+      'SsoLogout',
+      'StartAccountBootstrapAction',
+      'UpdateDataSourceRunActivities',
+      'UpdateEnvironmentConfiguration',
+      'UpdateEnvironmentDeploymentStatus',
+      'ValidatePassRole'
     ],
     'Permissions management': [
       'AddPolicyGrant',
       'GetIamPortalLoginUrl',
       'RemovePolicyGrant',
-      'RevokeSubscription'
+      'RevokeSubscription',
+      'DeleteDomainSharingPolicy',
+      'PutDomainSharingPolicy'
     ],
     Read: [
       'BatchGetAttributesMetadata',
@@ -2236,7 +2440,11 @@ export class Datazone extends PolicyStatement {
       'GetUpdateEligibility',
       'GetUserProfile',
       'ListTagsForResource',
-      'ValidatePolicy'
+      'ValidatePolicy',
+      'GetDomainExecutionRoleCredentials',
+      'GetDomainSharingPolicy',
+      'GetEnvironmentActionLink',
+      'GetSubscriptionEligibility'
     ],
     List: [
       'ListAccountEnvironments',
@@ -2283,7 +2491,11 @@ export class Datazone extends PolicyStatement {
       'SearchGroupProfiles',
       'SearchListings',
       'SearchTypes',
-      'SearchUserProfiles'
+      'SearchUserProfiles',
+      'ListEnvironmentBlueprintConfigurationSummaries',
+      'ListLinkedTypes',
+      'ListWarehouseMetadata',
+      'SearchRules'
     ],
     Tagging: [
       'TagResource',
@@ -2337,6 +2549,10 @@ export class Datazone extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateDomain()
+   * - .toBatchDeleteLinkedTypes()
+   * - .toBatchPutLinkedTypes()
+   * - .toListLinkedTypes()
+   * - .toStartAccountBootstrapAction()
    *
    * Applies to resource types:
    * - domain

@@ -7,6 +7,7 @@ appmesh-preview:CreateVirtualRouter;Write
 appmesh-preview:CreateVirtualService;Write
 appmesh-preview:DeleteGatewayRoute;Write
 appmesh-preview:DeleteMesh;Write
+appmesh-preview:DeleteMeshPolicy;Write
 appmesh-preview:DeleteRoute;Write
 appmesh-preview:DeleteVirtualGateway;Write
 appmesh-preview:DeleteVirtualNode;Write
@@ -19,6 +20,7 @@ appmesh-preview:DescribeVirtualGateway;Read
 appmesh-preview:DescribeVirtualNode;Read
 appmesh-preview:DescribeVirtualRouter;Read
 appmesh-preview:DescribeVirtualService;Read
+appmesh-preview:GetMeshPolicy;Read
 appmesh-preview:ListGatewayRoutes;List
 appmesh-preview:ListMeshes;List
 appmesh-preview:ListRoutes;List
@@ -26,6 +28,7 @@ appmesh-preview:ListVirtualGateways;List
 appmesh-preview:ListVirtualNodes;List
 appmesh-preview:ListVirtualRouters;List
 appmesh-preview:ListVirtualServices;List
+appmesh-preview:PutMeshPolicy;Write
 appmesh-preview:StreamAggregatedResources;Read
 appmesh-preview:UpdateGatewayRoute;Write
 appmesh-preview:UpdateMesh;Write

@@ -535,6 +535,17 @@ export class Codedeploy extends PolicyStatement {
     return this.to('UpdateDeploymentGroup');
   }
 
+  /**
+   * Grants permission to create CloudFormation deployment to cooperate ochestration for a CloudFormation stack update
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codedeploy/latest/APIReference/codedeploy/latest/userguide/deployments-create-ecs-cfn.html
+   */
+  public toCreateCloudFormationDeployment() {
+    return this.to('CreateCloudFormationDeployment');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddTagsToOnPremisesInstances',
@@ -564,7 +575,8 @@ export class Codedeploy extends PolicyStatement {
       'TagResource',
       'UntagResource',
       'UpdateApplication',
-      'UpdateDeploymentGroup'
+      'UpdateDeploymentGroup',
+      'CreateCloudFormationDeployment'
     ],
     Read: [
       'BatchGetApplicationRevisions',

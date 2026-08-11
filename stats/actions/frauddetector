@@ -28,6 +28,7 @@ frauddetector:DeleteRule;Write
 frauddetector:DeleteVariable;Write
 frauddetector:DescribeDetector;Read
 frauddetector:DescribeModelVersions;Read
+frauddetector:GetBatchImportJobValidationReport;Read
 frauddetector:GetBatchImportJobs;List
 frauddetector:GetBatchPredictionJobs;List
 frauddetector:GetDeleteEventsByEventTypeStatus;Read

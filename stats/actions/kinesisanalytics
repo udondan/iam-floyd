@@ -19,6 +19,7 @@ kinesisanalytics:DescribeApplicationOperation;Read
 kinesisanalytics:DescribeApplicationSnapshot;Read
 kinesisanalytics:DescribeApplicationVersion;Read
 kinesisanalytics:DiscoverInputSchema;Read
+kinesisanalytics:GetApplicationState;Read
 kinesisanalytics:ListApplicationOperations;Read
 kinesisanalytics:ListApplicationSnapshots;Read
 kinesisanalytics:ListApplicationVersions;Read

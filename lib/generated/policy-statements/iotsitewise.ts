@@ -1686,6 +1686,24 @@ export class Iotsitewise extends PolicyStatement {
     return this.to('UpdateWorkspace');
   }
 
+  /**
+   * Grants permission to allow IoT SiteWise integrate with other services
+   *
+   * Access Level: Write
+   */
+  public toEnableSiteWiseIntegration() {
+    return this.to('EnableSiteWiseIntegration');
+  }
+
+  /**
+   * Grants permission to update an AssetModel property routing
+   *
+   * Access Level: Write
+   */
+  public toUpdateAssetModelPropertyRouting() {
+    return this.to('UpdateAssetModelPropertyRouting');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateAssets',
@@ -1758,7 +1776,9 @@ export class Iotsitewise extends PolicyStatement {
       'UpdatePortal',
       'UpdateProject',
       'UpdateTask',
-      'UpdateWorkspace'
+      'UpdateWorkspace',
+      'EnableSiteWiseIntegration',
+      'UpdateAssetModelPropertyRouting'
     ],
     Read: [
       'BatchGetAssetPropertyAggregates',
@@ -2250,6 +2270,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .toUpdateProject()
    * - .toUpdateTask()
    * - .toUpdateWorkspace()
+   * - .toUpdateAssetModelPropertyRouting()
    *
    * Applies to resource types:
    * - access-policy

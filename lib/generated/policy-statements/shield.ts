@@ -422,6 +422,39 @@ export class Shield extends PolicyStatement {
     return this.to('UpdateSubscription');
   }
 
+  /**
+   * Grants permission to get detailed information about the contributors to a specific DDoS attack
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html
+   */
+  public toDescribeAttackContributors() {
+    return this.to('DescribeAttackContributors');
+  }
+
+  /**
+   * Grants permission to retrieve global threat intelligence data and trends from AWS Shield's threat monitoring systems
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html
+   */
+  public toGetGlobalThreatData() {
+    return this.to('GetGlobalThreatData');
+  }
+
+  /**
+   * Grants permission to retrieve a list of mitigation actions that have been applied during DDoS attacks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html
+   */
+  public toListMitigations() {
+    return this.to('ListMitigations');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateDRTLogBucket',
@@ -457,13 +490,16 @@ export class Shield extends PolicyStatement {
       'DescribeProtectionGroup',
       'DescribeSubscription',
       'GetSubscriptionState',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'DescribeAttackContributors',
+      'GetGlobalThreatData'
     ],
     List: [
       'ListAttacks',
       'ListProtectionGroups',
       'ListProtections',
-      'ListResourcesInProtectionGroup'
+      'ListResourcesInProtectionGroup',
+      'ListMitigations'
     ],
     Tagging: [
       'TagResource',
@@ -551,6 +587,7 @@ export class Shield extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateProtectionGroup()
+   * - .toDescribeAttackContributors()
    *
    * Applies to resource types:
    * - protection

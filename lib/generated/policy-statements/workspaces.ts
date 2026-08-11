@@ -1046,6 +1046,105 @@ export class Workspaces extends PolicyStatement {
     return this.to('UpdateWorkspacesPool');
   }
 
+  /**
+   * Grants permission to create a root client certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
+   */
+  public toCreateRootClientCertificate() {
+    return this.to('CreateRootClientCertificate');
+  }
+
+  /**
+   * Grants permission to delete root client certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
+   */
+  public toDeleteRootClientCertificate() {
+    return this.to('DeleteRootClientCertificate');
+  }
+
+  /**
+   * Grants permission to retrieve information about consent agreement to BYOL minimum requirements
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
+   */
+  public toDescribeConsent() {
+    return this.to('DescribeConsent');
+  }
+
+  /**
+   * Grants permission to directory management actions while managing and provisioning workspaces
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
+   */
+  public toDirectoryAccessManagement() {
+    return this.to('DirectoryAccessManagement');
+  }
+
+  /**
+   * Grants permission to get troubleshooting recommendations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html
+   */
+  public toGetTroubleshootingRecommendation() {
+    return this.to('GetTroubleshootingRecommendation');
+  }
+
+  /**
+   * Grants permission to invoke troubleshooting investigation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html
+   */
+  public toInvokeTroubleshootingInvestigation() {
+    return this.to('InvokeTroubleshootingInvestigation');
+  }
+
+  /**
+   * Grants permission to list troubleshooting recommendations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html
+   */
+  public toListTroubleshootingRecommendations() {
+    return this.to('ListTroubleshootingRecommendations');
+  }
+
+  /**
+   * Grants permission to update the consent agreement to BYOL minimum requirements
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
+   */
+  public toUpdateConsent() {
+    return this.to('UpdateConsent');
+  }
+
+  /**
+   * Grants permission to update a root client certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
+   */
+  public toUpdateRootClientCertificate() {
+    return this.to('UpdateRootClientCertificate');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptAccountLinkInvitation',
@@ -1112,7 +1211,11 @@ export class Workspaces extends PolicyStatement {
       'UpdateRulesOfIpGroup',
       'UpdateWorkspaceBundle',
       'UpdateWorkspaceImagePermission',
-      'UpdateWorkspacesPool'
+      'UpdateWorkspacesPool',
+      'CreateRootClientCertificate',
+      'DeleteRootClientCertificate',
+      'UpdateConsent',
+      'UpdateRootClientCertificate'
     ],
     Tagging: [
       'CreateTags',
@@ -1130,7 +1233,11 @@ export class Workspaces extends PolicyStatement {
       'DescribeWorkspaceDirectories',
       'DescribeWorkspaceImagePermissions',
       'DescribeWorkspacesConnectionStatus',
-      'GetAccountLink'
+      'GetAccountLink',
+      'DescribeConsent',
+      'GetTroubleshootingRecommendation',
+      'InvokeTroubleshootingInvestigation',
+      'ListTroubleshootingRecommendations'
     ],
     List: [
       'DescribeApplicationAssociations',
@@ -1147,7 +1254,8 @@ export class Workspaces extends PolicyStatement {
       'DescribeWorkspacesPoolSessions',
       'DescribeWorkspacesPools',
       'ListAccountLinks',
-      'ListAvailableManagementCidrRanges'
+      'ListAvailableManagementCidrRanges',
+      'DirectoryAccessManagement'
     ],
     'Permissions management': [
       'ModifySelfservicePermissions',
@@ -1400,6 +1508,13 @@ export class Workspaces extends PolicyStatement {
    * - .toUpdateWorkspaceBundle()
    * - .toUpdateWorkspaceImagePermission()
    * - .toUpdateWorkspacesPool()
+   * - .toCreateRootClientCertificate()
+   * - .toDeleteRootClientCertificate()
+   * - .toDirectoryAccessManagement()
+   * - .toGetTroubleshootingRecommendation()
+   * - .toInvokeTroubleshootingInvestigation()
+   * - .toListTroubleshootingRecommendations()
+   * - .toUpdateRootClientCertificate()
    *
    * Applies to resource types:
    * - certificateid

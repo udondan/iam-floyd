@@ -183,6 +183,171 @@ export class Honeycode extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to approve a team association request for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#approve-team-association
+   */
+  public toApproveTeamAssociation() {
+    return this.to('ApproveTeamAssociation');
+  }
+
+  /**
+   * Grants permission to create a new Amazon Honeycode team for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team.html#create-team
+   */
+  public toCreateTeam() {
+    return this.to('CreateTeam');
+  }
+
+  /**
+   * Grants permission to create a new tenant within Amazon Honeycode for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/tenant.html#create-tenant
+   */
+  public toCreateTenant() {
+    return this.to('CreateTenant');
+  }
+
+  /**
+   * Grants permission to delete Amazon Honeycode domains for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#delete-domains
+   */
+  public toDeleteDomains() {
+    return this.to('DeleteDomains');
+  }
+
+  /**
+   * Grants permission to remove groups from an Amazon Honeycode team for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/group.html#deregister-groups
+   */
+  public toDeregisterGroups() {
+    return this.to('DeregisterGroups');
+  }
+
+  /**
+   * Grants permission to get details about Amazon Honeycode teams for your AWS Account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team.html#describe-team
+   */
+  public toDescribeTeam() {
+    return this.to('DescribeTeam');
+  }
+
+  /**
+   * Grants permission to list all Amazon Honeycode domains and their verification status for your AWS Account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#list-domains
+   */
+  public toListDomains() {
+    return this.to('ListDomains');
+  }
+
+  /**
+   * Grants permission to list all groups in an Amazon Honeycode team for your AWS Account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/group.html#list-groups
+   */
+  public toListGroups() {
+    return this.to('ListGroups');
+  }
+
+  /**
+   * Grants permission to list all pending and approved team associations with your AWS Account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#list-team-associations
+   */
+  public toListTeamAssociations() {
+    return this.to('ListTeamAssociations');
+  }
+
+  /**
+   * Grants permission to list all tenants of Amazon Honeycode for your AWS Account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/tenant.html#list-tenants
+   */
+  public toListTenants() {
+    return this.to('ListTenants');
+  }
+
+  /**
+   * Grants permission to request verification of the Amazon Honeycode domains for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#register-domain-for-verification
+   */
+  public toRegisterDomainForVerification() {
+    return this.to('RegisterDomainForVerification');
+  }
+
+  /**
+   * Grants permission to add groups to an Amazon Honeycode team for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/group.html#register-groups
+   */
+  public toRegisterGroups() {
+    return this.to('RegisterGroups');
+  }
+
+  /**
+   * Grants permission to reject a team association request for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#reject-team-association
+   */
+  public toRejectTeamAssociation() {
+    return this.to('RejectTeamAssociation');
+  }
+
+  /**
+   * Grants permission to restart verification of the Amazon Honeycode domains for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#restart-domain-verification
+   */
+  public toRestartDomainVerification() {
+    return this.to('RestartDomainVerification');
+  }
+
+  /**
+   * Grants permission to update an Amazon Honeycode team for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team.html#update-team
+   */
+  public toUpdateTeam() {
+    return this.to('UpdateTeam');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchCreateTableRows',
@@ -193,17 +358,32 @@ export class Honeycode extends PolicyStatement {
       'ListTagsForResource',
       'StartTableDataImportJob',
       'TagResource',
-      'UntagResource'
+      'UntagResource',
+      'ApproveTeamAssociation',
+      'CreateTeam',
+      'CreateTenant',
+      'DeleteDomains',
+      'DeregisterGroups',
+      'RegisterDomainForVerification',
+      'RegisterGroups',
+      'RejectTeamAssociation',
+      'RestartDomainVerification',
+      'UpdateTeam'
     ],
     Read: [
       'DescribeTableDataImportJob',
       'GetScreenData',
-      'QueryTableRows'
+      'QueryTableRows',
+      'DescribeTeam'
     ],
     List: [
       'ListTableColumns',
       'ListTableRows',
-      'ListTables'
+      'ListTables',
+      'ListDomains',
+      'ListGroups',
+      'ListTeamAssociations',
+      'ListTenants'
     ],
     Tagging: [
       'ListTagsForResource',

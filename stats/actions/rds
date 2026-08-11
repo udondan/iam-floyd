@@ -6,6 +6,7 @@ rds:ApplyPendingMaintenanceAction;Write
 rds:AuthorizeDBSecurityGroupIngress;Permissions management, Write
 rds:BacktrackDBCluster;Write
 rds:CancelExportTask;Write
+rds:CopyCustomDBEngineVersion;Write
 rds:CopyDBClusterParameterGroup;Write
 rds:CopyDBClusterSnapshot;Write
 rds:CopyDBParameterGroup;Write
@@ -31,6 +32,7 @@ rds:CreateGlobalCluster;Write
 rds:CreateIntegration;Write
 rds:CreateOptionGroup;Write
 rds:CreateTenantDatabase;Write
+rds:CrossRegionCommunication;Write
 rds:DeleteBlueGreenDeployment;Write
 rds:DeleteCustomDBEngineVersion;Write
 rds:DeleteDBCluster;Write
@@ -94,6 +96,8 @@ rds:DescribeOptionGroupOptions;List
 rds:DescribeOptionGroups;List
 rds:DescribeOrderableDBInstanceOptions;List
 rds:DescribePendingMaintenanceActions;List
+rds:DescribeRecommendationGroups;Read
+rds:DescribeRecommendations;Read
 rds:DescribeReservedDBInstances;List
 rds:DescribeReservedDBInstancesOfferings;List
 rds:DescribeSourceRegions;List
@@ -128,6 +132,7 @@ rds:ModifyEventSubscription;Write
 rds:ModifyGlobalCluster;Write
 rds:ModifyIntegration;Write
 rds:ModifyOptionGroup;Write
+rds:ModifyRecommendation;Write
 rds:ModifyTenantDatabase;Write
 rds:PromoteReadReplica;Write
 rds:PromoteReadReplicaDBCluster;Write

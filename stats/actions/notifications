@@ -14,6 +14,7 @@ notifications:DisassociateManagedNotificationAdditionalChannel;Write
 notifications:DisassociateOrganizationalUnit;Write
 notifications:EnableNotificationsAccessForOrganization;Permissions management, Write
 notifications:GetEventRule;Read
+notifications:GetFeatureOptInStatus;Read
 notifications:GetManagedNotificationChildEvent;Read
 notifications:GetManagedNotificationConfiguration;Read
 notifications:GetManagedNotificationEvent;Read
@@ -32,6 +33,7 @@ notifications:ListNotificationEvents;List
 notifications:ListNotificationHubs;List
 notifications:ListOrganizationalUnits;List
 notifications:ListTagsForResource;List
+notifications:PutFeatureOptInStatus;Write
 notifications:RegisterNotificationHub;Write
 notifications:TagResource;Tagging, Write
 notifications:UntagResource;Tagging, Write

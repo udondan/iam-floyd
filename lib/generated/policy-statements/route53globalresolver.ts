@@ -535,6 +535,17 @@ export class Route53globalresolver extends PolicyStatement {
     return this.to('UpdateHostedZoneAssociation');
   }
 
+  /**
+   * Grants permission to deliver logs for a global resolver
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_AllowVendedLogDeliveryForResource.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateHostedZone',
@@ -566,7 +577,8 @@ export class Route53globalresolver extends PolicyStatement {
       'UpdateFirewallDomains',
       'UpdateFirewallRule',
       'UpdateGlobalResolver',
-      'UpdateHostedZoneAssociation'
+      'UpdateHostedZoneAssociation',
+      'AllowVendedLogDeliveryForResource'
     ],
     Read: [
       'GetAccessSource',
@@ -592,6 +604,9 @@ export class Route53globalresolver extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
     ]
   };
 
@@ -731,6 +746,7 @@ export class Route53globalresolver extends PolicyStatement {
    * - .toUpdateDNSView()
    * - .toUpdateFirewallDomains()
    * - .toUpdateGlobalResolver()
+   * - .toAllowVendedLogDeliveryForResource()
    *
    * Applies to resource types:
    * - access-source

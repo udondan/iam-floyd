@@ -4,10 +4,12 @@ qldb:DeleteLedger;Write
 qldb:DescribeJournalKinesisStream;Read
 qldb:DescribeJournalS3Export;Read
 qldb:DescribeLedger;Read
+qldb:ExecuteStatement;Write
 qldb:ExportJournalToS3;Write
 qldb:GetBlock;Read
 qldb:GetDigest;Read
 qldb:GetRevision;Read
+qldb:InsertSampleData;Write
 qldb:ListJournalKinesisStreamsForLedger;List
 qldb:ListJournalS3Exports;List
 qldb:ListJournalS3ExportsForLedger;List
@@ -25,6 +27,7 @@ qldb:PartiQLSelect;Read
 qldb:PartiQLUndropTable;Write
 qldb:PartiQLUpdate;Write
 qldb:SendCommand;Write
+qldb:ShowCatalog;Write
 qldb:StreamJournalToKinesis;Write
 qldb:TagResource;Tagging, Write
 qldb:UntagResource;Tagging, Write

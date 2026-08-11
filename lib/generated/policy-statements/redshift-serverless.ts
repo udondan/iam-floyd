@@ -733,6 +733,39 @@ export class RedshiftServerless extends PolicyStatement {
     return this.to('UpdateWorkgroup');
   }
 
+  /**
+   * Grants permission to see on the Amazon Redshift Serverless console the remaining number of free trial credits and their expiration date
+   *
+   * Access Level: Read
+   *
+   * https://aws.amazon.com/redshift/free-trial/
+   */
+  public toDescribeOneTimeCredit() {
+    return this.to('DescribeOneTimeCredit');
+  }
+
+  /**
+   * Grants permission to list the resources that are denylisted from global autonomics decisions for a specified workgroup
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html
+   */
+  public toListAutonomicsDenylist() {
+    return this.to('ListAutonomicsDenylist');
+  }
+
+  /**
+   * Grants permission to add or remove resources from the global autonomics denylist for a specified workgroup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html
+   */
+  public toUpdateAutonomicsDenylist() {
+    return this.to('UpdateAutonomicsDenylist');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ConvertRecoveryPointToSnapshot',
@@ -769,7 +802,8 @@ export class RedshiftServerless extends PolicyStatement {
       'UpdateSnapshot',
       'UpdateSnapshotCopyConfiguration',
       'UpdateUsageLimit',
-      'UpdateWorkgroup'
+      'UpdateWorkgroup',
+      'UpdateAutonomicsDenylist'
     ],
     Read: [
       'GetCustomDomainAssociation',
@@ -786,7 +820,9 @@ export class RedshiftServerless extends PolicyStatement {
       'GetTableRestoreStatus',
       'GetTrack',
       'GetUsageLimit',
-      'GetWorkgroup'
+      'GetWorkgroup',
+      'DescribeOneTimeCredit',
+      'ListAutonomicsDenylist'
     ],
     List: [
       'ListCustomDomainAssociations',
@@ -965,6 +1001,8 @@ export class RedshiftServerless extends PolicyStatement {
    * - .toUpdateNamespace()
    * - .toUpdateSnapshot()
    * - .toUpdateWorkgroup()
+   * - .toListAutonomicsDenylist()
+   * - .toUpdateAutonomicsDenylist()
    *
    * Applies to resource types:
    * - namespace

@@ -1,3 +1,4 @@
+xray:BatchGetTraceSummaryById;Read
 xray:BatchGetTraces;List
 xray:CancelTraceRetrieval;Read
 xray:CreateGroup;Write
@@ -5,6 +6,7 @@ xray:CreateSamplingRule;Write
 xray:DeleteGroup;Write
 xray:DeleteResourcePolicy;Write
 xray:DeleteSamplingRule;Write
+xray:GetDistinctTraceGraphs;Read
 xray:GetEncryptionConfig;Read
 xray:GetGroup;Read
 xray:GetGroups;Read
@@ -22,12 +24,14 @@ xray:GetTimeSeriesServiceStatistics;Read
 xray:GetTraceGraph;Read
 xray:GetTraceSegmentDestination;Read
 xray:GetTraceSummaries;Read
+xray:Link;Write
 xray:ListResourcePolicies;List
 xray:ListRetrievedTraces;List
 xray:ListTagsForResource;List
 xray:PutEncryptionConfig;Permissions management, Write
 xray:PutResourcePolicy;Write
 xray:PutSpans;Write
+xray:PutSpansForIndexing;Write
 xray:PutTelemetryRecords;Write
 xray:PutTraceSegments;Write
 xray:StartTraceRetrieval;Read

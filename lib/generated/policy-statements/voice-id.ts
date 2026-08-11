@@ -341,6 +341,28 @@ export class Voiceid extends PolicyStatement {
     return this.to('UpdateWatchlist');
   }
 
+  /**
+   * Grants permission to describe compliance consent
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-voiceid.html#enable-voiceid-step1
+   */
+  public toDescribeComplianceConsent() {
+    return this.to('DescribeComplianceConsent');
+  }
+
+  /**
+   * Grants permission to register compliance consent
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-voiceid.html#enable-voiceid-step1
+   */
+  public toRegisterComplianceConsent() {
+    return this.to('RegisterComplianceConsent');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateFraudster',
@@ -358,7 +380,8 @@ export class Voiceid extends PolicyStatement {
       'TagResource',
       'UntagResource',
       'UpdateDomain',
-      'UpdateWatchlist'
+      'UpdateWatchlist',
+      'RegisterComplianceConsent'
     ],
     Read: [
       'DescribeDomain',
@@ -367,7 +390,8 @@ export class Voiceid extends PolicyStatement {
       'DescribeSpeaker',
       'DescribeSpeakerEnrollmentJob',
       'DescribeWatchlist',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'DescribeComplianceConsent'
     ],
     List: [
       'ListDomains',

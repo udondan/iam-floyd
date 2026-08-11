@@ -15,6 +15,7 @@ sms:GetAppReplicationConfiguration;Read
 sms:GetAppValidationConfiguration;Read
 sms:GetAppValidationOutput;Read
 sms:GetConnectors;Read
+sms:GetMessages;Read
 sms:GetReplicationJobs;Read
 sms:GetReplicationRuns;Read
 sms:GetServers;Read
@@ -26,6 +27,7 @@ sms:NotifyAppValidationOutput;Write
 sms:PutAppLaunchConfiguration;Write
 sms:PutAppReplicationConfiguration;Write
 sms:PutAppValidationConfiguration;Write
+sms:SendMessage;Write
 sms:StartAppReplication;Write
 sms:StartOnDemandAppReplication;Write
 sms:StartOnDemandReplicationRun;Write

@@ -150,6 +150,17 @@ export class IdentitySync extends PolicyStatement {
     return this.to('UpdateSyncTarget');
   }
 
+  /**
+   * Grants permission to configure vended log delivery for a Sync Profile
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/logging-ad-sync-errors.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateSyncFilter',
@@ -160,7 +171,8 @@ export class IdentitySync extends PolicyStatement {
       'DeleteSyncTarget',
       'StartSync',
       'StopSync',
-      'UpdateSyncTarget'
+      'UpdateSyncTarget',
+      'AllowVendedLogDeliveryForResource'
     ],
     Read: [
       'GetSyncProfile',
@@ -168,6 +180,9 @@ export class IdentitySync extends PolicyStatement {
     ],
     List: [
       'ListSyncFilters'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
     ]
   };
 

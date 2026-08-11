@@ -9240,6 +9240,281 @@ export class Ec2 extends PolicyStatement {
     return this.to('WithdrawByoipCidr');
   }
 
+  /**
+   * Grants permission to associate an AWS Web Application Firewall (WAF) web access control list (ACL) with a Verified Access instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/verified-access/latest/ug/waf-integration.html
+   */
+  public toAssociateVerifiedAccessInstanceWebAcl() {
+    return this.to('AssociateVerifiedAccessInstanceWebAcl');
+  }
+
+  /**
+   * Grants permission to attach an appliance with a public/private Natgateway
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachApplianceToNatGateway.html
+   */
+  public toAttachApplianceToNatGateway() {
+    return this.to('AttachApplianceToNatGateway');
+  }
+
+  /**
+   * Grants permission to attach resources to a placement group
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/UserGuide/placement-groups.html
+   */
+  public toAttachResourcesToPlacementGroup() {
+    return this.to('AttachResourcesToPlacementGroup');
+  }
+
+  /**
+   * Grants permission to allow a service to access a customer-owned IP (CoIP) pool
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html
+   */
+  public toCreateCoipPoolPermission() {
+    return this.to('CreateCoipPoolPermission');
+  }
+
+  /**
+   * Grants permission to allow a service to access a local gateway route table
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html
+   */
+  public toCreateLocalGatewayRouteTablePermission() {
+    return this.to('CreateLocalGatewayRouteTablePermission');
+  }
+
+  /**
+   * Grants permission to allow Oracle Database@AWS to create a peering connection between an ODB network and a VPC
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateOdbNetworkPeering.html
+   */
+  public toCreateOdbNetworkPeering() {
+    return this.to('CreateOdbNetworkPeering');
+  }
+
+  /**
+   * Grants permission to deny a service from accessing a customer-owned IP (CoIP) pool
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html
+   */
+  public toDeleteCoipPoolPermission() {
+    return this.to('DeleteCoipPoolPermission');
+  }
+
+  /**
+   * Grants permission to deny a service from accessing a local gateway route table
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html
+   */
+  public toDeleteLocalGatewayRouteTablePermission() {
+    return this.to('DeleteLocalGatewayRouteTablePermission');
+  }
+
+  /**
+   * Grants permission to allow Oracle Database@AWS to delete a peering connection between an ODB network and a VPC
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteOdbNetworkPeering.html
+   */
+  public toDeleteOdbNetworkPeering() {
+    return this.to('DeleteOdbNetworkPeering');
+  }
+
+  /**
+   * Grants permission to remove an IAM policy that enables cross-account sharing from a resource
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/vpc/latest/ipam/share-pool-ipam.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to allow a service to describe local gateway route table permissions
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html
+   */
+  public toDescribeLocalGatewayRouteTablePermissions() {
+    return this.to('DescribeLocalGatewayRouteTablePermissions');
+  }
+
+  /**
+   * Grants permission to describe the AWS Web Application Firewall (WAF) web access control list (ACL) associations for a Verified Access instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/verified-access/latest/ug/waf-integration.html
+   */
+  public toDescribeVerifiedAccessInstanceWebAclAssociations() {
+    return this.to('DescribeVerifiedAccessInstanceWebAclAssociations');
+  }
+
+  /**
+   * Grants permission to detach an appliance from a public/private Natgateway
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachApplianceFromNatGateway.html
+   */
+  public toDetachApplianceFromNatGateway() {
+    return this.to('DetachApplianceFromNatGateway');
+  }
+
+  /**
+   * Grants permission to detach resources from a placement group
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/UserGuide/placement-groups.html
+   */
+  public toDetachResourcesFromPlacementGroup() {
+    return this.to('DetachResourcesFromPlacementGroup');
+  }
+
+  /**
+   * Grants permission to disassociate an AWS Web Application Firewall (WAF) web access control list (ACL) from a Verified Access instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/verified-access/latest/ug/waf-integration.html
+   */
+  public toDisassociateVerifiedAccessInstanceWebAcl() {
+    return this.to('DisassociateVerifiedAccessInstanceWebAcl');
+  }
+
+  /**
+   * Grants permission to describe an IAM policy that enables cross-account sharing
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/vpc/latest/ipam/share-pool-ipam.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to show the AWS Web Application Firewall (WAF) web access control list (ACL) for a Verified Access instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/verified-access/latest/ug/waf-integration.html
+   */
+  public toGetVerifiedAccessInstanceWebAcl() {
+    return this.to('GetVerifiedAccessInstanceWebAcl');
+  }
+
+  /**
+   * Grants permission to transfer existing BYOIP IPv4 CIDRs to IPAM
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-ipam-transfer-ipv4.html
+   */
+  public toImportByoipCidrToIpam() {
+    return this.to('ImportByoipCidrToIpam');
+  }
+
+  /**
+   * Grants permission to temporarily inject errors for target API requests
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifFisActionId()
+   * - .ifFisTargetArns()
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
+   */
+  public toInjectApiError() {
+    return this.to('InjectApiError');
+  }
+
+  /**
+   * Grants permission to temporarily inject latency to I/O operations for a target Amazon EBS volume
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#ebs-actions-reference
+   */
+  public toInjectVolumeIOLatency() {
+    return this.to('InjectVolumeIOLatency');
+  }
+
+  /**
+   * Grants permission to allow Oracle Database@AWS to modify the settings of a peering connection between an ODB network and a VPC
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyOdbNetworkPeering.html
+   */
+  public toModifyOdbNetworkPeering() {
+    return this.to('ModifyOdbNetworkPeering');
+  }
+
+  /**
+   * Grants permission to temporarily pause I/O operations for a target Amazon EBS volume
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#ebs-actions-reference
+   */
+  public toPauseVolumeIO() {
+    return this.to('PauseVolumeIO');
+  }
+
+  /**
+   * Grants permission to attach an IAM policy that enables cross-account sharing to a resource
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/vpc/latest/ipam/share-pool-ipam.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
+   * Grants permission to interrupt a Spot Instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#send-spot-instance-interruptions
+   */
+  public toSendSpotInstanceInterruptions() {
+    return this.to('SendSpotInstanceInterruptions');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptAddressTransfer',
@@ -9743,7 +10018,27 @@ export class Ec2 extends PolicyStatement {
       'UpdateInterruptibleCapacityReservationAllocation',
       'UpdateSecurityGroupRuleDescriptionsEgress',
       'UpdateSecurityGroupRuleDescriptionsIngress',
-      'WithdrawByoipCidr'
+      'WithdrawByoipCidr',
+      'AssociateVerifiedAccessInstanceWebAcl',
+      'AttachApplianceToNatGateway',
+      'AttachResourcesToPlacementGroup',
+      'CreateCoipPoolPermission',
+      'CreateLocalGatewayRouteTablePermission',
+      'CreateOdbNetworkPeering',
+      'DeleteCoipPoolPermission',
+      'DeleteLocalGatewayRouteTablePermission',
+      'DeleteOdbNetworkPeering',
+      'DeleteResourcePolicy',
+      'DetachApplianceFromNatGateway',
+      'DetachResourcesFromPlacementGroup',
+      'DisassociateVerifiedAccessInstanceWebAcl',
+      'ImportByoipCidrToIpam',
+      'InjectApiError',
+      'InjectVolumeIOLatency',
+      'ModifyOdbNetworkPeering',
+      'PauseVolumeIO',
+      'PutResourcePolicy',
+      'SendSpotInstanceInterruptions'
     ],
     'Permissions management': [
       'CancelImageLaunchPermission',
@@ -9755,7 +10050,20 @@ export class Ec2 extends PolicyStatement {
       'EnableSnapshotBlockPublicAccess',
       'ModifySnapshotAttribute',
       'ModifyVpcEndpointServicePermissions',
-      'ResetSnapshotAttribute'
+      'ResetSnapshotAttribute',
+      'AttachApplianceToNatGateway',
+      'AttachResourcesToPlacementGroup',
+      'CreateCoipPoolPermission',
+      'CreateLocalGatewayRouteTablePermission',
+      'CreateOdbNetworkPeering',
+      'DeleteCoipPoolPermission',
+      'DeleteLocalGatewayRouteTablePermission',
+      'DeleteOdbNetworkPeering',
+      'DeleteResourcePolicy',
+      'DetachApplianceFromNatGateway',
+      'DetachResourcesFromPlacementGroup',
+      'ModifyOdbNetworkPeering',
+      'PutResourcePolicy'
     ],
     Tagging: [
       'CreateTags',
@@ -9977,7 +10285,10 @@ export class Ec2 extends PolicyStatement {
       'ListVolumesInRecycleBin',
       'SearchLocalGatewayRoutes',
       'SearchTransitGatewayMulticastGroups',
-      'SearchTransitGatewayRoutes'
+      'SearchTransitGatewayRoutes',
+      'DescribeLocalGatewayRouteTablePermissions',
+      'DescribeVerifiedAccessInstanceWebAclAssociations',
+      'GetVerifiedAccessInstanceWebAcl'
     ],
     Read: [
       'ExportClientVpnClientCertificateRevocationList',
@@ -10030,7 +10341,8 @@ export class Ec2 extends PolicyStatement {
       'GetSnapshotBlockPublicAccessState',
       'GetSpotPlacementScores',
       'GetSubnetCidrReservations',
-      'StartDeclarativePoliciesReport'
+      'StartDeclarativePoliciesReport',
+      'GetResourcePolicy'
     ]
   };
 
@@ -13348,6 +13660,27 @@ export class Ec2 extends PolicyStatement {
    * - .toUpdateInterruptibleCapacityReservationAllocation()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()
    * - .toUpdateSecurityGroupRuleDescriptionsIngress()
+   * - .toAssociateVerifiedAccessInstanceWebAcl()
+   * - .toAttachApplianceToNatGateway()
+   * - .toAttachResourcesToPlacementGroup()
+   * - .toCreateCoipPoolPermission()
+   * - .toCreateLocalGatewayRouteTablePermission()
+   * - .toCreateOdbNetworkPeering()
+   * - .toDeleteCoipPoolPermission()
+   * - .toDeleteLocalGatewayRouteTablePermission()
+   * - .toDeleteOdbNetworkPeering()
+   * - .toDeleteResourcePolicy()
+   * - .toDetachApplianceFromNatGateway()
+   * - .toDetachResourcesFromPlacementGroup()
+   * - .toDisassociateVerifiedAccessInstanceWebAcl()
+   * - .toGetResourcePolicy()
+   * - .toGetVerifiedAccessInstanceWebAcl()
+   * - .toImportByoipCidrToIpam()
+   * - .toInjectVolumeIOLatency()
+   * - .toModifyOdbNetworkPeering()
+   * - .toPauseVolumeIO()
+   * - .toPutResourcePolicy()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - capacity-block
@@ -14002,6 +14335,7 @@ export class Ec2 extends PolicyStatement {
    * - .toResetFpgaImageAttribute()
    * - .toResetImageAttribute()
    * - .toResetSnapshotAttribute()
+   * - .toModifyOdbNetworkPeering()
    *
    * Applies to resource types:
    * - capacity-block
@@ -14275,6 +14609,9 @@ export class Ec2 extends PolicyStatement {
    * - .toUnassignPrivateIpAddresses()
    * - .toUnmonitorInstances()
    * - .toUpdateInterruptibleCapacityReservationAllocation()
+   * - .toInjectVolumeIOLatency()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -14389,6 +14726,9 @@ export class Ec2 extends PolicyStatement {
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
    * - .toUpdateInterruptibleCapacityReservationAllocation()
+   * - .toInjectVolumeIOLatency()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -14606,6 +14946,8 @@ export class Ec2 extends PolicyStatement {
    * - .toStopInstances()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - instance
@@ -14860,6 +15202,8 @@ export class Ec2 extends PolicyStatement {
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
    * - .toUpdateInterruptibleCapacityReservationAllocation()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -14923,6 +15267,8 @@ export class Ec2 extends PolicyStatement {
    * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
    * - .toUnlockSnapshot()
+   * - .toInjectVolumeIOLatency()
+   * - .toPauseVolumeIO()
    *
    * Applies to resource types:
    * - snapshot
@@ -15020,6 +15366,9 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
    *
+   * Applies to actions:
+   * - .toInjectApiError()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -15031,6 +15380,9 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the ARN of an AWS FIS target
    *
    * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
+   *
+   * Applies to actions:
+   * - .toInjectApiError()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -15284,6 +15636,8 @@ export class Ec2 extends PolicyStatement {
    * - .toStopInstances()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - instance
@@ -15349,6 +15703,8 @@ export class Ec2 extends PolicyStatement {
    * - .toStopInstances()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - instance
@@ -15439,6 +15795,8 @@ export class Ec2 extends PolicyStatement {
    * - .toStopInstances()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - instance
@@ -15502,6 +15860,8 @@ export class Ec2 extends PolicyStatement {
    * - .toStopInstances()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - instance
@@ -15590,6 +15950,8 @@ export class Ec2 extends PolicyStatement {
    * - .toStopInstances()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - instance
@@ -15682,6 +16044,8 @@ export class Ec2 extends PolicyStatement {
    * - .toStopInstances()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - instance
@@ -15762,6 +16126,8 @@ export class Ec2 extends PolicyStatement {
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
    * - .toUpdateInterruptibleCapacityReservationAllocation()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -16154,6 +16520,8 @@ export class Ec2 extends PolicyStatement {
    * - .toUnassignIpv6Addresses()
    * - .toUnassignPrivateIpAddresses()
    * - .toUnmonitorInstances()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - instance
@@ -16220,6 +16588,8 @@ export class Ec2 extends PolicyStatement {
    * - .toStopInstances()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - instance
@@ -16283,6 +16653,8 @@ export class Ec2 extends PolicyStatement {
    * - .toStopInstances()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - instance
@@ -16346,6 +16718,8 @@ export class Ec2 extends PolicyStatement {
    * - .toStopInstances()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - instance
@@ -16574,6 +16948,8 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolumeAttribute()
    * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
+   * - .toInjectVolumeIOLatency()
+   * - .toPauseVolumeIO()
    *
    * Applies to resource types:
    * - snapshot
@@ -16905,6 +17281,11 @@ export class Ec2 extends PolicyStatement {
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
+   * - .toAttachResourcesToPlacementGroup()
+   * - .toDeleteResourcePolicy()
+   * - .toDetachResourcesFromPlacementGroup()
+   * - .toGetResourcePolicy()
+   * - .toPutResourcePolicy()
    *
    * Applies to resource types:
    * - placement-group
@@ -16930,6 +17311,11 @@ export class Ec2 extends PolicyStatement {
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
+   * - .toAttachResourcesToPlacementGroup()
+   * - .toDeleteResourcePolicy()
+   * - .toDetachResourcesFromPlacementGroup()
+   * - .toGetResourcePolicy()
+   * - .toPutResourcePolicy()
    *
    * Applies to resource types:
    * - placement-group
@@ -17868,6 +18254,30 @@ export class Ec2 extends PolicyStatement {
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()
    * - .toUpdateSecurityGroupRuleDescriptionsIngress()
    * - .toWithdrawByoipCidr()
+   * - .toAssociateVerifiedAccessInstanceWebAcl()
+   * - .toAttachApplianceToNatGateway()
+   * - .toAttachResourcesToPlacementGroup()
+   * - .toCreateCoipPoolPermission()
+   * - .toCreateLocalGatewayRouteTablePermission()
+   * - .toCreateOdbNetworkPeering()
+   * - .toDeleteCoipPoolPermission()
+   * - .toDeleteLocalGatewayRouteTablePermission()
+   * - .toDeleteOdbNetworkPeering()
+   * - .toDeleteResourcePolicy()
+   * - .toDescribeLocalGatewayRouteTablePermissions()
+   * - .toDescribeVerifiedAccessInstanceWebAclAssociations()
+   * - .toDetachApplianceFromNatGateway()
+   * - .toDetachResourcesFromPlacementGroup()
+   * - .toDisassociateVerifiedAccessInstanceWebAcl()
+   * - .toGetResourcePolicy()
+   * - .toGetVerifiedAccessInstanceWebAcl()
+   * - .toImportByoipCidrToIpam()
+   * - .toInjectApiError()
+   * - .toInjectVolumeIOLatency()
+   * - .toModifyOdbNetworkPeering()
+   * - .toPauseVolumeIO()
+   * - .toPutResourcePolicy()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - capacity-block
@@ -18605,6 +19015,27 @@ export class Ec2 extends PolicyStatement {
    * - .toUpdateInterruptibleCapacityReservationAllocation()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()
    * - .toUpdateSecurityGroupRuleDescriptionsIngress()
+   * - .toAssociateVerifiedAccessInstanceWebAcl()
+   * - .toAttachApplianceToNatGateway()
+   * - .toAttachResourcesToPlacementGroup()
+   * - .toCreateCoipPoolPermission()
+   * - .toCreateLocalGatewayRouteTablePermission()
+   * - .toCreateOdbNetworkPeering()
+   * - .toDeleteCoipPoolPermission()
+   * - .toDeleteLocalGatewayRouteTablePermission()
+   * - .toDeleteOdbNetworkPeering()
+   * - .toDeleteResourcePolicy()
+   * - .toDetachApplianceFromNatGateway()
+   * - .toDetachResourcesFromPlacementGroup()
+   * - .toDisassociateVerifiedAccessInstanceWebAcl()
+   * - .toGetResourcePolicy()
+   * - .toGetVerifiedAccessInstanceWebAcl()
+   * - .toImportByoipCidrToIpam()
+   * - .toInjectVolumeIOLatency()
+   * - .toModifyOdbNetworkPeering()
+   * - .toPauseVolumeIO()
+   * - .toPutResourcePolicy()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - capacity-block
@@ -18812,6 +19243,8 @@ export class Ec2 extends PolicyStatement {
    * - .toStopInstances()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - image
@@ -19417,6 +19850,11 @@ export class Ec2 extends PolicyStatement {
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
    * - .toUpdateInterruptibleCapacityReservationAllocation()
+   * - .toCreateOdbNetworkPeering()
+   * - .toDeleteOdbNetworkPeering()
+   * - .toModifyOdbNetworkPeering()
+   * - .toPauseVolumeIO()
+   * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -19454,6 +19892,8 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolumeAttribute()
    * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
+   * - .toInjectVolumeIOLatency()
+   * - .toPauseVolumeIO()
    *
    * Applies to resource types:
    * - volume
@@ -19521,6 +19961,8 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolumeAttribute()
    * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
+   * - .toInjectVolumeIOLatency()
+   * - .toPauseVolumeIO()
    *
    * Applies to resource types:
    * - volume
@@ -19575,6 +20017,8 @@ export class Ec2 extends PolicyStatement {
    * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
    * - .toUnlockSnapshot()
+   * - .toInjectVolumeIOLatency()
+   * - .toPauseVolumeIO()
    *
    * Applies to resource types:
    * - snapshot
@@ -19611,6 +20055,8 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolumeAttribute()
    * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
+   * - .toInjectVolumeIOLatency()
+   * - .toPauseVolumeIO()
    *
    * Applies to resource types:
    * - volume
@@ -19646,6 +20092,8 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolumeAttribute()
    * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
+   * - .toInjectVolumeIOLatency()
+   * - .toPauseVolumeIO()
    *
    * Applies to resource types:
    * - volume
@@ -19810,6 +20258,9 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyClientVpnEndpoint()
    * - .toModifyVpcAttribute()
    * - .toModifyVpcTenancy()
+   * - .toCreateOdbNetworkPeering()
+   * - .toDeleteOdbNetworkPeering()
+   * - .toModifyOdbNetworkPeering()
    *
    * Applies to resource types:
    * - vpc

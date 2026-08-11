@@ -909,6 +909,17 @@ export class Aidevops extends PolicyStatement {
     return this.to('ValidateAwsAssociations');
   }
 
+  /**
+   * Grants permission to authorize vended logs
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/configuring-capabilities-for-aws-devops-agent-vended-logs-and-metrics.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateService',
@@ -954,7 +965,8 @@ export class Aidevops extends PolicyStatement {
       'UpdatePrivateConnectionCertificate',
       'UpdateRecommendation',
       'UpdateTrigger',
-      'ValidateAwsAssociations'
+      'ValidateAwsAssociations',
+      'AllowVendedLogDeliveryForResource'
     ],
     Read: [
       'DescribePrivateConnection',
@@ -1000,6 +1012,9 @@ export class Aidevops extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
     ]
   };
 

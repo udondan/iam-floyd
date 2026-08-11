@@ -229,6 +229,33 @@ export class Codestar extends PolicyStatement {
     return this.to('VerifyServiceRole');
   }
 
+  /**
+   * Grants permission to extended delete APIs
+   *
+   * Access Level: Write
+   */
+  public toDeleteExtendedAccess() {
+    return this.to('DeleteExtendedAccess');
+  }
+
+  /**
+   * Grants permission to extended read APIs
+   *
+   * Access Level: Read
+   */
+  public toGetExtendedAccess() {
+    return this.to('GetExtendedAccess');
+  }
+
+  /**
+   * Grants permission to extended write APIs
+   *
+   * Access Level: Write
+   */
+  public toPutExtendedAccess() {
+    return this.to('PutExtendedAccess');
+  }
+
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AssociateTeamMember',
@@ -248,11 +275,14 @@ export class Codestar extends PolicyStatement {
       'UntagProject',
       'UpdateProject',
       'UpdateTeamMember',
-      'UpdateUserProfile'
+      'UpdateUserProfile',
+      'DeleteExtendedAccess',
+      'PutExtendedAccess'
     ],
     Read: [
       'DescribeProject',
-      'DescribeUserProfile'
+      'DescribeUserProfile',
+      'GetExtendedAccess'
     ],
     List: [
       'ListProjects',
@@ -332,6 +362,9 @@ export class Codestar extends PolicyStatement {
    * - .toUntagProject()
    * - .toUpdateProject()
    * - .toUpdateTeamMember()
+   * - .toDeleteExtendedAccess()
+   * - .toGetExtendedAccess()
+   * - .toPutExtendedAccess()
    *
    * Applies to resource types:
    * - project

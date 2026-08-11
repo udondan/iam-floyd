@@ -4740,6 +4740,174 @@ export class Sagemaker extends PolicyStatement {
     return this.to('UpdateWorkteam');
   }
 
+  /**
+   * Grants permission to access model package that can be used in Amazon SageMaker training or hosting services
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/
+   */
+  public toAccessModelPackage() {
+    return this.to('AccessModelPackage');
+  }
+
+  /**
+   * Grants permission to use bearer token in SageMaker Job and Inference runtime endpoints APIs
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifBearerTokenType()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CallWithBearerToken.html
+   */
+  public toCallWithBearerToken() {
+    return this.to('CallWithBearerToken');
+  }
+
+  /**
+   * Grants permission to create a reserved capacity
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateReservedCapacity.html
+   */
+  public toCreateReservedCapacity() {
+    return this.to('CreateReservedCapacity');
+  }
+
+  /**
+   * Grants permission to create a shared model in a SageMaker Studio application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   */
+  public toCreateSharedModel() {
+    return this.to('CreateSharedModel');
+  }
+
+  /**
+   * Grants AWS Resource Access Manager permission to delete a resource policy on a SageMaker resource that supports cross-account sharing
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to get information about the inference operator for a SageMaker HyperPod cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-inference.html
+   */
+  public toDescribeClusterInference() {
+    return this.to('DescribeClusterInference');
+  }
+
+  /**
+   * Grants permission to describe a shared model in a SageMaker Studio application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   */
+  public toDescribeSharedModel() {
+    return this.to('DescribeSharedModel');
+  }
+
+  /**
+   * Grants AWS Resource Access Manager permission to retrieve a resource policy on a SageMaker resource that supports cross-account sharing
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetResourcePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to list shared model events
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   */
+  public toListSharedModelEvents() {
+    return this.to('ListSharedModelEvents');
+  }
+
+  /**
+   * Grants permission to list shared model versions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   */
+  public toListSharedModelVersions() {
+    return this.to('ListSharedModelVersions');
+  }
+
+  /**
+   * Grants permission to list shared models
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   */
+  public toListSharedModels() {
+    return this.to('ListSharedModels');
+  }
+
+  /**
+   * Grants AWS Resource Access Manager permission to create a resource policy on a SageMaker resource that supports cross-account sharing
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
+   * Grants permission to send a shared model event
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   */
+  public toSendSharedModelEvent() {
+    return this.to('SendSharedModelEvent');
+  }
+
+  /**
+   * Grants permission to update the inference operator for a SageMaker HyperPod cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-inference.html
+   */
+  public toUpdateClusterInference() {
+    return this.to('UpdateClusterInference');
+  }
+
+  /**
+   * Grants permission to update a shared model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
+   */
+  public toUpdateSharedModel() {
+    return this.to('UpdateSharedModel');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddAssociation',
@@ -4982,7 +5150,14 @@ export class Sagemaker extends PolicyStatement {
       'UpdateTrialComponent',
       'UpdateUserProfile',
       'UpdateWorkforce',
-      'UpdateWorkteam'
+      'UpdateWorkteam',
+      'CreateReservedCapacity',
+      'CreateSharedModel',
+      'DeleteResourcePolicy',
+      'PutResourcePolicy',
+      'SendSharedModelEvent',
+      'UpdateClusterInference',
+      'UpdateSharedModel'
     ],
     Tagging: [
       'AddTags',
@@ -5083,7 +5258,12 @@ export class Sagemaker extends PolicyStatement {
       'InvokeEndpointWithResponseStream',
       'RenderUiTemplate',
       'Search',
-      'SearchTrainingPlanOfferings'
+      'SearchTrainingPlanOfferings',
+      'AccessModelPackage',
+      'CallWithBearerToken',
+      'DescribeClusterInference',
+      'DescribeSharedModel',
+      'GetResourcePolicy'
     ],
     List: [
       'ListAIBenchmarkJobs',
@@ -5178,7 +5358,10 @@ export class Sagemaker extends PolicyStatement {
       'ListUserProfiles',
       'ListWorkforces',
       'ListWorkteams',
-      'QueryLineage'
+      'QueryLineage',
+      'ListSharedModelEvents',
+      'ListSharedModelVersions',
+      'ListSharedModels'
     ]
   };
 
@@ -6564,6 +6747,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toRegisterDevices()
    * - .toUpdateMonitoringSchedule()
    * - .toUpdateProject()
+   * - .toCreateReservedCapacity()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -6917,6 +7101,10 @@ export class Sagemaker extends PolicyStatement {
    * - .toUpdateUserProfile()
    * - .toUpdateWorkforce()
    * - .toUpdateWorkteam()
+   * - .toAccessModelPackage()
+   * - .toCreateReservedCapacity()
+   * - .toDescribeClusterInference()
+   * - .toUpdateClusterInference()
    *
    * Applies to resource types:
    * - action
@@ -7071,6 +7259,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toRegisterDevices()
    * - .toUpdateMonitoringSchedule()
    * - .toUpdateProject()
+   * - .toCreateReservedCapacity()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -7117,6 +7306,9 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .toCallWithBearerToken()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -7139,6 +7331,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toListModelPackages()
    * - .toListTags()
    * - .toUpdateModelPackage()
+   * - .toAccessModelPackage()
    *
    * Applies to resource types:
    * - model-package
@@ -7166,6 +7359,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toListModelPackages()
    * - .toListTags()
    * - .toUpdateModelPackage()
+   * - .toAccessModelPackage()
    *
    * Applies to resource types:
    * - model-package
@@ -7192,6 +7386,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toListModelPackages()
    * - .toListTags()
    * - .toUpdateModelPackage()
+   * - .toAccessModelPackage()
    *
    * Applies to resource types:
    * - model-package
@@ -8205,6 +8400,10 @@ export class Sagemaker extends PolicyStatement {
    * - .toUpdateUserProfile()
    * - .toUpdateWorkforce()
    * - .toUpdateWorkteam()
+   * - .toAccessModelPackage()
+   * - .toCreateReservedCapacity()
+   * - .toDescribeClusterInference()
+   * - .toUpdateClusterInference()
    *
    * Applies to resource types:
    * - action

@@ -348,6 +348,61 @@ export class AppIntegrations extends PolicyStatement {
     return this.to('UpdateEventIntegration');
   }
 
+  /**
+   * Grants permission to create an ApplicationAssociation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/onboard-3p-apps.html
+   */
+  public toCreateApplicationAssociation() {
+    return this.to('CreateApplicationAssociation');
+  }
+
+  /**
+   * Grants permission to create an EventIntegrationAssociation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateEventIntegration.html
+   */
+  public toCreateEventIntegrationAssociation() {
+    return this.to('CreateEventIntegrationAssociation');
+  }
+
+  /**
+   * Grants permission to delete an ApplicationAssociation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/onboard-3p-apps.html
+   */
+  public toDeleteApplicationAssociation() {
+    return this.to('DeleteApplicationAssociation');
+  }
+
+  /**
+   * Grants permission to delete a DataIntegrationAssociation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html
+   */
+  public toDeleteDataIntegrationAssociation() {
+    return this.to('DeleteDataIntegrationAssociation');
+  }
+
+  /**
+   * Grants permission to delete an EventIntegrationAssociation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteEventIntegration.html
+   */
+  public toDeleteEventIntegrationAssociation() {
+    return this.to('DeleteEventIntegrationAssociation');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateApplication',
@@ -365,7 +420,12 @@ export class AppIntegrations extends PolicyStatement {
       'UpdateDataIntegration',
       'UpdateDataIntegrationAssociation',
       'UpdateDataIntegrationSchedule',
-      'UpdateEventIntegration'
+      'UpdateEventIntegration',
+      'CreateApplicationAssociation',
+      'CreateEventIntegrationAssociation',
+      'DeleteApplicationAssociation',
+      'DeleteDataIntegrationAssociation',
+      'DeleteEventIntegrationAssociation'
     ],
     Read: [
       'GetApplication',
@@ -507,6 +567,8 @@ export class AppIntegrations extends PolicyStatement {
    * - .toCreateDataIntegrationAssociation()
    * - .toCreateEventIntegration()
    * - .toTagResource()
+   * - .toCreateApplicationAssociation()
+   * - .toCreateEventIntegrationAssociation()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -546,6 +608,11 @@ export class AppIntegrations extends PolicyStatement {
    * - .toUpdateDataIntegrationAssociation()
    * - .toUpdateDataIntegrationSchedule()
    * - .toUpdateEventIntegration()
+   * - .toCreateApplicationAssociation()
+   * - .toCreateEventIntegrationAssociation()
+   * - .toDeleteApplicationAssociation()
+   * - .toDeleteDataIntegrationAssociation()
+   * - .toDeleteEventIntegrationAssociation()
    *
    * Applies to resource types:
    * - application
@@ -575,6 +642,8 @@ export class AppIntegrations extends PolicyStatement {
    * - .toCreateEventIntegration()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toCreateApplicationAssociation()
+   * - .toCreateEventIntegrationAssociation()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

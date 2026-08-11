@@ -1030,6 +1030,380 @@ export class Workmail extends PolicyStatement {
     return this.to('UpdateUser');
   }
 
+  /**
+   * Grants permission to configure vended log delivery for WorkMail audit logs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/audit-logging.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
+   * Grants permission to create an inbound email flow rule which will apply to all email sent to an organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/create-email-rules.html
+   */
+  public toCreateInboundMailFlowRule() {
+    return this.to('CreateInboundMailFlowRule');
+  }
+
+  /**
+   * Grants permission to create a mail domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html
+   */
+  public toCreateMailDomain() {
+    return this.to('CreateMailDomain');
+  }
+
+  /**
+   * Grants permission to create an outbound email flow rule which will apply to all email sent from an organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/create-email-rules.html
+   */
+  public toCreateOutboundMailFlowRule() {
+    return this.to('CreateOutboundMailFlowRule');
+  }
+
+  /**
+   * Grants permission to register an SMTP gateway to a WorkMail organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html
+   */
+  public toCreateSmtpGateway() {
+    return this.to('CreateSmtpGateway');
+  }
+
+  /**
+   * Grants permission to remove an inbound email flow rule to no longer apply to emails sent to an organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/remove-email-flow-rule.html
+   */
+  public toDeleteInboundMailFlowRule() {
+    return this.to('DeleteInboundMailFlowRule');
+  }
+
+  /**
+   * Grants permission to remove an unused mail domain from an organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/remove_domain.html
+   */
+  public toDeleteMailDomain() {
+    return this.to('DeleteMailDomain');
+  }
+
+  /**
+   * Grants permission to remove a mobile device from a user
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html#remove_mobile_device
+   */
+  public toDeleteMobileDevice() {
+    return this.to('DeleteMobileDevice');
+  }
+
+  /**
+   * Grants permission to remove an outbound email flow rule so that it no longer applies to emails sent from an organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/remove-email-flow-rule.html
+   */
+  public toDeleteOutboundMailFlowRule() {
+    return this.to('DeleteOutboundMailFlowRule');
+  }
+
+  /**
+   * Grants permission to remove an SMTP gateway from an organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html
+   */
+  public toDeleteSmtpGateway() {
+    return this.to('DeleteSmtpGateway');
+  }
+
+  /**
+   * Grants permission to deliver emails to a WorkMail organization via the SES MailManager DeliverToMailbox action
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeliverToMailboxAction.html
+   */
+  public toDeliverToMailbox() {
+    return this.to('DeliverToMailbox');
+  }
+
+  /**
+   * Grants permission to read the details of an inbound mail flow rule configured for an organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-actions
+   */
+  public toDescribeInboundMailFlowRule() {
+    return this.to('DescribeInboundMailFlowRule');
+  }
+
+  /**
+   * Grants permission to show the details of all mail domains associated with the organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/domains_overview.html
+   */
+  public toDescribeMailDomains() {
+    return this.to('DescribeMailDomains');
+  }
+
+  /**
+   * Grants permission to read the details of an outbound mail flow rule configured for an organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-outbound
+   */
+  public toDescribeOutboundMailFlowRule() {
+    return this.to('DescribeOutboundMailFlowRule');
+  }
+
+  /**
+   * Grants permission to read the details of an SMTP gateway registered to an organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html
+   */
+  public toDescribeSmtpGateway() {
+    return this.to('DescribeSmtpGateway');
+  }
+
+  /**
+   * Grants permission to enable a mail domain in the organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html
+   */
+  public toEnableMailDomain() {
+    return this.to('EnableMailDomain');
+  }
+
+  /**
+   * Grants permission to read the configured journaling and fallback email addresses for email journaling
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/journaling_overview.html
+   */
+  public toGetJournalingRules() {
+    return this.to('GetJournalingRules');
+  }
+
+  /**
+   * Grants permission to get the details of the mail domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/domains_overview.html
+   */
+  public toGetMailDomainDetails() {
+    return this.to('GetMailDomainDetails');
+  }
+
+  /**
+   * Grants permission to get the details of the mobile device
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html
+   */
+  public toGetMobileDeviceDetails() {
+    return this.to('GetMobileDeviceDetails');
+  }
+
+  /**
+   * Grants permission to get a list of the mobile devices associated with the user
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html
+   */
+  public toGetMobileDevicesForUser() {
+    return this.to('GetMobileDevicesForUser');
+  }
+
+  /**
+   * Grants permission to get the details of the mobile device policy associated with the organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/edit_organization_mobile_policy.html
+   */
+  public toGetMobilePolicyDetails() {
+    return this.to('GetMobilePolicyDetails');
+  }
+
+  /**
+   * Grants permission to list inbound mail flow rules configured for an organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-actions
+   */
+  public toListInboundMailFlowRules() {
+    return this.to('ListInboundMailFlowRules');
+  }
+
+  /**
+   * Grants permission to list outbound mail flow rules configured for an organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-outbound
+   */
+  public toListOutboundMailFlowRules() {
+    return this.to('ListOutboundMailFlowRules');
+  }
+
+  /**
+   * Grants permission to list SMTP gateways registered to the organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html
+   */
+  public toListSmtpGateways() {
+    return this.to('ListSmtpGateways');
+  }
+
+  /**
+   * Grants permission to perform a prefix search to find a specific user in a mail group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html
+   */
+  public toSearchMembers() {
+    return this.to('SearchMembers');
+  }
+
+  /**
+   * Grants permission to set the default mail domain for the organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html
+   */
+  public toSetDefaultMailDomain() {
+    return this.to('SetDefaultMailDomain');
+  }
+
+  /**
+   * Grants permission to set journaling and fallback email addresses for email journaling
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/journaling_overview.html
+   */
+  public toSetJournalingRules() {
+    return this.to('SetJournalingRules');
+  }
+
+  /**
+   * Grants permission to set the details of a mobile policy associated with the organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/edit_organization_mobile_policy.html
+   */
+  public toSetMobilePolicyDetails() {
+    return this.to('SetMobilePolicyDetails');
+  }
+
+  /**
+   * Grants permission to test what inbound rules will apply to an email with a given sender and recipient
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/test-email-flow-rule.html
+   */
+  public toTestInboundMailFlowRules() {
+    return this.to('TestInboundMailFlowRules');
+  }
+
+  /**
+   * Grants permission to test what outbound rules will apply to an email with a given sender and recipient
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/test-email-flow-rule.html
+   */
+  public toTestOutboundMailFlowRules() {
+    return this.to('TestOutboundMailFlowRules');
+  }
+
+  /**
+   * Grants permission to update the details of an inbound email flow rule which will apply to all email sent to an organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/modify-email-flow-rule.html
+   */
+  public toUpdateInboundMailFlowRule() {
+    return this.to('UpdateInboundMailFlowRule');
+  }
+
+  /**
+   * Grants permission to update the details of an outbound email flow rule which will apply to all email sent from an organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/modify-email-flow-rule.html
+   */
+  public toUpdateOutboundMailFlowRule() {
+    return this.to('UpdateOutboundMailFlowRule');
+  }
+
+  /**
+   * Grants permission to update the details of an existing SMTP gateway registered to an organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html
+   */
+  public toUpdateSmtpGateway() {
+    return this.to('UpdateSmtpGateway');
+  }
+
+  /**
+   * Grants permission to remotely wipe the mobile device associated with a user's account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html#remote_wipe_device
+   */
+  public toWipeMobileDevice() {
+    return this.to('WipeMobileDevice');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateDelegateToResource',
@@ -1086,7 +1460,28 @@ export class Workmail extends PolicyStatement {
       'UpdateMobileDeviceAccessRule',
       'UpdatePrimaryEmailAddress',
       'UpdateResource',
-      'UpdateUser'
+      'UpdateUser',
+      'AllowVendedLogDeliveryForResource',
+      'CreateInboundMailFlowRule',
+      'CreateMailDomain',
+      'CreateOutboundMailFlowRule',
+      'CreateSmtpGateway',
+      'DeleteInboundMailFlowRule',
+      'DeleteMailDomain',
+      'DeleteMobileDevice',
+      'DeleteOutboundMailFlowRule',
+      'DeleteSmtpGateway',
+      'DeliverToMailbox',
+      'EnableMailDomain',
+      'SetDefaultMailDomain',
+      'SetJournalingRules',
+      'SetMobilePolicyDetails',
+      'TestInboundMailFlowRules',
+      'TestOutboundMailFlowRules',
+      'UpdateInboundMailFlowRule',
+      'UpdateOutboundMailFlowRule',
+      'UpdateSmtpGateway',
+      'WipeMobileDevice'
     ],
     Read: [
       'DescribeEmailMonitoringConfiguration',
@@ -1107,7 +1502,16 @@ export class Workmail extends PolicyStatement {
       'ListAvailabilityConfigurations',
       'ListMobileDeviceAccessOverrides',
       'ListMobileDeviceAccessRules',
-      'TestAvailabilityConfiguration'
+      'TestAvailabilityConfiguration',
+      'DescribeInboundMailFlowRule',
+      'DescribeOutboundMailFlowRule',
+      'DescribeSmtpGateway',
+      'GetJournalingRules',
+      'GetMailDomainDetails',
+      'GetMobileDeviceDetails',
+      'GetMobileDevicesForUser',
+      'GetMobilePolicyDetails',
+      'SearchMembers'
     ],
     List: [
       'DescribeGroup',
@@ -1127,7 +1531,11 @@ export class Workmail extends PolicyStatement {
       'ListResourceDelegates',
       'ListResources',
       'ListTagsForResource',
-      'ListUsers'
+      'ListUsers',
+      'DescribeMailDomains',
+      'ListInboundMailFlowRules',
+      'ListOutboundMailFlowRules',
+      'ListSmtpGateways'
     ],
     Tagging: [
       'TagResource',
@@ -1263,6 +1671,40 @@ export class Workmail extends PolicyStatement {
    * - .toUpdatePrimaryEmailAddress()
    * - .toUpdateResource()
    * - .toUpdateUser()
+   * - .toAllowVendedLogDeliveryForResource()
+   * - .toCreateInboundMailFlowRule()
+   * - .toCreateMailDomain()
+   * - .toCreateOutboundMailFlowRule()
+   * - .toCreateSmtpGateway()
+   * - .toDeleteInboundMailFlowRule()
+   * - .toDeleteMailDomain()
+   * - .toDeleteMobileDevice()
+   * - .toDeleteOutboundMailFlowRule()
+   * - .toDeleteSmtpGateway()
+   * - .toDeliverToMailbox()
+   * - .toDescribeInboundMailFlowRule()
+   * - .toDescribeMailDomains()
+   * - .toDescribeOutboundMailFlowRule()
+   * - .toDescribeSmtpGateway()
+   * - .toEnableMailDomain()
+   * - .toGetJournalingRules()
+   * - .toGetMailDomainDetails()
+   * - .toGetMobileDeviceDetails()
+   * - .toGetMobileDevicesForUser()
+   * - .toGetMobilePolicyDetails()
+   * - .toListInboundMailFlowRules()
+   * - .toListOutboundMailFlowRules()
+   * - .toListSmtpGateways()
+   * - .toSearchMembers()
+   * - .toSetDefaultMailDomain()
+   * - .toSetJournalingRules()
+   * - .toSetMobilePolicyDetails()
+   * - .toTestInboundMailFlowRules()
+   * - .toTestOutboundMailFlowRules()
+   * - .toUpdateInboundMailFlowRule()
+   * - .toUpdateOutboundMailFlowRule()
+   * - .toUpdateSmtpGateway()
+   * - .toWipeMobileDevice()
    *
    * Applies to resource types:
    * - organization

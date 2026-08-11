@@ -1,5 +1,6 @@
 signin:Authenticate;Read
 signin:AuthorizeOAuth2Access;Read
+signin:CreateAccount;Write
 signin:CreateOAuth2PublicClient;Write
 signin:CreateOAuth2Token;Read
 signin:CreateTrustedIdentityPropagationApplicationForConsole;Write

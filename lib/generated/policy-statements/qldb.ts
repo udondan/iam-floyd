@@ -370,6 +370,39 @@ export class Qldb extends PolicyStatement {
     return this.to('UpdateLedgerPermissionsMode');
   }
 
+  /**
+   * Grants permission to send commands to a ledger via the console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html
+   */
+  public toExecuteStatement() {
+    return this.to('ExecuteStatement');
+  }
+
+  /**
+   * Grants permission to insert sample application data via the console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html
+   */
+  public toInsertSampleData() {
+    return this.to('InsertSampleData');
+  }
+
+  /**
+   * Grants permission to view a ledger's catalog via the console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html
+   */
+  public toShowCatalog() {
+    return this.to('ShowCatalog');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelJournalKinesisStream',
@@ -390,7 +423,10 @@ export class Qldb extends PolicyStatement {
       'TagResource',
       'UntagResource',
       'UpdateLedger',
-      'UpdateLedgerPermissionsMode'
+      'UpdateLedgerPermissionsMode',
+      'ExecuteStatement',
+      'InsertSampleData',
+      'ShowCatalog'
     ],
     Read: [
       'DescribeJournalKinesisStream',
@@ -541,6 +577,9 @@ export class Qldb extends PolicyStatement {
    * - .toUntagResource()
    * - .toUpdateLedger()
    * - .toUpdateLedgerPermissionsMode()
+   * - .toExecuteStatement()
+   * - .toInsertSampleData()
+   * - .toShowCatalog()
    *
    * Applies to resource types:
    * - catalog

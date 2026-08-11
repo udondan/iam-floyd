@@ -1239,6 +1239,94 @@ export class LexV2 extends PolicyStatement {
     return this.to('UpdateTestSet');
   }
 
+  /**
+   * Grants permission to create a bot channel in an existing bot
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/deploying-messaging-platform.html
+   */
+  public toCreateBotChannel() {
+    return this.to('CreateBotChannel');
+  }
+
+  /**
+   * Grants permission to create a new custom vocabulary in an existing bot locale
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/vocab.html
+   */
+  public toCreateCustomVocabulary() {
+    return this.to('CreateCustomVocabulary');
+  }
+
+  /**
+   * Grants permission to import a new test-set
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/create-test-set-from-CSV.html
+   */
+  public toCreateTestSet() {
+    return this.to('CreateTestSet');
+  }
+
+  /**
+   * Grants permission to delete an existing bot channel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/deploying-messaging-platform.html
+   */
+  public toDeleteBotChannel() {
+    return this.to('DeleteBotChannel');
+  }
+
+  /**
+   * Grants permission to retrieve an existing bot channel
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/deploying-messaging-platform.html
+   */
+  public toDescribeBotChannel() {
+    return this.to('DescribeBotChannel');
+  }
+
+  /**
+   * Grants permission to retrieve an existing custom vocabulary
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/vocab.html
+   */
+  public toDescribeCustomVocabulary() {
+    return this.to('DescribeCustomVocabulary');
+  }
+
+  /**
+   * Grants permission to list bot channels
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/deploying-messaging-platform.html
+   */
+  public toListBotChannels() {
+    return this.to('ListBotChannels');
+  }
+
+  /**
+   * Grants permission to update an existing custom vocabulary
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/vocab.html
+   */
+  public toUpdateCustomVocabulary() {
+    return this.to('UpdateCustomVocabulary');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchCreateCustomVocabularyItem',
@@ -1298,7 +1386,12 @@ export class LexV2 extends PolicyStatement {
       'UpdateResourcePolicy',
       'UpdateSlot',
       'UpdateSlotType',
-      'UpdateTestSet'
+      'UpdateTestSet',
+      'CreateBotChannel',
+      'CreateCustomVocabulary',
+      'CreateTestSet',
+      'DeleteBotChannel',
+      'UpdateCustomVocabulary'
     ],
     Read: [
       'DescribeBot',
@@ -1325,7 +1418,9 @@ export class LexV2 extends PolicyStatement {
       'GetTestExecutionArtifactsUrl',
       'ListTagsForResource',
       'ListTestExecutionResultItems',
-      'ListTestSetRecords'
+      'ListTestSetRecords',
+      'DescribeBotChannel',
+      'DescribeCustomVocabulary'
     ],
     List: [
       'ListAggregatedUtterances',
@@ -1355,7 +1450,8 @@ export class LexV2 extends PolicyStatement {
       'ListSlots',
       'ListTestExecutions',
       'ListTestSets',
-      'SearchAssociatedTranscripts'
+      'SearchAssociatedTranscripts',
+      'ListBotChannels'
     ],
     Tagging: [
       'TagResource',
@@ -1553,6 +1649,13 @@ export class LexV2 extends PolicyStatement {
    * - .toUpdateSlot()
    * - .toUpdateSlotType()
    * - .toUpdateTestSet()
+   * - .toCreateBotChannel()
+   * - .toCreateCustomVocabulary()
+   * - .toDeleteBotChannel()
+   * - .toDescribeBotChannel()
+   * - .toDescribeCustomVocabulary()
+   * - .toListBotChannels()
+   * - .toUpdateCustomVocabulary()
    *
    * Applies to resource types:
    * - bot

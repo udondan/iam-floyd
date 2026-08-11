@@ -205,6 +205,33 @@ export class Braket extends PolicyStatement {
     return this.to('UpdateSpendingLimit');
   }
 
+  /**
+   * Grants permission to accept the Amazon Braket user agreement
+   *
+   * Access Level: Write
+   */
+  public toAcceptUserAgreement() {
+    return this.to('AcceptUserAgreement');
+  }
+
+  /**
+   * Grants permission to check if the Amazon Braket service linked role has been created
+   *
+   * Access Level: Read
+   */
+  public toGetServiceLinkedRoleStatus() {
+    return this.to('GetServiceLinkedRoleStatus');
+  }
+
+  /**
+   * Grants permission to check if the account has accepted the Amazon Braket user agreement
+   *
+   * Access Level: Read
+   */
+  public toGetUserAgreementStatus() {
+    return this.to('GetUserAgreementStatus');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelJob',
@@ -215,14 +242,17 @@ export class Braket extends PolicyStatement {
       'DeleteSpendingLimit',
       'TagResource',
       'UntagResource',
-      'UpdateSpendingLimit'
+      'UpdateSpendingLimit',
+      'AcceptUserAgreement'
     ],
     Read: [
       'GetDevice',
       'GetJob',
       'GetQuantumTask',
       'ListTagsForResource',
-      'SearchSpendingLimits'
+      'SearchSpendingLimits',
+      'GetServiceLinkedRoleStatus',
+      'GetUserAgreementStatus'
     ],
     List: [
       'SearchDevices',

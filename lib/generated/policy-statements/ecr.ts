@@ -651,6 +651,39 @@ export class Ecr extends PolicyStatement {
     return this.to('ValidatePullThroughCacheRule');
   }
 
+  /**
+   * Grants permission to retrieve the image from the upstream registry and import it to your private registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html
+   */
+  public toBatchImportUpstreamImage() {
+    return this.to('BatchImportUpstreamImage');
+  }
+
+  /**
+   * Grants permission to retrieve the status about an image copy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html
+   */
+  public toGetImageCopyStatus() {
+    return this.to('GetImageCopyStatus');
+  }
+
+  /**
+   * Grants permission to replicate images to the destination registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html
+   */
+  public toReplicateImage() {
+    return this.to('ReplicateImage');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'BatchCheckLayerAvailability',
@@ -672,7 +705,8 @@ export class Ecr extends PolicyStatement {
       'GetRepositoryPolicy',
       'GetSigningConfiguration',
       'ListTagsForResource',
-      'ValidatePullThroughCacheRule'
+      'ValidatePullThroughCacheRule',
+      'GetImageCopyStatus'
     ],
     Write: [
       'BatchDeleteImage',
@@ -707,7 +741,9 @@ export class Ecr extends PolicyStatement {
       'UpdateImageStorageClass',
       'UpdatePullThroughCacheRule',
       'UpdateRepositoryCreationTemplate',
-      'UploadLayerPart'
+      'UploadLayerPart',
+      'BatchImportUpstreamImage',
+      'ReplicateImage'
     ],
     'Permissions management': [
       'DeleteRegistryPolicy',
@@ -801,6 +837,9 @@ export class Ecr extends PolicyStatement {
    * - .toUntagResource()
    * - .toUpdateImageStorageClass()
    * - .toUploadLayerPart()
+   * - .toBatchImportUpstreamImage()
+   * - .toGetImageCopyStatus()
+   * - .toReplicateImage()
    *
    * Applies to resource types:
    * - repository
@@ -885,6 +924,9 @@ export class Ecr extends PolicyStatement {
    * - .toUntagResource()
    * - .toUpdateImageStorageClass()
    * - .toUploadLayerPart()
+   * - .toBatchImportUpstreamImage()
+   * - .toGetImageCopyStatus()
+   * - .toReplicateImage()
    *
    * Applies to resource types:
    * - repository

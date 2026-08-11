@@ -579,6 +579,72 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     return this.to('SetSubnets');
   }
 
+  /**
+   * Grants permission to configure vended log delivery for load balancers
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_AllowVendedLogDeliveryForResource.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
+   * Grants permission to associate WAF WebACL to the specified load balancer
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL
+   */
+  public toCreateWebACLAssociation() {
+    return this.to('CreateWebACLAssociation');
+  }
+
+  /**
+   * Grants permission to disassociate WAF WebACL from the specified load balancer
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL
+   */
+  public toDeleteWebACLAssociation() {
+    return this.to('DeleteWebACLAssociation');
+  }
+
+  /**
+   * Grants permission to describe all load balancers associated to a WAF WebACL in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL
+   */
+  public toDescribeWebACLAssociation() {
+    return this.to('DescribeWebACLAssociation');
+  }
+
+  /**
+   * Grants permission to retrieve the WAF WebACL associated to the specified load balancer
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL
+   */
+  public toGetLoadBalancerWebACL() {
+    return this.to('GetLoadBalancerWebACL');
+  }
+
+  /**
+   * Grants permission to give WebAcl permission to WAF
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL
+   */
+  public toSetWebAcl() {
+    return this.to('SetWebAcl');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddListenerCertificates',
@@ -612,7 +678,11 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       'SetIpAddressType',
       'SetRulePriorities',
       'SetSecurityGroups',
-      'SetSubnets'
+      'SetSubnets',
+      'AllowVendedLogDeliveryForResource',
+      'CreateWebACLAssociation',
+      'DeleteWebACLAssociation',
+      'SetWebAcl'
     ],
     Tagging: [
       'AddTags',
@@ -636,10 +706,15 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       'DescribeTrustStores',
       'GetResourcePolicy',
       'GetTrustStoreCaCertificatesBundle',
-      'GetTrustStoreRevocationContent'
+      'GetTrustStoreRevocationContent',
+      'GetLoadBalancerWebACL'
     ],
     List: [
-      'DescribeLoadBalancers'
+      'DescribeLoadBalancers',
+      'DescribeWebACLAssociation'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
     ]
   };
 
@@ -903,6 +978,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .toSetRulePriorities()
    * - .toSetSecurityGroups()
    * - .toSetSubnets()
+   * - .toCreateWebACLAssociation()
+   * - .toDeleteWebACLAssociation()
+   * - .toGetLoadBalancerWebACL()
    *
    * Applies to resource types:
    * - listener-rule/app
@@ -1018,6 +1096,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .toSetRulePriorities()
    * - .toSetSecurityGroups()
    * - .toSetSubnets()
+   * - .toCreateWebACLAssociation()
+   * - .toDeleteWebACLAssociation()
+   * - .toGetLoadBalancerWebACL()
    *
    * Applies to resource types:
    * - listener-rule/app

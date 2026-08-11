@@ -1,3 +1,4 @@
+eks:AccessKubernetesApi;Read
 eks:AssociateAccessPolicy;Write
 eks:AssociateEncryptionConfig;Write
 eks:AssociateIdentityProviderConfig;Write
@@ -52,6 +53,7 @@ eks:ListNodegroups;List
 eks:ListPodIdentityAssociations;List
 eks:ListTagsForResource;Read
 eks:ListUpdates;List
+eks:MutateViaKubernetesApi;Write
 eks:RegisterCluster;Write
 eks:StartInsightsRefresh;Write
 eks:TagResource;Tagging, Write

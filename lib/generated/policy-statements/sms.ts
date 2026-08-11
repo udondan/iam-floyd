@@ -403,6 +403,24 @@ export class Sms extends PolicyStatement {
     return this.to('UpdateReplicationJob');
   }
 
+  /**
+   * Grants permission to gets messages from AWS Server Migration Service to Server Migration Connector
+   *
+   * Access Level: Read
+   */
+  public toGetMessages() {
+    return this.to('GetMessages');
+  }
+
+  /**
+   * Grants permission to send message from Server Migration Connector to AWS Server Migration Service
+   *
+   * Access Level: Write
+   */
+  public toSendMessage() {
+    return this.to('SendMessage');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateApp',
@@ -429,7 +447,8 @@ export class Sms extends PolicyStatement {
       'StopAppReplication',
       'TerminateApp',
       'UpdateApp',
-      'UpdateReplicationJob'
+      'UpdateReplicationJob',
+      'SendMessage'
     ],
     Read: [
       'GetApp',
@@ -440,7 +459,8 @@ export class Sms extends PolicyStatement {
       'GetConnectors',
       'GetReplicationJobs',
       'GetReplicationRuns',
-      'GetServers'
+      'GetServers',
+      'GetMessages'
     ],
     List: [
       'ListApps'

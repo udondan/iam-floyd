@@ -1775,6 +1775,61 @@ export class Ssm extends PolicyStatement {
     return this.to('ValidateCloudConnector');
   }
 
+  /**
+   * Grants permission to view details of a specific calendar
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar-prereqs.html
+   */
+  public toGetCalendar() {
+    return this.to('GetCalendar');
+  }
+
+  /**
+   * Grants permission to Systems Manager and SSM Agent to determine package installation requirements for an instance (internal Systems Manager call)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
+   */
+  public toGetManifest() {
+    return this.to('GetManifest');
+  }
+
+  /**
+   * Grants permission to create/edit a specific calendar
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar-prereqs.html
+   */
+  public toPutCalendar() {
+    return this.to('PutCalendar');
+  }
+
+  /**
+   * Grants permission to SSM Agent to generate a report of the results of specific agent requests (internal Systems Manager call)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
+   */
+  public toPutConfigurePackageResult() {
+    return this.to('PutConfigurePackageResult');
+  }
+
+  /**
+   * Grants permission to SSM Agent to update the status of the association that it is currently running (internal Systems Manager call)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
+   */
+  public toUpdateInstanceAssociationStatus() {
+    return this.to('UpdateInstanceAssociationStatus');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddTagsToResource',
@@ -1852,7 +1907,9 @@ export class Ssm extends PolicyStatement {
       'UpdateOpsMetadata',
       'UpdatePatchBaseline',
       'UpdateResourceDataSync',
-      'UpdateServiceSetting'
+      'UpdateServiceSetting',
+      'PutCalendar',
+      'UpdateInstanceAssociationStatus'
     ],
     'Permissions management': [
       'DeleteResourcePolicy',
@@ -1909,7 +1966,10 @@ export class Ssm extends PolicyStatement {
       'GetPatchBaselineForPatchGroup',
       'GetServiceSetting',
       'StartExecutionPreview',
-      'ValidateCloudConnector'
+      'ValidateCloudConnector',
+      'GetCalendar',
+      'GetManifest',
+      'PutConfigurePackageResult'
     ],
     List: [
       'DescribeMaintenanceWindowExecutionTaskInvocations',
@@ -2445,6 +2505,9 @@ export class Ssm extends PolicyStatement {
    * - .toUpdateOpsMetadata()
    * - .toUpdatePatchBaseline()
    * - .toValidateCloudConnector()
+   * - .toGetCalendar()
+   * - .toPutCalendar()
+   * - .toUpdateInstanceAssociationStatus()
    *
    * Applies to resource types:
    * - association
@@ -2509,6 +2572,7 @@ export class Ssm extends PolicyStatement {
    * - .toPutComplianceItems()
    * - .toUpdateAssociationStatus()
    * - .toUpdateInstanceInformation()
+   * - .toUpdateInstanceAssociationStatus()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -2581,6 +2645,8 @@ export class Ssm extends PolicyStatement {
    * - .toUpdateDocument()
    * - .toUpdateDocumentDefaultVersion()
    * - .toUpdateDocumentMetadata()
+   * - .toGetCalendar()
+   * - .toPutCalendar()
    *
    * Applies to resource types:
    * - document
@@ -2627,6 +2693,8 @@ export class Ssm extends PolicyStatement {
    * - .toUpdateDocument()
    * - .toUpdateDocumentDefaultVersion()
    * - .toUpdateDocumentMetadata()
+   * - .toGetCalendar()
+   * - .toPutCalendar()
    *
    * Applies to resource types:
    * - automation-definition
@@ -2738,6 +2806,7 @@ export class Ssm extends PolicyStatement {
    * - .toPutComplianceItems()
    * - .toUpdateAssociationStatus()
    * - .toUpdateInstanceInformation()
+   * - .toUpdateInstanceAssociationStatus()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -2848,6 +2917,9 @@ export class Ssm extends PolicyStatement {
    * - .toUpdateManagedInstanceRole()
    * - .toUpdateOpsMetadata()
    * - .toUpdatePatchBaseline()
+   * - .toGetCalendar()
+   * - .toPutCalendar()
+   * - .toUpdateInstanceAssociationStatus()
    *
    * Applies to resource types:
    * - automation-execution

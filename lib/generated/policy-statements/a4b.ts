@@ -1077,6 +1077,39 @@ export class A4b extends PolicyStatement {
     return this.to('UpdateSkillGroup');
   }
 
+  /**
+   * Grants permission to complete the operation of registering an Alexa device
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/a4b/latest/ag/manage-devices.html
+   */
+  public toCompleteRegistration() {
+    return this.to('CompleteRegistration');
+  }
+
+  /**
+   * Grants permission to publish Alexa device setup events
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/a4b/latest/ag/manage-devices.html
+   */
+  public toPutDeviceSetupEvents() {
+    return this.to('PutDeviceSetupEvents');
+  }
+
+  /**
+   * Grants permission to register an Alexa device
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/a4b/latest/ag/manage-devices.html
+   */
+  public toRegisterDevice() {
+    return this.to('RegisterDevice');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ApproveSkill',
@@ -1138,7 +1171,10 @@ export class A4b extends PolicyStatement {
       'UpdateNetworkProfile',
       'UpdateProfile',
       'UpdateRoom',
-      'UpdateSkillGroup'
+      'UpdateSkillGroup',
+      'CompleteRegistration',
+      'PutDeviceSetupEvents',
+      'RegisterDevice'
     ],
     Read: [
       'GetAddressBook',

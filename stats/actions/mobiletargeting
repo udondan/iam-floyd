@@ -71,6 +71,7 @@ mobiletargeting:GetJourneyRuns;List
 mobiletargeting:GetPushTemplate;Read
 mobiletargeting:GetRecommenderConfiguration;Read
 mobiletargeting:GetRecommenderConfigurations;List
+mobiletargeting:GetReports;Read
 mobiletargeting:GetSegment;Read
 mobiletargeting:GetSegmentExportJobs;List
 mobiletargeting:GetSegmentImportJobs;List

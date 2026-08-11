@@ -275,6 +275,72 @@ export class ResourceGroups extends PolicyStatement {
     return this.to('UpdateGroupQuery');
   }
 
+  /**
+   * Grants permission to associate a resource to an Application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/arguide/associate-resources.html
+   */
+  public toAssociateResource() {
+    return this.to('AssociateResource');
+  }
+
+  /**
+   * Grants permission to delete a resource-based policy for the specified group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/userguide/management-role.html#service-linked-role-permissions-management-role
+   */
+  public toDeleteGroupPolicy() {
+    return this.to('DeleteGroupPolicy');
+  }
+
+  /**
+   * Grants permission to disassociate a resource from an Application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/arguide/associate-resources.html
+   */
+  public toDisassociateResource() {
+    return this.to('DisassociateResource');
+  }
+
+  /**
+   * Grants permission to get a resource-based policy for the specified group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/userguide/management-role.html#service-linked-role-permissions-management-role
+   */
+  public toGetGroupPolicy() {
+    return this.to('GetGroupPolicy');
+  }
+
+  /**
+   * Grants permission to list supported resource types
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html
+   */
+  public toListResourceTypes() {
+    return this.to('ListResourceTypes');
+  }
+
+  /**
+   * Grants permission to add a resource-based policy for the specified group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/userguide/management-role.html#service-linked-role-permissions-management-role
+   */
+  public toPutGroupPolicy() {
+    return this.to('PutGroupPolicy');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelTagSyncTask',
@@ -288,7 +354,11 @@ export class ResourceGroups extends PolicyStatement {
       'Untag',
       'UpdateAccountSettings',
       'UpdateGroup',
-      'UpdateGroupQuery'
+      'UpdateGroupQuery',
+      'AssociateResource',
+      'DeleteGroupPolicy',
+      'DisassociateResource',
+      'PutGroupPolicy'
     ],
     Read: [
       'GetAccountSettings',
@@ -296,14 +366,16 @@ export class ResourceGroups extends PolicyStatement {
       'GetGroupConfiguration',
       'GetGroupQuery',
       'GetTagSyncTask',
-      'GetTags'
+      'GetTags',
+      'GetGroupPolicy'
     ],
     List: [
       'ListGroupResources',
       'ListGroupingStatuses',
       'ListGroups',
       'ListTagSyncTasks',
-      'SearchResources'
+      'SearchResources',
+      'ListResourceTypes'
     ],
     Tagging: [
       'Tag',
@@ -387,6 +459,11 @@ export class ResourceGroups extends PolicyStatement {
    * - .toUntag()
    * - .toUpdateGroup()
    * - .toUpdateGroupQuery()
+   * - .toAssociateResource()
+   * - .toDeleteGroupPolicy()
+   * - .toDisassociateResource()
+   * - .toGetGroupPolicy()
+   * - .toPutGroupPolicy()
    *
    * Applies to resource types:
    * - group

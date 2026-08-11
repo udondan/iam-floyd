@@ -176,6 +176,39 @@ export class CodeguruReviewer extends PolicyStatement {
     return this.to('UnTagResource');
   }
 
+  /**
+   * Grants permission to perform webbased oauth handshake for 3rd party providers
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+   */
+  public toCreateConnectionToken() {
+    return this.to('CreateConnectionToken');
+  }
+
+  /**
+   * Grants permission to view pull request metrics in console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+   */
+  public toGetMetricsData() {
+    return this.to('GetMetricsData');
+  }
+
+  /**
+   * Grants permission to list 3rd party providers repositories in console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+   */
+  public toListThirdPartyRepositories() {
+    return this.to('ListThirdPartyRepositories');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateRepository',
@@ -188,7 +221,10 @@ export class CodeguruReviewer extends PolicyStatement {
     Read: [
       'DescribeCodeReview',
       'DescribeRecommendationFeedback',
-      'DescribeRepositoryAssociation'
+      'DescribeRepositoryAssociation',
+      'CreateConnectionToken',
+      'GetMetricsData',
+      'ListThirdPartyRepositories'
     ],
     List: [
       'ListCodeReviews',

@@ -194,6 +194,17 @@ export class Account extends PolicyStatement {
     return this.to('StartPrimaryEmailUpdate');
   }
 
+  /**
+   * Grants permission to close an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/security_account-permissions-ref.html
+   */
+  public toCloseAccount() {
+    return this.to('CloseAccount');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptPrimaryEmailUpdate',
@@ -203,7 +214,8 @@ export class Account extends PolicyStatement {
       'PutAccountName',
       'PutAlternateContact',
       'PutContactInformation',
-      'StartPrimaryEmailUpdate'
+      'StartPrimaryEmailUpdate',
+      'CloseAccount'
     ],
     Read: [
       'GetAccountInformation',

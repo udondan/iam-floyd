@@ -1,3 +1,4 @@
+ses:AllowVendedLogDeliveryForResource;Permissions management, Write
 ses:BatchGetMetricData;Read
 ses:CancelExportJob;Write
 ses:CloneReceiptRuleSet;Write
@@ -177,6 +178,7 @@ ses:PutSuppressedDestination;Write
 ses:PutTenantSuppressionAttributes;Write
 ses:RegisterMemberToAddressList;Write
 ses:ReorderReceiptRuleSet;Write
+ses:ReplicateEmailIdentityDkimSigningKey;Permissions management, Write
 ses:SendBounce;Write
 ses:SendBulkEmail;Write
 ses:SendBulkTemplatedEmail;Write

@@ -199,6 +199,24 @@ export class Thinclient extends PolicyStatement {
     return this.to('UpdateSoftwareSet');
   }
 
+  /**
+   * Grants permission to get details of devices
+   *
+   * Access Level: Read
+   */
+  public toGetDeviceDetails() {
+    return this.to('GetDeviceDetails');
+  }
+
+  /**
+   * Grants permission to list device sessions
+   *
+   * Access Level: List
+   */
+  public toListDeviceSessions() {
+    return this.to('ListDeviceSessions');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateEnvironment',
@@ -214,13 +232,15 @@ export class Thinclient extends PolicyStatement {
     Read: [
       'GetDevice',
       'GetEnvironment',
-      'GetSoftwareSet'
+      'GetSoftwareSet',
+      'GetDeviceDetails'
     ],
     List: [
       'ListDevices',
       'ListEnvironments',
       'ListSoftwareSets',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'ListDeviceSessions'
     ],
     Tagging: [
       'TagResource',
@@ -315,6 +335,8 @@ export class Thinclient extends PolicyStatement {
    * - .toUpdateDevice()
    * - .toUpdateEnvironment()
    * - .toUpdateSoftwareSet()
+   * - .toGetDeviceDetails()
+   * - .toListDeviceSessions()
    *
    * Applies to resource types:
    * - device

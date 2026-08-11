@@ -232,6 +232,17 @@ export class Pcs extends PolicyStatement {
     return this.to('UpdateQueue');
   }
 
+  /**
+   * Grants permission to configure vended log delivery for AWS PCS cluster logs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pcs/latest/userguide/monitoring_scheduler-logs.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateCluster',
@@ -245,7 +256,8 @@ export class Pcs extends PolicyStatement {
       'UntagResource',
       'UpdateCluster',
       'UpdateComputeNodeGroup',
-      'UpdateQueue'
+      'UpdateQueue',
+      'AllowVendedLogDeliveryForResource'
     ],
     Read: [
       'GetCluster',
@@ -359,6 +371,7 @@ export class Pcs extends PolicyStatement {
    * - .toUpdateCluster()
    * - .toUpdateComputeNodeGroup()
    * - .toUpdateQueue()
+   * - .toAllowVendedLogDeliveryForResource()
    *
    * Applies to resource types:
    * - cluster

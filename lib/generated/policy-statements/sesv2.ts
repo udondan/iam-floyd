@@ -1344,6 +1344,15 @@ export class SesV2 extends PolicyStatement {
     return this.to('UpdateReputationEntityPolicy');
   }
 
+  /**
+   * Grants permission to replicate email identity DKIM signing key
+   *
+   * Access Level: Permissions management, Write
+   */
+  public toReplicateEmailIdentityDkimSigningKey() {
+    return this.to('ReplicateEmailIdentityDkimSigningKey');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'BatchGetMetricData',
@@ -1444,12 +1453,14 @@ export class SesV2 extends PolicyStatement {
       'UpdateEmailIdentityPolicy',
       'UpdateEmailTemplate',
       'UpdateReputationEntityCustomerManagedStatus',
-      'UpdateReputationEntityPolicy'
+      'UpdateReputationEntityPolicy',
+      'ReplicateEmailIdentityDkimSigningKey'
     ],
     'Permissions management': [
       'CreateEmailIdentityPolicy',
       'DeleteEmailIdentityPolicy',
-      'UpdateEmailIdentityPolicy'
+      'UpdateEmailIdentityPolicy',
+      'ReplicateEmailIdentityDkimSigningKey'
     ],
     List: [
       'ListConfigurationSets',
@@ -1794,6 +1805,7 @@ export class SesV2 extends PolicyStatement {
    * - .toUpdateEmailTemplate()
    * - .toUpdateReputationEntityCustomerManagedStatus()
    * - .toUpdateReputationEntityPolicy()
+   * - .toReplicateEmailIdentityDkimSigningKey()
    *
    * Applies to resource types:
    * - configuration-set
@@ -2068,6 +2080,9 @@ export class SesV2 extends PolicyStatement {
    * Filters access by the replica regions for Replicating domain DKIM signing key
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
+   *
+   * Applies to actions:
+   * - .toReplicateEmailIdentityDkimSigningKey()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

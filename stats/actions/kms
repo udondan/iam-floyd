@@ -45,6 +45,7 @@ kms:RevokeGrant;Permissions management, Write
 kms:RotateKeyOnDemand;Write
 kms:ScheduleKeyDeletion;Write
 kms:Sign;Write
+kms:SynchronizeMultiRegionKey;Write
 kms:TagResource;Tagging, Write
 kms:UntagResource;Tagging, Write
 kms:UpdateAlias;Write

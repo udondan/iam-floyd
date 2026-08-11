@@ -1441,6 +1441,138 @@ export class Partnercentral extends PolicyStatement {
     return this.to('UpdateRevenueAttribution');
   }
 
+  /**
+   * Grants permission to create business plans in AWS Partner Central
+   *
+   * Access Level: Write
+   */
+  public toCreateBusinessPlan() {
+    return this.to('CreateBusinessPlan');
+  }
+
+  /**
+   * Grants permission to create collaboration channel members in AWS Partner Central
+   *
+   * Access Level: Write
+   */
+  public toCreateCollaborationChannelMembers() {
+    return this.to('CreateCollaborationChannelMembers');
+  }
+
+  /**
+   * Grants permission to create collaboration channel requests in AWS Partner Central
+   *
+   * Access Level: Write
+   */
+  public toCreateCollaborationChannelRequest() {
+    return this.to('CreateCollaborationChannelRequest');
+  }
+
+  /**
+   * Grants permission to enroll in partner paths in AWS Partner Central
+   *
+   * Access Level: Write
+   */
+  public toEnrollInPartnerPath() {
+    return this.to('EnrollInPartnerPath');
+  }
+
+  /**
+   * Grants permission to retrieve business plan details in AWS Partner Central
+   *
+   * Access Level: Read
+   */
+  public toGetBusinessPlan() {
+    return this.to('GetBusinessPlan');
+  }
+
+  /**
+   * Grants permission to retrieve collaboration channel details in AWS Partner Central
+   *
+   * Access Level: Read
+   */
+  public toGetCollaborationChannel() {
+    return this.to('GetCollaborationChannel');
+  }
+
+  /**
+   * Grants permission to retrieve public partner profile details in AWS Partner Central
+   *
+   * Access Level: Read
+   */
+  public toGetPartnerProfile() {
+    return this.to('GetPartnerProfile');
+  }
+
+  /**
+   * Grants permission to retrieve program management account details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   */
+  public toGetProgramManagementAccount() {
+    return this.to('GetProgramManagementAccount');
+  }
+
+  /**
+   * Grants permission to list business plans in AWS Partner Central
+   *
+   * Access Level: List
+   */
+  public toListBusinessPlans() {
+    return this.to('ListBusinessPlans');
+  }
+
+  /**
+   * Grants permission to list collaboration channels in AWS Partner Central
+   *
+   * Access Level: List
+   */
+  public toListCollaborationChannels() {
+    return this.to('ListCollaborationChannels');
+  }
+
+  /**
+   * Grants permission to list partner paths in AWS Partner Central
+   *
+   * Access Level: List
+   */
+  public toListPartnerPaths() {
+    return this.to('ListPartnerPaths');
+  }
+
+  /**
+   * Grants permission to update business plans in AWS Partner Central
+   *
+   * Access Level: Write
+   */
+  public toPutBusinessPlan() {
+    return this.to('PutBusinessPlan');
+  }
+
+  /**
+   * Grants permission to search public partner profiles in AWS Partner Central
+   *
+   * Access Level: List
+   */
+  public toSearchPartnerProfiles() {
+    return this.to('SearchPartnerProfiles');
+  }
+
+  /**
+   * Grants permission to use Partner Central Agents sessions in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   */
+  public toUseSession() {
+    return this.to('UseSession');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptChannelHandshake',
@@ -1507,7 +1639,13 @@ export class Partnercentral extends PolicyStatement {
       'UpdateOpportunity',
       'UpdateProgramManagementAccount',
       'UpdateRelationship',
-      'UpdateRevenueAttribution'
+      'UpdateRevenueAttribution',
+      'CreateBusinessPlan',
+      'CreateCollaborationChannelMembers',
+      'CreateCollaborationChannelRequest',
+      'EnrollInPartnerPath',
+      'PutBusinessPlan',
+      'UseSession'
     ],
     Read: [
       'GetAllianceLeadContact',
@@ -1541,7 +1679,11 @@ export class Partnercentral extends PolicyStatement {
       'GetVerification',
       'ListEngagementMembers',
       'ListEngagementResourceAssociations',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'GetBusinessPlan',
+      'GetCollaborationChannel',
+      'GetPartnerProfile',
+      'GetProgramManagementAccount'
     ],
     List: [
       'ListBenefitAllocations',
@@ -1566,7 +1708,11 @@ export class Partnercentral extends PolicyStatement {
       'ListResourceSnapshots',
       'ListRevenueAttributionAllocations',
       'ListRevenueAttributions',
-      'ListSolutions'
+      'ListSolutions',
+      'ListBusinessPlans',
+      'ListCollaborationChannels',
+      'ListPartnerPaths',
+      'SearchPartnerProfiles'
     ],
     Tagging: [
       'TagResource',
@@ -2222,6 +2368,8 @@ export class Partnercentral extends PolicyStatement {
    * - .toUpdateProgramManagementAccount()
    * - .toUpdateRelationship()
    * - .toUpdateRevenueAttribution()
+   * - .toGetProgramManagementAccount()
+   * - .toUseSession()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

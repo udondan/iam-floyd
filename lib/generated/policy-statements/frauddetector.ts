@@ -833,6 +833,17 @@ export class Frauddetector extends PolicyStatement {
     return this.to('UpdateVariable');
   }
 
+  /**
+   * Grants permission to get the data validation report of a specific batch import job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/ug/prepare-storage-event-data.html#smart-data-validation
+   */
+  public toGetBatchImportJobValidationReport() {
+    return this.to('GetBatchImportJobValidationReport');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchCreateVariable',
@@ -911,7 +922,8 @@ export class Frauddetector extends PolicyStatement {
       'GetKMSEncryptionKey',
       'GetListElements',
       'GetModelVersion',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'GetBatchImportJobValidationReport'
     ],
     Tagging: [
       'TagResource',
@@ -1266,6 +1278,7 @@ export class Frauddetector extends PolicyStatement {
    * - .toUpdateRuleMetadata()
    * - .toUpdateRuleVersion()
    * - .toUpdateVariable()
+   * - .toGetBatchImportJobValidationReport()
    *
    * Applies to resource types:
    * - batch-import

@@ -537,6 +537,17 @@ export class Memorydb extends PolicyStatement {
     return this.to('UpdateUser');
   }
 
+  /**
+   * Grants permission to pause replication for a Multi-Region cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#memorydb-actions-reference
+   */
+  public toPauseMultiRegionClusterReplication() {
+    return this.to('PauseMultiRegionClusterReplication');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchUpdateCluster',
@@ -566,7 +577,8 @@ export class Memorydb extends PolicyStatement {
       'UpdateMultiRegionCluster',
       'UpdateParameterGroup',
       'UpdateSubnetGroup',
-      'UpdateUser'
+      'UpdateUser',
+      'PauseMultiRegionClusterReplication'
     ],
     Read: [
       'DescribeAcls',
@@ -811,6 +823,7 @@ export class Memorydb extends PolicyStatement {
    * - .toUpdateParameterGroup()
    * - .toUpdateSubnetGroup()
    * - .toUpdateUser()
+   * - .toPauseMultiRegionClusterReplication()
    *
    * Applies to resource types:
    * - acl
@@ -871,6 +884,7 @@ export class Memorydb extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateMultiRegionCluster()
+   * - .toPauseMultiRegionClusterReplication()
    *
    * Applies to resource types:
    * - multiregioncluster

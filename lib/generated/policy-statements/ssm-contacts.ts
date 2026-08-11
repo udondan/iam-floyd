@@ -447,6 +447,17 @@ export class SsmContacts extends PolicyStatement {
     return this.to('UpdateRotation');
   }
 
+  /**
+   * Grants permission to use a contact in an escalation plan
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/incident-manager/latest/userguide/contacts.html
+   */
+  public toAssociateContact() {
+    return this.to('AssociateContact');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptPage',
@@ -468,7 +479,8 @@ export class SsmContacts extends PolicyStatement {
       'UntagResource',
       'UpdateContact',
       'UpdateContactChannel',
-      'UpdateRotation'
+      'UpdateRotation',
+      'AssociateContact'
     ],
     Read: [
       'DescribeEngagement',
@@ -496,6 +508,9 @@ export class SsmContacts extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'AssociateContact'
     ]
   };
 
@@ -624,6 +639,7 @@ export class SsmContacts extends PolicyStatement {
    * - .toUntagResource()
    * - .toUpdateContact()
    * - .toUpdateRotation()
+   * - .toAssociateContact()
    *
    * Applies to resource types:
    * - contact

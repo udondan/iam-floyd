@@ -1,5 +1,6 @@
 dataexchange:AcceptDataGrant;Write
 dataexchange:CancelJob;Write
+dataexchange:CreateAsset;Write
 dataexchange:CreateDataGrant;Write
 dataexchange:CreateDataSet;Write
 dataexchange:CreateEventAction;Write
@@ -25,6 +26,8 @@ dataexchange:ListJobs;List
 dataexchange:ListReceivedDataGrants;List
 dataexchange:ListRevisionAssets;List
 dataexchange:ListTagsForResource;List
+dataexchange:PublishDataSet;Write
+dataexchange:PublishToDataGrant;Write
 dataexchange:RevokeRevision;Write
 dataexchange:SendApiAsset;Write
 dataexchange:SendDataSetNotification;Write

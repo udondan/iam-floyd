@@ -547,6 +547,138 @@ export class Ce extends PolicyStatement {
     return this.to('UpdateCostCategoryDefinition');
   }
 
+  /**
+   * Grants permission to create Reservation expiration alerts
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toCreateNotificationSubscription() {
+    return this.to('CreateNotificationSubscription');
+  }
+
+  /**
+   * Grants permission to create Cost Explorer Reports
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toCreateReport() {
+    return this.to('CreateReport');
+  }
+
+  /**
+   * Grants permission to delete Reservation expiration alerts
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toDeleteNotificationSubscription() {
+    return this.to('DeleteNotificationSubscription');
+  }
+
+  /**
+   * Grants permission to delete Cost Explorer Reports
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toDeleteReport() {
+    return this.to('DeleteReport');
+  }
+
+  /**
+   * Grants permission to view Reservation expiration alerts
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toDescribeNotificationSubscription() {
+    return this.to('DescribeNotificationSubscription');
+  }
+
+  /**
+   * Grants permission to view Cost Explorer Reports page
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toDescribeReport() {
+    return this.to('DescribeReport');
+  }
+
+  /**
+   * Grants permission to view whether existing or fine-grained IAM actions are being used to control authorization to Billing, Cost Management, and Account consoles
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toGetConsoleActionSetEnforced() {
+    return this.to('GetConsoleActionSetEnforced');
+  }
+
+  /**
+   * Grants permission to view Cost Explorer Preferences page
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toGetPreferences() {
+    return this.to('GetPreferences');
+  }
+
+  /**
+   * Grants permission to change whether existing or fine-grained IAM actions will be used to control authorization to Billing, Cost Management, and Account consoles
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toUpdateConsoleActionSetEnforced() {
+    return this.to('UpdateConsoleActionSetEnforced');
+  }
+
+  /**
+   * Grants permission to update Reservation expiration alerts
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toUpdateNotificationSubscription() {
+    return this.to('UpdateNotificationSubscription');
+  }
+
+  /**
+   * Grants permission to edit Cost Explorer Preferences page
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toUpdatePreferences() {
+    return this.to('UpdatePreferences');
+  }
+
+  /**
+   * Grants permission to update Cost Explorer Reports
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toUpdateReport() {
+    return this.to('UpdateReport');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateAnomalyMonitor',
@@ -564,7 +696,15 @@ export class Ce extends PolicyStatement {
       'UpdateAnomalyMonitor',
       'UpdateAnomalySubscription',
       'UpdateCostAllocationTagsStatus',
-      'UpdateCostCategoryDefinition'
+      'UpdateCostCategoryDefinition',
+      'CreateNotificationSubscription',
+      'CreateReport',
+      'DeleteNotificationSubscription',
+      'DeleteReport',
+      'UpdateConsoleActionSetEnforced',
+      'UpdateNotificationSubscription',
+      'UpdatePreferences',
+      'UpdateReport'
     ],
     Read: [
       'DescribeCostCategoryDefinition',
@@ -591,7 +731,11 @@ export class Ce extends PolicyStatement {
       'GetSavingsPlansUtilizationDetails',
       'GetTags',
       'GetUsageForecast',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'DescribeNotificationSubscription',
+      'DescribeReport',
+      'GetConsoleActionSetEnforced',
+      'GetPreferences'
     ],
     List: [
       'ListCommitmentPurchaseAnalyses',

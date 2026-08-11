@@ -249,6 +249,39 @@ export class ArcRegionSwitch extends PolicyStatement {
     return this.to('UpdatePlanExecutionStep');
   }
 
+  /**
+   * Grants permission to delete the RAM access control policy for a plan
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/r53recovery/latest/dg/arc-region-switch.region-switch-different-accounts.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to get the resource policy of a plan
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/r53recovery/latest/dg/arc-region-switch.region-switch-different-accounts.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to define the RAM access control policy for a plan
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/r53recovery/latest/dg/arc-region-switch.region-switch-different-accounts.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ApprovePlanExecutionStep',
@@ -260,7 +293,10 @@ export class ArcRegionSwitch extends PolicyStatement {
       'UntagResource',
       'UpdatePlan',
       'UpdatePlanExecution',
-      'UpdatePlanExecutionStep'
+      'UpdatePlanExecutionStep',
+      'DeleteResourcePolicy',
+      'GetResourcePolicy',
+      'PutResourcePolicy'
     ],
     Read: [
       'GetPlan',
@@ -280,6 +316,11 @@ export class ArcRegionSwitch extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'GetResourcePolicy',
+      'PutResourcePolicy'
     ]
   };
 
@@ -341,6 +382,7 @@ export class ArcRegionSwitch extends PolicyStatement {
    * - .toUpdatePlan()
    * - .toUpdatePlanExecution()
    * - .toUpdatePlanExecutionStep()
+   * - .toGetResourcePolicy()
    *
    * Applies to resource types:
    * - plan

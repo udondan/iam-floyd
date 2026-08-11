@@ -784,6 +784,20 @@ export class Anthropic extends PolicyStatement {
     return this.to('UpdateWorkspace');
   }
 
+  /**
+   * Grants permission to make API calls using bearer token authentication
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifBearerTokenType()
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html
+   */
+  public toCallWithBearerToken() {
+    return this.to('CallWithBearerToken');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ArchiveAgent',
@@ -858,7 +872,8 @@ export class Anthropic extends PolicyStatement {
       'ListUserProfiles',
       'ListVaults',
       'ListWebhooks',
-      'ListWorkspaces'
+      'ListWorkspaces',
+      'CallWithBearerToken'
     ],
     Tagging: [
       'TagResource',
@@ -887,6 +902,9 @@ export class Anthropic extends PolicyStatement {
    * Filters access by the Short-term or Long-term bearer tokens
    *
    * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-policies.html
+   *
+   * Applies to actions:
+   * - .toCallWithBearerToken()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

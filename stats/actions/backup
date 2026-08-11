@@ -1,5 +1,8 @@
 backup:AssociateBackupVaultMpaApprovalTeam;Write
 backup:CancelLegalHold;Write
+backup:CopyFromBackupVault;Write
+backup:CopyIntoBackupVault;Write
+backup:CreateBackupAccessPoint;Write
 backup:CreateBackupPlan;Write
 backup:CreateBackupSelection;Write
 backup:CreateBackupVault;Write
@@ -11,18 +14,21 @@ backup:CreateRestoreAccessBackupVault;Write
 backup:CreateRestoreTestingPlan;Write
 backup:CreateRestoreTestingSelection;Write
 backup:CreateTieringConfiguration;Write
+backup:DeleteBackupAccessPoint;Write
 backup:DeleteBackupPlan;Write
 backup:DeleteBackupSelection;Write
 backup:DeleteBackupVault;Write
 backup:DeleteBackupVaultAccessPolicy;Permissions management, Write
 backup:DeleteBackupVaultLockConfiguration;Write
 backup:DeleteBackupVaultNotifications;Write
+backup:DeleteBackupVaultSharingPolicy;Permissions management, Write
 backup:DeleteFramework;Write
 backup:DeleteRecoveryPoint;Write
 backup:DeleteReportPlan;Write
 backup:DeleteRestoreTestingPlan;Write
 backup:DeleteRestoreTestingSelection;Write
 backup:DeleteTieringConfiguration;Write
+backup:DescribeBackupAccessPoint;Read
 backup:DescribeBackupJob;Read
 backup:DescribeBackupVault;Read
 backup:DescribeCopyJob;Read
@@ -45,6 +51,7 @@ backup:GetBackupPlanFromTemplate;Read
 backup:GetBackupSelection;Read
 backup:GetBackupVaultAccessPolicy;Read
 backup:GetBackupVaultNotifications;Read
+backup:GetBackupVaultSharingPolicy;Read
 backup:GetLegalHold;Read
 backup:GetPITRMalwareScanResults;Read
 backup:GetRecoveryPointIndexDetails;Read
@@ -66,6 +73,7 @@ backup:ListCopyJobSummaries;List
 backup:ListCopyJobs;List
 backup:ListFrameworks;List
 backup:ListIndexedRecoveryPoints;List
+backup:ListIndexedRecoveryPointsForSearch;Permissions management, Write
 backup:ListLegalHolds;List
 backup:ListProtectedResources;List
 backup:ListProtectedResourcesByBackupVault;List
@@ -87,8 +95,10 @@ backup:ListTieringConfigurations;List
 backup:PutBackupVaultAccessPolicy;Permissions management, Write
 backup:PutBackupVaultLockConfiguration;Write
 backup:PutBackupVaultNotifications;Write
+backup:PutBackupVaultSharingPolicy;Permissions management, Write
 backup:PutRestoreValidationResult;Write
 backup:RevokeRestoreAccessBackupVault;Write
+backup:SearchRecoveryPoint;Permissions management, Write
 backup:StartBackupJob;Write
 backup:StartCopyJob;Write
 backup:StartReportJob;Write

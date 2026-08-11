@@ -447,6 +447,22 @@ export class Kinesis extends PolicyStatement {
     return this.to('UpdateStreamWarmThroughput');
   }
 
+  /**
+   * Grants permission to temporarily inject errors for target API requests
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifFisActionId()
+   * - .ifFisInjectPercentage()
+   * - .ifFisTargetArns()
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
+   */
+  public toInjectApiError() {
+    return this.to('InjectApiError');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddTagsToStream',
@@ -479,7 +495,8 @@ export class Kinesis extends PolicyStatement {
       'UpdateMaxRecordSize',
       'UpdateShardCount',
       'UpdateStreamMode',
-      'UpdateStreamWarmThroughput'
+      'UpdateStreamWarmThroughput',
+      'InjectApiError'
     ],
     Read: [
       'DescribeAccountSettings',
@@ -650,6 +667,9 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
    *
+   * Applies to actions:
+   * - .toInjectApiError()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -662,6 +682,9 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
    *
+   * Applies to actions:
+   * - .toInjectApiError()
+   *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
@@ -673,6 +696,9 @@ export class Kinesis extends PolicyStatement {
    * Filters access by the ARN of an AWS FIS target
    *
    * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
+   *
+   * Applies to actions:
+   * - .toInjectApiError()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`

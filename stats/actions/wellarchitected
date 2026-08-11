@@ -1,5 +1,6 @@
 wellarchitected:AssociateLenses;Write
 wellarchitected:AssociateProfiles;Write
+wellarchitected:ConfigureIntegration;Write
 wellarchitected:CreateAgentContext;Write
 wellarchitected:CreateAgentGoal;Write
 wellarchitected:CreateAgentProfile;Write

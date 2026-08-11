@@ -365,6 +365,68 @@ export class ResourceExplorer2 extends PolicyStatement {
     return this.to('UpdateView');
   }
 
+  /**
+   * Grants permission to create managed view
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/userguide/API_ManagedView.html
+   */
+  public toCreateManagedView() {
+    return this.to('CreateManagedView');
+  }
+
+  /**
+   * Grants permission to create resource explorer streaming access
+   *
+   * Access Level: Write
+   */
+  public toCreateStreamingAccessForService() {
+    return this.to('CreateStreamingAccessForService');
+  }
+
+  /**
+   * Grants permission to delete the specified view's resource policy
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-share.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to delete resource explorer streaming access
+   *
+   * Access Level: Write
+   */
+  public toDeleteStreamingAccessForService() {
+    return this.to('DeleteStreamingAccessForService');
+  }
+
+  /**
+   * Grants permission to retrieve information about the specified view's resource policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-share.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to update the specified view's resource policy
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-share.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateDefaultView',
@@ -378,7 +440,12 @@ export class ResourceExplorer2 extends PolicyStatement {
       'TagResource',
       'UntagResource',
       'UpdateIndexType',
-      'UpdateView'
+      'UpdateView',
+      'CreateManagedView',
+      'CreateStreamingAccessForService',
+      'DeleteResourcePolicy',
+      'DeleteStreamingAccessForService',
+      'PutResourcePolicy'
     ],
     Read: [
       'BatchGetView',
@@ -391,7 +458,8 @@ export class ResourceExplorer2 extends PolicyStatement {
       'GetServiceView',
       'GetView',
       'ListTagsForResource',
-      'Search'
+      'Search',
+      'GetResourcePolicy'
     ],
     List: [
       'ListIndexes',
@@ -406,6 +474,10 @@ export class ResourceExplorer2 extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'PutResourcePolicy'
     ]
   };
 
@@ -492,6 +564,9 @@ export class ResourceExplorer2 extends PolicyStatement {
    * - .toUntagResource()
    * - .toUpdateIndexType()
    * - .toUpdateView()
+   * - .toDeleteResourcePolicy()
+   * - .toGetResourcePolicy()
+   * - .toPutResourcePolicy()
    *
    * Applies to resource types:
    * - index

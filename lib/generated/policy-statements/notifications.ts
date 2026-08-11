@@ -451,6 +451,28 @@ export class Notifications extends PolicyStatement {
     return this.to('UpdateNotificationConfiguration');
   }
 
+  /**
+   * Grants permission to read the opt-in status of an AWS User Notification Service feature
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/notifications/latest/userguide/managing-notification-features.html
+   */
+  public toGetFeatureOptInStatus() {
+    return this.to('GetFeatureOptInStatus');
+  }
+
+  /**
+   * Grants permission to update the opt-in status of an AWS User Notification Service feature
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/notifications/latest/userguide/managing-notification-features.html
+   */
+  public toPutFeatureOptInStatus() {
+    return this.to('PutFeatureOptInStatus');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateChannel',
@@ -472,7 +494,8 @@ export class Notifications extends PolicyStatement {
       'TagResource',
       'UntagResource',
       'UpdateEventRule',
-      'UpdateNotificationConfiguration'
+      'UpdateNotificationConfiguration',
+      'PutFeatureOptInStatus'
     ],
     'Permissions management': [
       'DisableNotificationsAccessForOrganization',
@@ -485,7 +508,8 @@ export class Notifications extends PolicyStatement {
       'GetManagedNotificationEvent',
       'GetNotificationConfiguration',
       'GetNotificationEvent',
-      'GetNotificationsAccessForOrganization'
+      'GetNotificationsAccessForOrganization',
+      'GetFeatureOptInStatus'
     ],
     List: [
       'ListChannels',

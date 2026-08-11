@@ -2,6 +2,7 @@ ecr:BatchCheckLayerAvailability;Read
 ecr:BatchDeleteImage;Write
 ecr:BatchGetImage;Read
 ecr:BatchGetRepositoryScanningConfiguration;Read
+ecr:BatchImportUpstreamImage;Write
 ecr:CompleteLayerUpload;Write
 ecr:CreatePullThroughCacheRule;Write
 ecr:CreateRepository;Write
@@ -25,6 +26,7 @@ ecr:DescribeRepositoryCreationTemplates;Read
 ecr:GetAccountSetting;Read
 ecr:GetAuthorizationToken;Read
 ecr:GetDownloadUrlForLayer;Read
+ecr:GetImageCopyStatus;Read
 ecr:GetLifecyclePolicy;Read
 ecr:GetLifecyclePolicyPreview;Read
 ecr:GetRegistryPolicy;Read
@@ -45,6 +47,7 @@ ecr:PutRegistryScanningConfiguration;Write
 ecr:PutReplicationConfiguration;Write
 ecr:PutSigningConfiguration;Write
 ecr:RegisterPullTimeUpdateExclusion;Write
+ecr:ReplicateImage;Write
 ecr:SetRepositoryPolicy;Permissions management, Write
 ecr:StartImageScan;Write
 ecr:StartLifecyclePolicyPreview;Write

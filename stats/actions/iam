@@ -130,6 +130,7 @@ iam:ListUserPolicies;List
 iam:ListUserTags;List
 iam:ListUsers;List
 iam:ListVirtualMFADevices;List
+iam:PassRole;Write
 iam:PutGroupPolicy;Permissions management, Write
 iam:PutRolePermissionsBoundary;Permissions management, Write
 iam:PutRolePolicy;Permissions management, Write

@@ -2531,6 +2531,138 @@ export class BedrockAgentcore extends PolicyStatement {
     return this.to('UpdateWorkloadIdentity');
   }
 
+  /**
+   * Grants permission to configure vended telemetry for a resource
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
+   * Grants permission to evaluate Cedar policies for authorization requests
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toAuthorizeAction() {
+    return this.to('AuthorizeAction');
+  }
+
+  /**
+   * Grants permission to associate an AWS WAF Web ACL with an AgentCore Gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   */
+  public toGatewayAssociateWebACL() {
+    return this.to('GatewayAssociateWebACL');
+  }
+
+  /**
+   * Grants permission to remove the AWS WAF Web ACL association from an AgentCore Gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   */
+  public toGatewayDisassociateWebACL() {
+    return this.to('GatewayDisassociateWebACL');
+  }
+
+  /**
+   * Grants permission to retrieve the AWS WAF Web ACL ARN currently associated with an AgentCore Gateway
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   */
+  public toGatewayGetWebACLForResource() {
+    return this.to('GatewayGetWebACLForResource');
+  }
+
+  /**
+   * Grants permission to list AgentCore Gateways associated with an AWS WAF Web ACL
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   */
+  public toGatewayListResourcesForWebACL() {
+    return this.to('GatewayListResourcesForWebACL');
+  }
+
+  /**
+   * Grants permission to invoke a gateway
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toInvokeGateway() {
+    return this.to('InvokeGateway');
+  }
+
+  /**
+   * Grants permission to invoke a web search target
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toInvokeWebSearch() {
+    return this.to('InvokeWebSearch');
+  }
+
+  /**
+   * Grants permission to create or modify wildcard policies that apply to gateway resources
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toManageAdminPolicy() {
+    return this.to('ManageAdminPolicy');
+  }
+
+  /**
+   * Grants permission to create or modify policies that apply to specific gateway resources
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toManageResourceScopedPolicy() {
+    return this.to('ManageResourceScopedPolicy');
+  }
+
+  /**
+   * Grants permission to perform partial evaluation of Cedar policies to authorize a caller to list tools they are allowed to call
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toPartiallyAuthorizeActions() {
+    return this.to('PartiallyAuthorizeActions');
+  }
+
+  /**
+   * Grants permission to enable search on gateways
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toSynchronizeGatewayTargets() {
+    return this.to('SynchronizeGatewayTargets');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddDatasetExamples',
@@ -2655,7 +2787,17 @@ export class BedrockAgentcore extends PolicyStatement {
       'UpdateRegistry',
       'UpdateRegistryRecord',
       'UpdateRegistryRecordStatus',
-      'UpdateWorkloadIdentity'
+      'UpdateWorkloadIdentity',
+      'AllowVendedLogDeliveryForResource',
+      'AuthorizeAction',
+      'GatewayAssociateWebACL',
+      'GatewayDisassociateWebACL',
+      'InvokeGateway',
+      'InvokeWebSearch',
+      'ManageAdminPolicy',
+      'ManageResourceScopedPolicy',
+      'PartiallyAuthorizeActions',
+      'SynchronizeGatewayTargets'
     ],
     Read: [
       'CompleteResourceTokenAuth',
@@ -2711,7 +2853,8 @@ export class BedrockAgentcore extends PolicyStatement {
       'ListApiKeyCredentialProviders',
       'ListOauth2CredentialProviders',
       'ListWorkloadIdentities',
-      'SearchRegistryRecords'
+      'SearchRegistryRecords',
+      'GatewayGetWebACLForResource'
     ],
     List: [
       'ListABTests',
@@ -2759,11 +2902,22 @@ export class BedrockAgentcore extends PolicyStatement {
       'ListRegistryRecords',
       'ListSessions',
       'ListTagsForResource',
-      'RetrieveMemoryRecords'
+      'RetrieveMemoryRecords',
+      'GatewayListResourcesForWebACL'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource',
+      'AuthorizeAction',
+      'InvokeGateway',
+      'InvokeWebSearch',
+      'ManageAdminPolicy',
+      'ManageResourceScopedPolicy',
+      'PartiallyAuthorizeActions',
+      'SynchronizeGatewayTargets'
     ]
   };
 
@@ -3491,6 +3645,15 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toUpdatePolicy()
    * - .toUpdatePolicyEngine()
    * - .toUpdateWorkloadIdentity()
+   * - .toAllowVendedLogDeliveryForResource()
+   * - .toAuthorizeAction()
+   * - .toGatewayAssociateWebACL()
+   * - .toGatewayDisassociateWebACL()
+   * - .toGatewayGetWebACLForResource()
+   * - .toInvokeGateway()
+   * - .toManageResourceScopedPolicy()
+   * - .toPartiallyAuthorizeActions()
+   * - .toSynchronizeGatewayTargets()
    *
    * Applies to resource types:
    * - ab-test

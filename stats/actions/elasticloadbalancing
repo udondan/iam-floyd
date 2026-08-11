@@ -1,6 +1,7 @@
 elasticloadbalancing:AddListenerCertificates;Write
 elasticloadbalancing:AddTags;Tagging, Write
 elasticloadbalancing:AddTrustStoreRevocations;Write
+elasticloadbalancing:AllowVendedLogDeliveryForResource;Permissions management, Write
 elasticloadbalancing:ApplySecurityGroupsToLoadBalancer;Write
 elasticloadbalancing:AttachLoadBalancerToSubnets;Write
 elasticloadbalancing:ConfigureHealthCheck;Write
@@ -13,6 +14,7 @@ elasticloadbalancing:CreateLoadBalancerPolicy;Write
 elasticloadbalancing:CreateRule;Write
 elasticloadbalancing:CreateTargetGroup;Write
 elasticloadbalancing:CreateTrustStore;Write
+elasticloadbalancing:CreateWebACLAssociation;Write
 elasticloadbalancing:DeleteListener;Write
 elasticloadbalancing:DeleteLoadBalancer;Write
 elasticloadbalancing:DeleteLoadBalancerListeners;Write
@@ -21,6 +23,7 @@ elasticloadbalancing:DeleteRule;Write
 elasticloadbalancing:DeleteSharedTrustStoreAssociation;Write
 elasticloadbalancing:DeleteTargetGroup;Write
 elasticloadbalancing:DeleteTrustStore;Write
+elasticloadbalancing:DeleteWebACLAssociation;Write
 elasticloadbalancing:DeregisterInstancesFromLoadBalancer;Write
 elasticloadbalancing:DeregisterTargets;Write
 elasticloadbalancing:DescribeAccountLimits;Read
@@ -42,9 +45,11 @@ elasticloadbalancing:DescribeTargetHealth;Read
 elasticloadbalancing:DescribeTrustStoreAssociations;Read
 elasticloadbalancing:DescribeTrustStoreRevocations;Read
 elasticloadbalancing:DescribeTrustStores;Read
+elasticloadbalancing:DescribeWebACLAssociation;List
 elasticloadbalancing:DetachLoadBalancerFromSubnets;Write
 elasticloadbalancing:DisableAvailabilityZonesForLoadBalancer;Write
 elasticloadbalancing:EnableAvailabilityZonesForLoadBalancer;Write
+elasticloadbalancing:GetLoadBalancerWebACL;Read
 elasticloadbalancing:GetResourcePolicy;Read
 elasticloadbalancing:GetTrustStoreCaCertificatesBundle;Read
 elasticloadbalancing:GetTrustStoreRevocationContent;Read
@@ -69,3 +74,4 @@ elasticloadbalancing:SetLoadBalancerPoliciesOfListener;Write
 elasticloadbalancing:SetRulePriorities;Write
 elasticloadbalancing:SetSecurityGroups;Write
 elasticloadbalancing:SetSubnets;Write
+elasticloadbalancing:SetWebAcl;Write

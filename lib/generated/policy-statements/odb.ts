@@ -763,6 +763,96 @@ export class Odb extends PolicyStatement {
     return this.to('UpdateOdbPeeringConnection');
   }
 
+  /**
+   * Grants permission to create a DB Node
+   *
+   * Access Level: Write
+   */
+  public toCreateDbNode() {
+    return this.to('CreateDbNode');
+  }
+
+  /**
+   * Grants permission to create an ODB Grant Share
+   *
+   * Access Level: Write
+   */
+  public toCreateGrantShare() {
+    return this.to('CreateGrantShare');
+  }
+
+  /**
+   * Grants permission to create an Outbound Integration
+   *
+   * Access Level: Write
+   */
+  public toCreateOutboundIntegration() {
+    return this.to('CreateOutboundIntegration');
+  }
+
+  /**
+   * Grants permission to delete a DB Node
+   *
+   * Access Level: Write
+   */
+  public toDeleteDbNode() {
+    return this.to('DeleteDbNode');
+  }
+
+  /**
+   * Grants permission to delete an ODB Grant Share
+   *
+   * Access Level: Write
+   */
+  public toDeleteGrantShare() {
+    return this.to('DeleteGrantShare');
+  }
+
+  /**
+   * Grants permission to delete a resource policy
+   *
+   * Access Level: Write
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to get a resource policy
+   *
+   * Access Level: Read
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to update a resource policy
+   *
+   * Access Level: Write
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
+   * Grants permission to update an ODB Grant Share
+   *
+   * Access Level: Write
+   */
+  public toUpdateGrantShare() {
+    return this.to('UpdateGrantShare');
+  }
+
+  /**
+   * Grants permission to update an Outbound Integration
+   *
+   * Access Level: Write
+   */
+  public toUpdateOutboundIntegration() {
+    return this.to('UpdateOutboundIntegration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptMarketplaceRegistration',
@@ -800,7 +890,16 @@ export class Odb extends PolicyStatement {
       'UpdateAutonomousDatabaseBackup',
       'UpdateCloudExadataInfrastructure',
       'UpdateOdbNetwork',
-      'UpdateOdbPeeringConnection'
+      'UpdateOdbPeeringConnection',
+      'CreateDbNode',
+      'CreateGrantShare',
+      'CreateOutboundIntegration',
+      'DeleteDbNode',
+      'DeleteGrantShare',
+      'DeleteResourcePolicy',
+      'PutResourcePolicy',
+      'UpdateGrantShare',
+      'UpdateOutboundIntegration'
     ],
     Read: [
       'GetAutonomousDatabase',
@@ -815,7 +914,8 @@ export class Odb extends PolicyStatement {
       'GetOciOnboardingStatus',
       'GetOdbNetwork',
       'GetOdbPeeringConnection',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'GetResourcePolicy'
     ],
     List: [
       'ListAutonomousDatabaseBackups',
@@ -1061,6 +1161,13 @@ export class Odb extends PolicyStatement {
    * - .toUpdateCloudExadataInfrastructure()
    * - .toUpdateOdbNetwork()
    * - .toUpdateOdbPeeringConnection()
+   * - .toCreateDbNode()
+   * - .toCreateOutboundIntegration()
+   * - .toDeleteDbNode()
+   * - .toDeleteResourcePolicy()
+   * - .toGetResourcePolicy()
+   * - .toPutResourcePolicy()
+   * - .toUpdateOutboundIntegration()
    *
    * Applies to resource types:
    * - autonomous-database

@@ -404,6 +404,28 @@ export class Panorama extends PolicyStatement {
     return this.to('UpdateDeviceMetadata');
   }
 
+  /**
+   * Grants permission to view details about a software version for the AWS Panorama Appliance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspanorama.html
+   */
+  public toDescribeSoftware() {
+    return this.to('DescribeSoftware');
+  }
+
+  /**
+   * Grants permission to generate a WebSocket endpoint for communication with AWS Panorama
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspanorama.html
+   */
+  public toGetWebSocketURL() {
+    return this.to('GetWebSocketURL');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateApplicationInstance',
@@ -432,7 +454,9 @@ export class Panorama extends PolicyStatement {
       'DescribePackage',
       'DescribePackageImportJob',
       'DescribePackageVersion',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'DescribeSoftware',
+      'GetWebSocketURL'
     ],
     List: [
       'ListApplicationInstanceDependencies',

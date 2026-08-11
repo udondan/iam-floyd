@@ -1,4 +1,5 @@
 wisdom:ActivateMessageTemplate;Write
+wisdom:AllowVendedLogDeliveryForResource;Permissions management, Write
 wisdom:CreateAIAgent;Write
 wisdom:CreateAIAgentVersion;Write
 wisdom:CreateAIGuardrail;Write

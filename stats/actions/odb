@@ -6,15 +6,21 @@ odb:CreateAutonomousDatabaseWallet;Write
 odb:CreateCloudAutonomousVmCluster;Write
 odb:CreateCloudExadataInfrastructure;Write
 odb:CreateCloudVmCluster;Write
+odb:CreateDbNode;Write
+odb:CreateGrantShare;Write
 odb:CreateOdbNetwork;Write
 odb:CreateOdbPeeringConnection;Write
+odb:CreateOutboundIntegration;Write
 odb:DeleteAutonomousDatabase;Write
 odb:DeleteAutonomousDatabaseBackup;Write
 odb:DeleteCloudAutonomousVmCluster;Write
 odb:DeleteCloudExadataInfrastructure;Write
 odb:DeleteCloudVmCluster;Write
+odb:DeleteDbNode;Write
+odb:DeleteGrantShare;Write
 odb:DeleteOdbNetwork;Write
 odb:DeleteOdbPeeringConnection;Write
+odb:DeleteResourcePolicy;Write
 odb:DisassociateIamRoleFromResource;Write
 odb:FailoverAutonomousDatabase;Write
 odb:GetAutonomousDatabase;Read
@@ -29,6 +35,7 @@ odb:GetDbServer;Read
 odb:GetOciOnboardingStatus;Read
 odb:GetOdbNetwork;Read
 odb:GetOdbPeeringConnection;Read
+odb:GetResourcePolicy;Read
 odb:InitializeService;Write
 odb:ListAutonomousDatabaseBackups;List
 odb:ListAutonomousDatabaseCharacterSets;List
@@ -49,6 +56,7 @@ odb:ListOdbNetworks;List
 odb:ListOdbPeeringConnections;List
 odb:ListSystemVersions;List
 odb:ListTagsForResource;Read
+odb:PutResourcePolicy;Write
 odb:RebootAutonomousDatabase;Write
 odb:RebootDbNode;Write
 odb:RestoreAutonomousDatabase;Write
@@ -63,5 +71,7 @@ odb:UntagResource;Tagging, Write
 odb:UpdateAutonomousDatabase;Write
 odb:UpdateAutonomousDatabaseBackup;Write
 odb:UpdateCloudExadataInfrastructure;Write
+odb:UpdateGrantShare;Write
 odb:UpdateOdbNetwork;Write
 odb:UpdateOdbPeeringConnection;Write
+odb:UpdateOutboundIntegration;Write

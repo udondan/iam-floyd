@@ -1,3 +1,4 @@
+pcs:AllowVendedLogDeliveryForResource;Write
 pcs:CreateCluster;Write
 pcs:CreateComputeNodeGroup;Write
 pcs:CreateQueue;Write
