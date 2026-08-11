@@ -92,7 +92,8 @@
       ],
       "Resource": [
         "arn:aws:iam::*:role/SDMP-*",
-        "arn:aws:iam::*:role/SDMPServiceRole*"
+        "arn:aws:iam::*:role/SDMPServiceRole*",
+        "arn:aws:iam::*:role/aws-service-role/sdmp.amazonaws.com/AWSServiceRoleForSDMP"
       ]
     },
     {
