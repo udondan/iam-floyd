@@ -9,10 +9,10 @@ ecr:CreateRepository;Write
 ecr:CreateRepositoryCreationTemplate;Write
 ecr:DeleteLifecyclePolicy;Write
 ecr:DeletePullThroughCacheRule;Write
-ecr:DeleteRegistryPolicy;Permissions management
+ecr:DeleteRegistryPolicy;Permissions management, Write
 ecr:DeleteRepository;Write
 ecr:DeleteRepositoryCreationTemplate;Write
-ecr:DeleteRepositoryPolicy;Permissions management
+ecr:DeleteRepositoryPolicy;Permissions management, Write
 ecr:DeleteSigningConfiguration;Write
 ecr:DeregisterPullTimeUpdateExclusion;Write
 ecr:DescribeImageReplicationStatus;Read
@@ -42,17 +42,17 @@ ecr:PutImage;Write
 ecr:PutImageScanningConfiguration;Write
 ecr:PutImageTagMutability;Write
 ecr:PutLifecyclePolicy;Write
-ecr:PutRegistryPolicy;Permissions management
+ecr:PutRegistryPolicy;Permissions management, Write
 ecr:PutRegistryScanningConfiguration;Write
 ecr:PutReplicationConfiguration;Write
 ecr:PutSigningConfiguration;Write
 ecr:RegisterPullTimeUpdateExclusion;Write
 ecr:ReplicateImage;Write
-ecr:SetRepositoryPolicy;Permissions management
+ecr:SetRepositoryPolicy;Permissions management, Write
 ecr:StartImageScan;Write
 ecr:StartLifecyclePolicyPreview;Write
-ecr:TagResource;Tagging
-ecr:UntagResource;Tagging
+ecr:TagResource;Tagging, Write
+ecr:UntagResource;Tagging, Write
 ecr:UpdateImageStorageClass;Write
 ecr:UpdatePullThroughCacheRule;Write
 ecr:UpdateRepositoryCreationTemplate;Write

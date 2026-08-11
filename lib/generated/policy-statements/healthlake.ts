@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [healthlake](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthlake.html).
+ * Statement provider for service [healthlake](https://docs.aws.amazon.com/service-authorization/latest/reference/list_healthlake.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Healthlake extends PolicyStatement {
   public servicePrefix = 'healthlake';
 
   /**
-   * Statement provider for service [healthlake](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthlake.html).
+   * Statement provider for service [healthlake](https://docs.aws.amazon.com/service-authorization/latest/reference/list_healthlake.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -41,13 +41,29 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a data transformation profile
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_CreateDataTransformationProfile.html
+   */
+  public toCreateDataTransformationProfile() {
+    return this.to('CreateDataTransformationProfile');
+  }
+
+  /**
    * Grants permission to create a datastore that can ingest and export FHIR data
    *
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_CreateFHIRDatastore.html
@@ -65,6 +81,17 @@ export class Healthlake extends PolicyStatement {
    */
   public toCreateResource() {
     return this.to('CreateResource');
+  }
+
+  /**
+   * Grants permission to delete a data transformation profile and all its versions
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_DeleteDataTransformationProfile.html
+   */
+  public toDeleteDataTransformationProfile() {
+    return this.to('DeleteDataTransformationProfile');
   }
 
   /**
@@ -87,6 +114,17 @@ export class Healthlake extends PolicyStatement {
    */
   public toDeleteResource() {
     return this.to('DeleteResource');
+  }
+
+  /**
+   * Grants permission to describe a data transformation job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_DescribeDataTransformationJob.html
+   */
+  public toDescribeDataTransformationJob() {
+    return this.to('DescribeDataTransformationJob');
   }
 
   /**
@@ -211,6 +249,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a data transformation profile and its content
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_GetDataTransformationProfile.html
+   */
+  public toGetDataTransformationProfile() {
+    return this.to('GetDataTransformationProfile');
+  }
+
+  /**
    * Grants permission to access exported files from a FHIR Export job initiated with Get
    *
    * Access Level: Read
@@ -241,6 +290,39 @@ export class Healthlake extends PolicyStatement {
    */
   public toInquirePreAuthClaim() {
     return this.to('InquirePreAuthClaim');
+  }
+
+  /**
+   * Grants permission to list data transformation jobs in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_ListDataTransformationJobs.html
+   */
+  public toListDataTransformationJobs() {
+    return this.to('ListDataTransformationJobs');
+  }
+
+  /**
+   * Grants permission to list all versions of a data transformation profile
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_ListDataTransformationProfileVersions.html
+   */
+  public toListDataTransformationProfileVersions() {
+    return this.to('ListDataTransformationProfileVersions');
+  }
+
+  /**
+   * Grants permission to list data transformation profiles in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_ListDataTransformationProfiles.html
+   */
+  public toListDataTransformationProfiles() {
+    return this.to('ListDataTransformationProfiles');
   }
 
   /**
@@ -365,6 +447,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to publish a new immutable version of a data transformation profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_PublishDataTransformationProfile.html
+   */
+  public toPublishDataTransformationProfile() {
+    return this.to('PublishDataTransformationProfile');
+  }
+
+  /**
    * Grants permission to retrieve Questionnaire packages with dependency Library and ValueSet resources
    *
    * Access Level: Read
@@ -428,6 +521,17 @@ export class Healthlake extends PolicyStatement {
    */
   public toSearchWithPost() {
     return this.to('SearchWithPost');
+  }
+
+  /**
+   * Grants permission to start an asynchronous data transformation job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_StartDataTransformationJob.html
+   */
+  public toStartDataTransformationJob() {
+    return this.to('StartDataTransformationJob');
   }
 
   /**
@@ -510,12 +614,7 @@ export class Healthlake extends PolicyStatement {
   /**
    * Grants permission to add tags to a datastore
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_TagResource.html
    */
@@ -524,17 +623,36 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to perform a synchronous data transformation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/data-transformation-getting-started-sdk.html
+   */
+  public toTransformData() {
+    return this.to('TransformData');
+  }
+
+  /**
    * Grants permission to remove tags associated with a datastore
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update the draft version of a data transformation profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_UpdateDataTransformationProfile.html
+   */
+  public toUpdateDataTransformationProfile() {
+    return this.to('UpdateDataTransformationProfile');
   }
 
   /**
@@ -546,6 +664,17 @@ export class Healthlake extends PolicyStatement {
    */
   public toUpdateFHIRDatastore() {
     return this.to('UpdateFHIRDatastore');
+  }
+
+  /**
+   * Grants permission to update a data transformation profile using the AI agent
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_UpdateProfileWithAgent.html
+   */
+  public toUpdateProfileWithAgent() {
+    return this.to('UpdateProfileWithAgent');
   }
 
   /**
@@ -571,6 +700,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to validate source data against format specifications
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/data-transformation-features.html
+   */
+  public toValidateSource() {
+    return this.to('ValidateSource');
+  }
+
+  /**
    * Grants permission to read version of a resource
    *
    * Access Level: Read
@@ -585,8 +725,10 @@ export class Healthlake extends PolicyStatement {
     Write: [
       'CancelFHIRExportJobWithDelete',
       'ConfirmAttributionList',
+      'CreateDataTransformationProfile',
       'CreateFHIRDatastore',
       'CreateResource',
+      'DeleteDataTransformationProfile',
       'DeleteFHIRDatastore',
       'DeleteResource',
       'GenerateDocumentWithGet',
@@ -596,7 +738,9 @@ export class Healthlake extends PolicyStatement {
       'MemberRemove',
       'PatchResource',
       'ProcessBundle',
+      'PublishDataTransformationProfile',
       'RetrieveAttributionStatus',
+      'StartDataTransformationJob',
       'StartFHIRBulkDeleteJob',
       'StartFHIRBulkMemberMatchJob',
       'StartFHIRExportJob',
@@ -604,10 +748,16 @@ export class Healthlake extends PolicyStatement {
       'StartFHIRExportJobWithPost',
       'StartFHIRImportJob',
       'SubmitPreAuthClaim',
+      'TagResource',
+      'TransformData',
+      'UntagResource',
+      'UpdateDataTransformationProfile',
       'UpdateFHIRDatastore',
+      'UpdateProfileWithAgent',
       'UpdateResource'
     ],
     Read: [
+      'DescribeDataTransformationJob',
       'DescribeFHIRBulkDeleteJob',
       'DescribeFHIRBulkMemberMatchJob',
       'DescribeFHIRDatastore',
@@ -617,6 +767,7 @@ export class Healthlake extends PolicyStatement {
       'ExpandValueSetWithGet',
       'ExpandValueSetWithPost',
       'GetCapabilities',
+      'GetDataTransformationProfile',
       'GetExportedFile',
       'GetHistoryByResourceId',
       'InquirePreAuthClaim',
@@ -628,9 +779,13 @@ export class Healthlake extends PolicyStatement {
       'SearchWithGet',
       'SearchWithPost',
       'ValidateResource',
+      'ValidateSource',
       'VersionReadResource'
     ],
     List: [
+      'ListDataTransformationJobs',
+      'ListDataTransformationProfileVersions',
+      'ListDataTransformationProfiles',
       'ListFHIRDatastores',
       'ListFHIRExportJobs',
       'ListFHIRImportJobs',
@@ -641,6 +796,23 @@ export class Healthlake extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type dataTransformationProfile to the statement
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_DataTransformationProfileSummary.html
+   *
+   * @param profileId - Identifier for the profileId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataTransformationProfile(profileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:healthlake:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataTransformationProfile/${ profileId }`);
+  }
 
   /**
    * Adds a resource of type datastore to the statement
@@ -665,6 +837,7 @@ export class Healthlake extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateDataTransformationProfile()
    * - .toCreateFHIRDatastore()
    * - .toTagResource()
    *
@@ -682,10 +855,67 @@ export class Healthlake extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toCancelFHIRExportJobWithDelete()
+   * - .toConfirmAttributionList()
+   * - .toCreateDataTransformationProfile()
    * - .toCreateFHIRDatastore()
+   * - .toCreateResource()
+   * - .toDeleteDataTransformationProfile()
+   * - .toDeleteFHIRDatastore()
+   * - .toDeleteResource()
+   * - .toDescribeFHIRBulkDeleteJob()
+   * - .toDescribeFHIRBulkMemberMatchJob()
+   * - .toDescribeFHIRDatastore()
+   * - .toDescribeFHIRExportJob()
+   * - .toDescribeFHIRExportJobWithGet()
+   * - .toDescribeFHIRImportJob()
+   * - .toExpandValueSetWithGet()
+   * - .toExpandValueSetWithPost()
+   * - .toGenerateDocumentWithGet()
+   * - .toGenerateDocumentWithPost()
+   * - .toGetCapabilities()
+   * - .toGetDataTransformationProfile()
+   * - .toGetExportedFile()
+   * - .toGetHistoryByResourceId()
+   * - .toInquirePreAuthClaim()
+   * - .toListDataTransformationProfileVersions()
+   * - .toListFHIRExportJobs()
+   * - .toListFHIRImportJobs()
+   * - .toListTagsForResource()
+   * - .toLookupCodeSystemWithGet()
+   * - .toLookupCodeSystemWithPost()
+   * - .toMemberAdd()
+   * - .toMemberMatch()
+   * - .toMemberRemove()
+   * - .toPatchResource()
+   * - .toProcessBundle()
+   * - .toPublishDataTransformationProfile()
+   * - .toQuestionnairePackage()
+   * - .toReadResource()
+   * - .toRetrieveAttributionStatus()
+   * - .toSearchEverything()
+   * - .toSearchWithGet()
+   * - .toSearchWithPost()
+   * - .toStartDataTransformationJob()
+   * - .toStartFHIRBulkDeleteJob()
+   * - .toStartFHIRBulkMemberMatchJob()
+   * - .toStartFHIRExportJob()
+   * - .toStartFHIRExportJobWithGet()
+   * - .toStartFHIRExportJobWithPost()
+   * - .toStartFHIRImportJob()
+   * - .toSubmitPreAuthClaim()
    * - .toTagResource()
+   * - .toTransformData()
+   * - .toUntagResource()
+   * - .toUpdateDataTransformationProfile()
+   * - .toUpdateFHIRDatastore()
+   * - .toUpdateProfileWithAgent()
+   * - .toUpdateResource()
+   * - .toValidateResource()
+   * - .toVersionReadResource()
    *
    * Applies to resource types:
+   * - dataTransformationProfile
    * - datastore
    *
    * @param tagKey The tag key to check
@@ -702,6 +932,7 @@ export class Healthlake extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateDataTransformationProfile()
    * - .toCreateFHIRDatastore()
    * - .toTagResource()
    * - .toUntagResource()

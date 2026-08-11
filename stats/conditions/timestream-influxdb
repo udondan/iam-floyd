@@ -1,3 +1,4 @@
 timestream-influxdb:RequestTag/${TagKey}
 timestream-influxdb:ResourceTag/${TagKey}
+timestream-influxdb:RestoreMode
 timestream-influxdb:TagKeys

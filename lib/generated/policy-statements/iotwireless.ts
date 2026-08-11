@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [iotwireless](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html).
+ * Statement provider for service [iotwireless](https://docs.aws.amazon.com/service-authorization/latest/reference/list_iotwireless.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Iotwireless extends PolicyStatement {
   public servicePrefix = 'iotwireless';
 
   /**
-   * Statement provider for service [iotwireless](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html).
+   * Statement provider for service [iotwireless](https://docs.aws.amazon.com/service-authorization/latest/reference/list_iotwireless.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -71,9 +71,6 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iot:DescribeThing
-   *
    * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateWirelessDeviceWithThing.html
    */
   public toAssociateWirelessDeviceWithThing() {
@@ -95,9 +92,6 @@ export class Iotwireless extends PolicyStatement {
    * Grants permission to associate the wireless gateway with AWS IoT thing for a given wirelessGatewayId
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - iot:DescribeThing
    *
    * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateWirelessGatewayWithThing.html
    */
@@ -181,10 +175,6 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateNetworkAnalyzerConfiguration.html
    */
   public toCreateNetworkAnalyzerConfiguration() {
@@ -210,10 +200,6 @@ export class Iotwireless extends PolicyStatement {
    * Grants permission to create a WirelessDevice resource with given Destination
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessDevice.html
    */
@@ -454,9 +440,6 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iot:DescribeThing
-   *
    * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateWirelessDeviceFromThing.html
    */
   public toDisassociateWirelessDeviceFromThing() {
@@ -478,9 +461,6 @@ export class Iotwireless extends PolicyStatement {
    * Grants permission to disassociate a WirelessGateway from a IoT Core thing
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - iot:DescribeThing
    *
    * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateWirelessGatewayFromThing.html
    */
@@ -1109,10 +1089,6 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartSingleWirelessDeviceImportTask.html
    */
   public toStartSingleWirelessDeviceImportTask() {
@@ -1124,10 +1100,6 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartWirelessDeviceImportTask.html
    */
   public toStartWirelessDeviceImportTask() {
@@ -1137,11 +1109,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Grants permission to tag a given resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_TagResource.html
    */
@@ -1163,10 +1131,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Grants permission to remove the given tags from the resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UntagResource.html
    */
@@ -1381,7 +1346,9 @@ export class Iotwireless extends PolicyStatement {
       'StartNetworkAnalyzerStream',
       'StartSingleWirelessDeviceImportTask',
       'StartWirelessDeviceImportTask',
+      'TagResource',
       'TestWirelessDevice',
+      'UntagResource',
       'UpdateDestination',
       'UpdateEventConfigurationByResourceTypes',
       'UpdateFuotaTask',
@@ -1451,11 +1418,11 @@ export class Iotwireless extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type WirelessDevice to the statement
+   * Adds a resource of type Destination to the statement
    *
-   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessDevice.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateDestination.html
    *
-   * @param wirelessDeviceId - Identifier for the wirelessDeviceId.
+   * @param destinationName - Identifier for the destinationName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1463,25 +1430,8 @@ export class Iotwireless extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onWirelessDevice(wirelessDeviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:WirelessDevice/${ wirelessDeviceId }`);
-  }
-
-  /**
-   * Adds a resource of type WirelessGateway to the statement
-   *
-   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessGateway.html
-   *
-   * @param wirelessGatewayId - Identifier for the wirelessGatewayId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onWirelessGateway(wirelessGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:WirelessGateway/${ wirelessGatewayId }`);
+  public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Destination/${ destinationName }`);
   }
 
   /**
@@ -1502,74 +1452,6 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type ServiceProfile to the statement
-   *
-   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateServiceProfile.html
-   *
-   * @param serviceProfileId - Identifier for the serviceProfileId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onServiceProfile(serviceProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ServiceProfile/${ serviceProfileId }`);
-  }
-
-  /**
-   * Adds a resource of type Destination to the statement
-   *
-   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateDestination.html
-   *
-   * @param destinationName - Identifier for the destinationName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Destination/${ destinationName }`);
-  }
-
-  /**
-   * Adds a resource of type SidewalkAccount to the statement
-   *
-   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateAwsAccountWithPartnerAccount.html
-   *
-   * @param sidewalkAccountId - Identifier for the sidewalkAccountId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onSidewalkAccount(sidewalkAccountId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:SidewalkAccount/${ sidewalkAccountId }`);
-  }
-
-  /**
-   * Adds a resource of type WirelessGatewayTaskDefinition to the statement
-   *
-   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessGatewayTaskDefinition.html
-   *
-   * @param wirelessGatewayTaskDefinitionId - Identifier for the wirelessGatewayTaskDefinitionId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onWirelessGatewayTaskDefinition(wirelessGatewayTaskDefinitionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:WirelessGatewayTaskDefinition/${ wirelessGatewayTaskDefinitionId }`);
-  }
-
-  /**
    * Adds a resource of type FuotaTask to the statement
    *
    * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateFuotaTask.html
@@ -1584,6 +1466,23 @@ export class Iotwireless extends PolicyStatement {
    */
   public onFuotaTask(fuotaTaskId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:FuotaTask/${ fuotaTaskId }`);
+  }
+
+  /**
+   * Adds a resource of type ImportTask to the statement
+   *
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartWirelessDeviceImportTask.html
+   *
+   * @param importTaskId - Identifier for the importTaskId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onImportTask(importTaskId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ImportTask/${ importTaskId }`);
   }
 
   /**
@@ -1621,17 +1520,88 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type thing to the statement
+   * Adds a resource of type ServiceProfile to the statement
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateServiceProfile.html
    *
-   * @param thingName - Identifier for the thingName.
+   * @param serviceProfileId - Identifier for the serviceProfileId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onThing(thingName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:thing/${ thingName }`);
+  public onServiceProfile(serviceProfileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ServiceProfile/${ serviceProfileId }`);
+  }
+
+  /**
+   * Adds a resource of type SidewalkAccount to the statement
+   *
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateAwsAccountWithPartnerAccount.html
+   *
+   * @param sidewalkAccountId - Identifier for the sidewalkAccountId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSidewalkAccount(sidewalkAccountId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:SidewalkAccount/${ sidewalkAccountId }`);
+  }
+
+  /**
+   * Adds a resource of type WirelessDevice to the statement
+   *
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessDevice.html
+   *
+   * @param wirelessDeviceId - Identifier for the wirelessDeviceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWirelessDevice(wirelessDeviceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:WirelessDevice/${ wirelessDeviceId }`);
+  }
+
+  /**
+   * Adds a resource of type WirelessGateway to the statement
+   *
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessGateway.html
+   *
+   * @param wirelessGatewayId - Identifier for the wirelessGatewayId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWirelessGateway(wirelessGatewayId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:WirelessGateway/${ wirelessGatewayId }`);
+  }
+
+  /**
+   * Adds a resource of type WirelessGatewayTaskDefinition to the statement
+   *
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessGatewayTaskDefinition.html
+   *
+   * @param wirelessGatewayTaskDefinitionId - Identifier for the wirelessGatewayTaskDefinitionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWirelessGatewayTaskDefinition(wirelessGatewayTaskDefinitionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:WirelessGatewayTaskDefinition/${ wirelessGatewayTaskDefinitionId }`);
   }
 
   /**
@@ -1649,20 +1619,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type ImportTask to the statement
+   * Adds a resource of type thing to the statement
    *
-   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartWirelessDeviceImportTask.html
+   * https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html
    *
-   * @param importTaskId - Identifier for the importTaskId.
+   * @param thingName - Identifier for the thingName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
-  public onImportTask(importTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ImportTask/${ importTaskId }`);
+  public onThing(thingName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:thing/${ thingName }`);
   }
 
   /**
@@ -1698,18 +1665,100 @@ export class Iotwireless extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toAssociateMulticastGroupWithFuotaTask()
+   * - .toAssociateWirelessDeviceWithFuotaTask()
+   * - .toAssociateWirelessDeviceWithMulticastGroup()
+   * - .toAssociateWirelessDeviceWithThing()
+   * - .toAssociateWirelessGatewayWithCertificate()
+   * - .toAssociateWirelessGatewayWithThing()
+   * - .toCancelMulticastGroupSession()
+   * - .toCreateNetworkAnalyzerConfiguration()
+   * - .toCreateWirelessDevice()
+   * - .toCreateWirelessGatewayTask()
+   * - .toDeleteDestination()
+   * - .toDeleteDeviceProfile()
+   * - .toDeleteFuotaTask()
+   * - .toDeleteMulticastGroup()
+   * - .toDeleteNetworkAnalyzerConfiguration()
+   * - .toDeleteServiceProfile()
+   * - .toDeleteWirelessDevice()
+   * - .toDeleteWirelessDeviceImportTask()
+   * - .toDeleteWirelessGateway()
+   * - .toDeleteWirelessGatewayTask()
+   * - .toDeleteWirelessGatewayTaskDefinition()
+   * - .toDeregisterWirelessDevice()
+   * - .toDisassociateAwsAccountFromPartnerAccount()
+   * - .toDisassociateMulticastGroupFromFuotaTask()
+   * - .toDisassociateWirelessDeviceFromFuotaTask()
+   * - .toDisassociateWirelessDeviceFromMulticastGroup()
+   * - .toDisassociateWirelessDeviceFromThing()
+   * - .toDisassociateWirelessGatewayFromCertificate()
+   * - .toDisassociateWirelessGatewayFromThing()
+   * - .toGetDestination()
+   * - .toGetDeviceProfile()
+   * - .toGetFuotaTask()
+   * - .toGetMulticastGroup()
+   * - .toGetMulticastGroupSession()
+   * - .toGetNetworkAnalyzerConfiguration()
+   * - .toGetPartnerAccount()
+   * - .toGetPosition()
+   * - .toGetPositionConfiguration()
+   * - .toGetResourceEventConfiguration()
+   * - .toGetResourceLogLevel()
+   * - .toGetResourcePosition()
+   * - .toGetServiceProfile()
+   * - .toGetWirelessDevice()
+   * - .toGetWirelessDeviceImportTask()
+   * - .toGetWirelessDeviceStatistics()
+   * - .toGetWirelessGateway()
+   * - .toGetWirelessGatewayCertificate()
+   * - .toGetWirelessGatewayFirmwareInformation()
+   * - .toGetWirelessGatewayStatistics()
+   * - .toGetWirelessGatewayTask()
+   * - .toGetWirelessGatewayTaskDefinition()
+   * - .toListDevicesForWirelessDeviceImportTask()
+   * - .toListMulticastGroupsByFuotaTask()
+   * - .toListTagsForResource()
+   * - .toPutPositionConfiguration()
+   * - .toPutResourceLogLevel()
+   * - .toResetResourceLogLevel()
+   * - .toSendDataToMulticastGroup()
+   * - .toSendDataToWirelessDevice()
+   * - .toStartBulkAssociateWirelessDeviceWithMulticastGroup()
+   * - .toStartBulkDisassociateWirelessDeviceFromMulticastGroup()
+   * - .toStartFuotaTask()
+   * - .toStartMulticastGroupSession()
+   * - .toStartNetworkAnalyzerStream()
+   * - .toStartSingleWirelessDeviceImportTask()
+   * - .toStartWirelessDeviceImportTask()
+   * - .toTagResource()
+   * - .toTestWirelessDevice()
+   * - .toUntagResource()
+   * - .toUpdateDestination()
+   * - .toUpdateFuotaTask()
+   * - .toUpdateMulticastGroup()
+   * - .toUpdateNetworkAnalyzerConfiguration()
+   * - .toUpdatePartnerAccount()
+   * - .toUpdatePosition()
+   * - .toUpdateResourceEventConfiguration()
+   * - .toUpdateResourcePosition()
+   * - .toUpdateWirelessDevice()
+   * - .toUpdateWirelessDeviceImportTask()
+   * - .toUpdateWirelessGateway()
+   *
    * Applies to resource types:
-   * - WirelessDevice
-   * - WirelessGateway
-   * - DeviceProfile
-   * - ServiceProfile
    * - Destination
-   * - SidewalkAccount
-   * - WirelessGatewayTaskDefinition
+   * - DeviceProfile
    * - FuotaTask
+   * - ImportTask
    * - MulticastGroup
    * - NetworkAnalyzerConfiguration
-   * - ImportTask
+   * - ServiceProfile
+   * - SidewalkAccount
+   * - WirelessDevice
+   * - WirelessGateway
+   * - WirelessGatewayTaskDefinition
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

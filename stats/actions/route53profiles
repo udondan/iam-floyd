@@ -13,6 +13,6 @@ route53profiles:ListProfileResourceAssociations;List
 route53profiles:ListProfiles;List
 route53profiles:ListTagsForResource;List
 route53profiles:PutProfilePolicy;Write
-route53profiles:TagResource;Tagging
-route53profiles:UntagResource;Tagging
+route53profiles:TagResource;Tagging, Write
+route53profiles:UntagResource;Tagging, Write
 route53profiles:UpdateProfileResourceAssociation;Write

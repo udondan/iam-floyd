@@ -7,7 +7,7 @@ codestar-notifications:ListNotificationRules;List
 codestar-notifications:ListTagsForResource;List
 codestar-notifications:ListTargets;List
 codestar-notifications:Subscribe;Write
-codestar-notifications:TagResource;Tagging
+codestar-notifications:TagResource;Tagging, Write
 codestar-notifications:Unsubscribe;Write
-codestar-notifications:UntagResource;Tagging
+codestar-notifications:UntagResource;Tagging, Write
 codestar-notifications:UpdateNotificationRule;Write

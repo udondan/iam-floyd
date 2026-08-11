@@ -12,8 +12,8 @@ translate:ListTerminologies;List
 translate:ListTextTranslationJobs;List
 translate:StartTextTranslationJob;Write
 translate:StopTextTranslationJob;Write
-translate:TagResource;Tagging
+translate:TagResource;Tagging, Write
 translate:TranslateDocument;Read
 translate:TranslateText;Read
-translate:UntagResource;Tagging
+translate:UntagResource;Tagging, Write
 translate:UpdateParallelData;Write

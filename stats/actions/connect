@@ -106,6 +106,7 @@ connect:DeleteWorkspace;Write
 connect:DeleteWorkspaceMedia;Write
 connect:DeleteWorkspacePage;Write
 connect:DescribeAgentStatus;Read
+connect:DescribeAttachedFilesConfiguration;Read
 connect:DescribeAuthenticationProfile;Read
 connect:DescribeContact;Read
 connect:DescribeContactEvaluation;Read
@@ -179,6 +180,7 @@ connect:ListAnalyticsDataAssociations;List
 connect:ListAnalyticsDataLakeDataSets;List
 connect:ListApprovedOrigins;List
 connect:ListAssociatedContacts;List
+connect:ListAttachedFilesConfigurations;List
 connect:ListAuthenticationProfiles;List
 connect:ListBots;List
 connect:ListContactEvaluations;List
@@ -264,6 +266,7 @@ connect:SearchQueues;Read
 connect:SearchQuickConnects;Read
 connect:SearchResourceTags;List
 connect:SearchRoutingProfiles;Read
+connect:SearchRules;Read
 connect:SearchSecurityProfiles;Read
 connect:SearchUserHierarchyGroups;Read
 connect:SearchUsers;Read
@@ -300,11 +303,12 @@ connect:StopForecastingPlanningSchedulingIntegration;Write
 connect:SubmitContactEvaluation;Write
 connect:SuspendContactRecording;Write
 connect:TagContact;Write
-connect:TagResource;Tagging
+connect:TagResource;Tagging, Write
 connect:TransferContact;Write
 connect:UntagContact;Write
-connect:UntagResource;Tagging
+connect:UntagResource;Tagging, Write
 connect:UpdateAgentStatus;Write
+connect:UpdateAttachedFilesConfiguration;Write
 connect:UpdateAuthenticationProfile;Write
 connect:UpdateContact;Write
 connect:UpdateContactAttributes;Write

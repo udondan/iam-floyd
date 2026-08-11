@@ -5,5 +5,5 @@ tag:GetTagKeys;Read
 tag:GetTagValues;Read
 tag:ListRequiredTags;List
 tag:StartReportCreation;Write
-tag:TagResources;Tagging
-tag:UntagResources;Tagging
+tag:TagResources;Tagging, Write
+tag:UntagResources;Tagging, Write

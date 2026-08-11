@@ -1,12 +1,13 @@
 securityhub:AcceptAdministratorInvitation;Write
 securityhub:AcceptInvitation;Write
-securityhub:AllowVendedLogDeliveryForResource;Permissions management
+securityhub:AllowVendedLogDeliveryForResource;Permissions management, Write
 securityhub:BatchDeleteAutomationRules;Write
 securityhub:BatchDisableStandards;Write
 securityhub:BatchEnableStandards;Write
 securityhub:BatchGetAutomationRules;Read
 securityhub:BatchGetConfigurationPolicyAssociations;Read
 securityhub:BatchGetControlEvaluations;Read
+securityhub:BatchGetEnabledRegionsV2;Read
 securityhub:BatchGetSecurityControls;Read
 securityhub:BatchGetStandardsControlAssociations;Read
 securityhub:BatchImportFindings;Write
@@ -67,6 +68,7 @@ securityhub:GetConfigurationPolicyAssociation;Read
 securityhub:GetConnector;Read
 securityhub:GetConnectorV2;Read
 securityhub:GetControlFindingSummary;Read
+securityhub:GetCoverageStatisticsV2;Read
 securityhub:GetEnabledStandards;List
 securityhub:GetFindingAggregator;Read
 securityhub:GetFindingHistory;Read
@@ -109,8 +111,8 @@ securityhub:SendFindingEvents;Read
 securityhub:SendInsightEvents;Read
 securityhub:StartConfigurationPolicyAssociation;Write
 securityhub:StartConfigurationPolicyDisassociation;Write
-securityhub:TagResource;Tagging
-securityhub:UntagResource;Tagging
+securityhub:TagResource;Tagging, Write
+securityhub:UntagResource;Tagging, Write
 securityhub:UpdateActionTarget;Write
 securityhub:UpdateAggregatorV2;Write
 securityhub:UpdateAutomationRuleV2;Write

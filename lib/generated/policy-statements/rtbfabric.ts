@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [rtbfabric](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html).
+ * Statement provider for service [rtbfabric](https://docs.aws.amazon.com/service-authorization/latest/reference/list_rtbfabric.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Rtbfabric extends PolicyStatement {
   public servicePrefix = 'rtbfabric';
 
   /**
-   * Statement provider for service [rtbfabric](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html).
+   * Statement provider for service [rtbfabric](https://docs.aws.amazon.com/service-authorization/latest/reference/list_rtbfabric.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -45,10 +45,6 @@ export class Rtbfabric extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateInboundExternalLink.html
    */
   public toCreateInboundExternalLink() {
@@ -75,10 +71,6 @@ export class Rtbfabric extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateLinkRoutingRule.html
    */
   public toCreateLinkRoutingRule() {
@@ -89,10 +81,6 @@ export class Rtbfabric extends PolicyStatement {
    * Grants permission to create an outbound external link for a requester gateway to connect to external public responder endpoints
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateOutboundExternalLink.html
    */
@@ -364,11 +352,7 @@ export class Rtbfabric extends PolicyStatement {
   /**
    * Grants permission to assign one or more tags (key-value pairs) to the specified resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_TagResource.html
    */
@@ -379,10 +363,7 @@ export class Rtbfabric extends PolicyStatement {
   /**
    * Grants permission to remove a tag or tags from a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UntagResource.html
    */
@@ -463,6 +444,8 @@ export class Rtbfabric extends PolicyStatement {
       'DeleteResponderGateway',
       'DisassociateCertificate',
       'RejectLink',
+      'TagResource',
+      'UntagResource',
       'UpdateLink',
       'UpdateLinkModuleFlow',
       'UpdateLinkRoutingRule',
@@ -637,6 +620,38 @@ export class Rtbfabric extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toAcceptLink()
+   * - .toAssociateCertificate()
+   * - .toCreateInboundExternalLink()
+   * - .toCreateLinkRoutingRule()
+   * - .toCreateOutboundExternalLink()
+   * - .toDeleteInboundExternalLink()
+   * - .toDeleteLink()
+   * - .toDeleteLinkRoutingRule()
+   * - .toDeleteOutboundExternalLink()
+   * - .toDeleteRequesterGateway()
+   * - .toDeleteResponderGateway()
+   * - .toDisassociateCertificate()
+   * - .toGetCertificateAssociation()
+   * - .toGetInboundExternalLink()
+   * - .toGetLink()
+   * - .toGetLinkRoutingRule()
+   * - .toGetOutboundExternalLink()
+   * - .toGetRequesterGateway()
+   * - .toGetResponderGateway()
+   * - .toListCertificateAssociations()
+   * - .toListLinkRoutingRules()
+   * - .toListTagsForResource()
+   * - .toRejectLink()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateLink()
+   * - .toUpdateLinkModuleFlow()
+   * - .toUpdateLinkRoutingRule()
+   * - .toUpdateRequesterGateway()
+   * - .toUpdateResponderGateway()
+   *
    * Applies to resource types:
    * - InboundExternalLink
    * - Link
@@ -692,6 +707,13 @@ export class Rtbfabric extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rtb-fabric/latest/userguide/security_iam_service-with-iam.html
    *
+   * Applies to actions:
+   * - .toDeleteInboundExternalLink()
+   * - .toGetInboundExternalLink()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
    * Applies to resource types:
    * - InboundExternalLink
    *
@@ -706,6 +728,22 @@ export class Rtbfabric extends PolicyStatement {
    * Filters access by Link resource linkId identifier
    *
    * https://docs.aws.amazon.com/rtb-fabric/latest/userguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toAcceptLink()
+   * - .toCreateLinkRoutingRule()
+   * - .toDeleteLink()
+   * - .toDeleteLinkRoutingRule()
+   * - .toGetLink()
+   * - .toGetLinkRoutingRule()
+   * - .toListLinkRoutingRules()
+   * - .toListTagsForResource()
+   * - .toRejectLink()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateLink()
+   * - .toUpdateLinkModuleFlow()
+   * - .toUpdateLinkRoutingRule()
    *
    * Applies to resource types:
    * - Link
@@ -723,6 +761,14 @@ export class Rtbfabric extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rtb-fabric/latest/userguide/security_iam_service-with-iam.html
    *
+   * Applies to actions:
+   * - .toDeleteLinkRoutingRule()
+   * - .toGetLinkRoutingRule()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateLinkRoutingRule()
+   *
    * Applies to resource types:
    * - LinkRoutingRule
    *
@@ -738,6 +784,13 @@ export class Rtbfabric extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rtb-fabric/latest/userguide/security_iam_service-with-iam.html
    *
+   * Applies to actions:
+   * - .toDeleteOutboundExternalLink()
+   * - .toGetOutboundExternalLink()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
    * Applies to resource types:
    * - OutboundExternalLink
    *
@@ -752,6 +805,28 @@ export class Rtbfabric extends PolicyStatement {
    * Filters access by gateway identifier supporting rtb-gw-* formats
    *
    * https://docs.aws.amazon.com/rtb-fabric/latest/userguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toAcceptLink()
+   * - .toCreateLinkRoutingRule()
+   * - .toCreateOutboundExternalLink()
+   * - .toDeleteLink()
+   * - .toDeleteLinkRoutingRule()
+   * - .toDeleteOutboundExternalLink()
+   * - .toDeleteRequesterGateway()
+   * - .toGetLink()
+   * - .toGetLinkRoutingRule()
+   * - .toGetOutboundExternalLink()
+   * - .toGetRequesterGateway()
+   * - .toListLinkRoutingRules()
+   * - .toListTagsForResource()
+   * - .toRejectLink()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateLink()
+   * - .toUpdateLinkModuleFlow()
+   * - .toUpdateLinkRoutingRule()
+   * - .toUpdateRequesterGateway()
    *
    * Applies to resource types:
    * - Link
@@ -769,6 +844,32 @@ export class Rtbfabric extends PolicyStatement {
    * Filters access by gateway identifier supporting rtb-gw-* formats
    *
    * https://docs.aws.amazon.com/rtb-fabric/latest/userguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toAcceptLink()
+   * - .toAssociateCertificate()
+   * - .toCreateInboundExternalLink()
+   * - .toCreateLinkRoutingRule()
+   * - .toDeleteInboundExternalLink()
+   * - .toDeleteLink()
+   * - .toDeleteLinkRoutingRule()
+   * - .toDeleteResponderGateway()
+   * - .toDisassociateCertificate()
+   * - .toGetCertificateAssociation()
+   * - .toGetInboundExternalLink()
+   * - .toGetLink()
+   * - .toGetLinkRoutingRule()
+   * - .toGetResponderGateway()
+   * - .toListCertificateAssociations()
+   * - .toListLinkRoutingRules()
+   * - .toListTagsForResource()
+   * - .toRejectLink()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateLink()
+   * - .toUpdateLinkModuleFlow()
+   * - .toUpdateLinkRoutingRule()
+   * - .toUpdateResponderGateway()
    *
    * Applies to resource types:
    * - InboundExternalLink

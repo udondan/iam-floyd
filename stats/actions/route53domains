@@ -4,7 +4,7 @@ route53domains:CancelDomainTransferToAnotherAwsAccount;Write
 route53domains:CheckDomainAvailability;Read
 route53domains:CheckDomainTransferability;Read
 route53domains:DeleteDomain;Write
-route53domains:DeleteTagsForDomain;Tagging
+route53domains:DeleteTagsForDomain;Tagging, Write
 route53domains:DisableDomainAutoRenew;Write
 route53domains:DisableDomainTransferLock;Write
 route53domains:DisassociateDelegationSignerFromDomain;Write
@@ -30,5 +30,5 @@ route53domains:TransferDomainToAnotherAwsAccount;Write
 route53domains:UpdateDomainContact;Write
 route53domains:UpdateDomainContactPrivacy;Write
 route53domains:UpdateDomainNameservers;Write
-route53domains:UpdateTagsForDomain;Tagging
+route53domains:UpdateTagsForDomain;Tagging, Write
 route53domains:ViewBilling;Read

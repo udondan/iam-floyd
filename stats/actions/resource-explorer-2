@@ -7,7 +7,7 @@ resource-explorer-2:CreateStreamingAccessForService;Write
 resource-explorer-2:CreateView;Write
 resource-explorer-2:DeleteIndex;Write
 resource-explorer-2:DeleteResourceExplorerSetup;Write
-resource-explorer-2:DeleteResourcePolicy;Permissions management
+resource-explorer-2:DeleteResourcePolicy;Permissions management, Write
 resource-explorer-2:DeleteStreamingAccessForService;Write
 resource-explorer-2:DeleteView;Write
 resource-explorer-2:DisassociateDefaultView;Write
@@ -29,9 +29,9 @@ resource-explorer-2:ListStreamingAccessForServices;List
 resource-explorer-2:ListSupportedResourceTypes;List
 resource-explorer-2:ListTagsForResource;Read
 resource-explorer-2:ListViews;List
-resource-explorer-2:PutResourcePolicy;Permissions management
+resource-explorer-2:PutResourcePolicy;Permissions management, Write
 resource-explorer-2:Search;Read
-resource-explorer-2:TagResource;Tagging
-resource-explorer-2:UntagResource;Tagging
+resource-explorer-2:TagResource;Tagging, Write
+resource-explorer-2:UntagResource;Tagging, Write
 resource-explorer-2:UpdateIndexType;Write
 resource-explorer-2:UpdateView;Write

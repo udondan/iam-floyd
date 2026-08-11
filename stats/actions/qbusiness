@@ -1,4 +1,4 @@
-qbusiness:AllowVendedLogDeliveryForResource;Permissions management
+qbusiness:AllowVendedLogDeliveryForResource;Permissions management, Write
 qbusiness:AssociatePermission;Write
 qbusiness:BatchDeleteDocument;Write
 qbusiness:BatchPutDocument;Write
@@ -77,8 +77,8 @@ qbusiness:SearchRelevantContent;Read
 qbusiness:StartDataSourceSyncJob;Write
 qbusiness:StartDeployment;Write
 qbusiness:StopDataSourceSyncJob;Write
-qbusiness:TagResource;Tagging
-qbusiness:UntagResource;Tagging
+qbusiness:TagResource;Tagging, Write
+qbusiness:UntagResource;Tagging, Write
 qbusiness:UpdateApplication;Write
 qbusiness:UpdateChatControlsConfiguration;Write
 qbusiness:UpdateChatResponseConfiguration;Write

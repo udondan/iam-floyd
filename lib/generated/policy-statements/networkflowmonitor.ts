@@ -23,10 +23,6 @@ export class Networkflowmonitor extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_CreateMonitor.html
    */
   public toCreateMonitor() {
@@ -271,11 +267,7 @@ export class Networkflowmonitor extends PolicyStatement {
   /**
    * Grants permission to add tags to a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_TagResource.html
    */
@@ -286,10 +278,7 @@ export class Networkflowmonitor extends PolicyStatement {
   /**
    * Grants permission to remove tags from a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_UntagResource.html
    */
@@ -332,6 +321,8 @@ export class Networkflowmonitor extends PolicyStatement {
       'StopQueryMonitorTopContributors',
       'StopQueryWorkloadInsightsTopContributors',
       'StopQueryWorkloadInsightsTopContributorsData',
+      'TagResource',
+      'UntagResource',
       'UpdateMonitor',
       'UpdateScope'
     ],
@@ -412,6 +403,30 @@ export class Networkflowmonitor extends PolicyStatement {
    * Filters access by the tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateMonitor()
+   * - .toDeleteMonitor()
+   * - .toDeleteScope()
+   * - .toGetMonitor()
+   * - .toGetQueryResultsMonitorTopContributors()
+   * - .toGetQueryResultsWorkloadInsightsTopContributors()
+   * - .toGetQueryResultsWorkloadInsightsTopContributorsData()
+   * - .toGetQueryStatusMonitorTopContributors()
+   * - .toGetQueryStatusWorkloadInsightsTopContributors()
+   * - .toGetQueryStatusWorkloadInsightsTopContributorsData()
+   * - .toGetScope()
+   * - .toListTagsForResource()
+   * - .toStartQueryMonitorTopContributors()
+   * - .toStartQueryWorkloadInsightsTopContributors()
+   * - .toStartQueryWorkloadInsightsTopContributorsData()
+   * - .toStopQueryMonitorTopContributors()
+   * - .toStopQueryWorkloadInsightsTopContributors()
+   * - .toStopQueryWorkloadInsightsTopContributorsData()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateMonitor()
+   * - .toUpdateScope()
    *
    * Applies to resource types:
    * - monitor

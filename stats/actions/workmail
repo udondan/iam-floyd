@@ -106,11 +106,11 @@ workmail:SetDefaultMailDomain;Write
 workmail:SetJournalingRules;Write
 workmail:SetMobilePolicyDetails;Write
 workmail:StartMailboxExportJob;Write
-workmail:TagResource;Tagging
+workmail:TagResource;Tagging, Write
 workmail:TestAvailabilityConfiguration;Read
 workmail:TestInboundMailFlowRules;Write
 workmail:TestOutboundMailFlowRules;Write
-workmail:UntagResource;Tagging
+workmail:UntagResource;Tagging, Write
 workmail:UpdateAvailabilityConfiguration;Write
 workmail:UpdateDefaultMailDomain;Write
 workmail:UpdateGroup;Write

@@ -5,5 +5,5 @@ notifications-contacts:GetEmailContact;Read
 notifications-contacts:ListEmailContacts;List
 notifications-contacts:ListTagsForResource;Read
 notifications-contacts:SendActivationCode;Write
-notifications-contacts:TagResource;Tagging
-notifications-contacts:UntagResource;Tagging
+notifications-contacts:TagResource;Tagging, Write
+notifications-contacts:UntagResource;Tagging, Write

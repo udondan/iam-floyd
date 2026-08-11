@@ -1,4 +1,4 @@
-cloudfront:AllowVendedLogDeliveryForResource;Permissions management
+cloudfront:AllowVendedLogDeliveryForResource;Permissions management, Write
 cloudfront:AssociateAlias;Write
 cloudfront:AssociateDistributionTenantWebACL;Write
 cloudfront:AssociateDistributionWebACL;Write
@@ -142,10 +142,10 @@ cloudfront:ListVpcOrigins;List
 cloudfront:PublishConnectionFunction;Write
 cloudfront:PublishFunction;Write
 cloudfront:PutResourcePolicy;Write
-cloudfront:TagResource;Tagging
+cloudfront:TagResource;Tagging, Write
 cloudfront:TestConnectionFunction;Write
 cloudfront:TestFunction;Write
-cloudfront:UntagResource;Tagging
+cloudfront:UntagResource;Tagging, Write
 cloudfront:UpdateAnycastIpList;Write
 cloudfront:UpdateCachePolicy;Write
 cloudfront:UpdateCloudFrontOriginAccessIdentity;Write

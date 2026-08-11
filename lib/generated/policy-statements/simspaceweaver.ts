@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [simspaceweaver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssimspaceweaver.html).
+ * Statement provider for service [simspaceweaver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_simspaceweaver.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Simspaceweaver extends PolicyStatement {
   public servicePrefix = 'simspaceweaver';
 
   /**
-   * Statement provider for service [simspaceweaver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssimspaceweaver.html).
+   * Statement provider for service [simspaceweaver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_simspaceweaver.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -179,11 +179,7 @@ export class Simspaceweaver extends PolicyStatement {
   /**
    * Grants permission to tag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_TagResource.html
    */
@@ -194,10 +190,7 @@ export class Simspaceweaver extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_UntagResource.html
    */
@@ -215,7 +208,9 @@ export class Simspaceweaver extends PolicyStatement {
       'StartSimulation',
       'StopApp',
       'StopClock',
-      'StopSimulation'
+      'StopSimulation',
+      'TagResource',
+      'UntagResource'
     ],
     Read: [
       'DescribeApp',
@@ -270,6 +265,21 @@ export class Simspaceweaver extends PolicyStatement {
    * Filters access by tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateSnapshot()
+   * - .toDeleteApp()
+   * - .toDeleteSimulation()
+   * - .toDescribeApp()
+   * - .toDescribeSimulation()
+   * - .toListApps()
+   * - .toStartApp()
+   * - .toStartClock()
+   * - .toStopApp()
+   * - .toStopClock()
+   * - .toStopSimulation()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * Applies to resource types:
    * - Simulation

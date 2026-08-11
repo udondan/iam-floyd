@@ -1,3 +1,5 @@
 sustainability:GetCarbonFootprintSummary;Read
 sustainability:GetEstimatedCarbonEmissions;Read
 sustainability:GetEstimatedCarbonEmissionsDimensionValues;Read
+sustainability:GetEstimatedWaterAllocation;Read
+sustainability:GetEstimatedWaterAllocationDimensionValues;Read

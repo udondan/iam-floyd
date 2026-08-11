@@ -1,3 +1,4 @@
 gameliftstreams:RequestTag/${TagKey}
 gameliftstreams:ResourceTag/${TagKey}
+gameliftstreams:RoleArn
 gameliftstreams:TagKeys

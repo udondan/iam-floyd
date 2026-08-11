@@ -13,6 +13,6 @@ kafkaconnect:ListConnectors;Read
 kafkaconnect:ListCustomPlugins;Read
 kafkaconnect:ListTagsForResource;Read
 kafkaconnect:ListWorkerConfigurations;Read
-kafkaconnect:TagResource;Tagging
-kafkaconnect:UntagResource;Tagging
+kafkaconnect:TagResource;Tagging, Write
+kafkaconnect:UntagResource;Tagging, Write
 kafkaconnect:UpdateConnector;Write

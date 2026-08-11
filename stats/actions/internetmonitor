@@ -12,6 +12,6 @@ internetmonitor:ListMonitors;List
 internetmonitor:ListTagsForResource;Read
 internetmonitor:StartQuery;Read
 internetmonitor:StopQuery;Read
-internetmonitor:TagResource;Tagging
-internetmonitor:UntagResource;Tagging
+internetmonitor:TagResource;Tagging, Write
+internetmonitor:UntagResource;Tagging, Write
 internetmonitor:UpdateMonitor;Write

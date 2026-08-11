@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [chime](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonchime.html).
+ * Statement provider for service [chime](https://docs.aws.amazon.com/service-authorization/latest/reference/list_chime.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Chime extends PolicyStatement {
   public servicePrefix = 'chime';
 
   /**
-   * Statement provider for service [chime](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonchime.html).
+   * Statement provider for service [chime](https://docs.aws.amazon.com/service-authorization/latest/reference/list_chime.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -115,17 +115,6 @@ export class Chime extends PolicyStatement {
    */
   public toAssociateSigninDelegateGroupsWithAccount() {
     return this.to('AssociateSigninDelegateGroupsWithAccount');
-  }
-
-  /**
-   * Grants permission to associate the specified Amazon Connect instance with an Amazon Chime Voice Connector
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions
-   */
-  public toAssociateVoiceConnectorConnect() {
-    return this.to('AssociateVoiceConnectorConnect');
   }
 
   /**
@@ -265,9 +254,6 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - ds:ConnectDirectory
-   *
    * https://docs.aws.amazon.com/chime/latest/ag/active_directory.html
    */
   public toConnectDirectory() {
@@ -302,8 +288,8 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstance.html
    */
@@ -328,8 +314,8 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstanceBot.html
    */
@@ -343,8 +329,8 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstanceUser.html
    */
@@ -379,10 +365,6 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - s3:CreateBucket
-   * - s3:ListAllMyBuckets
-   *
    * https://docs.aws.amazon.com/chime/latest/ag/manage-access.html
    */
   public toCreateCDRBucket() {
@@ -393,10 +375,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to create a channel for an app instance in the AWS account (tag-based access controls are only supported on messaging-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannel.html
    */
@@ -419,10 +397,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to create a channel flow for an app instance in the AWS account (tag-based access controls are only supported on messaging-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelFlow.html
    */
@@ -453,52 +427,13 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an Amazon Connect Analytics Connector in the AWS account (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
-   * Dependent actions:
-   * - chime:CreateVoiceConnector
-   *
-   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html
-   */
-  public toCreateConnectAnalyticsConnector() {
-    return this.to('CreateConnectAnalyticsConnector');
-  }
-
-  /**
-   * Grants permission to create an Amazon Connect Call Transfer Connector in the AWS account (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
-   * Dependent actions:
-   * - chime:CreateVoiceConnector
-   *
-   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html
-   */
-  public toCreateConnectCallTransferConnector() {
-    return this.to('CreateConnectCallTransferConnector');
-  }
-
-  /**
    * Grants permission to create a media capture pipeline (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
-   *
-   * Dependent actions:
-   * - s3:GetBucketPolicy
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaCapturePipeline.html
    */
@@ -512,11 +447,8 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
-   *
-   * Dependent actions:
-   * - s3:GetBucketPolicy
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaConcatenationPipeline.html
    */
@@ -528,14 +460,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to create a media insights pipeline (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
-   * Dependent actions:
-   * - chime:TagResource
-   * - kinesisvideo:DescribeStream
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaInsightsPipeline.html
    */
@@ -549,14 +473,8 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
-   *
-   * Dependent actions:
-   * - chime:TagResource
-   * - iam:PassRole
-   * - kinesis:DescribeStream
-   * - s3:ListBucket
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaInsightsPipelineConfiguration.html
    */
@@ -570,8 +488,8 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaLiveConnectorPipeline.html
    */
@@ -585,14 +503,8 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
-   *
-   * Dependent actions:
-   * - kinesis:DescribeStream
-   * - kinesisvideo:CreateStream
-   * - kinesisvideo:GetDataEndpoint
-   * - kinesisvideo:ListStreams
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaPipelineKinesisVideoStreamPool.html
    */
@@ -604,15 +516,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to create a media stream pipeline (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
-   * Dependent actions:
-   * - kinesisvideo:DescribeStream
-   * - kinesisvideo:GetDataEndpoint
-   * - kinesisvideo:PutMedia
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaStreamPipeline.html
    */
@@ -711,8 +614,8 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateSipMediaApplication.html
    */
@@ -759,12 +662,8 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
-   *
-   * Dependent actions:
-   * - chime:CreateConnectAnalyticsConnector
-   * - chime:CreateConnectCallTransferConnector
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html
    */
@@ -800,13 +699,8 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
-   *
-   * Dependent actions:
-   * - chime:TagResource
-   * - kms:CreateGrant
-   * - kms:DescribeKey
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceProfileDomain.html
    */
@@ -917,9 +811,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to delete a Call Detail Record S3 bucket from your Amazon Chime account
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - s3:DeleteBucket
    *
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
@@ -1053,9 +944,6 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - chime:ListVoiceConnectors
-   *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_DeleteMediaInsightsPipelineConfiguration.html
    */
   public toDeleteMediaInsightsPipelineConfiguration() {
@@ -1176,12 +1064,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to delete the specified Amazon Chime Voice Connector
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - logs:CreateLogDelivery
-   * - logs:DeleteLogDelivery
-   * - logs:GetLogDelivery
-   * - logs:ListLogDeliveries
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnector.html
    */
@@ -1498,17 +1380,6 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate the Amazon Connect instance from the specified Amazon Chime Voice Connector
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions
-   */
-  public toDisassociateVoiceConnectorConnect() {
-    return this.to('DisassociateVoiceConnectorConnect');
-  }
-
-  /**
    * Grants permission to disconnect the Active Directory from your Amazon Chime Enterprise account
    *
    * Access Level: Write
@@ -1611,13 +1482,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to get details of a Call Detail Record S3 bucket associated with your Amazon Chime account
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - s3:GetBucketAcl
-   * - s3:GetBucketLocation
-   * - s3:GetBucketLogging
-   * - s3:GetBucketVersioning
-   * - s3:GetBucketWebsite
    *
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
@@ -2266,10 +2130,6 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - s3:ListAllMyBuckets
-   * - s3:ListBucket
-   *
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toListCDRBucket() {
@@ -2840,14 +2700,6 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - logs:CreateLogDelivery
-   * - logs:CreateLogGroup
-   * - logs:DeleteLogDelivery
-   * - logs:DescribeLogGroups
-   * - logs:GetLogDelivery
-   * - logs:ListLogDeliveries
-   *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorLoggingConfiguration.html
    */
   public toPutVoiceConnectorLoggingConfiguration() {
@@ -2880,9 +2732,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to add streaming configuration for the specified Amazon Chime Voice Connector
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - chime:GetMediaInsightsPipelineConfiguration
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorStreamingConfiguration.html
    */
@@ -2960,9 +2809,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to register an endpoint for an app instance user
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - mobiletargeting:GetApp
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_RegisterAppInstanceUserEndpoint.html
    */
@@ -3171,7 +3017,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to apply the specified tags to the specified Amazon Chime SDK attendee
    *
-   * Access Level: Tagging
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_TagAttendee.html
    */
@@ -3182,12 +3028,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to apply the specified tags to the specified Amazon Chime SDK meeting
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_TagMeeting.html
    */
@@ -3198,12 +3039,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to apply the specified tags to the specified resource (tag-based access controls are only supported on *-chime.<region>.amazonaws.com endpoints)
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_TagResource.html
    */
@@ -3225,7 +3061,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to untag the specified tags from the specified Amazon Chime SDK attendee
    *
-   * Access Level: Tagging
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UntagAttendee.html
    */
@@ -3236,7 +3072,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to untag the specified tags from the specified Amazon Chime SDK meeting
    *
-   * Access Level: Tagging
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UntagMeeting.html
    */
@@ -3247,10 +3083,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to untag the specified tags from the specified resource (tag-based access controls are only supported on *-chime.<region>.amazonaws.com endpoints)
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UntagResource.html
    */
@@ -3373,11 +3206,6 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - s3:CreateBucket
-   * - s3:DeleteBucket
-   * - s3:ListAllMyBuckets
-   *
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toUpdateCDRSettings() {
@@ -3443,12 +3271,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to update the status of a media insights pipeline configuration
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - chime:ListVoiceConnectors
-   * - iam:PassRole
-   * - kinesis:DescribeStream
-   * - s3:ListBucket
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_UpdateMediaInsightsPipelineConfiguration.html
    */
@@ -3676,6 +3498,58 @@ export class Chime extends PolicyStatement {
     return this.to('ValidateE911Address');
   }
 
+  /**
+   * Grants permission to associate the specified Amazon Connect instance with an Amazon Chime Voice Connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions
+   */
+  public toAssociateVoiceConnectorConnect() {
+    return this.to('AssociateVoiceConnectorConnect');
+  }
+
+  /**
+   * Grants permission to create an Amazon Connect Analytics Connector in the AWS account (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html
+   */
+  public toCreateConnectAnalyticsConnector() {
+    return this.to('CreateConnectAnalyticsConnector');
+  }
+
+  /**
+   * Grants permission to create an Amazon Connect Call Transfer Connector in the AWS account (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html
+   */
+  public toCreateConnectCallTransferConnector() {
+    return this.to('CreateConnectCallTransferConnector');
+  }
+
+  /**
+   * Grants permission to disassociate the Amazon Connect instance from the specified Amazon Chime Voice Connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions
+   */
+  public toDisassociateVoiceConnectorConnect() {
+    return this.to('DisassociateVoiceConnectorConnect');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptDelegate',
@@ -3687,7 +3561,6 @@ export class Chime extends PolicyStatement {
       'AssociatePhoneNumbersWithVoiceConnector',
       'AssociatePhoneNumbersWithVoiceConnectorGroup',
       'AssociateSigninDelegateGroupsWithAccount',
-      'AssociateVoiceConnectorConnect',
       'AuthorizeDirectory',
       'BatchCreateAttendee',
       'BatchCreateChannelMembership',
@@ -3715,8 +3588,6 @@ export class Chime extends PolicyStatement {
       'CreateChannelFlow',
       'CreateChannelMembership',
       'CreateChannelModerator',
-      'CreateConnectAnalyticsConnector',
-      'CreateConnectCallTransferConnector',
       'CreateMediaCapturePipeline',
       'CreateMediaConcatenationPipeline',
       'CreateMediaInsightsPipeline',
@@ -3788,7 +3659,6 @@ export class Chime extends PolicyStatement {
       'DisassociatePhoneNumbersFromVoiceConnector',
       'DisassociatePhoneNumbersFromVoiceConnectorGroup',
       'DisassociateSigninDelegateGroupsFromAccount',
-      'DisassociateVoiceConnectorConnect',
       'DisconnectDirectory',
       'InviteDelegate',
       'InviteUsers',
@@ -3832,7 +3702,13 @@ export class Chime extends PolicyStatement {
       'StopVoiceToneAnalysisTask',
       'SubmitSupportRequest',
       'SuspendUsers',
+      'TagAttendee',
+      'TagMeeting',
+      'TagResource',
       'UnauthorizeDirectory',
+      'UntagAttendee',
+      'UntagMeeting',
+      'UntagResource',
       'UpdateAccount',
       'UpdateAccountOpenIdConfig',
       'UpdateAccountResource',
@@ -3867,7 +3743,11 @@ export class Chime extends PolicyStatement {
       'UpdateVoiceConnector',
       'UpdateVoiceConnectorGroup',
       'UpdateVoiceProfile',
-      'UpdateVoiceProfileDomain'
+      'UpdateVoiceProfileDomain',
+      'AssociateVoiceConnectorConnect',
+      'CreateConnectAnalyticsConnector',
+      'CreateConnectCallTransferConnector',
+      'DisassociateVoiceConnectorConnect'
     ],
     Read: [
       'DescribeAppInstance',
@@ -4004,23 +3884,6 @@ export class Chime extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type meeting to the statement
-   *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_Meeting.html
-   *
-   * @param meetingId - Identifier for the meetingId.
-   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onMeeting(meetingId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:meeting/${ meetingId }`);
-  }
-
-  /**
    * Adds a resource of type app-instance to the statement
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_AppInstance.html
@@ -4035,24 +3898,6 @@ export class Chime extends PolicyStatement {
    */
   public onAppInstance(appInstanceId: string, accountId?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:app-instance/${ appInstanceId }`);
-  }
-
-  /**
-   * Adds a resource of type app-instance-user to the statement
-   *
-   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_AppInstanceUser.html
-   *
-   * @param appInstanceId - Identifier for the appInstanceId.
-   * @param appInstanceUserId - Identifier for the appInstanceUserId.
-   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onAppInstanceUser(appInstanceId: string, appInstanceUserId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:app-instance/${ appInstanceId }/user/${ appInstanceUserId }`);
   }
 
   /**
@@ -4071,6 +3916,24 @@ export class Chime extends PolicyStatement {
    */
   public onAppInstanceBot(appInstanceId: string, appInstanceBotId: string, accountId?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:app-instance/${ appInstanceId }/bot/${ appInstanceBotId }`);
+  }
+
+  /**
+   * Adds a resource of type app-instance-user to the statement
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_AppInstanceUser.html
+   *
+   * @param appInstanceId - Identifier for the appInstanceId.
+   * @param appInstanceUserId - Identifier for the appInstanceUserId.
+   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAppInstanceUser(appInstanceId: string, appInstanceUserId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:app-instance/${ appInstanceId }/user/${ appInstanceUserId }`);
   }
 
   /**
@@ -4110,23 +3973,6 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type media-pipeline to the statement
-   *
-   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_MediaPipeline.html
-   *
-   * @param mediaPipelineId - Identifier for the mediaPipelineId.
-   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onMediaPipeline(mediaPipelineId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:media-pipeline/${ mediaPipelineId }`);
-  }
-
-  /**
    * Adds a resource of type media-insights-pipeline-configuration to the statement
    *
    * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_MediaInsightsPipelineConfiguration.html
@@ -4141,6 +3987,23 @@ export class Chime extends PolicyStatement {
    */
   public onMediaInsightsPipelineConfiguration(configurationName: string, accountId?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:media-insights-pipeline-configuration/${ configurationName }`);
+  }
+
+  /**
+   * Adds a resource of type media-pipeline to the statement
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_MediaPipeline.html
+   *
+   * @param mediaPipelineId - Identifier for the mediaPipelineId.
+   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMediaPipeline(mediaPipelineId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:media-pipeline/${ mediaPipelineId }`);
   }
 
   /**
@@ -4161,11 +4024,11 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type voice-profile-domain to the statement
+   * Adds a resource of type meeting to the statement
    *
-   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceProfileDomain.html
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_Meeting.html
    *
-   * @param voiceProfileDomainId - Identifier for the voiceProfileDomainId.
+   * @param meetingId - Identifier for the meetingId.
    * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -4173,39 +4036,8 @@ export class Chime extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onVoiceProfileDomain(voiceProfileDomainId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:voice-profile-domain/${ voiceProfileDomainId }`);
-  }
-
-  /**
-   * Adds a resource of type voice-profile to the statement
-   *
-   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceProfile.html
-   *
-   * @param voiceProfileId - Identifier for the voiceProfileId.
-   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onVoiceProfile(voiceProfileId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:voice-profile/${ voiceProfileId }`);
-  }
-
-  /**
-   * Adds a resource of type voice-connector to the statement
-   *
-   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_VoiceConnector.html
-   *
-   * @param voiceConnectorId - Identifier for the voiceConnectorId.
-   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onVoiceConnector(voiceConnectorId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:vc/${ voiceConnectorId }`);
+  public onMeeting(meetingId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:meeting/${ meetingId }`);
   }
 
   /**
@@ -4226,6 +4058,54 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type voice-connector to the statement
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_VoiceConnector.html
+   *
+   * @param voiceConnectorId - Identifier for the voiceConnectorId.
+   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVoiceConnector(voiceConnectorId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:vc/${ voiceConnectorId }`);
+  }
+
+  /**
+   * Adds a resource of type voice-profile to the statement
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceProfile.html
+   *
+   * @param voiceProfileId - Identifier for the voiceProfileId.
+   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onVoiceProfile(voiceProfileId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:voice-profile/${ voiceProfileId }`);
+  }
+
+  /**
+   * Adds a resource of type voice-profile-domain to the statement
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceProfileDomain.html
+   *
+   * @param voiceProfileDomainId - Identifier for the voiceProfileDomainId.
+   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVoiceProfileDomain(voiceProfileDomainId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:voice-profile-domain/${ voiceProfileDomainId }`);
+  }
+
+  /**
    * Filters access by a tag's key and value in a request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -4236,8 +4116,6 @@ export class Chime extends PolicyStatement {
    * - .toCreateAppInstanceUser()
    * - .toCreateChannel()
    * - .toCreateChannelFlow()
-   * - .toCreateConnectAnalyticsConnector()
-   * - .toCreateConnectCallTransferConnector()
    * - .toCreateMediaCapturePipeline()
    * - .toCreateMediaConcatenationPipeline()
    * - .toCreateMediaInsightsPipeline()
@@ -4252,6 +4130,8 @@ export class Chime extends PolicyStatement {
    * - .toCreateVoiceProfileDomain()
    * - .toTagMeeting()
    * - .toTagResource()
+   * - .toCreateConnectAnalyticsConnector()
+   * - .toCreateConnectCallTransferConnector()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -4267,22 +4147,185 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toAssociateChannelFlow()
+   * - .toAssociatePhoneNumbersWithVoiceConnector()
+   * - .toBatchCreateAttendee()
+   * - .toBatchCreateChannelMembership()
+   * - .toBatchUpdateAttendeeCapabilitiesExcept()
+   * - .toChannelFlowCallback()
+   * - .toConnect()
+   * - .toCreateAppInstanceAdmin()
+   * - .toCreateAttendee()
+   * - .toCreateChannel()
+   * - .toCreateChannelBan()
+   * - .toCreateChannelFlow()
+   * - .toCreateChannelMembership()
+   * - .toCreateChannelModerator()
+   * - .toCreateMediaInsightsPipeline()
+   * - .toCreateMediaStreamPipeline()
+   * - .toCreateMeetingDialOut()
+   * - .toCreateProxySession()
+   * - .toCreateSipMediaApplicationCall()
+   * - .toCreateSipRule()
+   * - .toCreateVoiceConnectorGroup()
+   * - .toDeleteAppInstance()
+   * - .toDeleteAppInstanceAdmin()
+   * - .toDeleteAppInstanceBot()
+   * - .toDeleteAppInstanceStreamingConfigurations()
+   * - .toDeleteAppInstanceUser()
+   * - .toDeleteAttendee()
+   * - .toDeleteChannel()
+   * - .toDeleteChannelBan()
+   * - .toDeleteChannelFlow()
+   * - .toDeleteChannelMembership()
+   * - .toDeleteChannelMessage()
+   * - .toDeleteChannelModerator()
+   * - .toDeleteMediaCapturePipeline()
+   * - .toDeleteMediaInsightsPipelineConfiguration()
+   * - .toDeleteMediaPipeline()
+   * - .toDeleteMediaPipelineKinesisVideoStreamPool()
+   * - .toDeleteMeeting()
+   * - .toDeleteMessagingStreamingConfigurations()
+   * - .toDeleteProxySession()
+   * - .toDeleteSipMediaApplication()
+   * - .toDeleteVoiceConnector()
+   * - .toDeleteVoiceConnectorEmergencyCallingConfiguration()
+   * - .toDeleteVoiceConnectorExternalSystemsConfiguration()
+   * - .toDeleteVoiceConnectorOrigination()
+   * - .toDeleteVoiceConnectorProxy()
+   * - .toDeleteVoiceConnectorStreamingConfiguration()
+   * - .toDeleteVoiceConnectorTermination()
+   * - .toDeleteVoiceConnectorTerminationCredentials()
+   * - .toDeleteVoiceProfileDomain()
+   * - .toDeregisterAppInstanceUserEndpoint()
+   * - .toDescribeAppInstance()
+   * - .toDescribeAppInstanceAdmin()
+   * - .toDescribeAppInstanceBot()
+   * - .toDescribeAppInstanceUser()
+   * - .toDescribeAppInstanceUserEndpoint()
+   * - .toDescribeChannel()
+   * - .toDescribeChannelBan()
+   * - .toDescribeChannelFlow()
+   * - .toDescribeChannelMembership()
+   * - .toDescribeChannelMembershipForAppInstanceUser()
+   * - .toDescribeChannelModeratedByAppInstanceUser()
+   * - .toDescribeChannelModerator()
+   * - .toDisassociateChannelFlow()
+   * - .toDisassociatePhoneNumbersFromVoiceConnector()
+   * - .toGetAppInstanceRetentionSettings()
+   * - .toGetAppInstanceStreamingConfigurations()
+   * - .toGetAttendee()
+   * - .toGetChannelMembershipPreferences()
+   * - .toGetChannelMessage()
+   * - .toGetChannelMessageStatus()
+   * - .toGetMediaCapturePipeline()
+   * - .toGetMediaInsightsPipelineConfiguration()
+   * - .toGetMediaPipeline()
+   * - .toGetMediaPipelineKinesisVideoStreamPool()
+   * - .toGetMeeting()
+   * - .toGetMessagingStreamingConfigurations()
+   * - .toGetProxySession()
+   * - .toGetSipMediaApplication()
+   * - .toGetSipMediaApplicationAlexaSkillConfiguration()
+   * - .toGetSipMediaApplicationLoggingConfiguration()
+   * - .toGetSpeakerSearchTask()
+   * - .toGetVoiceConnector()
+   * - .toGetVoiceConnectorEmergencyCallingConfiguration()
+   * - .toGetVoiceConnectorExternalSystemsConfiguration()
+   * - .toGetVoiceConnectorLoggingConfiguration()
+   * - .toGetVoiceConnectorOrigination()
+   * - .toGetVoiceConnectorProxy()
+   * - .toGetVoiceConnectorStreamingConfiguration()
+   * - .toGetVoiceConnectorTermination()
+   * - .toGetVoiceConnectorTerminationHealth()
+   * - .toGetVoiceProfileDomain()
+   * - .toGetVoiceToneAnalysisTask()
+   * - .toListAppInstanceAdmins()
+   * - .toListAppInstanceBots()
+   * - .toListAppInstanceUserEndpoints()
+   * - .toListAppInstanceUsers()
+   * - .toListAppInstances()
+   * - .toListAttendeeTags()
+   * - .toListAttendees()
+   * - .toListChannelBans()
+   * - .toListChannelFlows()
+   * - .toListChannelMemberships()
+   * - .toListChannelMembershipsForAppInstanceUser()
+   * - .toListChannelMessages()
+   * - .toListChannelModerators()
+   * - .toListChannels()
+   * - .toListChannelsAssociatedWithChannelFlow()
+   * - .toListChannelsModeratedByAppInstanceUser()
+   * - .toListMeetingTags()
+   * - .toListProxySessions()
+   * - .toListSipRules()
+   * - .toListSubChannels()
+   * - .toListTagsForResource()
+   * - .toListVoiceConnectorTerminationCredentials()
+   * - .toListVoiceProfiles()
+   * - .toPutAppInstanceRetentionSettings()
+   * - .toPutAppInstanceStreamingConfigurations()
+   * - .toPutAppInstanceUserExpirationSettings()
+   * - .toPutChannelExpirationSettings()
+   * - .toPutChannelMembershipPreferences()
+   * - .toPutMessagingStreamingConfigurations()
+   * - .toPutSipMediaApplicationAlexaSkillConfiguration()
+   * - .toPutSipMediaApplicationLoggingConfiguration()
+   * - .toPutVoiceConnectorEmergencyCallingConfiguration()
+   * - .toPutVoiceConnectorExternalSystemsConfiguration()
+   * - .toPutVoiceConnectorLoggingConfiguration()
+   * - .toPutVoiceConnectorOrigination()
+   * - .toPutVoiceConnectorProxy()
+   * - .toPutVoiceConnectorStreamingConfiguration()
+   * - .toPutVoiceConnectorTermination()
+   * - .toPutVoiceConnectorTerminationCredentials()
+   * - .toRedactChannelMessage()
+   * - .toRegisterAppInstanceUserEndpoint()
+   * - .toSearchChannels()
+   * - .toSendChannelMessage()
+   * - .toStartSpeakerSearchTask()
+   * - .toStartVoiceToneAnalysisTask()
+   * - .toStopSpeakerSearchTask()
+   * - .toStopVoiceToneAnalysisTask()
+   * - .toTagAttendee()
    * - .toTagMeeting()
    * - .toTagResource()
+   * - .toUntagAttendee()
+   * - .toUntagMeeting()
+   * - .toUntagResource()
+   * - .toUpdateAppInstance()
+   * - .toUpdateAppInstanceBot()
+   * - .toUpdateAppInstanceUser()
+   * - .toUpdateAppInstanceUserEndpoint()
+   * - .toUpdateAttendeeCapabilities()
+   * - .toUpdateChannel()
+   * - .toUpdateChannelFlow()
+   * - .toUpdateChannelMessage()
+   * - .toUpdateChannelReadMarker()
+   * - .toUpdateMediaInsightsPipelineConfiguration()
+   * - .toUpdateMediaInsightsPipelineStatus()
+   * - .toUpdateMediaPipelineKinesisVideoStreamPool()
+   * - .toUpdateProxySession()
+   * - .toUpdateSipMediaApplication()
+   * - .toUpdateSipMediaApplicationCall()
+   * - .toUpdateSipRule()
+   * - .toUpdateVoiceConnector()
+   * - .toUpdateVoiceConnectorGroup()
+   * - .toUpdateVoiceProfileDomain()
    *
    * Applies to resource types:
-   * - meeting
    * - app-instance
-   * - app-instance-user
    * - app-instance-bot
+   * - app-instance-user
    * - channel
    * - channel-flow
-   * - media-pipeline
    * - media-insights-pipeline-configuration
+   * - media-pipeline
    * - media-pipeline-kinesis-video-stream-pool
-   * - voice-profile-domain
-   * - voice-connector
+   * - meeting
    * - sip-media-application
+   * - voice-connector
+   * - voice-profile-domain
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -4303,8 +4346,6 @@ export class Chime extends PolicyStatement {
    * - .toCreateAppInstanceUser()
    * - .toCreateChannel()
    * - .toCreateChannelFlow()
-   * - .toCreateConnectAnalyticsConnector()
-   * - .toCreateConnectCallTransferConnector()
    * - .toCreateMediaCapturePipeline()
    * - .toCreateMediaConcatenationPipeline()
    * - .toCreateMediaInsightsPipeline()
@@ -4320,6 +4361,8 @@ export class Chime extends PolicyStatement {
    * - .toTagMeeting()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toCreateConnectAnalyticsConnector()
+   * - .toCreateConnectCallTransferConnector()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -28,7 +28,7 @@ kinesisanalytics:ListTagsForResource;Read
 kinesisanalytics:RollbackApplication;Write
 kinesisanalytics:StartApplication;Write
 kinesisanalytics:StopApplication;Write
-kinesisanalytics:TagResource;Tagging
-kinesisanalytics:UntagResource;Tagging
+kinesisanalytics:TagResource;Tagging, Write
+kinesisanalytics:UntagResource;Tagging, Write
 kinesisanalytics:UpdateApplication;Write
 kinesisanalytics:UpdateApplicationMaintenanceConfiguration;Write

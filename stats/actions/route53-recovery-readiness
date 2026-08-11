@@ -24,8 +24,8 @@ route53-recovery-readiness:ListRecoveryGroups;Read
 route53-recovery-readiness:ListResourceSets;Read
 route53-recovery-readiness:ListRules;Read
 route53-recovery-readiness:ListTagsForResources;Read
-route53-recovery-readiness:TagResource;Tagging
-route53-recovery-readiness:UntagResource;Tagging
+route53-recovery-readiness:TagResource;Tagging, Write
+route53-recovery-readiness:UntagResource;Tagging, Write
 route53-recovery-readiness:UpdateCell;Write
 route53-recovery-readiness:UpdateReadinessCheck;Write
 route53-recovery-readiness:UpdateRecoveryGroup;Write

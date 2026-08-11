@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement } from '../../shared';
 
 /**
- * Statement provider for service [polly](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpolly.html).
+ * Statement provider for service [polly](https://docs.aws.amazon.com/service-authorization/latest/reference/list_polly.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Polly extends PolicyStatement {
   public servicePrefix = 'polly';
 
   /**
-   * Statement provider for service [polly](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpolly.html).
+   * Statement provider for service [polly](https://docs.aws.amazon.com/service-authorization/latest/reference/list_polly.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -110,9 +110,6 @@ export class Polly extends PolicyStatement {
    * Grants permission to synthesize long inputs to the provided S3 location
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - s3:PutObject
    *
    * https://docs.aws.amazon.com/polly/latest/dg/API_StartSpeechSynthesisTask.html
    */

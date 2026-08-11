@@ -14,7 +14,7 @@ rum:ListTagsForResource;Read
 rum:PutResourcePolicy;Write
 rum:PutRumEvents;Write
 rum:PutRumMetricsDestination;Write
-rum:TagResource;Tagging
-rum:UntagResource;Tagging
+rum:TagResource;Tagging, Write
+rum:UntagResource;Tagging, Write
 rum:UpdateAppMonitor;Write
 rum:UpdateRumMetricDefinition;Write

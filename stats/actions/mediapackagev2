@@ -27,8 +27,8 @@ mediapackagev2:PutObject;Write
 mediapackagev2:PutOriginEndpointPolicy;Write
 mediapackagev2:ResetChannelState;Write
 mediapackagev2:ResetOriginEndpointState;Write
-mediapackagev2:TagResource;Tagging
-mediapackagev2:UntagResource;Tagging
+mediapackagev2:TagResource;Tagging, Write
+mediapackagev2:UntagResource;Tagging, Write
 mediapackagev2:UpdateChannel;Write
 mediapackagev2:UpdateChannelGroup;Write
 mediapackagev2:UpdateOriginEndpoint;Write

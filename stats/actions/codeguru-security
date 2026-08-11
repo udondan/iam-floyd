@@ -10,6 +10,6 @@ codeguru-security:ListFindings;List
 codeguru-security:ListFindingsMetrics;List
 codeguru-security:ListScans;List
 codeguru-security:ListTagsForResource;Read
-codeguru-security:TagResource;Tagging
-codeguru-security:UntagResource;Tagging
+codeguru-security:TagResource;Tagging, Write
+codeguru-security:UntagResource;Tagging, Write
 codeguru-security:UpdateAccountConfiguration;Write

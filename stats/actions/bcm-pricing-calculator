@@ -22,11 +22,11 @@ bcm-pricing-calculator:ListBillEstimates;List
 bcm-pricing-calculator:ListBillScenarioCommitmentModifications;List
 bcm-pricing-calculator:ListBillScenarioUsageModifications;List
 bcm-pricing-calculator:ListBillScenarios;List
-bcm-pricing-calculator:ListTagsForResource;Tagging
+bcm-pricing-calculator:ListTagsForResource;Tagging, Write
 bcm-pricing-calculator:ListWorkloadEstimateUsage;List
 bcm-pricing-calculator:ListWorkloadEstimates;List
-bcm-pricing-calculator:TagResource;Tagging
-bcm-pricing-calculator:UntagResource;Tagging
+bcm-pricing-calculator:TagResource;Tagging, Write
+bcm-pricing-calculator:UntagResource;Tagging, Write
 bcm-pricing-calculator:UpdateBillEstimate;Write
 bcm-pricing-calculator:UpdateBillScenario;Write
 bcm-pricing-calculator:UpdateBillScenarioCommitmentModification;Write

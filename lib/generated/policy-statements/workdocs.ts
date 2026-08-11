@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement } from '../../shared';
 
 /**
- * Statement provider for service [workdocs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkdocs.html).
+ * Statement provider for service [workdocs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_workdocs.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Workdocs extends PolicyStatement {
   public servicePrefix = 'workdocs';
 
   /**
-   * Statement provider for service [workdocs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkdocs.html).
+   * Statement provider for service [workdocs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_workdocs.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -41,17 +41,6 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add principals that are allowed to call notification subscription APIs for a given WorkDocs site
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-notifications.html
-   */
-  public toAddNotificationPermissions() {
-    return this.to('AddNotificationPermissions');
-  }
-
-  /**
    * Grants permission to create a set of permissions for the specified folder or document
    *
    * Access Level: Write
@@ -60,28 +49,6 @@ export class Workdocs extends PolicyStatement {
    */
   public toAddResourcePermissions() {
     return this.to('AddResourcePermissions');
-  }
-
-  /**
-   * Grants permission to add a user to a group
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage_set_admin.html
-   */
-  public toAddUserToGroup() {
-    return this.to('AddUserToGroup');
-  }
-
-  /**
-   * Grants permission to check an alias
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/adminguide/cloud_quick_start.html
-   */
-  public toCheckAlias() {
-    return this.to('CheckAlias');
   }
 
   /**
@@ -115,17 +82,6 @@ export class Workdocs extends PolicyStatement {
    */
   public toCreateFolder() {
     return this.to('CreateFolder');
-  }
-
-  /**
-   * Grants permission to create an instance
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/adminguide/getting_started.html
-   */
-  public toCreateInstance() {
-    return this.to('CreateInstance');
   }
 
   /**
@@ -239,17 +195,6 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an instance
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html#delete_site
-   */
-  public toDeleteInstance() {
-    return this.to('DeleteInstance');
-  }
-
-  /**
    * Grants permission to delete one or more labels from a resource
    *
    * Access Level: Write
@@ -258,17 +203,6 @@ export class Workdocs extends PolicyStatement {
    */
   public toDeleteLabels() {
     return this.to('DeleteLabels');
-  }
-
-  /**
-   * Grants permission to delete principals that are allowed to call notification subscription APIs for a given WorkDocs site
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-notifications.html
-   */
-  public toDeleteNotificationPermissions() {
-    return this.to('DeleteNotificationPermissions');
   }
 
   /**
@@ -294,17 +228,6 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deregister a directory
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html#delete_site
-   */
-  public toDeregisterDirectory() {
-    return this.to('DeregisterDirectory');
-  }
-
-  /**
    * Grants permission to fetch user activities in a specified time period
    *
    * Access Level: List
@@ -313,17 +236,6 @@ export class Workdocs extends PolicyStatement {
    */
   public toDescribeActivities() {
     return this.to('DescribeActivities');
-  }
-
-  /**
-   * Grants permission to describe available directories
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/adminguide/getting_started.html
-   */
-  public toDescribeAvailableDirectories() {
-    return this.to('DescribeAvailableDirectories');
   }
 
   /**
@@ -371,39 +283,6 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the export history for an instance
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/adminguide/migration-tool.html
-   */
-  public toDescribeInstanceExports() {
-    return this.to('DescribeInstanceExports');
-  }
-
-  /**
-   * Grants permission to describe instances
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/adminguide/getting_started.html
-   */
-  public toDescribeInstances() {
-    return this.to('DescribeInstances');
-  }
-
-  /**
-   * Grants permission to describe principals that are allowed to call notification subscription APIs for a given WorkDocs site
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-notifications.html
-   */
-  public toDescribeNotificationPermissions() {
-    return this.to('DescribeNotificationPermissions');
-  }
-
-  /**
    * Grants permission to list the specified notification subscriptions
    *
    * Access Level: List
@@ -445,17 +324,6 @@ export class Workdocs extends PolicyStatement {
    */
   public toDescribeUsers() {
     return this.to('DescribeUsers');
-  }
-
-  /**
-   * Grants permission to download a specified document version
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_GetDocumentVersion.html
-   */
-  public toDownloadDocumentVersion() {
-    return this.to('DownloadDocumentVersion');
   }
 
   /**
@@ -525,17 +393,6 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve details for the specified group
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_Operations.html
-   */
-  public toGetGroup() {
-    return this.to('GetGroup');
-  }
-
-  /**
    * Grants permission to get a collection of resources
    *
    * Access Level: Read
@@ -555,17 +412,6 @@ export class Workdocs extends PolicyStatement {
    */
   public toInitiateDocumentVersionUpload() {
     return this.to('InitiateDocumentVersionUpload');
-  }
-
-  /**
-   * Grants permission to register a directory
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/adminguide/existing-dir-setup.html
-   */
-  public toRegisterDirectory() {
-    return this.to('RegisterDirectory');
   }
 
   /**
@@ -613,17 +459,6 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start an export for an instance
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/adminguide/migration-tool.html
-   */
-  public toStartInstanceExport() {
-    return this.to('StartInstanceExport');
-  }
-
-  /**
    * Grants permission to update the specified attributes of the specified document
    *
    * Access Level: Write
@@ -657,17 +492,6 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an instance alias
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workdocs/latest/adminguide/getting_started.html
-   */
-  public toUpdateInstanceAlias() {
-    return this.to('UpdateInstanceAlias');
-  }
-
-  /**
    * Grants permission to update the specified attributes of the specified user, and grants or revokes administrative privileges to the Amazon WorkDocs site
    *
    * Access Level: Write
@@ -676,6 +500,182 @@ export class Workdocs extends PolicyStatement {
    */
   public toUpdateUser() {
     return this.to('UpdateUser');
+  }
+
+  /**
+   * Grants permission to add principals that are allowed to call notification subscription APIs for a given WorkDocs site
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-notifications.html
+   */
+  public toAddNotificationPermissions() {
+    return this.to('AddNotificationPermissions');
+  }
+
+  /**
+   * Grants permission to add a user to a group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage_set_admin.html
+   */
+  public toAddUserToGroup() {
+    return this.to('AddUserToGroup');
+  }
+
+  /**
+   * Grants permission to check an alias
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/cloud_quick_start.html
+   */
+  public toCheckAlias() {
+    return this.to('CheckAlias');
+  }
+
+  /**
+   * Grants permission to create an instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/getting_started.html
+   */
+  public toCreateInstance() {
+    return this.to('CreateInstance');
+  }
+
+  /**
+   * Grants permission to delete an instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html#delete_site
+   */
+  public toDeleteInstance() {
+    return this.to('DeleteInstance');
+  }
+
+  /**
+   * Grants permission to delete principals that are allowed to call notification subscription APIs for a given WorkDocs site
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-notifications.html
+   */
+  public toDeleteNotificationPermissions() {
+    return this.to('DeleteNotificationPermissions');
+  }
+
+  /**
+   * Grants permission to deregister a directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html#delete_site
+   */
+  public toDeregisterDirectory() {
+    return this.to('DeregisterDirectory');
+  }
+
+  /**
+   * Grants permission to describe available directories
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/getting_started.html
+   */
+  public toDescribeAvailableDirectories() {
+    return this.to('DescribeAvailableDirectories');
+  }
+
+  /**
+   * Grants permission to describe the export history for an instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/migration-tool.html
+   */
+  public toDescribeInstanceExports() {
+    return this.to('DescribeInstanceExports');
+  }
+
+  /**
+   * Grants permission to describe instances
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/getting_started.html
+   */
+  public toDescribeInstances() {
+    return this.to('DescribeInstances');
+  }
+
+  /**
+   * Grants permission to describe principals that are allowed to call notification subscription APIs for a given WorkDocs site
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-notifications.html
+   */
+  public toDescribeNotificationPermissions() {
+    return this.to('DescribeNotificationPermissions');
+  }
+
+  /**
+   * Grants permission to download a specified document version
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_GetDocumentVersion.html
+   */
+  public toDownloadDocumentVersion() {
+    return this.to('DownloadDocumentVersion');
+  }
+
+  /**
+   * Grants permission to retrieve details for the specified group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_Operations.html
+   */
+  public toGetGroup() {
+    return this.to('GetGroup');
+  }
+
+  /**
+   * Grants permission to register a directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/existing-dir-setup.html
+   */
+  public toRegisterDirectory() {
+    return this.to('RegisterDirectory');
+  }
+
+  /**
+   * Grants permission to start an export for an instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/migration-tool.html
+   */
+  public toStartInstanceExport() {
+    return this.to('StartInstanceExport');
+  }
+
+  /**
+   * Grants permission to update an instance alias
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/getting_started.html
+   */
+  public toUpdateInstanceAlias() {
+    return this.to('UpdateInstanceAlias');
   }
 
   /**
@@ -693,13 +693,10 @@ export class Workdocs extends PolicyStatement {
     Write: [
       'AbortDocumentVersionUpload',
       'ActivateUser',
-      'AddNotificationPermissions',
       'AddResourcePermissions',
-      'AddUserToGroup',
       'CreateComment',
       'CreateCustomMetadata',
       'CreateFolder',
-      'CreateInstance',
       'CreateLabels',
       'CreateNotificationSubscription',
       'CreateUser',
@@ -710,52 +707,55 @@ export class Workdocs extends PolicyStatement {
       'DeleteDocumentVersion',
       'DeleteFolder',
       'DeleteFolderContents',
-      'DeleteInstance',
       'DeleteLabels',
-      'DeleteNotificationPermissions',
       'DeleteNotificationSubscription',
       'DeleteUser',
-      'DeregisterDirectory',
       'InitiateDocumentVersionUpload',
-      'RegisterDirectory',
       'RemoveAllResourcePermissions',
       'RemoveResourcePermission',
       'RestoreDocumentVersions',
-      'StartInstanceExport',
       'UpdateDocument',
       'UpdateDocumentVersion',
       'UpdateFolder',
-      'UpdateInstanceAlias',
       'UpdateUser',
+      'AddNotificationPermissions',
+      'AddUserToGroup',
+      'CreateInstance',
+      'DeleteInstance',
+      'DeleteNotificationPermissions',
+      'DeregisterDirectory',
+      'RegisterDirectory',
+      'StartInstanceExport',
+      'UpdateInstanceAlias',
       'UpdateUserAdministrativeSettings'
     ],
+    List: [
+      'DescribeActivities',
+      'DescribeComments',
+      'DescribeDocumentVersions',
+      'DescribeFolderContents',
+      'DescribeGroups',
+      'DescribeNotificationSubscriptions',
+      'DescribeResourcePermissions',
+      'DescribeRootFolders',
+      'DescribeUsers',
+      'SearchResources',
+      'DescribeAvailableDirectories',
+      'DescribeInstanceExports',
+      'DescribeInstances',
+      'DescribeNotificationPermissions'
+    ],
     Read: [
-      'CheckAlias',
-      'DownloadDocumentVersion',
       'GetCurrentUser',
       'GetDocument',
       'GetDocumentPath',
       'GetDocumentVersion',
       'GetFolder',
       'GetFolderPath',
-      'GetGroup',
-      'GetResources'
-    ],
-    List: [
-      'DescribeActivities',
-      'DescribeAvailableDirectories',
-      'DescribeComments',
-      'DescribeDocumentVersions',
-      'DescribeFolderContents',
-      'DescribeGroups',
-      'DescribeInstanceExports',
-      'DescribeInstances',
-      'DescribeNotificationPermissions',
-      'DescribeNotificationSubscriptions',
-      'DescribeResourcePermissions',
-      'DescribeRootFolders',
-      'DescribeUsers',
-      'SearchResources'
+      'GetResources',
+      'CheckAlias',
+      'DownloadDocumentVersion',
+      'GetGroup'
     ]
   };
 

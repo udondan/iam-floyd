@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [codeguru-profiler](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncodeguruprofiler.html).
+ * Statement provider for service [codeguru-profiler](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codeguruprofiler.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class CodeguruProfiler extends PolicyStatement {
   public servicePrefix = 'codeguru-profiler';
 
   /**
-   * Statement provider for service [codeguru-profiler](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncodeguruprofiler.html).
+   * Statement provider for service [codeguru-profiler](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codeguruprofiler.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -57,8 +57,8 @@ export class CodeguruProfiler extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_CreateProfilingGroup.html
    */
@@ -201,7 +201,7 @@ export class CodeguruProfiler extends PolicyStatement {
   /**
    * Grants permission to update the list of principals allowed for an action group in the resource policy associated with the specified Profiling Group
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PutPermission.html
    */
@@ -223,7 +223,7 @@ export class CodeguruProfiler extends PolicyStatement {
   /**
    * Grants permission to remove the permission of specified Action Group from the resource policy associated with the specified Profiling Group
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_RemovePermission.html
    */
@@ -245,11 +245,7 @@ export class CodeguruProfiler extends PolicyStatement {
   /**
    * Grants permission to add or overwrite tags to a Profiling Group
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_TagResource.html
    */
@@ -260,10 +256,7 @@ export class CodeguruProfiler extends PolicyStatement {
   /**
    * Grants permission to remove tags from a Profiling Group
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_UntagResource.html
    */
@@ -289,8 +282,12 @@ export class CodeguruProfiler extends PolicyStatement {
       'CreateProfilingGroup',
       'DeleteProfilingGroup',
       'PostAgentProfile',
+      'PutPermission',
       'RemoveNotificationChannel',
+      'RemovePermission',
       'SubmitFeedback',
+      'TagResource',
+      'UntagResource',
       'UpdateProfilingGroup'
     ],
     List: [
@@ -356,6 +353,28 @@ export class CodeguruProfiler extends PolicyStatement {
    * Filters access by tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAddNotificationChannels()
+   * - .toBatchGetFrameMetricData()
+   * - .toConfigureAgent()
+   * - .toDeleteProfilingGroup()
+   * - .toDescribeProfilingGroup()
+   * - .toGetNotificationConfiguration()
+   * - .toGetPolicy()
+   * - .toGetProfile()
+   * - .toGetRecommendations()
+   * - .toListFindingsReports()
+   * - .toListProfileTimes()
+   * - .toListTagsForResource()
+   * - .toPostAgentProfile()
+   * - .toPutPermission()
+   * - .toRemoveNotificationChannel()
+   * - .toRemovePermission()
+   * - .toSubmitFeedback()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateProfilingGroup()
    *
    * Applies to resource types:
    * - ProfilingGroup

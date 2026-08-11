@@ -12,11 +12,15 @@ invoicing:ListInvoiceCorrections;List
 invoicing:ListInvoiceSummaries;Read
 invoicing:ListInvoiceUnits;List
 invoicing:ListProcurementPortalPreferences;List
+invoicing:ListProcurementPortalSuppliers;List
+invoicing:ListProcurementPortals;List
 invoicing:ListTagsForResource;Read
 invoicing:PutInvoiceEmailDeliveryPreferences;Write
 invoicing:PutProcurementPortalPreference;Write
+invoicing:SendProcurementPortalValidation;Write
 invoicing:StartInvoiceCorrection;Write
-invoicing:TagResource;Tagging
-invoicing:UntagResource;Tagging
+invoicing:TagResource;Tagging, Write
+invoicing:UntagResource;Tagging, Write
 invoicing:UpdateInvoiceUnit;Write
 invoicing:UpdateProcurementPortalPreferenceStatus;Write
+invoicing:VerifyProcurementPortalValidation;Write

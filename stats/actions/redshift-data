@@ -7,5 +7,6 @@ redshift-data:GetStagingBucketLocation;Read
 redshift-data:GetStatementResult;Read
 redshift-data:ListDatabases;Read
 redshift-data:ListSchemas;Read
+redshift-data:ListSessions;List
 redshift-data:ListStatements;List
 redshift-data:ListTables;List

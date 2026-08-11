@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [gameliftstreams](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftstreams.html).
+ * Statement provider for service [gameliftstreams](https://docs.aws.amazon.com/service-authorization/latest/reference/list_gameliftstreams.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Gameliftstreams extends PolicyStatement {
   public servicePrefix = 'gameliftstreams';
 
   /**
-   * Statement provider for service [gameliftstreams](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftstreams.html).
+   * Statement provider for service [gameliftstreams](https://docs.aws.amazon.com/service-authorization/latest/reference/list_gameliftstreams.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -22,9 +22,6 @@ export class Gameliftstreams extends PolicyStatement {
    * Grants permission to attach a StreamGroup remote location
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - ec2:DescribeRegions
    *
    * https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AddStreamGroupLocations.html
    */
@@ -52,11 +49,6 @@ export class Gameliftstreams extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - gameliftstreams:TagResource
-   * - s3:GetObject
-   * - s3:ListBucket
-   *
    * https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_CreateApplication.html
    */
   public toCreateApplication() {
@@ -71,9 +63,6 @@ export class Gameliftstreams extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - gameliftstreams:TagResource
    *
    * https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_CreateStreamGroup.html
    */
@@ -101,6 +90,17 @@ export class Gameliftstreams extends PolicyStatement {
    */
   public toCreateStreamSessionConnection() {
     return this.to('CreateStreamSessionConnection');
+  }
+
+  /**
+   * Grants permission to create a stream URL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_CreateStreamUrl.html
+   */
+  public toCreateStreamUrl() {
+    return this.to('CreateStreamUrl');
   }
 
   /**
@@ -141,9 +141,6 @@ export class Gameliftstreams extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - s3:PutObject
-   *
    * https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ExportStreamSessionFiles.html
    */
   public toExportStreamSessionFiles() {
@@ -181,6 +178,28 @@ export class Gameliftstreams extends PolicyStatement {
    */
   public toGetStreamSession() {
     return this.to('GetStreamSession');
+  }
+
+  /**
+   * Grants permission to get a stream URL
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamUrl.html
+   */
+  public toGetStreamUrl() {
+    return this.to('GetStreamUrl');
+  }
+
+  /**
+   * Grants permission to list application shader caches
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListApplicationShaderCaches.html
+   */
+  public toListApplicationShaderCaches() {
+    return this.to('ListApplicationShaderCaches');
   }
 
   /**
@@ -228,6 +247,17 @@ export class Gameliftstreams extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list stream URLs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListStreamUrls.html
+   */
+  public toListStreamUrls() {
+    return this.to('ListStreamUrls');
+  }
+
+  /**
    * Grants permission to list tags for a resource
    *
    * Access Level: Read
@@ -250,6 +280,17 @@ export class Gameliftstreams extends PolicyStatement {
   }
 
   /**
+   * Grants permission to revoke a stream URL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_RevokeStreamUrl.html
+   */
+  public toRevokeStreamUrl() {
+    return this.to('RevokeStreamUrl');
+  }
+
+  /**
    * Grants permission to create a stream session
    *
    * Access Level: Write
@@ -263,11 +304,7 @@ export class Gameliftstreams extends PolicyStatement {
   /**
    * Grants permission to tag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html
    */
@@ -289,10 +326,7 @@ export class Gameliftstreams extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html
    */
@@ -330,13 +364,17 @@ export class Gameliftstreams extends PolicyStatement {
       'CreateStreamGroup',
       'CreateStreamSessionAdminShell',
       'CreateStreamSessionConnection',
+      'CreateStreamUrl',
       'DeleteApplication',
       'DeleteStreamGroup',
       'DisassociateApplications',
       'ExportStreamSessionFiles',
       'RemoveStreamGroupLocations',
+      'RevokeStreamUrl',
       'StartStreamSession',
+      'TagResource',
       'TerminateStreamSession',
+      'UntagResource',
       'UpdateApplication',
       'UpdateStreamGroup'
     ],
@@ -344,13 +382,16 @@ export class Gameliftstreams extends PolicyStatement {
       'GetApplication',
       'GetStreamGroup',
       'GetStreamSession',
+      'GetStreamUrl',
       'ListStreamSessions',
       'ListStreamSessionsByAccount',
       'ListTagsForResource'
     ],
     List: [
+      'ListApplicationShaderCaches',
       'ListApplications',
-      'ListStreamGroups'
+      'ListStreamGroups',
+      'ListStreamUrls'
     ],
     Tagging: [
       'TagResource',
@@ -415,6 +456,32 @@ export class Gameliftstreams extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toAddStreamGroupLocations()
+   * - .toAssociateApplications()
+   * - .toCreateStreamSessionAdminShell()
+   * - .toCreateStreamSessionConnection()
+   * - .toCreateStreamUrl()
+   * - .toDeleteApplication()
+   * - .toDeleteStreamGroup()
+   * - .toDisassociateApplications()
+   * - .toExportStreamSessionFiles()
+   * - .toGetApplication()
+   * - .toGetStreamGroup()
+   * - .toGetStreamSession()
+   * - .toGetStreamUrl()
+   * - .toListApplicationShaderCaches()
+   * - .toListStreamSessions()
+   * - .toListTagsForResource()
+   * - .toRemoveStreamGroupLocations()
+   * - .toRevokeStreamUrl()
+   * - .toStartStreamSession()
+   * - .toTagResource()
+   * - .toTerminateStreamSession()
+   * - .toUntagResource()
+   * - .toUpdateApplication()
+   * - .toUpdateStreamGroup()
+   *
    * Applies to resource types:
    * - application
    * - stream group
@@ -443,5 +510,21 @@ export class Gameliftstreams extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ARN of the IAM role passed to Amazon GameLift Streams to assume for the stream session
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_gameliftstreams.html#list_gameliftstreams-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateStreamUrl()
+   * - .toStartStreamSession()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifRoleArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`RoleArn`, value, operator ?? 'ArnLike');
   }
 }

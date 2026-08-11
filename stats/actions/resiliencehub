@@ -14,6 +14,7 @@ resiliencehub:CreateService;Write
 resiliencehub:CreateServiceFunction;Write
 resiliencehub:CreateServiceFunctionResources;Write
 resiliencehub:CreateSystem;Write
+resiliencehub:CreateTest;Write
 resiliencehub:CreateUserJourney;Write
 resiliencehub:DeleteApp;Write
 resiliencehub:DeleteAppAssessment;Write
@@ -29,6 +30,8 @@ resiliencehub:DeleteService;Write
 resiliencehub:DeleteServiceFunction;Write
 resiliencehub:DeleteServiceFunctionResources;Write
 resiliencehub:DeleteSystem;Write
+resiliencehub:DeleteTest;Write
+resiliencehub:DeleteTestSources;Write
 resiliencehub:DeleteUserJourney;Write
 resiliencehub:DescribeApp;Read
 resiliencehub:DescribeAppAssessment;Read
@@ -45,6 +48,9 @@ resiliencehub:GetFailureModeFinding;Read
 resiliencehub:GetPolicy;Read
 resiliencehub:GetService;Read
 resiliencehub:GetSystem;Read
+resiliencehub:GetTest;Read
+resiliencehub:GetTestRun;Read
+resiliencehub:GetTestTemplate;Read
 resiliencehub:GetUserJourney;Read
 resiliencehub:ImportApp;Write
 resiliencehub:ImportPolicy;Write
@@ -71,6 +77,7 @@ resiliencehub:ListPolicies;Read
 resiliencehub:ListRecommendationTemplates;List
 resiliencehub:ListReports;Read
 resiliencehub:ListResiliencyPolicies;List
+resiliencehub:ListResolvedTestRunTargetResources;Read
 resiliencehub:ListResourceGroupingRecommendations;List
 resiliencehub:ListResources;Read
 resiliencehub:ListServiceEvents;Read
@@ -83,10 +90,17 @@ resiliencehub:ListSystemEvents;Read
 resiliencehub:ListSystems;Read
 resiliencehub:ListTagsForResource;Read
 resiliencehub:ListTestRecommendations;List
+resiliencehub:ListTestRunEvents;Read
+resiliencehub:ListTestRunSources;Read
+resiliencehub:ListTestRuns;Read
+resiliencehub:ListTestSources;Read
+resiliencehub:ListTestTemplates;Read
+resiliencehub:ListTests;Read
 resiliencehub:ListUnsupportedAppVersionResources;List
 resiliencehub:ListUserJourneys;Read
 resiliencehub:PublishAppVersion;Write
 resiliencehub:PutDraftAppVersionTemplate;Write
+resiliencehub:PutTestSources;Write
 resiliencehub:RejectResourceGroupingRecommendations;Write
 resiliencehub:RemoveDraftAppVersionResourceMappings;Write
 resiliencehub:ResolveAppVersionResources;Write
@@ -94,8 +108,10 @@ resiliencehub:StartAppAssessment;Write
 resiliencehub:StartFailureModeAssessment;Write
 resiliencehub:StartMetricsExport;Write
 resiliencehub:StartResourceGroupingRecommendationTask;Write
-resiliencehub:TagResource;Tagging
-resiliencehub:UntagResource;Tagging
+resiliencehub:StartTestRun;Write
+resiliencehub:StopTestRun;Write
+resiliencehub:TagResource;Tagging, Write
+resiliencehub:UntagResource;Tagging, Write
 resiliencehub:UpdateApp;Write
 resiliencehub:UpdateAppVersion;Write
 resiliencehub:UpdateAppVersionAppComponent;Write
@@ -108,4 +124,5 @@ resiliencehub:UpdateResiliencyPolicy;Write
 resiliencehub:UpdateService;Write
 resiliencehub:UpdateServiceFunction;Write
 resiliencehub:UpdateSystem;Write
+resiliencehub:UpdateTest;Write
 resiliencehub:UpdateUserJourney;Write

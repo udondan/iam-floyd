@@ -43,8 +43,8 @@ globalaccelerator:ListTagsForResource;Read
 globalaccelerator:ProvisionByoipCidr;Write
 globalaccelerator:RemoveCustomRoutingEndpoints;Write
 globalaccelerator:RemoveEndpoints;Write
-globalaccelerator:TagResource;Tagging
-globalaccelerator:UntagResource;Tagging
+globalaccelerator:TagResource;Tagging, Write
+globalaccelerator:UntagResource;Tagging, Write
 globalaccelerator:UpdateAccelerator;Write
 globalaccelerator:UpdateAcceleratorAttributes;Write
 globalaccelerator:UpdateCrossAccountAttachment;Write

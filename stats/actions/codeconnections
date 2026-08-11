@@ -28,8 +28,8 @@ codeconnections:PassRepository;Read
 codeconnections:RegisterAppCode;Read
 codeconnections:StartAppRegistrationHandshake;Read
 codeconnections:StartOAuthHandshake;Read
-codeconnections:TagResource;Tagging
-codeconnections:UntagResource;Tagging
+codeconnections:TagResource;Tagging, Write
+codeconnections:UntagResource;Tagging, Write
 codeconnections:UpdateConnectionInstallation;Write
 codeconnections:UpdateHost;Write
 codeconnections:UpdateRepositoryLink;Write

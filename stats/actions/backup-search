@@ -8,5 +8,5 @@ backup-search:ListTagsForResource;Read
 backup-search:StartSearchJob;Write
 backup-search:StartSearchResultExportJob;Write
 backup-search:StopSearchJob;Write
-backup-search:TagResource;Tagging
-backup-search:UntagResource;Tagging
+backup-search:TagResource;Tagging, Write
+backup-search:UntagResource;Tagging, Write

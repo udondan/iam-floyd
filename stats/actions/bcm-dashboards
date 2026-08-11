@@ -9,7 +9,7 @@ bcm-dashboards:GetScheduledReport;Read
 bcm-dashboards:ListDashboards;Read
 bcm-dashboards:ListScheduledReports;List
 bcm-dashboards:ListTagsForResource;Read
-bcm-dashboards:TagResource;Tagging
-bcm-dashboards:UntagResource;Tagging
+bcm-dashboards:TagResource;Tagging, Write
+bcm-dashboards:UntagResource;Tagging, Write
 bcm-dashboards:UpdateDashboard;Write
 bcm-dashboards:UpdateScheduledReport;Write

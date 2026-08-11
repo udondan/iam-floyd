@@ -27,6 +27,6 @@ application-signals:ListTagsForResource;Read
 application-signals:PutGroupingConfiguration;Write
 application-signals:ReportInstrumentationConfigurationStatus;Write
 application-signals:StartDiscovery;Write
-application-signals:TagResource;Tagging
-application-signals:UntagResource;Tagging
+application-signals:TagResource;Tagging, Write
+application-signals:UntagResource;Tagging, Write
 application-signals:UpdateServiceLevelObjective;Write

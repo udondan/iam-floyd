@@ -19,11 +19,11 @@ b2bi:ListProfiles;List
 b2bi:ListTagsForResource;Read
 b2bi:ListTransformers;List
 b2bi:StartTransformerJob;Write
-b2bi:TagResource;Tagging
+b2bi:TagResource;Tagging, Write
 b2bi:TestConversion;Write
 b2bi:TestMapping;Write
 b2bi:TestParsing;Write
-b2bi:UntagResource;Tagging
+b2bi:UntagResource;Tagging, Write
 b2bi:UpdateCapability;Write
 b2bi:UpdatePartnership;Write
 b2bi:UpdateProfile;Write

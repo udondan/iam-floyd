@@ -170,11 +170,14 @@ export function getContent(service: string): Promise<Module> {
   const urlPattern =
     'https://docs.aws.amazon.com/service-authorization/latest/reference/list_%s.html';
   return new Promise(async (resolve, reject) => {
-    const shortName = service.replace(/^(amazon|aws)/, '');
+    const shortName = service.replace(/^(amazon|aws)-?/, '');
+    const serviceFixes = fixes[shortName];
+    const filenameBase =
+      serviceFixes && 'name' in serviceFixes ? serviceFixes.name : shortName;
 
     try {
       let module: Module = {
-        filename: shortName.replace(/[^a-z0-9-]/i, '-'),
+        filename: filenameBase.replace(/[^a-z0-9-]/i, '-'),
       };
 
       const url = urlPattern.replace('%s', service);
@@ -202,8 +205,8 @@ export function getContent(service: string): Promise<Module> {
           module.servicePrefix = servicePrefix;
           module.url = url;
 
-          if (shortName in fixes) {
-            module.fixes = fixes[shortName];
+          if (serviceFixes) {
+            module.fixes = serviceFixes;
           }
 
           module = addConditions($, module);
@@ -359,10 +362,15 @@ export function createModule(module: Module): Promise<void> {
   const accessLevelList: AccessLevelList = {};
 
   for (const [name, action] of Object.entries(module.actionList!)) {
-    if (!(action.accessLevel in accessLevelList)) {
-      accessLevelList[action.accessLevel] = [];
+    // the docs sometimes report multiple access levels for a single action (e.g. "Tagging, Write")
+    for (const accessLevel of action.accessLevel
+      .split(',')
+      .map((level) => level.trim())) {
+      if (!(accessLevel in accessLevelList)) {
+        accessLevelList[accessLevel] = [];
+      }
+      accessLevelList[accessLevel].push(name);
     }
-    accessLevelList[action.accessLevel].push(name);
 
     stats.actions.push(`${module.servicePrefix}:${name};${action.accessLevel}`);
 
@@ -592,10 +600,10 @@ export function createModule(module: Module): Promise<void> {
     let propsKey = '';
 
     if (parts[0] != module.servicePrefix) {
-      propsKey += `${parts[0]}:`;
+      propsKey += `${escapeTemplateLiteral(parts[0])}:`;
     }
 
-    propsKey += name[0];
+    propsKey += escapeTemplateLiteral(name[0]);
 
     if (name.length > 1) {
       // it is a parameterized condition
@@ -760,13 +768,22 @@ function upperFirst(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+// AWS sometimes documents condition keys with a literal `${Placeholder}` baked into the
+// key text itself (e.g. `agent.${Domain}.buildkite.dev:build_branch`), as opposed to a
+// placeholder we turn into a real method parameter. Since we embed the raw key text into a
+// backtick template literal in the generated source, an un-escaped `$` would be parsed as a
+// live interpolation referencing an undefined identifier. Escape it so it stays literal text.
+function escapeTemplateLiteral(str: string): string {
+  return str.replace(/\$/g, () => '\\$');
+}
+
 export function lowerFirst(str: string): string {
   return str.charAt(0).toLowerCase() + str.slice(1);
 }
 
 export function camelCase(str: string) {
   return str
-    .split(/[_-\s\./]/)
+    .split(/[_\-\s\./${}]/)
     .map((str) => {
       return upperFirst(str);
     })
@@ -838,99 +855,106 @@ function getTable($: cheerio.Root, title: string) {
   return $(table[0]);
 }
 
+// Some services (e.g. S3) split their actions across multiple tables: the
+// main actions table plus a separate "permission-only actions" table. Both
+// tables share the same `<th>Actions</th>` header, so all of them need to be
+// collected and merged, not just the first match.
+function getTables($: cheerio.Root, title: string) {
+  return $('.table-container table')
+    .toArray()
+    .filter((element) => {
+      return $(element).find('th').first().text() == title;
+    })
+    .map((element) => $(element));
+}
+
 function addActions($: cheerio.Root, module: Module): Module {
   const actions: Actions = {};
-  const tableActions = getTable($, 'Actions');
+  const tablesActions = getTables($, 'Actions');
 
   let action: string;
-  tableActions.find('tr').each((_, element) => {
-    const tds = $(element).find('td');
-    const tdLength = tds.length;
-    let first = tds.first();
+  tablesActions.forEach((tableActions) => {
+    tableActions.find('tr').each((_, element) => {
+      const tds = $(element).find('td');
+      const tdLength = tds.length;
+      let first = tds.first();
 
-    if (tdLength == 6) {
-      // it's a new action
+      if (tdLength == 5) {
+        // it's a new action
+        // column order: action, description, resource type, condition keys, access level
 
-      action = first
-        .text()
-        .replace('[permission only]', '')
-        .replace(/-/g, '')
-        .trim();
-      actions[action] = {
-        url: validateUrl(first.find('a[href]').attr('href')?.trim()),
-        description: cleanDescription(first.next().text().trim()),
-        accessLevel: first.next().next().text().trim(),
-      };
-      first = first.next().next().next();
-    }
-
-    if (tdLength != 6 && tdLength != 3) {
-      const content = cleanDescription(tds.text());
-      if (content.length && !content.startsWith('SCENARIO:')) {
-        console.warn(
-          `skipping row due to unexpected number of fields: ${content}`.yellow,
-        );
+        action = first
+          .text()
+          .replace('[permission only]', '')
+          .replace(/-/g, '')
+          .trim();
+        actions[action] = {
+          url: validateUrl(first.find('a[href]').attr('href')?.trim()),
+          description: cleanDescription(first.next().text().trim()),
+          accessLevel: first.next().next().next().next().text().trim(),
+        };
+        first = first.next().next();
       }
-      return;
-    }
 
-    let resourceType = first.text().trim();
-    let required = false;
-    const conditionKeys = first.next().find('p');
-    const dependentActions = first.next().next().find('p');
-
-    const conditions: string[] = [];
-    if (conditionKeys.length) {
-      conditionKeys.each((_: unknown, conditionKey: string) => {
-        const condition = conditionKeyFixer(
-          module.servicePrefix!,
-          cleanDescription($(conditionKey).text()),
-        );
-
-        if (!module.conditions![condition]) {
-          console.log(
-            `[Skipping referenced condition, since it is not documented: ${condition}]`
-              .red,
+      if (tdLength != 5 && tdLength != 2) {
+        const content = cleanDescription(tds.text());
+        if (content.length && !content.startsWith('SCENARIO:')) {
+          console.warn(
+            `skipping row due to unexpected number of fields: ${content}`
+              .yellow,
           );
-          return;
+        }
+        return;
+      }
+
+      let resourceType = first.text().trim();
+      let required = false;
+      const conditionKeys = first.next().find('p');
+
+      const conditions: string[] = [];
+      if (conditionKeys.length) {
+        conditionKeys.each((_: unknown, conditionKey: string) => {
+          const condition = conditionKeyFixer(
+            module.servicePrefix!,
+            cleanDescription($(conditionKey).text()),
+          );
+
+          if (!module.conditions![condition]) {
+            console.log(
+              `[Skipping referenced condition, since it is not documented: ${condition}]`
+                .red,
+            );
+            return;
+          }
+
+          conditions.push(condition);
+          if (!('relatedActions' in module.conditions![condition])) {
+            module.conditions![condition].relatedActions = [];
+          }
+          module.conditions![condition].relatedActions?.push(action);
+        });
+      }
+
+      if (resourceType.length) {
+        if (typeof actions[action].resourceTypes == 'undefined') {
+          actions[action].resourceTypes = {};
         }
 
-        conditions.push(condition);
-        if (!('relatedActions' in module.conditions![condition])) {
-          module.conditions![condition].relatedActions = [];
+        if (resourceType.indexOf('*') >= 0) {
+          resourceType = resourceType.slice(0, -1);
+          required = true;
         }
-        module.conditions![condition].relatedActions?.push(action);
-      });
-    }
 
-    if (dependentActions.length) {
-      actions[action].dependentActions = [];
-      dependentActions.each((_: unknown, dependentAction: string) => {
-        actions[action].dependentActions?.push(
-          cleanDescription($(dependentAction).text()),
-        );
-      });
-    }
-
-    if (resourceType.length) {
-      if (typeof actions[action].resourceTypes == 'undefined') {
-        actions[action].resourceTypes = {};
+        actions[action].resourceTypes![resourceType] = {
+          required: required,
+        };
+        if (conditions.length) {
+          actions[action].resourceTypes![resourceType].conditions = conditions;
+        }
+      } else if (conditions.length) {
+        actions[action].conditions = conditions;
       }
-
-      if (resourceType.indexOf('*') >= 0) {
-        resourceType = resourceType.slice(0, -1);
-        required = true;
-      }
-
-      actions[action].resourceTypes![resourceType] = {
-        required: required,
-      };
-      if (conditions.length) {
-        actions[action].resourceTypes![resourceType].conditions = conditions;
-      }
-    } else if (conditions.length) {
-      actions[action].conditions = conditions;
-    }
+    });
   });
   module.actionList = actions;
   return module;
@@ -1026,7 +1050,24 @@ function createConditionName(key: string, servicePrefix: string): string {
     // for global conditions and conditions related to other services
     methodName += upperFirst(camelCase(split[0]));
   }
-  methodName += upperFirst(camelCase(split[1]));
+
+  // A trailing placeholder segment (e.g. `${TagKey}` at the very end of the key, as in
+  // `aws:RequestTag/${TagKey}`) is omitted from the name - it becomes a real method parameter
+  // instead, and including it would change hundreds of already-stable method names. A
+  // placeholder that is NOT last (e.g. `${EnterpriseName}` in
+  // `github.com/enterprises/${EnterpriseName}:actor`) isn't turned into a parameter anywhere,
+  // so it must stay part of the name - otherwise multiple distinct keys that only differ by
+  // what follows the placeholder (`:actor` vs `:actor_id`, or by comparison with a sibling key
+  // that omits the placeholder segment entirely) collapse onto the same method name.
+  const rest = split.slice(1);
+  rest.forEach((part, i) => {
+    const isLast = i === rest.length - 1;
+    if (isLast && /^[$<]/.test(part)) {
+      return;
+    }
+    methodName += upperFirst(camelCase(part));
+  });
+
   return methodName;
 }
 
@@ -1059,16 +1100,23 @@ function requestWithRetry(
   return new Promise((resolve, reject) => {
     const retry = (retries: number, backoff: number) => {
       request(url, options, (err, response, body) => {
-        if (err) {
+        const failure =
+          err ||
+          (response && response.statusCode >= 400
+            ? new Error(
+                `Request to ${url} failed with status ${response.statusCode}`,
+              )
+            : undefined);
+        if (failure) {
           const failDetails =
             retries > 0 ? `Retry in ${backoff * 2}` : 'Giving up';
-          console.log(`Failed to fetch ${url} - ${failDetails}`);
+          console.log(`Failed to fetch ${url} - ${failure} - ${failDetails}`);
           if (retries > 0) {
             setTimeout(() => {
               retry(--retries, backoff * 2);
             }, backoff);
           } else {
-            reject(err);
+            reject(failure);
           }
         } else {
           if ('method' in options && options.method == 'HEAD') {

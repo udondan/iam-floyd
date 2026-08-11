@@ -13,7 +13,7 @@ servicecatalog:CreateApplication;Write
 servicecatalog:CreateAttributeGroup;Write
 servicecatalog:CreateConstraint;Write
 servicecatalog:CreatePortfolio;Write
-servicecatalog:CreatePortfolioShare;Permissions management
+servicecatalog:CreatePortfolioShare;Permissions management, Write
 servicecatalog:CreateProduct;Write
 servicecatalog:CreateProvisionedProductPlan;Write
 servicecatalog:CreateProvisioningArtifact;Write
@@ -23,7 +23,7 @@ servicecatalog:DeleteApplication;Write
 servicecatalog:DeleteAttributeGroup;Write
 servicecatalog:DeleteConstraint;Write
 servicecatalog:DeletePortfolio;Write
-servicecatalog:DeletePortfolioShare;Permissions management
+servicecatalog:DeletePortfolioShare;Permissions management, Write
 servicecatalog:DeleteProduct;Write
 servicecatalog:DeleteProvisionedProductPlan;Write
 servicecatalog:DeleteProvisioningArtifact;Write
@@ -101,14 +101,14 @@ servicecatalog:SearchProducts;List
 servicecatalog:SearchProductsAsAdmin;List
 servicecatalog:SearchProvisionedProducts;List
 servicecatalog:SyncResource;Write
-servicecatalog:TagResource;Tagging
+servicecatalog:TagResource;Tagging, Write
 servicecatalog:TerminateProvisionedProduct;Write
-servicecatalog:UntagResource;Tagging
+servicecatalog:UntagResource;Tagging, Write
 servicecatalog:UpdateApplication;Write
 servicecatalog:UpdateAttributeGroup;Write
 servicecatalog:UpdateConstraint;Write
 servicecatalog:UpdatePortfolio;Write
-servicecatalog:UpdatePortfolioShare;Permissions management
+servicecatalog:UpdatePortfolioShare;Permissions management, Write
 servicecatalog:UpdateProduct;Write
 servicecatalog:UpdateProvisionedProduct;Write
 servicecatalog:UpdateProvisionedProductProperties;Write

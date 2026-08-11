@@ -15,8 +15,8 @@ security-ir:ListInvestigations;Read
 security-ir:ListMemberships;List
 security-ir:ListTagsForResource;Read
 security-ir:SendFeedback;Write
-security-ir:TagResource;Tagging
-security-ir:UntagResource;Tagging
+security-ir:TagResource;Tagging, Write
+security-ir:UntagResource;Tagging, Write
 security-ir:UpdateCase;Write
 security-ir:UpdateCaseComment;Write
 security-ir:UpdateCaseStatus;Write

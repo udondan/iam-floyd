@@ -94,9 +94,9 @@ iotwireless:StartMulticastGroupSession;Write
 iotwireless:StartNetworkAnalyzerStream;Write
 iotwireless:StartSingleWirelessDeviceImportTask;Write
 iotwireless:StartWirelessDeviceImportTask;Write
-iotwireless:TagResource;Tagging
+iotwireless:TagResource;Tagging, Write
 iotwireless:TestWirelessDevice;Write
-iotwireless:UntagResource;Tagging
+iotwireless:UntagResource;Tagging, Write
 iotwireless:UpdateDestination;Write
 iotwireless:UpdateEventConfigurationByResourceTypes;Write
 iotwireless:UpdateFuotaTask;Write

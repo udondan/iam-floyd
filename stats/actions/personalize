@@ -74,8 +74,8 @@ personalize:PutUsers;Write
 personalize:StartRecommender;Write
 personalize:StopRecommender;Write
 personalize:StopSolutionVersionCreation;Write
-personalize:TagResource;Tagging
-personalize:UntagResource;Tagging
+personalize:TagResource;Tagging, Write
+personalize:UntagResource;Tagging, Write
 personalize:UpdateCampaign;Write
 personalize:UpdateDataset;Write
 personalize:UpdateMetricAttribution;Write

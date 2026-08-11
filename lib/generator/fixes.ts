@@ -14,14 +14,23 @@ type Fixes = Record<string, any>;
  *
  * Possible keys for the contained objects:
  *
- * id: rewrites the filename and class name. This is needed, because, in some cases, the docs have split up the documentation for the same service prefix on multiple pages
+ * name: rewrites the filename and class name. This is needed, because, in some cases, the docs have split up the documentation for the same service prefix on multiple pages
  * resourceTypes.$name.arn: Fixes ARN of the given resource type
  */
 export const fixes: Fixes = {
   'awsiot1-click': {
     ignore: true, // is EOL. the page exists but doesn't have the expected content format
   },
-  cloudcontrolapi: {
+  portal: {
+    name: 'billing-portal',
+  },
+  'marketplace-management': {
+    name: 'marketplace-management-portal',
+  },
+  'external-anthropic': {
+    name: 'anthropic',
+  },
+  cloudcontrol: {
     name: 'aws-cloud-control-api',
   },
   codebuild: {
@@ -40,37 +49,40 @@ export const fixes: Fixes = {
       },
     },
   },
-  pinpointemailservice: {
+  'pinpoint-email': {
     name: 'ses-pinpoint',
   },
-  marketplacecatalog: {
+  'marketplace-agreement': {
+    name: 'aws-marketplace-agreement',
+  },
+  'marketplace-catalog': {
     name: 'aws-marketplace-catalog',
   },
-  marketplacedeploymentservice: {
+  'marketplace-deployment': {
     name: 'aws-marketplace-deployment-service',
   },
-  marketplacediscovery: {
+  'marketplace-discovery': {
     name: 'aws-marketplace-discovery',
   },
-  marketplaceentitlementservice: {
+  'marketplace-entitlement': {
     name: 'aws-marketplace-entitlement-service',
   },
-  marketplaceimagebuildingservice: {
+  'marketplace-image-build': {
     name: 'aws-marketplace-image-building-service',
   },
-  marketplacemeteringservice: {
+  meteringmarketplace: {
     name: 'aws-marketplace-metering-service',
   },
-  marketplaceprocurementsystemsintegration: {
+  'marketplace-procurement-integration': {
     name: 'aws-marketplace-procurement-systems-integration',
   },
-  marketplaceprivatemarketplace: {
+  'private-marketplace': {
     name: 'aws-marketplace-private',
   },
-  marketplacereporting: {
+  'marketplace-reporting': {
     name: 'aws-marketplace-reporting',
   },
-  marketplacesellerreporting: {
+  'marketplace-seller-reporting': {
     name: 'aws-marketplace-seller-reporting',
   },
   backup: {
@@ -142,7 +154,7 @@ export const fixes: Fixes = {
       },
     },
   },
-  'simpleemailservice-mailmanager': {
+  mailmanager: {
     name: 'ses-mailmanager',
   },
   ssm: {

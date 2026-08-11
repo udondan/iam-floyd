@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [amplify](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsamplify.html).
+ * Statement provider for service [amplify](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amplify.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Amplify extends PolicyStatement {
   public servicePrefix = 'amplify';
 
   /**
-   * Statement provider for service [amplify](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsamplify.html).
+   * Statement provider for service [amplify](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amplify.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -59,10 +59,6 @@ export class Amplify extends PolicyStatement {
    * Grants permission to create a new Branch for an Amplify App
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
@@ -414,11 +410,7 @@ export class Amplify extends PolicyStatement {
   /**
    * Grants permission to tag an AWS Amplify Console resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
@@ -429,10 +421,7 @@ export class Amplify extends PolicyStatement {
   /**
    * Grants permission to remove a tag from an AWS Amplify Console resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
@@ -504,6 +493,8 @@ export class Amplify extends PolicyStatement {
       'StartDeployment',
       'StartJob',
       'StopJob',
+      'TagResource',
+      'UntagResource',
       'UpdateApp',
       'UpdateBranch',
       'UpdateDomainAssociation',
@@ -572,22 +563,6 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type jobs to the statement
-   *
-   * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
-   *
-   * @param appId - Identifier for the appId.
-   * @param branchName - Identifier for the branchName.
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onJobs(appId: string, branchName: string, jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:amplify:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/branches/${ branchName }/jobs/${ jobId }`);
-  }
-
-  /**
    * Adds a resource of type domains to the statement
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
@@ -603,6 +578,22 @@ export class Amplify extends PolicyStatement {
    */
   public onDomains(appId: string, domainName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:amplify:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/domains/${ domainName }`);
+  }
+
+  /**
+   * Adds a resource of type jobs to the statement
+   *
+   * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param branchName - Identifier for the branchName.
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onJobs(appId: string, branchName: string, jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:amplify:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/branches/${ branchName }/jobs/${ jobId }`);
   }
 
   /**
@@ -644,6 +635,42 @@ export class Amplify extends PolicyStatement {
    * Filters access by a tag's key associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAssociateWebACL()
+   * - .toCreateBackendEnvironment()
+   * - .toCreateBranch()
+   * - .toCreateDeployment()
+   * - .toCreateDomainAssociation()
+   * - .toCreateWebHook()
+   * - .toDeleteApp()
+   * - .toDeleteBackendEnvironment()
+   * - .toDeleteBranch()
+   * - .toDeleteDomainAssociation()
+   * - .toDeleteWebHook()
+   * - .toDisassociateWebACL()
+   * - .toGenerateAccessLogs()
+   * - .toGetApp()
+   * - .toGetArtifactUrl()
+   * - .toGetBackendEnvironment()
+   * - .toGetBranch()
+   * - .toGetDomainAssociation()
+   * - .toGetWebACLForResource()
+   * - .toGetWebHook()
+   * - .toListArtifacts()
+   * - .toListBackendEnvironments()
+   * - .toListBranches()
+   * - .toListDomainAssociations()
+   * - .toListJobs()
+   * - .toListTagsForResource()
+   * - .toListWebHooks()
+   * - .toStartDeployment()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateApp()
+   * - .toUpdateBranch()
+   * - .toUpdateDomainAssociation()
+   * - .toUpdateWebHook()
    *
    * Applies to resource types:
    * - apps

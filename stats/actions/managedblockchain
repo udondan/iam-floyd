@@ -6,13 +6,13 @@ managedblockchain:CreateProposal;Write
 managedblockchain:DeleteAccessor;Write
 managedblockchain:DeleteMember;Write
 managedblockchain:DeleteNode;Write
-managedblockchain:GET;Permissions management
+managedblockchain:GET;Permissions management, Write
 managedblockchain:GetAccessor;Read
 managedblockchain:GetMember;Read
 managedblockchain:GetNetwork;Read
 managedblockchain:GetNode;Read
 managedblockchain:GetProposal;Read
-managedblockchain:Invoke;Permissions management
+managedblockchain:Invoke;Permissions management, Write
 managedblockchain:InvokeRpcBitcoinMainnet;Read
 managedblockchain:InvokeRpcBitcoinTestnet;Read
 managedblockchain:InvokeRpcPolygonMainnet;Read
@@ -25,10 +25,10 @@ managedblockchain:ListNodes;List
 managedblockchain:ListProposalVotes;Read
 managedblockchain:ListProposals;List
 managedblockchain:ListTagsForResource;Read
-managedblockchain:POST;Permissions management
+managedblockchain:POST;Permissions management, Write
 managedblockchain:RejectInvitation;Write
-managedblockchain:TagResource;Tagging
-managedblockchain:UntagResource;Tagging
+managedblockchain:TagResource;Tagging, Write
+managedblockchain:UntagResource;Tagging, Write
 managedblockchain:UpdateMember;Write
 managedblockchain:UpdateNode;Write
 managedblockchain:VoteOnProposal;Write

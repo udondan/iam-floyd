@@ -1,4 +1,4 @@
-acm:AddTagsToCertificate;Tagging
+acm:AddTagsToCertificate;Tagging, Write
 acm:CreateAcmeDomainValidation;Write
 acm:CreateAcmeEndpoint;Write
 acm:CreateAcmeExternalAccountBinding;Write
@@ -24,7 +24,7 @@ acm:ListCertificates;List
 acm:ListTagsForCertificate;Read
 acm:ListTagsForResource;Read
 acm:PutAccountConfiguration;Write
-acm:RemoveTagsFromCertificate;Tagging
+acm:RemoveTagsFromCertificate;Tagging, Write
 acm:RenewCertificate;Write
 acm:RequestCertificate;Write
 acm:ResendValidationEmail;Write
@@ -32,8 +32,8 @@ acm:RevokeAcmeAccount;Write
 acm:RevokeAcmeExternalAccountBinding;Write
 acm:RevokeCertificate;Write
 acm:SearchCertificates;List
-acm:TagResource;Tagging
-acm:UntagResource;Tagging
+acm:TagResource;Tagging, Write
+acm:UntagResource;Tagging, Write
 acm:UpdateAcmeDomainValidation;Write
 acm:UpdateAcmeEndpoint;Write
 acm:UpdateCertificate;Write

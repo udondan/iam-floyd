@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [datasync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatasync.html).
+ * Statement provider for service [datasync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Datasync extends PolicyStatement {
   public servicePrefix = 'datasync';
 
   /**
-   * Statement provider for service [datasync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatasync.html).
+   * Statement provider for service [datasync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,11 +23,6 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_AddStorageSystem.html
    */
   public toAddStorageSystem() {
@@ -38,9 +33,6 @@ export class Datasync extends PolicyStatement {
    * Grants permission to cancel execution of a sync task
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CancelTaskExecution.html
    */
@@ -232,10 +224,6 @@ export class Datasync extends PolicyStatement {
    * Grants permission to create a sync task
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html
    */
@@ -468,9 +456,6 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html
    */
   public toDescribeTaskExecution() {
@@ -595,11 +580,6 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html
    */
   public toStartTaskExecution() {
@@ -620,11 +600,7 @@ export class Datasync extends PolicyStatement {
   /**
    * Grants permission to apply a key-value pair to an AWS resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_TagResource.html
    */
@@ -635,10 +611,7 @@ export class Datasync extends PolicyStatement {
   /**
    * Grants permission to remove one or more tags from the specified resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UntagResource.html
    */
@@ -816,9 +789,6 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateTaskExecution.html
    */
   public toUpdateTaskExecution() {
@@ -850,6 +820,8 @@ export class Datasync extends PolicyStatement {
       'StartDiscoveryJob',
       'StartTaskExecution',
       'StopDiscoveryJob',
+      'TagResource',
+      'UntagResource',
       'UpdateAgent',
       'UpdateDiscoveryJob',
       'UpdateLocationAzureBlob',
@@ -920,6 +892,24 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type discoveryjob to the statement
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-create.html
+   *
+   * @param storageSystemId - Identifier for the storageSystemId.
+   * @param discoveryJobId - Identifier for the discoveryJobId.
+   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDiscoveryjob(storageSystemId: string, discoveryJobId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:datasync:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:system/${ storageSystemId }/job/${ discoveryJobId }`);
+  }
+
+  /**
    * Adds a resource of type location to the statement
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html
@@ -934,6 +924,23 @@ export class Datasync extends PolicyStatement {
    */
   public onLocation(locationId: string, accountId?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:datasync:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:location/${ locationId }`);
+  }
+
+  /**
+   * Adds a resource of type storagesystem to the statement
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/discovery-configure-storage.html
+   *
+   * @param storageSystemId - Identifier for the storageSystemId.
+   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onStoragesystem(storageSystemId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:datasync:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:system/${ storageSystemId }`);
   }
 
   /**
@@ -969,41 +976,6 @@ export class Datasync extends PolicyStatement {
    */
   public onTaskexecution(taskId: string, executionId: string, accountId?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:datasync:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:task/${ taskId }/execution/${ executionId }`);
-  }
-
-  /**
-   * Adds a resource of type storagesystem to the statement
-   *
-   * https://docs.aws.amazon.com/datasync/latest/userguide/discovery-configure-storage.html
-   *
-   * @param storageSystemId - Identifier for the storageSystemId.
-   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onStoragesystem(storageSystemId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:datasync:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:system/${ storageSystemId }`);
-  }
-
-  /**
-   * Adds a resource of type discoveryjob to the statement
-   *
-   * https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-create.html
-   *
-   * @param storageSystemId - Identifier for the storageSystemId.
-   * @param discoveryJobId - Identifier for the discoveryJobId.
-   * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDiscoveryjob(storageSystemId: string, discoveryJobId: string, accountId?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:datasync:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:system/${ storageSystemId }/job/${ discoveryJobId }`);
   }
 
   /**
@@ -1045,18 +1017,61 @@ export class Datasync extends PolicyStatement {
    * Applies to actions:
    * - .toAddStorageSystem()
    * - .toCancelTaskExecution()
+   * - .toCreateTask()
+   * - .toDeleteAgent()
+   * - .toDeleteLocation()
+   * - .toDeleteTask()
+   * - .toDescribeAgent()
+   * - .toDescribeDiscoveryJob()
+   * - .toDescribeLocationAzureBlob()
+   * - .toDescribeLocationEfs()
+   * - .toDescribeLocationFsxLustre()
+   * - .toDescribeLocationFsxOntap()
+   * - .toDescribeLocationFsxOpenZfs()
+   * - .toDescribeLocationFsxWindows()
+   * - .toDescribeLocationHdfs()
+   * - .toDescribeLocationNfs()
+   * - .toDescribeLocationObjectStorage()
+   * - .toDescribeLocationS3()
+   * - .toDescribeLocationSmb()
+   * - .toDescribeStorageSystem()
+   * - .toDescribeStorageSystemResourceMetrics()
+   * - .toDescribeStorageSystemResources()
+   * - .toDescribeTask()
    * - .toDescribeTaskExecution()
+   * - .toGenerateRecommendations()
+   * - .toListTagsForResource()
    * - .toListTaskExecutions()
+   * - .toRemoveStorageSystem()
+   * - .toStartDiscoveryJob()
    * - .toStartTaskExecution()
+   * - .toStopDiscoveryJob()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAgent()
+   * - .toUpdateDiscoveryJob()
+   * - .toUpdateLocationAzureBlob()
+   * - .toUpdateLocationEfs()
+   * - .toUpdateLocationFsxLustre()
+   * - .toUpdateLocationFsxOntap()
+   * - .toUpdateLocationFsxOpenZfs()
+   * - .toUpdateLocationFsxWindows()
+   * - .toUpdateLocationHdfs()
+   * - .toUpdateLocationNfs()
+   * - .toUpdateLocationObjectStorage()
+   * - .toUpdateLocationS3()
+   * - .toUpdateLocationSmb()
+   * - .toUpdateStorageSystem()
+   * - .toUpdateTask()
    * - .toUpdateTaskExecution()
    *
    * Applies to resource types:
    * - agent
+   * - discoveryjob
    * - location
+   * - storagesystem
    * - task
    * - taskexecution
-   * - storagesystem
-   * - discoveryjob
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

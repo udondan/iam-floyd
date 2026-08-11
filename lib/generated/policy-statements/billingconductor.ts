@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [billingconductor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingconductor.html).
+ * Statement provider for service [billingconductor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_billingconductor.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Billingconductor extends PolicyStatement {
   public servicePrefix = 'billingconductor';
 
   /**
-   * Statement provider for service [billingconductor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingconductor.html).
+   * Statement provider for service [billingconductor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_billingconductor.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -67,10 +67,6 @@ export class Billingconductor extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_CreateBillingGroup.html
    */
   public toCreateBillingGroup() {
@@ -82,10 +78,6 @@ export class Billingconductor extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_CreateCustomLineItem.html
    */
   public toCreateCustomLineItem() {
@@ -96,10 +88,6 @@ export class Billingconductor extends PolicyStatement {
    * Grants permission to create a pricing plan
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_CreatePricingPlan.html
    */
@@ -113,8 +101,8 @@ export class Billingconductor extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_CreatePricingRule.html
    */
@@ -314,10 +302,6 @@ export class Billingconductor extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -327,11 +311,7 @@ export class Billingconductor extends PolicyStatement {
   /**
    * Grants permission to tag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_TagResource.html
    */
@@ -342,10 +322,7 @@ export class Billingconductor extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_UntagResource.html
    */
@@ -413,6 +390,8 @@ export class Billingconductor extends PolicyStatement {
       'DeletePricingRule',
       'DisassociateAccounts',
       'DisassociatePricingRules',
+      'TagResource',
+      'UntagResource',
       'UpdateBillingGroup',
       'UpdateCustomLineItem',
       'UpdatePricingPlan',
@@ -457,6 +436,22 @@ export class Billingconductor extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type customlineitem to the statement
+   *
+   * https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-abc.html
+   *
+   * @param customLineItemId - Identifier for the customLineItemId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustomlineitem(customLineItemId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:billingconductor::${ account ?? this.defaultAccount }:customlineitem/${ customLineItemId }`);
+  }
+
+  /**
    * Adds a resource of type pricingplan to the statement
    *
    * https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-abc.html
@@ -489,22 +484,6 @@ export class Billingconductor extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type customlineitem to the statement
-   *
-   * https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-abc.html
-   *
-   * @param customLineItemId - Identifier for the customLineItemId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCustomlineitem(customLineItemId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:billingconductor::${ account ?? this.defaultAccount }:customlineitem/${ customLineItemId }`);
-  }
-
-  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -530,11 +509,38 @@ export class Billingconductor extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toAssociateAccounts()
+   * - .toAssociatePricingRules()
+   * - .toBatchAssociateResourcesToCustomLineItem()
+   * - .toBatchDisassociateResourcesFromCustomLineItem()
+   * - .toCreateBillingGroup()
+   * - .toCreateCustomLineItem()
+   * - .toCreatePricingPlan()
+   * - .toDeleteBillingGroup()
+   * - .toDeleteCustomLineItem()
+   * - .toDeletePricingPlan()
+   * - .toDeletePricingRule()
+   * - .toDisassociateAccounts()
+   * - .toDisassociatePricingRules()
+   * - .toGetBillingGroupCostReport()
+   * - .toListCustomLineItemVersions()
+   * - .toListPricingPlansAssociatedWithPricingRule()
+   * - .toListPricingRulesAssociatedToPricingPlan()
+   * - .toListResourcesAssociatedToCustomLineItem()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateBillingGroup()
+   * - .toUpdateCustomLineItem()
+   * - .toUpdatePricingPlan()
+   * - .toUpdatePricingRule()
+   *
    * Applies to resource types:
    * - billinggroup
+   * - customlineitem
    * - pricingplan
    * - pricingrule
-   * - customlineitem
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

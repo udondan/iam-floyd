@@ -53,11 +53,11 @@ route53resolver:ListResolverQueryLogConfigs;List
 route53resolver:ListResolverRuleAssociations;List
 route53resolver:ListResolverRules;List
 route53resolver:ListTagsForResource;Read
-route53resolver:PutFirewallRuleGroupPolicy;Permissions management
-route53resolver:PutResolverQueryLogConfigPolicy;Permissions management
-route53resolver:PutResolverRulePolicy;Permissions management
-route53resolver:TagResource;Tagging
-route53resolver:UntagResource;Tagging
+route53resolver:PutFirewallRuleGroupPolicy;Permissions management, Write
+route53resolver:PutResolverQueryLogConfigPolicy;Permissions management, Write
+route53resolver:PutResolverRulePolicy;Permissions management, Write
+route53resolver:TagResource;Tagging, Write
+route53resolver:UntagResource;Tagging, Write
 route53resolver:UpdateFirewallConfig;Write
 route53resolver:UpdateFirewallDomains;Write
 route53resolver:UpdateFirewallRule;Write

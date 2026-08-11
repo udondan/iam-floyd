@@ -51,8 +51,8 @@ aps:PutResourcePolicy;Write
 aps:PutRuleGroupsNamespace;Write
 aps:QueryMetrics;Read
 aps:RemoteWrite;Write
-aps:TagResource;Tagging
-aps:UntagResource;Tagging
+aps:TagResource;Tagging, Write
+aps:UntagResource;Tagging, Write
 aps:UpdateLoggingConfiguration;Write
 aps:UpdateQueryLoggingConfiguration;Write
 aps:UpdateScraper;Write

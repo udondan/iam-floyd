@@ -24,8 +24,8 @@ schemas:PutResourcePolicy;Write
 schemas:SearchSchemas;List
 schemas:StartDiscoverer;Write
 schemas:StopDiscoverer;Write
-schemas:TagResource;Tagging
-schemas:UntagResource;Tagging
+schemas:TagResource;Tagging, Write
+schemas:UntagResource;Tagging, Write
 schemas:UpdateDiscoverer;Write
 schemas:UpdateRegistry;Write
 schemas:UpdateSchema;Write

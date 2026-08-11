@@ -4,7 +4,7 @@ ssm-incidents:CreateResponsePlan;Write
 ssm-incidents:CreateTimelineEvent;Write
 ssm-incidents:DeleteIncidentRecord;Write
 ssm-incidents:DeleteReplicationSet;Write
-ssm-incidents:DeleteResourcePolicy;Permissions management
+ssm-incidents:DeleteResourcePolicy;Permissions management, Write
 ssm-incidents:DeleteResponsePlan;Write
 ssm-incidents:DeleteTimelineEvent;Write
 ssm-incidents:GetIncidentRecord;Read
@@ -19,10 +19,10 @@ ssm-incidents:ListReplicationSets;List
 ssm-incidents:ListResponsePlans;List
 ssm-incidents:ListTagsForResource;Read
 ssm-incidents:ListTimelineEvents;List
-ssm-incidents:PutResourcePolicy;Permissions management
+ssm-incidents:PutResourcePolicy;Permissions management, Write
 ssm-incidents:StartIncident;Write
-ssm-incidents:TagResource;Tagging
-ssm-incidents:UntagResource;Tagging
+ssm-incidents:TagResource;Tagging, Write
+ssm-incidents:UntagResource;Tagging, Write
 ssm-incidents:UpdateDeletionProtection;Write
 ssm-incidents:UpdateIncidentRecord;Write
 ssm-incidents:UpdateRelatedItems;Write

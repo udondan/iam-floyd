@@ -8,5 +8,5 @@ pca-connector-scep:GetConnector;Read
 pca-connector-scep:ListChallengeMetadata;List
 pca-connector-scep:ListConnectors;List
 pca-connector-scep:ListTagsForResource;Read
-pca-connector-scep:TagResource;Tagging
-pca-connector-scep:UntagResource;Tagging
+pca-connector-scep:TagResource;Tagging, Write
+pca-connector-scep:UntagResource;Tagging, Write

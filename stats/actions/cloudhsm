@@ -4,7 +4,7 @@ cloudhsm:CreateHsm;Write
 cloudhsm:DeleteBackup;Write
 cloudhsm:DeleteCluster;Write
 cloudhsm:DeleteHsm;Write
-cloudhsm:DeleteResourcePolicy;Write
+cloudhsm:DeleteResourcePolicy;Permissions management, Write
 cloudhsm:DescribeBackups;Read
 cloudhsm:DescribeClusters;Read
 cloudhsm:GetResourcePolicy;Read
@@ -12,7 +12,7 @@ cloudhsm:InitializeCluster;Write
 cloudhsm:ListTags;Read
 cloudhsm:ModifyBackupAttributes;Write
 cloudhsm:ModifyCluster;Write
-cloudhsm:PutResourcePolicy;Write
+cloudhsm:PutResourcePolicy;Permissions management, Write
 cloudhsm:RestoreBackup;Write
-cloudhsm:TagResource;Tagging
-cloudhsm:UntagResource;Tagging
+cloudhsm:TagResource;Tagging, Write
+cloudhsm:UntagResource;Tagging, Write

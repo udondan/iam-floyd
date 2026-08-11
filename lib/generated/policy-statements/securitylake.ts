@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [securitylake](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsecuritylake.html).
+ * Statement provider for service [securitylake](https://docs.aws.amazon.com/service-authorization/latest/reference/list_securitylake.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Securitylake extends PolicyStatement {
   public servicePrefix = 'securitylake';
 
   /**
-   * Statement provider for service [securitylake](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsecuritylake.html).
+   * Statement provider for service [securitylake](https://docs.aws.amazon.com/service-authorization/latest/reference/list_securitylake.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,15 +23,6 @@ export class Securitylake extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - glue:CreateDatabase
-   * - glue:CreateTable
-   * - glue:GetDatabase
-   * - glue:GetTable
-   * - iam:CreateServiceLinkedRole
-   * - kms:CreateGrant
-   * - kms:DescribeKey
-   *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateAwsLogSource.html
    */
   public toCreateAwsLogSource() {
@@ -43,23 +34,6 @@ export class Securitylake extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - glue:CreateCrawler
-   * - glue:CreateDatabase
-   * - glue:CreateTable
-   * - glue:StartCrawlerSchedule
-   * - iam:DeleteRolePolicy
-   * - iam:GetRole
-   * - iam:PassRole
-   * - iam:PutRolePolicy
-   * - kms:CreateGrant
-   * - kms:DescribeKey
-   * - kms:GenerateDataKey
-   * - lakeformation:GrantPermissions
-   * - lakeformation:RegisterResource
-   * - s3:ListBucket
-   * - s3:PutObject
-   *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateCustomLogSource.html
    */
   public toCreateCustomLogSource() {
@@ -70,41 +44,6 @@ export class Securitylake extends PolicyStatement {
    * Grants permission to create a new security data lake
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - events:PutRule
-   * - events:PutTargets
-   * - iam:CreateServiceLinkedRole
-   * - iam:DeleteRolePolicy
-   * - iam:GetRole
-   * - iam:ListAttachedRolePolicies
-   * - iam:PassRole
-   * - iam:PutRolePolicy
-   * - kms:CreateGrant
-   * - kms:DescribeKey
-   * - lakeformation:GetDataLakeSettings
-   * - lakeformation:PutDataLakeSettings
-   * - lambda:AddPermission
-   * - lambda:CreateEventSourceMapping
-   * - lambda:CreateFunction
-   * - organizations:DescribeOrganization
-   * - organizations:ListAccounts
-   * - organizations:ListDelegatedServicesForAccount
-   * - s3:CreateBucket
-   * - s3:GetObject
-   * - s3:GetObjectVersion
-   * - s3:ListBucket
-   * - s3:PutBucketPolicy
-   * - s3:PutBucketPublicAccessBlock
-   * - s3:PutBucketVersioning
-   * - sqs:CreateQueue
-   * - sqs:GetQueueAttributes
-   * - sqs:SetQueueAttributes
    *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLake.html
    */
@@ -144,20 +83,6 @@ export class Securitylake extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - iam:CreateRole
-   * - iam:DeleteRolePolicy
-   * - iam:GetRole
-   * - iam:PutRolePolicy
-   * - lakeformation:GrantPermissions
-   * - lakeformation:ListPermissions
-   * - lakeformation:RegisterResource
-   * - lakeformation:RevokePermissions
-   * - ram:GetResourceShareAssociations
-   * - ram:GetResourceShares
-   * - ram:UpdateResourceShare
-   * - s3:PutObject
-   *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateSubscriber.html
    */
   public toCreateSubscriber() {
@@ -168,25 +93,6 @@ export class Securitylake extends PolicyStatement {
    * Grants permission to create a webhook invocation to notify a client when there is new data in the data lake
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - events:CreateApiDestination
-   * - events:CreateConnection
-   * - events:DescribeRule
-   * - events:ListApiDestinations
-   * - events:ListConnections
-   * - events:PutRule
-   * - events:PutTargets
-   * - iam:DeleteRolePolicy
-   * - iam:GetRole
-   * - iam:PassRole
-   * - s3:GetBucketNotification
-   * - s3:PutBucketNotification
-   * - sqs:CreateQueue
-   * - sqs:DeleteQueue
-   * - sqs:GetQueueAttributes
-   * - sqs:GetQueueUrl
-   * - sqs:SetQueueAttributes
    *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateSubscriberNotification.html
    */
@@ -210,9 +116,6 @@ export class Securitylake extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - glue:StopCrawlerSchedule
-   *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeleteCustomLogSource.html
    */
   public toDeleteCustomLogSource() {
@@ -223,11 +126,6 @@ export class Securitylake extends PolicyStatement {
    * Grants permission to delete security data lake
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - organizations:DescribeOrganization
-   * - organizations:ListDelegatedAdministrators
-   * - organizations:ListDelegatedServicesForAccount
    *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeleteDataLake.html
    */
@@ -262,23 +160,6 @@ export class Securitylake extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - events:DeleteApiDestination
-   * - events:DeleteConnection
-   * - events:DeleteRule
-   * - events:DescribeRule
-   * - events:ListApiDestinations
-   * - events:ListTargetsByRule
-   * - events:RemoveTargets
-   * - iam:DeleteRole
-   * - iam:DeleteRolePolicy
-   * - iam:GetRole
-   * - iam:ListRolePolicies
-   * - lakeformation:ListPermissions
-   * - lakeformation:RevokePermissions
-   * - sqs:DeleteQueue
-   * - sqs:GetQueueUrl
-   *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeleteSubscriber.html
    */
   public toDeleteSubscriber() {
@@ -290,22 +171,6 @@ export class Securitylake extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - events:DeleteApiDestination
-   * - events:DeleteConnection
-   * - events:DeleteRule
-   * - events:DescribeRule
-   * - events:ListApiDestinations
-   * - events:ListTargetsByRule
-   * - events:RemoveTargets
-   * - iam:DeleteRole
-   * - iam:DeleteRolePolicy
-   * - iam:GetRole
-   * - iam:ListRolePolicies
-   * - lakeformation:RevokePermissions
-   * - sqs:DeleteQueue
-   * - sqs:GetQueueUrl
-   *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeleteSubscriberNotification.html
    */
   public toDeleteSubscriberNotification() {
@@ -316,11 +181,6 @@ export class Securitylake extends PolicyStatement {
    * Grants permission to remove the Delegated Administrator account and disable Amazon Security Lake as a service for this organization
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - organizations:DeregisterDelegatedAdministrator
-   * - organizations:DescribeOrganization
-   * - organizations:ListDelegatedServicesForAccount
    *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeregisterDataLakeDelegatedAdministrator.html
    */
@@ -343,9 +203,6 @@ export class Securitylake extends PolicyStatement {
    * Grants permission to get an organization's configuration setting for automatically enabling Amazon Security Lake access for new organization accounts
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - organizations:DescribeOrganization
    *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_GetDataLakeOrganizationConfiguration.html
    */
@@ -435,14 +292,6 @@ export class Securitylake extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   * - organizations:DescribeOrganization
-   * - organizations:EnableAWSServiceAccess
-   * - organizations:ListDelegatedAdministrators
-   * - organizations:ListDelegatedServicesForAccount
-   * - organizations:RegisterDelegatedAdministrator
-   *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_RegisterDataLakeDelegatedAdministrator.html
    */
   public toRegisterDataLakeDelegatedAdministrator() {
@@ -452,11 +301,7 @@ export class Securitylake extends PolicyStatement {
   /**
    * Grants permission to add tags to the resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_TagResource.html
    */
@@ -467,10 +312,7 @@ export class Securitylake extends PolicyStatement {
   /**
    * Grants permission to remove tags from the resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UntagResource.html
    */
@@ -482,34 +324,6 @@ export class Securitylake extends PolicyStatement {
    * Grants permission to update a security data lake
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - events:PutRule
-   * - events:PutTargets
-   * - iam:CreateServiceLinkedRole
-   * - iam:DeleteRolePolicy
-   * - iam:GetRole
-   * - iam:ListAttachedRolePolicies
-   * - iam:PutRolePolicy
-   * - kms:CreateGrant
-   * - kms:DescribeKey
-   * - lakeformation:GetDataLakeSettings
-   * - lakeformation:PutDataLakeSettings
-   * - lambda:AddPermission
-   * - lambda:CreateEventSourceMapping
-   * - lambda:CreateFunction
-   * - organizations:DescribeOrganization
-   * - organizations:ListDelegatedServicesForAccount
-   * - s3:CreateBucket
-   * - s3:GetObject
-   * - s3:GetObjectVersion
-   * - s3:ListBucket
-   * - s3:PutBucketPolicy
-   * - s3:PutBucketPublicAccessBlock
-   * - s3:PutBucketVersioning
-   * - sqs:CreateQueue
-   * - sqs:GetQueueAttributes
-   * - sqs:SetQueueAttributes
    *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDataLake.html
    */
@@ -533,18 +347,6 @@ export class Securitylake extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - events:CreateApiDestination
-   * - events:CreateConnection
-   * - events:DescribeRule
-   * - events:ListApiDestinations
-   * - events:ListConnections
-   * - events:PutRule
-   * - events:PutTargets
-   * - iam:DeleteRolePolicy
-   * - iam:GetRole
-   * - iam:PutRolePolicy
-   *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateSubscriber.html
    */
   public toUpdateSubscriber() {
@@ -555,33 +357,6 @@ export class Securitylake extends PolicyStatement {
    * Grants permission to update a webhook invocation to notify a client when there is new data in the data lake
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - events:CreateApiDestination
-   * - events:CreateConnection
-   * - events:DescribeRule
-   * - events:ListApiDestinations
-   * - events:ListConnections
-   * - events:PutRule
-   * - events:PutTargets
-   * - iam:CreateServiceLinkedRole
-   * - iam:DeleteRolePolicy
-   * - iam:GetRole
-   * - iam:PassRole
-   * - iam:PutRolePolicy
-   * - s3:CreateBucket
-   * - s3:GetBucketNotification
-   * - s3:ListBucket
-   * - s3:PutBucketNotification
-   * - s3:PutBucketPolicy
-   * - s3:PutBucketPublicAccessBlock
-   * - s3:PutBucketVersioning
-   * - s3:PutLifecycleConfiguration
-   * - sqs:CreateQueue
-   * - sqs:DeleteQueue
-   * - sqs:GetQueueAttributes
-   * - sqs:GetQueueUrl
-   * - sqs:SetQueueAttributes
    *
    * https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateSubscriberNotification.html
    */
@@ -607,6 +382,8 @@ export class Securitylake extends PolicyStatement {
       'DeleteSubscriberNotification',
       'DeregisterDataLakeDelegatedAdministrator',
       'RegisterDataLakeDelegatedAdministrator',
+      'TagResource',
+      'UntagResource',
       'UpdateDataLake',
       'UpdateDataLakeExceptionSubscription',
       'UpdateSubscriber',
@@ -672,9 +449,27 @@ export class Securitylake extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateAwsLogSource()
+   * - .toCreateCustomLogSource()
    * - .toCreateDataLake()
+   * - .toCreateDataLakeOrganizationConfiguration()
    * - .toCreateSubscriber()
+   * - .toCreateSubscriberNotification()
+   * - .toDeleteAwsLogSource()
+   * - .toDeleteCustomLogSource()
+   * - .toDeleteDataLake()
+   * - .toDeleteDataLakeOrganizationConfiguration()
+   * - .toDeleteSubscriber()
+   * - .toDeleteSubscriberNotification()
+   * - .toGetDataLakeOrganizationConfiguration()
+   * - .toGetDataLakeSources()
+   * - .toGetSubscriber()
+   * - .toListTagsForResource()
    * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateDataLake()
+   * - .toUpdateSubscriber()
+   * - .toUpdateSubscriberNotification()
    *
    * Applies to resource types:
    * - data-lake
@@ -694,8 +489,27 @@ export class Securitylake extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toCreateAwsLogSource()
+   * - .toCreateCustomLogSource()
    * - .toCreateDataLake()
+   * - .toCreateDataLakeOrganizationConfiguration()
    * - .toCreateSubscriber()
+   * - .toCreateSubscriberNotification()
+   * - .toDeleteAwsLogSource()
+   * - .toDeleteCustomLogSource()
+   * - .toDeleteDataLake()
+   * - .toDeleteDataLakeOrganizationConfiguration()
+   * - .toDeleteSubscriber()
+   * - .toDeleteSubscriberNotification()
+   * - .toGetDataLakeOrganizationConfiguration()
+   * - .toGetDataLakeSources()
+   * - .toGetSubscriber()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateDataLake()
+   * - .toUpdateSubscriber()
+   * - .toUpdateSubscriberNotification()
    *
    * Applies to resource types:
    * - data-lake
