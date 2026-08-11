@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [codeartifact](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codeartifact.html).
+ * Statement provider for service [codeartifact](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodeartifact.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Codeartifact extends PolicyStatement {
   public servicePrefix = 'codeartifact';
 
   /**
-   * Statement provider for service [codeartifact](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codeartifact.html).
+   * Statement provider for service [codeartifact](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodeartifact.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -110,7 +110,7 @@ export class Codeartifact extends PolicyStatement {
   /**
    * Grants permission to delete the resource policy set on a domain
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeleteDomainPermissionsPolicy.html
    */
@@ -165,7 +165,7 @@ export class Codeartifact extends PolicyStatement {
   /**
    * Grants permission to delete the resource policy set on a repository
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeleteRepositoryPermissionsPolicy.html
    */
@@ -528,7 +528,11 @@ export class Codeartifact extends PolicyStatement {
   /**
    * Grants permission to tag a CodeArtifact resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_TagResource.html
    */
@@ -539,7 +543,10 @@ export class Codeartifact extends PolicyStatement {
   /**
    * Grants permission to remove a tag from a CodeArtifact resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UntagResource.html
    */
@@ -600,12 +607,10 @@ export class Codeartifact extends PolicyStatement {
       'CreatePackageGroup',
       'CreateRepository',
       'DeleteDomain',
-      'DeleteDomainPermissionsPolicy',
       'DeletePackage',
       'DeletePackageGroup',
       'DeletePackageVersions',
       'DeleteRepository',
-      'DeleteRepositoryPermissionsPolicy',
       'DisassociateExternalConnection',
       'DisposePackageVersions',
       'PublishPackageVersion',
@@ -613,8 +618,6 @@ export class Codeartifact extends PolicyStatement {
       'PutPackageMetadata',
       'PutPackageOriginConfiguration',
       'PutRepositoryPermissionsPolicy',
-      'TagResource',
-      'UntagResource',
       'UpdatePackageGroup',
       'UpdatePackageGroupOriginConfiguration',
       'UpdatePackageVersionsStatus',
@@ -677,21 +680,21 @@ export class Codeartifact extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type package to the statement
+   * Adds a resource of type repository to the statement
    *
-   * https://docs.aws.amazon.com/codeartifact/latest/ug/packages.html
+   * https://docs.aws.amazon.com/codeartifact/latest/ug/repos.html
    *
    * @param domainName - Identifier for the domainName.
    * @param repositoryName - Identifier for the repositoryName.
-   * @param packageFormat - Identifier for the packageFormat.
-   * @param packageNamespace - Identifier for the packageNamespace.
-   * @param packageName - Identifier for the packageName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onPackage(domainName: string, repositoryName: string, packageFormat: string, packageNamespace: string, packageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:codeartifact:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:package/${ domainName }/${ repositoryName }/${ packageFormat }/${ packageNamespace }/${ packageName }`);
+  public onRepository(domainName: string, repositoryName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codeartifact:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:repository/${ domainName }/${ repositoryName }`);
   }
 
   /**
@@ -713,21 +716,21 @@ export class Codeartifact extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type repository to the statement
+   * Adds a resource of type package to the statement
    *
-   * https://docs.aws.amazon.com/codeartifact/latest/ug/repos.html
+   * https://docs.aws.amazon.com/codeartifact/latest/ug/packages.html
    *
    * @param domainName - Identifier for the domainName.
    * @param repositoryName - Identifier for the repositoryName.
+   * @param packageFormat - Identifier for the packageFormat.
+   * @param packageNamespace - Identifier for the packageNamespace.
+   * @param packageName - Identifier for the packageName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
-  public onRepository(domainName: string, repositoryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:codeartifact:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:repository/${ domainName }/${ repositoryName }`);
+  public onPackage(domainName: string, repositoryName: string, packageFormat: string, packageNamespace: string, packageName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codeartifact:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:package/${ domainName }/${ repositoryName }/${ packageFormat }/${ packageNamespace }/${ packageName }`);
   }
 
   /**
@@ -754,44 +757,10 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toAssociateExternalConnection()
-   * - .toAssociateWithDownstreamRepository()
-   * - .toCopyPackageVersions()
-   * - .toDeleteDomain()
-   * - .toDeleteDomainPermissionsPolicy()
-   * - .toDeletePackageGroup()
-   * - .toDeleteRepository()
-   * - .toDeleteRepositoryPermissionsPolicy()
-   * - .toDescribeDomain()
-   * - .toDescribePackageGroup()
-   * - .toDescribeRepository()
-   * - .toDisassociateExternalConnection()
-   * - .toGetAssociatedPackageGroup()
-   * - .toGetAuthorizationToken()
-   * - .toGetDomainPermissionsPolicy()
-   * - .toGetRepositoryEndpoint()
-   * - .toGetRepositoryPermissionsPolicy()
-   * - .toListAllowedRepositoriesForGroup()
-   * - .toListAssociatedPackages()
-   * - .toListPackageGroups()
-   * - .toListPackages()
-   * - .toListRepositoriesInDomain()
-   * - .toListSubPackageGroups()
-   * - .toListTagsForResource()
-   * - .toPutDomainPermissionsPolicy()
-   * - .toPutRepositoryPermissionsPolicy()
-   * - .toReadFromRepository()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdatePackageGroup()
-   * - .toUpdatePackageGroupOriginConfiguration()
-   * - .toUpdateRepository()
-   *
    * Applies to resource types:
    * - domain
-   * - package-group
    * - repository
+   * - package-group
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

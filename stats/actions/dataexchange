@@ -32,8 +32,8 @@ dataexchange:RevokeRevision;Write
 dataexchange:SendApiAsset;Write
 dataexchange:SendDataSetNotification;Write
 dataexchange:StartJob;Write
-dataexchange:TagResource;Tagging, Write
-dataexchange:UntagResource;Tagging, Write
+dataexchange:TagResource;Tagging
+dataexchange:UntagResource;Tagging
 dataexchange:UpdateAsset;Write
 dataexchange:UpdateDataSet;Write
 dataexchange:UpdateEventAction;Write

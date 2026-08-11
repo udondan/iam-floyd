@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [s3](https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3.html).
+ * Statement provider for service [s3](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class S3 extends PolicyStatement {
   public servicePrefix = 's3';
 
   /**
-   * Statement provider for service [s3](https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3.html).
+   * Statement provider for service [s3](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,6 +23,15 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html
    */
   public toAbortMultipartUpload() {
@@ -34,6 +43,11 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifResourceArnBeingAuthorized()
+   * - .ifDeliverySourceArn()
+   * - .ifLogType()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html
    */
   public toAllowVendedLogDeliveryForResource() {
@@ -43,7 +57,16 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to associate Access Grants identity center
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_AssociateAccessGrantsIdentityCenter.html
    */
@@ -54,7 +77,30 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to allow circumvention of governance-mode object retention settings
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifRequestObjectTag()
+   * - .ifRequestObjectTagKeys()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzAcl()
+   * - .ifXAmzContentSha256()
+   * - .ifXAmzCopySource()
+   * - .ifXAmzGrantFullControl()
+   * - .ifXAmzGrantRead()
+   * - .ifXAmzGrantReadAcp()
+   * - .ifXAmzGrantWrite()
+   * - .ifXAmzGrantWriteAcp()
+   * - .ifXAmzMetadataDirective()
+   * - .ifXAmzServerSideEncryption()
+   * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
+   * - .ifXAmzServerSideEncryptionCustomerAlgorithm()
+   * - .ifXAmzStorageClass()
+   * - .ifXAmzWebsiteRedirectLocation()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-managing-bypass
    */
@@ -65,7 +111,19 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to create Access Grant
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAccessGrantScope()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessGrant.html
    */
@@ -76,7 +134,18 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to Create Access Grants Instance
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessGrantsInstance.html
    */
@@ -87,7 +156,19 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to create Access Grants location
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAccessGrantsLocationScope()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessGrantsLocation.html
    */
@@ -100,6 +181,23 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifLocationconstraint()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzAcl()
+   * - .ifXAmzContentSha256()
+   * - .ifAccessPointTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html
    */
   public toCreateAccessPoint() {
@@ -110,6 +208,17 @@ export class S3 extends PolicyStatement {
    * Grants permission to create an object lambda enabled accesspoint
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html
    */
@@ -122,6 +231,25 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifLocationconstraint()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzAcl()
+   * - .ifXAmzContentSha256()
+   * - .ifXAmzGrantFullControl()
+   * - .ifXAmzGrantRead()
+   * - .ifXAmzGrantReadAcp()
+   * - .ifXAmzGrantWrite()
+   * - .ifXAmzGrantWriteAcp()
+   * - .ifXAmzBucketNamespace()
+   * - .ifXAmzObjectOwnership()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html
    */
   public toCreateBucket() {
@@ -132,6 +260,24 @@ export class S3 extends PolicyStatement {
    * Grants permission to create a new S3 Metadata configuration for a specified general purpose bucket
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * Dependent actions:
+   * - kms:DescribeKey
+   * - s3tables:CreateNamespace
+   * - s3tables:CreateTable
+   * - s3tables:CreateTableBucket
+   * - s3tables:GetTable
+   * - s3tables:PutTableBucketPolicy
+   * - s3tables:PutTableEncryption
+   * - s3tables:PutTablePolicy
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html
    */
@@ -145,16 +291,19 @@ export class S3 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    * - .ifAuthType()
-   * - .ifRequestJobOperation()
-   * - .ifRequestJobPriority()
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
+   * - .ifRequestJobPriority()
+   * - .ifRequestJobOperation()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html
    */
@@ -166,6 +315,16 @@ export class S3 extends PolicyStatement {
    * Grants permission to create a new Multi-Region Access Point
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html
    */
@@ -179,14 +338,14 @@ export class S3 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    * - .ifAuthType()
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateStorageLensGroup.html
    */
@@ -197,7 +356,17 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to delete Access Grant
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAccessGrantScope()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrant.html
    */
@@ -208,7 +377,16 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to Delete Access Grants Instance
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrantsInstance.html
    */
@@ -219,7 +397,16 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to read Access grants instance resource policy
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrantsInstanceResourcePolicy.html
    */
@@ -230,7 +417,17 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to delete Access Grants location
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAccessGrantsLocationScope()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrantsLocation.html
    */
@@ -243,6 +440,19 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifDataAccessPointArn()
+   * - .ifDataAccessPointAccount()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAccessPointTag()
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html
    */
   public toDeleteAccessPoint() {
@@ -254,6 +464,17 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifDataAccessPointArn()
+   * - .ifDataAccessPointAccount()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html
    */
   public toDeleteAccessPointForObjectLambda() {
@@ -263,7 +484,20 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to delete the policy on a specified access point
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointArn()
+   * - .ifDataAccessPointAccount()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAccessPointTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html
    */
@@ -274,7 +508,18 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to delete the policy on a specified object lambda enabled access point
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointArn()
+   * - .ifDataAccessPointAccount()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html
    */
@@ -287,6 +532,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html
    */
   public toDeleteBucket() {
@@ -298,6 +551,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataConfiguration.html
    */
   public toDeleteBucketMetadataTableConfiguration() {
@@ -307,7 +568,15 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to delete the policy on a specified bucket
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html
    */
@@ -320,6 +589,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketWebsite.html
    */
   public toDeleteBucketWebsite() {
@@ -329,7 +606,17 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to remove tags from an existing Amazon S3 Batch Operations job
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifExistingJobPriority()
+   * - .ifExistingJobOperation()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteJobTagging.html
    */
@@ -342,6 +629,16 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html
    */
   public toDeleteMultiRegionAccessPoint() {
@@ -352,6 +649,16 @@ export class S3 extends PolicyStatement {
    * Grants permission to remove the null version of an object and insert a delete marker, which becomes the current version of the object
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifIfMatch()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html
    */
@@ -364,6 +671,16 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifXAmzObjectIfMatch()
+   * - .ifExistingObjectTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectAnnotation.html
    */
   public toDeleteObjectAnnotation() {
@@ -373,7 +690,16 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to use the tagging subresource to remove the entire tag set from the specified object
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html
    */
@@ -386,6 +712,16 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html
    */
   public toDeleteObjectVersion() {
@@ -397,6 +733,17 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifVersionid()
+   * - .ifXAmzObjectIfMatch()
+   * - .ifExistingObjectTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectAnnotation.html
    */
   public toDeleteObjectVersionAnnotation() {
@@ -406,7 +753,17 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to remove the entire tag set for a specific version of the object
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html
    */
@@ -419,6 +776,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteStorageLensConfiguration.html
    */
   public toDeleteStorageLensConfiguration() {
@@ -428,7 +793,15 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to remove tags from an existing Amazon S3 Storage Lens configuration
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteStorageLensConfigurationTagging.html
    */
@@ -441,6 +814,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteStorageLensGroup.html
    */
   public toDeleteStorageLensGroup() {
@@ -451,6 +832,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to retrieve the configuration parameters and status for a batch operations job
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeJob.html
    */
@@ -463,6 +852,13 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html
    */
   public toDescribeMultiRegionAccessPointOperation() {
@@ -472,7 +868,16 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to disassociate Access Grants identity center
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DissociateAccessGrantsIdentityCenter.html
    */
@@ -485,6 +890,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAccelerateConfiguration.html
    */
   public toGetAccelerateConfiguration() {
@@ -495,6 +908,16 @@ export class S3 extends PolicyStatement {
    * Grants permission to read Access Grant
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAccessGrantScope()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessGrant.html
    */
@@ -507,6 +930,15 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessGrantsInstance.html
    */
   public toGetAccessGrantsInstance() {
@@ -517,6 +949,15 @@ export class S3 extends PolicyStatement {
    * Grants permission to Read Access Grants Instance by prefix
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessGrantsInstanceForPrefix.html
    */
@@ -529,6 +970,15 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessGrantsInstanceResourcePolicy.html
    */
   public toGetAccessGrantsInstanceResourcePolicy() {
@@ -539,6 +989,16 @@ export class S3 extends PolicyStatement {
    * Grants permission to read Access Grants location
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAccessGrantsLocationScope()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessGrantsLocation.html
    */
@@ -552,17 +1012,17 @@ export class S3 extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAccessPointNetworkOrigin()
-   * - .ifAccessPointTag()
-   * - .ifAuthType()
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
+   * - .ifAccessPointTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html
    */
@@ -575,6 +1035,17 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifDataAccessPointArn()
+   * - .ifDataAccessPointAccount()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointConfigurationForObjectLambda.html
    */
   public toGetAccessPointConfigurationForObjectLambda() {
@@ -585,6 +1056,17 @@ export class S3 extends PolicyStatement {
    * Grants permission to create an object lambda enabled accesspoint
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html
    */
@@ -597,6 +1079,19 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAccessPointTag()
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicy.html
    */
   public toGetAccessPointPolicy() {
@@ -607,6 +1102,17 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the access point policy associated with the specified object lambda enabled access point
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html
    */
@@ -619,6 +1125,19 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAccessPointTag()
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyStatus.html
    */
   public toGetAccessPointPolicyStatus() {
@@ -629,6 +1148,17 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the policy status for a specific object lambda access point policy
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyStatusForObjectLambda.html
    */
@@ -660,6 +1190,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAnalyticsConfiguration.html
    */
   public toGetAnalyticsConfiguration() {
@@ -670,6 +1208,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to retrieve ABAC configuration for a general purpose bucket
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAbac.html
    */
@@ -682,6 +1228,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html
    */
   public toGetBucketAcl() {
@@ -692,6 +1246,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the CORS configuration information set for an Amazon S3 bucket
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html
    */
@@ -704,6 +1266,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLocation.html
    */
   public toGetBucketLocation() {
@@ -714,6 +1284,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the logging status of an Amazon S3 bucket and the permissions users have to view or modify that status
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html
    */
@@ -726,6 +1304,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html
    */
   public toGetBucketMetadataTableConfiguration() {
@@ -736,6 +1322,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to get the notification configuration of an Amazon S3 bucket
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotification.html
    */
@@ -748,6 +1342,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifSignatureversion()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html
    */
   public toGetBucketObjectLockConfiguration() {
@@ -758,6 +1360,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to retrieve ownership controls on a bucket
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketOwnershipControls.html
    */
@@ -770,6 +1380,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html
    */
   public toGetBucketPolicy() {
@@ -780,6 +1398,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to retrieve the policy status for a specific Amazon S3 bucket, which indicates whether the bucket is public
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicyStatus.html
    */
@@ -792,6 +1418,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetPublicAccessBlock.html
    */
   public toGetBucketPublicAccessBlock() {
@@ -802,6 +1436,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the request payment configuration for an Amazon S3 bucket
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketRequestPayment.html
    */
@@ -814,6 +1456,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html
    */
   public toGetBucketTagging() {
@@ -824,6 +1474,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the versioning state of an Amazon S3 bucket
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html
    */
@@ -836,6 +1494,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketWebsite.html
    */
   public toGetBucketWebsite() {
@@ -846,6 +1512,15 @@ export class S3 extends PolicyStatement {
    * Grants permission to get Access
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetDataAccess.html
    */
@@ -858,6 +1533,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html
    */
   public toGetEncryptionConfiguration() {
@@ -868,6 +1551,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to get an or list all Amazon S3 Intelligent Tiering configuration in a S3 Bucket
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html
    */
@@ -880,6 +1571,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html
    */
   public toGetInventoryConfiguration() {
@@ -890,6 +1589,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the tag set of an existing Amazon S3 Batch Operations job
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html
    */
@@ -902,6 +1609,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html
    */
   public toGetLifecycleConfiguration() {
@@ -912,6 +1627,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to get a metrics configuration from an Amazon S3 bucket
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html
    */
@@ -924,6 +1647,16 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html
    */
   public toGetMultiRegionAccessPoint() {
@@ -934,6 +1667,16 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the access point policy associated with the specified Multi-Region Access Point
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html
    */
@@ -946,6 +1689,16 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html
    */
   public toGetMultiRegionAccessPointPolicyStatus() {
@@ -956,6 +1709,16 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the route configuration for a Multi-Region Access Point
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointRoutes.html
    */
@@ -968,6 +1731,16 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html
    */
   public toGetObject() {
@@ -978,6 +1751,16 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the access control list (ACL) of an object
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html
    */
@@ -990,6 +1773,15 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifExistingObjectTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAnnotation.html
    */
   public toGetObjectAnnotation() {
@@ -1000,6 +1792,15 @@ export class S3 extends PolicyStatement {
    * Grants permission to retrieve attributes related to a specific object
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html
    */
@@ -1012,6 +1813,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLegalHold.html
    */
   public toGetObjectLegalHold() {
@@ -1022,6 +1831,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to retrieve the retention settings for an object
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectRetention.html
    */
@@ -1034,6 +1851,15 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html
    */
   public toGetObjectTagging() {
@@ -1044,6 +1870,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to return torrent files from an Amazon S3 bucket
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTorrent.html
    */
@@ -1056,6 +1890,17 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html
    */
   public toGetObjectVersion() {
@@ -1066,6 +1911,17 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the access control list (ACL) of a specific object version
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html
    */
@@ -1078,6 +1934,16 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifVersionid()
+   * - .ifExistingObjectTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAnnotation.html
    */
   public toGetObjectVersionAnnotation() {
@@ -1088,6 +1954,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to get an object version annotation for replication
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
    */
@@ -1100,6 +1974,16 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html
    */
   public toGetObjectVersionAttributes() {
@@ -1110,6 +1994,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to replicate both unencrypted objects and objects encrypted with SSE-S3 or SSE-KMS
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-config-for-kms-objects.html
    */
@@ -1122,6 +2014,16 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
    */
   public toGetObjectVersionTagging() {
@@ -1132,6 +2034,15 @@ export class S3 extends PolicyStatement {
    * Grants permission to get Torrent files about a different version using the versionId subresource
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTorrent.html
    */
@@ -1144,6 +2055,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html
    */
   public toGetReplicationConfiguration() {
@@ -1154,6 +2073,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to get an Amazon S3 Storage Lens configuration
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetStorageLensConfiguration.html
    */
@@ -1166,6 +2093,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetStorageLensConfigurationTagging.html
    */
   public toGetStorageLensConfigurationTagging() {
@@ -1176,6 +2111,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to get an Amazon S3 Storage Lens dashboard
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_dashboard.html
    */
@@ -1188,6 +2131,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetStorageLensGroup.html
    */
   public toGetStorageLensGroup() {
@@ -1195,9 +2146,32 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate the replication process by setting replication status of an object to pending
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifResourceAccount()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
+   */
+  public toInitiateReplication() {
+    return this.to('InitiateReplication');
+  }
+
+  /**
    * Grants permission to list Access Grant
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessGrants.html
    */
@@ -1228,6 +2202,15 @@ export class S3 extends PolicyStatement {
    * Grants permission to list Access Grants locations
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessGrantsLocations.html
    */
@@ -1297,6 +2280,18 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
+   * - .ifAuthType()
+   * - .ifDelimiter()
+   * - .ifMaxKeys()
+   * - .ifPrefix()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html
    */
   public toListBucket() {
@@ -1307,6 +2302,20 @@ export class S3 extends PolicyStatement {
    * Grants permission to list in-progress multipart uploads
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAccessPointTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html
    */
@@ -1319,6 +2328,18 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
+   * - .ifAuthType()
+   * - .ifDelimiter()
+   * - .ifMaxKeys()
+   * - .ifPrefix()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html
    */
   public toListBucketVersions() {
@@ -1329,6 +2350,15 @@ export class S3 extends PolicyStatement {
    * Grants permission to list caller's Access Grant
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListCallerAccessGrants.html
    */
@@ -1363,8 +2393,8 @@ export class S3 extends PolicyStatement {
    * Possible conditions:
    * - .ifAuthType()
    * - .ifResourceAccount()
-   * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifSignatureAge()
    * - .ifTlsVersion()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html
@@ -1378,6 +2408,15 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html
    */
   public toListMultipartUploadParts() {
@@ -1389,6 +2428,17 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifAnnotationPrefix()
+   * - .ifMaxAnnotationResults()
+   * - .ifExistingObjectTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectAnnotations.html
    */
   public toListObjectAnnotations() {
@@ -1399,6 +2449,18 @@ export class S3 extends PolicyStatement {
    * Grants permission to list annotations on a specific version of an object
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifVersionid()
+   * - .ifAnnotationPrefix()
+   * - .ifMaxAnnotationResults()
+   * - .ifExistingObjectTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectAnnotations.html
    */
@@ -1449,6 +2511,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -1458,7 +2528,15 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to change replica ownership
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-change-owner.html#repl-ownership-add-role-permission
    */
@@ -1467,9 +2545,41 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to pause S3 Replication from target source buckets to destination buckets
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDestinationRegion()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * Dependent actions:
+   * - s3:GetReplicationConfiguration
+   * - s3:PutReplicationConfiguration
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#bucket-pause-replication
+   */
+  public toPauseReplication() {
+    return this.to('PauseReplication');
+  }
+
+  /**
    * Grants permission to use the accelerate subresource to set the Transfer Acceleration state of an existing S3 bucket
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html
    */
@@ -1480,7 +2590,16 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to put Access grants instance resource policy
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessGrantsInstanceResourcePolicy.html
    */
@@ -1493,6 +2612,17 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifDataAccessPointArn()
+   * - .ifDataAccessPointAccount()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointConfigurationForObjectLambda.html
    */
   public toPutAccessPointConfigurationForObjectLambda() {
@@ -1502,7 +2632,15 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to associate an access policy with a specified access point
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html
    */
@@ -1513,7 +2651,18 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to associate an access policy with a specified object lambda enabled access point
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html
    */
@@ -1524,7 +2673,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to associate public access block configurations with a specified access point, while creating a access point
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html#access-control-block-public-access-examples-access-point
    */
@@ -1535,7 +2684,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to create or modify the PublicAccessBlock configuration for an AWS account
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -1556,6 +2705,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html
    */
   public toPutAnalyticsConfiguration() {
@@ -1567,6 +2724,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAbac.html
    */
   public toPutBucketAbac() {
@@ -1576,7 +2741,21 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to set the permissions on an existing bucket using access control lists (ACLs)
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzAcl()
+   * - .ifXAmzContentSha256()
+   * - .ifXAmzGrantFullControl()
+   * - .ifXAmzGrantRead()
+   * - .ifXAmzGrantReadAcp()
+   * - .ifXAmzGrantWrite()
+   * - .ifXAmzGrantWriteAcp()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAcl.html
    */
@@ -1589,6 +2768,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html
    */
   public toPutBucketCORS() {
@@ -1599,6 +2786,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to set the logging parameters for an Amazon S3 bucket
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html
    */
@@ -1611,6 +2806,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html
    */
   public toPutBucketNotification() {
@@ -1622,6 +2825,13 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   * - .ifSignatureversion()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLockConfiguration.html
    */
   public toPutBucketObjectLockConfiguration() {
@@ -1631,7 +2841,15 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to add, replace or delete ownership controls on a bucket
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketOwnershipControls.html
    */
@@ -1642,7 +2860,15 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to add or replace a bucket policy on a bucket
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html
    */
@@ -1653,7 +2879,15 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to create or modify the PublicAccessBlock configuration for a specific Amazon S3 bucket
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutPublicAccessBlock.html
    */
@@ -1666,6 +2900,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketRequestPayment.html
    */
   public toPutBucketRequestPayment() {
@@ -1675,7 +2917,15 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to add a set of tags to an existing Amazon S3 bucket
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html
    */
@@ -1688,6 +2938,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html
    */
   public toPutBucketVersioning() {
@@ -1698,6 +2956,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to set the configuration of the website that is specified in the website subresource
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html
    */
@@ -1710,6 +2976,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html
    */
   public toPutEncryptionConfiguration() {
@@ -1720,6 +2994,14 @@ export class S3 extends PolicyStatement {
    * Grants permission to create new or update or delete an existing Amazon S3 Intelligent Tiering configuration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html
    */
@@ -1732,6 +3014,15 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifInventoryAccessibleOptionalFields()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html
    */
   public toPutInventoryConfiguration() {
@@ -1741,7 +3032,19 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to replace tags on an existing Amazon S3 Batch Operations job
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifExistingJobPriority()
+   * - .ifExistingJobOperation()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutJobTagging.html
    */
@@ -1754,6 +3057,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html
    */
   public toPutLifecycleConfiguration() {
@@ -1765,6 +3076,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html
    */
   public toPutMetricsConfiguration() {
@@ -1774,7 +3093,17 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to associate an access policy with a specified Multi-Region Access Point
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html
    */
@@ -1787,6 +3116,38 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
+   * - .ifRequestObjectTag()
+   * - .ifRequestObjectTagKeys()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzAcl()
+   * - .ifXAmzContentSha256()
+   * - .ifXAmzCopySource()
+   * - .ifXAmzGrantFullControl()
+   * - .ifXAmzGrantRead()
+   * - .ifXAmzGrantReadAcp()
+   * - .ifXAmzGrantWrite()
+   * - .ifXAmzGrantWriteAcp()
+   * - .ifXAmzMetadataDirective()
+   * - .ifXAmzObjectAnnotationDirective()
+   * - .ifXAmzServerSideEncryption()
+   * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
+   * - .ifXAmzServerSideEncryptionCustomerAlgorithm()
+   * - .ifXAmzStorageClass()
+   * - .ifXAmzWebsiteRedirectLocation()
+   * - .ifObjectLockMode()
+   * - .ifObjectLockRetainUntilDate()
+   * - .ifObjectLockRemainingRetentionDays()
+   * - .ifObjectLockLegalHold()
+   * - .ifIfMatch()
+   * - .ifIfNoneMatch()
+   * - .ifObjectCreationOperation()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html
    */
   public toPutObject() {
@@ -1796,7 +3157,24 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to set the access control list (ACL) permissions for new or existing objects in an S3 bucket
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzAcl()
+   * - .ifXAmzContentSha256()
+   * - .ifXAmzGrantFullControl()
+   * - .ifXAmzGrantRead()
+   * - .ifXAmzGrantReadAcp()
+   * - .ifXAmzGrantWrite()
+   * - .ifXAmzGrantWriteAcp()
+   * - .ifXAmzStorageClass()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html
    */
@@ -1809,6 +3187,16 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifXAmzObjectIfMatch()
+   * - .ifExistingObjectTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAnnotation.html
    */
   public toPutObjectAnnotation() {
@@ -1819,6 +3207,15 @@ export class S3 extends PolicyStatement {
    * Grants permission to apply a Legal Hold configuration to the specified object
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifObjectLockLegalHold()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLegalHold.html
    */
@@ -1831,6 +3228,17 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifObjectLockMode()
+   * - .ifObjectLockRetainUntilDate()
+   * - .ifObjectLockRemainingRetentionDays()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html
    */
   public toPutObjectRetention() {
@@ -1840,7 +3248,18 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to set the supplied tag-set to an object that already exists in a bucket
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifExistingObjectTag()
+   * - .ifRequestObjectTag()
+   * - .ifRequestObjectTagKeys()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html
    */
@@ -1851,7 +3270,25 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to use the acl subresource to set the access control list (ACL) permissions for an object that already exists in a bucket
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAccessGrantsInstanceArn()
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   * - .ifXAmzAcl()
+   * - .ifXAmzContentSha256()
+   * - .ifXAmzGrantFullControl()
+   * - .ifXAmzGrantRead()
+   * - .ifXAmzGrantReadAcp()
+   * - .ifXAmzGrantWrite()
+   * - .ifXAmzGrantWriteAcp()
+   * - .ifXAmzStorageClass()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html
    */
@@ -1864,6 +3301,17 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifVersionid()
+   * - .ifXAmzObjectIfMatch()
+   * - .ifExistingObjectTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAnnotation.html
    */
   public toPutObjectVersionAnnotation() {
@@ -1873,7 +3321,19 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to set the supplied tag-set for a specific version of an object
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifExistingObjectTag()
+   * - .ifRequestObjectTag()
+   * - .ifRequestObjectTagKeys()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html
    */
@@ -1885,6 +3345,18 @@ export class S3 extends PolicyStatement {
    * Grants permission to create a new replication configuration or replace an existing one
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifIsReplicationPauseRequest()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html
    */
@@ -1898,14 +3370,14 @@ export class S3 extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    * - .ifAuthType()
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutStorageLensConfiguration.html
    */
@@ -1916,7 +3388,17 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to put or replace tags on an existing Amazon S3 Storage Lens configuration
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutStorageLensConfigurationTagging.html
    */
@@ -1929,6 +3411,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
    */
   public toReplicateDelete() {
@@ -1939,6 +3429,17 @@ export class S3 extends PolicyStatement {
    * Grants permission to replicate objects and object tags to the destination bucket
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifXAmzServerSideEncryption()
+   * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
+   * - .ifXAmzServerSideEncryptionCustomerAlgorithm()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
    */
@@ -1951,6 +3452,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
    */
   public toReplicateObjectAnnotation() {
@@ -1960,7 +3469,15 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to replicate object tags to the destination bucket
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
    */
@@ -1973,6 +3490,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html
    */
   public toRestoreObject() {
@@ -1984,6 +3509,16 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_SubmitMultiRegionAccessPointRoutes.html
    */
   public toSubmitMultiRegionAccessPointRoutes() {
@@ -1993,7 +3528,17 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to add tags to the specified resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html
    */
@@ -2004,7 +3549,16 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to remove tags from the specified resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html
    */
@@ -2015,7 +3569,17 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to update Access Grants location
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAccessGrantsLocationScope()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateAccessGrantsLocation.html
    */
@@ -2028,6 +3592,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataAnnotationTableConfiguration.html
    */
   public toUpdateBucketMetadataAnnotationTableConfiguration() {
@@ -2038,6 +3610,23 @@ export class S3 extends PolicyStatement {
    * Grants permission to update the inventory table configuration on an existing S3 Metadata configuration for a specified general purpose bucket
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * Dependent actions:
+   * - kms:DescribeKey
+   * - s3tables:CreateNamespace
+   * - s3tables:CreateTable
+   * - s3tables:CreateTableBucket
+   * - s3tables:GetTable
+   * - s3tables:PutTableEncryption
+   * - s3tables:PutTablePolicy
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html
    */
@@ -2050,6 +3639,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html
    */
   public toUpdateBucketMetadataJournalTableConfiguration() {
@@ -2060,6 +3657,17 @@ export class S3 extends PolicyStatement {
    * Grants permission to update the priority of an existing job
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifRequestJobPriority()
+   * - .ifExistingJobPriority()
+   * - .ifExistingJobOperation()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobPriority.html
    */
@@ -2072,6 +3680,17 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifExistingJobPriority()
+   * - .ifExistingJobOperation()
+   * - .ifJobSuspendedCause()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html
    */
   public toUpdateJobStatus() {
@@ -2082,6 +3701,17 @@ export class S3 extends PolicyStatement {
    * Grants permission to update the server-side encryption type of an existing object in a general purpose bucket
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifExistingObjectTag()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifXAmzServerSideEncryption()
+   * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateObjectEncryption.html
    */
@@ -2094,42 +3724,23 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateStorageLensGroup.html
    */
   public toUpdateStorageLensGroup() {
     return this.to('UpdateStorageLensGroup');
   }
 
-  /**
-   * Grants permission to initiate the replication process by setting replication status of an object to pending
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
-   */
-  public toInitiateReplication() {
-    return this.to('InitiateReplication');
-  }
-
-  /**
-   * Grants permission to pause S3 Replication from target source buckets to destination buckets
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#bucket-pause-replication
-   */
-  public toPauseReplication() {
-    return this.to('PauseReplication');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AbortMultipartUpload',
-      'AssociateAccessGrantsIdentityCenter',
-      'BypassGovernanceRetention',
-      'CreateAccessGrant',
-      'CreateAccessGrantsInstance',
-      'CreateAccessGrantsLocation',
       'CreateAccessPoint',
       'CreateAccessPointForObjectLambda',
       'CreateBucket',
@@ -2137,89 +3748,55 @@ export class S3 extends PolicyStatement {
       'CreateJob',
       'CreateMultiRegionAccessPoint',
       'CreateStorageLensGroup',
-      'DeleteAccessGrant',
-      'DeleteAccessGrantsInstance',
-      'DeleteAccessGrantsInstanceResourcePolicy',
-      'DeleteAccessGrantsLocation',
       'DeleteAccessPoint',
       'DeleteAccessPointForObjectLambda',
-      'DeleteAccessPointPolicy',
-      'DeleteAccessPointPolicyForObjectLambda',
       'DeleteBucket',
       'DeleteBucketMetadataTableConfiguration',
-      'DeleteBucketPolicy',
       'DeleteBucketWebsite',
-      'DeleteJobTagging',
       'DeleteMultiRegionAccessPoint',
       'DeleteObject',
       'DeleteObjectAnnotation',
-      'DeleteObjectTagging',
       'DeleteObjectVersion',
       'DeleteObjectVersionAnnotation',
-      'DeleteObjectVersionTagging',
       'DeleteStorageLensConfiguration',
-      'DeleteStorageLensConfigurationTagging',
       'DeleteStorageLensGroup',
-      'DissociateAccessGrantsIdentityCenter',
-      'ObjectOwnerOverrideToBucketOwner',
+      'InitiateReplication',
+      'PauseReplication',
       'PutAccelerateConfiguration',
-      'PutAccessGrantsInstanceResourcePolicy',
       'PutAccessPointConfigurationForObjectLambda',
-      'PutAccessPointPolicy',
-      'PutAccessPointPolicyForObjectLambda',
-      'PutAccessPointPublicAccessBlock',
-      'PutAccountPublicAccessBlock',
       'PutAnalyticsConfiguration',
       'PutBucketAbac',
-      'PutBucketAcl',
       'PutBucketCORS',
       'PutBucketLogging',
       'PutBucketNotification',
       'PutBucketObjectLockConfiguration',
-      'PutBucketOwnershipControls',
-      'PutBucketPolicy',
-      'PutBucketPublicAccessBlock',
       'PutBucketRequestPayment',
-      'PutBucketTagging',
       'PutBucketVersioning',
       'PutBucketWebsite',
       'PutEncryptionConfiguration',
       'PutIntelligentTieringConfiguration',
       'PutInventoryConfiguration',
-      'PutJobTagging',
       'PutLifecycleConfiguration',
       'PutMetricsConfiguration',
-      'PutMultiRegionAccessPointPolicy',
       'PutObject',
-      'PutObjectAcl',
       'PutObjectAnnotation',
       'PutObjectLegalHold',
       'PutObjectRetention',
-      'PutObjectTagging',
-      'PutObjectVersionAcl',
       'PutObjectVersionAnnotation',
-      'PutObjectVersionTagging',
       'PutReplicationConfiguration',
       'PutStorageLensConfiguration',
-      'PutStorageLensConfigurationTagging',
       'ReplicateDelete',
       'ReplicateObject',
       'ReplicateObjectAnnotation',
-      'ReplicateTags',
       'RestoreObject',
       'SubmitMultiRegionAccessPointRoutes',
-      'TagResource',
-      'UntagResource',
-      'UpdateAccessGrantsLocation',
       'UpdateBucketMetadataAnnotationTableConfiguration',
       'UpdateBucketMetadataInventoryTableConfiguration',
       'UpdateBucketMetadataJournalTableConfiguration',
       'UpdateJobPriority',
       'UpdateJobStatus',
       'UpdateObjectEncryption',
-      'UpdateStorageLensGroup',
-      'InitiateReplication',
-      'PauseReplication'
+      'UpdateStorageLensGroup'
     ],
     Read: [
       'AllowVendedLogDeliveryForResource',
@@ -2355,62 +3932,6 @@ export class S3 extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type accessgrant to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-grant.html
-   *
-   * @param token - Identifier for the token.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   */
-  public onAccessgrant(token: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:s3:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:access-grants/default/grant/${ token }`);
-  }
-
-  /**
-   * Adds a resource of type accessgrantsinstance to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-instance.html
-   *
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   */
-  public onAccessgrantsinstance(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:s3:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:access-grants/default`);
-  }
-
-  /**
-   * Adds a resource of type accessgrantslocation to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-location.html
-   *
-   * @param token - Identifier for the token.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   */
-  public onAccessgrantslocation(token: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:s3:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:access-grants/default/location/${ token }`);
-  }
-
-  /**
    * Adds a resource of type accesspoint to the statement
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html
@@ -2471,52 +3992,6 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type job to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-managing-jobs.html
-   *
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   */
-  public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:s3:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobId }`);
-  }
-
-  /**
-   * Adds a resource of type multiregionaccesspoint to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRequests.html
-   *
-   * @param accessPointAlias - Identifier for the accessPointAlias.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onMultiregionaccesspoint(accessPointAlias: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:s3::${ account ?? this.defaultAccount }:accesspoint/${ accessPointAlias }`);
-  }
-
-  /**
-   * Adds a resource of type multiregionaccesspointrequestarn to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRequests.html
-   *
-   * @param operation - Identifier for the operation.
-   * @param token - Identifier for the token.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onMultiregionaccesspointrequestarn(operation: string, token: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:s3:us-west-2:${ account ?? this.defaultAccount }:async-request/mrap/${ operation }/${ token }`);
-  }
-
-  /**
    * Adds a resource of type object to the statement
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingObjects.html
@@ -2534,17 +4009,22 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type objectlambdaaccesspoint to the statement
+   * Adds a resource of type job to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-managing-jobs.html
    *
-   * @param accessPointName - Identifier for the accessPointName.
+   * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
-  public onObjectlambdaaccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:s3-object-lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accesspoint/${ accessPointName }`);
+  public onJob(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobId }`);
   }
 
   /**
@@ -2586,12 +4066,108 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type objectlambdaaccesspoint to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html
+   *
+   * @param accessPointName - Identifier for the accessPointName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onObjectlambdaaccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3-object-lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accesspoint/${ accessPointName }`);
+  }
+
+  /**
+   * Adds a resource of type multiregionaccesspoint to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRequests.html
+   *
+   * @param accessPointAlias - Identifier for the accessPointAlias.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onMultiregionaccesspoint(accessPointAlias: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3::${ account ?? this.defaultAccount }:accesspoint/${ accessPointAlias }`);
+  }
+
+  /**
+   * Adds a resource of type multiregionaccesspointrequestarn to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRequests.html
+   *
+   * @param operation - Identifier for the operation.
+   * @param token - Identifier for the token.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onMultiregionaccesspointrequestarn(operation: string, token: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3:us-west-2:${ account ?? this.defaultAccount }:async-request/mrap/${ operation }/${ token }`);
+  }
+
+  /**
+   * Adds a resource of type accessgrantsinstance to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-instance.html
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   */
+  public onAccessgrantsinstance(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:access-grants/default`);
+  }
+
+  /**
+   * Adds a resource of type accessgrantslocation to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-location.html
+   *
+   * @param token - Identifier for the token.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   */
+  public onAccessgrantslocation(token: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:access-grants/default/location/${ token }`);
+  }
+
+  /**
+   * Adds a resource of type accessgrant to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-grant.html
+   *
+   * @param token - Identifier for the token.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   */
+  public onAccessgrant(token: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:access-grants/default/grant/${ token }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .toAssociateAccessGrantsIdentityCenter()
    * - .toCreateAccessGrant()
    * - .toCreateAccessGrantsInstance()
    * - .toCreateAccessGrantsLocation()
@@ -2599,49 +4175,18 @@ export class S3 extends PolicyStatement {
    * - .toCreateBucket()
    * - .toCreateJob()
    * - .toCreateStorageLensGroup()
-   * - .toDeleteAccessGrant()
-   * - .toDeleteAccessGrantsInstance()
-   * - .toDeleteAccessGrantsInstanceResourcePolicy()
-   * - .toDeleteAccessGrantsLocation()
-   * - .toDeleteJobTagging()
-   * - .toDeleteStorageLensConfiguration()
-   * - .toDeleteStorageLensConfigurationTagging()
-   * - .toDeleteStorageLensGroup()
-   * - .toDescribeJob()
-   * - .toDissociateAccessGrantsIdentityCenter()
-   * - .toGetAccessGrant()
-   * - .toGetAccessGrantsInstance()
-   * - .toGetAccessGrantsInstanceForPrefix()
-   * - .toGetAccessGrantsInstanceResourcePolicy()
-   * - .toGetAccessGrantsLocation()
-   * - .toGetDataAccess()
-   * - .toGetJobTagging()
-   * - .toGetStorageLensConfiguration()
-   * - .toGetStorageLensConfigurationTagging()
-   * - .toGetStorageLensDashboard()
-   * - .toGetStorageLensGroup()
-   * - .toListAccessGrants()
-   * - .toListAccessGrantsLocations()
-   * - .toListCallerAccessGrants()
-   * - .toListTagsForResource()
-   * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutJobTagging()
    * - .toPutStorageLensConfiguration()
    * - .toPutStorageLensConfigurationTagging()
    * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateAccessGrantsLocation()
-   * - .toUpdateJobPriority()
-   * - .toUpdateJobStatus()
-   * - .toUpdateStorageLensGroup()
    *
    * Applies to resource types:
-   * - accessgrant
-   * - accessgrantsinstance
-   * - accessgrantslocation
    * - job
    * - storagelensconfiguration
    * - storagelensgroup
+   * - accessgrantsinstance
+   * - accessgrantslocation
+   * - accessgrant
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -2657,39 +4202,18 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toAbortMultipartUpload()
-   * - .toAllowVendedLogDeliveryForResource()
    * - .toAssociateAccessGrantsIdentityCenter()
-   * - .toBypassGovernanceRetention()
    * - .toCreateAccessGrant()
    * - .toCreateAccessGrantsInstance()
    * - .toCreateAccessGrantsLocation()
    * - .toCreateAccessPoint()
-   * - .toCreateBucket()
-   * - .toCreateBucketMetadataTableConfiguration()
    * - .toDeleteAccessGrant()
    * - .toDeleteAccessGrantsInstance()
    * - .toDeleteAccessGrantsInstanceResourcePolicy()
    * - .toDeleteAccessGrantsLocation()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointPolicy()
-   * - .toDeleteBucket()
-   * - .toDeleteBucketMetadataTableConfiguration()
-   * - .toDeleteBucketPolicy()
-   * - .toDeleteBucketWebsite()
-   * - .toDeleteJobTagging()
-   * - .toDeleteObject()
-   * - .toDeleteObjectAnnotation()
-   * - .toDeleteObjectTagging()
-   * - .toDeleteObjectVersion()
-   * - .toDeleteObjectVersionAnnotation()
-   * - .toDeleteObjectVersionTagging()
-   * - .toDeleteStorageLensConfiguration()
-   * - .toDeleteStorageLensConfigurationTagging()
-   * - .toDeleteStorageLensGroup()
-   * - .toDescribeJob()
    * - .toDissociateAccessGrantsIdentityCenter()
-   * - .toGetAccelerateConfiguration()
    * - .toGetAccessGrant()
    * - .toGetAccessGrantsInstance()
    * - .toGetAccessGrantsInstanceForPrefix()
@@ -2698,125 +4222,25 @@ export class S3 extends PolicyStatement {
    * - .toGetAccessPoint()
    * - .toGetAccessPointPolicy()
    * - .toGetAccessPointPolicyStatus()
-   * - .toGetAnalyticsConfiguration()
-   * - .toGetBucketAbac()
-   * - .toGetBucketAcl()
-   * - .toGetBucketCORS()
-   * - .toGetBucketLocation()
-   * - .toGetBucketLogging()
-   * - .toGetBucketMetadataTableConfiguration()
-   * - .toGetBucketNotification()
-   * - .toGetBucketObjectLockConfiguration()
-   * - .toGetBucketOwnershipControls()
-   * - .toGetBucketPolicy()
-   * - .toGetBucketPolicyStatus()
-   * - .toGetBucketPublicAccessBlock()
-   * - .toGetBucketRequestPayment()
-   * - .toGetBucketTagging()
-   * - .toGetBucketVersioning()
-   * - .toGetBucketWebsite()
    * - .toGetDataAccess()
-   * - .toGetEncryptionConfiguration()
-   * - .toGetIntelligentTieringConfiguration()
-   * - .toGetInventoryConfiguration()
-   * - .toGetJobTagging()
-   * - .toGetLifecycleConfiguration()
-   * - .toGetMetricsConfiguration()
-   * - .toGetObject()
-   * - .toGetObjectAcl()
-   * - .toGetObjectAnnotation()
-   * - .toGetObjectAttributes()
-   * - .toGetObjectLegalHold()
-   * - .toGetObjectRetention()
-   * - .toGetObjectTagging()
-   * - .toGetObjectTorrent()
-   * - .toGetObjectVersion()
-   * - .toGetObjectVersionAcl()
-   * - .toGetObjectVersionAnnotation()
-   * - .toGetObjectVersionAnnotationForReplication()
-   * - .toGetObjectVersionAttributes()
-   * - .toGetObjectVersionForReplication()
-   * - .toGetObjectVersionTagging()
-   * - .toGetObjectVersionTorrent()
-   * - .toGetReplicationConfiguration()
-   * - .toGetStorageLensConfiguration()
-   * - .toGetStorageLensConfigurationTagging()
-   * - .toGetStorageLensDashboard()
-   * - .toGetStorageLensGroup()
    * - .toListAccessGrants()
    * - .toListAccessGrantsLocations()
-   * - .toListBucket()
    * - .toListBucketMultipartUploads()
-   * - .toListBucketVersions()
    * - .toListCallerAccessGrants()
-   * - .toListMultipartUploadParts()
-   * - .toListObjectAnnotations()
-   * - .toListObjectVersionAnnotations()
-   * - .toListTagsForResource()
-   * - .toObjectOwnerOverrideToBucketOwner()
-   * - .toPutAccelerateConfiguration()
    * - .toPutAccessGrantsInstanceResourcePolicy()
-   * - .toPutAccessPointPolicy()
-   * - .toPutAnalyticsConfiguration()
-   * - .toPutBucketAbac()
-   * - .toPutBucketAcl()
-   * - .toPutBucketCORS()
-   * - .toPutBucketLogging()
-   * - .toPutBucketNotification()
-   * - .toPutBucketObjectLockConfiguration()
-   * - .toPutBucketOwnershipControls()
-   * - .toPutBucketPolicy()
-   * - .toPutBucketPublicAccessBlock()
-   * - .toPutBucketRequestPayment()
-   * - .toPutBucketTagging()
-   * - .toPutBucketVersioning()
-   * - .toPutBucketWebsite()
-   * - .toPutEncryptionConfiguration()
-   * - .toPutIntelligentTieringConfiguration()
-   * - .toPutInventoryConfiguration()
-   * - .toPutJobTagging()
-   * - .toPutLifecycleConfiguration()
-   * - .toPutMetricsConfiguration()
-   * - .toPutObject()
-   * - .toPutObjectAcl()
-   * - .toPutObjectAnnotation()
-   * - .toPutObjectLegalHold()
-   * - .toPutObjectRetention()
-   * - .toPutObjectTagging()
-   * - .toPutObjectVersionAcl()
-   * - .toPutObjectVersionAnnotation()
-   * - .toPutObjectVersionTagging()
-   * - .toPutReplicationConfiguration()
-   * - .toPutStorageLensConfigurationTagging()
-   * - .toReplicateDelete()
-   * - .toReplicateObject()
-   * - .toReplicateObjectAnnotation()
-   * - .toReplicateTags()
-   * - .toRestoreObject()
-   * - .toTagResource()
-   * - .toUntagResource()
    * - .toUpdateAccessGrantsLocation()
-   * - .toUpdateBucketMetadataAnnotationTableConfiguration()
-   * - .toUpdateBucketMetadataInventoryTableConfiguration()
-   * - .toUpdateBucketMetadataJournalTableConfiguration()
-   * - .toUpdateJobPriority()
-   * - .toUpdateJobStatus()
-   * - .toUpdateObjectEncryption()
-   * - .toUpdateStorageLensGroup()
-   * - .toInitiateReplication()
-   * - .toPauseReplication()
    *
    * Applies to resource types:
-   * - accessgrant
-   * - accessgrantsinstance
-   * - accessgrantslocation
    * - accesspoint
    * - accesspointobject
    * - bucket
-   * - job
    * - object
+   * - job
    * - storagelensconfiguration
    * - storagelensgroup
+   * - accessgrantsinstance
+   * - accessgrantslocation
+   * - accessgrant
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -2832,7 +4256,6 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .toAssociateAccessGrantsIdentityCenter()
    * - .toCreateAccessGrant()
    * - .toCreateAccessGrantsInstance()
    * - .toCreateAccessGrantsLocation()
@@ -2840,49 +4263,19 @@ export class S3 extends PolicyStatement {
    * - .toCreateBucket()
    * - .toCreateJob()
    * - .toCreateStorageLensGroup()
-   * - .toDeleteAccessGrant()
-   * - .toDeleteAccessGrantsInstance()
-   * - .toDeleteAccessGrantsInstanceResourcePolicy()
-   * - .toDeleteAccessGrantsLocation()
-   * - .toDeleteJobTagging()
-   * - .toDeleteStorageLensConfiguration()
-   * - .toDeleteStorageLensConfigurationTagging()
-   * - .toDeleteStorageLensGroup()
-   * - .toDescribeJob()
-   * - .toDissociateAccessGrantsIdentityCenter()
-   * - .toGetAccessGrant()
-   * - .toGetAccessGrantsInstance()
-   * - .toGetAccessGrantsInstanceForPrefix()
-   * - .toGetAccessGrantsInstanceResourcePolicy()
-   * - .toGetAccessGrantsLocation()
-   * - .toGetDataAccess()
-   * - .toGetJobTagging()
-   * - .toGetStorageLensConfiguration()
-   * - .toGetStorageLensConfigurationTagging()
-   * - .toGetStorageLensDashboard()
-   * - .toGetStorageLensGroup()
-   * - .toListAccessGrants()
-   * - .toListAccessGrantsLocations()
-   * - .toListCallerAccessGrants()
-   * - .toListTagsForResource()
-   * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutJobTagging()
    * - .toPutStorageLensConfiguration()
    * - .toPutStorageLensConfigurationTagging()
    * - .toTagResource()
    * - .toUntagResource()
-   * - .toUpdateAccessGrantsLocation()
-   * - .toUpdateJobPriority()
-   * - .toUpdateJobStatus()
-   * - .toUpdateStorageLensGroup()
    *
    * Applies to resource types:
-   * - accessgrant
-   * - accessgrantsinstance
-   * - accessgrantslocation
    * - job
    * - storagelensconfiguration
    * - storagelensgroup
+   * - accessgrantsinstance
+   * - accessgrantslocation
+   * - accessgrant
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -2960,8 +4353,6 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies
    *
    * Applies to actions:
-   * - .toAbortMultipartUpload()
-   * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateMultiRegionAccessPoint()
@@ -2970,12 +4361,6 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteMultiRegionAccessPoint()
-   * - .toDeleteObject()
-   * - .toDeleteObjectAnnotation()
-   * - .toDeleteObjectTagging()
-   * - .toDeleteObjectVersion()
-   * - .toDeleteObjectVersionAnnotation()
-   * - .toDeleteObjectVersionTagging()
    * - .toGetAccessPoint()
    * - .toGetAccessPointConfigurationForObjectLambda()
    * - .toGetAccessPointForObjectLambda()
@@ -2983,52 +4368,15 @@ export class S3 extends PolicyStatement {
    * - .toGetAccessPointPolicyForObjectLambda()
    * - .toGetAccessPointPolicyStatus()
    * - .toGetAccessPointPolicyStatusForObjectLambda()
-   * - .toGetBucketAcl()
-   * - .toGetBucketCORS()
-   * - .toGetBucketLocation()
-   * - .toGetBucketNotification()
-   * - .toGetBucketPolicy()
    * - .toGetMultiRegionAccessPoint()
    * - .toGetMultiRegionAccessPointPolicy()
    * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetMultiRegionAccessPointRoutes()
-   * - .toGetObject()
-   * - .toGetObjectAcl()
-   * - .toGetObjectAnnotation()
-   * - .toGetObjectAttributes()
-   * - .toGetObjectLegalHold()
-   * - .toGetObjectRetention()
-   * - .toGetObjectTagging()
-   * - .toGetObjectVersion()
-   * - .toGetObjectVersionAcl()
-   * - .toGetObjectVersionAnnotation()
-   * - .toGetObjectVersionAttributes()
-   * - .toGetObjectVersionTagging()
-   * - .toListBucket()
    * - .toListBucketMultipartUploads()
-   * - .toListBucketVersions()
-   * - .toListMultipartUploadParts()
-   * - .toListObjectAnnotations()
-   * - .toListObjectVersionAnnotations()
-   * - .toListTagsForResource()
    * - .toPutAccessPointConfigurationForObjectLambda()
-   * - .toPutAccessPointPolicy()
    * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutMultiRegionAccessPointPolicy()
-   * - .toPutObject()
-   * - .toPutObjectAcl()
-   * - .toPutObjectAnnotation()
-   * - .toPutObjectLegalHold()
-   * - .toPutObjectRetention()
-   * - .toPutObjectTagging()
-   * - .toPutObjectVersionAcl()
-   * - .toPutObjectVersionAnnotation()
-   * - .toPutObjectVersionTagging()
-   * - .toRestoreObject()
    * - .toSubmitMultiRegionAccessPointRoutes()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateObjectEncryption()
    *
    * Applies to resource types:
    * - accesspoint
@@ -3047,58 +4395,13 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html#tagging-and-policies
    *
    * Applies to actions:
-   * - .toAbortMultipartUpload()
-   * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointPolicy()
-   * - .toDeleteObject()
-   * - .toDeleteObjectAnnotation()
-   * - .toDeleteObjectTagging()
-   * - .toDeleteObjectVersion()
-   * - .toDeleteObjectVersionAnnotation()
-   * - .toDeleteObjectVersionTagging()
    * - .toGetAccessPoint()
    * - .toGetAccessPointPolicy()
    * - .toGetAccessPointPolicyStatus()
-   * - .toGetBucketAcl()
-   * - .toGetBucketCORS()
-   * - .toGetBucketLocation()
-   * - .toGetBucketNotification()
-   * - .toGetBucketPolicy()
-   * - .toGetObject()
-   * - .toGetObjectAcl()
-   * - .toGetObjectAnnotation()
-   * - .toGetObjectAttributes()
-   * - .toGetObjectLegalHold()
-   * - .toGetObjectRetention()
-   * - .toGetObjectTagging()
-   * - .toGetObjectVersion()
-   * - .toGetObjectVersionAcl()
-   * - .toGetObjectVersionAnnotation()
-   * - .toGetObjectVersionAttributes()
-   * - .toGetObjectVersionTagging()
-   * - .toListBucket()
    * - .toListBucketMultipartUploads()
-   * - .toListBucketVersions()
-   * - .toListMultipartUploadParts()
-   * - .toListObjectAnnotations()
-   * - .toListObjectVersionAnnotations()
-   * - .toListTagsForResource()
-   * - .toPutAccessPointPolicy()
-   * - .toPutObject()
-   * - .toPutObjectAcl()
-   * - .toPutObjectAnnotation()
-   * - .toPutObjectLegalHold()
-   * - .toPutObjectRetention()
-   * - .toPutObjectTagging()
-   * - .toPutObjectVersionAcl()
-   * - .toPutObjectVersionAnnotation()
-   * - .toPutObjectVersionTagging()
-   * - .toRestoreObject()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateObjectEncryption()
    *
    * Applies to resource types:
    * - accesspoint
@@ -3116,114 +4419,6 @@ export class S3 extends PolicyStatement {
    * Filters access by the tags associated with the bucket
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html
-   *
-   * Applies to actions:
-   * - .toAbortMultipartUpload()
-   * - .toAllowVendedLogDeliveryForResource()
-   * - .toBypassGovernanceRetention()
-   * - .toCreateBucket()
-   * - .toCreateBucketMetadataTableConfiguration()
-   * - .toDeleteBucket()
-   * - .toDeleteBucketMetadataTableConfiguration()
-   * - .toDeleteBucketPolicy()
-   * - .toDeleteBucketWebsite()
-   * - .toDeleteObject()
-   * - .toDeleteObjectAnnotation()
-   * - .toDeleteObjectTagging()
-   * - .toDeleteObjectVersion()
-   * - .toDeleteObjectVersionAnnotation()
-   * - .toDeleteObjectVersionTagging()
-   * - .toGetAccelerateConfiguration()
-   * - .toGetAnalyticsConfiguration()
-   * - .toGetBucketAbac()
-   * - .toGetBucketAcl()
-   * - .toGetBucketCORS()
-   * - .toGetBucketLocation()
-   * - .toGetBucketLogging()
-   * - .toGetBucketMetadataTableConfiguration()
-   * - .toGetBucketNotification()
-   * - .toGetBucketObjectLockConfiguration()
-   * - .toGetBucketOwnershipControls()
-   * - .toGetBucketPolicy()
-   * - .toGetBucketPolicyStatus()
-   * - .toGetBucketPublicAccessBlock()
-   * - .toGetBucketRequestPayment()
-   * - .toGetBucketTagging()
-   * - .toGetBucketVersioning()
-   * - .toGetBucketWebsite()
-   * - .toGetEncryptionConfiguration()
-   * - .toGetIntelligentTieringConfiguration()
-   * - .toGetInventoryConfiguration()
-   * - .toGetLifecycleConfiguration()
-   * - .toGetMetricsConfiguration()
-   * - .toGetObject()
-   * - .toGetObjectAcl()
-   * - .toGetObjectAnnotation()
-   * - .toGetObjectAttributes()
-   * - .toGetObjectLegalHold()
-   * - .toGetObjectRetention()
-   * - .toGetObjectTagging()
-   * - .toGetObjectTorrent()
-   * - .toGetObjectVersion()
-   * - .toGetObjectVersionAcl()
-   * - .toGetObjectVersionAnnotation()
-   * - .toGetObjectVersionAnnotationForReplication()
-   * - .toGetObjectVersionAttributes()
-   * - .toGetObjectVersionForReplication()
-   * - .toGetObjectVersionTagging()
-   * - .toGetObjectVersionTorrent()
-   * - .toGetReplicationConfiguration()
-   * - .toListBucket()
-   * - .toListBucketMultipartUploads()
-   * - .toListBucketVersions()
-   * - .toListMultipartUploadParts()
-   * - .toListObjectAnnotations()
-   * - .toListObjectVersionAnnotations()
-   * - .toListTagsForResource()
-   * - .toObjectOwnerOverrideToBucketOwner()
-   * - .toPutAccelerateConfiguration()
-   * - .toPutAnalyticsConfiguration()
-   * - .toPutBucketAbac()
-   * - .toPutBucketAcl()
-   * - .toPutBucketCORS()
-   * - .toPutBucketLogging()
-   * - .toPutBucketNotification()
-   * - .toPutBucketObjectLockConfiguration()
-   * - .toPutBucketOwnershipControls()
-   * - .toPutBucketPolicy()
-   * - .toPutBucketPublicAccessBlock()
-   * - .toPutBucketRequestPayment()
-   * - .toPutBucketTagging()
-   * - .toPutBucketVersioning()
-   * - .toPutBucketWebsite()
-   * - .toPutEncryptionConfiguration()
-   * - .toPutIntelligentTieringConfiguration()
-   * - .toPutInventoryConfiguration()
-   * - .toPutLifecycleConfiguration()
-   * - .toPutMetricsConfiguration()
-   * - .toPutObject()
-   * - .toPutObjectAcl()
-   * - .toPutObjectAnnotation()
-   * - .toPutObjectLegalHold()
-   * - .toPutObjectRetention()
-   * - .toPutObjectTagging()
-   * - .toPutObjectVersionAcl()
-   * - .toPutObjectVersionAnnotation()
-   * - .toPutObjectVersionTagging()
-   * - .toPutReplicationConfiguration()
-   * - .toReplicateDelete()
-   * - .toReplicateObject()
-   * - .toReplicateObjectAnnotation()
-   * - .toReplicateTags()
-   * - .toRestoreObject()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateBucketMetadataAnnotationTableConfiguration()
-   * - .toUpdateBucketMetadataInventoryTableConfiguration()
-   * - .toUpdateBucketMetadataJournalTableConfiguration()
-   * - .toUpdateObjectEncryption()
-   * - .toInitiateReplication()
-   * - .toPauseReplication()
    *
    * Applies to resource types:
    * - accesspointobject
@@ -3244,8 +4439,6 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies
    *
    * Applies to actions:
-   * - .toAbortMultipartUpload()
-   * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateMultiRegionAccessPoint()
@@ -3254,12 +4447,6 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteMultiRegionAccessPoint()
-   * - .toDeleteObject()
-   * - .toDeleteObjectAnnotation()
-   * - .toDeleteObjectTagging()
-   * - .toDeleteObjectVersion()
-   * - .toDeleteObjectVersionAnnotation()
-   * - .toDeleteObjectVersionTagging()
    * - .toGetAccessPoint()
    * - .toGetAccessPointConfigurationForObjectLambda()
    * - .toGetAccessPointForObjectLambda()
@@ -3267,52 +4454,15 @@ export class S3 extends PolicyStatement {
    * - .toGetAccessPointPolicyForObjectLambda()
    * - .toGetAccessPointPolicyStatus()
    * - .toGetAccessPointPolicyStatusForObjectLambda()
-   * - .toGetBucketAcl()
-   * - .toGetBucketCORS()
-   * - .toGetBucketLocation()
-   * - .toGetBucketNotification()
-   * - .toGetBucketPolicy()
    * - .toGetMultiRegionAccessPoint()
    * - .toGetMultiRegionAccessPointPolicy()
    * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetMultiRegionAccessPointRoutes()
-   * - .toGetObject()
-   * - .toGetObjectAcl()
-   * - .toGetObjectAnnotation()
-   * - .toGetObjectAttributes()
-   * - .toGetObjectLegalHold()
-   * - .toGetObjectRetention()
-   * - .toGetObjectTagging()
-   * - .toGetObjectVersion()
-   * - .toGetObjectVersionAcl()
-   * - .toGetObjectVersionAnnotation()
-   * - .toGetObjectVersionAttributes()
-   * - .toGetObjectVersionTagging()
-   * - .toListBucket()
    * - .toListBucketMultipartUploads()
-   * - .toListBucketVersions()
-   * - .toListMultipartUploadParts()
-   * - .toListObjectAnnotations()
-   * - .toListObjectVersionAnnotations()
-   * - .toListTagsForResource()
    * - .toPutAccessPointConfigurationForObjectLambda()
-   * - .toPutAccessPointPolicy()
    * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutMultiRegionAccessPointPolicy()
-   * - .toPutObject()
-   * - .toPutObjectAcl()
-   * - .toPutObjectAnnotation()
-   * - .toPutObjectLegalHold()
-   * - .toPutObjectRetention()
-   * - .toPutObjectTagging()
-   * - .toPutObjectVersionAcl()
-   * - .toPutObjectVersionAnnotation()
-   * - .toPutObjectVersionTagging()
-   * - .toRestoreObject()
    * - .toSubmitMultiRegionAccessPointRoutes()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateObjectEncryption()
    *
    * Applies to resource types:
    * - accesspoint
@@ -3331,8 +4481,6 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies
    *
    * Applies to actions:
-   * - .toAbortMultipartUpload()
-   * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateMultiRegionAccessPoint()
@@ -3341,12 +4489,6 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteMultiRegionAccessPoint()
-   * - .toDeleteObject()
-   * - .toDeleteObjectAnnotation()
-   * - .toDeleteObjectTagging()
-   * - .toDeleteObjectVersion()
-   * - .toDeleteObjectVersionAnnotation()
-   * - .toDeleteObjectVersionTagging()
    * - .toGetAccessPoint()
    * - .toGetAccessPointConfigurationForObjectLambda()
    * - .toGetAccessPointForObjectLambda()
@@ -3354,52 +4496,15 @@ export class S3 extends PolicyStatement {
    * - .toGetAccessPointPolicyForObjectLambda()
    * - .toGetAccessPointPolicyStatus()
    * - .toGetAccessPointPolicyStatusForObjectLambda()
-   * - .toGetBucketAcl()
-   * - .toGetBucketCORS()
-   * - .toGetBucketLocation()
-   * - .toGetBucketNotification()
-   * - .toGetBucketPolicy()
    * - .toGetMultiRegionAccessPoint()
    * - .toGetMultiRegionAccessPointPolicy()
    * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetMultiRegionAccessPointRoutes()
-   * - .toGetObject()
-   * - .toGetObjectAcl()
-   * - .toGetObjectAnnotation()
-   * - .toGetObjectAttributes()
-   * - .toGetObjectLegalHold()
-   * - .toGetObjectRetention()
-   * - .toGetObjectTagging()
-   * - .toGetObjectVersion()
-   * - .toGetObjectVersionAcl()
-   * - .toGetObjectVersionAnnotation()
-   * - .toGetObjectVersionAttributes()
-   * - .toGetObjectVersionTagging()
-   * - .toListBucket()
    * - .toListBucketMultipartUploads()
-   * - .toListBucketVersions()
-   * - .toListMultipartUploadParts()
-   * - .toListObjectAnnotations()
-   * - .toListObjectVersionAnnotations()
-   * - .toListTagsForResource()
    * - .toPutAccessPointConfigurationForObjectLambda()
-   * - .toPutAccessPointPolicy()
    * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutMultiRegionAccessPointPolicy()
-   * - .toPutObject()
-   * - .toPutObjectAcl()
-   * - .toPutObjectAnnotation()
-   * - .toPutObjectLegalHold()
-   * - .toPutObjectRetention()
-   * - .toPutObjectTagging()
-   * - .toPutObjectVersionAcl()
-   * - .toPutObjectVersionAnnotation()
-   * - .toPutObjectVersionTagging()
-   * - .toRestoreObject()
    * - .toSubmitMultiRegionAccessPointRoutes()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateObjectEncryption()
    *
    * Applies to resource types:
    * - accesspoint
@@ -3706,6 +4811,7 @@ export class S3 extends PolicyStatement {
    * - .toGetStorageLensConfigurationTagging()
    * - .toGetStorageLensDashboard()
    * - .toGetStorageLensGroup()
+   * - .toInitiateReplication()
    * - .toListAccessGrants()
    * - .toListAccessGrantsInstances()
    * - .toListAccessGrantsLocations()
@@ -3725,6 +4831,7 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
+   * - .toPauseReplication()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
@@ -3780,8 +4887,6 @@ export class S3 extends PolicyStatement {
    * - .toUpdateJobStatus()
    * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
-   * - .toInitiateReplication()
-   * - .toPauseReplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3917,6 +5022,7 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
+   * - .toPauseReplication()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
@@ -3972,7 +5078,6 @@ export class S3 extends PolicyStatement {
    * - .toUpdateJobStatus()
    * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
-   * - .toPauseReplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -4124,6 +5229,7 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
+   * - .toPauseReplication()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
@@ -4179,7 +5285,6 @@ export class S3 extends PolicyStatement {
    * - .toUpdateJobStatus()
    * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
-   * - .toPauseReplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4574,6 +5679,7 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
+   * - .toPauseReplication()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
@@ -4629,7 +5735,6 @@ export class S3 extends PolicyStatement {
    * - .toUpdateJobStatus()
    * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
-   * - .toPauseReplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -4765,6 +5870,7 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
+   * - .toPauseReplication()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
@@ -4820,7 +5926,6 @@ export class S3 extends PolicyStatement {
    * - .toUpdateJobStatus()
    * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
-   * - .toPauseReplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -5010,6 +6115,7 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
+   * - .toPauseReplication()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
@@ -5062,7 +6168,6 @@ export class S3 extends PolicyStatement {
    * - .toUpdateJobStatus()
    * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
-   * - .toPauseReplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -1,0 +1,1952 @@
+import { AccessLevelList } from '../../shared/access-level';
+import { PolicyStatement, Operator } from '../../shared';
+
+/**
+ * Statement provider for service [logs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchlogs.html).
+ *
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ */
+export class Logs extends PolicyStatement {
+  public servicePrefix = 'logs';
+
+  /**
+   * Statement provider for service [logs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchlogs.html).
+   *
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   */
+  constructor(sid?: string) {
+    super(sid);
+  }
+
+  /**
+   * Grants permission to associate the specified AWS Key Management Service (AWS KMS) customer master key (CMK) with the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_AssociateKmsKey.html
+   */
+  public toAssociateKmsKey() {
+    return this.to('AssociateKmsKey');
+  }
+
+  /**
+   * Grants permission to associate a log source to an S3 Tables integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_AssociateSourceToS3TableIntegration.html
+   */
+  public toAssociateSourceToS3TableIntegration() {
+    return this.to('AssociateSourceToS3TableIntegration');
+  }
+
+  /**
+   * Grants permission to authenticate requests using bearer token
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html
+   */
+  public toCallWithBearerToken() {
+    return this.to('CallWithBearerToken');
+  }
+
+  /**
+   * Grants permission to cancel an export task if it is in PENDING or RUNNING state
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html
+   */
+  public toCancelExportTask() {
+    return this.to('CancelExportTask');
+  }
+
+  /**
+   * Grants permission to cancel an import from CloudTrail Lake to CloudWatch
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelImportTask.html
+   */
+  public toCancelImportTask() {
+    return this.to('CancelImportTask');
+  }
+
+  /**
+   * Grants permission to create a delivery connecting a delivery source to a delivery destination
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html
+   */
+  public toCreateDelivery() {
+    return this.to('CreateDelivery');
+  }
+
+  /**
+   * Grants permission to create an ExportTask which allows you to efficiently export data from a Log Group to your Amazon S3 bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateExportTask.html
+   */
+  public toCreateExportTask() {
+    return this.to('CreateExportTask');
+  }
+
+  /**
+   * Grants permission to start an asynchronous process to import data from a CloudTrail Lake event data store into a managed log group in CloudWatch
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateImportTask.html
+   */
+  public toCreateImportTask() {
+    return this.to('CreateImportTask');
+  }
+
+  /**
+   * Grants permission to create a log anomaly detector
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogAnomalyDetector.html
+   */
+  public toCreateLogAnomalyDetector() {
+    return this.to('CreateLogAnomalyDetector');
+  }
+
+  /**
+   * Grants permission to create the log delivery
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html
+   */
+  public toCreateLogDelivery() {
+    return this.to('CreateLogDelivery');
+  }
+
+  /**
+   * Grants permission to create a new log group with the specified name
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogGroup.html
+   */
+  public toCreateLogGroup() {
+    return this.to('CreateLogGroup');
+  }
+
+  /**
+   * Grants permission to create a new log stream with the specified name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogStream.html
+   */
+  public toCreateLogStream() {
+    return this.to('CreateLogStream');
+  }
+
+  /**
+   * Grants permission to create a lookup table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLookupTable.html
+   */
+  public toCreateLookupTable() {
+    return this.to('CreateLookupTable');
+  }
+
+  /**
+   * Grants permission to create a scheduled query
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateScheduledQuery.html
+   */
+  public toCreateScheduledQuery() {
+    return this.to('CreateScheduledQuery');
+  }
+
+  /**
+   * Grants permission to delete an account policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteAccountPolicy.html
+   */
+  public toDeleteAccountPolicy() {
+    return this.to('DeleteAccountPolicy');
+  }
+
+  /**
+   * Grants permission to delete a data protection policy attached to a log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDataProtectionPolicy.html
+   */
+  public toDeleteDataProtectionPolicy() {
+    return this.to('DeleteDataProtectionPolicy');
+  }
+
+  /**
+   * Grants permission to delete a delivery
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDelivery.html
+   */
+  public toDeleteDelivery() {
+    return this.to('DeleteDelivery');
+  }
+
+  /**
+   * Grants permission to delete a delivery destination after all associated deliveries are deleted
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDeliveryDestination.html
+   */
+  public toDeleteDeliveryDestination() {
+    return this.to('DeleteDeliveryDestination');
+  }
+
+  /**
+   * Grants permission to delete a delivery destination policy associated with a delivery destination
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDeliveryDestinationPolicy.html
+   */
+  public toDeleteDeliveryDestinationPolicy() {
+    return this.to('DeleteDeliveryDestinationPolicy');
+  }
+
+  /**
+   * Grants permission to delete a delivery source after all associated deliveries are deleted
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDeliverySource.html
+   */
+  public toDeleteDeliverySource() {
+    return this.to('DeleteDeliverySource');
+  }
+
+  /**
+   * Grants permission to delete the destination with the specified name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDestination.html
+   */
+  public toDeleteDestination() {
+    return this.to('DeleteDestination');
+  }
+
+  /**
+   * Grants permission to delete an index policy attached to a log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteIndexPolicy.html
+   */
+  public toDeleteIndexPolicy() {
+    return this.to('DeleteIndexPolicy');
+  }
+
+  /**
+   * Grants permission to delete the integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteIntegration.html
+   */
+  public toDeleteIntegration() {
+    return this.to('DeleteIntegration');
+  }
+
+  /**
+   * Grants permission to delete a log anomaly detector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLogAnomalyDetector.html
+   */
+  public toDeleteLogAnomalyDetector() {
+    return this.to('DeleteLogAnomalyDetector');
+  }
+
+  /**
+   * Grants permission to delete the log delivery information for specified log delivery
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html
+   */
+  public toDeleteLogDelivery() {
+    return this.to('DeleteLogDelivery');
+  }
+
+  /**
+   * Grants permission to delete the log group with the specified name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLogGroup.html
+   */
+  public toDeleteLogGroup() {
+    return this.to('DeleteLogGroup');
+  }
+
+  /**
+   * Grants permission to delete a log stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLogStream.html
+   */
+  public toDeleteLogStream() {
+    return this.to('DeleteLogStream');
+  }
+
+  /**
+   * Grants permission to delete a lookup table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLookupTable.html
+   */
+  public toDeleteLookupTable() {
+    return this.to('DeleteLookupTable');
+  }
+
+  /**
+   * Grants permission to delete a metric filter associated with the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteMetricFilter.html
+   */
+  public toDeleteMetricFilter() {
+    return this.to('DeleteMetricFilter');
+  }
+
+  /**
+   * Grants permission to delete telemetry pipeline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toDeletePipelineRule() {
+    return this.to('DeletePipelineRule');
+  }
+
+  /**
+   * Grants permission to delete a saved CloudWatch Logs Insights query definition
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteQueryDefinition.html
+   */
+  public toDeleteQueryDefinition() {
+    return this.to('DeleteQueryDefinition');
+  }
+
+  /**
+   * Grants permission to delete a resource policy from this account
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to delete the retention policy of the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html
+   */
+  public toDeleteRetentionPolicy() {
+    return this.to('DeleteRetentionPolicy');
+  }
+
+  /**
+   * Grants permission to delete a scheduled query
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteScheduledQuery.html
+   */
+  public toDeleteScheduledQuery() {
+    return this.to('DeleteScheduledQuery');
+  }
+
+  /**
+   * Grants permission to delete a subscription filter associated with the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteSubscriptionFilter.html
+   */
+  public toDeleteSubscriptionFilter() {
+    return this.to('DeleteSubscriptionFilter');
+  }
+
+  /**
+   * Grants permission to delete syslog configuration for the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteSyslogConfiguration.html
+   */
+  public toDeleteSyslogConfiguration() {
+    return this.to('DeleteSyslogConfiguration');
+  }
+
+  /**
+   * Grants permission to delete a transformer associated with the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteTransformer.html
+   */
+  public toDeleteTransformer() {
+    return this.to('DeleteTransformer');
+  }
+
+  /**
+   * Grants permission to retrieve account policies
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeAccountPolicies.html
+   */
+  public toDescribeAccountPolicies() {
+    return this.to('DescribeAccountPolicies');
+  }
+
+  /**
+   * Grants permission to retrieve a list of configuration templates of available log types
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeConfigurationTemplates.html
+   */
+  public toDescribeConfigurationTemplates() {
+    return this.to('DescribeConfigurationTemplates');
+  }
+
+  /**
+   * Grants permission to retrieve a list of deliveries an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html
+   */
+  public toDescribeDeliveries() {
+    return this.to('DescribeDeliveries');
+  }
+
+  /**
+   * Grants permission to retrieve a list of delivery destinations an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveryDestinations.html
+   */
+  public toDescribeDeliveryDestinations() {
+    return this.to('DescribeDeliveryDestinations');
+  }
+
+  /**
+   * Grants permission to retrieve a list of delivery sources in an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliverySources.html
+   */
+  public toDescribeDeliverySources() {
+    return this.to('DescribeDeliverySources');
+  }
+
+  /**
+   * Grants permission to return all the destinations that are associated with the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDestinations.html
+   */
+  public toDescribeDestinations() {
+    return this.to('DescribeDestinations');
+  }
+
+  /**
+   * Grants permission to return all the export tasks that are associated with the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html
+   */
+  public toDescribeExportTasks() {
+    return this.to('DescribeExportTasks');
+  }
+
+  /**
+   * Grants permission to return all the indexing attributes that are attached with the log groups
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeFieldIndexes.html
+   */
+  public toDescribeFieldIndexes() {
+    return this.to('DescribeFieldIndexes');
+  }
+
+  /**
+   * Grants permission to return detailed information about the individual batches within an import task, including status and any error
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeImportTaskBatches.html
+   */
+  public toDescribeImportTaskBatches() {
+    return this.to('DescribeImportTaskBatches');
+  }
+
+  /**
+   * Grants permission to return all the import tasks associated with the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeImportTasks.html
+   */
+  public toDescribeImportTasks() {
+    return this.to('DescribeImportTasks');
+  }
+
+  /**
+   * Grants permission to return all the index policies that are attached with the log groups
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeIndexPolicies.html
+   */
+  public toDescribeIndexPolicies() {
+    return this.to('DescribeIndexPolicies');
+  }
+
+  /**
+   * Grants permission to return all the log groups that are associated with the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogGroups.html
+   */
+  public toDescribeLogGroups() {
+    return this.to('DescribeLogGroups');
+  }
+
+  /**
+   * Grants permission to return all the log streams that are associated with the specified log group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html
+   */
+  public toDescribeLogStreams() {
+    return this.to('DescribeLogStreams');
+  }
+
+  /**
+   * Grants permission to return all lookup tables
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLookupTables.html
+   */
+  public toDescribeLookupTables() {
+    return this.to('DescribeLookupTables');
+  }
+
+  /**
+   * Grants permission to return all the metrics filters associated with the specified log group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeMetricFilters.html
+   */
+  public toDescribeMetricFilters() {
+    return this.to('DescribeMetricFilters');
+  }
+
+  /**
+   * Grants permission to return a list of CloudWatch Logs Insights queries that are scheduled, executing, or have been executed recently in this account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueries.html
+   */
+  public toDescribeQueries() {
+    return this.to('DescribeQueries');
+  }
+
+  /**
+   * Grants permission to return a paginated list of your saved CloudWatch Logs Insights query definitions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html
+   */
+  public toDescribeQueryDefinitions() {
+    return this.to('DescribeQueryDefinitions');
+  }
+
+  /**
+   * Grants permission to return all the resource policies in this account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeResourcePolicies.html
+   */
+  public toDescribeResourcePolicies() {
+    return this.to('DescribeResourcePolicies');
+  }
+
+  /**
+   * Grants permission to return all the subscription filters associated with the specified log group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html
+   */
+  public toDescribeSubscriptionFilters() {
+    return this.to('DescribeSubscriptionFilters');
+  }
+
+  /**
+   * Grants permission to disassociate the associated AWS Key Management Service (AWS KMS) customer master key (CMK) from the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DisassociateKmsKey.html
+   */
+  public toDisassociateKmsKey() {
+    return this.to('DisassociateKmsKey');
+  }
+
+  /**
+   * Grants permission to disassociate a log source from an S3 Tables integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DisassociateSourceFromS3TableIntegration.html
+   */
+  public toDisassociateSourceFromS3TableIntegration() {
+    return this.to('DisassociateSourceFromS3TableIntegration');
+  }
+
+  /**
+   * Grants permission to retrieve log events, optionally filtered by a filter pattern from the specified log group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html
+   */
+  public toFilterLogEvents() {
+    return this.to('FilterLogEvents');
+  }
+
+  /**
+   * Grants permission to retrieve a data protection policy attached to a log group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetDataProtectionPolicy.html
+   */
+  public toGetDataProtectionPolicy() {
+    return this.to('GetDataProtectionPolicy');
+  }
+
+  /**
+   * Grants permission to retrieve a single delivery
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetDelivery.html
+   */
+  public toGetDelivery() {
+    return this.to('GetDelivery');
+  }
+
+  /**
+   * Grants permission to retrieve a single delivery destination
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetDeliveryDestination.html
+   */
+  public toGetDeliveryDestination() {
+    return this.to('GetDeliveryDestination');
+  }
+
+  /**
+   * Grants permission to retrieve a delivery destination policy attached to a delivery destination
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetDeliveryDestinationPolicy.html
+   */
+  public toGetDeliveryDestinationPolicy() {
+    return this.to('GetDeliveryDestinationPolicy');
+  }
+
+  /**
+   * Grants permission to retrieve a single delivery source
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetDeliverySource.html
+   */
+  public toGetDeliverySource() {
+    return this.to('GetDeliverySource');
+  }
+
+  /**
+   * Grants permission to retrieve a single integration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetIntegration.html
+   */
+  public toGetIntegration() {
+    return this.to('GetIntegration');
+  }
+
+  /**
+   * Grants permission to get a log anomaly detector
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogAnomalyDetector.html
+   */
+  public toGetLogAnomalyDetector() {
+    return this.to('GetLogAnomalyDetector');
+  }
+
+  /**
+   * Grants permission to get the log delivery information for specified log delivery
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html
+   */
+  public toGetLogDelivery() {
+    return this.to('GetLogDelivery');
+  }
+
+  /**
+   * Grants permission to retrieve log events from the specified log stream
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html
+   */
+  public toGetLogEvents() {
+    return this.to('GetLogEvents');
+  }
+
+  /**
+   * Grants permission to retrieve a list of log fields for a data source
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogFields.html
+   */
+  public toGetLogFields() {
+    return this.to('GetLogFields');
+  }
+
+  /**
+   * Grants permission to return a list of the fields that are included in log events in the specified log group, along with the percentage of log events that contain each field
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogGroupFields.html
+   */
+  public toGetLogGroupFields() {
+    return this.to('GetLogGroupFields');
+  }
+
+  /**
+   * Grants permission to retrieve all the fields and values of a single log event
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html
+   */
+  public toGetLogRecord() {
+    return this.to('GetLogRecord');
+  }
+
+  /**
+   * Grants permission to retrieve a lookup table
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLookupTable.html
+   */
+  public toGetLookupTable() {
+    return this.to('GetLookupTable');
+  }
+
+  /**
+   * Grants permission to return the results from the specified query
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html
+   */
+  public toGetQueryResults() {
+    return this.to('GetQueryResults');
+  }
+
+  /**
+   * Grants permission to retrieve information about a specified scheduled query
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetScheduledQuery.html
+   */
+  public toGetScheduledQuery() {
+    return this.to('GetScheduledQuery');
+  }
+
+  /**
+   * Grants permission to return the execution history for a specified scheduled query
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetScheduledQueryHistory.html
+   */
+  public toGetScheduledQueryHistory() {
+    return this.to('GetScheduledQueryHistory');
+  }
+
+  /**
+   * Grants permission to return transformer associated with the specified log group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetTransformer.html
+   */
+  public toGetTransformer() {
+    return this.to('GetTransformer');
+  }
+
+  /**
+   * Grants permission to deliver log events to S3 Tables
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataSourceName()
+   * - .ifDataSourceType()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toIntegrateWithS3Table() {
+    return this.to('IntegrateWithS3Table');
+  }
+
+  /**
+   * Grants permission to share CloudWatch resources with a monitoring account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions
+   */
+  public toLink() {
+    return this.to('Link');
+  }
+
+  /**
+   * Grants permission to return an aggregate summary of all log groups in the region grouped by specified data-source characteristics
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAggregateLogGroupSummaries.html
+   */
+  public toListAggregateLogGroupSummaries() {
+    return this.to('ListAggregateLogGroupSummaries');
+  }
+
+  /**
+   * Grants permission to list all anomalies detected in the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAnomalies.html
+   */
+  public toListAnomalies() {
+    return this.to('ListAnomalies');
+  }
+
+  /**
+   * Grants permission to retrieve all the entities that are associated with log group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toListEntitiesForLogGroup() {
+    return this.to('ListEntitiesForLogGroup');
+  }
+
+  /**
+   * Grants permission to list all integrations associated with the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListIntegrations.html
+   */
+  public toListIntegrations() {
+    return this.to('ListIntegrations');
+  }
+
+  /**
+   * Grants permission to return all the anomaly detectors that are associated with the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListLogAnomalyDetectors.html
+   */
+  public toListLogAnomalyDetectors() {
+    return this.to('ListLogAnomalyDetectors');
+  }
+
+  /**
+   * Grants permission to list all the log deliveries for specified account and/or log source
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html
+   */
+  public toListLogDeliveries() {
+    return this.to('ListLogDeliveries');
+  }
+
+  /**
+   * Grants permission to return all the log groups that are associated with the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListLogGroups.html
+   */
+  public toListLogGroups() {
+    return this.to('ListLogGroups');
+  }
+
+  /**
+   * Grants permission to retrieve all the log groups that are associated with entity
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toListLogGroupsForEntity() {
+    return this.to('ListLogGroupsForEntity');
+  }
+
+  /**
+   * Grants permission to return all the log groups that are associated with the specified query
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListLogGroupsForQuery.html
+   */
+  public toListLogGroupsForQuery() {
+    return this.to('ListLogGroupsForQuery');
+  }
+
+  /**
+   * Grants permission to return all scheduled queries that are associated with the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListScheduledQueries.html
+   */
+  public toListScheduledQueries() {
+    return this.to('ListScheduledQueries');
+  }
+
+  /**
+   * Grants permission to return all log sources associated with an S3 Tables integration
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListSourcesForS3TableIntegration.html
+   */
+  public toListSourcesForS3TableIntegration() {
+    return this.to('ListSourcesForS3TableIntegration');
+  }
+
+  /**
+   * Grants permission to return all syslog configurations associated with the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListSyslogConfigurations.html
+   */
+  public toListSyslogConfigurations() {
+    return this.to('ListSyslogConfigurations');
+  }
+
+  /**
+   * Grants permission to list the tags for the specified resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list the tags for the specified log group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html
+   */
+  public toListTagsLogGroup() {
+    return this.to('ListTagsLogGroup');
+  }
+
+  /**
+   * Grants permission to process and transform log events through pipeline transformers before storage
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataSourceName()
+   * - .ifDataSourceType()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toProcessWithPipeline() {
+    return this.to('ProcessWithPipeline');
+  }
+
+  /**
+   * Grants permission to attach an account policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html
+   */
+  public toPutAccountPolicy() {
+    return this.to('PutAccountPolicy');
+  }
+
+  /**
+   * Grants permission to enable or disable bearer token based authentication for the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutBearerTokenAuthentication.html
+   */
+  public toPutBearerTokenAuthentication() {
+    return this.to('PutBearerTokenAuthentication');
+  }
+
+  /**
+   * Grants permission to attach a data protection policy to detect and redact sensitive information from log events
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html
+   */
+  public toPutDataProtectionPolicy() {
+    return this.to('PutDataProtectionPolicy');
+  }
+
+  /**
+   * Grants permission to create/update a delivery destination
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifDeliveryDestinationResourceArn()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html
+   */
+  public toPutDeliveryDestination() {
+    return this.to('PutDeliveryDestination');
+  }
+
+  /**
+   * Grants permission to attach a delivery destination policy to a delivery destination
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html
+   */
+  public toPutDeliveryDestinationPolicy() {
+    return this.to('PutDeliveryDestinationPolicy');
+  }
+
+  /**
+   * Grants permission to create/update a delivery source
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifLogGeneratingResourceArns()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html
+   */
+  public toPutDeliverySource() {
+    return this.to('PutDeliverySource');
+  }
+
+  /**
+   * Grants permission to create or update a Destination
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html
+   */
+  public toPutDestination() {
+    return this.to('PutDestination');
+  }
+
+  /**
+   * Grants permission to create or update an access policy associated with an existing Destination
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html
+   */
+  public toPutDestinationPolicy() {
+    return this.to('PutDestinationPolicy');
+  }
+
+  /**
+   * Grants permission to attach an index policy at log group level to optimize search and query
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html
+   */
+  public toPutIndexPolicy() {
+    return this.to('PutIndexPolicy');
+  }
+
+  /**
+   * Grants permission to create integration between cloudwatch logs and opensearch
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIntegration.html
+   */
+  public toPutIntegration() {
+    return this.to('PutIntegration');
+  }
+
+  /**
+   * Grants permission to upload a batch of log events to the specified log stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html
+   */
+  public toPutLogEvents() {
+    return this.to('PutLogEvents');
+  }
+
+  /**
+   * Grants permission to enable or disable deletion protection for the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogGroupDeletionProtection.html
+   */
+  public toPutLogGroupDeletionProtection() {
+    return this.to('PutLogGroupDeletionProtection');
+  }
+
+  /**
+   * Grants permission to create or update a metric filter and associates it with the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutMetricFilter.html
+   */
+  public toPutMetricFilter() {
+    return this.to('PutMetricFilter');
+  }
+
+  /**
+   * Grants permission to create telemetry pipeline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toPutPipelineRule() {
+    return this.to('PutPipelineRule');
+  }
+
+  /**
+   * Grants permission to create or update a query definition
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutQueryDefinition.html
+   */
+  public toPutQueryDefinition() {
+    return this.to('PutQueryDefinition');
+  }
+
+  /**
+   * Grants permission to create or update a resource policy allowing other AWS services to put log events to this account
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
+   * Grants permission to set the retention of the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html
+   */
+  public toPutRetentionPolicy() {
+    return this.to('PutRetentionPolicy');
+  }
+
+  /**
+   * Grants permission to create or update a subscription filter and associates it with the specified log group
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html
+   */
+  public toPutSubscriptionFilter() {
+    return this.to('PutSubscriptionFilter');
+  }
+
+  /**
+   * Grants permission to add syslog configuration for the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSyslogConfiguration.html
+   */
+  public toPutSyslogConfiguration() {
+    return this.to('PutSyslogConfiguration');
+  }
+
+  /**
+   * Grants permission to create or update a transformer and associates it with the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html
+   */
+  public toPutTransformer() {
+    return this.to('PutTransformer');
+  }
+
+  /**
+   * Grants permission to start a Live Tail session in CloudWatch Logs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTail.html
+   */
+  public toStartLiveTail() {
+    return this.to('StartLiveTail');
+  }
+
+  /**
+   * Grants permission to schedule a query of a log group using CloudWatch Logs Insights
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html
+   */
+  public toStartQuery() {
+    return this.to('StartQuery');
+  }
+
+  /**
+   * Grants permission to stop a Live Tail session that is in progress
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs_LiveTail.html
+   */
+  public toStopLiveTail() {
+    return this.to('StopLiveTail');
+  }
+
+  /**
+   * Grants permission to stop a CloudWatch Logs Insights query that is in progress
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StopQuery.html
+   */
+  public toStopQuery() {
+    return this.to('StopQuery');
+  }
+
+  /**
+   * Grants permission to add or update the specified tags for the specified log group
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html
+   */
+  public toTagLogGroup() {
+    return this.to('TagLogGroup');
+  }
+
+  /**
+   * Grants permission to add or update the specified tags for the specified resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to test the filter pattern of a metric filter against a sample of log event messages
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TestMetricFilter.html
+   */
+  public toTestMetricFilter() {
+    return this.to('TestMetricFilter');
+  }
+
+  /**
+   * Grants permission to test the transformer against a sample of log event messages
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TestTransformer.html
+   */
+  public toTestTransformer() {
+    return this.to('TestTransformer');
+  }
+
+  /**
+   * Grants permission to fetch unmasked log events that have been redacted with a data protection policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html
+   */
+  public toUnmask() {
+    return this.to('Unmask');
+  }
+
+  /**
+   * Grants permission to remove the specified tags from the specified log group
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html
+   */
+  public toUntagLogGroup() {
+    return this.to('UntagLogGroup');
+  }
+
+  /**
+   * Grants permission to remove the specified tags from the specified resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update an anomaly reported by a log anomaly detector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateAnomaly.html
+   */
+  public toUpdateAnomaly() {
+    return this.to('UpdateAnomaly');
+  }
+
+  /**
+   * Grants permission to update configuration related to a delivery
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateDeliveryConfiguration.html
+   */
+  public toUpdateDeliveryConfiguration() {
+    return this.to('UpdateDeliveryConfiguration');
+  }
+
+  /**
+   * Grants permission to update a log anomaly detector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateLogAnomalyDetector.html
+   */
+  public toUpdateLogAnomalyDetector() {
+    return this.to('UpdateLogAnomalyDetector');
+  }
+
+  /**
+   * Grants permission to update the log delivery information for specified log delivery
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html
+   */
+  public toUpdateLogDelivery() {
+    return this.to('UpdateLogDelivery');
+  }
+
+  /**
+   * Grants permission to update a lookup table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateLookupTable.html
+   */
+  public toUpdateLookupTable() {
+    return this.to('UpdateLookupTable');
+  }
+
+  /**
+   * Grants permission to update a scheduled query
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateScheduledQuery.html
+   */
+  public toUpdateScheduledQuery() {
+    return this.to('UpdateScheduledQuery');
+  }
+
+  protected accessLevelList: AccessLevelList = {
+    Write: [
+      'AssociateKmsKey',
+      'AssociateSourceToS3TableIntegration',
+      'CallWithBearerToken',
+      'CancelExportTask',
+      'CancelImportTask',
+      'CreateDelivery',
+      'CreateExportTask',
+      'CreateImportTask',
+      'CreateLogAnomalyDetector',
+      'CreateLogDelivery',
+      'CreateLogGroup',
+      'CreateLogStream',
+      'CreateLookupTable',
+      'CreateScheduledQuery',
+      'DeleteAccountPolicy',
+      'DeleteDataProtectionPolicy',
+      'DeleteDelivery',
+      'DeleteDeliveryDestination',
+      'DeleteDeliveryDestinationPolicy',
+      'DeleteDeliverySource',
+      'DeleteDestination',
+      'DeleteIndexPolicy',
+      'DeleteIntegration',
+      'DeleteLogAnomalyDetector',
+      'DeleteLogDelivery',
+      'DeleteLogGroup',
+      'DeleteLogStream',
+      'DeleteLookupTable',
+      'DeleteMetricFilter',
+      'DeletePipelineRule',
+      'DeleteQueryDefinition',
+      'DeleteRetentionPolicy',
+      'DeleteScheduledQuery',
+      'DeleteSubscriptionFilter',
+      'DeleteSyslogConfiguration',
+      'DeleteTransformer',
+      'DisassociateKmsKey',
+      'DisassociateSourceFromS3TableIntegration',
+      'IntegrateWithS3Table',
+      'Link',
+      'ProcessWithPipeline',
+      'PutAccountPolicy',
+      'PutBearerTokenAuthentication',
+      'PutDataProtectionPolicy',
+      'PutDeliveryDestination',
+      'PutDeliveryDestinationPolicy',
+      'PutDeliverySource',
+      'PutDestination',
+      'PutDestinationPolicy',
+      'PutIndexPolicy',
+      'PutIntegration',
+      'PutLogEvents',
+      'PutLogGroupDeletionProtection',
+      'PutMetricFilter',
+      'PutPipelineRule',
+      'PutQueryDefinition',
+      'PutRetentionPolicy',
+      'PutSubscriptionFilter',
+      'PutSyslogConfiguration',
+      'PutTransformer',
+      'UpdateAnomaly',
+      'UpdateDeliveryConfiguration',
+      'UpdateLogAnomalyDetector',
+      'UpdateLogDelivery',
+      'UpdateLookupTable',
+      'UpdateScheduledQuery'
+    ],
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'PutResourcePolicy'
+    ],
+    List: [
+      'DescribeAccountPolicies',
+      'DescribeConfigurationTemplates',
+      'DescribeDeliveries',
+      'DescribeDeliveryDestinations',
+      'DescribeDeliverySources',
+      'DescribeDestinations',
+      'DescribeExportTasks',
+      'DescribeFieldIndexes',
+      'DescribeImportTaskBatches',
+      'DescribeImportTasks',
+      'DescribeIndexPolicies',
+      'DescribeLogGroups',
+      'DescribeLogStreams',
+      'DescribeLookupTables',
+      'DescribeMetricFilters',
+      'DescribeQueries',
+      'DescribeQueryDefinitions',
+      'DescribeResourcePolicies',
+      'DescribeSubscriptionFilters',
+      'ListAggregateLogGroupSummaries',
+      'ListAnomalies',
+      'ListEntitiesForLogGroup',
+      'ListIntegrations',
+      'ListLogAnomalyDetectors',
+      'ListLogDeliveries',
+      'ListLogGroups',
+      'ListLogGroupsForEntity',
+      'ListLogGroupsForQuery',
+      'ListScheduledQueries',
+      'ListSourcesForS3TableIntegration',
+      'ListSyslogConfigurations',
+      'ListTagsForResource',
+      'ListTagsLogGroup'
+    ],
+    Read: [
+      'FilterLogEvents',
+      'GetDataProtectionPolicy',
+      'GetDelivery',
+      'GetDeliveryDestination',
+      'GetDeliveryDestinationPolicy',
+      'GetDeliverySource',
+      'GetIntegration',
+      'GetLogAnomalyDetector',
+      'GetLogDelivery',
+      'GetLogEvents',
+      'GetLogFields',
+      'GetLogGroupFields',
+      'GetLogRecord',
+      'GetLookupTable',
+      'GetQueryResults',
+      'GetScheduledQuery',
+      'GetScheduledQueryHistory',
+      'GetTransformer',
+      'StartLiveTail',
+      'StartQuery',
+      'StopLiveTail',
+      'StopQuery',
+      'TestMetricFilter',
+      'TestTransformer',
+      'Unmask'
+    ],
+    Tagging: [
+      'TagLogGroup',
+      'TagResource',
+      'UntagLogGroup',
+      'UntagResource'
+    ]
+  };
+
+  /**
+   * Adds a resource of type log-group to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LogGroup.html
+   *
+   * @param logGroupName - Identifier for the logGroupName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLogGroup(logGroupName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:log-group:${ logGroupName }`);
+  }
+
+  /**
+   * Adds a resource of type log-stream to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LogStream.html
+   *
+   * @param logGroupName - Identifier for the logGroupName.
+   * @param logStreamName - Identifier for the logStreamName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLogStream(logGroupName: string, logStreamName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:log-group:${ logGroupName }:log-stream:${ logStreamName }`);
+  }
+
+  /**
+   * Adds a resource of type destination to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Destination.html
+   *
+   * @param destinationName - Identifier for the destinationName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:destination:${ destinationName }`);
+  }
+
+  /**
+   * Adds a resource of type delivery-source to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeliverySource.html
+   *
+   * @param deliverySourceName - Identifier for the deliverySourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDeliverySource(deliverySourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:delivery-source:${ deliverySourceName }`);
+  }
+
+  /**
+   * Adds a resource of type delivery to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Delivery.html
+   *
+   * @param deliveryName - Identifier for the deliveryName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDelivery(deliveryName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:delivery:${ deliveryName }`);
+  }
+
+  /**
+   * Adds a resource of type delivery-destination to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeliveryDestination.html
+   *
+   * @param deliveryDestinationName - Identifier for the deliveryDestinationName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDeliveryDestination(deliveryDestinationName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:delivery-destination:${ deliveryDestinationName }`);
+  }
+
+  /**
+   * Adds a resource of type anomaly-detector to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_AnomalyDetector.html
+   *
+   * @param detectorId - Identifier for the detectorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAnomalyDetector(detectorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:anomaly-detector:${ detectorId }`);
+  }
+
+  /**
+   * Adds a resource of type scheduled-query to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ScheduledQuery.html
+   *
+   * @param scheduledQueryId - Identifier for the scheduledQueryId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onScheduledQuery(scheduledQueryId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:scheduled-query:${ scheduledQueryId }`);
+  }
+
+  /**
+   * Adds a resource of type lookup-table to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LookupTable.html
+   *
+   * @param lookupTableName - Identifier for the lookupTableName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLookupTable(lookupTableName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:lookup-table:${ lookupTableName }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateDelivery()
+   * - .toCreateLogAnomalyDetector()
+   * - .toCreateLogGroup()
+   * - .toCreateLookupTable()
+   * - .toCreateScheduledQuery()
+   * - .toPutDeliveryDestination()
+   * - .toPutDeliverySource()
+   * - .toPutDestination()
+   * - .toTagLogGroup()
+   * - .toTagResource()
+   * - .toUpdateDeliveryConfiguration()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - log-group
+   * - log-stream
+   * - destination
+   * - delivery-source
+   * - delivery
+   * - delivery-destination
+   * - anomaly-detector
+   * - scheduled-query
+   * - lookup-table
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateDelivery()
+   * - .toCreateLogAnomalyDetector()
+   * - .toCreateLogGroup()
+   * - .toCreateLookupTable()
+   * - .toCreateScheduledQuery()
+   * - .toPutDeliveryDestination()
+   * - .toPutDeliverySource()
+   * - .toPutDestination()
+   * - .toTagLogGroup()
+   * - .toTagResource()
+   * - .toUntagLogGroup()
+   * - .toUntagResource()
+   * - .toUpdateDeliveryConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the Log Destination ARN passed in the request
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html
+   *
+   * Applies to actions:
+   * - .toPutDeliveryDestination()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifDeliveryDestinationResourceArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`DeliveryDestinationResourceArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the Log Generating Resource ARNs passed in the request
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html
+   *
+   * Applies to actions:
+   * - .toPutDeliverySource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifLogGeneratingResourceArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`LogGeneratingResourceArns`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the data source name passed in the request
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html
+   *
+   * Applies to actions:
+   * - .toIntegrateWithS3Table()
+   * - .toProcessWithPipeline()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDataSourceName(value: string | string[], operator?: Operator | string) {
+    return this.if(`data_source_name`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the data source type passed in the request
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html
+   *
+   * Applies to actions:
+   * - .toIntegrateWithS3Table()
+   * - .toProcessWithPipeline()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDataSourceType(value: string | string[], operator?: Operator | string) {
+    return this.if(`data_source_type`, value, operator ?? 'StringLike');
+  }
+}

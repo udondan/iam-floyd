@@ -6,8 +6,8 @@ purchase-orders:ListPurchaseOrderInvoices;List
 purchase-orders:ListPurchaseOrders;List
 purchase-orders:ListTagsForResource;Read
 purchase-orders:ModifyPurchaseOrders;Write
-purchase-orders:TagResource;Tagging, Write
-purchase-orders:UntagResource;Tagging, Write
+purchase-orders:TagResource;Tagging
+purchase-orders:UntagResource;Tagging
 purchase-orders:UpdateConsoleActionSetEnforced;Write
 purchase-orders:UpdatePurchaseOrder;Write
 purchase-orders:UpdatePurchaseOrderStatus;Write

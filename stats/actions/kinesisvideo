@@ -33,10 +33,10 @@ kinesisvideo:ListTagsForStream;Read
 kinesisvideo:PutMedia;Write
 kinesisvideo:SendAlexaOfferToMaster;Write
 kinesisvideo:StartEdgeConfigurationUpdate;Write
-kinesisvideo:TagResource;Tagging, Write
-kinesisvideo:TagStream;Tagging, Write
-kinesisvideo:UntagResource;Tagging, Write
-kinesisvideo:UntagStream;Tagging, Write
+kinesisvideo:TagResource;Tagging
+kinesisvideo:TagStream;Tagging
+kinesisvideo:UntagResource;Tagging
+kinesisvideo:UntagStream;Tagging
 kinesisvideo:UpdateDataRetention;Write
 kinesisvideo:UpdateImageGenerationConfiguration;Write
 kinesisvideo:UpdateMediaStorageConfiguration;Write

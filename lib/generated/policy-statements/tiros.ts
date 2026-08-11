@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement } from '../../shared';
 
 /**
- * Statement provider for service [tiros](https://docs.aws.amazon.com/service-authorization/latest/reference/list_tiros.html).
+ * Statement provider for service [tiros](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstiros.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Tiros extends PolicyStatement {
   public servicePrefix = 'tiros';
 
   /**
-   * Statement provider for service [tiros](https://docs.aws.amazon.com/service-authorization/latest/reference/list_tiros.html).
+   * Statement provider for service [tiros](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstiros.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

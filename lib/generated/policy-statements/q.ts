@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [q](https://docs.aws.amazon.com/service-authorization/latest/reference/list_q.html).
+ * Statement provider for service [q](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonq.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Q extends PolicyStatement {
   public servicePrefix = 'q';
 
   /**
-   * Statement provider for service [q](https://docs.aws.amazon.com/service-authorization/latest/reference/list_q.html).
+   * Statement provider for service [q](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonq.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -100,6 +100,10 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifIdentitystoreUserId()
+   * - .ifIdentitystoreGroupId()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toCreateAssignment() {
@@ -110,6 +114,12 @@ export class Q extends PolicyStatement {
    * Grants permission to create OAuth user in Amazon Q
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
    *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
@@ -122,6 +132,12 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toCreateOAuthAppConnection() {
@@ -132,6 +148,10 @@ export class Q extends PolicyStatement {
    * Grants permission to create and configure a third party plugin in Amazon Q
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
@@ -155,6 +175,10 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifIdentitystoreUserId()
+   * - .ifIdentitystoreGroupId()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toDeleteAssignment() {
@@ -177,6 +201,12 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toDeleteOAuthAppConnection() {
@@ -187,6 +217,9 @@ export class Q extends PolicyStatement {
    * Grants permission to delete a configured plugin in Amazon Q
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
@@ -254,6 +287,11 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - cloudformation:GetResource
+   * - cloudformation:GetResourceRequestStatus
+   * - cloudformation:ListResourceRequests
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toGetArtifactActionResult() {
@@ -297,6 +335,9 @@ export class Q extends PolicyStatement {
    * Grants permission to view information about a specific configured Amazon Q plugin
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
@@ -397,6 +438,9 @@ export class Q extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toListTagsForResource() {
@@ -430,6 +474,18 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - cloudformation:CancelResourceRequest
+   * - cloudformation:CreateResource
+   * - cloudformation:GetResource
+   * - cloudformation:GetResourceRequestStatus
+   * - cloudformation:ListResourceRequests
+   * - cloudformation:UpdateResource
+   * - iam:AttachRolePolicy
+   * - iam:CreatePolicy
+   * - iam:CreateRole
+   * - iam:PutRolePolicy
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toPerformArtifactAction() {
@@ -451,6 +507,12 @@ export class Q extends PolicyStatement {
    * Grants permission to trigger asynchronous Amazon Q actions
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
    *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
@@ -505,7 +567,12 @@ export class Q extends PolicyStatement {
   /**
    * Grants permission to associate tags with an Amazon Q resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
@@ -516,7 +583,11 @@ export class Q extends PolicyStatement {
   /**
    * Grants permission to remove tags associated with an Amazon Q resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
@@ -529,6 +600,10 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifIdentitystoreUserId()
+   * - .ifIdentitystoreGroupId()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toUpdateAssignment() {
@@ -539,6 +614,12 @@ export class Q extends PolicyStatement {
    * Grants permission to update OAuth user in Amazon Q
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
    *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
@@ -562,6 +643,12 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toUpdateOAuthAppConnection() {
@@ -572,6 +659,10 @@ export class Q extends PolicyStatement {
    * Grants permission to update a third party plugin in Amazon Q
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
@@ -606,6 +697,12 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toVerifyOAuthAppConnection() {
@@ -636,8 +733,6 @@ export class Q extends PolicyStatement {
       'StartConversation',
       'StartTroubleshootingAnalysis',
       'StartTroubleshootingResolutionExplanation',
-      'TagResource',
-      'UntagResource',
       'UpdateAssignment',
       'UpdateAuthGrant',
       'UpdateConversation',
@@ -680,23 +775,6 @@ export class Q extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type plugin to the statement
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/plugins.html
-   *
-   * @param identifier - Identifier for the identifier.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onPlugin(identifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:qdeveloper:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:plugin/${ identifier }`);
-  }
-
-  /**
    * Adds a resource of type profile to the statement
    *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/as-whisper-admin.html#about-profiles
@@ -711,6 +789,23 @@ export class Q extends PolicyStatement {
    */
   public onProfile(identifier: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:codewhisperer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:profile/${ identifier }`);
+  }
+
+  /**
+   * Adds a resource of type plugin to the statement
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/plugins.html
+   *
+   * @param identifier - Identifier for the identifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPlugin(identifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qdeveloper:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:plugin/${ identifier }`);
   }
 
   /**
@@ -737,34 +832,15 @@ export class Q extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html
    *
    * Applies to actions:
-   * - .toAssociateLoginDomain()
-   * - .toBatchDescribeGroups()
-   * - .toBatchDescribeUsers()
-   * - .toBatchGetGroups()
-   * - .toBatchGetUsers()
-   * - .toCreateAssignment()
-   * - .toCreatePlugin()
-   * - .toCreateScimAccessToken()
-   * - .toDeleteAssignment()
    * - .toDeletePlugin()
-   * - .toDeleteScimAccessToken()
-   * - .toDisassociateLoginDomain()
    * - .toGetPlugin()
-   * - .toListGroups()
-   * - .toListLoginDomains()
-   * - .toListPlugins()
-   * - .toListScimAccessTokens()
    * - .toListTagsForResource()
-   * - .toListUsers()
    * - .toTagResource()
    * - .toUntagResource()
-   * - .toUpdateAssignment()
-   * - .toUpdatePlugin()
-   * - .toUsePlugin()
    *
    * Applies to resource types:
-   * - plugin
    * - profile
+   * - plugin
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

@@ -55,8 +55,8 @@ clouddirectory:LookupPolicy;Read
 clouddirectory:PublishSchema;Write
 clouddirectory:PutSchemaFromJson;Write
 clouddirectory:RemoveFacetFromObject;Write
-clouddirectory:TagResource;Tagging, Write
-clouddirectory:UntagResource;Tagging, Write
+clouddirectory:TagResource;Tagging
+clouddirectory:UntagResource;Tagging
 clouddirectory:UpdateFacet;Write
 clouddirectory:UpdateLinkAttributes;Write
 clouddirectory:UpdateObjectAttributes;Write

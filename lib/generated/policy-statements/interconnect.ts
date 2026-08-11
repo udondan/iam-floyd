@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [interconnect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_interconnect.html).
+ * Statement provider for service [interconnect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Interconnect extends PolicyStatement {
   public servicePrefix = 'interconnect';
 
   /**
-   * Statement provider for service [interconnect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_interconnect.html).
+   * Statement provider for service [interconnect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -37,6 +37,10 @@ export class Interconnect extends PolicyStatement {
    * Grants permission to create a connection
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/interconnect/latest/api/API_CreateConnection.html
    */
@@ -135,7 +139,11 @@ export class Interconnect extends PolicyStatement {
   /**
    * Grants permission to apply tags to a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/interconnect/latest/api/API_TagResource.html
    */
@@ -146,7 +154,10 @@ export class Interconnect extends PolicyStatement {
   /**
    * Grants permission to remove tags from a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/interconnect/latest/api/API_UntagResource.html
    */
@@ -170,8 +181,6 @@ export class Interconnect extends PolicyStatement {
       'AcceptConnectionProposal',
       'CreateConnection',
       'DeleteConnection',
-      'TagResource',
-      'UntagResource',
       'UpdateConnection'
     ],
     Read: [
@@ -244,14 +253,6 @@ export class Interconnect extends PolicyStatement {
    * Filters access by a tag key and value pair of a resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toCreateConnection()
-   * - .toDeleteConnection()
-   * - .toGetConnection()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateConnection()
    *
    * Applies to resource types:
    * - connection

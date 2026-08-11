@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [appflow](https://docs.aws.amazon.com/service-authorization/latest/reference/list_appflow.html).
+ * Statement provider for service [appflow](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappflow.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Appflow extends PolicyStatement {
   public servicePrefix = 'appflow';
 
   /**
-   * Statement provider for service [appflow](https://docs.aws.amazon.com/service-authorization/latest/reference/list_appflow.html).
+   * Statement provider for service [appflow](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappflow.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -71,6 +71,10 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DeleteFlow.html
    */
   public toDeleteFlow() {
@@ -97,6 +101,17 @@ export class Appflow extends PolicyStatement {
    */
   public toDescribeConnectorEntity() {
     return this.to('DescribeConnectorEntity');
+  }
+
+  /**
+   * Grants permission to describe all fields for an object in a login profile configured in Amazon AppFlow (Console Only)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
+   */
+  public toDescribeConnectorFields() {
+    return this.to('DescribeConnectorFields');
   }
 
   /**
@@ -133,6 +148,17 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe all flow executions for a flow configured in Amazon AppFlow (Console Only)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
+   */
+  public toDescribeFlowExecution() {
+    return this.to('DescribeFlowExecution');
+  }
+
+  /**
    * Grants permission to describe all flow executions for a flow configured in Amazon AppFlow
    *
    * Access Level: Read
@@ -144,6 +170,17 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe all flows configured in Amazon AppFlow (Console Only)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
+   */
+  public toDescribeFlows() {
+    return this.to('DescribeFlows');
+  }
+
+  /**
    * Grants permission to list all objects for a login profile configured in Amazon AppFlow
    *
    * Access Level: List
@@ -152,6 +189,17 @@ export class Appflow extends PolicyStatement {
    */
   public toListConnectorEntities() {
     return this.to('ListConnectorEntities');
+  }
+
+  /**
+   * Grants permission to list all objects for a login profile configured in Amazon AppFlow (Console Only)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
+   */
+  public toListConnectorFields() {
+    return this.to('ListConnectorFields');
   }
 
   /**
@@ -214,6 +262,17 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
+   * Grants permission to run a flow configured in Amazon AppFlow (Console Only)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
+   */
+  public toRunFlow() {
+    return this.to('RunFlow');
+  }
+
+  /**
    * Grants permission to activate (for scheduled and event-triggered flows) or run (for on-demand flows) a flow configured in Amazon AppFlow
    *
    * Access Level: Write
@@ -238,7 +297,11 @@ export class Appflow extends PolicyStatement {
   /**
    * Grants permission to tag a flow or a connector
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_TagResource.html
    */
@@ -251,6 +314,10 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UnregisterConnector.html
    */
   public toUnRegisterConnector() {
@@ -260,7 +327,10 @@ export class Appflow extends PolicyStatement {
   /**
    * Grants permission to untag a flow or a connector
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UntagResource.html
    */
@@ -302,61 +372,6 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe all fields for an object in a login profile configured in Amazon AppFlow (Console Only)
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
-   */
-  public toDescribeConnectorFields() {
-    return this.to('DescribeConnectorFields');
-  }
-
-  /**
-   * Grants permission to describe all flow executions for a flow configured in Amazon AppFlow (Console Only)
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
-   */
-  public toDescribeFlowExecution() {
-    return this.to('DescribeFlowExecution');
-  }
-
-  /**
-   * Grants permission to describe all flows configured in Amazon AppFlow (Console Only)
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
-   */
-  public toDescribeFlows() {
-    return this.to('DescribeFlows');
-  }
-
-  /**
-   * Grants permission to list all objects for a login profile configured in Amazon AppFlow (Console Only)
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
-   */
-  public toListConnectorFields() {
-    return this.to('ListConnectorFields');
-  }
-
-  /**
-   * Grants permission to run a flow configured in Amazon AppFlow (Console Only)
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
-   */
-  public toRunFlow() {
-    return this.to('RunFlow');
-  }
-
-  /**
    * Grants permission to use a connector profile while creating a flow in Amazon AppFlow
    *
    * Access Level: Write
@@ -374,29 +389,27 @@ export class Appflow extends PolicyStatement {
       'DeleteFlow',
       'RegisterConnector',
       'ResetConnectorMetadataCache',
+      'RunFlow',
       'StartFlow',
       'StopFlow',
-      'TagResource',
       'UnRegisterConnector',
-      'UntagResource',
       'UpdateConnectorProfile',
       'UpdateConnectorRegistration',
       'UpdateFlow',
-      'RunFlow',
       'UseConnectorProfile'
     ],
     Read: [
       'DescribeConnector',
       'DescribeConnectorEntity',
+      'DescribeConnectorFields',
       'DescribeConnectorProfiles',
       'DescribeConnectors',
       'DescribeFlow',
-      'DescribeFlowExecutionRecords',
-      'ListTagsForResource',
-      'DescribeConnectorFields',
       'DescribeFlowExecution',
+      'DescribeFlowExecutionRecords',
       'DescribeFlows',
-      'ListConnectorFields'
+      'ListConnectorFields',
+      'ListTagsForResource'
     ],
     List: [
       'ListConnectorEntities',
@@ -408,23 +421,6 @@ export class Appflow extends PolicyStatement {
       'UntagResource'
     ]
   };
-
-  /**
-   * Adds a resource of type connector to the statement
-   *
-   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ConnectorDetail.html
-   *
-   * @param connectorLabel - Identifier for the connectorLabel.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onConnector(connectorLabel: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appflow:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ connectorLabel }`);
-  }
 
   /**
    * Adds a resource of type connectorprofile to the statement
@@ -458,6 +454,23 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type connector to the statement
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ConnectorDetail.html
+   *
+   * @param connectorLabel - Identifier for the connectorLabel.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnector(connectorLabel: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appflow:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ connectorLabel }`);
+  }
+
+  /**
    * Filters access by allowed set of values for each of the tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -482,28 +495,9 @@ export class Appflow extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toCancelFlowExecutions()
-   * - .toDeleteFlow()
-   * - .toDescribeConnector()
-   * - .toDescribeFlow()
-   * - .toDescribeFlowExecutionRecords()
-   * - .toListConnectors()
-   * - .toListFlows()
-   * - .toListTagsForResource()
-   * - .toStartFlow()
-   * - .toStopFlow()
-   * - .toTagResource()
-   * - .toUnRegisterConnector()
-   * - .toUntagResource()
-   * - .toUpdateConnectorRegistration()
-   * - .toUpdateFlow()
-   * - .toDescribeFlowExecution()
-   * - .toRunFlow()
-   *
    * Applies to resource types:
-   * - connector
    * - flow
+   * - connector
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

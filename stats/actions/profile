@@ -100,8 +100,8 @@ profile:StartRecommender;Write
 profile:StartUploadJob;Write
 profile:StopRecommender;Write
 profile:StopUploadJob;Write
-profile:TagResource;Tagging, Write
-profile:UntagResource;Tagging, Write
+profile:TagResource;Tagging
+profile:UntagResource;Tagging
 profile:UpdateCalculatedAttributeDefinition;Write
 profile:UpdateDomain;Write
 profile:UpdateDomainLayout;Write

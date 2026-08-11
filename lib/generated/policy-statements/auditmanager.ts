@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [auditmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_auditmanager.html).
+ * Statement provider for service [auditmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsauditmanager.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Auditmanager extends PolicyStatement {
   public servicePrefix = 'auditmanager';
 
   /**
-   * Statement provider for service [auditmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_auditmanager.html).
+   * Statement provider for service [auditmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsauditmanager.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -91,8 +91,8 @@ export class Auditmanager extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html
    */
@@ -104,6 +104,11 @@ export class Auditmanager extends PolicyStatement {
    * Grants permission to create a framework for use in AWS Audit Manager
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessmentFramework.html
    */
@@ -129,8 +134,8 @@ export class Auditmanager extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateControl.html
    */
@@ -143,6 +148,10 @@ export class Auditmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessment.html
    */
   public toDeleteAssessment() {
@@ -153,6 +162,10 @@ export class Auditmanager extends PolicyStatement {
    * Grants permission to delete an assessment framework in AWS Audit Manager
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFramework.html
    */
@@ -186,6 +199,10 @@ export class Auditmanager extends PolicyStatement {
    * Grants permission to delete a control in AWS Audit Manager
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteControl.html
    */
@@ -592,7 +609,11 @@ export class Auditmanager extends PolicyStatement {
   /**
    * Grants permission to tag an AWS Audit Manager resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_TagResource.html
    */
@@ -603,7 +624,10 @@ export class Auditmanager extends PolicyStatement {
   /**
    * Grants permission to untag an AWS Audit Manager resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UntagResource.html
    */
@@ -733,8 +757,6 @@ export class Auditmanager extends PolicyStatement {
       'RegisterAccount',
       'RegisterOrganizationAdminAccount',
       'StartAssessmentFrameworkShare',
-      'TagResource',
-      'UntagResource',
       'UpdateAssessment',
       'UpdateAssessmentControl',
       'UpdateAssessmentControlSetStatus',
@@ -803,21 +825,6 @@ export class Auditmanager extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type assessmentControlSet to the statement
-   *
-   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_AssessmentControlSet.html
-   *
-   * @param assessmentId - Identifier for the assessmentId.
-   * @param controlSetId - Identifier for the controlSetId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAssessmentControlSet(assessmentId: string, controlSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:auditmanager:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:assessment/${ assessmentId }/controlSet/${ controlSetId }`);
-  }
-
-  /**
    * Adds a resource of type assessmentFramework to the statement
    *
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_AssessmentFramework.html
@@ -832,6 +839,21 @@ export class Auditmanager extends PolicyStatement {
    */
   public onAssessmentFramework(assessmentFrameworkId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:auditmanager:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:assessmentFramework/${ assessmentFrameworkId }`);
+  }
+
+  /**
+   * Adds a resource of type assessmentControlSet to the statement
+   *
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_AssessmentControlSet.html
+   *
+   * @param assessmentId - Identifier for the assessmentId.
+   * @param controlSetId - Identifier for the controlSetId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAssessmentControlSet(assessmentId: string, controlSetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:auditmanager:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:assessment/${ assessmentId }/controlSet/${ controlSetId }`);
   }
 
   /**
@@ -879,35 +901,10 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toAssociateAssessmentReportEvidenceFolder()
-   * - .toBatchAssociateAssessmentReportEvidence()
-   * - .toBatchCreateDelegationByAssessment()
-   * - .toBatchDeleteDelegationByAssessment()
-   * - .toBatchDisassociateAssessmentReportEvidence()
    * - .toCreateAssessment()
    * - .toCreateAssessmentFramework()
-   * - .toCreateAssessmentReport()
    * - .toCreateControl()
-   * - .toDeleteAssessment()
-   * - .toDeleteAssessmentFramework()
-   * - .toDeleteAssessmentReport()
-   * - .toDeleteControl()
-   * - .toDisassociateAssessmentReportEvidenceFolder()
-   * - .toGetAssessment()
-   * - .toGetAssessmentFramework()
-   * - .toGetAssessmentReportUrl()
-   * - .toGetChangeLogs()
-   * - .toGetControl()
-   * - .toGetEvidenceFoldersByAssessment()
-   * - .toListTagsForResource()
-   * - .toStartAssessmentFrameworkShare()
-   * - .toTagResource()
    * - .toUntagResource()
-   * - .toUpdateAssessment()
-   * - .toUpdateAssessmentFramework()
-   * - .toUpdateAssessmentFrameworkShare()
-   * - .toUpdateAssessmentStatus()
-   * - .toUpdateControl()
    *
    * Applies to resource types:
    * - assessment

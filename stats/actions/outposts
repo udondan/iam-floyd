@@ -35,8 +35,8 @@ outposts:ListSites;List
 outposts:ListTagsForResource;Read
 outposts:StartCapacityTask;Write
 outposts:StartConnection;Write
-outposts:TagResource;Tagging, Write
-outposts:UntagResource;Tagging, Write
+outposts:TagResource;Tagging
+outposts:UntagResource;Tagging
 outposts:UpdateOutpost;Write
 outposts:UpdateQuote;Write
 outposts:UpdateSite;Write

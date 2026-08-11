@@ -57,8 +57,8 @@ aws-external-anthropic:ListWebhooks;List
 aws-external-anthropic:ListWorkspaces;List
 aws-external-anthropic:ProcessEnvironmentWork;Write
 aws-external-anthropic:RotateWebhookSecret;Write
-aws-external-anthropic:TagResource;Tagging, Write
-aws-external-anthropic:UntagResource;Tagging, Write
+aws-external-anthropic:TagResource;Tagging
+aws-external-anthropic:UntagResource;Tagging
 aws-external-anthropic:UpdateAgent;Write
 aws-external-anthropic:UpdateEnvironment;Write
 aws-external-anthropic:UpdateMemoryStore;Write

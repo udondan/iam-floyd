@@ -62,6 +62,6 @@ cloudwatch:StartMetricStreams;Write
 cloudwatch:StartOTelEnrichment;Write
 cloudwatch:StopMetricStreams;Write
 cloudwatch:StopOTelEnrichment;Write
-cloudwatch:TagResource;Tagging, Write
-cloudwatch:UntagResource;Tagging, Write
+cloudwatch:TagResource;Tagging
+cloudwatch:UntagResource;Tagging
 cloudwatch:UpdateServiceLevelObjective;Write

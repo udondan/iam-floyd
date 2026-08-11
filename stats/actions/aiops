@@ -24,8 +24,8 @@ aiops:ListReports;List
 aiops:ListTagsForResource;List
 aiops:PutFact;Write
 aiops:PutInvestigationGroupPolicy;Write
-aiops:TagResource;Tagging, Write
-aiops:UntagResource;Tagging, Write
+aiops:TagResource;Tagging
+aiops:UntagResource;Tagging
 aiops:UpdateInvestigation;Write
 aiops:UpdateInvestigationEvent;Write
 aiops:UpdateInvestigationGroup;Write

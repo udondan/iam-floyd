@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [securityhub](https://docs.aws.amazon.com/service-authorization/latest/reference/list_securityhub.html).
+ * Statement provider for service [securityhub](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Securityhub extends PolicyStatement {
   public servicePrefix = 'securityhub';
 
   /**
-   * Statement provider for service [securityhub](https://docs.aws.amazon.com/service-authorization/latest/reference/list_securityhub.html).
+   * Statement provider for service [securityhub](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -38,6 +38,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toAcceptInvitation() {
     return this.to('AcceptInvitation');
+  }
+
+  /**
+   * Grants permission to log delivery for resources
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AllowVendedLogDeliveryForResource.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
   }
 
   /**
@@ -96,9 +107,23 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the enablement and compliance status of controls, the findings count for controls, and the overall security score for controls on the Security Hub console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/iam-permissions-controls-standards.html
+   */
+  public toBatchGetControlEvaluations() {
+    return this.to('BatchGetControlEvaluations');
+  }
+
+  /**
    * Grants permission to get details about specific security controls identified by ID or ARN
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - securityhub:DescribeStandardsControls
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchGetSecurityControls.html
    */
@@ -111,6 +136,9 @@ export class Securityhub extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - securityhub:DescribeStandardsControls
+   *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchGetStandardsControlAssociations.html
    */
   public toBatchGetStandardsControlAssociations() {
@@ -121,6 +149,9 @@ export class Securityhub extends PolicyStatement {
    * Grants permission to import findings into Security Hub from an integrated product
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTargetAccount()
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html
    */
@@ -144,6 +175,10 @@ export class Securityhub extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifASFFSyntaxPath()
+   * - .ifOCSFSyntaxPath()
+   *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindingsV2.html
    */
   public toBatchUpdateFindings() {
@@ -154,6 +189,9 @@ export class Securityhub extends PolicyStatement {
    * Grants permission to update the enablement status of a batch of security controls in standards
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - securityhub:UpdateStandardsControl
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html
    */
@@ -538,6 +576,11 @@ export class Securityhub extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - organizations:DeregisterDelegatedAdministrator
+   * - organizations:DescribeOrganization
+   * - organizations:ListDelegatedAdministrators
+   *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableOrganizationAdminAccount.html
    */
   public toDisableOrganizationAdminAccount() {
@@ -626,6 +669,13 @@ export class Securityhub extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   * - organizations:EnableAWSServiceAccess
+   * - organizations:ListAWSServiceAccessForOrganization
+   * - organizations:ListDelegatedAdministrators
+   * - organizations:RegisterDelegatedAdministrator
+   *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableOrganizationAdminAccount.html
    */
   public toEnableOrganizationAdminAccount() {
@@ -636,6 +686,10 @@ export class Securityhub extends PolicyStatement {
    * Grants permission to enable Security Hub
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableSecurityHub.html
    */
@@ -678,6 +732,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toGenerateRecommendedPolicyV2() {
     return this.to('GenerateRecommendedPolicyV2');
+  }
+
+  /**
+   * Grants permission to retrieve aggregated statistical data about the findings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingStatisticsV2.html
+   */
+  public toGetAdhocInsightResults() {
+    return this.to('GetAdhocInsightResults');
   }
 
   /**
@@ -758,6 +823,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a security score and counts of finding and control statuses for a security standard
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetControlFindingSummary.html
+   */
+  public toGetControlFindingSummary() {
+    return this.to('GetControlFindingSummary');
+  }
+
+  /**
    * Grants permission to retrieve a list of the standards that are enabled in Security Hub
    *
    * Access Level: List
@@ -810,6 +886,39 @@ export class Securityhub extends PolicyStatement {
    */
   public toGetFindingsTrendsV2() {
     return this.to('GetFindingsTrendsV2');
+  }
+
+  /**
+   * Grants permission to retrieve the end date for an account's free trial of Security Hub
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFreeTrialEndDate.html
+   */
+  public toGetFreeTrialEndDate() {
+    return this.to('GetFreeTrialEndDate');
+  }
+
+  /**
+   * Grants permission to retrieve information about Security Hub usage during the free trial period
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFreeTrialUsage.html
+   */
+  public toGetFreeTrialUsage() {
+    return this.to('GetFreeTrialUsage');
+  }
+
+  /**
+   * Grants permission to retrieve an insight finding trend from Security Hub in order to generate a graph
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsightFindingTrend.html
+   */
+  public toGetInsightFindingTrend() {
+    return this.to('GetInsightFindingTrend');
   }
 
   /**
@@ -916,10 +1025,35 @@ export class Securityhub extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - securityhub:DescribeStandardsControls
+   *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetSecurityControlDefinition.html
    */
   public toGetSecurityControlDefinition() {
     return this.to('GetSecurityControlDefinition');
+  }
+
+  /**
+   * Grants permission to retrieve information about Security Hub usage by accounts
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetUsage.html
+   */
+  public toGetUsage() {
+    return this.to('GetUsage');
+  }
+
+  /**
+   * Grants permission to retrieve information about Security Hub usage for an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetUsageV2.html
+   */
+  public toGetUsageV2() {
+    return this.to('GetUsageV2');
   }
 
   /**
@@ -931,6 +1065,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toInviteMembers() {
     return this.to('InviteMembers');
+  }
+
+  /**
+   * Grants permission to retrieve a list of Security Hub usage for accounts in an organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListAccountUsageV2.html
+   */
+  public toListAccountUsageV2() {
+    return this.to('ListAccountUsageV2');
   }
 
   /**
@@ -1011,6 +1156,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of controls for a standard, including the control IDs, statuses and finding counts
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListControlEvaluationSummaries.html
+   */
+  public toListControlEvaluationSummaries() {
+    return this.to('ListControlEvaluationSummaries');
+  }
+
+  /**
    * Grants permission to retrieve the Security Hub integrated products that are currently enabled
    *
    * Access Level: List
@@ -1059,6 +1215,10 @@ export class Securityhub extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   * - organizations:ListDelegatedAdministrators
+   *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListOrganizationAdminAccounts.html
    */
   public toListOrganizationAdminAccounts() {
@@ -1081,6 +1241,9 @@ export class Securityhub extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - securityhub:DescribeStandardsControls
+   *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListStandardsControlAssociations.html
    */
   public toListStandardsControlAssociations() {
@@ -1096,6 +1259,28 @@ export class Securityhub extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to use a custom action to send Security Hub findings to Amazon EventBridge
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_SendFindingEvents.html
+   */
+  public toSendFindingEvents() {
+    return this.to('SendFindingEvents');
+  }
+
+  /**
+   * Grants permission to use a custom action to send Security Hub insights to Amazon EventBridge
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_SendInsightEvents.html
+   */
+  public toSendInsightEvents() {
+    return this.to('SendInsightEvents');
   }
 
   /**
@@ -1123,7 +1308,7 @@ export class Securityhub extends PolicyStatement {
   /**
    * Grants permission to add tags to a Security Hub resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_TagResource.html
    */
@@ -1134,7 +1319,7 @@ export class Securityhub extends PolicyStatement {
   /**
    * Grants permission to remove tags from a Security Hub resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UntagResource.html
    */
@@ -1257,6 +1442,9 @@ export class Securityhub extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - securityhub:UpdateStandardsControl
+   *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateSecurityControl.html
    */
   public toUpdateSecurityControl() {
@@ -1283,171 +1471,6 @@ export class Securityhub extends PolicyStatement {
    */
   public toUpdateStandardsControl() {
     return this.to('UpdateStandardsControl');
-  }
-
-  /**
-   * Grants permission to log delivery for resources
-   *
-   * Access Level: Permissions management, Write
-   *
-   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AllowVendedLogDeliveryForResource.html
-   */
-  public toAllowVendedLogDeliveryForResource() {
-    return this.to('AllowVendedLogDeliveryForResource');
-  }
-
-  /**
-   * Grants permission to get the enablement and compliance status of controls, the findings count for controls, and the overall security score for controls on the Security Hub console
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityhub/latest/userguide/iam-permissions-controls-standards.html
-   */
-  public toBatchGetControlEvaluations() {
-    return this.to('BatchGetControlEvaluations');
-  }
-
-  /**
-   * Grants permission to retrieve Security Hub enabled regions for accounts in an organization
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchGetEnabledRegionsV2.html
-   */
-  public toBatchGetEnabledRegionsV2() {
-    return this.to('BatchGetEnabledRegionsV2');
-  }
-
-  /**
-   * Grants permission to retrieve aggregated statistical data about the findings
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingStatisticsV2.html
-   */
-  public toGetAdhocInsightResults() {
-    return this.to('GetAdhocInsightResults');
-  }
-
-  /**
-   * Grants permission to retrieve a security score and counts of finding and control statuses for a security standard
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetControlFindingSummary.html
-   */
-  public toGetControlFindingSummary() {
-    return this.to('GetControlFindingSummary');
-  }
-
-  /**
-   * Grants permission to retrieve Security Hub coverage statistics in an organization
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetCoverageStatisticsV2.html
-   */
-  public toGetCoverageStatisticsV2() {
-    return this.to('GetCoverageStatisticsV2');
-  }
-
-  /**
-   * Grants permission to retrieve the end date for an account's free trial of Security Hub
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFreeTrialEndDate.html
-   */
-  public toGetFreeTrialEndDate() {
-    return this.to('GetFreeTrialEndDate');
-  }
-
-  /**
-   * Grants permission to retrieve information about Security Hub usage during the free trial period
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFreeTrialUsage.html
-   */
-  public toGetFreeTrialUsage() {
-    return this.to('GetFreeTrialUsage');
-  }
-
-  /**
-   * Grants permission to retrieve an insight finding trend from Security Hub in order to generate a graph
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsightFindingTrend.html
-   */
-  public toGetInsightFindingTrend() {
-    return this.to('GetInsightFindingTrend');
-  }
-
-  /**
-   * Grants permission to retrieve information about Security Hub usage by accounts
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetUsage.html
-   */
-  public toGetUsage() {
-    return this.to('GetUsage');
-  }
-
-  /**
-   * Grants permission to retrieve information about Security Hub usage for an account
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetUsageV2.html
-   */
-  public toGetUsageV2() {
-    return this.to('GetUsageV2');
-  }
-
-  /**
-   * Grants permission to retrieve a list of Security Hub usage for accounts in an organization
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListAccountUsageV2.html
-   */
-  public toListAccountUsageV2() {
-    return this.to('ListAccountUsageV2');
-  }
-
-  /**
-   * Grants permission to retrieve a list of controls for a standard, including the control IDs, statuses and finding counts
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListControlEvaluationSummaries.html
-   */
-  public toListControlEvaluationSummaries() {
-    return this.to('ListControlEvaluationSummaries');
-  }
-
-  /**
-   * Grants permission to use a custom action to send Security Hub findings to Amazon EventBridge
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_SendFindingEvents.html
-   */
-  public toSendFindingEvents() {
-    return this.to('SendFindingEvents');
-  }
-
-  /**
-   * Grants permission to use a custom action to send Security Hub insights to Amazon EventBridge
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_SendInsightEvents.html
-   */
-  public toSendInsightEvents() {
-    return this.to('SendInsightEvents');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -1501,8 +1524,6 @@ export class Securityhub extends PolicyStatement {
       'InviteMembers',
       'StartConfigurationPolicyAssociation',
       'StartConfigurationPolicyDisassociation',
-      'TagResource',
-      'UntagResource',
       'UpdateActionTarget',
       'UpdateAggregatorV2',
       'UpdateAutomationRuleV2',
@@ -1515,12 +1536,15 @@ export class Securityhub extends PolicyStatement {
       'UpdateOrganizationConfiguration',
       'UpdateSecurityControl',
       'UpdateSecurityHubConfiguration',
-      'UpdateStandardsControl',
+      'UpdateStandardsControl'
+    ],
+    'Permissions management': [
       'AllowVendedLogDeliveryForResource'
     ],
     Read: [
       'BatchGetAutomationRules',
       'BatchGetConfigurationPolicyAssociations',
+      'BatchGetControlEvaluations',
       'BatchGetSecurityControls',
       'BatchGetStandardsControlAssociations',
       'DescribeActionTargets',
@@ -1531,6 +1555,7 @@ export class Securityhub extends PolicyStatement {
       'DescribeSecurityHubV2',
       'DescribeStandards',
       'DescribeStandardsControls',
+      'GetAdhocInsightResults',
       'GetAdministratorAccount',
       'GetAggregatorV2',
       'GetAutomationRuleV2',
@@ -1538,10 +1563,14 @@ export class Securityhub extends PolicyStatement {
       'GetConfigurationPolicyAssociation',
       'GetConnector',
       'GetConnectorV2',
+      'GetControlFindingSummary',
       'GetFindingAggregator',
       'GetFindingHistory',
       'GetFindings',
       'GetFindingsTrendsV2',
+      'GetFreeTrialEndDate',
+      'GetFreeTrialUsage',
+      'GetInsightFindingTrend',
       'GetInsightResults',
       'GetInvitationsCount',
       'GetMasterAccount',
@@ -1551,24 +1580,17 @@ export class Securityhub extends PolicyStatement {
       'GetResourcesTrendsV2',
       'GetResourcesV2',
       'GetSecurityControlDefinition',
-      'ListTagsForResource',
-      'BatchGetControlEvaluations',
-      'BatchGetEnabledRegionsV2',
-      'GetAdhocInsightResults',
-      'GetControlFindingSummary',
-      'GetCoverageStatisticsV2',
-      'GetFreeTrialEndDate',
-      'GetFreeTrialUsage',
-      'GetInsightFindingTrend',
       'GetUsage',
       'GetUsageV2',
       'ListControlEvaluationSummaries',
+      'ListTagsForResource',
       'SendFindingEvents',
       'SendInsightEvents'
     ],
     List: [
       'GetEnabledStandards',
       'GetInsights',
+      'ListAccountUsageV2',
       'ListAggregatorsV2',
       'ListAutomationRules',
       'ListAutomationRulesV2',
@@ -1582,17 +1604,75 @@ export class Securityhub extends PolicyStatement {
       'ListMembers',
       'ListOrganizationAdminAccounts',
       'ListSecurityControlDefinitions',
-      'ListStandardsControlAssociations',
-      'ListAccountUsageV2'
+      'ListStandardsControlAssociations'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
-    ],
-    'Permissions management': [
-      'AllowVendedLogDeliveryForResource'
     ]
   };
+
+  /**
+   * Adds a resource of type hub to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onHub(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityhub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hub/default`);
+  }
+
+  /**
+   * Adds a resource of type hubv2 to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
+   *
+   * @param hubV2Id - Identifier for the hubV2Id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onHubv2(hubV2Id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityhub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hubv2/${ hubV2Id }`);
+  }
+
+  /**
+   * Adds a resource of type product to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
+   *
+   * @param company - Identifier for the company.
+   * @param productId - Identifier for the productId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onProduct(company: string, productId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityhub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:product/${ company }/${ productId }`);
+  }
+
+  /**
+   * Adds a resource of type finding-aggregator to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
+   *
+   * @param findingAggregatorId - Identifier for the findingAggregatorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onFindingAggregator(findingAggregatorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityhub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:finding-aggregator/${ findingAggregatorId }`);
+  }
 
   /**
    * Adds a resource of type aggregatorv2 to the statement
@@ -1697,68 +1777,6 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type finding-aggregator to the statement
-   *
-   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
-   *
-   * @param findingAggregatorId - Identifier for the findingAggregatorId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onFindingAggregator(findingAggregatorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityhub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:finding-aggregator/${ findingAggregatorId }`);
-  }
-
-  /**
-   * Adds a resource of type hub to the statement
-   *
-   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
-   *
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onHub(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityhub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hub/default`);
-  }
-
-  /**
-   * Adds a resource of type hubv2 to the statement
-   *
-   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
-   *
-   * @param hubV2Id - Identifier for the hubV2Id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onHubv2(hubV2Id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityhub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hubv2/${ hubV2Id }`);
-  }
-
-  /**
-   * Adds a resource of type product to the statement
-   *
-   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
-   *
-   * @param company - Identifier for the company.
-   * @param productId - Identifier for the productId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onProduct(company: string, productId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityhub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:product/${ company }/${ productId }`);
-  }
-
-  /**
    * Filters access by actions based on the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1785,113 +1803,15 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toAcceptAdministratorInvitation()
-   * - .toAcceptInvitation()
-   * - .toBatchDeleteAutomationRules()
-   * - .toBatchDisableStandards()
-   * - .toBatchEnableStandards()
-   * - .toBatchGetAutomationRules()
-   * - .toBatchUpdateAutomationRules()
-   * - .toBatchUpdateFindings()
-   * - .toCreateActionTarget()
-   * - .toCreateInsight()
-   * - .toCreateMembers()
-   * - .toCreateTicketV2()
-   * - .toDeclineInvitations()
-   * - .toDeleteActionTarget()
-   * - .toDeleteAggregatorV2()
-   * - .toDeleteAutomationRuleV2()
-   * - .toDeleteConfigurationPolicy()
-   * - .toDeleteConnector()
-   * - .toDeleteConnectorV2()
-   * - .toDeleteInsight()
-   * - .toDeleteInvitations()
-   * - .toDeleteMembers()
-   * - .toDescribeActionTargets()
-   * - .toDescribeHub()
-   * - .toDescribeOrganizationConfiguration()
-   * - .toDescribeProducts()
-   * - .toDescribeProductsV2()
-   * - .toDescribeStandards()
-   * - .toDescribeStandardsControls()
-   * - .toDisableImportFindingsForProduct()
-   * - .toDisableOrganizationAdminAccount()
-   * - .toDisableSecurityHub()
-   * - .toDisableSecurityHubFeatureV2()
-   * - .toDisassociateFromAdministratorAccount()
-   * - .toDisassociateFromMasterAccount()
-   * - .toDisassociateMembers()
-   * - .toEnableImportFindingsForProduct()
-   * - .toEnableOrganizationAdminAccount()
-   * - .toEnableSecurityHub()
-   * - .toEnableSecurityHubFeatureV2()
-   * - .toGenerateRecommendedPolicyV2()
-   * - .toGetAdministratorAccount()
-   * - .toGetAggregatorV2()
-   * - .toGetAutomationRuleV2()
-   * - .toGetConfigurationPolicy()
-   * - .toGetConnector()
-   * - .toGetConnectorV2()
-   * - .toGetEnabledStandards()
-   * - .toGetFindingHistory()
-   * - .toGetFindings()
-   * - .toGetFindingsTrendsV2()
-   * - .toGetInsightResults()
-   * - .toGetInsights()
-   * - .toGetInvitationsCount()
-   * - .toGetMasterAccount()
-   * - .toGetMembers()
-   * - .toGetRecommendedPolicyV2()
-   * - .toGetResourcesStatisticsV2()
-   * - .toGetResourcesTrendsV2()
-   * - .toGetResourcesV2()
-   * - .toInviteMembers()
-   * - .toListEnabledProductsForImport()
-   * - .toListInvitations()
-   * - .toListMembers()
-   * - .toListOrganizationAdminAccounts()
-   * - .toListTagsForResource()
-   * - .toStartConfigurationPolicyAssociation()
-   * - .toStartConfigurationPolicyDisassociation()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateActionTarget()
-   * - .toUpdateAggregatorV2()
-   * - .toUpdateAutomationRuleV2()
-   * - .toUpdateConfigurationPolicy()
-   * - .toUpdateConnector()
-   * - .toUpdateConnectorV2()
-   * - .toUpdateFindings()
-   * - .toUpdateInsight()
-   * - .toUpdateOrganizationConfiguration()
-   * - .toUpdateSecurityHubConfiguration()
-   * - .toUpdateStandardsControl()
-   * - .toAllowVendedLogDeliveryForResource()
-   * - .toBatchGetControlEvaluations()
-   * - .toBatchGetEnabledRegionsV2()
-   * - .toGetAdhocInsightResults()
-   * - .toGetControlFindingSummary()
-   * - .toGetCoverageStatisticsV2()
-   * - .toGetFreeTrialEndDate()
-   * - .toGetFreeTrialUsage()
-   * - .toGetInsightFindingTrend()
-   * - .toGetUsage()
-   * - .toGetUsageV2()
-   * - .toListAccountUsageV2()
-   * - .toListControlEvaluationSummaries()
-   * - .toSendFindingEvents()
-   * - .toSendInsightEvents()
-   *
    * Applies to resource types:
+   * - hub
+   * - hubv2
    * - aggregatorv2
    * - automation-rule
    * - automation-rulev2
    * - configuration-policy
    * - connector
    * - connectorv2
-   * - hub
-   * - hubv2
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

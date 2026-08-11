@@ -31,8 +31,8 @@ iotevents:ListInputs;List
 iotevents:ListTagsForResource;Read
 iotevents:PutLoggingOptions;Write
 iotevents:StartDetectorModelAnalysis;Write
-iotevents:TagResource;Tagging, Write
-iotevents:UntagResource;Tagging, Write
+iotevents:TagResource;Tagging
+iotevents:UntagResource;Tagging
 iotevents:UpdateAlarmModel;Write
 iotevents:UpdateDetectorModel;Write
 iotevents:UpdateInput;Write

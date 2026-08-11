@@ -31,8 +31,8 @@ iottwinmaker:ListSyncJobs;List
 iottwinmaker:ListSyncResources;List
 iottwinmaker:ListTagsForResource;List
 iottwinmaker:ListWorkspaces;List
-iottwinmaker:TagResource;Tagging, Write
-iottwinmaker:UntagResource;Tagging, Write
+iottwinmaker:TagResource;Tagging
+iottwinmaker:UntagResource;Tagging
 iottwinmaker:UpdateComponentType;Write
 iottwinmaker:UpdateEntity;Write
 iottwinmaker:UpdatePricingPlan;Write

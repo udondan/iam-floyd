@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [route53profiles](https://docs.aws.amazon.com/service-authorization/latest/reference/list_route53profiles.html).
+ * Statement provider for service [route53profiles](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Route53profiles extends PolicyStatement {
   public servicePrefix = 'route53profiles';
 
   /**
-   * Statement provider for service [route53profiles](https://docs.aws.amazon.com/service-authorization/latest/reference/list_route53profiles.html).
+   * Statement provider for service [route53profiles](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -28,6 +28,9 @@ export class Route53profiles extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifResourceIds()
    *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_AssociateProfile.html
    */
   public toAssociateProfile() {
@@ -40,11 +43,11 @@ export class Route53profiles extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifFirewallRuleGroupPriority()
+   * - .ifResourceTypes()
    * - .ifHostedZoneDomains()
    * - .ifResolverRuleDomains()
+   * - .ifFirewallRuleGroupPriority()
    * - .ifResourceArns()
-   * - .ifResourceTypes()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_AssociateResourceToProfile.html
    */
@@ -98,11 +101,11 @@ export class Route53profiles extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifFirewallRuleGroupPriority()
+   * - .ifResourceTypes()
    * - .ifHostedZoneDomains()
    * - .ifResolverRuleDomains()
+   * - .ifFirewallRuleGroupPriority()
    * - .ifResourceArns()
-   * - .ifResourceTypes()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_DisassociateResourceFromProfile.html
    */
@@ -130,6 +133,17 @@ export class Route53profiles extends PolicyStatement {
    */
   public toGetProfileAssociation() {
     return this.to('GetProfileAssociation');
+  }
+
+  /**
+   * Grants permission to read the RAM access control policy for a Profile
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/sharing-profiles.html
+   */
+  public toGetProfilePolicy() {
+    return this.to('GetProfilePolicy');
   }
 
   /**
@@ -188,9 +202,24 @@ export class Route53profiles extends PolicyStatement {
   }
 
   /**
+   * Grants permission to define the RAM access control policy for a Profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/sharing-profiles.html
+   */
+  public toPutProfilePolicy() {
+    return this.to('PutProfilePolicy');
+  }
+
+  /**
    * Grants permission to add a tag to the given resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_TagResource.html
    */
@@ -201,7 +230,10 @@ export class Route53profiles extends PolicyStatement {
   /**
    * Grants permission to delete a tag from the given resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UntagResource.html
    */
@@ -215,37 +247,15 @@ export class Route53profiles extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifFirewallRuleGroupPriority()
+   * - .ifResourceTypes()
    * - .ifHostedZoneDomains()
    * - .ifResolverRuleDomains()
-   * - .ifResourceTypes()
+   * - .ifFirewallRuleGroupPriority()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UpdateProfileResourceAssociation.html
    */
   public toUpdateProfileResourceAssociation() {
     return this.to('UpdateProfileResourceAssociation');
-  }
-
-  /**
-   * Grants permission to read the RAM access control policy for a Profile
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/sharing-profiles.html
-   */
-  public toGetProfilePolicy() {
-    return this.to('GetProfilePolicy');
-  }
-
-  /**
-   * Grants permission to define the RAM access control policy for a Profile
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/sharing-profiles.html
-   */
-  public toPutProfilePolicy() {
-    return this.to('PutProfilePolicy');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -256,16 +266,14 @@ export class Route53profiles extends PolicyStatement {
       'DeleteProfile',
       'DisassociateProfile',
       'DisassociateResourceFromProfile',
-      'TagResource',
-      'UntagResource',
-      'UpdateProfileResourceAssociation',
-      'PutProfilePolicy'
+      'PutProfilePolicy',
+      'UpdateProfileResourceAssociation'
     ],
     Read: [
       'GetProfile',
       'GetProfileAssociation',
-      'GetProfileResourceAssociation',
-      'GetProfilePolicy'
+      'GetProfilePolicy',
+      'GetProfileResourceAssociation'
     ],
     List: [
       'ListProfileAssociations',
@@ -335,12 +343,6 @@ export class Route53profiles extends PolicyStatement {
    * Filters access by the presence of tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toGetProfilePolicy()
-   * - .toPutProfilePolicy()
    *
    * Applies to resource types:
    * - profile

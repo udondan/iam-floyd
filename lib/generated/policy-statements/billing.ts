@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [billing](https://docs.aws.amazon.com/service-authorization/latest/reference/list_billing.html).
+ * Statement provider for service [billing](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbilling.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Billing extends PolicyStatement {
   public servicePrefix = 'billing';
 
   /**
-   * Statement provider for service [billing](https://docs.aws.amazon.com/service-authorization/latest/reference/list_billing.html).
+   * Statement provider for service [billing](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbilling.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,6 +23,13 @@ export class Billing extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - billing:UseSourceView
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_AssociateSourceViews.html
    */
   public toAssociateSourceViews() {
@@ -33,6 +40,14 @@ export class Billing extends PolicyStatement {
    * Grants permission to create a billing view
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - billing:UseSourceView
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_CreateBillingView.html
    */
@@ -45,6 +60,9 @@ export class Billing extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_DeleteBillingView.html
    */
   public toDeleteBillingView() {
@@ -52,14 +70,70 @@ export class Billing extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a billing view resource policy
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to disassociate source views from a billing view
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_DisassociateSourceViews.html
    */
   public toDisassociateSourceViews() {
     return this.to('DisassociateSourceViews');
+  }
+
+  /**
+   * Grants permission to perform queries on billing information
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toGetBillingData() {
+    return this.to('GetBillingData');
+  }
+
+  /**
+   * Grants permission to view detailed line item billing information
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toGetBillingDetails() {
+    return this.to('GetBillingDetails');
+  }
+
+  /**
+   * Grants permission to view notifications sent by AWS related to your accounts billing information
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toGetBillingNotifications() {
+    return this.to('GetBillingNotifications');
   }
 
   /**
@@ -78,10 +152,33 @@ export class Billing extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_GetBillingView.html
    */
   public toGetBillingView() {
     return this.to('GetBillingView');
+  }
+
+  /**
+   * Grants permission to get cost and usage data for a specified billng view
+   *
+   * Access Level: Read
+   */
+  public toGetBillingViewData() {
+    return this.to('GetBillingViewData');
+  }
+
+  /**
+   * Grants permission to view the account's contract information including the contract number, end-user organization names, PO numbers and if the account is used to service public-sector customers
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toGetContractInformation() {
+    return this.to('GetContractInformation');
   }
 
   /**
@@ -107,36 +204,61 @@ export class Billing extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view Enterprise Support charge summary data
+   * Grants permission to retrieve cumulative spend and usage tracking data for a contract
    *
    * Access Level: Read
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public toGetEnterpriseSupportChargeSummary() {
-    return this.to('GetEnterpriseSupportChargeSummary');
+  public toGetCumulativeTracking() {
+    return this.to('GetCumulativeTracking');
   }
 
   /**
-   * Grants permission to view Enterprise Support contract details
+   * Grants permission to retrieve the state of the Allow IAM Access billing preference
    *
    * Access Level: Read
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public toGetEnterpriseSupportContractDetails() {
-    return this.to('GetEnterpriseSupportContractDetails');
+  public toGetIAMAccessPreference() {
+    return this.to('GetIAMAccessPreference');
+  }
+
+  /**
+   * Grants permission to retrieve monthly spend and usage tracking data for a contract
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toGetMonthlyTracking() {
+    return this.to('GetMonthlyTracking');
   }
 
   /**
    * Grants permission to get the resource policy specified billing view
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_GetResourcePolicy.html
    */
   public toGetResourcePolicy() {
     return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to retrieve the account's default Seller of Record
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toGetSellerOfRecord() {
+    return this.to('GetSellerOfRecord');
   }
 
   /**
@@ -151,20 +273,12 @@ export class Billing extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view Enterprise Support charges broken down by linked account
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
-   */
-  public toListEnterpriseSupportLinkedAccountCharges() {
-    return this.to('ListEnterpriseSupportLinkedAccountCharges');
-  }
-
-  /**
    * Grants permission to get the list of source views for a specified billing view
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_ListSourceViewsForBillingView.html
    */
@@ -177,10 +291,38 @@ export class Billing extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to set the account's contract information end-user organization names and if the account is used to service public-sector customers
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toPutContractInformation() {
+    return this.to('PutContractInformation');
+  }
+
+  /**
+   * Grants permission to put a billing view resource policy
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
   }
 
   /**
@@ -197,7 +339,12 @@ export class Billing extends PolicyStatement {
   /**
    * Grants permission to add tags to a specified billing view
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_TagResource.html
    */
@@ -208,7 +355,11 @@ export class Billing extends PolicyStatement {
   /**
    * Grants permission to remove a tag from a specified billing view
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_UntagResource.html
    */
@@ -232,118 +383,13 @@ export class Billing extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_UpdateBillingView.html
    */
   public toUpdateBillingView() {
     return this.to('UpdateBillingView');
-  }
-
-  /**
-   * Grants permission to delete a billing view resource policy
-   *
-   * Access Level: Permissions management, Write
-   *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_DeleteResourcePolicy.html
-   */
-  public toDeleteResourcePolicy() {
-    return this.to('DeleteResourcePolicy');
-  }
-
-  /**
-   * Grants permission to perform queries on billing information
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
-   */
-  public toGetBillingData() {
-    return this.to('GetBillingData');
-  }
-
-  /**
-   * Grants permission to view detailed line item billing information
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
-   */
-  public toGetBillingDetails() {
-    return this.to('GetBillingDetails');
-  }
-
-  /**
-   * Grants permission to view notifications sent by AWS related to your accounts billing information
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
-   */
-  public toGetBillingNotifications() {
-    return this.to('GetBillingNotifications');
-  }
-
-  /**
-   * Grants permission to get cost and usage data for a specified billng view
-   *
-   * Access Level: Read
-   */
-  public toGetBillingViewData() {
-    return this.to('GetBillingViewData');
-  }
-
-  /**
-   * Grants permission to view the account's contract information including the contract number, end-user organization names, PO numbers and if the account is used to service public-sector customers
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
-   */
-  public toGetContractInformation() {
-    return this.to('GetContractInformation');
-  }
-
-  /**
-   * Grants permission to retrieve the state of the Allow IAM Access billing preference
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
-   */
-  public toGetIAMAccessPreference() {
-    return this.to('GetIAMAccessPreference');
-  }
-
-  /**
-   * Grants permission to retrieve the account's default Seller of Record
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
-   */
-  public toGetSellerOfRecord() {
-    return this.to('GetSellerOfRecord');
-  }
-
-  /**
-   * Grants permission to set the account's contract information end-user organization names and if the account is used to service public-sector customers
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
-   */
-  public toPutContractInformation() {
-    return this.to('PutContractInformation');
-  }
-
-  /**
-   * Grants permission to put a billing view resource policy
-   *
-   * Access Level: Permissions management, Write
-   *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_PutResourcePolicy.html
-   */
-  public toPutResourcePolicy() {
-    return this.to('PutResourcePolicy');
   }
 
   /**
@@ -374,42 +420,36 @@ export class Billing extends PolicyStatement {
       'CreateBillingView',
       'DeleteBillingView',
       'DisassociateSourceViews',
-      'GetResourcePolicy',
+      'PutContractInformation',
       'RedeemCredits',
-      'TagResource',
-      'UntagResource',
       'UpdateBillingPreferences',
       'UpdateBillingView',
-      'DeleteResourcePolicy',
-      'PutContractInformation',
-      'PutResourcePolicy',
       'UpdateIAMAccessPreference'
     ],
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'GetResourcePolicy',
+      'PutResourcePolicy'
+    ],
     Read: [
-      'GetBillingPreferences',
-      'GetBillingView',
-      'GetCreditAllocationHistory',
-      'GetCredits',
-      'GetEnterpriseSupportChargeSummary',
-      'GetEnterpriseSupportContractDetails',
-      'ListBillingViews',
-      'ListTagsForResource',
       'GetBillingData',
       'GetBillingDetails',
       'GetBillingNotifications',
+      'GetBillingPreferences',
+      'GetBillingView',
       'GetBillingViewData',
       'GetContractInformation',
+      'GetCreditAllocationHistory',
+      'GetCredits',
+      'GetCumulativeTracking',
       'GetIAMAccessPreference',
+      'GetMonthlyTracking',
       'GetSellerOfRecord',
+      'ListBillingViews',
+      'ListTagsForResource',
       'UseSourceView'
     ],
-    'Permissions management': [
-      'GetResourcePolicy',
-      'DeleteResourcePolicy',
-      'PutResourcePolicy'
-    ],
     List: [
-      'ListEnterpriseSupportLinkedAccountCharges',
       'ListSourceViewsForBillingView'
     ],
     Tagging: [
@@ -432,6 +472,19 @@ export class Billing extends PolicyStatement {
    */
   public onBillingview(resourceId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:billing::${ account ?? this.defaultAccount }:billingview/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type contract to the statement
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/
+   *
+   * @param contractId - Identifier for the contractId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onContract(contractId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:billing::${ account ?? this.defaultAccount }:contract/${ contractId }`);
   }
 
   /**
@@ -458,21 +511,19 @@ export class Billing extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateSourceViews()
-   * - .toCreateBillingView()
    * - .toDeleteBillingView()
+   * - .toDeleteResourcePolicy()
    * - .toDisassociateSourceViews()
+   * - .toGetBillingData()
+   * - .toGetBillingDetails()
    * - .toGetBillingView()
    * - .toGetResourcePolicy()
    * - .toListSourceViewsForBillingView()
    * - .toListTagsForResource()
+   * - .toPutResourcePolicy()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateBillingView()
-   * - .toDeleteResourcePolicy()
-   * - .toGetBillingData()
-   * - .toGetBillingDetails()
-   * - .toGetBillingViewData()
-   * - .toPutResourcePolicy()
    *
    * Applies to resource types:
    * - billingview

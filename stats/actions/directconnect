@@ -51,12 +51,11 @@ directconnect:DescribeVirtualGateways;Read
 directconnect:DescribeVirtualInterfaces;Read
 directconnect:DisassociateConnectionFromLag;Write
 directconnect:DisassociateMacSecKey;Write
-directconnect:ListVirtualInterfaceRoutes;List
 directconnect:ListVirtualInterfaceTestHistory;List
 directconnect:StartBgpFailoverTest;Write
 directconnect:StopBgpFailoverTest;Write
-directconnect:TagResource;Tagging, Write
-directconnect:UntagResource;Tagging, Write
+directconnect:TagResource;Tagging
+directconnect:UntagResource;Tagging
 directconnect:UpdateConnection;Write
 directconnect:UpdateDirectConnectGateway;Write
 directconnect:UpdateDirectConnectGatewayAssociation;Write

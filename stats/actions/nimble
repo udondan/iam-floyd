@@ -42,8 +42,8 @@ nimble:PutStudioMembers;Write
 nimble:StartStreamingSession;Write
 nimble:StartStudioSSOConfigurationRepair;Write
 nimble:StopStreamingSession;Write
-nimble:TagResource;Tagging, Write
-nimble:UntagResource;Tagging, Write
+nimble:TagResource;Tagging
+nimble:UntagResource;Tagging
 nimble:UpdateLaunchProfile;Write
 nimble:UpdateLaunchProfileMember;Write
 nimble:UpdateStreamingImage;Write

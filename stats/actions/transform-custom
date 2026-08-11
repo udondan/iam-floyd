@@ -39,9 +39,9 @@ transform-custom:ListTransformationPackageMetadata;List
 transform-custom:ListTransformationPackageShares;Read
 transform-custom:SendTelemetryEvent;Write
 transform-custom:ShareTransformationPackage;Write
-transform-custom:TagResource;Tagging, Write
+transform-custom:TagResource;Tagging
 transform-custom:UnshareTransformationPackage;Write
-transform-custom:UntagResource;Tagging, Write
+transform-custom:UntagResource;Tagging
 transform-custom:UpdateAnalysis;Write
 transform-custom:UpdateCampaign;Write
 transform-custom:UpdateCampaignRepositoryStatus;Write

@@ -10,8 +10,8 @@ elemental-support-cases:GetCases;Read
 elemental-support-cases:GetUICache;Read
 elemental-support-cases:ListTagsForCase;Read
 elemental-support-cases:StartMultipartUpload;Write
-elemental-support-cases:TagCase;Tagging, Write
-elemental-support-cases:UntagCase;Tagging, Write
+elemental-support-cases:TagCase;Tagging
+elemental-support-cases:UntagCase;Tagging
 elemental-support-cases:UpdateCase;Write
 elemental-support-cases:UpdateCaseStatus;Write
 elemental-support-cases:UpdateMultipartUpload;Write

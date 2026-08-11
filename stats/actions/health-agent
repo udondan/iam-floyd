@@ -27,7 +27,6 @@ health-agent:ListDomains;List
 health-agent:ListIntegrations;List
 health-agent:ListPatientAppointments;Read
 health-agent:ListPatientInsuranceCoverages;Read
-health-agent:ListPatientMedications;Read
 health-agent:ListProviders;Read
 health-agent:ListSessionRecords;List
 health-agent:ListSubscriptions;List
@@ -35,13 +34,11 @@ health-agent:ListTagsForResource;List
 health-agent:MatchPatient;Read
 health-agent:PublishAgent;Write
 health-agent:RescheduleAppointment;Write
-health-agent:ResetPassword;Write
 health-agent:ScheduleAppointment;Write
 health-agent:StartMedicalScribeListeningSession;Write
 health-agent:StartPatientInsightsJob;Write
-health-agent:SubmitMedicationRenewal;Write
-health-agent:TagResource;Tagging, Write
-health-agent:UntagResource;Tagging, Write
+health-agent:TagResource;Tagging
+health-agent:UntagResource;Tagging
 health-agent:UpdateAgent;Write
 health-agent:UpdateIntegration;Write
 health-agent:UpdateSession;Write

@@ -28,8 +28,8 @@ scn:ListInstances;List
 scn:ListTagsForResource;List
 scn:RemoveAdminPermissionsForUser;Write
 scn:SendDataIntegrationEvent;Write
-scn:TagResource;Tagging, Write
-scn:UntagResource;Tagging, Write
+scn:TagResource;Tagging
+scn:UntagResource;Tagging
 scn:UpdateDataIntegrationFlow;Write
 scn:UpdateDataLakeDataset;Write
 scn:UpdateDataLakeNamespace;Write

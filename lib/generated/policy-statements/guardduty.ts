@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [guardduty](https://docs.aws.amazon.com/service-authorization/latest/reference/list_guardduty.html).
+ * Statement provider for service [guardduty](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonguardduty.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Guardduty extends PolicyStatement {
   public servicePrefix = 'guardduty';
 
   /**
-   * Statement provider for service [guardduty](https://docs.aws.amazon.com/service-authorization/latest/reference/list_guardduty.html).
+   * Statement provider for service [guardduty](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonguardduty.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -72,6 +72,10 @@ export class Guardduty extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateFilter.html
    */
   public toCreateFilter() {
@@ -87,6 +91,10 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:DeleteRolePolicy
+   * - iam:PutRolePolicy
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateIPSet.html
    */
@@ -142,6 +150,10 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - s3:GetObject
+   * - s3:ListBucket
+   *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreatePublishingDestination.html
    */
   public toCreatePublishingDestination() {
@@ -167,6 +179,9 @@ export class Guardduty extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateThreatEntitySet.html
    */
@@ -198,6 +213,9 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateTrustedEntitySet.html
    */
@@ -890,7 +908,11 @@ export class Guardduty extends PolicyStatement {
   /**
    * Grants permission to add tags to a GuardDuty resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_TagResource.html
    */
@@ -912,7 +934,10 @@ export class Guardduty extends PolicyStatement {
   /**
    * Grants permission to remove tags from a GuardDuty resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UntagResource.html
    */
@@ -957,6 +982,10 @@ export class Guardduty extends PolicyStatement {
    * Grants permission to update GuardDuty IPSets
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:DeleteRolePolicy
+   * - iam:PutRolePolicy
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateIPSet.html
    */
@@ -1013,6 +1042,10 @@ export class Guardduty extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - s3:GetObject
+   * - s3:ListBucket
+   *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdatePublishingDestination.html
    */
   public toUpdatePublishingDestination() {
@@ -1023,6 +1056,9 @@ export class Guardduty extends PolicyStatement {
    * Grants permission to update GuardDuty ThreatEntitySets
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateThreatEntitySet.html
    */
@@ -1035,6 +1071,10 @@ export class Guardduty extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:DeleteRolePolicy
+   * - iam:PutRolePolicy
+   *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateThreatIntelSet.html
    */
   public toUpdateThreatIntelSet() {
@@ -1045,6 +1085,9 @@ export class Guardduty extends PolicyStatement {
    * Grants permission to update GuardDuty TrustedEntitySets
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateTrustedEntitySet.html
    */
@@ -1090,9 +1133,7 @@ export class Guardduty extends PolicyStatement {
       'StartMalwareScan',
       'StartMonitoringMembers',
       'StopMonitoringMembers',
-      'TagResource',
       'UnarchiveFindings',
-      'UntagResource',
       'UpdateDetector',
       'UpdateFilter',
       'UpdateFindingsFeedback',
@@ -1210,59 +1251,6 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type malwareprotectionplan to the statement
-   *
-   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
-   *
-   * @param malwareProtectionPlanId - Identifier for the malwareProtectionPlanId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onMalwareprotectionplan(malwareProtectionPlanId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:malware-protection-plan/${ malwareProtectionPlanId }`);
-  }
-
-  /**
-   * Adds a resource of type publishingDestination to the statement
-   *
-   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
-   *
-   * @param detectorId - Identifier for the detectorId.
-   * @param publishingDestinationId - Identifier for the publishingDestinationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onPublishingDestination(detectorId: string, publishingDestinationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detector/${ detectorId }/publishingdestination/${ publishingDestinationId }`);
-  }
-
-  /**
-   * Adds a resource of type threatentityset to the statement
-   *
-   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
-   *
-   * @param detectorId - Identifier for the detectorId.
-   * @param threatEntitySetId - Identifier for the threatEntitySetId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onThreatentityset(detectorId: string, threatEntitySetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detector/${ detectorId }/threatentityset/${ threatEntitySetId }`);
-  }
-
-  /**
    * Adds a resource of type threatintelset to the statement
    *
    * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
@@ -1299,6 +1287,59 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type threatentityset to the statement
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
+   *
+   * @param detectorId - Identifier for the detectorId.
+   * @param threatEntitySetId - Identifier for the threatEntitySetId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onThreatentityset(detectorId: string, threatEntitySetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detector/${ detectorId }/threatentityset/${ threatEntitySetId }`);
+  }
+
+  /**
+   * Adds a resource of type publishingDestination to the statement
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
+   *
+   * @param detectorId - Identifier for the detectorId.
+   * @param publishingDestinationId - Identifier for the publishingDestinationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPublishingDestination(detectorId: string, publishingDestinationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detector/${ detectorId }/publishingdestination/${ publishingDestinationId }`);
+  }
+
+  /**
+   * Adds a resource of type malwareprotectionplan to the statement
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
+   *
+   * @param malwareProtectionPlanId - Identifier for the malwareProtectionPlanId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMalwareprotectionplan(malwareProtectionPlanId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:malware-protection-plan/${ malwareProtectionPlanId }`);
+  }
+
+  /**
    * Filters access by tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1329,50 +1370,20 @@ export class Guardduty extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateDetector()
-   * - .toCreateFilter()
    * - .toCreateIPSet()
    * - .toCreateMalwareProtectionPlan()
    * - .toCreatePublishingDestination()
    * - .toCreateTrustedEntitySet()
-   * - .toDeleteDetector()
-   * - .toDeleteFilter()
-   * - .toDeleteIPSet()
-   * - .toDeleteMalwareProtectionPlan()
-   * - .toDeletePublishingDestination()
-   * - .toDeleteThreatEntitySet()
-   * - .toDeleteThreatIntelSet()
-   * - .toDeleteTrustedEntitySet()
-   * - .toDescribePublishingDestination()
-   * - .toGetCoverageStatistics()
-   * - .toGetDetector()
-   * - .toGetFilter()
-   * - .toGetIPSet()
-   * - .toGetMalwareProtectionPlan()
-   * - .toGetThreatEntitySet()
-   * - .toGetThreatIntelSet()
-   * - .toGetTrustedEntitySet()
-   * - .toListCoverage()
-   * - .toListTagsForResource()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateDetector()
-   * - .toUpdateFilter()
-   * - .toUpdateIPSet()
-   * - .toUpdateMalwareProtectionPlan()
-   * - .toUpdatePublishingDestination()
-   * - .toUpdateThreatEntitySet()
-   * - .toUpdateThreatIntelSet()
-   * - .toUpdateTrustedEntitySet()
    *
    * Applies to resource types:
    * - detector
    * - filter
    * - ipset
-   * - malwareprotectionplan
-   * - publishingDestination
-   * - threatentityset
    * - threatintelset
    * - trustedentityset
+   * - threatentityset
+   * - publishingDestination
+   * - malwareprotectionplan
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

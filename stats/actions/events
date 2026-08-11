@@ -43,16 +43,16 @@ events:ListTagsForResource;List
 events:ListTargetsByRule;List
 events:PutEvents;Write
 events:PutPartnerEvents;Write
-events:PutPermission;Permissions management, Write
+events:PutPermission;Permissions management
 events:PutRule;Write
 events:PutTargets;Write
-events:RemovePermission;Permissions management, Write
+events:RemovePermission;Permissions management
 events:RemoveTargets;Write
 events:RetrieveConnectionCredentials;Write
 events:StartReplay;Write
-events:TagResource;Tagging, Write
+events:TagResource;Tagging
 events:TestEventPattern;Read
-events:UntagResource;Tagging, Write
+events:UntagResource;Tagging
 events:UpdateApiDestination;Write
 events:UpdateArchive;Write
 events:UpdateConnection;Write

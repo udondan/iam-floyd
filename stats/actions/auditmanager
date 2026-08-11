@@ -49,8 +49,8 @@ auditmanager:ListTagsForResource;Read
 auditmanager:RegisterAccount;Write
 auditmanager:RegisterOrganizationAdminAccount;Write
 auditmanager:StartAssessmentFrameworkShare;Write
-auditmanager:TagResource;Tagging, Write
-auditmanager:UntagResource;Tagging, Write
+auditmanager:TagResource;Tagging
+auditmanager:UntagResource;Tagging
 auditmanager:UpdateAssessment;Write
 auditmanager:UpdateAssessmentControl;Write
 auditmanager:UpdateAssessmentControlSetStatus;Write

@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [qldb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_qldb.html).
+ * Statement provider for service [qldb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqldb.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Qldb extends PolicyStatement {
   public servicePrefix = 'qldb';
 
   /**
-   * Statement provider for service [qldb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_qldb.html).
+   * Statement provider for service [qldb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqldb.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -33,6 +33,10 @@ export class Qldb extends PolicyStatement {
    * Grants permission to create a ledger
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_CreateLedger.html
    */
@@ -85,6 +89,17 @@ export class Qldb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send commands to a ledger via the console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html
+   */
+  public toExecuteStatement() {
+    return this.to('ExecuteStatement');
+  }
+
+  /**
    * Grants permission to export journal contents to an Amazon S3 bucket
    *
    * Access Level: Write
@@ -126,6 +141,17 @@ export class Qldb extends PolicyStatement {
    */
   public toGetRevision() {
     return this.to('GetRevision');
+  }
+
+  /**
+   * Grants permission to insert sample application data via the console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html
+   */
+  public toInsertSampleData() {
+    return this.to('InsertSampleData');
   }
 
   /**
@@ -199,6 +225,10 @@ export class Qldb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.create-table.html
    */
   public toPartiQLCreateTable() {
@@ -221,6 +251,9 @@ export class Qldb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPurge()
+   *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.drop-index.html
    */
   public toPartiQLDropIndex() {
@@ -231,6 +264,9 @@ export class Qldb extends PolicyStatement {
    * Grants permission to drop a table
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPurge()
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.drop-table.html
    */
@@ -316,9 +352,24 @@ export class Qldb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view a ledger's catalog via the console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html
+   */
+  public toShowCatalog() {
+    return this.to('ShowCatalog');
+  }
+
+  /**
    * Grants permission to stream journal contents to a Kinesis Data Stream
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_StreamJournalToKinesis.html
    */
@@ -329,7 +380,11 @@ export class Qldb extends PolicyStatement {
   /**
    * Grants permission to add one or more tags to a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_TagResource.html
    */
@@ -340,7 +395,11 @@ export class Qldb extends PolicyStatement {
   /**
    * Grants permission to remove one or more tags from a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_UntagResource.html
    */
@@ -370,45 +429,14 @@ export class Qldb extends PolicyStatement {
     return this.to('UpdateLedgerPermissionsMode');
   }
 
-  /**
-   * Grants permission to send commands to a ledger via the console
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html
-   */
-  public toExecuteStatement() {
-    return this.to('ExecuteStatement');
-  }
-
-  /**
-   * Grants permission to insert sample application data via the console
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html
-   */
-  public toInsertSampleData() {
-    return this.to('InsertSampleData');
-  }
-
-  /**
-   * Grants permission to view a ledger's catalog via the console
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html
-   */
-  public toShowCatalog() {
-    return this.to('ShowCatalog');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelJournalKinesisStream',
       'CreateLedger',
       'DeleteLedger',
+      'ExecuteStatement',
       'ExportJournalToS3',
+      'InsertSampleData',
       'PartiQLCreateIndex',
       'PartiQLCreateTable',
       'PartiQLDelete',
@@ -419,14 +447,10 @@ export class Qldb extends PolicyStatement {
       'PartiQLUndropTable',
       'PartiQLUpdate',
       'SendCommand',
+      'ShowCatalog',
       'StreamJournalToKinesis',
-      'TagResource',
-      'UntagResource',
       'UpdateLedger',
-      'UpdateLedgerPermissionsMode',
-      'ExecuteStatement',
-      'InsertSampleData',
-      'ShowCatalog'
+      'UpdateLedgerPermissionsMode'
     ],
     Read: [
       'DescribeJournalKinesisStream',
@@ -450,23 +474,6 @@ export class Qldb extends PolicyStatement {
       'UntagResource'
     ]
   };
-
-  /**
-   * Adds a resource of type catalog to the statement
-   *
-   * https://docs.aws.amazon.com/qldb/latest/developerguide/working.catalog.html
-   *
-   * @param ledgerName - Identifier for the ledgerName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCatalog(ledgerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:qldb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ledger/${ ledgerName }/information_schema/user_tables`);
-  }
 
   /**
    * Adds a resource of type ledger to the statement
@@ -522,6 +529,23 @@ export class Qldb extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type catalog to the statement
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/working.catalog.html
+   *
+   * @param ledgerName - Identifier for the ledgerName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCatalog(ledgerName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qldb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ledger/${ ledgerName }/information_schema/user_tables`);
+  }
+
+  /**
    * Filters access by a tag key and value pair that is allowed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -546,46 +570,11 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toCancelJournalKinesisStream()
-   * - .toCreateLedger()
-   * - .toDeleteLedger()
-   * - .toDescribeJournalKinesisStream()
-   * - .toDescribeJournalS3Export()
-   * - .toDescribeLedger()
-   * - .toExportJournalToS3()
-   * - .toGetBlock()
-   * - .toGetDigest()
-   * - .toGetRevision()
-   * - .toListJournalKinesisStreamsForLedger()
-   * - .toListJournalS3ExportsForLedger()
-   * - .toListTagsForResource()
-   * - .toPartiQLCreateIndex()
-   * - .toPartiQLCreateTable()
-   * - .toPartiQLDelete()
-   * - .toPartiQLDropIndex()
-   * - .toPartiQLDropTable()
-   * - .toPartiQLHistoryFunction()
-   * - .toPartiQLInsert()
-   * - .toPartiQLRedact()
-   * - .toPartiQLSelect()
-   * - .toPartiQLUndropTable()
-   * - .toPartiQLUpdate()
-   * - .toSendCommand()
-   * - .toStreamJournalToKinesis()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateLedger()
-   * - .toUpdateLedgerPermissionsMode()
-   * - .toExecuteStatement()
-   * - .toInsertSampleData()
-   * - .toShowCatalog()
-   *
    * Applies to resource types:
-   * - catalog
    * - ledger
    * - stream
    * - table
+   * - catalog
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

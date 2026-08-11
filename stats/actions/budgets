@@ -7,7 +7,7 @@ budgets:DescribeBudgetActionsForBudget;Read
 budgets:ExecuteBudgetAction;Write
 budgets:ListTagsForResource;Read
 budgets:ModifyBudget;Write
-budgets:TagResource;Tagging, Write
-budgets:UntagResource;Tagging, Write
+budgets:TagResource;Tagging
+budgets:UntagResource;Tagging
 budgets:UpdateBudgetAction;Write
 budgets:ViewBudget;Read

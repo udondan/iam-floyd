@@ -24,7 +24,7 @@ dsql:StartBackupJob;Write
 dsql:StartRestoreJob;Write
 dsql:StopBackupJob;Write
 dsql:StopRestoreJob;Write
-dsql:TagResource;Tagging, Write
-dsql:UntagResource;Tagging, Write
+dsql:TagResource;Tagging
+dsql:UntagResource;Tagging
 dsql:UpdateCluster;Write
 dsql:UpdateStream;Write

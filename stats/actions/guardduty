@@ -74,9 +74,9 @@ guardduty:SendSecurityTelemetry;Write
 guardduty:StartMalwareScan;Write
 guardduty:StartMonitoringMembers;Write
 guardduty:StopMonitoringMembers;Write
-guardduty:TagResource;Tagging, Write
+guardduty:TagResource;Tagging
 guardduty:UnarchiveFindings;Write
-guardduty:UntagResource;Tagging, Write
+guardduty:UntagResource;Tagging
 guardduty:UpdateDetector;Write
 guardduty:UpdateFilter;Write
 guardduty:UpdateFindingsFeedback;Write

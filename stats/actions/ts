@@ -5,5 +5,5 @@ ts:ListExecutions;List
 ts:ListTagsForResource;Read
 ts:ListTools;List
 ts:StartExecution;Write
-ts:TagResource;Tagging, Write
-ts:UntagResource;Tagging, Write
+ts:TagResource;Tagging
+ts:UntagResource;Tagging

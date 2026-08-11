@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [sqs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_sqs.html).
+ * Statement provider for service [sqs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsqs.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Sqs extends PolicyStatement {
   public servicePrefix = 'sqs';
 
   /**
-   * Statement provider for service [sqs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_sqs.html).
+   * Statement provider for service [sqs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsqs.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -21,7 +21,7 @@ export class Sqs extends PolicyStatement {
   /**
    * Grants permission to a queue for a specific principal
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html
    */
@@ -55,6 +55,10 @@ export class Sqs extends PolicyStatement {
    * Grants permission to create a new queue, or returns the URL of an existing one
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html
    */
@@ -175,7 +179,7 @@ export class Sqs extends PolicyStatement {
   /**
    * Grants permission to revoke any permissions in the queue policy that matches the specified Label parameter
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_RemovePermission.html
    */
@@ -197,7 +201,7 @@ export class Sqs extends PolicyStatement {
   /**
    * Grants permission to set the value of one or more queue attributes
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html
    */
@@ -219,7 +223,11 @@ export class Sqs extends PolicyStatement {
   /**
    * Grants permission to add tags to the specified SQS queue
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_TagQueue.html
    */
@@ -230,7 +238,10 @@ export class Sqs extends PolicyStatement {
   /**
    * Grants permission to remove tags from the specified SQS queue
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_UntagQueue.html
    */
@@ -241,23 +252,18 @@ export class Sqs extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AddPermission',
-      'RemovePermission',
-      'SetQueueAttributes'
+      'RemovePermission'
     ],
     Write: [
-      'AddPermission',
       'CancelMessageMoveTask',
       'ChangeMessageVisibility',
       'CreateQueue',
       'DeleteMessage',
       'DeleteQueue',
       'PurgeQueue',
-      'RemovePermission',
       'SendMessage',
       'SetQueueAttributes',
-      'StartMessageMoveTask',
-      'TagQueue',
-      'UntagQueue'
+      'StartMessageMoveTask'
     ],
     Read: [
       'GetQueueAttributes',
@@ -312,27 +318,6 @@ export class Sqs extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toAddPermission()
-   * - .toCancelMessageMoveTask()
-   * - .toChangeMessageVisibility()
-   * - .toCreateQueue()
-   * - .toDeleteMessage()
-   * - .toDeleteQueue()
-   * - .toGetQueueAttributes()
-   * - .toGetQueueUrl()
-   * - .toListDeadLetterSourceQueues()
-   * - .toListMessageMoveTasks()
-   * - .toListQueueTags()
-   * - .toPurgeQueue()
-   * - .toReceiveMessage()
-   * - .toRemovePermission()
-   * - .toSendMessage()
-   * - .toSetQueueAttributes()
-   * - .toStartMessageMoveTask()
-   * - .toTagQueue()
-   * - .toUntagQueue()
    *
    * Applies to resource types:
    * - queue

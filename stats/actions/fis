@@ -22,8 +22,8 @@ fis:ListTargetAccountConfigurations;List
 fis:ListTargetResourceTypes;List
 fis:StartExperiment;Write
 fis:StopExperiment;Write
-fis:TagResource;Tagging, Write
-fis:UntagResource;Tagging, Write
+fis:TagResource;Tagging
+fis:UntagResource;Tagging
 fis:UpdateExperimentTemplate;Write
 fis:UpdateSafetyLeverState;Write
 fis:UpdateTargetAccountConfiguration;Write

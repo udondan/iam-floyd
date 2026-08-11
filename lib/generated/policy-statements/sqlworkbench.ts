@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [sqlworkbench](https://docs.aws.amazon.com/service-authorization/latest/reference/list_sqlworkbench.html).
+ * Statement provider for service [sqlworkbench](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssqlworkbench.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Sqlworkbench extends PolicyStatement {
   public servicePrefix = 'sqlworkbench';
 
   /**
-   * Statement provider for service [sqlworkbench](https://docs.aws.amazon.com/service-authorization/latest/reference/list_sqlworkbench.html).
+   * Statement provider for service [sqlworkbench](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssqlworkbench.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -100,6 +100,10 @@ export class Sqlworkbench extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toCreateChart() {
@@ -110,6 +114,10 @@ export class Sqlworkbench extends PolicyStatement {
    * Grants permission to create a new connection on your account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
@@ -133,6 +141,10 @@ export class Sqlworkbench extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toCreateNotebook() {
@@ -143,6 +155,10 @@ export class Sqlworkbench extends PolicyStatement {
    * Grants permission to create a notebook cell on your account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
@@ -155,6 +171,10 @@ export class Sqlworkbench extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toCreateNotebookFromVersion() {
@@ -166,6 +186,10 @@ export class Sqlworkbench extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toCreateNotebookVersion() {
@@ -176,6 +200,10 @@ export class Sqlworkbench extends PolicyStatement {
    * Grants permission to create a new saved query on your account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
@@ -297,6 +325,10 @@ export class Sqlworkbench extends PolicyStatement {
    * Grants permission to create a new notebook by duplicating an existing one on your account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
@@ -529,6 +561,10 @@ export class Sqlworkbench extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toImportNotebook() {
@@ -727,6 +763,10 @@ export class Sqlworkbench extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toRestoreNotebookVersion() {
@@ -736,7 +776,11 @@ export class Sqlworkbench extends PolicyStatement {
   /**
    * Grants permission to tag an sqlworkbench resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
@@ -747,7 +791,10 @@ export class Sqlworkbench extends PolicyStatement {
   /**
    * Grants permission to untag an sqlworkbench resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
@@ -804,6 +851,10 @@ export class Sqlworkbench extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toUpdateChart() {
@@ -814,6 +865,10 @@ export class Sqlworkbench extends PolicyStatement {
    * Grants permission to update a connection on your account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
@@ -848,6 +903,10 @@ export class Sqlworkbench extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toUpdateNotebook() {
@@ -858,6 +917,10 @@ export class Sqlworkbench extends PolicyStatement {
    * Grants permission to update a notebook cell content on your account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
@@ -870,6 +933,10 @@ export class Sqlworkbench extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toUpdateNotebookCellLayout() {
@@ -880,6 +947,10 @@ export class Sqlworkbench extends PolicyStatement {
    * Grants permission to update a saved query on your account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
@@ -922,8 +993,6 @@ export class Sqlworkbench extends PolicyStatement {
       'PutTab',
       'PutUserWorkspaceSettings',
       'RestoreNotebookVersion',
-      'TagResource',
-      'UntagResource',
       'UpdateAccountConnectionSettings',
       'UpdateAccountExportSettings',
       'UpdateAccountGeneralSettings',
@@ -980,23 +1049,6 @@ export class Sqlworkbench extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type chart to the statement
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onChart(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sqlworkbench:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:chart/${ resourceId }`);
-  }
-
-  /**
    * Adds a resource of type connection to the statement
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2.html
@@ -1014,23 +1066,6 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type notebook to the statement
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onNotebook(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sqlworkbench:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:notebook/${ resourceId }`);
-  }
-
-  /**
    * Adds a resource of type query to the statement
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2.html
@@ -1045,6 +1080,40 @@ export class Sqlworkbench extends PolicyStatement {
    */
   public onQuery(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sqlworkbench:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:query/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type chart to the statement
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onChart(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sqlworkbench:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:chart/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type notebook to the statement
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onNotebook(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sqlworkbench:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:notebook/${ resourceId }`);
   }
 
   /**
@@ -1084,53 +1153,11 @@ export class Sqlworkbench extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toAssociateConnectionWithChart()
-   * - .toAssociateConnectionWithTab()
-   * - .toAssociateNotebookWithTab()
-   * - .toAssociateQueryWithTab()
-   * - .toBatchGetNotebookCell()
-   * - .toCreateChart()
-   * - .toCreateConnection()
-   * - .toCreateNotebook()
-   * - .toCreateNotebookCell()
-   * - .toCreateNotebookFromVersion()
-   * - .toCreateNotebookVersion()
-   * - .toCreateSavedQuery()
-   * - .toDeleteChart()
-   * - .toDeleteConnection()
-   * - .toDeleteNotebook()
-   * - .toDeleteNotebookCell()
-   * - .toDeleteNotebookVersion()
-   * - .toDeleteSavedQuery()
-   * - .toDriverExecute()
-   * - .toDuplicateNotebook()
-   * - .toExportNotebook()
-   * - .toGetChart()
-   * - .toGetConnection()
-   * - .toGetNotebook()
-   * - .toGetNotebookVersion()
-   * - .toGetSavedQuery()
-   * - .toImportNotebook()
-   * - .toListNotebookVersions()
-   * - .toListSavedQueryVersions()
-   * - .toListTagsForResource()
-   * - .toRestoreNotebookVersion()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateChart()
-   * - .toUpdateConnection()
-   * - .toUpdateFileFolder()
-   * - .toUpdateNotebook()
-   * - .toUpdateNotebookCellContent()
-   * - .toUpdateNotebookCellLayout()
-   * - .toUpdateSavedQuery()
-   *
    * Applies to resource types:
-   * - chart
    * - connection
-   * - notebook
    * - query
+   * - chart
+   * - notebook
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

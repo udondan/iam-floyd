@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [transform](https://docs.aws.amazon.com/service-authorization/latest/reference/list_transform.html).
+ * Statement provider for service [transform](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Transform extends PolicyStatement {
   public servicePrefix = 'transform';
 
   /**
-   * Statement provider for service [transform](https://docs.aws.amazon.com/service-authorization/latest/reference/list_transform.html).
+   * Statement provider for service [transform](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -33,6 +33,9 @@ export class Transform extends PolicyStatement {
    * Grants permission to invoke AssociateConnectorResource on AWS Transform
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
@@ -66,6 +69,9 @@ export class Transform extends PolicyStatement {
    * Grants permission to invoke DeleteConnector on AWS Transform
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
@@ -121,6 +127,9 @@ export class Transform extends PolicyStatement {
    * Grants permission to invoke GetConnector on AWS Transform
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
@@ -202,6 +211,9 @@ export class Transform extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
   public toRejectConnector() {
@@ -211,7 +223,11 @@ export class Transform extends PolicyStatement {
   /**
    * Grants permission to invoke TagResource on AWS Transform
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
@@ -222,7 +238,10 @@ export class Transform extends PolicyStatement {
   /**
    * Grants permission to invoke UntagResource on AWS Transform
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
@@ -273,8 +292,6 @@ export class Transform extends PolicyStatement {
       'DeleteProfile',
       'PutAgentRuntimeConfiguration',
       'RejectConnector',
-      'TagResource',
-      'UntagResource',
       'UpdateAccountSettings',
       'UpdateAgentAccess',
       'UpdateProfile'
@@ -299,6 +316,20 @@ export class Transform extends PolicyStatement {
   };
 
   /**
+   * Adds a resource of type profile to the statement
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
+   *
+   * @param identifier - Identifier for the identifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onProfile(identifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transform:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:profile/${ identifier }`);
+  }
+
+  /**
    * Adds a resource of type connector to the statement
    *
    * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
@@ -314,20 +345,6 @@ export class Transform extends PolicyStatement {
    */
   public onConnector(workspaceId: string, connectorId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:transform:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ workspaceId }/${ connectorId }`);
-  }
-
-  /**
-   * Adds a resource of type profile to the statement
-   *
-   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
-   *
-   * @param identifier - Identifier for the identifier.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onProfile(identifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:transform:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:profile/${ identifier }`);
   }
 
   /**
@@ -356,10 +373,7 @@ export class Transform extends PolicyStatement {
    * - .toDeleteConnector()
    * - .toGetConnector()
    * - .toListConnectors()
-   * - .toListTagsForResource()
    * - .toRejectConnector()
-   * - .toTagResource()
-   * - .toUntagResource()
    *
    * Applies to resource types:
    * - connector

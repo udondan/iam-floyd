@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [route53](https://docs.aws.amazon.com/service-authorization/latest/reference/list_route53.html).
+ * Statement provider for service [route53](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Route53 extends PolicyStatement {
   public servicePrefix = 'route53';
 
   /**
-   * Statement provider for service [route53](https://docs.aws.amazon.com/service-authorization/latest/reference/list_route53.html).
+   * Statement provider for service [route53](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -34,6 +34,12 @@ export class Route53 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifVPCs()
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html
    */
   public toAssociateVPCWithHostedZone() {
@@ -56,6 +62,11 @@ export class Route53 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifChangeResourceRecordSetsNormalizedRecordNames()
+   * - .ifChangeResourceRecordSetsRecordTypes()
+   * - .ifChangeResourceRecordSetsActions()
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html
    */
   public toChangeResourceRecordSets() {
@@ -65,7 +76,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Grants permission to add, edit, or delete tags for a health check or a hosted zone
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeTagsForResource.html
    */
@@ -102,6 +113,9 @@ export class Route53 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifVPCs()
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html
    */
@@ -179,6 +193,9 @@ export class Route53 extends PolicyStatement {
    * Grants permission to authorize the AWS account that created a specified VPC to submit an AssociateVPCWithHostedZone request, which associates the VPC with a specified hosted zone that was created by a different account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifVPCs()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html
    */
@@ -290,6 +307,9 @@ export class Route53 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifVPCs()
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteVPCAssociationAuthorization.html
    */
   public toDeleteVPCAssociationAuthorization() {
@@ -311,6 +331,12 @@ export class Route53 extends PolicyStatement {
    * Grants permission to disassociate an Amazon Virtual Private Cloud from a Route 53 private hosted zone
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifVPCs()
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DisassociateVPCFromHostedZone.html
    */
@@ -612,6 +638,9 @@ export class Route53 extends PolicyStatement {
    * Possible conditions:
    * - .ifVPCs()
    *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html
    */
   public toListHostedZonesByVPC() {
@@ -811,7 +840,6 @@ export class Route53 extends PolicyStatement {
       'AssociateVPCWithHostedZone',
       'ChangeCidrCollection',
       'ChangeResourceRecordSets',
-      'ChangeTagsForResource',
       'CreateCidrCollection',
       'CreateHealthCheck',
       'CreateHostedZone',
@@ -889,6 +917,16 @@ export class Route53 extends PolicyStatement {
   };
 
   /**
+   * Adds a resource of type cidrcollection to the statement
+   *
+   * @param id - Identifier for the id.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onCidrcollection(id: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53:::cidrcollection/${ id }`);
+  }
+
+  /**
    * Adds a resource of type change to the statement
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_Change.html
@@ -898,16 +936,6 @@ export class Route53 extends PolicyStatement {
    */
   public onChange(id: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:route53:::change/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type cidrcollection to the statement
-   *
-   * @param id - Identifier for the id.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onCidrcollection(id: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:route53:::cidrcollection/${ id }`);
   }
 
   /**
@@ -947,18 +975,6 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type queryloggingconfig to the statement
-   *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html
-   *
-   * @param id - Identifier for the id.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onQueryloggingconfig(id: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:route53:::queryloggingconfig/${ id }`);
-  }
-
-  /**
    * Adds a resource of type trafficpolicy to the statement
    *
    * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policies.html
@@ -980,6 +996,18 @@ export class Route53 extends PolicyStatement {
    */
   public onTrafficpolicyinstance(id: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:route53:::trafficpolicyinstance/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type queryloggingconfig to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html
+   *
+   * @param id - Identifier for the id.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onQueryloggingconfig(id: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53:::queryloggingconfig/${ id }`);
   }
 
   /**

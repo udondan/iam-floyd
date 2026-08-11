@@ -23,6 +23,6 @@ medical-imaging:SearchImageSets;Read
 medical-imaging:StartDICOMImportJob;Write
 medical-imaging:StoreDICOM;Write
 medical-imaging:StoreDICOMStudy;Write
-medical-imaging:TagResource;Tagging, Write
-medical-imaging:UntagResource;Tagging, Write
+medical-imaging:TagResource;Tagging
+medical-imaging:UntagResource;Tagging
 medical-imaging:UpdateImageSetMetadata;Write

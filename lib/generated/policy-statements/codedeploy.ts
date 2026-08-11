@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [codedeploy](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codedeploy.html).
+ * Statement provider for service [codedeploy](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodedeploy.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Codedeploy extends PolicyStatement {
   public servicePrefix = 'codedeploy';
 
   /**
-   * Statement provider for service [codedeploy](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codedeploy.html).
+   * Statement provider for service [codedeploy](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodedeploy.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -21,7 +21,7 @@ export class Codedeploy extends PolicyStatement {
   /**
    * Grants permission to add tags to one or more on-premises instances
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_AddTagsToOnPremisesInstances.html
    */
@@ -122,10 +122,25 @@ export class Codedeploy extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateApplication.html
    */
   public toCreateApplication() {
     return this.to('CreateApplication');
+  }
+
+  /**
+   * Grants permission to create CloudFormation deployment to cooperate ochestration for a CloudFormation stack update
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codedeploy/latest/APIReference/codedeploy/latest/userguide/deployments-create-ecs-cfn.html
+   */
+  public toCreateCloudFormationDeployment() {
+    return this.to('CreateCloudFormationDeployment');
   }
 
   /**
@@ -154,6 +169,10 @@ export class Codedeploy extends PolicyStatement {
    * Grants permission to create a deployment group for an application associated with the IAM user
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentGroup.html
    */
@@ -461,7 +480,7 @@ export class Codedeploy extends PolicyStatement {
   /**
    * Grants permission to remove tags from one or more on-premises instances
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RemoveTagsFromOnPremisesInstances.html
    */
@@ -494,7 +513,11 @@ export class Codedeploy extends PolicyStatement {
   /**
    * Grants permission to associate the list of tags in the input Tags parameter with the resource identified by the ResourceArn input parameter
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TagResource.html
    */
@@ -505,7 +528,10 @@ export class Codedeploy extends PolicyStatement {
   /**
    * Grants permission to disassociate a resource from a list of tags. The resource is identified by the ResourceArn input parameter. The tags are identfied by the list of keys in the TagKeys input parameter
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UntagResource.html
    */
@@ -535,17 +561,6 @@ export class Codedeploy extends PolicyStatement {
     return this.to('UpdateDeploymentGroup');
   }
 
-  /**
-   * Grants permission to create CloudFormation deployment to cooperate ochestration for a CloudFormation stack update
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/codedeploy/latest/APIReference/codedeploy/latest/userguide/deployments-create-ecs-cfn.html
-   */
-  public toCreateCloudFormationDeployment() {
-    return this.to('CreateCloudFormationDeployment');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddTagsToOnPremisesInstances',
@@ -553,10 +568,20 @@ export class Codedeploy extends PolicyStatement {
       'TagResource',
       'UntagResource'
     ],
+    Read: [
+      'BatchGetApplicationRevisions',
+      'BatchGetApplications',
+      'BatchGetDeploymentGroups',
+      'BatchGetDeploymentInstances',
+      'BatchGetDeploymentTargets',
+      'BatchGetDeployments',
+      'BatchGetOnPremisesInstances',
+      'GetDeploymentTarget'
+    ],
     Write: [
-      'AddTagsToOnPremisesInstances',
       'ContinueDeployment',
       'CreateApplication',
+      'CreateCloudFormationDeployment',
       'CreateDeployment',
       'CreateDeploymentConfig',
       'CreateDeploymentGroup',
@@ -569,24 +594,10 @@ export class Codedeploy extends PolicyStatement {
       'PutLifecycleEventHookExecutionStatus',
       'RegisterApplicationRevision',
       'RegisterOnPremisesInstance',
-      'RemoveTagsFromOnPremisesInstances',
       'SkipWaitTimeForInstanceTermination',
       'StopDeployment',
-      'TagResource',
-      'UntagResource',
       'UpdateApplication',
-      'UpdateDeploymentGroup',
-      'CreateCloudFormationDeployment'
-    ],
-    Read: [
-      'BatchGetApplicationRevisions',
-      'BatchGetApplications',
-      'BatchGetDeploymentGroups',
-      'BatchGetDeploymentInstances',
-      'BatchGetDeploymentTargets',
-      'BatchGetDeployments',
-      'BatchGetOnPremisesInstances',
-      'GetDeploymentTarget'
+      'UpdateDeploymentGroup'
     ],
     List: [
       'GetApplication',
@@ -694,33 +705,6 @@ export class Codedeploy extends PolicyStatement {
    * Filters actions based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toBatchGetApplicationRevisions()
-   * - .toBatchGetApplications()
-   * - .toBatchGetDeploymentGroups()
-   * - .toBatchGetDeploymentInstances()
-   * - .toBatchGetDeployments()
-   * - .toCreateApplication()
-   * - .toCreateDeployment()
-   * - .toCreateDeploymentGroup()
-   * - .toDeleteApplication()
-   * - .toDeleteDeploymentGroup()
-   * - .toGetApplication()
-   * - .toGetApplicationRevision()
-   * - .toGetDeployment()
-   * - .toGetDeploymentGroup()
-   * - .toGetDeploymentInstance()
-   * - .toListApplicationRevisions()
-   * - .toListDeploymentGroups()
-   * - .toListDeploymentInstances()
-   * - .toListDeployments()
-   * - .toListTagsForResource()
-   * - .toRegisterApplicationRevision()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateApplication()
-   * - .toUpdateDeploymentGroup()
    *
    * Applies to resource types:
    * - application

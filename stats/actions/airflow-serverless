@@ -10,6 +10,6 @@ airflow-serverless:ListWorkflowVersions;List
 airflow-serverless:ListWorkflows;List
 airflow-serverless:StartWorkflowRun;Write
 airflow-serverless:StopWorkflowRun;Write
-airflow-serverless:TagResource;Tagging, Write
-airflow-serverless:UntagResource;Tagging, Write
+airflow-serverless:TagResource;Tagging
+airflow-serverless:UntagResource;Tagging
 airflow-serverless:UpdateWorkflow;Write

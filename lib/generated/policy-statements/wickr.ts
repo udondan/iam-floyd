@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [wickr](https://docs.aws.amazon.com/service-authorization/latest/reference/list_wickr.html).
+ * Statement provider for service [wickr](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Wickr extends PolicyStatement {
   public servicePrefix = 'wickr';
 
   /**
-   * Statement provider for service [wickr](https://docs.aws.amazon.com/service-authorization/latest/reference/list_wickr.html).
+   * Statement provider for service [wickr](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -132,6 +132,10 @@ export class Wickr extends PolicyStatement {
    * Grants permission to create a new Wickr network
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html
    */
@@ -450,7 +454,12 @@ export class Wickr extends PolicyStatement {
   /**
    * Grants permission to add tags to a specified Wickr resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html
    */
@@ -461,7 +470,10 @@ export class Wickr extends PolicyStatement {
   /**
    * Grants permission to untag the specified tags from the specified Wickr resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html
    */
@@ -566,8 +578,6 @@ export class Wickr extends PolicyStatement {
       'RegisterOidcConfig',
       'RegisterOidcConfigTest',
       'RegisterOpentdfConfig',
-      'TagResource',
-      'UntagResource',
       'UpdateBot',
       'UpdateDataRetention',
       'UpdateGuestUser',
@@ -645,53 +655,7 @@ export class Wickr extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toBatchCreateUser()
-   * - .toBatchDeleteUser()
-   * - .toBatchLookupUserUname()
-   * - .toBatchReinviteUser()
-   * - .toBatchResetDevicesForUser()
-   * - .toBatchToggleUserSuspendStatus()
-   * - .toCreateAdminSession()
-   * - .toCreateBot()
-   * - .toCreateDataRetentionBot()
-   * - .toCreateDataRetentionBotChallenge()
-   * - .toCreateNetwork()
-   * - .toCreateSecurityGroup()
-   * - .toDeleteBot()
-   * - .toDeleteDataRetentionBot()
-   * - .toDeleteNetwork()
-   * - .toDeleteSecurityGroup()
-   * - .toGetBot()
-   * - .toGetBotsCount()
-   * - .toGetDataRetentionBot()
-   * - .toGetGuestUserHistoryCount()
-   * - .toGetNetwork()
-   * - .toGetNetworkSettings()
-   * - .toGetOidcInfo()
-   * - .toGetOpentdfConfig()
-   * - .toGetSecurityGroup()
-   * - .toGetUser()
-   * - .toGetUsersCount()
-   * - .toListBlockedGuestUsers()
-   * - .toListBots()
-   * - .toListDevicesForUser()
-   * - .toListGuestUsers()
-   * - .toListSecurityGroupUsers()
-   * - .toListSecurityGroups()
-   * - .toListTagsForResource()
-   * - .toListUsers()
-   * - .toRegisterOidcConfig()
-   * - .toRegisterOidcConfigTest()
-   * - .toRegisterOpentdfConfig()
    * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateBot()
-   * - .toUpdateDataRetention()
-   * - .toUpdateGuestUser()
-   * - .toUpdateNetworkDetails()
-   * - .toUpdateNetworkSettings()
-   * - .toUpdateSecurityGroup()
-   * - .toUpdateUser()
    *
    * Applies to resource types:
    * - network

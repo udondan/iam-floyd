@@ -82,8 +82,8 @@ cleanrooms:PopulateIntermediateTable;Write
 cleanrooms:PreviewPrivacyImpact;Read
 cleanrooms:StartProtectedJob;Write
 cleanrooms:StartProtectedQuery;Write
-cleanrooms:TagResource;Tagging, Write
-cleanrooms:UntagResource;Tagging, Write
+cleanrooms:TagResource;Tagging
+cleanrooms:UntagResource;Tagging
 cleanrooms:UpdateAnalysisTemplate;Write
 cleanrooms:UpdateCollaboration;Write
 cleanrooms:UpdateCollaborationChangeRequest;Write

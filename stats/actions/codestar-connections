@@ -28,8 +28,8 @@ codestar-connections:PassRepository;Read
 codestar-connections:RegisterAppCode;Read
 codestar-connections:StartAppRegistrationHandshake;Read
 codestar-connections:StartOAuthHandshake;Read
-codestar-connections:TagResource;Tagging, Write
-codestar-connections:UntagResource;Tagging, Write
+codestar-connections:TagResource;Tagging
+codestar-connections:UntagResource;Tagging
 codestar-connections:UpdateConnectionInstallation;Write
 codestar-connections:UpdateHost;Write
 codestar-connections:UpdateRepositoryLink;Write

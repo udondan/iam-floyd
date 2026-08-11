@@ -1,4 +1,4 @@
-aidevops:AllowVendedLogDeliveryForResource;Permissions management, Write
+aidevops:AllowVendedLogDeliveryForResource;Permissions management
 aidevops:AssociateService;Write
 aidevops:CreateAccessToken;Write
 aidevops:CreateAgentSpace;Write
@@ -65,8 +65,8 @@ aidevops:RevokeAccessToken;Write
 aidevops:RotateAccessToken;Write
 aidevops:SearchServiceAccessibleResource;Read
 aidevops:SendMessage;Write
-aidevops:TagResource;Tagging, Write
-aidevops:UntagResource;Tagging, Write
+aidevops:TagResource;Tagging
+aidevops:UntagResource;Tagging
 aidevops:UpdateAgentSpace;Write
 aidevops:UpdateApprovalAction;Write
 aidevops:UpdateAsset;Write

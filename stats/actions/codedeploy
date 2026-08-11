@@ -1,4 +1,4 @@
-codedeploy:AddTagsToOnPremisesInstances;Tagging, Write
+codedeploy:AddTagsToOnPremisesInstances;Tagging
 codedeploy:BatchGetApplicationRevisions;Read
 codedeploy:BatchGetApplications;Read
 codedeploy:BatchGetDeploymentGroups;Read
@@ -39,10 +39,10 @@ codedeploy:ListTagsForResource;List
 codedeploy:PutLifecycleEventHookExecutionStatus;Write
 codedeploy:RegisterApplicationRevision;Write
 codedeploy:RegisterOnPremisesInstance;Write
-codedeploy:RemoveTagsFromOnPremisesInstances;Tagging, Write
+codedeploy:RemoveTagsFromOnPremisesInstances;Tagging
 codedeploy:SkipWaitTimeForInstanceTermination;Write
 codedeploy:StopDeployment;Write
-codedeploy:TagResource;Tagging, Write
-codedeploy:UntagResource;Tagging, Write
+codedeploy:TagResource;Tagging
+codedeploy:UntagResource;Tagging
 codedeploy:UpdateApplication;Write
 codedeploy:UpdateDeploymentGroup;Write

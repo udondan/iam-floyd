@@ -54,8 +54,8 @@ kendra:Retrieve;Read
 kendra:StartDataSourceSyncJob;Write
 kendra:StopDataSourceSyncJob;Write
 kendra:SubmitFeedback;Write
-kendra:TagResource;Tagging, Write
-kendra:UntagResource;Tagging, Write
+kendra:TagResource;Tagging
+kendra:UntagResource;Tagging
 kendra:UpdateAccessControlConfiguration;Write
 kendra:UpdateDataSource;Write
 kendra:UpdateExperience;Write

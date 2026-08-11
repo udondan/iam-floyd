@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [cloudfront](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudfront.html).
+ * Statement provider for service [cloudfront](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,12 +10,23 @@ export class Cloudfront extends PolicyStatement {
   public servicePrefix = 'cloudfront';
 
   /**
-   * Statement provider for service [cloudfront](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudfront.html).
+   * Statement provider for service [cloudfront](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
   constructor(sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Grants permission to configure vended log delivery for a distribution
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-logs-infrastructure-V2-service-specific
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
   }
 
   /**
@@ -55,6 +66,11 @@ export class Cloudfront extends PolicyStatement {
    * Grants permission to copy an existing distribution and create a new web distribution
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - cloudfront:CopyDistribution
+   * - cloudfront:CreateDistribution
+   * - cloudfront:GetDistribution
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.html
    */
@@ -148,6 +164,9 @@ export class Cloudfront extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - cloudfront:CreateConnectionGroup
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html
    */
@@ -319,6 +338,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toCreateResponseHeadersPolicy() {
     return this.to('CreateResponseHeadersPolicy');
+  }
+
+  /**
+   * Grants permission to create a new savings plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toCreateSavingsPlan() {
+    return this.to('CreateSavingsPlan');
   }
 
   /**
@@ -1071,6 +1101,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a savings plan
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toGetSavingsPlan() {
+    return this.to('GetSavingsPlan');
+  }
+
+  /**
    * Grants permission to get the information about an RTMP distribution
    *
    * Access Level: Read
@@ -1280,6 +1321,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the distributions associated a Lambda function
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toListDistributionsByLambdaFunction() {
+    return this.to('ListDistributionsByLambdaFunction');
+  }
+
+  /**
    * Grants permission to list distribution IDs for distributions that have a cache behavior that's associated with the specified origin request policy
    *
    * Access Level: List
@@ -1467,6 +1519,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list CloudFront rate cards for the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toListRateCards() {
+    return this.to('ListRateCards');
+  }
+
+  /**
    * Grants permission to get a list of real-time log configurations
    *
    * Access Level: List
@@ -1486,6 +1549,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListResponseHeadersPolicies() {
     return this.to('ListResponseHeadersPolicies');
+  }
+
+  /**
+   * Grants permission to list savings plans in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toListSavingsPlans() {
+    return this.to('ListSavingsPlans');
   }
 
   /**
@@ -1519,6 +1593,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListTrustStores() {
     return this.to('ListTrustStores');
+  }
+
+  /**
+   * Grants permission to list CloudFront usage
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toListUsages() {
+    return this.to('ListUsages');
   }
 
   /**
@@ -1568,7 +1653,11 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Grants permission to add tags to a CloudFront resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html
    */
@@ -1601,7 +1690,10 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Grants permission to remove tags from a CloudFront resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UntagResource.html
    */
@@ -1830,6 +1922,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a savings plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
+   */
+  public toUpdateSavingsPlan() {
+    return this.to('UpdateSavingsPlan');
+  }
+
+  /**
    * Grants permission to update the configuration for an RTMP distribution
    *
    * Access Level: Write
@@ -1873,95 +1976,10 @@ export class Cloudfront extends PolicyStatement {
     return this.to('VerifyDnsConfiguration');
   }
 
-  /**
-   * Grants permission to configure vended log delivery for a distribution
-   *
-   * Access Level: Permissions management, Write
-   *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-logs-infrastructure-V2-service-specific
-   */
-  public toAllowVendedLogDeliveryForResource() {
-    return this.to('AllowVendedLogDeliveryForResource');
-  }
-
-  /**
-   * Grants permission to create a new savings plan
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
-   */
-  public toCreateSavingsPlan() {
-    return this.to('CreateSavingsPlan');
-  }
-
-  /**
-   * Grants permission to get a savings plan
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
-   */
-  public toGetSavingsPlan() {
-    return this.to('GetSavingsPlan');
-  }
-
-  /**
-   * Grants permission to list the distributions associated a Lambda function
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
-   */
-  public toListDistributionsByLambdaFunction() {
-    return this.to('ListDistributionsByLambdaFunction');
-  }
-
-  /**
-   * Grants permission to list CloudFront rate cards for the account
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
-   */
-  public toListRateCards() {
-    return this.to('ListRateCards');
-  }
-
-  /**
-   * Grants permission to list savings plans in the account
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
-   */
-  public toListSavingsPlans() {
-    return this.to('ListSavingsPlans');
-  }
-
-  /**
-   * Grants permission to list CloudFront usage
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
-   */
-  public toListUsages() {
-    return this.to('ListUsages');
-  }
-
-  /**
-   * Grants permission to update a savings plan
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cf-api-permissions-ref.html
-   */
-  public toUpdateSavingsPlan() {
-    return this.to('UpdateSavingsPlan');
-  }
-
   protected accessLevelList: AccessLevelList = {
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
+    ],
     Write: [
       'AssociateAlias',
       'AssociateDistributionTenantWebACL',
@@ -1988,6 +2006,7 @@ export class Cloudfront extends PolicyStatement {
       'CreatePublicKey',
       'CreateRealtimeLogConfig',
       'CreateResponseHeadersPolicy',
+      'CreateSavingsPlan',
       'CreateStreamingDistribution',
       'CreateStreamingDistributionWithTags',
       'CreateTrustStore',
@@ -2020,10 +2039,8 @@ export class Cloudfront extends PolicyStatement {
       'PublishConnectionFunction',
       'PublishFunction',
       'PutResourcePolicy',
-      'TagResource',
       'TestConnectionFunction',
       'TestFunction',
-      'UntagResource',
       'UpdateAnycastIpList',
       'UpdateCachePolicy',
       'UpdateCloudFrontOriginAccessIdentity',
@@ -2044,12 +2061,10 @@ export class Cloudfront extends PolicyStatement {
       'UpdatePublicKey',
       'UpdateRealtimeLogConfig',
       'UpdateResponseHeadersPolicy',
+      'UpdateSavingsPlan',
       'UpdateStreamingDistribution',
       'UpdateTrustStore',
-      'UpdateVpcOrigin',
-      'AllowVendedLogDeliveryForResource',
-      'CreateSavingsPlan',
-      'UpdateSavingsPlan'
+      'UpdateVpcOrigin'
     ],
     Read: [
       'DescribeConnectionFunction',
@@ -2090,13 +2105,13 @@ export class Cloudfront extends PolicyStatement {
       'GetResourcePolicy',
       'GetResponseHeadersPolicy',
       'GetResponseHeadersPolicyConfig',
+      'GetSavingsPlan',
       'GetStreamingDistribution',
       'GetStreamingDistributionConfig',
       'GetTrustStore',
       'GetVpcOrigin',
       'ListTagsForResource',
-      'VerifyDnsConfiguration',
-      'GetSavingsPlan'
+      'VerifyDnsConfiguration'
     ],
     List: [
       'ListAnycastIpLists',
@@ -2114,6 +2129,7 @@ export class Cloudfront extends PolicyStatement {
       'ListDistributionsByConnectionFunction',
       'ListDistributionsByConnectionMode',
       'ListDistributionsByKeyGroup',
+      'ListDistributionsByLambdaFunction',
       'ListDistributionsByOriginRequestPolicyId',
       'ListDistributionsByRealtimeLogConfig',
       'ListDistributionsByResponseHeadersPolicyId',
@@ -2131,98 +2147,20 @@ export class Cloudfront extends PolicyStatement {
       'ListOriginAccessControls',
       'ListOriginRequestPolicies',
       'ListPublicKeys',
+      'ListRateCards',
       'ListRealtimeLogConfigs',
       'ListResponseHeadersPolicies',
+      'ListSavingsPlans',
       'ListStreamingDistributions',
       'ListTrustStores',
-      'ListVpcOrigins',
-      'ListDistributionsByLambdaFunction',
-      'ListRateCards',
-      'ListSavingsPlans',
-      'ListUsages'
+      'ListUsages',
+      'ListVpcOrigins'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
-    ],
-    'Permissions management': [
-      'AllowVendedLogDeliveryForResource'
     ]
   };
-
-  /**
-   * Adds a resource of type anycast-ip-list to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/request-static-ips.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onAnycastIpList(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:anycast-ip-list/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type cache-policy to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cache-key-create-cache-policy.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onCachePolicy(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:cache-policy/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type connection-function to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/connection-functions.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onConnectionFunction(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:connection-function/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type connection-group to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-connection-group.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onConnectionGroup(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:connection-group/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type continuous-deployment-policy to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-staging-distribution-continuous-deployment-policy.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onContinuousDeploymentPolicy(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:continuous-deployment-policy/${ id }`);
-  }
 
   /**
    * Adds a resource of type distribution to the statement
@@ -2241,19 +2179,32 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type distribution-tenant to the statement
+   * Adds a resource of type streaming-distribution to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html
    *
-   * @param id - Identifier for the id.
+   * @param distributionId - Identifier for the distributionId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDistributionTenant(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:distribution-tenant/${ id }`);
+  public onStreamingDistribution(distributionId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:streaming-distribution/${ distributionId }`);
+  }
+
+  /**
+   * Adds a resource of type origin-access-identity to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#private-content-restricting-access-to-s3-overview
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onOriginAccessIdentity(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:origin-access-identity/${ id }`);
   }
 
   /**
@@ -2280,6 +2231,45 @@ export class Cloudfront extends PolicyStatement {
    */
   public onFieldLevelEncryptionProfile(id: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:field-level-encryption-profile/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type cache-policy to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cache-key-create-cache-policy.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onCachePolicy(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:cache-policy/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type origin-request-policy to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onOriginRequestPolicy(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:origin-request-policy/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type realtime-log-config to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html
+   *
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRealtimeLogConfig(name: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:realtime-log-config/${ name }`);
   }
 
   /**
@@ -2315,58 +2305,6 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type origin-access-control to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-origin.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onOriginAccessControl(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:origin-access-control/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type origin-access-identity to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#private-content-restricting-access-to-s3-overview
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onOriginAccessIdentity(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:origin-access-identity/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type origin-request-policy to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onOriginRequestPolicy(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:origin-request-policy/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type realtime-log-config to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html
-   *
-   * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onRealtimeLogConfig(name: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:realtime-log-config/${ name }`);
-  }
-
-  /**
    * Adds a resource of type response-headers-policy to the statement
    *
    * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/modifying-response-headers.html
@@ -2380,19 +2318,93 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type streaming-distribution to the statement
+   * Adds a resource of type origin-access-control to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-origin.html
    *
-   * @param distributionId - Identifier for the distributionId.
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onOriginAccessControl(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:origin-access-control/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type continuous-deployment-policy to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-staging-distribution-continuous-deployment-policy.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onContinuousDeploymentPolicy(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:continuous-deployment-policy/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type anycast-ip-list to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/request-static-ips.html
+   *
+   * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onStreamingDistribution(distributionId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:streaming-distribution/${ distributionId }`);
+  public onAnycastIpList(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:anycast-ip-list/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type vpcorigin to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-vpc-origins.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVpcorigin(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:vpcorigin/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type distribution-tenant to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDistributionTenant(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:distribution-tenant/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type connection-group to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-connection-group.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnectionGroup(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:connection-group/${ id }`);
   }
 
   /**
@@ -2412,9 +2424,9 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type vpcorigin to the statement
+   * Adds a resource of type connection-function to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-vpc-origins.html
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/connection-functions.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -2423,8 +2435,8 @@ export class Cloudfront extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onVpcorigin(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:vpcorigin/${ id }`);
+  public onConnectionFunction(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:connection-function/${ id }`);
   }
 
   /**
@@ -2458,86 +2470,17 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toAssociateAlias()
-   * - .toAssociateDistributionTenantWebACL()
-   * - .toAssociateDistributionWebACL()
-   * - .toCopyDistribution()
-   * - .toCreateInvalidation()
-   * - .toCreateInvalidationForDistributionTenant()
-   * - .toDeleteAnycastIpList()
-   * - .toDeleteConnectionFunction()
-   * - .toDeleteConnectionGroup()
-   * - .toDeleteDistribution()
-   * - .toDeleteDistributionTenant()
-   * - .toDeleteFunction()
-   * - .toDeleteKeyValueStore()
-   * - .toDeleteResourcePolicy()
-   * - .toDeleteStreamingDistribution()
-   * - .toDeleteTrustStore()
-   * - .toDeleteVpcOrigin()
-   * - .toDescribeConnectionFunction()
-   * - .toDescribeFunction()
-   * - .toDescribeKeyValueStore()
-   * - .toDisassociateDistributionTenantWebACL()
-   * - .toDisassociateDistributionWebACL()
-   * - .toGetAnycastIpList()
-   * - .toGetConnectionFunction()
-   * - .toGetConnectionGroup()
-   * - .toGetConnectionGroupByRoutingEndpoint()
-   * - .toGetDistribution()
-   * - .toGetDistributionConfig()
-   * - .toGetDistributionTenant()
-   * - .toGetDistributionTenantByDomain()
-   * - .toGetFunction()
-   * - .toGetInvalidation()
-   * - .toGetInvalidationForDistributionTenant()
-   * - .toGetManagedCertificateDetails()
-   * - .toGetResourcePolicy()
-   * - .toGetStreamingDistribution()
-   * - .toGetStreamingDistributionConfig()
-   * - .toGetTrustStore()
-   * - .toGetVpcOrigin()
-   * - .toListConflictingAliases()
-   * - .toListDistributionsByConnectionFunction()
-   * - .toListDistributionsByTrustStore()
-   * - .toListDomainConflicts()
-   * - .toListInvalidations()
-   * - .toListInvalidationsForDistributionTenant()
-   * - .toListTagsForResource()
-   * - .toPublishConnectionFunction()
-   * - .toPublishFunction()
-   * - .toPutResourcePolicy()
-   * - .toTagResource()
-   * - .toTestConnectionFunction()
-   * - .toTestFunction()
-   * - .toUntagResource()
-   * - .toUpdateAnycastIpList()
-   * - .toUpdateConnectionFunction()
-   * - .toUpdateConnectionGroup()
-   * - .toUpdateDistribution()
-   * - .toUpdateDistributionTenant()
-   * - .toUpdateDistributionWithStagingConfig()
-   * - .toUpdateDomainAssociation()
-   * - .toUpdateFunction()
-   * - .toUpdateKeyValueStore()
-   * - .toUpdateStreamingDistribution()
-   * - .toUpdateTrustStore()
-   * - .toUpdateVpcOrigin()
-   * - .toVerifyDnsConfiguration()
-   * - .toAllowVendedLogDeliveryForResource()
-   *
    * Applies to resource types:
-   * - anycast-ip-list
-   * - connection-function
-   * - connection-group
    * - distribution
-   * - distribution-tenant
+   * - streaming-distribution
    * - function
    * - key-value-store
-   * - streaming-distribution
-   * - trust-store
+   * - anycast-ip-list
    * - vpcorigin
+   * - distribution-tenant
+   * - connection-group
+   * - trust-store
+   * - connection-function
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

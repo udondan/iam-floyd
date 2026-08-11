@@ -17,6 +17,6 @@ synthetics:ListTagsForResource;Read
 synthetics:StartCanary;Write
 synthetics:StartCanaryDryRun;Write
 synthetics:StopCanary;Write
-synthetics:TagResource;Tagging, Write
-synthetics:UntagResource;Tagging, Write
+synthetics:TagResource;Tagging
+synthetics:UntagResource;Tagging
 synthetics:UpdateCanary;Write

@@ -10,7 +10,7 @@ workspaces:CreateConnectionAlias;Write
 workspaces:CreateIpGroup;Write
 workspaces:CreateRootClientCertificate;Write
 workspaces:CreateStandbyWorkspaces;Write
-workspaces:CreateTags;Tagging, Write
+workspaces:CreateTags;Tagging
 workspaces:CreateUpdatedWorkspaceImage;Write
 workspaces:CreateWorkspaceBundle;Write
 workspaces:CreateWorkspaceImage;Write
@@ -22,7 +22,7 @@ workspaces:DeleteConnectClientAddIn;Write
 workspaces:DeleteConnectionAlias;Write
 workspaces:DeleteIpGroup;Write
 workspaces:DeleteRootClientCertificate;Write
-workspaces:DeleteTags;Tagging, Write
+workspaces:DeleteTags;Tagging
 workspaces:DeleteWorkspaceBundle;Write
 workspaces:DeleteWorkspaceImage;Write
 workspaces:DeployWorkspaceApplications;Write
@@ -71,7 +71,7 @@ workspaces:ModifyCertificateBasedAuthProperties;Write
 workspaces:ModifyClientProperties;Write
 workspaces:ModifyEndpointEncryptionMode;Write
 workspaces:ModifySamlProperties;Write
-workspaces:ModifySelfservicePermissions;Permissions management, Write
+workspaces:ModifySelfservicePermissions;Permissions management
 workspaces:ModifyStreamingProperties;Write
 workspaces:ModifyWorkspaceAccessProperties;Write
 workspaces:ModifyWorkspaceCreationProperties;Write
@@ -92,10 +92,10 @@ workspaces:TerminateWorkspaces;Write
 workspaces:TerminateWorkspacesPool;Write
 workspaces:TerminateWorkspacesPoolSession;Write
 workspaces:UpdateConnectClientAddIn;Write
-workspaces:UpdateConnectionAliasPermission;Permissions management, Write
+workspaces:UpdateConnectionAliasPermission;Permissions management
 workspaces:UpdateConsent;Write
 workspaces:UpdateRootClientCertificate;Write
 workspaces:UpdateRulesOfIpGroup;Write
 workspaces:UpdateWorkspaceBundle;Write
-workspaces:UpdateWorkspaceImagePermission;Permissions management, Write
+workspaces:UpdateWorkspaceImagePermission;Permissions management
 workspaces:UpdateWorkspacesPool;Write

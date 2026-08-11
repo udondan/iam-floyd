@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [frauddetector](https://docs.aws.amazon.com/service-authorization/latest/reference/list_frauddetector.html).
+ * Statement provider for service [frauddetector](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Frauddetector extends PolicyStatement {
   public servicePrefix = 'frauddetector';
 
   /**
-   * Statement provider for service [frauddetector](https://docs.aws.amazon.com/service-authorization/latest/reference/list_frauddetector.html).
+   * Statement provider for service [frauddetector](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -71,6 +71,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateBatchImportJob.html
    */
   public toCreateBatchImportJob() {
@@ -82,6 +86,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateBatchPredictionJob.html
    */
   public toCreateBatchPredictionJob() {
@@ -92,6 +100,10 @@ export class Frauddetector extends PolicyStatement {
    * Grants permission to create a detector version. The detector version starts in a DRAFT status
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateDetectorVersion.html
    */
@@ -119,6 +131,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateModel.html
    */
   public toCreateModel() {
@@ -130,6 +146,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateModelVersion.html
    */
   public toCreateModelVersion() {
@@ -140,6 +160,10 @@ export class Frauddetector extends PolicyStatement {
    * Grants permission to create a rule for use with the specified detector
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateRule.html
    */
@@ -277,6 +301,9 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteList.html
    */
   public toDeleteList() {
@@ -358,6 +385,17 @@ export class Frauddetector extends PolicyStatement {
    */
   public toDescribeModelVersions() {
     return this.to('DescribeModelVersions');
+  }
+
+  /**
+   * Grants permission to get the data validation report of a specific batch import job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/ug/prepare-storage-event-data.html#smart-data-validation
+   */
+  public toGetBatchImportJobValidationReport() {
+    return this.to('GetBatchImportJobValidationReport');
   }
 
   /**
@@ -508,6 +546,9 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetListElements.html
    */
   public toGetListElements() {
@@ -518,6 +559,9 @@ export class Frauddetector extends PolicyStatement {
    * Grants permission to get metadata about lists
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetListsMetadata.html
    */
@@ -607,6 +651,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutDetector.html
    */
   public toPutDetector() {
@@ -617,6 +665,10 @@ export class Frauddetector extends PolicyStatement {
    * Grants permission to create or update an entity type. An entity represents who is performing the event. As part of a fraud prediction, you pass the entity ID to indicate the specific entity who performed the event. An entity type classifies the entity. Example classifications include customer, merchant, or account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutEntityType.html
    */
@@ -629,6 +681,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutEventType.html
    */
   public toPutEventType() {
@@ -639,6 +695,10 @@ export class Frauddetector extends PolicyStatement {
    * Grants permission to create or update an Amazon SageMaker model endpoint. You can also use this action to update the configuration of the model endpoint, including the IAM role and/or the mapped variables
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutExternalModel.html
    */
@@ -662,6 +722,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutLabel.html
    */
   public toPutLabel() {
@@ -672,6 +736,10 @@ export class Frauddetector extends PolicyStatement {
    * Grants permission to create or update an outcome
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutOutcome.html
    */
@@ -684,6 +752,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_SendEvent.html
    */
   public toSendEvent() {
@@ -693,7 +765,11 @@ export class Frauddetector extends PolicyStatement {
   /**
    * Grants permission to assign tags to a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_TagResource.html
    */
@@ -704,7 +780,10 @@ export class Frauddetector extends PolicyStatement {
   /**
    * Grants permission to remove tags from a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UntagResource.html
    */
@@ -750,6 +829,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateEventLabel.html
    */
   public toUpdateEventLabel() {
@@ -760,6 +843,9 @@ export class Frauddetector extends PolicyStatement {
    * Grants permission to update a list
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateList.html
    */
@@ -782,6 +868,10 @@ export class Frauddetector extends PolicyStatement {
    * Grants permission to update a model version. Updating a model version retrains an existing model version using updated training data and produces a new minor version of the model. You can update the training data set location and data access role attributes using this action. This action creates and trains a new minor version of the model, for example version 1.01, 1.02, 1.03
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateModelVersion.html
    */
@@ -816,6 +906,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateRuleVersion.html
    */
   public toUpdateRuleVersion() {
@@ -831,17 +925,6 @@ export class Frauddetector extends PolicyStatement {
    */
   public toUpdateVariable() {
     return this.to('UpdateVariable');
-  }
-
-  /**
-   * Grants permission to get the data validation report of a specific batch import job
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/frauddetector/latest/ug/prepare-storage-event-data.html#smart-data-validation
-   */
-  public toGetBatchImportJobValidationReport() {
-    return this.to('GetBatchImportJobValidationReport');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -881,8 +964,6 @@ export class Frauddetector extends PolicyStatement {
       'PutLabel',
       'PutOutcome',
       'SendEvent',
-      'TagResource',
-      'UntagResource',
       'UpdateDetectorVersion',
       'UpdateDetectorVersionMetadata',
       'UpdateDetectorVersionStatus',
@@ -914,6 +995,7 @@ export class Frauddetector extends PolicyStatement {
     Read: [
       'DescribeDetector',
       'DescribeModelVersions',
+      'GetBatchImportJobValidationReport',
       'GetDeleteEventsByEventTypeStatus',
       'GetDetectorVersion',
       'GetEvent',
@@ -922,31 +1004,13 @@ export class Frauddetector extends PolicyStatement {
       'GetKMSEncryptionKey',
       'GetListElements',
       'GetModelVersion',
-      'ListTagsForResource',
-      'GetBatchImportJobValidationReport'
+      'ListTagsForResource'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
     ]
   };
-
-  /**
-   * Adds a resource of type batch-import to the statement
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies
-   *
-   * @param resourcePath - Identifier for the resourcePath.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onBatchImport(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:batch-import/${ resourcePath }`);
-  }
 
   /**
    * Adds a resource of type batch-prediction to the statement
@@ -1017,23 +1081,6 @@ export class Frauddetector extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type event-type to the statement
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies
-   *
-   * @param resourcePath - Identifier for the resourcePath.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onEventType(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-type/${ resourcePath }`);
-  }
-
-  /**
    * Adds a resource of type external-model to the statement
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies
@@ -1051,6 +1098,23 @@ export class Frauddetector extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type event-type to the statement
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies
+   *
+   * @param resourcePath - Identifier for the resourcePath.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEventType(resourcePath: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-type/${ resourcePath }`);
+  }
+
+  /**
    * Adds a resource of type label to the statement
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies
@@ -1065,23 +1129,6 @@ export class Frauddetector extends PolicyStatement {
    */
   public onLabel(resourcePath: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:label/${ resourcePath }`);
-  }
-
-  /**
-   * Adds a resource of type list to the statement
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies
-   *
-   * @param resourcePath - Identifier for the resourcePath.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onList(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:list/${ resourcePath }`);
   }
 
   /**
@@ -1170,6 +1217,40 @@ export class Frauddetector extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type batch-import to the statement
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies
+   *
+   * @param resourcePath - Identifier for the resourcePath.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBatchImport(resourcePath: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:batch-import/${ resourcePath }`);
+  }
+
+  /**
+   * Adds a resource of type list to the statement
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies
+   *
+   * @param resourcePath - Identifier for the resourcePath.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onList(resourcePath: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:list/${ resourcePath }`);
+  }
+
+  /**
    * Filters actions based on the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1210,91 +1291,26 @@ export class Frauddetector extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toBatchGetVariable()
-   * - .toCancelBatchImportJob()
-   * - .toCancelBatchPredictionJob()
-   * - .toCreateBatchImportJob()
-   * - .toCreateBatchPredictionJob()
-   * - .toCreateDetectorVersion()
-   * - .toCreateModel()
-   * - .toCreateModelVersion()
-   * - .toCreateRule()
-   * - .toDeleteBatchImportJob()
-   * - .toDeleteBatchPredictionJob()
-   * - .toDeleteDetector()
-   * - .toDeleteDetectorVersion()
-   * - .toDeleteEntityType()
-   * - .toDeleteEvent()
-   * - .toDeleteEventType()
-   * - .toDeleteEventsByEventType()
-   * - .toDeleteExternalModel()
-   * - .toDeleteLabel()
    * - .toDeleteList()
-   * - .toDeleteModel()
-   * - .toDeleteModelVersion()
-   * - .toDeleteOutcome()
-   * - .toDeleteRule()
-   * - .toDeleteVariable()
-   * - .toDescribeDetector()
-   * - .toDescribeModelVersions()
-   * - .toGetBatchImportJobs()
-   * - .toGetBatchPredictionJobs()
-   * - .toGetDeleteEventsByEventTypeStatus()
-   * - .toGetDetectorVersion()
-   * - .toGetDetectors()
-   * - .toGetEntityTypes()
-   * - .toGetEvent()
-   * - .toGetEventPrediction()
-   * - .toGetEventPredictionMetadata()
-   * - .toGetEventTypes()
-   * - .toGetExternalModels()
-   * - .toGetLabels()
    * - .toGetListElements()
    * - .toGetListsMetadata()
-   * - .toGetModelVersion()
-   * - .toGetModels()
-   * - .toGetOutcomes()
-   * - .toGetRules()
-   * - .toGetVariables()
-   * - .toListEventPredictions()
-   * - .toListTagsForResource()
-   * - .toPutDetector()
-   * - .toPutEntityType()
-   * - .toPutEventType()
-   * - .toPutExternalModel()
-   * - .toPutLabel()
-   * - .toPutOutcome()
-   * - .toSendEvent()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateDetectorVersion()
-   * - .toUpdateDetectorVersionMetadata()
-   * - .toUpdateDetectorVersionStatus()
-   * - .toUpdateEventLabel()
    * - .toUpdateList()
-   * - .toUpdateModel()
-   * - .toUpdateModelVersion()
-   * - .toUpdateModelVersionStatus()
-   * - .toUpdateRuleMetadata()
-   * - .toUpdateRuleVersion()
-   * - .toUpdateVariable()
-   * - .toGetBatchImportJobValidationReport()
    *
    * Applies to resource types:
-   * - batch-import
    * - batch-prediction
    * - detector
    * - detector-version
    * - entity-type
-   * - event-type
    * - external-model
+   * - event-type
    * - label
-   * - list
    * - model
    * - model-version
    * - outcome
    * - rule
    * - variable
+   * - batch-import
+   * - list
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

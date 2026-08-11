@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [forecast](https://docs.aws.amazon.com/service-authorization/latest/reference/list_forecast.html).
+ * Statement provider for service [forecast](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonforecast.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Forecast extends PolicyStatement {
   public servicePrefix = 'forecast';
 
   /**
-   * Statement provider for service [forecast](https://docs.aws.amazon.com/service-authorization/latest/reference/list_forecast.html).
+   * Statement provider for service [forecast](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonforecast.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -38,6 +38,10 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html
    */
   public toCreateDataset() {
@@ -48,6 +52,10 @@ export class Forecast extends PolicyStatement {
    * Grants permission to create a dataset group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html
    */
@@ -60,6 +68,10 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html
    */
   public toCreateDatasetImportJob() {
@@ -70,6 +82,10 @@ export class Forecast extends PolicyStatement {
    * Grants permission to create an explainability
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateExplainability.html
    */
@@ -82,6 +98,10 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateExplainabilityExport.html
    */
   public toCreateExplainabilityExport() {
@@ -93,6 +113,10 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html
    */
   public toCreateForecast() {
@@ -100,9 +124,28 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an endpoint using a Predictor resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   */
+  public toCreateForecastEndpoint() {
+    return this.to('CreateForecastEndpoint');
+  }
+
+  /**
    * Grants permission to create a forecast export job using a forecast resource
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecastExportJob.html
    */
@@ -115,6 +158,10 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateMonitor.html
    */
   public toCreateMonitor() {
@@ -125,6 +172,10 @@ export class Forecast extends PolicyStatement {
    * Grants permission to create a predictor
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_CreatePredictor.html
    */
@@ -137,6 +188,10 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_CreatePredictorBacktestExportJob.html
    */
   public toCreatePredictorBacktestExportJob() {
@@ -147,6 +202,10 @@ export class Forecast extends PolicyStatement {
    * Grants permission to create a what-if analysis
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfAnalysis.html
    */
@@ -159,6 +218,10 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfForecast.html
    */
   public toCreateWhatIfForecast() {
@@ -169,6 +232,10 @@ export class Forecast extends PolicyStatement {
    * Grants permission to create a what-if forecast export using what-if forecast resources
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfForecastExport.html
    */
@@ -240,6 +307,17 @@ export class Forecast extends PolicyStatement {
    */
   public toDeleteForecast() {
     return this.to('DeleteForecast');
+  }
+
+  /**
+   * Grants permission to delete an endpoint resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   */
+  public toDeleteForecastEndpoint() {
+    return this.to('DeleteForecastEndpoint');
   }
 
   /**
@@ -408,6 +486,17 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an endpoint resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   */
+  public toDescribeForecastEndpoint() {
+    return this.to('DescribeForecastEndpoint');
+  }
+
+  /**
    * Grants permission to describe a forecast export job
    *
    * Access Level: Read
@@ -493,6 +582,28 @@ export class Forecast extends PolicyStatement {
    */
   public toGetAccuracyMetrics() {
     return this.to('GetAccuracyMetrics');
+  }
+
+  /**
+   * Grants permission to get the forecast context of a timeseries for an endpoint
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   */
+  public toGetRecentForecastContext() {
+    return this.to('GetRecentForecastContext');
+  }
+
+  /**
+   * Grants permission to invoke the endpoint to get forecast for a timeseries
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   */
+  public toInvokeForecastEndpoint() {
+    return this.to('InvokeForecastEndpoint');
   }
 
   /**
@@ -687,6 +798,10 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_ResumeResource.html
    */
   public toResumeResource() {
@@ -698,6 +813,10 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_StopResource.html
    */
   public toStopResource() {
@@ -707,7 +826,11 @@ export class Forecast extends PolicyStatement {
   /**
    * Grants permission to associate the specified tags to a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_TagResource.html
    */
@@ -718,7 +841,10 @@ export class Forecast extends PolicyStatement {
   /**
    * Grants permission to delete the specified tags for a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_UntagResource.html
    */
@@ -737,61 +863,6 @@ export class Forecast extends PolicyStatement {
     return this.to('UpdateDatasetGroup');
   }
 
-  /**
-   * Grants permission to create an endpoint using a Predictor resource
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
-   */
-  public toCreateForecastEndpoint() {
-    return this.to('CreateForecastEndpoint');
-  }
-
-  /**
-   * Grants permission to delete an endpoint resource
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
-   */
-  public toDeleteForecastEndpoint() {
-    return this.to('DeleteForecastEndpoint');
-  }
-
-  /**
-   * Grants permission to describe an endpoint resource
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
-   */
-  public toDescribeForecastEndpoint() {
-    return this.to('DescribeForecastEndpoint');
-  }
-
-  /**
-   * Grants permission to get the forecast context of a timeseries for an endpoint
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
-   */
-  public toGetRecentForecastContext() {
-    return this.to('GetRecentForecastContext');
-  }
-
-  /**
-   * Grants permission to invoke the endpoint to get forecast for a timeseries
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
-   */
-  public toInvokeForecastEndpoint() {
-    return this.to('InvokeForecastEndpoint');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateAutoPredictor',
@@ -801,6 +872,7 @@ export class Forecast extends PolicyStatement {
       'CreateExplainability',
       'CreateExplainabilityExport',
       'CreateForecast',
+      'CreateForecastEndpoint',
       'CreateForecastExportJob',
       'CreateMonitor',
       'CreatePredictor',
@@ -814,6 +886,7 @@ export class Forecast extends PolicyStatement {
       'DeleteExplainability',
       'DeleteExplainabilityExport',
       'DeleteForecast',
+      'DeleteForecastEndpoint',
       'DeleteForecastExportJob',
       'DeleteMonitor',
       'DeletePredictor',
@@ -824,11 +897,7 @@ export class Forecast extends PolicyStatement {
       'DeleteWhatIfForecastExport',
       'ResumeResource',
       'StopResource',
-      'TagResource',
-      'UntagResource',
-      'UpdateDatasetGroup',
-      'CreateForecastEndpoint',
-      'DeleteForecastEndpoint'
+      'UpdateDatasetGroup'
     ],
     Read: [
       'DescribeAutoPredictor',
@@ -838,6 +907,7 @@ export class Forecast extends PolicyStatement {
       'DescribeExplainability',
       'DescribeExplainabilityExport',
       'DescribeForecast',
+      'DescribeForecastEndpoint',
       'DescribeForecastExportJob',
       'DescribeMonitor',
       'DescribePredictor',
@@ -846,6 +916,8 @@ export class Forecast extends PolicyStatement {
       'DescribeWhatIfForecast',
       'DescribeWhatIfForecastExport',
       'GetAccuracyMetrics',
+      'GetRecentForecastContext',
+      'InvokeForecastEndpoint',
       'ListDatasetGroups',
       'ListDatasetImportJobs',
       'ListDatasets',
@@ -862,28 +934,13 @@ export class Forecast extends PolicyStatement {
       'ListWhatIfForecastExports',
       'ListWhatIfForecasts',
       'QueryForecast',
-      'QueryWhatIfForecast',
-      'DescribeForecastEndpoint',
-      'GetRecentForecastContext',
-      'InvokeForecastEndpoint'
+      'QueryWhatIfForecast'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
     ]
   };
-
-  /**
-   * Adds a resource of type algorithm to the statement
-   *
-   * https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-choosing-recipes.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAlgorithm(resourceId: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:forecast:::algorithm/${ resourceId }`);
-  }
 
   /**
    * Adds a resource of type dataset to the statement
@@ -937,26 +994,21 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type endpoint to the statement
+   * Adds a resource of type algorithm to the statement
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-choosing-recipes.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
-  public onEndpoint(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:forecast:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:forecast-endpoint/${ resourceId }`);
+  public onAlgorithm(resourceId: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:forecast:::algorithm/${ resourceId }`);
   }
 
   /**
-   * Adds a resource of type explainability to the statement
+   * Adds a resource of type predictor to the statement
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateExplainability.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreatePredictor.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -966,14 +1018,14 @@ export class Forecast extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onExplainability(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:forecast:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:explainability/${ resourceId }`);
+  public onPredictor(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:forecast:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:predictor/${ resourceId }`);
   }
 
   /**
-   * Adds a resource of type explainabilityExport to the statement
+   * Adds a resource of type predictorBacktestExportJob to the statement
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateExplainabilityExport.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreatePredictorBacktestExportJob.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -983,8 +1035,8 @@ export class Forecast extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onExplainabilityExport(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:forecast:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:explainability-export/${ resourceId }`);
+  public onPredictorBacktestExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:forecast:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:predictor-backtest-export-job/${ resourceId }`);
   }
 
   /**
@@ -1022,6 +1074,40 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type explainability to the statement
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateExplainability.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onExplainability(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:forecast:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:explainability/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type explainabilityExport to the statement
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateExplainabilityExport.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onExplainabilityExport(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:forecast:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:explainability-export/${ resourceId }`);
+  }
+
+  /**
    * Adds a resource of type monitor to the statement
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateMonitor.html
@@ -1036,40 +1122,6 @@ export class Forecast extends PolicyStatement {
    */
   public onMonitor(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:forecast:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:monitor/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type predictor to the statement
-   *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreatePredictor.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onPredictor(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:forecast:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:predictor/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type predictorBacktestExportJob to the statement
-   *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreatePredictorBacktestExportJob.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onPredictorBacktestExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:forecast:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:predictor-backtest-export-job/${ resourceId }`);
   }
 
   /**
@@ -1124,6 +1176,23 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEndpoint(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:forecast:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:forecast-endpoint/${ resourceId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1136,6 +1205,7 @@ export class Forecast extends PolicyStatement {
    * - .toCreateExplainability()
    * - .toCreateExplainabilityExport()
    * - .toCreateForecast()
+   * - .toCreateForecastEndpoint()
    * - .toCreateForecastExportJob()
    * - .toCreateMonitor()
    * - .toCreatePredictor()
@@ -1146,7 +1216,6 @@ export class Forecast extends PolicyStatement {
    * - .toResumeResource()
    * - .toStopResource()
    * - .toTagResource()
-   * - .toCreateForecastEndpoint()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1161,79 +1230,21 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toCreateDataset()
-   * - .toCreateDatasetGroup()
-   * - .toCreateDatasetImportJob()
-   * - .toCreateExplainability()
-   * - .toCreateExplainabilityExport()
-   * - .toCreateForecast()
-   * - .toCreateForecastExportJob()
-   * - .toCreateMonitor()
-   * - .toCreatePredictor()
-   * - .toCreatePredictorBacktestExportJob()
-   * - .toCreateWhatIfAnalysis()
-   * - .toCreateWhatIfForecast()
-   * - .toCreateWhatIfForecastExport()
-   * - .toDeleteDataset()
-   * - .toDeleteDatasetGroup()
-   * - .toDeleteDatasetImportJob()
-   * - .toDeleteExplainability()
-   * - .toDeleteExplainabilityExport()
-   * - .toDeleteForecast()
-   * - .toDeleteForecastExportJob()
-   * - .toDeleteMonitor()
-   * - .toDeletePredictor()
-   * - .toDeletePredictorBacktestExportJob()
-   * - .toDeleteResourceTree()
-   * - .toDeleteWhatIfAnalysis()
-   * - .toDeleteWhatIfForecast()
-   * - .toDeleteWhatIfForecastExport()
-   * - .toDescribeAutoPredictor()
-   * - .toDescribeDataset()
-   * - .toDescribeDatasetGroup()
-   * - .toDescribeDatasetImportJob()
-   * - .toDescribeExplainability()
-   * - .toDescribeExplainabilityExport()
-   * - .toDescribeForecast()
-   * - .toDescribeForecastExportJob()
-   * - .toDescribeMonitor()
-   * - .toDescribePredictor()
-   * - .toDescribePredictorBacktestExportJob()
-   * - .toDescribeWhatIfAnalysis()
-   * - .toDescribeWhatIfForecast()
-   * - .toDescribeWhatIfForecastExport()
-   * - .toGetAccuracyMetrics()
-   * - .toListMonitorEvaluations()
-   * - .toListTagsForResource()
-   * - .toQueryForecast()
-   * - .toQueryWhatIfForecast()
-   * - .toResumeResource()
-   * - .toStopResource()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateDatasetGroup()
-   * - .toCreateForecastEndpoint()
-   * - .toDeleteForecastEndpoint()
-   * - .toDescribeForecastEndpoint()
-   * - .toGetRecentForecastContext()
-   * - .toInvokeForecastEndpoint()
-   *
    * Applies to resource types:
    * - dataset
    * - datasetGroup
    * - datasetImportJob
-   * - endpoint
-   * - explainability
-   * - explainabilityExport
-   * - forecast
-   * - forecastExport
-   * - monitor
    * - predictor
    * - predictorBacktestExportJob
+   * - forecast
+   * - forecastExport
+   * - explainability
+   * - explainabilityExport
+   * - monitor
    * - whatIfAnalysis
    * - whatIfForecast
    * - whatIfForecastExport
+   * - endpoint
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1256,6 +1267,7 @@ export class Forecast extends PolicyStatement {
    * - .toCreateExplainability()
    * - .toCreateExplainabilityExport()
    * - .toCreateForecast()
+   * - .toCreateForecastEndpoint()
    * - .toCreateForecastExportJob()
    * - .toCreateMonitor()
    * - .toCreatePredictor()
@@ -1267,7 +1279,6 @@ export class Forecast extends PolicyStatement {
    * - .toStopResource()
    * - .toTagResource()
    * - .toUntagResource()
-   * - .toCreateForecastEndpoint()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

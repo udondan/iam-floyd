@@ -7,8 +7,8 @@ ssm-quicksetup:ListConfigurationManagers;List
 ssm-quicksetup:ListConfigurations;List
 ssm-quicksetup:ListQuickSetupTypes;Read
 ssm-quicksetup:ListTagsForResource;Read
-ssm-quicksetup:TagResource;Tagging, Write
-ssm-quicksetup:UntagResource;Tagging, Write
+ssm-quicksetup:TagResource;Tagging
+ssm-quicksetup:UntagResource;Tagging
 ssm-quicksetup:UpdateConfigurationDefinition;Write
 ssm-quicksetup:UpdateConfigurationManager;Write
 ssm-quicksetup:UpdateServiceSettings;Write

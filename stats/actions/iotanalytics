@@ -26,8 +26,8 @@ iotanalytics:PutLoggingOptions;Write
 iotanalytics:RunPipelineActivity;Read
 iotanalytics:SampleChannelData;Read
 iotanalytics:StartPipelineReprocessing;Write
-iotanalytics:TagResource;Tagging, Write
-iotanalytics:UntagResource;Tagging, Write
+iotanalytics:TagResource;Tagging
+iotanalytics:UntagResource;Tagging
 iotanalytics:UpdateChannel;Write
 iotanalytics:UpdateDataset;Write
 iotanalytics:UpdateDatastore;Write

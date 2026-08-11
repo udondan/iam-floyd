@@ -1,4 +1,3 @@
-glue:AccessDataQualityRuntimeConfiguration;Read
 glue:AuthorizeInboundIntegration;Write
 glue:BatchCreatePartition;Write
 glue:BatchDeleteConnection;Write
@@ -11,7 +10,7 @@ glue:BatchGetCustomEntityTypes;Read
 glue:BatchGetDevEndpoints;Read
 glue:BatchGetJobs;Read
 glue:BatchGetPartition;Read
-glue:BatchGetStageFiles;Permissions management, Write
+glue:BatchGetStageFiles;Permissions management
 glue:BatchGetTableOptimizer;Read
 glue:BatchGetTriggers;Read
 glue:BatchGetWorkflows;Read
@@ -74,7 +73,7 @@ glue:DeleteMLTransform;Write
 glue:DeletePartition;Write
 glue:DeletePartitionIndex;Write
 glue:DeleteRegistry;Write
-glue:DeleteResourcePolicy;Permissions management, Write
+glue:DeleteResourcePolicy;Permissions management
 glue:DeleteSchema;Write
 glue:DeleteSchemaVersions;Write
 glue:DeleteSecurityConfiguration;Write
@@ -86,9 +85,9 @@ glue:DeleteTrigger;Write
 glue:DeleteUsageProfile;Write
 glue:DeleteUserDefinedFunction;Write
 glue:DeleteWorkflow;Write
-glue:DeregisterDataPreview;Permissions management, Write
-glue:DescribeConnectionType;Permissions management, Write
-glue:DescribeEntity;Permissions management, Write
+glue:DeregisterDataPreview;Permissions management
+glue:DescribeConnectionType;Permissions management
+glue:DescribeEntity;Permissions management
 glue:DescribeInboundIntegrations;List
 glue:DescribeIntegrations;List
 glue:FederateAuthorization;Write
@@ -114,7 +113,7 @@ glue:GetCrawlers;Read
 glue:GetCustomEntityType;Read
 glue:GetDashboardUrl;Read
 glue:GetDataCatalogEncryptionSettings;Read
-glue:GetDataPreviewStatement;Permissions management, Write
+glue:GetDataPreviewStatement;Permissions management
 glue:GetDataQualityModel;Read
 glue:GetDataQualityModelResult;Read
 glue:GetDataQualityResult;Read
@@ -127,9 +126,9 @@ glue:GetDataflowGraph;Read
 glue:GetDevEndpoint;Read
 glue:GetDevEndpoints;Read
 glue:GetEntityRecords;Read
-glue:GetEnvironment;Permissions management, Write
-glue:GetExecutors;Permissions management, Write
-glue:GetExecutorsThreads;Permissions management, Write
+glue:GetEnvironment;Permissions management
+glue:GetExecutors;Permissions management
+glue:GetExecutorsThreads;Permissions management
 glue:GetGeneratedCode;Read
 glue:GetGlueIdentityCenterConfiguration;Read
 glue:GetIntegrationResourceProperty;Read
@@ -140,20 +139,20 @@ glue:GetJobRun;Read
 glue:GetJobRuns;Read
 glue:GetJobUpgradeAnalysis;Read
 glue:GetJobs;Read
-glue:GetLogParsingStatus;Permissions management, Write
+glue:GetLogParsingStatus;Permissions management
 glue:GetMLTaskRun;Read
 glue:GetMLTaskRuns;List
 glue:GetMLTransform;Read
 glue:GetMLTransforms;List
 glue:GetMapping;Read
-glue:GetNotebookInstanceStatus;Permissions management, Write
+glue:GetNotebookInstanceStatus;Permissions management
 glue:GetPartition;Read
 glue:GetPartitionIndexes;Read
 glue:GetPartitions;Read
 glue:GetPlan;Read
-glue:GetQueries;Permissions management, Write
-glue:GetQuery;Permissions management, Write
-glue:GetRecipeAction;Permissions management, Write
+glue:GetQueries;Permissions management
+glue:GetQuery;Permissions management
+glue:GetRecipeAction;Permissions management
 glue:GetRegistry;Read
 glue:GetResourcePolicies;Read
 glue:GetResourcePolicy;Read
@@ -165,15 +164,15 @@ glue:GetSecurityConfiguration;Read
 glue:GetSecurityConfigurations;Read
 glue:GetSession;Read
 glue:GetSessionEndpoint;Read
-glue:GetStage;Permissions management, Write
-glue:GetStageAttempt;Permissions management, Write
-glue:GetStageAttemptTaskList;Permissions management, Write
-glue:GetStageAttemptTaskSummary;Permissions management, Write
-glue:GetStageFiles;Permissions management, Write
-glue:GetStages;Permissions management, Write
+glue:GetStage;Permissions management
+glue:GetStageAttempt;Permissions management
+glue:GetStageAttemptTaskList;Permissions management
+glue:GetStageAttemptTaskSummary;Permissions management
+glue:GetStageFiles;Permissions management
+glue:GetStages;Permissions management
 glue:GetStatement;Read
-glue:GetStorage;Permissions management, Write
-glue:GetStorageUnit;Permissions management, Write
+glue:GetStorage;Permissions management
+glue:GetStorageUnit;Permissions management
 glue:GetTable;Read
 glue:GetTableOptimizer;Read
 glue:GetTableVersion;Read
@@ -189,12 +188,12 @@ glue:GetWorkflow;Read
 glue:GetWorkflowRun;Read
 glue:GetWorkflowRunProperties;Read
 glue:GetWorkflowRuns;Read
-glue:GlueNotebookAuthorize;Permissions management, Write
-glue:GlueNotebookRefreshCredentials;Permissions management, Write
+glue:GlueNotebookAuthorize;Permissions management
+glue:GlueNotebookRefreshCredentials;Permissions management
 glue:ImportCatalogToGlue;Write
 glue:ListBlueprints;List
 glue:ListColumnStatisticsTaskRuns;Read
-glue:ListConnectionTypes;Permissions management, Write
+glue:ListConnectionTypes;Permissions management
 glue:ListCrawlers;List
 glue:ListCrawls;List
 glue:ListCustomEntityTypes;List
@@ -203,7 +202,7 @@ glue:ListDataQualityRuleRecommendationRuns;List
 glue:ListDataQualityRulesetEvaluationRuns;List
 glue:ListDataQualityRulesets;List
 glue:ListDevEndpoints;List
-glue:ListEntities;Permissions management, Write
+glue:ListEntities;Permissions management
 glue:ListIntegrationResourceProperties;List
 glue:ListJobUpgradeAnalyses;List
 glue:ListJobs;List
@@ -217,7 +216,7 @@ glue:ListTableOptimizerRuns;List
 glue:ListTriggers;List
 glue:ListUsageProfiles;List
 glue:ListWorkflows;List
-glue:ManagedConnector;Permissions management, Write
+glue:ManagedConnector;Permissions management
 glue:ModifyIntegration;Write
 glue:NotifyEvent;Write
 glue:PassConnection;Write
@@ -225,23 +224,23 @@ glue:PublishDataQuality;Write
 glue:PutDataCatalogEncryptionSettings;Write
 glue:PutDataQualityProfileAnnotation;Write
 glue:PutDataQualityStatisticAnnotation;Write
-glue:PutResourcePolicy;Permissions management, Write
+glue:PutResourcePolicy;Permissions management
 glue:PutSchemaVersionMetadata;Write
 glue:PutWorkflowRunProperties;Write
 glue:QuerySchemaVersionMetadata;List
-glue:RefreshOAuth2Tokens;Permissions management, Write
+glue:RefreshOAuth2Tokens;Permissions management
 glue:RegisterConnectionType;Write
 glue:RegisterSchemaVersion;Write
 glue:RemoveSchemaVersionMetadata;Write
 glue:RenameTable;Write
-glue:RequestLogParsing;Permissions management, Write
+glue:RequestLogParsing;Permissions management
 glue:ResetJobBookmark;Write
 glue:ResumeWorkflowRun;Write
-glue:RunDataPreviewStatement;Permissions management, Write
+glue:RunDataPreviewStatement;Permissions management
 glue:RunStatement;Write
 glue:SearchTables;Read
 glue:SendFeedback;Write
-glue:SendRecipeAction;Permissions management, Write
+glue:SendRecipeAction;Permissions management
 glue:StartBlueprintRun;Write
 glue:StartColumnStatisticsTaskRun;Write
 glue:StartColumnStatisticsTaskRunSchedule;Write
@@ -256,7 +255,7 @@ glue:StartJobRun;Write
 glue:StartJobUpgradeAnalysis;Write
 glue:StartMLEvaluationTaskRun;Write
 glue:StartMLLabelingSetGenerationTaskRun;Write
-glue:StartNotebook;Permissions management, Write
+glue:StartNotebook;Permissions management
 glue:StartTrigger;Write
 glue:StartWorkflowRun;Write
 glue:StopColumnStatisticsTaskRun;Write
@@ -267,10 +266,10 @@ glue:StopJobUpgradeAnalysis;Write
 glue:StopSession;Write
 glue:StopTrigger;Write
 glue:StopWorkflowRun;Write
-glue:TagResource;Tagging, Write
-glue:TerminateNotebook;Permissions management, Write
-glue:TestConnection;Permissions management, Write
-glue:UntagResource;Tagging, Write
+glue:TagResource;Tagging
+glue:TerminateNotebook;Permissions management
+glue:TestConnection;Permissions management
+glue:UntagResource;Tagging
 glue:UpdateBlueprint;Write
 glue:UpdateCatalog;Write
 glue:UpdateClassifier;Write
@@ -300,5 +299,5 @@ glue:UpdateUsageProfile;Write
 glue:UpdateUserDefinedFunction;Write
 glue:UpdateWorkflow;Write
 glue:UpgradeJob;Write
-glue:UseGlueStudio;Permissions management, Write
+glue:UseGlueStudio;Permissions management
 glue:UseMLTransforms;Write

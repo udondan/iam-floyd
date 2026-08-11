@@ -15,8 +15,8 @@ transform:ListProfiles;List
 transform:ListTagsForResource;Read
 transform:PutAgentRuntimeConfiguration;Write
 transform:RejectConnector;Write
-transform:TagResource;Tagging, Write
-transform:UntagResource;Tagging, Write
+transform:TagResource;Tagging
+transform:UntagResource;Tagging
 transform:UpdateAccountSettings;Write
 transform:UpdateAgentAccess;Write
 transform:UpdateProfile;Write

@@ -9,5 +9,5 @@ workspaces-instances:ListInstanceTypes;List
 workspaces-instances:ListRegions;List
 workspaces-instances:ListTagsForResource;List
 workspaces-instances:ListWorkspaceInstances;List
-workspaces-instances:TagResource;Tagging, Write
-workspaces-instances:UntagResource;Tagging, Write
+workspaces-instances:TagResource;Tagging
+workspaces-instances:UntagResource;Tagging

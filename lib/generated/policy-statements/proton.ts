@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [proton](https://docs.aws.amazon.com/service-authorization/latest/reference/list_proton.html).
+ * Statement provider for service [proton](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsproton.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Proton extends PolicyStatement {
   public servicePrefix = 'proton';
 
   /**
-   * Statement provider for service [proton](https://docs.aws.amazon.com/service-authorization/latest/reference/list_proton.html).
+   * Statement provider for service [proton](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsproton.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -45,6 +45,9 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifEnvironmentTemplate()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CancelEnvironmentDeployment.html
    */
   public toCancelEnvironmentDeployment() {
@@ -55,6 +58,9 @@ export class Proton extends PolicyStatement {
    * Grants permission to cancel a service instance deployment
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServiceTemplate()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CancelServiceInstanceDeployment.html
    */
@@ -67,6 +73,9 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifServiceTemplate()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CancelServicePipelineDeployment.html
    */
   public toCancelServicePipelineDeployment() {
@@ -78,6 +87,10 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateComponent.html
    */
   public toCreateComponent() {
@@ -88,6 +101,14 @@ export class Proton extends PolicyStatement {
    * Grants permission to create an environment
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifEnvironmentTemplate()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateEnvironment.html
    */
@@ -101,8 +122,8 @@ export class Proton extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateEnvironmentAccountConnection.html
    */
@@ -115,6 +136,10 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateEnvironmentTemplate.html
    */
   public toCreateEnvironmentTemplate() {
@@ -125,6 +150,10 @@ export class Proton extends PolicyStatement {
    * Grants permission to create an environment template major version. DEPRECATED - use CreateEnvironmentTemplateVersion instead
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateEnvironmentTemplateMajorVersion.html
    */
@@ -137,6 +166,10 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateEnvironmentTemplateMinorVersion.html
    */
   public toCreateEnvironmentTemplateMinorVersion() {
@@ -147,6 +180,10 @@ export class Proton extends PolicyStatement {
    * Grants permission to create an environment template version
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateEnvironmentTemplateVersion.html
    */
@@ -159,6 +196,10 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html
    */
   public toCreateRepository() {
@@ -170,6 +211,14 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifServiceTemplate()
+   *
+   * Dependent actions:
+   * - codestar-connections:PassConnection
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateService.html
    */
   public toCreateService() {
@@ -180,6 +229,11 @@ export class Proton extends PolicyStatement {
    * Grants permission to create a service instance
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifServiceTemplate()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateServiceInstance.html
    */
@@ -203,6 +257,10 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateServiceTemplate.html
    */
   public toCreateServiceTemplate() {
@@ -213,6 +271,10 @@ export class Proton extends PolicyStatement {
    * Grants permission to create a service template major version. DEPRECATED - use CreateServiceTemplateVersion instead
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateServiceTemplateMajorVersion.html
    */
@@ -225,6 +287,10 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateServiceTemplateMinorVersion.html
    */
   public toCreateServiceTemplateMinorVersion() {
@@ -235,6 +301,10 @@ export class Proton extends PolicyStatement {
    * Grants permission to create a service template version
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateServiceTemplateVersion.html
    */
@@ -290,6 +360,9 @@ export class Proton extends PolicyStatement {
    * Grants permission to delete an environment
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifEnvironmentTemplate()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteEnvironment.html
    */
@@ -367,6 +440,9 @@ export class Proton extends PolicyStatement {
    * Grants permission to delete a service
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServiceTemplate()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteService.html
    */
@@ -1015,7 +1091,11 @@ export class Proton extends PolicyStatement {
   /**
    * Grants permission to add tags to a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_TagResource.html
    */
@@ -1026,7 +1106,10 @@ export class Proton extends PolicyStatement {
   /**
    * Grants permission to remove tags from a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UntagResource.html
    */
@@ -1039,6 +1122,9 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateAccountRoles.html
    */
   public toUpdateAccountRoles() {
@@ -1049,6 +1135,9 @@ export class Proton extends PolicyStatement {
    * Grants permission to update the account settings
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateAccountSettings.html
    */
@@ -1071,6 +1160,12 @@ export class Proton extends PolicyStatement {
    * Grants permission to update an environment
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifEnvironmentTemplate()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateEnvironment.html
    */
@@ -1138,6 +1233,9 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifServiceTemplate()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateService.html
    */
   public toUpdateService() {
@@ -1149,6 +1247,9 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifServiceTemplate()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateServiceInstance.html
    */
   public toUpdateServiceInstance() {
@@ -1159,6 +1260,9 @@ export class Proton extends PolicyStatement {
    * Grants permission to update a service pipeline
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServiceTemplate()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateServicePipeline.html
    */
@@ -1285,8 +1389,6 @@ export class Proton extends PolicyStatement {
       'DeleteTemplateSyncConfig',
       'NotifyResourceDeploymentStatusChange',
       'RejectEnvironmentAccountConnection',
-      'TagResource',
-      'UntagResource',
       'UpdateAccountRoles',
       'UpdateAccountSettings',
       'UpdateComponent',
@@ -1368,74 +1470,6 @@ export class Proton extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type component to the statement
-   *
-   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onComponent(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:component/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type deployment to the statement
-   *
-   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-deployments.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDeployment(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deployment/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type environment to the statement
-   *
-   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html
-   *
-   * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onEnvironment(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment/${ name }`);
-  }
-
-  /**
-   * Adds a resource of type environment-account-connection to the statement
-   *
-   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onEnvironmentAccountConnection(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment-account-connection/${ id }`);
-  }
-
-  /**
    * Adds a resource of type environment-template to the statement
    *
    * https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html
@@ -1450,6 +1484,25 @@ export class Proton extends PolicyStatement {
    */
   public onEnvironmentTemplate(name: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment-template/${ name }`);
+  }
+
+  /**
+   * Adds a resource of type environment-template-version to the statement
+   *
+   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html
+   *
+   * @param templateName - Identifier for the templateName.
+   * @param majorVersion - Identifier for the majorVersion.
+   * @param minorVersion - Identifier for the minorVersion.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEnvironmentTemplateVersion(templateName: string, majorVersion: string, minorVersion: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment-template/${ templateName }:${ majorVersion }.${ minorVersion }`);
   }
 
   /**
@@ -1490,78 +1543,6 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type environment-template-version to the statement
-   *
-   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html
-   *
-   * @param templateName - Identifier for the templateName.
-   * @param majorVersion - Identifier for the majorVersion.
-   * @param minorVersion - Identifier for the minorVersion.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onEnvironmentTemplateVersion(templateName: string, majorVersion: string, minorVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment-template/${ templateName }:${ majorVersion }.${ minorVersion }`);
-  }
-
-  /**
-   * Adds a resource of type repository to the statement
-   *
-   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-repositories.html
-   *
-   * @param provider - Identifier for the provider.
-   * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onRepository(provider: string, name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:repository/${ provider }:${ name }`);
-  }
-
-  /**
-   * Adds a resource of type service to the statement
-   *
-   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html
-   *
-   * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onService(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ name }`);
-  }
-
-  /**
-   * Adds a resource of type service-instance to the statement
-   *
-   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html
-   *
-   * @param serviceName - Identifier for the serviceName.
-   * @param name - Identifier for the name.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onServiceInstance(serviceName: string, name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceName }/service-instance/${ name }`);
-  }
-
-  /**
    * Adds a resource of type service-template to the statement
    *
    * https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html
@@ -1576,6 +1557,25 @@ export class Proton extends PolicyStatement {
    */
   public onServiceTemplate(name: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-template/${ name }`);
+  }
+
+  /**
+   * Adds a resource of type service-template-version to the statement
+   *
+   * https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html
+   *
+   * @param templateName - Identifier for the templateName.
+   * @param majorVersion - Identifier for the majorVersion.
+   * @param minorVersion - Identifier for the minorVersion.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onServiceTemplateVersion(templateName: string, majorVersion: string, minorVersion: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-template/${ templateName }:${ majorVersion }.${ minorVersion }`);
   }
 
   /**
@@ -1616,13 +1616,11 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type service-template-version to the statement
+   * Adds a resource of type environment to the statement
    *
-   * https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html
+   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html
    *
-   * @param templateName - Identifier for the templateName.
-   * @param majorVersion - Identifier for the majorVersion.
-   * @param minorVersion - Identifier for the minorVersion.
+   * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1630,8 +1628,112 @@ export class Proton extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onServiceTemplateVersion(templateName: string, majorVersion: string, minorVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-template/${ templateName }:${ majorVersion }.${ minorVersion }`);
+  public onEnvironment(name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment/${ name }`);
+  }
+
+  /**
+   * Adds a resource of type service to the statement
+   *
+   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html
+   *
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onService(name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ name }`);
+  }
+
+  /**
+   * Adds a resource of type service-instance to the statement
+   *
+   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html
+   *
+   * @param serviceName - Identifier for the serviceName.
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onServiceInstance(serviceName: string, name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceName }/service-instance/${ name }`);
+  }
+
+  /**
+   * Adds a resource of type environment-account-connection to the statement
+   *
+   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEnvironmentAccountConnection(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment-account-connection/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type repository to the statement
+   *
+   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-repositories.html
+   *
+   * @param provider - Identifier for the provider.
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRepository(provider: string, name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:repository/${ provider }:${ name }`);
+  }
+
+  /**
+   * Adds a resource of type component to the statement
+   *
+   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onComponent(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:component/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type deployment to the statement
+   *
+   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-deployments.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDeployment(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deployment/${ id }`);
   }
 
   /**
@@ -1669,105 +1771,22 @@ export class Proton extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toAcceptEnvironmentAccountConnection()
-   * - .toCancelComponentDeployment()
-   * - .toCancelEnvironmentDeployment()
-   * - .toCancelServiceInstanceDeployment()
-   * - .toCancelServicePipelineDeployment()
-   * - .toCreateComponent()
-   * - .toCreateEnvironment()
-   * - .toCreateEnvironmentTemplate()
-   * - .toCreateEnvironmentTemplateMajorVersion()
-   * - .toCreateEnvironmentTemplateMinorVersion()
-   * - .toCreateEnvironmentTemplateVersion()
-   * - .toCreateRepository()
-   * - .toCreateService()
-   * - .toCreateServiceInstance()
-   * - .toCreateServiceTemplate()
-   * - .toCreateServiceTemplateMajorVersion()
-   * - .toCreateServiceTemplateMinorVersion()
-   * - .toCreateServiceTemplateVersion()
-   * - .toDeleteComponent()
-   * - .toDeleteDeployment()
-   * - .toDeleteEnvironment()
-   * - .toDeleteEnvironmentAccountConnection()
-   * - .toDeleteEnvironmentTemplate()
-   * - .toDeleteEnvironmentTemplateMajorVersion()
-   * - .toDeleteEnvironmentTemplateMinorVersion()
-   * - .toDeleteEnvironmentTemplateVersion()
-   * - .toDeleteRepository()
-   * - .toDeleteService()
-   * - .toDeleteServiceTemplate()
-   * - .toDeleteServiceTemplateMajorVersion()
-   * - .toDeleteServiceTemplateMinorVersion()
-   * - .toDeleteServiceTemplateVersion()
-   * - .toGetComponent()
-   * - .toGetDeployment()
-   * - .toGetEnvironment()
-   * - .toGetEnvironmentAccountConnection()
-   * - .toGetEnvironmentTemplate()
-   * - .toGetEnvironmentTemplateMajorVersion()
-   * - .toGetEnvironmentTemplateMinorVersion()
-   * - .toGetEnvironmentTemplateVersion()
-   * - .toGetRepository()
-   * - .toGetService()
-   * - .toGetServiceInstance()
-   * - .toGetServiceTemplate()
-   * - .toGetServiceTemplateMajorVersion()
-   * - .toGetServiceTemplateMinorVersion()
-   * - .toGetServiceTemplateVersion()
-   * - .toListComponentOutputs()
-   * - .toListComponentProvisionedResources()
-   * - .toListComponents()
-   * - .toListEnvironmentOutputs()
-   * - .toListEnvironmentProvisionedResources()
-   * - .toListEnvironmentTemplateMajorVersions()
-   * - .toListEnvironmentTemplateMinorVersions()
-   * - .toListEnvironmentTemplateVersions()
-   * - .toListServiceInstanceOutputs()
-   * - .toListServiceInstanceProvisionedResources()
-   * - .toListServicePipelineOutputs()
-   * - .toListServicePipelineProvisionedResources()
-   * - .toListServiceTemplateMajorVersions()
-   * - .toListServiceTemplateMinorVersions()
-   * - .toListServiceTemplateVersions()
-   * - .toListTagsForResource()
-   * - .toNotifyResourceDeploymentStatusChange()
-   * - .toRejectEnvironmentAccountConnection()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateComponent()
-   * - .toUpdateEnvironment()
-   * - .toUpdateEnvironmentAccountConnection()
-   * - .toUpdateEnvironmentTemplate()
-   * - .toUpdateEnvironmentTemplateMajorVersion()
-   * - .toUpdateEnvironmentTemplateMinorVersion()
-   * - .toUpdateEnvironmentTemplateVersion()
-   * - .toUpdateService()
-   * - .toUpdateServiceInstance()
-   * - .toUpdateServicePipeline()
-   * - .toUpdateServiceTemplate()
-   * - .toUpdateServiceTemplateMajorVersion()
-   * - .toUpdateServiceTemplateMinorVersion()
-   * - .toUpdateServiceTemplateVersion()
-   *
    * Applies to resource types:
-   * - component
-   * - deployment
-   * - environment
-   * - environment-account-connection
    * - environment-template
+   * - environment-template-version
    * - environment-template-major-version
    * - environment-template-minor-version
-   * - environment-template-version
-   * - repository
-   * - service
-   * - service-instance
    * - service-template
+   * - service-template-version
    * - service-template-major-version
    * - service-template-minor-version
-   * - service-template-version
+   * - environment
+   * - service
+   * - service-instance
+   * - environment-account-connection
+   * - repository
+   * - component
+   * - deployment
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

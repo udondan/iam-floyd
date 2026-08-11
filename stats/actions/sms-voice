@@ -1,14 +1,11 @@
 sms-voice:AssociateOriginationIdentity;Write
 sms-voice:AssociateProtectConfiguration;Write
-sms-voice:CarrierLookup;Read
 sms-voice:CreateConfigurationSet;Write
 sms-voice:CreateConfigurationSetEventDestination;Write
 sms-voice:CreateEventDestination;Write
-sms-voice:CreateNotifyConfiguration;Write
 sms-voice:CreateOptOutList;Write
 sms-voice:CreatePool;Write
 sms-voice:CreateProtectConfiguration;Write
-sms-voice:CreateRcsAgent;Write
 sms-voice:CreateRegistration;Write
 sms-voice:CreateRegistrationAssociation;Write
 sms-voice:CreateRegistrationAttachment;Write
@@ -22,19 +19,15 @@ sms-voice:DeleteDefaultSenderId;Write
 sms-voice:DeleteEventDestination;Write
 sms-voice:DeleteKeyword;Write
 sms-voice:DeleteMediaMessageSpendLimitOverride;Write
-sms-voice:DeleteNotifyConfiguration;Write
-sms-voice:DeleteNotifyMessageSpendLimitOverride;Write
 sms-voice:DeleteOptOutList;Write
 sms-voice:DeleteOptedOutNumber;Write
 sms-voice:DeletePool;Write
 sms-voice:DeleteProtectConfiguration;Write
 sms-voice:DeleteProtectConfigurationRuleSetNumberOverride;Write
-sms-voice:DeleteRcsAgent;Write
-sms-voice:DeleteRcsMessageSpendLimitOverride;Write
 sms-voice:DeleteRegistration;Write
 sms-voice:DeleteRegistrationAttachment;Write
 sms-voice:DeleteRegistrationFieldValue;Write
-sms-voice:DeleteResourcePolicy;Permissions management, Write
+sms-voice:DeleteResourcePolicy;Permissions management
 sms-voice:DeleteTextMessageSpendLimitOverride;Write
 sms-voice:DeleteVerifiedDestinationNumber;Write
 sms-voice:DeleteVoiceMessageSpendLimitOverride;Write
@@ -42,15 +35,11 @@ sms-voice:DescribeAccountAttributes;Read
 sms-voice:DescribeAccountLimits;Read
 sms-voice:DescribeConfigurationSets;Read
 sms-voice:DescribeKeywords;Read
-sms-voice:DescribeNotifyConfigurations;Read
-sms-voice:DescribeNotifyTemplates;Read
 sms-voice:DescribeOptOutLists;Read
 sms-voice:DescribeOptedOutNumbers;Read
 sms-voice:DescribePhoneNumbers;Read
 sms-voice:DescribePools;Read
 sms-voice:DescribeProtectConfigurations;Read
-sms-voice:DescribeRcsAgentCountryLaunchStatus;Read
-sms-voice:DescribeRcsAgents;Read
 sms-voice:DescribeRegistrationAttachments;Read
 sms-voice:DescribeRegistrationFieldDefinitions;Read
 sms-voice:DescribeRegistrationFieldValues;Read
@@ -68,7 +57,6 @@ sms-voice:GetConfigurationSetEventDestinations;Read
 sms-voice:GetProtectConfigurationCountryRuleSet;Read
 sms-voice:GetResourcePolicy;Read
 sms-voice:ListConfigurationSets;Read
-sms-voice:ListNotifyCountries;Read
 sms-voice:ListPoolOriginationIdentities;Read
 sms-voice:ListProtectConfigurationRuleSetNumberOverrides;Read
 sms-voice:ListRegistrationAssociations;Read
@@ -78,16 +66,13 @@ sms-voice:PutMessageFeedback;Write
 sms-voice:PutOptedOutNumber;Write
 sms-voice:PutProtectConfigurationRuleSetNumberOverride;Write
 sms-voice:PutRegistrationFieldValue;Write
-sms-voice:PutResourcePolicy;Permissions management, Write
+sms-voice:PutResourcePolicy;Permissions management
 sms-voice:ReleasePhoneNumber;Write
 sms-voice:ReleaseSenderId;Write
 sms-voice:RequestPhoneNumber;Write
 sms-voice:RequestSenderId;Write
 sms-voice:SendDestinationNumberVerificationCode;Write
 sms-voice:SendMediaMessage;Write
-sms-voice:SendNotifyTextMessage;Write
-sms-voice:SendNotifyVoiceMessage;Write
-sms-voice:SendRcsMessage;Write
 sms-voice:SendTextMessage;Write
 sms-voice:SendVoiceMessage;Write
 sms-voice:SetAccountDefaultProtectConfiguration;Write
@@ -95,20 +80,16 @@ sms-voice:SetDefaultMessageFeedbackEnabled;Write
 sms-voice:SetDefaultMessageType;Write
 sms-voice:SetDefaultSenderId;Write
 sms-voice:SetMediaMessageSpendLimitOverride;Write
-sms-voice:SetNotifyMessageSpendLimitOverride;Write
-sms-voice:SetRcsMessageSpendLimitOverride;Write
 sms-voice:SetTextMessageSpendLimitOverride;Write
 sms-voice:SetVoiceMessageSpendLimitOverride;Write
 sms-voice:SubmitRegistrationVersion;Write
-sms-voice:TagResource;Tagging, Write
-sms-voice:UntagResource;Tagging, Write
+sms-voice:TagResource;Tagging
+sms-voice:UntagResource;Tagging
 sms-voice:UpdateConfigurationSetEventDestination;Write
 sms-voice:UpdateEventDestination;Write
-sms-voice:UpdateNotifyConfiguration;Write
 sms-voice:UpdatePhoneNumber;Write
 sms-voice:UpdatePool;Write
 sms-voice:UpdateProtectConfiguration;Write
 sms-voice:UpdateProtectConfigurationCountryRuleSet;Write
-sms-voice:UpdateRcsAgent;Write
 sms-voice:UpdateSenderId;Write
 sms-voice:VerifyDestinationNumber;Write

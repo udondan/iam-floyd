@@ -31,7 +31,7 @@ bedrock-mantle:ListProjects;List
 bedrock-mantle:ListReservations;List
 bedrock-mantle:ListTagsForResource;Read
 bedrock-mantle:PutAccountDataRetention;Write
-bedrock-mantle:TagResource;Tagging, Write
-bedrock-mantle:UntagResource;Tagging, Write
+bedrock-mantle:TagResource;Tagging
+bedrock-mantle:UntagResource;Tagging
 bedrock-mantle:UpdateProject;Write
 bedrock-mantle:UpdateReservation;Write

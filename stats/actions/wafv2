@@ -9,7 +9,7 @@ wafv2:DeleteAPIKey;Write
 wafv2:DeleteFirewallManagerRuleGroups;Write
 wafv2:DeleteIPSet;Write
 wafv2:DeleteLoggingConfiguration;Write
-wafv2:DeletePermissionPolicy;Permissions management, Write
+wafv2:DeletePermissionPolicy;Permissions management
 wafv2:DeleteRegexPatternSet;Write
 wafv2:DeleteRuleGroup;Write
 wafv2:DeleteWebACL;Write
@@ -51,9 +51,9 @@ wafv2:ListWebACLs;List
 wafv2:PutFirewallManagerRuleGroups;Write
 wafv2:PutLoggingConfiguration;Write
 wafv2:PutManagedRuleSetVersions;Write
-wafv2:PutPermissionPolicy;Permissions management, Write
-wafv2:TagResource;Tagging, Write
-wafv2:UntagResource;Tagging, Write
+wafv2:PutPermissionPolicy;Permissions management
+wafv2:TagResource;Tagging
+wafv2:UntagResource;Tagging
 wafv2:UpdateIPSet;Write
 wafv2:UpdateManagedRuleSetVersionExpiryDate;Write
 wafv2:UpdateRegexPatternSet;Write

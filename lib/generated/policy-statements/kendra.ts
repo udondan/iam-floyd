@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [kendra](https://docs.aws.amazon.com/service-authorization/latest/reference/list_kendra.html).
+ * Statement provider for service [kendra](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkendra.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Kendra extends PolicyStatement {
   public servicePrefix = 'kendra';
 
   /**
-   * Statement provider for service [kendra](https://docs.aws.amazon.com/service-authorization/latest/reference/list_kendra.html).
+   * Statement provider for service [kendra](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkendra.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -111,6 +111,10 @@ export class Kendra extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateDataSource.html
    */
   public toCreateDataSource() {
@@ -133,6 +137,10 @@ export class Kendra extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateFaq.html
    */
   public toCreateFaq() {
@@ -143,6 +151,10 @@ export class Kendra extends PolicyStatement {
    * Grants permission to create a featured results set
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateFeaturedResults.html
    */
@@ -170,6 +182,10 @@ export class Kendra extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateQuerySuggestionsBlockList.html
    */
   public toCreateQuerySuggestionsBlockList() {
@@ -180,6 +196,10 @@ export class Kendra extends PolicyStatement {
    * Grants permission to create a Thesaurus
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateThesaurus.html
    */
@@ -641,7 +661,11 @@ export class Kendra extends PolicyStatement {
   /**
    * Grants permission to tag a resource with given key value pairs
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_TagResource.html
    */
@@ -652,7 +676,10 @@ export class Kendra extends PolicyStatement {
   /**
    * Grants permission to remove the tag with the given key from a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_UntagResource.html
    */
@@ -778,8 +805,6 @@ export class Kendra extends PolicyStatement {
       'StartDataSourceSyncJob',
       'StopDataSourceSyncJob',
       'SubmitFeedback',
-      'TagResource',
-      'UntagResource',
       'UpdateAccessControlConfiguration',
       'UpdateDataSource',
       'UpdateExperience',
@@ -828,18 +853,20 @@ export class Kendra extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type access-control-configuration to the statement
+   * Adds a resource of type index to the statement
    *
-   * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateAccessControlConfiguration.html
+   * https://docs.aws.amazon.com/kendra/latest/dg/index.html
    *
    * @param indexId - Identifier for the indexId.
-   * @param accessControlConfigurationId - Identifier for the accessControlConfigurationId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onAccessControlConfiguration(indexId: string, accessControlConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }/access-control-configuration/${ accessControlConfigurationId }`);
+  public onIndex(indexId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }`);
   }
 
   /**
@@ -861,21 +888,6 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type experience to the statement
-   *
-   * https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html
-   *
-   * @param indexId - Identifier for the indexId.
-   * @param experienceId - Identifier for the experienceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onExperience(indexId: string, experienceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }/experience/${ experienceId }`);
-  }
-
-  /**
    * Adds a resource of type faq to the statement
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/faq.html
@@ -894,29 +906,27 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type featured-results-set to the statement
+   * Adds a resource of type experience to the statement
    *
-   * https://docs.aws.amazon.com/kendra/latest/dg/featured-results.html
+   * https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html
    *
    * @param indexId - Identifier for the indexId.
-   * @param featuredResultsSetId - Identifier for the featuredResultsSetId.
+   * @param experienceId - Identifier for the experienceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
-  public onFeaturedResultsSet(indexId: string, featuredResultsSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }/featured-results-set/${ featuredResultsSetId }`);
+  public onExperience(indexId: string, experienceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }/experience/${ experienceId }`);
   }
 
   /**
-   * Adds a resource of type index to the statement
+   * Adds a resource of type thesaurus to the statement
    *
-   * https://docs.aws.amazon.com/kendra/latest/dg/index.html
+   * https://docs.aws.amazon.com/kendra/latest/dg/thesaurus.html
    *
    * @param indexId - Identifier for the indexId.
+   * @param thesaurusId - Identifier for the thesaurusId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -924,8 +934,8 @@ export class Kendra extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onIndex(indexId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }`);
+  public onThesaurus(indexId: string, thesaurusId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }/thesaurus/${ thesaurusId }`);
   }
 
   /**
@@ -947,12 +957,12 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type thesaurus to the statement
+   * Adds a resource of type featured-results-set to the statement
    *
-   * https://docs.aws.amazon.com/kendra/latest/dg/thesaurus.html
+   * https://docs.aws.amazon.com/kendra/latest/dg/featured-results.html
    *
    * @param indexId - Identifier for the indexId.
-   * @param thesaurusId - Identifier for the thesaurusId.
+   * @param featuredResultsSetId - Identifier for the featuredResultsSetId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -960,8 +970,23 @@ export class Kendra extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onThesaurus(indexId: string, thesaurusId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }/thesaurus/${ thesaurusId }`);
+  public onFeaturedResultsSet(indexId: string, featuredResultsSetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }/featured-results-set/${ featuredResultsSetId }`);
+  }
+
+  /**
+   * Adds a resource of type access-control-configuration to the statement
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateAccessControlConfiguration.html
+   *
+   * @param indexId - Identifier for the indexId.
+   * @param accessControlConfigurationId - Identifier for the accessControlConfigurationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAccessControlConfiguration(indexId: string, accessControlConfigurationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }/access-control-configuration/${ accessControlConfigurationId }`);
   }
 
   /**
@@ -991,79 +1016,13 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toAssociateEntitiesToExperience()
-   * - .toAssociatePersonasToEntities()
-   * - .toBatchDeleteDocument()
-   * - .toBatchDeleteFeaturedResultsSet()
-   * - .toBatchGetDocumentStatus()
-   * - .toBatchPutDocument()
-   * - .toClearQuerySuggestions()
-   * - .toCreateAccessControlConfiguration()
-   * - .toCreateDataSource()
-   * - .toCreateExperience()
-   * - .toCreateFaq()
-   * - .toCreateFeaturedResultsSet()
-   * - .toCreateQuerySuggestionsBlockList()
-   * - .toCreateThesaurus()
-   * - .toDeleteAccessControlConfiguration()
-   * - .toDeleteDataSource()
-   * - .toDeleteExperience()
-   * - .toDeleteFaq()
-   * - .toDeleteIndex()
-   * - .toDeletePrincipalMapping()
-   * - .toDeleteQuerySuggestionsBlockList()
-   * - .toDeleteThesaurus()
-   * - .toDescribeAccessControlConfiguration()
-   * - .toDescribeDataSource()
-   * - .toDescribeExperience()
-   * - .toDescribeFaq()
-   * - .toDescribeFeaturedResultsSet()
-   * - .toDescribeIndex()
-   * - .toDescribePrincipalMapping()
-   * - .toDescribeQuerySuggestionsBlockList()
-   * - .toDescribeQuerySuggestionsConfig()
-   * - .toDescribeThesaurus()
-   * - .toDisassociateEntitiesFromExperience()
-   * - .toDisassociatePersonasFromEntities()
-   * - .toGetQuerySuggestions()
-   * - .toGetSnapshots()
-   * - .toListAccessControlConfigurations()
-   * - .toListDataSourceSyncJobs()
-   * - .toListDataSources()
-   * - .toListEntityPersonas()
-   * - .toListExperienceEntities()
-   * - .toListExperiences()
-   * - .toListFaqs()
-   * - .toListFeaturedResultsSets()
-   * - .toListGroupsOlderThanOrderingId()
-   * - .toListQuerySuggestionsBlockLists()
-   * - .toListTagsForResource()
-   * - .toListThesauri()
-   * - .toPutPrincipalMapping()
-   * - .toQuery()
-   * - .toRetrieve()
-   * - .toStartDataSourceSyncJob()
-   * - .toStopDataSourceSyncJob()
-   * - .toSubmitFeedback()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateAccessControlConfiguration()
-   * - .toUpdateDataSource()
-   * - .toUpdateExperience()
-   * - .toUpdateFeaturedResultsSet()
-   * - .toUpdateIndex()
-   * - .toUpdateQuerySuggestionsBlockList()
-   * - .toUpdateQuerySuggestionsConfig()
-   * - .toUpdateThesaurus()
-   *
    * Applies to resource types:
+   * - index
    * - data-source
    * - faq
-   * - featured-results-set
-   * - index
-   * - query-suggestions-block-list
    * - thesaurus
+   * - query-suggestions-block-list
+   * - featured-results-set
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

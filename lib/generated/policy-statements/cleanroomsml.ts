@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [cleanrooms-ml](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cleanroomsml.html).
+ * Statement provider for service [cleanrooms-ml](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanroomsml.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class CleanroomsMl extends PolicyStatement {
   public servicePrefix = 'cleanrooms-ml';
 
   /**
-   * Statement provider for service [cleanrooms-ml](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cleanroomsml.html).
+   * Statement provider for service [cleanrooms-ml](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanroomsml.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,6 +23,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CancelTrainedModel.html
    */
   public toCancelTrainedModel() {
@@ -33,6 +37,10 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to cancel a trained model inference job
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CancelTrainedModelInferenceJob.html
    */
@@ -45,6 +53,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CreateAudienceModel.html
    */
   public toCreateAudienceModel() {
@@ -55,6 +67,10 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to create a configured audience model
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CreateConfiguredAudienceModel.html
    */
@@ -82,6 +98,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CreateConfiguredModelAlgorithmAssociation.html
    */
   public toCreateConfiguredModelAlgorithmAssociation() {
@@ -93,6 +113,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CreateMLInputChannel.html
    */
   public toCreateMLInputChannel() {
@@ -103,6 +127,10 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to create a trained model
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CreateTrainedModel.html
    */
@@ -130,6 +158,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteAudienceGenerationJob.html
    */
   public toDeleteAudienceGenerationJob() {
@@ -140,6 +172,10 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to delete the specified audience generation job, and removes all data associated with the job
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteAudienceModel.html
    */
@@ -152,6 +188,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteConfiguredAudienceModel.html
    */
   public toDeleteConfiguredAudienceModel() {
@@ -162,6 +202,10 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to delete the specified configured audience model policy
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteConfiguredAudienceModelPolicy.html
    */
@@ -174,6 +218,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteConfiguredModelAlgorithm.html
    */
   public toDeleteConfiguredModelAlgorithm() {
@@ -184,6 +232,10 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to delete a configured model algorithm association
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteConfiguredModelAlgorithmAssociation.html
    */
@@ -211,6 +263,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteMLInputChannelData.html
    */
   public toDeleteMLInputChannelData() {
@@ -221,6 +277,10 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to delete all output associated with the trained model
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteTrainedModelOutput.html
    */
@@ -233,6 +293,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteTrainingDataset.html
    */
   public toDeleteTrainingDataset() {
@@ -243,6 +307,10 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to return information about an audience generation job
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetAudienceGenerationJob.html
    */
@@ -255,6 +323,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetAudienceModel.html
    */
   public toGetAudienceModel() {
@@ -265,6 +337,11 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to return information about a configured model algorithm association created by any member in the collaboration
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifCollaborationId()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetCollaborationConfiguredModelAlgorithmAssociation.html
    */
@@ -277,6 +354,11 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifCollaborationId()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetCollaborationMLInputChannel.html
    */
   public toGetCollaborationMLInputChannel() {
@@ -287,6 +369,11 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to return information about a trained model created by any member in the collaboration
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifCollaborationId()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetCollaborationTrainedModel.html
    */
@@ -299,6 +386,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetConfiguredAudienceModel.html
    */
   public toGetConfiguredAudienceModel() {
@@ -309,6 +400,10 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to return information about a configured audience model policy
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetConfiguredAudienceModelPolicy.html
    */
@@ -321,6 +416,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetConfiguredModelAlgorithm.html
    */
   public toGetConfiguredModelAlgorithm() {
@@ -331,6 +430,10 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to return information about a configured model algorithm association
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetConfiguredModelAlgorithmAssociation.html
    */
@@ -358,6 +461,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetMLInputChannel.html
    */
   public toGetMLInputChannel() {
@@ -368,6 +475,10 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to return information about a trained model
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetTrainedModel.html
    */
@@ -380,6 +491,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetTrainedModelInferenceJob.html
    */
   public toGetTrainedModelInferenceJob() {
@@ -390,6 +505,10 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to return information about a training dataset
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetTrainingDataset.html
    */
@@ -402,6 +521,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListAudienceExportJobs.html
    */
   public toListAudienceExportJobs() {
@@ -412,6 +535,10 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to return a list of audience generation jobs
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListAudienceGenerationJobs.html
    */
@@ -466,6 +593,11 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to return a list of trained model export jobs started by any member in the collaboration
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifCollaborationId()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListCollaborationTrainedModelExportJobs.html
    */
@@ -566,6 +698,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -631,7 +767,7 @@ export class CleanroomsMl extends PolicyStatement {
   /**
    * Grants permission to create or update the resource policy for a configured audience model
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_PutConfiguredAudienceModelPolicy.html
    */
@@ -659,6 +795,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_StartAudienceExportJob.html
    */
   public toStartAudienceExportJob() {
@@ -669,6 +809,11 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to start the audience generation job
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifCollaborationId()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_StartAudienceGenerationJob.html
    */
@@ -681,6 +826,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_StartTrainedModelExportJob.html
    */
   public toStartTrainedModelExportJob() {
@@ -692,6 +841,10 @@ export class CleanroomsMl extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_StartTrainedModelInferenceJob.html
    */
   public toStartTrainedModelInferenceJob() {
@@ -701,7 +854,12 @@ export class CleanroomsMl extends PolicyStatement {
   /**
    * Grants permission to tag a specific resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_TagResource.html
    */
@@ -712,7 +870,11 @@ export class CleanroomsMl extends PolicyStatement {
   /**
    * Grants permission to untag a specific resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_UntagResource.html
    */
@@ -724,6 +886,10 @@ export class CleanroomsMl extends PolicyStatement {
    * Grants permission to update a configured audience model.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_UpdateConfiguredAudienceModel.html
    */
@@ -752,14 +918,11 @@ export class CleanroomsMl extends PolicyStatement {
       'DeleteMLInputChannelData',
       'DeleteTrainedModelOutput',
       'DeleteTrainingDataset',
-      'PutConfiguredAudienceModelPolicy',
       'PutMLConfiguration',
       'StartAudienceExportJob',
       'StartAudienceGenerationJob',
       'StartTrainedModelExportJob',
       'StartTrainedModelInferenceJob',
-      'TagResource',
-      'UnTagResource',
       'UpdateConfiguredAudienceModel'
     ],
     Read: [
@@ -805,6 +968,66 @@ export class CleanroomsMl extends PolicyStatement {
       'UnTagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type trainingdataset to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTrainingdataset(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms-ml:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:training-dataset/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type audiencemodel to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAudiencemodel(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms-ml:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:audience-model/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type configuredaudiencemodel to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConfiguredaudiencemodel(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms-ml:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configured-audience-model/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type audiencegenerationjob to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAudiencegenerationjob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms-ml:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:audience-generation-job/${ resourceId }`);
+  }
 
   /**
    * Adds a resource of type ConfiguredModelAlgorithm to the statement
@@ -886,66 +1109,6 @@ export class CleanroomsMl extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type audiencegenerationjob to the statement
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onAudiencegenerationjob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms-ml:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:audience-generation-job/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type audiencemodel to the statement
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onAudiencemodel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms-ml:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:audience-model/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type configuredaudiencemodel to the statement
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onConfiguredaudiencemodel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms-ml:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configured-audience-model/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type trainingdataset to the statement
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onTrainingdataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms-ml:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:training-dataset/${ resourceId }`);
-  }
-
-  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1019,58 +1182,20 @@ export class CleanroomsMl extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toCancelTrainedModel()
-   * - .toCancelTrainedModelInferenceJob()
-   * - .toCreateAudienceModel()
-   * - .toCreateConfiguredAudienceModel()
-   * - .toCreateConfiguredModelAlgorithmAssociation()
-   * - .toCreateMLInputChannel()
-   * - .toCreateTrainedModel()
-   * - .toDeleteAudienceGenerationJob()
-   * - .toDeleteAudienceModel()
-   * - .toDeleteConfiguredAudienceModel()
-   * - .toDeleteConfiguredAudienceModelPolicy()
-   * - .toDeleteConfiguredModelAlgorithm()
-   * - .toDeleteConfiguredModelAlgorithmAssociation()
-   * - .toDeleteMLInputChannelData()
-   * - .toDeleteTrainedModelOutput()
-   * - .toDeleteTrainingDataset()
-   * - .toGetAudienceGenerationJob()
-   * - .toGetAudienceModel()
-   * - .toGetCollaborationConfiguredModelAlgorithmAssociation()
-   * - .toGetCollaborationMLInputChannel()
-   * - .toGetCollaborationTrainedModel()
-   * - .toGetConfiguredAudienceModel()
-   * - .toGetConfiguredAudienceModelPolicy()
-   * - .toGetConfiguredModelAlgorithm()
-   * - .toGetConfiguredModelAlgorithmAssociation()
-   * - .toGetMLInputChannel()
-   * - .toGetTrainedModel()
-   * - .toGetTrainedModelInferenceJob()
-   * - .toGetTrainingDataset()
-   * - .toListAudienceExportJobs()
-   * - .toListAudienceGenerationJobs()
-   * - .toListCollaborationTrainedModelExportJobs()
    * - .toListTagsForResource()
-   * - .toPutConfiguredAudienceModelPolicy()
-   * - .toStartAudienceExportJob()
-   * - .toStartAudienceGenerationJob()
-   * - .toStartTrainedModelExportJob()
-   * - .toStartTrainedModelInferenceJob()
    * - .toTagResource()
    * - .toUnTagResource()
-   * - .toUpdateConfiguredAudienceModel()
    *
    * Applies to resource types:
+   * - trainingdataset
+   * - audiencemodel
+   * - configuredaudiencemodel
+   * - audiencegenerationjob
    * - ConfiguredModelAlgorithm
    * - ConfiguredModelAlgorithmAssociation
    * - MLInputChannel
    * - TrainedModel
    * - TrainedModelInferenceJob
-   * - audiencegenerationjob
-   * - audiencemodel
-   * - configuredaudiencemodel
-   * - trainingdataset
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

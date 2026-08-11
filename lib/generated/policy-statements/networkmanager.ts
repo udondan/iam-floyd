@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_networkmanager.html).
+ * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Networkmanager extends PolicyStatement {
   public servicePrefix = 'networkmanager';
 
   /**
-   * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_networkmanager.html).
+   * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -22,6 +22,9 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to accept creation of an attachment between a source and destination in a core network
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AcceptAttachment.html
    */
@@ -45,6 +48,9 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifCgwArn()
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateCustomerGateway.html
    */
   public toAssociateCustomerGateway() {
@@ -67,6 +73,9 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifTgwConnectPeerArn()
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateTransitGatewayConnectPeer.html
    */
   public toAssociateTransitGatewayConnectPeer() {
@@ -77,6 +86,14 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to create a Connect attachment
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateConnectAttachment.html
    */
@@ -89,6 +106,14 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateConnectPeer.html
    */
   public toCreateConnectPeer() {
@@ -100,6 +125,13 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - networkmanager:TagResource
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateConnection.html
    */
   public toCreateConnection() {
@@ -110,6 +142,14 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to create a new core network
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateCoreNetwork.html
    */
@@ -133,6 +173,13 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - networkmanager:TagResource
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateDevice.html
    */
   public toCreateDevice() {
@@ -143,6 +190,16 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to create a Direct Connect gateway attachment
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifDirectConnectGatewayArn()
+   * - .ifEdgeLocations()
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateDirectConnectGatewayAttachment.html
    */
@@ -159,6 +216,10 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - networkmanager:TagResource
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateGlobalNetwork.html
    */
   public toCreateGlobalNetwork() {
@@ -169,6 +230,13 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to create a new link
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - networkmanager:TagResource
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateLink.html
    */
@@ -181,6 +249,13 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - networkmanager:TagResource
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateSite.html
    */
   public toCreateSite() {
@@ -191,6 +266,15 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to create a site-to-site VPN attachment
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifVpnConnectionArn()
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateSiteToSiteVpnAttachment.html
    */
@@ -203,6 +287,15 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifTgwArn()
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateTransitGatewayPeering.html
    */
   public toCreateTransitGatewayPeering() {
@@ -213,6 +306,15 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to create a TGW RTB attachment
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifTgwRtbArn()
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateTransitGatewayRouteTableAttachment.html
    */
@@ -225,6 +327,16 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifVpcArn()
+   * - .ifSubnetArns()
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateVpcAttachment.html
    */
   public toCreateVpcAttachment() {
@@ -236,6 +348,9 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteAttachment.html
    */
   public toDeleteAttachment() {
@@ -246,6 +361,9 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to delete a Connect Peer
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteConnectPeer.html
    */
@@ -268,6 +386,9 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to delete a core network
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteCoreNetwork.html
    */
@@ -335,6 +456,9 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeletePeering.html
    */
   public toDeletePeering() {
@@ -344,7 +468,7 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Grants permission to delete a resource
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteResourcePolicy.html
    */
@@ -367,6 +491,9 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to deregister a transit gateway from a global network
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTgwArn()
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeregisterTransitGateway.html
    */
@@ -401,6 +528,9 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifCgwArn()
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateCustomerGateway.html
    */
   public toDisassociateCustomerGateway() {
@@ -423,6 +553,9 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifTgwConnectPeerArn()
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateTransitGatewayConnectPeer.html
    */
   public toDisassociateTransitGatewayConnectPeer() {
@@ -433,6 +566,9 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to apply changes to the core network
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ExecuteCoreNetworkChangeSet.html
    */
@@ -841,6 +977,9 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -863,6 +1002,9 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_PutCoreNetworkPolicy.html
    */
   public toPutCoreNetworkPolicy() {
@@ -872,7 +1014,7 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Grants permission to create or update a resource policy
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_PutResourcePolicy.html
    */
@@ -884,6 +1026,9 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to register a transit gateway to a global network
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTgwArn()
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RegisterTransitGateway.html
    */
@@ -918,6 +1063,9 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RestoreCoreNetworkPolicyVersion.html
    */
   public toRestoreCoreNetworkPolicyVersion() {
@@ -927,7 +1075,7 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Grants permission to start organization service access update
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_StartOrganizationServiceAccessUpdate.html
    */
@@ -949,7 +1097,12 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Grants permission to tag a Network Manager resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_TagResource.html
    */
@@ -960,7 +1113,10 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Grants permission to untag a Network Manager resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UntagResource.html
    */
@@ -1005,6 +1161,14 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to update a Direct Connect gateway attachment
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifEdgeLocations()
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateDirectConnectGatewayAttachment.html
    */
@@ -1061,6 +1225,14 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifSubnetArns()
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateVpcAttachment.html
    */
   public toUpdateVpcAttachment() {
@@ -1098,7 +1270,6 @@ export class Networkmanager extends PolicyStatement {
       'DeleteGlobalNetwork',
       'DeleteLink',
       'DeletePeering',
-      'DeleteResourcePolicy',
       'DeleteSite',
       'DeregisterTransitGateway',
       'DisassociateConnectPeer',
@@ -1108,15 +1279,11 @@ export class Networkmanager extends PolicyStatement {
       'ExecuteCoreNetworkChangeSet',
       'PutAttachmentRoutingPolicyLabel',
       'PutCoreNetworkPolicy',
-      'PutResourcePolicy',
       'RegisterTransitGateway',
       'RejectAttachment',
       'RemoveAttachmentRoutingPolicyLabel',
       'RestoreCoreNetworkPolicyVersion',
-      'StartOrganizationServiceAccessUpdate',
       'StartRouteAnalysis',
-      'TagResource',
-      'UntagResource',
       'UpdateConnection',
       'UpdateCoreNetwork',
       'UpdateDevice',
@@ -1181,7 +1348,7 @@ export class Networkmanager extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type attachment to the statement
+   * Adds a resource of type global-network to the statement
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
    *
@@ -1192,15 +1359,16 @@ export class Networkmanager extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onAttachment(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:attachment/${ resourceId }`);
+  public onGlobalNetwork(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:global-network/${ resourceId }`);
   }
 
   /**
-   * Adds a resource of type connect-peer to the statement
+   * Adds a resource of type site to the statement
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
    *
+   * @param globalNetworkId - Identifier for the globalNetworkId.
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1208,8 +1376,42 @@ export class Networkmanager extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onConnectPeer(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:connect-peer/${ resourceId }`);
+  public onSite(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:site/${ globalNetworkId }/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type link to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
+   *
+   * @param globalNetworkId - Identifier for the globalNetworkId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLink(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:link/${ globalNetworkId }/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type device to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
+   *
+   * @param globalNetworkId - Identifier for the globalNetworkId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDevice(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:device/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -1246,11 +1448,10 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type device to the statement
+   * Adds a resource of type attachment to the statement
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
    *
-   * @param globalNetworkId - Identifier for the globalNetworkId.
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1258,12 +1459,12 @@ export class Networkmanager extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDevice(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:device/${ globalNetworkId }/${ resourceId }`);
+  public onAttachment(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:attachment/${ resourceId }`);
   }
 
   /**
-   * Adds a resource of type global-network to the statement
+   * Adds a resource of type connect-peer to the statement
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
    *
@@ -1274,25 +1475,8 @@ export class Networkmanager extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onGlobalNetwork(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:global-network/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type link to the statement
-   *
-   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
-   *
-   * @param globalNetworkId - Identifier for the globalNetworkId.
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onLink(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:link/${ globalNetworkId }/${ resourceId }`);
+  public onConnectPeer(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:connect-peer/${ resourceId }`);
   }
 
   /**
@@ -1309,23 +1493,6 @@ export class Networkmanager extends PolicyStatement {
    */
   public onPeering(resourceId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:peering/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type site to the statement
-   *
-   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
-   *
-   * @param globalNetworkId - Identifier for the globalNetworkId.
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onSite(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:networkmanager::${ account ?? this.defaultAccount }:site/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -1365,107 +1532,19 @@ export class Networkmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toAcceptAttachment()
-   * - .toAssociateConnectPeer()
-   * - .toAssociateCustomerGateway()
-   * - .toAssociateLink()
-   * - .toAssociateTransitGatewayConnectPeer()
-   * - .toCreateConnectAttachment()
-   * - .toCreateConnectPeer()
-   * - .toCreateConnection()
-   * - .toCreateCoreNetwork()
-   * - .toCreateCoreNetworkPrefixListAssociation()
-   * - .toCreateDevice()
-   * - .toCreateDirectConnectGatewayAttachment()
-   * - .toCreateLink()
-   * - .toCreateSite()
-   * - .toCreateSiteToSiteVpnAttachment()
-   * - .toCreateTransitGatewayPeering()
-   * - .toCreateTransitGatewayRouteTableAttachment()
-   * - .toCreateVpcAttachment()
-   * - .toDeleteAttachment()
-   * - .toDeleteConnectPeer()
-   * - .toDeleteConnection()
-   * - .toDeleteCoreNetwork()
-   * - .toDeleteCoreNetworkPolicyVersion()
-   * - .toDeleteCoreNetworkPrefixListAssociation()
-   * - .toDeleteDevice()
-   * - .toDeleteGlobalNetwork()
-   * - .toDeleteLink()
-   * - .toDeletePeering()
-   * - .toDeleteResourcePolicy()
-   * - .toDeleteSite()
-   * - .toDeregisterTransitGateway()
-   * - .toDescribeGlobalNetworks()
-   * - .toDisassociateConnectPeer()
-   * - .toDisassociateCustomerGateway()
-   * - .toDisassociateLink()
-   * - .toDisassociateTransitGatewayConnectPeer()
-   * - .toExecuteCoreNetworkChangeSet()
-   * - .toGetConnectAttachment()
-   * - .toGetConnectPeer()
-   * - .toGetConnectPeerAssociations()
-   * - .toGetConnections()
-   * - .toGetCoreNetwork()
-   * - .toGetCoreNetworkChangeEvents()
-   * - .toGetCoreNetworkChangeSet()
-   * - .toGetCoreNetworkPolicy()
-   * - .toGetCustomerGatewayAssociations()
-   * - .toGetDevices()
-   * - .toGetDirectConnectGatewayAttachment()
-   * - .toGetLinkAssociations()
-   * - .toGetLinks()
-   * - .toGetNetworkResourceCounts()
-   * - .toGetNetworkResourceRelationships()
-   * - .toGetNetworkResources()
-   * - .toGetNetworkRoutes()
-   * - .toGetNetworkTelemetry()
-   * - .toGetResourcePolicy()
-   * - .toGetRouteAnalysis()
-   * - .toGetSiteToSiteVpnAttachment()
-   * - .toGetSites()
-   * - .toGetTransitGatewayConnectPeerAssociations()
-   * - .toGetTransitGatewayPeering()
-   * - .toGetTransitGatewayRegistrations()
-   * - .toGetTransitGatewayRouteTableAttachment()
-   * - .toGetVpcAttachment()
-   * - .toListAttachmentRoutingPolicyAssociations()
-   * - .toListAttachments()
-   * - .toListConnectPeers()
-   * - .toListCoreNetworkPolicyVersions()
-   * - .toListCoreNetworkPrefixListAssociations()
-   * - .toListCoreNetworkRoutingInformation()
    * - .toListTagsForResource()
-   * - .toPutAttachmentRoutingPolicyLabel()
-   * - .toPutCoreNetworkPolicy()
-   * - .toPutResourcePolicy()
-   * - .toRegisterTransitGateway()
-   * - .toRejectAttachment()
-   * - .toRemoveAttachmentRoutingPolicyLabel()
-   * - .toRestoreCoreNetworkPolicyVersion()
-   * - .toStartRouteAnalysis()
    * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateConnection()
-   * - .toUpdateCoreNetwork()
-   * - .toUpdateDevice()
-   * - .toUpdateDirectConnectGatewayAttachment()
-   * - .toUpdateGlobalNetwork()
-   * - .toUpdateLink()
-   * - .toUpdateNetworkResourceMetadata()
-   * - .toUpdateSite()
-   * - .toUpdateVpcAttachment()
    *
    * Applies to resource types:
-   * - attachment
-   * - connect-peer
+   * - global-network
+   * - site
+   * - link
+   * - device
    * - connection
    * - core-network
-   * - device
-   * - global-network
-   * - link
+   * - attachment
+   * - connect-peer
    * - peering
-   * - site
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [storagegateway](https://docs.aws.amazon.com/service-authorization/latest/reference/list_storagegateway.html).
+ * Statement provider for service [storagegateway](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsstoragegateway.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Storagegateway extends PolicyStatement {
   public servicePrefix = 'storagegateway';
 
   /**
-   * Statement provider for service [storagegateway](https://docs.aws.amazon.com/service-authorization/latest/reference/list_storagegateway.html).
+   * Statement provider for service [storagegateway](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsstoragegateway.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -47,7 +47,11 @@ export class Storagegateway extends PolicyStatement {
   /**
    * Grants permission to add one or more tags to the specified resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddTagsToResource.html
    */
@@ -92,6 +96,20 @@ export class Storagegateway extends PolicyStatement {
    * Grants permission to associate an Amazon FSx file system with the Amazon FSx file gateway
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ds:DescribeDirectories
+   * - ec2:DescribeNetworkInterfaces
+   * - fsx:DescribeFileSystems
+   * - iam:CreateServiceLinkedRole
+   * - logs:CreateLogDelivery
+   * - logs:GetLogDelivery
+   * - logs:ListLogDeliveries
+   * - logs:UpdateLogDelivery
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AssociateFileSystem.html
    */
@@ -159,6 +177,10 @@ export class Storagegateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateCachediSCSIVolume.html
    */
   public toCreateCachediSCSIVolume() {
@@ -169,6 +191,10 @@ export class Storagegateway extends PolicyStatement {
    * Grants permission to create a NFS file share on an existing file gateway
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateNFSFileShare.html
    */
@@ -181,6 +207,10 @@ export class Storagegateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSMBFileShare.html
    */
   public toCreateSMBFileShare() {
@@ -191,6 +221,10 @@ export class Storagegateway extends PolicyStatement {
    * Grants permission to initiate a snapshot of a volume
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSnapshot.html
    */
@@ -203,6 +237,10 @@ export class Storagegateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSnapshotFromVolumeRecoveryPoint.html
    */
   public toCreateSnapshotFromVolumeRecoveryPoint() {
@@ -213,6 +251,10 @@ export class Storagegateway extends PolicyStatement {
    * Grants permission to create a volume on a specified gateway
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateStorediSCSIVolume.html
    */
@@ -240,6 +282,10 @@ export class Storagegateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateTapeWithBarcode.html
    */
   public toCreateTapeWithBarcode() {
@@ -250,6 +296,10 @@ export class Storagegateway extends PolicyStatement {
    * Grants permission to create one or more virtual tapes. You write data to the virtual tapes and then archive the tapes
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateTapes.html
    */
@@ -821,7 +871,10 @@ export class Storagegateway extends PolicyStatement {
   /**
    * Grants permission to remove one or more tags from the specified resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_RemoveTagsFromResource.html
    */
@@ -911,6 +964,10 @@ export class Storagegateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_StartCacheReport.html
    */
   public toStartCacheReport() {
@@ -976,6 +1033,13 @@ export class Storagegateway extends PolicyStatement {
    * Grants permission to update a file system association
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - logs:CreateLogDelivery
+   * - logs:DeleteLogDelivery
+   * - logs:GetLogDelivery
+   * - logs:ListLogDeliveries
+   * - logs:UpdateLogDelivery
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateFileSystemAssociation.html
    */
@@ -1076,6 +1140,10 @@ export class Storagegateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateSnapshotSchedule.html
    */
   public toUpdateSnapshotSchedule() {
@@ -1097,7 +1165,6 @@ export class Storagegateway extends PolicyStatement {
     Write: [
       'ActivateGateway',
       'AddCache',
-      'AddTagsToResource',
       'AddUploadBuffer',
       'AddWorkingStorage',
       'AssignTapePool',
@@ -1134,7 +1201,6 @@ export class Storagegateway extends PolicyStatement {
       'JoinDomain',
       'NotifyWhenUploaded',
       'RefreshCache',
-      'RemoveTagsFromResource',
       'ResetCache',
       'RetrieveTapeArchive',
       'RetrieveTapeRecoveryPoint',
@@ -1231,9 +1297,6 @@ export class Storagegateway extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
   public onDevice(gatewayId: string, vtldevice: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:storagegateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }/device/${ vtldevice }`);
@@ -1334,9 +1397,6 @@ export class Storagegateway extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
   public onTarget(gatewayId: string, iscsiTarget: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:storagegateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }/target/${ iscsiTarget }`);
@@ -1394,102 +1454,13 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toAddCache()
-   * - .toAddTagsToResource()
-   * - .toAddUploadBuffer()
-   * - .toAddWorkingStorage()
-   * - .toAssignTapePool()
-   * - .toAssociateFileSystem()
-   * - .toAttachVolume()
-   * - .toBypassGovernanceRetention()
-   * - .toCancelArchival()
-   * - .toCancelCacheReport()
-   * - .toCancelRetrieval()
-   * - .toCreateCachediSCSIVolume()
-   * - .toCreateNFSFileShare()
-   * - .toCreateSMBFileShare()
-   * - .toCreateSnapshot()
-   * - .toCreateSnapshotFromVolumeRecoveryPoint()
-   * - .toCreateStorediSCSIVolume()
-   * - .toCreateTapeWithBarcode()
-   * - .toCreateTapes()
-   * - .toDeleteAutomaticTapeCreationPolicy()
-   * - .toDeleteBandwidthRateLimit()
-   * - .toDeleteCacheReport()
-   * - .toDeleteChapCredentials()
-   * - .toDeleteFileShare()
-   * - .toDeleteGateway()
-   * - .toDeleteSnapshotSchedule()
-   * - .toDeleteTape()
-   * - .toDeleteTapePool()
-   * - .toDeleteVolume()
-   * - .toDescribeAvailabilityMonitorTest()
-   * - .toDescribeBandwidthRateLimit()
-   * - .toDescribeBandwidthRateLimitSchedule()
-   * - .toDescribeCache()
-   * - .toDescribeCacheReport()
-   * - .toDescribeCachediSCSIVolumes()
-   * - .toDescribeChapCredentials()
-   * - .toDescribeFileSystemAssociations()
-   * - .toDescribeGatewayInformation()
-   * - .toDescribeMaintenanceStartTime()
-   * - .toDescribeNFSFileShares()
-   * - .toDescribeSMBFileShares()
-   * - .toDescribeSMBSettings()
-   * - .toDescribeSnapshotSchedule()
-   * - .toDescribeStorediSCSIVolumes()
-   * - .toDescribeTapeRecoveryPoints()
-   * - .toDescribeTapes()
-   * - .toDescribeUploadBuffer()
-   * - .toDescribeVTLDevices()
-   * - .toDescribeWorkingStorage()
-   * - .toDetachVolume()
-   * - .toDisableGateway()
-   * - .toDisassociateFileSystem()
-   * - .toEvictFilesFailingUpload()
-   * - .toJoinDomain()
-   * - .toListLocalDisks()
-   * - .toListTagsForResource()
-   * - .toListVolumeInitiators()
-   * - .toListVolumeRecoveryPoints()
-   * - .toNotifyWhenUploaded()
-   * - .toRefreshCache()
-   * - .toRemoveTagsFromResource()
-   * - .toResetCache()
-   * - .toRetrieveTapeArchive()
-   * - .toRetrieveTapeRecoveryPoint()
-   * - .toSetLocalConsolePassword()
-   * - .toSetSMBGuestPassword()
-   * - .toShutdownGateway()
-   * - .toStartAvailabilityMonitorTest()
-   * - .toStartCacheReport()
-   * - .toStartGateway()
-   * - .toUpdateAutomaticTapeCreationPolicy()
-   * - .toUpdateBandwidthRateLimit()
-   * - .toUpdateBandwidthRateLimitSchedule()
-   * - .toUpdateChapCredentials()
-   * - .toUpdateFileSystemAssociation()
-   * - .toUpdateGatewayInformation()
-   * - .toUpdateGatewaySoftwareNow()
-   * - .toUpdateMaintenanceStartTime()
-   * - .toUpdateNFSFileShare()
-   * - .toUpdateSMBFileShare()
-   * - .toUpdateSMBFileShareVisibility()
-   * - .toUpdateSMBLocalGroups()
-   * - .toUpdateSMBSecurityStrategy()
-   * - .toUpdateSnapshotSchedule()
-   * - .toUpdateVTLDeviceType()
-   *
    * Applies to resource types:
    * - cache-report
-   * - device
    * - fs-association
    * - gateway
    * - share
    * - tape
    * - tapepool
-   * - target
    * - volume
    *
    * @param tagKey The tag key to check

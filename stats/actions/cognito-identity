@@ -19,8 +19,8 @@ cognito-identity:LookupDeveloperIdentity;Read
 cognito-identity:MergeDeveloperIdentities;Write
 cognito-identity:SetIdentityPoolRoles;Write
 cognito-identity:SetPrincipalTagAttributeMap;Write
-cognito-identity:TagResource;Tagging, Write
+cognito-identity:TagResource;Tagging
 cognito-identity:UnlinkDeveloperIdentity;Write
 cognito-identity:UnlinkIdentity;Write
-cognito-identity:UntagResource;Tagging, Write
+cognito-identity:UntagResource;Tagging
 cognito-identity:UpdateIdentityPool;Write

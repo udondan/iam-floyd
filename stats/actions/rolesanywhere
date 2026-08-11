@@ -23,8 +23,8 @@ rolesanywhere:ListTrustAnchors;List
 rolesanywhere:PutAttributeMapping;Write
 rolesanywhere:PutNotificationSettings;Write
 rolesanywhere:ResetNotificationSettings;Write
-rolesanywhere:TagResource;Tagging, Write
-rolesanywhere:UntagResource;Tagging, Write
+rolesanywhere:TagResource;Tagging
+rolesanywhere:UntagResource;Tagging
 rolesanywhere:UpdateCrl;Write
 rolesanywhere:UpdateProfile;Write
 rolesanywhere:UpdateTrustAnchor;Write

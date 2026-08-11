@@ -13,7 +13,7 @@ opsworks-cm:ExportServerEngineAttribute;Read
 opsworks-cm:ListTagsForResource;Read
 opsworks-cm:RestoreServer;Write
 opsworks-cm:StartMaintenance;Write
-opsworks-cm:TagResource;Tagging, Write
-opsworks-cm:UntagResource;Tagging, Write
+opsworks-cm:TagResource;Tagging
+opsworks-cm:UntagResource;Tagging
 opsworks-cm:UpdateServer;Write
 opsworks-cm:UpdateServerEngineAttributes;Write

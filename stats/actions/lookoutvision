@@ -20,6 +20,6 @@ lookoutvision:StartModel;Write
 lookoutvision:StartModelPackagingJob;Write
 lookoutvision:StartTrialDetection;Write
 lookoutvision:StopModel;Write
-lookoutvision:TagResource;Tagging, Write
-lookoutvision:UntagResource;Tagging, Write
+lookoutvision:TagResource;Tagging
+lookoutvision:UntagResource;Tagging
 lookoutvision:UpdateDatasetEntries;Write

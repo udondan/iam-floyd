@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement } from '../../shared';
 
 /**
- * Statement provider for service [opsworks](https://docs.aws.amazon.com/service-authorization/latest/reference/list_opsworks.html).
+ * Statement provider for service [opsworks](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsopsworks.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Opsworks extends PolicyStatement {
   public servicePrefix = 'opsworks';
 
   /**
-   * Statement provider for service [opsworks](https://docs.aws.amazon.com/service-authorization/latest/reference/list_opsworks.html).
+   * Statement provider for service [opsworks](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsopsworks.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -626,7 +626,7 @@ export class Opsworks extends PolicyStatement {
   /**
    * Grants permission to specify a user's permissions
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/opsworks/latest/APIReference/API_SetPermission.html
    */
@@ -692,7 +692,7 @@ export class Opsworks extends PolicyStatement {
   /**
    * Grants permission to apply tags to a specified stack or layer
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/opsworks/latest/APIReference/API_TagResource.html
    */
@@ -725,7 +725,7 @@ export class Opsworks extends PolicyStatement {
   /**
    * Grants permission to remove tags from a specified stack or layer
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/opsworks/latest/APIReference/API_UntagResource.html
    */
@@ -813,7 +813,7 @@ export class Opsworks extends PolicyStatement {
   /**
    * Grants permission to update a specified user profile
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/opsworks/latest/APIReference/API_UpdateUserProfile.html
    */
@@ -865,16 +865,13 @@ export class Opsworks extends PolicyStatement {
       'RegisterRdsDbInstance',
       'RegisterVolume',
       'SetLoadBasedAutoScaling',
-      'SetPermission',
       'SetTimeBasedAutoScaling',
       'StartInstance',
       'StartStack',
       'StopInstance',
       'StopStack',
-      'TagResource',
       'UnassignInstance',
       'UnassignVolume',
-      'UntagResource',
       'UpdateApp',
       'UpdateElasticIp',
       'UpdateInstance',
@@ -882,7 +879,6 @@ export class Opsworks extends PolicyStatement {
       'UpdateMyUserProfile',
       'UpdateRdsDbInstance',
       'UpdateStack',
-      'UpdateUserProfile',
       'UpdateVolume'
     ],
     List: [

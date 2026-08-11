@@ -65,8 +65,8 @@ devicefarm:ScheduleRun;Write
 devicefarm:StopJob;Write
 devicefarm:StopRemoteAccessSession;Write
 devicefarm:StopRun;Write
-devicefarm:TagResource;Tagging, Write
-devicefarm:UntagResource;Tagging, Write
+devicefarm:TagResource;Tagging
+devicefarm:UntagResource;Tagging
 devicefarm:UpdateDeviceInstance;Write
 devicefarm:UpdateDevicePool;Write
 devicefarm:UpdateInstanceProfile;Write

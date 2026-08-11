@@ -28,15 +28,15 @@ xray:Link;Write
 xray:ListResourcePolicies;List
 xray:ListRetrievedTraces;List
 xray:ListTagsForResource;List
-xray:PutEncryptionConfig;Permissions management, Write
+xray:PutEncryptionConfig;Permissions management
 xray:PutResourcePolicy;Write
 xray:PutSpans;Write
 xray:PutSpansForIndexing;Write
 xray:PutTelemetryRecords;Write
 xray:PutTraceSegments;Write
 xray:StartTraceRetrieval;Read
-xray:TagResource;Tagging, Write
-xray:UntagResource;Tagging, Write
+xray:TagResource;Tagging
+xray:UntagResource;Tagging
 xray:UpdateGroup;Write
 xray:UpdateIndexingRule;Write
 xray:UpdateSamplingRule;Write

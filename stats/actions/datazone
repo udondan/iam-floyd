@@ -1,7 +1,7 @@
 datazone:AcceptPredictions;Write
 datazone:AcceptSubscriptionRequest;Write
 datazone:AddEntityOwner;Write
-datazone:AddPolicyGrant;Permissions management, Write
+datazone:AddPolicyGrant;Permissions management
 datazone:AssociateEnvironmentRole;Write
 datazone:AssociateGovernedTerms;Write
 datazone:BatchDeleteLinkedTypes;Write
@@ -24,7 +24,6 @@ datazone:CreateConnection;Write
 datazone:CreateDataProduct;Write
 datazone:CreateDataProductRevision;Write
 datazone:CreateDataSource;Write
-datazone:CreateDesignation;Write
 datazone:CreateDomain;Write
 datazone:CreateDomainUnit;Write
 datazone:CreateEnvironment;Write
@@ -55,9 +54,8 @@ datazone:DeleteConnection;Write
 datazone:DeleteDataExportConfiguration;Write
 datazone:DeleteDataProduct;Write
 datazone:DeleteDataSource;Write
-datazone:DeleteDesignation;Write
 datazone:DeleteDomain;Write
-datazone:DeleteDomainSharingPolicy;Permissions management, Write
+datazone:DeleteDomainSharingPolicy;Permissions management
 datazone:DeleteDomainUnit;Write
 datazone:DeleteEnvironment;Write
 datazone:DeleteEnvironmentAction;Write
@@ -91,12 +89,10 @@ datazone:GetCellRunResult;Read
 datazone:GetCompute;Read
 datazone:GetConnection;Read
 datazone:GetConversation;Read
-datazone:GetCurrentEffectivePolicy;Read
 datazone:GetDataExportConfiguration;Read
 datazone:GetDataProduct;Read
 datazone:GetDataSource;Read
 datazone:GetDataSourceRun;Read
-datazone:GetDesignation;Read
 datazone:GetDomain;Read
 datazone:GetDomainExecutionRoleCredentials;Read
 datazone:GetDomainSharingPolicy;Read
@@ -112,7 +108,7 @@ datazone:GetFormType;Read
 datazone:GetGlossary;Read
 datazone:GetGlossaryTerm;Read
 datazone:GetGroupProfile;Read
-datazone:GetIamPortalLoginUrl;Permissions management, Write
+datazone:GetIamPortalLoginUrl;Permissions management
 datazone:GetJobRun;Read
 datazone:GetLineageEvent;Read
 datazone:GetLineageNode;Read
@@ -121,7 +117,6 @@ datazone:GetMetadataGenerationRun;Read
 datazone:GetNotebook;Read
 datazone:GetNotebookCompute;Read
 datazone:GetNotebookExport;Read
-datazone:GetNotebookRun;Read
 datazone:GetProject;Read
 datazone:GetProjectProfile;Read
 datazone:GetRule;Read
@@ -145,7 +140,6 @@ datazone:ListDataProductRevisions;List
 datazone:ListDataSourceRunActivities;List
 datazone:ListDataSourceRuns;List
 datazone:ListDataSources;List
-datazone:ListDesignations;List
 datazone:ListDomainUnitsForParent;List
 datazone:ListDomains;List
 datazone:ListEntityOwners;List
@@ -161,7 +155,6 @@ datazone:ListLineageEvents;List
 datazone:ListLineageNodeHistory;List
 datazone:ListLinkedTypes;List
 datazone:ListMetadataGenerationRuns;List
-datazone:ListNotebookRuns;List
 datazone:ListNotebooks;List
 datazone:ListNotifications;List
 datazone:ListPolicyGrants;List
@@ -181,15 +174,15 @@ datazone:PostTimeSeriesDataPoints;Write
 datazone:ProvisionDomain;Write
 datazone:PutCellRunResult;Write
 datazone:PutDataExportConfiguration;Write
-datazone:PutDomainSharingPolicy;Permissions management, Write
+datazone:PutDomainSharingPolicy;Permissions management
 datazone:PutEnvironmentBlueprintConfiguration;Write
 datazone:QueryGraph;List
 datazone:RefreshToken;Write
 datazone:RejectPredictions;Write
 datazone:RejectSubscriptionRequest;Write
 datazone:RemoveEntityOwner;Write
-datazone:RemovePolicyGrant;Permissions management, Write
-datazone:RevokeSubscription;Permissions management, Write
+datazone:RemovePolicyGrant;Permissions management
+datazone:RevokeSubscription;Permissions management
 datazone:Search;List
 datazone:SearchGroupProfiles;List
 datazone:SearchListings;List
@@ -207,14 +200,12 @@ datazone:StartMetadataGenerationRun;Write
 datazone:StartNotebookCompute;Write
 datazone:StartNotebookExport;Write
 datazone:StartNotebookImport;Write
-datazone:StartNotebookRun;Write
 datazone:StartNotebookSync;Write
 datazone:StopCompute;Write
 datazone:StopMetadataGenerationRun;Write
 datazone:StopNotebookCompute;Write
-datazone:StopNotebookRun;Write
-datazone:TagResource;Tagging, Write
-datazone:UntagResource;Tagging, Write
+datazone:TagResource;Tagging
+datazone:UntagResource;Tagging
 datazone:UpdateAccountPool;Write
 datazone:UpdateAssetFilter;Write
 datazone:UpdateCell;Write
@@ -222,7 +213,6 @@ datazone:UpdateCellRun;Write
 datazone:UpdateConnection;Write
 datazone:UpdateDataSource;Write
 datazone:UpdateDataSourceRunActivities;Write
-datazone:UpdateDesignation;Write
 datazone:UpdateDomain;Write
 datazone:UpdateDomainUnit;Write
 datazone:UpdateEnvironment;Write
@@ -243,4 +233,3 @@ datazone:UpdateSubscriptionRequest;Write
 datazone:UpdateSubscriptionTarget;Write
 datazone:UpdateUserProfile;Write
 datazone:ValidatePassRole;Write
-datazone:ValidatePolicy;Read

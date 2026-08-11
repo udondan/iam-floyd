@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [scn](https://docs.aws.amazon.com/service-authorization/latest/reference/list_supplychain.html).
+ * Statement provider for service [scn](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Scn extends PolicyStatement {
   public servicePrefix = 'scn';
 
   /**
-   * Statement provider for service [scn](https://docs.aws.amazon.com/service-authorization/latest/reference/list_supplychain.html).
+   * Statement provider for service [scn](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -45,6 +45,10 @@ export class Scn extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
    */
   public toCreateDataIntegrationFlow() {
@@ -55,6 +59,10 @@ export class Scn extends PolicyStatement {
    * Grants permission to create the data lake dataset
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
    */
@@ -67,6 +75,10 @@ export class Scn extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
    */
   public toCreateDataLakeNamespace() {
@@ -77,6 +89,10 @@ export class Scn extends PolicyStatement {
    * Grants permission to create a new AWS Supply Chain instance
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
    */
@@ -351,7 +367,11 @@ export class Scn extends PolicyStatement {
   /**
    * Grants permission to tag an AWS Supply Chain resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
    */
@@ -362,7 +382,10 @@ export class Scn extends PolicyStatement {
   /**
    * Grants permission to remove tag from an AWS Supply Chain resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
    */
@@ -430,8 +453,6 @@ export class Scn extends PolicyStatement {
       'DeleteSSOApplication',
       'RemoveAdminPermissionsForUser',
       'SendDataIntegrationEvent',
-      'TagResource',
-      'UntagResource',
       'UpdateDataIntegrationFlow',
       'UpdateDataLakeDataset',
       'UpdateDataLakeNamespace',
@@ -462,6 +483,23 @@ export class Scn extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type instance to the statement
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:scn:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }`);
+  }
 
   /**
    * Adds a resource of type bill-of-materials-import-job to the statement
@@ -497,6 +535,24 @@ export class Scn extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type namespace to the statement
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param namespace - Identifier for the namespace.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onNamespace(instanceId: string, namespace: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:scn:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/namespaces/${ namespace }`);
+  }
+
+  /**
    * Adds a resource of type dataset to the statement
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
@@ -513,41 +569,6 @@ export class Scn extends PolicyStatement {
    */
   public onDataset(instanceId: string, namespace: string, datasetName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:scn:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/namespaces/${ namespace }/datasets/${ datasetName }`);
-  }
-
-  /**
-   * Adds a resource of type instance to the statement
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:scn:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }`);
-  }
-
-  /**
-   * Adds a resource of type namespace to the statement
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param namespace - Identifier for the namespace.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onNamespace(instanceId: string, namespace: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:scn:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/namespaces/${ namespace }`);
   }
 
   /**
@@ -575,48 +596,11 @@ export class Scn extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toAssignAdminPermissionsToUser()
-   * - .toCreateBillOfMaterialsImportJob()
-   * - .toCreateDataIntegrationFlow()
-   * - .toCreateDataLakeDataset()
-   * - .toCreateDataLakeNamespace()
-   * - .toCreateInstance()
-   * - .toCreateSSOApplication()
-   * - .toDeleteDataIntegrationFlow()
-   * - .toDeleteDataLakeDataset()
-   * - .toDeleteDataLakeNamespace()
-   * - .toDeleteInstance()
-   * - .toDeleteSSOApplication()
-   * - .toDescribeInstance()
-   * - .toGetDataIntegrationEvent()
-   * - .toGetDataIntegrationFlow()
-   * - .toGetDataIntegrationFlowExecution()
-   * - .toGetDataLakeDataset()
-   * - .toGetDataLakeNamespace()
-   * - .toGetInstance()
-   * - .toListAdminUsers()
-   * - .toListDataIntegrationEvents()
-   * - .toListDataIntegrationFlowExecutions()
-   * - .toListDataIntegrationFlows()
-   * - .toListDataLakeDatasets()
-   * - .toListDataLakeNamespaces()
-   * - .toListInstances()
-   * - .toListTagsForResource()
-   * - .toRemoveAdminPermissionsForUser()
-   * - .toSendDataIntegrationEvent()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateDataIntegrationFlow()
-   * - .toUpdateDataLakeDataset()
-   * - .toUpdateDataLakeNamespace()
-   * - .toUpdateInstance()
-   *
    * Applies to resource types:
-   * - data-integration-flow
-   * - dataset
    * - instance
+   * - data-integration-flow
    * - namespace
+   * - dataset
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

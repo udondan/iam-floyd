@@ -4,7 +4,6 @@ gameliftstreams:CreateApplication;Write
 gameliftstreams:CreateStreamGroup;Write
 gameliftstreams:CreateStreamSessionAdminShell;Write
 gameliftstreams:CreateStreamSessionConnection;Write
-gameliftstreams:CreateStreamUrl;Write
 gameliftstreams:DeleteApplication;Write
 gameliftstreams:DeleteStreamGroup;Write
 gameliftstreams:DisassociateApplications;Write
@@ -12,19 +11,15 @@ gameliftstreams:ExportStreamSessionFiles;Write
 gameliftstreams:GetApplication;Read
 gameliftstreams:GetStreamGroup;Read
 gameliftstreams:GetStreamSession;Read
-gameliftstreams:GetStreamUrl;Read
-gameliftstreams:ListApplicationShaderCaches;List
 gameliftstreams:ListApplications;List
 gameliftstreams:ListStreamGroups;List
 gameliftstreams:ListStreamSessions;Read
 gameliftstreams:ListStreamSessionsByAccount;Read
-gameliftstreams:ListStreamUrls;List
 gameliftstreams:ListTagsForResource;Read
 gameliftstreams:RemoveStreamGroupLocations;Write
-gameliftstreams:RevokeStreamUrl;Write
 gameliftstreams:StartStreamSession;Write
-gameliftstreams:TagResource;Tagging, Write
+gameliftstreams:TagResource;Tagging
 gameliftstreams:TerminateStreamSession;Write
-gameliftstreams:UntagResource;Tagging, Write
+gameliftstreams:UntagResource;Tagging
 gameliftstreams:UpdateApplication;Write
 gameliftstreams:UpdateStreamGroup;Write

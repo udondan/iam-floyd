@@ -19,8 +19,8 @@ cloud9:GetUserSettings;Read
 cloud9:ListEnvironments;Read
 cloud9:ListTagsForResource;Read
 cloud9:ModifyTemporaryCredentialsOnEnvironmentEC2;Write
-cloud9:TagResource;Tagging, Write
-cloud9:UntagResource;Tagging, Write
+cloud9:TagResource;Tagging
+cloud9:UntagResource;Tagging
 cloud9:UpdateEnvironment;Write
 cloud9:UpdateEnvironmentMembership;Write
 cloud9:UpdateEnvironmentSettings;Write

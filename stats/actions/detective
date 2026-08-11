@@ -29,8 +29,8 @@ detective:RejectInvitation;Write
 detective:SearchGraph;Read
 detective:StartInvestigation;Write
 detective:StartMonitoringMember;Write
-detective:TagResource;Tagging, Write
-detective:UntagResource;Tagging, Write
+detective:TagResource;Tagging
+detective:UntagResource;Tagging
 detective:UpdateDatasourcePackages;Write
 detective:UpdateInvestigationState;Write
 detective:UpdateOrganizationConfiguration;Write

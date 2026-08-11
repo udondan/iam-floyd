@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [cases](https://docs.aws.amazon.com/service-authorization/latest/reference/list_connectcases.html).
+ * Statement provider for service [cases](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcases.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Cases extends PolicyStatement {
   public servicePrefix = 'cases';
 
   /**
-   * Statement provider for service [cases](https://docs.aws.amazon.com/service-authorization/latest/reference/list_connectcases.html).
+   * Statement provider for service [cases](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcases.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -55,6 +55,9 @@ export class Cases extends PolicyStatement {
    * Grants permission to create a case in the case domain
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifConnectUserArn()
    *
    * https://docs.aws.amazon.com/cases/latest/APIReference/API_CreateCase.html
    */
@@ -110,6 +113,9 @@ export class Cases extends PolicyStatement {
    * Grants permission to create a related item associated to a case in the case domain
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifConnectUserArn()
    *
    * https://docs.aws.amazon.com/cases/latest/APIReference/API_CreateRelatedItem.html
    */
@@ -406,7 +412,11 @@ export class Cases extends PolicyStatement {
   /**
    * Grants permission to add the specified tags to the specified resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cases/latest/APIReference/API_TagResource.html
    */
@@ -417,7 +427,10 @@ export class Cases extends PolicyStatement {
   /**
    * Grants permission to remove the specified tags from the specified resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cases/latest/APIReference/API_UntagResource.html
    */
@@ -429,6 +442,9 @@ export class Cases extends PolicyStatement {
    * Grants permission to update the field values on the case in the case domain
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifConnectUserArn()
    *
    * https://docs.aws.amazon.com/cases/latest/APIReference/API_UpdateCase.html
    */
@@ -523,8 +539,6 @@ export class Cases extends PolicyStatement {
       'DeleteRelatedItem',
       'DeleteTemplate',
       'PutCaseEventConfiguration',
-      'TagResource',
-      'UntagResource',
       'UpdateCase',
       'UpdateCaseRule',
       'UpdateField',
@@ -563,24 +577,6 @@ export class Cases extends PolicyStatement {
    */
   public onCase(domainId: string, caseId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:cases:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }/case/${ caseId }`);
-  }
-
-  /**
-   * Adds a resource of type CaseRule to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/case-rules.html
-   *
-   * @param domainId - Identifier for the domainId.
-   * @param caseRuleId - Identifier for the caseRuleId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCaseRule(domainId: string, caseRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cases:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }/case-rule/${ caseRuleId }`);
   }
 
   /**
@@ -676,6 +672,24 @@ export class Cases extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type CaseRule to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/case-rules.html
+   *
+   * @param domainId - Identifier for the domainId.
+   * @param caseRuleId - Identifier for the caseRuleId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCaseRule(domainId: string, caseRuleId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cases:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }/case-rule/${ caseRuleId }`);
+  }
+
+  /**
    * Filters access by tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -696,56 +710,14 @@ export class Cases extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toBatchGetCaseRule()
-   * - .toBatchGetField()
-   * - .toBatchPutFieldOptions()
-   * - .toCreateCase()
-   * - .toCreateCaseRule()
-   * - .toCreateField()
-   * - .toCreateLayout()
-   * - .toCreateRelatedItem()
-   * - .toCreateTemplate()
-   * - .toDeleteCase()
-   * - .toDeleteCaseRule()
-   * - .toDeleteDomain()
-   * - .toDeleteField()
-   * - .toDeleteLayout()
-   * - .toDeleteRelatedItem()
-   * - .toDeleteTemplate()
-   * - .toGetCase()
-   * - .toGetCaseAuditEvents()
-   * - .toGetCaseEventConfiguration()
-   * - .toGetDomain()
-   * - .toGetLayout()
-   * - .toGetTemplate()
-   * - .toListCaseRules()
-   * - .toListCasesForContact()
-   * - .toListFieldOptions()
-   * - .toListFields()
-   * - .toListLayouts()
-   * - .toListTemplates()
-   * - .toPutCaseEventConfiguration()
-   * - .toSearchAllRelatedItems()
-   * - .toSearchCases()
-   * - .toSearchRelatedItems()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateCase()
-   * - .toUpdateCaseRule()
-   * - .toUpdateField()
-   * - .toUpdateLayout()
-   * - .toUpdateRelatedItem()
-   * - .toUpdateTemplate()
-   *
    * Applies to resource types:
    * - Case
-   * - CaseRule
    * - Domain
    * - Field
    * - Layout
    * - RelatedItem
    * - Template
+   * - CaseRule
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -776,13 +748,6 @@ export class Cases extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
    *
-   * Applies to actions:
-   * - .toCreateRelatedItem()
-   * - .toDeleteRelatedItem()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateRelatedItem()
-   *
    * Applies to resource types:
    * - RelatedItem
    *
@@ -797,13 +762,6 @@ export class Cases extends PolicyStatement {
    * Filters access by the type of related item. Possible values: Contact, Comment, File, Sla, ConnectCase, Custom
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
-   *
-   * Applies to actions:
-   * - .toCreateRelatedItem()
-   * - .toDeleteRelatedItem()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateRelatedItem()
    *
    * Applies to resource types:
    * - RelatedItem

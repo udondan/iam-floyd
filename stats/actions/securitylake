@@ -23,8 +23,8 @@ securitylake:ListLogSources;List
 securitylake:ListSubscribers;List
 securitylake:ListTagsForResource;List
 securitylake:RegisterDataLakeDelegatedAdministrator;Write
-securitylake:TagResource;Tagging, Write
-securitylake:UntagResource;Tagging, Write
+securitylake:TagResource;Tagging
+securitylake:UntagResource;Tagging
 securitylake:UpdateDataLake;Write
 securitylake:UpdateDataLakeExceptionSubscription;Write
 securitylake:UpdateSubscriber;Write

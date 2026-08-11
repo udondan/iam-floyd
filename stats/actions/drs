@@ -72,9 +72,9 @@ drs:StartSourceNetworkReplication;Write
 drs:StopFailback;Write
 drs:StopReplication;Write
 drs:StopSourceNetworkReplication;Write
-drs:TagResource;Tagging, Write
+drs:TagResource;Tagging
 drs:TerminateRecoveryInstances;Write
-drs:UntagResource;Tagging, Write
+drs:UntagResource;Tagging
 drs:UpdateAgentBacklogForDrs;Write
 drs:UpdateAgentConversionInfoForDrs;Write
 drs:UpdateAgentReplicationInfoForDrs;Write

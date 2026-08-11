@@ -24,8 +24,8 @@ social-messaging:PostWhatsAppMessageMedia;Write
 social-messaging:PublishWhatsAppFlow;Write
 social-messaging:PutWhatsAppBusinessAccountEventDestinations;Write
 social-messaging:SendWhatsAppMessage;Write
-social-messaging:TagResource;Tagging, Write
-social-messaging:UntagResource;Tagging, Write
+social-messaging:TagResource;Tagging
+social-messaging:UntagResource;Tagging
 social-messaging:UpdateWhatsAppFlow;Write
 social-messaging:UpdateWhatsAppFlowAssets;Write
 social-messaging:UpdateWhatsAppMessageTemplate;Write

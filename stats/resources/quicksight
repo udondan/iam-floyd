@@ -2,7 +2,6 @@ quicksight:account
 quicksight:actionconnector
 quicksight:agent
 quicksight:analysis
-quicksight:app
 quicksight:approvalPolicy
 quicksight:assetBundleExportJob
 quicksight:assetBundleImportJob

@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [dataexchange](https://docs.aws.amazon.com/service-authorization/latest/reference/list_dataexchange.html).
+ * Statement provider for service [dataexchange](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Dataexchange extends PolicyStatement {
   public servicePrefix = 'dataexchange';
 
   /**
-   * Statement provider for service [dataexchange](https://docs.aws.amazon.com/service-authorization/latest/reference/list_dataexchange.html).
+   * Statement provider for service [dataexchange](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -41,9 +41,31 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an asset (for example, in a Job)
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   */
+  public toCreateAsset() {
+    return this.to('CreateAsset');
+  }
+
+  /**
    * Grants permission to create a data grant
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - dataexchange:PublishToDataGrant
    *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateDataGrant.html
    */
@@ -56,6 +78,10 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateDataSet.html
    */
   public toCreateDataSet() {
@@ -66,6 +92,10 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to create an event action
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateEventAction.html
    */
@@ -78,6 +108,9 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifJobType()
+   *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateJob.html
    */
   public toCreateJob() {
@@ -88,6 +121,10 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to create a revision
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateRevision.html
    */
@@ -316,6 +353,32 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
+   * Grants permission to publish a data set to a product
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   */
+  public toPublishDataSet() {
+    return this.to('PublishDataSet');
+  }
+
+  /**
+   * Grants permission to publish a data set to a data grant
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   */
+  public toPublishToDataGrant() {
+    return this.to('PublishToDataGrant');
+  }
+
+  /**
    * Grants permission to revoke subscriber access to a revision
    *
    * Access Level: Write
@@ -353,6 +416,15 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - dataexchange:CreateAsset
+   * - dataexchange:DeleteDataSet
+   * - dataexchange:GetAsset
+   * - dataexchange:GetDataSet
+   * - dataexchange:GetRevision
+   * - dataexchange:PublishDataSet
+   * - redshift:AuthorizeDataShare
+   *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_StartJob.html
    */
   public toStartJob() {
@@ -362,7 +434,11 @@ export class Dataexchange extends PolicyStatement {
   /**
    * Grants permission to add one or more tags to a specified resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_TagResource.html
    */
@@ -373,7 +449,10 @@ export class Dataexchange extends PolicyStatement {
   /**
    * Grants permission to remove one or more tags from a specified resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_UntagResource.html
    */
@@ -419,49 +498,21 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - dataexchange:PublishDataSet
+   * - dataexchange:PublishToDataGrant
+   *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_UpdateRevision.html
    */
   public toUpdateRevision() {
     return this.to('UpdateRevision');
   }
 
-  /**
-   * Grants permission to create an asset (for example, in a Job)
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
-   */
-  public toCreateAsset() {
-    return this.to('CreateAsset');
-  }
-
-  /**
-   * Grants permission to publish a data set to a product
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
-   */
-  public toPublishDataSet() {
-    return this.to('PublishDataSet');
-  }
-
-  /**
-   * Grants permission to publish a data set to a data grant
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
-   */
-  public toPublishToDataGrant() {
-    return this.to('PublishToDataGrant');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptDataGrant',
       'CancelJob',
+      'CreateAsset',
       'CreateDataGrant',
       'CreateDataSet',
       'CreateEventAction',
@@ -472,19 +523,16 @@ export class Dataexchange extends PolicyStatement {
       'DeleteDataSet',
       'DeleteEventAction',
       'DeleteRevision',
+      'PublishDataSet',
+      'PublishToDataGrant',
       'RevokeRevision',
       'SendApiAsset',
       'SendDataSetNotification',
       'StartJob',
-      'TagResource',
-      'UntagResource',
       'UpdateAsset',
       'UpdateDataSet',
       'UpdateEventAction',
-      'UpdateRevision',
-      'CreateAsset',
-      'PublishDataSet',
-      'PublishToDataGrant'
+      'UpdateRevision'
     ],
     Read: [
       'GetAsset',
@@ -512,39 +560,20 @@ export class Dataexchange extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type assets to the statement
+   * Adds a resource of type jobs to the statement
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#assets
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html
    *
-   * @param dataSetId - Identifier for the dataSetId.
-   * @param revisionId - Identifier for the revisionId.
-   * @param assetId - Identifier for the assetId.
+   * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
+   * - .ifJobType()
    */
-  public onAssets(dataSetId: string, revisionId: string, assetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
-  }
-
-  /**
-   * Adds a resource of type data-grants to the statement
-   *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html
-   *
-   * @param dataGrantId - Identifier for the dataGrantId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDataGrants(dataGrantId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-grants/${ dataGrantId }`);
+  public onJobs(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:jobs/${ jobId }`);
   }
 
   /**
@@ -565,21 +594,6 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type entitled-assets to the statement
-   *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#assets
-   *
-   * @param dataSetId - Identifier for the dataSetId.
-   * @param revisionId - Identifier for the revisionId.
-   * @param assetId - Identifier for the assetId.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onEntitledAssets(dataSetId: string, revisionId: string, assetId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }::data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
-  }
-
-  /**
    * Adds a resource of type entitled-data-sets to the statement
    *
    * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html
@@ -590,54 +604,6 @@ export class Dataexchange extends PolicyStatement {
    */
   public onEntitledDataSets(dataSetId: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }::data-sets/${ dataSetId }`);
-  }
-
-  /**
-   * Adds a resource of type entitled-revisions to the statement
-   *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#revisions
-   *
-   * @param dataSetId - Identifier for the dataSetId.
-   * @param revisionId - Identifier for the revisionId.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onEntitledRevisions(dataSetId: string, revisionId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }::data-sets/${ dataSetId }/revisions/${ revisionId }`);
-  }
-
-  /**
-   * Adds a resource of type event-actions to the statement
-   *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html
-   *
-   * @param eventActionId - Identifier for the eventActionId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onEventActions(eventActionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-actions/${ eventActionId }`);
-  }
-
-  /**
-   * Adds a resource of type jobs to the statement
-   *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html
-   *
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifJobType()
-   */
-  public onJobs(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:jobs/${ jobId }`);
   }
 
   /**
@@ -659,18 +625,100 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type entitled-revisions to the statement
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#revisions
+   *
+   * @param dataSetId - Identifier for the dataSetId.
+   * @param revisionId - Identifier for the revisionId.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onEntitledRevisions(dataSetId: string, revisionId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }::data-sets/${ dataSetId }/revisions/${ revisionId }`);
+  }
+
+  /**
+   * Adds a resource of type assets to the statement
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#assets
+   *
+   * @param dataSetId - Identifier for the dataSetId.
+   * @param revisionId - Identifier for the revisionId.
+   * @param assetId - Identifier for the assetId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAssets(dataSetId: string, revisionId: string, assetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
+  }
+
+  /**
+   * Adds a resource of type entitled-assets to the statement
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#assets
+   *
+   * @param dataSetId - Identifier for the dataSetId.
+   * @param revisionId - Identifier for the revisionId.
+   * @param assetId - Identifier for the assetId.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onEntitledAssets(dataSetId: string, revisionId: string, assetId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }::data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
+  }
+
+  /**
+   * Adds a resource of type event-actions to the statement
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html
+   *
+   * @param eventActionId - Identifier for the eventActionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEventActions(eventActionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-actions/${ eventActionId }`);
+  }
+
+  /**
+   * Adds a resource of type data-grants to the statement
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html
+   *
+   * @param dataGrantId - Identifier for the dataGrantId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataGrants(dataGrantId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-grants/${ dataGrantId }`);
+  }
+
+  /**
    * Filters access by the allowed set of values for each of the mandatory tags in the create request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * Applies to actions:
+   * - .toCreateAsset()
    * - .toCreateDataGrant()
    * - .toCreateDataSet()
    * - .toCreateEventAction()
    * - .toCreateRevision()
-   * - .toTagResource()
-   * - .toCreateAsset()
    * - .toPublishToDataGrant()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -685,45 +733,12 @@ export class Dataexchange extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
-   * Applies to actions:
-   * - .toAcceptDataGrant()
-   * - .toCreateDataGrant()
-   * - .toCreateDataSet()
-   * - .toCreateEventAction()
-   * - .toCreateRevision()
-   * - .toDeleteAsset()
-   * - .toDeleteDataGrant()
-   * - .toDeleteDataSet()
-   * - .toDeleteEventAction()
-   * - .toDeleteRevision()
-   * - .toGetAsset()
-   * - .toGetDataGrant()
-   * - .toGetDataSet()
-   * - .toGetEventAction()
-   * - .toGetReceivedDataGrant()
-   * - .toGetRevision()
-   * - .toListDataSetRevisions()
-   * - .toListRevisionAssets()
-   * - .toListTagsForResource()
-   * - .toRevokeRevision()
-   * - .toSendApiAsset()
-   * - .toSendDataSetNotification()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateAsset()
-   * - .toUpdateDataSet()
-   * - .toUpdateEventAction()
-   * - .toUpdateRevision()
-   * - .toCreateAsset()
-   * - .toPublishDataSet()
-   * - .toPublishToDataGrant()
-   *
    * Applies to resource types:
-   * - assets
-   * - data-grants
    * - data-sets
-   * - event-actions
    * - revisions
+   * - assets
+   * - event-actions
+   * - data-grants
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -739,14 +754,14 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * Applies to actions:
+   * - .toCreateAsset()
    * - .toCreateDataGrant()
    * - .toCreateDataSet()
    * - .toCreateEventAction()
    * - .toCreateRevision()
+   * - .toPublishToDataGrant()
    * - .toTagResource()
    * - .toUntagResource()
-   * - .toCreateAsset()
-   * - .toPublishToDataGrant()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -761,10 +776,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/userguide/access-control.html
    *
    * Applies to actions:
-   * - .toCancelJob()
    * - .toCreateJob()
-   * - .toGetJob()
-   * - .toStartJob()
    *
    * Applies to resource types:
    * - jobs

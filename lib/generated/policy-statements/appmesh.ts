@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [appmesh](https://docs.aws.amazon.com/service-authorization/latest/reference/list_appmesh.html).
+ * Statement provider for service [appmesh](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappmesh.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Appmesh extends PolicyStatement {
   public servicePrefix = 'appmesh';
 
   /**
-   * Statement provider for service [appmesh](https://docs.aws.amazon.com/service-authorization/latest/reference/list_appmesh.html).
+   * Statement provider for service [appmesh](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappmesh.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -34,6 +34,10 @@ export class Appmesh extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateMesh.html
    */
   public toCreateMesh() {
@@ -56,6 +60,10 @@ export class Appmesh extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualGateway.html
    */
   public toCreateVirtualGateway() {
@@ -77,6 +85,10 @@ export class Appmesh extends PolicyStatement {
    * Grants permission to create a virtual router within a service mesh
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualRouter.html
    */
@@ -115,6 +127,17 @@ export class Appmesh extends PolicyStatement {
    */
   public toDeleteMesh() {
     return this.to('DeleteMesh');
+  }
+
+  /**
+   * Grants permission to delete the RAM access control policy for a mesh
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html
+   */
+  public toDeleteMeshPolicy() {
+    return this.to('DeleteMeshPolicy');
   }
 
   /**
@@ -250,6 +273,17 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
+   * Grants permission to read the RAM access control policy for a mesh
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html
+   */
+  public toGetMeshPolicy() {
+    return this.to('GetMeshPolicy');
+  }
+
+  /**
    * Grants permission to list existing gateway routes in a service mesh
    *
    * Access Level: List
@@ -338,6 +372,17 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
+   * Grants permission to define the RAM access control policy for a mesh
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html
+   */
+  public toPutMeshPolicy() {
+    return this.to('PutMeshPolicy');
+  }
+
+  /**
    * Grants permission to receive streamed resources for an App Mesh endpoint (VirtualNode/VirtualGateway)
    *
    * Access Level: Read
@@ -351,7 +396,11 @@ export class Appmesh extends PolicyStatement {
   /**
    * Grants permission to tag a resource with a specified resourceArn
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_TagResource.html
    */
@@ -362,7 +411,10 @@ export class Appmesh extends PolicyStatement {
   /**
    * Grants permission to delete a tag from a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UntagResource.html
    */
@@ -447,39 +499,6 @@ export class Appmesh extends PolicyStatement {
     return this.to('UpdateVirtualService');
   }
 
-  /**
-   * Grants permission to delete the RAM access control policy for a mesh
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html
-   */
-  public toDeleteMeshPolicy() {
-    return this.to('DeleteMeshPolicy');
-  }
-
-  /**
-   * Grants permission to read the RAM access control policy for a mesh
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html
-   */
-  public toGetMeshPolicy() {
-    return this.to('GetMeshPolicy');
-  }
-
-  /**
-   * Grants permission to define the RAM access control policy for a mesh
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html
-   */
-  public toPutMeshPolicy() {
-    return this.to('PutMeshPolicy');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateGatewayRoute',
@@ -491,22 +510,20 @@ export class Appmesh extends PolicyStatement {
       'CreateVirtualService',
       'DeleteGatewayRoute',
       'DeleteMesh',
+      'DeleteMeshPolicy',
       'DeleteRoute',
       'DeleteVirtualGateway',
       'DeleteVirtualNode',
       'DeleteVirtualRouter',
       'DeleteVirtualService',
-      'TagResource',
-      'UntagResource',
+      'PutMeshPolicy',
       'UpdateGatewayRoute',
       'UpdateMesh',
       'UpdateRoute',
       'UpdateVirtualGateway',
       'UpdateVirtualNode',
       'UpdateVirtualRouter',
-      'UpdateVirtualService',
-      'DeleteMeshPolicy',
-      'PutMeshPolicy'
+      'UpdateVirtualService'
     ],
     Read: [
       'DescribeGatewayRoute',
@@ -516,8 +533,8 @@ export class Appmesh extends PolicyStatement {
       'DescribeVirtualNode',
       'DescribeVirtualRouter',
       'DescribeVirtualService',
-      'StreamAggregatedResources',
-      'GetMeshPolicy'
+      'GetMeshPolicy',
+      'StreamAggregatedResources'
     ],
     List: [
       'ListGatewayRoutes',
@@ -536,25 +553,6 @@ export class Appmesh extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type gatewayRoute to the statement
-   *
-   * https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html
-   *
-   * @param meshName - Identifier for the meshName.
-   * @param virtualGatewayName - Identifier for the virtualGatewayName.
-   * @param gatewayRouteName - Identifier for the gatewayRouteName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onGatewayRoute(meshName: string, virtualGatewayName: string, gatewayRouteName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }/gatewayRoute/${ gatewayRouteName }`);
-  }
-
-  /**
    * Adds a resource of type mesh to the statement
    *
    * https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html
@@ -569,6 +567,60 @@ export class Appmesh extends PolicyStatement {
    */
   public onMesh(meshName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }`);
+  }
+
+  /**
+   * Adds a resource of type virtualService to the statement
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html
+   *
+   * @param meshName - Identifier for the meshName.
+   * @param virtualServiceName - Identifier for the virtualServiceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVirtualService(meshName: string, virtualServiceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }/virtualService/${ virtualServiceName }`);
+  }
+
+  /**
+   * Adds a resource of type virtualNode to the statement
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html
+   *
+   * @param meshName - Identifier for the meshName.
+   * @param virtualNodeName - Identifier for the virtualNodeName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVirtualNode(meshName: string, virtualNodeName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }/virtualNode/${ virtualNodeName }`);
+  }
+
+  /**
+   * Adds a resource of type virtualRouter to the statement
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html
+   *
+   * @param meshName - Identifier for the meshName.
+   * @param virtualRouterName - Identifier for the virtualRouterName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVirtualRouter(meshName: string, virtualRouterName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }`);
   }
 
   /**
@@ -609,12 +661,13 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type virtualNode to the statement
+   * Adds a resource of type gatewayRoute to the statement
    *
-   * https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html
    *
    * @param meshName - Identifier for the meshName.
-   * @param virtualNodeName - Identifier for the virtualNodeName.
+   * @param virtualGatewayName - Identifier for the virtualGatewayName.
+   * @param gatewayRouteName - Identifier for the gatewayRouteName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -622,44 +675,8 @@ export class Appmesh extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onVirtualNode(meshName: string, virtualNodeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }/virtualNode/${ virtualNodeName }`);
-  }
-
-  /**
-   * Adds a resource of type virtualRouter to the statement
-   *
-   * https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html
-   *
-   * @param meshName - Identifier for the meshName.
-   * @param virtualRouterName - Identifier for the virtualRouterName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onVirtualRouter(meshName: string, virtualRouterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }`);
-  }
-
-  /**
-   * Adds a resource of type virtualService to the statement
-   *
-   * https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html
-   *
-   * @param meshName - Identifier for the meshName.
-   * @param virtualServiceName - Identifier for the virtualServiceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onVirtualService(meshName: string, virtualServiceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }/virtualService/${ virtualServiceName }`);
+  public onGatewayRoute(meshName: string, virtualGatewayName: string, gatewayRouteName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appmesh:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }/gatewayRoute/${ gatewayRouteName }`);
   }
 
   /**
@@ -690,57 +707,14 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toCreateGatewayRoute()
-   * - .toCreateMesh()
-   * - .toCreateRoute()
-   * - .toCreateVirtualGateway()
-   * - .toCreateVirtualNode()
-   * - .toCreateVirtualRouter()
-   * - .toCreateVirtualService()
-   * - .toDeleteGatewayRoute()
-   * - .toDeleteMesh()
-   * - .toDeleteRoute()
-   * - .toDeleteVirtualGateway()
-   * - .toDeleteVirtualNode()
-   * - .toDeleteVirtualRouter()
-   * - .toDeleteVirtualService()
-   * - .toDescribeGatewayRoute()
-   * - .toDescribeMesh()
-   * - .toDescribeRoute()
-   * - .toDescribeVirtualGateway()
-   * - .toDescribeVirtualNode()
-   * - .toDescribeVirtualRouter()
-   * - .toDescribeVirtualService()
-   * - .toListGatewayRoutes()
-   * - .toListRoutes()
-   * - .toListTagsForResource()
-   * - .toListVirtualGateways()
-   * - .toListVirtualNodes()
-   * - .toListVirtualRouters()
-   * - .toListVirtualServices()
-   * - .toStreamAggregatedResources()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateGatewayRoute()
-   * - .toUpdateMesh()
-   * - .toUpdateRoute()
-   * - .toUpdateVirtualGateway()
-   * - .toUpdateVirtualNode()
-   * - .toUpdateVirtualRouter()
-   * - .toUpdateVirtualService()
-   * - .toDeleteMeshPolicy()
-   * - .toGetMeshPolicy()
-   * - .toPutMeshPolicy()
-   *
    * Applies to resource types:
-   * - gatewayRoute
    * - mesh
-   * - route
-   * - virtualGateway
+   * - virtualService
    * - virtualNode
    * - virtualRouter
-   * - virtualService
+   * - route
+   * - virtualGateway
+   * - gatewayRoute
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

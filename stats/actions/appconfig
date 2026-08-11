@@ -35,8 +35,8 @@ appconfig:ListTagsForResource;Read
 appconfig:StartConfigurationSession;Write
 appconfig:StartDeployment;Write
 appconfig:StopDeployment;Write
-appconfig:TagResource;Tagging, Write
-appconfig:UntagResource;Tagging, Write
+appconfig:TagResource;Tagging
+appconfig:UntagResource;Tagging
 appconfig:UpdateAccountSettings;Write
 appconfig:UpdateApplication;Write
 appconfig:UpdateConfigurationProfile;Write

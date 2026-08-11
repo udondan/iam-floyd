@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [signer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_signer.html).
+ * Statement provider for service [signer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssigner.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Signer extends PolicyStatement {
   public servicePrefix = 'signer';
 
   /**
-   * Statement provider for service [signer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_signer.html).
+   * Statement provider for service [signer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssigner.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -21,7 +21,7 @@ export class Signer extends PolicyStatement {
   /**
    * Grants permission to add cross-account permissions to a Signing Profile
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_AddProfilePermission.html
    */
@@ -33,6 +33,9 @@ export class Signer extends PolicyStatement {
    * Grants permission to change the state of a Signing Profile to CANCELED
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifProfileVersion()
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_CancelSigningProfile.html
    */
@@ -77,6 +80,9 @@ export class Signer extends PolicyStatement {
    * Grants permission to return information about a specific Signing Profile
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifProfileVersion()
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_GetSigningProfile.html
    */
@@ -157,7 +163,7 @@ export class Signer extends PolicyStatement {
   /**
    * Grants permission to remove cross-account permissions from a Signing Profile
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_RemoveProfilePermission.html
    */
@@ -170,6 +176,9 @@ export class Signer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifProfileVersion()
+   *
    * https://docs.aws.amazon.com/signer/latest/api/API_RevokeSignature.html
    */
   public toRevokeSignature() {
@@ -180,6 +189,9 @@ export class Signer extends PolicyStatement {
    * Grants permission to change the state of a Signing Profile to REVOKED
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifProfileVersion()
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_RevokeSigningProfile.html
    */
@@ -192,6 +204,9 @@ export class Signer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifProfileVersion()
+   *
    * https://docs.aws.amazon.com/signer/latest/api/API_SignPayload.html
    */
   public toSignPayload() {
@@ -203,6 +218,9 @@ export class Signer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifProfileVersion()
+   *
    * https://docs.aws.amazon.com/signer/latest/api/API_StartSigningJob.html
    */
   public toStartSigningJob() {
@@ -212,7 +230,11 @@ export class Signer extends PolicyStatement {
   /**
    * Grants permission to add one or more tags to a Signing Profile
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_TagResource.html
    */
@@ -223,7 +245,11 @@ export class Signer extends PolicyStatement {
   /**
    * Grants permission to remove one or more tags from a Signing Profile
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_UntagResource.html
    */
@@ -237,16 +263,12 @@ export class Signer extends PolicyStatement {
       'RemoveProfilePermission'
     ],
     Write: [
-      'AddProfilePermission',
       'CancelSigningProfile',
       'PutSigningProfile',
-      'RemoveProfilePermission',
       'RevokeSignature',
       'RevokeSigningProfile',
       'SignPayload',
-      'StartSigningJob',
-      'TagResource',
-      'UntagResource'
+      'StartSigningJob'
     ],
     Read: [
       'DescribeSigningJob',
@@ -268,20 +290,6 @@ export class Signer extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type signing-job to the statement
-   *
-   * https://docs.aws.amazon.com/signer/latest/developerguide/gs-job.html
-   *
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onSigningJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:signer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/signing-jobs/${ jobId }`);
-  }
-
-  /**
    * Adds a resource of type signing-profile to the statement
    *
    * https://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html
@@ -296,6 +304,20 @@ export class Signer extends PolicyStatement {
    */
   public onSigningProfile(profileName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:signer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/signing-profiles/${ profileName }`);
+  }
+
+  /**
+   * Adds a resource of type signing-job to the statement
+   *
+   * https://docs.aws.amazon.com/signer/latest/developerguide/gs-job.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSigningJob(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:signer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/signing-jobs/${ jobId }`);
   }
 
   /**
@@ -320,20 +342,6 @@ export class Signer extends PolicyStatement {
    * Filters access by tag-value associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toAddProfilePermission()
-   * - .toCancelSigningProfile()
-   * - .toGetRevocationStatus()
-   * - .toGetSigningProfile()
-   * - .toListProfilePermissions()
-   * - .toListTagsForResource()
-   * - .toRemoveProfilePermission()
-   * - .toRevokeSigningProfile()
-   * - .toSignPayload()
-   * - .toStartSigningJob()
-   * - .toTagResource()
-   * - .toUntagResource()
    *
    * Applies to resource types:
    * - signing-profile

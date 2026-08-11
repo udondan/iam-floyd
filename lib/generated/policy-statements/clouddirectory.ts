@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement } from '../../shared';
 
 /**
- * Statement provider for service [clouddirectory](https://docs.aws.amazon.com/service-authorization/latest/reference/list_clouddirectory.html).
+ * Statement provider for service [clouddirectory](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonclouddirectory.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Clouddirectory extends PolicyStatement {
   public servicePrefix = 'clouddirectory';
 
   /**
-   * Statement provider for service [clouddirectory](https://docs.aws.amazon.com/service-authorization/latest/reference/list_clouddirectory.html).
+   * Statement provider for service [clouddirectory](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonclouddirectory.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -648,7 +648,7 @@ export class Clouddirectory extends PolicyStatement {
   /**
    * Grants permission to add tags to a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_TagResource.html
    */
@@ -659,7 +659,7 @@ export class Clouddirectory extends PolicyStatement {
   /**
    * Grants permission to remove tags from a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UntagResource.html
    */
@@ -773,8 +773,6 @@ export class Clouddirectory extends PolicyStatement {
       'PublishSchema',
       'PutSchemaFromJson',
       'RemoveFacetFromObject',
-      'TagResource',
-      'UntagResource',
       'UpdateFacet',
       'UpdateLinkAttributes',
       'UpdateObjectAttributes',

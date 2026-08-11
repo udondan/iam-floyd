@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [s3express](https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3express.html).
+ * Statement provider for service [s3express](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class S3express extends PolicyStatement {
   public servicePrefix = 's3express';
 
   /**
-   * Statement provider for service [s3express](https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3express.html).
+   * Statement provider for service [s3express](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,6 +23,19 @@ export class S3express extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifLocationName()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html
    */
   public toCreateAccessPoint() {
@@ -33,6 +46,16 @@ export class S3express extends PolicyStatement {
    * Grants permission to create a new bucket
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifLocationName()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html
    */
@@ -45,6 +68,19 @@ export class S3express extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSessionMode()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifXAmzServerSideEncryption()
+   * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
+   * - .ifAllAccessRestrictedToLocalZoneGroup()
+   * - .ifPermissions()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html
    */
   public toCreateSession() {
@@ -56,6 +92,16 @@ export class S3express extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html
    */
   public toDeleteAccessPoint() {
@@ -65,7 +111,17 @@ export class S3express extends PolicyStatement {
   /**
    * Grants permission to delete the policy on a specified access point
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html
    */
@@ -76,7 +132,17 @@ export class S3express extends PolicyStatement {
   /**
    * Grants permission to delete the scope configuration on a specified access point
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointScope.html
    */
@@ -89,6 +155,13 @@ export class S3express extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html
    */
   public toDeleteBucket() {
@@ -98,7 +171,14 @@ export class S3express extends PolicyStatement {
   /**
    * Grants permission to delete the policy on a specified bucket
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html
    */
@@ -111,6 +191,16 @@ export class S3express extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html
    */
   public toGetAccessPoint() {
@@ -121,6 +211,16 @@ export class S3express extends PolicyStatement {
    * Grants permission to return the access point policy associated with the specified access point
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicy.html
    */
@@ -133,6 +233,16 @@ export class S3express extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointScope.html
    */
   public toGetAccessPointScope() {
@@ -143,6 +253,13 @@ export class S3express extends PolicyStatement {
    * Grants permission to return the policy of the specified bucket
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html
    */
@@ -155,6 +272,13 @@ export class S3express extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html
    */
   public toGetEncryptionConfiguration() {
@@ -165,6 +289,13 @@ export class S3express extends PolicyStatement {
    * Grants permission to return an inventory configuration identified by the inventory configuration ID for a S3 directory bucket
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html
    */
@@ -177,6 +308,13 @@ export class S3express extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html
    */
   public toGetLifecycleConfiguration() {
@@ -187,6 +325,13 @@ export class S3express extends PolicyStatement {
    * Grants permission to get a metrics configuration of a directory bucket
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html
    */
@@ -235,6 +380,13 @@ export class S3express extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -244,7 +396,17 @@ export class S3express extends PolicyStatement {
   /**
    * Grants permission to associate an access policy with a specified access point
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html
    */
@@ -255,7 +417,17 @@ export class S3express extends PolicyStatement {
   /**
    * Grants permission to associate an access point with a specified access point scope configuration
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointScope.html
    */
@@ -266,7 +438,14 @@ export class S3express extends PolicyStatement {
   /**
    * Grants permission to add or replace a bucket policy on a bucket
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html
    */
@@ -279,6 +458,13 @@ export class S3express extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html
    */
   public toPutEncryptionConfiguration() {
@@ -289,6 +475,14 @@ export class S3express extends PolicyStatement {
    * Grants permission to add an inventory configuration to the bucket, identified by the inventory ID
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifInventoryAccessibleOptionalFields()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html
    */
@@ -301,6 +495,13 @@ export class S3express extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html
    */
   public toPutLifecycleConfiguration() {
@@ -312,6 +513,13 @@ export class S3express extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html
    */
   public toPutMetricsConfiguration() {
@@ -321,7 +529,16 @@ export class S3express extends PolicyStatement {
   /**
    * Grants permission to create a new user-defined tag or update an existing tag
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html
    */
@@ -332,7 +549,15 @@ export class S3express extends PolicyStatement {
   /**
    * Grants permission to remove the specified user-defined tags from an S3 resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html
    */
@@ -346,19 +571,11 @@ export class S3express extends PolicyStatement {
       'CreateBucket',
       'CreateSession',
       'DeleteAccessPoint',
-      'DeleteAccessPointPolicy',
-      'DeleteAccessPointScope',
       'DeleteBucket',
-      'DeleteBucketPolicy',
-      'PutAccessPointPolicy',
-      'PutAccessPointScope',
-      'PutBucketPolicy',
       'PutEncryptionConfiguration',
       'PutInventoryConfiguration',
       'PutLifecycleConfiguration',
-      'PutMetricsConfiguration',
-      'TagResource',
-      'UntagResource'
+      'PutMetricsConfiguration'
     ],
     'Permissions management': [
       'DeleteAccessPointPolicy',
@@ -390,24 +607,6 @@ export class S3express extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type accesspoint to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html
-   *
-   * @param accessPointName - Identifier for the accessPointName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAccessPointTag()
-   */
-  public onAccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:s3express:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accesspoint/${ accessPointName }`);
-  }
-
-  /**
    * Adds a resource of type bucket to the statement
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html
@@ -423,6 +622,24 @@ export class S3express extends PolicyStatement {
    */
   public onBucket(bucketName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3express:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bucket/${ bucketName }`);
+  }
+
+  /**
+   * Adds a resource of type accesspoint to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html
+   *
+   * @param accessPointName - Identifier for the accessPointName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAccessPointTag()
+   */
+  public onAccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3express:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accesspoint/${ accessPointName }`);
   }
 
   /**
@@ -448,37 +665,9 @@ export class S3express extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html#example-user-policy-resource-tag
    *
-   * Applies to actions:
-   * - .toCreateAccessPoint()
-   * - .toCreateBucket()
-   * - .toCreateSession()
-   * - .toDeleteAccessPoint()
-   * - .toDeleteAccessPointPolicy()
-   * - .toDeleteAccessPointScope()
-   * - .toDeleteBucket()
-   * - .toDeleteBucketPolicy()
-   * - .toGetAccessPoint()
-   * - .toGetAccessPointPolicy()
-   * - .toGetAccessPointScope()
-   * - .toGetBucketPolicy()
-   * - .toGetEncryptionConfiguration()
-   * - .toGetInventoryConfiguration()
-   * - .toGetLifecycleConfiguration()
-   * - .toGetMetricsConfiguration()
-   * - .toListTagsForResource()
-   * - .toPutAccessPointPolicy()
-   * - .toPutAccessPointScope()
-   * - .toPutBucketPolicy()
-   * - .toPutEncryptionConfiguration()
-   * - .toPutInventoryConfiguration()
-   * - .toPutLifecycleConfiguration()
-   * - .toPutMetricsConfiguration()
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
    * Applies to resource types:
-   * - accesspoint
    * - bucket
+   * - accesspoint
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -534,21 +723,6 @@ export class S3express extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html#example-access-points-db-policy-bucket-tag
    *
-   * Applies to actions:
-   * - .toCreateAccessPoint()
-   * - .toCreateSession()
-   * - .toDeleteAccessPoint()
-   * - .toDeleteAccessPointPolicy()
-   * - .toDeleteAccessPointScope()
-   * - .toGetAccessPoint()
-   * - .toGetAccessPointPolicy()
-   * - .toGetAccessPointScope()
-   * - .toListTagsForResource()
-   * - .toPutAccessPointPolicy()
-   * - .toPutAccessPointScope()
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
    * Applies to resource types:
    * - accesspoint
    *
@@ -577,25 +751,6 @@ export class S3express extends PolicyStatement {
    * Filters access by tag key-value pairs attached to the bucket
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html#example-policy-bucket-tag
-   *
-   * Applies to actions:
-   * - .toCreateBucket()
-   * - .toCreateSession()
-   * - .toDeleteBucket()
-   * - .toDeleteBucketPolicy()
-   * - .toGetBucketPolicy()
-   * - .toGetEncryptionConfiguration()
-   * - .toGetInventoryConfiguration()
-   * - .toGetLifecycleConfiguration()
-   * - .toGetMetricsConfiguration()
-   * - .toListTagsForResource()
-   * - .toPutBucketPolicy()
-   * - .toPutEncryptionConfiguration()
-   * - .toPutInventoryConfiguration()
-   * - .toPutLifecycleConfiguration()
-   * - .toPutMetricsConfiguration()
-   * - .toTagResource()
-   * - .toUntagResource()
    *
    * Applies to resource types:
    * - bucket

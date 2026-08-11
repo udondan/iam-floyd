@@ -23,9 +23,9 @@ tnb:ListSolNetworkPackages;List
 tnb:ListTagsForResource;List
 tnb:PutSolFunctionPackageContent;Write
 tnb:PutSolNetworkPackageContent;Write
-tnb:TagResource;Tagging, Write
+tnb:TagResource;Tagging
 tnb:TerminateSolNetworkInstance;Write
-tnb:UntagResource;Tagging, Write
+tnb:UntagResource;Tagging
 tnb:UpdateSolFunctionPackage;Write
 tnb:UpdateSolNetworkInstance;Write
 tnb:UpdateSolNetworkPackage;Write

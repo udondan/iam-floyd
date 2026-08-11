@@ -2,10 +2,10 @@ s3express:CreateAccessPoint;Write
 s3express:CreateBucket;Write
 s3express:CreateSession;Write
 s3express:DeleteAccessPoint;Write
-s3express:DeleteAccessPointPolicy;Permissions management, Write
-s3express:DeleteAccessPointScope;Permissions management, Write
+s3express:DeleteAccessPointPolicy;Permissions management
+s3express:DeleteAccessPointScope;Permissions management
 s3express:DeleteBucket;Write
-s3express:DeleteBucketPolicy;Permissions management, Write
+s3express:DeleteBucketPolicy;Permissions management
 s3express:GetAccessPoint;Read
 s3express:GetAccessPointPolicy;Read
 s3express:GetAccessPointScope;Read
@@ -17,12 +17,12 @@ s3express:GetMetricsConfiguration;Read
 s3express:ListAccessPointsForDirectoryBuckets;List
 s3express:ListAllMyDirectoryBuckets;List
 s3express:ListTagsForResource;List
-s3express:PutAccessPointPolicy;Permissions management, Write
-s3express:PutAccessPointScope;Permissions management, Write
-s3express:PutBucketPolicy;Permissions management, Write
+s3express:PutAccessPointPolicy;Permissions management
+s3express:PutAccessPointScope;Permissions management
+s3express:PutBucketPolicy;Permissions management
 s3express:PutEncryptionConfiguration;Write
 s3express:PutInventoryConfiguration;Write
 s3express:PutLifecycleConfiguration;Write
 s3express:PutMetricsConfiguration;Write
-s3express:TagResource;Tagging, Write
-s3express:UntagResource;Tagging, Write
+s3express:TagResource;Tagging
+s3express:UntagResource;Tagging

@@ -29,7 +29,7 @@ logs:DeleteLookupTable;Write
 logs:DeleteMetricFilter;Write
 logs:DeletePipelineRule;Write
 logs:DeleteQueryDefinition;Write
-logs:DeleteResourcePolicy;Permissions management, Write
+logs:DeleteResourcePolicy;Permissions management
 logs:DeleteRetentionPolicy;Write
 logs:DeleteScheduledQuery;Write
 logs:DeleteSubscriptionFilter;Write
@@ -73,7 +73,6 @@ logs:GetLookupTable;Read
 logs:GetQueryResults;Read
 logs:GetScheduledQuery;Read
 logs:GetScheduledQueryHistory;Read
-logs:GetStorageTierPolicy;Read
 logs:GetTransformer;Read
 logs:IntegrateWithS3Table;Write
 logs:Link;Write
@@ -107,9 +106,8 @@ logs:PutLogGroupDeletionProtection;Write
 logs:PutMetricFilter;Write
 logs:PutPipelineRule;Write
 logs:PutQueryDefinition;Write
-logs:PutResourcePolicy;Permissions management, Write
+logs:PutResourcePolicy;Permissions management
 logs:PutRetentionPolicy;Write
-logs:PutStorageTierPolicy;Write
 logs:PutSubscriptionFilter;Write
 logs:PutSyslogConfiguration;Write
 logs:PutTransformer;Write
@@ -117,13 +115,13 @@ logs:StartLiveTail;Read
 logs:StartQuery;Read
 logs:StopLiveTail;Read
 logs:StopQuery;Read
-logs:TagLogGroup;Tagging, Write
-logs:TagResource;Tagging, Write
+logs:TagLogGroup;Tagging
+logs:TagResource;Tagging
 logs:TestMetricFilter;Read
 logs:TestTransformer;Read
 logs:Unmask;Read
-logs:UntagLogGroup;Tagging, Write
-logs:UntagResource;Tagging, Write
+logs:UntagLogGroup;Tagging
+logs:UntagResource;Tagging
 logs:UpdateAnomaly;Write
 logs:UpdateDeliveryConfiguration;Write
 logs:UpdateLogAnomalyDetector;Write

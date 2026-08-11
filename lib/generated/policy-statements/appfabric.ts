@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [appfabric](https://docs.aws.amazon.com/service-authorization/latest/reference/list_appfabric.html).
+ * Statement provider for service [appfabric](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappfabric.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Appfabric extends PolicyStatement {
   public servicePrefix = 'appfabric';
 
   /**
-   * Statement provider for service [appfabric](https://docs.aws.amazon.com/service-authorization/latest/reference/list_appfabric.html).
+   * Statement provider for service [appfabric](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappfabric.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -45,6 +45,10 @@ export class Appfabric extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/appfabric/latest/api/API_CreateAppAuthorization.html
    */
   public toCreateAppAuthorization() {
@@ -71,6 +75,10 @@ export class Appfabric extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/appfabric/latest/api/API_CreateIngestion.html
    */
   public toCreateIngestion() {
@@ -81,6 +89,10 @@ export class Appfabric extends PolicyStatement {
    * Grants permission to create ingestion destinations for app bundles
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/appfabric/latest/api/API_CreateIngestionDestination.html
    */
@@ -137,6 +149,9 @@ export class Appfabric extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/appfabric/latest/api/API_GetAppAuthorization.html
    */
   public toGetAppAuthorization() {
@@ -147,6 +162,9 @@ export class Appfabric extends PolicyStatement {
    * Grants permission to view details about app bundles
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appfabric/latest/api/API_GetAppBundle.html
    */
@@ -159,6 +177,9 @@ export class Appfabric extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/appfabric/latest/api/API_GetIngestion.html
    */
   public toGetIngestion() {
@@ -169,6 +190,9 @@ export class Appfabric extends PolicyStatement {
    * Grants permission to view details about ingestion destinations
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appfabric/latest/api/API_GetIngestionDestination.html
    */
@@ -267,7 +291,12 @@ export class Appfabric extends PolicyStatement {
   /**
    * Grants permission to tag AppFabric resources
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appfabric/latest/api/API_TagResource.html
    */
@@ -278,7 +307,10 @@ export class Appfabric extends PolicyStatement {
   /**
    * Grants permission to untag AppFabric resources
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/appfabric/latest/api/API_UntagResource.html
    */
@@ -291,6 +323,9 @@ export class Appfabric extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/appfabric/latest/api/API_UpdateAppAuthorization.html
    */
   public toUpdateAppAuthorization() {
@@ -301,6 +336,9 @@ export class Appfabric extends PolicyStatement {
    * Grants permission to update destinations within ingestions
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appfabric/latest/api/API_UpdateIngestionDestination.html
    */
@@ -323,8 +361,6 @@ export class Appfabric extends PolicyStatement {
       'StartIngestion',
       'StartUserAccessTasks',
       'StopIngestion',
-      'TagResource',
-      'UntagResource',
       'UpdateAppAuthorization',
       'UpdateIngestionDestination'
     ],
@@ -348,6 +384,23 @@ export class Appfabric extends PolicyStatement {
   };
 
   /**
+   * Adds a resource of type appbundle to the statement
+   *
+   * https://docs.aws.amazon.com/appfabric/latest/api/API_AppBundle.html
+   *
+   * @param appBundleIdentifier - Identifier for the appBundleIdentifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAppbundle(appBundleIdentifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appfabric:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:appbundle/${ appBundleIdentifier }`);
+  }
+
+  /**
    * Adds a resource of type appauthorization to the statement
    *
    * https://docs.aws.amazon.com/appfabric/latest/api/API_AppAuthorization.html
@@ -363,23 +416,6 @@ export class Appfabric extends PolicyStatement {
    */
   public onAppauthorization(appbundleId: string, appAuthorizationIdentifier: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:appfabric:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:appbundle/${ appbundleId }/appauthorization/${ appAuthorizationIdentifier }`);
-  }
-
-  /**
-   * Adds a resource of type appbundle to the statement
-   *
-   * https://docs.aws.amazon.com/appfabric/latest/api/API_AppBundle.html
-   *
-   * @param appBundleIdentifier - Identifier for the appBundleIdentifier.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onAppbundle(appBundleIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appfabric:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:appbundle/${ appBundleIdentifier }`);
   }
 
   /**
@@ -445,34 +481,17 @@ export class Appfabric extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toBatchGetUserAccessTasks()
-   * - .toConnectAppAuthorization()
-   * - .toCreateAppAuthorization()
-   * - .toCreateIngestion()
-   * - .toCreateIngestionDestination()
-   * - .toDeleteAppAuthorization()
-   * - .toDeleteAppBundle()
-   * - .toDeleteIngestion()
-   * - .toDeleteIngestionDestination()
    * - .toGetAppAuthorization()
    * - .toGetAppBundle()
    * - .toGetIngestion()
    * - .toGetIngestionDestination()
-   * - .toListAppAuthorizations()
-   * - .toListIngestionDestinations()
-   * - .toListIngestions()
-   * - .toListTagsForResource()
-   * - .toStartIngestion()
-   * - .toStartUserAccessTasks()
-   * - .toStopIngestion()
    * - .toTagResource()
-   * - .toUntagResource()
    * - .toUpdateAppAuthorization()
    * - .toUpdateIngestionDestination()
    *
    * Applies to resource types:
-   * - appauthorization
    * - appbundle
+   * - appauthorization
    * - ingestion
    * - ingestiondestination
    *

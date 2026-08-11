@@ -38,23 +38,22 @@ odb:GetOdbPeeringConnection;Read
 odb:GetResourcePolicy;Read
 odb:InitializeService;Write
 odb:ListAutonomousDatabaseBackups;List
-odb:ListAutonomousDatabaseCharacterSets;List
-odb:ListAutonomousDatabaseClones;List
-odb:ListAutonomousDatabasePeers;List
-odb:ListAutonomousDatabaseVersions;List
+odb:ListAutonomousDatabaseCharacterSets;Read
+odb:ListAutonomousDatabaseClones;Read
+odb:ListAutonomousDatabasePeers;Read
+odb:ListAutonomousDatabaseVersions;Read
 odb:ListAutonomousDatabases;List
-odb:ListAutonomousVirtualMachines;List
+odb:ListAutonomousVirtualMachines;Read
 odb:ListCloudAutonomousVmClusters;List
 odb:ListCloudExadataInfrastructures;List
 odb:ListCloudVmClusters;List
 odb:ListDbNodes;List
-odb:ListDbServers;List
-odb:ListDbSystemShapes;List
-odb:ListFlexComponents;List
-odb:ListGiVersions;List
+odb:ListDbServers;Read
+odb:ListDbSystemShapes;Read
+odb:ListGiVersions;Read
 odb:ListOdbNetworks;List
 odb:ListOdbPeeringConnections;List
-odb:ListSystemVersions;List
+odb:ListSystemVersions;Read
 odb:ListTagsForResource;Read
 odb:PutResourcePolicy;Write
 odb:RebootAutonomousDatabase;Write
@@ -66,8 +65,8 @@ odb:StartDbNode;Write
 odb:StopAutonomousDatabase;Write
 odb:StopDbNode;Write
 odb:SwitchoverAutonomousDatabase;Write
-odb:TagResource;Tagging, Write
-odb:UntagResource;Tagging, Write
+odb:TagResource;Tagging
+odb:UntagResource;Tagging
 odb:UpdateAutonomousDatabase;Write
 odb:UpdateAutonomousDatabaseBackup;Write
 odb:UpdateCloudExadataInfrastructure;Write

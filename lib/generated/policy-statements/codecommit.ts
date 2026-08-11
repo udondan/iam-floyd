@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [codecommit](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codecommit.html).
+ * Statement provider for service [codecommit](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodecommit.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Codecommit extends PolicyStatement {
   public servicePrefix = 'codecommit';
 
   /**
-   * Statement provider for service [codecommit](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codecommit.html).
+   * Statement provider for service [codecommit](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodecommit.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -74,6 +74,17 @@ export class Codecommit extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return information about one or more pull requests in an AWS CodeCommit repository
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-pr
+   */
+  public toBatchGetPullRequests() {
+    return this.to('BatchGetPullRequests');
+  }
+
+  /**
    * Grants permission to get information about multiple repositories
    *
    * Access Level: Read
@@ -82,6 +93,17 @@ export class Codecommit extends PolicyStatement {
    */
   public toBatchGetRepositories() {
     return this.to('BatchGetRepositories');
+  }
+
+  /**
+   * Grants permission to cancel the uploading of an archive to a pipeline in AWS CodePipeline
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-acp
+   */
+  public toCancelUploadArchive() {
+    return this.to('CancelUploadArchive');
   }
 
   /**
@@ -100,6 +122,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifReferences()
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateBranch.html
    */
   public toCreateBranch() {
@@ -110,6 +135,9 @@ export class Codecommit extends PolicyStatement {
    * Grants permission to add, copy, move or update single or multiple files in a branch in an AWS CodeCommit repository, and generate a commit for the changes in the specified branch
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateCommit.html
    */
@@ -144,6 +172,10 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateRepository.html
    */
   public toCreateRepository() {
@@ -154,6 +186,9 @@ export class Codecommit extends PolicyStatement {
    * Grants permission to create an unreferenced commit that contains the result of merging two commits using either the three-way or the squash merge option; does not control Git merge actions
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateUnreferencedMergeCommit.html
    */
@@ -177,6 +212,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifReferences()
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_DeleteBranch.html
    */
   public toDeleteBranch() {
@@ -198,6 +236,9 @@ export class Codecommit extends PolicyStatement {
    * Grants permission to delete a specified file from a specified branch
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_DeleteFile.html
    */
@@ -360,6 +401,28 @@ export class Codecommit extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about the history of commits in a repository
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
+   */
+  public toGetCommitHistory() {
+    return this.to('GetCommitHistory');
+  }
+
+  /**
+   * Grants permission to get information about the difference between commits in the context of a potential merge
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-pr
+   */
+  public toGetCommitsFromMergeBase() {
+    return this.to('GetCommitsFromMergeBase');
+  }
+
+  /**
    * Grants permission to view information about the differences between valid commit specifiers such as a branch, tag, HEAD, commit ID, or other fully qualified reference
    *
    * Access Level: Read
@@ -397,6 +460,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifReferences()
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetMergeCommit.html
    */
   public toGetMergeCommit() {
@@ -423,6 +489,17 @@ export class Codecommit extends PolicyStatement {
    */
   public toGetMergeOptions() {
     return this.to('GetMergeOptions');
+  }
+
+  /**
+   * Grants permission to resolve blobs, trees, and commits to their identifier
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
+   */
+  public toGetObjectIdentifier() {
+    return this.to('GetObjectIdentifier');
   }
 
   /**
@@ -459,6 +536,17 @@ export class Codecommit extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details about references in an AWS CodeCommit repository; does not control Git reference actions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
+   */
+  public toGetReferences() {
+    return this.to('GetReferences');
+  }
+
+  /**
    * Grants permission to get information about an AWS CodeCommit repository
    *
    * Access Level: Read
@@ -478,6 +566,53 @@ export class Codecommit extends PolicyStatement {
    */
   public toGetRepositoryTriggers() {
     return this.to('GetRepositoryTriggers');
+  }
+
+  /**
+   * Grants permission to view the contents of a specified tree in an AWS CodeCommit repository from the AWS CodeCommit console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
+   */
+  public toGetTree() {
+    return this.to('GetTree');
+  }
+
+  /**
+   * Grants permission to get status information about an archive upload to a pipeline in AWS CodePipeline
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-acp
+   */
+  public toGetUploadArchiveStatus() {
+    return this.to('GetUploadArchiveStatus');
+  }
+
+  /**
+   * Grants permission to pull information from an AWS CodeCommit repository to a local repo
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-git
+   */
+  public toGitPull() {
+    return this.to('GitPull');
+  }
+
+  /**
+   * Grants permission to push information from a local repo to an AWS CodeCommit repository
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifReferences()
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-git
+   */
+  public toGitPush() {
+    return this.to('GitPush');
   }
 
   /**
@@ -573,6 +708,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifReferences()
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergeBranchesByFastForward.html
    */
   public toMergeBranchesByFastForward() {
@@ -583,6 +721,9 @@ export class Codecommit extends PolicyStatement {
    * Grants permission to merge two commits into the specified destination branch using the squash merge option
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergeBranchesBySquash.html
    */
@@ -595,6 +736,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifReferences()
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergeBranchesByThreeWay.html
    */
   public toMergeBranchesByThreeWay() {
@@ -605,6 +749,9 @@ export class Codecommit extends PolicyStatement {
    * Grants permission to close a pull request and attempt to merge it into the specified destination branch for that pull request at the specified commit using the fast-forward merge option
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergePullRequestByFastForward.html
    */
@@ -617,6 +764,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifReferences()
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergePullRequestBySquash.html
    */
   public toMergePullRequestBySquash() {
@@ -627,6 +777,9 @@ export class Codecommit extends PolicyStatement {
    * Grants permission to close a pull request and attempt to merge it into the specified destination branch for that pull request at the specified commit using the three-way merge option
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergePullRequestByThreeWay.html
    */
@@ -694,6 +847,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifReferences()
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_PutFile.html
    */
   public toPutFile() {
@@ -714,7 +870,12 @@ export class Codecommit extends PolicyStatement {
   /**
    * Grants permission to attach resource tags to a CodeCommit resource ARN
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_TagResource.html
    */
@@ -736,7 +897,11 @@ export class Codecommit extends PolicyStatement {
   /**
    * Grants permission to disassociate resource tags from a CodeCommit resource ARN
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UntagResource.html
    */
@@ -888,116 +1053,6 @@ export class Codecommit extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about one or more pull requests in an AWS CodeCommit repository
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-pr
-   */
-  public toBatchGetPullRequests() {
-    return this.to('BatchGetPullRequests');
-  }
-
-  /**
-   * Grants permission to cancel the uploading of an archive to a pipeline in AWS CodePipeline
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-acp
-   */
-  public toCancelUploadArchive() {
-    return this.to('CancelUploadArchive');
-  }
-
-  /**
-   * Grants permission to get information about the history of commits in a repository
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
-   */
-  public toGetCommitHistory() {
-    return this.to('GetCommitHistory');
-  }
-
-  /**
-   * Grants permission to get information about the difference between commits in the context of a potential merge
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-pr
-   */
-  public toGetCommitsFromMergeBase() {
-    return this.to('GetCommitsFromMergeBase');
-  }
-
-  /**
-   * Grants permission to resolve blobs, trees, and commits to their identifier
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
-   */
-  public toGetObjectIdentifier() {
-    return this.to('GetObjectIdentifier');
-  }
-
-  /**
-   * Grants permission to get details about references in an AWS CodeCommit repository; does not control Git reference actions
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
-   */
-  public toGetReferences() {
-    return this.to('GetReferences');
-  }
-
-  /**
-   * Grants permission to view the contents of a specified tree in an AWS CodeCommit repository from the AWS CodeCommit console
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
-   */
-  public toGetTree() {
-    return this.to('GetTree');
-  }
-
-  /**
-   * Grants permission to get status information about an archive upload to a pipeline in AWS CodePipeline
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-acp
-   */
-  public toGetUploadArchiveStatus() {
-    return this.to('GetUploadArchiveStatus');
-  }
-
-  /**
-   * Grants permission to pull information from an AWS CodeCommit repository to a local repo
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-git
-   */
-  public toGitPull() {
-    return this.to('GitPull');
-  }
-
-  /**
-   * Grants permission to push information from a local repo to an AWS CodeCommit repository
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-git
-   */
-  public toGitPush() {
-    return this.to('GitPush');
-  }
-
-  /**
    * Grants permission to the service role for AWS CodePipeline to upload repository changes into a pipeline
    *
    * Access Level: Write
@@ -1027,6 +1082,7 @@ export class Codecommit extends PolicyStatement {
       'DeletePullRequestApprovalRule',
       'DeleteRepository',
       'DisassociateApprovalRuleTemplateFromRepository',
+      'GitPush',
       'MergeBranchesByFastForward',
       'MergeBranchesBySquash',
       'MergeBranchesByThreeWay',
@@ -1040,9 +1096,7 @@ export class Codecommit extends PolicyStatement {
       'PutCommentReaction',
       'PutFile',
       'PutRepositoryTriggers',
-      'TagResource',
       'TestRepositoryTriggers',
-      'UntagResource',
       'UpdateApprovalRuleTemplateContent',
       'UpdateApprovalRuleTemplateDescription',
       'UpdateApprovalRuleTemplateName',
@@ -1056,13 +1110,14 @@ export class Codecommit extends PolicyStatement {
       'UpdateRepositoryDescription',
       'UpdateRepositoryEncryptionKey',
       'UpdateRepositoryName',
-      'GitPush',
       'UploadArchive'
     ],
     Read: [
       'BatchDescribeMergeConflicts',
       'BatchGetCommits',
+      'BatchGetPullRequests',
       'BatchGetRepositories',
+      'CancelUploadArchive',
       'DescribeMergeConflicts',
       'DescribePullRequestEvents',
       'EvaluatePullRequestApprovalRules',
@@ -1074,23 +1129,21 @@ export class Codecommit extends PolicyStatement {
       'GetCommentsForComparedCommit',
       'GetCommentsForPullRequest',
       'GetCommit',
+      'GetCommitHistory',
+      'GetCommitsFromMergeBase',
       'GetDifferences',
       'GetFile',
       'GetFolder',
       'GetMergeCommit',
       'GetMergeConflicts',
       'GetMergeOptions',
+      'GetObjectIdentifier',
       'GetPullRequest',
       'GetPullRequestApprovalStates',
       'GetPullRequestOverrideState',
+      'GetReferences',
       'GetRepository',
       'GetRepositoryTriggers',
-      'BatchGetPullRequests',
-      'CancelUploadArchive',
-      'GetCommitHistory',
-      'GetCommitsFromMergeBase',
-      'GetObjectIdentifier',
-      'GetReferences',
       'GetTree',
       'GetUploadArchiveStatus',
       'GitPull'
@@ -1151,87 +1204,8 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toAssociateApprovalRuleTemplateWithRepository()
-   * - .toBatchAssociateApprovalRuleTemplateWithRepositories()
-   * - .toBatchDescribeMergeConflicts()
-   * - .toBatchDisassociateApprovalRuleTemplateFromRepositories()
-   * - .toBatchGetCommits()
-   * - .toBatchGetRepositories()
-   * - .toCreateBranch()
-   * - .toCreateCommit()
-   * - .toCreatePullRequest()
-   * - .toCreatePullRequestApprovalRule()
-   * - .toCreateRepository()
-   * - .toCreateUnreferencedMergeCommit()
-   * - .toDeleteBranch()
-   * - .toDeleteCommentContent()
-   * - .toDeleteFile()
-   * - .toDeletePullRequestApprovalRule()
-   * - .toDeleteRepository()
-   * - .toDescribeMergeConflicts()
-   * - .toDescribePullRequestEvents()
-   * - .toDisassociateApprovalRuleTemplateFromRepository()
-   * - .toEvaluatePullRequestApprovalRules()
-   * - .toGetBlob()
-   * - .toGetBranch()
-   * - .toGetComment()
-   * - .toGetCommentReactions()
-   * - .toGetCommentsForComparedCommit()
-   * - .toGetCommentsForPullRequest()
-   * - .toGetCommit()
-   * - .toGetDifferences()
-   * - .toGetFile()
-   * - .toGetFolder()
-   * - .toGetMergeCommit()
-   * - .toGetMergeConflicts()
-   * - .toGetMergeOptions()
-   * - .toGetPullRequest()
-   * - .toGetPullRequestApprovalStates()
-   * - .toGetPullRequestOverrideState()
-   * - .toGetRepository()
-   * - .toGetRepositoryTriggers()
-   * - .toListAssociatedApprovalRuleTemplatesForRepository()
-   * - .toListBranches()
-   * - .toListFileCommitHistory()
-   * - .toListPullRequests()
-   * - .toListTagsForResource()
-   * - .toMergeBranchesByFastForward()
-   * - .toMergeBranchesBySquash()
-   * - .toMergeBranchesByThreeWay()
-   * - .toMergePullRequestByFastForward()
-   * - .toMergePullRequestBySquash()
-   * - .toMergePullRequestByThreeWay()
-   * - .toOverridePullRequestApprovalRules()
-   * - .toPostCommentForComparedCommit()
-   * - .toPostCommentForPullRequest()
-   * - .toPostCommentReply()
-   * - .toPutCommentReaction()
-   * - .toPutFile()
-   * - .toPutRepositoryTriggers()
    * - .toTagResource()
-   * - .toTestRepositoryTriggers()
    * - .toUntagResource()
-   * - .toUpdateComment()
-   * - .toUpdateDefaultBranch()
-   * - .toUpdatePullRequestApprovalRuleContent()
-   * - .toUpdatePullRequestApprovalState()
-   * - .toUpdatePullRequestDescription()
-   * - .toUpdatePullRequestStatus()
-   * - .toUpdatePullRequestTitle()
-   * - .toUpdateRepositoryDescription()
-   * - .toUpdateRepositoryEncryptionKey()
-   * - .toUpdateRepositoryName()
-   * - .toBatchGetPullRequests()
-   * - .toCancelUploadArchive()
-   * - .toGetCommitHistory()
-   * - .toGetCommitsFromMergeBase()
-   * - .toGetObjectIdentifier()
-   * - .toGetReferences()
-   * - .toGetTree()
-   * - .toGetUploadArchiveStatus()
-   * - .toGitPull()
-   * - .toGitPush()
-   * - .toUploadArchive()
    *
    * Applies to resource types:
    * - repository
@@ -1273,6 +1247,7 @@ export class Codecommit extends PolicyStatement {
    * - .toDeleteBranch()
    * - .toDeleteFile()
    * - .toGetMergeCommit()
+   * - .toGitPush()
    * - .toMergeBranchesByFastForward()
    * - .toMergeBranchesBySquash()
    * - .toMergeBranchesByThreeWay()
@@ -1280,7 +1255,6 @@ export class Codecommit extends PolicyStatement {
    * - .toMergePullRequestBySquash()
    * - .toMergePullRequestByThreeWay()
    * - .toPutFile()
-   * - .toGitPush()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

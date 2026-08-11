@@ -43,8 +43,8 @@ transcribe:StartMedicalTranscriptionJob;Write
 transcribe:StartStreamTranscription;Write
 transcribe:StartStreamTranscriptionWebSocket;Write
 transcribe:StartTranscriptionJob;Write
-transcribe:TagResource;Tagging, Write
-transcribe:UntagResource;Tagging, Write
+transcribe:TagResource;Tagging
+transcribe:UntagResource;Tagging
 transcribe:UpdateCallAnalyticsCategory;Write
 transcribe:UpdateMedicalVocabulary;Write
 transcribe:UpdateVocabulary;Write

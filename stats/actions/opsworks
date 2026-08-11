@@ -53,16 +53,16 @@ opsworks:RegisterInstance;Write
 opsworks:RegisterRdsDbInstance;Write
 opsworks:RegisterVolume;Write
 opsworks:SetLoadBasedAutoScaling;Write
-opsworks:SetPermission;Permissions management, Write
+opsworks:SetPermission;Permissions management
 opsworks:SetTimeBasedAutoScaling;Write
 opsworks:StartInstance;Write
 opsworks:StartStack;Write
 opsworks:StopInstance;Write
 opsworks:StopStack;Write
-opsworks:TagResource;Tagging, Write
+opsworks:TagResource;Tagging
 opsworks:UnassignInstance;Write
 opsworks:UnassignVolume;Write
-opsworks:UntagResource;Tagging, Write
+opsworks:UntagResource;Tagging
 opsworks:UpdateApp;Write
 opsworks:UpdateElasticIp;Write
 opsworks:UpdateInstance;Write
@@ -70,5 +70,5 @@ opsworks:UpdateLayer;Write
 opsworks:UpdateMyUserProfile;Write
 opsworks:UpdateRdsDbInstance;Write
 opsworks:UpdateStack;Write
-opsworks:UpdateUserProfile;Permissions management, Write
+opsworks:UpdateUserProfile;Permissions management
 opsworks:UpdateVolume;Write

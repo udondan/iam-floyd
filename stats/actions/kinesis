@@ -1,4 +1,4 @@
-kinesis:AddTagsToStream;Tagging, Write
+kinesis:AddTagsToStream;Tagging
 kinesis:CreateStream;Write
 kinesis:DecreaseStreamRetentionPeriod;Write
 kinesis:DeleteResourcePolicy;Write
@@ -26,13 +26,13 @@ kinesis:PutRecord;Write
 kinesis:PutRecords;Write
 kinesis:PutResourcePolicy;Write
 kinesis:RegisterStreamConsumer;Write
-kinesis:RemoveTagsFromStream;Tagging, Write
+kinesis:RemoveTagsFromStream;Tagging
 kinesis:SplitShard;Write
 kinesis:StartStreamEncryption;Write
 kinesis:StopStreamEncryption;Write
 kinesis:SubscribeToShard;Read
-kinesis:TagResource;Tagging, Write
-kinesis:UntagResource;Tagging, Write
+kinesis:TagResource;Tagging
+kinesis:UntagResource;Tagging
 kinesis:UpdateAccountSettings;Write
 kinesis:UpdateMaxRecordSize;Write
 kinesis:UpdateShardCount;Write

@@ -23,8 +23,8 @@ verifiedpermissions:ListPolicyStores;List
 verifiedpermissions:ListPolicyTemplates;List
 verifiedpermissions:ListTagsForResource;Read
 verifiedpermissions:PutSchema;Write
-verifiedpermissions:TagResource;Tagging, Write
-verifiedpermissions:UntagResource;Tagging, Write
+verifiedpermissions:TagResource;Tagging
+verifiedpermissions:UntagResource;Tagging
 verifiedpermissions:UpdateIdentitySource;Write
 verifiedpermissions:UpdatePolicy;Write
 verifiedpermissions:UpdatePolicyStore;Write

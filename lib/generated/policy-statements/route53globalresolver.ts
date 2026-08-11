@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [route53globalresolver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_route53globalresolver.html).
+ * Statement provider for service [route53globalresolver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsroute53globalresolver.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,12 +10,21 @@ export class Route53globalresolver extends PolicyStatement {
   public servicePrefix = 'route53globalresolver';
 
   /**
-   * Statement provider for service [route53globalresolver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_route53globalresolver.html).
+   * Statement provider for service [route53globalresolver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsroute53globalresolver.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
   constructor(sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Grants permission to deliver logs for a global resolver
+   *
+   * Access Level: Permissions management
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
   }
 
   /**
@@ -67,6 +76,10 @@ export class Route53globalresolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateAccessSource
    */
   public toCreateAccessSource() {
@@ -77,6 +90,10 @@ export class Route53globalresolver extends PolicyStatement {
    * Grants permission to create an access token
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateAccessToken
    */
@@ -89,6 +106,10 @@ export class Route53globalresolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateDNSView
    */
   public toCreateDNSView() {
@@ -99,6 +120,10 @@ export class Route53globalresolver extends PolicyStatement {
    * Grants permission to create a firewall domain list
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateFirewallDomainList
    */
@@ -121,6 +146,10 @@ export class Route53globalresolver extends PolicyStatement {
    * Grants permission to create a global resolver
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateGlobalResolver
    */
@@ -320,6 +349,10 @@ export class Route53globalresolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - s3:GetObject
+   * - s3:ListBucket
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ImportFirewallDomains
    */
   public toImportFirewallDomains() {
@@ -439,7 +472,11 @@ export class Route53globalresolver extends PolicyStatement {
   /**
    * Grants permission to tag a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_TagResource
    */
@@ -450,7 +487,10 @@ export class Route53globalresolver extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UntagResource
    */
@@ -535,18 +575,10 @@ export class Route53globalresolver extends PolicyStatement {
     return this.to('UpdateHostedZoneAssociation');
   }
 
-  /**
-   * Grants permission to deliver logs for a global resolver
-   *
-   * Access Level: Permissions management, Write
-   *
-   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_AllowVendedLogDeliveryForResource.html
-   */
-  public toAllowVendedLogDeliveryForResource() {
-    return this.to('AllowVendedLogDeliveryForResource');
-  }
-
   protected accessLevelList: AccessLevelList = {
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
+    ],
     Write: [
       'AssociateHostedZone',
       'BatchCreateFirewallRule',
@@ -569,16 +601,13 @@ export class Route53globalresolver extends PolicyStatement {
       'EnableDNSView',
       'ImportFirewallDomains',
       'ListTagsForResource',
-      'TagResource',
-      'UntagResource',
       'UpdateAccessSource',
       'UpdateAccessToken',
       'UpdateDNSView',
       'UpdateFirewallDomains',
       'UpdateFirewallRule',
       'UpdateGlobalResolver',
-      'UpdateHostedZoneAssociation',
-      'AllowVendedLogDeliveryForResource'
+      'UpdateHostedZoneAssociation'
     ],
     Read: [
       'GetAccessSource',
@@ -604,9 +633,6 @@ export class Route53globalresolver extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
-    ],
-    'Permissions management': [
-      'AllowVendedLogDeliveryForResource'
     ]
   };
 
@@ -717,35 +743,6 @@ export class Route53globalresolver extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toCreateAccessSource()
-   * - .toCreateAccessToken()
-   * - .toCreateDNSView()
-   * - .toCreateFirewallDomainList()
-   * - .toCreateFirewallRule()
-   * - .toCreateGlobalResolver()
-   * - .toDeleteAccessSource()
-   * - .toDeleteAccessToken()
-   * - .toDeleteDNSView()
-   * - .toDeleteFirewallDomainList()
-   * - .toDeleteGlobalResolver()
-   * - .toDisableDNSView()
-   * - .toEnableDNSView()
-   * - .toGetAccessSource()
-   * - .toGetAccessToken()
-   * - .toGetDNSView()
-   * - .toGetFirewallDomainList()
-   * - .toGetGlobalResolver()
-   * - .toImportFirewallDomains()
-   * - .toListFirewallDomains()
-   * - .toListFirewallRules()
-   * - .toListTagsForResource()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateAccessSource()
-   * - .toUpdateAccessToken()
-   * - .toUpdateDNSView()
-   * - .toUpdateFirewallDomains()
-   * - .toUpdateGlobalResolver()
    * - .toAllowVendedLogDeliveryForResource()
    *
    * Applies to resource types:

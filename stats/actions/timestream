@@ -27,9 +27,9 @@ timestream:Select;Read
 timestream:SelectValues;Read
 timestream:StartAwsBackupJob;Write
 timestream:StartAwsRestoreJob;Write
-timestream:TagResource;Tagging, Write
+timestream:TagResource;Tagging
 timestream:Unload;Write
-timestream:UntagResource;Tagging, Write
+timestream:UntagResource;Tagging
 timestream:UpdateAccountSettings;Write
 timestream:UpdateDatabase;Write
 timestream:UpdateScheduledQuery;Write

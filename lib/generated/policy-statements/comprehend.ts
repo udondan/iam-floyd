@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [comprehend](https://docs.aws.amazon.com/service-authorization/latest/reference/list_comprehend.html).
+ * Statement provider for service [comprehend](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncomprehend.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Comprehend extends PolicyStatement {
   public servicePrefix = 'comprehend';
 
   /**
-   * Statement provider for service [comprehend](https://docs.aws.amazon.com/service-authorization/latest/reference/list_comprehend.html).
+   * Statement provider for service [comprehend](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncomprehend.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -111,6 +111,10 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateDataset.html
    */
   public toCreateDataset() {
@@ -121,6 +125,15 @@ export class Comprehend extends PolicyStatement {
    * Grants permission to create a new document classifier that you can use to categorize documents
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifVolumeKmsKey()
+   * - .ifModelKmsKey()
+   * - .ifOutputKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
    *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateDocumentClassifier.html
    */
@@ -143,6 +156,14 @@ export class Comprehend extends PolicyStatement {
    * Grants permission to create an entity recognizer using submitted files
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifVolumeKmsKey()
+   * - .ifModelKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
    *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateEntityRecognizer.html
    */
@@ -320,6 +341,9 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifFlywheelIterationId()
+   *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeFlywheelIteration.html
    */
   public toDescribeFlywheelIteration() {
@@ -484,6 +508,11 @@ export class Comprehend extends PolicyStatement {
    * Grants permission to import a trained Comprehend model
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifModelKmsKey()
    *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ImportModel.html
    */
@@ -716,6 +745,14 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDominantLanguageDetectionJob.html
    */
   public toStartDominantLanguageDetectionJob() {
@@ -737,6 +774,11 @@ export class Comprehend extends PolicyStatement {
    * Grants permission to start an asynchronous Events detection job for a collection of documents
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifOutputKmsKey()
    *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEventsDetectionJob.html
    */
@@ -760,6 +802,14 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartKeyPhrasesDetectionJob.html
    */
   public toStartKeyPhrasesDetectionJob() {
@@ -770,6 +820,11 @@ export class Comprehend extends PolicyStatement {
    * Grants permission to start an asynchronous PII entities detection job for a collection of documents
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifOutputKmsKey()
    *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartPiiEntitiesDetectionJob.html
    */
@@ -782,6 +837,14 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartSentimentDetectionJob.html
    */
   public toStartSentimentDetectionJob() {
@@ -793,6 +856,14 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartTargetedSentimentDetectionJob.html
    */
   public toStartTargetedSentimentDetectionJob() {
@@ -803,6 +874,14 @@ export class Comprehend extends PolicyStatement {
    * Grants permission to start an asynchronous job to detect the most common topics in the collection of documents and the phrases associated with each topic
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
    *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartTopicsDetectionJob.html
    */
@@ -912,7 +991,11 @@ export class Comprehend extends PolicyStatement {
   /**
    * Grants permission to tag a resource with given key value pairs
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_TagResource.html
    */
@@ -923,7 +1006,10 @@ export class Comprehend extends PolicyStatement {
   /**
    * Grants permission to untag a resource with given key
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_UntagResource.html
    */
@@ -1038,8 +1124,6 @@ export class Comprehend extends PolicyStatement {
       'StopTargetedSentimentDetectionJob',
       'StopTrainingDocumentClassifier',
       'StopTrainingEntityRecognizer',
-      'TagResource',
-      'UntagResource',
       'UpdateEndpoint',
       'UpdateFlywheel'
     ],
@@ -1050,9 +1134,9 @@ export class Comprehend extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type document-classification-job to the statement
+   * Adds a resource of type targeted-sentiment-detection-job to the statement
    *
-   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDocumentClassificationJob.html
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartTargetedSentimentDetectionJob.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1062,8 +1146,8 @@ export class Comprehend extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDocumentClassificationJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:document-classification-job/${ jobId }`);
+  public onTargetedSentimentDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:targeted-sentiment-detection-job/${ jobId }`);
   }
 
   /**
@@ -1101,40 +1185,6 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type dominant-language-detection-job to the statement
-   *
-   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDominantLanguageDetectionJob.html
-   *
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDominantLanguageDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dominant-language-detection-job/${ jobId }`);
-  }
-
-  /**
-   * Adds a resource of type entities-detection-job to the statement
-   *
-   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEntitiesDetectionJob.html
-   *
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onEntitiesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:entities-detection-job/${ jobId }`);
-  }
-
-  /**
    * Adds a resource of type entity-recognizer to the statement
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/training-recognizers.html
@@ -1169,6 +1219,57 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type dominant-language-detection-job to the statement
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDominantLanguageDetectionJob.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDominantLanguageDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dominant-language-detection-job/${ jobId }`);
+  }
+
+  /**
+   * Adds a resource of type entities-detection-job to the statement
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEntitiesDetectionJob.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEntitiesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:entities-detection-job/${ jobId }`);
+  }
+
+  /**
+   * Adds a resource of type pii-entities-detection-job to the statement
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartPiiEntitiesDetectionJob.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPiiEntitiesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:pii-entities-detection-job/${ jobId }`);
+  }
+
+  /**
    * Adds a resource of type events-detection-job to the statement
    *
    * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEventsDetectionJob.html
@@ -1183,6 +1284,74 @@ export class Comprehend extends PolicyStatement {
    */
   public onEventsDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:events-detection-job/${ jobId }`);
+  }
+
+  /**
+   * Adds a resource of type key-phrases-detection-job to the statement
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartKeyPhrasesDetectionJob.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onKeyPhrasesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:key-phrases-detection-job/${ jobId }`);
+  }
+
+  /**
+   * Adds a resource of type sentiment-detection-job to the statement
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartSentimentDetectionJob.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSentimentDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sentiment-detection-job/${ jobId }`);
+  }
+
+  /**
+   * Adds a resource of type topics-detection-job to the statement
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartTopicsDetectionJob.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTopicsDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:topics-detection-job/${ jobId }`);
+  }
+
+  /**
+   * Adds a resource of type document-classification-job to the statement
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDocumentClassificationJob.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDocumentClassificationJob(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:document-classification-job/${ jobId }`);
   }
 
   /**
@@ -1221,91 +1390,6 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type key-phrases-detection-job to the statement
-   *
-   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartKeyPhrasesDetectionJob.html
-   *
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onKeyPhrasesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:key-phrases-detection-job/${ jobId }`);
-  }
-
-  /**
-   * Adds a resource of type pii-entities-detection-job to the statement
-   *
-   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartPiiEntitiesDetectionJob.html
-   *
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onPiiEntitiesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:pii-entities-detection-job/${ jobId }`);
-  }
-
-  /**
-   * Adds a resource of type sentiment-detection-job to the statement
-   *
-   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartSentimentDetectionJob.html
-   *
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onSentimentDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sentiment-detection-job/${ jobId }`);
-  }
-
-  /**
-   * Adds a resource of type targeted-sentiment-detection-job to the statement
-   *
-   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartTargetedSentimentDetectionJob.html
-   *
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onTargetedSentimentDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:targeted-sentiment-detection-job/${ jobId }`);
-  }
-
-  /**
-   * Adds a resource of type topics-detection-job to the statement
-   *
-   * https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartTopicsDetectionJob.html
-   *
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onTopicsDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:topics-detection-job/${ jobId }`);
-  }
-
-  /**
    * Filters access by requiring tag values present in a resource creation request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
@@ -1341,80 +1425,22 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
-   * Applies to actions:
-   * - .toClassifyDocument()
-   * - .toCreateDataset()
-   * - .toCreateDocumentClassifier()
-   * - .toCreateEndpoint()
-   * - .toCreateEntityRecognizer()
-   * - .toCreateFlywheel()
-   * - .toDeleteDocumentClassifier()
-   * - .toDeleteEndpoint()
-   * - .toDeleteEntityRecognizer()
-   * - .toDeleteFlywheel()
-   * - .toDeleteResourcePolicy()
-   * - .toDescribeDataset()
-   * - .toDescribeDocumentClassificationJob()
-   * - .toDescribeDocumentClassifier()
-   * - .toDescribeDominantLanguageDetectionJob()
-   * - .toDescribeEndpoint()
-   * - .toDescribeEntitiesDetectionJob()
-   * - .toDescribeEntityRecognizer()
-   * - .toDescribeEventsDetectionJob()
-   * - .toDescribeFlywheel()
-   * - .toDescribeFlywheelIteration()
-   * - .toDescribeKeyPhrasesDetectionJob()
-   * - .toDescribePiiEntitiesDetectionJob()
-   * - .toDescribeResourcePolicy()
-   * - .toDescribeSentimentDetectionJob()
-   * - .toDescribeTargetedSentimentDetectionJob()
-   * - .toDescribeTopicsDetectionJob()
-   * - .toDetectEntities()
-   * - .toImportModel()
-   * - .toListDatasets()
-   * - .toListFlywheelIterationHistory()
-   * - .toListTagsForResource()
-   * - .toPutResourcePolicy()
-   * - .toStartDocumentClassificationJob()
-   * - .toStartDominantLanguageDetectionJob()
-   * - .toStartEntitiesDetectionJob()
-   * - .toStartEventsDetectionJob()
-   * - .toStartFlywheelIteration()
-   * - .toStartKeyPhrasesDetectionJob()
-   * - .toStartPiiEntitiesDetectionJob()
-   * - .toStartSentimentDetectionJob()
-   * - .toStartTargetedSentimentDetectionJob()
-   * - .toStartTopicsDetectionJob()
-   * - .toStopDominantLanguageDetectionJob()
-   * - .toStopEntitiesDetectionJob()
-   * - .toStopEventsDetectionJob()
-   * - .toStopKeyPhrasesDetectionJob()
-   * - .toStopPiiEntitiesDetectionJob()
-   * - .toStopSentimentDetectionJob()
-   * - .toStopTargetedSentimentDetectionJob()
-   * - .toStopTrainingDocumentClassifier()
-   * - .toStopTrainingEntityRecognizer()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateEndpoint()
-   * - .toUpdateFlywheel()
-   *
    * Applies to resource types:
-   * - document-classification-job
+   * - targeted-sentiment-detection-job
    * - document-classifier
    * - document-classifier-endpoint
-   * - dominant-language-detection-job
-   * - entities-detection-job
    * - entity-recognizer
    * - entity-recognizer-endpoint
+   * - dominant-language-detection-job
+   * - entities-detection-job
+   * - pii-entities-detection-job
    * - events-detection-job
+   * - key-phrases-detection-job
+   * - sentiment-detection-job
+   * - topics-detection-job
+   * - document-classification-job
    * - flywheel
    * - flywheel-dataset
-   * - key-phrases-detection-job
-   * - pii-entities-detection-job
-   * - sentiment-detection-job
-   * - targeted-sentiment-detection-job
-   * - topics-detection-job
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

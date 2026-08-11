@@ -1,6 +1,6 @@
 ssm-contacts:AcceptPage;Write
 ssm-contacts:ActivateContactChannel;Write
-ssm-contacts:AssociateContact;Permissions management, Write
+ssm-contacts:AssociateContact;Permissions management
 ssm-contacts:CreateContact;Write
 ssm-contacts:CreateContactChannel;Write
 ssm-contacts:CreateRotation;Write
@@ -33,8 +33,8 @@ ssm-contacts:PutContactPolicy;Write
 ssm-contacts:SendActivationCode;Write
 ssm-contacts:StartEngagement;Write
 ssm-contacts:StopEngagement;Write
-ssm-contacts:TagResource;Tagging, Write
-ssm-contacts:UntagResource;Tagging, Write
+ssm-contacts:TagResource;Tagging
+ssm-contacts:UntagResource;Tagging
 ssm-contacts:UpdateContact;Write
 ssm-contacts:UpdateContactChannel;Write
 ssm-contacts:UpdateRotation;Write
