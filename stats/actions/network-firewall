@@ -63,8 +63,8 @@ network-firewall:RejectNetworkFirewallTransitGatewayAttachment;Write
 network-firewall:StartAnalysisReport;Write
 network-firewall:StartFlowCapture;Write
 network-firewall:StartFlowFlush;Write
-network-firewall:TagResource;Tagging, Write
-network-firewall:UntagResource;Tagging, Write
+network-firewall:TagResource;Tagging
+network-firewall:UntagResource;Tagging
 network-firewall:UpdateAvailabilityZoneChangeProtection;Write
 network-firewall:UpdateContainerAssociation;Write
 network-firewall:UpdateFirewallAnalysisSettings;Write

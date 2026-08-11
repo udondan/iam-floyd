@@ -15,6 +15,6 @@ braket:SearchDevices;List
 braket:SearchJobs;List
 braket:SearchQuantumTasks;List
 braket:SearchSpendingLimits;Read
-braket:TagResource;Tagging, Write
-braket:UntagResource;Tagging, Write
+braket:TagResource;Tagging
+braket:UntagResource;Tagging
 braket:UpdateSpendingLimit;Write

@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [payments](https://docs.aws.amazon.com/service-authorization/latest/reference/list_payments.html).
+ * Statement provider for service [payments](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspayments.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Payments extends PolicyStatement {
   public servicePrefix = 'payments';
 
   /**
-   * Statement provider for service [payments](https://docs.aws.amazon.com/service-authorization/latest/reference/list_payments.html).
+   * Statement provider for service [payments](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspayments.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -46,13 +46,24 @@ export class Payments extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
    */
   public toCreatePaymentInstrument() {
     return this.to('CreatePaymentInstrument');
+  }
+
+  /**
+   * Grants permission to delete a payment instrument
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toDeletePaymentInstrument() {
+    return this.to('DeletePaymentInstrument');
   }
 
   /**
@@ -111,6 +122,17 @@ export class Payments extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get payment status of invoices
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toGetPaymentStatus() {
+    return this.to('GetPaymentStatus');
+  }
+
+  /**
    * Grants permission to list financing application metadata
    *
    * Access Level: List
@@ -141,6 +163,28 @@ export class Payments extends PolicyStatement {
    */
   public toListFinancingLines() {
     return this.to('ListFinancingLines');
+  }
+
+  /**
+   * Grants permission to list payment instrument metadata
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toListPaymentInstruments() {
+    return this.to('ListPaymentInstruments');
+  }
+
+  /**
+   * Grants permission to get payment preferences (preferred payment currency, preferred payment method, etc.)
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toListPaymentPreferences() {
+    return this.to('ListPaymentPreferences');
   }
 
   /**
@@ -177,9 +221,24 @@ export class Payments extends PolicyStatement {
   }
 
   /**
+   * Grants permission to make a payment, authenticate a payment, verify a payment method, and generate a funding request document for Advance Pay
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toMakePayment() {
+    return this.to('MakePayment');
+  }
+
+  /**
    * Grants permission to tag a payment resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
    */
@@ -190,7 +249,10 @@ export class Payments extends PolicyStatement {
   /**
    * Grants permission to untag a payment resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
    */
@@ -207,61 +269,6 @@ export class Payments extends PolicyStatement {
    */
   public toUpdateFinancingApplication() {
     return this.to('UpdateFinancingApplication');
-  }
-
-  /**
-   * Grants permission to delete a payment instrument
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
-   */
-  public toDeletePaymentInstrument() {
-    return this.to('DeletePaymentInstrument');
-  }
-
-  /**
-   * Grants permission to get payment status of invoices
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
-   */
-  public toGetPaymentStatus() {
-    return this.to('GetPaymentStatus');
-  }
-
-  /**
-   * Grants permission to list payment instrument metadata
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
-   */
-  public toListPaymentInstruments() {
-    return this.to('ListPaymentInstruments');
-  }
-
-  /**
-   * Grants permission to get payment preferences (preferred payment currency, preferred payment method, etc.)
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
-   */
-  public toListPaymentPreferences() {
-    return this.to('ListPaymentPreferences');
-  }
-
-  /**
-   * Grants permission to make a payment, authenticate a payment, verify a payment method, and generate a funding request document for Advance Pay
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
-   */
-  public toMakePayment() {
-    return this.to('MakePayment');
   }
 
   /**
@@ -291,11 +298,9 @@ export class Payments extends PolicyStatement {
       'AcceptFinancingApplicationTerms',
       'CreateFinancingApplication',
       'CreatePaymentInstrument',
-      'TagResource',
-      'UntagResource',
-      'UpdateFinancingApplication',
       'DeletePaymentInstrument',
       'MakePayment',
+      'UpdateFinancingApplication',
       'UpdatePaymentInstrument',
       'UpdatePaymentPreferences'
     ],
@@ -311,11 +316,11 @@ export class Payments extends PolicyStatement {
       'ListFinancingApplications',
       'ListFinancingLineWithdrawals',
       'ListFinancingLines',
+      'ListPaymentInstruments',
+      'ListPaymentPreferences',
       'ListPaymentProgramOptions',
       'ListPaymentProgramStatus',
-      'ListTagsForResource',
-      'ListPaymentInstruments',
-      'ListPaymentPreferences'
+      'ListTagsForResource'
     ],
     Tagging: [
       'TagResource',
@@ -360,12 +365,6 @@ export class Payments extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toGetPaymentInstrument()
-   * - .toListTagsForResource()
-   * - .toTagResource()
-   * - .toUntagResource()
    *
    * Applies to resource types:
    * - payment-instrument

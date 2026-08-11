@@ -1,18 +1,18 @@
-monitron:AssociateProjectAdminUser;Permissions management, Write
+monitron:AssociateProjectAdminUser;Permissions management
 monitron:CreateProject;Write
-monitron:CreateProjectUserAssociation;Permissions management, Write
-monitron:CreateUserAccessRoleAssociation;Permissions management, Write
+monitron:CreateProjectUserAssociation;Permissions management
+monitron:CreateUserAccessRoleAssociation;Permissions management
 monitron:DeleteProject;Write
-monitron:DeleteProjectUserAssociation;Permissions management, Write
-monitron:DeleteUserAccessRoleAssociation;Permissions management, Write
-monitron:DisassociateProjectAdminUser;Permissions management, Write
+monitron:DeleteProjectUserAssociation;Permissions management
+monitron:DeleteUserAccessRoleAssociation;Permissions management
+monitron:DisassociateProjectAdminUser;Permissions management
 monitron:GetProject;Read
 monitron:GetProjectAdminUser;Read
-monitron:ListProjectAdminUsers;Permissions management, Write
+monitron:ListProjectAdminUsers;Permissions management
 monitron:ListProjectUserAssociations;List
 monitron:ListProjects;List
 monitron:ListTagsForResource;Read
 monitron:ListUserAccessRoleAssociations;List
-monitron:TagResource;Tagging, Write
-monitron:UntagResource;Tagging, Write
+monitron:TagResource;Tagging
+monitron:UntagResource;Tagging
 monitron:UpdateProject;Write

@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [identitystore](https://docs.aws.amazon.com/service-authorization/latest/reference/list_identitystore.html).
+ * Statement provider for service [identitystore](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentitystore.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Identitystore extends PolicyStatement {
   public servicePrefix = 'identitystore';
 
   /**
-   * Statement provider for service [identitystore](https://docs.aws.amazon.com/service-authorization/latest/reference/list_identitystore.html).
+   * Statement provider for service [identitystore](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentitystore.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,6 +23,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toAddRegion() {
@@ -33,6 +36,13 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to create a group in the specified IdentityStore
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifGroupExternalIdIssuers()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroup.html
    */
@@ -45,6 +55,12 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroupMembership.html
    */
   public toCreateGroupMembership() {
@@ -55,6 +71,12 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to create a new IdentityStore in an AWS account
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:Encrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -67,6 +89,14 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifUserExternalIdIssuers()
+   * - .ifReservedUserId()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateUser.html
    */
   public toCreateUser() {
@@ -78,6 +108,13 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifGroupExternalIdIssuers()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteGroup.html
    */
   public toDeleteGroup() {
@@ -88,6 +125,12 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to remove a member that is part of a group in the specified IdentityStore
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteGroupMembership.html
    */
@@ -111,6 +154,13 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifUserExternalIdIssuers()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteUser.html
    */
   public toDeleteUser() {
@@ -122,6 +172,13 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifGroupExternalIdIssuers()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroup.html
    */
   public toDescribeGroup() {
@@ -132,6 +189,12 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to retrieve information about a member that is part of a group in the specified IdentityStore
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroupMembership.html
    */
@@ -147,6 +210,9 @@ export class Identitystore extends PolicyStatement {
    * Possible conditions:
    * - .ifPrimaryRegion()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDescribeRegion() {
@@ -157,6 +223,13 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to retrieve information about user in the specified IdentityStore
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifUserExternalIdIssuers()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeUser.html
    */
@@ -169,6 +242,12 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetGroupId.html
    */
   public toGetGroupId() {
@@ -179,6 +258,12 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to retrieve ID information of a member which is part of a group in the specified IdentityStore
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetGroupMembershipId.html
    */
@@ -191,6 +276,12 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetUserId.html
    */
   public toGetUserId() {
@@ -201,6 +292,12 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to check if a member is a part of groups in the specified IdentityStore
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_IsMemberInGroups.html
    */
@@ -213,6 +310,12 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMemberships.html
    */
   public toListGroupMemberships() {
@@ -224,6 +327,12 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMembershipsForMember.html
    */
   public toListGroupMembershipsForMember() {
@@ -234,6 +343,13 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to search for groups within the specified IdentityStore
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifGroupExternalIdIssuers()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroups.html
    */
@@ -249,6 +365,9 @@ export class Identitystore extends PolicyStatement {
    * Possible conditions:
    * - .ifPrimaryRegion()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListRegions() {
@@ -259,6 +378,13 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to search for users in the specified IdentityStore
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifUserExternalIdIssuers()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListUsers.html
    */
@@ -271,6 +397,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toRemoveRegion() {
@@ -281,6 +410,12 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to reserve a user by getting a userId
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -293,6 +428,13 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifGroupExternalIdIssuers()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_UpdateGroup.html
    */
   public toUpdateGroup() {
@@ -304,6 +446,12 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:Encrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateIdentityStore() {
@@ -314,6 +462,13 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to update user information in the specified IdentityStore
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifUserExternalIdIssuers()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_UpdateUser.html
    */
@@ -358,57 +513,9 @@ export class Identitystore extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type AllGroupMemberships to the statement
-   *
-   * @param resourceName - Identifier for the resourceName.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAllGroupMemberships(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::membership/${ resourceName }`);
-  }
-
-  /**
-   * Adds a resource of type AllGroups to the statement
-   *
-   * @param resourceName - Identifier for the resourceName.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAllGroups(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::group/${ resourceName }`);
-  }
-
-  /**
-   * Adds a resource of type AllUsers to the statement
-   *
-   * @param resourceName - Identifier for the resourceName.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAllUsers(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::user/${ resourceName }`);
-  }
-
-  /**
-   * Adds a resource of type Group to the statement
-   *
-   * @param groupId - Identifier for the groupId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onGroup(groupId: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::group/${ groupId }`);
-  }
-
-  /**
-   * Adds a resource of type GroupMembership to the statement
-   *
-   * @param membershipId - Identifier for the membershipId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onGroupMembership(membershipId: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::membership/${ membershipId }`);
-  }
-
-  /**
    * Adds a resource of type Identitystore to the statement
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/
    *
    * @param identityStoreId - Identifier for the identityStoreId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -421,11 +528,73 @@ export class Identitystore extends PolicyStatement {
   /**
    * Adds a resource of type User to the statement
    *
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html
+   *
    * @param userId - Identifier for the userId.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUser(userId: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::user/${ userId }`);
+  }
+
+  /**
+   * Adds a resource of type Group to the statement
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html
+   *
+   * @param groupId - Identifier for the groupId.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onGroup(groupId: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::group/${ groupId }`);
+  }
+
+  /**
+   * Adds a resource of type GroupMembership to the statement
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GroupMembership.html
+   *
+   * @param membershipId - Identifier for the membershipId.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onGroupMembership(membershipId: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::membership/${ membershipId }`);
+  }
+
+  /**
+   * Adds a resource of type AllUsers to the statement
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAllUsers(resourceName: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::user/${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type AllGroups to the statement
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAllGroups(resourceName: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::group/${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type AllGroupMemberships to the statement
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GroupMembership.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAllGroupMemberships(resourceName: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:identitystore:::membership/${ resourceName }`);
   }
 
   /**

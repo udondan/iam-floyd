@@ -17,8 +17,8 @@ payments:ListPaymentProgramOptions;List
 payments:ListPaymentProgramStatus;List
 payments:ListTagsForResource;List
 payments:MakePayment;Write
-payments:TagResource;Tagging, Write
-payments:UntagResource;Tagging, Write
+payments:TagResource;Tagging
+payments:UntagResource;Tagging
 payments:UpdateFinancingApplication;Write
 payments:UpdatePaymentInstrument;Write
 payments:UpdatePaymentPreferences;Write

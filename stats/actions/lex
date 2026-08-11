@@ -137,8 +137,8 @@ lex:StartTestExecution;Write
 lex:StartTestSetGeneration;Write
 lex:StopBotAnalyzer;Write
 lex:StopBotRecommendation;Write
-lex:TagResource;Tagging, Write
-lex:UntagResource;Tagging, Write
+lex:TagResource;Tagging
+lex:UntagResource;Tagging
 lex:UpdateBot;Write
 lex:UpdateBotAlias;Write
 lex:UpdateBotLocale;Write

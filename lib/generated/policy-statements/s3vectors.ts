@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [s3vectors](https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3vectors.html).
+ * Statement provider for service [s3vectors](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class S3vectors extends PolicyStatement {
   public servicePrefix = 's3vectors';
 
   /**
-   * Statement provider for service [s3vectors](https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3vectors.html).
+   * Statement provider for service [s3vectors](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,6 +23,14 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifSseType()
+   * - .ifKmsKeyArn()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_CreateIndex.html
    */
   public toCreateIndex() {
@@ -33,6 +41,14 @@ export class S3vectors extends PolicyStatement {
    * Grants permission to create a new vector bucket
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSseType()
+   * - .ifKmsKeyArn()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_CreateVectorBucket.html
    */
@@ -45,6 +61,10 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteIndex.html
    */
   public toDeleteIndex() {
@@ -56,6 +76,10 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteVectorBucket.html
    */
   public toDeleteVectorBucket() {
@@ -65,7 +89,11 @@ export class S3vectors extends PolicyStatement {
   /**
    * Grants permission to delete the IAM resource policy from a specified vector bucket
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteVectorBucketPolicy.html
    */
@@ -78,6 +106,10 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteVectors.html
    */
   public toDeleteVectors() {
@@ -88,6 +120,10 @@ export class S3vectors extends PolicyStatement {
    * Grants permission to get the attributes of a specified vector index
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetIndex.html
    */
@@ -100,6 +136,10 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetVectorBucket.html
    */
   public toGetVectorBucket() {
@@ -110,6 +150,10 @@ export class S3vectors extends PolicyStatement {
    * Grants permission to get the IAM resource policy for a specific vector bucket
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetVectorBucketPolicy.html
    */
@@ -122,6 +166,10 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetVectors.html
    */
   public toGetVectors() {
@@ -133,6 +181,10 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_ListIndexes.html
    */
   public toListIndexes() {
@@ -143,6 +195,10 @@ export class S3vectors extends PolicyStatement {
    * Grants permission to list tags for specified S3Vector resource
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_ListTagsForResource.html
    */
@@ -166,6 +222,13 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
+   * Dependent actions:
+   * - s3vectors:GetVectors
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_ListVectors.html
    */
   public toListVectors() {
@@ -175,7 +238,11 @@ export class S3vectors extends PolicyStatement {
   /**
    * Grants permission to add an IAM resource policy to a specified vector bucket
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_PutVectorBucketPolicy.html
    */
@@ -188,6 +255,10 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_PutVectors.html
    */
   public toPutVectors() {
@@ -199,6 +270,13 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
+   * Dependent actions:
+   * - s3vectors:GetVectors
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_QueryVectors.html
    */
   public toQueryVectors() {
@@ -208,7 +286,13 @@ export class S3vectors extends PolicyStatement {
   /**
    * Grants permission to tag a S3Vector resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_TagResource.html
    */
@@ -219,7 +303,12 @@ export class S3vectors extends PolicyStatement {
   /**
    * Grants permission to untag a S3Vector resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_UntagResource.html
    */
@@ -233,12 +322,8 @@ export class S3vectors extends PolicyStatement {
       'CreateVectorBucket',
       'DeleteIndex',
       'DeleteVectorBucket',
-      'DeleteVectorBucketPolicy',
       'DeleteVectors',
-      'PutVectorBucketPolicy',
-      'PutVectors',
-      'TagResource',
-      'UntagResource'
+      'PutVectors'
     ],
     'Permissions management': [
       'DeleteVectorBucketPolicy',

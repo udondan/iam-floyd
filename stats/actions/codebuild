@@ -20,7 +20,7 @@ codebuild:DeleteOAuthToken;Write
 codebuild:DeleteProject;Write
 codebuild:DeleteReport;Write
 codebuild:DeleteReportGroup;Write
-codebuild:DeleteResourcePolicy;Permissions management, Write
+codebuild:DeleteResourcePolicy;Permissions management
 codebuild:DeleteSourceCredentials;Write
 codebuild:DeleteWebhook;Write
 codebuild:DescribeCodeCoverages;Read
@@ -48,7 +48,7 @@ codebuild:ListSharedProjects;List
 codebuild:ListSharedReportGroups;List
 codebuild:ListSourceCredentials;List
 codebuild:PersistOAuthToken;Write
-codebuild:PutResourcePolicy;Permissions management, Write
+codebuild:PutResourcePolicy;Permissions management
 codebuild:RetryBuild;Write
 codebuild:RetryBuildBatch;Write
 codebuild:StartBuild;Write

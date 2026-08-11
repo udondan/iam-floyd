@@ -25,7 +25,7 @@ voiceid:OptOutSpeaker;Write
 voiceid:RegisterComplianceConsent;Write
 voiceid:StartFraudsterRegistrationJob;Write
 voiceid:StartSpeakerEnrollmentJob;Write
-voiceid:TagResource;Tagging, Write
-voiceid:UntagResource;Tagging, Write
+voiceid:TagResource;Tagging
+voiceid:UntagResource;Tagging
 voiceid:UpdateDomain;Write
 voiceid:UpdateWatchlist;Write

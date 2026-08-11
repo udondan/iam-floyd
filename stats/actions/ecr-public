@@ -17,7 +17,7 @@ ecr-public:ListTagsForResource;Read
 ecr-public:PutImage;Write
 ecr-public:PutRegistryCatalogData;Write
 ecr-public:PutRepositoryCatalogData;Write
-ecr-public:SetRepositoryPolicy;Permissions management, Write
-ecr-public:TagResource;Tagging, Write
-ecr-public:UntagResource;Tagging, Write
+ecr-public:SetRepositoryPolicy;Permissions management
+ecr-public:TagResource;Tagging
+ecr-public:UntagResource;Tagging
 ecr-public:UploadLayerPart;Write

@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [app-integrations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_appintegrations.html).
+ * Statement provider for service [app-integrations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappintegrations.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class AppIntegrations extends PolicyStatement {
   public servicePrefix = 'app-integrations';
 
   /**
-   * Statement provider for service [app-integrations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_appintegrations.html).
+   * Statement provider for service [app-integrations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappintegrations.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,6 +23,15 @@ export class AppIntegrations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateApplication.html
    */
   public toCreateApplication() {
@@ -30,9 +39,41 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an ApplicationAssociation
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/onboard-3p-apps.html
+   */
+  public toCreateApplicationAssociation() {
+    return this.to('CreateApplicationAssociation');
+  }
+
+  /**
    * Grants permission to create a new DataIntegration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - appflow:DeleteFlow
+   * - appflow:DescribeConnectorProfiles
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   * - kms:CreateGrant
+   * - profile:GetDomain
+   * - profile:GetProfileObjectType
+   * - s3:GetBucketNotification
+   * - s3:GetEncryptionConfiguration
+   * - s3:PutBucketNotification
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html
    */
@@ -44,6 +85,20 @@ export class AppIntegrations extends PolicyStatement {
    * Grants permission to create a DataIntegrationAssociation
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - appflow:CreateFlow
+   * - appflow:DeleteFlow
+   * - appflow:DescribeConnectorEntity
+   * - appflow:DescribeConnectorProfiles
+   * - appflow:TagResource
+   * - appflow:UseConnectorProfile
+   * - profile:CreateSnapshot
+   * - profile:GetSnapshot
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html
    */
@@ -67,6 +122,15 @@ export class AppIntegrations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateEventIntegration.html
    */
   public toCreateEventIntegration() {
@@ -74,9 +138,31 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an EventIntegrationAssociation
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - events:PutRule
+   * - events:PutTargets
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateEventIntegration.html
+   */
+  public toCreateEventIntegrationAssociation() {
+    return this.to('CreateEventIntegrationAssociation');
+  }
+
+  /**
    * Grants permission to delete an Application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteApplication.html
    */
@@ -85,9 +171,23 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an ApplicationAssociation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/onboard-3p-apps.html
+   */
+  public toDeleteApplicationAssociation() {
+    return this.to('DeleteApplicationAssociation');
+  }
+
+  /**
    * Grants permission to delete a DataIntegration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html
    */
@@ -96,9 +196,32 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a DataIntegrationAssociation
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - appflow:CreateFlow
+   * - appflow:DeleteFlow
+   * - appflow:DescribeConnectorEntity
+   * - appflow:DescribeConnectorProfiles
+   * - appflow:StopFlow
+   * - appflow:TagResource
+   * - appflow:UseConnectorProfile
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html
+   */
+  public toDeleteDataIntegrationAssociation() {
+    return this.to('DeleteDataIntegrationAssociation');
+  }
+
+  /**
    * Grants permission to delete an EventIntegration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteEventIntegration.html
    */
@@ -107,9 +230,28 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an EventIntegrationAssociation
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - events:DeleteRule
+   * - events:ListTargetsByRule
+   * - events:RemoveTargets
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteEventIntegration.html
+   */
+  public toDeleteEventIntegrationAssociation() {
+    return this.to('DeleteEventIntegrationAssociation');
+  }
+
+  /**
    * Grants permission to view details about Application
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetApplication.html
    */
@@ -121,6 +263,9 @@ export class AppIntegrations extends PolicyStatement {
    * Grants permission to view details about DataIntegrations
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetDataIntegration.html
    */
@@ -154,6 +299,9 @@ export class AppIntegrations extends PolicyStatement {
    * Grants permission to view details about EventIntegrations
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetEventIntegration.html
    */
@@ -254,6 +402,9 @@ export class AppIntegrations extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -265,6 +416,10 @@ export class AppIntegrations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - profile:CreateSegmentSnapshot
+   * - profile:CreateSnapshot
+   *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_StartDataIntegrationExecution.html
    */
   public toStartDataIntegrationExecution() {
@@ -274,7 +429,12 @@ export class AppIntegrations extends PolicyStatement {
   /**
    * Grants permission to tag an Amazon AppIntegration resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_TagResource.html
    */
@@ -285,7 +445,11 @@ export class AppIntegrations extends PolicyStatement {
   /**
    * Grants permission to untag an Amazon AppIntegration resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UntagResource.html
    */
@@ -298,6 +462,9 @@ export class AppIntegrations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UpdateApplication.html
    */
   public toUpdateApplication() {
@@ -309,6 +476,9 @@ export class AppIntegrations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UpdateDataIntegration.html
    */
   public toUpdateDataIntegration() {
@@ -319,6 +489,13 @@ export class AppIntegrations extends PolicyStatement {
    * Grants permission to modify a DataIntegrationAssociation
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - profile:CreateSnapshot
+   * - profile:GetSnapshot
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UpdateDataIntegrationAssociation.html
    */
@@ -342,90 +519,36 @@ export class AppIntegrations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UpdateEventIntegration.html
    */
   public toUpdateEventIntegration() {
     return this.to('UpdateEventIntegration');
   }
 
-  /**
-   * Grants permission to create an ApplicationAssociation
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/onboard-3p-apps.html
-   */
-  public toCreateApplicationAssociation() {
-    return this.to('CreateApplicationAssociation');
-  }
-
-  /**
-   * Grants permission to create an EventIntegrationAssociation
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateEventIntegration.html
-   */
-  public toCreateEventIntegrationAssociation() {
-    return this.to('CreateEventIntegrationAssociation');
-  }
-
-  /**
-   * Grants permission to delete an ApplicationAssociation
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/onboard-3p-apps.html
-   */
-  public toDeleteApplicationAssociation() {
-    return this.to('DeleteApplicationAssociation');
-  }
-
-  /**
-   * Grants permission to delete a DataIntegrationAssociation
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html
-   */
-  public toDeleteDataIntegrationAssociation() {
-    return this.to('DeleteDataIntegrationAssociation');
-  }
-
-  /**
-   * Grants permission to delete an EventIntegrationAssociation
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteEventIntegration.html
-   */
-  public toDeleteEventIntegrationAssociation() {
-    return this.to('DeleteEventIntegrationAssociation');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateApplication',
+      'CreateApplicationAssociation',
       'CreateDataIntegration',
       'CreateDataIntegrationAssociation',
       'CreateDataIntegrationSchedule',
       'CreateEventIntegration',
+      'CreateEventIntegrationAssociation',
       'DeleteApplication',
+      'DeleteApplicationAssociation',
       'DeleteDataIntegration',
+      'DeleteDataIntegrationAssociation',
       'DeleteEventIntegration',
+      'DeleteEventIntegrationAssociation',
       'StartDataIntegrationExecution',
-      'TagResource',
-      'UntagResource',
       'UpdateApplication',
       'UpdateDataIntegration',
       'UpdateDataIntegrationAssociation',
       'UpdateDataIntegrationSchedule',
-      'UpdateEventIntegration',
-      'CreateApplicationAssociation',
-      'CreateEventIntegrationAssociation',
-      'DeleteApplicationAssociation',
-      'DeleteDataIntegrationAssociation',
-      'DeleteEventIntegrationAssociation'
+      'UpdateEventIntegration'
     ],
     Read: [
       'GetApplication',
@@ -452,11 +575,11 @@ export class AppIntegrations extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type application to the statement
+   * Adds a resource of type event-integration to the statement
    *
-   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ApplicationSummary.html
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_EventIntegration.html
    *
-   * @param applicationId - Identifier for the applicationId.
+   * @param eventIntegrationName - Identifier for the eventIntegrationName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -464,17 +587,17 @@ export class AppIntegrations extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:app-integrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }`);
+  public onEventIntegration(eventIntegrationName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:app-integrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-integration/${ eventIntegrationName }`);
   }
 
   /**
-   * Adds a resource of type application-association to the statement
+   * Adds a resource of type event-integration-association to the statement
    *
-   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ApplicationAssociationSummary.html
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_EventIntegrationAssociation.html
    *
-   * @param applicationId - Identifier for the applicationId.
-   * @param applicationAssociationId - Identifier for the applicationAssociationId.
+   * @param eventIntegrationName - Identifier for the eventIntegrationName.
+   * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -482,8 +605,8 @@ export class AppIntegrations extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onApplicationAssociation(applicationId: string, applicationAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:app-integrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application-association/${ applicationId }/${ applicationAssociationId }`);
+  public onEventIntegrationAssociation(eventIntegrationName: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:app-integrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-integration-association/${ eventIntegrationName }/${ resourceId }`);
   }
 
   /**
@@ -522,11 +645,11 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type event-integration to the statement
+   * Adds a resource of type application to the statement
    *
-   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_EventIntegration.html
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ApplicationSummary.html
    *
-   * @param eventIntegrationName - Identifier for the eventIntegrationName.
+   * @param applicationId - Identifier for the applicationId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -534,17 +657,17 @@ export class AppIntegrations extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onEventIntegration(eventIntegrationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:app-integrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-integration/${ eventIntegrationName }`);
+  public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:app-integrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }`);
   }
 
   /**
-   * Adds a resource of type event-integration-association to the statement
+   * Adds a resource of type application-association to the statement
    *
-   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_EventIntegrationAssociation.html
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ApplicationAssociationSummary.html
    *
-   * @param eventIntegrationName - Identifier for the eventIntegrationName.
-   * @param resourceId - Identifier for the resourceId.
+   * @param applicationId - Identifier for the applicationId.
+   * @param applicationAssociationId - Identifier for the applicationAssociationId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -552,8 +675,8 @@ export class AppIntegrations extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onEventIntegrationAssociation(eventIntegrationName: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:app-integrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-integration-association/${ eventIntegrationName }/${ resourceId }`);
+  public onApplicationAssociation(applicationId: string, applicationAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:app-integrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application-association/${ applicationId }/${ applicationAssociationId }`);
   }
 
   /**
@@ -563,12 +686,12 @@ export class AppIntegrations extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateApplication()
+   * - .toCreateApplicationAssociation()
    * - .toCreateDataIntegration()
    * - .toCreateDataIntegrationAssociation()
    * - .toCreateEventIntegration()
-   * - .toTagResource()
-   * - .toCreateApplicationAssociation()
    * - .toCreateEventIntegrationAssociation()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -584,43 +707,27 @@ export class AppIntegrations extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toCreateApplication()
-   * - .toCreateDataIntegration()
-   * - .toCreateDataIntegrationAssociation()
-   * - .toCreateDataIntegrationSchedule()
-   * - .toCreateEventIntegration()
    * - .toDeleteApplication()
    * - .toDeleteDataIntegration()
    * - .toDeleteEventIntegration()
    * - .toGetApplication()
    * - .toGetDataIntegration()
-   * - .toGetDataIntegrationExecution()
-   * - .toGetDataIntegrationSchedule()
    * - .toGetEventIntegration()
-   * - .toListDataIntegrationExecutions()
-   * - .toListDataIntegrationSchedules()
    * - .toListTagsForResource()
-   * - .toStartDataIntegrationExecution()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateApplication()
    * - .toUpdateDataIntegration()
    * - .toUpdateDataIntegrationAssociation()
-   * - .toUpdateDataIntegrationSchedule()
    * - .toUpdateEventIntegration()
-   * - .toCreateApplicationAssociation()
-   * - .toCreateEventIntegrationAssociation()
-   * - .toDeleteApplicationAssociation()
-   * - .toDeleteDataIntegrationAssociation()
-   * - .toDeleteEventIntegrationAssociation()
    *
    * Applies to resource types:
-   * - application
-   * - application-association
-   * - data-integration
-   * - data-integration-association
    * - event-integration
    * - event-integration-association
+   * - data-integration
+   * - data-integration-association
+   * - application
+   * - application-association
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -637,13 +744,13 @@ export class AppIntegrations extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateApplication()
+   * - .toCreateApplicationAssociation()
    * - .toCreateDataIntegration()
    * - .toCreateDataIntegrationAssociation()
    * - .toCreateEventIntegration()
+   * - .toCreateEventIntegrationAssociation()
    * - .toTagResource()
    * - .toUntagResource()
-   * - .toCreateApplicationAssociation()
-   * - .toCreateEventIntegrationAssociation()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -1,4 +1,4 @@
-sqs:AddPermission;Permissions management, Write
+sqs:AddPermission;Permissions management
 sqs:CancelMessageMoveTask;Write
 sqs:ChangeMessageVisibility;Write
 sqs:CreateQueue;Write
@@ -12,9 +12,9 @@ sqs:ListQueueTags;Read
 sqs:ListQueues;Read
 sqs:PurgeQueue;Write
 sqs:ReceiveMessage;Read
-sqs:RemovePermission;Permissions management, Write
+sqs:RemovePermission;Permissions management
 sqs:SendMessage;Write
-sqs:SetQueueAttributes;Permissions management, Write
+sqs:SetQueueAttributes;Write
 sqs:StartMessageMoveTask;Write
-sqs:TagQueue;Tagging, Write
-sqs:UntagQueue;Tagging, Write
+sqs:TagQueue;Tagging
+sqs:UntagQueue;Tagging

@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [finspace](https://docs.aws.amazon.com/service-authorization/latest/reference/list_finspace.html).
+ * Statement provider for service [finspace](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfinspace.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Finspace extends PolicyStatement {
   public servicePrefix = 'finspace';
 
   /**
-   * Statement provider for service [finspace](https://docs.aws.amazon.com/service-authorization/latest/reference/list_finspace.html).
+   * Statement provider for service [finspace](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfinspace.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,9 +19,24 @@ export class Finspace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to connect to a kdb cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/finspace/latest/userguide/interacting-with-kdb-clusters.html
+   */
+  public toConnectKxCluster() {
+    return this.to('ConnectKxCluster');
+  }
+
+  /**
    * Grants permission to create a FinSpace environment
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateEnvironment.html
    */
@@ -45,6 +60,14 @@ export class Finspace extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - ec2:DescribeSubnets
+   * - finspace:MountKxDatabase
+   *
    * https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateKxCluster.html
    */
   public toCreateKxCluster() {
@@ -56,6 +79,10 @@ export class Finspace extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateKxDatabase.html
    */
   public toCreateKxDatabase() {
@@ -66,6 +93,10 @@ export class Finspace extends PolicyStatement {
    * Grants permission to create a dataview in a managed kdb environment
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateKxDataview.html
    */
@@ -79,8 +110,8 @@ export class Finspace extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateKxEnvironment.html
    */
@@ -93,6 +124,10 @@ export class Finspace extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateKxScalingGroup.html
    */
   public toCreateKxScalingGroup() {
@@ -103,6 +138,10 @@ export class Finspace extends PolicyStatement {
    * Grants permission to create a user in a managed kdb environment
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateKxUser.html
    */
@@ -115,6 +154,10 @@ export class Finspace extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateKxVolume.html
    */
   public toCreateKxVolume() {
@@ -125,6 +168,10 @@ export class Finspace extends PolicyStatement {
    * Grants permission to create a FinSpace user
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html
    */
@@ -268,6 +315,9 @@ export class Finspace extends PolicyStatement {
    * Grants permission to retrieve a connection string for kdb clusters
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - finspace:ConnectKxCluster
    *
    * https://docs.aws.amazon.com/finspace/latest/management-api/API_GetKxConnectionString.html
    */
@@ -507,6 +557,17 @@ export class Finspace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to mount a database to a kdb cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-managed-kdb-db.html
+   */
+  public toMountKxDatabase() {
+    return this.to('MountKxDatabase');
+  }
+
+  /**
    * Grants permission to reset the password for a FinSpace user
    *
    * Access Level: Write
@@ -520,7 +581,11 @@ export class Finspace extends PolicyStatement {
   /**
    * Grants permission to tag a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/finspace/latest/management-api/API_TagResource.html
    */
@@ -531,7 +596,10 @@ export class Finspace extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/finspace/latest/management-api/API_UntagResource.html
    */
@@ -649,30 +717,9 @@ export class Finspace extends PolicyStatement {
     return this.to('UpdateUser');
   }
 
-  /**
-   * Grants permission to connect to a kdb cluster
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/finspace/latest/userguide/interacting-with-kdb-clusters.html
-   */
-  public toConnectKxCluster() {
-    return this.to('ConnectKxCluster');
-  }
-
-  /**
-   * Grants permission to mount a database to a kdb cluster
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-managed-kdb-db.html
-   */
-  public toMountKxDatabase() {
-    return this.to('MountKxDatabase');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'ConnectKxCluster',
       'CreateEnvironment',
       'CreateKxChangeset',
       'CreateKxCluster',
@@ -693,9 +740,8 @@ export class Finspace extends PolicyStatement {
       'DeleteKxUser',
       'DeleteKxVolume',
       'LoadSampleDataSetGroupIntoEnvironment',
+      'MountKxDatabase',
       'ResetUserPassword',
-      'TagResource',
-      'UntagResource',
       'UpdateEnvironment',
       'UpdateKxClusterCodeConfiguration',
       'UpdateKxClusterDatabases',
@@ -705,9 +751,7 @@ export class Finspace extends PolicyStatement {
       'UpdateKxEnvironmentNetwork',
       'UpdateKxUser',
       'UpdateKxVolume',
-      'UpdateUser',
-      'ConnectKxCluster',
-      'MountKxDatabase'
+      'UpdateUser'
     ],
     Read: [
       'GetEnvironment',
@@ -761,6 +805,58 @@ export class Finspace extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type user to the statement
+   *
+   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
+   *
+   * @param userId - Identifier for the userId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onUser(userId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user/${ userId }`);
+  }
+
+  /**
+   * Adds a resource of type kxEnvironment to the statement
+   *
+   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
+   *
+   * @param environmentId - Identifier for the environmentId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onKxEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:kxEnvironment/${ environmentId }`);
+  }
+
+  /**
+   * Adds a resource of type kxUser to the statement
+   *
+   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
+   *
+   * @param environmentId - Identifier for the environmentId.
+   * @param userName - Identifier for the userName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onKxUser(environmentId: string, userName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:kxEnvironment/${ environmentId }/kxUser/${ userName }`);
+  }
+
+  /**
    * Adds a resource of type kxCluster to the statement
    *
    * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
@@ -797,6 +893,24 @@ export class Finspace extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type kxScalingGroup to the statement
+   *
+   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
+   *
+   * @param environmentId - Identifier for the environmentId.
+   * @param kxScalingGroup - Identifier for the kxScalingGroup.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onKxScalingGroup(environmentId: string, kxScalingGroup: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:kxEnvironment/${ environmentId }/kxScalingGroup/${ kxScalingGroup }`);
+  }
+
+  /**
    * Adds a resource of type kxDataview to the statement
    *
    * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
@@ -816,59 +930,6 @@ export class Finspace extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type kxEnvironment to the statement
-   *
-   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
-   *
-   * @param environmentId - Identifier for the environmentId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onKxEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:kxEnvironment/${ environmentId }`);
-  }
-
-  /**
-   * Adds a resource of type kxScalingGroup to the statement
-   *
-   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
-   *
-   * @param environmentId - Identifier for the environmentId.
-   * @param kxScalingGroup - Identifier for the kxScalingGroup.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onKxScalingGroup(environmentId: string, kxScalingGroup: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:kxEnvironment/${ environmentId }/kxScalingGroup/${ kxScalingGroup }`);
-  }
-
-  /**
-   * Adds a resource of type kxUser to the statement
-   *
-   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
-   *
-   * @param environmentId - Identifier for the environmentId.
-   * @param userName - Identifier for the userName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onKxUser(environmentId: string, userName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:kxEnvironment/${ environmentId }/kxUser/${ userName }`);
-  }
-
-  /**
    * Adds a resource of type kxVolume to the statement
    *
    * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
@@ -884,23 +945,6 @@ export class Finspace extends PolicyStatement {
    */
   public onKxVolume(environmentId: string, kxVolume: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:kxEnvironment/${ environmentId }/kxVolume/${ kxVolume }`);
-  }
-
-  /**
-   * Adds a resource of type user to the statement
-   *
-   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
-   *
-   * @param userId - Identifier for the userId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onUser(userId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user/${ userId }`);
   }
 
   /**
@@ -933,75 +977,16 @@ export class Finspace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toCreateEnvironment()
-   * - .toCreateKxChangeset()
-   * - .toCreateKxCluster()
-   * - .toCreateKxDatabase()
-   * - .toCreateKxDataview()
-   * - .toCreateKxScalingGroup()
-   * - .toCreateKxUser()
-   * - .toCreateKxVolume()
-   * - .toCreateUser()
-   * - .toDeleteEnvironment()
-   * - .toDeleteKxCluster()
-   * - .toDeleteKxClusterNode()
-   * - .toDeleteKxDatabase()
-   * - .toDeleteKxDataview()
-   * - .toDeleteKxEnvironment()
-   * - .toDeleteKxScalingGroup()
-   * - .toDeleteKxUser()
-   * - .toDeleteKxVolume()
-   * - .toGetEnvironment()
-   * - .toGetKxChangeset()
-   * - .toGetKxCluster()
-   * - .toGetKxConnectionString()
-   * - .toGetKxDatabase()
-   * - .toGetKxDataview()
-   * - .toGetKxEnvironment()
-   * - .toGetKxScalingGroup()
-   * - .toGetKxUser()
-   * - .toGetKxVolume()
-   * - .toGetLoadSampleDataSetGroupIntoEnvironmentStatus()
-   * - .toGetUser()
-   * - .toListEnvironments()
-   * - .toListKxChangesets()
-   * - .toListKxClusterNodes()
-   * - .toListKxClusters()
-   * - .toListKxDatabases()
-   * - .toListKxDataviews()
-   * - .toListKxScalingGroups()
-   * - .toListKxUsers()
-   * - .toListKxVolumes()
-   * - .toListTagsForResource()
-   * - .toListUsers()
-   * - .toLoadSampleDataSetGroupIntoEnvironment()
-   * - .toResetUserPassword()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateEnvironment()
-   * - .toUpdateKxClusterCodeConfiguration()
-   * - .toUpdateKxClusterDatabases()
-   * - .toUpdateKxDatabase()
-   * - .toUpdateKxDataview()
-   * - .toUpdateKxEnvironment()
-   * - .toUpdateKxEnvironmentNetwork()
-   * - .toUpdateKxUser()
-   * - .toUpdateKxVolume()
-   * - .toUpdateUser()
-   * - .toConnectKxCluster()
-   * - .toMountKxDatabase()
-   *
    * Applies to resource types:
    * - environment
+   * - user
+   * - kxEnvironment
+   * - kxUser
    * - kxCluster
    * - kxDatabase
-   * - kxDataview
-   * - kxEnvironment
    * - kxScalingGroup
-   * - kxUser
+   * - kxDataview
    * - kxVolume
-   * - user
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

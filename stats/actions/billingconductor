@@ -24,8 +24,8 @@ billingconductor:ListPricingRules;Read
 billingconductor:ListPricingRulesAssociatedToPricingPlan;List
 billingconductor:ListResourcesAssociatedToCustomLineItem;List
 billingconductor:ListTagsForResource;Read
-billingconductor:TagResource;Tagging, Write
-billingconductor:UntagResource;Tagging, Write
+billingconductor:TagResource;Tagging
+billingconductor:UntagResource;Tagging
 billingconductor:UpdateBillingGroup;Write
 billingconductor:UpdateCustomLineItem;Write
 billingconductor:UpdatePricingPlan;Write

@@ -30,9 +30,9 @@ states:SendTaskSuccess;Write
 states:StartExecution;Write
 states:StartSyncExecution;Write
 states:StopExecution;Write
-states:TagResource;Tagging, Write
+states:TagResource;Tagging
 states:TestState;Write
-states:UntagResource;Tagging, Write
+states:UntagResource;Tagging
 states:UpdateMapRun;Write
 states:UpdateStateMachine;Write
 states:UpdateStateMachineAlias;Write

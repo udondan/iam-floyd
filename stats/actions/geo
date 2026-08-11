@@ -53,8 +53,8 @@ geo:SearchPlaceIndexForPosition;Read
 geo:SearchPlaceIndexForSuggestions;Read
 geo:SearchPlaceIndexForText;Read
 geo:StartJob;Write
-geo:TagResource;Tagging, Write
-geo:UntagResource;Tagging, Write
+geo:TagResource;Tagging
+geo:UntagResource;Tagging
 geo:UpdateGeofenceCollection;Write
 geo:UpdateKey;Write
 geo:UpdateMap;Write

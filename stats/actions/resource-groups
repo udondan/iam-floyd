@@ -21,9 +21,9 @@ resource-groups:PutGroupConfiguration;Write
 resource-groups:PutGroupPolicy;Write
 resource-groups:SearchResources;List
 resource-groups:StartTagSyncTask;Write
-resource-groups:Tag;Tagging, Write
+resource-groups:Tag;Tagging
 resource-groups:UngroupResources;Write
-resource-groups:Untag;Tagging, Write
+resource-groups:Untag;Tagging
 resource-groups:UpdateAccountSettings;Write
 resource-groups:UpdateGroup;Write
 resource-groups:UpdateGroupQuery;Write

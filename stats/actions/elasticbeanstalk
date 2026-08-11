@@ -1,5 +1,5 @@
 elasticbeanstalk:AbortEnvironmentUpdate;Write
-elasticbeanstalk:AddTags;Tagging, Write
+elasticbeanstalk:AddTags;Tagging
 elasticbeanstalk:ApplyEnvironmentManagedAction;Write
 elasticbeanstalk:AssociateEnvironmentOperationsRole;Write
 elasticbeanstalk:CheckDNSAvailability;Read
@@ -35,7 +35,7 @@ elasticbeanstalk:ListPlatformVersions;List
 elasticbeanstalk:ListTagsForResource;Read
 elasticbeanstalk:PutInstanceStatistics;Write
 elasticbeanstalk:RebuildEnvironment;Write
-elasticbeanstalk:RemoveTags;Tagging, Write
+elasticbeanstalk:RemoveTags;Tagging
 elasticbeanstalk:RequestEnvironmentInfo;Read
 elasticbeanstalk:RestartAppServer;Write
 elasticbeanstalk:RetrieveEnvironmentInfo;Read
@@ -46,5 +46,5 @@ elasticbeanstalk:UpdateApplicationResourceLifecycle;Write
 elasticbeanstalk:UpdateApplicationVersion;Write
 elasticbeanstalk:UpdateConfigurationTemplate;Write
 elasticbeanstalk:UpdateEnvironment;Write
-elasticbeanstalk:UpdateTagsForResource;Tagging, Write
+elasticbeanstalk:UpdateTagsForResource;Tagging
 elasticbeanstalk:ValidateConfigurationSettings;Read

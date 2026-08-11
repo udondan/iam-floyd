@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [workspaces](https://docs.aws.amazon.com/service-authorization/latest/reference/list_workspaces.html).
+ * Statement provider for service [workspaces](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Workspaces extends PolicyStatement {
   public servicePrefix = 'workspaces';
 
   /**
-   * Statement provider for service [workspaces](https://docs.aws.amazon.com/service-authorization/latest/reference/list_workspaces.html).
+   * Statement provider for service [workspaces](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -56,6 +56,9 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_AssociateWorkspaceApplication.html
    */
   public toAssociateWorkspaceApplication() {
@@ -67,6 +70,9 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - workspaces:UpdateRulesOfIpGroup
+   *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_AuthorizeIpRules.html
    */
   public toAuthorizeIpRules() {
@@ -77,6 +83,13 @@ export class Workspaces extends PolicyStatement {
    * Grants permission to copy a WorkSpace image
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - workspaces:DescribeWorkspaceImages
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_CopyWorkspaceImage.html
    */
@@ -137,9 +150,24 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a root client certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
+   */
+  public toCreateRootClientCertificate() {
+    return this.to('CreateRootClientCertificate');
+  }
+
+  /**
    * Grants permission to create one or more Standby WorkSpaces
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateStandbyWorkspaces.html
    */
@@ -150,7 +178,7 @@ export class Workspaces extends PolicyStatement {
   /**
    * Grants permission to create tags for WorkSpaces resources
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -167,6 +195,10 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateUpdatedWorkspaceImage.html
    */
   public toCreateUpdatedWorkspaceImage() {
@@ -177,6 +209,13 @@ export class Workspaces extends PolicyStatement {
    * Grants permission to create a WorkSpace bundle
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - workspaces:CreateTags
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspaceBundle.html
    */
@@ -189,6 +228,10 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspaceImage.html
    */
   public toCreateWorkspaceImage() {
@@ -200,6 +243,10 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspaces.html
    */
   public toCreateWorkspaces() {
@@ -210,6 +257,10 @@ export class Workspaces extends PolicyStatement {
    * Grants permission to create a WorkSpaces Pool
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspacesPool.html
    */
@@ -273,9 +324,20 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete root client certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
+   */
+  public toDeleteRootClientCertificate() {
+    return this.to('DeleteRootClientCertificate');
+  }
+
+  /**
    * Grants permission to delete tags from WorkSpaces resources
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -313,6 +375,9 @@ export class Workspaces extends PolicyStatement {
    * Grants permission to deploy all pending workspace applications on a WorkSpace
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DeployWorkspaceApplications.html
    */
@@ -358,6 +423,9 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeApplicationAssociations.html
    */
   public toDescribeApplicationAssociations() {
@@ -379,6 +447,9 @@ export class Workspaces extends PolicyStatement {
    * Grants permission to retrieve information about resources associated with a WorkSpace bundle
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeBundleAssociations.html
    */
@@ -442,6 +513,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about consent agreement to BYOL minimum requirements
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
+   */
+  public toDescribeConsent() {
+    return this.to('DescribeConsent');
+  }
+
+  /**
    * Grants permission to retrieve information about WorkSpace BYOL image import task
    *
    * Access Level: Read
@@ -456,6 +538,9 @@ export class Workspaces extends PolicyStatement {
    * Grants permission to retrieve information about resources associated with a WorkSpace image
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeImageAssociations.html
    */
@@ -489,6 +574,9 @@ export class Workspaces extends PolicyStatement {
    * Grants permission to retrieve information about resources associated with a WorkSpace
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceAssociations.html
    */
@@ -596,6 +684,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to directory management actions while managing and provisioning workspaces
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
+   */
+  public toDirectoryAccessManagement() {
+    return this.to('DirectoryAccessManagement');
+  }
+
+  /**
    * Grants permission to disassociate connection aliases from directories
    *
    * Access Level: Write
@@ -622,6 +721,9 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DisassociateWorkspaceApplication.html
    */
   public toDisassociateWorkspaceApplication() {
@@ -637,6 +739,17 @@ export class Workspaces extends PolicyStatement {
    */
   public toGetAccountLink() {
     return this.to('GetAccountLink');
+  }
+
+  /**
+   * Grants permission to get troubleshooting recommendations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html
+   */
+  public toGetTroubleshootingRecommendation() {
+    return this.to('GetTroubleshootingRecommendation');
   }
 
   /**
@@ -666,10 +779,25 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DescribeImages
+   * - ec2:ModifyImageAttribute
+   *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ImportWorkspaceImage.html
    */
   public toImportWorkspaceImage() {
     return this.to('ImportWorkspaceImage');
+  }
+
+  /**
+   * Grants permission to invoke troubleshooting investigation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html
+   */
+  public toInvokeTroubleshootingInvestigation() {
+    return this.to('InvokeTroubleshootingInvestigation');
   }
 
   /**
@@ -692,6 +820,17 @@ export class Workspaces extends PolicyStatement {
    */
   public toListAvailableManagementCidrRanges() {
     return this.to('ListAvailableManagementCidrRanges');
+  }
+
+  /**
+   * Grants permission to list troubleshooting recommendations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html
+   */
+  public toListTroubleshootingRecommendations() {
+    return this.to('ListTroubleshootingRecommendations');
   }
 
   /**
@@ -763,7 +902,7 @@ export class Workspaces extends PolicyStatement {
   /**
    * Grants permission to modify the self-service WorkSpace management capabilities for your users
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ModifySelfservicePermissions.html
    */
@@ -853,6 +992,10 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_RegisterWorkspaceDirectory.html
    */
   public toRegisterWorkspaceDirectory() {
@@ -885,6 +1028,9 @@ export class Workspaces extends PolicyStatement {
    * Grants permission to remove rules from IP access control groups
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - workspaces:UpdateRulesOfIpGroup
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_RevokeIpRules.html
    */
@@ -941,6 +1087,9 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserId()
+   *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_Stream.html
    */
   public toStream() {
@@ -994,133 +1143,12 @@ export class Workspaces extends PolicyStatement {
   /**
    * Grants permission to share or unshare connection aliases with other accounts
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateConnectionAliasPermission.html
    */
   public toUpdateConnectionAliasPermission() {
     return this.to('UpdateConnectionAliasPermission');
-  }
-
-  /**
-   * Grants permission to replace rules for IP access control groups
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateRulesOfIpGroup.html
-   */
-  public toUpdateRulesOfIpGroup() {
-    return this.to('UpdateRulesOfIpGroup');
-  }
-
-  /**
-   * Grants permission to update the WorkSpace images used in WorkSpace bundles
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateWorkspaceBundle.html
-   */
-  public toUpdateWorkspaceBundle() {
-    return this.to('UpdateWorkspaceBundle');
-  }
-
-  /**
-   * Grants permission to share or unshare WorkSpace images with other accounts by specifying whether other accounts have permission to copy the image
-   *
-   * Access Level: Permissions management, Write
-   *
-   * https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateWorkspaceImagePermission.html
-   */
-  public toUpdateWorkspaceImagePermission() {
-    return this.to('UpdateWorkspaceImagePermission');
-  }
-
-  /**
-   * Grants permission to update the WorkSpaces pool
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateWorkspacesPool.html
-   */
-  public toUpdateWorkspacesPool() {
-    return this.to('UpdateWorkspacesPool');
-  }
-
-  /**
-   * Grants permission to create a root client certificate
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
-   */
-  public toCreateRootClientCertificate() {
-    return this.to('CreateRootClientCertificate');
-  }
-
-  /**
-   * Grants permission to delete root client certificate
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
-   */
-  public toDeleteRootClientCertificate() {
-    return this.to('DeleteRootClientCertificate');
-  }
-
-  /**
-   * Grants permission to retrieve information about consent agreement to BYOL minimum requirements
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
-   */
-  public toDescribeConsent() {
-    return this.to('DescribeConsent');
-  }
-
-  /**
-   * Grants permission to directory management actions while managing and provisioning workspaces
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
-   */
-  public toDirectoryAccessManagement() {
-    return this.to('DirectoryAccessManagement');
-  }
-
-  /**
-   * Grants permission to get troubleshooting recommendations
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html
-   */
-  public toGetTroubleshootingRecommendation() {
-    return this.to('GetTroubleshootingRecommendation');
-  }
-
-  /**
-   * Grants permission to invoke troubleshooting investigation
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html
-   */
-  public toInvokeTroubleshootingInvestigation() {
-    return this.to('InvokeTroubleshootingInvestigation');
-  }
-
-  /**
-   * Grants permission to list troubleshooting recommendations
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html
-   */
-  public toListTroubleshootingRecommendations() {
-    return this.to('ListTroubleshootingRecommendations');
   }
 
   /**
@@ -1145,6 +1173,54 @@ export class Workspaces extends PolicyStatement {
     return this.to('UpdateRootClientCertificate');
   }
 
+  /**
+   * Grants permission to replace rules for IP access control groups
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - workspaces:AuthorizeIpRules
+   * - workspaces:RevokeIpRules
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateRulesOfIpGroup.html
+   */
+  public toUpdateRulesOfIpGroup() {
+    return this.to('UpdateRulesOfIpGroup');
+  }
+
+  /**
+   * Grants permission to update the WorkSpace images used in WorkSpace bundles
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateWorkspaceBundle.html
+   */
+  public toUpdateWorkspaceBundle() {
+    return this.to('UpdateWorkspaceBundle');
+  }
+
+  /**
+   * Grants permission to share or unshare WorkSpace images with other accounts by specifying whether other accounts have permission to copy the image
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateWorkspaceImagePermission.html
+   */
+  public toUpdateWorkspaceImagePermission() {
+    return this.to('UpdateWorkspaceImagePermission');
+  }
+
+  /**
+   * Grants permission to update the WorkSpaces pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateWorkspacesPool.html
+   */
+  public toUpdateWorkspacesPool() {
+    return this.to('UpdateWorkspacesPool');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptAccountLinkInvitation',
@@ -1157,8 +1233,8 @@ export class Workspaces extends PolicyStatement {
       'CreateConnectClientAddIn',
       'CreateConnectionAlias',
       'CreateIpGroup',
+      'CreateRootClientCertificate',
       'CreateStandbyWorkspaces',
-      'CreateTags',
       'CreateUpdatedWorkspaceImage',
       'CreateWorkspaceBundle',
       'CreateWorkspaceImage',
@@ -1169,7 +1245,7 @@ export class Workspaces extends PolicyStatement {
       'DeleteConnectClientAddIn',
       'DeleteConnectionAlias',
       'DeleteIpGroup',
-      'DeleteTags',
+      'DeleteRootClientCertificate',
       'DeleteWorkspaceBundle',
       'DeleteWorkspaceImage',
       'DeployWorkspaceApplications',
@@ -1186,7 +1262,6 @@ export class Workspaces extends PolicyStatement {
       'ModifyClientProperties',
       'ModifyEndpointEncryptionMode',
       'ModifySamlProperties',
-      'ModifySelfservicePermissions',
       'ModifyStreamingProperties',
       'ModifyWorkspaceAccessProperties',
       'ModifyWorkspaceCreationProperties',
@@ -1207,15 +1282,11 @@ export class Workspaces extends PolicyStatement {
       'TerminateWorkspacesPool',
       'TerminateWorkspacesPoolSession',
       'UpdateConnectClientAddIn',
-      'UpdateConnectionAliasPermission',
+      'UpdateConsent',
+      'UpdateRootClientCertificate',
       'UpdateRulesOfIpGroup',
       'UpdateWorkspaceBundle',
-      'UpdateWorkspaceImagePermission',
-      'UpdateWorkspacesPool',
-      'CreateRootClientCertificate',
-      'DeleteRootClientCertificate',
-      'UpdateConsent',
-      'UpdateRootClientCertificate'
+      'UpdateWorkspacesPool'
     ],
     Tagging: [
       'CreateTags',
@@ -1227,6 +1298,7 @@ export class Workspaces extends PolicyStatement {
       'DescribeClientBranding',
       'DescribeConnectionAliasPermissions',
       'DescribeConnectionAliases',
+      'DescribeConsent',
       'DescribeCustomWorkspaceImageImport',
       'DescribeIpGroups',
       'DescribeTags',
@@ -1234,7 +1306,6 @@ export class Workspaces extends PolicyStatement {
       'DescribeWorkspaceImagePermissions',
       'DescribeWorkspacesConnectionStatus',
       'GetAccountLink',
-      'DescribeConsent',
       'GetTroubleshootingRecommendation',
       'InvokeTroubleshootingInvestigation',
       'ListTroubleshootingRecommendations'
@@ -1253,9 +1324,9 @@ export class Workspaces extends PolicyStatement {
       'DescribeWorkspaces',
       'DescribeWorkspacesPoolSessions',
       'DescribeWorkspacesPools',
+      'DirectoryAccessManagement',
       'ListAccountLinks',
-      'ListAvailableManagementCidrRanges',
-      'DirectoryAccessManagement'
+      'ListAvailableManagementCidrRanges'
     ],
     'Permissions management': [
       'ModifySelfservicePermissions',
@@ -1273,29 +1344,9 @@ export class Workspaces extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
   public onCertificateid(certificateId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspacecertificate/${ certificateId }`);
-  }
-
-  /**
-   * Adds a resource of type connectionalias to the statement
-   *
-   * https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html
-   *
-   * @param connectionAliasId - Identifier for the connectionAliasId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onConnectionalias(connectionAliasId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connectionalias/${ connectionAliasId }`);
   }
 
   /**
@@ -1313,23 +1364,6 @@ export class Workspaces extends PolicyStatement {
    */
   public onDirectoryid(directoryId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:directory/${ directoryId }`);
-  }
-
-  /**
-   * Adds a resource of type workspaceapplication to the statement
-   *
-   * https://docs.aws.amazon.com/workspaces/latest/adminguide/application-bundle-management.html
-   *
-   * @param workSpaceApplicationId - Identifier for the workSpaceApplicationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onWorkspaceapplication(workSpaceApplicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspaceapplication/${ workSpaceApplicationId }`);
   }
 
   /**
@@ -1401,9 +1435,9 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type workspacespool to the statement
+   * Adds a resource of type workspacespoolid to the statement
    *
-   * https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-pools.html
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-pool.html
    *
    * @param poolId - Identifier for the poolId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1413,8 +1447,42 @@ export class Workspaces extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onWorkspacespool(poolId: string, account?: string, region?: string, partition?: string) {
+  public onWorkspacespoolid(poolId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspacespool/${ poolId }`);
+  }
+
+  /**
+   * Adds a resource of type connectionalias to the statement
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html
+   *
+   * @param connectionAliasId - Identifier for the connectionAliasId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnectionalias(connectionAliasId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connectionalias/${ connectionAliasId }`);
+  }
+
+  /**
+   * Adds a resource of type workspaceapplication to the statement
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/application-bundle-management.html
+   *
+   * @param workSpaceApplicationId - Identifier for the workSpaceApplicationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorkspaceapplication(workSpaceApplicationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspaceapplication/${ workSpaceApplicationId }`);
   }
 
   /**
@@ -1423,9 +1491,16 @@ export class Workspaces extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCopyWorkspaceImage()
    * - .toCreateConnectionAlias()
    * - .toCreateIpGroup()
+   * - .toCreateStandbyWorkspaces()
    * - .toCreateTags()
+   * - .toCreateUpdatedWorkspaceImage()
+   * - .toCreateWorkspaceBundle()
+   * - .toCreateWorkspaceImage()
+   * - .toCreateWorkspaces()
+   * - .toCreateWorkspacesPool()
    * - .toDeleteTags()
    * - .toRegisterWorkspaceDirectory()
    *
@@ -1443,89 +1518,24 @@ export class Workspaces extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toAssociateConnectionAlias()
-   * - .toAssociateIpGroups()
    * - .toAssociateWorkspaceApplication()
-   * - .toAuthorizeIpRules()
-   * - .toCopyWorkspaceImage()
-   * - .toCreateConnectClientAddIn()
-   * - .toCreateStandbyWorkspaces()
-   * - .toCreateUpdatedWorkspaceImage()
-   * - .toCreateWorkspaceBundle()
-   * - .toCreateWorkspaceImage()
    * - .toCreateWorkspaces()
-   * - .toCreateWorkspacesPool()
-   * - .toDeleteClientBranding()
-   * - .toDeleteConnectClientAddIn()
-   * - .toDeleteConnectionAlias()
-   * - .toDeleteIpGroup()
-   * - .toDeleteWorkspaceBundle()
-   * - .toDeleteWorkspaceImage()
    * - .toDeployWorkspaceApplications()
-   * - .toDeregisterWorkspaceDirectory()
    * - .toDescribeApplicationAssociations()
    * - .toDescribeBundleAssociations()
-   * - .toDescribeClientBranding()
-   * - .toDescribeClientProperties()
-   * - .toDescribeConnectClientAddIns()
-   * - .toDescribeConnectionAliasPermissions()
    * - .toDescribeImageAssociations()
-   * - .toDescribeIpGroups()
    * - .toDescribeWorkspaceAssociations()
-   * - .toDescribeWorkspaceImagePermissions()
-   * - .toDescribeWorkspaceSnapshots()
-   * - .toDescribeWorkspacesPoolSessions()
-   * - .toDisassociateConnectionAlias()
-   * - .toDisassociateIpGroups()
    * - .toDisassociateWorkspaceApplication()
-   * - .toImportClientBranding()
-   * - .toMigrateWorkspace()
-   * - .toModifyCertificateBasedAuthProperties()
-   * - .toModifyClientProperties()
-   * - .toModifyEndpointEncryptionMode()
-   * - .toModifySamlProperties()
-   * - .toModifySelfservicePermissions()
-   * - .toModifyStreamingProperties()
-   * - .toModifyWorkspaceAccessProperties()
-   * - .toModifyWorkspaceCreationProperties()
-   * - .toModifyWorkspaceProperties()
-   * - .toModifyWorkspaceState()
-   * - .toRebootWorkspaces()
-   * - .toRebuildWorkspaces()
-   * - .toRegisterWorkspaceDirectory()
-   * - .toRestoreWorkspace()
-   * - .toRevokeIpRules()
-   * - .toStartWorkspaces()
-   * - .toStartWorkspacesPool()
-   * - .toStopWorkspaces()
-   * - .toStopWorkspacesPool()
-   * - .toStream()
-   * - .toTerminateWorkspaces()
-   * - .toTerminateWorkspacesPool()
-   * - .toUpdateConnectClientAddIn()
-   * - .toUpdateConnectionAliasPermission()
-   * - .toUpdateRulesOfIpGroup()
-   * - .toUpdateWorkspaceBundle()
-   * - .toUpdateWorkspaceImagePermission()
-   * - .toUpdateWorkspacesPool()
-   * - .toCreateRootClientCertificate()
-   * - .toDeleteRootClientCertificate()
-   * - .toDirectoryAccessManagement()
-   * - .toGetTroubleshootingRecommendation()
-   * - .toInvokeTroubleshootingInvestigation()
-   * - .toListTroubleshootingRecommendations()
-   * - .toUpdateRootClientCertificate()
    *
    * Applies to resource types:
-   * - certificateid
-   * - connectionalias
    * - directoryid
-   * - workspaceapplication
    * - workspacebundle
    * - workspaceid
    * - workspaceimage
    * - workspaceipgroup
-   * - workspacespool
+   * - workspacespoolid
+   * - connectionalias
+   * - workspaceapplication
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1541,9 +1551,16 @@ export class Workspaces extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCopyWorkspaceImage()
    * - .toCreateConnectionAlias()
    * - .toCreateIpGroup()
+   * - .toCreateStandbyWorkspaces()
    * - .toCreateTags()
+   * - .toCreateUpdatedWorkspaceImage()
+   * - .toCreateWorkspaceBundle()
+   * - .toCreateWorkspaceImage()
+   * - .toCreateWorkspaces()
+   * - .toCreateWorkspacesPool()
    * - .toDeleteTags()
    * - .toRegisterWorkspaceDirectory()
    *

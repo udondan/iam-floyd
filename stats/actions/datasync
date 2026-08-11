@@ -46,8 +46,8 @@ datasync:RemoveStorageSystem;Write
 datasync:StartDiscoveryJob;Write
 datasync:StartTaskExecution;Write
 datasync:StopDiscoveryJob;Write
-datasync:TagResource;Tagging, Write
-datasync:UntagResource;Tagging, Write
+datasync:TagResource;Tagging
+datasync:UntagResource;Tagging
 datasync:UpdateAgent;Write
 datasync:UpdateDiscoveryJob;Write
 datasync:UpdateLocationAzureBlob;Write

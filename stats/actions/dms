@@ -1,4 +1,4 @@
-dms:AddTagsToResource;Tagging, Write
+dms:AddTagsToResource;Tagging
 dms:ApplyPendingMaintenanceAction;Write
 dms:AssociateExtensionPack;Write
 dms:BatchStartRecommendations;Write
@@ -98,7 +98,7 @@ dms:RebootReplicationInstance;Write
 dms:RefreshSchemas;Write
 dms:ReloadReplicationTables;Write
 dms:ReloadTables;Write
-dms:RemoveTagsFromResource;Tagging, Write
+dms:RemoveTagsFromResource;Tagging
 dms:RunFleetAdvisorLsaAnalysis;Write
 dms:StartDataMigration;Write
 dms:StartMetadataModelAssessment;Write

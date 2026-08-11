@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [codebuild](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codebuild.html).
+ * Statement provider for service [codebuild](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodebuild.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Codebuild extends PolicyStatement {
   public servicePrefix = 'codebuild';
 
   /**
-   * Statement provider for service [codebuild](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codebuild.html).
+   * Statement provider for service [codebuild](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodebuild.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -118,9 +118,49 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add or update information about a report
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public toBatchPutCodeCoverages() {
+    return this.to('BatchPutCodeCoverages');
+  }
+
+  /**
+   * Grants permission to add or update information about a report
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public toBatchPutTestCases() {
+    return this.to('BatchPutTestCases');
+  }
+
+  /**
    * Grants permission to create a compute fleet
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifImageId()
+   * - .ifComputeType()
+   * - .ifVpcConfig()
+   * - .ifVpcConfigVpcId()
+   * - .ifVpcConfigSecurityGroupIds()
+   * - .ifVpcConfigSubnets()
+   * - .ifComputeConfiguration()
+   * - .ifComputeConfigurationDisk()
+   * - .ifComputeConfigurationInstanceType()
+   * - .ifComputeConfigurationMachineType()
+   * - .ifComputeConfigurationMemory()
+   * - .ifComputeConfigurationVCpu()
+   * - .ifEnvironmentType()
+   * - .ifFleetServiceRole()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateFleet.html
    */
@@ -133,6 +173,94 @@ export class Codebuild extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAutoRetryLimit()
+   * - .ifConcurrentBuildLimit()
+   * - .ifArtifacts()
+   * - .ifArtifactsBucketOwnerAccess()
+   * - .ifArtifactsEncryptionDisabled()
+   * - .ifArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifactsArtifactIdentifier()
+   * - .ifSecondaryArtifactsBucketOwnerAccess()
+   * - .ifSecondaryArtifactsEncryptionDisabled()
+   * - .ifSecondaryArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSource()
+   * - .ifSourceBuildStatusConfigTargetUrl()
+   * - .ifSourceBuildStatusConfigContext()
+   * - .ifSourceLocation()
+   * - .ifSourceInsecureSsl()
+   * - .ifSourceBuildspec()
+   * - .ifSourceAuthResource()
+   * - .ifSourceAuthType()
+   * - .ifSecondarySources()
+   * - .ifSecondarySourcesSourceIdentifier()
+   * - .ifSecondarySourcesBuildStatusConfigTargetUrl()
+   * - .ifSecondarySourcesBuildStatusConfigContext()
+   * - .ifSecondarySourcesLocation()
+   * - .ifSecondarySourcesAuthResource()
+   * - .ifSecondarySourcesAuthType()
+   * - .ifSecondarySourcesBuildspec()
+   * - .ifSecondarySourcesInsecureSsl()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifLogsConfig()
+   * - .ifLogsConfigS3Logs()
+   * - .ifLogsConfigS3LogsBucketOwnerAccess()
+   * - .ifLogsConfigS3LogsEncryptionDisabled()
+   * - .ifLogsConfigS3LogsLocation()
+   * - .ifLogsConfigS3LogsStatus()
+   * - .ifFileSystemLocationsIdentifier()
+   * - .ifFileSystemLocationsType()
+   * - .ifFileSystemLocationsLocation()
+   * - .ifFileSystemLocations()
+   * - .ifFileSystemLocations()
+   * - .ifBuildBatchConfig()
+   * - .ifBuildBatchConfigServiceRole()
+   * - .ifBuildBatchConfigRestrictionsComputeTypesAllowed()
+   * - .ifBuildBatchConfigRestrictionsFleetsAllowed()
+   * - .ifVpcConfig()
+   * - .ifVpcConfigSubnets()
+   * - .ifVpcConfigVpcId()
+   * - .ifVpcConfigSecurityGroupIds()
+   * - .ifEnvironment()
+   * - .ifEnvironmentType()
+   * - .ifEnvironmentFleetFleetArn()
+   * - .ifEnvironmentComputeType()
+   * - .ifEnvironmentImage()
+   * - .ifEnvironmentImagePullCredentialsType()
+   * - .ifEnvironmentPrivilegedMode()
+   * - .ifEnvironmentCertificate()
+   * - .ifEnvironmentComputeConfiguration()
+   * - .ifEnvironmentComputeConfigurationDisk()
+   * - .ifEnvironmentComputeConfigurationInstanceType()
+   * - .ifEnvironmentComputeConfigurationMachineType()
+   * - .ifEnvironmentComputeConfigurationMemory()
+   * - .ifEnvironmentComputeConfigurationVCpu()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentEnvironmentVariablesName()
+   * - .ifEnvironmentEnvironmentVariablesValue()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentRegistryCredential()
+   * - .ifEnvironmentRegistryCredentialCredential()
+   * - .ifEnvironmentRegistryCredentialCredentialProvider()
+   * - .ifEncryptionKey()
+   * - .ifCache()
+   * - .ifCacheType()
+   * - .ifCacheLocation()
+   * - .ifCacheModes()
+   * - .ifServiceRole()
+   *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateProject.html
    */
   public toCreateProject() {
@@ -140,9 +268,29 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a report. A report is created when tests specified in the buildspec file for a report groups run during the build of a project
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public toCreateReport() {
+    return this.to('CreateReport');
+  }
+
+  /**
    * Grants permission to create a report group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifExportConfigS3DestinationBucket()
+   * - .ifExportConfigS3DestinationBucketOwner()
+   * - .ifExportConfigS3DestinationEncryptionKey()
+   * - .ifExportConfigS3DestinationEncryptionDisabled()
+   * - .ifExportConfigS3DestinationPath()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateReportGroup.html
    */
@@ -154,6 +302,13 @@ export class Codebuild extends PolicyStatement {
    * Grants permission to create webhook. For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed to the repository
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifBuildType()
+   * - .ifManualCreation()
+   * - .ifScopeConfigurationDomain()
+   * - .ifScopeConfigurationName()
+   * - .ifScopeConfigurationScope()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateWebhook.html
    */
@@ -181,6 +336,17 @@ export class Codebuild extends PolicyStatement {
    */
   public toDeleteFleet() {
     return this.to('DeleteFleet');
+  }
+
+  /**
+   * Grants permission to delete an OAuth token from a connected third-party OAuth provider. Only used in the AWS CodeBuild console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public toDeleteOAuthToken() {
+    return this.to('DeleteOAuthToken');
   }
 
   /**
@@ -219,7 +385,7 @@ export class Codebuild extends PolicyStatement {
   /**
    * Grants permission to delete a resource policy for the associated project or report group
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteResourcePolicy.html
    */
@@ -378,6 +544,17 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list connected third-party OAuth providers. Only used in the AWS CodeBuild console
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public toListConnectedOAuthAccounts() {
+    return this.to('ListConnectedOAuthAccounts');
+  }
+
+  /**
    * Grants permission to get information about Docker images that are managed by AWS CodeBuild
    *
    * Access Level: List
@@ -444,6 +621,17 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list source code repositories from a connected third-party OAuth provider. Only used in the AWS CodeBuild console
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public toListRepositories() {
+    return this.to('ListRepositories');
+  }
+
+  /**
    * Grants permission to get a list of sandbox IDs, with each sandbox ID representing a single sandbox
    *
    * Access Level: List
@@ -499,9 +687,20 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Grants permission to save an OAuth token from a connected third-party OAuth provider. Only used in the AWS CodeBuild console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public toPersistOAuthToken() {
+    return this.to('PersistOAuthToken');
+  }
+
+  /**
    * Grants permission to create a resource policy for the associated project or report group
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_PutResourcePolicy.html
    */
@@ -536,6 +735,72 @@ export class Codebuild extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAutoRetryLimit()
+   * - .ifArtifacts()
+   * - .ifArtifactsBucketOwnerAccess()
+   * - .ifArtifactsEncryptionDisabled()
+   * - .ifArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifactsArtifactIdentifier()
+   * - .ifSecondaryArtifactsBucketOwnerAccess()
+   * - .ifSecondaryArtifactsEncryptionDisabled()
+   * - .ifSecondaryArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSource()
+   * - .ifSourceBuildStatusConfigTargetUrl()
+   * - .ifSourceBuildStatusConfigContext()
+   * - .ifSourceLocation()
+   * - .ifSourceInsecureSsl()
+   * - .ifSourceBuildspec()
+   * - .ifSourceAuthResource()
+   * - .ifSourceAuthType()
+   * - .ifSecondarySources()
+   * - .ifSecondarySourcesSourceIdentifier()
+   * - .ifSecondarySourcesBuildStatusConfigTargetUrl()
+   * - .ifSecondarySourcesBuildStatusConfigContext()
+   * - .ifSecondarySourcesLocation()
+   * - .ifSecondarySourcesAuthResource()
+   * - .ifSecondarySourcesAuthType()
+   * - .ifSecondarySourcesBuildspec()
+   * - .ifSecondarySourcesInsecureSsl()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifLogsConfig()
+   * - .ifLogsConfigS3Logs()
+   * - .ifLogsConfigS3LogsBucketOwnerAccess()
+   * - .ifLogsConfigS3LogsEncryptionDisabled()
+   * - .ifLogsConfigS3LogsLocation()
+   * - .ifLogsConfigS3LogsStatus()
+   * - .ifEnvironment()
+   * - .ifEnvironmentType()
+   * - .ifEnvironmentFleetFleetArn()
+   * - .ifEnvironmentComputeType()
+   * - .ifEnvironmentImage()
+   * - .ifEnvironmentImagePullCredentialsType()
+   * - .ifEnvironmentPrivilegedMode()
+   * - .ifEnvironmentCertificate()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentEnvironmentVariablesName()
+   * - .ifEnvironmentEnvironmentVariablesValue()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentRegistryCredential()
+   * - .ifEnvironmentRegistryCredentialCredential()
+   * - .ifEnvironmentRegistryCredentialCredentialProvider()
+   * - .ifEncryptionKey()
+   * - .ifCache()
+   * - .ifCacheType()
+   * - .ifCacheLocation()
+   * - .ifCacheModes()
+   * - .ifServiceRole()
+   *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuild.html
    */
   public toStartBuild() {
@@ -546,6 +811,72 @@ export class Codebuild extends PolicyStatement {
    * Grants permission to start running a build batch
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifArtifacts()
+   * - .ifArtifactsBucketOwnerAccess()
+   * - .ifArtifactsEncryptionDisabled()
+   * - .ifArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifactsArtifactIdentifier()
+   * - .ifSecondaryArtifactsBucketOwnerAccess()
+   * - .ifSecondaryArtifactsEncryptionDisabled()
+   * - .ifSecondaryArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSource()
+   * - .ifSourceLocation()
+   * - .ifSourceInsecureSsl()
+   * - .ifSourceBuildspec()
+   * - .ifSourceAuthResource()
+   * - .ifSourceAuthType()
+   * - .ifSecondarySources()
+   * - .ifSecondarySourcesSourceIdentifier()
+   * - .ifSecondarySourcesBuildStatusConfigTargetUrl()
+   * - .ifSecondarySourcesBuildStatusConfigContext()
+   * - .ifSecondarySourcesLocation()
+   * - .ifSecondarySourcesAuthResource()
+   * - .ifSecondarySourcesAuthType()
+   * - .ifSecondarySourcesBuildspec()
+   * - .ifSecondarySourcesInsecureSsl()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifLogsConfig()
+   * - .ifLogsConfigS3Logs()
+   * - .ifLogsConfigS3LogsBucketOwnerAccess()
+   * - .ifLogsConfigS3LogsEncryptionDisabled()
+   * - .ifLogsConfigS3LogsLocation()
+   * - .ifLogsConfigS3LogsStatus()
+   * - .ifBuildBatchConfig()
+   * - .ifBuildBatchConfigServiceRole()
+   * - .ifBuildBatchConfigRestrictionsComputeTypesAllowed()
+   * - .ifBuildBatchConfigRestrictionsFleetsAllowed()
+   * - .ifEnvironment()
+   * - .ifEnvironmentType()
+   * - .ifEnvironmentComputeType()
+   * - .ifEnvironmentImage()
+   * - .ifEnvironmentImagePullCredentialsType()
+   * - .ifEnvironmentPrivilegedMode()
+   * - .ifEnvironmentCertificate()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentEnvironmentVariablesName()
+   * - .ifEnvironmentEnvironmentVariablesValue()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentRegistryCredential()
+   * - .ifEnvironmentRegistryCredentialCredential()
+   * - .ifEnvironmentRegistryCredentialCredentialProvider()
+   * - .ifEncryptionKey()
+   * - .ifCache()
+   * - .ifCacheType()
+   * - .ifCacheLocation()
+   * - .ifCacheModes()
+   * - .ifServiceRole()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuildBatch.html
    */
@@ -624,6 +955,24 @@ export class Codebuild extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifImageId()
+   * - .ifComputeType()
+   * - .ifVpcConfig()
+   * - .ifVpcConfigVpcId()
+   * - .ifVpcConfigSecurityGroupIds()
+   * - .ifVpcConfigSubnets()
+   * - .ifComputeConfiguration()
+   * - .ifComputeConfigurationDisk()
+   * - .ifComputeConfigurationInstanceType()
+   * - .ifComputeConfigurationMachineType()
+   * - .ifComputeConfigurationMemory()
+   * - .ifComputeConfigurationVCpu()
+   * - .ifEnvironmentType()
+   * - .ifFleetServiceRole()
+   *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateFleet.html
    */
   public toUpdateFleet() {
@@ -634,6 +983,94 @@ export class Codebuild extends PolicyStatement {
    * Grants permission to change the settings of an existing build project
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAutoRetryLimit()
+   * - .ifConcurrentBuildLimit()
+   * - .ifArtifacts()
+   * - .ifArtifactsBucketOwnerAccess()
+   * - .ifArtifactsEncryptionDisabled()
+   * - .ifArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifactsArtifactIdentifier()
+   * - .ifSecondaryArtifactsBucketOwnerAccess()
+   * - .ifSecondaryArtifactsEncryptionDisabled()
+   * - .ifSecondaryArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSource()
+   * - .ifSourceBuildStatusConfigTargetUrl()
+   * - .ifSourceBuildStatusConfigContext()
+   * - .ifSourceLocation()
+   * - .ifSourceInsecureSsl()
+   * - .ifSourceBuildspec()
+   * - .ifSourceAuthResource()
+   * - .ifSourceAuthType()
+   * - .ifSecondarySources()
+   * - .ifSecondarySourcesSourceIdentifier()
+   * - .ifSecondarySourcesBuildStatusConfigTargetUrl()
+   * - .ifSecondarySourcesBuildStatusConfigContext()
+   * - .ifSecondarySourcesLocation()
+   * - .ifSecondarySourcesAuthResource()
+   * - .ifSecondarySourcesAuthType()
+   * - .ifSecondarySourcesBuildspec()
+   * - .ifSecondarySourcesInsecureSsl()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifLogsConfig()
+   * - .ifLogsConfigS3Logs()
+   * - .ifLogsConfigS3LogsBucketOwnerAccess()
+   * - .ifLogsConfigS3LogsEncryptionDisabled()
+   * - .ifLogsConfigS3LogsLocation()
+   * - .ifLogsConfigS3LogsStatus()
+   * - .ifFileSystemLocationsIdentifier()
+   * - .ifFileSystemLocationsType()
+   * - .ifFileSystemLocationsLocation()
+   * - .ifFileSystemLocations()
+   * - .ifFileSystemLocations()
+   * - .ifBuildBatchConfig()
+   * - .ifBuildBatchConfigServiceRole()
+   * - .ifBuildBatchConfigRestrictionsComputeTypesAllowed()
+   * - .ifBuildBatchConfigRestrictionsFleetsAllowed()
+   * - .ifVpcConfig()
+   * - .ifVpcConfigSubnets()
+   * - .ifVpcConfigVpcId()
+   * - .ifVpcConfigSecurityGroupIds()
+   * - .ifEnvironment()
+   * - .ifEnvironmentType()
+   * - .ifEnvironmentFleetFleetArn()
+   * - .ifEnvironmentComputeType()
+   * - .ifEnvironmentImage()
+   * - .ifEnvironmentImagePullCredentialsType()
+   * - .ifEnvironmentPrivilegedMode()
+   * - .ifEnvironmentCertificate()
+   * - .ifEnvironmentComputeConfiguration()
+   * - .ifEnvironmentComputeConfigurationDisk()
+   * - .ifEnvironmentComputeConfigurationInstanceType()
+   * - .ifEnvironmentComputeConfigurationMachineType()
+   * - .ifEnvironmentComputeConfigurationMemory()
+   * - .ifEnvironmentComputeConfigurationVCpu()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentEnvironmentVariablesName()
+   * - .ifEnvironmentEnvironmentVariablesValue()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentRegistryCredential()
+   * - .ifEnvironmentRegistryCredentialCredential()
+   * - .ifEnvironmentRegistryCredentialCredentialProvider()
+   * - .ifEncryptionKey()
+   * - .ifCache()
+   * - .ifCacheType()
+   * - .ifCacheLocation()
+   * - .ifCacheModes()
+   * - .ifServiceRole()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateProject.html
    */
@@ -646,109 +1083,15 @@ export class Codebuild extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifProjectVisibility()
+   *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateProjectVisibility.html
    */
   public toUpdateProjectVisibility() {
     return this.to('UpdateProjectVisibility');
-  }
-
-  /**
-   * Grants permission to change the settings of an existing report group
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateReportGroup.html
-   */
-  public toUpdateReportGroup() {
-    return this.to('UpdateReportGroup');
-  }
-
-  /**
-   * Grants permission to update the webhook associated with an AWS CodeBuild build project
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateWebhook.html
-   */
-  public toUpdateWebhook() {
-    return this.to('UpdateWebhook');
-  }
-
-  /**
-   * Grants permission to add or update information about a report
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
-   */
-  public toBatchPutCodeCoverages() {
-    return this.to('BatchPutCodeCoverages');
-  }
-
-  /**
-   * Grants permission to add or update information about a report
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
-   */
-  public toBatchPutTestCases() {
-    return this.to('BatchPutTestCases');
-  }
-
-  /**
-   * Grants permission to create a report. A report is created when tests specified in the buildspec file for a report groups run during the build of a project
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
-   */
-  public toCreateReport() {
-    return this.to('CreateReport');
-  }
-
-  /**
-   * Grants permission to delete an OAuth token from a connected third-party OAuth provider. Only used in the AWS CodeBuild console
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
-   */
-  public toDeleteOAuthToken() {
-    return this.to('DeleteOAuthToken');
-  }
-
-  /**
-   * Grants permission to list connected third-party OAuth providers. Only used in the AWS CodeBuild console
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
-   */
-  public toListConnectedOAuthAccounts() {
-    return this.to('ListConnectedOAuthAccounts');
-  }
-
-  /**
-   * Grants permission to list source code repositories from a connected third-party OAuth provider. Only used in the AWS CodeBuild console
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
-   */
-  public toListRepositories() {
-    return this.to('ListRepositories');
-  }
-
-  /**
-   * Grants permission to save an OAuth token from a connected third-party OAuth provider. Only used in the AWS CodeBuild console
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
-   */
-  public toPersistOAuthToken() {
-    return this.to('PersistOAuthToken');
   }
 
   /**
@@ -762,24 +1105,65 @@ export class Codebuild extends PolicyStatement {
     return this.to('UpdateReport');
   }
 
+  /**
+   * Grants permission to change the settings of an existing report group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifExportConfigS3DestinationBucket()
+   * - .ifExportConfigS3DestinationBucketOwner()
+   * - .ifExportConfigS3DestinationEncryptionKey()
+   * - .ifExportConfigS3DestinationEncryptionDisabled()
+   * - .ifExportConfigS3DestinationPath()
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateReportGroup.html
+   */
+  public toUpdateReportGroup() {
+    return this.to('UpdateReportGroup');
+  }
+
+  /**
+   * Grants permission to update the webhook associated with an AWS CodeBuild build project
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifBuildType()
+   * - .ifManualCreation()
+   * - .ifScopeConfigurationDomain()
+   * - .ifScopeConfigurationName()
+   * - .ifScopeConfigurationScope()
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateWebhook.html
+   */
+  public toUpdateWebhook() {
+    return this.to('UpdateWebhook');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchDeleteBuilds',
+      'BatchPutCodeCoverages',
+      'BatchPutTestCases',
       'CreateFleet',
       'CreateProject',
+      'CreateReport',
       'CreateReportGroup',
       'CreateWebhook',
       'DeleteBuildBatch',
       'DeleteFleet',
+      'DeleteOAuthToken',
       'DeleteProject',
       'DeleteReport',
       'DeleteReportGroup',
-      'DeleteResourcePolicy',
       'DeleteSourceCredentials',
       'DeleteWebhook',
       'ImportSourceCredentials',
       'InvalidateProjectCache',
-      'PutResourcePolicy',
+      'PersistOAuthToken',
       'RetryBuild',
       'RetryBuildBatch',
       'StartBuild',
@@ -793,14 +1177,9 @@ export class Codebuild extends PolicyStatement {
       'UpdateFleet',
       'UpdateProject',
       'UpdateProjectVisibility',
+      'UpdateReport',
       'UpdateReportGroup',
-      'UpdateWebhook',
-      'BatchPutCodeCoverages',
-      'BatchPutTestCases',
-      'CreateReport',
-      'DeleteOAuthToken',
-      'PersistOAuthToken',
-      'UpdateReport'
+      'UpdateWebhook'
     ],
     Read: [
       'BatchGetBuildBatches',
@@ -826,19 +1205,19 @@ export class Codebuild extends PolicyStatement {
       'ListBuilds',
       'ListBuildsForProject',
       'ListCommandExecutionsForSandbox',
+      'ListConnectedOAuthAccounts',
       'ListCuratedEnvironmentImages',
       'ListFleets',
       'ListProjects',
       'ListReportGroups',
       'ListReports',
       'ListReportsForReportGroup',
+      'ListRepositories',
       'ListSandboxes',
       'ListSandboxesForProject',
       'ListSharedProjects',
       'ListSharedReportGroups',
-      'ListSourceCredentials',
-      'ListConnectedOAuthAccounts',
-      'ListRepositories'
+      'ListSourceCredentials'
     ]
   };
 
@@ -871,21 +1250,6 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type fleet to the statement
-   *
-   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
-   *
-   * @param fleetName - Identifier for the fleetName.
-   * @param fleetId - Identifier for the fleetId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onFleet(fleetName: string, fleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:codebuild:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:fleet/${ fleetName }:${ fleetId }`);
-  }
-
-  /**
    * Adds a resource of type project to the statement
    *
    * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
@@ -900,6 +1264,23 @@ export class Codebuild extends PolicyStatement {
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:codebuild:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }`);
+  }
+
+  /**
+   * Adds a resource of type report-group to the statement
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   *
+   * @param reportGroupName - Identifier for the reportGroupName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onReportGroup(reportGroupName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codebuild:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:report-group/${ reportGroupName }`);
   }
 
   /**
@@ -918,20 +1299,18 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type report-group to the statement
+   * Adds a resource of type fleet to the statement
    *
    * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
    *
-   * @param reportGroupName - Identifier for the reportGroupName.
+   * @param fleetName - Identifier for the fleetName.
+   * @param fleetId - Identifier for the fleetId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
-  public onReportGroup(reportGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:codebuild:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:report-group/${ reportGroupName }`);
+  public onFleet(fleetName: string, fleetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codebuild:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:fleet/${ fleetName }:${ fleetId }`);
   }
 
   /**
@@ -974,50 +1353,6 @@ export class Codebuild extends PolicyStatement {
    * Filters access by actions based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toBatchDeleteBuilds()
-   * - .toBatchGetBuildBatches()
-   * - .toBatchGetBuilds()
-   * - .toBatchGetProjects()
-   * - .toBatchGetReportGroups()
-   * - .toBatchGetReports()
-   * - .toBatchGetSandboxes()
-   * - .toCreateProject()
-   * - .toCreateReportGroup()
-   * - .toCreateWebhook()
-   * - .toDeleteBuildBatch()
-   * - .toDeleteProject()
-   * - .toDeleteReport()
-   * - .toDeleteReportGroup()
-   * - .toDeleteResourcePolicy()
-   * - .toDeleteWebhook()
-   * - .toDescribeCodeCoverages()
-   * - .toDescribeTestCases()
-   * - .toGetReportGroupTrend()
-   * - .toGetResourcePolicy()
-   * - .toInvalidateProjectCache()
-   * - .toListBuildBatchesForProject()
-   * - .toListBuildsForProject()
-   * - .toListReportsForReportGroup()
-   * - .toListSandboxesForProject()
-   * - .toPutResourcePolicy()
-   * - .toRetryBuild()
-   * - .toRetryBuildBatch()
-   * - .toStartBuild()
-   * - .toStartBuildBatch()
-   * - .toStartSandbox()
-   * - .toStopBuild()
-   * - .toStopBuildBatch()
-   * - .toStopSandbox()
-   * - .toUpdateProject()
-   * - .toUpdateProjectVisibility()
-   * - .toUpdateReportGroup()
-   * - .toUpdateWebhook()
-   * - .toBatchPutCodeCoverages()
-   * - .toBatchPutTestCases()
-   * - .toCreateReport()
-   * - .toUpdateReport()
    *
    * Applies to resource types:
    * - project

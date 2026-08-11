@@ -56,8 +56,8 @@ eks:ListUpdates;List
 eks:MutateViaKubernetesApi;Write
 eks:RegisterCluster;Write
 eks:StartInsightsRefresh;Write
-eks:TagResource;Tagging, Write
-eks:UntagResource;Tagging, Write
+eks:TagResource;Tagging
+eks:UntagResource;Tagging
 eks:UpdateAccessEntry;Write
 eks:UpdateAddon;Write
 eks:UpdateCapability;Write

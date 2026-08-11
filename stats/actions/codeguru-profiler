@@ -14,10 +14,10 @@ codeguru-profiler:ListProfileTimes;List
 codeguru-profiler:ListProfilingGroups;List
 codeguru-profiler:ListTagsForResource;List
 codeguru-profiler:PostAgentProfile;Write
-codeguru-profiler:PutPermission;Permissions management, Write
+codeguru-profiler:PutPermission;Permissions management
 codeguru-profiler:RemoveNotificationChannel;Write
-codeguru-profiler:RemovePermission;Permissions management, Write
+codeguru-profiler:RemovePermission;Permissions management
 codeguru-profiler:SubmitFeedback;Write
-codeguru-profiler:TagResource;Tagging, Write
-codeguru-profiler:UntagResource;Tagging, Write
+codeguru-profiler:TagResource;Tagging
+codeguru-profiler:UntagResource;Tagging
 codeguru-profiler:UpdateProfilingGroup;Write

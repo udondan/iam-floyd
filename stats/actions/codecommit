@@ -71,9 +71,9 @@ codecommit:PostCommentReply;Write
 codecommit:PutCommentReaction;Write
 codecommit:PutFile;Write
 codecommit:PutRepositoryTriggers;Write
-codecommit:TagResource;Tagging, Write
+codecommit:TagResource;Tagging
 codecommit:TestRepositoryTriggers;Write
-codecommit:UntagResource;Tagging, Write
+codecommit:UntagResource;Tagging
 codecommit:UpdateApprovalRuleTemplateContent;Write
 codecommit:UpdateApprovalRuleTemplateDescription;Write
 codecommit:UpdateApprovalRuleTemplateName;Write

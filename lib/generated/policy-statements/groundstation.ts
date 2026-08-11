@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [groundstation](https://docs.aws.amazon.com/service-authorization/latest/reference/list_groundstation.html).
+ * Statement provider for service [groundstation](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsgroundstation.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Groundstation extends PolicyStatement {
   public servicePrefix = 'groundstation';
 
   /**
-   * Statement provider for service [groundstation](https://docs.aws.amazon.com/service-authorization/latest/reference/list_groundstation.html).
+   * Statement provider for service [groundstation](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsgroundstation.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -408,7 +408,11 @@ export class Groundstation extends PolicyStatement {
   /**
    * Grants permission to assign a resource tag
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_TagResource.html
    */
@@ -419,7 +423,10 @@ export class Groundstation extends PolicyStatement {
   /**
    * Grants permission to unassign a resource tag
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UntagResource.html
    */
@@ -496,8 +503,6 @@ export class Groundstation extends PolicyStatement {
       'DeleteMissionProfile',
       'RegisterAgent',
       'ReserveContact',
-      'TagResource',
-      'UntagResource',
       'UpdateAgentStatus',
       'UpdateConfig',
       'UpdateContact',
@@ -534,23 +539,6 @@ export class Groundstation extends PolicyStatement {
       'UntagResource'
     ]
   };
-
-  /**
-   * Adds a resource of type Agent to the statement
-   *
-   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_AgentDetails.html
-   *
-   * @param agentId - Identifier for the agentId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAgentId()
-   */
-  public onAgent(agentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:groundstation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent/${ agentId }`);
-  }
 
   /**
    * Adds a resource of type Config to the statement
@@ -679,6 +667,23 @@ export class Groundstation extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Agent to the statement
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_AgentDetails.html
+   *
+   * @param agentId - Identifier for the agentId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAgentId()
+   */
+  public onAgent(agentId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:groundstation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent/${ agentId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -704,27 +709,6 @@ export class Groundstation extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toCancelContact()
-   * - .toDeleteConfig()
-   * - .toDeleteDataflowEndpointGroup()
-   * - .toDeleteEphemeris()
-   * - .toDeleteMissionProfile()
-   * - .toDescribeContact()
-   * - .toDescribeContactVersion()
-   * - .toDescribeEphemeris()
-   * - .toGetConfig()
-   * - .toGetDataflowEndpointGroup()
-   * - .toGetMissionProfile()
-   * - .toListContactVersions()
-   * - .toListTagsForResource()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateConfig()
-   * - .toUpdateContact()
-   * - .toUpdateEphemeris()
-   * - .toUpdateMissionProfile()
    *
    * Applies to resource types:
    * - Config
@@ -768,11 +752,6 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_RegisterAgent.html#groundstation-RegisterAgent-response-agentId
    *
-   * Applies to actions:
-   * - .toGetAgentConfiguration()
-   * - .toGetAgentTaskResponseUrl()
-   * - .toUpdateAgentStatus()
-   *
    * Applies to resource types:
    * - Agent
    *
@@ -787,14 +766,6 @@ export class Groundstation extends PolicyStatement {
    * Filters access by the ID of a config
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateConfig.html#groundstation-CreateConfig-response-configId
-   *
-   * Applies to actions:
-   * - .toDeleteConfig()
-   * - .toGetConfig()
-   * - .toListTagsForResource()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateConfig()
    *
    * Applies to resource types:
    * - Config
@@ -811,14 +782,6 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateConfig.html#groundstation-CreateConfig-response-configType
    *
-   * Applies to actions:
-   * - .toDeleteConfig()
-   * - .toGetConfig()
-   * - .toListTagsForResource()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateConfig()
-   *
    * Applies to resource types:
    * - Config
    *
@@ -833,16 +796,6 @@ export class Groundstation extends PolicyStatement {
    * Filters access by the ID of a contact
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ReserveContact.html#groundstation-ReserveContact-response-contactId
-   *
-   * Applies to actions:
-   * - .toCancelContact()
-   * - .toDescribeContact()
-   * - .toDescribeContactVersion()
-   * - .toListContactVersions()
-   * - .toListTagsForResource()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateContact()
    *
    * Applies to resource types:
    * - Contact
@@ -859,13 +812,6 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateDataflowEndpointGroup.html#groundstation-CreateDataflowEndpointGroup-response-dataflowEndpointGroupId
    *
-   * Applies to actions:
-   * - .toDeleteDataflowEndpointGroup()
-   * - .toGetDataflowEndpointGroup()
-   * - .toListTagsForResource()
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
    * Applies to resource types:
    * - DataflowEndpointGroup
    *
@@ -880,13 +826,6 @@ export class Groundstation extends PolicyStatement {
    * Filters access by the ID of an ephemeris
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateEphemeris.html#groundstation-CreateEphemeris-response-ephemerisId
-   *
-   * Applies to actions:
-   * - .toDeleteEphemeris()
-   * - .toDescribeEphemeris()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateEphemeris()
    *
    * Applies to resource types:
    * - EphemerisItem
@@ -903,10 +842,6 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GroundStationData.html#groundstation-Type-GroundStationData-groundStationId
    *
-   * Applies to actions:
-   * - .toListAntennas()
-   * - .toListGroundStationReservations()
-   *
    * Applies to resource types:
    * - GroundStationResource
    *
@@ -922,14 +857,6 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateMissionProfile.html#groundstation-CreateMissionProfile-response-missionProfileId
    *
-   * Applies to actions:
-   * - .toDeleteMissionProfile()
-   * - .toGetMissionProfile()
-   * - .toListTagsForResource()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateMissionProfile()
-   *
    * Applies to resource types:
    * - MissionProfile
    *
@@ -944,9 +871,6 @@ export class Groundstation extends PolicyStatement {
    * Filters access by the ID of a satellite
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_SatelliteListItem.html#groundstation-Type-SatelliteListItem-satelliteId
-   *
-   * Applies to actions:
-   * - .toGetSatellite()
    *
    * Applies to resource types:
    * - Satellite

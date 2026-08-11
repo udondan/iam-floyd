@@ -26,8 +26,8 @@ connect-campaigns:ResumeCampaign;Write
 connect-campaigns:StartCampaign;Write
 connect-campaigns:StartInstanceOnboardingJob;Write
 connect-campaigns:StopCampaign;Write
-connect-campaigns:TagResource;Tagging, Write
-connect-campaigns:UntagResource;Tagging, Write
+connect-campaigns:TagResource;Tagging
+connect-campaigns:UntagResource;Tagging
 connect-campaigns:UpdateCampaignChannelSubtypeConfig;Write
 connect-campaigns:UpdateCampaignCommunicationLimits;Write
 connect-campaigns:UpdateCampaignCommunicationTime;Write

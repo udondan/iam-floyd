@@ -1,5 +1,5 @@
 datapipeline:ActivatePipeline;Write
-datapipeline:AddTags;Tagging, Write
+datapipeline:AddTags;Tagging
 datapipeline:CreatePipeline;Write
 datapipeline:DeactivatePipeline;Write
 datapipeline:DeletePipeline;Write
@@ -13,7 +13,7 @@ datapipeline:PollForTask;Write
 datapipeline:PutAccountLimits;Write
 datapipeline:PutPipelineDefinition;Write
 datapipeline:QueryObjects;Read
-datapipeline:RemoveTags;Tagging, Write
+datapipeline:RemoveTags;Tagging
 datapipeline:ReportTaskProgress;Write
 datapipeline:ReportTaskRunnerHeartbeat;Write
 datapipeline:SetStatus;Write

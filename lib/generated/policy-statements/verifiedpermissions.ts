@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [verifiedpermissions](https://docs.aws.amazon.com/service-authorization/latest/reference/list_verifiedpermissions.html).
+ * Statement provider for service [verifiedpermissions](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonverifiedpermissions.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Verifiedpermissions extends PolicyStatement {
   public servicePrefix = 'verifiedpermissions';
 
   /**
-   * Statement provider for service [verifiedpermissions](https://docs.aws.amazon.com/service-authorization/latest/reference/list_verifiedpermissions.html).
+   * Statement provider for service [verifiedpermissions](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonverifiedpermissions.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -46,8 +46,8 @@ export class Verifiedpermissions extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicyStore.html
@@ -159,6 +159,9 @@ export class Verifiedpermissions extends PolicyStatement {
    * Grants permission to retrieve details about a policy store
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - verifiedpermissions:ListTagsForResource
    *
    * https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetPolicyStore.html
    */
@@ -301,7 +304,11 @@ export class Verifiedpermissions extends PolicyStatement {
   /**
    * Grants permission to add tags to the specified policy store
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_TagResource.html
    */
@@ -312,7 +319,10 @@ export class Verifiedpermissions extends PolicyStatement {
   /**
    * Grants permission to remove tags from the specified policy store
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UntagResource.html
    */
@@ -377,8 +387,6 @@ export class Verifiedpermissions extends PolicyStatement {
       'DeletePolicyStoreAlias',
       'DeletePolicyTemplate',
       'PutSchema',
-      'TagResource',
-      'UntagResource',
       'UpdateIdentitySource',
       'UpdatePolicy',
       'UpdatePolicyStore',
@@ -461,33 +469,7 @@ export class Verifiedpermissions extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toCreateIdentitySource()
-   * - .toCreatePolicy()
    * - .toCreatePolicyStore()
-   * - .toCreatePolicyStoreAlias()
-   * - .toCreatePolicyTemplate()
-   * - .toDeleteIdentitySource()
-   * - .toDeletePolicy()
-   * - .toDeletePolicyStore()
-   * - .toDeletePolicyTemplate()
-   * - .toGetIdentitySource()
-   * - .toGetPolicy()
-   * - .toGetPolicyStore()
-   * - .toGetPolicyTemplate()
-   * - .toGetSchema()
-   * - .toIsAuthorized()
-   * - .toIsAuthorizedWithToken()
-   * - .toListIdentitySources()
-   * - .toListPolicies()
-   * - .toListPolicyTemplates()
-   * - .toListTagsForResource()
-   * - .toPutSchema()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateIdentitySource()
-   * - .toUpdatePolicy()
-   * - .toUpdatePolicyStore()
-   * - .toUpdatePolicyTemplate()
    *
    * Applies to resource types:
    * - policy-store

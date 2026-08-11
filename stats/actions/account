@@ -8,7 +8,6 @@ account:GetAlternateContact;Read
 account:GetContactInformation;Read
 account:GetGovCloudAccountInformation;Read
 account:GetPrimaryEmail;Read
-account:GetPrimaryEmailUpdateStatus;Read
 account:GetRegionOptStatus;Read
 account:ListRegions;List
 account:PutAccountName;Write

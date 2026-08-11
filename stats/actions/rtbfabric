@@ -27,8 +27,8 @@ rtbfabric:ListRequesterGateways;List
 rtbfabric:ListResponderGateways;List
 rtbfabric:ListTagsForResource;Read
 rtbfabric:RejectLink;Write
-rtbfabric:TagResource;Tagging, Write
-rtbfabric:UntagResource;Tagging, Write
+rtbfabric:TagResource;Tagging
+rtbfabric:UntagResource;Tagging
 rtbfabric:UpdateLink;Write
 rtbfabric:UpdateLinkModuleFlow;Write
 rtbfabric:UpdateLinkRoutingRule;Write

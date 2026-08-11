@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [bedrock](https://docs.aws.amazon.com/service-authorization/latest/reference/list_bedrock.html).
+ * Statement provider for service [bedrock](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Bedrock extends PolicyStatement {
   public servicePrefix = 'bedrock';
 
   /**
-   * Statement provider for service [bedrock](https://docs.aws.amazon.com/service-authorization/latest/reference/list_bedrock.html).
+   * Statement provider for service [bedrock](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -27,6 +27,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toAgenticRetrieveStream() {
     return this.to('AgenticRetrieveStream');
+  }
+
+  /**
+   * Grants permission to configure vended log delivery for a knowledge base
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
   }
 
   /**
@@ -60,6 +71,20 @@ export class Bedrock extends PolicyStatement {
    */
   public toAssociateAgentKnowledgeBase() {
     return this.to('AssociateAgentKnowledgeBase');
+  }
+
+  /**
+   * Grants permission to use 3rd party platform to store knowledge data
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifThirdPartyKnowledgeBaseCredentialsSecretArn()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toAssociateThirdPartyKnowledgeBase() {
+    return this.to('AssociateThirdPartyKnowledgeBase');
   }
 
   /**
@@ -136,6 +161,10 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateAdvancedPromptOptimizationJob.html
    */
   public toCreateAdvancedPromptOptimizationJob() {
@@ -162,6 +191,10 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateAgentActionGroup.html
    */
   public toCreateAgentActionGroup() {
@@ -172,6 +205,10 @@ export class Bedrock extends PolicyStatement {
    * Grants permission to create a new alias for an agent
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateAgentAlias.html
    */
@@ -209,6 +246,10 @@ export class Bedrock extends PolicyStatement {
    * Grants permission to create a new automated reasoning policy version
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    */
@@ -262,6 +303,10 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModelDeployment.html
    */
   public toCreateCustomModelDeployment() {
@@ -288,6 +333,10 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateDataAutomationProject.html
    */
   public toCreateDataAutomationProject() {
@@ -309,6 +358,10 @@ export class Bedrock extends PolicyStatement {
    * Grants permission to create a job for evaluation foundation models or custom models
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateEvaluationJob.html
    */
@@ -335,6 +388,10 @@ export class Bedrock extends PolicyStatement {
    * Grants permission to create an alias of a prompt flow
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateFlowAlias.html
    */
@@ -369,6 +426,10 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    */
   public toCreateGuardrail() {
@@ -390,6 +451,10 @@ export class Bedrock extends PolicyStatement {
    * Grants permission to create inference profiles
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateInferenceProfile.html
    */
@@ -437,6 +502,10 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelCopyJob.html
    */
   public toCreateModelCopyJob() {
@@ -448,6 +517,10 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelCustomizationJob.html
    */
   public toCreateModelCustomizationJob() {
@@ -458,6 +531,10 @@ export class Bedrock extends PolicyStatement {
    * Grants permission to create a job for evaluation foundation models or custom models
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelEvaluationJob.html
    */
@@ -485,6 +562,10 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelInvocationJob.html
    */
   public toCreateModelInvocationJob() {
@@ -511,6 +592,10 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreatePromptRouter.html
    */
   public toCreatePromptRouter() {
@@ -522,6 +607,10 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreatePromptVersion.html
    */
   public toCreatePromptVersion() {
@@ -532,6 +621,10 @@ export class Bedrock extends PolicyStatement {
    * Grants permission to create a new provisioned model throughput
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateProvisionedModelThroughput.html
    */
@@ -883,6 +976,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Deletes a previously created Bedrock resource policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to delete a Session that you created earlier
    *
    * Access Level: Write
@@ -1175,6 +1279,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toGetBlueprintOptimizationStatus() {
     return this.to('GetBlueprintOptimizationStatus');
+  }
+
+  /**
+   * Grants permission to retrieve blueprint recommendation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toGetBlueprintRecommendation() {
+    return this.to('GetBlueprintRecommendation');
   }
 
   /**
@@ -1550,6 +1665,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Gets the resource policy document for a Bedrock resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetResourePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
    * Grants permission to retrieve an existing session
    *
    * Access Level: Read
@@ -1594,14 +1720,51 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke an Automated Reasoning policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toInvokeAutomatedReasoningPolicy() {
+    return this.to('InvokeAutomatedReasoningPolicy');
+  }
+
+  /**
    * Grants permission to invoke an async job to perform blueprint optimization
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Data_Automation_for_Amazon_Bedrock.html
    */
   public toInvokeBlueprintOptimizationAsync() {
     return this.to('InvokeBlueprintOptimizationAsync');
+  }
+
+  /**
+   * Grants permission to invoke blueprint recommendations asynchronously
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toInvokeBlueprintRecommendationAsync() {
+    return this.to('InvokeBlueprintRecommendationAsync');
+  }
+
+  /**
+   * Grants permission to use the conversational builder which aids in building supported bedrock resources
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/userguide/agents-create-cb.html
+   */
+  public toInvokeBuilder() {
+    return this.to('InvokeBuilder');
   }
 
   /**
@@ -1620,6 +1783,10 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation-runtime_InvokeDataAutomationAsync.html
    */
   public toInvokeDataAutomationAsync() {
@@ -1630,6 +1797,10 @@ export class Bedrock extends PolicyStatement {
    * Grants permission to invoke a Data Automation Library ingestion job
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_InvokeDataAutomationLibraryIngestionJob.html
    */
@@ -1678,6 +1849,14 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifInferenceProfileArn()
+   * - .ifPromptRouterArn()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifGuardrailIdentifier()
+   * - .ifServiceTier()
+   *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html
    */
   public toInvokeModel() {
@@ -1688,6 +1867,12 @@ export class Bedrock extends PolicyStatement {
    * Grants permission to invoke the specified Bedrock model to run inference using the input provided in the request body with streaming response
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInferenceProfileArn()
+   * - .ifPromptRouterArn()
+   * - .ifGuardrailIdentifier()
+   * - .ifServiceTier()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html
    */
@@ -2324,6 +2509,21 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Adds a resource policy for a Bedrock resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Grants permission to put a use case for model access
    *
    * Access Level: Write
@@ -2341,6 +2541,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toRegisterMarketplaceModelEndpoint() {
     return this.to('RegisterMarketplaceModelEndpoint');
+  }
+
+  /**
+   * Grants permission to render an existing prompt or its version
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toRenderPrompt() {
+    return this.to('RenderPrompt');
   }
 
   /**
@@ -2489,7 +2700,11 @@ export class Bedrock extends PolicyStatement {
   /**
    * Grants permission to Tag a Bedrock resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_TagResource.html
    */
@@ -2500,7 +2715,10 @@ export class Bedrock extends PolicyStatement {
   /**
    * Grants permission to Untag a Bedrock resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_UntagResource.html
    */
@@ -2748,119 +2966,6 @@ export class Bedrock extends PolicyStatement {
     return this.to('ValidateFlowDefinition');
   }
 
-  /**
-   * Grants permission to configure vended log delivery for a knowledge base
-   *
-   * Access Level: Permissions management, Write
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   */
-  public toAllowVendedLogDeliveryForResource() {
-    return this.to('AllowVendedLogDeliveryForResource');
-  }
-
-  /**
-   * Grants permission to use 3rd party platform to store knowledge data
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifThirdPartyKnowledgeBaseCredentialsSecretArn()
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   */
-  public toAssociateThirdPartyKnowledgeBase() {
-    return this.to('AssociateThirdPartyKnowledgeBase');
-  }
-
-  /**
-   * Deletes a previously created Bedrock resource policy
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteResourcePolicy.html
-   */
-  public toDeleteResourcePolicy() {
-    return this.to('DeleteResourcePolicy');
-  }
-
-  /**
-   * Grants permission to retrieve blueprint recommendation
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   */
-  public toGetBlueprintRecommendation() {
-    return this.to('GetBlueprintRecommendation');
-  }
-
-  /**
-   * Gets the resource policy document for a Bedrock resource
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetResourePolicy.html
-   */
-  public toGetResourcePolicy() {
-    return this.to('GetResourcePolicy');
-  }
-
-  /**
-   * Grants permission to invoke an Automated Reasoning policy
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   */
-  public toInvokeAutomatedReasoningPolicy() {
-    return this.to('InvokeAutomatedReasoningPolicy');
-  }
-
-  /**
-   * Grants permission to invoke blueprint recommendations asynchronously
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   */
-  public toInvokeBlueprintRecommendationAsync() {
-    return this.to('InvokeBlueprintRecommendationAsync');
-  }
-
-  /**
-   * Grants permission to use the conversational builder which aids in building supported bedrock resources
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/userguide/agents-create-cb.html
-   */
-  public toInvokeBuilder() {
-    return this.to('InvokeBuilder');
-  }
-
-  /**
-   * Adds a resource policy for a Bedrock resource
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_PutResourcePolicy.html
-   */
-  public toPutResourcePolicy() {
-    return this.to('PutResourcePolicy');
-  }
-
-  /**
-   * Grants permission to render an existing prompt or its version
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   */
-  public toRenderPrompt() {
-    return this.to('RenderPrompt');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Read: [
       'AgenticRetrieveStream',
@@ -2889,6 +2994,7 @@ export class Bedrock extends PolicyStatement {
       'GetAutomatedReasoningPolicyTestResult',
       'GetBlueprint',
       'GetBlueprintOptimizationStatus',
+      'GetBlueprintRecommendation',
       'GetCustomModel',
       'GetCustomModelDeployment',
       'GetDataAutomationLibrary',
@@ -2923,9 +3029,11 @@ export class Bedrock extends PolicyStatement {
       'GetPrompt',
       'GetPromptRouter',
       'GetProvisionedModelThroughput',
+      'GetResourcePolicy',
       'GetSession',
       'GetUseCaseForModelAccess',
       'InvokeAgent',
+      'InvokeAutomatedReasoningPolicy',
       'InvokeFlow',
       'InvokeGuardrailChecks',
       'InvokeInlineAgent',
@@ -2935,16 +3043,17 @@ export class Bedrock extends PolicyStatement {
       'ListMarketplaceModelEndpoints',
       'ListTagsForResource',
       'OptimizePrompt',
+      'RenderPrompt',
       'Retrieve',
-      'ValidateFlowDefinition',
-      'GetBlueprintRecommendation',
-      'GetResourcePolicy',
-      'InvokeAutomatedReasoningPolicy',
-      'RenderPrompt'
+      'ValidateFlowDefinition'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
     ],
     Write: [
       'AssociateAgentCollaborator',
       'AssociateAgentKnowledgeBase',
+      'AssociateThirdPartyKnowledgeBase',
       'BatchDeleteAdvancedPromptOptimizationJob',
       'BatchDeleteEvaluationJob',
       'CancelAutomatedReasoningPolicyBuildWorkflow',
@@ -3014,6 +3123,7 @@ export class Bedrock extends PolicyStatement {
       'DeletePrompt',
       'DeletePromptRouter',
       'DeleteProvisionedModelThroughput',
+      'DeleteResourcePolicy',
       'DeleteSession',
       'DeregisterMarketplaceModelEndpoint',
       'DisassociateAgentCollaborator',
@@ -3021,6 +3131,8 @@ export class Bedrock extends PolicyStatement {
       'EndSession',
       'IngestKnowledgeBaseDocuments',
       'InvokeBlueprintOptimizationAsync',
+      'InvokeBlueprintRecommendationAsync',
+      'InvokeBuilder',
       'InvokeDataAutomation',
       'InvokeDataAutomationAsync',
       'InvokeDataAutomationLibraryIngestionJob',
@@ -3031,6 +3143,7 @@ export class Bedrock extends PolicyStatement {
       'PutFoundationModelEntitlement',
       'PutInvocationStep',
       'PutModelInvocationLoggingConfiguration',
+      'PutResourcePolicy',
       'PutUseCaseForModelAccess',
       'RegisterMarketplaceModelEndpoint',
       'Rerank',
@@ -3045,8 +3158,6 @@ export class Bedrock extends PolicyStatement {
       'StopIngestionJob',
       'StopModelCustomizationJob',
       'StopModelInvocationJob',
-      'TagResource',
-      'UntagResource',
       'UpdateAgent',
       'UpdateAgentActionGroup',
       'UpdateAgentAlias',
@@ -3067,13 +3178,7 @@ export class Bedrock extends PolicyStatement {
       'UpdateMarketplaceModelEndpoint',
       'UpdatePrompt',
       'UpdateProvisionedModelThroughput',
-      'UpdateSession',
-      'AllowVendedLogDeliveryForResource',
-      'AssociateThirdPartyKnowledgeBase',
-      'DeleteResourcePolicy',
-      'InvokeBlueprintRecommendationAsync',
-      'InvokeBuilder',
-      'PutResourcePolicy'
+      'UpdateSession'
     ],
     List: [
       'ListAdvancedPromptOptimizationJobs',
@@ -3126,14 +3231,37 @@ export class Bedrock extends PolicyStatement {
     Tagging: [
       'TagResource',
       'UntagResource'
-    ],
-    'Permissions management': [
-      'AllowVendedLogDeliveryForResource'
     ]
   };
 
   /**
-   * Adds a resource of type advanced-prompt-optimization-job to the statement
+   * Adds a resource of type foundation-model to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onFoundationModel(resourceId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }::foundation-model/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type system-tool to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSystemTool(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock::${ account ?? this.defaultAccount }:system-tool/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type async-invoke to the statement
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    *
@@ -3145,8 +3273,121 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onAdvancedPromptOptimizationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:advanced-prompt-optimization-job/${ resourceId }`);
+  public onAsyncInvoke(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:async-invoke/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type inference-profile to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onInferenceProfile(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:inference-profile/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type default-prompt-router to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onDefaultPromptRouter(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:default-prompt-router/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type prompt-router to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPromptRouter(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:prompt-router/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type application-inference-profile to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onApplicationInferenceProfile(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application-inference-profile/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type custom-model to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustomModel(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custom-model/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type provisioned-model to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProvisionedModel(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:provisioned-model/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type model-customization-job to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onModelCustomizationJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-customization-job/${ resourceId }`);
   }
 
   /**
@@ -3185,11 +3426,11 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type application-inference-profile to the statement
+   * Adds a resource of type knowledge-base to the statement
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    *
-   * @param resourceId - Identifier for the resourceId.
+   * @param knowledgeBaseId - Identifier for the knowledgeBaseId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -3197,12 +3438,12 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onApplicationInferenceProfile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application-inference-profile/${ resourceId }`);
+  public onKnowledgeBase(knowledgeBaseId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:knowledge-base/${ knowledgeBaseId }`);
   }
 
   /**
-   * Adds a resource of type async-invoke to the statement
+   * Adds a resource of type model-evaluation-job to the statement
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    *
@@ -3214,8 +3455,73 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onAsyncInvoke(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:async-invoke/${ resourceId }`);
+  public onModelEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-evaluation-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type evaluation-job to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:evaluation-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type model-invocation-job to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param jobIdentifier - Identifier for the jobIdentifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onModelInvocationJob(jobIdentifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-invocation-job/${ jobIdentifier }`);
+  }
+
+  /**
+   * Adds a resource of type guardrail to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param guardrailId - Identifier for the guardrailId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onGuardrail(guardrailId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:guardrail/${ guardrailId }`);
+  }
+
+  /**
+   * Adds a resource of type guardrail-profile to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/userguide/guardrail-profiles-permissions.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onGuardrailProfile(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:guardrail-profile/${ resourceId }`);
   }
 
   /**
@@ -3251,200 +3557,6 @@ export class Bedrock extends PolicyStatement {
    */
   public onAutomatedReasoningPolicyVersion(automatedReasoningPolicyId: string, automatedReasoningPolicyVersion: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automated-reasoning-policy/${ automatedReasoningPolicyId }:${ automatedReasoningPolicyVersion }`);
-  }
-
-  /**
-   * Adds a resource of type bedrock-marketplace-model-endpoint to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onBedrockMarketplaceModelEndpoint(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:marketplace/model-endpoint/all-access`);
-  }
-
-  /**
-   * Adds a resource of type blueprint to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param blueprintId - Identifier for the blueprintId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onBlueprint(blueprintId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:blueprint/${ blueprintId }`);
-  }
-
-  /**
-   * Adds a resource of type blueprint-optimization-invocation to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Data_Automation_for_Amazon_Bedrock.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onBlueprintOptimizationInvocation(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:blueprint-optimization-invocation/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type custom-model to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCustomModel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custom-model/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type custom-model-deployment to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCustomModelDeployment(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custom-model-deployment/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type data-automation-invocation-job to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDataAutomationInvocationJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-invocation/${ jobId }`);
-  }
-
-  /**
-   * Adds a resource of type data-automation-library to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param dataAutomationLibraryId - Identifier for the dataAutomationLibraryId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDataAutomationLibrary(dataAutomationLibraryId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-library/${ dataAutomationLibraryId }`);
-  }
-
-  /**
-   * Adds a resource of type data-automation-library-ingestion-job to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param ingestionJobId - Identifier for the ingestionJobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDataAutomationLibraryIngestionJob(ingestionJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-library-ingestion-job/${ ingestionJobId }`);
-  }
-
-  /**
-   * Adds a resource of type data-automation-profile to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param profileId - Identifier for the profileId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onDataAutomationProfile(profileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-profile/${ profileId }`);
-  }
-
-  /**
-   * Adds a resource of type data-automation-project to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param projectId - Identifier for the projectId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDataAutomationProject(projectId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-project/${ projectId }`);
-  }
-
-  /**
-   * Adds a resource of type default-prompt-router to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onDefaultPromptRouter(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:default-prompt-router/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type evaluation-job to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:evaluation-job/${ resourceId }`);
   }
 
   /**
@@ -3499,98 +3611,6 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type foundation-model to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onFoundationModel(resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }::foundation-model/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type guardrail to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param guardrailId - Identifier for the guardrailId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onGuardrail(guardrailId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:guardrail/${ guardrailId }`);
-  }
-
-  /**
-   * Adds a resource of type guardrail-profile to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/userguide/guardrail-profiles-permissions.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onGuardrailProfile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:guardrail-profile/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type imported-model to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onImportedModel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:imported-model/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type inference-profile to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onInferenceProfile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:inference-profile/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type knowledge-base to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param knowledgeBaseId - Identifier for the knowledgeBaseId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onKnowledgeBase(knowledgeBaseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:knowledge-base/${ knowledgeBaseId }`);
-  }
-
-  /**
    * Adds a resource of type model-copy-job to the statement
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
@@ -3608,74 +3628,6 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type model-customization-job to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onModelCustomizationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-customization-job/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type model-evaluation-job to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onModelEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-evaluation-job/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type model-import-job to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onModelImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-import-job/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type model-invocation-job to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param jobIdentifier - Identifier for the jobIdentifier.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onModelInvocationJob(jobIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-invocation-job/${ jobIdentifier }`);
-  }
-
-  /**
    * Adds a resource of type prompt to the statement
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptSummary.html
@@ -3690,23 +3642,6 @@ export class Bedrock extends PolicyStatement {
    */
   public onPrompt(promptId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:prompt/${ promptId }`);
-  }
-
-  /**
-   * Adds a resource of type prompt-router to the statement
-   *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onPromptRouter(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:prompt-router/${ resourceId }`);
   }
 
   /**
@@ -3728,7 +3663,7 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type provisioned-model to the statement
+   * Adds a resource of type model-import-job to the statement
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    *
@@ -3740,8 +3675,154 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onProvisionedModel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:provisioned-model/${ resourceId }`);
+  public onModelImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-import-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type imported-model to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onImportedModel(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:imported-model/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type bedrock-marketplace-model-endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onBedrockMarketplaceModelEndpoint(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:marketplace/model-endpoint/all-access`);
+  }
+
+  /**
+   * Adds a resource of type data-automation-project to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param projectId - Identifier for the projectId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataAutomationProject(projectId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-project/${ projectId }`);
+  }
+
+  /**
+   * Adds a resource of type blueprint to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param blueprintId - Identifier for the blueprintId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBlueprint(blueprintId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:blueprint/${ blueprintId }`);
+  }
+
+  /**
+   * Adds a resource of type blueprint-optimization-invocation to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Data_Automation_for_Amazon_Bedrock.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBlueprintOptimizationInvocation(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:blueprint-optimization-invocation/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type data-automation-invocation-job to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataAutomationInvocationJob(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-invocation/${ jobId }`);
+  }
+
+  /**
+   * Adds a resource of type data-automation-profile to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param profileId - Identifier for the profileId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onDataAutomationProfile(profileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-profile/${ profileId }`);
+  }
+
+  /**
+   * Adds a resource of type data-automation-library to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param dataAutomationLibraryId - Identifier for the dataAutomationLibraryId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataAutomationLibrary(dataAutomationLibraryId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-library/${ dataAutomationLibraryId }`);
+  }
+
+  /**
+   * Adds a resource of type data-automation-library-ingestion-job to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param ingestionJobId - Identifier for the ingestionJobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataAutomationLibraryIngestionJob(ingestionJobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-library-ingestion-job/${ ingestionJobId }`);
   }
 
   /**
@@ -3762,16 +3843,37 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type system-tool to the statement
+   * Adds a resource of type custom-model-deployment to the statement
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onSystemTool(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock::${ account ?? this.defaultAccount }:system-tool/${ resourceId }`);
+  public onCustomModelDeployment(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custom-model-deployment/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type advanced-prompt-optimization-job to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAdvancedPromptOptimizationJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:advanced-prompt-optimization-job/${ resourceId }`);
   }
 
   /**
@@ -3811,8 +3913,8 @@ export class Bedrock extends PolicyStatement {
    * - .toInvokeDataAutomationAsync()
    * - .toInvokeDataAutomationLibraryIngestionJob()
    * - .toInvokeModel()
-   * - .toTagResource()
    * - .toPutResourcePolicy()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3827,225 +3929,38 @@ export class Bedrock extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
-   * Applies to actions:
-   * - .toApplyGuardrail()
-   * - .toAssociateAgentCollaborator()
-   * - .toAssociateAgentKnowledgeBase()
-   * - .toBatchDeleteAdvancedPromptOptimizationJob()
-   * - .toBatchDeleteEvaluationJob()
-   * - .toCancelAutomatedReasoningPolicyBuildWorkflow()
-   * - .toCopyBlueprintStage()
-   * - .toCreateAdvancedPromptOptimizationJob()
-   * - .toCreateAgentActionGroup()
-   * - .toCreateAgentAlias()
-   * - .toCreateAutomatedReasoningPolicyTestCase()
-   * - .toCreateAutomatedReasoningPolicyVersion()
-   * - .toCreateBlueprintVersion()
-   * - .toCreateCustomModelDeployment()
-   * - .toCreateDataAutomationProject()
-   * - .toCreateDataSource()
-   * - .toCreateEvaluationJob()
-   * - .toCreateFlowAlias()
-   * - .toCreateFlowVersion()
-   * - .toCreateGuardrail()
-   * - .toCreateGuardrailVersion()
-   * - .toCreateInferenceProfile()
-   * - .toCreateInvocation()
-   * - .toCreateModelCopyJob()
-   * - .toCreateModelCustomizationJob()
-   * - .toCreateModelEvaluationJob()
-   * - .toCreateModelInvocationJob()
-   * - .toCreatePromptRouter()
-   * - .toCreatePromptVersion()
-   * - .toCreateProvisionedModelThroughput()
-   * - .toDeleteAgent()
-   * - .toDeleteAgentActionGroup()
-   * - .toDeleteAgentAlias()
-   * - .toDeleteAgentMemory()
-   * - .toDeleteAgentVersion()
-   * - .toDeleteAutomatedReasoningPolicy()
-   * - .toDeleteAutomatedReasoningPolicyBuildWorkflow()
-   * - .toDeleteAutomatedReasoningPolicyTestCase()
-   * - .toDeleteBlueprint()
-   * - .toDeleteCustomModel()
-   * - .toDeleteCustomModelDeployment()
-   * - .toDeleteDataAutomationLibrary()
-   * - .toDeleteDataAutomationProject()
-   * - .toDeleteDataSource()
-   * - .toDeleteFlow()
-   * - .toDeleteFlowAlias()
-   * - .toDeleteFlowVersion()
-   * - .toDeleteGuardrail()
-   * - .toDeleteImportedModel()
-   * - .toDeleteInferenceProfile()
-   * - .toDeleteKnowledgeBase()
-   * - .toDeleteKnowledgeBaseDocuments()
-   * - .toDeletePrompt()
-   * - .toDeletePromptRouter()
-   * - .toDeleteProvisionedModelThroughput()
-   * - .toDeleteSession()
-   * - .toDisassociateAgentCollaborator()
-   * - .toDisassociateAgentKnowledgeBase()
-   * - .toEndSession()
-   * - .toExportAutomatedReasoningPolicyVersion()
-   * - .toGetAdvancedPromptOptimizationJob()
-   * - .toGetAgent()
-   * - .toGetAgentActionGroup()
-   * - .toGetAgentAlias()
-   * - .toGetAgentCollaborator()
-   * - .toGetAgentKnowledgeBase()
-   * - .toGetAgentMemory()
-   * - .toGetAgentVersion()
-   * - .toGetAsyncInvoke()
-   * - .toGetAutomatedReasoningPolicy()
-   * - .toGetAutomatedReasoningPolicyAnnotations()
-   * - .toGetAutomatedReasoningPolicyBuildWorkflow()
-   * - .toGetAutomatedReasoningPolicyBuildWorkflowResultAssets()
-   * - .toGetAutomatedReasoningPolicyNextScenario()
-   * - .toGetAutomatedReasoningPolicyTestCase()
-   * - .toGetAutomatedReasoningPolicyTestResult()
-   * - .toGetBlueprint()
-   * - .toGetBlueprintOptimizationStatus()
-   * - .toGetCustomModel()
-   * - .toGetCustomModelDeployment()
-   * - .toGetDataAutomationLibrary()
-   * - .toGetDataAutomationLibraryEntity()
-   * - .toGetDataAutomationLibraryIngestionJob()
-   * - .toGetDataAutomationProject()
-   * - .toGetDataAutomationStatus()
-   * - .toGetDataSource()
-   * - .toGetEvaluationJob()
-   * - .toGetExecutionFlowSnapshot()
-   * - .toGetFlow()
-   * - .toGetFlowAlias()
-   * - .toGetFlowExecution()
-   * - .toGetFlowVersion()
-   * - .toGetGuardrail()
-   * - .toGetImportedModel()
-   * - .toGetInferenceProfile()
-   * - .toGetIngestionJob()
-   * - .toGetInvocationStep()
-   * - .toGetKnowledgeBase()
-   * - .toGetKnowledgeBaseDocuments()
-   * - .toGetModelCopyJob()
-   * - .toGetModelCustomizationJob()
-   * - .toGetModelEvaluationJob()
-   * - .toGetModelImportJob()
-   * - .toGetModelInvocationJob()
-   * - .toGetPrompt()
-   * - .toGetPromptRouter()
-   * - .toGetProvisionedModelThroughput()
-   * - .toGetSession()
-   * - .toIngestKnowledgeBaseDocuments()
-   * - .toInvokeAgent()
-   * - .toInvokeBlueprintOptimizationAsync()
-   * - .toInvokeDataAutomation()
-   * - .toInvokeDataAutomationAsync()
-   * - .toInvokeDataAutomationLibraryIngestionJob()
-   * - .toInvokeFlow()
-   * - .toInvokeModel()
-   * - .toInvokeModelWithResponseStream()
-   * - .toListAgentActionGroups()
-   * - .toListAgentAliases()
-   * - .toListAgentCollaborators()
-   * - .toListAgentKnowledgeBases()
-   * - .toListAgentVersions()
-   * - .toListAutomatedReasoningPolicies()
-   * - .toListAutomatedReasoningPolicyBuildWorkflows()
-   * - .toListAutomatedReasoningPolicyTestCases()
-   * - .toListAutomatedReasoningPolicyTestResults()
-   * - .toListBlueprints()
-   * - .toListDataAutomationLibraries()
-   * - .toListDataAutomationLibraryEntities()
-   * - .toListDataAutomationLibraryIngestionJobs()
-   * - .toListDataAutomationProjects()
-   * - .toListDataSources()
-   * - .toListFlowAliases()
-   * - .toListFlowExecutionEvents()
-   * - .toListFlowExecutions()
-   * - .toListFlowVersions()
-   * - .toListGuardrails()
-   * - .toListIngestionJobs()
-   * - .toListInvocationSteps()
-   * - .toListInvocations()
-   * - .toListKnowledgeBaseDocuments()
-   * - .toListPrompts()
-   * - .toListTagsForResource()
-   * - .toPrepareAgent()
-   * - .toPrepareFlow()
-   * - .toPutInvocationStep()
-   * - .toRetrieve()
-   * - .toStartAutomatedReasoningPolicyBuildWorkflow()
-   * - .toStartAutomatedReasoningPolicyTestWorkflow()
-   * - .toStartFlowExecution()
-   * - .toStartIngestionJob()
-   * - .toStopAdvancedPromptOptimizationJob()
-   * - .toStopEvaluationJob()
-   * - .toStopFlowExecution()
-   * - .toStopIngestionJob()
-   * - .toStopModelCustomizationJob()
-   * - .toStopModelInvocationJob()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateAgent()
-   * - .toUpdateAgentActionGroup()
-   * - .toUpdateAgentAlias()
-   * - .toUpdateAgentCollaborator()
-   * - .toUpdateAgentKnowledgeBase()
-   * - .toUpdateAutomatedReasoningPolicy()
-   * - .toUpdateAutomatedReasoningPolicyAnnotations()
-   * - .toUpdateAutomatedReasoningPolicyTestCase()
-   * - .toUpdateBlueprint()
-   * - .toUpdateCustomModelDeployment()
-   * - .toUpdateDataAutomationLibrary()
-   * - .toUpdateDataAutomationProject()
-   * - .toUpdateDataSource()
-   * - .toUpdateFlow()
-   * - .toUpdateFlowAlias()
-   * - .toUpdateGuardrail()
-   * - .toUpdateKnowledgeBase()
-   * - .toUpdatePrompt()
-   * - .toUpdateProvisionedModelThroughput()
-   * - .toUpdateSession()
-   * - .toAllowVendedLogDeliveryForResource()
-   * - .toDeleteResourcePolicy()
-   * - .toGetResourcePolicy()
-   * - .toInvokeAutomatedReasoningPolicy()
-   * - .toPutResourcePolicy()
-   * - .toRenderPrompt()
-   *
    * Applies to resource types:
-   * - advanced-prompt-optimization-job
+   * - async-invoke
+   * - prompt-router
+   * - application-inference-profile
+   * - custom-model
+   * - provisioned-model
+   * - model-customization-job
    * - agent
    * - agent-alias
-   * - application-inference-profile
-   * - async-invoke
+   * - knowledge-base
+   * - model-evaluation-job
+   * - evaluation-job
+   * - model-invocation-job
+   * - guardrail
    * - automated-reasoning-policy
    * - automated-reasoning-policy-version
+   * - flow
+   * - flow-alias
+   * - model-copy-job
+   * - prompt
+   * - prompt-version
+   * - model-import-job
+   * - imported-model
+   * - data-automation-project
    * - blueprint
    * - blueprint-optimization-invocation
-   * - custom-model
-   * - custom-model-deployment
    * - data-automation-invocation-job
    * - data-automation-library
    * - data-automation-library-ingestion-job
-   * - data-automation-project
-   * - evaluation-job
-   * - flow
-   * - flow-alias
-   * - guardrail
-   * - imported-model
-   * - knowledge-base
-   * - model-copy-job
-   * - model-customization-job
-   * - model-evaluation-job
-   * - model-import-job
-   * - model-invocation-job
-   * - prompt
-   * - prompt-router
-   * - prompt-version
-   * - provisioned-model
    * - session
+   * - custom-model-deployment
+   * - advanced-prompt-optimization-job
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -4092,9 +4007,9 @@ export class Bedrock extends PolicyStatement {
    * - .toInvokeDataAutomationAsync()
    * - .toInvokeDataAutomationLibraryIngestionJob()
    * - .toInvokeModel()
+   * - .toPutResourcePolicy()
    * - .toTagResource()
    * - .toUntagResource()
-   * - .toPutResourcePolicy()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

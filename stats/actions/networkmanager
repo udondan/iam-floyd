@@ -27,7 +27,7 @@ networkmanager:DeleteDevice;Write
 networkmanager:DeleteGlobalNetwork;Write
 networkmanager:DeleteLink;Write
 networkmanager:DeletePeering;Write
-networkmanager:DeleteResourcePolicy;Permissions management, Write
+networkmanager:DeleteResourcePolicy;Permissions management
 networkmanager:DeleteSite;Write
 networkmanager:DeregisterTransitGateway;Write
 networkmanager:DescribeGlobalNetworks;List
@@ -75,15 +75,15 @@ networkmanager:ListPeerings;List
 networkmanager:ListTagsForResource;Read
 networkmanager:PutAttachmentRoutingPolicyLabel;Write
 networkmanager:PutCoreNetworkPolicy;Write
-networkmanager:PutResourcePolicy;Permissions management, Write
+networkmanager:PutResourcePolicy;Permissions management
 networkmanager:RegisterTransitGateway;Write
 networkmanager:RejectAttachment;Write
 networkmanager:RemoveAttachmentRoutingPolicyLabel;Write
 networkmanager:RestoreCoreNetworkPolicyVersion;Write
-networkmanager:StartOrganizationServiceAccessUpdate;Permissions management, Write
+networkmanager:StartOrganizationServiceAccessUpdate;Permissions management
 networkmanager:StartRouteAnalysis;Write
-networkmanager:TagResource;Tagging, Write
-networkmanager:UntagResource;Tagging, Write
+networkmanager:TagResource;Tagging
+networkmanager:UntagResource;Tagging
 networkmanager:UpdateConnection;Write
 networkmanager:UpdateCoreNetwork;Write
 networkmanager:UpdateDevice;Write

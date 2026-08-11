@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [datapipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_datapipeline.html).
+ * Statement provider for service [datapipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatapipeline.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Datapipeline extends PolicyStatement {
   public servicePrefix = 'datapipeline';
 
   /**
-   * Statement provider for service [datapipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_datapipeline.html).
+   * Statement provider for service [datapipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatapipeline.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,6 +23,11 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   * - .ifWorkerGroup()
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ActivatePipeline.html
    */
   public toActivatePipeline() {
@@ -32,7 +37,13 @@ export class Datapipeline extends PolicyStatement {
   /**
    * Grants permission to add or modify tags for the specified pipeline
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_AddTags.html
    */
@@ -50,6 +61,9 @@ export class Datapipeline extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifTag()
    *
+   * Dependent actions:
+   * - datapipeline:AddTags
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_CreatePipeline.html
    */
   public toCreatePipeline() {
@@ -60,6 +74,11 @@ export class Datapipeline extends PolicyStatement {
    * Grants permission to Deactivate the specified running pipeline
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   * - .ifWorkerGroup()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeactivatePipeline.html
    */
@@ -72,6 +91,10 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeletePipeline.html
    */
   public toDeletePipeline() {
@@ -82,6 +105,10 @@ export class Datapipeline extends PolicyStatement {
    * Grants permission to get the object definitions for a set of objects associated with the pipeline
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribeObjects.html
    */
@@ -94,6 +121,10 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribePipelines.html
    */
   public toDescribePipelines() {
@@ -105,6 +136,10 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_EvaluateExpression.html
    */
   public toEvaluateExpression() {
@@ -112,9 +147,25 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
+   * Grants permission to call GetAccountLimits
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetAccountLimits.html
+   */
+  public toGetAccountLimits() {
+    return this.to('GetAccountLimits');
+  }
+
+  /**
    * Grants permission to gets the definition of the specified pipeline
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   * - .ifWorkerGroup()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetPipelineDefinition.html
    */
@@ -148,9 +199,25 @@ export class Datapipeline extends PolicyStatement {
   }
 
   /**
+   * Grants permission to call PutAccountLimits
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutAccountLimits.html
+   */
+  public toPutAccountLimits() {
+    return this.to('PutAccountLimits');
+  }
+
+  /**
    * Grants permission to add tasks, schedules, and preconditions to the specified pipeline
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   * - .ifWorkerGroup()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutPipelineDefinition.html
    */
@@ -163,6 +230,10 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_QueryObjects.html
    */
   public toQueryObjects() {
@@ -172,7 +243,13 @@ export class Datapipeline extends PolicyStatement {
   /**
    * Grants permission to remove existing tags from the specified pipeline
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_RemoveTags.html
    */
@@ -207,6 +284,10 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetStatus.html
    */
   public toSetStatus() {
@@ -229,49 +310,30 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   * - .ifWorkerGroup()
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ValidatePipelineDefinition.html
    */
   public toValidatePipelineDefinition() {
     return this.to('ValidatePipelineDefinition');
   }
 
-  /**
-   * Grants permission to call GetAccountLimits
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetAccountLimits.html
-   */
-  public toGetAccountLimits() {
-    return this.to('GetAccountLimits');
-  }
-
-  /**
-   * Grants permission to call PutAccountLimits
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutAccountLimits.html
-   */
-  public toPutAccountLimits() {
-    return this.to('PutAccountLimits');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ActivatePipeline',
-      'AddTags',
       'CreatePipeline',
       'DeactivatePipeline',
       'DeletePipeline',
       'PollForTask',
+      'PutAccountLimits',
       'PutPipelineDefinition',
-      'RemoveTags',
       'ReportTaskProgress',
       'ReportTaskRunnerHeartbeat',
       'SetStatus',
-      'SetTaskStatus',
-      'PutAccountLimits'
+      'SetTaskStatus'
     ],
     Tagging: [
       'AddTags',
@@ -286,8 +348,8 @@ export class Datapipeline extends PolicyStatement {
       'ValidatePipelineDefinition'
     ],
     List: [
-      'ListPipelines',
-      'GetAccountLimits'
+      'GetAccountLimits',
+      'ListPipelines'
     ]
   };
 
@@ -330,23 +392,6 @@ export class Datapipeline extends PolicyStatement {
    * Filters access by tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toActivatePipeline()
-   * - .toAddTags()
-   * - .toDeactivatePipeline()
-   * - .toDeletePipeline()
-   * - .toDescribeObjects()
-   * - .toDescribePipelines()
-   * - .toEvaluateExpression()
-   * - .toGetPipelineDefinition()
-   * - .toPutPipelineDefinition()
-   * - .toQueryObjects()
-   * - .toRemoveTags()
-   * - .toReportTaskProgress()
-   * - .toSetStatus()
-   * - .toSetTaskStatus()
-   * - .toValidatePipelineDefinition()
    *
    * Applies to resource types:
    * - pipeline

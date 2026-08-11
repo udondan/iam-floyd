@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [redshift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_redshift.html).
+ * Statement provider for service [redshift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshift.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Redshift extends PolicyStatement {
   public servicePrefix = 'redshift';
 
   /**
-   * Statement provider for service [redshift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_redshift.html).
+   * Statement provider for service [redshift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshift.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -45,6 +45,10 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifConsumerArn()
+   * - .ifAllowWrites()
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_AssociateDataShareConsumer.html
    */
   public toAssociateDataShareConsumer() {
@@ -65,7 +69,11 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to authorize the specified datashare consumer to consume a datashare
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifConsumerIdentifier()
+   * - .ifAllowWrites()
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_AuthorizeDataShare.html
    */
@@ -76,7 +84,7 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to authorize endpoint related activities for redshift-managed vpc endpoint
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_AuthorizeEndpointAccess.html
    */
@@ -85,9 +93,20 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to Amazon Redshift to continuously validate that the target namespace can receive data replicated from the source ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/zero-etl-using.setting-up.html
+   */
+  public toAuthorizeInboundIntegration() {
+    return this.to('AuthorizeInboundIntegration');
+  }
+
+  /**
    * Grants permission to the specified AWS account to restore a snapshot
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_AuthorizeSnapshotAccess.html
    */
@@ -118,6 +137,28 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a query through the Amazon Redshift console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toCancelQuery() {
+    return this.to('CancelQuery');
+  }
+
+  /**
+   * Grants permission to see queries in the Amazon Redshift console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toCancelQuerySession() {
+    return this.to('CancelQuerySession');
+  }
+
+  /**
    * Grants permission to cancel a resize operation
    *
    * Access Level: Write
@@ -132,6 +173,10 @@ export class Redshift extends PolicyStatement {
    * Grants permission to copy a cluster snapshot
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CopyClusterSnapshot.html
    */
@@ -155,6 +200,24 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
+   * - kms:RetireGrant
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:DeleteSecret
+   * - secretsmanager:DescribeSecret
+   * - secretsmanager:GetRandomPassword
+   * - secretsmanager:RotateSecret
+   * - secretsmanager:TagResource
+   * - secretsmanager:UpdateSecret
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateCluster.html
    */
   public toCreateCluster() {
@@ -165,6 +228,10 @@ export class Redshift extends PolicyStatement {
    * Grants permission to create an Amazon Redshift parameter group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterParameterGroup.html
    */
@@ -177,6 +244,10 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSecurityGroup.html
    */
   public toCreateClusterSecurityGroup() {
@@ -187,6 +258,10 @@ export class Redshift extends PolicyStatement {
    * Grants permission to create a manual snapshot of the specified cluster
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSnapshot.html
    */
@@ -199,6 +274,10 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSubnetGroup.html
    */
   public toCreateClusterSubnetGroup() {
@@ -208,7 +287,10 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to automatically create the specified Amazon Redshift user if it does not exist
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDbUser()
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/generating-iam-credentials-role-permissions.html
    */
@@ -220,6 +302,9 @@ export class Redshift extends PolicyStatement {
    * Grants permission to create a custom domain name for a cluster
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - acm:DescribeCertificate
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateCustomDomainAssociation.html
    */
@@ -243,6 +328,10 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateEventSubscription.html
    */
   public toCreateEventSubscription() {
@@ -253,6 +342,10 @@ export class Redshift extends PolicyStatement {
    * Grants permission to create an HSM client certificate that a cluster uses to connect to an HSM
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateHsmClientCertificate.html
    */
@@ -265,6 +358,10 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateHsmConfiguration.html
    */
   public toCreateHsmConfiguration() {
@@ -272,9 +369,30 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to the source principal to create an integration into the namespace of target data warehouse
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/zero-etl-using.setting-up.html
+   */
+  public toCreateInboundIntegration() {
+    return this.to('CreateInboundIntegration');
+  }
+
+  /**
    * Grants permission to create an Amazon Redshift zero-ETL integration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifIntegrationSourceArn()
+   * - .ifIntegrationTargetArn()
+   *
+   * Dependent actions:
+   * - kms:CreateGrant
+   * - kms:DescribeKey
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateIntegration.html
    */
@@ -283,14 +401,48 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a qev2 idc application
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - sso:CreateApplication
+   * - sso:PutApplicationAccessScope
+   * - sso:PutApplicationAuthenticationMethod
+   * - sso:PutApplicationGrant
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
+   */
+  public toCreateQev2IdcApplication() {
+    return this.to('CreateQev2IdcApplication');
+  }
+
+  /**
    * Grants permission to create a redshift idc application
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - sso:CreateApplication
+   * - sso:PutApplicationAccessScope
+   * - sso:PutApplicationAuthenticationMethod
+   * - sso:PutApplicationGrant
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateRedshiftIdcApplication.html
    */
   public toCreateRedshiftIdcApplication() {
     return this.to('CreateRedshiftIdcApplication');
+  }
+
+  /**
+   * Grants permission to create saved SQL queries through the Amazon Redshift console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toCreateSavedQuery() {
+    return this.to('CreateSavedQuery');
   }
 
   /**
@@ -307,7 +459,11 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to create a snapshot copy grant and encrypt copied snapshots in a destination AWS Region
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateSnapshotCopyGrant.html
    */
@@ -320,6 +476,10 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateSnapshotSchedule.html
    */
   public toCreateSnapshotSchedule() {
@@ -329,7 +489,11 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to add one or more tags to a specified resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateTags.html
    */
@@ -342,6 +506,10 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateUsageLimit.html
    */
   public toCreateUsageLimit() {
@@ -351,7 +519,10 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to remove permission from the specified datashare consumer to consume a datashare
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifConsumerIdentifier()
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeauthorizeDataShare.html
    */
@@ -483,6 +654,9 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteIntegration.html
    */
   public toDeleteIntegration() {
@@ -501,9 +675,26 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a qev2 idc application
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - sso:DeleteApplication
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
+   */
+  public toDeleteQev2IdcApplication() {
+    return this.to('DeleteQev2IdcApplication');
+  }
+
+  /**
    * Grants permission to delete a redshift idc application
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - sso:DeleteApplication
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteRedshiftIdcApplication.html
    */
@@ -514,12 +705,23 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to delete the resource policy for a specified resource
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteResourcePolicy.html
    */
   public toDeleteResourcePolicy() {
     return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to delete saved SQL queries through the Amazon Redshift console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toDeleteSavedQueries() {
+    return this.to('DeleteSavedQueries');
   }
 
   /**
@@ -556,7 +758,10 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to delete a tag or tags from a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteTags.html
    */
@@ -604,6 +809,17 @@ export class Redshift extends PolicyStatement {
    */
   public toDescribeAuthenticationProfiles() {
     return this.to('DescribeAuthenticationProfiles');
+  }
+
+  /**
+   * Grants permission to describe the list of resources that are denylisted from global autonomics decisions for a specified cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html
+   */
+  public toDescribeAutonomicsDenylist() {
+    return this.to('DescribeAutonomicsDenylist');
   }
 
   /**
@@ -856,6 +1072,9 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeIntegrations.html
    */
   public toDescribeIntegrations() {
@@ -907,9 +1126,35 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe qev2 idc applications
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
+   */
+  public toDescribeQev2IdcApplications() {
+    return this.to('DescribeQev2IdcApplications');
+  }
+
+  /**
+   * Grants permission to describe a query through the Amazon Redshift console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toDescribeQuery() {
+    return this.to('DescribeQuery');
+  }
+
+  /**
    * Grants permission to describe redshift idc applications
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - sso:GetApplicationGrant
+   * - sso:ListApplicationAccessScopes
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeRedshiftIdcApplications.html
    */
@@ -962,6 +1207,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe saved queries through the Amazon Redshift console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toDescribeSavedQueries() {
+    return this.to('DescribeSavedQueries');
+  }
+
+  /**
    * Grants permission to describe created Amazon Redshift scheduled actions
    *
    * Access Level: Read
@@ -1001,6 +1257,17 @@ export class Redshift extends PolicyStatement {
    */
   public toDescribeStorage() {
     return this.to('DescribeStorage');
+  }
+
+  /**
+   * Grants permission to describe a table through the Amazon Redshift console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toDescribeTable() {
+    return this.to('DescribeTable');
   }
 
   /**
@@ -1063,6 +1330,9 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifConsumerArn()
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DisassociateDataShareConsumer.html
    */
   public toDisassociateDataShareConsumer() {
@@ -1092,6 +1362,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to execute a query through the Amazon Redshift console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toExecuteQuery() {
+    return this.to('ExecuteQuery');
+  }
+
+  /**
    * Grants permission to failover the primary compute of an Multi-AZ cluster to another AZ
    *
    * Access Level: Write
@@ -1103,9 +1384,25 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to fetch query results through the Amazon Redshift console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toFetchResults() {
+    return this.to('FetchResults');
+  }
+
+  /**
    * Grants permission to get temporary credentials to access an Amazon Redshift database by the specified AWS account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDbName()
+   * - .ifDbUser()
+   * - .ifDurationSeconds()
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html
    */
@@ -1117,6 +1414,10 @@ export class Redshift extends PolicyStatement {
    * Grants permission to get enhanced temporary credentials to access an Amazon Redshift database by the specified AWS account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDbName()
+   * - .ifDurationSeconds()
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentialsWithIAM.html
    */
@@ -1171,12 +1472,23 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to join the specified Amazon Redshift group
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html
    */
   public toJoinGroup() {
     return this.to('JoinGroup');
+  }
+
+  /**
+   * Grants permission to list databases through the Amazon Redshift console
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toListDatabases() {
+    return this.to('ListDatabases');
   }
 
   /**
@@ -1186,6 +1498,39 @@ export class Redshift extends PolicyStatement {
    */
   public toListRecommendations() {
     return this.to('ListRecommendations');
+  }
+
+  /**
+   * Grants permission to list saved queries through the Amazon Redshift console
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toListSavedQueries() {
+    return this.to('ListSavedQueries');
+  }
+
+  /**
+   * Grants permission to list schemas through the Amazon Redshift console
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toListSchemas() {
+    return this.to('ListSchemas');
+  }
+
+  /**
+   * Grants permission to list tables through the Amazon Redshift console
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toListTables() {
+    return this.to('ListTables');
   }
 
   /**
@@ -1211,9 +1556,35 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add or remove resources from the global autonomics denylist for a specified cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html
+   */
+  public toModifyAutonomicsDenylist() {
+    return this.to('ModifyAutonomicsDenylist');
+  }
+
+  /**
    * Grants permission to modify the settings of a cluster
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - acm:DescribeCertificate
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
+   * - kms:RetireGrant
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:DeleteSecret
+   * - secretsmanager:DescribeSecret
+   * - secretsmanager:GetRandomPassword
+   * - secretsmanager:RotateSecret
+   * - secretsmanager:TagResource
+   * - secretsmanager:UpdateSecret
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyCluster.html
    */
@@ -1235,7 +1606,7 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to modify the list of AWS Identity and Access Management (IAM) roles that can be used by a cluster to access other AWS services
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyClusterIamRoles.html
    */
@@ -1303,6 +1674,9 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - acm:DescribeCertificate
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyCustomDomainAssociation.html
    */
   public toModifyCustomDomainAssociation() {
@@ -1336,6 +1710,9 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyIntegration.html
    */
   public toModifyIntegration() {
@@ -1343,14 +1720,48 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify a qev2 idc application
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - sso:UpdateApplication
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
+   */
+  public toModifyQev2IdcApplication() {
+    return this.to('ModifyQev2IdcApplication');
+  }
+
+  /**
    * Grants permission to modify a redshift idc application
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - sso:DeleteApplicationAccessScope
+   * - sso:DeleteApplicationGrant
+   * - sso:GetApplicationGrant
+   * - sso:ListApplicationAccessScopes
+   * - sso:PutApplicationAccessScope
+   * - sso:PutApplicationGrant
+   * - sso:UpdateApplication
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyRedshiftIdcApplication.html
    */
   public toModifyRedshiftIdcApplication() {
     return this.to('ModifyRedshiftIdcApplication');
+  }
+
+  /**
+   * Grants permission to modify an existing saved query through the Amazon Redshift console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toModifySavedQuery() {
+    return this.to('ModifySavedQuery');
   }
 
   /**
@@ -1422,7 +1833,7 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to update the resource policy for a specified resource
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_PutResourcePolicy.html
    */
@@ -1455,7 +1866,7 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to decline a datashare shared from another account
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RejectDataShare.html
    */
@@ -1489,6 +1900,23 @@ export class Redshift extends PolicyStatement {
    * Grants permission to create a cluster from a snapshot
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
+   * - kms:RetireGrant
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:DeleteSecret
+   * - secretsmanager:DescribeSecret
+   * - secretsmanager:GetRandomPassword
+   * - secretsmanager:RotateSecret
+   * - secretsmanager:TagResource
+   * - secretsmanager:UpdateSecret
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RestoreFromClusterSnapshot.html
    */
@@ -1532,7 +1960,7 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to revoke access for endpoint related activities for redshift-managed vpc endpoint
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RevokeEndpointAccess.html
    */
@@ -1543,7 +1971,7 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to revoke access from the specified AWS account to restore a snapshot
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RevokeSnapshotAccess.html
    */
@@ -1574,248 +2002,6 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Amazon Redshift to continuously validate that the target namespace can receive data replicated from the source ARN
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/zero-etl-using.setting-up.html
-   */
-  public toAuthorizeInboundIntegration() {
-    return this.to('AuthorizeInboundIntegration');
-  }
-
-  /**
-   * Grants permission to cancel a query through the Amazon Redshift console
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toCancelQuery() {
-    return this.to('CancelQuery');
-  }
-
-  /**
-   * Grants permission to see queries in the Amazon Redshift console
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toCancelQuerySession() {
-    return this.to('CancelQuerySession');
-  }
-
-  /**
-   * Grants permission to the source principal to create an integration into the namespace of target data warehouse
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/zero-etl-using.setting-up.html
-   */
-  public toCreateInboundIntegration() {
-    return this.to('CreateInboundIntegration');
-  }
-
-  /**
-   * Grants permission to create a qev2 idc application
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
-   */
-  public toCreateQev2IdcApplication() {
-    return this.to('CreateQev2IdcApplication');
-  }
-
-  /**
-   * Grants permission to create saved SQL queries through the Amazon Redshift console
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toCreateSavedQuery() {
-    return this.to('CreateSavedQuery');
-  }
-
-  /**
-   * Grants permission to delete a qev2 idc application
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
-   */
-  public toDeleteQev2IdcApplication() {
-    return this.to('DeleteQev2IdcApplication');
-  }
-
-  /**
-   * Grants permission to delete saved SQL queries through the Amazon Redshift console
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toDeleteSavedQueries() {
-    return this.to('DeleteSavedQueries');
-  }
-
-  /**
-   * Grants permission to describe the list of resources that are denylisted from global autonomics decisions for a specified cluster
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html
-   */
-  public toDescribeAutonomicsDenylist() {
-    return this.to('DescribeAutonomicsDenylist');
-  }
-
-  /**
-   * Grants permission to describe qev2 idc applications
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
-   */
-  public toDescribeQev2IdcApplications() {
-    return this.to('DescribeQev2IdcApplications');
-  }
-
-  /**
-   * Grants permission to describe a query through the Amazon Redshift console
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toDescribeQuery() {
-    return this.to('DescribeQuery');
-  }
-
-  /**
-   * Grants permission to describe saved queries through the Amazon Redshift console
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toDescribeSavedQueries() {
-    return this.to('DescribeSavedQueries');
-  }
-
-  /**
-   * Grants permission to describe a table through the Amazon Redshift console
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toDescribeTable() {
-    return this.to('DescribeTable');
-  }
-
-  /**
-   * Grants permission to execute a query through the Amazon Redshift console
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toExecuteQuery() {
-    return this.to('ExecuteQuery');
-  }
-
-  /**
-   * Grants permission to fetch query results through the Amazon Redshift console
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toFetchResults() {
-    return this.to('FetchResults');
-  }
-
-  /**
-   * Grants permission to list databases through the Amazon Redshift console
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toListDatabases() {
-    return this.to('ListDatabases');
-  }
-
-  /**
-   * Grants permission to list saved queries through the Amazon Redshift console
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toListSavedQueries() {
-    return this.to('ListSavedQueries');
-  }
-
-  /**
-   * Grants permission to list schemas through the Amazon Redshift console
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toListSchemas() {
-    return this.to('ListSchemas');
-  }
-
-  /**
-   * Grants permission to list tables through the Amazon Redshift console
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toListTables() {
-    return this.to('ListTables');
-  }
-
-  /**
-   * Grants permission to add or remove resources from the global autonomics denylist for a specified cluster
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html
-   */
-  public toModifyAutonomicsDenylist() {
-    return this.to('ModifyAutonomicsDenylist');
-  }
-
-  /**
-   * Grants permission to modify a qev2 idc application
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
-   */
-  public toModifyQev2IdcApplication() {
-    return this.to('ModifyQev2IdcApplication');
-  }
-
-  /**
-   * Grants permission to modify an existing saved query through the Amazon Redshift console
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
-   */
-  public toModifySavedQuery() {
-    return this.to('ModifySavedQuery');
-  }
-
-  /**
    * Grants permission to view query results through the Amazon Redshift console
    *
    * Access Level: List
@@ -1843,11 +2029,11 @@ export class Redshift extends PolicyStatement {
       'AddPartner',
       'AssociateDataShareConsumer',
       'AuthorizeClusterSecurityGroupIngress',
-      'AuthorizeDataShare',
-      'AuthorizeEndpointAccess',
-      'AuthorizeSnapshotAccess',
+      'AuthorizeInboundIntegration',
       'BatchDeleteClusterSnapshots',
       'BatchModifyClusterSnapshots',
+      'CancelQuery',
+      'CancelQuerySession',
       'CancelResize',
       'CopyClusterSnapshot',
       'CreateAuthenticationProfile',
@@ -1856,20 +2042,19 @@ export class Redshift extends PolicyStatement {
       'CreateClusterSecurityGroup',
       'CreateClusterSnapshot',
       'CreateClusterSubnetGroup',
-      'CreateClusterUser',
       'CreateCustomDomainAssociation',
       'CreateEndpointAccess',
       'CreateEventSubscription',
       'CreateHsmClientCertificate',
       'CreateHsmConfiguration',
+      'CreateInboundIntegration',
       'CreateIntegration',
+      'CreateQev2IdcApplication',
       'CreateRedshiftIdcApplication',
+      'CreateSavedQuery',
       'CreateScheduledAction',
-      'CreateSnapshotCopyGrant',
       'CreateSnapshotSchedule',
-      'CreateTags',
       'CreateUsageLimit',
-      'DeauthorizeDataShare',
       'DeleteAuthenticationProfile',
       'DeleteCluster',
       'DeleteClusterParameterGroup',
@@ -1883,12 +2068,12 @@ export class Redshift extends PolicyStatement {
       'DeleteHsmConfiguration',
       'DeleteIntegration',
       'DeletePartner',
+      'DeleteQev2IdcApplication',
       'DeleteRedshiftIdcApplication',
-      'DeleteResourcePolicy',
+      'DeleteSavedQueries',
       'DeleteScheduledAction',
       'DeleteSnapshotCopyGrant',
       'DeleteSnapshotSchedule',
-      'DeleteTags',
       'DeleteUsageLimit',
       'DeregisterNamespace',
       'DisableLogging',
@@ -1896,15 +2081,15 @@ export class Redshift extends PolicyStatement {
       'DisassociateDataShareConsumer',
       'EnableLogging',
       'EnableSnapshotCopy',
+      'ExecuteQuery',
       'FailoverPrimaryCompute',
       'GetClusterCredentials',
       'GetClusterCredentialsWithIAM',
-      'JoinGroup',
       'ModifyAquaConfiguration',
       'ModifyAuthenticationProfile',
+      'ModifyAutonomicsDenylist',
       'ModifyCluster',
       'ModifyClusterDbRevision',
-      'ModifyClusterIamRoles',
       'ModifyClusterMaintenance',
       'ModifyClusterParameterGroup',
       'ModifyClusterSnapshot',
@@ -1914,39 +2099,25 @@ export class Redshift extends PolicyStatement {
       'ModifyEndpointAccess',
       'ModifyEventSubscription',
       'ModifyIntegration',
+      'ModifyQev2IdcApplication',
       'ModifyRedshiftIdcApplication',
+      'ModifySavedQuery',
       'ModifyScheduledAction',
       'ModifySnapshotCopyRetentionPeriod',
       'ModifySnapshotSchedule',
       'ModifyUsageLimit',
       'PauseCluster',
       'PurchaseReservedNodeOffering',
-      'PutResourcePolicy',
       'RebootCluster',
       'RegisterNamespace',
-      'RejectDataShare',
       'ResetClusterParameterGroup',
       'ResizeCluster',
       'RestoreFromClusterSnapshot',
       'RestoreTableFromClusterSnapshot',
       'ResumeCluster',
       'RevokeClusterSecurityGroupIngress',
-      'RevokeEndpointAccess',
-      'RevokeSnapshotAccess',
       'RotateEncryptionKey',
-      'UpdatePartnerStatus',
-      'AuthorizeInboundIntegration',
-      'CancelQuery',
-      'CancelQuerySession',
-      'CreateInboundIntegration',
-      'CreateQev2IdcApplication',
-      'CreateSavedQuery',
-      'DeleteQev2IdcApplication',
-      'DeleteSavedQueries',
-      'ExecuteQuery',
-      'ModifyAutonomicsDenylist',
-      'ModifyQev2IdcApplication',
-      'ModifySavedQuery'
+      'UpdatePartnerStatus'
     ],
     'Permissions management': [
       'AuthorizeDataShare',
@@ -1970,6 +2141,7 @@ export class Redshift extends PolicyStatement {
     Read: [
       'DescribeAccountAttributes',
       'DescribeAuthenticationProfiles',
+      'DescribeAutonomicsDenylist',
       'DescribeClusterParameterGroups',
       'DescribeClusterParameters',
       'DescribeClusterSecurityGroups',
@@ -1988,26 +2160,25 @@ export class Redshift extends PolicyStatement {
       'DescribeLoggingStatus',
       'DescribeOrderableClusterOptions',
       'DescribePartners',
+      'DescribeQuery',
       'DescribeReservedNodeExchangeStatus',
       'DescribeReservedNodeOfferings',
       'DescribeReservedNodes',
       'DescribeResize',
+      'DescribeSavedQueries',
       'DescribeScheduledActions',
       'DescribeSnapshotCopyGrants',
       'DescribeSnapshotSchedules',
       'DescribeStorage',
+      'DescribeTable',
       'DescribeTableRestoreStatus',
       'DescribeTags',
       'DescribeUsageLimits',
+      'FetchResults',
       'GetIdentityCenterAuthToken',
       'GetReservedNodeExchangeConfigurationOptions',
       'GetReservedNodeExchangeOfferings',
-      'GetResourcePolicy',
-      'DescribeAutonomicsDenylist',
-      'DescribeQuery',
-      'DescribeSavedQueries',
-      'DescribeTable',
-      'FetchResults'
+      'GetResourcePolicy'
     ],
     List: [
       'DescribeClusterDbRevisions',
@@ -2019,10 +2190,10 @@ export class Redshift extends PolicyStatement {
       'DescribeInboundIntegrations',
       'DescribeIntegrations',
       'DescribeNodeConfigurationOptions',
-      'DescribeRedshiftIdcApplications',
-      'ListRecommendations',
       'DescribeQev2IdcApplications',
+      'DescribeRedshiftIdcApplications',
       'ListDatabases',
+      'ListRecommendations',
       'ListSavedQueries',
       'ListSchemas',
       'ListTables',
@@ -2211,34 +2382,6 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type qev2idcapplication to the statement
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
-   *
-   * @param qev2IdcApplicationId - Identifier for the qev2IdcApplicationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onQev2idcapplication(qev2IdcApplicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:qev2idcapplication:${ qev2IdcApplicationId }`);
-  }
-
-  /**
-   * Adds a resource of type redshiftidcapplication to the statement
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
-   *
-   * @param redshiftIdcApplicationId - Identifier for the redshiftIdcApplicationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onRedshiftidcapplication(redshiftIdcApplicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:redshiftidcapplication:${ redshiftIdcApplicationId }`);
-  }
-
-  /**
    * Adds a resource of type securitygroup to the statement
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html
@@ -2381,6 +2524,34 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type redshiftidcapplication to the statement
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
+   *
+   * @param redshiftIdcApplicationId - Identifier for the redshiftIdcApplicationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRedshiftidcapplication(redshiftIdcApplicationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:redshiftidcapplication:${ redshiftIdcApplicationId }`);
+  }
+
+  /**
+   * Adds a resource of type qev2idcapplication to the statement
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
+   *
+   * @param qev2IdcApplicationId - Identifier for the qev2IdcApplicationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onQev2idcapplication(qev2IdcApplicationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:qev2idcapplication:${ qev2IdcApplicationId }`);
+  }
+
+  /**
    * Filters access by actions based on the allowed set of values for each of the tags
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
@@ -2415,101 +2586,9 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
    *
    * Applies to actions:
-   * - .toAssociateDataShareConsumer()
-   * - .toAuthorizeClusterSecurityGroupIngress()
-   * - .toAuthorizeDataShare()
-   * - .toAuthorizeEndpointAccess()
-   * - .toAuthorizeSnapshotAccess()
-   * - .toBatchDeleteClusterSnapshots()
-   * - .toBatchModifyClusterSnapshots()
-   * - .toCancelResize()
-   * - .toCopyClusterSnapshot()
-   * - .toCreateCluster()
-   * - .toCreateClusterParameterGroup()
-   * - .toCreateClusterSecurityGroup()
-   * - .toCreateClusterSnapshot()
-   * - .toCreateClusterSubnetGroup()
-   * - .toCreateCustomDomainAssociation()
-   * - .toCreateEndpointAccess()
-   * - .toCreateEventSubscription()
-   * - .toCreateHsmClientCertificate()
-   * - .toCreateHsmConfiguration()
-   * - .toCreateIntegration()
-   * - .toCreateSnapshotCopyGrant()
-   * - .toCreateSnapshotSchedule()
-   * - .toCreateTags()
-   * - .toCreateUsageLimit()
-   * - .toDeauthorizeDataShare()
-   * - .toDeleteCluster()
-   * - .toDeleteClusterParameterGroup()
-   * - .toDeleteClusterSecurityGroup()
-   * - .toDeleteClusterSnapshot()
-   * - .toDeleteClusterSubnetGroup()
-   * - .toDeleteCustomDomainAssociation()
-   * - .toDeleteEventSubscription()
-   * - .toDeleteHsmClientCertificate()
-   * - .toDeleteHsmConfiguration()
    * - .toDeleteIntegration()
-   * - .toDeletePartner()
-   * - .toDeleteSnapshotCopyGrant()
-   * - .toDeleteSnapshotSchedule()
-   * - .toDeleteTags()
-   * - .toDeleteUsageLimit()
-   * - .toDescribeClusterParameters()
-   * - .toDescribeClusterSnapshots()
-   * - .toDescribeClusters()
-   * - .toDescribeEndpointAccess()
-   * - .toDescribeEndpointAuthorization()
    * - .toDescribeIntegrations()
-   * - .toDescribeLoggingStatus()
-   * - .toDescribeNodeConfigurationOptions()
-   * - .toDescribePartners()
-   * - .toDescribeResize()
-   * - .toDescribeSnapshotSchedules()
-   * - .toDescribeTableRestoreStatus()
-   * - .toDescribeTags()
-   * - .toDescribeUsageLimits()
-   * - .toDisableLogging()
-   * - .toDisableSnapshotCopy()
-   * - .toDisassociateDataShareConsumer()
-   * - .toEnableLogging()
-   * - .toEnableSnapshotCopy()
-   * - .toFailoverPrimaryCompute()
-   * - .toGetIdentityCenterAuthToken()
-   * - .toGetReservedNodeExchangeConfigurationOptions()
-   * - .toListRecommendations()
-   * - .toModifyAquaConfiguration()
-   * - .toModifyCluster()
-   * - .toModifyClusterDbRevision()
-   * - .toModifyClusterIamRoles()
-   * - .toModifyClusterMaintenance()
-   * - .toModifyClusterParameterGroup()
-   * - .toModifyClusterSnapshot()
-   * - .toModifyClusterSnapshotSchedule()
-   * - .toModifyClusterSubnetGroup()
-   * - .toModifyCustomDomainAssociation()
-   * - .toModifyEventSubscription()
    * - .toModifyIntegration()
-   * - .toModifySnapshotCopyRetentionPeriod()
-   * - .toModifySnapshotSchedule()
-   * - .toModifyUsageLimit()
-   * - .toPauseCluster()
-   * - .toRebootCluster()
-   * - .toRejectDataShare()
-   * - .toResetClusterParameterGroup()
-   * - .toResizeCluster()
-   * - .toRestoreFromClusterSnapshot()
-   * - .toRestoreTableFromClusterSnapshot()
-   * - .toResumeCluster()
-   * - .toRevokeClusterSecurityGroupIngress()
-   * - .toRevokeEndpointAccess()
-   * - .toRevokeSnapshotAccess()
-   * - .toRotateEncryptionKey()
-   * - .toUpdatePartnerStatus()
-   * - .toCancelQuerySession()
-   * - .toDescribeAutonomicsDenylist()
-   * - .toModifyAutonomicsDenylist()
-   * - .toViewQueriesInConsole()
    *
    * Applies to resource types:
    * - cluster

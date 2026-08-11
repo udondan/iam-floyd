@@ -18,7 +18,6 @@ artifact:ListReportVersions;List
 artifact:ListReports;List
 artifact:ListTagsForResource;Read
 artifact:PutAccountSettings;Write
-artifact:PutComplianceInquiryFeedback;Write
-artifact:TagResource;Tagging, Write
+artifact:TagResource;Tagging
 artifact:TerminateAgreement;Write
-artifact:UntagResource;Tagging, Write
+artifact:UntagResource;Tagging

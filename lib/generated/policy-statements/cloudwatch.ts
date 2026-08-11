@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [cloudwatch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudwatch.html).
+ * Statement provider for service [cloudwatch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Cloudwatch extends PolicyStatement {
   public servicePrefix = 'cloudwatch';
 
   /**
-   * Statement provider for service [cloudwatch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudwatch.html).
+   * Statement provider for service [cloudwatch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -38,6 +38,17 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toBatchGetServiceLevelObjectiveBudgetReport() {
     return this.to('BatchGetServiceLevelObjectiveBudgetReport');
+  }
+
+  /**
+   * Grants permission to make API calls to CloudWatch using bearer token authentication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toCallWithBearerToken() {
+    return this.to('CallWithBearerToken');
   }
 
   /**
@@ -70,6 +81,11 @@ export class Cloudwatch extends PolicyStatement {
    * Grants permission to delete a collection of alarms
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - logs:CreateScheduledQuery
+   * - logs:DeleteScheduledQuery
+   * - logs:GetScheduledQuery
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html
    */
@@ -119,6 +135,17 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toDeleteMetricStream() {
     return this.to('DeleteMetricStream');
+  }
+
+  /**
+   * Grants permission to delete a pipeline rule for CloudWatch pipelines for OTel metric processing
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toDeletePipelineRule() {
+    return this.to('DeletePipelineRule');
   }
 
   /**
@@ -291,6 +318,9 @@ export class Cloudwatch extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDataset.html
    */
   public toGetDataset() {
@@ -353,6 +383,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the status of OTel Enrichment of vended metrics for PromQL querying
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toGetOTelEnrichment() {
+    return this.to('GetOTelEnrichment');
+  }
+
+  /**
    * Grants permission to retrieve information about a service
    *
    * Access Level: Read
@@ -361,6 +402,17 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toGetService() {
     return this.to('GetService');
+  }
+
+  /**
+   * Grants permission to retrieve service data
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toGetServiceData() {
+    return this.to('GetServiceData');
   }
 
   /**
@@ -375,6 +427,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a CloudWatch topology discovery status
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toGetTopologyDiscoveryStatus() {
+    return this.to('GetTopologyDiscoveryStatus');
+  }
+
+  /**
    * Grants permission to retrieve a CloudWatch topology map
    *
    * Access Level: Read
@@ -383,6 +446,17 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toGetTopologyMap() {
     return this.to('GetTopologyMap');
+  }
+
+  /**
+   * Grants permission to share CloudWatch resources with a monitoring account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions
+   */
+  public toLink() {
+    return this.to('Link');
   }
 
   /**
@@ -405,6 +479,17 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toListDashboards() {
     return this.to('ListDashboards');
+  }
+
+  /**
+   * Grants permission to retrieve all the entities that are emitting a given metric
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toListEntitiesForMetric() {
+    return this.to('ListEntitiesForMetric');
   }
 
   /**
@@ -483,6 +568,10 @@ export class Cloudwatch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutAlarmMuteRule.html
    */
   public toPutAlarmMuteRule() {
@@ -505,6 +594,11 @@ export class Cloudwatch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAlarmActions()
+   *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutCompositeAlarm.html
    */
   public toPutCompositeAlarm() {
@@ -515,6 +609,10 @@ export class Cloudwatch extends PolicyStatement {
    * Grants permission to create a CloudWatch dashboard, or update an existing dashboard if it already exists
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutDashboard.html
    */
@@ -527,6 +625,11 @@ export class Cloudwatch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRequestInsightRuleLogGroups()
+   *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutInsightRule.html
    */
   public toPutInsightRule() {
@@ -537,6 +640,18 @@ export class Cloudwatch extends PolicyStatement {
    * Grants permission to create or update a log-based alarm and associate it with a CloudWatch Logs Insights scheduled query
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAlarmActions()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - logs:CreateScheduledQuery
+   * - logs:DeleteScheduledQuery
+   * - logs:GetScheduledQuery
+   * - logs:UpdateScheduledQuery
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutLogAlarm.html
    */
@@ -565,6 +680,11 @@ export class Cloudwatch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAlarmActions()
+   *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricAlarm.html
    */
   public toPutMetricAlarm() {
@@ -575,6 +695,9 @@ export class Cloudwatch extends PolicyStatement {
    * Grants permission to publish metric data points to Amazon CloudWatch using CloudWatch and OTLP formats
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifNamespace()
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricData.html
    */
@@ -587,10 +710,25 @@ export class Cloudwatch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricStream.html
    */
   public toPutMetricStream() {
     return this.to('PutMetricStream');
+  }
+
+  /**
+   * Grants permission to create or update a pipeline rule for CloudWatch pipelines for OTel metric processing
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toPutPipelineRule() {
+    return this.to('PutPipelineRule');
   }
 
   /**
@@ -616,6 +754,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable OTel Enrichment of vended metrics for PromQL querying
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toStartOTelEnrichment() {
+    return this.to('StartOTelEnrichment');
+  }
+
+  /**
    * Grants permission to stop all CloudWatch metric streams that you specify
    *
    * Access Level: Write
@@ -627,9 +776,24 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable OTel Enrichment of vended metrics for PromQL querying
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toStopOTelEnrichment() {
+    return this.to('StopOTelEnrichment');
+  }
+
+  /**
    * Grants permission to add tags to an Amazon CloudWatch resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html
    */
@@ -640,7 +804,10 @@ export class Cloudwatch extends PolicyStatement {
   /**
    * Grants permission to remove a tag from an Amazon CloudWatch resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html
    */
@@ -657,116 +824,6 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toUpdateServiceLevelObjective() {
     return this.to('UpdateServiceLevelObjective');
-  }
-
-  /**
-   * Grants permission to make API calls to CloudWatch using bearer token authentication
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
-   */
-  public toCallWithBearerToken() {
-    return this.to('CallWithBearerToken');
-  }
-
-  /**
-   * Grants permission to delete a pipeline rule for CloudWatch pipelines for OTel metric processing
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
-   */
-  public toDeletePipelineRule() {
-    return this.to('DeletePipelineRule');
-  }
-
-  /**
-   * Grants permission to retrieve the status of OTel Enrichment of vended metrics for PromQL querying
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
-   */
-  public toGetOTelEnrichment() {
-    return this.to('GetOTelEnrichment');
-  }
-
-  /**
-   * Grants permission to retrieve service data
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
-   */
-  public toGetServiceData() {
-    return this.to('GetServiceData');
-  }
-
-  /**
-   * Grants permission to retrieve a CloudWatch topology discovery status
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
-   */
-  public toGetTopologyDiscoveryStatus() {
-    return this.to('GetTopologyDiscoveryStatus');
-  }
-
-  /**
-   * Grants permission to share CloudWatch resources with a monitoring account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions
-   */
-  public toLink() {
-    return this.to('Link');
-  }
-
-  /**
-   * Grants permission to retrieve all the entities that are emitting a given metric
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
-   */
-  public toListEntitiesForMetric() {
-    return this.to('ListEntitiesForMetric');
-  }
-
-  /**
-   * Grants permission to create or update a pipeline rule for CloudWatch pipelines for OTel metric processing
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
-   */
-  public toPutPipelineRule() {
-    return this.to('PutPipelineRule');
-  }
-
-  /**
-   * Grants permission to enable OTel Enrichment of vended metrics for PromQL querying
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
-   */
-  public toStartOTelEnrichment() {
-    return this.to('StartOTelEnrichment');
-  }
-
-  /**
-   * Grants permission to disable OTel Enrichment of vended metrics for PromQL querying
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
-   */
-  public toStopOTelEnrichment() {
-    return this.to('StopOTelEnrichment');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -788,15 +845,16 @@ export class Cloudwatch extends PolicyStatement {
       'GetMetricStatistics',
       'GetMetricStream',
       'GetMetricWidgetImage',
-      'GetService',
-      'GetServiceLevelObjective',
-      'GetTopologyMap',
-      'ListManagedInsightRules',
       'GetOTelEnrichment',
+      'GetService',
       'GetServiceData',
-      'GetTopologyDiscoveryStatus'
+      'GetServiceLevelObjective',
+      'GetTopologyDiscoveryStatus',
+      'GetTopologyMap',
+      'ListManagedInsightRules'
     ],
     Write: [
+      'CallWithBearerToken',
       'CreateServiceLevelObjective',
       'DeleteAlarmMuteRule',
       'DeleteAlarms',
@@ -804,12 +862,14 @@ export class Cloudwatch extends PolicyStatement {
       'DeleteDashboards',
       'DeleteInsightRules',
       'DeleteMetricStream',
+      'DeletePipelineRule',
       'DeleteServiceLevelObjective',
       'DisableAlarmActions',
       'DisableInsightRules',
       'EnableAlarmActions',
       'EnableInsightRules',
       'EnableTopologyDiscovery',
+      'Link',
       'PutAlarmMuteRule',
       'PutAnomalyDetector',
       'PutCompositeAlarm',
@@ -820,28 +880,23 @@ export class Cloudwatch extends PolicyStatement {
       'PutMetricAlarm',
       'PutMetricData',
       'PutMetricStream',
+      'PutPipelineRule',
       'SetAlarmState',
       'StartMetricStreams',
-      'StopMetricStreams',
-      'TagResource',
-      'UntagResource',
-      'UpdateServiceLevelObjective',
-      'CallWithBearerToken',
-      'DeletePipelineRule',
-      'Link',
-      'PutPipelineRule',
       'StartOTelEnrichment',
-      'StopOTelEnrichment'
+      'StopMetricStreams',
+      'StopOTelEnrichment',
+      'UpdateServiceLevelObjective'
     ],
     List: [
       'ListAlarmMuteRules',
       'ListDashboards',
+      'ListEntitiesForMetric',
       'ListMetricStreams',
       'ListMetrics',
       'ListServiceLevelObjectives',
       'ListServices',
-      'ListTagsForResource',
-      'ListEntitiesForMetric'
+      'ListTagsForResource'
     ],
     Tagging: [
       'TagResource',
@@ -951,6 +1006,23 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type slo to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
+   *
+   * @param sloName - Identifier for the sloName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSlo(sloName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudwatch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:slo/${ sloName }`);
+  }
+
+  /**
    * Adds a resource of type service to the statement
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
@@ -966,23 +1038,6 @@ export class Cloudwatch extends PolicyStatement {
    */
   public onService(serviceName: string, uniqueAttributesHex: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:cloudwatch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceName }-${ uniqueAttributesHex }`);
-  }
-
-  /**
-   * Adds a resource of type slo to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
-   *
-   * @param sloName - Identifier for the sloName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onSlo(sloName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudwatch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:slo/${ sloName }`);
   }
 
   /**
@@ -1017,47 +1072,14 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toBatchGetServiceLevelObjectiveBudgetReport()
-   * - .toDeleteAlarmMuteRule()
-   * - .toDeleteAlarms()
-   * - .toDeleteDashboards()
-   * - .toDeleteInsightRules()
-   * - .toDeleteMetricStream()
-   * - .toDeleteServiceLevelObjective()
-   * - .toDescribeAlarmHistory()
-   * - .toDescribeAlarms()
-   * - .toDisableAlarmActions()
-   * - .toDisableInsightRules()
-   * - .toEnableAlarmActions()
-   * - .toEnableInsightRules()
-   * - .toGetAlarmMuteRule()
-   * - .toGetDashboard()
    * - .toGetDataset()
-   * - .toGetInsightRuleReport()
    * - .toGetMetricData()
-   * - .toGetMetricStream()
-   * - .toGetService()
-   * - .toGetServiceLevelObjective()
-   * - .toListAlarmMuteRules()
    * - .toListMetrics()
    * - .toListTagsForResource()
-   * - .toPutAlarmMuteRule()
-   * - .toPutCompositeAlarm()
-   * - .toPutDashboard()
-   * - .toPutInsightRule()
-   * - .toPutLogAlarm()
    * - .toPutMetricAlarm()
    * - .toPutMetricData()
-   * - .toPutMetricStream()
-   * - .toSetAlarmState()
-   * - .toStartMetricStreams()
-   * - .toStopMetricStreams()
    * - .toTagResource()
    * - .toUntagResource()
-   * - .toUpdateServiceLevelObjective()
-   * - .toDeletePipelineRule()
-   * - .toGetServiceData()
-   * - .toPutPipelineRule()
    *
    * Applies to resource types:
    * - alarm
@@ -1066,8 +1088,8 @@ export class Cloudwatch extends PolicyStatement {
    * - dataset
    * - insight-rule
    * - metric-stream
-   * - service
    * - slo
+   * - service
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

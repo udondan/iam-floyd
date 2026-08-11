@@ -31,7 +31,7 @@ m2:ListTagsForResource;Read
 m2:StartApplication;Write
 m2:StartBatchJob;Write
 m2:StopApplication;Write
-m2:TagResource;Tagging, Write
-m2:UntagResource;Tagging, Write
+m2:TagResource;Tagging
+m2:UntagResource;Tagging
 m2:UpdateApplication;Write
 m2:UpdateEnvironment;Write

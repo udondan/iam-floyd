@@ -31,8 +31,8 @@ appmesh:ListVirtualRouters;List
 appmesh:ListVirtualServices;List
 appmesh:PutMeshPolicy;Write
 appmesh:StreamAggregatedResources;Read
-appmesh:TagResource;Tagging, Write
-appmesh:UntagResource;Tagging, Write
+appmesh:TagResource;Tagging
+appmesh:UntagResource;Tagging
 appmesh:UpdateGatewayRoute;Write
 appmesh:UpdateMesh;Write
 appmesh:UpdateRoute;Write

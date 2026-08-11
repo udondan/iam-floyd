@@ -30,7 +30,6 @@ trustedadvisor:ListOrganizationRecommendations;List
 trustedadvisor:ListOrganizationalUnitsForParent;Read
 trustedadvisor:ListRecommendationResources;List
 trustedadvisor:ListRecommendations;List
-trustedadvisor:ListRecommendationsForResource;List
 trustedadvisor:ListRoots;Read
 trustedadvisor:RefreshCheck;Write
 trustedadvisor:SetAccountAccess;Write

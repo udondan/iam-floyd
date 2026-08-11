@@ -1,6 +1,6 @@
 storagegateway:ActivateGateway;Write
 storagegateway:AddCache;Write
-storagegateway:AddTagsToResource;Tagging, Write
+storagegateway:AddTagsToResource;Tagging
 storagegateway:AddUploadBuffer;Write
 storagegateway:AddWorkingStorage;Write
 storagegateway:AssignTapePool;Write
@@ -70,7 +70,7 @@ storagegateway:ListVolumeRecoveryPoints;List
 storagegateway:ListVolumes;List
 storagegateway:NotifyWhenUploaded;Write
 storagegateway:RefreshCache;Write
-storagegateway:RemoveTagsFromResource;Tagging, Write
+storagegateway:RemoveTagsFromResource;Tagging
 storagegateway:ResetCache;Write
 storagegateway:RetrieveTapeArchive;Write
 storagegateway:RetrieveTapeRecoveryPoint;Write

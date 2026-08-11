@@ -9,5 +9,5 @@ snow-device-management:ListDevices;List
 snow-device-management:ListExecutions;List
 snow-device-management:ListTagsForResource;Read
 snow-device-management:ListTasks;List
-snow-device-management:TagResource;Tagging, Write
-snow-device-management:UntagResource;Tagging, Write
+snow-device-management:TagResource;Tagging
+snow-device-management:UntagResource;Tagging

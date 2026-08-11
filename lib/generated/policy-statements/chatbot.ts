@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [chatbot](https://docs.aws.amazon.com/service-authorization/latest/reference/list_chatbot.html).
+ * Statement provider for service [chatbot](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Chatbot extends PolicyStatement {
   public servicePrefix = 'chatbot';
 
   /**
-   * Statement provider for service [chatbot](https://docs.aws.amazon.com/service-authorization/latest/reference/list_chatbot.html).
+   * Statement provider for service [chatbot](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -22,6 +22,9 @@ export class Chatbot extends PolicyStatement {
    * Grants permission to associate a resource with a configuration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_AssociateToConfiguration.html
    */
@@ -35,8 +38,8 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateChimeWebhookConfiguration.html
    */
@@ -50,8 +53,8 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateCustomAction.html
    */
@@ -65,8 +68,8 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateMicrosoftTeamsChannelConfiguration.html
    */
@@ -80,8 +83,8 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateSlackChannelConfiguration.html
    */
@@ -94,6 +97,9 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteChimeWebhookConfiguration.html
    */
   public toDeleteChimeWebhookConfiguration() {
@@ -105,6 +111,9 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteCustomAction.html
    */
   public toDeleteCustomAction() {
@@ -115,6 +124,9 @@ export class Chatbot extends PolicyStatement {
    * Grants permission to delete an AWS Chatbot Microsoft Teams Channel Configuration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteMicrosoftTeamsChannelConfiguration.html
    */
@@ -148,6 +160,9 @@ export class Chatbot extends PolicyStatement {
    * Grants permission to delete an AWS Chatbot Slack Channel Configuration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteSlackChannelConfiguration.html
    */
@@ -237,6 +252,9 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DisassociateFromConfiguration.html
    */
   public toDisassociateFromConfiguration() {
@@ -258,6 +276,9 @@ export class Chatbot extends PolicyStatement {
    * Grants permission to get a custom action
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_GetCustomAction.html
    */
@@ -392,7 +413,11 @@ export class Chatbot extends PolicyStatement {
   /**
    * Grants permission to create tags on AWS Chatbot Channel Configuration
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_TagResource.html
    */
@@ -403,7 +428,10 @@ export class Chatbot extends PolicyStatement {
   /**
    * Grants permission to remove tags on AWS Chatbot Channel Configuration
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UntagResource.html
    */
@@ -427,6 +455,9 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateChimeWebhookConfiguration.html
    */
   public toUpdateChimeWebhookConfiguration() {
@@ -437,6 +468,9 @@ export class Chatbot extends PolicyStatement {
    * Grants permission to update a custom action
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateCustomAction.html
    */
@@ -449,6 +483,9 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateMicrosoftTeamsChannelConfiguration.html
    */
   public toUpdateMicrosoftTeamsChannelConfiguration() {
@@ -459,6 +496,9 @@ export class Chatbot extends PolicyStatement {
    * Grants permission to update an AWS Chatbot Slack Channel Configuration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateSlackChannelConfiguration.html
    */
@@ -484,8 +524,6 @@ export class Chatbot extends PolicyStatement {
       'DisassociateFromConfiguration',
       'RedeemMicrosoftTeamsOauthCode',
       'RedeemSlackOauthCode',
-      'TagResource',
-      'UntagResource',
       'UpdateAccountPreferences',
       'UpdateChimeWebhookConfiguration',
       'UpdateCustomAction',
@@ -585,9 +623,6 @@ export class Chatbot extends PolicyStatement {
    * - .toDisassociateFromConfiguration()
    * - .toGetCustomAction()
    * - .toGetMicrosoftTeamsChannelConfiguration()
-   * - .toListAssociations()
-   * - .toTagResource()
-   * - .toUntagResource()
    * - .toUpdateChimeWebhookConfiguration()
    * - .toUpdateCustomAction()
    * - .toUpdateMicrosoftTeamsChannelConfiguration()

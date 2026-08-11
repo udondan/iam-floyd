@@ -25,6 +25,6 @@ codecatalyst:ListTagsForResource;Read
 codecatalyst:PutBillingAuthorization;Write
 codecatalyst:RejectConnection;Write
 codecatalyst:SynchronizeIdentityCenterApplication;Write
-codecatalyst:TagResource;Tagging, Write
-codecatalyst:UntagResource;Tagging, Write
+codecatalyst:TagResource;Tagging
+codecatalyst:UntagResource;Tagging
 codecatalyst:UpdateIdentityCenterApplication;Write

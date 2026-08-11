@@ -22,8 +22,8 @@ dax:PutItem;Write
 dax:Query;Read
 dax:RebootNode;Write
 dax:Scan;Read
-dax:TagResource;Tagging, Write
-dax:UntagResource;Tagging, Write
+dax:TagResource;Tagging
+dax:UntagResource;Tagging
 dax:UpdateCluster;Write
 dax:UpdateItem;Write
 dax:UpdateParameterGroup;Write

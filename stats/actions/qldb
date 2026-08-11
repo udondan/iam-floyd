@@ -29,7 +29,7 @@ qldb:PartiQLUpdate;Write
 qldb:SendCommand;Write
 qldb:ShowCatalog;Write
 qldb:StreamJournalToKinesis;Write
-qldb:TagResource;Tagging, Write
-qldb:UntagResource;Tagging, Write
+qldb:TagResource;Tagging
+qldb:UntagResource;Tagging
 qldb:UpdateLedger;Write
 qldb:UpdateLedgerPermissionsMode;Write

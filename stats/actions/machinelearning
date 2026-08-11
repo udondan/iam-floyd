@@ -1,4 +1,4 @@
-machinelearning:AddTags;Tagging, Write
+machinelearning:AddTags;Tagging
 machinelearning:CreateBatchPrediction;Write
 machinelearning:CreateDataSourceFromRDS;Write
 machinelearning:CreateDataSourceFromRedshift;Write
@@ -11,7 +11,7 @@ machinelearning:DeleteDataSource;Write
 machinelearning:DeleteEvaluation;Write
 machinelearning:DeleteMLModel;Write
 machinelearning:DeleteRealtimeEndpoint;Write
-machinelearning:DeleteTags;Tagging, Write
+machinelearning:DeleteTags;Tagging
 machinelearning:DescribeBatchPredictions;List
 machinelearning:DescribeDataSources;List
 machinelearning:DescribeEvaluations;List

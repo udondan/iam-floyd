@@ -60,7 +60,6 @@ bcm-recommended-actions
 bedrock
 bedrock-agentcore
 bedrock-mantle
-bedrock-websearch
 billing
 billingconductor
 braket
@@ -222,6 +221,8 @@ iotmanagedintegrations
 iotsitewise
 iottwinmaker
 iotwireless
+iq
+iq-permission
 ivs
 ivschat
 kafka
@@ -405,7 +406,6 @@ sts
 support
 support-console
 supportapp
-supportauthz
 supportplans
 sustainability
 swf

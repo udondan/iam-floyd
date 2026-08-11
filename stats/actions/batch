@@ -32,10 +32,10 @@ batch:ListTagsForResource;Read
 batch:RegisterJobDefinition;Write
 batch:SubmitJob;Write
 batch:SubmitServiceJob;Write
-batch:TagResource;Tagging, Write
+batch:TagResource;Tagging
 batch:TerminateJob;Write
 batch:TerminateServiceJob;Write
-batch:UntagResource;Tagging, Write
+batch:UntagResource;Tagging
 batch:UpdateComputeEnvironment;Write
 batch:UpdateConsumableResource;Write
 batch:UpdateJobQueue;Write

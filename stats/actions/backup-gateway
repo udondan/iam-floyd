@@ -19,9 +19,9 @@ backup-gateway:PutHypervisorPropertyMappings;Write
 backup-gateway:PutMaintenanceStartTime;Write
 backup-gateway:Restore;Write
 backup-gateway:StartVirtualMachinesMetadataSync;Write
-backup-gateway:TagResource;Tagging, Write
+backup-gateway:TagResource;Tagging
 backup-gateway:TestHypervisorConfiguration;Write
-backup-gateway:UntagResource;Tagging, Write
+backup-gateway:UntagResource;Tagging
 backup-gateway:UpdateGatewayInformation;Write
 backup-gateway:UpdateGatewaySoftwareNow;Write
 backup-gateway:UpdateHypervisor;Write

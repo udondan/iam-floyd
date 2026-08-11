@@ -77,8 +77,8 @@ appstream:StopAppBlockBuilder;Write
 appstream:StopFleet;Write
 appstream:StopImageBuilder;Write
 appstream:Stream;Write
-appstream:TagResource;Tagging, Write
-appstream:UntagResource;Tagging, Write
+appstream:TagResource;Tagging
+appstream:UntagResource;Tagging
 appstream:UpdateAppBlockBuilder;Write
 appstream:UpdateApplication;Write
 appstream:UpdateDirectoryConfig;Write

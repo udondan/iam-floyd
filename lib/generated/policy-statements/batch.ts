@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [batch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_batch.html).
+ * Statement provider for service [batch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Batch extends PolicyStatement {
   public servicePrefix = 'batch';
 
   /**
-   * Statement provider for service [batch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_batch.html).
+   * Statement provider for service [batch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -34,6 +34,10 @@ export class Batch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html
    */
   public toCreateComputeEnvironment() {
@@ -44,6 +48,10 @@ export class Batch extends PolicyStatement {
    * Grants permission to create an AWS Batch consumable resource in your account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateConsumableResource.html
    */
@@ -56,6 +64,10 @@ export class Batch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html
    */
   public toCreateJobQueue() {
@@ -66,6 +78,10 @@ export class Batch extends PolicyStatement {
    * Grants permission to create an AWS Batch quota share in your account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateQuotaShare.html
    */
@@ -78,6 +94,10 @@ export class Batch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateSchedulingPolicy.html
    */
   public toCreateSchedulingPolicy() {
@@ -88,6 +108,13 @@ export class Batch extends PolicyStatement {
    * Grants permission to create an AWS Batch service environment in your account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateServiceEnvironment.html
    */
@@ -364,6 +391,24 @@ export class Batch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUser()
+   * - .ifPrivileged()
+   * - .ifImage()
+   * - .ifLogDriver()
+   * - .ifAWSLogsGroup()
+   * - .ifAWSLogsRegion()
+   * - .ifAWSLogsStreamPrefix()
+   * - .ifAWSLogsCreateGroup()
+   * - .ifEKSServiceAccountName()
+   * - .ifEKSImage()
+   * - .ifEKSRunAsUser()
+   * - .ifEKSRunAsGroup()
+   * - .ifEKSPrivileged()
+   * - .ifEKSNamespace()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html
    */
   public toRegisterJobDefinition() {
@@ -374,6 +419,10 @@ export class Batch extends PolicyStatement {
    * Grants permission to submit an AWS Batch job from a job definition in your account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html
    */
@@ -386,6 +435,11 @@ export class Batch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifSchedulingPriority()
+   *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitServiceJob.html
    */
   public toSubmitServiceJob() {
@@ -395,7 +449,11 @@ export class Batch extends PolicyStatement {
   /**
    * Grants permission to tag an AWS Batch resource in your account
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html
    */
@@ -428,7 +486,10 @@ export class Batch extends PolicyStatement {
   /**
    * Grants permission to untag an AWS Batch resource in your account
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html
    */
@@ -507,6 +568,9 @@ export class Batch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifSchedulingPriority()
+   *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateServiceJob.html
    */
   public toUpdateServiceJob() {
@@ -532,10 +596,8 @@ export class Batch extends PolicyStatement {
       'RegisterJobDefinition',
       'SubmitJob',
       'SubmitServiceJob',
-      'TagResource',
       'TerminateJob',
       'TerminateServiceJob',
-      'UntagResource',
       'UpdateComputeEnvironment',
       'UpdateConsumableResource',
       'UpdateJobQueue',
@@ -589,11 +651,11 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type consumable-resource to the statement
+   * Adds a resource of type job-queue to the statement
    *
-   * https://docs.aws.amazon.com/batch/latest/userguide/resource-aware-scheduling.html
+   * https://docs.aws.amazon.com/batch/latest/userguide/job_queues.html
    *
-   * @param consumableResourceName - Identifier for the consumableResourceName.
+   * @param jobQueueName - Identifier for the jobQueueName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -601,25 +663,8 @@ export class Batch extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onConsumableResource(consumableResourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:consumable-resource/${ consumableResourceName }`);
-  }
-
-  /**
-   * Adds a resource of type job to the statement
-   *
-   * https://docs.aws.amazon.com/batch/latest/userguide/jobs.html
-   *
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobId }`);
+  public onJobQueue(jobQueueName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job-queue/${ jobQueueName }`);
   }
 
   /**
@@ -655,11 +700,11 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type job-queue to the statement
+   * Adds a resource of type job to the statement
    *
-   * https://docs.aws.amazon.com/batch/latest/userguide/job_queues.html
+   * https://docs.aws.amazon.com/batch/latest/userguide/jobs.html
    *
-   * @param jobQueueName - Identifier for the jobQueueName.
+   * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -667,26 +712,8 @@ export class Batch extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onJobQueue(jobQueueName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job-queue/${ jobQueueName }`);
-  }
-
-  /**
-   * Adds a resource of type quota-share to the statement
-   *
-   * https://docs.aws.amazon.com/batch/latest/userguide/quota-shares.html
-   *
-   * @param jobQueueName - Identifier for the jobQueueName.
-   * @param quotaShareName - Identifier for the quotaShareName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onQuotaShare(jobQueueName: string, quotaShareName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job-queue/${ jobQueueName }/quota-share/${ quotaShareName }`);
+  public onJob(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobId }`);
   }
 
   /**
@@ -741,6 +768,41 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type consumable-resource to the statement
+   *
+   * https://docs.aws.amazon.com/batch/latest/userguide/resource-aware-scheduling.html
+   *
+   * @param consumableResourceName - Identifier for the consumableResourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConsumableResource(consumableResourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:consumable-resource/${ consumableResourceName }`);
+  }
+
+  /**
+   * Adds a resource of type quota-share to the statement
+   *
+   * https://docs.aws.amazon.com/batch/latest/userguide/quota-shares.html
+   *
+   * @param jobQueueName - Identifier for the jobQueueName.
+   * @param quotaShareName - Identifier for the quotaShareName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onQuotaShare(jobQueueName: string, quotaShareName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job-queue/${ jobQueueName }/quota-share/${ quotaShareName }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -771,51 +833,18 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toCancelJob()
-   * - .toCreateComputeEnvironment()
-   * - .toCreateConsumableResource()
-   * - .toCreateJobQueue()
-   * - .toCreateQuotaShare()
-   * - .toCreateSchedulingPolicy()
-   * - .toCreateServiceEnvironment()
-   * - .toDeleteComputeEnvironment()
-   * - .toDeleteConsumableResource()
-   * - .toDeleteJobQueue()
-   * - .toDeleteQuotaShare()
-   * - .toDeleteSchedulingPolicy()
-   * - .toDeleteServiceEnvironment()
-   * - .toDeregisterJobDefinition()
-   * - .toDescribeConsumableResource()
-   * - .toDescribeQuotaShare()
-   * - .toGetJobQueueSnapshot()
-   * - .toListJobsByConsumableResource()
-   * - .toListQuotaShares()
-   * - .toListTagsForResource()
    * - .toRegisterJobDefinition()
-   * - .toSubmitJob()
-   * - .toSubmitServiceJob()
-   * - .toTagResource()
-   * - .toTerminateJob()
-   * - .toTerminateServiceJob()
-   * - .toUntagResource()
-   * - .toUpdateComputeEnvironment()
-   * - .toUpdateConsumableResource()
-   * - .toUpdateJobQueue()
-   * - .toUpdateQuotaShare()
-   * - .toUpdateSchedulingPolicy()
-   * - .toUpdateServiceEnvironment()
-   * - .toUpdateServiceJob()
    *
    * Applies to resource types:
    * - compute-environment
-   * - consumable-resource
-   * - job
-   * - job-definition-revision
    * - job-queue
-   * - quota-share
+   * - job-definition-revision
+   * - job
    * - scheduling-policy
    * - service-environment
    * - service-job
+   * - consumable-resource
+   * - quota-share
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

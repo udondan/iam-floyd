@@ -17,8 +17,8 @@ apptest:ListTestRunTestCases;Read
 apptest:ListTestRuns;List
 apptest:ListTestSuites;List
 apptest:StartTestRun;Write
-apptest:TagResource;Tagging, Write
-apptest:UntagResource;Tagging, Write
+apptest:TagResource;Tagging
+apptest:UntagResource;Tagging
 apptest:UpdateTestCase;Write
 apptest:UpdateTestConfiguration;Write
 apptest:UpdateTestSuite;Write

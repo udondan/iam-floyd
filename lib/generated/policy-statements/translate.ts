@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [translate](https://docs.aws.amazon.com/service-authorization/latest/reference/list_translate.html).
+ * Statement provider for service [translate](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontranslate.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Translate extends PolicyStatement {
   public servicePrefix = 'translate';
 
   /**
-   * Statement provider for service [translate](https://docs.aws.amazon.com/service-authorization/latest/reference/list_translate.html).
+   * Statement provider for service [translate](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontranslate.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -22,6 +22,10 @@ export class Translate extends PolicyStatement {
    * Grants permission to create a Parallel Data
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/translate/latest/APIReference/API_CreateParallelData.html
    */
@@ -88,6 +92,10 @@ export class Translate extends PolicyStatement {
    * Grants permission to create or update a terminology, depending on whether or not one already exists for the given terminology name
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/translate/latest/APIReference/API_ImportTerminology.html
    */
@@ -175,7 +183,11 @@ export class Translate extends PolicyStatement {
   /**
    * Grants permission to tag a resource with given key value pairs
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/translate/latest/APIReference/API_TagResource.html
    */
@@ -208,7 +220,10 @@ export class Translate extends PolicyStatement {
   /**
    * Grants permission to untag a resource with given key
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/translate/latest/APIReference/API_UntagResource.html
    */
@@ -235,8 +250,6 @@ export class Translate extends PolicyStatement {
       'ImportTerminology',
       'StartTextTranslationJob',
       'StopTextTranslationJob',
-      'TagResource',
-      'UntagResource',
       'UpdateParallelData'
     ],
     Read: [
@@ -260,23 +273,6 @@ export class Translate extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type parallel-data to the statement
-   *
-   * https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html
-   *
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onParallelData(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:translate:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:parallel-data/${ resourceName }`);
-  }
-
-  /**
    * Adds a resource of type terminology to the statement
    *
    * https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html
@@ -291,6 +287,23 @@ export class Translate extends PolicyStatement {
    */
   public onTerminology(resourceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:translate:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:terminology/${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type parallel-data to the statement
+   *
+   * https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onParallelData(resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:translate:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:parallel-data/${ resourceName }`);
   }
 
   /**
@@ -316,24 +329,9 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
-   * Applies to actions:
-   * - .toCreateParallelData()
-   * - .toDeleteParallelData()
-   * - .toDeleteTerminology()
-   * - .toGetParallelData()
-   * - .toGetTerminology()
-   * - .toImportTerminology()
-   * - .toListTagsForResource()
-   * - .toStartTextTranslationJob()
-   * - .toTagResource()
-   * - .toTranslateDocument()
-   * - .toTranslateText()
-   * - .toUntagResource()
-   * - .toUpdateParallelData()
-   *
    * Applies to resource types:
-   * - parallel-data
    * - terminology
+   * - parallel-data
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

@@ -93,9 +93,9 @@ securityagent:StartThreatModelJob;Write
 securityagent:StopCodeReviewJob;Write
 securityagent:StopPentestJob;Write
 securityagent:StopThreatModelJob;Write
-securityagent:TagResource;Tagging, Write
+securityagent:TagResource;Tagging
 securityagent:ToggleManagedSecurityRequirement;Write
-securityagent:UntagResource;Tagging, Write
+securityagent:UntagResource;Tagging
 securityagent:UpdateAgentSpace;Write
 securityagent:UpdateApplication;Write
 securityagent:UpdateCodeReview;Write

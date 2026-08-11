@@ -11,7 +11,7 @@ ivschat:ListLoggingConfigurations;List
 ivschat:ListRooms;List
 ivschat:ListTagsForResource;Read
 ivschat:SendEvent;Write
-ivschat:TagResource;Tagging, Write
-ivschat:UntagResource;Tagging, Write
+ivschat:TagResource;Tagging
+ivschat:UntagResource;Tagging
 ivschat:UpdateLoggingConfiguration;Write
 ivschat:UpdateRoom;Write

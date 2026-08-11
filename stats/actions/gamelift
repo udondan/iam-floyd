@@ -100,9 +100,9 @@ gamelift:StopFleetActions;Write
 gamelift:StopGameSessionPlacement;Write
 gamelift:StopMatchmaking;Write
 gamelift:SuspendGameServerGroup;Write
-gamelift:TagResource;Tagging, Write
+gamelift:TagResource;Tagging
 gamelift:TerminateGameSession;Write
-gamelift:UntagResource;Tagging, Write
+gamelift:UntagResource;Tagging
 gamelift:UpdateAlias;Write
 gamelift:UpdateBuild;Write
 gamelift:UpdateContainerFleet;Write

@@ -65,6 +65,6 @@ forecast:QueryForecast;Read
 forecast:QueryWhatIfForecast;Read
 forecast:ResumeResource;Write
 forecast:StopResource;Write
-forecast:TagResource;Tagging, Write
-forecast:UntagResource;Tagging, Write
+forecast:TagResource;Tagging
+forecast:UntagResource;Tagging
 forecast:UpdateDatasetGroup;Write

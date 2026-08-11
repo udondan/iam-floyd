@@ -1,6 +1,6 @@
 mediastore:CreateContainer;Write
 mediastore:DeleteContainer;Write
-mediastore:DeleteContainerPolicy;Permissions management, Write
+mediastore:DeleteContainerPolicy;Permissions management
 mediastore:DeleteCorsPolicy;Write
 mediastore:DeleteLifecyclePolicy;Write
 mediastore:DeleteMetricPolicy;Write
@@ -15,12 +15,12 @@ mediastore:GetObject;Read
 mediastore:ListContainers;List
 mediastore:ListItems;List
 mediastore:ListTagsForResource;Read
-mediastore:PutContainerPolicy;Permissions management, Write
+mediastore:PutContainerPolicy;Permissions management
 mediastore:PutCorsPolicy;Write
 mediastore:PutLifecyclePolicy;Write
 mediastore:PutMetricPolicy;Write
 mediastore:PutObject;Write
 mediastore:StartAccessLogging;Write
 mediastore:StopAccessLogging;Write
-mediastore:TagResource;Tagging, Write
-mediastore:UntagResource;Tagging, Write
+mediastore:TagResource;Tagging
+mediastore:UntagResource;Tagging

@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [detective](https://docs.aws.amazon.com/service-authorization/latest/reference/list_detective.html).
+ * Statement provider for service [detective](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondetective.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Detective extends PolicyStatement {
   public servicePrefix = 'detective';
 
   /**
-   * Statement provider for service [detective](https://docs.aws.amazon.com/service-authorization/latest/reference/list_detective.html).
+   * Statement provider for service [detective](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondetective.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -57,9 +57,12 @@ export class Detective extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - detective:TagResource
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_CreateGraph.html
    */
@@ -105,6 +108,9 @@ export class Detective extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_DescribeOrganizationConfiguration.html
    */
   public toDescribeOrganizationConfiguration() {
@@ -115,6 +121,9 @@ export class Detective extends PolicyStatement {
    * Grants permission to remove the Amazon Detective delegated administrator account for an organization
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_DisableOrganizationAdminAccount.html
    */
@@ -138,10 +147,38 @@ export class Detective extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - organizations:DescribeOrganization
+   * - organizations:EnableAWSServiceAccess
+   * - organizations:RegisterDelegatedAdministrator
+   *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_EnableOrganizationAdminAccount.html
    */
   public toEnableOrganizationAdminAccount() {
     return this.to('EnableOrganizationAdminAccount');
+  }
+
+  /**
+   * Grants permission to retrieve a behavior graph's eligibility for a free trial period
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/adminguide/free-trial-overview.html
+   */
+  public toGetFreeTrialEligibility() {
+    return this.to('GetFreeTrialEligibility');
+  }
+
+  /**
+   * Grants permission to retrieve the data ingestion state of a behavior graph
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/adminguide/detective-source-data-about.html
+   */
+  public toGetGraphIngestState() {
+    return this.to('GetGraphIngestState');
   }
 
   /**
@@ -167,6 +204,39 @@ export class Detective extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about Amazon Detective's pricing
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/adminguide/usage-projected-cost-calculation.html
+   */
+  public toGetPricingInformation() {
+    return this.to('GetPricingInformation');
+  }
+
+  /**
+   * Grants permission to list usage information of a behavior graph
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/adminguide/tracking-usage-logging.html
+   */
+  public toGetUsageInformation() {
+    return this.to('GetUsageInformation');
+  }
+
+  /**
+   * Grants permission to invoke Detective's Assistant
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/userguide/finding-groups-summary.html
+   */
+  public toInvokeAssistant() {
+    return this.to('InvokeAssistant');
+  }
+
+  /**
    * Grants permission to list a graph's datasource package ingest states and timestamps for the most recent state changes in a behavior graph managed by this account
    *
    * Access Level: List
@@ -186,6 +256,17 @@ export class Detective extends PolicyStatement {
    */
   public toListGraphs() {
     return this.to('ListGraphs');
+  }
+
+  /**
+   * Grants permission to retrieve high volume entities whose relationships cannot be stored by Detective
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/detective/latest/userguide/high-volume-entities.html
+   */
+  public toListHighDegreeEntities() {
+    return this.to('ListHighDegreeEntities');
   }
 
   /**
@@ -237,6 +318,9 @@ export class Detective extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_ListOrganizationAdminAccounts.html
    */
   public toListOrganizationAdminAccount() {
@@ -247,6 +331,9 @@ export class Detective extends PolicyStatement {
    * Grants permission to list the tag values that are assigned to a behavior graph
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_ListTagsForResource.html
    */
@@ -263,6 +350,17 @@ export class Detective extends PolicyStatement {
    */
   public toRejectInvitation() {
     return this.to('RejectInvitation');
+  }
+
+  /**
+   * Grants permission to search the data stored in a behavior graph
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/detective/latest/userguide/detective-search.html
+   */
+  public toSearchGraph() {
+    return this.to('SearchGraph');
   }
 
   /**
@@ -290,7 +388,12 @@ export class Detective extends PolicyStatement {
   /**
    * Grants permission to assign tag values to a behavior graph
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_TagResource.html
    */
@@ -301,7 +404,10 @@ export class Detective extends PolicyStatement {
   /**
    * Grants permission to remove tag values from a behavior graph
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_UntagResource.html
    */
@@ -336,87 +442,13 @@ export class Detective extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_UpdateOrganizationConfiguration.html
    */
   public toUpdateOrganizationConfiguration() {
     return this.to('UpdateOrganizationConfiguration');
-  }
-
-  /**
-   * Grants permission to retrieve a behavior graph's eligibility for a free trial period
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/detective/latest/adminguide/free-trial-overview.html
-   */
-  public toGetFreeTrialEligibility() {
-    return this.to('GetFreeTrialEligibility');
-  }
-
-  /**
-   * Grants permission to retrieve the data ingestion state of a behavior graph
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/detective/latest/adminguide/detective-source-data-about.html
-   */
-  public toGetGraphIngestState() {
-    return this.to('GetGraphIngestState');
-  }
-
-  /**
-   * Grants permission to retrieve information about Amazon Detective's pricing
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/detective/latest/adminguide/usage-projected-cost-calculation.html
-   */
-  public toGetPricingInformation() {
-    return this.to('GetPricingInformation');
-  }
-
-  /**
-   * Grants permission to list usage information of a behavior graph
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/detective/latest/adminguide/tracking-usage-logging.html
-   */
-  public toGetUsageInformation() {
-    return this.to('GetUsageInformation');
-  }
-
-  /**
-   * Grants permission to invoke Detective's Assistant
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/detective/latest/userguide/finding-groups-summary.html
-   */
-  public toInvokeAssistant() {
-    return this.to('InvokeAssistant');
-  }
-
-  /**
-   * Grants permission to retrieve high volume entities whose relationships cannot be stored by Detective
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/detective/latest/userguide/high-volume-entities.html
-   */
-  public toListHighDegreeEntities() {
-    return this.to('ListHighDegreeEntities');
-  }
-
-  /**
-   * Grants permission to search the data stored in a behavior graph
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/detective/latest/userguide/detective-search.html
-   */
-  public toSearchGraph() {
-    return this.to('SearchGraph');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -432,8 +464,6 @@ export class Detective extends PolicyStatement {
       'RejectInvitation',
       'StartInvestigation',
       'StartMonitoringMember',
-      'TagResource',
-      'UntagResource',
       'UpdateDatasourcePackages',
       'UpdateInvestigationState',
       'UpdateOrganizationConfiguration'
@@ -442,10 +472,10 @@ export class Detective extends PolicyStatement {
       'BatchGetGraphMemberDatasources',
       'BatchGetMembershipDatasources',
       'DescribeOrganizationConfiguration',
-      'GetInvestigation',
-      'GetMembers',
       'GetFreeTrialEligibility',
       'GetGraphIngestState',
+      'GetInvestigation',
+      'GetMembers',
       'GetPricingInformation',
       'GetUsageInformation',
       'InvokeAssistant',
@@ -454,13 +484,13 @@ export class Detective extends PolicyStatement {
     List: [
       'ListDatasourcePackages',
       'ListGraphs',
+      'ListHighDegreeEntities',
       'ListIndicators',
       'ListInvestigations',
       'ListInvitations',
       'ListMembers',
       'ListOrganizationAdminAccount',
-      'ListTagsForResource',
-      'ListHighDegreeEntities'
+      'ListTagsForResource'
     ],
     Tagging: [
       'TagResource',
@@ -508,35 +538,9 @@ export class Detective extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toAcceptInvitation()
-   * - .toBatchGetGraphMemberDatasources()
    * - .toCreateGraph()
-   * - .toCreateMembers()
-   * - .toDeleteGraph()
-   * - .toDeleteMembers()
-   * - .toDescribeOrganizationConfiguration()
-   * - .toDisassociateMembership()
-   * - .toGetInvestigation()
-   * - .toGetMembers()
-   * - .toListDatasourcePackages()
-   * - .toListIndicators()
-   * - .toListInvestigations()
-   * - .toListMembers()
    * - .toListTagsForResource()
-   * - .toRejectInvitation()
-   * - .toStartInvestigation()
-   * - .toStartMonitoringMember()
    * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateDatasourcePackages()
-   * - .toUpdateInvestigationState()
-   * - .toUpdateOrganizationConfiguration()
-   * - .toGetFreeTrialEligibility()
-   * - .toGetGraphIngestState()
-   * - .toGetUsageInformation()
-   * - .toInvokeAssistant()
-   * - .toListHighDegreeEntities()
-   * - .toSearchGraph()
    *
    * Applies to resource types:
    * - Graph

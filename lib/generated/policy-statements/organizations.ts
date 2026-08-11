@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [organizations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_organizations.html).
+ * Statement provider for service [organizations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Organizations extends PolicyStatement {
   public servicePrefix = 'organizations';
 
   /**
-   * Statement provider for service [organizations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_organizations.html).
+   * Statement provider for service [organizations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,6 +23,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_AcceptHandshake.html
    */
   public toAcceptHandshake() {
@@ -32,7 +35,10 @@ export class Organizations extends PolicyStatement {
   /**
    * Grants permission to attach a policy to a root, an organizational unit, or an individual account
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_AttachPolicy.html
    */
@@ -69,8 +75,8 @@ export class Organizations extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateAccount.html
    */
@@ -85,8 +91,8 @@ export class Organizations extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateGovCloudAccount.html
    */
@@ -99,6 +105,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateOrganization.html
    */
   public toCreateOrganization() {
@@ -110,6 +119,10 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateOrganizationalUnit.html
    */
   public toCreateOrganizationalUnit() {
@@ -120,6 +133,12 @@ export class Organizations extends PolicyStatement {
    * Grants permission to create a policy that you can attach to a root, an organizational unit (OU), or an individual AWS account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPolicyType()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreatePolicy.html
    */
@@ -165,6 +184,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPolicyType()
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeletePolicy.html
    */
   public toDeletePolicy() {
@@ -174,7 +196,7 @@ export class Organizations extends PolicyStatement {
   /**
    * Grants permission to delete a resource policy from your organization
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeleteResourcePolicy.html
    */
@@ -186,6 +208,9 @@ export class Organizations extends PolicyStatement {
    * Grants permission to deregister the specified member AWS account as a delegated administrator for the AWS service that is specified by ServicePrincipal
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServicePrincipal()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeregisterDelegatedAdministrator.html
    */
@@ -219,6 +244,9 @@ export class Organizations extends PolicyStatement {
    * Grants permission to retrieve the effective policy for an account
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeEffectivePolicy.html
    */
@@ -264,6 +292,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifPolicyType()
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribePolicy.html
    */
   public toDescribePolicy() {
@@ -286,6 +317,10 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifTransferType()
+   * - .ifTransferDirection()
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeResponsibilityTransfer.html
    */
   public toDescribeResponsibilityTransfer() {
@@ -295,7 +330,10 @@ export class Organizations extends PolicyStatement {
   /**
    * Grants permission to detach a policy from a target root, organizational unit, or account
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DetachPolicy.html
    */
@@ -321,6 +359,9 @@ export class Organizations extends PolicyStatement {
    * Grants permission to disable an organization policy type in a root
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DisablePolicyType.html
    */
@@ -358,6 +399,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPolicyType()
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnablePolicyType.html
    */
   public toEnablePolicyType() {
@@ -369,6 +413,10 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_InviteAccountToOrganization.html
    */
   public toInviteAccountToOrganization() {
@@ -379,6 +427,10 @@ export class Organizations extends PolicyStatement {
    * Grants permission to send an invitation to another AWS account, asking it to transfer a particular responsibility to your organization
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTransferType()
+   * - .ifTransferDirection()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_InviteOrganizationToTransferResponsibility.html
    */
@@ -496,6 +548,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifPolicyType()
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListEffectivePolicyValidationErrors.html
    */
   public toListEffectivePolicyValidationErrors() {
@@ -530,8 +585,8 @@ export class Organizations extends PolicyStatement {
    * Access Level: List
    *
    * Possible conditions:
-   * - .ifTransferDirection()
    * - .ifTransferType()
+   * - .ifTransferDirection()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListInboundResponsibilityTransfers.html
    */
@@ -556,8 +611,8 @@ export class Organizations extends PolicyStatement {
    * Access Level: List
    *
    * Possible conditions:
-   * - .ifTransferDirection()
    * - .ifTransferType()
+   * - .ifTransferDirection()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListOutboundResponsibilityTransfers.html
    */
@@ -595,6 +650,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifPolicyType()
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListPoliciesForTarget.html
    */
   public toListPoliciesForTarget() {
@@ -617,6 +675,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifPolicyType()
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -627,6 +688,9 @@ export class Organizations extends PolicyStatement {
    * Grants permission to list all the roots, OUs, and accounts to which a policy is attached
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListTargetsForPolicy.html
    */
@@ -648,7 +712,11 @@ export class Organizations extends PolicyStatement {
   /**
    * Grants permission to create or update a resource policy
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_PutResourcePolicy.html
    */
@@ -660,6 +728,9 @@ export class Organizations extends PolicyStatement {
    * Grants permission to register the specified member account to administer the Organizations features of the AWS service that is specified by ServicePrincipal
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServicePrincipal()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_RegisterDelegatedAdministrator.html
    */
@@ -681,7 +752,12 @@ export class Organizations extends PolicyStatement {
   /**
    * Grants permission to add one or more tags to the specified resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_TagResource.html
    */
@@ -694,6 +770,10 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifTransferType()
+   * - .ifTransferDirection()
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_TerminateResponsibilityTransfer.html
    */
   public toTerminateResponsibilityTransfer() {
@@ -703,7 +783,11 @@ export class Organizations extends PolicyStatement {
   /**
    * Grants permission to remove one or more tags from the specified resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_UntagResource.html
    */
@@ -725,7 +809,10 @@ export class Organizations extends PolicyStatement {
   /**
    * Grants permission to update an existing policy with a new name, description, or content
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_UpdatePolicy.html
    */
@@ -737,6 +824,10 @@ export class Organizations extends PolicyStatement {
    * Grants permission to rename a responsibility transfer to or from your organization
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTransferType()
+   * - .ifTransferDirection()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_UpdateResponsibilityTransfer.html
    */
@@ -774,19 +865,10 @@ export class Organizations extends PolicyStatement {
       'PutResourcePolicy',
       'RegisterDelegatedAdministrator',
       'RemoveAccountFromOrganization',
-      'TagResource',
       'TerminateResponsibilityTransfer',
-      'UntagResource',
       'UpdateOrganizationalUnit',
       'UpdatePolicy',
       'UpdateResponsibilityTransfer'
-    ],
-    'Permissions management': [
-      'AttachPolicy',
-      'DeleteResourcePolicy',
-      'DetachPolicy',
-      'PutResourcePolicy',
-      'UpdatePolicy'
     ],
     Read: [
       'DescribeAccount',
@@ -842,19 +924,6 @@ export class Organizations extends PolicyStatement {
    */
   public onAccount(organizationId: string, accountId?: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:organizations::${ account ?? this.defaultAccount }:account/o-${ organizationId }/${ accountId ?? this.defaultAccount }`);
-  }
-
-  /**
-   * Adds a resource of type awspolicy to the statement
-   *
-   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html
-   *
-   * @param policyType - Identifier for the policyType.
-   * @param policyId - Identifier for the policyId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAwspolicy(policyType: string, policyId: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:organizations::aws:policy/${ policyType }/p-${ policyId }`);
   }
 
   /**
@@ -938,22 +1007,16 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type responsibilitytransfer to the statement
+   * Adds a resource of type awspolicy to the statement
    *
    * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html
    *
-   * @param organizationId - Identifier for the organizationId.
-   * @param transferType - Identifier for the transferType.
-   * @param transferDirection - Identifier for the transferDirection.
-   * @param responsibilityTransferId - Identifier for the responsibilityTransferId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param policyType - Identifier for the policyType.
+   * @param policyId - Identifier for the policyId.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
-  public onResponsibilitytransfer(organizationId: string, transferType: string, transferDirection: string, responsibilityTransferId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:organizations::${ account ?? this.defaultAccount }:transfer/o-${ organizationId }/${ transferType }/${ transferDirection }/rt-${ responsibilityTransferId }`);
+  public onAwspolicy(policyType: string, policyId: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:organizations::aws:policy/${ policyType }/p-${ policyId }`);
   }
 
   /**
@@ -971,6 +1034,25 @@ export class Organizations extends PolicyStatement {
    */
   public onRoot(organizationId: string, rootId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:organizations::${ account ?? this.defaultAccount }:root/o-${ organizationId }/r-${ rootId }`);
+  }
+
+  /**
+   * Adds a resource of type responsibilitytransfer to the statement
+   *
+   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html
+   *
+   * @param organizationId - Identifier for the organizationId.
+   * @param transferType - Identifier for the transferType.
+   * @param transferDirection - Identifier for the transferDirection.
+   * @param responsibilityTransferId - Identifier for the responsibilityTransferId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onResponsibilitytransfer(organizationId: string, transferType: string, transferDirection: string, responsibilityTransferId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:organizations::${ account ?? this.defaultAccount }:transfer/o-${ organizationId }/${ transferType }/${ transferDirection }/rt-${ responsibilityTransferId }`);
   }
 
   /**
@@ -1001,52 +1083,17 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toAttachPolicy()
-   * - .toCloseAccount()
    * - .toCreateAccount()
    * - .toCreateGovCloudAccount()
-   * - .toCreateOrganizationalUnit()
    * - .toCreatePolicy()
-   * - .toDeleteOrganizationalUnit()
-   * - .toDeletePolicy()
-   * - .toDeregisterDelegatedAdministrator()
-   * - .toDescribeAccount()
-   * - .toDescribeEffectivePolicy()
-   * - .toDescribeOrganizationalUnit()
-   * - .toDescribePolicy()
-   * - .toDescribeResponsibilityTransfer()
-   * - .toDetachPolicy()
-   * - .toDisablePolicyType()
-   * - .toEnablePolicyType()
-   * - .toInviteAccountToOrganization()
-   * - .toInviteOrganizationToTransferResponsibility()
-   * - .toListAccountsForParent()
-   * - .toListChildren()
-   * - .toListDelegatedServicesForAccount()
-   * - .toListEffectivePolicyValidationErrors()
-   * - .toListOrganizationalUnitsForParent()
-   * - .toListParents()
-   * - .toListPoliciesForTarget()
-   * - .toListTagsForResource()
-   * - .toListTargetsForPolicy()
-   * - .toMoveAccount()
-   * - .toPutResourcePolicy()
-   * - .toRegisterDelegatedAdministrator()
-   * - .toRemoveAccountFromOrganization()
-   * - .toTagResource()
-   * - .toTerminateResponsibilityTransfer()
-   * - .toUntagResource()
-   * - .toUpdateOrganizationalUnit()
-   * - .toUpdatePolicy()
-   * - .toUpdateResponsibilityTransfer()
    *
    * Applies to resource types:
    * - account
    * - organizationalunit
    * - policy
    * - resourcepolicy
-   * - responsibilitytransfer
    * - root
+   * - responsibilitytransfer
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

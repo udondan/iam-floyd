@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [cleanrooms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cleanrooms.html).
+ * Statement provider for service [cleanrooms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanrooms.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Cleanrooms extends PolicyStatement {
   public servicePrefix = 'cleanrooms';
 
   /**
-   * Statement provider for service [cleanrooms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cleanrooms.html).
+   * Statement provider for service [cleanrooms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanrooms.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,6 +23,9 @@ export class Cleanrooms extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - cleanrooms:GetCollaborationAnalysisTemplate
+   *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_BatchGetCollaborationAnalysisTemplate.html
    */
   public toBatchGetCollaborationAnalysisTemplate() {
@@ -34,6 +37,9 @@ export class Cleanrooms extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - cleanrooms:GetSchema
+   *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_BatchGetSchema.html
    */
   public toBatchGetSchema() {
@@ -44,6 +50,9 @@ export class Cleanrooms extends PolicyStatement {
    * Grants permission to view analysis rules associated with schemas
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - cleanrooms:GetSchema
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_BatchGetSchemaAnalysisRule.html
    */
@@ -89,6 +98,11 @@ export class Cleanrooms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - cleanrooms-ml:GetConfiguredAudienceModel
+   * - cleanrooms-ml:GetConfiguredAudienceModelPolicy
+   * - cleanrooms-ml:PutConfiguredAudienceModelPolicy
+   *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateConfiguredAudienceModelAssociation.html
    */
   public toCreateConfiguredAudienceModelAssociation() {
@@ -99,6 +113,17 @@ export class Cleanrooms extends PolicyStatement {
    * Grants permission to create a new configured table
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - athena:GetTableMetadata
+   * - glue:BatchGetPartition
+   * - glue:GetDatabase
+   * - glue:GetDatabases
+   * - glue:GetPartition
+   * - glue:GetPartitions
+   * - glue:GetSchemaVersion
+   * - glue:GetTable
+   * - glue:GetTables
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateConfiguredTable.html
    */
@@ -122,6 +147,9 @@ export class Cleanrooms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateConfiguredTableAssociation.html
    */
   public toCreateConfiguredTableAssociation() {
@@ -144,6 +172,10 @@ export class Cleanrooms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - entityresolution:AddPolicyStatement
+   * - entityresolution:GetIdMappingWorkflow
+   *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateIdMappingTable.html
    */
   public toCreateIdMappingTable() {
@@ -155,6 +187,10 @@ export class Cleanrooms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - entityresolution:AddPolicyStatement
+   * - entityresolution:GetIdNamespace
+   *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateIdNamespaceAssociation.html
    */
   public toCreateIdNamespaceAssociation() {
@@ -165,6 +201,9 @@ export class Cleanrooms extends PolicyStatement {
    * Grants permission to create a new intermediate table in a membership
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - cleanrooms:GetCollaborationAnalysisTemplate
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateIntermediateTable.html
    */
@@ -187,6 +226,19 @@ export class Cleanrooms extends PolicyStatement {
    * Grants permission to join collaborations by creating a membership
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - logs:CreateLogDelivery
+   * - logs:CreateLogGroup
+   * - logs:DeleteLogDelivery
+   * - logs:DescribeLogGroups
+   * - logs:DescribeResourcePolicies
+   * - logs:GetLogDelivery
+   * - logs:ListLogDeliveries
+   * - logs:PutResourcePolicy
+   * - logs:UpdateLogDelivery
+   * - s3:GetBucketLocation
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateMembership.html
    */
@@ -221,6 +273,11 @@ export class Cleanrooms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - cleanrooms-ml:DeleteConfiguredAudienceModelPolicy
+   * - cleanrooms-ml:GetConfiguredAudienceModelPolicy
+   * - cleanrooms-ml:PutConfiguredAudienceModelPolicy
+   *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteCollaboration.html
    */
   public toDeleteCollaboration() {
@@ -231,6 +288,11 @@ export class Cleanrooms extends PolicyStatement {
    * Grants permission to delete an existing configured audience model association
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - cleanrooms-ml:DeleteConfiguredAudienceModelPolicy
+   * - cleanrooms-ml:GetConfiguredAudienceModelPolicy
+   * - cleanrooms-ml:PutConfiguredAudienceModelPolicy
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteConfiguredAudienceModelAssociation.html
    */
@@ -287,6 +349,9 @@ export class Cleanrooms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - entityresolution:DeletePolicyStatement
+   *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteIdMappingTable.html
    */
   public toDeleteIdMappingTable() {
@@ -297,6 +362,9 @@ export class Cleanrooms extends PolicyStatement {
    * Grants permission to remove an Id Namespace Association from a collaboration
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - entityresolution:DeletePolicyStatement
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteIdNamespaceAssociation.html
    */
@@ -330,6 +398,11 @@ export class Cleanrooms extends PolicyStatement {
    * Grants permission to delete members from a collaboration
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - cleanrooms-ml:DeleteConfiguredAudienceModelPolicy
+   * - cleanrooms-ml:GetConfiguredAudienceModelPolicy
+   * - cleanrooms-ml:PutConfiguredAudienceModelPolicy
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteMember.html
    */
@@ -518,6 +591,9 @@ export class Cleanrooms extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - entityresolution:GetIdNamespace
+   *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetIdNamespaceAssociation.html
    */
   public toGetIdNamespaceAssociation() {
@@ -605,6 +681,9 @@ export class Cleanrooms extends PolicyStatement {
    * Grants permission to view analysis rules associated with a schema
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - cleanrooms:GetSchema
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetSchemaAnalysisRule.html
    */
@@ -866,9 +945,34 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to access a collaboration in the context of Clean Rooms ML custom models
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/ml-behaviors-byom.html#ml-behaviors-byom-membership-collaboration-access
+   */
+  public toPassCollaboration() {
+    return this.to('PassCollaboration');
+  }
+
+  /**
+   * Grants permission to access a membership in the context of Clean Rooms ML custom models
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/ml-behaviors-byom.html#ml-behaviors-byom-membership-collaboration-access
+   */
+  public toPassMembership() {
+    return this.to('PassMembership');
+  }
+
+  /**
    * Grants permission to start an Id Mapping Job in AWS Entity Resolution to generate id mapping results in cleanrooms collaboration.
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - entityresolution:GetIdMappingWorkflow
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_PopulateIdMappingTable.html
    */
@@ -880,6 +984,9 @@ export class Cleanrooms extends PolicyStatement {
    * Grants permission to populate an intermediate table by executing its stored analysis
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - cleanrooms:GetSchema
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_PopulateIntermediateTable.html
    */
@@ -903,6 +1010,10 @@ export class Cleanrooms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - cleanrooms:GetCollaborationAnalysisTemplate
+   * - cleanrooms:GetSchema
+   *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_StartProtectedJob.html
    */
   public toStartProtectedJob() {
@@ -914,6 +1025,13 @@ export class Cleanrooms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - cleanrooms:GetCollaborationAnalysisTemplate
+   * - cleanrooms:GetSchema
+   * - s3:GetBucketLocation
+   * - s3:ListBucket
+   * - s3:PutObject
+   *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_StartProtectedQuery.html
    */
   public toStartProtectedQuery() {
@@ -923,7 +1041,11 @@ export class Cleanrooms extends PolicyStatement {
   /**
    * Grants permission to tag a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_TagResource.html
    */
@@ -934,7 +1056,10 @@ export class Cleanrooms extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UntagResource.html
    */
@@ -991,10 +1116,34 @@ export class Cleanrooms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - athena:GetTableMetadata
+   * - cleanrooms:UpdateConfiguredTableAllowedColumns
+   * - cleanrooms:UpdateConfiguredTableReference
+   * - glue:BatchGetPartition
+   * - glue:GetDatabase
+   * - glue:GetDatabases
+   * - glue:GetPartition
+   * - glue:GetPartitions
+   * - glue:GetSchemaVersion
+   * - glue:GetTable
+   * - glue:GetTables
+   *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html
    */
   public toUpdateConfiguredTable() {
     return this.to('UpdateConfiguredTable');
+  }
+
+  /**
+   * Grants permission to update the allowed columns of an existing configured table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html
+   */
+  public toUpdateConfiguredTableAllowedColumns() {
+    return this.to('UpdateConfiguredTableAllowedColumns');
   }
 
   /**
@@ -1012,6 +1161,9 @@ export class Cleanrooms extends PolicyStatement {
    * Grants permission to update a configured table association
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTableAssociation.html
    */
@@ -1031,6 +1183,17 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the table reference of an existing configured table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html
+   */
+  public toUpdateConfiguredTableReference() {
+    return this.to('UpdateConfiguredTableReference');
+  }
+
+  /**
    * Grants permission to update an id mapping table
    *
    * Access Level: Write
@@ -1045,6 +1208,9 @@ export class Cleanrooms extends PolicyStatement {
    * Grants permission to update a entity resolution input association
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - entityresolution:GetIdNamespace
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateIdNamespaceAssociation.html
    */
@@ -1078,6 +1244,19 @@ export class Cleanrooms extends PolicyStatement {
    * Grants permission to update details of a membership
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - logs:CreateLogDelivery
+   * - logs:CreateLogGroup
+   * - logs:DeleteLogDelivery
+   * - logs:DescribeLogGroups
+   * - logs:DescribeResourcePolicies
+   * - logs:GetLogDelivery
+   * - logs:ListLogDeliveries
+   * - logs:PutResourcePolicy
+   * - logs:UpdateLogDelivery
+   * - s3:GetBucketLocation
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateMembership.html
    */
@@ -1118,50 +1297,6 @@ export class Cleanrooms extends PolicyStatement {
     return this.to('UpdateProtectedQuery');
   }
 
-  /**
-   * Grants permission to access a collaboration in the context of Clean Rooms ML custom models
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/ml-behaviors-byom.html#ml-behaviors-byom-membership-collaboration-access
-   */
-  public toPassCollaboration() {
-    return this.to('PassCollaboration');
-  }
-
-  /**
-   * Grants permission to access a membership in the context of Clean Rooms ML custom models
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/ml-behaviors-byom.html#ml-behaviors-byom-membership-collaboration-access
-   */
-  public toPassMembership() {
-    return this.to('PassMembership');
-  }
-
-  /**
-   * Grants permission to update the allowed columns of an existing configured table
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html
-   */
-  public toUpdateConfiguredTableAllowedColumns() {
-    return this.to('UpdateConfiguredTableAllowedColumns');
-  }
-
-  /**
-   * Grants permission to update the table reference of an existing configured table
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html
-   */
-  public toUpdateConfiguredTableReference() {
-    return this.to('UpdateConfiguredTableReference');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Read: [
       'BatchGetCollaborationAnalysisTemplate',
@@ -1189,9 +1324,9 @@ export class Cleanrooms extends PolicyStatement {
       'GetProtectedQuery',
       'GetSchema',
       'GetSchemaAnalysisRule',
-      'PreviewPrivacyImpact',
       'PassCollaboration',
-      'PassMembership'
+      'PassMembership',
+      'PreviewPrivacyImpact'
     ],
     Write: [
       'CreateAnalysisTemplate',
@@ -1227,16 +1362,16 @@ export class Cleanrooms extends PolicyStatement {
       'PopulateIntermediateTable',
       'StartProtectedJob',
       'StartProtectedQuery',
-      'TagResource',
-      'UntagResource',
       'UpdateAnalysisTemplate',
       'UpdateCollaboration',
       'UpdateCollaborationChangeRequest',
       'UpdateConfiguredAudienceModelAssociation',
       'UpdateConfiguredTable',
+      'UpdateConfiguredTableAllowedColumns',
       'UpdateConfiguredTableAnalysisRule',
       'UpdateConfiguredTableAssociation',
       'UpdateConfiguredTableAssociationAnalysisRule',
+      'UpdateConfiguredTableReference',
       'UpdateIdMappingTable',
       'UpdateIdNamespaceAssociation',
       'UpdateIntermediateTable',
@@ -1244,9 +1379,7 @@ export class Cleanrooms extends PolicyStatement {
       'UpdateMembership',
       'UpdatePrivacyBudgetTemplate',
       'UpdateProtectedJob',
-      'UpdateProtectedQuery',
-      'UpdateConfiguredTableAllowedColumns',
-      'UpdateConfiguredTableReference'
+      'UpdateProtectedQuery'
     ],
     List: [
       'ListAnalysisTemplates',
@@ -1404,6 +1537,23 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type membership to the statement
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
+   *
+   * @param membershipId - Identifier for the membershipId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMembership(membershipId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:membership/${ membershipId }`);
+  }
+
+  /**
    * Adds a resource of type intermediatetable to the statement
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
@@ -1419,23 +1569,6 @@ export class Cleanrooms extends PolicyStatement {
    */
   public onIntermediatetable(membershipId: string, intermediateTableId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:membership/${ membershipId }/intermediatetable/${ intermediateTableId }`);
-  }
-
-  /**
-   * Adds a resource of type membership to the statement
-   *
-   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
-   *
-   * @param membershipId - Identifier for the membershipId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onMembership(membershipId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:membership/${ membershipId }`);
   }
 
   /**
@@ -1490,107 +1623,18 @@ export class Cleanrooms extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toBatchGetCollaborationAnalysisTemplate()
-   * - .toBatchGetSchema()
-   * - .toBatchGetSchemaAnalysisRule()
    * - .toCreateAnalysisTemplate()
    * - .toCreateCollaboration()
    * - .toCreateCollaborationChangeRequest()
    * - .toCreateConfiguredAudienceModelAssociation()
    * - .toCreateConfiguredTable()
-   * - .toCreateConfiguredTableAnalysisRule()
    * - .toCreateConfiguredTableAssociation()
    * - .toCreateConfiguredTableAssociationAnalysisRule()
    * - .toCreateIdMappingTable()
    * - .toCreateIdNamespaceAssociation()
    * - .toCreateIntermediateTable()
-   * - .toCreateIntermediateTableAnalysisRule()
    * - .toCreateMembership()
    * - .toCreatePrivacyBudgetTemplate()
-   * - .toDeleteAnalysisTemplate()
-   * - .toDeleteCollaboration()
-   * - .toDeleteConfiguredAudienceModelAssociation()
-   * - .toDeleteConfiguredTable()
-   * - .toDeleteConfiguredTableAnalysisRule()
-   * - .toDeleteConfiguredTableAssociation()
-   * - .toDeleteConfiguredTableAssociationAnalysisRule()
-   * - .toDeleteIdMappingTable()
-   * - .toDeleteIdNamespaceAssociation()
-   * - .toDeleteIntermediateTable()
-   * - .toDeleteIntermediateTableAnalysisRule()
-   * - .toDeleteMember()
-   * - .toDeleteMembership()
-   * - .toDeletePrivacyBudgetTemplate()
-   * - .toDisallowIntermediateTable()
-   * - .toGetAnalysisTemplate()
-   * - .toGetCollaboration()
-   * - .toGetCollaborationAnalysisTemplate()
-   * - .toGetCollaborationChangeRequest()
-   * - .toGetCollaborationConfiguredAudienceModelAssociation()
-   * - .toGetCollaborationIdNamespaceAssociation()
-   * - .toGetCollaborationPrivacyBudgetTemplate()
-   * - .toGetConfiguredAudienceModelAssociation()
-   * - .toGetConfiguredTable()
-   * - .toGetConfiguredTableAnalysisRule()
-   * - .toGetConfiguredTableAssociation()
-   * - .toGetConfiguredTableAssociationAnalysisRule()
-   * - .toGetIdMappingTable()
-   * - .toGetIdNamespaceAssociation()
-   * - .toGetIntermediateTable()
-   * - .toGetIntermediateTableAnalysisRule()
-   * - .toGetMembership()
-   * - .toGetPrivacyBudgetTemplate()
-   * - .toGetProtectedJob()
-   * - .toGetProtectedQuery()
-   * - .toGetSchema()
-   * - .toGetSchemaAnalysisRule()
-   * - .toListAnalysisTemplates()
-   * - .toListCollaborationAnalysisTemplates()
-   * - .toListCollaborationChangeRequests()
-   * - .toListCollaborationConfiguredAudienceModelAssociations()
-   * - .toListCollaborationIdNamespaceAssociations()
-   * - .toListCollaborationPrivacyBudgetTemplates()
-   * - .toListCollaborationPrivacyBudgets()
-   * - .toListConfiguredAudienceModelAssociations()
-   * - .toListConfiguredTableAssociations()
-   * - .toListIdMappingTables()
-   * - .toListIdNamespaceAssociations()
-   * - .toListIntermediateTableVersions()
-   * - .toListIntermediateTables()
-   * - .toListMembers()
-   * - .toListPrivacyBudgetTemplates()
-   * - .toListPrivacyBudgets()
-   * - .toListProtectedJobs()
-   * - .toListProtectedQueries()
-   * - .toListSchemas()
-   * - .toListTagsForResource()
-   * - .toPopulateIdMappingTable()
-   * - .toPopulateIntermediateTable()
-   * - .toPreviewPrivacyImpact()
-   * - .toStartProtectedJob()
-   * - .toStartProtectedQuery()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateAnalysisTemplate()
-   * - .toUpdateCollaboration()
-   * - .toUpdateCollaborationChangeRequest()
-   * - .toUpdateConfiguredAudienceModelAssociation()
-   * - .toUpdateConfiguredTable()
-   * - .toUpdateConfiguredTableAnalysisRule()
-   * - .toUpdateConfiguredTableAssociation()
-   * - .toUpdateConfiguredTableAssociationAnalysisRule()
-   * - .toUpdateIdMappingTable()
-   * - .toUpdateIdNamespaceAssociation()
-   * - .toUpdateIntermediateTable()
-   * - .toUpdateIntermediateTableAnalysisRule()
-   * - .toUpdateMembership()
-   * - .toUpdatePrivacyBudgetTemplate()
-   * - .toUpdateProtectedJob()
-   * - .toUpdateProtectedQuery()
-   * - .toPassCollaboration()
-   * - .toPassMembership()
-   * - .toUpdateConfiguredTableAllowedColumns()
-   * - .toUpdateConfiguredTableReference()
    *
    * Applies to resource types:
    * - analysistemplate
@@ -1600,8 +1644,8 @@ export class Cleanrooms extends PolicyStatement {
    * - configuredtableassociation
    * - idmappingtable
    * - idnamespaceassociation
-   * - intermediatetable
    * - membership
+   * - intermediatetable
    * - privacybudgettemplate
    *
    * @param tagKey The tag key to check

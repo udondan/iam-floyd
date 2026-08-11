@@ -1,5 +1,5 @@
-lambda:AddLayerVersionPermission;Permissions management, Write
-lambda:AddPermission;Permissions management, Write
+lambda:AddLayerVersionPermission;Permissions management
+lambda:AddPermission;Permissions management
 lambda:CheckpointDurableExecution;Write
 lambda:ConnectMicrovm;Write
 lambda:CreateAlias;Write
@@ -26,8 +26,8 @@ lambda:DeleteMicrovmImage;Write
 lambda:DeleteMicrovmImageVersion;Write
 lambda:DeleteNetworkConnector;Write
 lambda:DeleteProvisionedConcurrencyConfig;Write
-lambda:DisableReplication;Permissions management, Write
-lambda:EnableReplication;Permissions management, Write
+lambda:DisableReplication;Permissions management
+lambda:EnableReplication;Permissions management
 lambda:GetAccountSettings;Read
 lambda:GetAlias;Read
 lambda:GetCapacityProvider;Read
@@ -90,8 +90,8 @@ lambda:PutFunctionRecursionConfig;Write
 lambda:PutFunctionScalingConfig;Write
 lambda:PutProvisionedConcurrencyConfig;Write
 lambda:PutRuntimeManagementConfig;Write
-lambda:RemoveLayerVersionPermission;Permissions management, Write
-lambda:RemovePermission;Permissions management, Write
+lambda:RemoveLayerVersionPermission;Permissions management
+lambda:RemovePermission;Permissions management
 lambda:ResumeMicrovm;Write
 lambda:RunMicrovm;Write
 lambda:SendDurableExecutionCallbackFailure;Write
@@ -99,9 +99,9 @@ lambda:SendDurableExecutionCallbackHeartbeat;Write
 lambda:SendDurableExecutionCallbackSuccess;Write
 lambda:StopDurableExecution;Write
 lambda:SuspendMicrovm;Write
-lambda:TagResource;Tagging, Write
+lambda:TagResource;Tagging
 lambda:TerminateMicrovm;Write
-lambda:UntagResource;Tagging, Write
+lambda:UntagResource;Tagging
 lambda:UpdateAlias;Write
 lambda:UpdateCapacityProvider;Write
 lambda:UpdateCodeSigningConfig;Write

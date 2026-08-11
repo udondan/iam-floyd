@@ -1,4 +1,4 @@
-elasticache:AddTagsToResource;Tagging, Write
+elasticache:AddTagsToResource;Tagging
 elasticache:AuthorizeCacheSecurityGroupIngress;Write
 elasticache:BatchApplyUpdateAction;Write
 elasticache:BatchStopUpdateAction;Write
@@ -69,7 +69,7 @@ elasticache:ModifyUserGroup;Write
 elasticache:PurchaseReservedCacheNodesOffering;Write
 elasticache:RebalanceSlotsInGlobalReplicationGroup;Write
 elasticache:RebootCacheCluster;Write
-elasticache:RemoveTagsFromResource;Tagging, Write
+elasticache:RemoveTagsFromResource;Tagging
 elasticache:ResetCacheParameterGroup;Write
 elasticache:RevokeCacheSecurityGroupIngress;Write
 elasticache:StartMigration;Write

@@ -1,7 +1,7 @@
 elasticloadbalancing:AddListenerCertificates;Write
-elasticloadbalancing:AddTags;Tagging, Write
+elasticloadbalancing:AddTags;Tagging
 elasticloadbalancing:AddTrustStoreRevocations;Write
-elasticloadbalancing:AllowVendedLogDeliveryForResource;Permissions management, Write
+elasticloadbalancing:AllowVendedLogDeliveryForResource;Permissions management
 elasticloadbalancing:ApplySecurityGroupsToLoadBalancer;Write
 elasticloadbalancing:AttachLoadBalancerToSubnets;Write
 elasticloadbalancing:ConfigureHealthCheck;Write
@@ -65,7 +65,7 @@ elasticloadbalancing:ModifyTrustStore;Write
 elasticloadbalancing:RegisterInstancesWithLoadBalancer;Write
 elasticloadbalancing:RegisterTargets;Write
 elasticloadbalancing:RemoveListenerCertificates;Write
-elasticloadbalancing:RemoveTags;Tagging, Write
+elasticloadbalancing:RemoveTags;Tagging
 elasticloadbalancing:RemoveTrustStoreRevocations;Write
 elasticloadbalancing:SetIpAddressType;Write
 elasticloadbalancing:SetLoadBalancerListenerSSLCertificate;Write

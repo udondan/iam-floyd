@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [robomaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_robomaker.html).
+ * Statement provider for service [robomaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrobomaker.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Robomaker extends PolicyStatement {
   public servicePrefix = 'robomaker';
 
   /**
-   * Statement provider for service [robomaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_robomaker.html).
+   * Statement provider for service [robomaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrobomaker.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -101,8 +101,11 @@ export class Robomaker extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateDeploymentJob.html
    */
@@ -116,8 +119,8 @@ export class Robomaker extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateFleet.html
    */
@@ -131,8 +134,11 @@ export class Robomaker extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobot.html
    */
@@ -146,8 +152,8 @@ export class Robomaker extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobotApplication.html
    */
@@ -159,6 +165,9 @@ export class Robomaker extends PolicyStatement {
    * Create a snapshot of a robot application
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobotApplicationVersion.html
    */
@@ -172,8 +181,8 @@ export class Robomaker extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationApplication.html
    */
@@ -185,6 +194,9 @@ export class Robomaker extends PolicyStatement {
    * Create a snapshot of a simulation application
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationApplicationVersion.html
    */
@@ -198,8 +210,11 @@ export class Robomaker extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationJob.html
    */
@@ -212,6 +227,10 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateWorldExportJob.html
    */
   public toCreateWorldExportJob() {
@@ -222,6 +241,10 @@ export class Robomaker extends PolicyStatement {
    * Create a world generation job
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateWorldGenerationJob.html
    */
@@ -235,8 +258,8 @@ export class Robomaker extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateWorldTemplate.html
    */
@@ -520,6 +543,15 @@ export class Robomaker extends PolicyStatement {
   }
 
   /**
+   * Lists supported availability zones
+   *
+   * Access Level: List
+   */
+  public toListSupportedAvailabilityZones() {
+    return this.to('ListSupportedAvailabilityZones');
+  }
+
+  /**
    * List tags for a RoboMaker resource
    *
    * Access Level: List
@@ -602,8 +634,11 @@ export class Robomaker extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_StartSimulationJobBatch.html
    */
@@ -616,6 +651,9 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_SyncDeploymentJob.html
    */
   public toSyncDeploymentJob() {
@@ -625,7 +663,11 @@ export class Robomaker extends PolicyStatement {
   /**
    * Add tags to a RoboMaker resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html
    */
@@ -636,7 +678,10 @@ export class Robomaker extends PolicyStatement {
   /**
    * Remove tags from a RoboMaker resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_UntagResource.html
    */
@@ -653,6 +698,15 @@ export class Robomaker extends PolicyStatement {
    */
   public toUpdateRobotApplication() {
     return this.to('UpdateRobotApplication');
+  }
+
+  /**
+   * Report the deployment status for an individual robot
+   *
+   * Access Level: Write
+   */
+  public toUpdateRobotDeployment() {
+    return this.to('UpdateRobotDeployment');
   }
 
   /**
@@ -675,24 +729,6 @@ export class Robomaker extends PolicyStatement {
    */
   public toUpdateWorldTemplate() {
     return this.to('UpdateWorldTemplate');
-  }
-
-  /**
-   * Lists supported availability zones
-   *
-   * Access Level: List
-   */
-  public toListSupportedAvailabilityZones() {
-    return this.to('ListSupportedAvailabilityZones');
-  }
-
-  /**
-   * Report the deployment status for an individual robot
-   *
-   * Access Level: Write
-   */
-  public toUpdateRobotDeployment() {
-    return this.to('UpdateRobotDeployment');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -724,12 +760,10 @@ export class Robomaker extends PolicyStatement {
       'RestartSimulationJob',
       'StartSimulationJobBatch',
       'SyncDeploymentJob',
-      'TagResource',
-      'UntagResource',
       'UpdateRobotApplication',
+      'UpdateRobotDeployment',
       'UpdateSimulationApplication',
-      'UpdateWorldTemplate',
-      'UpdateRobotDeployment'
+      'UpdateWorldTemplate'
     ],
     Read: [
       'BatchDescribeSimulationJob',
@@ -754,71 +788,18 @@ export class Robomaker extends PolicyStatement {
       'ListSimulationApplications',
       'ListSimulationJobBatches',
       'ListSimulationJobs',
+      'ListSupportedAvailabilityZones',
       'ListTagsForResource',
       'ListWorldExportJobs',
       'ListWorldGenerationJobs',
       'ListWorldTemplates',
-      'ListWorlds',
-      'ListSupportedAvailabilityZones'
+      'ListWorlds'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
     ]
   };
-
-  /**
-   * Adds a resource of type deploymentFleet to the statement
-   *
-   * https://docs.aws.amazon.com/robomaker/latest/dg/managing-simulation-applications.html
-   *
-   * @param fleetName - Identifier for the fleetName.
-   * @param createdOnEpoch - Identifier for the createdOnEpoch.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDeploymentFleet(fleetName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deployment-fleet/${ fleetName }/${ createdOnEpoch }`);
-  }
-
-  /**
-   * Adds a resource of type deploymentJob to the statement
-   *
-   * https://docs.aws.amazon.com/robomaker/latest/dg/deployment.html
-   *
-   * @param deploymentJobId - Identifier for the deploymentJobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDeploymentJob(deploymentJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deployment-job/${ deploymentJobId }`);
-  }
-
-  /**
-   * Adds a resource of type robot to the statement
-   *
-   * https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html
-   *
-   * @param robotName - Identifier for the robotName.
-   * @param createdOnEpoch - Identifier for the createdOnEpoch.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onRobot(robotName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:robot/${ robotName }/${ createdOnEpoch }`);
-  }
 
   /**
    * Adds a resource of type robotApplication to the statement
@@ -891,11 +872,11 @@ export class Robomaker extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type world to the statement
+   * Adds a resource of type deploymentJob to the statement
    *
-   * https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-generated-worlds.html
+   * https://docs.aws.amazon.com/robomaker/latest/dg/deployment.html
    *
-   * @param worldId - Identifier for the worldId.
+   * @param deploymentJobId - Identifier for the deploymentJobId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -903,16 +884,17 @@ export class Robomaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onWorld(worldId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:world/${ worldId }`);
+  public onDeploymentJob(deploymentJobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deployment-job/${ deploymentJobId }`);
   }
 
   /**
-   * Adds a resource of type worldExportJob to the statement
+   * Adds a resource of type robot to the statement
    *
-   * https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-export-jobs.html
+   * https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html
    *
-   * @param worldExportJobId - Identifier for the worldExportJobId.
+   * @param robotName - Identifier for the robotName.
+   * @param createdOnEpoch - Identifier for the createdOnEpoch.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -920,8 +902,26 @@ export class Robomaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onWorldExportJob(worldExportJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:world-export-job/${ worldExportJobId }`);
+  public onRobot(robotName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:robot/${ robotName }/${ createdOnEpoch }`);
+  }
+
+  /**
+   * Adds a resource of type deploymentFleet to the statement
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/managing-simulation-applications.html
+   *
+   * @param fleetName - Identifier for the fleetName.
+   * @param createdOnEpoch - Identifier for the createdOnEpoch.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDeploymentFleet(fleetName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deployment-fleet/${ fleetName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -942,6 +942,23 @@ export class Robomaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type worldExportJob to the statement
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-export-jobs.html
+   *
+   * @param worldExportJobId - Identifier for the worldExportJobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorldExportJob(worldExportJobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:world-export-job/${ worldExportJobId }`);
+  }
+
+  /**
    * Adds a resource of type worldTemplate to the statement
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-simworld-templates.html
@@ -956,6 +973,23 @@ export class Robomaker extends PolicyStatement {
    */
   public onWorldTemplate(worldTemplateJobId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:world-template/${ worldTemplateJobId }`);
+  }
+
+  /**
+   * Adds a resource of type world to the statement
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-generated-worlds.html
+   *
+   * @param worldId - Identifier for the worldId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorld(worldId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:robomaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:world/${ worldId }`);
   }
 
   /**
@@ -989,56 +1023,18 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/tagging-resources-iam-policies.html
    *
-   * Applies to actions:
-   * - .toCancelDeploymentJob()
-   * - .toCancelSimulationJob()
-   * - .toCancelSimulationJobBatch()
-   * - .toCancelWorldExportJob()
-   * - .toCancelWorldGenerationJob()
-   * - .toCreateRobotApplicationVersion()
-   * - .toCreateSimulationApplicationVersion()
-   * - .toCreateWorldExportJob()
-   * - .toCreateWorldGenerationJob()
-   * - .toDeleteFleet()
-   * - .toDeleteRobot()
-   * - .toDeleteRobotApplication()
-   * - .toDeleteSimulationApplication()
-   * - .toDeleteWorldTemplate()
-   * - .toDeregisterRobot()
-   * - .toDescribeDeploymentJob()
-   * - .toDescribeFleet()
-   * - .toDescribeRobot()
-   * - .toDescribeRobotApplication()
-   * - .toDescribeSimulationApplication()
-   * - .toDescribeSimulationJob()
-   * - .toDescribeSimulationJobBatch()
-   * - .toDescribeWorld()
-   * - .toDescribeWorldExportJob()
-   * - .toDescribeWorldGenerationJob()
-   * - .toDescribeWorldTemplate()
-   * - .toGetWorldTemplateBody()
-   * - .toListTagsForResource()
-   * - .toRegisterRobot()
-   * - .toRestartSimulationJob()
-   * - .toSyncDeploymentJob()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateRobotApplication()
-   * - .toUpdateSimulationApplication()
-   * - .toUpdateWorldTemplate()
-   *
    * Applies to resource types:
-   * - deploymentFleet
-   * - deploymentJob
-   * - robot
    * - robotApplication
    * - simulationApplication
    * - simulationJob
    * - simulationJobBatch
-   * - world
-   * - worldExportJob
+   * - deploymentJob
+   * - robot
+   * - deploymentFleet
    * - worldGenerationJob
+   * - worldExportJob
    * - worldTemplate
+   * - world
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

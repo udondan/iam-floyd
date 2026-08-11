@@ -21,5 +21,5 @@ emr-containers:ListSecurityConfigurations;List
 emr-containers:ListTagsForResource;List
 emr-containers:ListVirtualClusters;List
 emr-containers:StartJobRun;Write
-emr-containers:TagResource;Tagging, Write
-emr-containers:UntagResource;Tagging, Write
+emr-containers:TagResource;Tagging
+emr-containers:UntagResource;Tagging

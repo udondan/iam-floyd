@@ -15,5 +15,5 @@ sagemaker-geospatial:StartEarthObservationJob;Write
 sagemaker-geospatial:StartVectorEnrichmentJob;Write
 sagemaker-geospatial:StopEarthObservationJob;Write
 sagemaker-geospatial:StopVectorEnrichmentJob;Write
-sagemaker-geospatial:TagResource;Tagging, Write
-sagemaker-geospatial:UntagResource;Tagging, Write
+sagemaker-geospatial:TagResource;Tagging
+sagemaker-geospatial:UntagResource;Tagging

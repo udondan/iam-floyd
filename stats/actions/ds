@@ -1,8 +1,8 @@
 ds:AcceptSharedDirectory;Write
-ds:AccessDSData;Permissions management, Write
+ds:AccessDSData;Permissions management
 ds:AddIpRoutes;Write
 ds:AddRegion;Write
-ds:AddTagsToResource;Tagging, Write
+ds:AddTagsToResource;Tagging
 ds:AuthorizeApplication;Write
 ds:CancelSchemaExtension;Write
 ds:CheckAlias;Read
@@ -71,7 +71,7 @@ ds:RegisterEventTopic;Write
 ds:RejectSharedDirectory;Write
 ds:RemoveIpRoutes;Write
 ds:RemoveRegion;Write
-ds:RemoveTagsFromResource;Tagging, Write
+ds:RemoveTagsFromResource;Tagging
 ds:ResetUserPassword;Write
 ds:RestoreFromSnapshot;Write
 ds:ShareDirectory;Write

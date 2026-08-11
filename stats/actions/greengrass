@@ -1,5 +1,5 @@
 greengrass:AssociateRoleToGroup;Write
-greengrass:AssociateServiceRoleToAccount;Permissions management, Write
+greengrass:AssociateServiceRoleToAccount;Permissions management
 greengrass:BatchAssociateClientDeviceWithCoreDevice;Write
 greengrass:BatchDisassociateClientDeviceFromCoreDevice;Write
 greengrass:CancelDeployment;Write
@@ -97,8 +97,8 @@ greengrass:ResetDeployments;Write
 greengrass:ResolveComponentCandidates;List
 greengrass:StartBulkDeployment;Write
 greengrass:StopBulkDeployment;Write
-greengrass:TagResource;Tagging, Write
-greengrass:UntagResource;Tagging, Write
+greengrass:TagResource;Tagging
+greengrass:UntagResource;Tagging
 greengrass:UpdateConnectivityInfo;Write
 greengrass:UpdateConnectorDefinition;Write
 greengrass:UpdateCoreDefinition;Write

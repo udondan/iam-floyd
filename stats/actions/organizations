@@ -1,5 +1,5 @@
 organizations:AcceptHandshake;Write
-organizations:AttachPolicy;Permissions management, Write
+organizations:AttachPolicy;Write
 organizations:CancelHandshake;Write
 organizations:CloseAccount;Write
 organizations:CreateAccount;Write
@@ -11,7 +11,7 @@ organizations:DeclineHandshake;Write
 organizations:DeleteOrganization;Write
 organizations:DeleteOrganizationalUnit;Write
 organizations:DeletePolicy;Write
-organizations:DeleteResourcePolicy;Permissions management, Write
+organizations:DeleteResourcePolicy;Write
 organizations:DeregisterDelegatedAdministrator;Write
 organizations:DescribeAccount;Read
 organizations:DescribeCreateAccountStatus;Read
@@ -22,7 +22,7 @@ organizations:DescribeOrganizationalUnit;Read
 organizations:DescribePolicy;Read
 organizations:DescribeResourcePolicy;Read
 organizations:DescribeResponsibilityTransfer;Read
-organizations:DetachPolicy;Permissions management, Write
+organizations:DetachPolicy;Write
 organizations:DisableAWSServiceAccess;Write
 organizations:DisablePolicyType;Write
 organizations:EnableAWSServiceAccess;Write
@@ -52,12 +52,12 @@ organizations:ListRoots;List
 organizations:ListTagsForResource;List
 organizations:ListTargetsForPolicy;List
 organizations:MoveAccount;Write
-organizations:PutResourcePolicy;Permissions management, Write
+organizations:PutResourcePolicy;Write
 organizations:RegisterDelegatedAdministrator;Write
 organizations:RemoveAccountFromOrganization;Write
-organizations:TagResource;Tagging, Write
+organizations:TagResource;Tagging
 organizations:TerminateResponsibilityTransfer;Write
-organizations:UntagResource;Tagging, Write
+organizations:UntagResource;Tagging
 organizations:UpdateOrganizationalUnit;Write
-organizations:UpdatePolicy;Permissions management, Write
+organizations:UpdatePolicy;Write
 organizations:UpdateResponsibilityTransfer;Write

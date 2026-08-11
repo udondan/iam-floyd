@@ -8,14 +8,14 @@ waf:CreateRule;Write
 waf:CreateRuleGroup;Write
 waf:CreateSizeConstraintSet;Write
 waf:CreateSqlInjectionMatchSet;Write
-waf:CreateWebACL;Permissions management, Write
+waf:CreateWebACL;Permissions management
 waf:CreateWebACLMigrationStack;Write
 waf:CreateXssMatchSet;Write
 waf:DeleteByteMatchSet;Write
 waf:DeleteGeoMatchSet;Write
 waf:DeleteIPSet;Write
 waf:DeleteLoggingConfiguration;Write
-waf:DeletePermissionPolicy;Permissions management, Write
+waf:DeletePermissionPolicy;Permissions management
 waf:DeleteRateBasedRule;Write
 waf:DeleteRegexMatchSet;Write
 waf:DeleteRegexPatternSet;Write
@@ -23,7 +23,7 @@ waf:DeleteRule;Write
 waf:DeleteRuleGroup;Write
 waf:DeleteSizeConstraintSet;Write
 waf:DeleteSqlInjectionMatchSet;Write
-waf:DeleteWebACL;Permissions management, Write
+waf:DeleteWebACL;Permissions management
 waf:DeleteXssMatchSet;Write
 waf:GetByteMatchSet;Read
 waf:GetChangeToken;Read
@@ -60,9 +60,9 @@ waf:ListTagsForResource;Read
 waf:ListWebACLs;List
 waf:ListXssMatchSets;List
 waf:PutLoggingConfiguration;Write
-waf:PutPermissionPolicy;Permissions management, Write
-waf:TagResource;Tagging, Write
-waf:UntagResource;Tagging, Write
+waf:PutPermissionPolicy;Permissions management
+waf:TagResource;Tagging
+waf:UntagResource;Tagging
 waf:UpdateByteMatchSet;Write
 waf:UpdateGeoMatchSet;Write
 waf:UpdateIPSet;Write
@@ -73,5 +73,5 @@ waf:UpdateRule;Write
 waf:UpdateRuleGroup;Write
 waf:UpdateSizeConstraintSet;Write
 waf:UpdateSqlInjectionMatchSet;Write
-waf:UpdateWebACL;Permissions management, Write
+waf:UpdateWebACL;Permissions management
 waf:UpdateXssMatchSet;Write

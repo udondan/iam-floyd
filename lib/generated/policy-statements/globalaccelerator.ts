@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [globalaccelerator](https://docs.aws.amazon.com/service-authorization/latest/reference/list_globalaccelerator.html).
+ * Statement provider for service [globalaccelerator](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglobalaccelerator.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Globalaccelerator extends PolicyStatement {
   public servicePrefix = 'globalaccelerator';
 
   /**
-   * Statement provider for service [globalaccelerator](https://docs.aws.amazon.com/service-authorization/latest/reference/list_globalaccelerator.html).
+   * Statement provider for service [globalaccelerator](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglobalaccelerator.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -33,6 +33,9 @@ export class Globalaccelerator extends PolicyStatement {
    * Grants permission to add an endpoint to a standard accelerator endpoint group
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - globalaccelerator:UpdateEndpointGroup
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_AddEndpoints.html
    */
@@ -519,6 +522,9 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - globalaccelerator:UpdateEndpointGroup
+   *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_RemoveEndpoints.html
    */
   public toRemoveEndpoints() {
@@ -528,7 +534,11 @@ export class Globalaccelerator extends PolicyStatement {
   /**
    * Grants permission to add tags to a globalaccelerator resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_TagResource.html
    */
@@ -539,7 +549,10 @@ export class Globalaccelerator extends PolicyStatement {
   /**
    * Grants permission to remove tags from a globalaccelerator resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UntagResource.html
    */
@@ -671,8 +684,6 @@ export class Globalaccelerator extends PolicyStatement {
       'ProvisionByoipCidr',
       'RemoveCustomRoutingEndpoints',
       'RemoveEndpoints',
-      'TagResource',
-      'UntagResource',
       'UpdateAccelerator',
       'UpdateAcceleratorAttributes',
       'UpdateCrossAccountAttachment',
@@ -732,19 +743,20 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type attachment to the statement
+   * Adds a resource of type listener to the statement
    *
-   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CrossAccountAttachment.html
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_Listener.html
    *
    * @param resourceId - Identifier for the resourceId.
+   * @param listenerId - Identifier for the listenerId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onAttachment(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:globalaccelerator::${ account ?? this.defaultAccount }:attachment/${ resourceId }`);
+  public onListener(resourceId: string, listenerId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:globalaccelerator::${ account ?? this.defaultAccount }:accelerator/${ resourceId }/listener/${ listenerId }`);
   }
 
   /**
@@ -766,20 +778,19 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type listener to the statement
+   * Adds a resource of type attachment to the statement
    *
-   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_Listener.html
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CrossAccountAttachment.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param listenerId - Identifier for the listenerId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onListener(resourceId: string, listenerId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:globalaccelerator::${ account ?? this.defaultAccount }:accelerator/${ resourceId }/listener/${ listenerId }`);
+  public onAttachment(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:globalaccelerator::${ account ?? this.defaultAccount }:attachment/${ resourceId }`);
   }
 
   /**
@@ -806,55 +817,11 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toAddCustomRoutingEndpoints()
-   * - .toAddEndpoints()
-   * - .toAllowCustomRoutingTraffic()
-   * - .toCreateCustomRoutingEndpointGroup()
-   * - .toCreateCustomRoutingListener()
-   * - .toCreateEndpointGroup()
-   * - .toCreateListener()
-   * - .toDeleteAccelerator()
-   * - .toDeleteCrossAccountAttachment()
-   * - .toDeleteCustomRoutingAccelerator()
-   * - .toDeleteCustomRoutingEndpointGroup()
-   * - .toDeleteCustomRoutingListener()
-   * - .toDeleteEndpointGroup()
-   * - .toDeleteListener()
-   * - .toDenyCustomRoutingTraffic()
-   * - .toDescribeAccelerator()
-   * - .toDescribeAcceleratorAttributes()
-   * - .toDescribeCrossAccountAttachment()
-   * - .toDescribeCustomRoutingAccelerator()
-   * - .toDescribeCustomRoutingAcceleratorAttributes()
-   * - .toDescribeCustomRoutingEndpointGroup()
-   * - .toDescribeCustomRoutingListener()
-   * - .toDescribeEndpointGroup()
-   * - .toDescribeListener()
-   * - .toListCustomRoutingEndpointGroups()
-   * - .toListCustomRoutingListeners()
-   * - .toListCustomRoutingPortMappings()
-   * - .toListEndpointGroups()
-   * - .toListListeners()
-   * - .toListTagsForResource()
-   * - .toRemoveCustomRoutingEndpoints()
-   * - .toRemoveEndpoints()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateAccelerator()
-   * - .toUpdateAcceleratorAttributes()
-   * - .toUpdateCrossAccountAttachment()
-   * - .toUpdateCustomRoutingAccelerator()
-   * - .toUpdateCustomRoutingAcceleratorAttributes()
-   * - .toUpdateCustomRoutingListener()
-   * - .toUpdateEndpointGroup()
-   * - .toUpdateListener()
-   *
    * Applies to resource types:
    * - accelerator
-   * - attachment
-   * - endpointgroup
    * - listener
+   * - endpointgroup
+   * - attachment
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

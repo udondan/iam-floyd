@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [codestar](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codestar.html).
+ * Statement provider for service [codestar](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodestar.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Codestar extends PolicyStatement {
   public servicePrefix = 'codestar';
 
   /**
-   * Statement provider for service [codestar](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codestar.html).
+   * Statement provider for service [codestar](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodestar.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -21,7 +21,7 @@ export class Codestar extends PolicyStatement {
   /**
    * Grants permission to add a user to the team for an AWS CodeStar project
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_AssociateTeamMember.html
    */
@@ -32,7 +32,7 @@ export class Codestar extends PolicyStatement {
   /**
    * Grants permission to create a project with minimal structure, customer policies, and no resources
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -56,9 +56,18 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
+   * Grants permission to extended delete APIs
+   *
+   * Access Level: Write
+   */
+  public toDeleteExtendedAccess() {
+    return this.to('DeleteExtendedAccess');
+  }
+
+  /**
    * Grants permission to delete a project, including project resources. Does not delete users associated with the project, but does delete the IAM roles that allowed access to the project
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DeleteProject.html
    */
@@ -102,12 +111,21 @@ export class Codestar extends PolicyStatement {
   /**
    * Grants permission to remove a user from a project. Removing a user from a project also removes the IAM policies from that user that allowed access to the project and its resources
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DisassociateTeamMember.html
    */
   public toDisassociateTeamMember() {
     return this.to('DisassociateTeamMember');
+  }
+
+  /**
+   * Grants permission to extended read APIs
+   *
+   * Access Level: Read
+   */
+  public toGetExtendedAccess() {
+    return this.to('GetExtendedAccess');
   }
 
   /**
@@ -166,9 +184,22 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
+   * Grants permission to extended write APIs
+   *
+   * Access Level: Write
+   */
+  public toPutExtendedAccess() {
+    return this.to('PutExtendedAccess');
+  }
+
+  /**
    * Grants permission to add tags to a project in CodeStar
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_TagProject.html
    */
@@ -179,7 +210,10 @@ export class Codestar extends PolicyStatement {
   /**
    * Grants permission to remove tags from a project in CodeStar
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_UntagProject.html
    */
@@ -201,7 +235,7 @@ export class Codestar extends PolicyStatement {
   /**
    * Grants permission to update team member attributes within a CodeStar project
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateTeamMember.html
    */
@@ -229,33 +263,6 @@ export class Codestar extends PolicyStatement {
     return this.to('VerifyServiceRole');
   }
 
-  /**
-   * Grants permission to extended delete APIs
-   *
-   * Access Level: Write
-   */
-  public toDeleteExtendedAccess() {
-    return this.to('DeleteExtendedAccess');
-  }
-
-  /**
-   * Grants permission to extended read APIs
-   *
-   * Access Level: Read
-   */
-  public toGetExtendedAccess() {
-    return this.to('GetExtendedAccess');
-  }
-
-  /**
-   * Grants permission to extended write APIs
-   *
-   * Access Level: Write
-   */
-  public toPutExtendedAccess() {
-    return this.to('PutExtendedAccess');
-  }
-
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AssociateTeamMember',
@@ -265,19 +272,12 @@ export class Codestar extends PolicyStatement {
       'UpdateTeamMember'
     ],
     Write: [
-      'AssociateTeamMember',
-      'CreateProject',
       'CreateUserProfile',
-      'DeleteProject',
-      'DeleteUserProfile',
-      'DisassociateTeamMember',
-      'TagProject',
-      'UntagProject',
-      'UpdateProject',
-      'UpdateTeamMember',
-      'UpdateUserProfile',
       'DeleteExtendedAccess',
-      'PutExtendedAccess'
+      'DeleteUserProfile',
+      'PutExtendedAccess',
+      'UpdateProject',
+      'UpdateUserProfile'
     ],
     Read: [
       'DescribeProject',
@@ -350,22 +350,6 @@ export class Codestar extends PolicyStatement {
   /**
    * Filters access by actions based on tag-value associated with the resource
    *
-   * Applies to actions:
-   * - .toAssociateTeamMember()
-   * - .toDeleteProject()
-   * - .toDescribeProject()
-   * - .toDisassociateTeamMember()
-   * - .toListResources()
-   * - .toListTagsForProject()
-   * - .toListTeamMembers()
-   * - .toTagProject()
-   * - .toUntagProject()
-   * - .toUpdateProject()
-   * - .toUpdateTeamMember()
-   * - .toDeleteExtendedAccess()
-   * - .toGetExtendedAccess()
-   * - .toPutExtendedAccess()
-   *
    * Applies to resource types:
    * - project
    *
@@ -394,11 +378,6 @@ export class Codestar extends PolicyStatement {
 
   /**
    * Filters access by actions based on tag-value associated with the resource
-   *
-   * Applies to actions:
-   * - .toCreateUserProfile()
-   * - .toDeleteUserProfile()
-   * - .toUpdateUserProfile()
    *
    * Applies to resource types:
    * - user

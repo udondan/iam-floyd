@@ -13,7 +13,7 @@ aws-marketplace:CancelChangeSet;Write
 aws-marketplace:CreateAgreementRequest;Write
 aws-marketplace:CreatePrivateMarketplaceRequests;Write
 aws-marketplace:CreateVerificationEvidence;Write
-aws-marketplace:DeleteResourcePolicy;Permissions management, Write
+aws-marketplace:DeleteResourcePolicy;Permissions management
 aws-marketplace:DescribeAgreement;Read
 aws-marketplace:DescribeAssessment;Read
 aws-marketplace:DescribeBuilds;Read
@@ -40,7 +40,6 @@ aws-marketplace:GetOfferTerms;Read
 aws-marketplace:GetProduct;Read
 aws-marketplace:GetResourcePolicy;Read
 aws-marketplace:GetSellerDashboard;Read
-aws-marketplace:GetTaxComplianceProfile;Read
 aws-marketplace:GetVerification;Read
 aws-marketplace:GetVerificationEvidence;Read
 aws-marketplace:ListAgreementApprovalRequests;List
@@ -63,14 +62,12 @@ aws-marketplace:ListPrivateListings;List
 aws-marketplace:ListPrivateMarketplaceRequests;List
 aws-marketplace:ListPurchaseOptions;List
 aws-marketplace:ListTagsForResource;Read
-aws-marketplace:ListTaxComplianceProfileChangeTasks;List
-aws-marketplace:ListTaxComplianceProfiles;List
 aws-marketplace:ListVerificationEvidence;List
 aws-marketplace:ListVerifications;List
 aws-marketplace:MeterUsage;Write
 aws-marketplace:PutDeploymentParameter;Write
 aws-marketplace:PutProcurementSystemConfiguration;Write
-aws-marketplace:PutResourcePolicy;Permissions management, Write
+aws-marketplace:PutResourcePolicy;Permissions management
 aws-marketplace:RegisterUsage;Write
 aws-marketplace:RejectAgreementApprovalRequest;Write
 aws-marketplace:RejectAgreementCancellationRequest;Write
@@ -84,12 +81,11 @@ aws-marketplace:SendAgreementPaymentRequest;Write
 aws-marketplace:StartBuild;Write
 aws-marketplace:StartChangeSet;Write
 aws-marketplace:StartInvoiceSubmissionTask;Write
-aws-marketplace:StartTaxComplianceProfileChangeTask;Write
 aws-marketplace:StartVerification;Write
 aws-marketplace:Subscribe;Write
-aws-marketplace:TagResource;Tagging, Write
+aws-marketplace:TagResource;Tagging
 aws-marketplace:Unsubscribe;Write
-aws-marketplace:UntagResource;Tagging, Write
+aws-marketplace:UntagResource;Tagging
 aws-marketplace:UpdateAgreementApprovalRequest;Write
 aws-marketplace:UpdatePurchaseOrders;Write
 aws-marketplace:UpdateVerificationEvidence;Write

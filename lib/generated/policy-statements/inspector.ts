@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement } from '../../shared';
 
 /**
- * Statement provider for service [inspector](https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector.html).
+ * Statement provider for service [inspector](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Inspector extends PolicyStatement {
   public servicePrefix = 'inspector';
 
   /**
-   * Statement provider for service [inspector](https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector.html).
+   * Statement provider for service [inspector](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -362,7 +362,7 @@ export class Inspector extends PolicyStatement {
   /**
    * Grants permission to set tags (key and value pairs) to the assessment template that is specified by the ARN of the assessment template
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_SetTagsForResource.html
    */
@@ -437,7 +437,6 @@ export class Inspector extends PolicyStatement {
       'DeleteAssessmentTemplate',
       'RegisterCrossAccountAccessRole',
       'RemoveAttributesFromFindings',
-      'SetTagsForResource',
       'StartAssessmentRun',
       'StopAssessmentRun',
       'SubscribeToEvent',

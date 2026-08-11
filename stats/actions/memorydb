@@ -37,8 +37,8 @@ memorydb:ListTags;Read
 memorydb:PauseMultiRegionClusterReplication;Write
 memorydb:PurchaseReservedNodesOffering;Write
 memorydb:ResetParameterGroup;Write
-memorydb:TagResource;Tagging, Write
-memorydb:UntagResource;Tagging, Write
+memorydb:TagResource;Tagging
+memorydb:UntagResource;Tagging
 memorydb:UpdateAcl;Write
 memorydb:UpdateCluster;Write
 memorydb:UpdateMultiRegionCluster;Write

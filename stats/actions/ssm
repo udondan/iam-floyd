@@ -1,4 +1,4 @@
-ssm:AddTagsToResource;Tagging, Write
+ssm:AddTagsToResource;Tagging
 ssm:AssociateOpsItemRelatedItem;Write
 ssm:CancelCommand;Write
 ssm:CancelMaintenanceWindowExecution;Write
@@ -24,7 +24,7 @@ ssm:DeleteParameter;Write
 ssm:DeleteParameters;Write
 ssm:DeletePatchBaseline;Write
 ssm:DeleteResourceDataSync;Write
-ssm:DeleteResourcePolicy;Permissions management, Write
+ssm:DeleteResourcePolicy;Permissions management
 ssm:DeregisterManagedInstance;Write
 ssm:DeregisterPatchBaselineForPatchGroup;Write
 ssm:DeregisterTargetFromMaintenanceWindow;Write
@@ -116,19 +116,19 @@ ssm:ListOpsMetadata;List
 ssm:ListResourceComplianceSummaries;List
 ssm:ListResourceDataSync;List
 ssm:ListTagsForResource;List
-ssm:ModifyDocumentPermission;Permissions management, Write
+ssm:ModifyDocumentPermission;Permissions management
 ssm:PutCalendar;Write
 ssm:PutComplianceItems;Write
 ssm:PutConfigurePackageResult;Read
 ssm:PutInventory;Write
 ssm:PutParameter;Write
-ssm:PutResourcePolicy;Permissions management, Write
+ssm:PutResourcePolicy;Permissions management
 ssm:RegisterDefaultPatchBaseline;Write
 ssm:RegisterManagedInstance;Write
 ssm:RegisterPatchBaselineForPatchGroup;Write
 ssm:RegisterTargetWithMaintenanceWindow;Write
 ssm:RegisterTaskWithMaintenanceWindow;Write
-ssm:RemoveTagsFromResource;Tagging, Write
+ssm:RemoveTagsFromResource;Tagging
 ssm:ResetServiceSetting;Write
 ssm:ResumeSession;Write
 ssm:SendAutomationSignal;Write

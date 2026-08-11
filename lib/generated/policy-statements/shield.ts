@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [shield](https://docs.aws.amazon.com/service-authorization/latest/reference/list_shield.html).
+ * Statement provider for service [shield](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Shield extends PolicyStatement {
   public servicePrefix = 'shield';
 
   /**
-   * Statement provider for service [shield](https://docs.aws.amazon.com/service-authorization/latest/reference/list_shield.html).
+   * Statement provider for service [shield](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,6 +23,10 @@ export class Shield extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - s3:GetBucketPolicy
+   * - s3:PutBucketPolicy
+   *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateDRTLogBucket.html
    */
   public toAssociateDRTLogBucket() {
@@ -34,6 +38,11 @@ export class Shield extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:GetRole
+   * - iam:ListAttachedRolePolicies
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateDRTRole.html
    */
   public toAssociateDRTRole() {
@@ -44,6 +53,12 @@ export class Shield extends PolicyStatement {
    * Grants permission to add health-based detection to the Shield Advanced protection for a resource
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - route53:GetHealthCheck
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateHealthCheck.html
    */
@@ -108,6 +123,9 @@ export class Shield extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteProtection.html
    */
   public toDeleteProtection() {
@@ -118,6 +136,9 @@ export class Shield extends PolicyStatement {
    * Grants permission to remove the specified protection group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteProtectionGroup.html
    */
@@ -145,6 +166,17 @@ export class Shield extends PolicyStatement {
    */
   public toDescribeAttack() {
     return this.to('DescribeAttack');
+  }
+
+  /**
+   * Grants permission to get detailed information about the contributors to a specific DDoS attack
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html
+   */
+  public toDescribeAttackContributors() {
+    return this.to('DescribeAttackContributors');
   }
 
   /**
@@ -185,6 +217,9 @@ export class Shield extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeProtection.html
    */
   public toDescribeProtection() {
@@ -195,6 +230,9 @@ export class Shield extends PolicyStatement {
    * Grants permission to describe the specification for the specified protection group
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeProtectionGroup.html
    */
@@ -240,6 +278,11 @@ export class Shield extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - s3:DeleteBucketPolicy
+   * - s3:GetBucketPolicy
+   * - s3:PutBucketPolicy
+   *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DisassociateDRTLogBucket.html
    */
   public toDisassociateDRTLogBucket() {
@@ -262,6 +305,9 @@ export class Shield extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DisassociateHealthCheck.html
    */
   public toDisassociateHealthCheck() {
@@ -272,6 +318,16 @@ export class Shield extends PolicyStatement {
    * Grants permission to enable application layer automatic response for Shield Advanced protection for a resource
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - apprunner:DescribeWebAclForService
+   * - cloudfront:GetDistribution
+   * - cognito-idp:GetWebACLForResource
+   * - ec2:GetVerifiedAccessInstanceWebAcl
+   * - iam:CreateServiceLinkedRole
+   * - iam:GetRole
+   * - wafv2:GetWebACL
+   * - wafv2:GetWebACLForResource
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_EnableApplicationLayerAutomaticResponse.html
    */
@@ -288,6 +344,17 @@ export class Shield extends PolicyStatement {
    */
   public toEnableProactiveEngagement() {
     return this.to('EnableProactiveEngagement');
+  }
+
+  /**
+   * Grants permission to retrieve global threat intelligence data and trends from AWS Shield's threat monitoring systems
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html
+   */
+  public toGetGlobalThreatData() {
+    return this.to('GetGlobalThreatData');
   }
 
   /**
@@ -310,6 +377,17 @@ export class Shield extends PolicyStatement {
    */
   public toListAttacks() {
     return this.to('ListAttacks');
+  }
+
+  /**
+   * Grants permission to retrieve a list of mitigation actions that have been applied during DDoS attacks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html
+   */
+  public toListMitigations() {
+    return this.to('ListMitigations');
   }
 
   /**
@@ -359,7 +437,11 @@ export class Shield extends PolicyStatement {
   /**
    * Grants permission to add or updates tags for a resource in AWS Shield
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_TagResource.html
    */
@@ -370,7 +452,10 @@ export class Shield extends PolicyStatement {
   /**
    * Grants permission to remove tags from a resource in AWS Shield
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UntagResource.html
    */
@@ -382,6 +467,13 @@ export class Shield extends PolicyStatement {
    * Grants permission to update application layer automatic response for Shield Advanced protection for a resource
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - apprunner:DescribeWebAclForService
+   * - cognito-idp:GetWebACLForResource
+   * - ec2:GetVerifiedAccessInstanceWebAcl
+   * - wafv2:GetWebACL
+   * - wafv2:GetWebACLForResource
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UpdateApplicationLayerAutomaticResponse.html
    */
@@ -405,6 +497,9 @@ export class Shield extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UpdateProtectionGroup.html
    */
   public toUpdateProtectionGroup() {
@@ -420,39 +515,6 @@ export class Shield extends PolicyStatement {
    */
   public toUpdateSubscription() {
     return this.to('UpdateSubscription');
-  }
-
-  /**
-   * Grants permission to get detailed information about the contributors to a specific DDoS attack
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html
-   */
-  public toDescribeAttackContributors() {
-    return this.to('DescribeAttackContributors');
-  }
-
-  /**
-   * Grants permission to retrieve global threat intelligence data and trends from AWS Shield's threat monitoring systems
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html
-   */
-  public toGetGlobalThreatData() {
-    return this.to('GetGlobalThreatData');
-  }
-
-  /**
-   * Grants permission to retrieve a list of mitigation actions that have been applied during DDoS attacks
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html
-   */
-  public toListMitigations() {
-    return this.to('ListMitigations');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -474,8 +536,6 @@ export class Shield extends PolicyStatement {
       'DisassociateHealthCheck',
       'EnableApplicationLayerAutomaticResponse',
       'EnableProactiveEngagement',
-      'TagResource',
-      'UntagResource',
       'UpdateApplicationLayerAutomaticResponse',
       'UpdateEmergencyContactSettings',
       'UpdateProtectionGroup',
@@ -483,23 +543,23 @@ export class Shield extends PolicyStatement {
     ],
     Read: [
       'DescribeAttack',
+      'DescribeAttackContributors',
       'DescribeAttackStatistics',
       'DescribeDRTAccess',
       'DescribeEmergencyContactSettings',
       'DescribeProtection',
       'DescribeProtectionGroup',
       'DescribeSubscription',
+      'GetGlobalThreatData',
       'GetSubscriptionState',
-      'ListTagsForResource',
-      'DescribeAttackContributors',
-      'GetGlobalThreatData'
+      'ListTagsForResource'
     ],
     List: [
       'ListAttacks',
+      'ListMitigations',
       'ListProtectionGroups',
       'ListProtections',
-      'ListResourcesInProtectionGroup',
-      'ListMitigations'
+      'ListResourcesInProtectionGroup'
     ],
     Tagging: [
       'TagResource',
@@ -582,12 +642,7 @@ export class Shield extends PolicyStatement {
    * - .toDescribeProtection()
    * - .toDescribeProtectionGroup()
    * - .toDisassociateHealthCheck()
-   * - .toListResourcesInProtectionGroup()
-   * - .toListTagsForResource()
-   * - .toTagResource()
-   * - .toUntagResource()
    * - .toUpdateProtectionGroup()
-   * - .toDescribeAttackContributors()
    *
    * Applies to resource types:
    * - protection

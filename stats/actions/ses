@@ -1,4 +1,4 @@
-ses:AllowVendedLogDeliveryForResource;Permissions management, Write
+ses:AllowVendedLogDeliveryForResource;Permissions management
 ses:BatchGetMetricData;Read
 ses:CancelExportJob;Write
 ses:CloneReceiptRuleSet;Write
@@ -16,7 +16,7 @@ ses:CreateCustomVerificationEmailTemplate;Write
 ses:CreateDedicatedIpPool;Write
 ses:CreateDeliverabilityTestReport;Write
 ses:CreateEmailIdentity;Write
-ses:CreateEmailIdentityPolicy;Permissions management, Write
+ses:CreateEmailIdentityPolicy;Permissions management
 ses:CreateEmailTemplate;Write
 ses:CreateExportJob;Write
 ses:CreateImportJob;Write
@@ -43,10 +43,10 @@ ses:DeleteContactList;Write
 ses:DeleteCustomVerificationEmailTemplate;Write
 ses:DeleteDedicatedIpPool;Write
 ses:DeleteEmailIdentity;Write
-ses:DeleteEmailIdentityPolicy;Permissions management, Write
+ses:DeleteEmailIdentityPolicy;Permissions management
 ses:DeleteEmailTemplate;Write
 ses:DeleteIdentity;Write
-ses:DeleteIdentityPolicy;Permissions management, Write
+ses:DeleteIdentityPolicy;Permissions management
 ses:DeleteIngressPoint;Write
 ses:DeleteMultiRegionEndpoint;Write
 ses:DeleteReceiptFilter;Write
@@ -153,7 +153,6 @@ ses:ListTrafficPolicies;List
 ses:ListVerifiedEmailAddresses;Read
 ses:PutAccountDedicatedIpWarmupAttributes;Write
 ses:PutAccountDetails;Write
-ses:PutAccountPricingAttributes;Write
 ses:PutAccountSendingAttributes;Write
 ses:PutAccountSuppressionAttributes;Write
 ses:PutAccountVdmAttributes;Write
@@ -173,12 +172,12 @@ ses:PutEmailIdentityDkimAttributes;Write
 ses:PutEmailIdentityDkimSigningAttributes;Write
 ses:PutEmailIdentityFeedbackAttributes;Write
 ses:PutEmailIdentityMailFromAttributes;Write
-ses:PutIdentityPolicy;Permissions management, Write
+ses:PutIdentityPolicy;Permissions management
 ses:PutSuppressedDestination;Write
 ses:PutTenantSuppressionAttributes;Write
 ses:RegisterMemberToAddressList;Write
 ses:ReorderReceiptRuleSet;Write
-ses:ReplicateEmailIdentityDkimSigningKey;Permissions management, Write
+ses:ReplicateEmailIdentityDkimSigningKey;Permissions management
 ses:SendBounce;Write
 ses:SendBulkEmail;Write
 ses:SendBulkTemplatedEmail;Write
@@ -199,10 +198,10 @@ ses:StartArchiveSearch;Write
 ses:StopAddressListImportJob;Write
 ses:StopArchiveExport;Write
 ses:StopArchiveSearch;Write
-ses:TagResource;Tagging, Write
+ses:TagResource;Tagging
 ses:TestRenderEmailTemplate;Write
 ses:TestRenderTemplate;Write
-ses:UntagResource;Tagging, Write
+ses:UntagResource;Tagging
 ses:UpdateAccountSendingEnabled;Write
 ses:UpdateArchive;Write
 ses:UpdateConfigurationSetEventDestination;Write
@@ -212,7 +211,7 @@ ses:UpdateConfigurationSetTrackingOptions;Write
 ses:UpdateContact;Write
 ses:UpdateContactList;Write
 ses:UpdateCustomVerificationEmailTemplate;Write
-ses:UpdateEmailIdentityPolicy;Permissions management, Write
+ses:UpdateEmailIdentityPolicy;Permissions management
 ses:UpdateEmailTemplate;Write
 ses:UpdateIngressPoint;Write
 ses:UpdateReceiptRule;Write

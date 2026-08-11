@@ -30,8 +30,8 @@ chatbot:ListMicrosoftTeamsUserIdentities;Read
 chatbot:ListTagsForResource;Read
 chatbot:RedeemMicrosoftTeamsOauthCode;Write
 chatbot:RedeemSlackOauthCode;Write
-chatbot:TagResource;Tagging, Write
-chatbot:UntagResource;Tagging, Write
+chatbot:TagResource;Tagging
+chatbot:UntagResource;Tagging
 chatbot:UpdateAccountPreferences;Write
 chatbot:UpdateChimeWebhookConfiguration;Write
 chatbot:UpdateCustomAction;Write

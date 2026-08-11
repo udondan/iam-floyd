@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [aoss](https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html).
+ * Statement provider for service [aoss](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchserverless.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Aoss extends PolicyStatement {
   public servicePrefix = 'aoss';
 
   /**
-   * Statement provider for service [aoss](https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html).
+   * Statement provider for service [aoss](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchserverless.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,6 +23,10 @@ export class Aoss extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifCollection()
+   * - .ifCollectionId()
+   *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_APIAccessAll.html
    */
   public toAPIAccessAll() {
@@ -33,6 +37,9 @@ export class Aoss extends PolicyStatement {
    * Grants permission to add a serverless collection to a specified collection group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCollectionGroup()
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateCollection.html
    */
@@ -212,6 +219,10 @@ export class Aoss extends PolicyStatement {
    * Grants permission to Opensearch Serverless Dashboards
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCollection()
+   * - .ifCollectionId()
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DashboardsAccessAll.html
    */
@@ -484,8 +495,8 @@ export class Aoss extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_TagResource.html
@@ -820,14 +831,8 @@ export class Aoss extends PolicyStatement {
    * Filters access based on the tags associated with the resource
    *
    * Applies to actions:
-   * - .toAPIAccessAll()
-   * - .toAddCollectionToCollectionGroup()
    * - .toCreateCollection()
-   * - .toDeleteCollection()
-   * - .toDeleteCollectionGroup()
    * - .toTagResource()
-   * - .toUpdateCollection()
-   * - .toUpdateCollectionGroup()
    *
    * Applies to resource types:
    * - Collection

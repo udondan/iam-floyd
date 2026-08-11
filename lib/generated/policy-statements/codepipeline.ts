@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [codepipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codepipeline.html).
+ * Statement provider for service [codepipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodepipeline.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Codepipeline extends PolicyStatement {
   public servicePrefix = 'codepipeline';
 
   /**
-   * Statement provider for service [codepipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codepipeline.html).
+   * Statement provider for service [codepipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodepipeline.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -45,6 +45,10 @@ export class Codepipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_CreateCustomActionType.html
    */
   public toCreateCustomActionType() {
@@ -55,6 +59,10 @@ export class Codepipeline extends PolicyStatement {
    * Grants permission to create a uniquely named pipeline
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_CreatePipeline.html
    */
@@ -397,6 +405,10 @@ export class Codepipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutWebhook.html
    */
   public toPutWebhook() {
@@ -461,7 +473,11 @@ export class Codepipeline extends PolicyStatement {
   /**
    * Grants permission to tag a CodePipeline resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_TagResource.html
    */
@@ -472,7 +488,10 @@ export class Codepipeline extends PolicyStatement {
   /**
    * Grants permission to remove a tag from a CodePipeline resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_UntagResource.html
    */
@@ -529,8 +548,6 @@ export class Codepipeline extends PolicyStatement {
       'RollbackStage',
       'StartPipelineExecution',
       'StopPipelineExecution',
-      'TagResource',
-      'UntagResource',
       'UpdateActionType',
       'UpdatePipeline'
     ],
@@ -673,39 +690,6 @@ export class Codepipeline extends PolicyStatement {
    * Filters actions based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toCreateCustomActionType()
-   * - .toCreatePipeline()
-   * - .toDeleteCustomActionType()
-   * - .toDeletePipeline()
-   * - .toDeleteWebhook()
-   * - .toDeregisterWebhookWithThirdParty()
-   * - .toDisableStageTransition()
-   * - .toEnableStageTransition()
-   * - .toGetPipeline()
-   * - .toGetPipelineExecution()
-   * - .toGetPipelineState()
-   * - .toListActionExecutions()
-   * - .toListDeployActionExecutionTargets()
-   * - .toListPipelineExecutions()
-   * - .toListRuleExecutions()
-   * - .toListTagsForResource()
-   * - .toListWebhooks()
-   * - .toOverrideStageCondition()
-   * - .toPollForJobs()
-   * - .toPutActionRevision()
-   * - .toPutApprovalResult()
-   * - .toPutWebhook()
-   * - .toRegisterWebhookWithThirdParty()
-   * - .toRetryStageExecution()
-   * - .toRollbackStage()
-   * - .toStartPipelineExecution()
-   * - .toStopPipelineExecution()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateActionType()
-   * - .toUpdatePipeline()
    *
    * Applies to resource types:
    * - action

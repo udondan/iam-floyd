@@ -94,8 +94,8 @@ omics:StartReferenceImportJob;Write
 omics:StartRun;Write
 omics:StartRunBatch;Write
 omics:StartVariantImportJob;Write
-omics:TagResource;Tagging, Write
-omics:UntagResource;Tagging, Write
+omics:TagResource;Tagging
+omics:UntagResource;Tagging
 omics:UpdateAnnotationStore;Write
 omics:UpdateAnnotationStoreVersion;Write
 omics:UpdateRunCache;Write

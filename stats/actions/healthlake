@@ -1,12 +1,9 @@
 healthlake:CancelFHIRExportJobWithDelete;Write
 healthlake:ConfirmAttributionList;Write
-healthlake:CreateDataTransformationProfile;Write
 healthlake:CreateFHIRDatastore;Write
 healthlake:CreateResource;Write
-healthlake:DeleteDataTransformationProfile;Write
 healthlake:DeleteFHIRDatastore;Write
 healthlake:DeleteResource;Write
-healthlake:DescribeDataTransformationJob;Read
 healthlake:DescribeFHIRBulkDeleteJob;Read
 healthlake:DescribeFHIRBulkMemberMatchJob;Read
 healthlake:DescribeFHIRDatastore;Read
@@ -18,13 +15,9 @@ healthlake:ExpandValueSetWithPost;Read
 healthlake:GenerateDocumentWithGet;Write
 healthlake:GenerateDocumentWithPost;Write
 healthlake:GetCapabilities;Read
-healthlake:GetDataTransformationProfile;Read
 healthlake:GetExportedFile;Read
 healthlake:GetHistoryByResourceId;Read
 healthlake:InquirePreAuthClaim;Read
-healthlake:ListDataTransformationJobs;List
-healthlake:ListDataTransformationProfileVersions;List
-healthlake:ListDataTransformationProfiles;List
 healthlake:ListFHIRDatastores;List
 healthlake:ListFHIRExportJobs;List
 healthlake:ListFHIRImportJobs;List
@@ -36,14 +29,12 @@ healthlake:MemberMatch;Write
 healthlake:MemberRemove;Write
 healthlake:PatchResource;Write
 healthlake:ProcessBundle;Write
-healthlake:PublishDataTransformationProfile;Write
 healthlake:QuestionnairePackage;Read
 healthlake:ReadResource;Read
 healthlake:RetrieveAttributionStatus;Write
 healthlake:SearchEverything;Read
 healthlake:SearchWithGet;Read
 healthlake:SearchWithPost;Read
-healthlake:StartDataTransformationJob;Write
 healthlake:StartFHIRBulkDeleteJob;Write
 healthlake:StartFHIRBulkMemberMatchJob;Write
 healthlake:StartFHIRExportJob;Write
@@ -51,13 +42,9 @@ healthlake:StartFHIRExportJobWithGet;Write
 healthlake:StartFHIRExportJobWithPost;Write
 healthlake:StartFHIRImportJob;Write
 healthlake:SubmitPreAuthClaim;Write
-healthlake:TagResource;Tagging, Write
-healthlake:TransformData;Write
-healthlake:UntagResource;Tagging, Write
-healthlake:UpdateDataTransformationProfile;Write
+healthlake:TagResource;Tagging
+healthlake:UntagResource;Tagging
 healthlake:UpdateFHIRDatastore;Write
-healthlake:UpdateProfileWithAgent;Write
 healthlake:UpdateResource;Write
 healthlake:ValidateResource;Read
-healthlake:ValidateSource;Read
 healthlake:VersionReadResource;Read

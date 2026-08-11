@@ -31,6 +31,6 @@ panorama:ProvisionDevice;Write
 panorama:RegisterPackageVersion;Write
 panorama:RemoveApplicationInstance;Write
 panorama:SignalApplicationInstanceNodeInstances;Write
-panorama:TagResource;Tagging, Write
-panorama:UntagResource;Tagging, Write
+panorama:TagResource;Tagging
+panorama:UntagResource;Tagging
 panorama:UpdateDeviceMetadata;Write

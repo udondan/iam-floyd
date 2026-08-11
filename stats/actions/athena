@@ -69,9 +69,9 @@ athena:StartQueryExecution;Write
 athena:StartSession;Write
 athena:StopCalculationExecution;Write
 athena:StopQueryExecution;Write
-athena:TagResource;Tagging, Write
+athena:TagResource;Tagging
 athena:TerminateSession;Write
-athena:UntagResource;Tagging, Write
+athena:UntagResource;Tagging
 athena:UpdateCapacityReservation;Write
 athena:UpdateDataCatalog;Write
 athena:UpdateNamedQuery;Write

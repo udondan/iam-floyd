@@ -1,4 +1,4 @@
-cloudtrail:AddTags;Tagging, Write
+cloudtrail:AddTags;Tagging
 cloudtrail:CancelQuery;Write
 cloudtrail:CreateChannel;Write
 cloudtrail:CreateDashboard;Write
@@ -48,7 +48,7 @@ cloudtrail:PutEventSelectors;Write
 cloudtrail:PutInsightSelectors;Write
 cloudtrail:PutResourcePolicy;Write
 cloudtrail:RegisterOrganizationDelegatedAdmin;Write
-cloudtrail:RemoveTags;Tagging, Write
+cloudtrail:RemoveTags;Tagging
 cloudtrail:RestoreEventDataStore;Write
 cloudtrail:SearchSampleQueries;Read
 cloudtrail:StartDashboardRefresh;Write

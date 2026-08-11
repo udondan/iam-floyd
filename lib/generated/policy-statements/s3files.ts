@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [s3files](https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3files.html).
+ * Statement provider for service [s3files](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class S3files extends PolicyStatement {
   public servicePrefix = 's3files';
 
   /**
-   * Statement provider for service [s3files](https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3files.html).
+   * Statement provider for service [s3files](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,9 +19,55 @@ export class S3files extends PolicyStatement {
   }
 
   /**
+   * Grants permission to allow an NFS client read-access to a file system
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAccessPointArn()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-client-authorization.html
+   */
+  public toClientMount() {
+    return this.to('ClientMount');
+  }
+
+  /**
+   * Grants permission to allow an NFS client root-access to a file system
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAccessPointArn()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-client-authorization.html
+   */
+  public toClientRootAccess() {
+    return this.to('ClientRootAccess');
+  }
+
+  /**
+   * Grants permission to allow an NFS client write-access to a file system
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAccessPointArn()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-client-authorization.html
+   */
+  public toClientWrite() {
+    return this.to('ClientWrite');
+  }
+
+  /**
    * Grants permission to create an access point for the specified file system
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_CreateAccessPoint.html
    */
@@ -80,7 +126,7 @@ export class S3files extends PolicyStatement {
   /**
    * Grants permission to delete the IAM resource policy for a specified file system
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_DeleteFileSystemPolicy.html
    */
@@ -201,7 +247,7 @@ export class S3files extends PolicyStatement {
   /**
    * Grants permission to add an IAM resource policy to a specified file system
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_PutFileSystemPolicy.html
    */
@@ -223,7 +269,12 @@ export class S3files extends PolicyStatement {
   /**
    * Grants permission to tag a specified S3 Files resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifCreateAction()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_TagResource.html
    */
@@ -234,7 +285,10 @@ export class S3files extends PolicyStatement {
   /**
    * Grants permission to untag a specified S3 Files resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_UntagResource.html
    */
@@ -253,68 +307,31 @@ export class S3files extends PolicyStatement {
     return this.to('UpdateMountTarget');
   }
 
-  /**
-   * Grants permission to allow an NFS client read-access to a file system
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-client-authorization.html
-   */
-  public toClientMount() {
-    return this.to('ClientMount');
-  }
-
-  /**
-   * Grants permission to allow an NFS client root-access to a file system
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-client-authorization.html
-   */
-  public toClientRootAccess() {
-    return this.to('ClientRootAccess');
-  }
-
-  /**
-   * Grants permission to allow an NFS client write-access to a file system
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-client-authorization.html
-   */
-  public toClientWrite() {
-    return this.to('ClientWrite');
-  }
-
   protected accessLevelList: AccessLevelList = {
-    Write: [
-      'CreateAccessPoint',
-      'CreateFileSystem',
-      'CreateMountTarget',
-      'DeleteAccessPoint',
-      'DeleteFileSystem',
-      'DeleteFileSystemPolicy',
-      'DeleteMountTarget',
-      'PutFileSystemPolicy',
-      'PutSynchronizationConfiguration',
-      'TagResource',
-      'UntagResource',
-      'UpdateMountTarget',
-      'ClientRootAccess',
-      'ClientWrite'
-    ],
-    'Permissions management': [
-      'DeleteFileSystemPolicy',
-      'PutFileSystemPolicy'
-    ],
     Read: [
+      'ClientMount',
       'GetAccessPoint',
       'GetFileSystem',
       'GetFileSystemPolicy',
       'GetMountTarget',
       'GetSynchronizationConfiguration',
-      'ListTagsForResource',
-      'ClientMount'
+      'ListTagsForResource'
+    ],
+    Write: [
+      'ClientRootAccess',
+      'ClientWrite',
+      'CreateAccessPoint',
+      'CreateFileSystem',
+      'CreateMountTarget',
+      'DeleteAccessPoint',
+      'DeleteFileSystem',
+      'DeleteMountTarget',
+      'PutSynchronizationConfiguration',
+      'UpdateMountTarget'
+    ],
+    'Permissions management': [
+      'DeleteFileSystemPolicy',
+      'PutFileSystemPolicy'
     ],
     List: [
       'ListAccessPoints',
@@ -326,6 +343,23 @@ export class S3files extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type file-system to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/creating-using-create-fs.html
+   *
+   * @param fileSystemId - Identifier for the fileSystemId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3files:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:file-system/${ fileSystemId }`);
+  }
 
   /**
    * Adds a resource of type access-point to the statement
@@ -343,23 +377,6 @@ export class S3files extends PolicyStatement {
    */
   public onAccessPoint(fileSystemId: string, accessPointId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3files:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:file-system/${ fileSystemId }/access-point/${ accessPointId }`);
-  }
-
-  /**
-   * Adds a resource of type file-system to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/creating-using-create-fs.html
-   *
-   * @param fileSystemId - Identifier for the fileSystemId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:s3files:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:file-system/${ fileSystemId }`);
   }
 
   /**
@@ -385,34 +402,9 @@ export class S3files extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toCreateAccessPoint()
-   * - .toCreateMountTarget()
-   * - .toDeleteAccessPoint()
-   * - .toDeleteFileSystem()
-   * - .toDeleteFileSystemPolicy()
-   * - .toDeleteMountTarget()
-   * - .toGetAccessPoint()
-   * - .toGetFileSystem()
-   * - .toGetFileSystemPolicy()
-   * - .toGetMountTarget()
-   * - .toGetSynchronizationConfiguration()
-   * - .toListAccessPoints()
-   * - .toListFileSystems()
-   * - .toListMountTargets()
-   * - .toListTagsForResource()
-   * - .toPutFileSystemPolicy()
-   * - .toPutSynchronizationConfiguration()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateMountTarget()
-   * - .toClientMount()
-   * - .toClientRootAccess()
-   * - .toClientWrite()
-   *
    * Applies to resource types:
-   * - access-point
    * - file-system
+   * - access-point
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

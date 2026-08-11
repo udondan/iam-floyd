@@ -7,7 +7,6 @@ bedrock-agentcore:browser-profile
 bedrock-agentcore:code-interpreter
 bedrock-agentcore:code-interpreter-custom
 bedrock-agentcore:configuration-bundle
-bedrock-agentcore:dataset
 bedrock-agentcore:evaluator
 bedrock-agentcore:gateway
 bedrock-agentcore:harness

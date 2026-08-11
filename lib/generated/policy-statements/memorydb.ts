@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [memorydb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_memorydb.html).
+ * Statement provider for service [memorydb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmemorydb.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Memorydb extends PolicyStatement {
   public servicePrefix = 'memorydb';
 
   /**
-   * Statement provider for service [memorydb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_memorydb.html).
+   * Statement provider for service [memorydb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmemorydb.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,6 +23,17 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - s3:GetObject
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_BatchUpdateCluster.html
    */
   public toBatchUpdateCluster() {
@@ -33,6 +44,9 @@ export class Memorydb extends PolicyStatement {
    * Allows an IAM user or role to connect as a specified MemoryDB user to a node in a cluster
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/memorydb/latest/devguide/auth-iam.html
    */
@@ -45,6 +59,17 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - memorydb:TagResource
+   * - s3:DeleteObject
+   * - s3:GetBucketAcl
+   * - s3:PutObject
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CopySnapshot.html
    */
   public toCopySnapshot() {
@@ -55,6 +80,14 @@ export class Memorydb extends PolicyStatement {
    * Grants permissions to create a new access control list
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - memorydb:TagResource
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CreateAcl.html
    */
@@ -67,6 +100,21 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifTLSEnabled()
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - memorydb:TagResource
+   * - s3:GetObject
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CreateCluster.html
    */
   public toCreateCluster() {
@@ -77,6 +125,15 @@ export class Memorydb extends PolicyStatement {
    * Grants permissions to create a Multi-Region cluster
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifTLSEnabled()
+   *
+   * Dependent actions:
+   * - memorydb:TagResource
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CreateMultiRegionCluster.html
    */
@@ -93,6 +150,9 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - memorydb:TagResource
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CreateParameterGroup.html
    */
   public toCreateParameterGroup() {
@@ -103,6 +163,17 @@ export class Memorydb extends PolicyStatement {
    * Grants permissions to create a backup of a cluster at the current point in time
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - memorydb:TagResource
+   * - s3:DeleteObject
+   * - s3:GetBucketAcl
+   * - s3:PutObject
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CreateSnapshot.html
    */
@@ -118,6 +189,9 @@ export class Memorydb extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - memorydb:TagResource
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CreateSubnetGroup.html
    */
@@ -135,6 +209,9 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifUserAuthenticationMode()
    *
+   * Dependent actions:
+   * - memorydb:TagResource
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CreateUser.html
    */
   public toCreateUser() {
@@ -145,6 +222,9 @@ export class Memorydb extends PolicyStatement {
    * Grants permissions to delete an access control list
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DeleteAcl.html
    */
@@ -157,6 +237,16 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DeleteCluster.html
    */
   public toDeleteCluster() {
@@ -167,6 +257,9 @@ export class Memorydb extends PolicyStatement {
    * Grants permissions to delete a Multi-Region cluster
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DeleteMultiRegionCluster.html
    */
@@ -179,6 +272,9 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DeleteParameterGroup.html
    */
   public toDeleteParameterGroup() {
@@ -189,6 +285,9 @@ export class Memorydb extends PolicyStatement {
    * Grants permissions to delete a snapshot
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DeleteSnapshot.html
    */
@@ -201,6 +300,16 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DeleteSubnetGroup.html
    */
   public toDeleteSubnetGroup() {
@@ -211,6 +320,9 @@ export class Memorydb extends PolicyStatement {
    * Grants permissions to delete a user
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DeleteUser.html
    */
@@ -223,6 +335,9 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeAcls.html
    */
   public toDescribeAcls() {
@@ -233,6 +348,9 @@ export class Memorydb extends PolicyStatement {
    * Grants permissions to retrieve information about all provisioned clusters if no cluster identifier is specified, or about a specific cluster if a cluster identifier is supplied
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeClusters.html
    */
@@ -267,6 +385,9 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeMultiRegionClusters.html
    */
   public toDescribeMultiRegionClusters() {
@@ -300,6 +421,9 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeParameterGroups.html
    */
   public toDescribeParameterGroups() {
@@ -311,6 +435,9 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeParameters.html
    */
   public toDescribeParameters() {
@@ -321,6 +448,9 @@ export class Memorydb extends PolicyStatement {
    * Grants permissions to retrieve reserved nodes
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeReservedNodes.html
    */
@@ -355,6 +485,9 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeSnapshots.html
    */
   public toDescribeSnapshots() {
@@ -365,6 +498,9 @@ export class Memorydb extends PolicyStatement {
    * Grants permissions to retrieve a list of subnet group
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeSubnetGroups.html
    */
@@ -377,6 +513,9 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeUsers.html
    */
   public toDescribeUsers() {
@@ -387,6 +526,16 @@ export class Memorydb extends PolicyStatement {
    * Grants permissions to test automatic failover on a specified shard in a cluster
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_FailoverShard.html
    */
@@ -399,6 +548,9 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_ListAllowedMultiRegionClusterUpdates.html
    */
   public toListAllowedMultiRegionClusterUpdates() {
@@ -409,6 +561,9 @@ export class Memorydb extends PolicyStatement {
    * Grants permissions to list available node type updates
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_ListAllowedNodeTypeUpdates.html
    */
@@ -421,6 +576,9 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_ListTags.html
    */
   public toListTags() {
@@ -428,9 +586,31 @@ export class Memorydb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to pause replication for a Multi-Region cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#memorydb-actions-reference
+   */
+  public toPauseMultiRegionClusterReplication() {
+    return this.to('PauseMultiRegionClusterReplication');
+  }
+
+  /**
    * Grants permissions to purchase a new reserved node
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - memorydb:TagResource
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_PurchaseReservedNodesOffering.html
    */
@@ -443,6 +623,9 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_ResetParameterGroup.html
    */
   public toResetParameterGroup() {
@@ -452,7 +635,12 @@ export class Memorydb extends PolicyStatement {
   /**
    * Grants permissions to add up to 10 cost allocation tags to the named resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_TagResource.html
    */
@@ -463,7 +651,11 @@ export class Memorydb extends PolicyStatement {
   /**
    * Grants permissions to remove the tags identified by the TagKeys list from a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_UntagResource.html
    */
@@ -476,6 +668,9 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_UpdateAcl.html
    */
   public toUpdateAcl() {
@@ -486,6 +681,16 @@ export class Memorydb extends PolicyStatement {
    * Grants permissions to update the settings for a cluster
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_UpdateCluster.html
    */
@@ -498,6 +703,16 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_UpdateMultiRegionCluster.html
    */
   public toUpdateMultiRegionCluster() {
@@ -508,6 +723,9 @@ export class Memorydb extends PolicyStatement {
    * Grants permissions to update parameters in a parameter group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_UpdateParameterGroup.html
    */
@@ -520,6 +738,9 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_UpdateSubnetGroup.html
    */
   public toUpdateSubnetGroup() {
@@ -531,21 +752,14 @@ export class Memorydb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifUserAuthenticationMode()
+   *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_UpdateUser.html
    */
   public toUpdateUser() {
     return this.to('UpdateUser');
-  }
-
-  /**
-   * Grants permission to pause replication for a Multi-Region cluster
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#memorydb-actions-reference
-   */
-  public toPauseMultiRegionClusterReplication() {
-    return this.to('PauseMultiRegionClusterReplication');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -568,17 +782,15 @@ export class Memorydb extends PolicyStatement {
       'DeleteSubnetGroup',
       'DeleteUser',
       'FailoverShard',
+      'PauseMultiRegionClusterReplication',
       'PurchaseReservedNodesOffering',
       'ResetParameterGroup',
-      'TagResource',
-      'UntagResource',
       'UpdateAcl',
       'UpdateCluster',
       'UpdateMultiRegionCluster',
       'UpdateParameterGroup',
       'UpdateSubnetGroup',
-      'UpdateUser',
-      'PauseMultiRegionClusterReplication'
+      'UpdateUser'
     ],
     Read: [
       'DescribeAcls',
@@ -605,57 +817,6 @@ export class Memorydb extends PolicyStatement {
       'UntagResource'
     ]
   };
-
-  /**
-   * Adds a resource of type acl to the statement
-   *
-   * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
-   *
-   * @param aclName - Identifier for the aclName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onAcl(aclName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:acl/${ aclName }`);
-  }
-
-  /**
-   * Adds a resource of type cluster to the statement
-   *
-   * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
-   *
-   * @param clusterName - Identifier for the clusterName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster/${ clusterName }`);
-  }
-
-  /**
-   * Adds a resource of type multiregioncluster to the statement
-   *
-   * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
-   *
-   * @param clusterName - Identifier for the clusterName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifTLSEnabled()
-   */
-  public onMultiregioncluster(clusterName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb::${ account ?? this.defaultAccount }:multiregioncluster/${ clusterName }`);
-  }
 
   /**
    * Adds a resource of type multiregionparametergroup to the statement
@@ -688,11 +849,11 @@ export class Memorydb extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type reservednode to the statement
+   * Adds a resource of type subnetgroup to the statement
    *
    * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
    *
-   * @param reservationID - Identifier for the reservationID.
+   * @param subnetGroupName - Identifier for the subnetGroupName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -700,8 +861,42 @@ export class Memorydb extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onReservednode(reservationID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:reservednode/${ reservationID }`);
+  public onSubnetgroup(subnetGroupName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:subnetgroup/${ subnetGroupName }`);
+  }
+
+  /**
+   * Adds a resource of type multiregioncluster to the statement
+   *
+   * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifTLSEnabled()
+   */
+  public onMultiregioncluster(clusterName: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb::${ account ?? this.defaultAccount }:multiregioncluster/${ clusterName }`);
+  }
+
+  /**
+   * Adds a resource of type cluster to the statement
+   *
+   * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster/${ clusterName }`);
   }
 
   /**
@@ -722,23 +917,6 @@ export class Memorydb extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type subnetgroup to the statement
-   *
-   * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
-   *
-   * @param subnetGroupName - Identifier for the subnetGroupName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onSubnetgroup(subnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:subnetgroup/${ subnetGroupName }`);
-  }
-
-  /**
    * Adds a resource of type user to the statement
    *
    * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
@@ -753,6 +931,40 @@ export class Memorydb extends PolicyStatement {
    */
   public onUser(userName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user/${ userName }`);
+  }
+
+  /**
+   * Adds a resource of type acl to the statement
+   *
+   * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
+   *
+   * @param aclName - Identifier for the aclName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAcl(aclName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:acl/${ aclName }`);
+  }
+
+  /**
+   * Adds a resource of type reservednode to the statement
+   *
+   * https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html
+   *
+   * @param reservationID - Identifier for the reservationID.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onReservednode(reservationID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:memorydb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:reservednode/${ reservationID }`);
   }
 
   /**
@@ -813,6 +1025,7 @@ export class Memorydb extends PolicyStatement {
    * - .toListAllowedMultiRegionClusterUpdates()
    * - .toListAllowedNodeTypeUpdates()
    * - .toListTags()
+   * - .toPauseMultiRegionClusterReplication()
    * - .toPurchaseReservedNodesOffering()
    * - .toResetParameterGroup()
    * - .toTagResource()
@@ -823,17 +1036,16 @@ export class Memorydb extends PolicyStatement {
    * - .toUpdateParameterGroup()
    * - .toUpdateSubnetGroup()
    * - .toUpdateUser()
-   * - .toPauseMultiRegionClusterReplication()
    *
    * Applies to resource types:
-   * - acl
-   * - cluster
-   * - multiregioncluster
    * - parametergroup
-   * - reservednode
-   * - snapshot
    * - subnetgroup
+   * - multiregioncluster
+   * - cluster
+   * - snapshot
    * - user
+   * - acl
+   * - reservednode
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -876,15 +1088,6 @@ export class Memorydb extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCluster()
    * - .toCreateMultiRegionCluster()
-   * - .toDeleteCluster()
-   * - .toDeleteMultiRegionCluster()
-   * - .toDescribeMultiRegionClusters()
-   * - .toListAllowedMultiRegionClusterUpdates()
-   * - .toListTags()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateMultiRegionCluster()
-   * - .toPauseMultiRegionClusterReplication()
    *
    * Applies to resource types:
    * - multiregioncluster

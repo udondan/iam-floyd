@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [elasticbeanstalk](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elasticbeanstalk.html).
+ * Statement provider for service [elasticbeanstalk](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselasticbeanstalk.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   public servicePrefix = 'elasticbeanstalk';
 
   /**
-   * Statement provider for service [elasticbeanstalk](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elasticbeanstalk.html).
+   * Statement provider for service [elasticbeanstalk](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselasticbeanstalk.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -32,7 +32,11 @@ export class Elasticbeanstalk extends PolicyStatement {
   /**
    * Grants permission to add tags to an Elastic Beanstalk resource and to update tag values
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html
    */
@@ -89,6 +93,10 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateApplication.html
    */
   public toCreateApplication() {
@@ -111,6 +119,16 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifFromApplication()
+   * - .ifFromApplicationVersion()
+   * - .ifFromConfigurationTemplate()
+   * - .ifFromEnvironment()
+   * - .ifFromSolutionStack()
+   * - .ifFromPlatform()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateConfigurationTemplate.html
    */
   public toCreateConfigurationTemplate() {
@@ -122,6 +140,14 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifFromApplicationVersion()
+   * - .ifFromConfigurationTemplate()
+   * - .ifFromSolutionStack()
+   * - .ifFromPlatform()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateEnvironment.html
    */
   public toCreateEnvironment() {
@@ -132,6 +158,10 @@ export class Elasticbeanstalk extends PolicyStatement {
    * Grants permission to create a new version of a custom platform
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreatePlatformVersion.html
    */
@@ -428,7 +458,10 @@ export class Elasticbeanstalk extends PolicyStatement {
   /**
    * Grants permission to remove tags from an Elastic Beanstalk resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html
    */
@@ -473,6 +506,9 @@ export class Elasticbeanstalk extends PolicyStatement {
    * Grants permission to swap the CNAMEs of two environments
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifFromEnvironment()
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_SwapEnvironmentCNAMEs.html
    */
@@ -529,6 +565,14 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifFromApplication()
+   * - .ifFromApplicationVersion()
+   * - .ifFromConfigurationTemplate()
+   * - .ifFromEnvironment()
+   * - .ifFromSolutionStack()
+   * - .ifFromPlatform()
+   *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateConfigurationTemplate.html
    */
   public toUpdateConfigurationTemplate() {
@@ -540,6 +584,12 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifFromApplicationVersion()
+   * - .ifFromConfigurationTemplate()
+   * - .ifFromSolutionStack()
+   * - .ifFromPlatform()
+   *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateEnvironment.html
    */
   public toUpdateEnvironment() {
@@ -549,7 +599,11 @@ export class Elasticbeanstalk extends PolicyStatement {
   /**
    * Doesn't grant permission to update tags. To grant permission to add tags to an Elastic Beanstalk resource, remove tags, and to update tag values, specify elasticbeanstalk:AddTags and elasticbeanstalk:RemoveTags
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html
    */
@@ -571,7 +625,6 @@ export class Elasticbeanstalk extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AbortEnvironmentUpdate',
-      'AddTags',
       'ApplyEnvironmentManagedAction',
       'AssociateEnvironmentOperationsRole',
       'ComposeEnvironments',
@@ -589,7 +642,6 @@ export class Elasticbeanstalk extends PolicyStatement {
       'DisassociateEnvironmentOperationsRole',
       'PutInstanceStatistics',
       'RebuildEnvironment',
-      'RemoveTags',
       'RestartAppServer',
       'SwapEnvironmentCNAMEs',
       'TerminateEnvironment',
@@ -597,8 +649,7 @@ export class Elasticbeanstalk extends PolicyStatement {
       'UpdateApplicationResourceLifecycle',
       'UpdateApplicationVersion',
       'UpdateConfigurationTemplate',
-      'UpdateEnvironment',
-      'UpdateTagsForResource'
+      'UpdateEnvironment'
     ],
     Tagging: [
       'AddTags',
@@ -707,19 +758,6 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type platform to the statement
-   *
-   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html
-   *
-   * @param platformNameWithVersion - Identifier for the platformNameWithVersion.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onPlatform(platformNameWithVersion: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticbeanstalk:${ region ?? this.defaultRegion }::platform/${ platformNameWithVersion }`);
-  }
-
-  /**
    * Adds a resource of type solutionstack to the statement
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html
@@ -730,6 +768,19 @@ export class Elasticbeanstalk extends PolicyStatement {
    */
   public onSolutionstack(solutionStackName: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:elasticbeanstalk:${ region ?? this.defaultRegion }::solutionstack/${ solutionStackName }`);
+  }
+
+  /**
+   * Adds a resource of type platform to the statement
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html
+   *
+   * @param platformNameWithVersion - Identifier for the platformNameWithVersion.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onPlatform(platformNameWithVersion: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticbeanstalk:${ region ?? this.defaultRegion }::platform/${ platformNameWithVersion }`);
   }
 
   /**
@@ -758,49 +809,6 @@ export class Elasticbeanstalk extends PolicyStatement {
    * Filters actions based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
-   *
-   * Applies to actions:
-   * - .toAbortEnvironmentUpdate()
-   * - .toAddTags()
-   * - .toApplyEnvironmentManagedAction()
-   * - .toAssociateEnvironmentOperationsRole()
-   * - .toComposeEnvironments()
-   * - .toCreateApplication()
-   * - .toCreateApplicationVersion()
-   * - .toCreateConfigurationTemplate()
-   * - .toCreateEnvironment()
-   * - .toDeleteApplication()
-   * - .toDeleteApplicationVersion()
-   * - .toDeleteConfigurationTemplate()
-   * - .toDeleteEnvironmentConfiguration()
-   * - .toDescribeApplicationVersions()
-   * - .toDescribeApplications()
-   * - .toDescribeConfigurationOptions()
-   * - .toDescribeConfigurationSettings()
-   * - .toDescribeEnvironmentHealth()
-   * - .toDescribeEnvironmentManagedActionHistory()
-   * - .toDescribeEnvironmentManagedActions()
-   * - .toDescribeEnvironmentResources()
-   * - .toDescribeEnvironments()
-   * - .toDescribeEvents()
-   * - .toDescribeInstancesHealth()
-   * - .toDisassociateEnvironmentOperationsRole()
-   * - .toListTagsForResource()
-   * - .toPutInstanceStatistics()
-   * - .toRebuildEnvironment()
-   * - .toRemoveTags()
-   * - .toRequestEnvironmentInfo()
-   * - .toRestartAppServer()
-   * - .toRetrieveEnvironmentInfo()
-   * - .toSwapEnvironmentCNAMEs()
-   * - .toTerminateEnvironment()
-   * - .toUpdateApplication()
-   * - .toUpdateApplicationResourceLifecycle()
-   * - .toUpdateApplicationVersion()
-   * - .toUpdateConfigurationTemplate()
-   * - .toUpdateEnvironment()
-   * - .toUpdateTagsForResource()
-   * - .toValidateConfigurationSettings()
    *
    * Applies to resource types:
    * - application
@@ -950,9 +958,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAbortEnvironmentUpdate()
-   * - .toAddTags()
    * - .toApplyEnvironmentManagedAction()
-   * - .toAssociateEnvironmentOperationsRole()
    * - .toComposeEnvironments()
    * - .toCreateApplicationVersion()
    * - .toCreateConfigurationTemplate()
@@ -963,18 +969,12 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .toDescribeApplicationVersions()
    * - .toDescribeConfigurationOptions()
    * - .toDescribeConfigurationSettings()
-   * - .toDescribeEnvironmentHealth()
    * - .toDescribeEnvironmentManagedActionHistory()
    * - .toDescribeEnvironmentManagedActions()
    * - .toDescribeEnvironmentResources()
    * - .toDescribeEnvironments()
    * - .toDescribeEvents()
-   * - .toDescribeInstancesHealth()
-   * - .toDisassociateEnvironmentOperationsRole()
-   * - .toListTagsForResource()
-   * - .toPutInstanceStatistics()
    * - .toRebuildEnvironment()
-   * - .toRemoveTags()
    * - .toRequestEnvironmentInfo()
    * - .toRestartAppServer()
    * - .toRetrieveEnvironmentInfo()
@@ -983,7 +983,6 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .toUpdateApplicationVersion()
    * - .toUpdateConfigurationTemplate()
    * - .toUpdateEnvironment()
-   * - .toUpdateTagsForResource()
    * - .toValidateConfigurationSettings()
    *
    * Applies to resource types:

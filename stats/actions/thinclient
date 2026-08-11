@@ -11,8 +11,8 @@ thinclient:ListDevices;List
 thinclient:ListEnvironments;List
 thinclient:ListSoftwareSets;List
 thinclient:ListTagsForResource;List
-thinclient:TagResource;Tagging, Write
-thinclient:UntagResource;Tagging, Write
+thinclient:TagResource;Tagging
+thinclient:UntagResource;Tagging
 thinclient:UpdateDevice;Write
 thinclient:UpdateEnvironment;Write
 thinclient:UpdateSoftwareSet;Write

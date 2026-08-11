@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [route53resolver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_route53resolver.html).
+ * Statement provider for service [route53resolver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53resolver.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Route53resolver extends PolicyStatement {
   public servicePrefix = 'route53resolver';
 
   /**
-   * Statement provider for service [route53resolver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_route53resolver.html).
+   * Statement provider for service [route53resolver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53resolver.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,6 +23,13 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateFirewallRuleGroup.html
    */
   public toAssociateFirewallRuleGroup() {
@@ -33,6 +40,11 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to associate a specified IP address with a Resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound)
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html
    */
@@ -45,6 +57,9 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html
    */
   public toAssociateResolverQueryLogConfig() {
@@ -56,6 +71,9 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html
    */
   public toAssociateResolverRule() {
@@ -66,6 +84,10 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to create a Firewall domain list
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateFirewallDomainList.html
    */
@@ -89,6 +111,10 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateFirewallRuleGroup.html
    */
   public toCreateFirewallRuleGroup() {
@@ -99,6 +125,13 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to create a Route 53 Resolver on Outposts
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - outposts:GetOutpost
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateOutpostResolver.html
    */
@@ -111,6 +144,17 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html
    */
   public toCreateResolverEndpoint() {
@@ -122,6 +166,10 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverQueryLogConfig.html
    */
   public toCreateResolverQueryLogConfig() {
@@ -132,6 +180,10 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to define how to route queries originating from your VPC out of the VPC
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html
    */
@@ -188,6 +240,10 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverEndpoint.html
    */
   public toDeleteResolverEndpoint() {
@@ -232,6 +288,10 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html
    */
   public toDisassociateResolverEndpointIpAddress() {
@@ -264,6 +324,9 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to get information about a specified Firewall config
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetFirewallConfig.html
    */
@@ -331,6 +394,9 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverConfig.html
    */
   public toGetResolverConfig() {
@@ -363,6 +429,9 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to get information about a specified Resolver query logging configuration, such as the number of VPCs that the configuration is logging queries for and the location that logs are sent to
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverQueryLogConfig.html
    */
@@ -440,6 +509,9 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to list all the Firewall config that current AWS account is able to check
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallConfigs.html
    */
@@ -529,6 +601,9 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverConfigs.html
    */
   public toListResolverConfigs() {
@@ -573,6 +648,9 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigAssociations.html
    */
   public toListResolverQueryLogConfigAssociations() {
@@ -584,6 +662,9 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigs.html
    */
   public toListResolverQueryLogConfigs() {
@@ -594,6 +675,9 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to list the associations that were created between Resolver rules and VPCs using the current AWS account
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html
    */
@@ -626,7 +710,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Grants permission to specify an AWS account that you want to share a Firewall rule group with, the Firewall rule group that you want to share, and the operations that you want the account to be able to perform on the configuration
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_PutFirewallRuleGroupPolicy.html
    */
@@ -637,7 +721,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Grants permission to specify an AWS account that you want to share a query logging configuration with, the query logging configuration that you want to share, and the operations that you want the account to be able to perform on the configuration
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_PutResolverQueryLogConfigPolicy.html
    */
@@ -648,7 +732,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Grants permission to specify an AWS account that you want to share rules with, the Resolver rules that you want to share, and the operations that you want the account to be able to perform on those rules
    *
-   * Access Level: Permissions management, Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_PutResolverRulePolicy.html
    */
@@ -659,7 +743,11 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Grants permission to add one or more tags to a specified resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_TagResource.html
    */
@@ -670,7 +758,10 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Grants permission to remove one or more tags from a specified resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UntagResource.html
    */
@@ -682,6 +773,9 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to update selected settings for an Firewall config
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateFirewallConfig.html
    */
@@ -738,6 +832,9 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverConfig.html
    */
   public toUpdateResolverConfig() {
@@ -759,6 +856,13 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to update selected settings for an inbound or an outbound Resolver endpoint
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:AssignIpv6Addresses
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:ModifyNetworkInterfaceAttribute
+   * - ec2:UnassignIpv6Addresses
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html
    */
@@ -802,11 +906,6 @@ export class Route53resolver extends PolicyStatement {
       'DisassociateResolverQueryLogConfig',
       'DisassociateResolverRule',
       'ImportFirewallDomains',
-      'PutFirewallRuleGroupPolicy',
-      'PutResolverQueryLogConfigPolicy',
-      'PutResolverRulePolicy',
-      'TagResource',
-      'UntagResource',
       'UpdateFirewallConfig',
       'UpdateFirewallDomains',
       'UpdateFirewallRule',
@@ -865,122 +964,6 @@ export class Route53resolver extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type autodefined-rule to the statement
-   *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onAutodefinedRule(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:autodefined-rule/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type firewall-config to the statement
-   *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onFirewallConfig(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:firewall-config/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type firewall-domain-list to the statement
-   *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onFirewallDomainList(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:firewall-domain-list/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type firewall-rule-group to the statement
-   *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onFirewallRuleGroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:firewall-rule-group/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type firewall-rule-group-association to the statement
-   *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onFirewallRuleGroupAssociation(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:firewall-rule-group-association/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type outpost-resolver to the statement
-   *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onOutpostResolver(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:outpost-resolver/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type resolver-config to the statement
-   *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onResolverConfig(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resolver-config/${ resourceId }`);
-  }
-
-  /**
    * Adds a resource of type resolver-dnssec-config to the statement
    *
    * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
@@ -995,23 +978,6 @@ export class Route53resolver extends PolicyStatement {
    */
   public onResolverDnssecConfig(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resolver-dnssec-config/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type resolver-endpoint to the statement
-   *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onResolverEndpoint(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resolver-endpoint/${ resourceId }`);
   }
 
   /**
@@ -1049,6 +1015,139 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type autodefined-rule to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAutodefinedRule(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:autodefined-rule/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type resolver-endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onResolverEndpoint(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resolver-endpoint/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type firewall-rule-group to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFirewallRuleGroup(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:firewall-rule-group/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type firewall-rule-group-association to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFirewallRuleGroupAssociation(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:firewall-rule-group-association/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type firewall-domain-list to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFirewallDomainList(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:firewall-domain-list/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type firewall-config to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFirewallConfig(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:firewall-config/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type resolver-config to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onResolverConfig(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resolver-config/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type outpost-resolver to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onOutpostResolver(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:outpost-resolver/${ resourceId }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1076,73 +1175,17 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toAssociateFirewallRuleGroup()
-   * - .toAssociateResolverEndpointIpAddress()
-   * - .toAssociateResolverQueryLogConfig()
-   * - .toAssociateResolverRule()
-   * - .toCreateFirewallDomainList()
-   * - .toCreateFirewallRule()
-   * - .toCreateFirewallRuleGroup()
-   * - .toCreateOutpostResolver()
-   * - .toCreateResolverEndpoint()
-   * - .toCreateResolverQueryLogConfig()
-   * - .toCreateResolverRule()
-   * - .toDeleteFirewallDomainList()
-   * - .toDeleteFirewallRule()
-   * - .toDeleteFirewallRuleGroup()
-   * - .toDeleteOutpostResolver()
-   * - .toDeleteResolverEndpoint()
-   * - .toDeleteResolverQueryLogConfig()
-   * - .toDeleteResolverRule()
-   * - .toDisassociateFirewallRuleGroup()
-   * - .toDisassociateResolverEndpointIpAddress()
-   * - .toDisassociateResolverQueryLogConfig()
-   * - .toDisassociateResolverRule()
-   * - .toGetFirewallConfig()
-   * - .toGetFirewallDomainList()
-   * - .toGetFirewallRuleGroup()
-   * - .toGetFirewallRuleGroupAssociation()
-   * - .toGetFirewallRuleGroupPolicy()
-   * - .toGetOutpostResolver()
-   * - .toGetResolverDnssecConfig()
-   * - .toGetResolverEndpoint()
-   * - .toGetResolverQueryLogConfig()
-   * - .toGetResolverQueryLogConfigPolicy()
-   * - .toGetResolverRule()
-   * - .toGetResolverRuleAssociation()
-   * - .toGetResolverRulePolicy()
-   * - .toImportFirewallDomains()
-   * - .toListFirewallDomains()
-   * - .toListFirewallRules()
-   * - .toListResolverDnssecConfigs()
-   * - .toListResolverEndpointIpAddresses()
-   * - .toListTagsForResource()
-   * - .toPutFirewallRuleGroupPolicy()
-   * - .toPutResolverQueryLogConfigPolicy()
-   * - .toPutResolverRulePolicy()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateFirewallConfig()
-   * - .toUpdateFirewallDomains()
-   * - .toUpdateFirewallRule()
-   * - .toUpdateFirewallRuleGroupAssociation()
-   * - .toUpdateOutpostResolver()
-   * - .toUpdateResolverDnssecConfig()
-   * - .toUpdateResolverEndpoint()
-   * - .toUpdateResolverRule()
-   *
    * Applies to resource types:
-   * - autodefined-rule
-   * - firewall-config
-   * - firewall-domain-list
-   * - firewall-rule-group
-   * - firewall-rule-group-association
-   * - outpost-resolver
    * - resolver-dnssec-config
-   * - resolver-endpoint
    * - resolver-query-log-config
    * - resolver-rule
+   * - autodefined-rule
+   * - resolver-endpoint
+   * - firewall-rule-group
+   * - firewall-rule-group-association
+   * - firewall-domain-list
+   * - firewall-config
+   * - outpost-resolver
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

@@ -25,8 +25,8 @@ mediaconvert:ListVersions;List
 mediaconvert:Probe;Read
 mediaconvert:PutPolicy;Write
 mediaconvert:SearchJobs;List
-mediaconvert:TagResource;Tagging, Write
-mediaconvert:UntagResource;Tagging, Write
+mediaconvert:TagResource;Tagging
+mediaconvert:UntagResource;Tagging
 mediaconvert:UpdateJobTemplate;Write
 mediaconvert:UpdatePreset;Write
 mediaconvert:UpdateQueue;Write

@@ -62,9 +62,9 @@ mediaconnect:StopFlow;Write
 mediaconnect:StopRouterInput;Write
 mediaconnect:StopRouterOutput;Write
 mediaconnect:SubmitGatewayStateChange;Write
-mediaconnect:TagResource;Tagging, Write
+mediaconnect:TagResource;Tagging
 mediaconnect:TakeRouterInput;Write
-mediaconnect:UntagResource;Tagging, Write
+mediaconnect:UntagResource;Tagging
 mediaconnect:UpdateBridge;Write
 mediaconnect:UpdateBridgeOutput;Write
 mediaconnect:UpdateBridgeSource;Write

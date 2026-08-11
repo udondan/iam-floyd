@@ -66,9 +66,7 @@
                 "organizations:PutResourcePolicy",
                 "organizations:RegisterDelegatedAdministrator",
                 "organizations:RemoveAccountFromOrganization",
-                "organizations:TagResource",
                 "organizations:TerminateResponsibilityTransfer",
-                "organizations:UntagResource",
                 "organizations:UpdateOrganizationalUnit",
                 "organizations:UpdatePolicy",
                 "organizations:UpdateResponsibilityTransfer"

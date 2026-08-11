@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [artifact](https://docs.aws.amazon.com/service-authorization/latest/reference/list_artifact.html).
+ * Statement provider for service [artifact](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsartifact.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Artifact extends PolicyStatement {
   public servicePrefix = 'artifact';
 
   /**
-   * Statement provider for service [artifact](https://docs.aws.amazon.com/service-authorization/latest/reference/list_artifact.html).
+   * Statement provider for service [artifact](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsartifact.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -44,6 +44,10 @@ export class Artifact extends PolicyStatement {
    * Grants permission to create a compliance inquiry
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/artifact/latest/APIReference/API_CreateComplianceInquiry.html
    */
@@ -239,20 +243,13 @@ export class Artifact extends PolicyStatement {
   }
 
   /**
-   * Grants permission to submit feedback on a compliance inquiry response
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_PutComplianceInquiryFeedback.html
-   */
-  public toPutComplianceInquiryFeedback() {
-    return this.to('PutComplianceInquiryFeedback');
-  }
-
-  /**
    * Grants permission to associate a set of tags with an AWS Artifact resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/artifact/latest/APIReference/API_TagResource.html
    */
@@ -274,7 +271,10 @@ export class Artifact extends PolicyStatement {
   /**
    * Grants permission to remove the association of tags from an AWS Artifact resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/artifact/latest/APIReference/API_UntagResource.html
    */
@@ -288,10 +288,7 @@ export class Artifact extends PolicyStatement {
       'AcceptNdaForAgreement',
       'CreateComplianceInquiry',
       'PutAccountSettings',
-      'PutComplianceInquiryFeedback',
-      'TagResource',
-      'TerminateAgreement',
-      'UntagResource'
+      'TerminateAgreement'
     ],
     Read: [
       'ExportComplianceInquiry',
@@ -320,35 +317,6 @@ export class Artifact extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type agreement to the statement
-   *
-   * https://docs.aws.amazon.com/artifact/latest/ug/managing-agreements.html
-   *
-   * @param resourceName - Identifier for the resourceName.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAgreement(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:artifact:::agreement/${ resourceName }`);
-  }
-
-  /**
-   * Adds a resource of type compliance-inquiry to the statement
-   *
-   * https://docs.aws.amazon.com/artifact/latest/ug/managing-compliance-inquiries.html
-   *
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onComplianceInquiry(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:artifact:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:compliance-inquiry/${ resourceName }`);
-  }
-
-  /**
    * Adds a resource of type customer-agreement to the statement
    *
    * https://docs.aws.amazon.com/artifact/latest/ug/managing-agreements.html
@@ -359,6 +327,18 @@ export class Artifact extends PolicyStatement {
    */
   public onCustomerAgreement(resourceName: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:artifact::${ account ?? this.defaultAccount }:customer-agreement/${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type agreement to the statement
+   *
+   * https://docs.aws.amazon.com/artifact/latest/ug/managing-agreements.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAgreement(resourceName: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:artifact:::agreement/${ resourceName }`);
   }
 
   /**
@@ -380,14 +360,26 @@ export class Artifact extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type compliance-inquiry to the statement
+   *
+   * https://docs.aws.amazon.com/artifact/latest/ug/managing-compliance-inquiries.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onComplianceInquiry(resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:artifact:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:compliance-inquiry/${ resourceName }`);
+  }
+
+  /**
    * Filters access by which category reports are associated with
    *
    * https://docs.aws.amazon.com/artifact/latest/ug/using-condition-keys.html
-   *
-   * Applies to actions:
-   * - .toGetReport()
-   * - .toGetReportMetadata()
-   * - .toGetTermForReport()
    *
    * Applies to resource types:
    * - report
@@ -403,11 +395,6 @@ export class Artifact extends PolicyStatement {
    * Filters access by which series reports are associated with
    *
    * https://docs.aws.amazon.com/artifact/latest/ug/using-condition-keys.html
-   *
-   * Applies to actions:
-   * - .toGetReport()
-   * - .toGetReportMetadata()
-   * - .toGetTermForReport()
    *
    * Applies to resource types:
    * - report
@@ -440,16 +427,6 @@ export class Artifact extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toCreateComplianceInquiry()
-   * - .toExportComplianceInquiry()
-   * - .toGetComplianceInquiryMetadata()
-   * - .toListComplianceInquiryQueries()
-   * - .toListTagsForResource()
-   * - .toPutComplianceInquiryFeedback()
-   * - .toTagResource()
-   * - .toUntagResource()
    *
    * Applies to resource types:
    * - compliance-inquiry

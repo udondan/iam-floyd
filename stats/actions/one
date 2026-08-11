@@ -20,8 +20,8 @@ one:ListTagsForResource;Read
 one:ListUsers;List
 one:ListUsersV1;List
 one:RebootDevice;Write
-one:TagResource;Tagging, Write
-one:UntagResource;Tagging, Write
+one:TagResource;Tagging
+one:UntagResource;Tagging
 one:UpdateDeviceConfigurationTemplate;Write
 one:UpdateDeviceInstance;Write
 one:UpdateSite;Write

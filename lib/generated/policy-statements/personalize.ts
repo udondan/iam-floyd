@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [personalize](https://docs.aws.amazon.com/service-authorization/latest/reference/list_personalize.html).
+ * Statement provider for service [personalize](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Personalize extends PolicyStatement {
   public servicePrefix = 'personalize';
 
   /**
-   * Statement provider for service [personalize](https://docs.aws.amazon.com/service-authorization/latest/reference/list_personalize.html).
+   * Statement provider for service [personalize](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,6 +23,13 @@ export class Personalize extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateBatchInferenceJob.html
    */
   public toCreateBatchInferenceJob() {
@@ -33,6 +40,13 @@ export class Personalize extends PolicyStatement {
    * Grants permission to create a batch segment job
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateBatchSegmentJob.html
    */
@@ -45,6 +59,10 @@ export class Personalize extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html
    */
   public toCreateCampaign() {
@@ -55,6 +73,13 @@ export class Personalize extends PolicyStatement {
    * Grants permission to create a data deletion job
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataDeletionJob.html
    */
@@ -78,6 +103,10 @@ export class Personalize extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html
    */
   public toCreateDataset() {
@@ -88,6 +117,13 @@ export class Personalize extends PolicyStatement {
    * Grants permission to create a dataset export job
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html
    */
@@ -100,6 +136,10 @@ export class Personalize extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html
    */
   public toCreateDatasetGroup() {
@@ -110,6 +150,13 @@ export class Personalize extends PolicyStatement {
    * Grants permission to create a dataset import job
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html
    */
@@ -122,6 +169,10 @@ export class Personalize extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html
    */
   public toCreateEventTracker() {
@@ -132,6 +183,10 @@ export class Personalize extends PolicyStatement {
    * Grants permission to create a filter
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateFilter.html
    */
@@ -144,6 +199,9 @@ export class Personalize extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateMetricAttribution.html
    */
   public toCreateMetricAttribution() {
@@ -154,6 +212,10 @@ export class Personalize extends PolicyStatement {
    * Grants permission to create a recommender
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html
    */
@@ -177,6 +239,10 @@ export class Personalize extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html
    */
   public toCreateSolution() {
@@ -187,6 +253,10 @@ export class Personalize extends PolicyStatement {
    * Grants permission to create a solution version
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html
    */
@@ -857,7 +927,11 @@ export class Personalize extends PolicyStatement {
   /**
    * Grants permission to tag a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_TagResource.html
    */
@@ -868,7 +942,10 @@ export class Personalize extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging, Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_UntagResource.html
    */
@@ -966,8 +1043,6 @@ export class Personalize extends PolicyStatement {
       'StartRecommender',
       'StopRecommender',
       'StopSolutionVersionCreation',
-      'TagResource',
-      'UntagResource',
       'UpdateCampaign',
       'UpdateDataset',
       'UpdateMetricAttribution',
@@ -1028,97 +1103,29 @@ export class Personalize extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type algorithm to the statement
+   * Adds a resource of type schema to the statement
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Algorithm.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAlgorithm(resourceId: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:::algorithm/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type batchInferenceJob to the statement
-   *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_BatchInferenceJob.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onBatchInferenceJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:batch-inference-job/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type batchSegmentJob to the statement
-   *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_BatchSegmentJob.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onBatchSegmentJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:batch-segment-job/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type campaign to the statement
-   *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Campaign.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCampaign(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:campaign/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type dataDeletionJob to the statement
-   *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_DataDeletionJob.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDataDeletionJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-deletion-job/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type dataInsightsJob to the statement
-   *
-   * https://docs.aws.amazon.com/personalize/latest/dg/analyzing-data.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html#schema-examples
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onDataInsightsJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-insights-job/${ resourceId }`);
+  public onSchema(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:schema/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type featureTransformation to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_FeatureTransformation.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onFeatureTransformation(resourceId: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:::feature-transformation/${ resourceId }`);
   }
 
   /**
@@ -1136,23 +1143,6 @@ export class Personalize extends PolicyStatement {
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type datasetExportJob to the statement
-   *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_DatasetExportJob.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDatasetExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset-export-job/${ resourceId }`);
   }
 
   /**
@@ -1190,6 +1180,88 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type dataInsightsJob to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/analyzing-data.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onDataInsightsJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-insights-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type datasetExportJob to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DatasetExportJob.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDatasetExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset-export-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type dataDeletionJob to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DataDeletionJob.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataDeletionJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-deletion-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type solution to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Solution.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSolution(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:solution/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type campaign to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Campaign.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCampaign(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:campaign/${ resourceId }`);
+  }
+
+  /**
    * Adds a resource of type eventTracker to the statement
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_EventTracker.html
@@ -1207,15 +1279,44 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type featureTransformation to the statement
+   * Adds a resource of type recipe to the statement
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_FeatureTransformation.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Recipe.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onFeatureTransformation(resourceId: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:::feature-transformation/${ resourceId }`);
+  public onRecipe(resourceId: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:::recipe/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type algorithm to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Algorithm.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAlgorithm(resourceId: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:::algorithm/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type batchInferenceJob to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_BatchInferenceJob.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBatchInferenceJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:batch-inference-job/${ resourceId }`);
   }
 
   /**
@@ -1236,32 +1337,6 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type metricAttribution to the statement
-   *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_MetricAttribution.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onMetricAttribution(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:metric-attribution/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type recipe to the statement
-   *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Recipe.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onRecipe(resourceId: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:::recipe/${ resourceId }`);
-  }
-
-  /**
    * Adds a resource of type recommender to the statement
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Recommender.html
@@ -1279,23 +1354,9 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type schema to the statement
+   * Adds a resource of type batchSegmentJob to the statement
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html#schema-examples
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onSchema(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:schema/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type solution to the statement
-   *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Solution.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_BatchSegmentJob.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1305,8 +1366,22 @@ export class Personalize extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onSolution(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:solution/${ resourceId }`);
+  public onBatchSegmentJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:batch-segment-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type metricAttribution to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_MetricAttribution.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onMetricAttribution(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:metric-attribution/${ resourceId }`);
   }
 
   /**
@@ -1343,72 +1418,19 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toCreateBatchInferenceJob()
-   * - .toCreateBatchSegmentJob()
-   * - .toCreateCampaign()
-   * - .toCreateDataDeletionJob()
-   * - .toCreateDataset()
-   * - .toCreateDatasetExportJob()
-   * - .toCreateDatasetGroup()
-   * - .toCreateDatasetImportJob()
-   * - .toCreateEventTracker()
-   * - .toCreateFilter()
-   * - .toCreateMetricAttribution()
-   * - .toCreateRecommender()
-   * - .toCreateSolution()
-   * - .toCreateSolutionVersion()
-   * - .toDeleteCampaign()
-   * - .toDeleteDataset()
-   * - .toDeleteDatasetGroup()
-   * - .toDeleteEventTracker()
-   * - .toDeleteFilter()
-   * - .toDeleteRecommender()
-   * - .toDeleteSolution()
-   * - .toDescribeBatchInferenceJob()
-   * - .toDescribeBatchSegmentJob()
-   * - .toDescribeCampaign()
-   * - .toDescribeDataDeletionJob()
-   * - .toDescribeDataset()
-   * - .toDescribeDatasetExportJob()
-   * - .toDescribeDatasetGroup()
-   * - .toDescribeDatasetImportJob()
-   * - .toDescribeEventTracker()
-   * - .toDescribeFilter()
-   * - .toDescribeRecommender()
-   * - .toDescribeSolution()
-   * - .toDescribeSolutionVersion()
-   * - .toGetActionRecommendations()
-   * - .toGetPersonalizedRanking()
-   * - .toGetRecommendations()
-   * - .toGetSolutionMetrics()
-   * - .toListTagsForResource()
-   * - .toPutActions()
-   * - .toPutItems()
-   * - .toPutUsers()
-   * - .toStartRecommender()
-   * - .toStopRecommender()
-   * - .toStopSolutionVersionCreation()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateCampaign()
-   * - .toUpdateDataset()
-   * - .toUpdateRecommender()
-   * - .toUpdateSolution()
-   *
    * Applies to resource types:
-   * - batchInferenceJob
-   * - batchSegmentJob
-   * - campaign
-   * - dataDeletionJob
    * - dataset
-   * - datasetExportJob
    * - datasetGroup
    * - datasetImportJob
+   * - datasetExportJob
+   * - dataDeletionJob
+   * - solution
+   * - campaign
    * - eventTracker
+   * - batchInferenceJob
    * - filter
    * - recommender
-   * - solution
+   * - batchSegmentJob
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
