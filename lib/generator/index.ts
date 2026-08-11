@@ -363,7 +363,9 @@ export function createModule(module: Module): Promise<void> {
 
   for (const [name, action] of Object.entries(module.actionList!)) {
     // the docs sometimes report multiple access levels for a single action (e.g. "Tagging, Write")
-    for (const accessLevel of action.accessLevel.split(',').map((level) => level.trim())) {
+    for (const accessLevel of action.accessLevel
+      .split(',')
+      .map((level) => level.trim())) {
       if (!(accessLevel in accessLevelList)) {
         accessLevelList[accessLevel] = [];
       }
@@ -853,90 +855,106 @@ function getTable($: cheerio.Root, title: string) {
   return $(table[0]);
 }
 
+// Some services (e.g. S3) split their actions across multiple tables: the
+// main actions table plus a separate "permission-only actions" table. Both
+// tables share the same `<th>Actions</th>` header, so all of them need to be
+// collected and merged, not just the first match.
+function getTables($: cheerio.Root, title: string) {
+  return $('.table-container table')
+    .toArray()
+    .filter((element) => {
+      return $(element).find('th').first().text() == title;
+    })
+    .map((element) => $(element));
+}
+
 function addActions($: cheerio.Root, module: Module): Module {
   const actions: Actions = {};
-  const tableActions = getTable($, 'Actions');
+  const tablesActions = getTables($, 'Actions');
 
   let action: string;
-  tableActions.find('tr').each((_, element) => {
-    const tds = $(element).find('td');
-    const tdLength = tds.length;
-    let first = tds.first();
+  tablesActions.forEach((tableActions) => {
+    tableActions.find('tr').each((_, element) => {
+      const tds = $(element).find('td');
+      const tdLength = tds.length;
+      let first = tds.first();
 
-    if (tdLength == 5) {
-      // it's a new action
-      // column order: action, description, resource type, condition keys, access level
+      if (tdLength == 5) {
+        // it's a new action
+        // column order: action, description, resource type, condition keys, access level
 
-      action = first
-        .text()
-        .replace('[permission only]', '')
-        .replace(/-/g, '')
-        .trim();
-      actions[action] = {
-        url: validateUrl(first.find('a[href]').attr('href')?.trim()),
-        description: cleanDescription(first.next().text().trim()),
-        accessLevel: first.next().next().next().next().text().trim(),
-      };
-      first = first.next().next();
-    }
-
-    if (tdLength != 5 && tdLength != 2) {
-      const content = cleanDescription(tds.text());
-      if (content.length && !content.startsWith('SCENARIO:')) {
-        console.warn(
-          `skipping row due to unexpected number of fields: ${content}`.yellow,
-        );
+        action = first
+          .text()
+          .replace('[permission only]', '')
+          .replace(/-/g, '')
+          .trim();
+        actions[action] = {
+          url: validateUrl(first.find('a[href]').attr('href')?.trim()),
+          description: cleanDescription(first.next().text().trim()),
+          accessLevel: first.next().next().next().next().text().trim(),
+        };
+        first = first.next().next();
       }
-      return;
-    }
 
-    let resourceType = first.text().trim();
-    let required = false;
-    const conditionKeys = first.next().find('p');
-
-    const conditions: string[] = [];
-    if (conditionKeys.length) {
-      conditionKeys.each((_: unknown, conditionKey: string) => {
-        const condition = conditionKeyFixer(
-          module.servicePrefix!,
-          cleanDescription($(conditionKey).text()),
-        );
-
-        if (!module.conditions![condition]) {
-          console.log(
-            `[Skipping referenced condition, since it is not documented: ${condition}]`
-              .red,
+      if (tdLength != 5 && tdLength != 2) {
+        const content = cleanDescription(tds.text());
+        if (content.length && !content.startsWith('SCENARIO:')) {
+          console.warn(
+            `skipping row due to unexpected number of fields: ${content}`
+              .yellow,
           );
-          return;
+        }
+        return;
+      }
+
+      let resourceType = first.text().trim();
+      let required = false;
+      const conditionKeys = first.next().find('p');
+
+      const conditions: string[] = [];
+      if (conditionKeys.length) {
+        conditionKeys.each((_: unknown, conditionKey: string) => {
+          const condition = conditionKeyFixer(
+            module.servicePrefix!,
+            cleanDescription($(conditionKey).text()),
+          );
+
+          if (!module.conditions![condition]) {
+            console.log(
+              `[Skipping referenced condition, since it is not documented: ${condition}]`
+                .red,
+            );
+            return;
+          }
+
+          conditions.push(condition);
+          if (!('relatedActions' in module.conditions![condition])) {
+            module.conditions![condition].relatedActions = [];
+          }
+          module.conditions![condition].relatedActions?.push(action);
+        });
+      }
+
+      if (resourceType.length) {
+        if (typeof actions[action].resourceTypes == 'undefined') {
+          actions[action].resourceTypes = {};
         }
 
-        conditions.push(condition);
-        if (!('relatedActions' in module.conditions![condition])) {
-          module.conditions![condition].relatedActions = [];
+        if (resourceType.indexOf('*') >= 0) {
+          resourceType = resourceType.slice(0, -1);
+          required = true;
         }
-        module.conditions![condition].relatedActions?.push(action);
-      });
-    }
 
-    if (resourceType.length) {
-      if (typeof actions[action].resourceTypes == 'undefined') {
-        actions[action].resourceTypes = {};
+        actions[action].resourceTypes![resourceType] = {
+          required: required,
+        };
+        if (conditions.length) {
+          actions[action].resourceTypes![resourceType].conditions = conditions;
+        }
+      } else if (conditions.length) {
+        actions[action].conditions = conditions;
       }
-
-      if (resourceType.indexOf('*') >= 0) {
-        resourceType = resourceType.slice(0, -1);
-        required = true;
-      }
-
-      actions[action].resourceTypes![resourceType] = {
-        required: required,
-      };
-      if (conditions.length) {
-        actions[action].resourceTypes![resourceType].conditions = conditions;
-      }
-    } else if (conditions.length) {
-      actions[action].conditions = conditions;
-    }
+    });
   });
   module.actionList = actions;
   return module;
