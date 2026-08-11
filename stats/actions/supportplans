@@ -1,5 +1,13 @@
+supportplans:AcceptSupportAgreement;Write
+supportplans:CancelSupportAgreement;Write
+supportplans:CreateSupportAgreement;Write
 supportplans:CreateSupportPlanSchedule;Write
+supportplans:GetSupportAgreement;Read
 supportplans:GetSupportPlan;Read
 supportplans:GetSupportPlanUpdateStatus;Read
+supportplans:ListSupportAgreementRevisions;List
+supportplans:ListSupportAgreements;List
 supportplans:ListSupportPlanModifiers;List
+supportplans:RejectSupportAgreement;Write
 supportplans:StartSupportPlanUpdate;Write
+supportplans:UpdateSupportAgreement;Write

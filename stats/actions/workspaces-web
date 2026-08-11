@@ -61,8 +61,8 @@ workspaces-web:ListTrustStoreCertificates;Read
 workspaces-web:ListTrustStores;Read
 workspaces-web:ListUserAccessLoggingSettings;Read
 workspaces-web:ListUserSettings;Read
-workspaces-web:TagResource;Tagging
-workspaces-web:UntagResource;Tagging
+workspaces-web:TagResource;Tagging, Write
+workspaces-web:UntagResource;Tagging, Write
 workspaces-web:UpdateBrowserSettings;Write
 workspaces-web:UpdateDataProtectionSettings;Write
 workspaces-web:UpdateIdentityProvider;Write

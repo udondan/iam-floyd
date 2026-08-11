@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [backup-search](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackupsearch.html).
+ * Statement provider for service [backup-search](https://docs.aws.amazon.com/service-authorization/latest/reference/list_backupsearch.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class BackupSearch extends PolicyStatement {
   public servicePrefix = 'backup-search';
 
   /**
-   * Statement provider for service [backup-search](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackupsearch.html).
+   * Statement provider for service [backup-search](https://docs.aws.amazon.com/service-authorization/latest/reference/list_backupsearch.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -116,13 +116,6 @@ export class BackupSearch extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_StartSearchResultExportJob.html
    */
   public toStartSearchResultExportJob() {
@@ -143,11 +136,7 @@ export class BackupSearch extends PolicyStatement {
   /**
    * Grants permission to tag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_TagResource.html
    */
@@ -158,10 +147,7 @@ export class BackupSearch extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_UntagResource.html
    */
@@ -184,30 +170,15 @@ export class BackupSearch extends PolicyStatement {
     Write: [
       'StartSearchJob',
       'StartSearchResultExportJob',
-      'StopSearchJob'
+      'StopSearchJob',
+      'TagResource',
+      'UntagResource'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
     ]
   };
-
-  /**
-   * Adds a resource of type searchJob to the statement
-   *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-search.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onSearchJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:backup-search:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:search-job/${ resourceId }`);
-  }
 
   /**
    * Adds a resource of type searchExportJob to the statement
@@ -224,6 +195,23 @@ export class BackupSearch extends PolicyStatement {
    */
   public onSearchExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:backup-search:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:search-export-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type searchJob to the statement
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-search.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSearchJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:backup-search:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:search-job/${ resourceId }`);
   }
 
   /**
@@ -250,11 +238,20 @@ export class BackupSearch extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toGetSearchJob()
+   * - .toGetSearchResultExportJob()
+   * - .toListSearchJobBackups()
+   * - .toListSearchJobResults()
+   * - .toListTagsForResource()
    * - .toStartSearchJob()
+   * - .toStartSearchResultExportJob()
+   * - .toStopSearchJob()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * Applies to resource types:
-   * - searchJob
    * - searchExportJob
+   * - searchJob
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

@@ -81,8 +81,8 @@ a4b:SendAnnouncement;Write
 a4b:SendInvitation;Write
 a4b:StartDeviceSync;Write
 a4b:StartSmartHomeApplianceDiscovery;Read
-a4b:TagResource;Tagging
-a4b:UntagResource;Tagging
+a4b:TagResource;Tagging, Write
+a4b:UntagResource;Tagging, Write
 a4b:UpdateAddressBook;Write
 a4b:UpdateBusinessReportSchedule;Write
 a4b:UpdateConferenceProvider;Write

@@ -17,9 +17,9 @@ grafana:ListVersions;List
 grafana:ListWorkspaceServiceAccountTokens;Read
 grafana:ListWorkspaceServiceAccounts;Read
 grafana:ListWorkspaces;Read
-grafana:TagResource;Tagging
-grafana:UntagResource;Tagging
-grafana:UpdatePermissions;Permissions management
+grafana:TagResource;Tagging, Write
+grafana:UntagResource;Tagging, Write
+grafana:UpdatePermissions;Permissions management, Write
 grafana:UpdateWorkspace;Write
 grafana:UpdateWorkspaceAuthentication;Write
 grafana:UpdateWorkspaceConfiguration;Write

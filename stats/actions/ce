@@ -47,8 +47,8 @@ ce:ProvideAnomalyFeedback;Write
 ce:StartCommitmentPurchaseAnalysis;Write
 ce:StartCostAllocationTagBackfill;Write
 ce:StartSavingsPlansPurchaseRecommendationGeneration;Write
-ce:TagResource;Tagging
-ce:UntagResource;Tagging
+ce:TagResource;Tagging, Write
+ce:UntagResource;Tagging, Write
 ce:UpdateAnomalyMonitor;Write
 ce:UpdateAnomalySubscription;Write
 ce:UpdateConsoleActionSetEnforced;Write

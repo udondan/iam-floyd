@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement } from '../../shared';
 
 /**
- * Statement provider for service [opensearch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearch.html).
+ * Statement provider for service [opensearch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearch.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,23 +10,12 @@ export class Opensearch extends PolicyStatement {
   public servicePrefix = 'opensearch';
 
   /**
-   * Statement provider for service [opensearch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearch.html).
+   * Statement provider for service [opensearch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearch.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
   constructor(sid?: string) {
     super(sid);
-  }
-
-  /**
-   * Grants permission to access OpenSearch Application
-   *
-   * Access Level: Permissions management
-   *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/
-   */
-  public toApplicationAccessAll() {
-    return this.to('ApplicationAccessAll');
   }
 
   /**
@@ -128,16 +117,37 @@ export class Opensearch extends PolicyStatement {
     return this.to('SubmitAutoOptimizeJob');
   }
 
+  /**
+   * Grants permission to access OpenSearch Application
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/
+   */
+  public toApplicationAccessAll() {
+    return this.to('ApplicationAccessAll');
+  }
+
+  /**
+   * Grants permission to view the login page of an OpenSearch Application
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/
+   */
+  public toViewLoginPage() {
+    return this.to('ViewLoginPage');
+  }
+
   protected accessLevelList: AccessLevelList = {
-    'Permissions management': [
-      'ApplicationAccessAll'
-    ],
     Write: [
       'CancelAutoOptimizeJob',
       'CancelDirectQuery',
       'DeleteAutoOptimizeJob',
       'StartDirectQuery',
-      'SubmitAutoOptimizeJob'
+      'SubmitAutoOptimizeJob',
+      'ApplicationAccessAll',
+      'ViewLoginPage'
     ],
     Read: [
       'GetAutoOptimizeJob',
@@ -146,6 +156,10 @@ export class Opensearch extends PolicyStatement {
     ],
     List: [
       'ListAutoOptimizeJobs'
+    ],
+    'Permissions management': [
+      'ApplicationAccessAll',
+      'ViewLoginPage'
     ]
   };
 

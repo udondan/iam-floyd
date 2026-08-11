@@ -13,7 +13,7 @@ mediapackage:ListOriginEndpoints;Read
 mediapackage:ListTagsForResource;Read
 mediapackage:RotateChannelCredentials;Write
 mediapackage:RotateIngestEndpointCredentials;Write
-mediapackage:TagResource;Tagging
-mediapackage:UntagResource;Tagging
+mediapackage:TagResource;Tagging, Write
+mediapackage:UntagResource;Tagging, Write
 mediapackage:UpdateChannel;Write
 mediapackage:UpdateOriginEndpoint;Write

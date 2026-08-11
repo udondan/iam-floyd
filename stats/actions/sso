@@ -1,8 +1,8 @@
 sso:AddRegion;Write
 sso:AssociateDirectory;Write
 sso:AssociateProfile;Write
-sso:AttachCustomerManagedPolicyReferenceToPermissionSet;Permissions management
-sso:AttachManagedPolicyToPermissionSet;Permissions management
+sso:AttachCustomerManagedPolicyReferenceToPermissionSet;Permissions management, Write
+sso:AttachManagedPolicyToPermissionSet;Permissions management, Write
 sso:CreateAccountAssignment;Write
 sso:CreateApplication;Write
 sso:CreateApplicationAssignment;Write
@@ -28,7 +28,7 @@ sso:DeleteInstance;Write
 sso:DeleteInstanceAccessControlAttributeConfiguration;Write
 sso:DeleteManagedApplicationInstance;Write
 sso:DeletePermissionSet;Write
-sso:DeletePermissionsBoundaryFromPermissionSet;Permissions management
+sso:DeletePermissionsBoundaryFromPermissionSet;Permissions management, Write
 sso:DeleteProfile;Write
 sso:DeleteTrustedTokenIssuer;Write
 sso:DescribeAccountAssignmentCreationStatus;Read
@@ -43,8 +43,8 @@ sso:DescribePermissionSetProvisioningStatus;Read
 sso:DescribeRegion;Read
 sso:DescribeRegisteredRegions;Read
 sso:DescribeTrustedTokenIssuer;Read
-sso:DetachCustomerManagedPolicyReferenceFromPermissionSet;Permissions management
-sso:DetachManagedPolicyFromPermissionSet;Permissions management
+sso:DetachCustomerManagedPolicyReferenceFromPermissionSet;Permissions management, Write
+sso:DetachManagedPolicyFromPermissionSet;Permissions management, Write
 sso:DisassociateDirectory;Write
 sso:DisassociateProfile;Write
 sso:GetApplicationAccessScope;Read
@@ -100,14 +100,14 @@ sso:PutApplicationGrant;Write
 sso:PutApplicationSessionConfiguration;Write
 sso:PutInlinePolicyToPermissionSet;Write
 sso:PutMfaDeviceManagementForDirectory;Write
-sso:PutPermissionsBoundaryToPermissionSet;Permissions management
-sso:PutPermissionsPolicy;Permissions management
+sso:PutPermissionsBoundaryToPermissionSet;Permissions management, Write
+sso:PutPermissionsPolicy;Permissions management, Write
 sso:RemoveRegion;Write
 sso:SearchGroups;Read
 sso:SearchUsers;Read
 sso:StartSSO;Write
-sso:TagResource;Tagging
-sso:UntagResource;Tagging
+sso:TagResource;Tagging, Write
+sso:UntagResource;Tagging, Write
 sso:UpdateApplication;Write
 sso:UpdateApplicationInstanceActiveCertificate;Write
 sso:UpdateApplicationInstanceDisplayData;Write
@@ -119,7 +119,7 @@ sso:UpdateApplicationInstanceStatus;Write
 sso:UpdateInstance;Write
 sso:UpdateInstanceAccessControlAttributeConfiguration;Write
 sso:UpdateManagedApplicationInstanceStatus;Write
-sso:UpdatePermissionSet;Permissions management
+sso:UpdatePermissionSet;Permissions management, Write
 sso:UpdateProfile;Write
 sso:UpdateSSOConfiguration;Write
 sso:UpdateTrust;Write

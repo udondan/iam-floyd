@@ -68,8 +68,8 @@ ivs:StartViewerSessionRevocation;Write
 ivs:StopComposition;Write
 ivs:StopParticipantReplication;Write
 ivs:StopStream;Write
-ivs:TagResource;Tagging
-ivs:UntagResource;Tagging
+ivs:TagResource;Tagging, Write
+ivs:UntagResource;Tagging, Write
 ivs:UpdateAdConfiguration;Write
 ivs:UpdateChannel;Write
 ivs:UpdateIngestConfiguration;Write

@@ -10,5 +10,5 @@ application-autoscaling:ListTagsForResource;Read
 application-autoscaling:PutScalingPolicy;Write
 application-autoscaling:PutScheduledAction;Write
 application-autoscaling:RegisterScalableTarget;Write
-application-autoscaling:TagResource;Tagging
-application-autoscaling:UntagResource;Tagging
+application-autoscaling:TagResource;Tagging, Write
+application-autoscaling:UntagResource;Tagging, Write

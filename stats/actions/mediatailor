@@ -7,7 +7,7 @@ mediatailor:CreateProgram;Write
 mediatailor:CreateSourceLocation;Write
 mediatailor:CreateVodSource;Write
 mediatailor:DeleteChannel;Write
-mediatailor:DeleteChannelPolicy;Permissions management
+mediatailor:DeleteChannelPolicy;Permissions management, Write
 mediatailor:DeleteLiveSource;Write
 mediatailor:DeletePlaybackConfiguration;Write
 mediatailor:DeletePrefetchSchedule;Write
@@ -31,12 +31,12 @@ mediatailor:ListPrefetchSchedules;List
 mediatailor:ListSourceLocations;Read
 mediatailor:ListTagsForResource;Read
 mediatailor:ListVodSources;Read
-mediatailor:PutChannelPolicy;Permissions management
+mediatailor:PutChannelPolicy;Permissions management, Write
 mediatailor:PutPlaybackConfiguration;Write
 mediatailor:StartChannel;Write
 mediatailor:StopChannel;Write
-mediatailor:TagResource;Tagging
-mediatailor:UntagResource;Tagging
+mediatailor:TagResource;Tagging, Write
+mediatailor:UntagResource;Tagging, Write
 mediatailor:UpdateChannel;Write
 mediatailor:UpdateLiveSource;Write
 mediatailor:UpdateProgram;Write

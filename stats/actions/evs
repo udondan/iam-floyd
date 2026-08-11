@@ -17,6 +17,6 @@ evs:ListEnvironmentVlans;List
 evs:ListEnvironments;List
 evs:ListTagsForResource;Read
 evs:ListVmEntitlements;List
-evs:TagResource;Tagging
-evs:UntagResource;Tagging
+evs:TagResource;Tagging, Write
+evs:UntagResource;Tagging, Write
 evs:UpdateEnvironmentConnector;Write

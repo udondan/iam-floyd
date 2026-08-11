@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [directconnect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdirectconnect.html).
+ * Statement provider for service [directconnect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_directconnect.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Directconnect extends PolicyStatement {
   public servicePrefix = 'directconnect';
 
   /**
-   * Statement provider for service [directconnect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdirectconnect.html).
+   * Statement provider for service [directconnect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_directconnect.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -45,10 +45,6 @@ export class Directconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocateHostedConnection.html
    */
   public toAllocateHostedConnection() {
@@ -59,10 +55,6 @@ export class Directconnect extends PolicyStatement {
    * Grants permission to provision a private virtual interface to be owned by a different customer
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocatePrivateVirtualInterface.html
    */
@@ -75,10 +67,6 @@ export class Directconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocatePublicVirtualInterface.html
    */
   public toAllocatePublicVirtualInterface() {
@@ -89,10 +77,6 @@ export class Directconnect extends PolicyStatement {
    * Grants permission to provision a transit virtual interface to be owned by a different customer
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocateTransitVirtualInterface.html
    */
@@ -215,10 +199,6 @@ export class Directconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateConnection.html
    */
   public toCreateConnection() {
@@ -267,10 +247,6 @@ export class Directconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateInterconnect.html
    */
   public toCreateInterconnect() {
@@ -281,10 +257,6 @@ export class Directconnect extends PolicyStatement {
    * Grants permission to create a link aggregation group (LAG) with the specified number of bundled physical connections between the customer network and a specific AWS Direct Connect location
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateLag.html
    */
@@ -297,10 +269,6 @@ export class Directconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreatePrivateVirtualInterface.html
    */
   public toCreatePrivateVirtualInterface() {
@@ -312,10 +280,6 @@ export class Directconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreatePublicVirtualInterface.html
    */
   public toCreatePublicVirtualInterface() {
@@ -326,10 +290,6 @@ export class Directconnect extends PolicyStatement {
    * Grants permission to create a new transit virtual interface
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateTransitVirtualInterface.html
    */
@@ -646,6 +606,17 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the routes accepted and advertised over a virtual interface
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceRoutes.html
+   */
+  public toListVirtualInterfaceRoutes() {
+    return this.to('ListVirtualInterfaceRoutes');
+  }
+
+  /**
    * Grants permission to list the virtual interface failover test history
    *
    * Access Level: List
@@ -681,11 +652,7 @@ export class Directconnect extends PolicyStatement {
   /**
    * Grants permission to add the specified tags to the specified AWS Direct Connect resource. Each resource can have a maximum of 50 tags
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_TagResource.html
    */
@@ -696,10 +663,7 @@ export class Directconnect extends PolicyStatement {
   /**
    * Grants permission to remove one or more tags from the specified AWS Direct Connect resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UntagResource.html
    */
@@ -801,6 +765,8 @@ export class Directconnect extends PolicyStatement {
       'DisassociateMacSecKey',
       'StartBgpFailoverTest',
       'StopBgpFailoverTest',
+      'TagResource',
+      'UntagResource',
       'UpdateConnection',
       'UpdateDirectConnectGateway',
       'UpdateDirectConnectGatewayAssociation',
@@ -828,6 +794,7 @@ export class Directconnect extends PolicyStatement {
       'DescribeVirtualInterfaces'
     ],
     List: [
+      'ListVirtualInterfaceRoutes',
       'ListVirtualInterfaceTestHistory'
     ],
     Tagging: [
@@ -835,6 +802,22 @@ export class Directconnect extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type dx-gateway to the statement
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html
+   *
+   * @param directConnectGatewayId - Identifier for the directConnectGatewayId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDxGateway(directConnectGatewayId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:directconnect::${ account ?? this.defaultAccount }:dx-gateway/${ directConnectGatewayId }`);
+  }
 
   /**
    * Adds a resource of type dxcon to the statement
@@ -888,22 +871,6 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type dx-gateway to the statement
-   *
-   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html
-   *
-   * @param directConnectGatewayId - Identifier for the directConnectGatewayId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDxGateway(directConnectGatewayId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:directconnect::${ account ?? this.defaultAccount }:dx-gateway/${ directConnectGatewayId }`);
-  }
-
-  /**
    * Filters access by actions based on the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -935,11 +902,70 @@ export class Directconnect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toAcceptDirectConnectGatewayAssociationProposal()
+   * - .toAllocateConnectionOnInterconnect()
+   * - .toAllocateHostedConnection()
+   * - .toAllocatePrivateVirtualInterface()
+   * - .toAllocatePublicVirtualInterface()
+   * - .toAllocateTransitVirtualInterface()
+   * - .toAssociateConnectionWithLag()
+   * - .toAssociateHostedConnection()
+   * - .toAssociateMacSecKey()
+   * - .toAssociateVirtualInterface()
+   * - .toConfirmConnection()
+   * - .toConfirmPrivateVirtualInterface()
+   * - .toConfirmPublicVirtualInterface()
+   * - .toConfirmTransitVirtualInterface()
+   * - .toCreateBGPPeer()
+   * - .toCreateConnection()
+   * - .toCreateDirectConnectGatewayAssociation()
+   * - .toCreateDirectConnectGatewayAssociationProposal()
+   * - .toCreateInterconnect()
+   * - .toCreateLag()
+   * - .toCreatePrivateVirtualInterface()
+   * - .toCreatePublicVirtualInterface()
+   * - .toCreateTransitVirtualInterface()
+   * - .toDeleteBGPPeer()
+   * - .toDeleteConnection()
+   * - .toDeleteDirectConnectGateway()
+   * - .toDeleteDirectConnectGatewayAssociation()
+   * - .toDeleteInterconnect()
+   * - .toDeleteLag()
+   * - .toDeleteVirtualInterface()
+   * - .toDescribeConnectionLoa()
+   * - .toDescribeConnections()
+   * - .toDescribeConnectionsOnInterconnect()
+   * - .toDescribeDirectConnectGatewayAssociationProposals()
+   * - .toDescribeDirectConnectGatewayAssociations()
+   * - .toDescribeDirectConnectGatewayAttachments()
+   * - .toDescribeDirectConnectGateways()
+   * - .toDescribeHostedConnections()
+   * - .toDescribeInterconnectLoa()
+   * - .toDescribeInterconnects()
+   * - .toDescribeLags()
+   * - .toDescribeLoa()
+   * - .toDescribeRouterConfiguration()
+   * - .toDescribeTags()
+   * - .toDescribeVirtualInterfaces()
+   * - .toDisassociateConnectionFromLag()
+   * - .toDisassociateMacSecKey()
+   * - .toListVirtualInterfaceRoutes()
+   * - .toListVirtualInterfaceTestHistory()
+   * - .toStartBgpFailoverTest()
+   * - .toStopBgpFailoverTest()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateConnection()
+   * - .toUpdateDirectConnectGateway()
+   * - .toUpdateLag()
+   * - .toUpdateVirtualInterfaceAttributes()
+   *
    * Applies to resource types:
+   * - dx-gateway
    * - dxcon
    * - dxlag
    * - dxvif
-   * - dx-gateway
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

@@ -45,8 +45,8 @@ finspace:ListUsers;List
 finspace:LoadSampleDataSetGroupIntoEnvironment;Write
 finspace:MountKxDatabase;Write
 finspace:ResetUserPassword;Write
-finspace:TagResource;Tagging
-finspace:UntagResource;Tagging
+finspace:TagResource;Tagging, Write
+finspace:UntagResource;Tagging, Write
 finspace:UpdateEnvironment;Write
 finspace:UpdateKxClusterCodeConfiguration;Write
 finspace:UpdateKxClusterDatabases;Write

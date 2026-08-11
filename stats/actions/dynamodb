@@ -10,7 +10,7 @@ dynamodb:CreateTableReplica;Write
 dynamodb:DeleteBackup;Write
 dynamodb:DeleteGlobalTableWitness;Write
 dynamodb:DeleteItem;Write
-dynamodb:DeleteResourcePolicy;Permissions management
+dynamodb:DeleteResourcePolicy;Permissions management, Write
 dynamodb:DeleteTable;Write
 dynamodb:DeleteTableReplica;Write
 dynamodb:DescribeBackup;Read
@@ -53,7 +53,7 @@ dynamodb:PartiQLSelect;Read
 dynamodb:PartiQLUpdate;Write
 dynamodb:PurchaseReservedCapacityOfferings;Write
 dynamodb:PutItem;Write
-dynamodb:PutResourcePolicy;Permissions management
+dynamodb:PutResourcePolicy;Permissions management, Write
 dynamodb:Query;Read
 dynamodb:ReadDataForReplication;Read
 dynamodb:ReplicateSettings;Write
@@ -62,9 +62,9 @@ dynamodb:RestoreTableFromBackup;Write
 dynamodb:RestoreTableToPointInTime;Write
 dynamodb:Scan;Read
 dynamodb:StartAwsBackupJob;Write
-dynamodb:TagResource;Tagging
-dynamodb:UntagResource;Tagging
-dynamodb:UpdateAbacStatus;Permissions management
+dynamodb:TagResource;Tagging, Write
+dynamodb:UntagResource;Tagging, Write
+dynamodb:UpdateAbacStatus;Permissions management, Write
 dynamodb:UpdateContinuousBackups;Write
 dynamodb:UpdateContributorInsights;Write
 dynamodb:UpdateGlobalTable;Write

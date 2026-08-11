@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [lambda](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html).
+ * Statement provider for service [lambda](https://docs.aws.amazon.com/service-authorization/latest/reference/list_lambda.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Lambda extends PolicyStatement {
   public servicePrefix = 'lambda';
 
   /**
-   * Statement provider for service [lambda](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html).
+   * Statement provider for service [lambda](https://docs.aws.amazon.com/service-authorization/latest/reference/list_lambda.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -21,7 +21,7 @@ export class Lambda extends PolicyStatement {
   /**
    * Grants permission to add permissions to the resource-based policy of a version of an AWS Lambda layer
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_AddLayerVersionPermission.html
    */
@@ -32,11 +32,7 @@ export class Lambda extends PolicyStatement {
   /**
    * Grants permission to give an AWS service or another account permission to use an AWS Lambda function
    *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifPrincipal()
-   * - .ifFunctionUrlAuthType()
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html
    */
@@ -56,17 +52,6 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to connect to a Lambda MicroVM via HTTP (VPC Endpoint only)
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html
-   */
-  public toConnectMicrovm() {
-    return this.to('ConnectMicrovm');
-  }
-
-  /**
    * Grants permission to create an alias for a Lambda function version
    *
    * Access Level: Write
@@ -81,17 +66,6 @@ export class Lambda extends PolicyStatement {
    * Grants permission to create an AWS Lambda capacity provider
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifSecurityGroupIds()
-   * - .ifSubnetIds()
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   * - iam:PassRole
-   * - kms:DescribeKey
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateCapacityProvider.html
    */
@@ -120,9 +94,9 @@ export class Lambda extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifFunctionArn()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifFunctionArn()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateEventSourceMapping.html
    */
@@ -135,19 +109,6 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLayer()
-   * - .ifVpcIds()
-   * - .ifSubnetIds()
-   * - .ifSecurityGroupIds()
-   * - .ifCodeSigningConfigArn()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - lambda:PassCapacityProvider
-   *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html
    */
   public toCreateFunction() {
@@ -158,10 +119,6 @@ export class Lambda extends PolicyStatement {
    * Grants permission to create a function url configuration for a Lambda function
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifFunctionUrlAuthType()
-   * - .ifFunctionArn()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunctionUrlConfig.html
    */
@@ -189,10 +146,6 @@ export class Lambda extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - iam:PassRole
-   * - lambda:PassNetworkConnector
-   *
    * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_CreateMicrovmImage.html
    */
   public toCreateMicrovmImage() {
@@ -214,16 +167,6 @@ export class Lambda extends PolicyStatement {
    * Grants permission to create an AWS Lambda network connector
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifSecurityGroupIds()
-   * - .ifSubnetIds()
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateNetworkConnector.html
    */
@@ -268,9 +211,6 @@ export class Lambda extends PolicyStatement {
    * Grants permission to delete an AWS Lambda event source mapping
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifFunctionArn()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteEventSourceMapping.html
    */
@@ -326,10 +266,6 @@ export class Lambda extends PolicyStatement {
    * Grants permission to delete function url configuration for a Lambda function
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifFunctionUrlAuthType()
-   * - .ifFunctionArn()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionUrlConfig.html
    */
@@ -390,28 +326,6 @@ export class Lambda extends PolicyStatement {
    */
   public toDeleteProvisionedConcurrencyConfig() {
     return this.to('DeleteProvisionedConcurrencyConfig');
-  }
-
-  /**
-   * Grants permission to disable replication for a Lambda@Edge function
-   *
-   * Access Level: Permissions management
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html
-   */
-  public toDisableReplication() {
-    return this.to('DisableReplication');
-  }
-
-  /**
-   * Grants permission to enable replication for a Lambda@Edge function
-   *
-   * Access Level: Permissions management
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html
-   */
-  public toEnableReplication() {
-    return this.to('EnableReplication');
   }
 
   /**
@@ -495,9 +409,6 @@ export class Lambda extends PolicyStatement {
    * Grants permission to view details about an AWS Lambda event source mapping
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifFunctionArn()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetEventSourceMapping.html
    */
@@ -586,10 +497,6 @@ export class Lambda extends PolicyStatement {
    * Grants permission to read function url configuration for a Lambda function
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifFunctionUrlAuthType()
-   * - .ifFunctionArn()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionUrlConfig.html
    */
@@ -723,30 +630,10 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifEventSourceToken()
-   * - .ifInvokedViaFunctionUrl()
-   *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html
    */
   public toInvokeFunction() {
     return this.to('InvokeFunction');
-  }
-
-  /**
-   * Grants permission to invoke an AWS Lambda function through url
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifFunctionUrlAuthType()
-   * - .ifFunctionArn()
-   * - .ifEventSourceToken()
-   *
-   * https://docs.aws.amazon.com/lambda/latest/dg/API_InvokeFunctionUrl.html
-   */
-  public toInvokeFunctionUrl() {
-    return this.to('InvokeFunctionUrl');
   }
 
   /**
@@ -819,9 +706,6 @@ export class Lambda extends PolicyStatement {
    * Grants permission to read function url configurations for a function
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifFunctionUrlAuthType()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctionUrlConfigs.html
    */
@@ -995,28 +879,6 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to pass an AWS Lambda capacity provider to a service
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html
-   */
-  public toPassCapacityProvider() {
-    return this.to('PassCapacityProvider');
-  }
-
-  /**
-   * Grants permission to pass an AWS Lambda network connector to a service
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html
-   */
-  public toPassNetworkConnector() {
-    return this.to('PassNetworkConnector');
-  }
-
-  /**
    * Grants permission to create an AWS Lambda layer
    *
    * Access Level: Write
@@ -1042,9 +904,6 @@ export class Lambda extends PolicyStatement {
    * Grants permission to attach a code signing config to an AWS Lambda function
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifCodeSigningConfigArn()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionCodeSigningConfig.html
    */
@@ -1121,7 +980,7 @@ export class Lambda extends PolicyStatement {
   /**
    * Grants permission to remove a statement from the permissions policy for a version of an AWS Lambda layer
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_RemoveLayerVersionPermission.html
    */
@@ -1132,11 +991,7 @@ export class Lambda extends PolicyStatement {
   /**
    * Grants permission to revoke function-use permission from an AWS service or another account
    *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifPrincipal()
-   * - .ifFunctionUrlAuthType()
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_RemovePermission.html
    */
@@ -1159,10 +1014,6 @@ export class Lambda extends PolicyStatement {
    * Grants permission to run an AWS Lambda MicroVM from a MicroVM image
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - lambda:PassNetworkConnector
    *
    * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_RunMicrovm.html
    */
@@ -1228,11 +1079,7 @@ export class Lambda extends PolicyStatement {
   /**
    * Grants permission to add tags to an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector or MicroVM image resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_TagResources.html
    */
@@ -1254,10 +1101,7 @@ export class Lambda extends PolicyStatement {
   /**
    * Grants permission to remove tags from an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector or MicroVM image resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UntagResource.html
    */
@@ -1303,9 +1147,6 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifFunctionArn()
-   *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateEventSourceMapping.html
    */
   public toUpdateEventSourceMapping() {
@@ -1339,12 +1180,6 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLayer()
-   * - .ifVpcIds()
-   * - .ifSubnetIds()
-   * - .ifSecurityGroupIds()
-   *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionConfiguration.html
    */
   public toUpdateFunctionConfiguration() {
@@ -1367,10 +1202,6 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifFunctionUrlAuthType()
-   * - .ifFunctionArn()
-   *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionUrlConfig.html
    */
   public toUpdateFunctionUrlConfig() {
@@ -1381,10 +1212,6 @@ export class Lambda extends PolicyStatement {
    * Grants permission to update an AWS Lambda MicroVM image
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - lambda:PassNetworkConnector
    *
    * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_UpdateMicrovmImage.html
    */
@@ -1414,18 +1241,85 @@ export class Lambda extends PolicyStatement {
     return this.to('UpdateNetworkConnector');
   }
 
+  /**
+   * Grants permission to connect to a Lambda MicroVM via HTTP (VPC Endpoint only)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html
+   */
+  public toConnectMicrovm() {
+    return this.to('ConnectMicrovm');
+  }
+
+  /**
+   * Grants permission to disable replication for a Lambda@Edge function
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html
+   */
+  public toDisableReplication() {
+    return this.to('DisableReplication');
+  }
+
+  /**
+   * Grants permission to enable replication for a Lambda@Edge function
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html
+   */
+  public toEnableReplication() {
+    return this.to('EnableReplication');
+  }
+
+  /**
+   * Grants permission to invoke an AWS Lambda function through url
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_InvokeFunctionUrl.html
+   */
+  public toInvokeFunctionUrl() {
+    return this.to('InvokeFunctionUrl');
+  }
+
+  /**
+   * Grants permission to pass an AWS Lambda capacity provider to a service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html
+   */
+  public toPassCapacityProvider() {
+    return this.to('PassCapacityProvider');
+  }
+
+  /**
+   * Grants permission to pass an AWS Lambda network connector to a service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html
+   */
+  public toPassNetworkConnector() {
+    return this.to('PassNetworkConnector');
+  }
+
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AddLayerVersionPermission',
       'AddPermission',
-      'DisableReplication',
-      'EnableReplication',
       'RemoveLayerVersionPermission',
-      'RemovePermission'
+      'RemovePermission',
+      'DisableReplication',
+      'EnableReplication'
     ],
     Write: [
+      'AddLayerVersionPermission',
+      'AddPermission',
       'CheckpointDurableExecution',
-      'ConnectMicrovm',
       'CreateAlias',
       'CreateCapacityProvider',
       'CreateCodeSigningConfig',
@@ -1452,9 +1346,6 @@ export class Lambda extends PolicyStatement {
       'DeleteProvisionedConcurrencyConfig',
       'InvokeAsync',
       'InvokeFunction',
-      'InvokeFunctionUrl',
-      'PassCapacityProvider',
-      'PassNetworkConnector',
       'PublishLayerVersion',
       'PublishVersion',
       'PutFunctionCodeSigningConfig',
@@ -1464,6 +1355,8 @@ export class Lambda extends PolicyStatement {
       'PutFunctionScalingConfig',
       'PutProvisionedConcurrencyConfig',
       'PutRuntimeManagementConfig',
+      'RemoveLayerVersionPermission',
+      'RemovePermission',
       'ResumeMicrovm',
       'RunMicrovm',
       'SendDurableExecutionCallbackFailure',
@@ -1471,7 +1364,9 @@ export class Lambda extends PolicyStatement {
       'SendDurableExecutionCallbackSuccess',
       'StopDurableExecution',
       'SuspendMicrovm',
+      'TagResource',
       'TerminateMicrovm',
+      'UntagResource',
       'UpdateAlias',
       'UpdateCapacityProvider',
       'UpdateCodeSigningConfig',
@@ -1483,7 +1378,13 @@ export class Lambda extends PolicyStatement {
       'UpdateFunctionUrlConfig',
       'UpdateMicrovmImage',
       'UpdateMicrovmImageVersion',
-      'UpdateNetworkConnector'
+      'UpdateNetworkConnector',
+      'ConnectMicrovm',
+      'DisableReplication',
+      'EnableReplication',
+      'InvokeFunctionUrl',
+      'PassCapacityProvider',
+      'PassNetworkConnector'
     ],
     Read: [
       'GetAccountSettings',
@@ -1589,6 +1490,9 @@ export class Lambda extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDurableExecution(functionName: string, version: string, executionName: string, executionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:function:${ functionName }:${ version }/durable-execution/${ executionName }/${ executionId }`);
@@ -1694,23 +1598,6 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type networkConnector to the statement
-   *
-   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
-   *
-   * @param networkConnectorId - Identifier for the networkConnectorId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onNetworkConnector(networkConnectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:network-connector:${ networkConnectorId }`);
-  }
-
-  /**
    * Adds a resource of type microvmImage to the statement
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
@@ -1725,6 +1612,23 @@ export class Lambda extends PolicyStatement {
    */
   public onMicrovmImage(microvmImageName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:microvm-image:${ microvmImageName }`);
+  }
+
+  /**
+   * Adds a resource of type networkConnector to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param networkConnectorId - Identifier for the networkConnectorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onNetworkConnector(networkConnectorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:network-connector:${ networkConnectorId }`);
   }
 
   /**
@@ -1754,15 +1658,112 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toAddPermission()
+   * - .toCheckpointDurableExecution()
+   * - .toCreateAlias()
+   * - .toCreateCapacityProvider()
+   * - .toCreateFunction()
+   * - .toCreateFunctionUrlConfig()
+   * - .toCreateMicrovmAuthToken()
+   * - .toCreateMicrovmShellAuthToken()
+   * - .toCreateNetworkConnector()
+   * - .toDeleteAlias()
+   * - .toDeleteCapacityProvider()
+   * - .toDeleteCodeSigningConfig()
+   * - .toDeleteEventSourceMapping()
+   * - .toDeleteFunction()
+   * - .toDeleteFunctionCodeSigningConfig()
+   * - .toDeleteFunctionConcurrency()
+   * - .toDeleteFunctionEventInvokeConfig()
+   * - .toDeleteFunctionUrlConfig()
+   * - .toDeleteMicrovmImage()
+   * - .toDeleteMicrovmImageVersion()
+   * - .toDeleteNetworkConnector()
+   * - .toDeleteProvisionedConcurrencyConfig()
+   * - .toGetAlias()
+   * - .toGetCapacityProvider()
+   * - .toGetCodeSigningConfig()
+   * - .toGetDurableExecution()
+   * - .toGetDurableExecutionHistory()
+   * - .toGetDurableExecutionState()
+   * - .toGetEventSourceMapping()
+   * - .toGetFunction()
+   * - .toGetFunctionCodeSigningConfig()
+   * - .toGetFunctionConcurrency()
+   * - .toGetFunctionConfiguration()
+   * - .toGetFunctionEventInvokeConfig()
+   * - .toGetFunctionRecursionConfig()
+   * - .toGetFunctionScalingConfig()
+   * - .toGetFunctionUrlConfig()
+   * - .toGetMicrovm()
+   * - .toGetMicrovmImage()
+   * - .toGetMicrovmImageBuild()
+   * - .toGetMicrovmImageVersion()
+   * - .toGetNetworkConnector()
+   * - .toGetPolicy()
+   * - .toGetProvisionedConcurrencyConfig()
+   * - .toGetRuntimeManagementConfig()
+   * - .toInvokeAsync()
+   * - .toInvokeFunction()
+   * - .toListAliases()
+   * - .toListDurableExecutionsByFunction()
+   * - .toListFunctionEventInvokeConfigs()
+   * - .toListFunctionUrlConfigs()
+   * - .toListFunctionVersionsByCapacityProvider()
+   * - .toListFunctionsByCodeSigningConfig()
+   * - .toListManagedMicrovmImageVersions()
+   * - .toListMicrovmImageBuilds()
+   * - .toListMicrovmImageVersions()
+   * - .toListProvisionedConcurrencyConfigs()
+   * - .toListTags()
+   * - .toListVersionsByFunction()
+   * - .toPublishVersion()
+   * - .toPutFunctionCodeSigningConfig()
+   * - .toPutFunctionConcurrency()
+   * - .toPutFunctionEventInvokeConfig()
+   * - .toPutFunctionRecursionConfig()
+   * - .toPutFunctionScalingConfig()
+   * - .toPutProvisionedConcurrencyConfig()
+   * - .toPutRuntimeManagementConfig()
+   * - .toRemovePermission()
+   * - .toResumeMicrovm()
+   * - .toRunMicrovm()
+   * - .toSendDurableExecutionCallbackFailure()
+   * - .toSendDurableExecutionCallbackHeartbeat()
+   * - .toSendDurableExecutionCallbackSuccess()
+   * - .toStopDurableExecution()
+   * - .toSuspendMicrovm()
+   * - .toTagResource()
+   * - .toTerminateMicrovm()
+   * - .toUntagResource()
+   * - .toUpdateAlias()
+   * - .toUpdateCapacityProvider()
+   * - .toUpdateCodeSigningConfig()
+   * - .toUpdateEventSourceMapping()
+   * - .toUpdateFunctionCode()
+   * - .toUpdateFunctionCodeSigningConfig()
+   * - .toUpdateFunctionConfiguration()
+   * - .toUpdateFunctionEventInvokeConfig()
+   * - .toUpdateFunctionUrlConfig()
+   * - .toUpdateMicrovmImage()
+   * - .toUpdateMicrovmImageVersion()
+   * - .toUpdateNetworkConnector()
+   * - .toDisableReplication()
+   * - .toEnableReplication()
+   * - .toInvokeFunctionUrl()
+   * - .toPassCapacityProvider()
+   *
    * Applies to resource types:
    * - capacityProvider
    * - code signing config
+   * - durable execution
    * - eventSourceMapping
    * - function
    * - function alias
    * - function version
-   * - networkConnector
    * - microvmImage
+   * - networkConnector
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1838,9 +1839,9 @@ export class Lambda extends PolicyStatement {
    * - .toDeleteFunctionUrlConfig()
    * - .toGetEventSourceMapping()
    * - .toGetFunctionUrlConfig()
-   * - .toInvokeFunctionUrl()
    * - .toUpdateEventSourceMapping()
    * - .toUpdateFunctionUrlConfig()
+   * - .toInvokeFunctionUrl()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -1859,10 +1860,10 @@ export class Lambda extends PolicyStatement {
    * - .toCreateFunctionUrlConfig()
    * - .toDeleteFunctionUrlConfig()
    * - .toGetFunctionUrlConfig()
-   * - .toInvokeFunctionUrl()
    * - .toListFunctionUrlConfigs()
    * - .toRemovePermission()
    * - .toUpdateFunctionUrlConfig()
+   * - .toInvokeFunctionUrl()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

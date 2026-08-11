@@ -29,8 +29,8 @@ qapps:PredictQApp;Write
 qapps:PredictQAppFromProblemStatement;Write
 qapps:StartQAppSession;Write
 qapps:StopQAppSession;Write
-qapps:TagResource;Tagging
-qapps:UntagResource;Tagging
+qapps:TagResource;Tagging, Write
+qapps:UntagResource;Tagging, Write
 qapps:UpdateLibraryItem;Write
 qapps:UpdateLibraryItemMetadata;Write
 qapps:UpdateQApp;Write

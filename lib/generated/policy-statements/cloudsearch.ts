@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement } from '../../shared';
 
 /**
- * Statement provider for service [cloudsearch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudsearch.html).
+ * Statement provider for service [cloudsearch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudsearch.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Cloudsearch extends PolicyStatement {
   public servicePrefix = 'cloudsearch';
 
   /**
-   * Statement provider for service [cloudsearch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudsearch.html).
+   * Statement provider for service [cloudsearch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudsearch.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -21,7 +21,7 @@ export class Cloudsearch extends PolicyStatement {
   /**
    * Attaches resource tags to an Amazon CloudSearch domain
    *
-   * Access Level: Tagging
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_AddTags.html
    */
@@ -285,7 +285,7 @@ export class Cloudsearch extends PolicyStatement {
   /**
    * Removes the specified resource tags from an Amazon ES domain
    *
-   * Access Level: Tagging
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_RemoveTags.html
    */
@@ -329,7 +329,7 @@ export class Cloudsearch extends PolicyStatement {
   /**
    * Configures the access rules that control access to the domain's document and search endpoints
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_UpdateServiceAccessPolicies.html
    */
@@ -376,6 +376,7 @@ export class Cloudsearch extends PolicyStatement {
       'RemoveTags'
     ],
     Write: [
+      'AddTags',
       'BuildSuggesters',
       'CreateDomain',
       'DefineAnalysisScheme',
@@ -388,9 +389,11 @@ export class Cloudsearch extends PolicyStatement {
       'DeleteIndexField',
       'DeleteSuggester',
       'IndexDocuments',
+      'RemoveTags',
       'UpdateAvailabilityOptions',
       'UpdateDomainEndpointOptions',
       'UpdateScalingParameters',
+      'UpdateServiceAccessPolicies',
       'document'
     ],
     Read: [

@@ -1,10 +1,14 @@
 iotsitewise:access-policy
+iotsitewise:application
 iotsitewise:asset
 iotsitewise:asset-model
 iotsitewise:computation-model
 iotsitewise:dashboard
 iotsitewise:dataset
 iotsitewise:gateway
+iotsitewise:pipeline
 iotsitewise:portal
 iotsitewise:project
+iotsitewise:task
 iotsitewise:time-series
+iotsitewise:workspace

@@ -28,9 +28,9 @@ evidently:StartExperiment;Write
 evidently:StartLaunch;Write
 evidently:StopExperiment;Write
 evidently:StopLaunch;Write
-evidently:TagResource;Tagging
+evidently:TagResource;Tagging, Write
 evidently:TestSegmentPattern;Read
-evidently:UntagResource;Tagging
+evidently:UntagResource;Tagging, Write
 evidently:UpdateExperiment;Write
 evidently:UpdateFeature;Write
 evidently:UpdateLaunch;Write

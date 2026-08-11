@@ -29,7 +29,7 @@ inspector:ListTagsForResource;Read
 inspector:PreviewAgents;Read
 inspector:RegisterCrossAccountAccessRole;Write
 inspector:RemoveAttributesFromFindings;Write
-inspector:SetTagsForResource;Tagging
+inspector:SetTagsForResource;Tagging, Write
 inspector:StartAssessmentRun;Write
 inspector:StopAssessmentRun;Write
 inspector:SubscribeToEvent;Write

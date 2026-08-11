@@ -13,5 +13,5 @@ codeguru-reviewer:ListRepositoryAssociations;List
 codeguru-reviewer:ListTagsForResource;List
 codeguru-reviewer:ListThirdPartyRepositories;Read
 codeguru-reviewer:PutRecommendationFeedback;Write
-codeguru-reviewer:TagResource;Tagging
-codeguru-reviewer:UnTagResource;Tagging
+codeguru-reviewer:TagResource;Tagging, Write
+codeguru-reviewer:UnTagResource;Tagging, Write

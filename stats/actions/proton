@@ -88,8 +88,8 @@ proton:ListServices;List
 proton:ListTagsForResource;Read
 proton:NotifyResourceDeploymentStatusChange;Write
 proton:RejectEnvironmentAccountConnection;Write
-proton:TagResource;Tagging
-proton:UntagResource;Tagging
+proton:TagResource;Tagging, Write
+proton:UntagResource;Tagging, Write
 proton:UpdateAccountRoles;Write
 proton:UpdateAccountSettings;Write
 proton:UpdateComponent;Write

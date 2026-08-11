@@ -145,10 +145,10 @@ lightsail:StartRelationalDatabase;Write
 lightsail:StopGUISession;Write
 lightsail:StopInstance;Write
 lightsail:StopRelationalDatabase;Write
-lightsail:TagResource;Tagging
+lightsail:TagResource;Tagging, Write
 lightsail:TestAlarm;Write
 lightsail:UnpeerVpc;Write
-lightsail:UntagResource;Tagging
+lightsail:UntagResource;Tagging, Write
 lightsail:UpdateBucket;Write
 lightsail:UpdateBucketBundle;Write
 lightsail:UpdateContainerService;Write

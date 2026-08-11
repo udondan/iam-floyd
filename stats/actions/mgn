@@ -109,11 +109,11 @@ mgn:StartReplication;Write
 mgn:StartSnapshotGroupForMgn;Write
 mgn:StartTest;Write
 mgn:StopReplication;Write
-mgn:TagResource;Tagging
+mgn:TagResource;Tagging, Write
 mgn:TerminateTargetInstances;Write
 mgn:UnarchiveApplication;Write
 mgn:UnarchiveWave;Write
-mgn:UntagResource;Tagging
+mgn:UntagResource;Tagging, Write
 mgn:UpdateAccountSettings;Write
 mgn:UpdateAgentBacklogForMgn;Write
 mgn:UpdateAgentConversionInfoForMgn;Write

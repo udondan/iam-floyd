@@ -1,0 +1,4146 @@
+import { AccessLevelList } from '../../shared/access-level';
+import { PolicyStatement, Operator } from '../../shared';
+
+/**
+ * Statement provider for service [bedrock-agentcore](https://docs.aws.amazon.com/service-authorization/latest/reference/list_bedrock-agentcore.html).
+ *
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ */
+export class BedrockAgentcore extends PolicyStatement {
+  public servicePrefix = 'bedrock-agentcore';
+
+  /**
+   * Statement provider for service [bedrock-agentcore](https://docs.aws.amazon.com/service-authorization/latest/reference/list_bedrock-agentcore.html).
+   *
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   */
+  constructor(sid?: string) {
+    super(sid);
+  }
+
+  /**
+   * Grants permission to add examples to a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_AddDatasetExamples.html
+   */
+  public toAddDatasetExamples() {
+    return this.to('AddDatasetExamples');
+  }
+
+  /**
+   * Grants permission to create one or more memory records
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_BatchCreateMemoryRecords.html
+   */
+  public toBatchCreateMemoryRecords() {
+    return this.to('BatchCreateMemoryRecords');
+  }
+
+  /**
+   * Grants permission to delete one or more memory records
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_BatchDeleteMemoryRecords.html
+   */
+  public toBatchDeleteMemoryRecords() {
+    return this.to('BatchDeleteMemoryRecords');
+  }
+
+  /**
+   * Grants permission to update one or more memory records
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_BatchUpdateMemoryRecords.html
+   */
+  public toBatchUpdateMemoryRecords() {
+    return this.to('BatchUpdateMemoryRecords');
+  }
+
+  /**
+   * Grants permission to retrieve access token with OAuth2 for 3LO flow to access external resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CompleteResourceTokenAuth.html
+   */
+  public toCompleteResourceTokenAuth() {
+    return this.to('CompleteResourceTokenAuth');
+  }
+
+  /**
+   * Grants permission to connect to a browser automation stream
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ConnectBrowserAutomationStream.html
+   */
+  public toConnectBrowserAutomationStream() {
+    return this.to('ConnectBrowserAutomationStream');
+  }
+
+  /**
+   * Grants permission to connect to a browser live view stream
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ConnectBrowserLiveViewStream.html
+   */
+  public toConnectBrowserLiveViewStream() {
+    return this.to('ConnectBrowserLiveViewStream');
+  }
+
+  /**
+   * Grants permission to create an A/B test
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateABTest.html
+   */
+  public toCreateABTest() {
+    return this.to('CreateABTest');
+  }
+
+  /**
+   * Grants permission to create a new agent runtime
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRuntimeAuthorizerType()
+   * - .ifSecurityGroups()
+   * - .ifSubnets()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateAgentRuntime.html
+   */
+  public toCreateAgentRuntime() {
+    return this.to('CreateAgentRuntime');
+  }
+
+  /**
+   * Grants permission to create a new agent runtime endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateAgentRuntimeEndpoint.html
+   */
+  public toCreateAgentRuntimeEndpoint() {
+    return this.to('CreateAgentRuntimeEndpoint');
+  }
+
+  /**
+   * Grants permission to create a new API Key Credential Provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateApiKeyCredentialProvider.html
+   */
+  public toCreateApiKeyCredentialProvider() {
+    return this.to('CreateApiKeyCredentialProvider');
+  }
+
+  /**
+   * Grants permission to create a new custom browser
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifSecurityGroups()
+   * - .ifSubnets()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateBrowser.html
+   */
+  public toCreateBrowser() {
+    return this.to('CreateBrowser');
+  }
+
+  /**
+   * Grants permission to create a new browser profile
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateBrowserProfile.html
+   */
+  public toCreateBrowserProfile() {
+    return this.to('CreateBrowserProfile');
+  }
+
+  /**
+   * Grants permission to create a new custom code interpreter
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifSecurityGroups()
+   * - .ifSubnets()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateCodeInterpreter.html
+   */
+  public toCreateCodeInterpreter() {
+    return this.to('CreateCodeInterpreter');
+  }
+
+  /**
+   * Grants permission to create a new configuration bundle
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateConfigurationBundle.html
+   */
+  public toCreateConfigurationBundle() {
+    return this.to('CreateConfigurationBundle');
+  }
+
+  /**
+   * Grants permission to create a new dataset
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateDataset.html
+   */
+  public toCreateDataset() {
+    return this.to('CreateDataset');
+  }
+
+  /**
+   * Grants permission to create a new version of a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateDatasetVersion.html
+   */
+  public toCreateDatasetVersion() {
+    return this.to('CreateDatasetVersion');
+  }
+
+  /**
+   * Grants permission to create a new evaluator
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateEvaluator.html
+   */
+  public toCreateEvaluator() {
+    return this.to('CreateEvaluator');
+  }
+
+  /**
+   * Grants permission to create an Event
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateEvent.html
+   */
+  public toCreateEvent() {
+    return this.to('CreateEvent');
+  }
+
+  /**
+   * Grants permission to create a new gateway
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateGateway.html
+   */
+  public toCreateGateway() {
+    return this.to('CreateGateway');
+  }
+
+  /**
+   * Grants permission to create a new rule in an existing gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateGatewayRule.html
+   */
+  public toCreateGatewayRule() {
+    return this.to('CreateGatewayRule');
+  }
+
+  /**
+   * Grants permission to create a new target in an existing gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateGatewayTarget.html
+   */
+  public toCreateGatewayTarget() {
+    return this.to('CreateGatewayTarget');
+  }
+
+  /**
+   * Grants permission to create a new harness
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateHarness.html
+   */
+  public toCreateHarness() {
+    return this.to('CreateHarness');
+  }
+
+  /**
+   * Grants permission to create a new harness endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateHarnessEndpoint.html
+   */
+  public toCreateHarnessEndpoint() {
+    return this.to('CreateHarnessEndpoint');
+  }
+
+  /**
+   * Grants permission to create a Memory resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifKmsKeyArn()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateMemory.html
+   */
+  public toCreateMemory() {
+    return this.to('CreateMemory');
+  }
+
+  /**
+   * Grants permission to create a new Credential Provider to access external resources with OAuth2 protocol
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateOauth2CredentialProvider.html
+   */
+  public toCreateOauth2CredentialProvider() {
+    return this.to('CreateOauth2CredentialProvider');
+  }
+
+  /**
+   * Grants permission to create a new online evaluation configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateOnlineEvaluationConfig.html
+   */
+  public toCreateOnlineEvaluationConfig() {
+    return this.to('CreateOnlineEvaluationConfig');
+  }
+
+  /**
+   * Grants permission to create a new payment connector under a payment manager
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePaymentConnector.html
+   */
+  public toCreatePaymentConnector() {
+    return this.to('CreatePaymentConnector');
+  }
+
+  /**
+   * Grants permission to create a new Payment Credential Provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePaymentCredentialProvider.html
+   */
+  public toCreatePaymentCredentialProvider() {
+    return this.to('CreatePaymentCredentialProvider');
+  }
+
+  /**
+   * Grants permission to create a new payment instrument
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePaymentInstrument.html
+   */
+  public toCreatePaymentInstrument() {
+    return this.to('CreatePaymentInstrument');
+  }
+
+  /**
+   * Grants permission to create a new payment manager
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifDiscoveryUrl()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePaymentManager.html
+   */
+  public toCreatePaymentManager() {
+    return this.to('CreatePaymentManager');
+  }
+
+  /**
+   * Grants permission to create a new payment session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePaymentSession.html
+   */
+  public toCreatePaymentSession() {
+    return this.to('CreatePaymentSession');
+  }
+
+  /**
+   * Grants permission to create a new policy within a policy engine
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePolicy.html
+   */
+  public toCreatePolicy() {
+    return this.to('CreatePolicy');
+  }
+
+  /**
+   * Grants permission to create a new policy engine
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePolicyEngine.html
+   */
+  public toCreatePolicyEngine() {
+    return this.to('CreatePolicyEngine');
+  }
+
+  /**
+   * Grants permission to create a new registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateRegistry.html
+   */
+  public toCreateRegistry() {
+    return this.to('CreateRegistry');
+  }
+
+  /**
+   * Grants permission to create a new registry record
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateRegistryRecord.html
+   */
+  public toCreateRegistryRecord() {
+    return this.to('CreateRegistryRecord');
+  }
+
+  /**
+   * Grants permission to create a new Workload Identity
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateWorkloadIdentity.html
+   */
+  public toCreateWorkloadIdentity() {
+    return this.to('CreateWorkloadIdentity');
+  }
+
+  /**
+   * Grants permission to delete an A/B test
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteABTest.html
+   */
+  public toDeleteABTest() {
+    return this.to('DeleteABTest');
+  }
+
+  /**
+   * Grants permission to delete an agent runtime
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteAgentRuntime.html
+   */
+  public toDeleteAgentRuntime() {
+    return this.to('DeleteAgentRuntime');
+  }
+
+  /**
+   * Grants permission to delete an agent runtime endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteAgentRuntimeEndpoint.html
+   */
+  public toDeleteAgentRuntimeEndpoint() {
+    return this.to('DeleteAgentRuntimeEndpoint');
+  }
+
+  /**
+   * Grants permission to delete a registered API Key Credential Provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteApiKeyCredentialProvider.html
+   */
+  public toDeleteApiKeyCredentialProvider() {
+    return this.to('DeleteApiKeyCredentialProvider');
+  }
+
+  /**
+   * Grants permission to delete a batch evaluation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteBatchEvaluation.html
+   */
+  public toDeleteBatchEvaluation() {
+    return this.to('DeleteBatchEvaluation');
+  }
+
+  /**
+   * Grants permission to delete a custom browser
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteBrowser.html
+   */
+  public toDeleteBrowser() {
+    return this.to('DeleteBrowser');
+  }
+
+  /**
+   * Grants permission to delete a browser profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteBrowserProfile.html
+   */
+  public toDeleteBrowserProfile() {
+    return this.to('DeleteBrowserProfile');
+  }
+
+  /**
+   * Grants permission to delete a custom code interpreter
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteCodeInterpreter.html
+   */
+  public toDeleteCodeInterpreter() {
+    return this.to('DeleteCodeInterpreter');
+  }
+
+  /**
+   * Grants permission to delete a configuration bundle
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteConfigurationBundle.html
+   */
+  public toDeleteConfigurationBundle() {
+    return this.to('DeleteConfigurationBundle');
+  }
+
+  /**
+   * Grants permission to delete a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteDataset.html
+   */
+  public toDeleteDataset() {
+    return this.to('DeleteDataset');
+  }
+
+  /**
+   * Grants permission to delete examples from a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteDatasetExamples.html
+   */
+  public toDeleteDatasetExamples() {
+    return this.to('DeleteDatasetExamples');
+  }
+
+  /**
+   * Grants permission to delete an evaluator
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteEvaluator.html
+   */
+  public toDeleteEvaluator() {
+    return this.to('DeleteEvaluator');
+  }
+
+  /**
+   * Grants permission to delete an Event
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteEvent.html
+   */
+  public toDeleteEvent() {
+    return this.to('DeleteEvent');
+  }
+
+  /**
+   * Grants permission to delete an existing gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteGateway.html
+   */
+  public toDeleteGateway() {
+    return this.to('DeleteGateway');
+  }
+
+  /**
+   * Grants permission to delete an existing gateway rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteGatewayRule.html
+   */
+  public toDeleteGatewayRule() {
+    return this.to('DeleteGatewayRule');
+  }
+
+  /**
+   * Grants permission to delete an existing gateway target
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteGatewayTarget.html
+   */
+  public toDeleteGatewayTarget() {
+    return this.to('DeleteGatewayTarget');
+  }
+
+  /**
+   * Grants permission to delete a harness
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteHarness.html
+   */
+  public toDeleteHarness() {
+    return this.to('DeleteHarness');
+  }
+
+  /**
+   * Grants permission to delete a harness endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteHarnessEndpoint.html
+   */
+  public toDeleteHarnessEndpoint() {
+    return this.to('DeleteHarnessEndpoint');
+  }
+
+  /**
+   * Grants permission to delete a Memory resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteMemory.html
+   */
+  public toDeleteMemory() {
+    return this.to('DeleteMemory');
+  }
+
+  /**
+   * Grants permission to delete a Memory Record
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteMemoryRecord.html
+   */
+  public toDeleteMemoryRecord() {
+    return this.to('DeleteMemoryRecord');
+  }
+
+  /**
+   * Grants permission to delete a registered OAuth2 Credential Provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteOauth2CredentialProvider.html
+   */
+  public toDeleteOauth2CredentialProvider() {
+    return this.to('DeleteOauth2CredentialProvider');
+  }
+
+  /**
+   * Grants permission to delete an online evaluation configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteOnlineEvaluationConfig.html
+   */
+  public toDeleteOnlineEvaluationConfig() {
+    return this.to('DeleteOnlineEvaluationConfig');
+  }
+
+  /**
+   * Grants permission to delete a payment connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePaymentConnector.html
+   */
+  public toDeletePaymentConnector() {
+    return this.to('DeletePaymentConnector');
+  }
+
+  /**
+   * Grants permission to delete a registered Payment Credential Provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePaymentCredentialProvider.html
+   */
+  public toDeletePaymentCredentialProvider() {
+    return this.to('DeletePaymentCredentialProvider');
+  }
+
+  /**
+   * Grants permission to delete a payment instrument
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePaymentInstrument.html
+   */
+  public toDeletePaymentInstrument() {
+    return this.to('DeletePaymentInstrument');
+  }
+
+  /**
+   * Grants permission to delete a payment manager
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePaymentManager.html
+   */
+  public toDeletePaymentManager() {
+    return this.to('DeletePaymentManager');
+  }
+
+  /**
+   * Grants permission to delete a payment session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePaymentSession.html
+   */
+  public toDeletePaymentSession() {
+    return this.to('DeletePaymentSession');
+  }
+
+  /**
+   * Grants permission to delete a policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePolicy.html
+   */
+  public toDeletePolicy() {
+    return this.to('DeletePolicy');
+  }
+
+  /**
+   * Grants permission to delete a policy engine
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePolicyEngine.html
+   */
+  public toDeletePolicyEngine() {
+    return this.to('DeletePolicyEngine');
+  }
+
+  /**
+   * Grants permission to delete a recommendation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteRecommendation.html
+   */
+  public toDeleteRecommendation() {
+    return this.to('DeleteRecommendation');
+  }
+
+  /**
+   * Grants permission to delete an existing registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteRegistry.html
+   */
+  public toDeleteRegistry() {
+    return this.to('DeleteRegistry');
+  }
+
+  /**
+   * Grants permission to delete an existing registry record
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteRegistryRecord.html
+   */
+  public toDeleteRegistryRecord() {
+    return this.to('DeleteRegistryRecord');
+  }
+
+  /**
+   * Grants permission to delete the resource-based policy for a Bedrock resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to delete a registered Workload Identity
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteWorkloadIdentity.html
+   */
+  public toDeleteWorkloadIdentity() {
+    return this.to('DeleteWorkloadIdentity');
+  }
+
+  /**
+   * Grants permission to run an evaluation using an evaluator
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_Evaluate.html
+   */
+  public toEvaluate() {
+    return this.to('Evaluate');
+  }
+
+  /**
+   * Grants permission to get details of an A/B test
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetABTest.html
+   */
+  public toGetABTest() {
+    return this.to('GetABTest');
+  }
+
+  /**
+   * Grants permission to retrieve an agent card for A2A
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetAgentCard.html
+   */
+  public toGetAgentCard() {
+    return this.to('GetAgentCard');
+  }
+
+  /**
+   * Grants permission to get details of an agent runtime
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetAgentRuntime.html
+   */
+  public toGetAgentRuntime() {
+    return this.to('GetAgentRuntime');
+  }
+
+  /**
+   * Grants permission to get details of an agent runtime endpoint
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetAgentRuntimeEndpoint.html
+   */
+  public toGetAgentRuntimeEndpoint() {
+    return this.to('GetAgentRuntimeEndpoint');
+  }
+
+  /**
+   * Grants permission to fetch a registered API Key Credential Provider by its name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetApiKeyCredentialProvider.html
+   */
+  public toGetApiKeyCredentialProvider() {
+    return this.to('GetApiKeyCredentialProvider');
+  }
+
+  /**
+   * Grants permission to get details of a batch evaluation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBatchEvaluation.html
+   */
+  public toGetBatchEvaluation() {
+    return this.to('GetBatchEvaluation');
+  }
+
+  /**
+   * Grants permission to get details of a browser
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetBrowser.html
+   */
+  public toGetBrowser() {
+    return this.to('GetBrowser');
+  }
+
+  /**
+   * Grants permission to get details of a browser profile
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetBrowserProfile.html
+   */
+  public toGetBrowserProfile() {
+    return this.to('GetBrowserProfile');
+  }
+
+  /**
+   * Grants permission to get details of a browser session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html
+   */
+  public toGetBrowserSession() {
+    return this.to('GetBrowserSession');
+  }
+
+  /**
+   * Grants permission to get details of a code interpreter
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetCodeInterpreter.html
+   */
+  public toGetCodeInterpreter() {
+    return this.to('GetCodeInterpreter');
+  }
+
+  /**
+   * Grants permission to get details of a code interpreter session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html
+   */
+  public toGetCodeInterpreterSession() {
+    return this.to('GetCodeInterpreterSession');
+  }
+
+  /**
+   * Grants permission to get details of a configuration bundle
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetConfigurationBundle.html
+   */
+  public toGetConfigurationBundle() {
+    return this.to('GetConfigurationBundle');
+  }
+
+  /**
+   * Grants permission to get a specific version of a configuration bundle
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetConfigurationBundleVersion.html
+   */
+  public toGetConfigurationBundleVersion() {
+    return this.to('GetConfigurationBundleVersion');
+  }
+
+  /**
+   * Grants permission to get details of a dataset
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetDataset.html
+   */
+  public toGetDataset() {
+    return this.to('GetDataset');
+  }
+
+  /**
+   * Grants permission to get details of an evaluator
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetEvaluator.html
+   */
+  public toGetEvaluator() {
+    return this.to('GetEvaluator');
+  }
+
+  /**
+   * Grants permission to fetch an Event
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetEvent.html
+   */
+  public toGetEvent() {
+    return this.to('GetEvent');
+  }
+
+  /**
+   * Grants permission to retrieve an existing gateway
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetGateway.html
+   */
+  public toGetGateway() {
+    return this.to('GetGateway');
+  }
+
+  /**
+   * Grants permission to retrieve an existing gateway rule
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetGatewayRule.html
+   */
+  public toGetGatewayRule() {
+    return this.to('GetGatewayRule');
+  }
+
+  /**
+   * Grants permission to retrieve an existing gateway target
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetGatewayTarget.html
+   */
+  public toGetGatewayTarget() {
+    return this.to('GetGatewayTarget');
+  }
+
+  /**
+   * Grants permission to get details of a harness
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetHarness.html
+   */
+  public toGetHarness() {
+    return this.to('GetHarness');
+  }
+
+  /**
+   * Grants permission to get details of a harness endpoint
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetHarnessEndpoint.html
+   */
+  public toGetHarnessEndpoint() {
+    return this.to('GetHarnessEndpoint');
+  }
+
+  /**
+   * Grants permission to fetch details for a Memory resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetMemory.html
+   */
+  public toGetMemory() {
+    return this.to('GetMemory');
+  }
+
+  /**
+   * Grants permission to fetch a Memory Record
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetMemoryRecord.html
+   */
+  public toGetMemoryRecord() {
+    return this.to('GetMemoryRecord');
+  }
+
+  /**
+   * Grants permission to fetch a registered OAuth2 Credential Provider by its name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetOauth2CredentialProvider.html
+   */
+  public toGetOauth2CredentialProvider() {
+    return this.to('GetOauth2CredentialProvider');
+  }
+
+  /**
+   * Grants permission to get details of an online evaluation configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetOnlineEvaluationConfig.html
+   */
+  public toGetOnlineEvaluationConfig() {
+    return this.to('GetOnlineEvaluationConfig');
+  }
+
+  /**
+   * Grants permission to retrieve details of a payment connector
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentConnector.html
+   */
+  public toGetPaymentConnector() {
+    return this.to('GetPaymentConnector');
+  }
+
+  /**
+   * Grants permission to fetch a registered Payment Credential Provider by its name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentCredentialProvider.html
+   */
+  public toGetPaymentCredentialProvider() {
+    return this.to('GetPaymentCredentialProvider');
+  }
+
+  /**
+   * Grants permission to retrieve details of a payment instrument
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentInstrument.html
+   */
+  public toGetPaymentInstrument() {
+    return this.to('GetPaymentInstrument');
+  }
+
+  /**
+   * Grants permission to retrieve the balance of a payment instrument
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentInstrumentBalance.html
+   */
+  public toGetPaymentInstrumentBalance() {
+    return this.to('GetPaymentInstrumentBalance');
+  }
+
+  /**
+   * Grants permission to retrieve details of a payment manager
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentManager.html
+   */
+  public toGetPaymentManager() {
+    return this.to('GetPaymentManager');
+  }
+
+  /**
+   * Grants permission to retrieve details of a payment session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentSession.html
+   */
+  public toGetPaymentSession() {
+    return this.to('GetPaymentSession');
+  }
+
+  /**
+   * Grants permission to retrieve a policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicy.html
+   */
+  public toGetPolicy() {
+    return this.to('GetPolicy');
+  }
+
+  /**
+   * Grants permission to retrieve a policy engine
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyEngine.html
+   */
+  public toGetPolicyEngine() {
+    return this.to('GetPolicyEngine');
+  }
+
+  /**
+   * Grants permission to retrieve a summary of a policy engine
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyEngineSummary.html
+   */
+  public toGetPolicyEngineSummary() {
+    return this.to('GetPolicyEngineSummary');
+  }
+
+  /**
+   * Grants permission to retrieve status and results of a policy generation request
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyGeneration.html
+   */
+  public toGetPolicyGeneration() {
+    return this.to('GetPolicyGeneration');
+  }
+
+  /**
+   * Grants permission to retrieve a summary of a policy generation request
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyGenerationSummary.html
+   */
+  public toGetPolicyGenerationSummary() {
+    return this.to('GetPolicyGenerationSummary');
+  }
+
+  /**
+   * Grants permission to retrieve a summary of a policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicySummary.html
+   */
+  public toGetPolicySummary() {
+    return this.to('GetPolicySummary');
+  }
+
+  /**
+   * Grants permission to get details of a recommendation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetRecommendation.html
+   */
+  public toGetRecommendation() {
+    return this.to('GetRecommendation');
+  }
+
+  /**
+   * Grants permission to retrieve an existing registry
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetRegistry.html
+   */
+  public toGetRegistry() {
+    return this.to('GetRegistry');
+  }
+
+  /**
+   * Grants permission to retrieve an existing registry record
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetRegistryRecord.html
+   */
+  public toGetRegistryRecord() {
+    return this.to('GetRegistryRecord');
+  }
+
+  /**
+   * Grants permission to retrieve an API Key associated with an Api Key Credential Provider
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetResourceApiKey.html
+   */
+  public toGetResourceApiKey() {
+    return this.to('GetResourceApiKey');
+  }
+
+  /**
+   * Grants permission to retrieve access token with OAuth2 2LO or 3LO flow to access external resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetResourceOauth2Token.html
+   */
+  public toGetResourceOauth2Token() {
+    return this.to('GetResourceOauth2Token');
+  }
+
+  /**
+   * Grants permission to retrieve a payment authentication token associated with a Payment Credential Provider
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetResourcePaymentToken.html
+   */
+  public toGetResourcePaymentToken() {
+    return this.to('GetResourcePaymentToken');
+  }
+
+  /**
+   * Grants permission to retrieve the resource-based policy for a Bedrock resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetResourcePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to fetch the current configuration of the TokenVault, including encryption settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetTokenVault.html
+   */
+  public toGetTokenVault() {
+    return this.to('GetTokenVault');
+  }
+
+  /**
+   * Grants permission to retrieve an Workload access token for agentic workloads not acting on behalf of a user
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetWorkloadAccessToken.html
+   */
+  public toGetWorkloadAccessToken() {
+    return this.to('GetWorkloadAccessToken');
+  }
+
+  /**
+   * Grants permission to retrieve an Workload access token for agentic workloads acting on behalf of user with JWT token
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetWorkloadAccessTokenForJWT.html
+   */
+  public toGetWorkloadAccessTokenForJWT() {
+    return this.to('GetWorkloadAccessTokenForJWT');
+  }
+
+  /**
+   * Grants permission to retrieve an Workload access token for agentic workloads acting on behalf of user with User Id
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetWorkloadAccessTokenForUserId.html
+   */
+  public toGetWorkloadAccessTokenForUserId() {
+    return this.to('GetWorkloadAccessTokenForUserId');
+  }
+
+  /**
+   * Grants permission to fetch details for a specific Workload identity, including its name and allowed OAuth2 return URLs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetWorkloadIdentity.html
+   */
+  public toGetWorkloadIdentity() {
+    return this.to('GetWorkloadIdentity');
+  }
+
+  /**
+   * Grants permission to invoke an agent runtime endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntime.html
+   */
+  public toInvokeAgentRuntime() {
+    return this.to('InvokeAgentRuntime');
+  }
+
+  /**
+   * Grants permission to invoke commands on an agent runtime endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntimeCommand.html
+   */
+  public toInvokeAgentRuntimeCommand() {
+    return this.to('InvokeAgentRuntimeCommand');
+  }
+
+  /**
+   * Grants permission to invoke a command shell on an agent runtime endpoint over a web socket stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntimeCommandShell.html
+   */
+  public toInvokeAgentRuntimeCommandShell() {
+    return this.to('InvokeAgentRuntimeCommandShell');
+  }
+
+  /**
+   * Grants permission to invoke an agent runtime endpoint with X-Amzn-Bedrock-AgentCore-Runtime-User-Id header
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntime.html
+   */
+  public toInvokeAgentRuntimeForUser() {
+    return this.to('InvokeAgentRuntimeForUser');
+  }
+
+  /**
+   * Grants permission to invoke an agent runtime endpoint with WebSocket stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntimeWithWebSocketStream.html
+   */
+  public toInvokeAgentRuntimeWithWebSocketStream() {
+    return this.to('InvokeAgentRuntimeWithWebSocketStream');
+  }
+
+  /**
+   * Grants permission to invoke an agent runtime endpoint with WebSocket stream and with X-Amzn-Bedrock-AgentCore-Runtime-User-Id header
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntimeWithWebSocketStream.html
+   */
+  public toInvokeAgentRuntimeWithWebSocketStreamForUser() {
+    return this.to('InvokeAgentRuntimeWithWebSocketStreamForUser');
+  }
+
+  /**
+   * Grants permission to invoke a code interpreter session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeCodeInterpreter.html
+   */
+  public toInvokeCodeInterpreter() {
+    return this.to('InvokeCodeInterpreter');
+  }
+
+  /**
+   * Grants permission to invoke a harness
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeHarness.html
+   */
+  public toInvokeHarness() {
+    return this.to('InvokeHarness');
+  }
+
+  /**
+   * Grants permission to invoke an MCP operation against an existing registry
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toInvokeRegistryMcp() {
+    return this.to('InvokeRegistryMcp');
+  }
+
+  /**
+   * Grants permission to list A/B tests
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListABTests.html
+   */
+  public toListABTests() {
+    return this.to('ListABTests');
+  }
+
+  /**
+   * Grants permission to list Actors
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListActors.html
+   */
+  public toListActors() {
+    return this.to('ListActors');
+  }
+
+  /**
+   * Grants permission to list agent runtime endpoints
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListAgentRuntimeEndpoints.html
+   */
+  public toListAgentRuntimeEndpoints() {
+    return this.to('ListAgentRuntimeEndpoints');
+  }
+
+  /**
+   * Grants permission to list agent runtime versions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListAgentRuntimeVersions.html
+   */
+  public toListAgentRuntimeVersions() {
+    return this.to('ListAgentRuntimeVersions');
+  }
+
+  /**
+   * Grants permission to list agent runtimes
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListAgentRuntimes.html
+   */
+  public toListAgentRuntimes() {
+    return this.to('ListAgentRuntimes');
+  }
+
+  /**
+   * Grants permission to list all API Key Credential Providers in the Token Vault
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListApiKeyCredentialProviders.html
+   */
+  public toListApiKeyCredentialProviders() {
+    return this.to('ListApiKeyCredentialProviders');
+  }
+
+  /**
+   * Grants permission to list batch evaluations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListBatchEvaluations.html
+   */
+  public toListBatchEvaluations() {
+    return this.to('ListBatchEvaluations');
+  }
+
+  /**
+   * Grants permission to list browser profiles
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListBrowserProfiles.html
+   */
+  public toListBrowserProfiles() {
+    return this.to('ListBrowserProfiles');
+  }
+
+  /**
+   * Grants permission to list browser sessions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListBrowserSessions.html
+   */
+  public toListBrowserSessions() {
+    return this.to('ListBrowserSessions');
+  }
+
+  /**
+   * Grants permission to list browsers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListBrowsers.html
+   */
+  public toListBrowsers() {
+    return this.to('ListBrowsers');
+  }
+
+  /**
+   * Grants permission to list code interpreter sessions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListCodeInterpreterSessions.html
+   */
+  public toListCodeInterpreterSessions() {
+    return this.to('ListCodeInterpreterSessions');
+  }
+
+  /**
+   * Grants permission to list code interpreters
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListCodeInterpreters.html
+   */
+  public toListCodeInterpreters() {
+    return this.to('ListCodeInterpreters');
+  }
+
+  /**
+   * Grants permission to list versions of a configuration bundle
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListConfigurationBundleVersions.html
+   */
+  public toListConfigurationBundleVersions() {
+    return this.to('ListConfigurationBundleVersions');
+  }
+
+  /**
+   * Grants permission to list configuration bundles
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListConfigurationBundles.html
+   */
+  public toListConfigurationBundles() {
+    return this.to('ListConfigurationBundles');
+  }
+
+  /**
+   * Grants permission to list examples in a dataset
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListDatasetExamples.html
+   */
+  public toListDatasetExamples() {
+    return this.to('ListDatasetExamples');
+  }
+
+  /**
+   * Grants permission to list versions of a dataset
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListDatasetVersions.html
+   */
+  public toListDatasetVersions() {
+    return this.to('ListDatasetVersions');
+  }
+
+  /**
+   * Grants permission to list datasets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListDatasets.html
+   */
+  public toListDatasets() {
+    return this.to('ListDatasets');
+  }
+
+  /**
+   * Grants permission to list evaluators
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListEvaluators.html
+   */
+  public toListEvaluators() {
+    return this.to('ListEvaluators');
+  }
+
+  /**
+   * Grants permission to list events
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListEvents.html
+   */
+  public toListEvents() {
+    return this.to('ListEvents');
+  }
+
+  /**
+   * Grants permission to list existing gateway rules
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListGatewayRules.html
+   */
+  public toListGatewayRules() {
+    return this.to('ListGatewayRules');
+  }
+
+  /**
+   * Grants permission to list existing gateway targets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListGatewayTargets.html
+   */
+  public toListGatewayTargets() {
+    return this.to('ListGatewayTargets');
+  }
+
+  /**
+   * Grants permission to list existing gateways
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListGateways.html
+   */
+  public toListGateways() {
+    return this.to('ListGateways');
+  }
+
+  /**
+   * Grants permission to list harness endpoints
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListHarnessEndpoints.html
+   */
+  public toListHarnessEndpoints() {
+    return this.to('ListHarnessEndpoints');
+  }
+
+  /**
+   * Grants permission to list harness versions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListHarnessVersions.html
+   */
+  public toListHarnessVersions() {
+    return this.to('ListHarnessVersions');
+  }
+
+  /**
+   * Grants permission to list harnesses
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListHarnesses.html
+   */
+  public toListHarnesses() {
+    return this.to('ListHarnesses');
+  }
+
+  /**
+   * Grants permission to list memory resources
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListMemories.html
+   */
+  public toListMemories() {
+    return this.to('ListMemories');
+  }
+
+  /**
+   * Grants permission to list extraction jobs for this memory
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListMemoryExtractionJobs.html
+   */
+  public toListMemoryExtractionJobs() {
+    return this.to('ListMemoryExtractionJobs');
+  }
+
+  /**
+   * Grants permission to list memory records
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListMemoryRecords.html
+   */
+  public toListMemoryRecords() {
+    return this.to('ListMemoryRecords');
+  }
+
+  /**
+   * Grants permission to list all OAuth2 Credential Providers in the Token Vault
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListOauth2CredentialProviders.html
+   */
+  public toListOauth2CredentialProviders() {
+    return this.to('ListOauth2CredentialProviders');
+  }
+
+  /**
+   * Grants permission to list online evaluation configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListOnlineEvaluationConfigs.html
+   */
+  public toListOnlineEvaluationConfigs() {
+    return this.to('ListOnlineEvaluationConfigs');
+  }
+
+  /**
+   * Grants permission to list payment connectors under a payment manager
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPaymentConnectors.html
+   */
+  public toListPaymentConnectors() {
+    return this.to('ListPaymentConnectors');
+  }
+
+  /**
+   * Grants permission to list all Payment Credential Providers in the Token Vault
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPaymentCredentialProviders.html
+   */
+  public toListPaymentCredentialProviders() {
+    return this.to('ListPaymentCredentialProviders');
+  }
+
+  /**
+   * Grants permission to list payment instruments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPaymentInstruments.html
+   */
+  public toListPaymentInstruments() {
+    return this.to('ListPaymentInstruments');
+  }
+
+  /**
+   * Grants permission to list payment managers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPaymentManagers.html
+   */
+  public toListPaymentManagers() {
+    return this.to('ListPaymentManagers');
+  }
+
+  /**
+   * Grants permission to list payment sessions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPaymentSessions.html
+   */
+  public toListPaymentSessions() {
+    return this.to('ListPaymentSessions');
+  }
+
+  /**
+   * Grants permission to list policies within a policy engine
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicies.html
+   */
+  public toListPolicies() {
+    return this.to('ListPolicies');
+  }
+
+  /**
+   * Grants permission to list policy engine summaries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyEngineSummaries.html
+   */
+  public toListPolicyEngineSummaries() {
+    return this.to('ListPolicyEngineSummaries');
+  }
+
+  /**
+   * Grants permission to list policy engines
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyEngines.html
+   */
+  public toListPolicyEngines() {
+    return this.to('ListPolicyEngines');
+  }
+
+  /**
+   * Grants permission to list generated policy assets from a generation request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationAssets.html
+   */
+  public toListPolicyGenerationAssets() {
+    return this.to('ListPolicyGenerationAssets');
+  }
+
+  /**
+   * Grants permission to list policy generation summaries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationSummaries.html
+   */
+  public toListPolicyGenerationSummaries() {
+    return this.to('ListPolicyGenerationSummaries');
+  }
+
+  /**
+   * Grants permission to list policy generation requests
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerations.html
+   */
+  public toListPolicyGenerations() {
+    return this.to('ListPolicyGenerations');
+  }
+
+  /**
+   * Grants permission to list policy summaries within a policy engine
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicySummaries.html
+   */
+  public toListPolicySummaries() {
+    return this.to('ListPolicySummaries');
+  }
+
+  /**
+   * Grants permission to list recommendations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListRecommendations.html
+   */
+  public toListRecommendations() {
+    return this.to('ListRecommendations');
+  }
+
+  /**
+   * Grants permission to list existing registries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListRegistries.html
+   */
+  public toListRegistries() {
+    return this.to('ListRegistries');
+  }
+
+  /**
+   * Grants permission to list existing registry records in a registry
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListRegistryRecords.html
+   */
+  public toListRegistryRecords() {
+    return this.to('ListRegistryRecords');
+  }
+
+  /**
+   * Grants permission to list sessions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListSessions.html
+   */
+  public toListSessions() {
+    return this.to('ListSessions');
+  }
+
+  /**
+   * Grants permission to list tags for a Bedrock-AgentCore resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list all Workload Identities in the caller's AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListWorkloadIdentities.html
+   */
+  public toListWorkloadIdentities() {
+    return this.to('ListWorkloadIdentities');
+  }
+
+  /**
+   * Grants permission to process a payment transaction
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ProcessPayment.html
+   */
+  public toProcessPayment() {
+    return this.to('ProcessPayment');
+  }
+
+  /**
+   * Grants permission to create or update the resource-based policy for a Bedrock resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
+   * Grants permission to retrieve memory records through sematic query
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_RetrieveMemoryRecords.html
+   */
+  public toRetrieveMemoryRecords() {
+    return this.to('RetrieveMemoryRecords');
+  }
+
+  /**
+   * Grants permission to save a browser session profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SaveBrowserSessionProfile.html
+   */
+  public toSaveBrowserSessionProfile() {
+    return this.to('SaveBrowserSessionProfile');
+  }
+
+  /**
+   * Grants permission to search for registry records
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SearchRegistryRecords.html
+   */
+  public toSearchRegistryRecords() {
+    return this.to('SearchRegistryRecords');
+  }
+
+  /**
+   * Grants permission to associate a Customer Managed Key (CMK) or a Service Managed Key with a specific TokenVault
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_SetTokenVaultCMK.html
+   */
+  public toSetTokenVaultCMK() {
+    return this.to('SetTokenVaultCMK');
+  }
+
+  /**
+   * Grants permission to start a batch evaluation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBatchEvaluation.html
+   */
+  public toStartBatchEvaluation() {
+    return this.to('StartBatchEvaluation');
+  }
+
+  /**
+   * Grants permission to start a new browser session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html
+   */
+  public toStartBrowserSession() {
+    return this.to('StartBrowserSession');
+  }
+
+  /**
+   * Grants permission to start a new code interpreter session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html
+   */
+  public toStartCodeInterpreterSession() {
+    return this.to('StartCodeInterpreterSession');
+  }
+
+  /**
+   * Grants permission to start memory extraction job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartMemoryExtractionJob.html
+   */
+  public toStartMemoryExtractionJob() {
+    return this.to('StartMemoryExtractionJob');
+  }
+
+  /**
+   * Grants permission to start an AI-powered policy generation request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_StartPolicyGeneration.html
+   */
+  public toStartPolicyGeneration() {
+    return this.to('StartPolicyGeneration');
+  }
+
+  /**
+   * Grants permission to start a recommendation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartRecommendation.html
+   */
+  public toStartRecommendation() {
+    return this.to('StartRecommendation');
+  }
+
+  /**
+   * Grants permission to stop a batch evaluation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBatchEvaluation.html
+   */
+  public toStopBatchEvaluation() {
+    return this.to('StopBatchEvaluation');
+  }
+
+  /**
+   * Grants permission to stop a browser session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html
+   */
+  public toStopBrowserSession() {
+    return this.to('StopBrowserSession');
+  }
+
+  /**
+   * Grants permission to stop a code interpreter session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopCodeInterpreterSession.html
+   */
+  public toStopCodeInterpreterSession() {
+    return this.to('StopCodeInterpreterSession');
+  }
+
+  /**
+   * Grants permission to stop a runtime session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopRuntimeSession.html
+   */
+  public toStopRuntimeSession() {
+    return this.to('StopRuntimeSession');
+  }
+
+  /**
+   * Grants permission to submit a registry record for approval
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_SubmitRegistryRecordForApproval.html
+   */
+  public toSubmitRegistryRecordForApproval() {
+    return this.to('SubmitRegistryRecordForApproval');
+  }
+
+  /**
+   * Grants permission to Tag a Bedrock-AgentCore resource
+   *
+   * Access Level: Tagging, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to Untag a Bedrock-AgentCore resource
+   *
+   * Access Level: Tagging, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update an A/B test
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateABTest.html
+   */
+  public toUpdateABTest() {
+    return this.to('UpdateABTest');
+  }
+
+  /**
+   * Grants permission to update an agent runtime
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateAgentRuntime.html
+   */
+  public toUpdateAgentRuntime() {
+    return this.to('UpdateAgentRuntime');
+  }
+
+  /**
+   * Grants permission to update an agent runtime endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateAgentRuntimeEndpoint.html
+   */
+  public toUpdateAgentRuntimeEndpoint() {
+    return this.to('UpdateAgentRuntimeEndpoint');
+  }
+
+  /**
+   * Grants permission to update an existing API Key Credential Provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateApiKeyCredentialProvider.html
+   */
+  public toUpdateApiKeyCredentialProvider() {
+    return this.to('UpdateApiKeyCredentialProvider');
+  }
+
+  /**
+   * Grants permission to update the status of browser session stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateBrowserStream.html
+   */
+  public toUpdateBrowserStream() {
+    return this.to('UpdateBrowserStream');
+  }
+
+  /**
+   * Grants permission to update a configuration bundle
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateConfigurationBundle.html
+   */
+  public toUpdateConfigurationBundle() {
+    return this.to('UpdateConfigurationBundle');
+  }
+
+  /**
+   * Grants permission to update a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateDataset.html
+   */
+  public toUpdateDataset() {
+    return this.to('UpdateDataset');
+  }
+
+  /**
+   * Grants permission to update examples in a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateDatasetExamples.html
+   */
+  public toUpdateDatasetExamples() {
+    return this.to('UpdateDatasetExamples');
+  }
+
+  /**
+   * Grants permission to update an evaluator
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateEvaluator.html
+   */
+  public toUpdateEvaluator() {
+    return this.to('UpdateEvaluator');
+  }
+
+  /**
+   * Grants permission to update an existing gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGateway.html
+   */
+  public toUpdateGateway() {
+    return this.to('UpdateGateway');
+  }
+
+  /**
+   * Grants permission to update an existing gateway rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGatewayRule.html
+   */
+  public toUpdateGatewayRule() {
+    return this.to('UpdateGatewayRule');
+  }
+
+  /**
+   * Grants permission to update an existing gateway target
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGatewayTarget.html
+   */
+  public toUpdateGatewayTarget() {
+    return this.to('UpdateGatewayTarget');
+  }
+
+  /**
+   * Grants permission to update a harness
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateHarness.html
+   */
+  public toUpdateHarness() {
+    return this.to('UpdateHarness');
+  }
+
+  /**
+   * Grants permission to update harness endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateHarnessEndpoint.html
+   */
+  public toUpdateHarnessEndpoint() {
+    return this.to('UpdateHarnessEndpoint');
+  }
+
+  /**
+   * Grants permission to update a Memory resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateMemory.html
+   */
+  public toUpdateMemory() {
+    return this.to('UpdateMemory');
+  }
+
+  /**
+   * Grants permission to update an existing OAuth2 Credential Provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateOauth2CredentialProvider.html
+   */
+  public toUpdateOauth2CredentialProvider() {
+    return this.to('UpdateOauth2CredentialProvider');
+  }
+
+  /**
+   * Grants permission to update an online evaluation configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateOnlineEvaluationConfig.html
+   */
+  public toUpdateOnlineEvaluationConfig() {
+    return this.to('UpdateOnlineEvaluationConfig');
+  }
+
+  /**
+   * Grants permission to update an existing payment connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePaymentConnector.html
+   */
+  public toUpdatePaymentConnector() {
+    return this.to('UpdatePaymentConnector');
+  }
+
+  /**
+   * Grants permission to update an existing Payment Credential Provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePaymentCredentialProvider.html
+   */
+  public toUpdatePaymentCredentialProvider() {
+    return this.to('UpdatePaymentCredentialProvider');
+  }
+
+  /**
+   * Grants permission to update an existing payment manager
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePaymentManager.html
+   */
+  public toUpdatePaymentManager() {
+    return this.to('UpdatePaymentManager');
+  }
+
+  /**
+   * Grants permission to update an existing policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePolicy.html
+   */
+  public toUpdatePolicy() {
+    return this.to('UpdatePolicy');
+  }
+
+  /**
+   * Grants permission to update a policy engine
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePolicyEngine.html
+   */
+  public toUpdatePolicyEngine() {
+    return this.to('UpdatePolicyEngine');
+  }
+
+  /**
+   * Grants permission to update an existing registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateRegistry.html
+   */
+  public toUpdateRegistry() {
+    return this.to('UpdateRegistry');
+  }
+
+  /**
+   * Grants permission to update an existing registry record
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateRegistryRecord.html
+   */
+  public toUpdateRegistryRecord() {
+    return this.to('UpdateRegistryRecord');
+  }
+
+  /**
+   * Grants permission to update the status of a registry record
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateRegistryRecordStatus.html
+   */
+  public toUpdateRegistryRecordStatus() {
+    return this.to('UpdateRegistryRecordStatus');
+  }
+
+  /**
+   * Grants permission to update the metadata of an existing Workload Identity
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateWorkloadIdentity.html
+   */
+  public toUpdateWorkloadIdentity() {
+    return this.to('UpdateWorkloadIdentity');
+  }
+
+  /**
+   * Grants permission to configure vended telemetry for a resource
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
+   * Grants permission to evaluate Cedar policies for authorization requests
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toAuthorizeAction() {
+    return this.to('AuthorizeAction');
+  }
+
+  /**
+   * Grants permission to associate an AWS WAF Web ACL with an AgentCore Gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   */
+  public toGatewayAssociateWebACL() {
+    return this.to('GatewayAssociateWebACL');
+  }
+
+  /**
+   * Grants permission to remove the AWS WAF Web ACL association from an AgentCore Gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   */
+  public toGatewayDisassociateWebACL() {
+    return this.to('GatewayDisassociateWebACL');
+  }
+
+  /**
+   * Grants permission to retrieve the AWS WAF Web ACL ARN currently associated with an AgentCore Gateway
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   */
+  public toGatewayGetWebACLForResource() {
+    return this.to('GatewayGetWebACLForResource');
+  }
+
+  /**
+   * Grants permission to list AgentCore Gateways associated with an AWS WAF Web ACL
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   */
+  public toGatewayListResourcesForWebACL() {
+    return this.to('GatewayListResourcesForWebACL');
+  }
+
+  /**
+   * Grants permission to invoke a gateway
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toInvokeGateway() {
+    return this.to('InvokeGateway');
+  }
+
+  /**
+   * Grants permission to invoke a web search target
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toInvokeWebSearch() {
+    return this.to('InvokeWebSearch');
+  }
+
+  /**
+   * Grants permission to create or modify wildcard policies that apply to gateway resources
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toManageAdminPolicy() {
+    return this.to('ManageAdminPolicy');
+  }
+
+  /**
+   * Grants permission to create or modify policies that apply to specific gateway resources
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toManageResourceScopedPolicy() {
+    return this.to('ManageResourceScopedPolicy');
+  }
+
+  /**
+   * Grants permission to perform partial evaluation of Cedar policies to authorize a caller to list tools they are allowed to call
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toPartiallyAuthorizeActions() {
+    return this.to('PartiallyAuthorizeActions');
+  }
+
+  /**
+   * Grants permission to enable search on gateways
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toSynchronizeGatewayTargets() {
+    return this.to('SynchronizeGatewayTargets');
+  }
+
+  protected accessLevelList: AccessLevelList = {
+    Write: [
+      'AddDatasetExamples',
+      'BatchCreateMemoryRecords',
+      'BatchDeleteMemoryRecords',
+      'BatchUpdateMemoryRecords',
+      'CreateABTest',
+      'CreateAgentRuntime',
+      'CreateAgentRuntimeEndpoint',
+      'CreateApiKeyCredentialProvider',
+      'CreateBrowser',
+      'CreateBrowserProfile',
+      'CreateCodeInterpreter',
+      'CreateConfigurationBundle',
+      'CreateDataset',
+      'CreateDatasetVersion',
+      'CreateEvaluator',
+      'CreateEvent',
+      'CreateGateway',
+      'CreateGatewayRule',
+      'CreateGatewayTarget',
+      'CreateHarness',
+      'CreateHarnessEndpoint',
+      'CreateMemory',
+      'CreateOauth2CredentialProvider',
+      'CreateOnlineEvaluationConfig',
+      'CreatePaymentConnector',
+      'CreatePaymentCredentialProvider',
+      'CreatePaymentInstrument',
+      'CreatePaymentManager',
+      'CreatePaymentSession',
+      'CreatePolicy',
+      'CreatePolicyEngine',
+      'CreateRegistry',
+      'CreateRegistryRecord',
+      'CreateWorkloadIdentity',
+      'DeleteABTest',
+      'DeleteAgentRuntime',
+      'DeleteAgentRuntimeEndpoint',
+      'DeleteApiKeyCredentialProvider',
+      'DeleteBatchEvaluation',
+      'DeleteBrowser',
+      'DeleteBrowserProfile',
+      'DeleteCodeInterpreter',
+      'DeleteConfigurationBundle',
+      'DeleteDataset',
+      'DeleteDatasetExamples',
+      'DeleteEvaluator',
+      'DeleteEvent',
+      'DeleteGateway',
+      'DeleteGatewayRule',
+      'DeleteGatewayTarget',
+      'DeleteHarness',
+      'DeleteHarnessEndpoint',
+      'DeleteMemory',
+      'DeleteMemoryRecord',
+      'DeleteOauth2CredentialProvider',
+      'DeleteOnlineEvaluationConfig',
+      'DeletePaymentConnector',
+      'DeletePaymentCredentialProvider',
+      'DeletePaymentInstrument',
+      'DeletePaymentManager',
+      'DeletePaymentSession',
+      'DeletePolicy',
+      'DeletePolicyEngine',
+      'DeleteRecommendation',
+      'DeleteRegistry',
+      'DeleteRegistryRecord',
+      'DeleteResourcePolicy',
+      'DeleteWorkloadIdentity',
+      'Evaluate',
+      'GetWorkloadAccessToken',
+      'GetWorkloadAccessTokenForJWT',
+      'GetWorkloadAccessTokenForUserId',
+      'InvokeAgentRuntime',
+      'InvokeAgentRuntimeCommand',
+      'InvokeAgentRuntimeCommandShell',
+      'InvokeAgentRuntimeForUser',
+      'InvokeAgentRuntimeWithWebSocketStream',
+      'InvokeAgentRuntimeWithWebSocketStreamForUser',
+      'InvokeCodeInterpreter',
+      'InvokeHarness',
+      'ProcessPayment',
+      'PutResourcePolicy',
+      'SaveBrowserSessionProfile',
+      'SetTokenVaultCMK',
+      'StartBatchEvaluation',
+      'StartBrowserSession',
+      'StartCodeInterpreterSession',
+      'StartMemoryExtractionJob',
+      'StartPolicyGeneration',
+      'StartRecommendation',
+      'StopBatchEvaluation',
+      'StopBrowserSession',
+      'StopCodeInterpreterSession',
+      'StopRuntimeSession',
+      'SubmitRegistryRecordForApproval',
+      'TagResource',
+      'UntagResource',
+      'UpdateABTest',
+      'UpdateAgentRuntime',
+      'UpdateAgentRuntimeEndpoint',
+      'UpdateApiKeyCredentialProvider',
+      'UpdateBrowserStream',
+      'UpdateConfigurationBundle',
+      'UpdateDataset',
+      'UpdateDatasetExamples',
+      'UpdateEvaluator',
+      'UpdateGateway',
+      'UpdateGatewayRule',
+      'UpdateGatewayTarget',
+      'UpdateHarness',
+      'UpdateHarnessEndpoint',
+      'UpdateMemory',
+      'UpdateOauth2CredentialProvider',
+      'UpdateOnlineEvaluationConfig',
+      'UpdatePaymentConnector',
+      'UpdatePaymentCredentialProvider',
+      'UpdatePaymentManager',
+      'UpdatePolicy',
+      'UpdatePolicyEngine',
+      'UpdateRegistry',
+      'UpdateRegistryRecord',
+      'UpdateRegistryRecordStatus',
+      'UpdateWorkloadIdentity',
+      'AllowVendedLogDeliveryForResource',
+      'AuthorizeAction',
+      'GatewayAssociateWebACL',
+      'GatewayDisassociateWebACL',
+      'InvokeGateway',
+      'InvokeWebSearch',
+      'ManageAdminPolicy',
+      'ManageResourceScopedPolicy',
+      'PartiallyAuthorizeActions',
+      'SynchronizeGatewayTargets'
+    ],
+    Read: [
+      'CompleteResourceTokenAuth',
+      'ConnectBrowserAutomationStream',
+      'ConnectBrowserLiveViewStream',
+      'GetABTest',
+      'GetAgentCard',
+      'GetAgentRuntime',
+      'GetAgentRuntimeEndpoint',
+      'GetApiKeyCredentialProvider',
+      'GetBatchEvaluation',
+      'GetBrowser',
+      'GetBrowserProfile',
+      'GetBrowserSession',
+      'GetCodeInterpreter',
+      'GetCodeInterpreterSession',
+      'GetConfigurationBundle',
+      'GetConfigurationBundleVersion',
+      'GetDataset',
+      'GetEvaluator',
+      'GetEvent',
+      'GetGateway',
+      'GetGatewayRule',
+      'GetGatewayTarget',
+      'GetHarness',
+      'GetHarnessEndpoint',
+      'GetMemory',
+      'GetMemoryRecord',
+      'GetOauth2CredentialProvider',
+      'GetOnlineEvaluationConfig',
+      'GetPaymentConnector',
+      'GetPaymentCredentialProvider',
+      'GetPaymentInstrument',
+      'GetPaymentInstrumentBalance',
+      'GetPaymentManager',
+      'GetPaymentSession',
+      'GetPolicy',
+      'GetPolicyEngine',
+      'GetPolicyEngineSummary',
+      'GetPolicyGeneration',
+      'GetPolicyGenerationSummary',
+      'GetPolicySummary',
+      'GetRecommendation',
+      'GetRegistry',
+      'GetRegistryRecord',
+      'GetResourceApiKey',
+      'GetResourceOauth2Token',
+      'GetResourcePaymentToken',
+      'GetResourcePolicy',
+      'GetTokenVault',
+      'GetWorkloadIdentity',
+      'InvokeRegistryMcp',
+      'ListApiKeyCredentialProviders',
+      'ListOauth2CredentialProviders',
+      'ListWorkloadIdentities',
+      'SearchRegistryRecords',
+      'GatewayGetWebACLForResource'
+    ],
+    List: [
+      'ListABTests',
+      'ListActors',
+      'ListAgentRuntimeEndpoints',
+      'ListAgentRuntimeVersions',
+      'ListAgentRuntimes',
+      'ListBatchEvaluations',
+      'ListBrowserProfiles',
+      'ListBrowserSessions',
+      'ListBrowsers',
+      'ListCodeInterpreterSessions',
+      'ListCodeInterpreters',
+      'ListConfigurationBundleVersions',
+      'ListConfigurationBundles',
+      'ListDatasetExamples',
+      'ListDatasetVersions',
+      'ListDatasets',
+      'ListEvaluators',
+      'ListEvents',
+      'ListGatewayRules',
+      'ListGatewayTargets',
+      'ListGateways',
+      'ListHarnessEndpoints',
+      'ListHarnessVersions',
+      'ListHarnesses',
+      'ListMemories',
+      'ListMemoryExtractionJobs',
+      'ListMemoryRecords',
+      'ListOnlineEvaluationConfigs',
+      'ListPaymentConnectors',
+      'ListPaymentCredentialProviders',
+      'ListPaymentInstruments',
+      'ListPaymentManagers',
+      'ListPaymentSessions',
+      'ListPolicies',
+      'ListPolicyEngineSummaries',
+      'ListPolicyEngines',
+      'ListPolicyGenerationAssets',
+      'ListPolicyGenerationSummaries',
+      'ListPolicyGenerations',
+      'ListPolicySummaries',
+      'ListRecommendations',
+      'ListRegistries',
+      'ListRegistryRecords',
+      'ListSessions',
+      'ListTagsForResource',
+      'RetrieveMemoryRecords',
+      'GatewayListResourcesForWebACL'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource',
+      'AuthorizeAction',
+      'InvokeGateway',
+      'InvokeWebSearch',
+      'ManageAdminPolicy',
+      'ManageResourceScopedPolicy',
+      'PartiallyAuthorizeActions',
+      'SynchronizeGatewayTargets'
+    ]
+  };
+
+  /**
+   * Adds a resource of type ab-test to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/abTest.html
+   *
+   * @param aBTestId - Identifier for the aBTestId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAbTest(aBTestId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ab-test/${ aBTestId }`);
+  }
+
+  /**
+   * Adds a resource of type apikeycredentialprovider to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/apikeycredentialprovider.html
+   *
+   * @param tokenVaultId - Identifier for the tokenVaultId.
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onApikeycredentialprovider(tokenVaultId: string, name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:token-vault/${ tokenVaultId }/apikeycredentialprovider/${ name }`);
+  }
+
+  /**
+   * Adds a resource of type batch-evaluate to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/batchEvaluation.html
+   *
+   * @param batchEvaluationId - Identifier for the batchEvaluationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBatchEvaluate(batchEvaluationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:batch-evaluate/${ batchEvaluationId }`);
+  }
+
+  /**
+   * Adds a resource of type browser to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/browser.html
+   *
+   * @param browserId - Identifier for the browserId.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onBrowser(browserId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:aws:browser/${ browserId }`);
+  }
+
+  /**
+   * Adds a resource of type browser-custom to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/browser.html
+   *
+   * @param browserId - Identifier for the browserId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBrowserCustom(browserId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:browser-custom/${ browserId }`);
+  }
+
+  /**
+   * Adds a resource of type browser-profile to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/browserProfile.html
+   *
+   * @param browserProfileId - Identifier for the browserProfileId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBrowserProfile(browserProfileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:browser-profile/${ browserProfileId }`);
+  }
+
+  /**
+   * Adds a resource of type code-interpreter to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/codeInterpreter.html
+   *
+   * @param codeInterpreterId - Identifier for the codeInterpreterId.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onCodeInterpreter(codeInterpreterId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:aws:code-interpreter/${ codeInterpreterId }`);
+  }
+
+  /**
+   * Adds a resource of type code-interpreter-custom to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/codeInterpreter.html
+   *
+   * @param codeInterpreterId - Identifier for the codeInterpreterId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCodeInterpreterCustom(codeInterpreterId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:code-interpreter-custom/${ codeInterpreterId }`);
+  }
+
+  /**
+   * Adds a resource of type configuration-bundle to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/configurationBundle.html
+   *
+   * @param configurationBundleId - Identifier for the configurationBundleId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConfigurationBundle(configurationBundleId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configuration-bundle/${ configurationBundleId }`);
+  }
+
+  /**
+   * Adds a resource of type dataset to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/dataset.html
+   *
+   * @param datasetId - Identifier for the datasetId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataset(datasetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ datasetId }`);
+  }
+
+  /**
+   * Adds a resource of type evaluator to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/evaluator.html
+   *
+   * @param evaluatorId - Identifier for the evaluatorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEvaluator(evaluatorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:evaluator/${ evaluatorId }`);
+  }
+
+  /**
+   * Adds a resource of type gateway to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/gateway.html
+   *
+   * @param gatewayId - Identifier for the gatewayId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }`);
+  }
+
+  /**
+   * Adds a resource of type harness to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/harness.html
+   *
+   * @param harnessId - Identifier for the harnessId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onHarness(harnessId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:harness/${ harnessId }`);
+  }
+
+  /**
+   * Adds a resource of type harness-endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/harness-endpoint.html
+   *
+   * @param harnessId - Identifier for the harnessId.
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onHarnessEndpoint(harnessId: string, name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:harness/${ harnessId }/harness-endpoint/${ name }`);
+  }
+
+  /**
+   * Adds a resource of type memory to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/memory.html
+   *
+   * @param memoryId - Identifier for the memoryId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMemory(memoryId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:memory/${ memoryId }`);
+  }
+
+  /**
+   * Adds a resource of type oauth2credentialprovider to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/oauth2credentialprovider.html
+   *
+   * @param tokenVaultId - Identifier for the tokenVaultId.
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onOauth2credentialprovider(tokenVaultId: string, name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:token-vault/${ tokenVaultId }/oauth2credentialprovider/${ name }`);
+  }
+
+  /**
+   * Adds a resource of type online-evaluation-config to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/onlineEvaluationConfig.html
+   *
+   * @param onlineEvaluationConfigId - Identifier for the onlineEvaluationConfigId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onOnlineEvaluationConfig(onlineEvaluationConfigId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:online-evaluation-config/${ onlineEvaluationConfigId }`);
+  }
+
+  /**
+   * Adds a resource of type payment-manager to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/paymentManager.html
+   *
+   * @param paymentManagerId - Identifier for the paymentManagerId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPaymentManager(paymentManagerId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:payment-manager/${ paymentManagerId }`);
+  }
+
+  /**
+   * Adds a resource of type paymentcredentialprovider to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/paymentcredentialprovider.html
+   *
+   * @param tokenVaultId - Identifier for the tokenVaultId.
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPaymentcredentialprovider(tokenVaultId: string, name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:token-vault/${ tokenVaultId }/paymentcredentialprovider/${ name }`);
+  }
+
+  /**
+   * Adds a resource of type policy to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/policy.html
+   *
+   * @param policyEngineId - Identifier for the policyEngineId.
+   * @param policyId - Identifier for the policyId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onPolicy(policyEngineId: string, policyId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:policy-engine/${ policyEngineId }/policy/${ policyId }`);
+  }
+
+  /**
+   * Adds a resource of type policy-engine to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/policyEngine.html
+   *
+   * @param policyEngineId - Identifier for the policyEngineId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPolicyEngine(policyEngineId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:policy-engine/${ policyEngineId }`);
+  }
+
+  /**
+   * Adds a resource of type policy-generation to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/policyGeneration.html
+   *
+   * @param policyEngineId - Identifier for the policyEngineId.
+   * @param policyGenerationId - Identifier for the policyGenerationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onPolicyGeneration(policyEngineId: string, policyGenerationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:policy-engine/${ policyEngineId }/policy-generation/${ policyGenerationId }`);
+  }
+
+  /**
+   * Adds a resource of type recommendation to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/recommendation.html
+   *
+   * @param recommendationId - Identifier for the recommendationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRecommendation(recommendationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recommendation/${ recommendationId }`);
+  }
+
+  /**
+   * Adds a resource of type registry to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/registry.html
+   *
+   * @param registryId - Identifier for the registryId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRegistry(registryId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:registry/${ registryId }`);
+  }
+
+  /**
+   * Adds a resource of type registry-record to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/registryRecord.html
+   *
+   * @param registryId - Identifier for the registryId.
+   * @param recordId - Identifier for the recordId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRegistryRecord(registryId: string, recordId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:registry/${ registryId }/record/${ recordId }`);
+  }
+
+  /**
+   * Adds a resource of type runtime to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/runtime.html
+   *
+   * @param runtimeId - Identifier for the runtimeId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRuntime(runtimeId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:runtime/${ runtimeId }`);
+  }
+
+  /**
+   * Adds a resource of type runtime-endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/runtimeEndpoint.html
+   *
+   * @param runtimeId - Identifier for the runtimeId.
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRuntimeEndpoint(runtimeId: string, name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:runtime/${ runtimeId }/runtime-endpoint/${ name }`);
+  }
+
+  /**
+   * Adds a resource of type token-vault to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/tokenVault.html
+   *
+   * @param tokenVaultId - Identifier for the tokenVaultId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTokenVault(tokenVaultId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:token-vault/${ tokenVaultId }`);
+  }
+
+  /**
+   * Adds a resource of type web-search to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/webSearch.html
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onWebSearch(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:tool/web-search.v1`);
+  }
+
+  /**
+   * Adds a resource of type workload-identity to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/workloadIdentity.html
+   *
+   * @param directoryId - Identifier for the directoryId.
+   * @param workloadIdentityName - Identifier for the workloadIdentityName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorkloadIdentity(directoryId: string, workloadIdentityName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workload-identity-directory/${ directoryId }/workload-identity/${ workloadIdentityName }`);
+  }
+
+  /**
+   * Adds a resource of type workload-identity-directory to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/workloadIdentityDirectory.html
+   *
+   * @param directoryId - Identifier for the directoryId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorkloadIdentityDirectory(directoryId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workload-identity-directory/${ directoryId }`);
+  }
+
+  /**
+   * Filters access by creating requests based on the allowed set of values for each of the mandatory tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toCreateAgentRuntime()
+   * - .toCreateAgentRuntimeEndpoint()
+   * - .toCreateApiKeyCredentialProvider()
+   * - .toCreateBrowser()
+   * - .toCreateBrowserProfile()
+   * - .toCreateCodeInterpreter()
+   * - .toCreateDataset()
+   * - .toCreateEvaluator()
+   * - .toCreateGateway()
+   * - .toCreateHarness()
+   * - .toCreateHarnessEndpoint()
+   * - .toCreateMemory()
+   * - .toCreateOauth2CredentialProvider()
+   * - .toCreateOnlineEvaluationConfig()
+   * - .toCreatePaymentCredentialProvider()
+   * - .toCreatePaymentManager()
+   * - .toCreatePolicyEngine()
+   * - .toCreateWorkloadIdentity()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by having actions based on the tag value associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toAddDatasetExamples()
+   * - .toBatchCreateMemoryRecords()
+   * - .toBatchDeleteMemoryRecords()
+   * - .toBatchUpdateMemoryRecords()
+   * - .toCompleteResourceTokenAuth()
+   * - .toCreateAgentRuntimeEndpoint()
+   * - .toCreateApiKeyCredentialProvider()
+   * - .toCreateDataset()
+   * - .toCreateDatasetVersion()
+   * - .toCreateEvaluator()
+   * - .toCreateEvent()
+   * - .toCreateGatewayRule()
+   * - .toCreateGatewayTarget()
+   * - .toCreateHarnessEndpoint()
+   * - .toCreateOauth2CredentialProvider()
+   * - .toCreateOnlineEvaluationConfig()
+   * - .toCreatePaymentConnector()
+   * - .toCreatePaymentCredentialProvider()
+   * - .toCreatePaymentInstrument()
+   * - .toCreatePaymentSession()
+   * - .toCreatePolicy()
+   * - .toCreateWorkloadIdentity()
+   * - .toDeleteABTest()
+   * - .toDeleteAgentRuntime()
+   * - .toDeleteAgentRuntimeEndpoint()
+   * - .toDeleteApiKeyCredentialProvider()
+   * - .toDeleteBatchEvaluation()
+   * - .toDeleteBrowser()
+   * - .toDeleteBrowserProfile()
+   * - .toDeleteCodeInterpreter()
+   * - .toDeleteConfigurationBundle()
+   * - .toDeleteDataset()
+   * - .toDeleteDatasetExamples()
+   * - .toDeleteEvaluator()
+   * - .toDeleteEvent()
+   * - .toDeleteGateway()
+   * - .toDeleteGatewayRule()
+   * - .toDeleteGatewayTarget()
+   * - .toDeleteHarness()
+   * - .toDeleteHarnessEndpoint()
+   * - .toDeleteMemory()
+   * - .toDeleteMemoryRecord()
+   * - .toDeleteOauth2CredentialProvider()
+   * - .toDeleteOnlineEvaluationConfig()
+   * - .toDeletePaymentConnector()
+   * - .toDeletePaymentCredentialProvider()
+   * - .toDeletePaymentInstrument()
+   * - .toDeletePaymentManager()
+   * - .toDeletePaymentSession()
+   * - .toDeletePolicy()
+   * - .toDeletePolicyEngine()
+   * - .toDeleteRecommendation()
+   * - .toDeleteResourcePolicy()
+   * - .toDeleteWorkloadIdentity()
+   * - .toEvaluate()
+   * - .toGetABTest()
+   * - .toGetAgentCard()
+   * - .toGetAgentRuntime()
+   * - .toGetAgentRuntimeEndpoint()
+   * - .toGetApiKeyCredentialProvider()
+   * - .toGetBatchEvaluation()
+   * - .toGetBrowser()
+   * - .toGetBrowserProfile()
+   * - .toGetBrowserSession()
+   * - .toGetCodeInterpreter()
+   * - .toGetCodeInterpreterSession()
+   * - .toGetConfigurationBundle()
+   * - .toGetConfigurationBundleVersion()
+   * - .toGetDataset()
+   * - .toGetEvaluator()
+   * - .toGetEvent()
+   * - .toGetGateway()
+   * - .toGetGatewayRule()
+   * - .toGetGatewayTarget()
+   * - .toGetHarness()
+   * - .toGetHarnessEndpoint()
+   * - .toGetMemory()
+   * - .toGetMemoryRecord()
+   * - .toGetOauth2CredentialProvider()
+   * - .toGetOnlineEvaluationConfig()
+   * - .toGetPaymentConnector()
+   * - .toGetPaymentCredentialProvider()
+   * - .toGetPaymentInstrument()
+   * - .toGetPaymentInstrumentBalance()
+   * - .toGetPaymentManager()
+   * - .toGetPaymentSession()
+   * - .toGetPolicy()
+   * - .toGetPolicyEngine()
+   * - .toGetPolicyEngineSummary()
+   * - .toGetPolicyGeneration()
+   * - .toGetPolicyGenerationSummary()
+   * - .toGetPolicySummary()
+   * - .toGetRecommendation()
+   * - .toGetResourceApiKey()
+   * - .toGetResourceOauth2Token()
+   * - .toGetResourcePaymentToken()
+   * - .toGetResourcePolicy()
+   * - .toGetTokenVault()
+   * - .toGetWorkloadAccessToken()
+   * - .toGetWorkloadAccessTokenForJWT()
+   * - .toGetWorkloadAccessTokenForUserId()
+   * - .toGetWorkloadIdentity()
+   * - .toInvokeAgentRuntime()
+   * - .toInvokeAgentRuntimeCommand()
+   * - .toInvokeAgentRuntimeCommandShell()
+   * - .toInvokeAgentRuntimeForUser()
+   * - .toInvokeAgentRuntimeWithWebSocketStream()
+   * - .toInvokeAgentRuntimeWithWebSocketStreamForUser()
+   * - .toInvokeCodeInterpreter()
+   * - .toInvokeHarness()
+   * - .toListActors()
+   * - .toListApiKeyCredentialProviders()
+   * - .toListCodeInterpreterSessions()
+   * - .toListConfigurationBundleVersions()
+   * - .toListDatasetExamples()
+   * - .toListDatasetVersions()
+   * - .toListEvents()
+   * - .toListGatewayRules()
+   * - .toListGatewayTargets()
+   * - .toListMemoryExtractionJobs()
+   * - .toListMemoryRecords()
+   * - .toListOauth2CredentialProviders()
+   * - .toListPaymentConnectors()
+   * - .toListPaymentCredentialProviders()
+   * - .toListPaymentInstruments()
+   * - .toListPaymentSessions()
+   * - .toListPolicies()
+   * - .toListPolicyGenerationAssets()
+   * - .toListPolicyGenerationSummaries()
+   * - .toListPolicyGenerations()
+   * - .toListPolicySummaries()
+   * - .toListSessions()
+   * - .toListTagsForResource()
+   * - .toListWorkloadIdentities()
+   * - .toProcessPayment()
+   * - .toPutResourcePolicy()
+   * - .toRetrieveMemoryRecords()
+   * - .toSaveBrowserSessionProfile()
+   * - .toSetTokenVaultCMK()
+   * - .toStartBrowserSession()
+   * - .toStartCodeInterpreterSession()
+   * - .toStartMemoryExtractionJob()
+   * - .toStartPolicyGeneration()
+   * - .toStopBatchEvaluation()
+   * - .toStopBrowserSession()
+   * - .toStopCodeInterpreterSession()
+   * - .toStopRuntimeSession()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateABTest()
+   * - .toUpdateAgentRuntime()
+   * - .toUpdateAgentRuntimeEndpoint()
+   * - .toUpdateApiKeyCredentialProvider()
+   * - .toUpdateBrowserStream()
+   * - .toUpdateConfigurationBundle()
+   * - .toUpdateDataset()
+   * - .toUpdateDatasetExamples()
+   * - .toUpdateEvaluator()
+   * - .toUpdateGateway()
+   * - .toUpdateGatewayRule()
+   * - .toUpdateGatewayTarget()
+   * - .toUpdateHarness()
+   * - .toUpdateHarnessEndpoint()
+   * - .toUpdateMemory()
+   * - .toUpdateOauth2CredentialProvider()
+   * - .toUpdateOnlineEvaluationConfig()
+   * - .toUpdatePaymentConnector()
+   * - .toUpdatePaymentCredentialProvider()
+   * - .toUpdatePaymentManager()
+   * - .toUpdatePolicy()
+   * - .toUpdatePolicyEngine()
+   * - .toUpdateWorkloadIdentity()
+   * - .toAllowVendedLogDeliveryForResource()
+   * - .toAuthorizeAction()
+   * - .toGatewayAssociateWebACL()
+   * - .toGatewayDisassociateWebACL()
+   * - .toGatewayGetWebACLForResource()
+   * - .toInvokeGateway()
+   * - .toManageResourceScopedPolicy()
+   * - .toPartiallyAuthorizeActions()
+   * - .toSynchronizeGatewayTargets()
+   *
+   * Applies to resource types:
+   * - ab-test
+   * - apikeycredentialprovider
+   * - batch-evaluate
+   * - browser-custom
+   * - browser-profile
+   * - code-interpreter-custom
+   * - configuration-bundle
+   * - dataset
+   * - evaluator
+   * - gateway
+   * - harness
+   * - harness-endpoint
+   * - memory
+   * - oauth2credentialprovider
+   * - online-evaluation-config
+   * - payment-manager
+   * - paymentcredentialprovider
+   * - policy-engine
+   * - recommendation
+   * - runtime
+   * - runtime-endpoint
+   * - token-vault
+   * - workload-identity
+   * - workload-identity-directory
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by creating requests based on the presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toCreateAgentRuntime()
+   * - .toCreateAgentRuntimeEndpoint()
+   * - .toCreateApiKeyCredentialProvider()
+   * - .toCreateBrowser()
+   * - .toCreateBrowserProfile()
+   * - .toCreateCodeInterpreter()
+   * - .toCreateDataset()
+   * - .toCreateEvaluator()
+   * - .toCreateGateway()
+   * - .toCreateHarness()
+   * - .toCreateHarnessEndpoint()
+   * - .toCreateMemory()
+   * - .toCreateOauth2CredentialProvider()
+   * - .toCreateOnlineEvaluationConfig()
+   * - .toCreatePaymentCredentialProvider()
+   * - .toCreatePaymentManager()
+   * - .toCreatePolicyEngine()
+   * - .toCreateWorkloadIdentity()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the metadataConfiguration.allowedQueryParameters attribute of a gateway target
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-allowedQueryParameters
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAllowedQueryParameters(value: string | string[], operator?: Operator | string) {
+    return this.if(`AllowedQueryParameters`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the metadataConfiguration.allowedRequestHeaders attribute of a gateway target
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-allowedRequestHeaders
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAllowedRequestHeaders(value: string | string[], operator?: Operator | string) {
+    return this.if(`AllowedRequestHeaders`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the metadataConfiguration.allowedResponseHeaders attribute of a gateway target
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-allowedResponseHeaders
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAllowedResponseHeaders(value: string | string[], operator?: Operator | string) {
+    return this.if(`AllowedResponseHeaders`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the scopes attribute of an OAuth credential provider on a gateway target
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-credentialProviderScope
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCredentialProviderScope(value: string | string[], operator?: Operator | string) {
+    return this.if(`CredentialProviderScope`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the credentialProviderConfigurations.credentialProviderType attribute of a gateway target
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-credentialProviderType
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCredentialProviderType(value: string | string[], operator?: Operator | string) {
+    return this.if(`CredentialProviderType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the authorizerConfiguration.customJWTAuthorizer.discoveryUrl attribute of a Gateway
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-discoveryUrl
+   *
+   * Applies to actions:
+   * - .toCreatePaymentManager()
+   * - .toUpdatePaymentManager()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDiscoveryUrl(value: string | string[], operator?: Operator | string) {
+    return this.if(`DiscoveryUrl`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the authorizerType attribute on a Gateway
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-gatewayAuthorizerType
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifGatewayAuthorizerType(value: string | string[], operator?: Operator | string) {
+    return this.if(`GatewayAuthorizerType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the HTTP target configuration type of a gateway target
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-httpTargetConfigurationType
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifHttpTargetConfigurationType(value: string | string[], operator?: Operator | string) {
+    return this.if(`HttpTargetConfigurationType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the audience claim (aud) in the JWT passed in the request
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-aud
+   *
+   * Applies to actions:
+   * - .toCompleteResourceTokenAuth()
+   * - .toGetWorkloadAccessTokenForJWT()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInboundJwtClaimAud(value: string | string[], operator?: Operator | string) {
+    return this.if(`InboundJwtClaim/aud`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the client_id claim in the JWT passed in the request
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-client_id
+   *
+   * Applies to actions:
+   * - .toCompleteResourceTokenAuth()
+   * - .toGetWorkloadAccessTokenForJWT()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInboundJwtClaimClientId(value: string | string[], operator?: Operator | string) {
+    return this.if(`InboundJwtClaim/client_id`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the issuer (iss) claim present in the JWT passed in the request
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-iss
+   *
+   * Applies to actions:
+   * - .toCompleteResourceTokenAuth()
+   * - .toGetWorkloadAccessTokenForJWT()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInboundJwtClaimIss(value: string | string[], operator?: Operator | string) {
+    return this.if(`InboundJwtClaim/iss`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the scope claim in the JWT passed in the request
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-scope
+   *
+   * Applies to actions:
+   * - .toCompleteResourceTokenAuth()
+   * - .toGetWorkloadAccessTokenForJWT()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInboundJwtClaimScope(value: string | string[], operator?: Operator | string) {
+    return this.if(`InboundJwtClaim/scope`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the subject claim (sub) in the JWT passed in the request
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-sub
+   *
+   * Applies to actions:
+   * - .toCompleteResourceTokenAuth()
+   * - .toGetWorkloadAccessTokenForJWT()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInboundJwtClaimSub(value: string | string[], operator?: Operator | string) {
+    return this.if(`InboundJwtClaim/sub`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the inference target configuration type of a gateway target
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-inferenceTargetConfigurationType
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInferenceTargetConfigurationType(value: string | string[], operator?: Operator | string) {
+    return this.if(`InferenceTargetConfigurationType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by KMS Key arn provided
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-kmsKeyArn
+   *
+   * Applies to actions:
+   * - .toCreateMemory()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifKmsKeyArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`KmsKeyArn`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the MCP target configuration type of a gateway target
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-mcpTargetConfigurationType
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifMcpTargetConfigurationType(value: string | string[], operator?: Operator | string) {
+    return this.if(`McpTargetConfigurationType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the policyEngineConfiguration.arn attribute of a Gateway
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-policyEngineArn
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPolicyEngineArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`PolicyEngineArn`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the policyEngineConfiguration.mode attribute of a Gateway
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-policyEngineMode
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPolicyEngineMode(value: string | string[], operator?: Operator | string) {
+    return this.if(`PolicyEngineMode`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the private endpoint type of a gateway target
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-privateEndpointType
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPrivateEndpointType(value: string | string[], operator?: Operator | string) {
+    return this.if(`PrivateEndpointType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the protocolType attribute of a Gateway
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-protocolType
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifProtocolType(value: string | string[], operator?: Operator | string) {
+    return this.if(`ProtocolType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the resource configuration identifier of a gateway target private endpoint
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-resourceConfigurationIdentifier
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceConfigurationIdentifier(value: string | string[], operator?: Operator | string) {
+    return this.if(`ResourceConfigurationIdentifier`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the authorizer type configured for the AgentCore runtime
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-authorizer-type-condition-key.html
+   *
+   * Applies to actions:
+   * - .toCreateAgentRuntime()
+   * - .toUpdateAgentRuntime()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRuntimeAuthorizerType(value: string | string[], operator?: Operator | string) {
+    return this.if(`RuntimeAuthorizerType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by Actor Id
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-actorId
+   *
+   * Applies to actions:
+   * - .toCreateEvent()
+   * - .toDeleteEvent()
+   * - .toGetEvent()
+   * - .toListEvents()
+   * - .toListSessions()
+   * - .toStartMemoryExtractionJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifActorId(value: string | string[], operator?: Operator | string) {
+    return this.if(`actorId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by namespace
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-namespace
+   *
+   * Applies to actions:
+   * - .toBatchCreateMemoryRecords()
+   * - .toBatchUpdateMemoryRecords()
+   * - .toListMemoryRecords()
+   * - .toRetrieveMemoryRecords()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifNamespace(value: string | string[], operator?: Operator | string) {
+    return this.if(`namespace`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of security groups configured for an AgentCore resource
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/security-vpc-condition.html
+   *
+   * Applies to actions:
+   * - .toCreateAgentRuntime()
+   * - .toCreateBrowser()
+   * - .toCreateCodeInterpreter()
+   * - .toUpdateAgentRuntime()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecurityGroups(value: string | string[], operator?: Operator | string) {
+    return this.if(`securityGroups`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by Session Id
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-sessionId
+   *
+   * Applies to actions:
+   * - .toCreateEvent()
+   * - .toDeleteEvent()
+   * - .toGetEvent()
+   * - .toListEvents()
+   * - .toStartMemoryExtractionJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSessionId(value: string | string[], operator?: Operator | string) {
+    return this.if(`sessionId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by Memory Strategy Id
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-strategyId
+   *
+   * Applies to actions:
+   * - .toListMemoryRecords()
+   * - .toRetrieveMemoryRecords()
+   * - .toStartMemoryExtractionJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifStrategyId(value: string | string[], operator?: Operator | string) {
+    return this.if(`strategyId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of subnets configured for an AgentCore resource
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/security-vpc-condition.html
+   *
+   * Applies to actions:
+   * - .toCreateAgentRuntime()
+   * - .toCreateBrowser()
+   * - .toCreateCodeInterpreter()
+   * - .toUpdateAgentRuntime()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSubnets(value: string | string[], operator?: Operator | string) {
+    return this.if(`subnets`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the static user ID value passed in the request
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-userid
+   *
+   * Applies to actions:
+   * - .toCompleteResourceTokenAuth()
+   * - .toGetWorkloadAccessTokenForUserId()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifUserid(value: string | string[], operator?: Operator | string) {
+    return this.if(`userid`, value, operator ?? 'StringLike');
+  }
+}

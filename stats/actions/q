@@ -42,8 +42,8 @@ q:SendMessage;Write
 q:StartConversation;Write
 q:StartTroubleshootingAnalysis;Write
 q:StartTroubleshootingResolutionExplanation;Write
-q:TagResource;Tagging
-q:UntagResource;Tagging
+q:TagResource;Tagging, Write
+q:UntagResource;Tagging, Write
 q:UpdateAssignment;Write
 q:UpdateAuthGrant;Write
 q:UpdateConversation;Write

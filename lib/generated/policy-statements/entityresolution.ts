@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [entityresolution](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsentityresolution.html).
+ * Statement provider for service [entityresolution](https://docs.aws.amazon.com/service-authorization/latest/reference/list_entityresolution.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Entityresolution extends PolicyStatement {
   public servicePrefix = 'entityresolution';
 
   /**
-   * Statement provider for service [entityresolution](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsentityresolution.html).
+   * Statement provider for service [entityresolution](https://docs.aws.amazon.com/service-authorization/latest/reference/list_entityresolution.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -21,7 +21,7 @@ export class Entityresolution extends PolicyStatement {
   /**
    * Grants permission to give an AWS service or another account permission to use an AWS Entity Resolution resources
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_AddPolicyStatement.html
    */
@@ -136,7 +136,7 @@ export class Entityresolution extends PolicyStatement {
   /**
    * Grants permission to delete permission given to an AWS service or another account permission to use an AWS Entity Resolution resources
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_DeletePolicyStatement.html
    */
@@ -356,7 +356,7 @@ export class Entityresolution extends PolicyStatement {
   /**
    * Grants permission to put a resource policy for an AWS Entity Resolution resources
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_PutPolicy.html
    */
@@ -389,11 +389,7 @@ export class Entityresolution extends PolicyStatement {
   /**
    * Grants permission to adds tags to a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_TagResource.html
    */
@@ -404,10 +400,7 @@ export class Entityresolution extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UntagResource.html
    */
@@ -462,7 +455,7 @@ export class Entityresolution extends PolicyStatement {
   /**
    * Grants permission to give an AWS service or another account permission to use IdNamespace within a workflow
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UseIdNamespace.html
    */
@@ -473,7 +466,7 @@ export class Entityresolution extends PolicyStatement {
   /**
    * Grants permission to give an AWS service or another account permission to use workflow within a IdNamespace
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UseWorkflow.html
    */
@@ -490,6 +483,7 @@ export class Entityresolution extends PolicyStatement {
       'UseWorkflow'
     ],
     Write: [
+      'AddPolicyStatement',
       'BatchDeleteUniqueId',
       'CreateIdMappingWorkflow',
       'CreateIdNamespace',
@@ -498,14 +492,20 @@ export class Entityresolution extends PolicyStatement {
       'DeleteIdMappingWorkflow',
       'DeleteIdNamespace',
       'DeleteMatchingWorkflow',
+      'DeletePolicyStatement',
       'DeleteSchemaMapping',
       'GenerateMatchId',
+      'PutPolicy',
       'StartIdMappingJob',
       'StartMatchingJob',
+      'TagResource',
+      'UntagResource',
       'UpdateIdMappingWorkflow',
       'UpdateIdNamespace',
       'UpdateMatchingWorkflow',
-      'UpdateSchemaMapping'
+      'UpdateSchemaMapping',
+      'UseIdNamespace',
+      'UseWorkflow'
     ],
     Read: [
       'GetIdMappingJob',
@@ -535,40 +535,6 @@ export class Entityresolution extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type MatchingWorkflow to the statement
-   *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/
-   *
-   * @param workflowName - Identifier for the workflowName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onMatchingWorkflow(workflowName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:matchingworkflow/${ workflowName }`);
-  }
-
-  /**
-   * Adds a resource of type SchemaMapping to the statement
-   *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/
-   *
-   * @param schemaName - Identifier for the schemaName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onSchemaMapping(schemaName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:schemamapping/${ schemaName }`);
-  }
-
-  /**
    * Adds a resource of type IdMappingWorkflow to the statement
    *
    * https://docs.aws.amazon.com/entityresolution/latest/userguide/
@@ -583,6 +549,40 @@ export class Entityresolution extends PolicyStatement {
    */
   public onIdMappingWorkflow(workflowName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:idmappingworkflow/${ workflowName }`);
+  }
+
+  /**
+   * Adds a resource of type IdNamespace to the statement
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/userguide/
+   *
+   * @param idNamespaceName - Identifier for the idNamespaceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIdNamespace(idNamespaceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:idnamespace/${ idNamespaceName }`);
+  }
+
+  /**
+   * Adds a resource of type MatchingWorkflow to the statement
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/userguide/
+   *
+   * @param workflowName - Identifier for the workflowName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMatchingWorkflow(workflowName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:matchingworkflow/${ workflowName }`);
   }
 
   /**
@@ -604,11 +604,11 @@ export class Entityresolution extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type IdNamespace to the statement
+   * Adds a resource of type SchemaMapping to the statement
    *
    * https://docs.aws.amazon.com/entityresolution/latest/userguide/
    *
-   * @param idNamespaceName - Identifier for the idNamespaceName.
+   * @param schemaName - Identifier for the schemaName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -616,8 +616,8 @@ export class Entityresolution extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onIdNamespace(idNamespaceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:idnamespace/${ idNamespaceName }`);
+  public onSchemaMapping(schemaName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:schemamapping/${ schemaName }`);
   }
 
   /**
@@ -645,12 +645,38 @@ export class Entityresolution extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys
    *
+   * Applies to actions:
+   * - .toBatchDeleteUniqueId()
+   * - .toDeleteIdMappingWorkflow()
+   * - .toDeleteIdNamespace()
+   * - .toDeleteMatchingWorkflow()
+   * - .toDeleteSchemaMapping()
+   * - .toGenerateMatchId()
+   * - .toGetIdMappingJob()
+   * - .toGetIdMappingWorkflow()
+   * - .toGetIdNamespace()
+   * - .toGetMatchId()
+   * - .toGetMatchingJob()
+   * - .toGetMatchingWorkflow()
+   * - .toGetProviderService()
+   * - .toGetSchemaMapping()
+   * - .toListIdMappingJobs()
+   * - .toListMatchingJobs()
+   * - .toStartIdMappingJob()
+   * - .toStartMatchingJob()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateIdMappingWorkflow()
+   * - .toUpdateIdNamespace()
+   * - .toUpdateMatchingWorkflow()
+   * - .toUpdateSchemaMapping()
+   *
    * Applies to resource types:
-   * - MatchingWorkflow
-   * - SchemaMapping
    * - IdMappingWorkflow
-   * - ProviderService
    * - IdNamespace
+   * - MatchingWorkflow
+   * - ProviderService
+   * - SchemaMapping
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

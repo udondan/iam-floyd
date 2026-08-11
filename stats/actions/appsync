@@ -67,13 +67,13 @@ appsync:ListTypes;List
 appsync:ListTypesByAssociation;List
 appsync:PutGraphqlApiEnvironmentVariables;Write
 appsync:PutResourcePolicy;Write
-appsync:SetWebACL;Permissions management
+appsync:SetWebACL;Permissions management, Write
 appsync:SourceGraphQL;Write
 appsync:StartDataSourceIntrospection;Write
 appsync:StartSchemaCreation;Write
 appsync:StartSchemaMerge;Write
-appsync:TagResource;Tagging
-appsync:UntagResource;Tagging
+appsync:TagResource;Tagging, Write
+appsync:UntagResource;Tagging, Write
 appsync:UpdateApi;Write
 appsync:UpdateApiCache;Write
 appsync:UpdateApiKey;Write

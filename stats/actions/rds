@@ -1,9 +1,9 @@
 rds:AddRoleToDBCluster;Write
 rds:AddRoleToDBInstance;Write
 rds:AddSourceIdentifierToSubscription;Write
-rds:AddTagsToResource;Tagging
+rds:AddTagsToResource;Tagging, Write
 rds:ApplyPendingMaintenanceAction;Write
-rds:AuthorizeDBSecurityGroupIngress;Permissions management
+rds:AuthorizeDBSecurityGroupIngress;Permissions management, Write
 rds:BacktrackDBCluster;Write
 rds:CancelExportTask;Write
 rds:CopyCustomDBEngineVersion;Write
@@ -145,7 +145,7 @@ rds:RemoveFromGlobalCluster;Write
 rds:RemoveRoleFromDBCluster;Write
 rds:RemoveRoleFromDBInstance;Write
 rds:RemoveSourceIdentifierFromSubscription;Write
-rds:RemoveTagsFromResource;Tagging
+rds:RemoveTagsFromResource;Tagging, Write
 rds:ResetDBClusterParameterGroup;Write
 rds:ResetDBParameterGroup;Write
 rds:RestoreDBClusterFromS3;Write

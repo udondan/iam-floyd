@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [monitron](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmonitron.html).
+ * Statement provider for service [monitron](https://docs.aws.amazon.com/service-authorization/latest/reference/list_monitron.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Monitron extends PolicyStatement {
   public servicePrefix = 'monitron';
 
   /**
-   * Statement provider for service [monitron](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmonitron.html).
+   * Statement provider for service [monitron](https://docs.aws.amazon.com/service-authorization/latest/reference/list_monitron.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -21,16 +21,7 @@ export class Monitron extends PolicyStatement {
   /**
    * Grants permission to associate a user with the project as an administrator
    *
-   * Access Level: Permissions management
-   *
-   * Dependent actions:
-   * - sso-directory:DescribeUsers
-   * - sso:AssociateProfile
-   * - sso:GetManagedApplicationInstance
-   * - sso:GetProfile
-   * - sso:ListDirectoryAssociations
-   * - sso:ListProfileAssociations
-   * - sso:ListProfiles
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/Monitron/latest/user-guide/user-management-chapter.html
    */
@@ -47,13 +38,6 @@ export class Monitron extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   * - kms:CreateGrant
-   * - sso:CreateManagedApplicationInstance
-   * - sso:DeleteManagedApplicationInstance
-   * - sso:DescribeRegisteredRegions
-   *
    * https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-creating-project.html
    */
   public toCreateProject() {
@@ -63,16 +47,7 @@ export class Monitron extends PolicyStatement {
   /**
    * Grants permission to associate a user with the project
    *
-   * Access Level: Permissions management
-   *
-   * Dependent actions:
-   * - sso-directory:DescribeUsers
-   * - sso:AssociateProfile
-   * - sso:GetManagedApplicationInstance
-   * - sso:GetProfile
-   * - sso:ListDirectoryAssociations
-   * - sso:ListProfileAssociations
-   * - sso:ListProfiles
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/Monitron/latest/user-guide/adding-user.html
    */
@@ -83,15 +58,7 @@ export class Monitron extends PolicyStatement {
   /**
    * Grants permission to associate an access role with the user
    *
-   * Access Level: Permissions management
-   *
-   * Dependent actions:
-   * - sso-directory:DescribeUsers
-   * - sso:GetManagedApplicationInstance
-   * - sso:GetProfile
-   * - sso:ListDirectoryAssociations
-   * - sso:ListProfileAssociations
-   * - sso:ListProfiles
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/Monitron/latest/user-guide/adding-user.html
    */
@@ -104,9 +71,6 @@ export class Monitron extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - sso:DeleteManagedApplicationInstance
-   *
    * https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-delete-project.html
    */
   public toDeleteProject() {
@@ -116,15 +80,7 @@ export class Monitron extends PolicyStatement {
   /**
    * Grants permission to disassociate a user from the project
    *
-   * Access Level: Permissions management
-   *
-   * Dependent actions:
-   * - sso-directory:DescribeUsers
-   * - sso:DisassociateProfile
-   * - sso:GetManagedApplicationInstance
-   * - sso:GetProfile
-   * - sso:ListDirectoryAssociations
-   * - sso:ListProfiles
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/Monitron/latest/user-guide/deleting-user.html
    */
@@ -135,7 +91,7 @@ export class Monitron extends PolicyStatement {
   /**
    * Grants permission to disassociate an access role from the user
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/Monitron/latest/user-guide/deleting-user.html
    */
@@ -146,15 +102,7 @@ export class Monitron extends PolicyStatement {
   /**
    * Grants permission to disassociate an administrator from the project
    *
-   * Access Level: Permissions management
-   *
-   * Dependent actions:
-   * - sso-directory:DescribeUsers
-   * - sso:DisassociateProfile
-   * - sso:GetManagedApplicationInstance
-   * - sso:GetProfile
-   * - sso:ListDirectoryAssociations
-   * - sso:ListProfiles
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/Monitron/latest/user-guide/mu-remove-project-admin.html
    */
@@ -178,11 +126,6 @@ export class Monitron extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - sso-directory:DescribeUsers
-   * - sso:GetManagedApplicationInstance
-   * - sso:ListProfileAssociations
-   *
    * https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-project-tasks.html
    */
   public toGetProjectAdminUser() {
@@ -192,11 +135,7 @@ export class Monitron extends PolicyStatement {
   /**
    * Grants permission to list all administrators associated with the project
    *
-   * Access Level: Permissions management
-   *
-   * Dependent actions:
-   * - sso-directory:DescribeUsers
-   * - sso:GetManagedApplicationInstance
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/Monitron/latest/user-guide/user-management-chapter.html
    */
@@ -208,13 +147,6 @@ export class Monitron extends PolicyStatement {
    * Grants permission to list all users associated with the project
    *
    * Access Level: List
-   *
-   * Dependent actions:
-   * - sso:GetManagedApplicationInstance
-   * - sso:GetProfile
-   * - sso:ListDirectoryAssociations
-   * - sso:ListProfileAssociations
-   * - sso:ListProfiles
    *
    * https://docs.aws.amazon.com/Monitron/latest/user-guide/user-management-chapter.html
    */
@@ -258,11 +190,7 @@ export class Monitron extends PolicyStatement {
   /**
    * Grants permission to tag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/Monitron/latest/user-guide/tagging.html
    */
@@ -273,10 +201,7 @@ export class Monitron extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/Monitron/latest/user-guide/tagging.html#modify-tag-1
    */
@@ -306,8 +231,17 @@ export class Monitron extends PolicyStatement {
       'ListProjectAdminUsers'
     ],
     Write: [
+      'AssociateProjectAdminUser',
       'CreateProject',
+      'CreateProjectUserAssociation',
+      'CreateUserAccessRoleAssociation',
       'DeleteProject',
+      'DeleteProjectUserAssociation',
+      'DeleteUserAccessRoleAssociation',
+      'DisassociateProjectAdminUser',
+      'ListProjectAdminUsers',
+      'TagResource',
+      'UntagResource',
       'UpdateProject'
     ],
     Read: [
@@ -364,6 +298,24 @@ export class Monitron extends PolicyStatement {
    * Filters access by the tags attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAssociateProjectAdminUser()
+   * - .toCreateProjectUserAssociation()
+   * - .toCreateUserAccessRoleAssociation()
+   * - .toDeleteProject()
+   * - .toDeleteProjectUserAssociation()
+   * - .toDeleteUserAccessRoleAssociation()
+   * - .toDisassociateProjectAdminUser()
+   * - .toGetProject()
+   * - .toGetProjectAdminUser()
+   * - .toListProjectAdminUsers()
+   * - .toListProjectUserAssociations()
+   * - .toListTagsForResource()
+   * - .toListUserAccessRoleAssociations()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateProject()
    *
    * Applies to resource types:
    * - project

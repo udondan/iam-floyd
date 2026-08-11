@@ -26,8 +26,8 @@ app-integrations:ListEventIntegrationAssociations;Read
 app-integrations:ListEventIntegrations;List
 app-integrations:ListTagsForResource;Read
 app-integrations:StartDataIntegrationExecution;Write
-app-integrations:TagResource;Tagging
-app-integrations:UntagResource;Tagging
+app-integrations:TagResource;Tagging, Write
+app-integrations:UntagResource;Tagging, Write
 app-integrations:UpdateApplication;Write
 app-integrations:UpdateDataIntegration;Write
 app-integrations:UpdateDataIntegrationAssociation;Write

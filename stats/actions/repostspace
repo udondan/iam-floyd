@@ -13,7 +13,7 @@ repostspace:ListSpaces;Read
 repostspace:ListTagsForResource;Read
 repostspace:RegisterAdmin;Write
 repostspace:SendInvites;Write
-repostspace:TagResource;Tagging
-repostspace:UntagResource;Tagging
+repostspace:TagResource;Tagging, Write
+repostspace:UntagResource;Tagging, Write
 repostspace:UpdateChannel;Write
 repostspace:UpdateSpace;Write

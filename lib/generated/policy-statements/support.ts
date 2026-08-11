@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement } from '../../shared';
 
 /**
- * Statement provider for service [support](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupport.html).
+ * Statement provider for service [support](https://docs.aws.amazon.com/service-authorization/latest/reference/list_support.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Support extends PolicyStatement {
   public servicePrefix = 'support';
 
   /**
-   * Statement provider for service [support](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupport.html).
+   * Statement provider for service [support](https://docs.aws.amazon.com/service-authorization/latest/reference/list_support.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -363,9 +363,6 @@ export class Support extends PolicyStatement {
    * Grants permission to start a specific interaction to receive personalized troubleshooting assistance for account and technical issues
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - support:DescribeSupportLevel
    *
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_StartInteraction.html
    */

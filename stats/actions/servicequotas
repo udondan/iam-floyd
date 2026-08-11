@@ -21,6 +21,6 @@ servicequotas:RequestServiceQuotaIncrease;Write
 servicequotas:StartAutoManagement;Write
 servicequotas:StartQuotaUtilizationReport;Read
 servicequotas:StopAutoManagement;Write
-servicequotas:TagResource;Tagging
-servicequotas:UntagResource;Tagging
+servicequotas:TagResource;Tagging, Write
+servicequotas:UntagResource;Tagging, Write
 servicequotas:UpdateAutoManagement;Write

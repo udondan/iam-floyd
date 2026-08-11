@@ -79,7 +79,7 @@ comprehend:StopSentimentDetectionJob;Write
 comprehend:StopTargetedSentimentDetectionJob;Write
 comprehend:StopTrainingDocumentClassifier;Write
 comprehend:StopTrainingEntityRecognizer;Write
-comprehend:TagResource;Tagging
-comprehend:UntagResource;Tagging
+comprehend:TagResource;Tagging, Write
+comprehend:UntagResource;Tagging, Write
 comprehend:UpdateEndpoint;Write
 comprehend:UpdateFlywheel;Write

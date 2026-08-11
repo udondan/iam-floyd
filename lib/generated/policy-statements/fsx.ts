@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [fsx](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfsx.html).
+ * Statement provider for service [fsx](https://docs.aws.amazon.com/service-authorization/latest/reference/list_fsx.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,23 +10,12 @@ export class Fsx extends PolicyStatement {
   public servicePrefix = 'fsx';
 
   /**
-   * Statement provider for service [fsx](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfsx.html).
+   * Statement provider for service [fsx](https://docs.aws.amazon.com/service-authorization/latest/reference/list_fsx.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
   constructor(sid?: string) {
     super(sid);
-  }
-
-  /**
-   * Grants permission to associate a File Gateway instance with an Amazon FSx for Windows File Server file system
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html
-   */
-  public toAssociateFileGateway() {
-    return this.to('AssociateFileGateway');
   }
 
   /**
@@ -38,17 +27,6 @@ export class Fsx extends PolicyStatement {
    */
   public toAssociateFileSystemAliases() {
     return this.to('AssociateFileSystemAliases');
-  }
-
-  /**
-   * Grants permission to allow deletion of an FSx for ONTAP SnapLock Enterprise volume that contains WORM (write once, read many) files with active retention periods
-   *
-   * Access Level: Permissions management
-   *
-   * https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#bypass-enterprise
-   */
-  public toBypassSnaplockEnterpriseRetention() {
-    return this.to('BypassSnaplockEnterpriseRetention');
   }
 
   /**
@@ -66,13 +44,6 @@ export class Fsx extends PolicyStatement {
    * Grants permission to copy a backup
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - fsx:TagResource
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopyBackup.html
    */
@@ -96,11 +67,6 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - s3:CreateAccessPoint
-   * - s3:GetAccessPoint
-   * - s3:PutAccessPointPolicy
-   *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateAndAttachS3AccessPoint.html
    */
   public toCreateAndAttachS3AccessPoint() {
@@ -111,13 +77,6 @@ export class Fsx extends PolicyStatement {
    * Grants permission to create a new backup of an Amazon FSx file system or an Amazon FSx volume
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - fsx:TagResource
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateBackup.html
    */
@@ -130,13 +89,6 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - fsx:TagResource
-   *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateDataRepositoryAssociation.html
    */
   public toCreateDataRepositoryAssociation() {
@@ -147,13 +99,6 @@ export class Fsx extends PolicyStatement {
    * Grants permission to create a new data respository task for an Amazon FSx for Lustre file system
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - fsx:TagResource
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateDataRepositoryTask.html
    */
@@ -166,22 +111,6 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - ec2:DescribeSecurityGroups
-   * - ec2:DescribeSubnets
-   * - ec2:DescribeVpcs
-   * - ec2:GetSecurityGroupsForVpc
-   * - fsx:CreateDataRepositoryAssociation
-   * - fsx:TagResource
-   * - logs:CreateLogGroup
-   * - logs:CreateLogStream
-   * - logs:PutLogEvents
-   * - s3:ListBucket
-   *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileCache.html
    */
   public toCreateFileCache() {
@@ -192,14 +121,6 @@ export class Fsx extends PolicyStatement {
    * Grants permission to create a new, empty, Amazon FSx file system
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - ec2:GetSecurityGroupsForVpc
-   * - fsx:TagResource
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystem.html
    */
@@ -212,14 +133,6 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - ec2:GetSecurityGroupsForVpc
-   * - fsx:TagResource
-   *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystemFromBackup.html
    */
   public toCreateFileSystemFromBackup() {
@@ -230,13 +143,6 @@ export class Fsx extends PolicyStatement {
    * Grants permission to create a new snapshot on a volume
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - fsx:TagResource
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateSnapshot.html
    */
@@ -249,13 +155,6 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - fsx:TagResource
-   *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateStorageVirtualMachine.html
    */
   public toCreateStorageVirtualMachine() {
@@ -267,15 +166,6 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifStorageVirtualMachineId()
-   * - .ifParentVolumeId()
-   *
-   * Dependent actions:
-   * - fsx:TagResource
-   *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateVolume.html
    */
   public toCreateVolume() {
@@ -286,14 +176,6 @@ export class Fsx extends PolicyStatement {
    * Grants permission to create a new volume from backup
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifStorageVirtualMachineId()
-   *
-   * Dependent actions:
-   * - fsx:TagResource
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateVolumeFromBackup.html
    */
@@ -328,13 +210,6 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - fsx:DeleteDataRepositoryAssociation
-   *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteFileCache.html
    */
   public toDeleteFileCache() {
@@ -346,29 +221,10 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - fsx:CreateBackup
-   * - fsx:TagResource
-   *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteFileSystem.html
    */
   public toDeleteFileSystem() {
     return this.to('DeleteFileSystem');
-  }
-
-  /**
-   * Grants permission to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and GetResourcePolicy are also required
-   *
-   * Access Level: Permissions management
-   *
-   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html
-   */
-  public toDeleteResourcePolicy() {
-    return this.to('DeleteResourcePolicy');
   }
 
   /**
@@ -398,30 +254,10 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifStorageVirtualMachineId()
-   * - .ifParentVolumeId()
-   *
-   * Dependent actions:
-   * - fsx:TagResource
-   *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteVolume.html
    */
   public toDeleteVolume() {
     return this.to('DeleteVolume');
-  }
-
-  /**
-   * Grants permission to describe the File Gateway instances associated with an Amazon FSx for Windows File Server file system
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html
-   */
-  public toDescribeAssociatedFileGateways() {
-    return this.to('DescribeAssociatedFileGateways');
   }
 
   /**
@@ -550,24 +386,10 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - s3:DeleteAccessPoint
-   *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DetachAndDeleteS3AccessPoint.html
    */
   public toDetachAndDeleteS3AccessPoint() {
     return this.to('DetachAndDeleteS3AccessPoint');
-  }
-
-  /**
-   * Grants permission to disassociate a File Gateway instance from an Amazon FSx for Windows File Server file system
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html
-   */
-  public toDisassociateFileGateway() {
-    return this.to('DisassociateFileGateway');
   }
 
   /**
@@ -582,17 +404,6 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * Grants permission to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and DeleteResourcePolicy are also required
-   *
-   * Access Level: Permissions management
-   *
-   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html
-   */
-  public toGetResourcePolicy() {
-    return this.to('GetResourcePolicy');
-  }
-
-  /**
    * Grants permission to list tags for an Amazon FSx resource
    *
    * Access Level: Read
@@ -601,28 +412,6 @@ export class Fsx extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
-  }
-
-  /**
-   * Grants permission to manage backup principal associations through AWS Backup
-   *
-   * Access Level: Permissions management
-   *
-   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopyBackup.html
-   */
-  public toManageBackupPrincipalAssociations() {
-    return this.to('ManageBackupPrincipalAssociations');
-  }
-
-  /**
-   * Grants permission to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). DeleteResourcePolicy and GetResourcePolicy are also required
-   *
-   * Access Level: Permissions management
-   *
-   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html
-   */
-  public toPutResourcePolicy() {
-    return this.to('PutResourcePolicy');
   }
 
   /**
@@ -661,11 +450,7 @@ export class Fsx extends PolicyStatement {
   /**
    * Grants permission to tag an Amazon FSx resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_TagResource.html
    */
@@ -676,10 +461,7 @@ export class Fsx extends PolicyStatement {
   /**
    * Grants permission to remove a tag from an Amazon FSx resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UntagResource.html
    */
@@ -758,19 +540,102 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifStorageVirtualMachineId()
-   * - .ifParentVolumeId()
-   *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateVolume.html
    */
   public toUpdateVolume() {
     return this.to('UpdateVolume');
   }
 
+  /**
+   * Grants permission to associate a File Gateway instance with an Amazon FSx for Windows File Server file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html
+   */
+  public toAssociateFileGateway() {
+    return this.to('AssociateFileGateway');
+  }
+
+  /**
+   * Grants permission to allow deletion of an FSx for ONTAP SnapLock Enterprise volume that contains WORM (write once, read many) files with active retention periods
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#bypass-enterprise
+   */
+  public toBypassSnaplockEnterpriseRetention() {
+    return this.to('BypassSnaplockEnterpriseRetention');
+  }
+
+  /**
+   * Grants permission to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and GetResourcePolicy are also required
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to describe the File Gateway instances associated with an Amazon FSx for Windows File Server file system
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html
+   */
+  public toDescribeAssociatedFileGateways() {
+    return this.to('DescribeAssociatedFileGateways');
+  }
+
+  /**
+   * Grants permission to disassociate a File Gateway instance from an Amazon FSx for Windows File Server file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html
+   */
+  public toDisassociateFileGateway() {
+    return this.to('DisassociateFileGateway');
+  }
+
+  /**
+   * Grants permission to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and DeleteResourcePolicy are also required
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to manage backup principal associations through AWS Backup
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopyBackup.html
+   */
+  public toManageBackupPrincipalAssociations() {
+    return this.to('ManageBackupPrincipalAssociations');
+  }
+
+  /**
+   * Grants permission to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). DeleteResourcePolicy and GetResourcePolicy are also required
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
-      'AssociateFileGateway',
       'AssociateFileSystemAliases',
       'CancelDataRepositoryTask',
       'CopyBackup',
@@ -794,28 +659,28 @@ export class Fsx extends PolicyStatement {
       'DeleteStorageVirtualMachine',
       'DeleteVolume',
       'DetachAndDeleteS3AccessPoint',
-      'DisassociateFileGateway',
       'DisassociateFileSystemAliases',
       'ReleaseFileSystemNfsV3Locks',
       'RestoreVolumeFromSnapshot',
       'StartMisconfiguredStateRecovery',
+      'TagResource',
+      'UntagResource',
       'UpdateDataRepositoryAssociation',
       'UpdateFileCache',
       'UpdateFileSystem',
       'UpdateSharedVpcConfiguration',
       'UpdateSnapshot',
       'UpdateStorageVirtualMachine',
-      'UpdateVolume'
-    ],
-    'Permissions management': [
+      'UpdateVolume',
+      'AssociateFileGateway',
       'BypassSnaplockEnterpriseRetention',
       'DeleteResourcePolicy',
+      'DisassociateFileGateway',
       'GetResourcePolicy',
       'ManageBackupPrincipalAssociations',
       'PutResourcePolicy'
     ],
     Read: [
-      'DescribeAssociatedFileGateways',
       'DescribeBackups',
       'DescribeDataRepositoryAssociations',
       'DescribeDataRepositoryTasks',
@@ -827,20 +692,29 @@ export class Fsx extends PolicyStatement {
       'DescribeSnapshots',
       'DescribeStorageVirtualMachines',
       'DescribeVolumes',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'DescribeAssociatedFileGateways'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
+    ],
+    'Permissions management': [
+      'BypassSnaplockEnterpriseRetention',
+      'DeleteResourcePolicy',
+      'GetResourcePolicy',
+      'ManageBackupPrincipalAssociations',
+      'PutResourcePolicy'
     ]
   };
 
   /**
-   * Adds a resource of type file-system to the statement
+   * Adds a resource of type association to the statement
    *
-   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/fsx/latest/LustreGuide/access-control-overview.html#access-control-resources
    *
-   * @param fileSystemId - Identifier for the fileSystemId.
+   * @param fileSystemIdOrFileCacheId - Identifier for the fileSystemIdOrFileCacheId.
+   * @param dataRepositoryAssociationId - Identifier for the dataRepositoryAssociationId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -848,8 +722,25 @@ export class Fsx extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:file-system/${ fileSystemId }`);
+  public onAssociation(fileSystemIdOrFileCacheId: string, dataRepositoryAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:association/${ fileSystemIdOrFileCacheId }/${ dataRepositoryAssociationId }`);
+  }
+
+  /**
+   * Adds a resource of type backup to the statement
+   *
+   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html#access-control-resources
+   *
+   * @param backupId - Identifier for the backupId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBackup(backupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:backup/${ backupId }`);
   }
 
   /**
@@ -870,11 +761,11 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type backup to the statement
+   * Adds a resource of type file-system to the statement
    *
    * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html#access-control-resources
    *
-   * @param backupId - Identifier for the backupId.
+   * @param fileSystemId - Identifier for the fileSystemId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -882,8 +773,26 @@ export class Fsx extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onBackup(backupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:backup/${ backupId }`);
+  public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:file-system/${ fileSystemId }`);
+  }
+
+  /**
+   * Adds a resource of type snapshot to the statement
+   *
+   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-control-overview.html#access-control-resources
+   *
+   * @param volumeId - Identifier for the volumeId.
+   * @param snapshotId - Identifier for the snapshotId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSnapshot(volumeId: string, snapshotId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:snapshot/${ volumeId }/${ snapshotId }`);
   }
 
   /**
@@ -922,24 +831,6 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type association to the statement
-   *
-   * https://docs.aws.amazon.com/fsx/latest/LustreGuide/access-control-overview.html#access-control-resources
-   *
-   * @param fileSystemIdOrFileCacheId - Identifier for the fileSystemIdOrFileCacheId.
-   * @param dataRepositoryAssociationId - Identifier for the dataRepositoryAssociationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onAssociation(fileSystemIdOrFileCacheId: string, dataRepositoryAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:association/${ fileSystemIdOrFileCacheId }/${ dataRepositoryAssociationId }`);
-  }
-
-  /**
    * Adds a resource of type volume to the statement
    *
    * https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security-iam.html
@@ -955,24 +846,6 @@ export class Fsx extends PolicyStatement {
    */
   public onVolume(fileSystemId: string, volumeId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:volume/${ fileSystemId }/${ volumeId }`);
-  }
-
-  /**
-   * Adds a resource of type snapshot to the statement
-   *
-   * https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-control-overview.html#access-control-resources
-   *
-   * @param volumeId - Identifier for the volumeId.
-   * @param snapshotId - Identifier for the snapshotId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onSnapshot(volumeId: string, snapshotId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:fsx:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:snapshot/${ volumeId }/${ snapshotId }`);
   }
 
   /**
@@ -992,7 +865,6 @@ export class Fsx extends PolicyStatement {
    * - .toCreateStorageVirtualMachine()
    * - .toCreateVolume()
    * - .toCreateVolumeFromBackup()
-   * - .toDeleteFileCache()
    * - .toDeleteFileSystem()
    * - .toDeleteVolume()
    * - .toTagResource()
@@ -1010,15 +882,62 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toAssociateFileSystemAliases()
+   * - .toCancelDataRepositoryTask()
+   * - .toCopyBackup()
+   * - .toCopySnapshotAndUpdateVolume()
+   * - .toCreateAndAttachS3AccessPoint()
+   * - .toCreateBackup()
+   * - .toCreateDataRepositoryAssociation()
+   * - .toCreateDataRepositoryTask()
+   * - .toCreateFileCache()
+   * - .toCreateFileSystem()
+   * - .toCreateFileSystemFromBackup()
+   * - .toCreateSnapshot()
+   * - .toCreateStorageVirtualMachine()
+   * - .toCreateVolume()
+   * - .toCreateVolumeFromBackup()
+   * - .toDeleteBackup()
+   * - .toDeleteDataRepositoryAssociation()
+   * - .toDeleteFileCache()
+   * - .toDeleteFileSystem()
+   * - .toDeleteSnapshot()
+   * - .toDeleteStorageVirtualMachine()
+   * - .toDeleteVolume()
+   * - .toDescribeFileSystemAliases()
+   * - .toDetachAndDeleteS3AccessPoint()
+   * - .toDisassociateFileSystemAliases()
+   * - .toListTagsForResource()
+   * - .toReleaseFileSystemNfsV3Locks()
+   * - .toRestoreVolumeFromSnapshot()
+   * - .toStartMisconfiguredStateRecovery()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateDataRepositoryAssociation()
+   * - .toUpdateFileCache()
+   * - .toUpdateFileSystem()
+   * - .toUpdateSnapshot()
+   * - .toUpdateStorageVirtualMachine()
+   * - .toUpdateVolume()
+   * - .toAssociateFileGateway()
+   * - .toBypassSnaplockEnterpriseRetention()
+   * - .toDeleteResourcePolicy()
+   * - .toDescribeAssociatedFileGateways()
+   * - .toDisassociateFileGateway()
+   * - .toGetResourcePolicy()
+   * - .toManageBackupPrincipalAssociations()
+   * - .toPutResourcePolicy()
+   *
    * Applies to resource types:
-   * - file-system
-   * - file-cache
+   * - association
    * - backup
+   * - file-cache
+   * - file-system
+   * - snapshot
    * - storage-virtual-machine
    * - task
-   * - association
    * - volume
-   * - snapshot
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1045,7 +964,6 @@ export class Fsx extends PolicyStatement {
    * - .toCreateStorageVirtualMachine()
    * - .toCreateVolume()
    * - .toCreateVolumeFromBackup()
-   * - .toDeleteFileCache()
    * - .toDeleteFileSystem()
    * - .toDeleteVolume()
    * - .toTagResource()

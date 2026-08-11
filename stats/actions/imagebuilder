@@ -61,16 +61,16 @@ imagebuilder:ListWorkflowBuildVersions;List
 imagebuilder:ListWorkflowExecutions;List
 imagebuilder:ListWorkflowStepExecutions;List
 imagebuilder:ListWorkflows;List
-imagebuilder:PutComponentPolicy;Permissions management
-imagebuilder:PutContainerRecipePolicy;Permissions management
-imagebuilder:PutImagePolicy;Permissions management
-imagebuilder:PutImageRecipePolicy;Permissions management
+imagebuilder:PutComponentPolicy;Permissions management, Write
+imagebuilder:PutContainerRecipePolicy;Permissions management, Write
+imagebuilder:PutImagePolicy;Permissions management, Write
+imagebuilder:PutImageRecipePolicy;Permissions management, Write
 imagebuilder:RetryImage;Write
 imagebuilder:SendWorkflowStepAction;Write
 imagebuilder:StartImagePipelineExecution;Write
 imagebuilder:StartResourceStateUpdate;Write
-imagebuilder:TagResource;Tagging
-imagebuilder:UntagResource;Tagging
+imagebuilder:TagResource;Tagging, Write
+imagebuilder:UntagResource;Tagging, Write
 imagebuilder:UpdateDistributionConfiguration;Write
 imagebuilder:UpdateImagePipeline;Write
 imagebuilder:UpdateInfrastructureConfiguration;Write

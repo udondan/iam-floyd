@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement } from '../../shared';
 
 /**
- * Statement provider for service [machinelearning](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmachinelearning.html).
+ * Statement provider for service [machinelearning](https://docs.aws.amazon.com/service-authorization/latest/reference/list_machinelearning.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Machinelearning extends PolicyStatement {
   public servicePrefix = 'machinelearning';
 
   /**
-   * Statement provider for service [machinelearning](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmachinelearning.html).
+   * Statement provider for service [machinelearning](https://docs.aws.amazon.com/service-authorization/latest/reference/list_machinelearning.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -21,7 +21,7 @@ export class Machinelearning extends PolicyStatement {
   /**
    * Adds one or more tags to an object, up to a limit of 10. Each tag consists of a key and an optional value
    *
-   * Access Level: Tagging
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_AddTags.html
    */
@@ -164,7 +164,7 @@ export class Machinelearning extends PolicyStatement {
   /**
    * Deletes the specified tags associated with an ML object. After this operation is complete, you can't recover deleted tags
    *
-   * Access Level: Tagging
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteTags.html
    */
@@ -332,6 +332,7 @@ export class Machinelearning extends PolicyStatement {
       'DeleteTags'
     ],
     Write: [
+      'AddTags',
       'CreateBatchPrediction',
       'CreateDataSourceFromRDS',
       'CreateDataSourceFromRedshift',
@@ -344,6 +345,7 @@ export class Machinelearning extends PolicyStatement {
       'DeleteEvaluation',
       'DeleteMLModel',
       'DeleteRealtimeEndpoint',
+      'DeleteTags',
       'Predict',
       'UpdateBatchPrediction',
       'UpdateDataSource',

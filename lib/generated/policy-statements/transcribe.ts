@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [transcribe](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontranscribe.html).
+ * Statement provider for service [transcribe](https://docs.aws.amazon.com/service-authorization/latest/reference/list_transcribe.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Transcribe extends PolicyStatement {
   public servicePrefix = 'transcribe';
 
   /**
-   * Statement provider for service [transcribe](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontranscribe.html).
+   * Statement provider for service [transcribe](https://docs.aws.amazon.com/service-authorization/latest/reference/list_transcribe.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -44,10 +44,6 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - s3:GetObject
-   * - s3:ListBucket
-   *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateLanguageModel.html
    */
   public toCreateLanguageModel() {
@@ -63,9 +59,6 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateMedicalVocabulary.html
    */
@@ -83,9 +76,6 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - s3:GetObject
-   *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateVocabulary.html
    */
   public toCreateVocabulary() {
@@ -101,9 +91,6 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateVocabularyFilter.html
    */
@@ -436,13 +423,10 @@ export class Transcribe extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifOutputEncryptionKMSKeyId()
-   * - .ifOutputLocation()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - s3:GetObject
+   * - .ifOutputEncryptionKMSKeyId()
+   * - .ifOutputLocation()
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_StartCallAnalyticsJob.html
    */
@@ -478,14 +462,11 @@ export class Transcribe extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifOutputBucketName()
-   * - .ifOutputEncryptionKMSKeyId()
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - s3:GetObject
+   * - .ifOutputBucketName()
+   * - .ifOutputEncryptionKMSKeyId()
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_StartMedicalScribeJob.html
    */
@@ -532,15 +513,12 @@ export class Transcribe extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifOutputBucketName()
-   * - .ifOutputEncryptionKMSKeyId()
-   * - .ifOutputKey()
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - s3:GetObject
+   * - .ifOutputBucketName()
+   * - .ifOutputEncryptionKMSKeyId()
+   * - .ifOutputKey()
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_StartMedicalTranscriptionJob.html
    */
@@ -576,15 +554,12 @@ export class Transcribe extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifOutputBucketName()
-   * - .ifOutputEncryptionKMSKeyId()
-   * - .ifOutputKey()
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - s3:GetObject
+   * - .ifOutputBucketName()
+   * - .ifOutputEncryptionKMSKeyId()
+   * - .ifOutputKey()
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html
    */
@@ -595,15 +570,15 @@ export class Transcribe extends PolicyStatement {
   /**
    * Grants permission to tag a resource with given key value pairs
    *
-   * Access Level: Tagging
+   * Access Level: Tagging, Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    * - .ifOutputBucketName()
    * - .ifOutputEncryptionKMSKeyId()
    * - .ifOutputKey()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_TagResource.html
    */
@@ -614,7 +589,7 @@ export class Transcribe extends PolicyStatement {
   /**
    * Grants permission to untag a resource with given key
    *
-   * Access Level: Tagging
+   * Access Level: Tagging, Write
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
@@ -641,9 +616,6 @@ export class Transcribe extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - s3:GetObject
-   *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateMedicalVocabulary.html
    */
   public toUpdateMedicalVocabulary() {
@@ -655,9 +627,6 @@ export class Transcribe extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - s3:GetObject
-   *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateVocabulary.html
    */
   public toUpdateVocabulary() {
@@ -668,9 +637,6 @@ export class Transcribe extends PolicyStatement {
    * Grants permission to update an existing vocabulary filter with new values. The UpdateVocabularyFilter operation overwrites all of the existing information with the values that you provide in the request
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateVocabularyFilter.html
    */
@@ -705,6 +671,8 @@ export class Transcribe extends PolicyStatement {
       'StartStreamTranscription',
       'StartStreamTranscriptionWebSocket',
       'StartTranscriptionJob',
+      'TagResource',
+      'UntagResource',
       'UpdateCallAnalyticsCategory',
       'UpdateMedicalVocabulary',
       'UpdateVocabulary',
@@ -739,6 +707,108 @@ export class Transcribe extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type callanalyticscategory to the statement
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateCallAnalyticsCategory.html
+   *
+   * @param categoryName - Identifier for the categoryName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCallanalyticscategory(categoryName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:analytics-category/${ categoryName }`);
+  }
+
+  /**
+   * Adds a resource of type callanalyticsjob to the statement
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_CallAnalyticsJob.html
+   *
+   * @param jobName - Identifier for the jobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCallanalyticsjob(jobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:analytics/${ jobName }`);
+  }
+
+  /**
+   * Adds a resource of type languagemodel to the statement
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_LanguageModel.html
+   *
+   * @param modelName - Identifier for the modelName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLanguagemodel(modelName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:language-model/${ modelName }`);
+  }
+
+  /**
+   * Adds a resource of type medicalscribejob to the statement
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_MedicalScribeJob.html
+   *
+   * @param jobName - Identifier for the jobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMedicalscribejob(jobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:medical-scribe-job/${ jobName }`);
+  }
+
+  /**
+   * Adds a resource of type medicaltranscriptionjob to the statement
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_MedicalTranscriptionJob.html
+   *
+   * @param jobName - Identifier for the jobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMedicaltranscriptionjob(jobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:medical-transcription-job/${ jobName }`);
+  }
+
+  /**
+   * Adds a resource of type medicalvocabulary to the statement
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateMedicalVocabulary.html
+   *
+   * @param vocabularyName - Identifier for the vocabularyName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMedicalvocabulary(vocabularyName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:medical-vocabulary/${ vocabularyName }`);
+  }
 
   /**
    * Adds a resource of type transcriptionjob to the statement
@@ -792,108 +862,6 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type languagemodel to the statement
-   *
-   * https://docs.aws.amazon.com/transcribe/latest/dg/API_LanguageModel.html
-   *
-   * @param modelName - Identifier for the modelName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onLanguagemodel(modelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:language-model/${ modelName }`);
-  }
-
-  /**
-   * Adds a resource of type medicaltranscriptionjob to the statement
-   *
-   * https://docs.aws.amazon.com/transcribe/latest/dg/API_MedicalTranscriptionJob.html
-   *
-   * @param jobName - Identifier for the jobName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onMedicaltranscriptionjob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:medical-transcription-job/${ jobName }`);
-  }
-
-  /**
-   * Adds a resource of type medicalvocabulary to the statement
-   *
-   * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateMedicalVocabulary.html
-   *
-   * @param vocabularyName - Identifier for the vocabularyName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onMedicalvocabulary(vocabularyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:medical-vocabulary/${ vocabularyName }`);
-  }
-
-  /**
-   * Adds a resource of type callanalyticsjob to the statement
-   *
-   * https://docs.aws.amazon.com/transcribe/latest/dg/API_CallAnalyticsJob.html
-   *
-   * @param jobName - Identifier for the jobName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCallanalyticsjob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:analytics/${ jobName }`);
-  }
-
-  /**
-   * Adds a resource of type callanalyticscategory to the statement
-   *
-   * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateCallAnalyticsCategory.html
-   *
-   * @param categoryName - Identifier for the categoryName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCallanalyticscategory(categoryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:analytics-category/${ categoryName }`);
-  }
-
-  /**
-   * Adds a resource of type medicalscribejob to the statement
-   *
-   * https://docs.aws.amazon.com/transcribe/latest/dg/API_MedicalScribeJob.html
-   *
-   * @param jobName - Identifier for the jobName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onMedicalscribejob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:medical-scribe-job/${ jobName }`);
-  }
-
-  /**
    * Filters access by requiring tag values present in a resource creation request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
@@ -929,21 +897,43 @@ export class Transcribe extends PolicyStatement {
    * - .toCreateMedicalVocabulary()
    * - .toCreateVocabulary()
    * - .toCreateVocabularyFilter()
+   * - .toDeleteCallAnalyticsCategory()
+   * - .toDeleteCallAnalyticsJob()
+   * - .toDeleteLanguageModel()
+   * - .toDeleteMedicalScribeJob()
+   * - .toDeleteMedicalTranscriptionJob()
+   * - .toDeleteMedicalVocabulary()
+   * - .toDeleteTranscriptionJob()
+   * - .toDeleteVocabulary()
+   * - .toDeleteVocabularyFilter()
+   * - .toDescribeLanguageModel()
+   * - .toGetCallAnalyticsCategory()
+   * - .toGetCallAnalyticsJob()
+   * - .toGetMedicalScribeJob()
+   * - .toGetMedicalTranscriptionJob()
+   * - .toGetMedicalVocabulary()
+   * - .toGetTranscriptionJob()
+   * - .toGetVocabulary()
+   * - .toGetVocabularyFilter()
    * - .toStartMedicalScribeJob()
    * - .toStartMedicalTranscriptionJob()
    * - .toStartTranscriptionJob()
    * - .toTagResource()
+   * - .toUpdateCallAnalyticsCategory()
+   * - .toUpdateMedicalVocabulary()
+   * - .toUpdateVocabulary()
+   * - .toUpdateVocabularyFilter()
    *
    * Applies to resource types:
+   * - callanalyticscategory
+   * - callanalyticsjob
+   * - languagemodel
+   * - medicalscribejob
+   * - medicaltranscriptionjob
+   * - medicalvocabulary
    * - transcriptionjob
    * - vocabulary
    * - vocabularyfilter
-   * - languagemodel
-   * - medicaltranscriptionjob
-   * - medicalvocabulary
-   * - callanalyticsjob
-   * - callanalyticscategory
-   * - medicalscribejob
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

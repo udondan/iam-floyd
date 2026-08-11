@@ -1,1 +1,6 @@
+signin:OAuthClientAuthentication
+signin:OAuthClientId
+signin:OAuthGrantType
+signin:OAuthRedirectUri
+signin:OAuthTokenType
 signin:PrincipalArn

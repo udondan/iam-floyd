@@ -1,6 +1,6 @@
 sagemaker:AccessModelPackage;Read
 sagemaker:AddAssociation;Write
-sagemaker:AddTags;Tagging
+sagemaker:AddTags;Tagging, Write
 sagemaker:AssociateTrialComponent;Write
 sagemaker:AttachClusterNodeVolume;Write
 sagemaker:BatchAddClusterNodes;Write
@@ -148,7 +148,7 @@ sagemaker:DeleteRecord;Write
 sagemaker:DeleteResourcePolicy;Write
 sagemaker:DeleteSpace;Write
 sagemaker:DeleteStudioLifecycleConfig;Write
-sagemaker:DeleteTags;Tagging
+sagemaker:DeleteTags;Tagging, Write
 sagemaker:DeleteTrainingJob;Write
 sagemaker:DeleteTrial;Write
 sagemaker:DeleteTrialComponent;Write

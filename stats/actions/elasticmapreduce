@@ -2,7 +2,7 @@ elasticmapreduce:AccessAllEventLogs;Write
 elasticmapreduce:AddInstanceFleet;Write
 elasticmapreduce:AddInstanceGroups;Write
 elasticmapreduce:AddJobFlowSteps;Write
-elasticmapreduce:AddTags;Tagging
+elasticmapreduce:AddTags;Tagging, Write
 elasticmapreduce:AttachEditor;Write
 elasticmapreduce:CancelSteps;Write
 elasticmapreduce:CreateEditor;Write
@@ -17,7 +17,7 @@ elasticmapreduce:DeleteRepository;Write
 elasticmapreduce:DeleteSecurityConfiguration;Write
 elasticmapreduce:DeleteStudio;Write
 elasticmapreduce:DeleteStudioSessionMapping;Write
-elasticmapreduce:DeleteWorkspaceAccess;Permissions management
+elasticmapreduce:DeleteWorkspaceAccess;Permissions management, Write
 elasticmapreduce:DescribeCluster;Read
 elasticmapreduce:DescribeEditor;Read
 elasticmapreduce:DescribeJobFlows;Read
@@ -58,13 +58,13 @@ elasticmapreduce:ModifyInstanceGroups;Write
 elasticmapreduce:OpenEditorInConsole;Write
 elasticmapreduce:PutAutoScalingPolicy;Write
 elasticmapreduce:PutAutoTerminationPolicy;Write
-elasticmapreduce:PutBlockPublicAccessConfiguration;Permissions management
+elasticmapreduce:PutBlockPublicAccessConfiguration;Permissions management, Write
 elasticmapreduce:PutManagedScalingPolicy;Write
-elasticmapreduce:PutWorkspaceAccess;Permissions management
+elasticmapreduce:PutWorkspaceAccess;Permissions management, Write
 elasticmapreduce:RemoveAutoScalingPolicy;Write
 elasticmapreduce:RemoveAutoTerminationPolicy;Write
 elasticmapreduce:RemoveManagedScalingPolicy;Write
-elasticmapreduce:RemoveTags;Tagging
+elasticmapreduce:RemoveTags;Tagging, Write
 elasticmapreduce:RunJobFlow;Write
 elasticmapreduce:SetKeepJobFlowAliveWhenNoSteps;Write
 elasticmapreduce:SetTerminationProtection;Write

@@ -38,7 +38,7 @@ codepipeline:RetryStageExecution;Write
 codepipeline:RollbackStage;Write
 codepipeline:StartPipelineExecution;Write
 codepipeline:StopPipelineExecution;Write
-codepipeline:TagResource;Tagging
-codepipeline:UntagResource;Tagging
+codepipeline:TagResource;Tagging, Write
+codepipeline:UntagResource;Tagging, Write
 codepipeline:UpdateActionType;Write
 codepipeline:UpdatePipeline;Write

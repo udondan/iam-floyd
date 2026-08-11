@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [glue](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html).
+ * Statement provider for service [glue](https://docs.aws.amazon.com/service-authorization/latest/reference/list_glue.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Glue extends PolicyStatement {
   public servicePrefix = 'glue';
 
   /**
-   * Statement provider for service [glue](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html).
+   * Statement provider for service [glue](https://docs.aws.amazon.com/service-authorization/latest/reference/list_glue.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,21 +19,9 @@ export class Glue extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Glue to continuously validate that the target Arn can receive data replicated from the source ARN
-   *
-   * Access Level: Write
-   */
-  public toAuthorizeInboundIntegration() {
-    return this.to('AuthorizeInboundIntegration');
-  }
-
-  /**
    * Grants permission to create one or more partitions
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchCreatePartition
    */
@@ -46,9 +34,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-BatchDeleteConnection
    */
   public toBatchDeleteConnection() {
@@ -59,9 +44,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to delete one or more partitions
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchDeletePartition
    */
@@ -74,9 +56,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-BatchDeleteTable
    */
   public toBatchDeleteTable() {
@@ -87,9 +66,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to delete one or more versions of a table
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTableVersion
    */
@@ -157,9 +133,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchGetPartition
    */
   public toBatchGetPartition() {
@@ -169,7 +142,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to batch get stage files for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -181,9 +154,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to return the configuration for the specified table optimizers
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - glue:GetTable
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-table-optimizers.html#aws-glue-api-table-optimizers-BatchGetTableOptimizer
    */
@@ -228,9 +198,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to update one or more partitions
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchUpdatePartition
    */
@@ -298,10 +265,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-CreateBlueprint
    */
   public toCreateBlueprint() {
@@ -312,12 +275,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to create a catalog
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
@@ -351,11 +308,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to create a connection
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-CreateConnection
    */
@@ -413,12 +365,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-CreateDatabase
    */
   public toCreateDatabase() {
@@ -452,26 +398,9 @@ export class Glue extends PolicyStatement {
   }
 
   /**
-   * Grants permission to the source principal to create an inbound integration for data to be replicated from the source into the target
-   *
-   * Access Level: Write
-   */
-  public toCreateInboundIntegration() {
-    return this.to('CreateInboundIntegration');
-  }
-
-  /**
    * Grants permission to create an integration
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - kms:CreateGrant
-   * - kms:DescribeKey
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-CreateIntegration
    */
@@ -483,10 +412,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to create integration resource property
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-CreateIntegrationResourceProperty
    */
@@ -509,13 +434,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to create a job
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifVpcIds()
-   * - .ifSubnetIds()
-   * - .ifSecurityGroupIds()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-CreateJob
    */
@@ -543,9 +461,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-CreatePartition
    */
   public toCreatePartition() {
@@ -556,9 +471,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to create a specified partition index in an existing table
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-CreatePartitionIndex
    */
@@ -571,10 +483,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-CreateRegistry
    */
   public toCreateRegistry() {
@@ -585,10 +493,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to create a new schema container
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-CreateSchema
    */
@@ -623,13 +527,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifVpcIds()
-   * - .ifSubnetIds()
-   * - .ifSecurityGroupIds()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-interactive-sessions.html#aws-glue-api-interactive-sessions-CreateSession
    */
   public toCreateSession() {
@@ -640,10 +537,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to create a table
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-CreateTable
    */
@@ -656,9 +549,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - glue:GetTable
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-table-optimizers.html#aws-glue-api-table-optimizers-CreateTableOptimizer
    */
   public toCreateTableOptimizer() {
@@ -669,10 +559,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to create a trigger
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-CreateTrigger
    */
@@ -685,10 +571,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-usage-profiles.html#aws-glue-api-usage-profiles-CreateUsageProfile
    */
   public toCreateUsageProfile() {
@@ -700,9 +582,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-CreateUserDefinedFunction
    */
   public toCreateUserDefinedFunction() {
@@ -713,10 +592,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to create a workflow
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-CreateWorkflow
    */
@@ -740,10 +615,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
   public toDeleteCatalog() {
@@ -766,9 +637,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-DeleteColumnStatisticsForPartition
    */
   public toDeleteColumnStatisticsForPartition() {
@@ -779,9 +647,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to delete the table statistics of columns
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteColumnStatisticsForTable
    */
@@ -804,9 +669,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to delete a connection
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-DeleteConnection
    */
@@ -863,10 +725,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-DeleteDatabase
    */
   public toDeleteDatabase() {
@@ -899,9 +757,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to delete an integration
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-DeleteIntegration
    */
@@ -958,9 +813,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-DeletePartition
    */
   public toDeletePartition() {
@@ -971,9 +823,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to delete a specified partition index from an existing table
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeletePartitionIndex
    */
@@ -995,7 +844,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to delete a resource policy
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-DeleteResourcePolicy
    */
@@ -1052,10 +901,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTable
    */
   public toDeleteTable() {
@@ -1067,9 +912,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - glue:GetTable
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-table-optimizers.html#aws-glue-api-table-optimizers-DeleteTableOptimizer
    */
   public toDeleteTableOptimizer() {
@@ -1080,9 +922,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to delete a version of a table
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTableVersion
    */
@@ -1117,9 +956,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-DeleteUserDefinedFunction
    */
   public toDeleteUserDefinedFunction() {
@@ -1140,7 +976,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to terminate Glue Studio Notebook session
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
    */
@@ -1151,7 +987,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to describe connection type in glue
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
    */
@@ -1162,7 +998,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to describe entity in glue studio
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
    */
@@ -1186,9 +1022,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-DescribeIntegrations
    */
   public toDescribeIntegrations() {
@@ -1199,10 +1032,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to read and write redshift federated resources
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifEnabledForRedshiftAutoDiscovery()
-   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
@@ -1248,11 +1077,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifEnabledForRedshiftAutoDiscovery()
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
   public toGetCatalog() {
@@ -1264,9 +1088,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-migration.html#aws-glue-api-catalog-migration-GetCatalogImportStatus
    */
   public toGetCatalogImportStatus() {
@@ -1277,11 +1098,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve all catalogs
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifEnabledForRedshiftAutoDiscovery()
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
@@ -1316,9 +1132,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetColumnStatisticsForPartition
    */
   public toGetColumnStatisticsForPartition() {
@@ -1329,9 +1142,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve table statistics of columns
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetColumnStatisticsForTable
    */
@@ -1388,9 +1198,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-GetConnection
    */
   public toGetConnection() {
@@ -1401,9 +1208,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve a list of connections
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-GetConnections
    */
@@ -1480,7 +1284,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get Data Preview Statement
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
    */
@@ -1559,10 +1363,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-GetDatabase
    */
   public toGetDatabase() {
@@ -1573,10 +1373,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve all databases
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-GetDatabases
    */
@@ -1631,7 +1427,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get environment details for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -1642,7 +1438,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get executors for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -1653,7 +1449,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get executor threads for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -1774,7 +1570,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get log parsing status for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -1840,7 +1636,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to retrieve Glue Studio Notebooks session status
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
    */
@@ -1853,9 +1649,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetPartition
    */
   public toGetPartition() {
@@ -1867,9 +1660,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetPartitionIndexes
    */
   public toGetPartitionIndexes() {
@@ -1880,9 +1670,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve the partitions of a table
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetPartitions
    */
@@ -1904,7 +1691,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get queries for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -1915,7 +1702,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get a specific query for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -1926,7 +1713,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get the result of a Data Preparation Recipe statement
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/ug/setting-up.html#getting-started-min-privs
    */
@@ -2058,7 +1845,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get a stage for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -2069,7 +1856,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get a stage attempt for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -2080,7 +1867,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get the task list for a stage attempt for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -2091,7 +1878,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get the task summary for a stage attempt for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -2102,7 +1889,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get stage files for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -2113,7 +1900,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get stages for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -2135,7 +1922,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get storage details for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -2146,7 +1933,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to get storage unit details for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -2159,10 +1946,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTable
    */
   public toGetTable() {
@@ -2173,9 +1956,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to return the configuration of all optimizers associated with a specified table
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - glue:GetTable
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-table-optimizers.html#aws-glue-api-table-optimizers-GetTableOptimizer
    */
@@ -2188,9 +1968,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTableVersion
    */
   public toGetTableVersion() {
@@ -2202,9 +1979,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTableVersions
    */
   public toGetTableVersions() {
@@ -2215,10 +1989,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve the tables in a database
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTables
    */
@@ -2275,9 +2045,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-GetUserDefinedFunction
    */
   public toGetUserDefinedFunction() {
@@ -2288,10 +2055,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve multiple function definitions
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-GetUserDefinedFunctions
    */
@@ -2346,7 +2109,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to access Glue Studio Notebooks
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
    */
@@ -2357,7 +2120,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to refresh Glue Studio Notebooks credentials
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
    */
@@ -2369,9 +2132,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to import an Athena data catalog into AWS Glue
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-migration.html#aws-glue-api-catalog-migration-ImportCatalogToGlue
    */
@@ -2404,7 +2164,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to list connection types in glue
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
    */
@@ -2503,7 +2263,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to list entities in glue studio
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
    */
@@ -2615,9 +2375,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - glue:GetTable
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-table-optimizers.html#aws-glue-api-table-optimizers-ListTableOptimizerRuns
    */
   public toListTableOptimizerRuns() {
@@ -2660,7 +2417,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to use Glue managed connectors to query data
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
    */
@@ -2672,9 +2429,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to modify a zero-ETL integration
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-ModifyIntegration
    */
@@ -2691,28 +2445,6 @@ export class Glue extends PolicyStatement {
    */
   public toNotifyEvent() {
     return this.to('NotifyEvent');
-  }
-
-  /**
-   * Grants permission to pass glue connection name in input for APIs that require them
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-CreateConnection
-   */
-  public toPassConnection() {
-    return this.to('PassConnection');
-  }
-
-  /**
-   * Grants permission to publish Data Quality results
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html
-   */
-  public toPublishDataQuality() {
-    return this.to('PublishDataQuality');
   }
 
   /**
@@ -2751,7 +2483,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to update a resource policy
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-PutResourcePolicy
    */
@@ -2795,7 +2527,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to refresh the oauth2 tokens for connection during job execution
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
    */
@@ -2807,11 +2539,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to register connection type
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
    */
@@ -2846,10 +2573,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-RenameTable
    */
   public toRenameTable() {
@@ -2859,7 +2582,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to request log parsing for SparkUI
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
    */
@@ -2892,7 +2615,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to run Data Preview Statement
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
    */
@@ -2916,9 +2639,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-SearchTables
    */
   public toSearchTables() {
@@ -2939,7 +2659,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to execute a Data Preparation Recipe statement in data preview
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/ug/setting-up.html#getting-started-min-privs
    */
@@ -2962,10 +2682,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to start a run for generating Column Statistics for the table
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - glue:GetSecurityConfiguration
-   * - glue:GetTable
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-column-statistics.html#aws-glue-api-crawler-column-statistics-StartColumnStatisticsTaskRun
    */
@@ -3108,7 +2824,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to start Glue Studio Notebooks
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
    */
@@ -3229,12 +2945,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to add tags to a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifLakeFormationPermissions()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-TagResource
    */
@@ -3245,7 +2956,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to terminate Glue Studio Notebooks
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations
    */
@@ -3256,7 +2967,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to test connection in Glue Studio
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/console-test-connections.html
    */
@@ -3267,11 +2978,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to remove tags associated with a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifLakeFormationPermissions()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-UntagResource
    */
@@ -3295,10 +3002,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
   public toUpdateCatalog() {
@@ -3321,9 +3024,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-UpdateColumnStatisticsForPartition
    */
   public toUpdateColumnStatisticsForPartition() {
@@ -3334,9 +3034,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to update table statistics of columns
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-UpdateColumnStatisticsForTable
    */
@@ -3359,9 +3056,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to update a connection
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-UpdateConnection
    */
@@ -3406,10 +3100,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to update a database
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-UpdateDatabase
    */
@@ -3466,11 +3156,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifVpcIds()
-   * - .ifSubnetIds()
-   * - .ifSecurityGroupIds()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-UpdateJob
    */
   public toUpdateJob() {
@@ -3503,9 +3188,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to update a partition
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-UpdatePartition
    */
@@ -3551,10 +3233,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   * - .ifFederatedAuthorizationSource()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-UpdateTable
    */
   public toUpdateTable() {
@@ -3565,9 +3243,6 @@ export class Glue extends PolicyStatement {
    * Grants permission to update the configuration for an existing table optimizer
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - glue:GetTable
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-table-optimizers.html#aws-glue-api-table-optimizers-UpdateTableOptimizer
    */
@@ -3602,9 +3277,6 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifLakeFormationPermissions()
-   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-UpdateUserDefinedFunction
    */
   public toUpdateUserDefinedFunction() {
@@ -3636,12 +3308,63 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to use Glue Studio and access its internal APIs
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/glue/latest/ug/setting-up.html#getting-started-min-privs
    */
   public toUseGlueStudio() {
     return this.to('UseGlueStudio');
+  }
+
+  /**
+   * Grants permission to retrieve runtime configuration for Data Quality features
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html
+   */
+  public toAccessDataQualityRuntimeConfiguration() {
+    return this.to('AccessDataQualityRuntimeConfiguration');
+  }
+
+  /**
+   * Grants permission to Glue to continuously validate that the target Arn can receive data replicated from the source ARN
+   *
+   * Access Level: Write
+   */
+  public toAuthorizeInboundIntegration() {
+    return this.to('AuthorizeInboundIntegration');
+  }
+
+  /**
+   * Grants permission to the source principal to create an inbound integration for data to be replicated from the source into the target
+   *
+   * Access Level: Write
+   */
+  public toCreateInboundIntegration() {
+    return this.to('CreateInboundIntegration');
+  }
+
+  /**
+   * Grants permission to pass glue connection name in input for APIs that require them
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-CreateConnection
+   */
+  public toPassConnection() {
+    return this.to('PassConnection');
+  }
+
+  /**
+   * Grants permission to publish Data Quality results
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html
+   */
+  public toPublishDataQuality() {
+    return this.to('PublishDataQuality');
   }
 
   /**
@@ -3657,12 +3380,12 @@ export class Glue extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
-      'AuthorizeInboundIntegration',
       'BatchCreatePartition',
       'BatchDeleteConnection',
       'BatchDeletePartition',
       'BatchDeleteTable',
       'BatchDeleteTableVersion',
+      'BatchGetStageFiles',
       'BatchStopJobRun',
       'BatchUpdatePartition',
       'CancelDataQualityRuleRecommendationRun',
@@ -3680,7 +3403,6 @@ export class Glue extends PolicyStatement {
       'CreateDatabase',
       'CreateDevEndpoint',
       'CreateGlueIdentityCenterConfiguration',
-      'CreateInboundIntegration',
       'CreateIntegration',
       'CreateIntegrationResourceProperty',
       'CreateIntegrationTableProperties',
@@ -3721,6 +3443,7 @@ export class Glue extends PolicyStatement {
       'DeletePartition',
       'DeletePartitionIndex',
       'DeleteRegistry',
+      'DeleteResourcePolicy',
       'DeleteSchema',
       'DeleteSchemaVersions',
       'DeleteSecurityConfiguration',
@@ -3732,25 +3455,53 @@ export class Glue extends PolicyStatement {
       'DeleteUsageProfile',
       'DeleteUserDefinedFunction',
       'DeleteWorkflow',
+      'DeregisterDataPreview',
+      'DescribeConnectionType',
+      'DescribeEntity',
       'FederateAuthorization',
+      'GetDataPreviewStatement',
+      'GetEnvironment',
+      'GetExecutors',
+      'GetExecutorsThreads',
+      'GetLogParsingStatus',
+      'GetNotebookInstanceStatus',
+      'GetQueries',
+      'GetQuery',
+      'GetRecipeAction',
+      'GetStage',
+      'GetStageAttempt',
+      'GetStageAttemptTaskList',
+      'GetStageAttemptTaskSummary',
+      'GetStageFiles',
+      'GetStages',
+      'GetStorage',
+      'GetStorageUnit',
+      'GlueNotebookAuthorize',
+      'GlueNotebookRefreshCredentials',
       'ImportCatalogToGlue',
+      'ListConnectionTypes',
+      'ListEntities',
+      'ManagedConnector',
       'ModifyIntegration',
       'NotifyEvent',
-      'PassConnection',
-      'PublishDataQuality',
       'PutDataCatalogEncryptionSettings',
       'PutDataQualityProfileAnnotation',
       'PutDataQualityStatisticAnnotation',
+      'PutResourcePolicy',
       'PutSchemaVersionMetadata',
       'PutWorkflowRunProperties',
+      'RefreshOAuth2Tokens',
       'RegisterConnectionType',
       'RegisterSchemaVersion',
       'RemoveSchemaVersionMetadata',
       'RenameTable',
+      'RequestLogParsing',
       'ResetJobBookmark',
       'ResumeWorkflowRun',
+      'RunDataPreviewStatement',
       'RunStatement',
       'SendFeedback',
+      'SendRecipeAction',
       'StartBlueprintRun',
       'StartColumnStatisticsTaskRun',
       'StartColumnStatisticsTaskRunSchedule',
@@ -3765,6 +3516,7 @@ export class Glue extends PolicyStatement {
       'StartJobUpgradeAnalysis',
       'StartMLEvaluationTaskRun',
       'StartMLLabelingSetGenerationTaskRun',
+      'StartNotebook',
       'StartTrigger',
       'StartWorkflowRun',
       'StopColumnStatisticsTaskRun',
@@ -3775,6 +3527,10 @@ export class Glue extends PolicyStatement {
       'StopSession',
       'StopTrigger',
       'StopWorkflowRun',
+      'TagResource',
+      'TerminateNotebook',
+      'TestConnection',
+      'UntagResource',
       'UpdateBlueprint',
       'UpdateCatalog',
       'UpdateClassifier',
@@ -3804,6 +3560,11 @@ export class Glue extends PolicyStatement {
       'UpdateUserDefinedFunction',
       'UpdateWorkflow',
       'UpgradeJob',
+      'UseGlueStudio',
+      'AuthorizeInboundIntegration',
+      'CreateInboundIntegration',
+      'PassConnection',
+      'PublishDataQuality',
       'UseMLTransforms'
     ],
     Read: [
@@ -3896,7 +3657,8 @@ export class Glue extends PolicyStatement {
       'GetWorkflowRunProperties',
       'GetWorkflowRuns',
       'ListColumnStatisticsTaskRuns',
-      'SearchTables'
+      'SearchTables',
+      'AccessDataQualityRuntimeConfiguration'
     ],
     'Permissions management': [
       'BatchGetStageFiles',
@@ -3972,16 +3734,20 @@ export class Glue extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type rootcatalog to the statement
+   * Adds a resource of type blueprint to the statement
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
    *
+   * @param blueprintName - Identifier for the blueprintName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onRootcatalog(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog`);
+  public onBlueprint(blueprintName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:blueprint/${ blueprintName }`);
   }
 
   /**
@@ -4002,6 +3768,105 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type completion to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param completionId - Identifier for the completionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onCompletion(completionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:completion/${ completionId }`);
+  }
+
+  /**
+   * Adds a resource of type connection to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param connectionName - Identifier for the connectionName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnection(connectionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connection/${ connectionName }`);
+  }
+
+  /**
+   * Adds a resource of type connectionType to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param connectionTypeName - Identifier for the connectionTypeName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnectionType(connectionTypeName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connectionType:${ connectionTypeName }`);
+  }
+
+  /**
+   * Adds a resource of type crawler to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param crawlerName - Identifier for the crawlerName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCrawler(crawlerName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:crawler/${ crawlerName }`);
+  }
+
+  /**
+   * Adds a resource of type customEntityType to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param customEntityTypeId - Identifier for the customEntityTypeId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustomEntityType(customEntityTypeId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:customEntityType/${ customEntityTypeId }`);
+  }
+
+  /**
+   * Adds a resource of type dataQualityRuleset to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param rulesetName - Identifier for the rulesetName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataQualityRuleset(rulesetName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataQualityRuleset/${ rulesetName }`);
+  }
+
+  /**
    * Adds a resource of type database to the statement
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
@@ -4016,6 +3881,156 @@ export class Glue extends PolicyStatement {
    */
   public onDatabase(databaseName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:database/${ databaseName }`);
+  }
+
+  /**
+   * Adds a resource of type devendpoint to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param devEndpointName - Identifier for the devEndpointName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDevendpoint(devEndpointName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:devEndpoint/${ devEndpointName }`);
+  }
+
+  /**
+   * Adds a resource of type integration to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param integrationId - Identifier for the integrationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIntegration(integrationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:integration:${ integrationId }`);
+  }
+
+  /**
+   * Adds a resource of type integrationResourceProperty to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param resourceType - Identifier for the resourceType.
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIntegrationResourceProperty(resourceType: string, resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:integrationresourceproperty/${ resourceType }/${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type job to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param jobName - Identifier for the jobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onJob(jobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobName }`);
+  }
+
+  /**
+   * Adds a resource of type mlTransform to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param transformId - Identifier for the transformId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMlTransform(transformId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mlTransform/${ transformId }`);
+  }
+
+  /**
+   * Adds a resource of type registry to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param registryName - Identifier for the registryName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRegistry(registryName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:registry/${ registryName }`);
+  }
+
+  /**
+   * Adds a resource of type rootcatalog to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRootcatalog(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog`);
+  }
+
+  /**
+   * Adds a resource of type schema to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param schemaName - Identifier for the schemaName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSchema(schemaName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:schema/${ schemaName }`);
+  }
+
+  /**
+   * Adds a resource of type session to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param sessionId - Identifier for the sessionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSession(sessionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:session/${ sessionId }`);
   }
 
   /**
@@ -4056,11 +4071,11 @@ export class Glue extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type connection to the statement
+   * Adds a resource of type trigger to the statement
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
    *
-   * @param connectionName - Identifier for the connectionName.
+   * @param triggerName - Identifier for the triggerName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -4068,8 +4083,25 @@ export class Glue extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onConnection(connectionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connection/${ connectionName }`);
+  public onTrigger(triggerName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:trigger/${ triggerName }`);
+  }
+
+  /**
+   * Adds a resource of type usageProfile to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param usageProfileId - Identifier for the usageProfileId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onUsageProfile(usageProfileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:usageProfile/${ usageProfileId }`);
   }
 
   /**
@@ -4091,74 +4123,6 @@ export class Glue extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type devendpoint to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param devEndpointName - Identifier for the devEndpointName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDevendpoint(devEndpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:devEndpoint/${ devEndpointName }`);
-  }
-
-  /**
-   * Adds a resource of type job to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param jobName - Identifier for the jobName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onJob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobName }`);
-  }
-
-  /**
-   * Adds a resource of type trigger to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param triggerName - Identifier for the triggerName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onTrigger(triggerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:trigger/${ triggerName }`);
-  }
-
-  /**
-   * Adds a resource of type crawler to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param crawlerName - Identifier for the crawlerName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCrawler(crawlerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:crawler/${ crawlerName }`);
-  }
-
-  /**
    * Adds a resource of type workflow to the statement
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
@@ -4173,208 +4137,6 @@ export class Glue extends PolicyStatement {
    */
   public onWorkflow(workflowName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workflow/${ workflowName }`);
-  }
-
-  /**
-   * Adds a resource of type blueprint to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param blueprintName - Identifier for the blueprintName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onBlueprint(blueprintName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:blueprint/${ blueprintName }`);
-  }
-
-  /**
-   * Adds a resource of type mlTransform to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param transformId - Identifier for the transformId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onMlTransform(transformId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mlTransform/${ transformId }`);
-  }
-
-  /**
-   * Adds a resource of type registry to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param registryName - Identifier for the registryName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onRegistry(registryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:registry/${ registryName }`);
-  }
-
-  /**
-   * Adds a resource of type schema to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param schemaName - Identifier for the schemaName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onSchema(schemaName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:schema/${ schemaName }`);
-  }
-
-  /**
-   * Adds a resource of type session to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param sessionId - Identifier for the sessionId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onSession(sessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:session/${ sessionId }`);
-  }
-
-  /**
-   * Adds a resource of type usageProfile to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param usageProfileId - Identifier for the usageProfileId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onUsageProfile(usageProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:usageProfile/${ usageProfileId }`);
-  }
-
-  /**
-   * Adds a resource of type dataQualityRuleset to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param rulesetName - Identifier for the rulesetName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDataQualityRuleset(rulesetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataQualityRuleset/${ rulesetName }`);
-  }
-
-  /**
-   * Adds a resource of type customEntityType to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param customEntityTypeId - Identifier for the customEntityTypeId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCustomEntityType(customEntityTypeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:customEntityType/${ customEntityTypeId }`);
-  }
-
-  /**
-   * Adds a resource of type completion to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param completionId - Identifier for the completionId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onCompletion(completionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:completion/${ completionId }`);
-  }
-
-  /**
-   * Adds a resource of type integration to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param integrationId - Identifier for the integrationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onIntegration(integrationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:integration:${ integrationId }`);
-  }
-
-  /**
-   * Adds a resource of type connectionType to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param connectionTypeName - Identifier for the connectionTypeName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onConnectionType(connectionTypeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connectionType:${ connectionTypeName }`);
-  }
-
-  /**
-   * Adds a resource of type integrationResourceProperty to the statement
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
-   *
-   * @param resourceType - Identifier for the resourceType.
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onIntegrationResourceProperty(resourceType: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:integrationresourceproperty/${ resourceType }/${ resourceName }`);
   }
 
   /**
@@ -4418,34 +4180,243 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toBatchCreatePartition()
+   * - .toBatchDeleteConnection()
+   * - .toBatchDeletePartition()
+   * - .toBatchDeleteTable()
+   * - .toBatchDeleteTableVersion()
+   * - .toBatchGetBlueprints()
+   * - .toBatchGetCrawlers()
+   * - .toBatchGetDevEndpoints()
+   * - .toBatchGetJobs()
+   * - .toBatchGetPartition()
+   * - .toBatchGetTableOptimizer()
+   * - .toBatchGetTriggers()
+   * - .toBatchGetWorkflows()
+   * - .toBatchStopJobRun()
+   * - .toBatchUpdatePartition()
+   * - .toCancelDataQualityRuleRecommendationRun()
+   * - .toCancelDataQualityRulesetEvaluationRun()
+   * - .toCancelMLTaskRun()
+   * - .toCancelStatement()
+   * - .toCreateBlueprint()
+   * - .toCreateCatalog()
+   * - .toCreateColumnStatisticsTaskSettings()
+   * - .toCreateConnection()
+   * - .toCreateDatabase()
+   * - .toCreateIntegration()
+   * - .toCreateIntegrationResourceProperty()
+   * - .toCreateIntegrationTableProperties()
+   * - .toCreateJob()
+   * - .toCreatePartition()
+   * - .toCreatePartitionIndex()
+   * - .toCreateRegistry()
+   * - .toCreateSchema()
+   * - .toCreateSession()
+   * - .toCreateTable()
+   * - .toCreateTableOptimizer()
+   * - .toCreateTrigger()
+   * - .toCreateUsageProfile()
+   * - .toCreateUserDefinedFunction()
+   * - .toCreateWorkflow()
+   * - .toDeleteBlueprint()
+   * - .toDeleteCatalog()
+   * - .toDeleteColumnStatisticsForPartition()
+   * - .toDeleteColumnStatisticsForTable()
+   * - .toDeleteColumnStatisticsTaskSettings()
+   * - .toDeleteConnection()
+   * - .toDeleteConnectionType()
+   * - .toDeleteCrawler()
+   * - .toDeleteDataQualityRuleset()
+   * - .toDeleteDatabase()
+   * - .toDeleteDevEndpoint()
    * - .toDeleteIntegration()
+   * - .toDeleteIntegrationResourceProperty()
+   * - .toDeleteIntegrationTableProperties()
+   * - .toDeleteJob()
+   * - .toDeleteMLTransform()
+   * - .toDeletePartition()
+   * - .toDeletePartitionIndex()
+   * - .toDeleteRegistry()
+   * - .toDeleteResourcePolicy()
+   * - .toDeleteSchema()
+   * - .toDeleteSchemaVersions()
+   * - .toDeleteSession()
+   * - .toDeleteTable()
+   * - .toDeleteTableOptimizer()
+   * - .toDeleteTableVersion()
+   * - .toDeleteTrigger()
+   * - .toDeleteUsageProfile()
+   * - .toDeleteUserDefinedFunction()
+   * - .toDeleteWorkflow()
+   * - .toDescribeConnectionType()
+   * - .toDescribeEntity()
    * - .toDescribeIntegrations()
+   * - .toFederateAuthorization()
+   * - .toGetBlueprint()
+   * - .toGetBlueprintRun()
+   * - .toGetBlueprintRuns()
+   * - .toGetCatalog()
+   * - .toGetCatalogs()
+   * - .toGetColumnStatisticsForPartition()
+   * - .toGetColumnStatisticsForTable()
+   * - .toGetConnection()
+   * - .toGetConnections()
+   * - .toGetCrawler()
+   * - .toGetDashboardUrl()
+   * - .toGetDataQualityModel()
+   * - .toGetDataQualityModelResult()
+   * - .toGetDataQualityResult()
+   * - .toGetDataQualityRuleRecommendationRun()
+   * - .toGetDataQualityRuleset()
+   * - .toGetDataQualityRulesetEvaluationRun()
+   * - .toGetDatabase()
+   * - .toGetDatabases()
+   * - .toGetDevEndpoint()
+   * - .toGetEntityRecords()
+   * - .toGetIntegrationResourceProperty()
+   * - .toGetIntegrationTableProperties()
+   * - .toGetJob()
+   * - .toGetJobRun()
+   * - .toGetJobRuns()
+   * - .toGetJobUpgradeAnalysis()
+   * - .toGetMLTaskRun()
+   * - .toGetMLTaskRuns()
+   * - .toGetMLTransform()
+   * - .toGetMLTransforms()
+   * - .toGetPartition()
+   * - .toGetPartitionIndexes()
+   * - .toGetPartitions()
+   * - .toGetRegistry()
+   * - .toGetResourcePolicy()
+   * - .toGetSchema()
+   * - .toGetSchemaByDefinition()
+   * - .toGetSchemaVersion()
+   * - .toGetSchemaVersionsDiff()
+   * - .toGetSession()
+   * - .toGetSessionEndpoint()
+   * - .toGetStatement()
+   * - .toGetTable()
+   * - .toGetTableOptimizer()
+   * - .toGetTableVersion()
+   * - .toGetTableVersions()
+   * - .toGetTables()
+   * - .toGetTags()
+   * - .toGetTrigger()
+   * - .toGetUsageProfile()
+   * - .toGetUserDefinedFunction()
+   * - .toGetUserDefinedFunctions()
+   * - .toGetWorkflow()
+   * - .toGetWorkflowRun()
+   * - .toGetWorkflowRunProperties()
+   * - .toGetWorkflowRuns()
+   * - .toListCrawls()
+   * - .toListDataQualityResults()
+   * - .toListDataQualityRuleRecommendationRuns()
+   * - .toListDataQualityRulesetEvaluationRuns()
+   * - .toListDataQualityRulesets()
+   * - .toListEntities()
+   * - .toListIntegrationResourceProperties()
+   * - .toListJobUpgradeAnalyses()
+   * - .toListMLTransforms()
+   * - .toListSchemaVersions()
+   * - .toListSchemas()
+   * - .toListStatements()
+   * - .toListTableOptimizerRuns()
    * - .toModifyIntegration()
+   * - .toNotifyEvent()
+   * - .toPutDataQualityProfileAnnotation()
+   * - .toPutDataQualityStatisticAnnotation()
+   * - .toPutResourcePolicy()
+   * - .toPutSchemaVersionMetadata()
+   * - .toPutWorkflowRunProperties()
+   * - .toQuerySchemaVersionMetadata()
+   * - .toRefreshOAuth2Tokens()
    * - .toRegisterConnectionType()
+   * - .toRegisterSchemaVersion()
+   * - .toRemoveSchemaVersionMetadata()
+   * - .toRenameTable()
+   * - .toResumeWorkflowRun()
+   * - .toRunStatement()
+   * - .toSearchTables()
+   * - .toStartBlueprintRun()
+   * - .toStartColumnStatisticsTaskRun()
+   * - .toStartColumnStatisticsTaskRunSchedule()
+   * - .toStartCrawler()
+   * - .toStartDataQualityRuleRecommendationRun()
+   * - .toStartDataQualityRulesetEvaluationRun()
+   * - .toStartExportLabelsTaskRun()
+   * - .toStartImportLabelsTaskRun()
+   * - .toStartJobRun()
+   * - .toStartJobUpgradeAnalysis()
+   * - .toStartMLEvaluationTaskRun()
+   * - .toStartMLLabelingSetGenerationTaskRun()
+   * - .toStartTrigger()
+   * - .toStartWorkflowRun()
+   * - .toStopColumnStatisticsTaskRun()
+   * - .toStopColumnStatisticsTaskRunSchedule()
+   * - .toStopCrawler()
+   * - .toStopJobUpgradeAnalysis()
+   * - .toStopSession()
+   * - .toStopTrigger()
+   * - .toStopWorkflowRun()
+   * - .toTagResource()
+   * - .toTestConnection()
+   * - .toUntagResource()
+   * - .toUpdateBlueprint()
+   * - .toUpdateCatalog()
+   * - .toUpdateColumnStatisticsForPartition()
+   * - .toUpdateColumnStatisticsForTable()
+   * - .toUpdateColumnStatisticsTaskSettings()
+   * - .toUpdateConnection()
+   * - .toUpdateCrawler()
+   * - .toUpdateDataQualityRuleset()
+   * - .toUpdateDatabase()
+   * - .toUpdateDevEndpoint()
+   * - .toUpdateIntegrationResourceProperty()
+   * - .toUpdateIntegrationTableProperties()
+   * - .toUpdateJob()
+   * - .toUpdateJobFromSourceControl()
+   * - .toUpdateMLTransform()
+   * - .toUpdatePartition()
+   * - .toUpdateRegistry()
+   * - .toUpdateSchema()
+   * - .toUpdateSourceControlFromJob()
+   * - .toUpdateTable()
+   * - .toUpdateTableOptimizer()
+   * - .toUpdateTrigger()
+   * - .toUpdateUsageProfile()
+   * - .toUpdateUserDefinedFunction()
+   * - .toUpdateWorkflow()
+   * - .toUpgradeJob()
+   * - .toAuthorizeInboundIntegration()
+   * - .toPassConnection()
+   * - .toPublishDataQuality()
+   * - .toUseMLTransforms()
    *
    * Applies to resource types:
-   * - catalog
-   * - database
-   * - table
-   * - tableversion
-   * - connection
-   * - userdefinedfunction
-   * - devendpoint
-   * - job
-   * - trigger
-   * - crawler
-   * - workflow
    * - blueprint
+   * - catalog
+   * - connection
+   * - connectionType
+   * - crawler
+   * - customEntityType
+   * - dataQualityRuleset
+   * - database
+   * - devendpoint
+   * - integration
+   * - integrationResourceProperty
+   * - job
    * - mlTransform
    * - registry
    * - schema
    * - session
+   * - table
+   * - tableversion
+   * - trigger
    * - usageProfile
-   * - dataQualityRuleset
-   * - customEntityType
-   * - integration
-   * - connectionType
-   * - integrationResourceProperty
+   * - userdefinedfunction
+   * - workflow
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

@@ -24,8 +24,8 @@ applicationinsights:ListProblems;List
 applicationinsights:ListTagsForResource;Read
 applicationinsights:ListWorkloads;List
 applicationinsights:RemoveWorkload;Write
-applicationinsights:TagResource;Tagging
-applicationinsights:UntagResource;Tagging
+applicationinsights:TagResource;Tagging, Write
+applicationinsights:UntagResource;Tagging, Write
 applicationinsights:UpdateApplication;Write
 applicationinsights:UpdateComponent;Write
 applicationinsights:UpdateComponentConfiguration;Write

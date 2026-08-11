@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [devicefarm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevicefarm.html).
+ * Statement provider for service [devicefarm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_devicefarm.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Devicefarm extends PolicyStatement {
   public servicePrefix = 'devicefarm';
 
   /**
-   * Statement provider for service [devicefarm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevicefarm.html).
+   * Statement provider for service [devicefarm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_devicefarm.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -56,13 +56,6 @@ export class Devicefarm extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - ec2:CreateNetworkInterface
-   * - ec2:DescribeSecurityGroups
-   * - ec2:DescribeSubnets
-   * - ec2:DescribeVpcs
-   * - iam:CreateServiceLinkedRole
-   *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateProject.html
    */
   public toCreateProject() {
@@ -84,13 +77,6 @@ export class Devicefarm extends PolicyStatement {
    * Grants permission to create a project for desktop testing
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - ec2:CreateNetworkInterface
-   * - ec2:DescribeSecurityGroups
-   * - ec2:DescribeSubnets
-   * - ec2:DescribeVpcs
-   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateTestGridProject.html
    */
@@ -772,11 +758,7 @@ export class Devicefarm extends PolicyStatement {
   /**
    * Grants permission to add tags to a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_TagResource.html
    */
@@ -787,10 +769,7 @@ export class Devicefarm extends PolicyStatement {
   /**
    * Grants permission to remove tags from a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UntagResource.html
    */
@@ -847,13 +826,6 @@ export class Devicefarm extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - ec2:CreateNetworkInterface
-   * - ec2:DescribeSecurityGroups
-   * - ec2:DescribeSubnets
-   * - ec2:DescribeVpcs
-   * - iam:CreateServiceLinkedRole
-   *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateProject.html
    */
   public toUpdateProject() {
@@ -864,13 +836,6 @@ export class Devicefarm extends PolicyStatement {
    * Grants permission to modify an existing desktop testing project
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - ec2:CreateNetworkInterface
-   * - ec2:DescribeSecurityGroups
-   * - ec2:DescribeSubnets
-   * - ec2:DescribeVpcs
-   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateTestGridProject.html
    */
@@ -927,6 +892,8 @@ export class Devicefarm extends PolicyStatement {
       'StopJob',
       'StopRemoteAccessSession',
       'StopRun',
+      'TagResource',
+      'UntagResource',
       'UpdateDeviceInstance',
       'UpdateDevicePool',
       'UpdateInstanceProfile',
@@ -989,6 +956,117 @@ export class Devicefarm extends PolicyStatement {
   };
 
   /**
+   * Adds a resource of type artifact to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Artifact.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onArtifact(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:artifact:${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type device to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Device.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDevice(resourceId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }::device:${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type deviceinstance to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeviceInstance.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDeviceinstance(resourceId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }::deviceinstance:${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type devicepool to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DevicePool.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDevicepool(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:devicepool:${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type instanceprofile to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_InstanceProfile.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onInstanceprofile(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instanceprofile:${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type job to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Job.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job:${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type networkprofile to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_NetworkProfile.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onNetworkprofile(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:networkprofile:${ resourceId }`);
+  }
+
+  /**
    * Adds a resource of type project to the statement
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Project.html
@@ -1023,17 +1101,34 @@ export class Devicefarm extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type job to the statement
+   * Adds a resource of type sample to the statement
    *
-   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Job.html
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Sample.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job:${ resourceId }`);
+  public onSample(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sample:${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type session to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_RemoteAccessSession.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSession(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:session:${ resourceId }`);
   }
 
   /**
@@ -1062,165 +1157,6 @@ export class Devicefarm extends PolicyStatement {
    */
   public onTest(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:test:${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type upload to the statement
-   *
-   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Upload.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onUpload(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:upload:${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type artifact to the statement
-   *
-   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Artifact.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onArtifact(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:artifact:${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type sample to the statement
-   *
-   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Sample.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onSample(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sample:${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type networkprofile to the statement
-   *
-   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_NetworkProfile.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onNetworkprofile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:networkprofile:${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type deviceinstance to the statement
-   *
-   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeviceInstance.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDeviceinstance(resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }::deviceinstance:${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type session to the statement
-   *
-   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_RemoteAccessSession.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onSession(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:session:${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type devicepool to the statement
-   *
-   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DevicePool.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDevicepool(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:devicepool:${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type device to the statement
-   *
-   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Device.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDevice(resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }::device:${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type instanceprofile to the statement
-   *
-   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_InstanceProfile.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onInstanceprofile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instanceprofile:${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type vpceconfiguration to the statement
-   *
-   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_VPCEConfiguration.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onVpceconfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vpceconfiguration:${ resourceId }`);
   }
 
   /**
@@ -1258,6 +1194,37 @@ export class Devicefarm extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type upload to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Upload.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onUpload(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:upload:${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type vpceconfiguration to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_VPCEConfiguration.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVpceconfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vpceconfiguration:${ resourceId }`);
+  }
+
+  /**
    * Filters actions based on the allowed set of values for each of the tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1278,18 +1245,70 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toCreateDevicePool()
+   * - .toCreateNetworkProfile()
+   * - .toCreateRemoteAccessSession()
+   * - .toCreateTestGridUrl()
+   * - .toCreateUpload()
+   * - .toDeleteDevicePool()
+   * - .toDeleteInstanceProfile()
+   * - .toDeleteNetworkProfile()
+   * - .toDeleteProject()
+   * - .toDeleteRemoteAccessSession()
+   * - .toDeleteRun()
+   * - .toDeleteTestGridProject()
+   * - .toDeleteVPCEConfiguration()
+   * - .toGetDevice()
+   * - .toGetDeviceInstance()
+   * - .toGetDevicePool()
+   * - .toGetDevicePoolCompatibility()
+   * - .toGetInstanceProfile()
+   * - .toGetNetworkProfile()
+   * - .toGetProject()
+   * - .toGetRemoteAccessSession()
+   * - .toGetRun()
+   * - .toGetTestGridProject()
+   * - .toGetTestGridSession()
+   * - .toGetVPCEConfiguration()
+   * - .toInstallToRemoteAccessSession()
+   * - .toListArtifacts()
+   * - .toListDevicePools()
+   * - .toListJobs()
+   * - .toListNetworkProfiles()
+   * - .toListRemoteAccessSessions()
+   * - .toListRuns()
+   * - .toListTagsForResource()
+   * - .toListTestGridSessionActions()
+   * - .toListTestGridSessionArtifacts()
+   * - .toListTestGridSessions()
+   * - .toListUniqueProblems()
+   * - .toListUploads()
+   * - .toScheduleRun()
+   * - .toStopRemoteAccessSession()
+   * - .toStopRun()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateDeviceInstance()
+   * - .toUpdateDevicePool()
+   * - .toUpdateInstanceProfile()
+   * - .toUpdateNetworkProfile()
+   * - .toUpdateProject()
+   * - .toUpdateTestGridProject()
+   * - .toUpdateVPCEConfiguration()
+   *
    * Applies to resource types:
+   * - device
+   * - deviceinstance
+   * - devicepool
+   * - instanceprofile
+   * - networkprofile
    * - project
    * - run
-   * - networkprofile
-   * - deviceinstance
    * - session
-   * - devicepool
-   * - device
-   * - instanceprofile
-   * - vpceconfiguration
    * - testgrid-project
    * - testgrid-session
+   * - vpceconfiguration
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

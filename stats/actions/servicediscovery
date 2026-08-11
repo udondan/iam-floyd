@@ -23,8 +23,8 @@ servicediscovery:ListServices;Read
 servicediscovery:ListTagsForResource;Read
 servicediscovery:PutResourcePolicy;Write
 servicediscovery:RegisterInstance;Write
-servicediscovery:TagResource;Tagging
-servicediscovery:UntagResource;Tagging
+servicediscovery:TagResource;Tagging, Write
+servicediscovery:UntagResource;Tagging, Write
 servicediscovery:UpdateHttpNamespace;Write
 servicediscovery:UpdateInstanceCustomHealthStatus;Write
 servicediscovery:UpdatePrivateDnsNamespace;Write

@@ -1,4 +1,4 @@
-entityresolution:AddPolicyStatement;Permissions management
+entityresolution:AddPolicyStatement;Permissions management, Write
 entityresolution:BatchDeleteUniqueId;Write
 entityresolution:CreateIdMappingWorkflow;Write
 entityresolution:CreateIdNamespace;Write
@@ -7,7 +7,7 @@ entityresolution:CreateSchemaMapping;Write
 entityresolution:DeleteIdMappingWorkflow;Write
 entityresolution:DeleteIdNamespace;Write
 entityresolution:DeleteMatchingWorkflow;Write
-entityresolution:DeletePolicyStatement;Permissions management
+entityresolution:DeletePolicyStatement;Permissions management, Write
 entityresolution:DeleteSchemaMapping;Write
 entityresolution:GenerateMatchId;Write
 entityresolution:GetIdMappingJob;Read
@@ -27,14 +27,14 @@ entityresolution:ListMatchingWorkflows;List
 entityresolution:ListProviderServices;List
 entityresolution:ListSchemaMappings;List
 entityresolution:ListTagsForResource;Read
-entityresolution:PutPolicy;Permissions management
+entityresolution:PutPolicy;Permissions management, Write
 entityresolution:StartIdMappingJob;Write
 entityresolution:StartMatchingJob;Write
-entityresolution:TagResource;Tagging
-entityresolution:UntagResource;Tagging
+entityresolution:TagResource;Tagging, Write
+entityresolution:UntagResource;Tagging, Write
 entityresolution:UpdateIdMappingWorkflow;Write
 entityresolution:UpdateIdNamespace;Write
 entityresolution:UpdateMatchingWorkflow;Write
 entityresolution:UpdateSchemaMapping;Write
-entityresolution:UseIdNamespace;Permissions management
-entityresolution:UseWorkflow;Permissions management
+entityresolution:UseIdNamespace;Permissions management, Write
+entityresolution:UseWorkflow;Permissions management, Write

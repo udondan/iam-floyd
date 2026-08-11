@@ -17,7 +17,7 @@ aco-automation:ListRecommendedActions;List
 aco-automation:ListTagsForResource;List
 aco-automation:RollbackAutomationEvent;Write
 aco-automation:StartAutomationEvent;Write
-aco-automation:TagResource;Tagging
-aco-automation:UntagResource;Tagging
+aco-automation:TagResource;Tagging, Write
+aco-automation:UntagResource;Tagging, Write
 aco-automation:UpdateAutomationRule;Write
 aco-automation:UpdateEnrollmentConfiguration;Write

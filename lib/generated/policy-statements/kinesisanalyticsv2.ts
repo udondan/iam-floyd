@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [kinesisanalytics-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisanalyticsv2.html).
+ * Statement provider for service [kinesisanalytics-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_kinesisanalyticsv2.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   public servicePrefix = 'kinesisanalytics';
 
   /**
-   * Statement provider for service [kinesisanalytics-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisanalyticsv2.html).
+   * Statement provider for service [kinesisanalytics-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_kinesisanalyticsv2.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -92,9 +92,6 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_CreateApplication.html
    */
@@ -250,9 +247,6 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - iam:PassRole
-   *
    * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DiscoverInputSchema.html
    */
   public toDiscoverInputSchema() {
@@ -350,11 +344,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   /**
    * Grants permission to add tags to the application
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_TagResource.html
    */
@@ -365,10 +355,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   /**
    * Grants permission to remove the specified tags from the application
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_UntagResource.html
    */
@@ -418,6 +405,8 @@ export class KinesisanalyticsV2 extends PolicyStatement {
       'RollbackApplication',
       'StartApplication',
       'StopApplication',
+      'TagResource',
+      'UntagResource',
       'UpdateApplication',
       'UpdateApplicationMaintenanceConfiguration'
     ],
@@ -480,6 +469,38 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    * Filters access by tag-value assoicated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAddApplicationCloudWatchLoggingOption()
+   * - .toAddApplicationInput()
+   * - .toAddApplicationInputProcessingConfiguration()
+   * - .toAddApplicationOutput()
+   * - .toAddApplicationReferenceDataSource()
+   * - .toAddApplicationVpcConfiguration()
+   * - .toCreateApplicationPresignedUrl()
+   * - .toCreateApplicationSnapshot()
+   * - .toDeleteApplication()
+   * - .toDeleteApplicationCloudWatchLoggingOption()
+   * - .toDeleteApplicationInputProcessingConfiguration()
+   * - .toDeleteApplicationOutput()
+   * - .toDeleteApplicationReferenceDataSource()
+   * - .toDeleteApplicationSnapshot()
+   * - .toDeleteApplicationVpcConfiguration()
+   * - .toDescribeApplication()
+   * - .toDescribeApplicationOperation()
+   * - .toDescribeApplicationSnapshot()
+   * - .toDescribeApplicationVersion()
+   * - .toListApplicationOperations()
+   * - .toListApplicationSnapshots()
+   * - .toListApplicationVersions()
+   * - .toListTagsForResource()
+   * - .toRollbackApplication()
+   * - .toStartApplication()
+   * - .toStopApplication()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateApplication()
+   * - .toUpdateApplicationMaintenanceConfiguration()
    *
    * Applies to resource types:
    * - application

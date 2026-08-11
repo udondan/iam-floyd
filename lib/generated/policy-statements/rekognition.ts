@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [rekognition](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrekognition.html).
+ * Statement provider for service [rekognition](https://docs.aws.amazon.com/service-authorization/latest/reference/list_rekognition.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Rekognition extends PolicyStatement {
   public servicePrefix = 'rekognition';
 
   /**
-   * Statement provider for service [rekognition](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrekognition.html).
+   * Statement provider for service [rekognition](https://docs.aws.amazon.com/service-authorization/latest/reference/list_rekognition.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -45,10 +45,6 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CopyProjectVersion.html
    */
   public toCopyProjectVersion() {
@@ -74,10 +70,6 @@ export class Rekognition extends PolicyStatement {
    * Grants permission to create a new Amazon Rekognition Custom Labels dataset
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateDataset.html
    */
@@ -116,10 +108,6 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateProjectVersion.html
    */
   public toCreateProjectVersion() {
@@ -130,10 +118,6 @@ export class Rekognition extends PolicyStatement {
    * Grants permission to create an Amazon Rekognition stream processor
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateStreamProcessor.html
    */
@@ -837,11 +821,7 @@ export class Rekognition extends PolicyStatement {
   /**
    * Grants permission to add one or more tags to a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_TagResource.html
    */
@@ -852,10 +832,7 @@ export class Rekognition extends PolicyStatement {
   /**
    * Grants permission to remove one or more tags from a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_UntagResource.html
    */
@@ -922,6 +899,8 @@ export class Rekognition extends PolicyStatement {
       'StartTextDetection',
       'StopProjectVersion',
       'StopStreamProcessor',
+      'TagResource',
+      'UntagResource',
       'UpdateDatasetEntries',
       'UpdateStreamProcessor'
     ],
@@ -990,11 +969,13 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type streamprocessor to the statement
+   * Adds a resource of type dataset to the statement
    *
-   * https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html
+   * https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/creating-datasets.html
    *
-   * @param streamprocessorId - Identifier for the streamprocessorId.
+   * @param projectName - Identifier for the projectName.
+   * @param datasetType - Identifier for the datasetType.
+   * @param creationTimestamp - Identifier for the creationTimestamp.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1002,8 +983,8 @@ export class Rekognition extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onStreamprocessor(streamprocessorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:rekognition:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:streamprocessor/${ streamprocessorId }`);
+  public onDataset(projectName: string, datasetType: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rekognition:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }/dataset/${ datasetType }/${ creationTimestamp }`);
   }
 
   /**
@@ -1044,13 +1025,11 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type dataset to the statement
+   * Adds a resource of type streamprocessor to the statement
    *
-   * https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/creating-datasets.html
+   * https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html
    *
-   * @param projectName - Identifier for the projectName.
-   * @param datasetType - Identifier for the datasetType.
-   * @param creationTimestamp - Identifier for the creationTimestamp.
+   * @param streamprocessorId - Identifier for the streamprocessorId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1058,8 +1037,8 @@ export class Rekognition extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDataset(projectName: string, datasetType: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:rekognition:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }/dataset/${ datasetType }/${ creationTimestamp }`);
+  public onStreamprocessor(streamprocessorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rekognition:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:streamprocessor/${ streamprocessorId }`);
   }
 
   /**
@@ -1089,12 +1068,58 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toAssociateFaces()
+   * - .toCopyProjectVersion()
+   * - .toCreateDataset()
+   * - .toCreateProjectVersion()
+   * - .toCreateStreamProcessor()
+   * - .toCreateUser()
+   * - .toDeleteCollection()
+   * - .toDeleteDataset()
+   * - .toDeleteFaces()
+   * - .toDeleteProject()
+   * - .toDeleteProjectPolicy()
+   * - .toDeleteProjectVersion()
+   * - .toDeleteStreamProcessor()
+   * - .toDeleteUser()
+   * - .toDescribeCollection()
+   * - .toDescribeDataset()
+   * - .toDescribeProjectVersions()
+   * - .toDescribeStreamProcessor()
+   * - .toDetectCustomLabels()
+   * - .toDetectModerationLabels()
+   * - .toDisassociateFaces()
+   * - .toDistributeDatasetEntries()
+   * - .toIndexFaces()
+   * - .toListDatasetEntries()
+   * - .toListDatasetLabels()
+   * - .toListFaces()
+   * - .toListProjectPolicies()
+   * - .toListTagsForResource()
+   * - .toListUsers()
+   * - .toPutProjectPolicy()
+   * - .toSearchFaces()
+   * - .toSearchFacesByImage()
+   * - .toSearchUsers()
+   * - .toSearchUsersByImage()
+   * - .toStartFaceSearch()
+   * - .toStartMediaAnalysisJob()
+   * - .toStartProjectVersion()
+   * - .toStartStreamProcessor()
+   * - .toStopProjectVersion()
+   * - .toStopStreamProcessor()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateDatasetEntries()
+   * - .toUpdateStreamProcessor()
+   *
    * Applies to resource types:
    * - collection
-   * - streamprocessor
+   * - dataset
    * - project
    * - projectversion
-   * - dataset
+   * - streamprocessor
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

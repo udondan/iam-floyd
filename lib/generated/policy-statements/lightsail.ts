@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [lightsail](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html).
+ * Statement provider for service [lightsail](https://docs.aws.amazon.com/service-authorization/latest/reference/list_lightsail.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Lightsail extends PolicyStatement {
   public servicePrefix = 'lightsail';
 
   /**
-   * Statement provider for service [lightsail](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html).
+   * Statement provider for service [lightsail](https://docs.aws.amazon.com/service-authorization/latest/reference/list_lightsail.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -141,10 +141,6 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - lightsail:CreateDomainEntry
-   * - lightsail:GetDomains
-   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateCertificate.html
    */
   public toCreateCertificate() {
@@ -234,10 +230,6 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDiskFromSnapshot.html
    */
   public toCreateDiskFromSnapshot() {
@@ -248,10 +240,6 @@ export class Lightsail extends PolicyStatement {
    * Grants permission to create a disk snapshot
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDiskSnapshot.html
    */
@@ -282,16 +270,6 @@ export class Lightsail extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - route53:DeleteHostedZone
-   * - route53:GetHostedZone
-   * - route53:ListHostedZonesByName
-   * - route53domains:GetDomainDetail
-   * - route53domains:GetOperationDetail
-   * - route53domains:ListDomains
-   * - route53domains:ListOperations
-   * - route53domains:UpdateDomainNameservers
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDomain.html
    */
@@ -326,10 +304,6 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstanceSnapshot.html
    */
   public toCreateInstanceSnapshot() {
@@ -355,10 +329,6 @@ export class Lightsail extends PolicyStatement {
    * Grants permission to create one or more instances based on an instance snapshot
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstancesFromSnapshot.html
    */
@@ -390,10 +360,6 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - lightsail:CreateDomainEntry
-   * - lightsail:GetDomains
-   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html
    */
   public toCreateLoadBalancer() {
@@ -404,10 +370,6 @@ export class Lightsail extends PolicyStatement {
    * Grants permission to create a load balancer TLS certificate
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - lightsail:CreateDomainEntry
-   * - lightsail:GetDomains
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancerTlsCertificate.html
    */
@@ -434,10 +396,6 @@ export class Lightsail extends PolicyStatement {
    * Grants permission to create a new relational database from a snapshot
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabaseFromSnapshot.html
    */
@@ -772,10 +730,6 @@ export class Lightsail extends PolicyStatement {
    * Grants permission to export an Amazon Lightsail snapshot to Amazon EC2
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   * - iam:PutRolePolicy
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ExportSnapshot.html
    */
@@ -1547,10 +1501,6 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_PutAlarm.html
    */
   public toPutAlarm() {
@@ -1661,9 +1611,6 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - lightsail:GetInstanceAccessDetails
-   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetupInstanceHttps.html
    */
   public toSetupInstanceHttps() {
@@ -1739,11 +1686,7 @@ export class Lightsail extends PolicyStatement {
   /**
    * Grants permission to tag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html
    */
@@ -1776,10 +1719,7 @@ export class Lightsail extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UntagResource.html
    */
@@ -1982,8 +1922,10 @@ export class Lightsail extends PolicyStatement {
       'StopGUISession',
       'StopInstance',
       'StopRelationalDatabase',
+      'TagResource',
       'TestAlarm',
       'UnpeerVpc',
+      'UntagResource',
       'UpdateBucket',
       'UpdateBucketBundle',
       'UpdateContainerService',
@@ -2068,6 +2010,156 @@ export class Lightsail extends PolicyStatement {
   };
 
   /**
+   * Adds a resource of type Alarm to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Alarm.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAlarm(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Alarm/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type Bucket to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Bucket.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBucket(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Bucket/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type Certificate to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Certificate.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCertificate(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Certificate/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type CloudFormationStackRecord to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CloudFormationStackRecord.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onCloudFormationStackRecord(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:CloudFormationStackRecord/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type ContactMethod to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ContactMethod.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onContactMethod(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ContactMethod/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type ContainerService to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ContainerService.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onContainerService(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ContainerService/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type Disk to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Disk.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDisk(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Disk/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type DiskSnapshot to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DiskSnapshot.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDiskSnapshot(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:DiskSnapshot/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type Distribution to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_LightsailDistribution.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDistribution(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Distribution/${ id }`);
+  }
+
+  /**
    * Adds a resource of type Domain to the statement
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Domain.html
@@ -2082,6 +2174,20 @@ export class Lightsail extends PolicyStatement {
    */
   public onDomain(id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Domain/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type ExportSnapshotRecord to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ExportSnapshotRecord.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onExportSnapshotRecord(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ExportSnapshotRecord/${ id }`);
   }
 
   /**
@@ -2136,57 +2242,6 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type StaticIp to the statement
-   *
-   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StaticIp.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onStaticIp(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:StaticIp/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type Disk to the statement
-   *
-   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Disk.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDisk(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Disk/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type DiskSnapshot to the statement
-   *
-   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DiskSnapshot.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDiskSnapshot(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:DiskSnapshot/${ id }`);
-  }
-
-  /**
    * Adds a resource of type LoadBalancer to the statement
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_LoadBalancer.html
@@ -2215,34 +2270,6 @@ export class Lightsail extends PolicyStatement {
    */
   public onLoadBalancerTlsCertificate(id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:LoadBalancerTlsCertificate/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type ExportSnapshotRecord to the statement
-   *
-   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ExportSnapshotRecord.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onExportSnapshotRecord(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ExportSnapshotRecord/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type CloudFormationStackRecord to the statement
-   *
-   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CloudFormationStackRecord.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onCloudFormationStackRecord(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:CloudFormationStackRecord/${ id }`);
   }
 
   /**
@@ -2280,26 +2307,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type Alarm to the statement
+   * Adds a resource of type StaticIp to the statement
    *
-   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Alarm.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onAlarm(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Alarm/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type Certificate to the statement
-   *
-   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Certificate.html
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StaticIp.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -2309,76 +2319,8 @@ export class Lightsail extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onCertificate(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Certificate/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type ContactMethod to the statement
-   *
-   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ContactMethod.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onContactMethod(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ContactMethod/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type ContainerService to the statement
-   *
-   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ContainerService.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onContainerService(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ContainerService/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type Distribution to the statement
-   *
-   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_LightsailDistribution.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDistribution(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Distribution/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type Bucket to the statement
-   *
-   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Bucket.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onBucket(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Bucket/${ id }`);
+  public onStaticIp(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:StaticIp/${ id }`);
   }
 
   /**
@@ -2420,23 +2362,99 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toAttachCertificateToDistribution()
+   * - .toAttachDisk()
+   * - .toAttachInstancesToLoadBalancer()
+   * - .toAttachLoadBalancerTlsCertificate()
+   * - .toAttachStaticIp()
+   * - .toCloseInstancePublicPorts()
+   * - .toCreateBucketAccessKey()
+   * - .toCreateContainerServiceDeployment()
+   * - .toCreateDiskFromSnapshot()
+   * - .toCreateDiskSnapshot()
+   * - .toCreateDomainEntry()
+   * - .toCreateGUISessionAccessDetails()
+   * - .toCreateInstanceSnapshot()
+   * - .toCreateInstancesFromSnapshot()
+   * - .toCreateLoadBalancerTlsCertificate()
+   * - .toCreateRelationalDatabaseFromSnapshot()
+   * - .toDeleteAlarm()
+   * - .toDeleteBucket()
+   * - .toDeleteBucketAccessKey()
+   * - .toDeleteCertificate()
+   * - .toDeleteContainerImage()
+   * - .toDeleteContainerService()
+   * - .toDeleteDisk()
+   * - .toDeleteDiskSnapshot()
+   * - .toDeleteDistribution()
+   * - .toDeleteDomain()
+   * - .toDeleteDomainEntry()
+   * - .toDeleteInstance()
+   * - .toDeleteInstanceSnapshot()
+   * - .toDeleteKeyPair()
+   * - .toDeleteKnownHostKeys()
+   * - .toDeleteLoadBalancer()
+   * - .toDeleteLoadBalancerTlsCertificate()
+   * - .toDeleteRelationalDatabase()
+   * - .toDeleteRelationalDatabaseSnapshot()
+   * - .toDetachCertificateFromDistribution()
+   * - .toDetachDisk()
+   * - .toDetachInstancesFromLoadBalancer()
+   * - .toDetachStaticIp()
+   * - .toExportSnapshot()
+   * - .toGetCostEstimate()
+   * - .toGetInstanceAccessDetails()
+   * - .toGetRelationalDatabaseMasterUserPassword()
+   * - .toGetSetupHistory()
+   * - .toOpenInstancePublicPorts()
+   * - .toPutAlarm()
+   * - .toPutInstancePublicPorts()
+   * - .toRebootInstance()
+   * - .toRebootRelationalDatabase()
+   * - .toRegisterContainerImage()
+   * - .toReleaseStaticIp()
+   * - .toResetDistributionCache()
+   * - .toSetIpAddressType()
+   * - .toSetResourceAccessForBucket()
+   * - .toSetupInstanceHttps()
+   * - .toStartGUISession()
+   * - .toStartInstance()
+   * - .toStartRelationalDatabase()
+   * - .toStopGUISession()
+   * - .toStopInstance()
+   * - .toStopRelationalDatabase()
+   * - .toTagResource()
+   * - .toTestAlarm()
+   * - .toUntagResource()
+   * - .toUpdateBucket()
+   * - .toUpdateBucketBundle()
+   * - .toUpdateContainerService()
+   * - .toUpdateDistribution()
+   * - .toUpdateDistributionBundle()
+   * - .toUpdateDomainEntry()
+   * - .toUpdateInstanceMetadataOptions()
+   * - .toUpdateLoadBalancerAttribute()
+   * - .toUpdateRelationalDatabase()
+   * - .toUpdateRelationalDatabaseParameters()
+   *
    * Applies to resource types:
+   * - Alarm
+   * - Bucket
+   * - Certificate
+   * - ContactMethod
+   * - ContainerService
+   * - Disk
+   * - DiskSnapshot
+   * - Distribution
    * - Domain
    * - Instance
    * - InstanceSnapshot
    * - KeyPair
-   * - StaticIp
-   * - Disk
-   * - DiskSnapshot
    * - LoadBalancer
    * - RelationalDatabase
    * - RelationalDatabaseSnapshot
-   * - Alarm
-   * - Certificate
-   * - ContactMethod
-   * - ContainerService
-   * - Distribution
-   * - Bucket
+   * - StaticIp
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

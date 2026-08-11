@@ -1,6 +1,6 @@
-lakeformation:AddLFTagsToResource;Tagging
-lakeformation:BatchGrantPermissions;Permissions management
-lakeformation:BatchRevokePermissions;Permissions management
+lakeformation:AddLFTagsToResource;Tagging, Write
+lakeformation:BatchGrantPermissions;Permissions management, Write
+lakeformation:BatchRevokePermissions;Permissions management, Write
 lakeformation:CancelTransaction;Write
 lakeformation:CommitTransaction;Write
 lakeformation:CreateDataCellsFilter;Write
@@ -34,7 +34,7 @@ lakeformation:GetTemporaryGluePartitionCredentials;Read
 lakeformation:GetTemporaryGlueTableCredentials;Read
 lakeformation:GetWorkUnitResults;Read
 lakeformation:GetWorkUnits;Read
-lakeformation:GrantPermissions;Permissions management
+lakeformation:GrantPermissions;Permissions management, Write
 lakeformation:ListDataCellsFilter;List
 lakeformation:ListLFTagExpressions;Read
 lakeformation:ListLFTags;Read
@@ -43,11 +43,11 @@ lakeformation:ListPermissions;List
 lakeformation:ListResources;List
 lakeformation:ListTableStorageOptimizers;List
 lakeformation:ListTransactions;List
-lakeformation:PutDataLakeSettings;Permissions management
+lakeformation:PutDataLakeSettings;Permissions management, Write
 lakeformation:RegisterResource;Write
 lakeformation:RegisterResourceWithPrivilegedAccess;Write
-lakeformation:RemoveLFTagsFromResource;Tagging
-lakeformation:RevokePermissions;Permissions management
+lakeformation:RemoveLFTagsFromResource;Tagging, Write
+lakeformation:RevokePermissions;Permissions management, Write
 lakeformation:SearchDatabasesByLFTags;Read
 lakeformation:SearchTablesByLFTags;Read
 lakeformation:StartQueryPlanning;Write

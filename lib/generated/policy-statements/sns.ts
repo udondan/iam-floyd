@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [sns](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsns.html).
+ * Statement provider for service [sns](https://docs.aws.amazon.com/service-authorization/latest/reference/list_sns.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Sns extends PolicyStatement {
   public servicePrefix = 'sns';
 
   /**
-   * Statement provider for service [sns](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsns.html).
+   * Statement provider for service [sns](https://docs.aws.amazon.com/service-authorization/latest/reference/list_sns.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -21,7 +21,7 @@ export class Sns extends PolicyStatement {
   /**
    * Grants permission to add a statement to a topic's access control policy, granting access for the specified AWS accounts to the specified actions
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/sns/latest/api/API_AddPermission.html
    */
@@ -56,9 +56,6 @@ export class Sns extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iam:PassRole
-   *
    * https://docs.aws.amazon.com/sns/latest/api/API_CreatePlatformApplication.html
    */
   public toCreatePlatformApplication() {
@@ -91,13 +88,6 @@ export class Sns extends PolicyStatement {
    * Grants permission to create a topic to which notifications can be published
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html
    */
@@ -361,7 +351,7 @@ export class Sns extends PolicyStatement {
   /**
    * Grants permission to remove a statement from a topic's access control policy
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/sns/latest/api/API_RemovePermission.html
    */
@@ -384,9 +374,6 @@ export class Sns extends PolicyStatement {
    * Grants permission to set the attributes of the platform application object for the supported push notification services, such as APNS and GCM
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html
    */
@@ -419,10 +406,7 @@ export class Sns extends PolicyStatement {
   /**
    * Grants permission to allow a topic owner to set an attribute of the topic to a new value
    *
-   * Access Level: Permissions management
-   *
-   * Dependent actions:
-   * - iam:PassRole
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/sns/latest/api/API_SetTopicAttributes.html
    */
@@ -435,10 +419,6 @@ export class Sns extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifEndpoint()
-   * - .ifProtocol()
-   *
    * https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html
    */
   public toSubscribe() {
@@ -448,11 +428,7 @@ export class Sns extends PolicyStatement {
   /**
    * Grants permission to add tags to the specified Amazon SNS topic
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/sns/latest/api/API_TagResource.html
    */
@@ -474,10 +450,7 @@ export class Sns extends PolicyStatement {
   /**
    * Grants permission to remove tags from the specified Amazon SNS topic
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/sns/latest/api/API_UntagResource.html
    */
@@ -502,19 +475,8 @@ export class Sns extends PolicyStatement {
       'RemovePermission',
       'SetTopicAttributes'
     ],
-    Read: [
-      'CheckIfPhoneNumberIsOptedOut',
-      'GetDataProtectionPolicy',
-      'GetEndpointAttributes',
-      'GetPlatformApplicationAttributes',
-      'GetSMSAttributes',
-      'GetSMSSandboxAccountStatus',
-      'GetSubscriptionAttributes',
-      'GetTopicAttributes',
-      'ListPhoneNumbersOptedOut',
-      'ListTagsForResource'
-    ],
     Write: [
+      'AddPermission',
       'ConfirmSubscription',
       'CreatePlatformApplication',
       'CreatePlatformEndpoint',
@@ -527,13 +489,29 @@ export class Sns extends PolicyStatement {
       'OptInPhoneNumber',
       'Publish',
       'PutDataProtectionPolicy',
+      'RemovePermission',
       'SetEndpointAttributes',
       'SetPlatformApplicationAttributes',
       'SetSMSAttributes',
       'SetSubscriptionAttributes',
+      'SetTopicAttributes',
       'Subscribe',
+      'TagResource',
       'Unsubscribe',
+      'UntagResource',
       'VerifySMSSandboxPhoneNumber'
+    ],
+    Read: [
+      'CheckIfPhoneNumberIsOptedOut',
+      'GetDataProtectionPolicy',
+      'GetEndpointAttributes',
+      'GetPlatformApplicationAttributes',
+      'GetSMSAttributes',
+      'GetSMSSandboxAccountStatus',
+      'GetSubscriptionAttributes',
+      'GetTopicAttributes',
+      'ListPhoneNumbersOptedOut',
+      'ListTagsForResource'
     ],
     List: [
       'ListEndpointsByPlatformApplication',
@@ -588,6 +566,26 @@ export class Sns extends PolicyStatement {
    * Filters access by tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAddPermission()
+   * - .toConfirmSubscription()
+   * - .toCreateTopic()
+   * - .toDeleteTopic()
+   * - .toGetDataProtectionPolicy()
+   * - .toGetSubscriptionAttributes()
+   * - .toGetTopicAttributes()
+   * - .toListSubscriptionsByTopic()
+   * - .toListTagsForResource()
+   * - .toPublish()
+   * - .toPutDataProtectionPolicy()
+   * - .toRemovePermission()
+   * - .toSetSubscriptionAttributes()
+   * - .toSetTopicAttributes()
+   * - .toSubscribe()
+   * - .toTagResource()
+   * - .toUnsubscribe()
+   * - .toUntagResource()
    *
    * Applies to resource types:
    * - topic

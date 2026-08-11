@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [amplifyuibuilder](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsamplifyuibuilder.html).
+ * Statement provider for service [amplifyuibuilder](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amplifyuibuilder.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Amplifyuibuilder extends PolicyStatement {
   public servicePrefix = 'amplifyuibuilder';
 
   /**
-   * Statement provider for service [amplifyuibuilder](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsamplifyuibuilder.html).
+   * Statement provider for service [amplifyuibuilder](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amplifyuibuilder.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -27,11 +27,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - amplify:GetApp
-   * - amplifyuibuilder:GetComponent
-   * - amplifyuibuilder:TagResource
-   *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CreateComponent.html
    */
   public toCreateComponent() {
@@ -46,12 +41,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - amplify:GetApp
-   * - amplifyuibuilder:GetForm
-   * - amplifyuibuilder:TagResource
-   * - amplifyuibuilder:UntagResource
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CreateForm.html
    */
@@ -68,11 +57,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - amplify:GetApp
-   * - amplifyuibuilder:GetTheme
-   * - amplifyuibuilder:TagResource
-   *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CreateTheme.html
    */
   public toCreateTheme() {
@@ -83,10 +67,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Grants permission to delete a component
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - amplify:GetApp
-   * - amplifyuibuilder:UntagResource
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_DeleteComponent.html
    */
@@ -99,11 +79,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - amplify:GetApp
-   * - amplifyuibuilder:TagResource
-   * - amplifyuibuilder:UntagResource
-   *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_DeleteForm.html
    */
   public toDeleteForm() {
@@ -114,10 +89,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Grants permission to delete a theme
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - amplify:GetApp
-   * - amplifyuibuilder:UntagResource
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_DeleteTheme.html
    */
@@ -174,9 +145,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - amplify:GetApp
-   *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_GetCodegenJob.html
    */
   public toGetCodegenJob() {
@@ -188,9 +156,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - amplify:GetApp
-   *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_GetComponent.html
    */
   public toGetComponent() {
@@ -201,9 +166,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Grants permission to get an existing form
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - amplify:GetApp
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_GetForm.html
    */
@@ -227,9 +189,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - amplify:GetApp
-   *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_GetTheme.html
    */
   public toGetTheme() {
@@ -240,9 +199,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Grants permission to list codegen jobs
    *
    * Access Level: List
-   *
-   * Dependent actions:
-   * - amplify:GetApp
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListCodegenJobs.html
    */
@@ -255,9 +211,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - amplify:GetApp
-   *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListComponents.html
    */
   public toListComponents() {
@@ -268,9 +221,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Grants permission to list forms
    *
    * Access Level: List
-   *
-   * Dependent actions:
-   * - amplify:GetApp
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListForms.html
    */
@@ -293,9 +243,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Grants permission to list themes
    *
    * Access Level: List
-   *
-   * Dependent actions:
-   * - amplify:GetApp
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListThemes.html
    */
@@ -345,9 +292,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - amplify:GetApp
-   *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_StartCodegenJob.html
    */
   public toStartCodegenJob() {
@@ -357,11 +301,7 @@ export class Amplifyuibuilder extends PolicyStatement {
   /**
    * Grants permission to tag the resource with a tag key and value
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_TagResource.html
    */
@@ -372,10 +312,7 @@ export class Amplifyuibuilder extends PolicyStatement {
   /**
    * Grants permission to untag a resource with a specified Amazon Resource Name (ARN)
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UntagResource.html
    */
@@ -388,11 +325,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - amplify:GetApp
-   * - amplifyuibuilder:TagResource
-   * - amplifyuibuilder:UntagResource
-   *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UpdateComponent.html
    */
   public toUpdateComponent() {
@@ -404,12 +336,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - amplify:GetApp
-   * - amplifyuibuilder:GetForm
-   * - amplifyuibuilder:TagResource
-   * - amplifyuibuilder:UntagResource
-   *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UpdateForm.html
    */
   public toUpdateForm() {
@@ -420,12 +346,6 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Grants permission to update a theme
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - amplify:GetApp
-   * - amplifyuibuilder:GetTheme
-   * - amplifyuibuilder:TagResource
-   * - amplifyuibuilder:UntagResource
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UpdateTheme.html
    */
@@ -446,6 +366,8 @@ export class Amplifyuibuilder extends PolicyStatement {
       'RefreshToken',
       'ResetMetadataFlag',
       'StartCodegenJob',
+      'TagResource',
+      'UntagResource',
       'UpdateComponent',
       'UpdateForm',
       'UpdateTheme'
@@ -566,6 +488,12 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/APIReference/API_App.html
    *
+   * Applies to actions:
+   * - .toGetCodegenJob()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
    * Applies to resource types:
    * - CodegenJobResource
    *
@@ -580,6 +508,12 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Filters access by the backend environment name
    *
    * https://docs.aws.amazon.com/amplify/latest/APIReference/API_BackendEnvironment.html
+   *
+   * Applies to actions:
+   * - .toGetCodegenJob()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * Applies to resource types:
    * - CodegenJobResource
@@ -596,6 +530,12 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CodegenJob.html
    *
+   * Applies to actions:
+   * - .toGetCodegenJob()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
    * Applies to resource types:
    * - CodegenJobResource
    *
@@ -610,6 +550,14 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Filters access by the app ID
    *
    * https://docs.aws.amazon.com/amplify/latest/APIReference/API_App.html
+   *
+   * Applies to actions:
+   * - .toDeleteComponent()
+   * - .toGetComponent()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateComponent()
    *
    * Applies to resource types:
    * - ComponentResource
@@ -626,6 +574,14 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/APIReference/API_BackendEnvironment.html
    *
+   * Applies to actions:
+   * - .toDeleteComponent()
+   * - .toGetComponent()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateComponent()
+   *
    * Applies to resource types:
    * - ComponentResource
    *
@@ -640,6 +596,14 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Filters access by the component ID
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_Component.html
+   *
+   * Applies to actions:
+   * - .toDeleteComponent()
+   * - .toGetComponent()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateComponent()
    *
    * Applies to resource types:
    * - ComponentResource
@@ -656,6 +620,14 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/APIReference/API_App.html
    *
+   * Applies to actions:
+   * - .toDeleteForm()
+   * - .toGetForm()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateForm()
+   *
    * Applies to resource types:
    * - FormResource
    *
@@ -670,6 +642,14 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Filters access by the backend environment name
    *
    * https://docs.aws.amazon.com/amplify/latest/APIReference/API_BackendEnvironment.html
+   *
+   * Applies to actions:
+   * - .toDeleteForm()
+   * - .toGetForm()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateForm()
    *
    * Applies to resource types:
    * - FormResource
@@ -686,6 +666,14 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_Form.html
    *
+   * Applies to actions:
+   * - .toDeleteForm()
+   * - .toGetForm()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateForm()
+   *
    * Applies to resource types:
    * - FormResource
    *
@@ -700,6 +688,14 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Filters access by the app ID
    *
    * https://docs.aws.amazon.com/amplify/latest/APIReference/API_App.html
+   *
+   * Applies to actions:
+   * - .toDeleteTheme()
+   * - .toGetTheme()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateTheme()
    *
    * Applies to resource types:
    * - ThemeResource
@@ -716,6 +712,14 @@ export class Amplifyuibuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/APIReference/API_BackendEnvironment.html
    *
+   * Applies to actions:
+   * - .toDeleteTheme()
+   * - .toGetTheme()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateTheme()
+   *
    * Applies to resource types:
    * - ThemeResource
    *
@@ -730,6 +734,14 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Filters access by the theme ID
    *
    * https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_Theme.html
+   *
+   * Applies to actions:
+   * - .toDeleteTheme()
+   * - .toGetTheme()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateTheme()
    *
    * Applies to resource types:
    * - ThemeResource
@@ -765,6 +777,21 @@ export class Amplifyuibuilder extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toDeleteComponent()
+   * - .toDeleteForm()
+   * - .toDeleteTheme()
+   * - .toGetCodegenJob()
+   * - .toGetComponent()
+   * - .toGetForm()
+   * - .toGetTheme()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateComponent()
+   * - .toUpdateForm()
+   * - .toUpdateTheme()
    *
    * Applies to resource types:
    * - CodegenJobResource

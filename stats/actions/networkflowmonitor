@@ -20,7 +20,7 @@ networkflowmonitor:StartQueryWorkloadInsightsTopContributorsData;Write
 networkflowmonitor:StopQueryMonitorTopContributors;Write
 networkflowmonitor:StopQueryWorkloadInsightsTopContributors;Write
 networkflowmonitor:StopQueryWorkloadInsightsTopContributorsData;Write
-networkflowmonitor:TagResource;Tagging
-networkflowmonitor:UntagResource;Tagging
+networkflowmonitor:TagResource;Tagging, Write
+networkflowmonitor:UntagResource;Tagging, Write
 networkflowmonitor:UpdateMonitor;Write
 networkflowmonitor:UpdateScope;Write

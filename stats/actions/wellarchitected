@@ -1,6 +1,9 @@
 wellarchitected:AssociateLenses;Write
 wellarchitected:AssociateProfiles;Write
 wellarchitected:ConfigureIntegration;Write
+wellarchitected:CreateAgentContext;Write
+wellarchitected:CreateAgentGoal;Write
+wellarchitected:CreateAgentProfile;Write
 wellarchitected:CreateLensShare;Write
 wellarchitected:CreateLensVersion;Write
 wellarchitected:CreateMilestone;Write
@@ -10,6 +13,9 @@ wellarchitected:CreateReviewTemplate;Write
 wellarchitected:CreateTemplateShare;Write
 wellarchitected:CreateWorkload;Write
 wellarchitected:CreateWorkloadShare;Write
+wellarchitected:DeleteAgentContext;Write
+wellarchitected:DeleteAgentGoal;Write
+wellarchitected:DeleteAgentProfile;Write
 wellarchitected:DeleteLens;Write
 wellarchitected:DeleteLensShare;Write
 wellarchitected:DeleteProfile;Write
@@ -21,6 +27,11 @@ wellarchitected:DeleteWorkloadShare;Write
 wellarchitected:DisassociateLenses;Write
 wellarchitected:DisassociateProfiles;Write
 wellarchitected:ExportLens;Read
+wellarchitected:GetAgentContext;Read
+wellarchitected:GetAgentGoal;Read
+wellarchitected:GetAgentProfile;Read
+wellarchitected:GetAgentRecommendation;Read
+wellarchitected:GetAgentRecommendationGeneration;Read
 wellarchitected:GetAnswer;Read
 wellarchitected:GetConsolidatedReport;Read
 wellarchitected:GetGlobalSettings;Read
@@ -36,6 +47,12 @@ wellarchitected:GetReviewTemplateAnswer;Read
 wellarchitected:GetReviewTemplateLensReview;Read
 wellarchitected:GetWorkload;Read
 wellarchitected:ImportLens;Write
+wellarchitected:ListAgentContexts;Read
+wellarchitected:ListAgentGoals;Read
+wellarchitected:ListAgentProfiles;Read
+wellarchitected:ListAgentRecommendationGenerations;Read
+wellarchitected:ListAgentRecommendationItems;Read
+wellarchitected:ListAgentRecommendations;Read
 wellarchitected:ListAnswers;List
 wellarchitected:ListCheckDetails;List
 wellarchitected:ListCheckSummaries;List
@@ -55,8 +72,14 @@ wellarchitected:ListTagsForResource;Read
 wellarchitected:ListTemplateShares;List
 wellarchitected:ListWorkloadShares;List
 wellarchitected:ListWorkloads;List
-wellarchitected:TagResource;Tagging
-wellarchitected:UntagResource;Tagging
+wellarchitected:PutAgentRecommendationFeedback;Write
+wellarchitected:StartAgentRecommendationGeneration;Write
+wellarchitected:TagResource;Tagging, Write
+wellarchitected:UntagResource;Tagging, Write
+wellarchitected:UpdateAgentContext;Write
+wellarchitected:UpdateAgentGoal;Write
+wellarchitected:UpdateAgentProfile;Write
+wellarchitected:UpdateAgentRecommendationStatus;Write
 wellarchitected:UpdateAnswer;Write
 wellarchitected:UpdateGlobalSettings;Write
 wellarchitected:UpdateIntegration;Write

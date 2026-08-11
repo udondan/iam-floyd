@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [worklink](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworklink.html).
+ * Statement provider for service [worklink](https://docs.aws.amazon.com/service-authorization/latest/reference/list_worklink.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Worklink extends PolicyStatement {
   public servicePrefix = 'worklink';
 
   /**
-   * Statement provider for service [worklink](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworklink.html).
+   * Statement provider for service [worklink](https://docs.aws.amazon.com/service-authorization/latest/reference/list_worklink.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -70,10 +70,6 @@ export class Worklink extends PolicyStatement {
    * Grants permission to delete an Amazon WorkLink fleet
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DeleteFleet.html
    */
@@ -140,10 +136,6 @@ export class Worklink extends PolicyStatement {
    * Grants permission to describe metadata of an Amazon WorkLink fleet
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeFleetMetadata.html
    */
@@ -295,17 +287,6 @@ export class Worklink extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list devices for an Amazon WorkLink fleet
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/worklink/latest/ag/manage-devices.html
-   */
-  public toSearchEntity() {
-    return this.to('SearchEntity');
-  }
-
-  /**
    * Grants permission to sign out a user from an Amazon WorkLink fleet
    *
    * Access Level: Write
@@ -319,11 +300,7 @@ export class Worklink extends PolicyStatement {
   /**
    * Grants permission to add one or more tags to a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_TagResource.html
    */
@@ -334,10 +311,7 @@ export class Worklink extends PolicyStatement {
   /**
    * Grants permission to remove one or more tags from a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_UntagResource.html
    */
@@ -411,6 +385,17 @@ export class Worklink extends PolicyStatement {
     return this.to('UpdateIdentityProviderConfiguration');
   }
 
+  /**
+   * Grants permission to list devices for an Amazon WorkLink fleet
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/worklink/latest/ag/manage-devices.html
+   */
+  public toSearchEntity() {
+    return this.to('SearchEntity');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateDomain',
@@ -424,6 +409,8 @@ export class Worklink extends PolicyStatement {
       'RestoreDomainAccess',
       'RevokeDomainAccess',
       'SignOutUser',
+      'TagResource',
+      'UntagResource',
       'UpdateAuditStreamConfiguration',
       'UpdateCompanyNetworkConfiguration',
       'UpdateDevicePolicyConfiguration',
@@ -459,8 +446,6 @@ export class Worklink extends PolicyStatement {
   /**
    * Adds a resource of type fleet to the statement
    *
-   * https://docs.aws.amazon.com/worklink/latest/api/API_CreateFleet.html
-   *
    * @param fleetName - Identifier for the fleetName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -495,6 +480,40 @@ export class Worklink extends PolicyStatement {
    * Filters actions based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAssociateDomain()
+   * - .toAssociateWebsiteAuthorizationProvider()
+   * - .toAssociateWebsiteCertificateAuthority()
+   * - .toDeleteFleet()
+   * - .toDescribeAuditStreamConfiguration()
+   * - .toDescribeCompanyNetworkConfiguration()
+   * - .toDescribeDevice()
+   * - .toDescribeDevicePolicyConfiguration()
+   * - .toDescribeDomain()
+   * - .toDescribeFleetMetadata()
+   * - .toDescribeIdentityProviderConfiguration()
+   * - .toDescribeWebsiteCertificateAuthority()
+   * - .toDisassociateDomain()
+   * - .toDisassociateWebsiteAuthorizationProvider()
+   * - .toDisassociateWebsiteCertificateAuthority()
+   * - .toListDevices()
+   * - .toListDomains()
+   * - .toListTagsForResource()
+   * - .toListWebsiteAuthorizationProviders()
+   * - .toListWebsiteCertificateAuthorities()
+   * - .toRestoreDomainAccess()
+   * - .toRevokeDomainAccess()
+   * - .toSignOutUser()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAuditStreamConfiguration()
+   * - .toUpdateCompanyNetworkConfiguration()
+   * - .toUpdateDevicePolicyConfiguration()
+   * - .toUpdateDomainMetadata()
+   * - .toUpdateFleetMetadata()
+   * - .toUpdateIdentityProviderConfiguration()
+   * - .toSearchEntity()
    *
    * Applies to resource types:
    * - fleet
