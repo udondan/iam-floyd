@@ -1254,7 +1254,8 @@
         "datazone:*Message*",
         "datazone:*Conversation*",
         "datazone:*Cell*",
-        "datazone:*Notebook*"
+        "datazone:*Notebook*",
+        "datazone:*Compute*"
       ],
       "Resource": "*"
     },

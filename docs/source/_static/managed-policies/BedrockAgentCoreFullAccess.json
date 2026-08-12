@@ -71,13 +71,13 @@
         "arn:aws:kms:*:*:key/*"
       ],
       "Condition": {
-        "StringEquals": {
-          "aws:ResourceAccount": "${aws:PrincipalAccount}"
-        },
         "ForAnyValue:StringEquals": {
           "aws:CalledVia": [
             "bedrock-agentcore.amazonaws.com"
           ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
     },
@@ -91,19 +91,19 @@
         "arn:aws:kms:*:*:key/*"
       ],
       "Condition": {
-        "StringEquals": {
-          "kms:GrantConstraintType": "EncryptionContextSubset"
-        },
-        "StringLike": {
-          "kms:ViaService": [
-            "bedrock-agentcore.*.amazonaws.com"
-          ],
-          "kms:EncryptionContext:aws:bedrock-agentcore-gateway:arn": "arn:aws:bedrock-agentcore:*:*:gateway/*"
-        },
         "ForAllValues:StringEquals": {
           "kms:GrantOperations": [
             "Decrypt",
             "GenerateDataKey"
+          ]
+        },
+        "StringEquals": {
+          "kms:GrantConstraintType": "EncryptionContextSubset"
+        },
+        "StringLike": {
+          "kms:EncryptionContext:aws:bedrock-agentcore-gateway:arn": "arn:aws:bedrock-agentcore:*:*:gateway/*",
+          "kms:ViaService": [
+            "bedrock-agentcore.*.amazonaws.com"
           ]
         }
       }
@@ -289,6 +289,17 @@
       "Condition": {
         "StringEquals": {
           "iam:AWSServiceName": "runtime-identity.bedrock-agentcore.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CreateBedrockAgentCoreRuntimeInstancesServiceLinkedRolePermissions",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/runtime-instances.bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreRuntimeInstances",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "runtime-instances.bedrock-agentcore.amazonaws.com"
         }
       }
     },

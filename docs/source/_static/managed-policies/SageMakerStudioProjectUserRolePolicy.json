@@ -469,7 +469,8 @@
         "emr-serverless:GetJobRun",
         "emr-serverless:*Session*",
         "emr-serverless:GetResourceDashboard",
-        "emr-serverless:TagResource"
+        "emr-serverless:TagResource",
+        "emr-serverless:StartJobRun"
       ],
       "Resource": "*",
       "Condition": {
