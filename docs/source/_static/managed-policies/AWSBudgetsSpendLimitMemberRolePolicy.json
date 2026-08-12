@@ -181,6 +181,16 @@
         "account:GetPrimaryEmail"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/aco-automation.amazonaws.com/AWSServiceRoleForComputeOptimizerAutomation",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "aco-automation.amazonaws.com"
+        }
+      }
     }
   ]
 }
