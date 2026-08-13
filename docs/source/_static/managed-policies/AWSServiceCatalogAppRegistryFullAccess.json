@@ -16,6 +16,25 @@
       }
     },
     {
+      "Sid": "CloudFormationTagOnCreate",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "servicecatalog-appregistry.amazonaws.com"
+        },
+        "StringEquals": {
+          "cloudformation:CreateAction": [
+            "UpdateStack"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "AppRegistryResourceGroupsIntegration",
       "Effect": "Allow",
       "Action": [

@@ -108,6 +108,7 @@
         "aws-marketplace-management:PutAdditionalSellerNotificationRecipients",
         "payments:GetPaymentInstrument",
         "payments:CreatePaymentInstrument",
+        "payments:DeletePaymentInstrument",
         "tax:GetTaxInterview",
         "tax:PutTaxInterview",
         "tax:GetTaxInfoReportingDocument",

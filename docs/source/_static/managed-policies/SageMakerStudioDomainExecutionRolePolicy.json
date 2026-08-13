@@ -12,6 +12,7 @@
         "datazone:AssociateGovernedTerms",
         "datazone:BatchGetAttributesMetadata",
         "datazone:BatchPutAttributesMetadata",
+        "datazone:BatchUpdateNotifications",
         "datazone:CancelMetadataGenerationRun",
         "datazone:CancelSubscription",
         "datazone:CreateAsset",

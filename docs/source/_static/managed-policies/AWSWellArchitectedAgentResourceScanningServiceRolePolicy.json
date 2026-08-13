@@ -2,58 +2,19 @@
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "CloudControlDiscoveryFrontDoor",
-      "Effect": "Allow",
-      "Action": [
-        "cloudformation:DescribeType",
-        "cloudformation:GetResource",
-        "cloudformation:ListResources",
-        "cloudformation:ListTypes"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AccessAnalyzer",
+      "Sid": "WellArchitectedAgentScanningReadOnly1",
       "Effect": "Allow",
       "Action": [
         "access-analyzer:GetAnalyzer",
         "access-analyzer:ListAnalyzers",
-        "access-analyzer:ListArchiveRules"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Acm",
-      "Effect": "Allow",
-      "Action": [
-        "acm:DescribeCertificate"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AcmPca",
-      "Effect": "Allow",
-      "Action": [
+        "access-analyzer:ListArchiveRules",
         "acm-pca:DescribeCertificateAuthority",
         "acm-pca:GetCertificateAuthorityCsr",
         "acm-pca:ListCertificateAuthorities",
-        "acm-pca:ListTags"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AcoAutomation",
-      "Effect": "Allow",
-      "Action": [
+        "acm-pca:ListTags",
+        "acm:DescribeCertificate",
         "aco-automation:GetAutomationRule",
-        "aco-automation:ListAutomationRules"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Aidevops",
-      "Effect": "Allow",
-      "Action": [
+        "aco-automation:ListAutomationRules",
         "aidevops:DescribePrivateConnection",
         "aidevops:GetAgentSpace",
         "aidevops:GetAssociation",
@@ -63,71 +24,29 @@
         "aidevops:ListAssociations",
         "aidevops:ListPrivateConnections",
         "aidevops:ListServices",
-        "aidevops:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Aiops",
-      "Effect": "Allow",
-      "Action": [
+        "aidevops:ListTagsForResource",
         "aiops:GetInvestigationGroup",
         "aiops:GetInvestigationGroupPolicy",
         "aiops:ListInvestigationGroups",
-        "aiops:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Airflow",
-      "Effect": "Allow",
-      "Action": [
-        "airflow:GetEnvironment",
-        "airflow:ListEnvironments"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AirflowServerless",
-      "Effect": "Allow",
-      "Action": [
+        "aiops:ListTagsForResource",
         "airflow-serverless:GetWorkflow",
         "airflow-serverless:ListTagsForResource",
-        "airflow-serverless:ListWorkflows"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Amplify",
-      "Effect": "Allow",
-      "Action": [
+        "airflow-serverless:ListWorkflows",
+        "airflow:GetEnvironment",
+        "airflow:ListEnvironments",
         "amplify:GetApp",
         "amplify:GetBranch",
         "amplify:GetDomainAssociation",
         "amplify:ListApps",
         "amplify:ListBranches",
         "amplify:ListDomainAssociations",
-        "amplify:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Amplifyuibuilder",
-      "Effect": "Allow",
-      "Action": [
+        "amplify:ListTagsForResource",
         "amplifyuibuilder:GetComponent",
         "amplifyuibuilder:GetForm",
         "amplifyuibuilder:GetTheme",
         "amplifyuibuilder:ListComponents",
         "amplifyuibuilder:ListForms",
-        "amplifyuibuilder:ListThemes"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Aoss",
-      "Effect": "Allow",
-      "Action": [
+        "amplifyuibuilder:ListThemes",
         "aoss:BatchGetCollection",
         "aoss:BatchGetCollectionGroup",
         "aoss:BatchGetLifecyclePolicy",
@@ -142,37 +61,16 @@
         "aoss:ListSecurityConfigs",
         "aoss:ListSecurityPolicies",
         "aoss:ListTagsForResource",
-        "aoss:ListVpcEndpoints"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Apigateway",
-      "Effect": "Allow",
-      "Action": [
+        "aoss:ListVpcEndpoints",
         "apigateway:GetRoutingRule",
-        "apigateway:ListRoutingRules"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AppIntegrations",
-      "Effect": "Allow",
-      "Action": [
+        "apigateway:ListRoutingRules",
         "app-integrations:GetApplication",
         "app-integrations:GetDataIntegration",
         "app-integrations:GetEventIntegration",
         "app-integrations:ListApplications",
         "app-integrations:ListDataIntegrations",
         "app-integrations:ListEventIntegrations",
-        "app-integrations:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Appconfig",
-      "Effect": "Allow",
-      "Action": [
+        "app-integrations:ListTagsForResource",
         "appconfig:GetApplication",
         "appconfig:GetConfigurationProfile",
         "appconfig:GetDeployment",
@@ -183,72 +81,37 @@
         "appconfig:GetHostedConfigurationVersion",
         "appconfig:ListApplications",
         "appconfig:ListConfigurationProfiles",
-        "appconfig:ListDeployments",
         "appconfig:ListDeploymentStrategies",
+        "appconfig:ListDeployments",
         "appconfig:ListEnvironments",
         "appconfig:ListExtensionAssociations",
         "appconfig:ListExtensions",
         "appconfig:ListHostedConfigurationVersions",
-        "appconfig:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Appflow",
-      "Effect": "Allow",
-      "Action": [
+        "appconfig:ListTagsForResource",
         "appflow:DescribeConnector",
         "appflow:DescribeConnectorProfiles",
         "appflow:DescribeFlow",
         "appflow:ListConnectors",
         "appflow:ListFlows",
-        "appflow:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "ApplicationAutoscaling",
-      "Effect": "Allow",
-      "Action": [
+        "appflow:ListTagsForResource",
         "application-autoscaling:DescribeScalableTargets",
         "application-autoscaling:DescribeScalingActivities",
         "application-autoscaling:DescribeScalingPolicies",
-        "application-autoscaling:DescribeScheduledActions"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "ApplicationSignals",
-      "Effect": "Allow",
-      "Action": [
+        "application-autoscaling:DescribeScheduledActions",
         "application-signals:GetServiceLevelObjective",
         "application-signals:ListGroupingAttributeDefinitions",
         "application-signals:ListServiceLevelObjectiveExclusionWindows",
         "application-signals:ListServiceLevelObjectives",
         "application-signals:ListServices",
-        "application-signals:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Applicationinsights",
-      "Effect": "Allow",
-      "Action": [
+        "application-signals:ListTagsForResource",
         "applicationinsights:DescribeApplication",
         "applicationinsights:DescribeComponent",
         "applicationinsights:DescribeLogPattern",
         "applicationinsights:ListApplications",
         "applicationinsights:ListComponents",
-        "applicationinsights:ListLogPatterns",
         "applicationinsights:ListLogPatternSets",
-        "applicationinsights:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Apprunner",
-      "Effect": "Allow",
-      "Action": [
+        "applicationinsights:ListLogPatterns",
+        "applicationinsights:ListTagsForResource",
         "apprunner:DescribeAutoScalingConfiguration",
         "apprunner:DescribeObservabilityConfiguration",
         "apprunner:DescribeService",
@@ -258,28 +121,14 @@
         "apprunner:ListObservabilityConfigurations",
         "apprunner:ListServices",
         "apprunner:ListVpcConnectors",
-        "apprunner:ListVpcIngressConnections"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Appstream",
-      "Effect": "Allow",
-      "Action": [
+        "apprunner:ListVpcIngressConnections",
         "appstream:DescribeAppBlockBuilders",
         "appstream:DescribeDirectoryConfigs",
         "appstream:DescribeImageBuilders",
         "appstream:DescribeStacks",
-        "appstream:DescribeUsers",
         "appstream:DescribeUserStackAssociations",
-        "appstream:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Appsync",
-      "Effect": "Allow",
-      "Action": [
+        "appstream:DescribeUsers",
+        "appstream:ListTagsForResource",
         "appsync:GetApi",
         "appsync:GetChannelNamespace",
         "appsync:GetDataSource",
@@ -294,24 +143,10 @@
         "appsync:ListGraphqlApis",
         "appsync:ListResolvers",
         "appsync:ListSourceApiAssociations",
-        "appsync:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Apptest",
-      "Effect": "Allow",
-      "Action": [
+        "appsync:ListTagsForResource",
         "apptest:GetTestCase",
         "apptest:ListTagsForResource",
-        "apptest:ListTestCases"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Aps",
-      "Effect": "Allow",
-      "Action": [
+        "apptest:ListTestCases",
         "aps:DescribeAlertManagerDefinition",
         "aps:DescribeAnomalyDetector",
         "aps:DescribeLoggingConfiguration",
@@ -326,35 +161,14 @@
         "aps:ListRuleGroupsNamespaces",
         "aps:ListScrapers",
         "aps:ListTagsForResource",
-        "aps:ListWorkspaces"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "ArcRegionSwitch",
-      "Effect": "Allow",
-      "Action": [
+        "aps:ListWorkspaces",
         "arc-region-switch:GetPlan",
         "arc-region-switch:ListPlans",
         "arc-region-switch:ListRoute53HealthChecks",
-        "arc-region-switch:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "ArcZonalShift",
-      "Effect": "Allow",
-      "Action": [
+        "arc-region-switch:ListTagsForResource",
         "arc-zonal-shift:GetAutoshiftObserverNotificationStatus",
         "arc-zonal-shift:GetManagedResource",
-        "arc-zonal-shift:ListManagedResources"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Athena",
-      "Effect": "Allow",
-      "Action": [
+        "arc-zonal-shift:ListManagedResources",
         "athena:GetCapacityAssignmentConfiguration",
         "athena:GetCapacityReservation",
         "athena:GetDataCatalog",
@@ -366,24 +180,10 @@
         "athena:ListNamedQueries",
         "athena:ListPreparedStatements",
         "athena:ListTagsForResource",
-        "athena:ListWorkGroups"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Auditmanager",
-      "Effect": "Allow",
-      "Action": [
+        "athena:ListWorkGroups",
         "auditmanager:GetAssessment",
         "auditmanager:ListAssessments",
-        "auditmanager:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Autoscaling",
-      "Effect": "Allow",
-      "Action": [
+        "auditmanager:ListTagsForResource",
         "autoscaling:DescribeAccountLimits",
         "autoscaling:DescribeAccountSettings",
         "autoscaling:DescribeAdjustmentTypes",
@@ -405,24 +205,10 @@
         "autoscaling:DescribeTags",
         "autoscaling:DescribeTerminationPolicyTypes",
         "autoscaling:DescribeTrafficSources",
-        "autoscaling:DescribeWarmPool"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AwsExternalAnthropic",
-      "Effect": "Allow",
-      "Action": [
+        "autoscaling:DescribeWarmPool",
         "aws-external-anthropic:GetWorkspace",
         "aws-external-anthropic:ListTagsForResource",
-        "aws-external-anthropic:ListWorkspaces"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "B2bi",
-      "Effect": "Allow",
-      "Action": [
+        "aws-external-anthropic:ListWorkspaces",
         "b2bi:GetCapability",
         "b2bi:GetPartnership",
         "b2bi:GetProfile",
@@ -431,14 +217,10 @@
         "b2bi:ListPartnerships",
         "b2bi:ListProfiles",
         "b2bi:ListTagsForResource",
-        "b2bi:ListTransformers"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Backup",
-      "Effect": "Allow",
-      "Action": [
+        "b2bi:ListTransformers",
+        "backup-gateway:GetHypervisor",
+        "backup-gateway:ListHypervisors",
+        "backup-gateway:ListTagsForResource",
         "backup:DescribeBackupVault",
         "backup:DescribeFramework",
         "backup:DescribeReportPlan",
@@ -457,24 +239,7 @@
         "backup:ListRestoreTestingPlans",
         "backup:ListRestoreTestingSelections",
         "backup:ListTags",
-        "backup:ListTieringConfigurations"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "BackupGateway",
-      "Effect": "Allow",
-      "Action": [
-        "backup-gateway:GetHypervisor",
-        "backup-gateway:ListHypervisors",
-        "backup-gateway:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Batch",
-      "Effect": "Allow",
-      "Action": [
+        "backup:ListTieringConfigurations",
         "batch:DescribeComputeEnvironments",
         "batch:DescribeConsumableResource",
         "batch:DescribeJobDefinitions",
@@ -484,34 +249,16 @@
         "batch:DescribeServiceEnvironments",
         "batch:ListConsumableResources",
         "batch:ListQuotaShares",
-        "batch:ListSchedulingPolicies"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "BcmDataExports",
-      "Effect": "Allow",
-      "Action": [
+        "batch:ListSchedulingPolicies",
         "bcm-data-exports:GetExport",
         "bcm-data-exports:ListExports",
-        "bcm-data-exports:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "BcmPricingCalculator",
-      "Effect": "Allow",
-      "Action": [
+        "bcm-data-exports:ListTagsForResource",
         "bcm-pricing-calculator:GetBillScenario",
         "bcm-pricing-calculator:ListBillScenarios",
-        "bcm-pricing-calculator:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Bedrock",
-      "Effect": "Allow",
-      "Action": [
+        "bcm-pricing-calculator:ListTagsForResource",
+        "bedrock-mantle:GetProject",
+        "bedrock-mantle:ListProjects",
+        "bedrock-mantle:ListTagsForResource",
         "bedrock:GetAgent",
         "bedrock:GetAgentActionGroup",
         "bedrock:GetAgentAlias",
@@ -542,78 +289,33 @@
         "bedrock:ListDataSources",
         "bedrock:ListEnforcedGuardrailsConfiguration",
         "bedrock:ListFlowAliases",
-        "bedrock:ListFlows",
         "bedrock:ListFlowVersions",
+        "bedrock:ListFlows",
         "bedrock:ListGuardrails",
         "bedrock:ListInferenceProfiles",
         "bedrock:ListKnowledgeBases",
         "bedrock:ListPromptRouters",
         "bedrock:ListPrompts",
-        "bedrock:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "BedrockMantle",
-      "Effect": "Allow",
-      "Action": [
-        "bedrock-mantle:GetProject",
-        "bedrock-mantle:ListProjects",
-        "bedrock-mantle:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Billing",
-      "Effect": "Allow",
-      "Action": [
+        "bedrock:ListTagsForResource",
         "billing:GetBillingView",
         "billing:ListBillingViews",
         "billing:ListSourceViewsForBillingView",
-        "billing:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Billingconductor",
-      "Effect": "Allow",
-      "Action": [
+        "billing:ListTagsForResource",
         "billingconductor:ListAccountAssociations",
         "billingconductor:ListBillingGroups",
-        "billingconductor:ListCustomLineItems",
         "billingconductor:ListCustomLineItemVersions",
+        "billingconductor:ListCustomLineItems",
         "billingconductor:ListPricingPlans",
         "billingconductor:ListPricingRules",
         "billingconductor:ListPricingRulesAssociatedToPricingPlan",
         "billingconductor:ListResourcesAssociatedToCustomLineItem",
-        "billingconductor:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Braket",
-      "Effect": "Allow",
-      "Action": [
+        "billingconductor:ListTagsForResource",
         "braket:ListTagsForResource",
-        "braket:SearchSpendingLimits"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Budgets",
-      "Effect": "Allow",
-      "Action": [
+        "braket:SearchSpendingLimits",
         "budgets:DescribeBudgetAction",
         "budgets:DescribeBudgetActionsForAccount",
         "budgets:DescribeBudgetActionsForBudget",
-        "budgets:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Cases",
-      "Effect": "Allow",
-      "Action": [
+        "budgets:ListTagsForResource",
         "cases:BatchGetCaseRule",
         "cases:BatchGetField",
         "cases:GetDomain",
@@ -623,54 +325,32 @@
         "cases:ListDomains",
         "cases:ListFields",
         "cases:ListLayouts",
-        "cases:ListTemplates"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Ce",
-      "Effect": "Allow",
-      "Action": [
+        "cases:ListTemplates",
         "ce:DescribeCostCategoryDefinition",
         "ce:GetAnomalyMonitors",
         "ce:GetAnomalySubscriptions",
         "ce:GetCostAndUsage",
         "ce:GetCostAndUsageWithResources",
         "ce:ListCostCategoryDefinitions",
-        "ce:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Chatbot",
-      "Effect": "Allow",
-      "Action": [
+        "ce:ListTagsForResource",
         "chatbot:DescribeSlackChannelConfigurations",
         "chatbot:GetCustomAction",
         "chatbot:GetMicrosoftTeamsChannelConfiguration",
         "chatbot:ListAssociations",
         "chatbot:ListCustomActions",
         "chatbot:ListMicrosoftTeamsChannelConfigurations",
-        "chatbot:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Chime",
-      "Effect": "Allow",
-      "Action": [
+        "chatbot:ListTagsForResource",
         "chime:DescribeAppInstance",
         "chime:DescribeAppInstanceBot",
         "chime:ListAppInstanceBots",
         "chime:ListAppInstances",
-        "chime:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Cleanrooms",
-      "Effect": "Allow",
-      "Action": [
+        "chime:ListTagsForResource",
+        "cleanrooms-ml:GetConfiguredModelAlgorithm",
+        "cleanrooms-ml:GetConfiguredModelAlgorithmAssociation",
+        "cleanrooms-ml:GetTrainingDataset",
+        "cleanrooms-ml:ListConfiguredModelAlgorithmAssociations",
+        "cleanrooms-ml:ListConfiguredModelAlgorithms",
+        "cleanrooms-ml:ListTrainingDatasets",
         "cleanrooms:GetAnalysisTemplate",
         "cleanrooms:GetCollaboration",
         "cleanrooms:GetConfiguredTable",
@@ -690,47 +370,22 @@
         "cleanrooms:ListMembers",
         "cleanrooms:ListMemberships",
         "cleanrooms:ListPrivacyBudgetTemplates",
-        "cleanrooms:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "CleanroomsMl",
-      "Effect": "Allow",
-      "Action": [
-        "cleanrooms-ml:GetConfiguredModelAlgorithm",
-        "cleanrooms-ml:GetConfiguredModelAlgorithmAssociation",
-        "cleanrooms-ml:GetTrainingDataset",
-        "cleanrooms-ml:ListConfiguredModelAlgorithmAssociations",
-        "cleanrooms-ml:ListConfiguredModelAlgorithms",
-        "cleanrooms-ml:ListTrainingDatasets"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Cloudformation",
-      "Effect": "Allow",
-      "Action": [
+        "cleanrooms:ListTagsForResource",
         "cloudformation:BatchDescribeTypeConfigurations",
         "cloudformation:DescribePublisher",
         "cloudformation:DescribeStackInstance",
-        "cloudformation:DescribeStacks",
         "cloudformation:DescribeStackSet",
+        "cloudformation:DescribeStacks",
         "cloudformation:DescribeType",
+        "cloudformation:GetResource",
         "cloudformation:GetStackPolicy",
         "cloudformation:GetTemplate",
+        "cloudformation:ListResources",
         "cloudformation:ListStackInstances",
-        "cloudformation:ListStacks",
         "cloudformation:ListStackSets",
+        "cloudformation:ListStacks",
+        "cloudformation:ListTypeVersions",
         "cloudformation:ListTypes",
-        "cloudformation:ListTypeVersions"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Cloudfront",
-      "Effect": "Allow",
-      "Action": [
         "cloudfront:DescribeConnectionFunction",
         "cloudfront:DescribeFunction",
         "cloudfront:DescribeKeyValueStore",
@@ -758,8 +413,8 @@
         "cloudfront:ListConnectionFunctions",
         "cloudfront:ListConnectionGroups",
         "cloudfront:ListContinuousDeploymentPolicies",
-        "cloudfront:ListDistributions",
         "cloudfront:ListDistributionTenants",
+        "cloudfront:ListDistributions",
         "cloudfront:ListFunctions",
         "cloudfront:ListKeyGroups",
         "cloudfront:ListKeyValueStores",
@@ -770,14 +425,7 @@
         "cloudfront:ListResponseHeadersPolicies",
         "cloudfront:ListTagsForResource",
         "cloudfront:ListTrustStores",
-        "cloudfront:ListVpcOrigins"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Cloudtrail",
-      "Effect": "Allow",
-      "Action": [
+        "cloudfront:ListVpcOrigins",
         "cloudtrail:DescribeTrails",
         "cloudtrail:GetChannel",
         "cloudtrail:GetDashboard",
@@ -791,14 +439,7 @@
         "cloudtrail:ListDashboards",
         "cloudtrail:ListEventDataStores",
         "cloudtrail:ListTags",
-        "cloudtrail:ListTrails"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Cloudwatch",
-      "Effect": "Allow",
-      "Action": [
+        "cloudtrail:ListTrails",
         "cloudwatch:DescribeAlarms",
         "cloudwatch:GetAlarmMuteRule",
         "cloudwatch:GetDashboard",
@@ -810,16 +451,9 @@
         "cloudwatch:ListAlarmMuteRules",
         "cloudwatch:ListDashboards",
         "cloudwatch:ListManagedInsightRules",
-        "cloudwatch:ListMetrics",
         "cloudwatch:ListMetricStreams",
-        "cloudwatch:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Codeartifact",
-      "Effect": "Allow",
-      "Action": [
+        "cloudwatch:ListMetrics",
+        "cloudwatch:ListTagsForResource",
         "codeartifact:DescribeDomain",
         "codeartifact:DescribePackageGroup",
         "codeartifact:DescribeRepository",
@@ -829,42 +463,14 @@
         "codeartifact:ListDomains",
         "codeartifact:ListPackageGroups",
         "codeartifact:ListRepositories",
-        "codeartifact:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Codebuild",
-      "Effect": "Allow",
-      "Action": [
+        "codeartifact:ListTagsForResource",
         "codebuild:BatchGetFleets",
-        "codebuild:ListFleets"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Codecommit",
-      "Effect": "Allow",
-      "Action": [
+        "codebuild:ListFleets",
         "codecommit:GetRepository",
-        "codecommit:GetRepositoryTriggers"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Codeconnections",
-      "Effect": "Allow",
-      "Action": [
+        "codecommit:GetRepositoryTriggers",
         "codeconnections:GetConnection",
         "codeconnections:ListConnections",
-        "codeconnections:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Codedeploy",
-      "Effect": "Allow",
-      "Action": [
+        "codeconnections:ListTagsForResource",
         "codedeploy:GetApplication",
         "codedeploy:GetDeployment",
         "codedeploy:GetDeploymentConfig",
@@ -873,83 +479,34 @@
         "codedeploy:ListDeploymentConfigs",
         "codedeploy:ListDeploymentGroups",
         "codedeploy:ListDeployments",
-        "codedeploy:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "CodeguruProfiler",
-      "Effect": "Allow",
-      "Action": [
+        "codedeploy:ListTagsForResource",
         "codeguru-profiler:DescribeProfilingGroup",
         "codeguru-profiler:GetNotificationConfiguration",
         "codeguru-profiler:GetPolicy",
         "codeguru-profiler:ListProfilingGroups",
-        "codeguru-profiler:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "CodeguruReviewer",
-      "Effect": "Allow",
-      "Action": [
+        "codeguru-profiler:ListTagsForResource",
         "codeguru-reviewer:DescribeRepositoryAssociation",
         "codeguru-reviewer:ListRepositoryAssociations",
-        "codeguru-reviewer:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Codepipeline",
-      "Effect": "Allow",
-      "Action": [
+        "codeguru-reviewer:ListTagsForResource",
         "codepipeline:GetPipeline",
         "codepipeline:GetPipelineState",
         "codepipeline:ListActionTypes",
         "codepipeline:ListPipelines",
         "codepipeline:ListTagsForResource",
-        "codepipeline:ListWebhooks"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "CodestarConnections",
-      "Effect": "Allow",
-      "Action": [
+        "codepipeline:ListWebhooks",
         "codestar-connections:GetConnection",
         "codestar-connections:GetRepositoryLink",
         "codestar-connections:GetSyncConfiguration",
         "codestar-connections:ListConnections",
         "codestar-connections:ListRepositoryLinks",
         "codestar-connections:ListSyncConfigurations",
-        "codestar-connections:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "CodestarNotifications",
-      "Effect": "Allow",
-      "Action": [
+        "codestar-connections:ListTagsForResource",
         "codestar-notifications:DescribeNotificationRule",
-        "codestar-notifications:ListNotificationRules"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "CognitoIdentity",
-      "Effect": "Allow",
-      "Action": [
+        "codestar-notifications:ListNotificationRules",
         "cognito-identity:DescribeIdentityPool",
         "cognito-identity:GetIdentityPoolRoles",
         "cognito-identity:GetPrincipalTagAttributeMap",
-        "cognito-identity:ListIdentityPools"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "CognitoIdp",
-      "Effect": "Allow",
-      "Action": [
+        "cognito-identity:ListIdentityPools",
         "cognito-idp:DescribeIdentityProvider",
         "cognito-idp:DescribeResourceServer",
         "cognito-idp:DescribeTerms",
@@ -962,27 +519,13 @@
         "cognito-idp:ListResourceServers",
         "cognito-idp:ListTerms",
         "cognito-idp:ListUserPoolClients",
-        "cognito-idp:ListUserPools"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Comprehend",
-      "Effect": "Allow",
-      "Action": [
+        "cognito-idp:ListUserPools",
         "comprehend:DescribeDocumentClassifier",
         "comprehend:DescribeFlywheel",
         "comprehend:DescribeResourcePolicy",
         "comprehend:ListDocumentClassifiers",
         "comprehend:ListFlywheels",
-        "comprehend:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Config",
-      "Effect": "Allow",
-      "Action": [
+        "comprehend:ListTagsForResource",
         "config:DescribeAggregationAuthorizations",
         "config:DescribeComplianceByConfigRule",
         "config:DescribeConfigRules",
@@ -992,14 +535,9 @@
         "config:DescribeRemediationConfigurations",
         "config:GetStoredQuery",
         "config:ListStoredQueries",
-        "config:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Connect",
-      "Effect": "Allow",
-      "Action": [
+        "config:ListTagsForResource",
+        "connect-campaigns:DescribeCampaign",
+        "connect-campaigns:ListCampaigns",
         "connect:DescribeAgentStatus",
         "connect:DescribeContactFlow",
         "connect:DescribeContactFlowModule",
@@ -1027,19 +565,19 @@
         "connect:ListApprovedOrigins",
         "connect:ListBots",
         "connect:ListContactFlowModuleAliases",
-        "connect:ListContactFlowModules",
         "connect:ListContactFlowModuleVersions",
-        "connect:ListContactFlows",
+        "connect:ListContactFlowModules",
         "connect:ListContactFlowVersions",
+        "connect:ListContactFlows",
         "connect:ListDataTableAttributes",
         "connect:ListDataTables",
-        "connect:ListEvaluationForms",
         "connect:ListEvaluationFormVersions",
+        "connect:ListEvaluationForms",
         "connect:ListHoursOfOperationOverrides",
         "connect:ListHoursOfOperations",
         "connect:ListInstanceAttributes",
-        "connect:ListInstances",
         "connect:ListInstanceStorageConfigs",
+        "connect:ListInstances",
         "connect:ListIntegrationAssociations",
         "connect:ListLambdaFunctions",
         "connect:ListNotifications",
@@ -1064,51 +602,21 @@
         "connect:ListUserHierarchyGroups",
         "connect:ListUserProficiencies",
         "connect:ListUsers",
-        "connect:ListViews",
         "connect:ListViewVersions",
+        "connect:ListViews",
         "connect:ListWorkspaceMedia",
         "connect:ListWorkspacePages",
         "connect:ListWorkspaces",
-        "connect:SearchWorkspaceAssociations"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "ConnectCampaigns",
-      "Effect": "Allow",
-      "Action": [
-        "connect-campaigns:DescribeCampaign",
-        "connect-campaigns:ListCampaigns"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Controltower",
-      "Effect": "Allow",
-      "Action": [
+        "connect:SearchWorkspaceAssociations",
         "controltower:GetEnabledBaseline",
         "controltower:GetEnabledControl",
         "controltower:GetLandingZone",
         "controltower:ListEnabledBaselines",
         "controltower:ListEnabledControls",
         "controltower:ListLandingZones",
-        "controltower:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Cur",
-      "Effect": "Allow",
-      "Action": [
+        "controltower:ListTagsForResource",
         "cur:DescribeReportDefinitions",
-        "cur:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Databrew",
-      "Effect": "Allow",
-      "Action": [
+        "cur:ListTagsForResource",
         "databrew:DescribeDataset",
         "databrew:DescribeJob",
         "databrew:DescribeProject",
@@ -1121,24 +629,10 @@
         "databrew:ListRecipes",
         "databrew:ListRulesets",
         "databrew:ListSchedules",
-        "databrew:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Datapipeline",
-      "Effect": "Allow",
-      "Action": [
+        "databrew:ListTagsForResource",
         "datapipeline:DescribePipelines",
         "datapipeline:GetPipelineDefinition",
-        "datapipeline:ListPipelines"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Datasync",
-      "Effect": "Allow",
-      "Action": [
+        "datapipeline:ListPipelines",
         "datasync:DescribeAgent",
         "datasync:DescribeLocationAzureBlob",
         "datasync:DescribeLocationEfs",
@@ -1155,14 +649,7 @@
         "datasync:ListAgents",
         "datasync:ListLocations",
         "datasync:ListTagsForResource",
-        "datasync:ListTasks"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Datazone",
-      "Effect": "Allow",
-      "Action": [
+        "datasync:ListTasks",
         "datazone:GetDataSource",
         "datazone:GetDomain",
         "datazone:GetDomainUnit",
@@ -1177,8 +664,8 @@
         "datazone:GetUserProfile",
         "datazone:ListConnections",
         "datazone:ListDataSources",
-        "datazone:ListDomains",
         "datazone:ListDomainUnitsForParent",
+        "datazone:ListDomains",
         "datazone:ListEntityOwners",
         "datazone:ListEnvironmentActions",
         "datazone:ListEnvironmentBlueprintConfigurations",
@@ -1190,14 +677,7 @@
         "datazone:ListProjects",
         "datazone:ListSubscriptionTargets",
         "datazone:SearchGroupProfiles",
-        "datazone:SearchUserProfiles"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Deadline",
-      "Effect": "Allow",
-      "Action": [
+        "datazone:SearchUserProfiles",
         "deadline:GetFarm",
         "deadline:GetFleet",
         "deadline:GetLicenseEndpoint",
@@ -1219,27 +699,13 @@
         "deadline:ListQueueLimitAssociations",
         "deadline:ListQueues",
         "deadline:ListStorageProfiles",
-        "deadline:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Detective",
-      "Effect": "Allow",
-      "Action": [
+        "deadline:ListTagsForResource",
         "detective:DescribeOrganizationConfiguration",
         "detective:GetMembers",
         "detective:ListGraphs",
         "detective:ListMembers",
         "detective:ListOrganizationAdminAccount",
-        "detective:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Devicefarm",
-      "Effect": "Allow",
-      "Action": [
+        "detective:ListTagsForResource",
         "devicefarm:GetDevicePool",
         "devicefarm:GetInstanceProfile",
         "devicefarm:GetNetworkProfile",
@@ -1252,80 +718,31 @@
         "devicefarm:ListProjects",
         "devicefarm:ListTagsForResource",
         "devicefarm:ListTestGridProjects",
-        "devicefarm:ListVPCEConfigurations"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "DevopsGuru",
-      "Effect": "Allow",
-      "Action": [
+        "devicefarm:ListVPCEConfigurations",
         "devops-guru:DescribeServiceIntegration",
         "devops-guru:GetResourceCollection",
-        "devops-guru:ListNotificationChannels"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Directconnect",
-      "Effect": "Allow",
-      "Action": [
+        "devops-guru:ListNotificationChannels",
         "directconnect:DescribeConnections",
         "directconnect:DescribeDirectConnectGatewayAssociations",
         "directconnect:DescribeDirectConnectGateways",
         "directconnect:DescribeLags",
-        "directconnect:DescribeVirtualInterfaces"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Dms",
-      "Effect": "Allow",
-      "Action": [
+        "directconnect:DescribeVirtualInterfaces",
         "dms:DescribeDataMigrations",
         "dms:DescribeReplicationConfigs",
         "dms:ListDataProviders",
         "dms:ListInstanceProfiles",
         "dms:ListMigrationProjects",
-        "dms:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "DocdbElastic",
-      "Effect": "Allow",
-      "Action": [
+        "dms:ListTagsForResource",
         "docdb-elastic:GetCluster",
         "docdb-elastic:ListClusters",
-        "docdb-elastic:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Ds",
-      "Effect": "Allow",
-      "Action": [
+        "docdb-elastic:ListTagsForResource",
         "ds:DescribeDirectories",
-        "ds:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Dsql",
-      "Effect": "Allow",
-      "Action": [
+        "ds:ListTagsForResource",
         "dsql:GetCluster",
         "dsql:GetClusterPolicy",
         "dsql:GetVpcEndpointServiceName",
         "dsql:ListClusters",
-        "dsql:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Dynamodb",
-      "Effect": "Allow",
-      "Action": [
+        "dsql:ListTagsForResource",
         "dynamodb:DescribeBackup",
         "dynamodb:DescribeContinuousBackups",
         "dynamodb:DescribeContributorInsights",
@@ -1344,14 +761,11 @@
         "dynamodb:DescribeTimeToLive",
         "dynamodb:GetResourcePolicy",
         "dynamodb:ListTables",
-        "dynamodb:ListTagsOfResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Ecr",
-      "Effect": "Allow",
-      "Action": [
+        "dynamodb:ListTagsOfResource",
+        "ecr-public:DescribeRepositories",
+        "ecr-public:GetRepositoryCatalogData",
+        "ecr-public:GetRepositoryPolicy",
+        "ecr-public:ListTagsForResource",
         "ecr:DescribePullThroughCacheRules",
         "ecr:DescribeRegistry",
         "ecr:DescribeRepositories",
@@ -1362,25 +776,7 @@
         "ecr:GetRepositoryPolicy",
         "ecr:GetSigningConfiguration",
         "ecr:ListPullTimeUpdateExclusions",
-        "ecr:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "EcrPublic",
-      "Effect": "Allow",
-      "Action": [
-        "ecr-public:DescribeRepositories",
-        "ecr-public:GetRepositoryCatalogData",
-        "ecr-public:GetRepositoryPolicy",
-        "ecr-public:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Ecs",
-      "Effect": "Allow",
-      "Action": [
+        "ecr:ListTagsForResource",
         "ecs:DescribeCapacityProviders",
         "ecs:DescribeClusters",
         "ecs:DescribeDaemon",
@@ -1388,18 +784,11 @@
         "ecs:DescribeServices",
         "ecs:DescribeTaskDefinition",
         "ecs:ListClusters",
-        "ecs:ListDaemons",
         "ecs:ListDaemonTaskDefinitions",
+        "ecs:ListDaemons",
         "ecs:ListServices",
         "ecs:ListTagsForResource",
-        "ecs:ListTaskDefinitions"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Eks",
-      "Effect": "Allow",
-      "Action": [
+        "ecs:ListTaskDefinitions",
         "eks:DescribeAccessEntry",
         "eks:DescribeAddon",
         "eks:DescribeCapability",
@@ -1416,14 +805,7 @@
         "eks:ListFargateProfiles",
         "eks:ListIdentityProviderConfigs",
         "eks:ListNodegroups",
-        "eks:ListPodIdentityAssociations"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Elasticache",
-      "Effect": "Allow",
-      "Action": [
+        "eks:ListPodIdentityAssociations",
         "elasticache:DescribeCacheClusters",
         "elasticache:DescribeCacheParameterGroups",
         "elasticache:DescribeCacheParameters",
@@ -1433,16 +815,9 @@
         "elasticache:DescribeServerlessCaches",
         "elasticache:DescribeUserGroups",
         "elasticache:DescribeUsers",
-        "elasticache:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "Elasticbeanstalk",
-      "Effect": "Allow",
-      "Action": [
-        "elasticbeanstalk:DescribeApplications",
+        "elasticache:ListTagsForResource",
         "elasticbeanstalk:DescribeApplicationVersions",
+        "elasticbeanstalk:DescribeApplications",
         "elasticbeanstalk:DescribeConfigurationSettings",
         "elasticbeanstalk:DescribeEnvironments",
         "elasticbeanstalk:ListTagsForResource"
