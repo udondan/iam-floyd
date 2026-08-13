@@ -17,6 +17,7 @@ quicksight:dashboard
 quicksight:dashboardSnapshotJob
 quicksight:dataset
 quicksight:datasource
+quicksight:dlpSetting
 quicksight:emailCustomizationTemplate
 quicksight:extensionaccess
 quicksight:flow

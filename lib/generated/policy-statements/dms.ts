@@ -107,7 +107,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an data provider using the provided settings
+   * Grants permission to create a data provider using the provided settings
    *
    * Access Level: Write
    *
@@ -128,12 +128,6 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   * - .ifReqTag()
-   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateEndpoint.html
    */
   public toCreateEndpoint() {
@@ -144,12 +138,6 @@ export class Dms extends PolicyStatement {
    * Grants permission to create an AWS DMS event notification subscription
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   * - .ifReqTag()
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateEventSubscription.html
    */
@@ -186,7 +174,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an migration project using the provided settings
+   * Grants permission to create a migration project using the provided settings
    *
    * Access Level: Write
    *
@@ -212,12 +200,6 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   * - .ifReqTag()
-   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html
    */
   public toCreateReplicationInstance() {
@@ -228,12 +210,6 @@ export class Dms extends PolicyStatement {
    * Grants permission to create a replication subnet group given a list of the subnet IDs in a VPC
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   * - .ifReqTag()
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationSubnetGroup.html
    */
@@ -385,7 +361,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deletes a subnet group
+   * Grants permission to delete a subnet group
    *
    * Access Level: Write
    *
@@ -704,7 +680,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to returns the status of the RefreshSchemas operation
+   * Grants permission to return the status of the RefreshSchemas operation
    *
    * Access Level: Read
    *
@@ -873,11 +849,6 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ImportCertificate.html
    */
   public toImportCertificate() {
@@ -885,7 +856,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the AWS DMS attributes for a data providers
+   * Grants permission to list the AWS DMS attributes for data providers
    *
    * Access Level: Read
    *
@@ -896,7 +867,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the AWS DMS attributes for a extension packs
+   * Grants permission to list the AWS DMS attributes for extension packs
    *
    * Access Level: Read
    *
@@ -907,7 +878,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the AWS DMS attributes for a instance profiles
+   * Grants permission to list the AWS DMS attributes for instance profiles
    *
    * Access Level: Read
    *
@@ -922,7 +893,7 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ListMetadataModelExports.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelAssessments.html
    */
   public toListMetadataModelAssessments() {
     return this.to('ListMetadataModelAssessments');
@@ -951,7 +922,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the AWS DMS attributes for a migration projects. Note. Despite this action requires DescribeMigrationProjects and DescribeConversionConfiguration, both required actions do not currently authorize the described Schema Conversion operation
+   * Grants permission to list the AWS DMS attributes for a migration projects
    *
    * Access Level: Read
    *
@@ -1375,7 +1346,18 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the AWS DMS attributes for a metadata model assessment action items. Note. Despite this action requires StartMetadataModelImport, the latter does not currently authorize the described Schema Conversion operation
+   * Grants permission to list all of the AWS DMS attributes for a metadata model
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toGetMetadataModel() {
+    return this.to('GetMetadataModel');
+  }
+
+  /**
+   * Grants permission to list the AWS DMS attributes for a metadata model assessment action items
    *
    * Access Level: Read
    *
@@ -1560,6 +1542,7 @@ export class Dms extends PolicyStatement {
       'ListMigrationProjects',
       'ListTagsForResource',
       'TestConnection',
+      'GetMetadataModel',
       'ListMetadataModelAssessmentActionItems'
     ]
   };
@@ -1888,8 +1871,10 @@ export class Dms extends PolicyStatement {
    * - .toListTagsForResource()
    * - .toModifyDataMigration()
    * - .toModifyEndpoint()
+   * - .toModifyEventSubscription()
    * - .toModifyReplicationConfig()
    * - .toModifyReplicationInstance()
+   * - .toModifyReplicationSubnetGroup()
    * - .toModifyReplicationTask()
    * - .toMoveReplicationTask()
    * - .toRebootReplicationInstance()
@@ -1917,6 +1902,7 @@ export class Dms extends PolicyStatement {
    * - .toUpdateInstanceProfile()
    * - .toUpdateMigrationProject()
    * - .toCreateOutboundIntegration()
+   * - .toGetMetadataModel()
    * - .toListMetadataModelAssessmentActionItems()
    *
    * Applies to resource types:
@@ -2003,7 +1989,9 @@ export class Dms extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddTagsToResource()
+   * - .toCreateEndpoint()
    * - .toDeleteCertificate()
+   * - .toImportCertificate()
    * - .toListTagsForResource()
    * - .toModifyEndpoint()
    * - .toRemoveTagsFromResource()
@@ -2076,6 +2064,7 @@ export class Dms extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddTagsToResource()
+   * - .toCreateEndpoint()
    * - .toCreateReplicationConfig()
    * - .toCreateReplicationTask()
    * - .toDeleteConnection()
@@ -2106,8 +2095,10 @@ export class Dms extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddTagsToResource()
+   * - .toCreateEventSubscription()
    * - .toDeleteEventSubscription()
    * - .toListTagsForResource()
+   * - .toModifyEventSubscription()
    * - .toRemoveTagsFromResource()
    *
    * Applies to resource types:
@@ -2202,6 +2193,7 @@ export class Dms extends PolicyStatement {
    * - .toStartMetadataModelImport()
    * - .toUpdateConversionConfiguration()
    * - .toUpdateMigrationProject()
+   * - .toGetMetadataModel()
    * - .toListMetadataModelAssessmentActionItems()
    *
    * Applies to resource types:
@@ -2223,6 +2215,7 @@ export class Dms extends PolicyStatement {
    * Applies to actions:
    * - .toAddTagsToResource()
    * - .toApplyPendingMaintenanceAction()
+   * - .toCreateReplicationInstance()
    * - .toCreateReplicationTask()
    * - .toDeleteConnection()
    * - .toDeleteReplicationInstance()
@@ -2309,8 +2302,11 @@ export class Dms extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddTagsToResource()
+   * - .toCreateReplicationInstance()
+   * - .toCreateReplicationSubnetGroup()
    * - .toDeleteReplicationSubnetGroup()
    * - .toListTagsForResource()
+   * - .toModifyReplicationSubnetGroup()
    * - .toRemoveTagsFromResource()
    *
    * Applies to resource types:

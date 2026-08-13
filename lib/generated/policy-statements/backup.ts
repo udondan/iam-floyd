@@ -41,6 +41,17 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new backup access point
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupAccessPoint.html
+   */
+  public toCreateBackupAccessPoint() {
+    return this.to('CreateBackupAccessPoint');
+  }
+
+  /**
    * Grants permission to create a new backup plan
    *
    * Access Level: Write
@@ -159,6 +170,17 @@ export class Backup extends PolicyStatement {
    */
   public toCreateTieringConfiguration() {
     return this.to('CreateTieringConfiguration');
+  }
+
+  /**
+   * Grants permission to delete the backup access point
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteBackupAccessPoint.html
+   */
+  public toDeleteBackupAccessPoint() {
+    return this.to('DeleteBackupAccessPoint');
   }
 
   /**
@@ -291,6 +313,17 @@ export class Backup extends PolicyStatement {
    */
   public toDeleteTieringConfiguration() {
     return this.to('DeleteTieringConfiguration');
+  }
+
+  /**
+   * Grants permission to return information about the specified backup access point
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeBackupAccessPoint.html
+   */
+  public toDescribeBackupAccessPoint() {
+    return this.to('DescribeBackupAccessPoint');
   }
 
   /**
@@ -643,6 +676,39 @@ export class Backup extends PolicyStatement {
    */
   public toGetTieringConfiguration() {
     return this.to('GetTieringConfiguration');
+  }
+
+  /**
+   * Grants permission to list backup access points in the caller's account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupAccessPoints.html
+   */
+  public toListBackupAccessPoints() {
+    return this.to('ListBackupAccessPoints');
+  }
+
+  /**
+   * Grants permission to list backup access points associated with a recovery point
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupAccessPointsByRecoveryPoint.html
+   */
+  public toListBackupAccessPointsByRecoveryPoint() {
+    return this.to('ListBackupAccessPointsByRecoveryPoint');
+  }
+
+  /**
+   * Grants permission to list backup access points associated with a resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupAccessPointsByResource.html
+   */
+  public toListBackupAccessPointsByResource() {
+    return this.to('ListBackupAccessPointsByResource');
   }
 
   /**
@@ -1240,28 +1306,6 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new access point for backup instant access
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-instant-access.html
-   */
-  public toCreateBackupAccessPoint() {
-    return this.to('CreateBackupAccessPoint');
-  }
-
-  /**
-   * Grants permission to delete the access point
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-instant-access.html
-   */
-  public toDeleteBackupAccessPoint() {
-    return this.to('DeleteBackupAccessPoint');
-  }
-
-  /**
    * Grants permission to delete backup vault sharing policy
    *
    * Access Level: Permissions management, Write
@@ -1270,17 +1314,6 @@ export class Backup extends PolicyStatement {
    */
   public toDeleteBackupVaultSharingPolicy() {
     return this.to('DeleteBackupVaultSharingPolicy');
-  }
-
-  /**
-   * Grants permission to return information about the specified access point
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-instant-access.html
-   */
-  public toDescribeBackupAccessPoint() {
-    return this.to('DescribeBackupAccessPoint');
   }
 
   /**
@@ -1331,6 +1364,7 @@ export class Backup extends PolicyStatement {
     Write: [
       'AssociateBackupVaultMpaApprovalTeam',
       'CancelLegalHold',
+      'CreateBackupAccessPoint',
       'CreateBackupPlan',
       'CreateBackupSelection',
       'CreateBackupVault',
@@ -1342,6 +1376,7 @@ export class Backup extends PolicyStatement {
       'CreateRestoreTestingPlan',
       'CreateRestoreTestingSelection',
       'CreateTieringConfiguration',
+      'DeleteBackupAccessPoint',
       'DeleteBackupPlan',
       'DeleteBackupSelection',
       'DeleteBackupVault',
@@ -1382,8 +1417,6 @@ export class Backup extends PolicyStatement {
       'UpdateTieringConfiguration',
       'CopyFromBackupVault',
       'CopyIntoBackupVault',
-      'CreateBackupAccessPoint',
-      'DeleteBackupAccessPoint',
       'DeleteBackupVaultSharingPolicy',
       'ListIndexedRecoveryPointsForSearch',
       'PutBackupVaultSharingPolicy',
@@ -1398,6 +1431,7 @@ export class Backup extends PolicyStatement {
       'SearchRecoveryPoint'
     ],
     Read: [
+      'DescribeBackupAccessPoint',
       'DescribeBackupJob',
       'DescribeBackupVault',
       'DescribeCopyJob',
@@ -1428,10 +1462,12 @@ export class Backup extends PolicyStatement {
       'GetSupportedResourceTypes',
       'GetTieringConfiguration',
       'ListTags',
-      'DescribeBackupAccessPoint',
       'GetBackupVaultSharingPolicy'
     ],
     List: [
+      'ListBackupAccessPoints',
+      'ListBackupAccessPointsByRecoveryPoint',
+      'ListBackupAccessPointsByResource',
       'ListBackupJobSummaries',
       'ListBackupJobs',
       'ListBackupPlanTemplates',
@@ -1466,6 +1502,23 @@ export class Backup extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type backupAccessPoint to the statement
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-access-points.html
+   *
+   * @param accessPointName - Identifier for the accessPointName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBackupAccessPoint(accessPointName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:backup:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accesspoint/${ accessPointName }`);
+  }
 
   /**
    * Adds a resource of type backupPlan to the statement
@@ -1613,6 +1666,7 @@ export class Backup extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateBackupAccessPoint()
    * - .toCreateBackupPlan()
    * - .toCreateBackupVault()
    * - .toCreateFramework()
@@ -1641,6 +1695,7 @@ export class Backup extends PolicyStatement {
    * Applies to actions:
    * - .toAssociateBackupVaultMpaApprovalTeam()
    * - .toCancelLegalHold()
+   * - .toCreateBackupAccessPoint()
    * - .toCreateBackupPlan()
    * - .toCreateBackupSelection()
    * - .toCreateBackupVault()
@@ -1652,6 +1707,7 @@ export class Backup extends PolicyStatement {
    * - .toCreateRestoreTestingPlan()
    * - .toCreateRestoreTestingSelection()
    * - .toCreateTieringConfiguration()
+   * - .toDeleteBackupAccessPoint()
    * - .toDeleteBackupPlan()
    * - .toDeleteBackupSelection()
    * - .toDeleteBackupVault()
@@ -1664,6 +1720,7 @@ export class Backup extends PolicyStatement {
    * - .toDeleteRestoreTestingPlan()
    * - .toDeleteRestoreTestingSelection()
    * - .toDeleteTieringConfiguration()
+   * - .toDescribeBackupAccessPoint()
    * - .toDescribeBackupVault()
    * - .toDescribeFramework()
    * - .toDescribeRecoveryPoint()
@@ -1711,13 +1768,13 @@ export class Backup extends PolicyStatement {
    * - .toUpdateTieringConfiguration()
    * - .toCopyFromBackupVault()
    * - .toCopyIntoBackupVault()
-   * - .toCreateBackupAccessPoint()
    * - .toDeleteBackupVaultSharingPolicy()
    * - .toGetBackupVaultSharingPolicy()
    * - .toPutBackupVaultSharingPolicy()
    * - .toSearchRecoveryPoint()
    *
    * Applies to resource types:
+   * - backupAccessPoint
    * - backupPlan
    * - backupVault
    * - framework
@@ -1741,6 +1798,7 @@ export class Backup extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateBackupAccessPoint()
    * - .toCreateBackupPlan()
    * - .toCreateBackupVault()
    * - .toCreateFramework()

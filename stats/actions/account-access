@@ -1,0 +1,11 @@
+account-access:CreateApplication;Write
+account-access:CreateEntitlement;Write
+account-access:DeleteApplication;Write
+account-access:DeleteEntitlement;Write
+account-access:GetApplication;Read
+account-access:GetEntitlement;Read
+account-access:ListApplications;List
+account-access:ListEntitlements;List
+account-access:ListTagsForResource;Read
+account-access:TagResource;Tagging, Write
+account-access:UntagResource;Tagging, Write

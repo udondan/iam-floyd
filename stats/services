@@ -2,11 +2,13 @@ a2c
 a4b
 access-analyzer
 account
+account-access
 acm
 acm-pca
 aco-automation
 action-recommendations
 activate
+agent-registry
 agentaccess-mcp
 aidevops
 aiops
@@ -222,6 +224,8 @@ iotmanagedintegrations
 iotsitewise
 iottwinmaker
 iotwireless
+iq
+iq-permission
 ivs
 ivschat
 kafka

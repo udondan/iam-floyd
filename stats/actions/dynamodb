@@ -61,6 +61,7 @@ dynamodb:RestoreTableFromAwsBackup;Write
 dynamodb:RestoreTableFromBackup;Write
 dynamodb:RestoreTableToPointInTime;Write
 dynamodb:Scan;Read
+dynamodb:SearchVectors;Read
 dynamodb:StartAwsBackupJob;Write
 dynamodb:TagResource;Tagging, Write
 dynamodb:UntagResource;Tagging, Write

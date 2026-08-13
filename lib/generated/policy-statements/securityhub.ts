@@ -1033,6 +1033,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of Security Hub free trial statuses for an account or accounts in an organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListFreeTrialStatusesV2.html
+   */
+  public toListFreeTrialStatusesV2() {
+    return this.to('ListFreeTrialStatusesV2');
+  }
+
+  /**
    * Grants permission to retrieve the Security Hub invitations sent to the account
    *
    * Access Level: List
@@ -1578,6 +1589,7 @@ export class Securityhub extends PolicyStatement {
       'ListConnectorsV2',
       'ListEnabledProductsForImport',
       'ListFindingAggregators',
+      'ListFreeTrialStatusesV2',
       'ListInvitations',
       'ListMembers',
       'ListOrganizationAdminAccounts',
@@ -1848,6 +1860,7 @@ export class Securityhub extends PolicyStatement {
    * - .toGetResourcesV2()
    * - .toInviteMembers()
    * - .toListEnabledProductsForImport()
+   * - .toListFreeTrialStatusesV2()
    * - .toListInvitations()
    * - .toListMembers()
    * - .toListOrganizationAdminAccounts()

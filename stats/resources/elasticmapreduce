@@ -1,4 +1,5 @@
 elasticmapreduce:cluster
 elasticmapreduce:editor
 elasticmapreduce:notebook-execution
+elasticmapreduce:session
 elasticmapreduce:studio

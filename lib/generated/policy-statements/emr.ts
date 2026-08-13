@@ -332,6 +332,28 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details of a Spark Connect session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_GetSession.html
+   */
+  public toGetSession() {
+    return this.to('GetSession');
+  }
+
+  /**
+   * Grants permission to get the endpoint and credentials for a Spark Connect session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_GetSessionEndpoint.html
+   */
+  public toGetSessionEndpoint() {
+    return this.to('GetSessionEndpoint');
+  }
+
+  /**
    * Grants permission to view information about an EMR Studio session mapping
    *
    * Access Level: Read
@@ -428,6 +450,17 @@ export class Elasticmapreduce extends PolicyStatement {
    */
   public toListSecurityConfigurations() {
     return this.to('ListSecurityConfigurations');
+  }
+
+  /**
+   * Grants permission to list Spark Connect sessions on an Amazon EMR cluster
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_ListSessions.html
+   */
+  public toListSessions() {
+    return this.to('ListSessions');
   }
 
   /**
@@ -667,6 +700,17 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a Spark Connect session on an Amazon EMR cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_StartSession.html
+   */
+  public toStartSession() {
+    return this.to('StartSession');
+  }
+
+  /**
    * Grants permission to stop notebook execution
    *
    * Access Level: Write
@@ -686,6 +730,17 @@ export class Elasticmapreduce extends PolicyStatement {
    */
   public toTerminateJobFlows() {
     return this.to('TerminateJobFlows');
+  }
+
+  /**
+   * Grants permission to terminate a Spark Connect session on an Amazon EMR cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_TerminateSession.html
+   */
+  public toTerminateSession() {
+    return this.to('TerminateSession');
   }
 
   /**
@@ -960,6 +1015,7 @@ export class Elasticmapreduce extends PolicyStatement {
       'GetClusterSessionCredentials',
       'GetOnClusterAppUIPresignedURL',
       'GetPersistentAppUIPresignedURL',
+      'GetSessionEndpoint',
       'ModifyCluster',
       'ModifyInstanceFleet',
       'ModifyInstanceGroups',
@@ -977,8 +1033,10 @@ export class Elasticmapreduce extends PolicyStatement {
       'SetUnhealthyNodeReplacement',
       'SetVisibleToAllUsers',
       'StartNotebookExecution',
+      'StartSession',
       'StopNotebookExecution',
       'TerminateJobFlows',
+      'TerminateSession',
       'UpdateStudio',
       'UpdateStudioSessionMapping',
       'AttachEditor',
@@ -1013,6 +1071,7 @@ export class Elasticmapreduce extends PolicyStatement {
       'GetAutoTerminationPolicy',
       'GetBlockPublicAccessConfiguration',
       'GetManagedScalingPolicy',
+      'GetSession',
       'GetStudioSessionMapping',
       'ListBootstrapActions',
       'ListInstanceFleets',
@@ -1027,6 +1086,7 @@ export class Elasticmapreduce extends PolicyStatement {
       'ListNotebookExecutions',
       'ListReleaseLabels',
       'ListSecurityConfigurations',
+      'ListSessions',
       'ListStudioSessionMappings',
       'ListStudios',
       'ListSupportedInstanceTypes',
@@ -1097,6 +1157,25 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type session to the statement
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-overview.html
+   *
+   * @param clusterId - Identifier for the clusterId.
+   * @param sessionId - Identifier for the sessionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onSession(clusterId: string, sessionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticmapreduce:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster/${ clusterId }/session/${ sessionId }`);
+  }
+
+  /**
    * Adds a resource of type studio to the statement
    *
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html
@@ -1124,6 +1203,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .toCreateStudio()
    * - .toRunJobFlow()
    * - .toStartNotebookExecution()
+   * - .toStartSession()
    * - .toCreateEditor()
    *
    * @param tagKey The tag key to check
@@ -1162,11 +1242,14 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .toGetManagedScalingPolicy()
    * - .toGetOnClusterAppUIPresignedURL()
    * - .toGetPersistentAppUIPresignedURL()
+   * - .toGetSession()
+   * - .toGetSessionEndpoint()
    * - .toGetStudioSessionMapping()
    * - .toListBootstrapActions()
    * - .toListInstanceFleets()
    * - .toListInstanceGroups()
    * - .toListInstances()
+   * - .toListSessions()
    * - .toListSteps()
    * - .toModifyCluster()
    * - .toModifyInstanceFleet()
@@ -1183,8 +1266,10 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .toSetUnhealthyNodeReplacement()
    * - .toSetVisibleToAllUsers()
    * - .toStartNotebookExecution()
+   * - .toStartSession()
    * - .toStopNotebookExecution()
    * - .toTerminateJobFlows()
+   * - .toTerminateSession()
    * - .toUpdateStudio()
    * - .toUpdateStudioSessionMapping()
    * - .toAttachEditor()
@@ -1204,6 +1289,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - cluster
    * - editor
    * - notebook-execution
+   * - session
    * - studio
    *
    * @param tagKey The tag key to check
@@ -1225,6 +1311,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .toRemoveTags()
    * - .toRunJobFlow()
    * - .toStartNotebookExecution()
+   * - .toStartSession()
    * - .toCreateEditor()
    *
    * @param value The value(s) to check
@@ -1243,6 +1330,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .toAddJobFlowSteps()
    * - .toGetClusterSessionCredentials()
    * - .toGetPersistentAppUIPresignedURL()
+   * - .toStartSession()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -1261,6 +1349,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .toCreateStudio()
    * - .toRunJobFlow()
    * - .toStartNotebookExecution()
+   * - .toStartSession()
    * - .toCreateEditor()
    *
    * @param tagKey The tag key to check
@@ -1299,11 +1388,14 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .toGetManagedScalingPolicy()
    * - .toGetOnClusterAppUIPresignedURL()
    * - .toGetPersistentAppUIPresignedURL()
+   * - .toGetSession()
+   * - .toGetSessionEndpoint()
    * - .toGetStudioSessionMapping()
    * - .toListBootstrapActions()
    * - .toListInstanceFleets()
    * - .toListInstanceGroups()
    * - .toListInstances()
+   * - .toListSessions()
    * - .toListSteps()
    * - .toModifyCluster()
    * - .toModifyInstanceFleet()
@@ -1320,8 +1412,10 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .toSetUnhealthyNodeReplacement()
    * - .toSetVisibleToAllUsers()
    * - .toStartNotebookExecution()
+   * - .toStartSession()
    * - .toStopNotebookExecution()
    * - .toTerminateJobFlows()
+   * - .toTerminateSession()
    * - .toUpdateStudio()
    * - .toUpdateStudioSessionMapping()
    * - .toAttachEditor()
@@ -1341,6 +1435,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - cluster
    * - editor
    * - notebook-execution
+   * - session
    * - studio
    *
    * @param tagKey The tag key to check

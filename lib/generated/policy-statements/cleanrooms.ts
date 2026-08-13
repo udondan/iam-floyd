@@ -371,6 +371,17 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an analysis log export
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetAnalysisLogExport.html
+   */
+  public toGetAnalysisLogExport() {
+    return this.to('GetAnalysisLogExport');
+  }
+
+  /**
    * Grants permission to view details for an analysis template
    *
    * Access Level: Read
@@ -610,6 +621,17 @@ export class Cleanrooms extends PolicyStatement {
    */
   public toGetSchemaAnalysisRule() {
     return this.to('GetSchemaAnalysisRule');
+  }
+
+  /**
+   * Grants permission to list analysis log exports
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListAnalysisLogExports.html
+   */
+  public toListAnalysisLogExports() {
+    return this.to('ListAnalysisLogExports');
   }
 
   /**
@@ -899,6 +921,17 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an analysis log export
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_StartAnalysisLogExport.html
+   */
+  public toStartAnalysisLogExport() {
+    return this.to('StartAnalysisLogExport');
+  }
+
+  /**
    * Grants permission to start protected jobs
    *
    * Access Level: Write
@@ -1167,6 +1200,7 @@ export class Cleanrooms extends PolicyStatement {
       'BatchGetCollaborationAnalysisTemplate',
       'BatchGetSchema',
       'BatchGetSchemaAnalysisRule',
+      'GetAnalysisLogExport',
       'GetAnalysisTemplate',
       'GetCollaboration',
       'GetCollaborationAnalysisTemplate',
@@ -1225,6 +1259,7 @@ export class Cleanrooms extends PolicyStatement {
       'DisallowIntermediateTable',
       'PopulateIdMappingTable',
       'PopulateIntermediateTable',
+      'StartAnalysisLogExport',
       'StartProtectedJob',
       'StartProtectedQuery',
       'TagResource',
@@ -1249,6 +1284,7 @@ export class Cleanrooms extends PolicyStatement {
       'UpdateConfiguredTableReference'
     ],
     List: [
+      'ListAnalysisLogExports',
       'ListAnalysisTemplates',
       'ListCollaborationAnalysisTemplates',
       'ListCollaborationChangeRequests',
@@ -1522,6 +1558,7 @@ export class Cleanrooms extends PolicyStatement {
    * - .toDeleteMembership()
    * - .toDeletePrivacyBudgetTemplate()
    * - .toDisallowIntermediateTable()
+   * - .toGetAnalysisLogExport()
    * - .toGetAnalysisTemplate()
    * - .toGetCollaboration()
    * - .toGetCollaborationAnalysisTemplate()
@@ -1544,6 +1581,7 @@ export class Cleanrooms extends PolicyStatement {
    * - .toGetProtectedQuery()
    * - .toGetSchema()
    * - .toGetSchemaAnalysisRule()
+   * - .toListAnalysisLogExports()
    * - .toListAnalysisTemplates()
    * - .toListCollaborationAnalysisTemplates()
    * - .toListCollaborationChangeRequests()
@@ -1567,6 +1605,7 @@ export class Cleanrooms extends PolicyStatement {
    * - .toPopulateIdMappingTable()
    * - .toPopulateIntermediateTable()
    * - .toPreviewPrivacyImpact()
+   * - .toStartAnalysisLogExport()
    * - .toStartProtectedJob()
    * - .toStartProtectedQuery()
    * - .toTagResource()

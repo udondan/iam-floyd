@@ -655,6 +655,10 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ImportCustomWorkspaceImage.html
    */
   public toImportCustomWorkspaceImage() {
@@ -665,6 +669,10 @@ export class Workspaces extends PolicyStatement {
    * Grants permission to import Bring Your Own License (BYOL) images into Amazon WorkSpaces
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ImportWorkspaceImage.html
    */
@@ -1423,10 +1431,19 @@ export class Workspaces extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCopyWorkspaceImage()
    * - .toCreateConnectionAlias()
    * - .toCreateIpGroup()
+   * - .toCreateStandbyWorkspaces()
    * - .toCreateTags()
+   * - .toCreateUpdatedWorkspaceImage()
+   * - .toCreateWorkspaceBundle()
+   * - .toCreateWorkspaceImage()
+   * - .toCreateWorkspaces()
+   * - .toCreateWorkspacesPool()
    * - .toDeleteTags()
+   * - .toImportCustomWorkspaceImage()
+   * - .toImportWorkspaceImage()
    * - .toRegisterWorkspaceDirectory()
    *
    * @param tagKey The tag key to check
@@ -1541,10 +1558,19 @@ export class Workspaces extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCopyWorkspaceImage()
    * - .toCreateConnectionAlias()
    * - .toCreateIpGroup()
+   * - .toCreateStandbyWorkspaces()
    * - .toCreateTags()
+   * - .toCreateUpdatedWorkspaceImage()
+   * - .toCreateWorkspaceBundle()
+   * - .toCreateWorkspaceImage()
+   * - .toCreateWorkspaces()
+   * - .toCreateWorkspacesPool()
    * - .toDeleteTags()
+   * - .toImportCustomWorkspaceImage()
+   * - .toImportWorkspaceImage()
    * - .toRegisterWorkspaceDirectory()
    *
    * @param value The value(s) to check

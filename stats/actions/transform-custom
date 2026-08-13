@@ -18,6 +18,7 @@ transform-custom:DeleteSource;Write
 transform-custom:DeleteTransformationPackage;Write
 transform-custom:ExecuteTransformation;Write
 transform-custom:GetAnalysis;Read
+transform-custom:GetAnalysisArtifactDownloadUrl;Read
 transform-custom:GetCampaign;Read
 transform-custom:GetFinding;Read
 transform-custom:GetFindingGroups;Read
@@ -27,6 +28,7 @@ transform-custom:GetRepository;Read
 transform-custom:GetSource;Read
 transform-custom:GetTransformationPackageUrl;Read
 transform-custom:ListAnalyses;List
+transform-custom:ListAnalysisArtifacts;Read
 transform-custom:ListCampaignRepositories;Read
 transform-custom:ListCampaigns;List
 transform-custom:ListFindings;List

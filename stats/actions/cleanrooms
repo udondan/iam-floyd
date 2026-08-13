@@ -30,6 +30,7 @@ cleanrooms:DeleteMember;Write
 cleanrooms:DeleteMembership;Write
 cleanrooms:DeletePrivacyBudgetTemplate;Write
 cleanrooms:DisallowIntermediateTable;Write
+cleanrooms:GetAnalysisLogExport;Read
 cleanrooms:GetAnalysisTemplate;Read
 cleanrooms:GetCollaboration;Read
 cleanrooms:GetCollaborationAnalysisTemplate;Read
@@ -52,6 +53,7 @@ cleanrooms:GetProtectedJob;Read
 cleanrooms:GetProtectedQuery;Read
 cleanrooms:GetSchema;Read
 cleanrooms:GetSchemaAnalysisRule;Read
+cleanrooms:ListAnalysisLogExports;List
 cleanrooms:ListAnalysisTemplates;List
 cleanrooms:ListCollaborationAnalysisTemplates;List
 cleanrooms:ListCollaborationChangeRequests;List
@@ -80,6 +82,7 @@ cleanrooms:PassMembership;Read
 cleanrooms:PopulateIdMappingTable;Write
 cleanrooms:PopulateIntermediateTable;Write
 cleanrooms:PreviewPrivacyImpact;Read
+cleanrooms:StartAnalysisLogExport;Write
 cleanrooms:StartProtectedJob;Write
 cleanrooms:StartProtectedQuery;Write
 cleanrooms:TagResource;Tagging, Write

@@ -62,6 +62,9 @@ backup:GetRestoreTestingPlan;Read
 backup:GetRestoreTestingSelection;Read
 backup:GetSupportedResourceTypes;Read
 backup:GetTieringConfiguration;Read
+backup:ListBackupAccessPoints;List
+backup:ListBackupAccessPointsByRecoveryPoint;List
+backup:ListBackupAccessPointsByResource;List
 backup:ListBackupJobSummaries;List
 backup:ListBackupJobs;List
 backup:ListBackupPlanTemplates;List

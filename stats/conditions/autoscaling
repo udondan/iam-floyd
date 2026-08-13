@@ -12,6 +12,7 @@ autoscaling:MetadataHttpEndpoint
 autoscaling:MetadataHttpPutResponseHopLimit
 autoscaling:MetadataHttpTokens
 autoscaling:MinSize
+autoscaling:OperatorPrincipal
 autoscaling:RequestTag/${TagKey}
 autoscaling:ResourceTag/${TagKey}
 autoscaling:SpotPrice

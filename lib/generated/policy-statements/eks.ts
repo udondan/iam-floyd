@@ -115,7 +115,10 @@ export class Eks extends PolicyStatement {
    * - .ifEncryptionConfigProviderKeyArns()
    * - .ifEndpointPrivateAccess()
    * - .ifEndpointPublicAccess()
+   * - .ifKubeApiServerConfig()
+   * - .ifKubeControllerManagerConfig()
    * - .ifKubernetesVersion()
+   * - .ifKubeSchedulerConfig()
    * - .ifLoggingType()
    * - .ifSupportType()
    * - .ifZonalShiftEnabled()
@@ -1507,6 +1510,51 @@ export class Eks extends PolicyStatement {
    */
   public ifIssuerUrl(value: string | string[], operator?: Operator | string) {
     return this.if(`issuerUrl`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by whether the kube-api-server configuration is present in the create / update cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterConfig()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifKubeApiServerConfig(value?: boolean) {
+    return this.if(`kubeApiServerConfig`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by whether the kube-controller-manager configuration is present in the create / update cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterConfig()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifKubeControllerManagerConfig(value?: boolean) {
+    return this.if(`kubeControllerManagerConfig`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by whether the kube-scheduler configuration is present in the create / update cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterConfig()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifKubeSchedulerConfig(value?: boolean) {
+    return this.if(`kubeSchedulerConfig`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

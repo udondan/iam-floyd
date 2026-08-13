@@ -1,0 +1,19 @@
+agent-registry:CreateRegistry;Write
+agent-registry:CreateRegistryRecord;Write
+agent-registry:DeleteRegistry;Write
+agent-registry:DeleteRegistryRecord;Write
+agent-registry:GetDiscoverableRegistryRecord;Read
+agent-registry:GetRegistry;Read
+agent-registry:GetRegistryRecord;Read
+agent-registry:InvokeRegistryMcp;Read
+agent-registry:ListDiscoverableRegistryRecords;List
+agent-registry:ListRegistries;List
+agent-registry:ListRegistryRecords;List
+agent-registry:ListTagsForResource;List
+agent-registry:SearchDiscoverableRegistryRecords;Read
+agent-registry:SubmitRegistryRecordForApproval;Write
+agent-registry:TagResource;Tagging, Write
+agent-registry:UntagResource;Tagging, Write
+agent-registry:UpdateRegistry;Write
+agent-registry:UpdateRegistryRecord;Write
+agent-registry:UpdateRegistryRecordStatus;Write
