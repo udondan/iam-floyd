@@ -1,11 +1,10 @@
 quicksight:AccountConfigurations;Write
 quicksight:AllowVendedLogDeliveryForResource;Permissions management, Write
-quicksight:BatchAssignLimitsProfile;Write
 quicksight:BatchCreateTopicReviewedAnswer;Write
 quicksight:BatchDeleteKnowledgeBase;Write
 quicksight:BatchDeleteTopicReviewedAnswer;Write
+quicksight:BatchDescribeUserLimits;Read
 quicksight:BatchGetPreferences;Read
-quicksight:BatchUnassignLimitsProfile;Write
 quicksight:BatchUpdatePreferences;Write
 quicksight:CancelIngestion;Write
 quicksight:CreateAccountCustomization;Write
@@ -14,11 +13,13 @@ quicksight:CreateActionConnector;Write
 quicksight:CreateAdmin;Write
 quicksight:CreateAgent;Write
 quicksight:CreateAnalysis;Write
+quicksight:CreateApprovalPolicy;Write
 quicksight:CreateBrand;Write
 quicksight:CreateCustomPermissions;Write
 quicksight:CreateDashboard;Write
 quicksight:CreateDataSet;Write
 quicksight:CreateDataSource;Write
+quicksight:CreateDlpSetting;Write
 quicksight:CreateEmailCustomizationTemplate;Write
 quicksight:CreateExtensionAccess;Write
 quicksight:CreateFlow;Write
@@ -51,6 +52,7 @@ quicksight:DeleteActionConnector;Write
 quicksight:DeleteAgent;Write
 quicksight:DeleteAnalysis;Write
 quicksight:DeleteApp;Write
+quicksight:DeleteApprovalPolicy;Write
 quicksight:DeleteBrand;Write
 quicksight:DeleteBrandAssignment;Write
 quicksight:DeleteCustomPermissions;Write
@@ -59,6 +61,7 @@ quicksight:DeleteDataSet;Write
 quicksight:DeleteDataSetRefreshProperties;Write
 quicksight:DeleteDataSource;Write
 quicksight:DeleteDefaultQBusinessApplication;Write
+quicksight:DeleteDlpSetting;Write
 quicksight:DeleteEmailCustomizationTemplate;Write
 quicksight:DeleteExtensionAccess;Write
 quicksight:DeleteFlow;Write
@@ -98,6 +101,7 @@ quicksight:DescribeAnalysis;Read
 quicksight:DescribeAnalysisPermissions;Read
 quicksight:DescribeApp;Read
 quicksight:DescribeAppPermissions;Read
+quicksight:DescribeApprovalPolicy;Read
 quicksight:DescribeAssetBundleExportJob;Read
 quicksight:DescribeAssetBundleImportJob;Read
 quicksight:DescribeAutomationGroup;Read
@@ -119,6 +123,8 @@ quicksight:DescribeDataSetRefreshProperties;Read
 quicksight:DescribeDataSource;Read
 quicksight:DescribeDataSourcePermissions;Read
 quicksight:DescribeDefaultQBusinessApplication;Read
+quicksight:DescribeDlpJob;Read
+quicksight:DescribeDlpSetting;Read
 quicksight:DescribeEmailCustomizationTemplate;Read
 quicksight:DescribeExtensionAccess;Read
 quicksight:DescribeFlow;Read
@@ -171,10 +177,10 @@ quicksight:GetSessionEmbedUrl;Read
 quicksight:ListActionConnectors;List
 quicksight:ListAgents;List
 quicksight:ListAnalyses;List
+quicksight:ListApprovalPolicies;List
 quicksight:ListApps;List
 quicksight:ListAssetBundleExportJobs;List
 quicksight:ListAssetBundleImportJobs;List
-quicksight:ListAssignmentsForPrincipal;List
 quicksight:ListAutomationGroups;List
 quicksight:ListBrands;List
 quicksight:ListCustomPermissions;List
@@ -183,6 +189,8 @@ quicksight:ListDashboardVersions;List
 quicksight:ListDashboards;List
 quicksight:ListDataSets;List
 quicksight:ListDataSources;List
+quicksight:ListDlpLabels;List
+quicksight:ListDlpSettings;List
 quicksight:ListExtensionAccesses;List
 quicksight:ListFlows;List
 quicksight:ListFolderMembers;Read
@@ -199,7 +207,6 @@ quicksight:ListKnowledgeBases;List
 quicksight:ListLimitsProfiles;List
 quicksight:ListNamespaces;List
 quicksight:ListOAuthClientApplications;List
-quicksight:ListProfileAssignments;List
 quicksight:ListRefreshSchedules;List
 quicksight:ListRoleMemberships;List
 quicksight:ListSelfUpgrades;List
@@ -252,6 +259,7 @@ quicksight:StartAssetBundleImportJob;Write
 quicksight:StartAutomationJob;Write
 quicksight:StartDashboardSnapshotJob;Write
 quicksight:StartDashboardSnapshotJobSchedule;Write
+quicksight:StartDlpJob;Write
 quicksight:Subscribe;Write
 quicksight:TagResource;Tagging, Write
 quicksight:UnpublishFlow;Write
@@ -268,6 +276,7 @@ quicksight:UpdateAnalysis;Write
 quicksight:UpdateAnalysisPermissions;Permissions management, Write
 quicksight:UpdateAppPermissions;Permissions management, Write
 quicksight:UpdateApplicationWithTokenExchangeGrant;Write
+quicksight:UpdateApprovalPolicy;Write
 quicksight:UpdateAutomationGroupPermissions;Permissions management, Write
 quicksight:UpdateBrand;Write
 quicksight:UpdateBrandAssignment;Write
@@ -284,6 +293,7 @@ quicksight:UpdateDataSetPermissions;Permissions management, Write
 quicksight:UpdateDataSource;Write
 quicksight:UpdateDataSourcePermissions;Permissions management, Write
 quicksight:UpdateDefaultQBusinessApplication;Write
+quicksight:UpdateDlpSetting;Write
 quicksight:UpdateEmailCustomizationTemplate;Write
 quicksight:UpdateExtensionAccess;Write
 quicksight:UpdateFlow;Write

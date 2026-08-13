@@ -18,6 +18,9 @@ eks:encryptionConfigProviderKeyArns
 eks:endpointPrivateAccess
 eks:endpointPublicAccess
 eks:issuerUrl
+eks:kubeApiServerConfig
+eks:kubeControllerManagerConfig
+eks:kubeSchedulerConfig
 eks:kubernetesGroups
 eks:kubernetesVersion
 eks:loggingType/${type}

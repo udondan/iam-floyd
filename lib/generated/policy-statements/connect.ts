@@ -554,6 +554,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a metric in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateMetric.html
+   */
+  public toCreateMetric() {
+    return this.to('CreateMetric');
+  }
+
+  /**
    * Grants permission to create a notification in an Amazon Connect instance
    *
    * Access Level: Write
@@ -961,6 +972,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a metric in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteMetric.html
+   */
+  public toDeleteMetric() {
+    return this.to('DeleteMetric');
+  }
+
+  /**
    * Grants permission to delete a notification in an Amazon Connect instance
    *
    * Access Level: Write
@@ -1365,6 +1387,17 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeInstanceStorageConfig() {
     return this.to('DescribeInstanceStorageConfig');
+  }
+
+  /**
+   * Grants permission to describe a metric in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeMetric.html
+   */
+  public toDescribeMetric() {
+    return this.to('DescribeMetric');
   }
 
   /**
@@ -2275,6 +2308,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list metrics in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListMetrics.html
+   */
+  public toListMetrics() {
+    return this.to('ListMetrics');
+  }
+
+  /**
    * Grants permission to list notifications in an Amazon Connect instance
    *
    * Access Level: Read
@@ -2844,6 +2888,17 @@ export class Connect extends PolicyStatement {
    */
   public toSearchHoursOfOperations() {
     return this.to('SearchHoursOfOperations');
+  }
+
+  /**
+   * Grants permission to search metrics in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchMetrics.html
+   */
+  public toSearchMetrics() {
+    return this.to('SearchMetrics');
   }
 
   /**
@@ -3573,6 +3628,28 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the content of a metric in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateMetricContent.html
+   */
+  public toUpdateMetricContent() {
+    return this.to('UpdateMetricContent');
+  }
+
+  /**
+   * Grants permission to update the metadata of a metric in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateMetricMetadata.html
+   */
+  public toUpdateMetricMetadata() {
+    return this.to('UpdateMetricMetadata');
+  }
+
+  /**
    * Grants permission to update the content of a notification in an Amazon Connect instance
    *
    * Access Level: Write
@@ -4137,6 +4214,7 @@ export class Connect extends PolicyStatement {
       'CreateHoursOfOperationOverride',
       'CreateInstance',
       'CreateIntegrationAssociation',
+      'CreateMetric',
       'CreateNotification',
       'CreateParticipant',
       'CreatePersistentContactAssociation',
@@ -4174,6 +4252,7 @@ export class Connect extends PolicyStatement {
       'DeleteHoursOfOperationOverride',
       'DeleteInstance',
       'DeleteIntegrationAssociation',
+      'DeleteMetric',
       'DeleteNotification',
       'DeletePredefinedAttribute',
       'DeletePrompt',
@@ -4272,6 +4351,8 @@ export class Connect extends PolicyStatement {
       'UpdateHoursOfOperationOverride',
       'UpdateInstanceAttribute',
       'UpdateInstanceStorageConfig',
+      'UpdateMetricContent',
+      'UpdateMetricMetadata',
       'UpdateNotificationContent',
       'UpdateParticipantAuthentication',
       'UpdateParticipantRoleConfig',
@@ -4339,6 +4420,7 @@ export class Connect extends PolicyStatement {
       'DescribeInstance',
       'DescribeInstanceAttribute',
       'DescribeInstanceStorageConfig',
+      'DescribeMetric',
       'DescribeNotification',
       'DescribePhoneNumber',
       'DescribePredefinedAttribute',
@@ -4383,6 +4465,7 @@ export class Connect extends PolicyStatement {
       'SearchEvaluationForms',
       'SearchHoursOfOperationOverrides',
       'SearchHoursOfOperations',
+      'SearchMetrics',
       'SearchNotifications',
       'SearchPredefinedAttributes',
       'SearchPrompts',
@@ -4433,6 +4516,7 @@ export class Connect extends PolicyStatement {
       'ListIntegrationAssociations',
       'ListLambdaFunctions',
       'ListLexBots',
+      'ListMetrics',
       'ListPhoneNumbers',
       'ListPhoneNumbersV2',
       'ListPredefinedAttributes',
@@ -4809,6 +4893,24 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type metric to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/custom-metrics-topic.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param metricId - Identifier for the metricId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMetric(instanceId: string, metricId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/metric/${ metricId }`);
+  }
+
+  /**
    * Adds a resource of type notification to the statement
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/notifications.html
@@ -4892,6 +4994,25 @@ export class Connect extends PolicyStatement {
    */
   public onQualifiedCustomerManagedView(instanceId: string, viewId: string, viewQualifier: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/view/${ viewId }:${ viewQualifier }`);
+  }
+
+  /**
+   * Adds a resource of type qualified-metric to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/custom-metrics-topic.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param metricId - Identifier for the metricId.
+   * @param metricQualifier - Identifier for the metricQualifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onQualifiedMetric(instanceId: string, metricId: string, metricQualifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/metric/${ metricId }:${ metricQualifier }`);
   }
 
   /**
@@ -5200,6 +5321,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateHoursOfOperation()
    * - .toCreateInstance()
    * - .toCreateIntegrationAssociation()
+   * - .toCreateMetric()
    * - .toCreateNotification()
    * - .toCreatePrompt()
    * - .toCreateQueue()
@@ -5284,6 +5406,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateHoursOfOperation()
    * - .toCreateHoursOfOperationOverride()
    * - .toCreateIntegrationAssociation()
+   * - .toCreateMetric()
    * - .toCreateNotification()
    * - .toCreateParticipant()
    * - .toCreatePersistentContactAssociation()
@@ -5321,6 +5444,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteHoursOfOperationOverride()
    * - .toDeleteInstance()
    * - .toDeleteIntegrationAssociation()
+   * - .toDeleteMetric()
    * - .toDeleteNotification()
    * - .toDeletePredefinedAttribute()
    * - .toDeletePrompt()
@@ -5358,6 +5482,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeInstance()
    * - .toDescribeInstanceAttribute()
    * - .toDescribeInstanceStorageConfig()
+   * - .toDescribeMetric()
    * - .toDescribeNotification()
    * - .toDescribePhoneNumber()
    * - .toDescribePredefinedAttribute()
@@ -5438,6 +5563,7 @@ export class Connect extends PolicyStatement {
    * - .toListIntegrationAssociations()
    * - .toListLambdaFunctions()
    * - .toListLexBots()
+   * - .toListMetrics()
    * - .toListNotifications()
    * - .toListPhoneNumbersV2()
    * - .toListPredefinedAttributes()
@@ -5487,6 +5613,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchEvaluationForms()
    * - .toSearchHoursOfOperationOverrides()
    * - .toSearchHoursOfOperations()
+   * - .toSearchMetrics()
    * - .toSearchNotifications()
    * - .toSearchPredefinedAttributes()
    * - .toSearchPrompts()
@@ -5551,6 +5678,8 @@ export class Connect extends PolicyStatement {
    * - .toUpdateHoursOfOperationOverride()
    * - .toUpdateInstanceAttribute()
    * - .toUpdateInstanceStorageConfig()
+   * - .toUpdateMetricContent()
+   * - .toUpdateMetricMetadata()
    * - .toUpdateNotificationContent()
    * - .toUpdateParticipantAuthentication()
    * - .toUpdateParticipantRoleConfig()
@@ -5616,10 +5745,12 @@ export class Connect extends PolicyStatement {
    * - hours-of-operation
    * - instance
    * - integration-association
+   * - metric
    * - notification
    * - phone-number
    * - prompt
    * - qualified-customer-managed-view
+   * - qualified-metric
    * - queue
    * - quick-connect
    * - routing-profile
@@ -5658,6 +5789,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateHoursOfOperation()
    * - .toCreateInstance()
    * - .toCreateIntegrationAssociation()
+   * - .toCreateMetric()
    * - .toCreateNotification()
    * - .toCreatePrompt()
    * - .toCreateQueue()
@@ -5889,6 +6021,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateHoursOfOperation()
    * - .toCreateHoursOfOperationOverride()
    * - .toCreateIntegrationAssociation()
+   * - .toCreateMetric()
    * - .toCreateNotification()
    * - .toCreateParticipant()
    * - .toCreatePersistentContactAssociation()
@@ -5925,6 +6058,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteHoursOfOperationOverride()
    * - .toDeleteInstance()
    * - .toDeleteIntegrationAssociation()
+   * - .toDeleteMetric()
    * - .toDeleteNotification()
    * - .toDeletePredefinedAttribute()
    * - .toDeletePrompt()
@@ -5961,6 +6095,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeInstance()
    * - .toDescribeInstanceAttribute()
    * - .toDescribeInstanceStorageConfig()
+   * - .toDescribeMetric()
    * - .toDescribeNotification()
    * - .toDescribePredefinedAttribute()
    * - .toDescribePrompt()
@@ -6037,6 +6172,7 @@ export class Connect extends PolicyStatement {
    * - .toListIntegrationAssociations()
    * - .toListLambdaFunctions()
    * - .toListLexBots()
+   * - .toListMetrics()
    * - .toListNotifications()
    * - .toListPredefinedAttributes()
    * - .toListPrompts()
@@ -6076,6 +6212,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchEvaluationForms()
    * - .toSearchHoursOfOperationOverrides()
    * - .toSearchHoursOfOperations()
+   * - .toSearchMetrics()
    * - .toSearchNotifications()
    * - .toSearchPredefinedAttributes()
    * - .toSearchPrompts()
@@ -6133,6 +6270,8 @@ export class Connect extends PolicyStatement {
    * - .toUpdateHoursOfOperationOverride()
    * - .toUpdateInstanceAttribute()
    * - .toUpdateInstanceStorageConfig()
+   * - .toUpdateMetricContent()
+   * - .toUpdateMetricMetadata()
    * - .toUpdateNotificationContent()
    * - .toUpdateParticipantAuthentication()
    * - .toUpdateParticipantRoleConfig()
@@ -6299,6 +6438,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchEvaluationForms()
    * - .toSearchHoursOfOperationOverrides()
    * - .toSearchHoursOfOperations()
+   * - .toSearchMetrics()
    * - .toSearchNotifications()
    * - .toSearchPrompts()
    * - .toSearchQueues()

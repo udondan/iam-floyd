@@ -1104,6 +1104,21 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
+   * Filters access based on the the operator for EC2 Managed Instances
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateAutoScalingGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifOperatorPrincipal(value: string | string[], operator?: Operator | string) {
+    return this.if(`OperatorPrincipal`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access based on the tags associated with the resource
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys

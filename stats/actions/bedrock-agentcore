@@ -3,6 +3,7 @@ bedrock-agentcore:AllowVendedLogDeliveryForResource;Permissions management, Writ
 bedrock-agentcore:AuthorizeAction;Permissions management, Write
 bedrock-agentcore:BatchCreateMemoryRecords;Write
 bedrock-agentcore:BatchDeleteMemoryRecords;Write
+bedrock-agentcore:BatchPutGatewayRateLimits;Write
 bedrock-agentcore:BatchUpdateMemoryRecords;Write
 bedrock-agentcore:CompleteResourceTokenAuth;Read
 bedrock-agentcore:ConnectBrowserAutomationStream;Read
@@ -13,6 +14,7 @@ bedrock-agentcore:CreateAgentRuntimeEndpoint;Write
 bedrock-agentcore:CreateApiKeyCredentialProvider;Write
 bedrock-agentcore:CreateBrowser;Write
 bedrock-agentcore:CreateBrowserProfile;Write
+bedrock-agentcore:CreateCapacityProvider;Write
 bedrock-agentcore:CreateCodeInterpreter;Write
 bedrock-agentcore:CreateConfigurationBundle;Write
 bedrock-agentcore:CreateDataset;Write
@@ -20,6 +22,7 @@ bedrock-agentcore:CreateDatasetVersion;Write
 bedrock-agentcore:CreateEvaluator;Write
 bedrock-agentcore:CreateEvent;Write
 bedrock-agentcore:CreateGateway;Write
+bedrock-agentcore:CreateGatewayRateLimit;Write
 bedrock-agentcore:CreateGatewayRule;Write
 bedrock-agentcore:CreateGatewayTarget;Write
 bedrock-agentcore:CreateHarness;Write
@@ -44,6 +47,8 @@ bedrock-agentcore:DeleteApiKeyCredentialProvider;Write
 bedrock-agentcore:DeleteBatchEvaluation;Write
 bedrock-agentcore:DeleteBrowser;Write
 bedrock-agentcore:DeleteBrowserProfile;Write
+bedrock-agentcore:DeleteCapacityProvider;Write
+bedrock-agentcore:DeleteCapacityProviderSession;Write
 bedrock-agentcore:DeleteCodeInterpreter;Write
 bedrock-agentcore:DeleteConfigurationBundle;Write
 bedrock-agentcore:DeleteDataset;Write
@@ -51,6 +56,7 @@ bedrock-agentcore:DeleteDatasetExamples;Write
 bedrock-agentcore:DeleteEvaluator;Write
 bedrock-agentcore:DeleteEvent;Write
 bedrock-agentcore:DeleteGateway;Write
+bedrock-agentcore:DeleteGatewayRateLimit;Write
 bedrock-agentcore:DeleteGatewayRule;Write
 bedrock-agentcore:DeleteGatewayTarget;Write
 bedrock-agentcore:DeleteHarness;Write
@@ -85,6 +91,7 @@ bedrock-agentcore:GetBatchEvaluation;Read
 bedrock-agentcore:GetBrowser;Read
 bedrock-agentcore:GetBrowserProfile;Read
 bedrock-agentcore:GetBrowserSession;Read
+bedrock-agentcore:GetCapacityProvider;Read
 bedrock-agentcore:GetCodeInterpreter;Read
 bedrock-agentcore:GetCodeInterpreterSession;Read
 bedrock-agentcore:GetConfigurationBundle;Read
@@ -93,6 +100,7 @@ bedrock-agentcore:GetDataset;Read
 bedrock-agentcore:GetEvaluator;Read
 bedrock-agentcore:GetEvent;Read
 bedrock-agentcore:GetGateway;Read
+bedrock-agentcore:GetGatewayRateLimit;Read
 bedrock-agentcore:GetGatewayRule;Read
 bedrock-agentcore:GetGatewayTarget;Read
 bedrock-agentcore:GetHarness;Read
@@ -140,12 +148,14 @@ bedrock-agentcore:ListABTests;List
 bedrock-agentcore:ListActors;List
 bedrock-agentcore:ListAgentRuntimeEndpoints;List
 bedrock-agentcore:ListAgentRuntimeVersions;List
+bedrock-agentcore:ListAgentRuntimeVersionsByCapacityProvider;List
 bedrock-agentcore:ListAgentRuntimes;List
 bedrock-agentcore:ListApiKeyCredentialProviders;Read
 bedrock-agentcore:ListBatchEvaluations;List
 bedrock-agentcore:ListBrowserProfiles;List
 bedrock-agentcore:ListBrowserSessions;List
 bedrock-agentcore:ListBrowsers;List
+bedrock-agentcore:ListCapacityProviders;List
 bedrock-agentcore:ListCodeInterpreterSessions;List
 bedrock-agentcore:ListCodeInterpreters;List
 bedrock-agentcore:ListConfigurationBundleVersions;List
@@ -155,6 +165,7 @@ bedrock-agentcore:ListDatasetVersions;List
 bedrock-agentcore:ListDatasets;List
 bedrock-agentcore:ListEvaluators;List
 bedrock-agentcore:ListEvents;List
+bedrock-agentcore:ListGatewayRateLimits;List
 bedrock-agentcore:ListGatewayRules;List
 bedrock-agentcore:ListGatewayTargets;List
 bedrock-agentcore:ListGateways;List
@@ -187,8 +198,10 @@ bedrock-agentcore:ListWorkloadIdentities;Read
 bedrock-agentcore:ManageAdminPolicy;Permissions management, Write
 bedrock-agentcore:ManageResourceScopedPolicy;Permissions management, Write
 bedrock-agentcore:PartiallyAuthorizeActions;Permissions management, Write
+bedrock-agentcore:PassCapacityProvider;Write
 bedrock-agentcore:ProcessPayment;Write
 bedrock-agentcore:PutResourcePolicy;Write
+bedrock-agentcore:PutSystemLogEvents;Write
 bedrock-agentcore:RetrieveMemoryRecords;List
 bedrock-agentcore:SaveBrowserSessionProfile;Write
 bedrock-agentcore:SearchRegistryRecords;Read
@@ -212,11 +225,13 @@ bedrock-agentcore:UpdateAgentRuntime;Write
 bedrock-agentcore:UpdateAgentRuntimeEndpoint;Write
 bedrock-agentcore:UpdateApiKeyCredentialProvider;Write
 bedrock-agentcore:UpdateBrowserStream;Write
+bedrock-agentcore:UpdateCapacityProvider;Write
 bedrock-agentcore:UpdateConfigurationBundle;Write
 bedrock-agentcore:UpdateDataset;Write
 bedrock-agentcore:UpdateDatasetExamples;Write
 bedrock-agentcore:UpdateEvaluator;Write
 bedrock-agentcore:UpdateGateway;Write
+bedrock-agentcore:UpdateGatewayRateLimit;Write
 bedrock-agentcore:UpdateGatewayRule;Write
 bedrock-agentcore:UpdateGatewayTarget;Write
 bedrock-agentcore:UpdateHarness;Write

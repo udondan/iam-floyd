@@ -35,6 +35,8 @@ elasticmapreduce:GetClusterSessionCredentials;Write
 elasticmapreduce:GetManagedScalingPolicy;Read
 elasticmapreduce:GetOnClusterAppUIPresignedURL;Write
 elasticmapreduce:GetPersistentAppUIPresignedURL;Write
+elasticmapreduce:GetSession;Read
+elasticmapreduce:GetSessionEndpoint;Write
 elasticmapreduce:GetStudioSessionMapping;Read
 elasticmapreduce:LinkRepository;Write
 elasticmapreduce:ListBootstrapActions;Read
@@ -47,6 +49,7 @@ elasticmapreduce:ListNotebookExecutions;List
 elasticmapreduce:ListReleaseLabels;List
 elasticmapreduce:ListRepositories;List
 elasticmapreduce:ListSecurityConfigurations;List
+elasticmapreduce:ListSessions;List
 elasticmapreduce:ListSteps;Read
 elasticmapreduce:ListStudioSessionMappings;List
 elasticmapreduce:ListStudios;List
@@ -72,9 +75,11 @@ elasticmapreduce:SetUnhealthyNodeReplacement;Write
 elasticmapreduce:SetVisibleToAllUsers;Write
 elasticmapreduce:StartEditor;Write
 elasticmapreduce:StartNotebookExecution;Write
+elasticmapreduce:StartSession;Write
 elasticmapreduce:StopEditor;Write
 elasticmapreduce:StopNotebookExecution;Write
 elasticmapreduce:TerminateJobFlows;Write
+elasticmapreduce:TerminateSession;Write
 elasticmapreduce:UnlinkRepository;Write
 elasticmapreduce:UpdateEditor;Write
 elasticmapreduce:UpdateRepository;Write

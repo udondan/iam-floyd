@@ -244,6 +244,17 @@ export class TransformCustom extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke GetAnalysisArtifactDownloadUrl on AWS Transform custom
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
+   */
+  public toGetAnalysisArtifactDownloadUrl() {
+    return this.to('GetAnalysisArtifactDownloadUrl');
+  }
+
+  /**
    * Grants permission to invoke GetCampaign on AWS Transform custom
    *
    * Access Level: Read
@@ -340,6 +351,17 @@ export class TransformCustom extends PolicyStatement {
    */
   public toListAnalyses() {
     return this.to('ListAnalyses');
+  }
+
+  /**
+   * Grants permission to invoke ListAnalysisArtifacts on AWS Transform custom
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
+   */
+  public toListAnalysisArtifacts() {
+    return this.to('ListAnalysisArtifacts');
   }
 
   /**
@@ -632,6 +654,7 @@ export class TransformCustom extends PolicyStatement {
     ],
     Read: [
       'GetAnalysis',
+      'GetAnalysisArtifactDownloadUrl',
       'GetCampaign',
       'GetFinding',
       'GetFindingGroups',
@@ -640,6 +663,7 @@ export class TransformCustom extends PolicyStatement {
       'GetRepository',
       'GetSource',
       'GetTransformationPackageUrl',
+      'ListAnalysisArtifacts',
       'ListCampaignRepositories',
       'ListTagsForResource',
       'ListTransformationPackageShares'
@@ -844,6 +868,7 @@ export class TransformCustom extends PolicyStatement {
    * - .toDeleteTransformationPackage()
    * - .toExecuteTransformation()
    * - .toGetAnalysis()
+   * - .toGetAnalysisArtifactDownloadUrl()
    * - .toGetCampaign()
    * - .toGetFinding()
    * - .toGetKnowledgeItem()
@@ -851,6 +876,7 @@ export class TransformCustom extends PolicyStatement {
    * - .toGetRepository()
    * - .toGetSource()
    * - .toGetTransformationPackageUrl()
+   * - .toListAnalysisArtifacts()
    * - .toListCampaignRepositories()
    * - .toListTransformationPackageShares()
    * - .toShareTransformationPackage()

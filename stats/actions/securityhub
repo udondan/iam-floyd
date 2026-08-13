@@ -101,6 +101,7 @@ securityhub:ListConnectorsV2;List
 securityhub:ListControlEvaluationSummaries;Read
 securityhub:ListEnabledProductsForImport;List
 securityhub:ListFindingAggregators;List
+securityhub:ListFreeTrialStatusesV2;List
 securityhub:ListInvitations;List
 securityhub:ListMembers;List
 securityhub:ListOrganizationAdminAccounts;List

@@ -569,6 +569,17 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to perform a vector similarity search on a vector index associated with an Amazon DynamoDB table
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_SearchVectors.html
+   */
+  public toSearchVectors() {
+    return this.to('SearchVectors');
+  }
+
+  /**
    * Grants permission to associate a set of tags with an Amazon DynamoDB resource
    *
    * Access Level: Tagging, Write
@@ -907,6 +918,7 @@ export class Dynamodb extends PolicyStatement {
       'PartiQLSelect',
       'Query',
       'Scan',
+      'SearchVectors',
       'DescribeReservedCapacity',
       'DescribeReservedCapacityOfferings',
       'GetAbacStatus',
@@ -1141,6 +1153,7 @@ export class Dynamodb extends PolicyStatement {
    * - .toRestoreTableFromBackup()
    * - .toRestoreTableToPointInTime()
    * - .toScan()
+   * - .toSearchVectors()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateContinuousBackups()

@@ -2066,6 +2066,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update mutable fields of the calling user's own notifications
+   *
+   * Access Level: Write
+   */
+  public toBatchUpdateNotifications() {
+    return this.to('BatchUpdateNotifications');
+  }
+
+  /**
    * Grants permission to delete a resource policy for a DataZone Domain
    *
    * Access Level: Permissions management, Write
@@ -2368,6 +2377,7 @@ export class Datazone extends PolicyStatement {
       'UpdateUserProfile',
       'BatchDeleteLinkedTypes',
       'BatchPutLinkedTypes',
+      'BatchUpdateNotifications',
       'DeleteDomainSharingPolicy',
       'ProvisionDomain',
       'PutDomainSharingPolicy',

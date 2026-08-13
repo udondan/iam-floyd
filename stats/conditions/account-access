@@ -1,0 +1,3 @@
+account-access:RequestTag/${TagKey}
+account-access:ResourceTag/${TagKey}
+account-access:TagKeys

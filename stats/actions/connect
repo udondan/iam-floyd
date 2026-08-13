@@ -48,6 +48,7 @@ connect:CreateHoursOfOperation;Write
 connect:CreateHoursOfOperationOverride;Write
 connect:CreateInstance;Write
 connect:CreateIntegrationAssociation;Write
+connect:CreateMetric;Write
 connect:CreateNotification;Write
 connect:CreateParticipant;Write
 connect:CreatePersistentContactAssociation;Write
@@ -85,6 +86,7 @@ connect:DeleteHoursOfOperation;Write
 connect:DeleteHoursOfOperationOverride;Write
 connect:DeleteInstance;Write
 connect:DeleteIntegrationAssociation;Write
+connect:DeleteMetric;Write
 connect:DeleteNotification;Write
 connect:DeletePredefinedAttribute;Write
 connect:DeletePrompt;Write
@@ -123,6 +125,7 @@ connect:DescribeHoursOfOperationOverride;Read
 connect:DescribeInstance;Read
 connect:DescribeInstanceAttribute;Read
 connect:DescribeInstanceStorageConfig;Read
+connect:DescribeMetric;Read
 connect:DescribeNotification;Read
 connect:DescribePhoneNumber;Read
 connect:DescribePredefinedAttribute;Read
@@ -207,6 +210,7 @@ connect:ListInstances;List
 connect:ListIntegrationAssociations;List
 connect:ListLambdaFunctions;List
 connect:ListLexBots;List
+connect:ListMetrics;List
 connect:ListNotifications;Read
 connect:ListPhoneNumbers;List
 connect:ListPhoneNumbersV2;List
@@ -259,6 +263,7 @@ connect:SearchEmailAddresses;Read
 connect:SearchEvaluationForms;Read
 connect:SearchHoursOfOperationOverrides;Read
 connect:SearchHoursOfOperations;Read
+connect:SearchMetrics;Read
 connect:SearchNotifications;Read
 connect:SearchPredefinedAttributes;Read
 connect:SearchPrompts;Read
@@ -330,6 +335,8 @@ connect:UpdateHoursOfOperation;Write
 connect:UpdateHoursOfOperationOverride;Write
 connect:UpdateInstanceAttribute;Write
 connect:UpdateInstanceStorageConfig;Write
+connect:UpdateMetricContent;Write
+connect:UpdateMetricMetadata;Write
 connect:UpdateNotificationContent;Write
 connect:UpdateParticipantAuthentication;Write
 connect:UpdateParticipantRoleConfig;Write

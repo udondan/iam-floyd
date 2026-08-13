@@ -25,6 +25,7 @@ bedrock-agentcore:RuntimeAuthorizerType
 bedrock-agentcore:TagKeys
 bedrock-agentcore:actorId
 bedrock-agentcore:namespace
+bedrock-agentcore:runtimeSessionId
 bedrock-agentcore:securityGroups
 bedrock-agentcore:sessionId
 bedrock-agentcore:strategyId

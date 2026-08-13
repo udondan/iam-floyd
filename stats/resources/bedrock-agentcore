@@ -4,6 +4,7 @@ bedrock-agentcore:batch-evaluate
 bedrock-agentcore:browser
 bedrock-agentcore:browser-custom
 bedrock-agentcore:browser-profile
+bedrock-agentcore:capacity-provider
 bedrock-agentcore:code-interpreter
 bedrock-agentcore:code-interpreter-custom
 bedrock-agentcore:configuration-bundle

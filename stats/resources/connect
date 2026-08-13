@@ -17,11 +17,13 @@ connect:hours-of-operation
 connect:instance
 connect:integration-association
 connect:legacy-phone-number
+connect:metric
 connect:notification
 connect:phone-number
 connect:prompt
 connect:qualified-aws-managed-view
 connect:qualified-customer-managed-view
+connect:qualified-metric
 connect:queue
 connect:quick-connect
 connect:routing-profile

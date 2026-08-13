@@ -5,4 +5,4 @@ airflow:ResourceId
 airflow:ResourceTag/${TagKey}
 airflow:ResourceType
 airflow:TagKeys
-airflow:TeamName
+airflow:TeamNames

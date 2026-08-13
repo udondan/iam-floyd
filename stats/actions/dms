@@ -72,6 +72,7 @@ dms:DescribeReplications;Read
 dms:DescribeSchemas;Read
 dms:DescribeTableStatistics;Read
 dms:ExportMetadataModelAssessment;Write
+dms:GetMetadataModel;Read
 dms:GetTargetSelectionRules;Read
 dms:ImportCertificate;Write
 dms:ListDataProviders;Read

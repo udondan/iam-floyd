@@ -52,6 +52,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to batch put rate limits on a gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_BatchPutGatewayRateLimits.html
+   */
+  public toBatchPutGatewayRateLimits() {
+    return this.to('BatchPutGatewayRateLimits');
+  }
+
+  /**
    * Grants permission to update one or more memory records
    *
    * Access Level: Write
@@ -179,6 +190,22 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new capacity provider
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateCapacityProvider.html
+   */
+  public toCreateCapacityProvider() {
+    return this.to('CreateCapacityProvider');
+  }
+
+  /**
    * Grants permission to create a new custom code interpreter
    *
    * Access Level: Write
@@ -273,6 +300,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toCreateGateway() {
     return this.to('CreateGateway');
+  }
+
+  /**
+   * Grants permission to create a rate limit on a gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateGatewayRateLimit.html
+   */
+  public toCreateGatewayRateLimit() {
+    return this.to('CreateGatewayRateLimit');
   }
 
   /**
@@ -563,6 +601,28 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a capacity provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteCapacityProvider.html
+   */
+  public toDeleteCapacityProvider() {
+    return this.to('DeleteCapacityProvider');
+  }
+
+  /**
+   * Grants permission to delete a capacity provider session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteCapacityProviderSession.html
+   */
+  public toDeleteCapacityProviderSession() {
+    return this.to('DeleteCapacityProviderSession');
+  }
+
+  /**
    * Grants permission to delete a custom code interpreter
    *
    * Access Level: Write
@@ -637,6 +697,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toDeleteGateway() {
     return this.to('DeleteGateway');
+  }
+
+  /**
+   * Grants permission to delete a rate limit on a gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteGatewayRateLimit.html
+   */
+  public toDeleteGatewayRateLimit() {
+    return this.to('DeleteGatewayRateLimit');
   }
 
   /**
@@ -970,6 +1041,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details of a capacity provider
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetCapacityProvider.html
+   */
+  public toGetCapacityProvider() {
+    return this.to('GetCapacityProvider');
+  }
+
+  /**
    * Grants permission to get details of a code interpreter
    *
    * Access Level: Read
@@ -1055,6 +1137,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toGetGateway() {
     return this.to('GetGateway');
+  }
+
+  /**
+   * Grants permission to retrieve a rate limit on a gateway
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetGatewayRateLimit.html
+   */
+  public toGetGatewayRateLimit() {
+    return this.to('GetGatewayRateLimit');
   }
 
   /**
@@ -1553,6 +1646,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list agent runtime versions by capacity provider
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListAgentRuntimeVersionsByCapacityProvider.html
+   */
+  public toListAgentRuntimeVersionsByCapacityProvider() {
+    return this.to('ListAgentRuntimeVersionsByCapacityProvider');
+  }
+
+  /**
    * Grants permission to list agent runtimes
    *
    * Access Level: List
@@ -1616,6 +1720,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toListBrowsers() {
     return this.to('ListBrowsers');
+  }
+
+  /**
+   * Grants permission to list capacity providers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListCapacityProviders.html
+   */
+  public toListCapacityProviders() {
+    return this.to('ListCapacityProviders');
   }
 
   /**
@@ -1715,6 +1830,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toListEvents() {
     return this.to('ListEvents');
+  }
+
+  /**
+   * Grants permission to list rate limits on a gateway
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListGatewayRateLimits.html
+   */
+  public toListGatewayRateLimits() {
+    return this.to('ListGatewayRateLimits');
   }
 
   /**
@@ -2301,6 +2427,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a capacity provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateCapacityProvider.html
+   */
+  public toUpdateCapacityProvider() {
+    return this.to('UpdateCapacityProvider');
+  }
+
+  /**
    * Grants permission to update a configuration bundle
    *
    * Access Level: Write
@@ -2353,6 +2490,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toUpdateGateway() {
     return this.to('UpdateGateway');
+  }
+
+  /**
+   * Grants permission to update a rate limit on a gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGatewayRateLimit.html
+   */
+  public toUpdateGatewayRateLimit() {
+    return this.to('UpdateGatewayRateLimit');
   }
 
   /**
@@ -2653,6 +2801,28 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to pass a capacity provider to a runtime resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toPassCapacityProvider() {
+    return this.to('PassCapacityProvider');
+  }
+
+  /**
+   * Grants permission to collect system logs from the runtime instances
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toPutSystemLogEvents() {
+    return this.to('PutSystemLogEvents');
+  }
+
+  /**
    * Grants permission to enable search on gateways
    *
    * Access Level: Permissions management, Write
@@ -2668,6 +2838,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'AddDatasetExamples',
       'BatchCreateMemoryRecords',
       'BatchDeleteMemoryRecords',
+      'BatchPutGatewayRateLimits',
       'BatchUpdateMemoryRecords',
       'CreateABTest',
       'CreateAgentRuntime',
@@ -2675,6 +2846,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'CreateApiKeyCredentialProvider',
       'CreateBrowser',
       'CreateBrowserProfile',
+      'CreateCapacityProvider',
       'CreateCodeInterpreter',
       'CreateConfigurationBundle',
       'CreateDataset',
@@ -2682,6 +2854,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'CreateEvaluator',
       'CreateEvent',
       'CreateGateway',
+      'CreateGatewayRateLimit',
       'CreateGatewayRule',
       'CreateGatewayTarget',
       'CreateHarness',
@@ -2706,6 +2879,8 @@ export class BedrockAgentcore extends PolicyStatement {
       'DeleteBatchEvaluation',
       'DeleteBrowser',
       'DeleteBrowserProfile',
+      'DeleteCapacityProvider',
+      'DeleteCapacityProviderSession',
       'DeleteCodeInterpreter',
       'DeleteConfigurationBundle',
       'DeleteDataset',
@@ -2713,6 +2888,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'DeleteEvaluator',
       'DeleteEvent',
       'DeleteGateway',
+      'DeleteGatewayRateLimit',
       'DeleteGatewayRule',
       'DeleteGatewayTarget',
       'DeleteHarness',
@@ -2767,11 +2943,13 @@ export class BedrockAgentcore extends PolicyStatement {
       'UpdateAgentRuntimeEndpoint',
       'UpdateApiKeyCredentialProvider',
       'UpdateBrowserStream',
+      'UpdateCapacityProvider',
       'UpdateConfigurationBundle',
       'UpdateDataset',
       'UpdateDatasetExamples',
       'UpdateEvaluator',
       'UpdateGateway',
+      'UpdateGatewayRateLimit',
       'UpdateGatewayRule',
       'UpdateGatewayTarget',
       'UpdateHarness',
@@ -2797,6 +2975,8 @@ export class BedrockAgentcore extends PolicyStatement {
       'ManageAdminPolicy',
       'ManageResourceScopedPolicy',
       'PartiallyAuthorizeActions',
+      'PassCapacityProvider',
+      'PutSystemLogEvents',
       'SynchronizeGatewayTargets'
     ],
     Read: [
@@ -2812,6 +2992,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'GetBrowser',
       'GetBrowserProfile',
       'GetBrowserSession',
+      'GetCapacityProvider',
       'GetCodeInterpreter',
       'GetCodeInterpreterSession',
       'GetConfigurationBundle',
@@ -2820,6 +3001,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'GetEvaluator',
       'GetEvent',
       'GetGateway',
+      'GetGatewayRateLimit',
       'GetGatewayRule',
       'GetGatewayTarget',
       'GetHarness',
@@ -2861,11 +3043,13 @@ export class BedrockAgentcore extends PolicyStatement {
       'ListActors',
       'ListAgentRuntimeEndpoints',
       'ListAgentRuntimeVersions',
+      'ListAgentRuntimeVersionsByCapacityProvider',
       'ListAgentRuntimes',
       'ListBatchEvaluations',
       'ListBrowserProfiles',
       'ListBrowserSessions',
       'ListBrowsers',
+      'ListCapacityProviders',
       'ListCodeInterpreterSessions',
       'ListCodeInterpreters',
       'ListConfigurationBundleVersions',
@@ -2875,6 +3059,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'ListDatasets',
       'ListEvaluators',
       'ListEvents',
+      'ListGatewayRateLimits',
       'ListGatewayRules',
       'ListGatewayTargets',
       'ListGateways',
@@ -3018,6 +3203,23 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public onBrowserProfile(browserProfileId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:browser-profile/${ browserProfileId }`);
+  }
+
+  /**
+   * Adds a resource of type capacity-provider to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/capacityProvider.html
+   *
+   * @param capacityProviderId - Identifier for the capacityProviderId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCapacityProvider(capacityProviderId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:capacity-provider/${ capacityProviderId }`);
   }
 
   /**
@@ -3444,6 +3646,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateApiKeyCredentialProvider()
    * - .toCreateBrowser()
    * - .toCreateBrowserProfile()
+   * - .toCreateCapacityProvider()
    * - .toCreateCodeInterpreter()
    * - .toCreateDataset()
    * - .toCreateEvaluator()
@@ -3476,14 +3679,17 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toAddDatasetExamples()
    * - .toBatchCreateMemoryRecords()
    * - .toBatchDeleteMemoryRecords()
+   * - .toBatchPutGatewayRateLimits()
    * - .toBatchUpdateMemoryRecords()
    * - .toCompleteResourceTokenAuth()
    * - .toCreateAgentRuntimeEndpoint()
    * - .toCreateApiKeyCredentialProvider()
+   * - .toCreateCapacityProvider()
    * - .toCreateDataset()
    * - .toCreateDatasetVersion()
    * - .toCreateEvaluator()
    * - .toCreateEvent()
+   * - .toCreateGatewayRateLimit()
    * - .toCreateGatewayRule()
    * - .toCreateGatewayTarget()
    * - .toCreateHarnessEndpoint()
@@ -3502,6 +3708,8 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toDeleteBatchEvaluation()
    * - .toDeleteBrowser()
    * - .toDeleteBrowserProfile()
+   * - .toDeleteCapacityProvider()
+   * - .toDeleteCapacityProviderSession()
    * - .toDeleteCodeInterpreter()
    * - .toDeleteConfigurationBundle()
    * - .toDeleteDataset()
@@ -3509,6 +3717,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toDeleteEvaluator()
    * - .toDeleteEvent()
    * - .toDeleteGateway()
+   * - .toDeleteGatewayRateLimit()
    * - .toDeleteGatewayRule()
    * - .toDeleteGatewayTarget()
    * - .toDeleteHarness()
@@ -3537,6 +3746,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toGetBrowser()
    * - .toGetBrowserProfile()
    * - .toGetBrowserSession()
+   * - .toGetCapacityProvider()
    * - .toGetCodeInterpreter()
    * - .toGetCodeInterpreterSession()
    * - .toGetConfigurationBundle()
@@ -3545,6 +3755,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toGetEvaluator()
    * - .toGetEvent()
    * - .toGetGateway()
+   * - .toGetGatewayRateLimit()
    * - .toGetGatewayRule()
    * - .toGetGatewayTarget()
    * - .toGetHarness()
@@ -3590,6 +3801,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toListDatasetExamples()
    * - .toListDatasetVersions()
    * - .toListEvents()
+   * - .toListGatewayRateLimits()
    * - .toListGatewayRules()
    * - .toListGatewayTargets()
    * - .toListMemoryExtractionJobs()
@@ -3627,11 +3839,13 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toUpdateAgentRuntimeEndpoint()
    * - .toUpdateApiKeyCredentialProvider()
    * - .toUpdateBrowserStream()
+   * - .toUpdateCapacityProvider()
    * - .toUpdateConfigurationBundle()
    * - .toUpdateDataset()
    * - .toUpdateDatasetExamples()
    * - .toUpdateEvaluator()
    * - .toUpdateGateway()
+   * - .toUpdateGatewayRateLimit()
    * - .toUpdateGatewayRule()
    * - .toUpdateGatewayTarget()
    * - .toUpdateHarness()
@@ -3653,6 +3867,8 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toInvokeGateway()
    * - .toManageResourceScopedPolicy()
    * - .toPartiallyAuthorizeActions()
+   * - .toPassCapacityProvider()
+   * - .toPutSystemLogEvents()
    * - .toSynchronizeGatewayTargets()
    *
    * Applies to resource types:
@@ -3661,6 +3877,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - batch-evaluate
    * - browser-custom
    * - browser-profile
+   * - capacity-provider
    * - code-interpreter-custom
    * - configuration-bundle
    * - dataset
@@ -3700,6 +3917,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateApiKeyCredentialProvider()
    * - .toCreateBrowser()
    * - .toCreateBrowserProfile()
+   * - .toCreateCapacityProvider()
    * - .toCreateCodeInterpreter()
    * - .toCreateDataset()
    * - .toCreateEvaluator()
@@ -4057,6 +4275,21 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Filters access by Runtime Session Id
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-runtimeSessionId
+   *
+   * Applies to actions:
+   * - .toPutSystemLogEvents()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRuntimeSessionId(value: string | string[], operator?: Operator | string) {
+    return this.if(`runtimeSessionId`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the ID of security groups configured for an AgentCore resource
    *
    * https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/security-vpc-condition.html
@@ -4075,7 +4308,7 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
-   * Filters access by Session Id
+   * Filters access by Memory Session Id
    *
    * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-sessionId
    *

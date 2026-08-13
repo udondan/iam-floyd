@@ -19,17 +19,6 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to assign a limits profile to targets
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchAssignLimitsProfile.html
-   */
-  public toBatchAssignLimitsProfile() {
-    return this.to('BatchAssignLimitsProfile');
-  }
-
-  /**
    * Grants permission to create reviewed answers for a topic
    *
    * Access Level: Write
@@ -63,14 +52,14 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to unassign a limits profile from targets
+   * Grants permission to describe the effective resource limits for users
    *
-   * Access Level: Write
+   * Access Level: Read
    *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchUnassignLimitsProfile.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchDescribeUserLimits.html
    */
-  public toBatchUnassignLimitsProfile() {
-    return this.to('BatchUnassignLimitsProfile');
+  public toBatchDescribeUserLimits() {
+    return this.to('BatchDescribeUserLimits');
   }
 
   /**
@@ -148,6 +137,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an approval policy for governed actions
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateApprovalPolicy.html
+   */
+  public toCreateApprovalPolicy() {
+    return this.to('CreateApprovalPolicy');
+  }
+
+  /**
    * Grants permission to create an Amazon QuickSight brand
    *
    * Access Level: Write
@@ -204,6 +204,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toCreateDataSource() {
     return this.to('CreateDataSource');
+  }
+
+  /**
+   * Grants permission to create a DLP setting
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDlpSetting.html
+   */
+  public toCreateDlpSetting() {
+    return this.to('CreateDlpSetting');
   }
 
   /**
@@ -526,6 +537,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an approval policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteApprovalPolicy.html
+   */
+  public toDeleteApprovalPolicy() {
+    return this.to('DeleteApprovalPolicy');
+  }
+
+  /**
    * Grants permission to delete an Amazon QuickSight brand
    *
    * Access Level: Write
@@ -611,6 +633,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDeleteDefaultQBusinessApplication() {
     return this.to('DeleteDefaultQBusinessApplication');
+  }
+
+  /**
+   * Grants permission to delete a DLP setting
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteDlpSetting.html
+   */
+  public toDeleteDlpSetting() {
+    return this.to('DeleteDlpSetting');
   }
 
   /**
@@ -1024,6 +1057,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an approval policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeApprovalPolicy.html
+   */
+  public toDescribeApprovalPolicy() {
+    return this.to('DescribeApprovalPolicy');
+  }
+
+  /**
    * Grants permission to describe an asset bundle export job
    *
    * Access Level: Read
@@ -1241,6 +1285,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeDefaultQBusinessApplication() {
     return this.to('DescribeDefaultQBusinessApplication');
+  }
+
+  /**
+   * Grants permission to describe a DLP setting
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDlpSetting.html
+   */
+  public toDescribeDlpSetting() {
+    return this.to('DescribeDlpSetting');
   }
 
   /**
@@ -1742,6 +1797,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list approval policies
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListApprovalPolicies.html
+   */
+  public toListApprovalPolicies() {
+    return this.to('ListApprovalPolicies');
+  }
+
+  /**
    * Grants permission to list all apps in a QuickSight account
    *
    * Access Level: List
@@ -1772,17 +1838,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toListAssetBundleImportJobs() {
     return this.to('ListAssetBundleImportJobs');
-  }
-
-  /**
-   * Grants permission to list limits profile assignments for a principal
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListAssignmentsForPrincipal.html
-   */
-  public toListAssignmentsForPrincipal() {
-    return this.to('ListAssignmentsForPrincipal');
   }
 
   /**
@@ -1868,6 +1923,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toListDataSources() {
     return this.to('ListDataSources');
+  }
+
+  /**
+   * Grants permission to list DLP settings in an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListDlpSettings.html
+   */
+  public toListDlpSettings() {
+    return this.to('ListDlpSettings');
   }
 
   /**
@@ -2030,17 +2096,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toListOAuthClientApplications() {
     return this.to('ListOAuthClientApplications');
-  }
-
-  /**
-   * Grants permission to list assignments for a limits profile
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListProfileAssignments.html
-   */
-  public toListProfileAssignments() {
-    return this.to('ListProfileAssignments');
   }
 
   /**
@@ -2650,6 +2705,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an approval policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateApprovalPolicy.html
+   */
+  public toUpdateApprovalPolicy() {
+    return this.to('UpdateApprovalPolicy');
+  }
+
+  /**
    * Grants permission to update permissions for an automation group
    *
    * Access Level: Permissions management, Write
@@ -2812,6 +2878,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toUpdateDefaultQBusinessApplication() {
     return this.to('UpdateDefaultQBusinessApplication');
+  }
+
+  /**
+   * Grants permission to update a DLP setting
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDlpSetting.html
+   */
+  public toUpdateDlpSetting() {
+    return this.to('UpdateDlpSetting');
   }
 
   /**
@@ -3343,6 +3420,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a DLP evaluation job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quick/latest/userguide/data-loss-prevention.html
+   */
+  public toDescribeDlpJob() {
+    return this.to('DescribeDlpJob');
+  }
+
+  /**
    * Grants permission to describe a QuickSight email customization template
    *
    * Access Level: Read
@@ -3428,6 +3516,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toListCustomerManagedKeys() {
     return this.to('ListCustomerManagedKeys');
+  }
+
+  /**
+   * Grants permission to list sensitivity labels available from a DLP provider
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quick/latest/userguide/data-loss-prevention.html
+   */
+  public toListDlpLabels() {
+    return this.to('ListDlpLabels');
   }
 
   /**
@@ -3574,6 +3673,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a DLP evaluation job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quick/latest/userguide/data-loss-prevention.html
+   */
+  public toStartDlpJob() {
+    return this.to('StartDlpJob');
+  }
+
+  /**
    * Grants permission to subscribe to Amazon QuickSight, and also to allow the user to upgrade the subscription to Enterprise edition
    *
    * Access Level: Write
@@ -3667,22 +3777,22 @@ export class Quicksight extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
-      'BatchAssignLimitsProfile',
       'BatchCreateTopicReviewedAnswer',
       'BatchDeleteKnowledgeBase',
       'BatchDeleteTopicReviewedAnswer',
-      'BatchUnassignLimitsProfile',
       'CancelIngestion',
       'CreateAccountCustomization',
       'CreateAccountSubscription',
       'CreateActionConnector',
       'CreateAgent',
       'CreateAnalysis',
+      'CreateApprovalPolicy',
       'CreateBrand',
       'CreateCustomPermissions',
       'CreateDashboard',
       'CreateDataSet',
       'CreateDataSource',
+      'CreateDlpSetting',
       'CreateFlow',
       'CreateFolder',
       'CreateFolderMembership',
@@ -3711,6 +3821,7 @@ export class Quicksight extends PolicyStatement {
       'DeleteAgent',
       'DeleteAnalysis',
       'DeleteApp',
+      'DeleteApprovalPolicy',
       'DeleteBrand',
       'DeleteBrandAssignment',
       'DeleteCustomPermissions',
@@ -3719,6 +3830,7 @@ export class Quicksight extends PolicyStatement {
       'DeleteDataSetRefreshProperties',
       'DeleteDataSource',
       'DeleteDefaultQBusinessApplication',
+      'DeleteDlpSetting',
       'DeleteFlow',
       'DeleteFolder',
       'DeleteFolderMembership',
@@ -3772,6 +3884,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateAnalysisPermissions',
       'UpdateAppPermissions',
       'UpdateApplicationWithTokenExchangeGrant',
+      'UpdateApprovalPolicy',
       'UpdateAutomationGroupPermissions',
       'UpdateBrand',
       'UpdateBrandAssignment',
@@ -3787,6 +3900,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateDataSource',
       'UpdateDataSourcePermissions',
       'UpdateDefaultQBusinessApplication',
+      'UpdateDlpSetting',
       'UpdateFlow',
       'UpdateFlowPermissions',
       'UpdateFolder',
@@ -3837,6 +3951,7 @@ export class Quicksight extends PolicyStatement {
       'RemoveCustomerManagedKey',
       'ScopeDownPolicy',
       'SetGroupMapping',
+      'StartDlpJob',
       'Subscribe',
       'UnpublishFlow',
       'Unsubscribe',
@@ -3847,6 +3962,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateResourcePermissions'
     ],
     Read: [
+      'BatchDescribeUserLimits',
       'DescribeAccountCustomPermission',
       'DescribeAccountCustomization',
       'DescribeAccountSettings',
@@ -3859,6 +3975,7 @@ export class Quicksight extends PolicyStatement {
       'DescribeAnalysisPermissions',
       'DescribeApp',
       'DescribeAppPermissions',
+      'DescribeApprovalPolicy',
       'DescribeAssetBundleExportJob',
       'DescribeAssetBundleImportJob',
       'DescribeAutomationGroup',
@@ -3878,6 +3995,7 @@ export class Quicksight extends PolicyStatement {
       'DescribeDataSource',
       'DescribeDataSourcePermissions',
       'DescribeDefaultQBusinessApplication',
+      'DescribeDlpSetting',
       'DescribeFlow',
       'DescribeFolder',
       'DescribeFolderPermissions',
@@ -3920,6 +4038,7 @@ export class Quicksight extends PolicyStatement {
       'SearchFolders',
       'BatchGetPreferences',
       'DescribeChatConfiguration',
+      'DescribeDlpJob',
       'DescribeEmailCustomizationTemplate',
       'DescribeExtensionAccess',
       'DescribeQuickIndexCapacity',
@@ -3958,10 +4077,10 @@ export class Quicksight extends PolicyStatement {
       'ListActionConnectors',
       'ListAgents',
       'ListAnalyses',
+      'ListApprovalPolicies',
       'ListApps',
       'ListAssetBundleExportJobs',
       'ListAssetBundleImportJobs',
-      'ListAssignmentsForPrincipal',
       'ListAutomationGroups',
       'ListBrands',
       'ListCustomPermissions',
@@ -3969,6 +4088,7 @@ export class Quicksight extends PolicyStatement {
       'ListDashboards',
       'ListDataSets',
       'ListDataSources',
+      'ListDlpSettings',
       'ListFlows',
       'ListFolders',
       'ListFoldersForResource',
@@ -3982,7 +4102,6 @@ export class Quicksight extends PolicyStatement {
       'ListLimitsProfiles',
       'ListNamespaces',
       'ListOAuthClientApplications',
-      'ListProfileAssignments',
       'ListRefreshSchedules',
       'ListRoleMemberships',
       'ListSelfUpgrades',
@@ -4014,6 +4133,7 @@ export class Quicksight extends PolicyStatement {
       'SearchSpaces',
       'SearchTopics',
       'ListCustomerManagedKeys',
+      'ListDlpLabels',
       'ListExtensionAccesses',
       'ListKMSKeysForUser',
       'ListUsersIndexCapacity',
@@ -4326,6 +4446,23 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type dlpSetting to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDlpSetting.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDlpSetting(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dlpsetting/${ resourceId }`);
+  }
+
+  /**
    * Adds a resource of type emailCustomizationTemplate to the statement
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
@@ -4618,6 +4755,7 @@ export class Quicksight extends PolicyStatement {
    * - .toCreateDashboard()
    * - .toCreateDataSet()
    * - .toCreateDataSource()
+   * - .toCreateDlpSetting()
    * - .toCreateFolder()
    * - .toCreateGroupMembership()
    * - .toCreateIngestion()
@@ -4691,6 +4829,7 @@ export class Quicksight extends PolicyStatement {
    * - .toCreateCustomPermissions()
    * - .toCreateDashboard()
    * - .toCreateDataSet()
+   * - .toCreateDlpSetting()
    * - .toCreateFlow()
    * - .toCreateFolder()
    * - .toCreateFolderMembership()
@@ -4712,6 +4851,7 @@ export class Quicksight extends PolicyStatement {
    * - .toDeleteDataSet()
    * - .toDeleteDataSetRefreshProperties()
    * - .toDeleteDataSource()
+   * - .toDeleteDlpSetting()
    * - .toDeleteFlow()
    * - .toDeleteFolder()
    * - .toDeleteFolderMembership()
@@ -4747,6 +4887,7 @@ export class Quicksight extends PolicyStatement {
    * - .toDescribeDataSetRefreshProperties()
    * - .toDescribeDataSource()
    * - .toDescribeDataSourcePermissions()
+   * - .toDescribeDlpSetting()
    * - .toDescribeFlow()
    * - .toDescribeFolder()
    * - .toDescribeFolderPermissions()
@@ -4778,6 +4919,7 @@ export class Quicksight extends PolicyStatement {
    * - .toListApps()
    * - .toListDashboardVersions()
    * - .toListDashboards()
+   * - .toListDlpSettings()
    * - .toListFolderMembers()
    * - .toListFolders()
    * - .toListFoldersForResource()
@@ -4824,6 +4966,7 @@ export class Quicksight extends PolicyStatement {
    * - .toUpdateDataSetPermissions()
    * - .toUpdateDataSource()
    * - .toUpdateDataSourcePermissions()
+   * - .toUpdateDlpSetting()
    * - .toUpdateFlow()
    * - .toUpdateFlowPermissions()
    * - .toUpdateFolder()
@@ -4849,12 +4992,14 @@ export class Quicksight extends PolicyStatement {
    * - .toCreateReader()
    * - .toCreateUser()
    * - .toDeleteEmailCustomizationTemplate()
+   * - .toDescribeDlpJob()
    * - .toDescribeEmailCustomizationTemplate()
    * - .toGetAuthCode()
    * - .toPassDataSet()
    * - .toPassDataSource()
    * - .toPassTopic()
    * - .toSearchUsers()
+   * - .toStartDlpJob()
    * - .toUnpublishFlow()
    * - .toUpdateEmailCustomizationTemplate()
    *
@@ -4869,6 +5014,7 @@ export class Quicksight extends PolicyStatement {
    * - dashboardSnapshotJob
    * - dataset
    * - datasource
+   * - dlpSetting
    * - emailCustomizationTemplate
    * - flow
    * - folder
@@ -4907,6 +5053,7 @@ export class Quicksight extends PolicyStatement {
    * - .toCreateDashboard()
    * - .toCreateDataSet()
    * - .toCreateDataSource()
+   * - .toCreateDlpSetting()
    * - .toCreateFolder()
    * - .toCreateGroupMembership()
    * - .toCreateIngestion()

@@ -89,7 +89,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateAssertion.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateAssertion.html
    */
   public toCreateAssertion() {
     return this.to('CreateAssertion');
@@ -100,7 +100,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateInputSource.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateInputSource.html
    */
   public toCreateInputSource() {
     return this.to('CreateInputSource');
@@ -111,7 +111,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreatePolicy.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreatePolicy.html
    */
   public toCreatePolicy() {
     return this.to('CreatePolicy');
@@ -133,7 +133,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateReport.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateReport.html
    */
   public toCreateReport() {
     return this.to('CreateReport');
@@ -155,7 +155,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateService.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateService.html
    */
   public toCreateService() {
     return this.to('CreateService');
@@ -166,7 +166,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateServiceFunction.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateServiceFunction.html
    */
   public toCreateServiceFunction() {
     return this.to('CreateServiceFunction');
@@ -177,7 +177,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateServiceFunctionResources.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateServiceFunctionResources.html
    */
   public toCreateServiceFunctionResources() {
     return this.to('CreateServiceFunctionResources');
@@ -188,7 +188,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateSystem.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateSystem.html
    */
   public toCreateSystem() {
     return this.to('CreateSystem');
@@ -199,7 +199,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateTest.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateTest.html
    */
   public toCreateTest() {
     return this.to('CreateTest');
@@ -210,7 +210,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateUserJourney.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateUserJourney.html
    */
   public toCreateUserJourney() {
     return this.to('CreateUserJourney');
@@ -276,7 +276,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteAssertion.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteAssertion.html
    */
   public toDeleteAssertion() {
     return this.to('DeleteAssertion');
@@ -287,7 +287,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteInputSource.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteInputSource.html
    */
   public toDeleteInputSource() {
     return this.to('DeleteInputSource');
@@ -298,7 +298,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeletePolicy.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeletePolicy.html
    */
   public toDeletePolicy() {
     return this.to('DeletePolicy');
@@ -331,7 +331,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteService.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteService.html
    */
   public toDeleteService() {
     return this.to('DeleteService');
@@ -342,7 +342,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteServiceFunction.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteServiceFunction.html
    */
   public toDeleteServiceFunction() {
     return this.to('DeleteServiceFunction');
@@ -353,7 +353,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteServiceFunctionResources.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteServiceFunctionResources.html
    */
   public toDeleteServiceFunctionResources() {
     return this.to('DeleteServiceFunctionResources');
@@ -364,7 +364,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteSystem.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteSystem.html
    */
   public toDeleteSystem() {
     return this.to('DeleteSystem');
@@ -375,7 +375,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteTest.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteTest.html
    */
   public toDeleteTest() {
     return this.to('DeleteTest');
@@ -386,7 +386,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteTestSources.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteTestSources.html
    */
   public toDeleteTestSources() {
     return this.to('DeleteTestSources');
@@ -397,7 +397,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteUserJourney.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteUserJourney.html
    */
   public toDeleteUserJourney() {
     return this.to('DeleteUserJourney');
@@ -529,7 +529,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetFailureModeFinding.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetFailureModeFinding.html
    */
   public toGetFailureModeFinding() {
     return this.to('GetFailureModeFinding');
@@ -540,7 +540,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetPolicy.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetPolicy.html
    */
   public toGetPolicy() {
     return this.to('GetPolicy');
@@ -551,7 +551,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetService.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetService.html
    */
   public toGetService() {
     return this.to('GetService');
@@ -562,7 +562,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetSystem.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetSystem.html
    */
   public toGetSystem() {
     return this.to('GetSystem');
@@ -573,7 +573,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetTest.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetTest.html
    */
   public toGetTest() {
     return this.to('GetTest');
@@ -584,7 +584,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetTestRun.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetTestRun.html
    */
   public toGetTestRun() {
     return this.to('GetTestRun');
@@ -595,7 +595,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetTestTemplate.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetTestTemplate.html
    */
   public toGetTestTemplate() {
     return this.to('GetTestTemplate');
@@ -606,7 +606,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetUserJourney.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetUserJourney.html
    */
   public toGetUserJourney() {
     return this.to('GetUserJourney');
@@ -617,7 +617,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ImportApp.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ImportApp.html
    */
   public toImportApp() {
     return this.to('ImportApp');
@@ -628,7 +628,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ImportPolicy.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ImportPolicy.html
    */
   public toImportPolicy() {
     return this.to('ImportPolicy');
@@ -782,7 +782,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAssertions.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListAssertions.html
    */
   public toListAssertions() {
     return this.to('ListAssertions');
@@ -793,7 +793,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListDependencies.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListDependencies.html
    */
   public toListDependencies() {
     return this.to('ListDependencies');
@@ -804,7 +804,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListFailureModeAssessments.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListFailureModeAssessments.html
    */
   public toListFailureModeAssessments() {
     return this.to('ListFailureModeAssessments');
@@ -815,7 +815,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListFailureModeFindings.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListFailureModeFindings.html
    */
   public toListFailureModeFindings() {
     return this.to('ListFailureModeFindings');
@@ -826,7 +826,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListInputSources.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListInputSources.html
    */
   public toListInputSources() {
     return this.to('ListInputSources');
@@ -848,7 +848,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListPolicies.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListPolicies.html
    */
   public toListPolicies() {
     return this.to('ListPolicies');
@@ -870,7 +870,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListReports.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListReports.html
    */
   public toListReports() {
     return this.to('ListReports');
@@ -892,7 +892,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListResolvedTestRunTargetResources.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListResolvedTestRunTargetResources.html
    */
   public toListResolvedTestRunTargetResources() {
     return this.to('ListResolvedTestRunTargetResources');
@@ -914,7 +914,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListResources.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListResources.html
    */
   public toListResources() {
     return this.to('ListResources');
@@ -925,7 +925,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListServiceEvents.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListServiceEvents.html
    */
   public toListServiceEvents() {
     return this.to('ListServiceEvents');
@@ -936,7 +936,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListServiceFunctions.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListServiceFunctions.html
    */
   public toListServiceFunctions() {
     return this.to('ListServiceFunctions');
@@ -947,7 +947,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListServiceTopologyEdges.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListServiceTopologyEdges.html
    */
   public toListServiceTopologyEdges() {
     return this.to('ListServiceTopologyEdges');
@@ -958,7 +958,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListServices.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListServices.html
    */
   public toListServices() {
     return this.to('ListServices');
@@ -991,7 +991,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListSystemEvents.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListSystemEvents.html
    */
   public toListSystemEvents() {
     return this.to('ListSystemEvents');
@@ -1002,7 +1002,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListSystems.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListSystems.html
    */
   public toListSystems() {
     return this.to('ListSystems');
@@ -1013,7 +1013,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -1035,7 +1035,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListTestRunEvents.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTestRunEvents.html
    */
   public toListTestRunEvents() {
     return this.to('ListTestRunEvents');
@@ -1046,7 +1046,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListTestRunSources.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTestRunSources.html
    */
   public toListTestRunSources() {
     return this.to('ListTestRunSources');
@@ -1057,7 +1057,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListTestRuns.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTestRuns.html
    */
   public toListTestRuns() {
     return this.to('ListTestRuns');
@@ -1068,7 +1068,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListTestSources.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTestSources.html
    */
   public toListTestSources() {
     return this.to('ListTestSources');
@@ -1079,7 +1079,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListTestTemplates.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTestTemplates.html
    */
   public toListTestTemplates() {
     return this.to('ListTestTemplates');
@@ -1090,7 +1090,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListTests.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTests.html
    */
   public toListTests() {
     return this.to('ListTests');
@@ -1112,7 +1112,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListUserJourneys.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListUserJourneys.html
    */
   public toListUserJourneys() {
     return this.to('ListUserJourneys');
@@ -1145,7 +1145,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_PutTestSources.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_PutTestSources.html
    */
   public toPutTestSources() {
     return this.to('PutTestSources');
@@ -1200,7 +1200,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_StartFailureModeAssessment.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_StartFailureModeAssessment.html
    */
   public toStartFailureModeAssessment() {
     return this.to('StartFailureModeAssessment');
@@ -1233,7 +1233,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_StartTestRun.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_StartTestRun.html
    */
   public toStartTestRun() {
     return this.to('StartTestRun');
@@ -1244,7 +1244,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_StopTestRun.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_StopTestRun.html
    */
   public toStopTestRun() {
     return this.to('StopTestRun');
@@ -1255,7 +1255,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Tagging, Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_TagResource.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -1266,7 +1266,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Tagging, Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UntagResource.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -1321,7 +1321,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateAssertion.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateAssertion.html
    */
   public toUpdateAssertion() {
     return this.to('UpdateAssertion');
@@ -1332,7 +1332,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateDependency.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateDependency.html
    */
   public toUpdateDependency() {
     return this.to('UpdateDependency');
@@ -1343,7 +1343,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateFailureModeFinding.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateFailureModeFinding.html
    */
   public toUpdateFailureModeFinding() {
     return this.to('UpdateFailureModeFinding');
@@ -1354,7 +1354,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdatePolicy.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdatePolicy.html
    */
   public toUpdatePolicy() {
     return this.to('UpdatePolicy');
@@ -1376,7 +1376,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateService.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateService.html
    */
   public toUpdateService() {
     return this.to('UpdateService');
@@ -1387,7 +1387,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateServiceFunction.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateServiceFunction.html
    */
   public toUpdateServiceFunction() {
     return this.to('UpdateServiceFunction');
@@ -1398,7 +1398,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateSystem.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateSystem.html
    */
   public toUpdateSystem() {
     return this.to('UpdateSystem');
@@ -1409,7 +1409,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateTest.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateTest.html
    */
   public toUpdateTest() {
     return this.to('UpdateTest');
@@ -1420,7 +1420,7 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateUserJourney.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateUserJourney.html
    */
   public toUpdateUserJourney() {
     return this.to('UpdateUserJourney');
@@ -1604,7 +1604,7 @@ export class Resiliencehub extends PolicyStatement {
   /**
    * Adds a resource of type policy to the statement
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_Policy.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_Policy.html
    *
    * @param policyId - Identifier for the policyId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1655,7 +1655,7 @@ export class Resiliencehub extends PolicyStatement {
   /**
    * Adds a resource of type service to the statement
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_Service.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_Service.html
    *
    * @param serviceId - Identifier for the serviceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1672,7 +1672,7 @@ export class Resiliencehub extends PolicyStatement {
   /**
    * Adds a resource of type system to the statement
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_System.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_System.html
    *
    * @param systemId - Identifier for the systemId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1689,7 +1689,7 @@ export class Resiliencehub extends PolicyStatement {
   /**
    * Adds a resource of type test-template to the statement
    *
-   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetTestTemplate.html
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetTestTemplate.html
    *
    * @param testTemplateId - Identifier for the testTemplateId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
