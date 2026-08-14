@@ -17,7 +17,8 @@
       "acm:ListAcmeDomainValidations",
       "acm:ListAcmeEndpoints",
       "acm:ListAcmeExternalAccountBindings",
-      "acm:ListTagsForResource"
+      "acm:ListTagsForResource",
+      "acm:ListCertificateDomainValidations"
     ],
     "Resource": "*"
   }

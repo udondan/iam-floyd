@@ -203,7 +203,8 @@
         "payments:SearchFinancialRecords",
         "payments:SetPreferredCurrency",
         "payments:UpdatePaymentProfile",
-        "payments:GetAccountBalance"
+        "payments:GetAccountBalance",
+        "payments:GetDefaultPaymentProfile"
       ],
       "Resource": "*"
     },
@@ -360,6 +361,68 @@
           "aws:CalledViaLast": "account.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "AllowAWSServiceAccessForCostOptimizationHub",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:EnableAWSServiceAccess"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "organizations:ServicePrincipal": [
+            "cost-optimization-hub.bcm.amazonaws.com",
+            "compute-optimizer.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowCreateServiceLinkedRoleForComputeOptimizerAutomation",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/aco-automation.amazonaws.com/AWSServiceRoleForComputeOptimizerAutomation",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "aco-automation.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowCreateServiceLinkedRoleForComputeOptimizer",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/compute-optimizer.amazonaws.com/AWSServiceRoleForComputeOptimizer",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "compute-optimizer.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowCreateServiceLinkedRoleForCostOptimizationHub",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/cost-optimization-hub.bcm.amazonaws.com/AWSServiceRoleForCostOptimizationHub",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "cost-optimization-hub.bcm.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "GetAndUpdateEnrollmentStatusForACOCOH",
+      "Effect": "Allow",
+      "Action": [
+        "aco-automation:GetEnrollmentConfiguration",
+        "aco-automation:UpdateEnrollmentConfiguration",
+        "compute-optimizer:GetEnrollmentStatus",
+        "compute-optimizer:UpdateEnrollmentStatus",
+        "cost-optimization-hub:ListEnrollmentStatuses",
+        "cost-optimization-hub:UpdateEnrollmentStatus"
+      ],
+      "Resource": "*"
     }
   ]
 }
