@@ -140,7 +140,10 @@
     {
       "Sid": "CostOptimizationHubActions",
       "Effect": "Allow",
-      "Action": "cost-optimization-hub:UpdateEnrollmentStatus",
+      "Action": [
+        "cost-optimization-hub:UpdateEnrollmentStatus",
+        "cost-optimization-hub:ListEnrollmentStatuses"
+      ],
       "Resource": "*"
     },
     {
@@ -149,6 +152,8 @@
       "Action": [
         "compute-optimizer:GetIdleRecommendations",
         "compute-optimizer:GetRecommendationSummaries",
+        "compute-optimizer:GetEC2InstanceRecommendations",
+        "compute-optimizer:GetAutoScalingGroupRecommendations",
         "compute-optimizer:GetEnrollmentStatus",
         "compute-optimizer:UpdateEnrollmentStatus"
       ],
@@ -161,6 +166,7 @@
         "aco-automation:StartAutomationEvent",
         "aco-automation:ListRecommendedActions",
         "aco-automation:GetAutomationEvent",
+        "aco-automation:GetEnrollmentConfiguration",
         "aco-automation:UpdateEnrollmentConfiguration"
       ],
       "Resource": "*"
@@ -183,12 +189,55 @@
       "Resource": "*"
     },
     {
+      "Sid": "AllowAWSServiceAccessForCostOptimizationHub",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:EnableAWSServiceAccess"
+      ],
+      "Resource": "arn:aws:organizations:*:*:*",
+      "Condition": {
+        "StringLike": {
+          "organizations:ServicePrincipal": [
+            "cost-optimization-hub.bcm.amazonaws.com",
+            "compute-optimizer.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowACOAutomationSLRCreation",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "arn:aws:iam::*:role/aws-service-role/aco-automation.amazonaws.com/AWSServiceRoleForComputeOptimizerAutomation",
       "Condition": {
         "StringLike": {
           "iam:AWSServiceName": "aco-automation.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowComputeOptimizerSLRCreation",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/cost-optimization-hub.bcm.amazonaws.com/AWSServiceRoleForCostOptimizationHub",
+        "arn:aws:iam::*:role/aws-service-role/compute-optimizer.amazonaws.com/AWSServiceRoleForComputeOptimizer",
+        "arn:aws:iam::*:role/aws-service-role/aco-automation.amazonaws.com/AWSServiceRoleForComputeOptimizerAutomation"
+      ],
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "compute-optimizer.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowCostOptimizationHubSLRCreation",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/cost-optimization-hub.bcm.amazonaws.com/AWSServiceRoleForCostOptimizationHub",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "cost-optimization-hub.bcm.amazonaws.com"
         }
       }
     }
