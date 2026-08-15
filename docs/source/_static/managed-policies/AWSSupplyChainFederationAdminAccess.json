@@ -81,6 +81,31 @@
       "Resource": "*"
     },
     {
+      "Sid": "BuilderIDCollaboration",
+      "Effect": "Allow",
+      "Action": [
+        "builderid:CreateInvitation",
+        "builderid:ListInvitations",
+        "builderid:DeleteInvitation",
+        "builderid:DisassociateCollaborator"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IdentityStoreCollaboration",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:ReserveUser",
+        "identitystore:DeleteUser"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "AppflowConnectorProfile",
       "Effect": "Allow",
       "Action": [
