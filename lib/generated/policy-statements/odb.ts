@@ -41,6 +41,17 @@ export class Odb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate virtual machines to a specified Exadb VM cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_AssociateVirtualMachinesToExadbVmCluster.html
+   */
+  public toAssociateVirtualMachinesToExadbVmCluster() {
+    return this.to('AssociateVirtualMachinesToExadbVmCluster');
+  }
+
+  /**
    * Grants permission to create an Autonomous Database
    *
    * Access Level: Write
@@ -108,6 +119,32 @@ export class Odb extends PolicyStatement {
    */
   public toCreateCloudVmCluster() {
     return this.to('CreateCloudVmCluster');
+  }
+
+  /**
+   * Grants permission to create an Exadb VM cluster in the specified Exascale DB storage vault
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateExadbVmCluster.html
+   */
+  public toCreateExadbVmCluster() {
+    return this.to('CreateExadbVmCluster');
+  }
+
+  /**
+   * Grants permission to create an Exascale DB storage vault
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateExascaleDbStorageVault.html
+   */
+  public toCreateExascaleDbStorageVault() {
+    return this.to('CreateExascaleDbStorageVault');
   }
 
   /**
@@ -192,6 +229,28 @@ export class Odb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a specified Exadb VM cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteExadbVmCluster.html
+   */
+  public toDeleteExadbVmCluster() {
+    return this.to('DeleteExadbVmCluster');
+  }
+
+  /**
+   * Grants permission to delete a specified Exascale DB storage vault
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteExascaleDbStorageVault.html
+   */
+  public toDeleteExascaleDbStorageVault() {
+    return this.to('DeleteExascaleDbStorageVault');
+  }
+
+  /**
    * Grants permission to delete the specified ODB network
    *
    * Access Level: Write
@@ -222,6 +281,17 @@ export class Odb extends PolicyStatement {
    */
   public toDisassociateIamRoleFromResource() {
     return this.to('DisassociateIamRoleFromResource');
+  }
+
+  /**
+   * Grants permission to disassociate virtual machines from a specified Exadb VM cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DisassociateVirtualMachinesFromExadbVmCluster.html
+   */
+  public toDisassociateVirtualMachinesFromExadbVmCluster() {
+    return this.to('DisassociateVirtualMachinesFromExadbVmCluster');
   }
 
   /**
@@ -332,6 +402,28 @@ export class Odb extends PolicyStatement {
    */
   public toGetDbServer() {
     return this.to('GetDbServer');
+  }
+
+  /**
+   * Grants permission to get information about a specified Exadb VM cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetExadbVmCluster.html
+   */
+  public toGetExadbVmCluster() {
+    return this.to('GetExadbVmCluster');
+  }
+
+  /**
+   * Grants permission to get information about a specified Exascale DB storage vault
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetExascaleDbStorageVault.html
+   */
+  public toGetExascaleDbStorageVault() {
+    return this.to('GetExascaleDbStorageVault');
   }
 
   /**
@@ -522,6 +614,28 @@ export class Odb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list information about the Exadb VM clusters owned by your Amazon Web Services account or only the ones in the specified Exascale DB storage vault
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListExadbVmClusters.html
+   */
+  public toListExadbVmClusters() {
+    return this.to('ListExadbVmClusters');
+  }
+
+  /**
+   * Grants permission to list information about the Exascale DB storage vaults owned by your Amazon Web Services account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListExascaleDbStorageVaults.html
+   */
+  public toListExascaleDbStorageVaults() {
+    return this.to('ListExascaleDbStorageVaults');
+  }
+
+  /**
    * Grants permission to list information about the flex components that are available for a DB system shape
    *
    * Access Level: List
@@ -530,6 +644,17 @@ export class Odb extends PolicyStatement {
    */
   public toListFlexComponents() {
     return this.to('ListFlexComponents');
+  }
+
+  /**
+   * Grants permission to list information about the minor versions of Oracle Grid Infrastructure (GI) software that are available for a VM cluster for the specified GI version and shape
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListGiMinorVersions.html
+   */
+  public toListGiMinorVersions() {
+    return this.to('ListGiMinorVersions');
   }
 
   /**
@@ -742,6 +867,28 @@ export class Odb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update properties of a specified Exadb VM cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateExadbVmCluster.html
+   */
+  public toUpdateExadbVmCluster() {
+    return this.to('UpdateExadbVmCluster');
+  }
+
+  /**
+   * Grants permission to update properties of a specified Exascale DB storage vault
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateExascaleDbStorageVault.html
+   */
+  public toUpdateExascaleDbStorageVault() {
+    return this.to('UpdateExascaleDbStorageVault');
+  }
+
+  /**
    * Grants permission to update properties of a specified ODB network
    *
    * Access Level: Write
@@ -857,12 +1004,15 @@ export class Odb extends PolicyStatement {
     Write: [
       'AcceptMarketplaceRegistration',
       'AssociateIamRoleToResource',
+      'AssociateVirtualMachinesToExadbVmCluster',
       'CreateAutonomousDatabase',
       'CreateAutonomousDatabaseBackup',
       'CreateAutonomousDatabaseWallet',
       'CreateCloudAutonomousVmCluster',
       'CreateCloudExadataInfrastructure',
       'CreateCloudVmCluster',
+      'CreateExadbVmCluster',
+      'CreateExascaleDbStorageVault',
       'CreateOdbNetwork',
       'CreateOdbPeeringConnection',
       'DeleteAutonomousDatabase',
@@ -870,9 +1020,12 @@ export class Odb extends PolicyStatement {
       'DeleteCloudAutonomousVmCluster',
       'DeleteCloudExadataInfrastructure',
       'DeleteCloudVmCluster',
+      'DeleteExadbVmCluster',
+      'DeleteExascaleDbStorageVault',
       'DeleteOdbNetwork',
       'DeleteOdbPeeringConnection',
       'DisassociateIamRoleFromResource',
+      'DisassociateVirtualMachinesFromExadbVmCluster',
       'FailoverAutonomousDatabase',
       'InitializeService',
       'RebootAutonomousDatabase',
@@ -889,6 +1042,8 @@ export class Odb extends PolicyStatement {
       'UpdateAutonomousDatabase',
       'UpdateAutonomousDatabaseBackup',
       'UpdateCloudExadataInfrastructure',
+      'UpdateExadbVmCluster',
+      'UpdateExascaleDbStorageVault',
       'UpdateOdbNetwork',
       'UpdateOdbPeeringConnection',
       'CreateDbNode',
@@ -911,6 +1066,8 @@ export class Odb extends PolicyStatement {
       'GetCloudVmCluster',
       'GetDbNode',
       'GetDbServer',
+      'GetExadbVmCluster',
+      'GetExascaleDbStorageVault',
       'GetOciOnboardingStatus',
       'GetOdbNetwork',
       'GetOdbPeeringConnection',
@@ -931,7 +1088,10 @@ export class Odb extends PolicyStatement {
       'ListDbNodes',
       'ListDbServers',
       'ListDbSystemShapes',
+      'ListExadbVmClusters',
+      'ListExascaleDbStorageVaults',
       'ListFlexComponents',
+      'ListGiMinorVersions',
       'ListGiVersions',
       'ListOdbNetworks',
       'ListOdbPeeringConnections',
@@ -1046,6 +1206,40 @@ export class Odb extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type exadb-vm-cluster to the statement
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ExadbVmCluster.html
+   *
+   * @param exadbVmClusterId - Identifier for the exadbVmClusterId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onExadbVmCluster(exadbVmClusterId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:odb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:exadb-vm-cluster/${ exadbVmClusterId }`);
+  }
+
+  /**
+   * Adds a resource of type exascale-db-storage-vault to the statement
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ExascaleDbStorageVault.html
+   *
+   * @param exascaleDbStorageVaultId - Identifier for the exascaleDbStorageVaultId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onExascaleDbStorageVault(exascaleDbStorageVaultId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:odb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:exascale-db-storage-vault/${ exascaleDbStorageVaultId }`);
+  }
+
+  /**
    * Adds a resource of type odb-network to the statement
    *
    * https://docs.aws.amazon.com/odb/latest/APIReference/API_OdbNetwork.html
@@ -1090,6 +1284,8 @@ export class Odb extends PolicyStatement {
    * - .toCreateCloudAutonomousVmCluster()
    * - .toCreateCloudExadataInfrastructure()
    * - .toCreateCloudVmCluster()
+   * - .toCreateExadbVmCluster()
+   * - .toCreateExascaleDbStorageVault()
    * - .toCreateOdbNetwork()
    * - .toCreateOdbPeeringConnection()
    * - .toTagResource()
@@ -1109,20 +1305,25 @@ export class Odb extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateIamRoleToResource()
+   * - .toAssociateVirtualMachinesToExadbVmCluster()
    * - .toCreateAutonomousDatabase()
    * - .toCreateAutonomousDatabaseBackup()
    * - .toCreateAutonomousDatabaseWallet()
    * - .toCreateCloudAutonomousVmCluster()
    * - .toCreateCloudVmCluster()
+   * - .toCreateExadbVmCluster()
    * - .toCreateOdbPeeringConnection()
    * - .toDeleteAutonomousDatabase()
    * - .toDeleteAutonomousDatabaseBackup()
    * - .toDeleteCloudAutonomousVmCluster()
    * - .toDeleteCloudExadataInfrastructure()
    * - .toDeleteCloudVmCluster()
+   * - .toDeleteExadbVmCluster()
+   * - .toDeleteExascaleDbStorageVault()
    * - .toDeleteOdbNetwork()
    * - .toDeleteOdbPeeringConnection()
    * - .toDisassociateIamRoleFromResource()
+   * - .toDisassociateVirtualMachinesFromExadbVmCluster()
    * - .toFailoverAutonomousDatabase()
    * - .toGetAutonomousDatabase()
    * - .toGetAutonomousDatabaseBackup()
@@ -1133,6 +1334,8 @@ export class Odb extends PolicyStatement {
    * - .toGetCloudVmCluster()
    * - .toGetDbNode()
    * - .toGetDbServer()
+   * - .toGetExadbVmCluster()
+   * - .toGetExascaleDbStorageVault()
    * - .toGetOdbNetwork()
    * - .toGetOdbPeeringConnection()
    * - .toListAutonomousDatabaseBackups()
@@ -1143,6 +1346,7 @@ export class Odb extends PolicyStatement {
    * - .toListCloudVmClusters()
    * - .toListDbNodes()
    * - .toListDbServers()
+   * - .toListExadbVmClusters()
    * - .toListOdbPeeringConnections()
    * - .toListTagsForResource()
    * - .toRebootAutonomousDatabase()
@@ -1159,6 +1363,8 @@ export class Odb extends PolicyStatement {
    * - .toUpdateAutonomousDatabase()
    * - .toUpdateAutonomousDatabaseBackup()
    * - .toUpdateCloudExadataInfrastructure()
+   * - .toUpdateExadbVmCluster()
+   * - .toUpdateExascaleDbStorageVault()
    * - .toUpdateOdbNetwork()
    * - .toUpdateOdbPeeringConnection()
    * - .toCreateDbNode()
@@ -1176,6 +1382,8 @@ export class Odb extends PolicyStatement {
    * - cloud-exadata-infrastructure
    * - cloud-vm-cluster
    * - db-node
+   * - exadb-vm-cluster
+   * - exascale-db-storage-vault
    * - odb-network
    * - odb-peering-connection
    *
@@ -1198,6 +1406,8 @@ export class Odb extends PolicyStatement {
    * - .toCreateCloudAutonomousVmCluster()
    * - .toCreateCloudExadataInfrastructure()
    * - .toCreateCloudVmCluster()
+   * - .toCreateExadbVmCluster()
+   * - .toCreateExascaleDbStorageVault()
    * - .toCreateOdbNetwork()
    * - .toCreateOdbPeeringConnection()
    * - .toTagResource()

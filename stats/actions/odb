@@ -1,5 +1,6 @@
 odb:AcceptMarketplaceRegistration;Write
 odb:AssociateIamRoleToResource;Write
+odb:AssociateVirtualMachinesToExadbVmCluster;Write
 odb:CreateAutonomousDatabase;Write
 odb:CreateAutonomousDatabaseBackup;Write
 odb:CreateAutonomousDatabaseWallet;Write
@@ -7,6 +8,8 @@ odb:CreateCloudAutonomousVmCluster;Write
 odb:CreateCloudExadataInfrastructure;Write
 odb:CreateCloudVmCluster;Write
 odb:CreateDbNode;Write
+odb:CreateExadbVmCluster;Write
+odb:CreateExascaleDbStorageVault;Write
 odb:CreateGrantShare;Write
 odb:CreateOdbNetwork;Write
 odb:CreateOdbPeeringConnection;Write
@@ -17,11 +20,14 @@ odb:DeleteCloudAutonomousVmCluster;Write
 odb:DeleteCloudExadataInfrastructure;Write
 odb:DeleteCloudVmCluster;Write
 odb:DeleteDbNode;Write
+odb:DeleteExadbVmCluster;Write
+odb:DeleteExascaleDbStorageVault;Write
 odb:DeleteGrantShare;Write
 odb:DeleteOdbNetwork;Write
 odb:DeleteOdbPeeringConnection;Write
 odb:DeleteResourcePolicy;Write
 odb:DisassociateIamRoleFromResource;Write
+odb:DisassociateVirtualMachinesFromExadbVmCluster;Write
 odb:FailoverAutonomousDatabase;Write
 odb:GetAutonomousDatabase;Read
 odb:GetAutonomousDatabaseBackup;Read
@@ -32,6 +38,8 @@ odb:GetCloudExadataInfrastructureUnallocatedResources;Read
 odb:GetCloudVmCluster;Read
 odb:GetDbNode;Read
 odb:GetDbServer;Read
+odb:GetExadbVmCluster;Read
+odb:GetExascaleDbStorageVault;Read
 odb:GetOciOnboardingStatus;Read
 odb:GetOdbNetwork;Read
 odb:GetOdbPeeringConnection;Read
@@ -50,7 +58,10 @@ odb:ListCloudVmClusters;List
 odb:ListDbNodes;List
 odb:ListDbServers;List
 odb:ListDbSystemShapes;List
+odb:ListExadbVmClusters;List
+odb:ListExascaleDbStorageVaults;List
 odb:ListFlexComponents;List
+odb:ListGiMinorVersions;List
 odb:ListGiVersions;List
 odb:ListOdbNetworks;List
 odb:ListOdbPeeringConnections;List
@@ -71,6 +82,8 @@ odb:UntagResource;Tagging, Write
 odb:UpdateAutonomousDatabase;Write
 odb:UpdateAutonomousDatabaseBackup;Write
 odb:UpdateCloudExadataInfrastructure;Write
+odb:UpdateExadbVmCluster;Write
+odb:UpdateExascaleDbStorageVault;Write
 odb:UpdateGrantShare;Write
 odb:UpdateOdbNetwork;Write
 odb:UpdateOdbPeeringConnection;Write

@@ -1,4 +1,5 @@
 iam:AWSServiceName
+iam:AccountPropertyNamespaces
 iam:AssociatedResourceArn
 iam:DelegationDuration
 iam:DelegationRequestOwner
@@ -13,6 +14,7 @@ iam:PolicyARN
 iam:RegisterSecurityKey
 iam:RequestTag/${TagKey}
 iam:ResourceTag/${TagKey}
+iam:RoleTemplateARN
 iam:ServiceSpecificCredentialAgeDays
 iam:ServiceSpecificCredentialServiceName
 iam:TagKeys

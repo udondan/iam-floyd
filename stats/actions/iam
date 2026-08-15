@@ -65,6 +65,7 @@ iam:GetAccountAuthorizationDetails;Read
 iam:GetAccountEmailAddress;Read
 iam:GetAccountName;Read
 iam:GetAccountPasswordPolicy;Read
+iam:GetAccountProperties;Read
 iam:GetAccountSummary;List
 iam:GetCloudFrontPublicKey;Read
 iam:GetContextKeysForCustomPolicy;Read
@@ -84,6 +85,7 @@ iam:GetPolicy;Read
 iam:GetPolicyVersion;Read
 iam:GetRole;Read
 iam:GetRolePolicy;Read
+iam:GetRoleTemplateVersion;Read
 iam:GetSAMLProvider;Read
 iam:GetSSHPublicKey;Read
 iam:GetServerCertificate;Read
@@ -131,6 +133,7 @@ iam:ListUserTags;List
 iam:ListUsers;List
 iam:ListVirtualMFADevices;List
 iam:PassRole;Write
+iam:PutAccountProperties;Write
 iam:PutGroupPolicy;Permissions management, Write
 iam:PutRolePermissionsBoundary;Permissions management, Write
 iam:PutRolePolicy;Permissions management, Write

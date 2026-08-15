@@ -265,6 +265,17 @@ export class Acm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list domain validation methods for a certificate
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/acm/latest/APIReference/API_ListCertificateDomainValidations.html
+   */
+  public toListCertificateDomainValidations() {
+    return this.to('ListCertificateDomainValidations');
+  }
+
+  /**
    * Grants permission to retrieve a list of certificates for specific certificate parameters
    *
    * Access Level: List
@@ -463,7 +474,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a certificate configuration. Use this to specify whether to opt in to or out of certificate transparency logging
+   * Grants permission to update a certificate configuration. Use this to specify whether to opt in to or out of certificate transparency logging or to update the certificate domain validation method
    *
    * Access Level: Write
    *
@@ -523,6 +534,7 @@ export class Acm extends PolicyStatement {
       'ListAcmeDomainValidations',
       'ListAcmeEndpoints',
       'ListAcmeExternalAccountBindings',
+      'ListCertificateDomainValidations',
       'ListCertificates',
       'SearchCertificates'
     ]
@@ -701,6 +713,7 @@ export class Acm extends PolicyStatement {
    *
    * Applies to actions:
    * - .toRequestCertificate()
+   * - .toUpdateCertificateOptions()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -757,6 +770,7 @@ export class Acm extends PolicyStatement {
    * - .toListAcmeAccounts()
    * - .toListAcmeDomainValidations()
    * - .toListAcmeExternalAccountBindings()
+   * - .toListCertificateDomainValidations()
    * - .toListTagsForCertificate()
    * - .toListTagsForResource()
    * - .toRemoveTagsFromCertificate()

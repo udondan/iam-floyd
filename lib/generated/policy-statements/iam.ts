@@ -756,6 +756,20 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve account-level properties for IAM features
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAccountPropertyNamespaces()
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountProperties.html
+   */
+  public toGetAccountProperties() {
+    return this.to('GetAccountProperties');
+  }
+
+  /**
    * Grants permission to retrieve information about IAM entity usage and IAM quotas in the AWS account
    *
    * Access Level: List
@@ -962,6 +976,17 @@ export class Iam extends PolicyStatement {
    */
   public toGetRolePolicy() {
     return this.to('GetRolePolicy');
+  }
+
+  /**
+   * Grants permission to retrieve information about a specific version of a role template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRoleTemplateVersion.html
+   */
+  public toGetRoleTemplateVersion() {
+    return this.to('GetRoleTemplateVersion');
   }
 
   /**
@@ -1471,6 +1496,20 @@ export class Iam extends PolicyStatement {
    */
   public toListVirtualMFADevices() {
     return this.to('ListVirtualMFADevices');
+  }
+
+  /**
+   * Grants permission to set account-level properties for IAM features
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAccountPropertyNamespaces()
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutAccountProperties.html
+   */
+  public toPutAccountProperties() {
+    return this.to('PutAccountProperties');
   }
 
   /**
@@ -2139,6 +2178,7 @@ export class Iam extends PolicyStatement {
       'EnableOrganizationsRootCredentialsManagement',
       'EnableOrganizationsRootSessions',
       'EnableOutboundWebIdentityFederation',
+      'PutAccountProperties',
       'PutGroupPolicy',
       'PutRolePermissionsBoundary',
       'PutRolePolicy',
@@ -2227,6 +2267,7 @@ export class Iam extends PolicyStatement {
       'GetAccountEmailAddress',
       'GetAccountName',
       'GetAccountPasswordPolicy',
+      'GetAccountProperties',
       'GetCloudFrontPublicKey',
       'GetContextKeysForCustomPolicy',
       'GetContextKeysForPrincipalPolicy',
@@ -2244,6 +2285,7 @@ export class Iam extends PolicyStatement {
       'GetPolicyVersion',
       'GetRole',
       'GetRolePolicy',
+      'GetRoleTemplateVersion',
       'GetSAMLProvider',
       'GetSSHPublicKey',
       'GetServerCertificate',
@@ -2465,6 +2507,20 @@ export class Iam extends PolicyStatement {
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:role/${ roleNameWithPath }`);
+  }
+
+  /**
+   * Adds a resource of type role-template to the statement
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_role-template.html
+   *
+   * @param aWSServicePrincipal - Identifier for the aWSServicePrincipal.
+   * @param roleTemplateName - Identifier for the roleTemplateName.
+   * @param roleTemplateMajorVersion - Identifier for the roleTemplateMajorVersion.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRoleTemplate(aWSServicePrincipal: string, roleTemplateName: string, roleTemplateMajorVersion: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::aws:role-template/${ aWSServicePrincipal }/${ roleTemplateName }:${ roleTemplateMajorVersion }`);
   }
 
   /**
@@ -2757,6 +2813,22 @@ export class Iam extends PolicyStatement {
    */
   public ifAWSServiceName(value: string | string[], operator?: Operator | string) {
     return this.if(`AWSServiceName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the account property namespaces being read or modified
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_AccountPropertyNamespaces
+   *
+   * Applies to actions:
+   * - .toGetAccountProperties()
+   * - .toPutAccountProperties()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAccountPropertyNamespaces(value: string | string[], operator?: Operator | string) {
+    return this.if(`AccountPropertyNamespaces`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3062,6 +3134,26 @@ export class Iam extends PolicyStatement {
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the role template ARN used in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RoleTemplateARN
+   *
+   * Applies to actions:
+   * - .toAttachRolePolicy()
+   * - .toCreateRole()
+   * - .toGetRole()
+   * - .toPutRolePermissionsBoundary()
+   * - .toPutRolePolicy()
+   * - .toTagRole()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifRoleTemplateARN(value: string | string[], operator?: Operator | string) {
+    return this.if(`RoleTemplateARN`, value, operator ?? 'ArnLike');
   }
 
   /**
