@@ -20,6 +20,7 @@ acm:ListAcmeAccounts;List
 acm:ListAcmeDomainValidations;List
 acm:ListAcmeEndpoints;List
 acm:ListAcmeExternalAccountBindings;List
+acm:ListCertificateDomainValidations;List
 acm:ListCertificates;List
 acm:ListTagsForCertificate;Read
 acm:ListTagsForResource;Read

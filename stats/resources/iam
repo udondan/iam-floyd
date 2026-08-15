@@ -8,6 +8,7 @@ iam:mfa
 iam:oidc-provider
 iam:policy
 iam:role
+iam:role-template
 iam:saml-provider
 iam:server-certificate
 iam:sms-mfa
