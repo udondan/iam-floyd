@@ -273,7 +273,9 @@
         "account-access:ListApplications",
         "account-access:CreateApplication",
         "account-access:CreateEntitlement",
-        "signin:DeleteConsoleAuthorizationConfiguration"
+        "signin:DeleteConsoleAuthorizationConfiguration",
+        "signin:DeleteResourcePermissionStatement",
+        "signin:ListResourcePermissionStatements"
       ],
       "Resource": "*",
       "Condition": {
@@ -352,6 +354,8 @@
       "Action": [
         "organizations:DeletePolicy",
         "organizations:DetachPolicy",
+        "organizations:AttachPolicy",
+        "organizations:CreatePolicy",
         "organizations:ListPolicies",
         "organizations:ListRoots"
       ],
