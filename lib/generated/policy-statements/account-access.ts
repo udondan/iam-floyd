@@ -27,7 +27,7 @@ export class AccountAccess extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_accountaccessmanager.html
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html
    */
   public toCreateApplication() {
     return this.to('CreateApplication');
@@ -38,7 +38,7 @@ export class AccountAccess extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_accountaccessmanager.html
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html
    */
   public toCreateEntitlement() {
     return this.to('CreateEntitlement');
@@ -49,7 +49,7 @@ export class AccountAccess extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_accountaccessmanager.html
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html
    */
   public toDeleteApplication() {
     return this.to('DeleteApplication');
@@ -60,7 +60,7 @@ export class AccountAccess extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_accountaccessmanager.html
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html
    */
   public toDeleteEntitlement() {
     return this.to('DeleteEntitlement');
@@ -71,7 +71,7 @@ export class AccountAccess extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_accountaccessmanager.html
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html
    */
   public toGetApplication() {
     return this.to('GetApplication');
@@ -82,7 +82,7 @@ export class AccountAccess extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_accountaccessmanager.html
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html
    */
   public toGetEntitlement() {
     return this.to('GetEntitlement');
@@ -93,7 +93,7 @@ export class AccountAccess extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_accountaccessmanager.html
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html
    */
   public toListApplications() {
     return this.to('ListApplications');
@@ -104,7 +104,7 @@ export class AccountAccess extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_accountaccessmanager.html
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html
    */
   public toListEntitlements() {
     return this.to('ListEntitlements');
@@ -115,7 +115,7 @@ export class AccountAccess extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_accountaccessmanager.html
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -126,7 +126,7 @@ export class AccountAccess extends PolicyStatement {
    *
    * Access Level: Tagging, Write
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_accountaccessmanager.html
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -137,7 +137,7 @@ export class AccountAccess extends PolicyStatement {
    *
    * Access Level: Tagging, Write
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_accountaccessmanager.html
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -170,7 +170,7 @@ export class AccountAccess extends PolicyStatement {
   /**
    * Adds a resource of type application to the statement
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_accountaccessmanager.html
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

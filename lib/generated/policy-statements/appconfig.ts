@@ -71,6 +71,17 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an experiment definition
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateExperimentDefinition.html
+   */
+  public toCreateExperimentDefinition() {
+    return this.to('CreateExperimentDefinition');
+  }
+
+  /**
    * Grants permission to create an extension
    *
    * Access Level: Write
@@ -153,6 +164,17 @@ export class Appconfig extends PolicyStatement {
    */
   public toDeleteEnvironment() {
     return this.to('DeleteEnvironment');
+  }
+
+  /**
+   * Grants permission to delete an experiment definition
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteExperimentDefinition.html
+   */
+  public toDeleteExperimentDefinition() {
+    return this.to('DeleteExperimentDefinition');
   }
 
   /**
@@ -266,6 +288,28 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view details about an experiment definition
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetExperimentDefinition.html
+   */
+  public toGetExperimentDefinition() {
+    return this.to('GetExperimentDefinition');
+  }
+
+  /**
+   * Grants permission to view details about an experiment run
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetExperimentRun.html
+   */
+  public toGetExperimentRun() {
+    return this.to('GetExperimentRun');
+  }
+
+  /**
    * Grants permission to view details about an extension
    *
    * Access Level: Read
@@ -365,6 +409,39 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the experiment definitions in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListExperimentDefinitions.html
+   */
+  public toListExperimentDefinitions() {
+    return this.to('ListExperimentDefinitions');
+  }
+
+  /**
+   * Grants permission to list the events for an experiment run
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListExperimentRunEvents.html
+   */
+  public toListExperimentRunEvents() {
+    return this.to('ListExperimentRunEvents');
+  }
+
+  /**
+   * Grants permission to list the experiment runs for an experiment definition
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListExperimentRuns.html
+   */
+  public toListExperimentRuns() {
+    return this.to('ListExperimentRuns');
+  }
+
+  /**
    * Grants permission to list the extension associations in your account
    *
    * Access Level: List
@@ -431,6 +508,17 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an experiment run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StartExperimentRun.html
+   */
+  public toStartExperimentRun() {
+    return this.to('StartExperimentRun');
+  }
+
+  /**
    * Grants permission to stop a deployment
    *
    * Access Level: Write
@@ -439,6 +527,17 @@ export class Appconfig extends PolicyStatement {
    */
   public toStopDeployment() {
     return this.to('StopDeployment');
+  }
+
+  /**
+   * Grants permission to stop an experiment run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StopExperimentRun.html
+   */
+  public toStopExperimentRun() {
+    return this.to('StopExperimentRun');
   }
 
   /**
@@ -519,6 +618,28 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify an experiment definition
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateExperimentDefinition.html
+   */
+  public toUpdateExperimentDefinition() {
+    return this.to('UpdateExperimentDefinition');
+  }
+
+  /**
+   * Grants permission to modify an experiment run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateExperimentRun.html
+   */
+  public toUpdateExperimentRun() {
+    return this.to('UpdateExperimentRun');
+  }
+
+  /**
    * Grants permission to modify an extension
    *
    * Access Level: Write
@@ -557,6 +678,7 @@ export class Appconfig extends PolicyStatement {
       'CreateConfigurationProfile',
       'CreateDeploymentStrategy',
       'CreateEnvironment',
+      'CreateExperimentDefinition',
       'CreateExtension',
       'CreateExtensionAssociation',
       'CreateHostedConfigurationVersion',
@@ -564,12 +686,15 @@ export class Appconfig extends PolicyStatement {
       'DeleteConfigurationProfile',
       'DeleteDeploymentStrategy',
       'DeleteEnvironment',
+      'DeleteExperimentDefinition',
       'DeleteExtension',
       'DeleteExtensionAssociation',
       'DeleteHostedConfigurationVersion',
       'StartConfigurationSession',
       'StartDeployment',
+      'StartExperimentRun',
       'StopDeployment',
+      'StopExperimentRun',
       'TagResource',
       'UntagResource',
       'UpdateAccountSettings',
@@ -577,6 +702,8 @@ export class Appconfig extends PolicyStatement {
       'UpdateConfigurationProfile',
       'UpdateDeploymentStrategy',
       'UpdateEnvironment',
+      'UpdateExperimentDefinition',
+      'UpdateExperimentRun',
       'UpdateExtension',
       'UpdateExtensionAssociation',
       'ValidateConfiguration'
@@ -589,6 +716,8 @@ export class Appconfig extends PolicyStatement {
       'GetDeployment',
       'GetDeploymentStrategy',
       'GetEnvironment',
+      'GetExperimentDefinition',
+      'GetExperimentRun',
       'GetExtension',
       'GetExtensionAssociation',
       'GetHostedConfigurationVersion',
@@ -601,6 +730,9 @@ export class Appconfig extends PolicyStatement {
       'ListDeploymentStrategies',
       'ListDeployments',
       'ListEnvironments',
+      'ListExperimentDefinitions',
+      'ListExperimentRunEvents',
+      'ListExperimentRuns',
       'ListExtensionAssociations',
       'ListExtensions',
       'ListHostedConfigurationVersions'
@@ -720,6 +852,43 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type experimentdefinition to the statement
+   *
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-experiment-definition.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param experimentDefinitionId - Identifier for the experimentDefinitionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onExperimentdefinition(applicationId: string, experimentDefinitionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appconfig:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/experimentdefinition/${ experimentDefinitionId }`);
+  }
+
+  /**
+   * Adds a resource of type experimentrun to the statement
+   *
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-experimentation-creating-starting.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param experimentDefinitionId - Identifier for the experimentDefinitionId.
+   * @param experimentRunNumber - Identifier for the experimentRunNumber.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onExperimentrun(applicationId: string, experimentDefinitionId: string, experimentRunNumber: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appconfig:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/experimentdefinition/${ experimentDefinitionId }/experimentrun/${ experimentRunNumber }`);
+  }
+
+  /**
    * Adds a resource of type extension to the statement
    *
    * https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html
@@ -779,9 +948,11 @@ export class Appconfig extends PolicyStatement {
    * - .toCreateConfigurationProfile()
    * - .toCreateDeploymentStrategy()
    * - .toCreateEnvironment()
+   * - .toCreateExperimentDefinition()
    * - .toCreateExtension()
    * - .toCreateExtensionAssociation()
    * - .toStartDeployment()
+   * - .toStartExperimentRun()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -800,11 +971,13 @@ export class Appconfig extends PolicyStatement {
    * Applies to actions:
    * - .toCreateConfigurationProfile()
    * - .toCreateEnvironment()
+   * - .toCreateExperimentDefinition()
    * - .toCreateHostedConfigurationVersion()
    * - .toDeleteApplication()
    * - .toDeleteConfigurationProfile()
    * - .toDeleteDeploymentStrategy()
    * - .toDeleteEnvironment()
+   * - .toDeleteExperimentDefinition()
    * - .toDeleteExtension()
    * - .toDeleteExtensionAssociation()
    * - .toDeleteHostedConfigurationVersion()
@@ -814,6 +987,8 @@ export class Appconfig extends PolicyStatement {
    * - .toGetDeployment()
    * - .toGetDeploymentStrategy()
    * - .toGetEnvironment()
+   * - .toGetExperimentDefinition()
+   * - .toGetExperimentRun()
    * - .toGetExtension()
    * - .toGetExtensionAssociation()
    * - .toGetHostedConfigurationVersion()
@@ -821,17 +996,23 @@ export class Appconfig extends PolicyStatement {
    * - .toListConfigurationProfiles()
    * - .toListDeployments()
    * - .toListEnvironments()
+   * - .toListExperimentRunEvents()
+   * - .toListExperimentRuns()
    * - .toListHostedConfigurationVersions()
    * - .toListTagsForResource()
    * - .toStartConfigurationSession()
    * - .toStartDeployment()
+   * - .toStartExperimentRun()
    * - .toStopDeployment()
+   * - .toStopExperimentRun()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateApplication()
    * - .toUpdateConfigurationProfile()
    * - .toUpdateDeploymentStrategy()
    * - .toUpdateEnvironment()
+   * - .toUpdateExperimentDefinition()
+   * - .toUpdateExperimentRun()
    * - .toUpdateExtension()
    * - .toUpdateExtensionAssociation()
    * - .toValidateConfiguration()
@@ -843,6 +1024,8 @@ export class Appconfig extends PolicyStatement {
    * - deployment
    * - deploymentstrategy
    * - environment
+   * - experimentdefinition
+   * - experimentrun
    * - extension
    * - extensionassociation
    *
@@ -864,9 +1047,11 @@ export class Appconfig extends PolicyStatement {
    * - .toCreateConfigurationProfile()
    * - .toCreateDeploymentStrategy()
    * - .toCreateEnvironment()
+   * - .toCreateExperimentDefinition()
    * - .toCreateExtension()
    * - .toCreateExtensionAssociation()
    * - .toStartDeployment()
+   * - .toStartExperimentRun()
    * - .toTagResource()
    * - .toUntagResource()
    *

@@ -2,6 +2,7 @@ appconfig:CreateApplication;Write
 appconfig:CreateConfigurationProfile;Write
 appconfig:CreateDeploymentStrategy;Write
 appconfig:CreateEnvironment;Write
+appconfig:CreateExperimentDefinition;Write
 appconfig:CreateExtension;Write
 appconfig:CreateExtensionAssociation;Write
 appconfig:CreateHostedConfigurationVersion;Write
@@ -9,6 +10,7 @@ appconfig:DeleteApplication;Write
 appconfig:DeleteConfigurationProfile;Write
 appconfig:DeleteDeploymentStrategy;Write
 appconfig:DeleteEnvironment;Write
+appconfig:DeleteExperimentDefinition;Write
 appconfig:DeleteExtension;Write
 appconfig:DeleteExtensionAssociation;Write
 appconfig:DeleteHostedConfigurationVersion;Write
@@ -19,6 +21,8 @@ appconfig:GetConfigurationProfile;Read
 appconfig:GetDeployment;Read
 appconfig:GetDeploymentStrategy;Read
 appconfig:GetEnvironment;Read
+appconfig:GetExperimentDefinition;Read
+appconfig:GetExperimentRun;Read
 appconfig:GetExtension;Read
 appconfig:GetExtensionAssociation;Read
 appconfig:GetHostedConfigurationVersion;Read
@@ -28,13 +32,18 @@ appconfig:ListConfigurationProfiles;List
 appconfig:ListDeploymentStrategies;List
 appconfig:ListDeployments;List
 appconfig:ListEnvironments;List
+appconfig:ListExperimentDefinitions;List
+appconfig:ListExperimentRunEvents;List
+appconfig:ListExperimentRuns;List
 appconfig:ListExtensionAssociations;List
 appconfig:ListExtensions;List
 appconfig:ListHostedConfigurationVersions;List
 appconfig:ListTagsForResource;Read
 appconfig:StartConfigurationSession;Write
 appconfig:StartDeployment;Write
+appconfig:StartExperimentRun;Write
 appconfig:StopDeployment;Write
+appconfig:StopExperimentRun;Write
 appconfig:TagResource;Tagging, Write
 appconfig:UntagResource;Tagging, Write
 appconfig:UpdateAccountSettings;Write
@@ -42,6 +51,8 @@ appconfig:UpdateApplication;Write
 appconfig:UpdateConfigurationProfile;Write
 appconfig:UpdateDeploymentStrategy;Write
 appconfig:UpdateEnvironment;Write
+appconfig:UpdateExperimentDefinition;Write
+appconfig:UpdateExperimentRun;Write
 appconfig:UpdateExtension;Write
 appconfig:UpdateExtensionAssociation;Write
 appconfig:ValidateConfiguration;Write

@@ -3,6 +3,8 @@ bedrock:DataRetentionMode
 bedrock:GuardrailIdentifier
 bedrock:InferenceProfileArn
 bedrock:InlineAgentName
+bedrock:ModelArn
+bedrock:ProjectArn
 bedrock:PromptRouterArn
 bedrock:RequestTag/${TagKey}
 bedrock:ResourceTag/${TagKey}

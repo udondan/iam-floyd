@@ -30,6 +30,17 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a recovery plan execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_CancelRecoveryPlanExecution.html
+   */
+  public toCancelRecoveryPlanExecution() {
+    return this.to('CancelRecoveryPlanExecution');
+  }
+
+  /**
    * Grants permission to extend a source server
    *
    * Access Level: Write
@@ -57,6 +68,32 @@ export class Drs extends PolicyStatement {
    */
   public toCreateLaunchConfigurationTemplate() {
     return this.to('CreateLaunchConfigurationTemplate');
+  }
+
+  /**
+   * Grants permission to create a recovery plan
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_CreateRecoveryPlan.html
+   */
+  public toCreateRecoveryPlan() {
+    return this.to('CreateRecoveryPlan');
+  }
+
+  /**
+   * Grants permission to create a step in a recovery plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_CreateRecoveryPlanStep.html
+   */
+  public toCreateRecoveryPlanStep() {
+    return this.to('CreateRecoveryPlanStep');
   }
 
   /**
@@ -131,6 +168,39 @@ export class Drs extends PolicyStatement {
    */
   public toDeleteRecoveryInstance() {
     return this.to('DeleteRecoveryInstance');
+  }
+
+  /**
+   * Grants permission to delete a recovery plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DeleteRecoveryPlan.html
+   */
+  public toDeleteRecoveryPlan() {
+    return this.to('DeleteRecoveryPlan');
+  }
+
+  /**
+   * Grants permission to delete a recovery plan execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DeleteRecoveryPlanExecution.html
+   */
+  public toDeleteRecoveryPlanExecution() {
+    return this.to('DeleteRecoveryPlanExecution');
+  }
+
+  /**
+   * Grants permission to delete a recovery plan step
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DeleteRecoveryPlanStep.html
+   */
+  public toDeleteRecoveryPlanStep() {
+    return this.to('DeleteRecoveryPlanStep');
   }
 
   /**
@@ -310,6 +380,50 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a recovery plan
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_GetRecoveryPlan.html
+   */
+  public toGetRecoveryPlan() {
+    return this.to('GetRecoveryPlan');
+  }
+
+  /**
+   * Grants permission to get a recovery plan execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_GetRecoveryPlanExecution.html
+   */
+  public toGetRecoveryPlanExecution() {
+    return this.to('GetRecoveryPlanExecution');
+  }
+
+  /**
+   * Grants permission to get a recovery plan execution step
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_GetRecoveryPlanExecutionStep.html
+   */
+  public toGetRecoveryPlanExecutionStep() {
+    return this.to('GetRecoveryPlanExecutionStep');
+  }
+
+  /**
+   * Grants permission to get a recovery plan step
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_GetRecoveryPlanStep.html
+   */
+  public toGetRecoveryPlanStep() {
+    return this.to('GetRecoveryPlanStep');
+  }
+
+  /**
    * Grants permission to get replication configuration
    *
    * Access Level: Read
@@ -354,6 +468,50 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list recovery plan execution steps
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_ListRecoveryPlanExecutionSteps.html
+   */
+  public toListRecoveryPlanExecutionSteps() {
+    return this.to('ListRecoveryPlanExecutionSteps');
+  }
+
+  /**
+   * Grants permission to list recovery plan executions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_ListRecoveryPlanExecutions.html
+   */
+  public toListRecoveryPlanExecutions() {
+    return this.to('ListRecoveryPlanExecutions');
+  }
+
+  /**
+   * Grants permission to list recovery plan steps
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_ListRecoveryPlanSteps.html
+   */
+  public toListRecoveryPlanSteps() {
+    return this.to('ListRecoveryPlanSteps');
+  }
+
+  /**
+   * Grants permission to list recovery plans
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_ListRecoveryPlans.html
+   */
+  public toListRecoveryPlans() {
+    return this.to('ListRecoveryPlans');
+  }
+
+  /**
    * Grants permission to list staging accounts
    *
    * Access Level: Read
@@ -387,6 +545,17 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reorder steps in a recovery plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_ReorderRecoveryPlanSteps.html
+   */
+  public toReorderRecoveryPlanSteps() {
+    return this.to('ReorderRecoveryPlanSteps');
+  }
+
+  /**
    * Grants permission to retry data replication
    *
    * Access Level: Write
@@ -395,6 +564,17 @@ export class Drs extends PolicyStatement {
    */
   public toRetryDataReplication() {
     return this.to('RetryDataReplication');
+  }
+
+  /**
+   * Grants permission to retry a recovery plan execution step
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_RetryRecoveryPlanExecutionStep.html
+   */
+  public toRetryRecoveryPlanExecutionStep() {
+    return this.to('RetryRecoveryPlanExecutionStep');
   }
 
   /**
@@ -428,6 +608,17 @@ export class Drs extends PolicyStatement {
    */
   public toStartRecovery() {
     return this.to('StartRecovery');
+  }
+
+  /**
+   * Grants permission to start a recovery plan execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_StartRecoveryPlanExecution.html
+   */
+  public toStartRecoveryPlanExecution() {
+    return this.to('StartRecoveryPlanExecution');
   }
 
   /**
@@ -560,6 +751,39 @@ export class Drs extends PolicyStatement {
    */
   public toUpdateLaunchConfigurationTemplate() {
     return this.to('UpdateLaunchConfigurationTemplate');
+  }
+
+  /**
+   * Grants permission to update a recovery plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_UpdateRecoveryPlan.html
+   */
+  public toUpdateRecoveryPlan() {
+    return this.to('UpdateRecoveryPlan');
+  }
+
+  /**
+   * Grants permission to update a recovery plan execution step
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_UpdateRecoveryPlanExecutionStep.html
+   */
+  public toUpdateRecoveryPlanExecutionStep() {
+    return this.to('UpdateRecoveryPlanExecutionStep');
+  }
+
+  /**
+   * Grants permission to update a recovery plan step
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_UpdateRecoveryPlanStep.html
+   */
+  public toUpdateRecoveryPlanStep() {
+    return this.to('UpdateRecoveryPlanStep');
   }
 
   /**
@@ -1031,14 +1255,20 @@ export class Drs extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateSourceNetworkStack',
+      'CancelRecoveryPlanExecution',
       'CreateExtendedSourceServer',
       'CreateLaunchConfigurationTemplate',
+      'CreateRecoveryPlan',
+      'CreateRecoveryPlanStep',
       'CreateReplicationConfigurationTemplate',
       'CreateSourceNetwork',
       'DeleteJob',
       'DeleteLaunchAction',
       'DeleteLaunchConfigurationTemplate',
       'DeleteRecoveryInstance',
+      'DeleteRecoveryPlan',
+      'DeleteRecoveryPlanExecution',
+      'DeleteRecoveryPlanStep',
       'DeleteReplicationConfigurationTemplate',
       'DeleteSourceNetwork',
       'DeleteSourceServer',
@@ -1047,10 +1277,13 @@ export class Drs extends PolicyStatement {
       'ExportSourceNetworkCfnTemplate',
       'InitializeService',
       'PutLaunchAction',
+      'ReorderRecoveryPlanSteps',
       'RetryDataReplication',
+      'RetryRecoveryPlanExecutionStep',
       'ReverseReplication',
       'StartFailbackLaunch',
       'StartRecovery',
+      'StartRecoveryPlanExecution',
       'StartReplication',
       'StartSourceNetworkRecovery',
       'StartSourceNetworkReplication',
@@ -1063,6 +1296,9 @@ export class Drs extends PolicyStatement {
       'UpdateFailbackReplicationConfiguration',
       'UpdateLaunchConfiguration',
       'UpdateLaunchConfigurationTemplate',
+      'UpdateRecoveryPlan',
+      'UpdateRecoveryPlanExecutionStep',
+      'UpdateRecoveryPlanStep',
       'UpdateReplicationConfiguration',
       'UpdateReplicationConfigurationTemplate',
       'AssociateFailbackClientToRecoveryInstanceForDrs',
@@ -1105,9 +1341,17 @@ export class Drs extends PolicyStatement {
       'DescribeSourceServers',
       'GetFailbackReplicationConfiguration',
       'GetLaunchConfiguration',
+      'GetRecoveryPlan',
+      'GetRecoveryPlanExecution',
+      'GetRecoveryPlanExecutionStep',
+      'GetRecoveryPlanStep',
       'GetReplicationConfiguration',
       'ListExtensibleSourceServers',
       'ListLaunchActions',
+      'ListRecoveryPlanExecutionSteps',
+      'ListRecoveryPlanExecutions',
+      'ListRecoveryPlanSteps',
+      'ListRecoveryPlans',
       'ListStagingAccounts',
       'ListTagsForResource',
       'DescribeReplicationServerAssociationsForDrs',
@@ -1182,6 +1426,40 @@ export class Drs extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type RecoveryPlanExecutionResource to the statement
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/recovery-plan-execution.html
+   *
+   * @param recoveryPlanExecutionID - Identifier for the recoveryPlanExecutionID.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRecoveryPlanExecutionResource(recoveryPlanExecutionID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:drs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recovery-plan-execution/${ recoveryPlanExecutionID }`);
+  }
+
+  /**
+   * Adds a resource of type RecoveryPlanResource to the statement
+   *
+   * https://docs.aws.amazon.com/drs/latest/userguide/recovery-plan.html
+   *
+   * @param recoveryPlanID - Identifier for the recoveryPlanID.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRecoveryPlanResource(recoveryPlanID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:drs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recovery-plan/${ recoveryPlanID }`);
+  }
+
+  /**
    * Adds a resource of type ReplicationConfigurationTemplateResource to the statement
    *
    * https://docs.aws.amazon.com/drs/latest/userguide/replication-settings-template.html
@@ -1241,12 +1519,14 @@ export class Drs extends PolicyStatement {
    * - .toAssociateSourceNetworkStack()
    * - .toCreateExtendedSourceServer()
    * - .toCreateLaunchConfigurationTemplate()
+   * - .toCreateRecoveryPlan()
    * - .toCreateReplicationConfigurationTemplate()
    * - .toCreateSourceNetwork()
    * - .toExportSourceNetworkCfnTemplate()
    * - .toReverseReplication()
    * - .toStartFailbackLaunch()
    * - .toStartRecovery()
+   * - .toStartRecoveryPlanExecution()
    * - .toStartSourceNetworkRecovery()
    * - .toTagResource()
    * - .toTerminateRecoveryInstances()
@@ -1269,10 +1549,15 @@ export class Drs extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateSourceNetworkStack()
+   * - .toCancelRecoveryPlanExecution()
+   * - .toCreateRecoveryPlanStep()
    * - .toDeleteJob()
    * - .toDeleteLaunchAction()
    * - .toDeleteLaunchConfigurationTemplate()
    * - .toDeleteRecoveryInstance()
+   * - .toDeleteRecoveryPlan()
+   * - .toDeleteRecoveryPlanExecution()
+   * - .toDeleteRecoveryPlanStep()
    * - .toDeleteReplicationConfigurationTemplate()
    * - .toDeleteSourceNetwork()
    * - .toDeleteSourceServer()
@@ -1283,13 +1568,23 @@ export class Drs extends PolicyStatement {
    * - .toExportSourceNetworkCfnTemplate()
    * - .toGetFailbackReplicationConfiguration()
    * - .toGetLaunchConfiguration()
+   * - .toGetRecoveryPlan()
+   * - .toGetRecoveryPlanExecution()
+   * - .toGetRecoveryPlanExecutionStep()
+   * - .toGetRecoveryPlanStep()
    * - .toGetReplicationConfiguration()
    * - .toListLaunchActions()
+   * - .toListRecoveryPlanExecutionSteps()
+   * - .toListRecoveryPlanExecutions()
+   * - .toListRecoveryPlanSteps()
    * - .toPutLaunchAction()
+   * - .toReorderRecoveryPlanSteps()
    * - .toRetryDataReplication()
+   * - .toRetryRecoveryPlanExecutionStep()
    * - .toReverseReplication()
    * - .toStartFailbackLaunch()
    * - .toStartRecovery()
+   * - .toStartRecoveryPlanExecution()
    * - .toStartReplication()
    * - .toStartSourceNetworkRecovery()
    * - .toStartSourceNetworkReplication()
@@ -1302,6 +1597,9 @@ export class Drs extends PolicyStatement {
    * - .toUpdateFailbackReplicationConfiguration()
    * - .toUpdateLaunchConfiguration()
    * - .toUpdateLaunchConfigurationTemplate()
+   * - .toUpdateRecoveryPlan()
+   * - .toUpdateRecoveryPlanExecutionStep()
+   * - .toUpdateRecoveryPlanStep()
    * - .toUpdateReplicationConfiguration()
    * - .toUpdateReplicationConfigurationTemplate()
    * - .toAssociateFailbackClientToRecoveryInstanceForDrs()
@@ -1340,6 +1638,8 @@ export class Drs extends PolicyStatement {
    * - JobResource
    * - LaunchConfigurationTemplateResource
    * - RecoveryInstanceResource
+   * - RecoveryPlanExecutionResource
+   * - RecoveryPlanResource
    * - ReplicationConfigurationTemplateResource
    * - SourceNetworkResource
    * - SourceServerResource
@@ -1361,12 +1661,14 @@ export class Drs extends PolicyStatement {
    * - .toAssociateSourceNetworkStack()
    * - .toCreateExtendedSourceServer()
    * - .toCreateLaunchConfigurationTemplate()
+   * - .toCreateRecoveryPlan()
    * - .toCreateReplicationConfigurationTemplate()
    * - .toCreateSourceNetwork()
    * - .toExportSourceNetworkCfnTemplate()
    * - .toReverseReplication()
    * - .toStartFailbackLaunch()
    * - .toStartRecovery()
+   * - .toStartRecoveryPlanExecution()
    * - .toStartSourceNetworkRecovery()
    * - .toTagResource()
    * - .toTerminateRecoveryInstances()

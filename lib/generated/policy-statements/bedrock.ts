@@ -110,6 +110,28 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel an in-progress stateful invocation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toCancelInvoke() {
+    return this.to('CancelInvoke');
+  }
+
+  /**
+   * Grants permission to check whether a user has access to a specific document based on access control list ingested in a knowledge base
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_CheckIngestedDocumentAcl.html
+   */
+  public toCheckIngestedDocumentAcl() {
+    return this.to('CheckIngestedDocumentAcl');
+  }
+
+  /**
    * Grants permission to copy a blueprint from one stage to another
    *
    * Access Level: Write
@@ -797,6 +819,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a stored response of a stateful invocation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toDeleteInvoke() {
+    return this.to('DeleteInvoke');
+  }
+
+  /**
    * Grants permission to delete a knowledge base
    *
    * Access Level: Write
@@ -1398,6 +1431,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to fetch the access control list for a specific document ingested in a knowledge base
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetIngestedDocumentAcl.html
+   */
+  public toGetIngestedDocumentAcl() {
+    return this.to('GetIngestedDocumentAcl');
+  }
+
+  /**
    * Grants permission to retrieve an existing ingestion job
    *
    * Access Level: Read
@@ -1417,6 +1461,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toGetInvocationStep() {
     return this.to('GetInvocationStep');
+  }
+
+  /**
+   * Grants permission to retrieve a stored response of a stateful invocation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toGetInvoke() {
+    return this.to('GetInvoke');
   }
 
   /**
@@ -2866,6 +2921,7 @@ export class Bedrock extends PolicyStatement {
       'AgenticRetrieveStream',
       'ApplyGuardrail',
       'CallWithBearerToken',
+      'CheckIngestedDocumentAcl',
       'CountTokens',
       'DetectGeneratedContent',
       'ExportAutomatedReasoningPolicyVersion',
@@ -2909,8 +2965,10 @@ export class Bedrock extends PolicyStatement {
       'GetGuardrail',
       'GetImportedModel',
       'GetInferenceProfile',
+      'GetIngestedDocumentAcl',
       'GetIngestionJob',
       'GetInvocationStep',
+      'GetInvoke',
       'GetKnowledgeBase',
       'GetKnowledgeBaseDocuments',
       'GetMarketplaceModelEndpoint',
@@ -2948,6 +3006,7 @@ export class Bedrock extends PolicyStatement {
       'BatchDeleteAdvancedPromptOptimizationJob',
       'BatchDeleteEvaluationJob',
       'CancelAutomatedReasoningPolicyBuildWorkflow',
+      'CancelInvoke',
       'CopyBlueprintStage',
       'CreateAdvancedPromptOptimizationJob',
       'CreateAgent',
@@ -3006,6 +3065,7 @@ export class Bedrock extends PolicyStatement {
       'DeleteGuardrail',
       'DeleteImportedModel',
       'DeleteInferenceProfile',
+      'DeleteInvoke',
       'DeleteKnowledgeBase',
       'DeleteKnowledgeBaseDocuments',
       'DeleteMarketplaceModelAgreement',
@@ -3676,6 +3736,23 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type project to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProject(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ resourceId }`);
+  }
+
+  /**
    * Adds a resource of type prompt to the statement
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptSummary.html
@@ -3834,6 +3911,7 @@ export class Bedrock extends PolicyStatement {
    * - .toBatchDeleteAdvancedPromptOptimizationJob()
    * - .toBatchDeleteEvaluationJob()
    * - .toCancelAutomatedReasoningPolicyBuildWorkflow()
+   * - .toCancelInvoke()
    * - .toCopyBlueprintStage()
    * - .toCreateAdvancedPromptOptimizationJob()
    * - .toCreateAgentActionGroup()
@@ -3878,6 +3956,7 @@ export class Bedrock extends PolicyStatement {
    * - .toDeleteGuardrail()
    * - .toDeleteImportedModel()
    * - .toDeleteInferenceProfile()
+   * - .toDeleteInvoke()
    * - .toDeleteKnowledgeBase()
    * - .toDeleteKnowledgeBaseDocuments()
    * - .toDeletePrompt()
@@ -3925,6 +4004,7 @@ export class Bedrock extends PolicyStatement {
    * - .toGetInferenceProfile()
    * - .toGetIngestionJob()
    * - .toGetInvocationStep()
+   * - .toGetInvoke()
    * - .toGetKnowledgeBase()
    * - .toGetKnowledgeBaseDocuments()
    * - .toGetModelCopyJob()
@@ -4041,6 +4121,7 @@ export class Bedrock extends PolicyStatement {
    * - model-evaluation-job
    * - model-import-job
    * - model-invocation-job
+   * - project
    * - prompt
    * - prompt-router
    * - prompt-version
@@ -4178,6 +4259,36 @@ export class Bedrock extends PolicyStatement {
    */
   public ifInlineAgentName(value: string | string[], operator?: Operator | string) {
     return this.if(`InlineAgentName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the model that a stateful invocation runs, on the authorization whose resource is the project
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys
+   *
+   * Applies to actions:
+   * - .toInvokeModel()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifModelArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ModelArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the project that a stateful invocation belongs to, on authorizations whose resource is the inference target it runs
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys
+   *
+   * Applies to actions:
+   * - .toInvokeModel()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifProjectArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ProjectArn`, value, operator ?? 'ArnLike');
   }
 
   /**
