@@ -1,6 +1,8 @@
 drs:JobResource
 drs:LaunchConfigurationTemplateResource
 drs:RecoveryInstanceResource
+drs:RecoveryPlanExecutionResource
+drs:RecoveryPlanResource
 drs:ReplicationConfigurationTemplateResource
 drs:SourceNetworkResource
 drs:SourceServerResource

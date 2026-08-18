@@ -31,6 +31,7 @@ bedrock:model-customization-job
 bedrock:model-evaluation-job
 bedrock:model-import-job
 bedrock:model-invocation-job
+bedrock:project
 bedrock:prompt
 bedrock:prompt-router
 bedrock:prompt-version

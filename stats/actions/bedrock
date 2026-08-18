@@ -8,6 +8,8 @@ bedrock:BatchDeleteAdvancedPromptOptimizationJob;Write
 bedrock:BatchDeleteEvaluationJob;Write
 bedrock:CallWithBearerToken;Read
 bedrock:CancelAutomatedReasoningPolicyBuildWorkflow;Write
+bedrock:CancelInvoke;Write
+bedrock:CheckIngestedDocumentAcl;Read
 bedrock:CopyBlueprintStage;Write
 bedrock:CountTokens;Read
 bedrock:CreateAdvancedPromptOptimizationJob;Write
@@ -67,6 +69,7 @@ bedrock:DeleteFoundationModelAgreement;Write
 bedrock:DeleteGuardrail;Write
 bedrock:DeleteImportedModel;Write
 bedrock:DeleteInferenceProfile;Write
+bedrock:DeleteInvoke;Write
 bedrock:DeleteKnowledgeBase;Write
 bedrock:DeleteKnowledgeBaseDocuments;Write
 bedrock:DeleteMarketplaceModelAgreement;Write
@@ -124,8 +127,10 @@ bedrock:GetFoundationModelAvailability;Read
 bedrock:GetGuardrail;Read
 bedrock:GetImportedModel;Read
 bedrock:GetInferenceProfile;Read
+bedrock:GetIngestedDocumentAcl;Read
 bedrock:GetIngestionJob;Read
 bedrock:GetInvocationStep;Read
+bedrock:GetInvoke;Read
 bedrock:GetKnowledgeBase;Read
 bedrock:GetKnowledgeBaseDocuments;Read
 bedrock:GetMarketplaceModelEndpoint;Read
