@@ -39,7 +39,6 @@
       ],
       "Condition": {
         "StringEquals": {
-          "ec2:AuthorizedService": "sagemaker.amazonaws.com",
           "ec2:Permission": "INSTANCE-ATTACH",
           "aws:ResourceTag/AmazonSageMakerManaged": "true",
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
