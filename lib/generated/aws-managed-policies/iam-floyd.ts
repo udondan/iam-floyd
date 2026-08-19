@@ -114,6 +114,10 @@ export class AwsManagedPolicy {
     public static AmazonBedrockWebSearchFullAccess = 'AmazonBedrockWebSearchFullAccess';
     /** Provides read-only access to Amazon Bedrock Web Search. Data remains within the AWS network boundary. */
     public static AmazonBedrockWebSearchReadOnly = 'AmazonBedrockWebSearchReadOnly';
+    /** Allows full administrative access to Amazon Bio Discovery */
+    public static AmazonBioDiscoveryFullAccess = 'AmazonBioDiscoveryFullAccess';
+    /** Provides full access to actions within the Amazon Bio Discovery applications */
+    public static AmazonBioDiscoveryInAppFullAccess = 'AmazonBioDiscoveryInAppFullAccess';
     /** Provides full access to Amazon Braket via the AWS Management Console and SDK. Also provides access to related services (e.g., S3, logs). */
     public static AmazonBraketFullAccess = 'AmazonBraketFullAccess';
     /** Grants access to AWS Services and resources necessary for executing an Amazon Braket Job including S3, Cloudwatch, IAM and Braket */
@@ -2926,6 +2930,8 @@ export class AwsManagedPolicy {
     public static NetworkAdministrator = 'job-function/NetworkAdministrator';
     /** Provides permissions for the AWS Shield network security director service linked role to assess specified environments. */
     public static NetworkSecurityDirectorServiceLinkedRolePolicy = 'aws-service-role/NetworkSecurityDirectorServiceLinkedRolePolicy';
+    /** Access policy to allow NetworkSecurityManager service linked role to perform NetworkSecurityManager-related actions on NetworkSecurityManager-managed resources within a customer AWS account. */
+    public static NetworkSecurityManagerServiceRolePolicy = 'aws-service-role/NetworkSecurityManagerServiceRolePolicy';
     /** This policy allows NovaAct to create and manage the necessary resources to operate the Nova Act agents. */
     public static NovaActServiceRolePolicy = 'aws-service-role/NovaActServiceRolePolicy';
     /** Provides full access to CloudWatch Observability Access Manager */
