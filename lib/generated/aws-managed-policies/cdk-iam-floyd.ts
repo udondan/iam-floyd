@@ -294,6 +294,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBedrockWebSearchReadOnly);
     }
 
+    /** Allows full administrative access to Amazon Bio Discovery */
+    public AmazonBioDiscoveryFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBioDiscoveryFullAccess);
+    }
+
+    /** Provides full access to actions within the Amazon Bio Discovery applications */
+    public AmazonBioDiscoveryInAppFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBioDiscoveryInAppFullAccess);
+    }
+
     /** Provides full access to Amazon Braket via the AWS Management Console and SDK. Also provides access to related services (e.g., S3, logs). */
     public AmazonBraketFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBraketFullAccess);
@@ -7322,6 +7332,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides permissions for the AWS Shield network security director service linked role to assess specified environments. */
     public NetworkSecurityDirectorServiceLinkedRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.NetworkSecurityDirectorServiceLinkedRolePolicy);
+    }
+
+    /** Access policy to allow NetworkSecurityManager service linked role to perform NetworkSecurityManager-related actions on NetworkSecurityManager-managed resources within a customer AWS account. */
+    public NetworkSecurityManagerServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.NetworkSecurityManagerServiceRolePolicy);
     }
 
     /** This policy allows NovaAct to create and manage the necessary resources to operate the Nova Act agents. */

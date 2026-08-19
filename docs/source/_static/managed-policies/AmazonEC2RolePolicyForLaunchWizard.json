@@ -66,6 +66,36 @@
     },
     {
       "Effect": "Allow",
+      "Action": "ec2:CreateVolume",
+      "Resource": "arn:aws:ec2:*:*:volume/*",
+      "Condition": {
+        "StringLike": {
+          "aws:RequestTag/LaunchWizardResourceGroupID": "*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "arn:aws:ec2:*:*:volume/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateVolume"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "arn:aws:ec2:*:*:volume/*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/LaunchWizardResourceGroupID": "*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
       "Action": [
         "s3:GetObject",
         "s3:ListBucket",

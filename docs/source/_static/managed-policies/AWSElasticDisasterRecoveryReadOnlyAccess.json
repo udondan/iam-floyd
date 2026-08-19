@@ -81,6 +81,21 @@
           "aws:ResourceTag/AWSElasticDisasterRecoveryManaged": "false"
         }
       }
+    },
+    {
+      "Sid": "DRSReadOnlyAccess9",
+      "Effect": "Allow",
+      "Action": [
+        "drs:GetRecoveryPlan",
+        "drs:ListRecoveryPlans",
+        "drs:GetRecoveryPlanStep",
+        "drs:ListRecoveryPlanSteps",
+        "drs:GetRecoveryPlanExecution",
+        "drs:ListRecoveryPlanExecutions",
+        "drs:GetRecoveryPlanExecutionStep",
+        "drs:ListRecoveryPlanExecutionSteps"
+      ],
+      "Resource": "*"
     }
   ]
 }
