@@ -634,6 +634,28 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to translate a code from one value set to another using a ConceptMap resource with GET method
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-translate.html
+   */
+  public toTranslateConceptMapWithGet() {
+    return this.to('TranslateConceptMapWithGet');
+  }
+
+  /**
+   * Grants permission to translate a code from one value set to another using a ConceptMap resource with POST method
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-translate.html
+   */
+  public toTranslateConceptMapWithPost() {
+    return this.to('TranslateConceptMapWithPost');
+  }
+
+  /**
    * Grants permission to remove tags associated with a datastore
    *
    * Access Level: Tagging, Write
@@ -778,6 +800,8 @@ export class Healthlake extends PolicyStatement {
       'SearchEverything',
       'SearchWithGet',
       'SearchWithPost',
+      'TranslateConceptMapWithGet',
+      'TranslateConceptMapWithPost',
       'ValidateResource',
       'ValidateSource',
       'VersionReadResource'
@@ -906,6 +930,8 @@ export class Healthlake extends PolicyStatement {
    * - .toSubmitPreAuthClaim()
    * - .toTagResource()
    * - .toTransformData()
+   * - .toTranslateConceptMapWithGet()
+   * - .toTranslateConceptMapWithPost()
    * - .toUntagResource()
    * - .toUpdateDataTransformationProfile()
    * - .toUpdateFHIRDatastore()

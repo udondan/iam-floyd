@@ -328,6 +328,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an authorization token for MANAGED_OAUTH2 data source
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-3lo-setup.html
+   */
+  public toCreateDataSourceToken() {
+    return this.to('CreateDataSourceToken');
+  }
+
+  /**
    * Grants permission to create a job for evaluation foundation models or custom models
    *
    * Access Level: Write
@@ -1296,6 +1307,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toGetDataSource() {
     return this.to('GetDataSource');
+  }
+
+  /**
+   * Grants permission to get the authorization URL for a MANAGED_OAUTH2 data source
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-3lo-setup.html
+   */
+  public toGetDataSourceAuthorizationUrl() {
+    return this.to('GetDataSourceAuthorizationUrl');
   }
 
   /**
@@ -2953,6 +2975,7 @@ export class Bedrock extends PolicyStatement {
       'GetDataAutomationProject',
       'GetDataAutomationStatus',
       'GetDataSource',
+      'GetDataSourceAuthorizationUrl',
       'GetDocumentContent',
       'GetEvaluationJob',
       'GetExecutionFlowSnapshot',
@@ -3022,6 +3045,7 @@ export class Bedrock extends PolicyStatement {
       'CreateDataAutomationLibrary',
       'CreateDataAutomationProject',
       'CreateDataSource',
+      'CreateDataSourceToken',
       'CreateEvaluationJob',
       'CreateFlow',
       'CreateFlowAlias',

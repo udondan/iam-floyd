@@ -129,6 +129,7 @@ ssm:RegisterPatchBaselineForPatchGroup;Write
 ssm:RegisterTargetWithMaintenanceWindow;Write
 ssm:RegisterTaskWithMaintenanceWindow;Write
 ssm:RemoveTagsFromResource;Tagging, Write
+ssm:RequestManagedInstanceRoleToken;Write
 ssm:ResetServiceSetting;Write
 ssm:ResumeSession;Write
 ssm:SendAutomationSignal;Write
@@ -153,6 +154,7 @@ ssm:UpdateInstanceInformation;Write
 ssm:UpdateMaintenanceWindow;Write
 ssm:UpdateMaintenanceWindowTarget;Write
 ssm:UpdateMaintenanceWindowTask;Write
+ssm:UpdateManagedInstancePublicKey;Write
 ssm:UpdateManagedInstanceRole;Write
 ssm:UpdateOpsItem;Write
 ssm:UpdateOpsMetadata;Write

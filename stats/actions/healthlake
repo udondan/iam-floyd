@@ -53,6 +53,8 @@ healthlake:StartFHIRImportJob;Write
 healthlake:SubmitPreAuthClaim;Write
 healthlake:TagResource;Tagging, Write
 healthlake:TransformData;Write
+healthlake:TranslateConceptMapWithGet;Read
+healthlake:TranslateConceptMapWithPost;Read
 healthlake:UntagResource;Tagging, Write
 healthlake:UpdateDataTransformationProfile;Write
 healthlake:UpdateFHIRDatastore;Write

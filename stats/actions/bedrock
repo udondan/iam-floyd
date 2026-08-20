@@ -26,6 +26,7 @@ bedrock:CreateCustomModelDeployment;Write
 bedrock:CreateDataAutomationLibrary;Write
 bedrock:CreateDataAutomationProject;Write
 bedrock:CreateDataSource;Write
+bedrock:CreateDataSourceToken;Write
 bedrock:CreateEvaluationJob;Write
 bedrock:CreateFlow;Write
 bedrock:CreateFlowAlias;Write
@@ -115,6 +116,7 @@ bedrock:GetDataAutomationLibraryIngestionJob;Read
 bedrock:GetDataAutomationProject;Read
 bedrock:GetDataAutomationStatus;Read
 bedrock:GetDataSource;Read
+bedrock:GetDataSourceAuthorizationUrl;Read
 bedrock:GetDocumentContent;Read
 bedrock:GetEvaluationJob;Read
 bedrock:GetExecutionFlowSnapshot;Read
