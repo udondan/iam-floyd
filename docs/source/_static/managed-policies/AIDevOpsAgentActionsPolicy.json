@@ -2,19 +2,33 @@
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "AIDevOpsMutativeAccess",
+      "Sid": "AIDevOpsElevatedAccess",
+      "Effect": "Allow",
+      "NotAction": [
+        "account:*",
+        "cognito-identity:*",
+        "iam:*",
+        "identitystore:*",
+        "organizations:*",
+        "ram:*",
+        "rolesanywhere:*",
+        "sso:*",
+        "sts:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AIDevOpsElevatedCarveBacks",
       "Effect": "Allow",
       "Action": [
-        "autoscaling:UpdateAutoScalingGroup",
-        "cloudformation:UpdateStack",
-        "cloudwatch:PutMetricAlarm",
-        "ec2:CreateTags",
-        "ec2:ModifyInstanceAttribute",
-        "ecs:UpdateService",
-        "elasticloadbalancing:ModifyTargetGroup",
-        "lambda:UpdateFunctionConfiguration",
-        "logs:PutMetricFilter",
-        "rds:ModifyDBInstance"
+        "account:GetAccountInformation",
+        "account:GetGovCloudAccountInformation",
+        "account:GetPrimaryEmail",
+        "account:ListRegions",
+        "iam:ListRoles",
+        "organizations:DescribeEffectivePolicy",
+        "organizations:DescribeOrganization",
+        "sts:DecodeAuthorizationMessage"
       ],
       "Resource": "*"
     }
