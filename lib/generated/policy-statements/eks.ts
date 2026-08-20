@@ -19,6 +19,17 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to activate a certificate authority for an Amazon EKS cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_ActivateCertificateAuthority.html
+   */
+  public toActivateCertificateAuthority() {
+    return this.to('ActivateCertificateAuthority');
+  }
+
+  /**
    * Grants permission to associate an Amazon EKS access policy to an Amazon EKS access entry
    *
    * Access Level: Write
@@ -93,6 +104,17 @@ export class Eks extends PolicyStatement {
    */
   public toCreateCapability() {
     return this.to('CreateCapability');
+  }
+
+  /**
+   * Grants permission to create a certificate authority for an Amazon EKS cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCertificateAuthority.html
+   */
+  public toCreateCertificateAuthority() {
+    return this.to('CreateCertificateAuthority');
   }
 
   /**
@@ -208,6 +230,17 @@ export class Eks extends PolicyStatement {
    */
   public toDeleteCapability() {
     return this.to('DeleteCapability');
+  }
+
+  /**
+   * Grants permission to delete a certificate authority from an Amazon EKS cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteCertificateAuthority.html
+   */
+  public toDeleteCertificateAuthority() {
+    return this.to('DeleteCertificateAuthority');
   }
 
   /**
@@ -329,6 +362,17 @@ export class Eks extends PolicyStatement {
    */
   public toDescribeCapability() {
     return this.to('DescribeCapability');
+  }
+
+  /**
+   * Grants permission to retrieve descriptive information about a certificate authority for an Amazon EKS cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCertificateAuthority.html
+   */
+  public toDescribeCertificateAuthority() {
+    return this.to('DescribeCertificateAuthority');
   }
 
   /**
@@ -516,6 +560,17 @@ export class Eks extends PolicyStatement {
    */
   public toListCapabilities() {
     return this.to('ListCapabilities');
+  }
+
+  /**
+   * Grants permission to list the certificate authorities for an Amazon EKS cluster
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListCertificateAuthorities.html
+   */
+  public toListCertificateAuthorities() {
+    return this.to('ListCertificateAuthorities');
   }
 
   /**
@@ -810,6 +865,7 @@ export class Eks extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'ActivateCertificateAuthority',
       'AssociateAccessPolicy',
       'AssociateEncryptionConfig',
       'AssociateIdentityProviderConfig',
@@ -817,6 +873,7 @@ export class Eks extends PolicyStatement {
       'CreateAccessEntry',
       'CreateAddon',
       'CreateCapability',
+      'CreateCertificateAuthority',
       'CreateCluster',
       'CreateEksAnywhereSubscription',
       'CreateFargateProfile',
@@ -825,6 +882,7 @@ export class Eks extends PolicyStatement {
       'DeleteAccessEntry',
       'DeleteAddon',
       'DeleteCapability',
+      'DeleteCertificateAuthority',
       'DeleteCluster',
       'DeleteEksAnywhereSubscription',
       'DeleteFargateProfile',
@@ -854,6 +912,7 @@ export class Eks extends PolicyStatement {
       'DescribeAddonConfiguration',
       'DescribeAddonVersions',
       'DescribeCapability',
+      'DescribeCertificateAuthority',
       'DescribeCluster',
       'DescribeClusterVersions',
       'DescribeEksAnywhereSubscription',
@@ -875,6 +934,7 @@ export class Eks extends PolicyStatement {
       'ListAddons',
       'ListAssociatedAccessPolicies',
       'ListCapabilities',
+      'ListCertificateAuthorities',
       'ListClusters',
       'ListEksAnywhereSubscriptions',
       'ListFargateProfiles',
@@ -1126,6 +1186,7 @@ export class Eks extends PolicyStatement {
    * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
    *
    * Applies to actions:
+   * - .toActivateCertificateAuthority()
    * - .toAssociateAccessPolicy()
    * - .toAssociateEncryptionConfig()
    * - .toAssociateIdentityProviderConfig()
@@ -1133,12 +1194,14 @@ export class Eks extends PolicyStatement {
    * - .toCreateAccessEntry()
    * - .toCreateAddon()
    * - .toCreateCapability()
+   * - .toCreateCertificateAuthority()
    * - .toCreateFargateProfile()
    * - .toCreateNodegroup()
    * - .toCreatePodIdentityAssociation()
    * - .toDeleteAccessEntry()
    * - .toDeleteAddon()
    * - .toDeleteCapability()
+   * - .toDeleteCertificateAuthority()
    * - .toDeleteCluster()
    * - .toDeleteEksAnywhereSubscription()
    * - .toDeleteFargateProfile()
@@ -1148,6 +1211,7 @@ export class Eks extends PolicyStatement {
    * - .toDescribeAccessEntry()
    * - .toDescribeAddon()
    * - .toDescribeCapability()
+   * - .toDescribeCertificateAuthority()
    * - .toDescribeCluster()
    * - .toDescribeEksAnywhereSubscription()
    * - .toDescribeFargateProfile()
@@ -1163,6 +1227,7 @@ export class Eks extends PolicyStatement {
    * - .toListAddons()
    * - .toListAssociatedAccessPolicies()
    * - .toListCapabilities()
+   * - .toListCertificateAuthorities()
    * - .toListDashboardData()
    * - .toListDashboardResources()
    * - .toListFargateProfiles()

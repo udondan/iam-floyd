@@ -16,6 +16,7 @@ ec2:AssignIpv6Addresses;Write
 ec2:AssignPrivateIpAddresses;Write
 ec2:AssignPrivateNatGatewayAddress;Write
 ec2:AssociateAddress;Write
+ec2:AssociateApplicationStatusCheck;Write
 ec2:AssociateCapacityReservationBillingOwner;Write
 ec2:AssociateClientVpnTargetNetwork;Write
 ec2:AssociateDhcpOptions;Write
@@ -64,6 +65,7 @@ ec2:CopyFpgaImage;Write
 ec2:CopyImage;Write
 ec2:CopySnapshot;Write
 ec2:CopyVolumes;Write
+ec2:CreateApplicationStatusCheck;Write
 ec2:CreateCapacityManagerDataExport;Write
 ec2:CreateCapacityReservation;Write
 ec2:CreateCapacityReservationBySplitting;Write
@@ -151,6 +153,7 @@ ec2:CreateTransitGatewayMeteringPolicyEntry;Write
 ec2:CreateTransitGatewayMulticastDomain;Write
 ec2:CreateTransitGatewayPeeringAttachment;Write
 ec2:CreateTransitGatewayPolicyTable;Write
+ec2:CreateTransitGatewayPolicyTableEntry;Write
 ec2:CreateTransitGatewayPrefixListReference;Write
 ec2:CreateTransitGatewayRoute;Write
 ec2:CreateTransitGatewayRouteTable;Write
@@ -172,6 +175,7 @@ ec2:CreateVpnConcentrator;Write
 ec2:CreateVpnConnection;Write
 ec2:CreateVpnConnectionRoute;Write
 ec2:CreateVpnGateway;Write
+ec2:DeleteApplicationStatusCheck;Write
 ec2:DeleteCapacityManagerDataExport;Write
 ec2:DeleteCarrierGateway;Write
 ec2:DeleteClientVpnEndpoint;Write
@@ -248,6 +252,7 @@ ec2:DeleteTransitGatewayMeteringPolicyEntry;Write
 ec2:DeleteTransitGatewayMulticastDomain;Write
 ec2:DeleteTransitGatewayPeeringAttachment;Write
 ec2:DeleteTransitGatewayPolicyTable;Write
+ec2:DeleteTransitGatewayPolicyTableEntry;Write
 ec2:DeleteTransitGatewayPrefixListReference;Write
 ec2:DeleteTransitGatewayRoute;Write
 ec2:DeleteTransitGatewayRouteTable;Write
@@ -282,6 +287,9 @@ ec2:DescribeAddressTransfers;List
 ec2:DescribeAddresses;List
 ec2:DescribeAddressesAttribute;List
 ec2:DescribeAggregateIdFormat;List
+ec2:DescribeApplicationStatus;List
+ec2:DescribeApplicationStatusCheckAssociations;List
+ec2:DescribeApplicationStatusChecks;List
 ec2:DescribeAvailabilityZones;List
 ec2:DescribeAwsNetworkPerformanceMetricSubscriptions;List
 ec2:DescribeBundleTasks;List
@@ -477,6 +485,7 @@ ec2:DetachVolume;Write
 ec2:DetachVpnGateway;Write
 ec2:DisableAddressTransfer;Write
 ec2:DisableAllowedImagesSettings;Write
+ec2:DisableApplicationStatusCheckSuppression;Write
 ec2:DisableAwsNetworkPerformanceMetricSubscription;Write
 ec2:DisableCapacityManager;Write
 ec2:DisableEbsEncryptionByDefault;Write
@@ -497,6 +506,7 @@ ec2:DisableVgwRoutePropagation;Write
 ec2:DisableVpcClassicLink;Write
 ec2:DisableVpcClassicLinkDnsSupport;Write
 ec2:DisassociateAddress;Write
+ec2:DisassociateApplicationStatusCheck;Write
 ec2:DisassociateCapacityReservationBillingOwner;Write
 ec2:DisassociateClientVpnTargetNetwork;Write
 ec2:DisassociateEnclaveCertificateIamRole;Write
@@ -517,6 +527,7 @@ ec2:DisassociateVerifiedAccessInstanceWebAcl;Write
 ec2:DisassociateVpcCidrBlock;Write
 ec2:EnableAddressTransfer;Write
 ec2:EnableAllowedImagesSettings;Write
+ec2:EnableApplicationStatusCheckSuppression;Write
 ec2:EnableAwsNetworkPerformanceMetricSubscription;Write
 ec2:EnableCapacityManager;Write
 ec2:EnableEbsEncryptionByDefault;Write
@@ -629,6 +640,7 @@ ec2:ListSnapshotsInRecycleBin;List
 ec2:ListVolumesInRecycleBin;List
 ec2:LockSnapshot;Write
 ec2:ModifyAddressAttribute;Write
+ec2:ModifyApplicationStatusCheck;Write
 ec2:ModifyAvailabilityZoneGroup;Write
 ec2:ModifyCapacityReservation;Write
 ec2:ModifyCapacityReservationFleet;Write
@@ -682,6 +694,7 @@ ec2:ModifyTrafficMirrorFilterRule;Write
 ec2:ModifyTrafficMirrorSession;Write
 ec2:ModifyTransitGateway;Write
 ec2:ModifyTransitGatewayMeteringPolicy;Write
+ec2:ModifyTransitGatewayPolicyTableEntry;Write
 ec2:ModifyTransitGatewayPrefixListReference;Write
 ec2:ModifyTransitGatewayVpcAttachment;Write
 ec2:ModifyVerifiedAccessEndpoint;Write
@@ -699,6 +712,7 @@ ec2:ModifyVpcBlockPublicAccessOptions;Write
 ec2:ModifyVpcEncryptionControl;Write
 ec2:ModifyVpcEndpoint;Write
 ec2:ModifyVpcEndpointConnectionNotification;Write
+ec2:ModifyVpcEndpointPayerResponsibility;Write
 ec2:ModifyVpcEndpointServiceConfiguration;Write
 ec2:ModifyVpcEndpointServicePayerResponsibility;Write
 ec2:ModifyVpcEndpointServicePermissions;Permissions management, Write

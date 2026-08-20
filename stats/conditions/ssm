@@ -4,6 +4,8 @@ ssm:DocumentCategories
 ssm:DocumentType
 ssm:DocumentVersion
 ssm:InventoryTypeName
+ssm:NodeAccountId
+ssm:NodeOrgId
 ssm:Overwrite
 ssm:Policies
 ssm:Recursive

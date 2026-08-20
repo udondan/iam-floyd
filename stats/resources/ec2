@@ -1,3 +1,4 @@
+ec2:application-status-check
 ec2:capacity-block
 ec2:capacity-manager-data-export
 ec2:capacity-reservation

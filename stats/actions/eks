@@ -1,4 +1,5 @@
 eks:AccessKubernetesApi;Read
+eks:ActivateCertificateAuthority;Write
 eks:AssociateAccessPolicy;Write
 eks:AssociateEncryptionConfig;Write
 eks:AssociateIdentityProviderConfig;Write
@@ -6,6 +7,7 @@ eks:CancelUpdate;Write
 eks:CreateAccessEntry;Write
 eks:CreateAddon;Write
 eks:CreateCapability;Write
+eks:CreateCertificateAuthority;Write
 eks:CreateCluster;Write
 eks:CreateEksAnywhereSubscription;Write
 eks:CreateFargateProfile;Write
@@ -14,6 +16,7 @@ eks:CreatePodIdentityAssociation;Write
 eks:DeleteAccessEntry;Write
 eks:DeleteAddon;Write
 eks:DeleteCapability;Write
+eks:DeleteCertificateAuthority;Write
 eks:DeleteCluster;Write
 eks:DeleteEksAnywhereSubscription;Write
 eks:DeleteFargateProfile;Write
@@ -25,6 +28,7 @@ eks:DescribeAddon;Read
 eks:DescribeAddonConfiguration;Read
 eks:DescribeAddonVersions;Read
 eks:DescribeCapability;Read
+eks:DescribeCertificateAuthority;Read
 eks:DescribeCluster;Read
 eks:DescribeClusterVersions;Read
 eks:DescribeEksAnywhereSubscription;Read
@@ -42,6 +46,7 @@ eks:ListAccessPolicies;List
 eks:ListAddons;List
 eks:ListAssociatedAccessPolicies;List
 eks:ListCapabilities;List
+eks:ListCertificateAuthorities;List
 eks:ListClusters;List
 eks:ListDashboardData;Read
 eks:ListDashboardResources;Read

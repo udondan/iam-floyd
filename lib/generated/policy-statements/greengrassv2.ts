@@ -484,7 +484,6 @@ export class GreengrassV2 extends PolicyStatement {
    * - .toCreateDeployment()
    * - .toListTagsForResource()
    * - .toTagResource()
-   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

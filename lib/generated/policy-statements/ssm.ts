@@ -1394,6 +1394,8 @@ export class Ssm extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifNodeAccountId()
+   * - .ifNodeOrgId()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
@@ -1820,6 +1822,17 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to SSM Agent to retrieve temporary credentials to access the managed node (internal Systems Manager call)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
+   */
+  public toRequestManagedInstanceRoleToken() {
+    return this.to('RequestManagedInstanceRoleToken');
+  }
+
+  /**
    * Grants permission to SSM Agent to update the status of the association that it is currently running (internal Systems Manager call)
    *
    * Access Level: Write
@@ -1828,6 +1841,17 @@ export class Ssm extends PolicyStatement {
    */
   public toUpdateInstanceAssociationStatus() {
     return this.to('UpdateInstanceAssociationStatus');
+  }
+
+  /**
+   * Grants permission to SSM Agent to update the public key of the managed node after rotating the key pair (internal Systems Manager call)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
+   */
+  public toUpdateManagedInstancePublicKey() {
+    return this.to('UpdateManagedInstancePublicKey');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -1909,7 +1933,9 @@ export class Ssm extends PolicyStatement {
       'UpdateResourceDataSync',
       'UpdateServiceSetting',
       'PutCalendar',
-      'UpdateInstanceAssociationStatus'
+      'RequestManagedInstanceRoleToken',
+      'UpdateInstanceAssociationStatus',
+      'UpdateManagedInstancePublicKey'
     ],
     'Permissions management': [
       'DeleteResourcePolicy',
@@ -2507,7 +2533,9 @@ export class Ssm extends PolicyStatement {
    * - .toValidateCloudConnector()
    * - .toGetCalendar()
    * - .toPutCalendar()
+   * - .toRequestManagedInstanceRoleToken()
    * - .toUpdateInstanceAssociationStatus()
+   * - .toUpdateManagedInstancePublicKey()
    *
    * Applies to resource types:
    * - association
@@ -2739,6 +2767,40 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Filters access by the AWS account ID associated with the managed node making the request. Available only in VPC endpoint policies and service control policies (SCPs)
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toRegisterManagedInstance()
+   * - .toRequestManagedInstanceRoleToken()
+   * - .toUpdateManagedInstancePublicKey()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifNodeAccountId(value: string | string[], operator?: Operator | string) {
+    return this.if(`NodeAccountId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the AWS Organizations ID associated with the managed node making the request. Available only in VPC endpoint policies and service control policies (SCPs)
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toRegisterManagedInstance()
+   * - .toRequestManagedInstanceRoleToken()
+   * - .toUpdateManagedInstancePublicKey()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifNodeOrgId(value: string | string[], operator?: Operator | string) {
+    return this.if(`NodeOrgId`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by controling whether Systems Manager parameters can be overwritten
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policy-conditions.html#overwrite-condition
@@ -2919,7 +2981,9 @@ export class Ssm extends PolicyStatement {
    * - .toUpdatePatchBaseline()
    * - .toGetCalendar()
    * - .toPutCalendar()
+   * - .toRequestManagedInstanceRoleToken()
    * - .toUpdateInstanceAssociationStatus()
+   * - .toUpdateManagedInstancePublicKey()
    *
    * Applies to resource types:
    * - automation-execution

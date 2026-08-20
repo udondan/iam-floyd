@@ -1074,6 +1074,9 @@ export class Dynamodb extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onStream(tableName: string, streamLabel: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }/stream/${ streamLabel }`);
@@ -1131,6 +1134,7 @@ export class Dynamodb extends PolicyStatement {
    * - .toDescribeContinuousBackups()
    * - .toDescribeContributorInsights()
    * - .toDescribeKinesisStreamingDestination()
+   * - .toDescribeStream()
    * - .toDescribeTable()
    * - .toDescribeTableReplicaAutoScaling()
    * - .toDescribeTimeToLive()
@@ -1138,7 +1142,9 @@ export class Dynamodb extends PolicyStatement {
    * - .toEnableKinesisStreamingDestination()
    * - .toExportTableToPointInTime()
    * - .toGetItem()
+   * - .toGetRecords()
    * - .toGetResourcePolicy()
+   * - .toGetShardIterator()
    * - .toImportTable()
    * - .toListExports()
    * - .toListImports()
@@ -1179,6 +1185,7 @@ export class Dynamodb extends PolicyStatement {
    *
    * Applies to resource types:
    * - index
+   * - stream
    * - table
    *
    * @param tagKey The tag key to check

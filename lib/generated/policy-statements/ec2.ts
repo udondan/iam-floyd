@@ -220,6 +220,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an application status check with instances or tags
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateApplicationStatusCheck.html
+   */
+  public toAssociateApplicationStatusCheck() {
+    return this.to('AssociateApplicationStatusCheck');
+  }
+
+  /**
    * Grants permission to assign billing of the unused capacity of a shared Capacity Reservation to a consumer account
    *
    * Access Level: Write
@@ -733,6 +744,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toCopyVolumes() {
     return this.to('CopyVolumes');
+  }
+
+  /**
+   * Grants permission to create an application status check for monitoring the health of applications running on instances
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateApplicationStatusCheck.html
+   */
+  public toCreateApplicationStatusCheck() {
+    return this.to('CreateApplicationStatusCheck');
   }
 
   /**
@@ -1672,6 +1694,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an entry in a transit gateway policy table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayPolicyTableEntry.html
+   */
+  public toCreateTransitGatewayPolicyTableEntry() {
+    return this.to('CreateTransitGatewayPolicyTableEntry');
+  }
+
+  /**
    * Grants permission to create a transit gateway prefix list reference
    *
    * Access Level: Write
@@ -1900,6 +1933,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreateVpnGateway() {
     return this.to('CreateVpnGateway');
+  }
+
+  /**
+   * Grants permission to delete an application status check
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteApplicationStatusCheck.html
+   */
+  public toDeleteApplicationStatusCheck() {
+    return this.to('DeleteApplicationStatusCheck');
   }
 
   /**
@@ -2701,6 +2745,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an entry from a transit gateway policy table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayPolicyTableEntry.html
+   */
+  public toDeleteTransitGatewayPolicyTableEntry() {
+    return this.to('DeleteTransitGatewayPolicyTableEntry');
+  }
+
+  /**
    * Grants permission to delete a transit gateway prefix list reference
    *
    * Access Level: Write
@@ -3093,6 +3148,48 @@ export class Ec2 extends PolicyStatement {
    */
   public toDescribeAggregateIdFormat() {
     return this.to('DescribeAggregateIdFormat');
+  }
+
+  /**
+   * Grants permission to describe the aggregated application health status for instances
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeApplicationStatus.html
+   */
+  public toDescribeApplicationStatus() {
+    return this.to('DescribeApplicationStatus');
+  }
+
+  /**
+   * Grants permission to describe the associations for one or more application status checks
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeApplicationStatusCheckAssociations.html
+   */
+  public toDescribeApplicationStatusCheckAssociations() {
+    return this.to('DescribeApplicationStatusCheckAssociations');
+  }
+
+  /**
+   * Grants permission to describe application status checks
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeApplicationStatusChecks.html
+   */
+  public toDescribeApplicationStatusChecks() {
+    return this.to('DescribeApplicationStatusChecks');
   }
 
   /**
@@ -5695,6 +5792,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable suppression of application status checks for instances
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableApplicationStatusCheckSuppression.html
+   */
+  public toDisableApplicationStatusCheckSuppression() {
+    return this.to('DisableApplicationStatusCheckSuppression');
+  }
+
+  /**
    * Grants permission to disable infrastructure performance metric subscriptions
    *
    * Access Level: Write
@@ -5936,6 +6044,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate an application status check from instances or tags
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateApplicationStatusCheck.html
+   */
+  public toDisassociateApplicationStatusCheck() {
+    return this.to('DisassociateApplicationStatusCheck');
+  }
+
+  /**
    * Grants permission to cancel a pending request to assign billing of the unused capacity of a Capacity Reservation to a consumer account
    *
    * Access Level: Write
@@ -6151,6 +6270,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toEnableAllowedImagesSettings() {
     return this.to('EnableAllowedImagesSettings');
+  }
+
+  /**
+   * Grants permission to suppress application status checks for instances
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableApplicationStatusCheckSuppression.html
+   */
+  public toEnableApplicationStatusCheckSuppression() {
+    return this.to('EnableApplicationStatusCheckSuppression');
   }
 
   /**
@@ -7439,6 +7569,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify an application status check
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyApplicationStatusCheck.html
+   */
+  public toModifyApplicationStatusCheck() {
+    return this.to('ModifyApplicationStatusCheck');
+  }
+
+  /**
    * Grants permission to modify the opt-in status of the Local Zone and Wavelength Zone group for your account
    *
    * Access Level: Write
@@ -8033,6 +8174,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify a transit gateway policy table entry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGatewayPolicyTableEntry.html
+   */
+  public toModifyTransitGatewayPolicyTableEntry() {
+    return this.to('ModifyTransitGatewayPolicyTableEntry');
+  }
+
+  /**
    * Grants permission to modify a transit gateway prefix list reference
    *
    * Access Level: Write
@@ -8220,6 +8372,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyVpcEndpointConnectionNotification() {
     return this.to('ModifyVpcEndpointConnectionNotification');
+  }
+
+  /**
+   * Grants permission to modify the payer responsibility for a VPC endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpointPayerResponsibility.html
+   */
+  public toModifyVpcEndpointPayerResponsibility() {
+    return this.to('ModifyVpcEndpointPayerResponsibility');
   }
 
   /**
@@ -9535,6 +9698,7 @@ export class Ec2 extends PolicyStatement {
       'AssignPrivateIpAddresses',
       'AssignPrivateNatGatewayAddress',
       'AssociateAddress',
+      'AssociateApplicationStatusCheck',
       'AssociateCapacityReservationBillingOwner',
       'AssociateClientVpnTargetNetwork',
       'AssociateDhcpOptions',
@@ -9580,6 +9744,7 @@ export class Ec2 extends PolicyStatement {
       'CopyImage',
       'CopySnapshot',
       'CopyVolumes',
+      'CreateApplicationStatusCheck',
       'CreateCapacityManagerDataExport',
       'CreateCapacityReservation',
       'CreateCapacityReservationBySplitting',
@@ -9664,6 +9829,7 @@ export class Ec2 extends PolicyStatement {
       'CreateTransitGatewayMulticastDomain',
       'CreateTransitGatewayPeeringAttachment',
       'CreateTransitGatewayPolicyTable',
+      'CreateTransitGatewayPolicyTableEntry',
       'CreateTransitGatewayPrefixListReference',
       'CreateTransitGatewayRoute',
       'CreateTransitGatewayRouteTable',
@@ -9685,6 +9851,7 @@ export class Ec2 extends PolicyStatement {
       'CreateVpnConnection',
       'CreateVpnConnectionRoute',
       'CreateVpnGateway',
+      'DeleteApplicationStatusCheck',
       'DeleteCapacityManagerDataExport',
       'DeleteCarrierGateway',
       'DeleteClientVpnEndpoint',
@@ -9757,6 +9924,7 @@ export class Ec2 extends PolicyStatement {
       'DeleteTransitGatewayMulticastDomain',
       'DeleteTransitGatewayPeeringAttachment',
       'DeleteTransitGatewayPolicyTable',
+      'DeleteTransitGatewayPolicyTableEntry',
       'DeleteTransitGatewayPrefixListReference',
       'DeleteTransitGatewayRoute',
       'DeleteTransitGatewayRouteTable',
@@ -9795,6 +9963,7 @@ export class Ec2 extends PolicyStatement {
       'DetachVpnGateway',
       'DisableAddressTransfer',
       'DisableAllowedImagesSettings',
+      'DisableApplicationStatusCheckSuppression',
       'DisableAwsNetworkPerformanceMetricSubscription',
       'DisableCapacityManager',
       'DisableEbsEncryptionByDefault',
@@ -9815,6 +9984,7 @@ export class Ec2 extends PolicyStatement {
       'DisableVpcClassicLink',
       'DisableVpcClassicLinkDnsSupport',
       'DisassociateAddress',
+      'DisassociateApplicationStatusCheck',
       'DisassociateCapacityReservationBillingOwner',
       'DisassociateClientVpnTargetNetwork',
       'DisassociateEnclaveCertificateIamRole',
@@ -9834,6 +10004,7 @@ export class Ec2 extends PolicyStatement {
       'DisassociateVpcCidrBlock',
       'EnableAddressTransfer',
       'EnableAllowedImagesSettings',
+      'EnableApplicationStatusCheckSuppression',
       'EnableAwsNetworkPerformanceMetricSubscription',
       'EnableCapacityManager',
       'EnableEbsEncryptionByDefault',
@@ -9865,6 +10036,7 @@ export class Ec2 extends PolicyStatement {
       'ImportVolume',
       'LockSnapshot',
       'ModifyAddressAttribute',
+      'ModifyApplicationStatusCheck',
       'ModifyAvailabilityZoneGroup',
       'ModifyCapacityReservation',
       'ModifyCapacityReservationFleet',
@@ -9917,6 +10089,7 @@ export class Ec2 extends PolicyStatement {
       'ModifyTrafficMirrorSession',
       'ModifyTransitGateway',
       'ModifyTransitGatewayMeteringPolicy',
+      'ModifyTransitGatewayPolicyTableEntry',
       'ModifyTransitGatewayPrefixListReference',
       'ModifyTransitGatewayVpcAttachment',
       'ModifyVerifiedAccessEndpoint',
@@ -9934,6 +10107,7 @@ export class Ec2 extends PolicyStatement {
       'ModifyVpcEncryptionControl',
       'ModifyVpcEndpoint',
       'ModifyVpcEndpointConnectionNotification',
+      'ModifyVpcEndpointPayerResponsibility',
       'ModifyVpcEndpointServiceConfiguration',
       'ModifyVpcEndpointServicePayerResponsibility',
       'ModifyVpcEndpointServicePermissions',
@@ -10075,6 +10249,9 @@ export class Ec2 extends PolicyStatement {
       'DescribeAddresses',
       'DescribeAddressesAttribute',
       'DescribeAggregateIdFormat',
+      'DescribeApplicationStatus',
+      'DescribeApplicationStatusCheckAssociations',
+      'DescribeApplicationStatusChecks',
       'DescribeAvailabilityZones',
       'DescribeAwsNetworkPerformanceMetricSubscriptions',
       'DescribeBundleTasks',
@@ -10345,6 +10522,29 @@ export class Ec2 extends PolicyStatement {
       'GetResourcePolicy'
     ]
   };
+
+  /**
+   * Adds a resource of type application-status-check to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
+   *
+   * @param applicationStatusCheckId - Identifier for the applicationStatusCheckId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAttribute()
+   * - .ifAttribute()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onApplicationStatusCheck(applicationStatusCheckId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application-status-check/${ applicationStatusCheckId }`);
+  }
 
   /**
    * Adds a resource of type capacity-block to the statement
@@ -12965,6 +13165,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCopyImage()
    * - .toCopySnapshot()
    * - .toCopyVolumes()
+   * - .toCreateApplicationStatusCheck()
    * - .toCreateCapacityManagerDataExport()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationCancellationQuote()
@@ -13065,6 +13266,7 @@ export class Ec2 extends PolicyStatement {
    * - .toStartNetworkInsightsAnalysis()
    *
    * Applies to resource types:
+   * - application-status-check
    * - capacity-block
    * - capacity-manager-data-export
    * - capacity-reservation
@@ -13201,6 +13403,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssignPrivateIpAddresses()
    * - .toAssignPrivateNatGatewayAddress()
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toAssociateClientVpnTargetNetwork()
    * - .toAssociateDhcpOptions()
@@ -13234,6 +13437,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCancelImportTask()
    * - .toCancelSpotFleetRequests()
    * - .toCancelSpotInstanceRequests()
+   * - .toCreateApplicationStatusCheck()
    * - .toCreateCapacityReservationBySplitting()
    * - .toCreateCapacityReservationCancellationQuote()
    * - .toCreateCarrierGateway()
@@ -13291,6 +13495,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
    * - .toCreateTransitGatewayPolicyTable()
+   * - .toCreateTransitGatewayPolicyTableEntry()
    * - .toCreateTransitGatewayPrefixListReference()
    * - .toCreateTransitGatewayRoute()
    * - .toCreateTransitGatewayRouteTable()
@@ -13308,6 +13513,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVpnConcentrator()
    * - .toCreateVpnConnection()
    * - .toCreateVpnConnectionRoute()
+   * - .toDeleteApplicationStatusCheck()
    * - .toDeleteCapacityManagerDataExport()
    * - .toDeleteCarrierGateway()
    * - .toDeleteClientVpnEndpoint()
@@ -13378,6 +13584,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteTransitGatewayMulticastDomain()
    * - .toDeleteTransitGatewayPeeringAttachment()
    * - .toDeleteTransitGatewayPolicyTable()
+   * - .toDeleteTransitGatewayPolicyTableEntry()
    * - .toDeleteTransitGatewayPrefixListReference()
    * - .toDeleteTransitGatewayRoute()
    * - .toDeleteTransitGatewayRouteTable()
@@ -13430,6 +13637,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDetachVpnGateway()
    * - .toDisableAddressTransfer()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableFastLaunch()
    * - .toDisableFastSnapshotRestores()
    * - .toDisableImage()
@@ -13443,6 +13651,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableVpcClassicLink()
    * - .toDisableVpcClassicLinkDnsSupport()
    * - .toDisassociateAddress()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toDisassociateClientVpnTargetNetwork()
    * - .toDisassociateIamInstanceProfile()
@@ -13458,6 +13667,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateTransitGatewayRouteTable()
    * - .toDisassociateVpcCidrBlock()
    * - .toEnableAddressTransfer()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableFastLaunch()
    * - .toEnableFastSnapshotRestores()
    * - .toEnableImage()
@@ -13525,6 +13735,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportVolume()
    * - .toLockSnapshot()
    * - .toModifyAddressAttribute()
+   * - .toModifyApplicationStatusCheck()
    * - .toModifyCapacityReservation()
    * - .toModifyCapacityReservationFleet()
    * - .toModifyClientVpnEndpoint()
@@ -13570,6 +13781,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyTrafficMirrorSession()
    * - .toModifyTransitGateway()
    * - .toModifyTransitGatewayMeteringPolicy()
+   * - .toModifyTransitGatewayPolicyTableEntry()
    * - .toModifyTransitGatewayPrefixListReference()
    * - .toModifyTransitGatewayVpcAttachment()
    * - .toModifyVerifiedAccessEndpoint()
@@ -13586,6 +13798,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVpcEncryptionControl()
    * - .toModifyVpcEndpoint()
    * - .toModifyVpcEndpointConnectionNotification()
+   * - .toModifyVpcEndpointPayerResponsibility()
    * - .toModifyVpcEndpointServiceConfiguration()
    * - .toModifyVpcEndpointServicePayerResponsibility()
    * - .toModifyVpcEndpointServicePermissions()
@@ -13683,6 +13896,7 @@ export class Ec2 extends PolicyStatement {
    * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
+   * - application-status-check
    * - capacity-block
    * - capacity-manager-data-export
    * - capacity-reservation
@@ -13814,6 +14028,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCopyImage()
    * - .toCopySnapshot()
    * - .toCopyVolumes()
+   * - .toCreateApplicationStatusCheck()
    * - .toCreateCapacityManagerDataExport()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationCancellationQuote()
@@ -13914,6 +14129,7 @@ export class Ec2 extends PolicyStatement {
    * - .toStartNetworkInsightsAnalysis()
    *
    * Applies to resource types:
+   * - application-status-check
    * - capacity-block
    * - capacity-manager-data-export
    * - capacity-reservation
@@ -14141,6 +14357,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toModifyAddressAttribute()
+   * - .toModifyApplicationStatusCheck()
    * - .toModifyCapacityReservation()
    * - .toModifyCapacityReservationFleet()
    * - .toModifyClientVpnEndpoint()
@@ -14204,6 +14421,7 @@ export class Ec2 extends PolicyStatement {
    * - .toResetSnapshotAttribute()
    *
    * Applies to resource types:
+   * - application-status-check
    * - capacity-block
    * - capacity-manager-data-export
    * - capacity-reservation
@@ -14265,6 +14483,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toModifyAddressAttribute()
+   * - .toModifyApplicationStatusCheck()
    * - .toModifyCapacityReservation()
    * - .toModifyCapacityReservationFleet()
    * - .toModifyClientVpnEndpoint()
@@ -14338,6 +14557,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyOdbNetworkPeering()
    *
    * Applies to resource types:
+   * - application-status-check
    * - capacity-block
    * - capacity-manager-data-export
    * - capacity-reservation
@@ -14491,6 +14711,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssignIpv6Addresses()
    * - .toAssignPrivateIpAddresses()
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toAssociateIamInstanceProfile()
    * - .toAssociateRouteTable()
@@ -14500,6 +14721,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
    * - .toCopyVolumes()
+   * - .toCreateApplicationStatusCheck()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
    * - .toCreateDelegateMacVolumeOwnershipTask()
@@ -14542,15 +14764,18 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableFastSnapshotRestores()
    * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisassociateAddress()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toDisassociateIamInstanceProfile()
    * - .toDisassociateNatGatewayAddress()
    * - .toDisassociateRouteTable()
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableFastSnapshotRestores()
    * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toEnableVolumeIO()
@@ -14563,6 +14788,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetReservedInstancesExchangeQuote()
    * - .toImportInstance()
    * - .toImportVolume()
+   * - .toModifyApplicationStatusCheck()
    * - .toModifyFleet()
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
@@ -14640,6 +14866,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateClientVpnTargetNetwork()
    * - .toAssociateIamInstanceProfile()
    * - .toAssociateRouteTable()
@@ -14649,6 +14876,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
    * - .toCopyVolumes()
+   * - .toCreateApplicationStatusCheck()
    * - .toCreateCapacityReservation()
    * - .toCreateClientVpnRoute()
    * - .toCreateDelegateMacVolumeOwnershipTask()
@@ -14676,11 +14904,14 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeVolumeAttribute()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableInstanceSqlHaStandbyDetections()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateIamInstanceProfile()
    * - .toDisassociateRouteTable()
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toEnableVolumeIO()
    * - .toGetConsoleOutput()
@@ -14690,6 +14921,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toImportVolume()
+   * - .toModifyApplicationStatusCheck()
    * - .toModifyFleet()
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
@@ -15146,6 +15378,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toAssociateIamInstanceProfile()
    * - .toAttachClassicLinkVpc()
@@ -15168,9 +15401,12 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableInstanceSqlHaStandbyDetections()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
@@ -15593,6 +15829,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateIamInstanceProfile()
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
@@ -15607,8 +15844,11 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeInstanceAttribute()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableInstanceSqlHaStandbyDetections()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
@@ -15654,6 +15894,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateIamInstanceProfile()
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
@@ -15671,8 +15912,11 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableInstanceSqlHaStandbyDetections()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
@@ -15815,6 +16059,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateIamInstanceProfile()
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
@@ -15830,8 +16075,11 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableInstanceSqlHaStandbyDetections()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
@@ -15907,6 +16155,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateIamInstanceProfile()
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
@@ -15921,8 +16170,11 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeInstanceAttribute()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableInstanceSqlHaStandbyDetections()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
@@ -15997,6 +16249,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateIamInstanceProfile()
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
@@ -16014,8 +16267,11 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableInstanceSqlHaStandbyDetections()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
@@ -16067,6 +16323,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAcceptReservedInstancesExchangeQuote()
    * - .toAllocateHosts()
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toAssociateIamInstanceProfile()
    * - .toAttachClassicLinkVpc()
@@ -16090,9 +16347,12 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableInstanceSqlHaStandbyDetections()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
@@ -16230,15 +16490,9 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the ID of an IPAM pool provided for IPv4 CIDR block allocation
    *
    * Applies to actions:
-   * - .toAssociateRouteServer()
-   * - .toAssociateSecurityGroupVpc()
    * - .toAssociateVpcCidrBlock()
-   * - .toCreateNatGateway()
    * - .toCreateSubnet()
    * - .toCreateVpc()
-   * - .toCreateVpcBlockPublicAccessExclusion()
-   * - .toDisassociateRouteServer()
-   * - .toDisassociateSecurityGroupVpc()
    *
    * Applies to resource types:
    * - subnet
@@ -16255,16 +16509,10 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the ID of an IPAM pool provided for IPv6 CIDR block allocation
    *
    * Applies to actions:
-   * - .toAssociateRouteServer()
-   * - .toAssociateSecurityGroupVpc()
    * - .toAssociateSubnetCidrBlock()
    * - .toAssociateVpcCidrBlock()
-   * - .toCreateNatGateway()
    * - .toCreateSubnet()
    * - .toCreateVpc()
-   * - .toCreateVpcBlockPublicAccessExclusion()
-   * - .toDisassociateRouteServer()
-   * - .toDisassociateSecurityGroupVpc()
    *
    * Applies to resource types:
    * - subnet
@@ -16543,6 +16791,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateIamInstanceProfile()
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
@@ -16558,8 +16807,11 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableInstanceSqlHaStandbyDetections()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
@@ -16608,6 +16860,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateIamInstanceProfile()
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
@@ -16623,8 +16876,11 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableInstanceSqlHaStandbyDetections()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
@@ -16673,6 +16929,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateIamInstanceProfile()
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
@@ -16688,8 +16945,11 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableInstanceSqlHaStandbyDetections()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
@@ -17503,6 +17763,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssignPrivateIpAddresses()
    * - .toAssignPrivateNatGatewayAddress()
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toAssociateClientVpnTargetNetwork()
    * - .toAssociateDhcpOptions()
@@ -17548,6 +17809,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCopyImage()
    * - .toCopySnapshot()
    * - .toCopyVolumes()
+   * - .toCreateApplicationStatusCheck()
    * - .toCreateCapacityManagerDataExport()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
@@ -17632,6 +17894,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
    * - .toCreateTransitGatewayPolicyTable()
+   * - .toCreateTransitGatewayPolicyTableEntry()
    * - .toCreateTransitGatewayPrefixListReference()
    * - .toCreateTransitGatewayRoute()
    * - .toCreateTransitGatewayRouteTable()
@@ -17653,6 +17916,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVpnConnection()
    * - .toCreateVpnConnectionRoute()
    * - .toCreateVpnGateway()
+   * - .toDeleteApplicationStatusCheck()
    * - .toDeleteCapacityManagerDataExport()
    * - .toDeleteCarrierGateway()
    * - .toDeleteClientVpnEndpoint()
@@ -17725,6 +17989,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteTransitGatewayMulticastDomain()
    * - .toDeleteTransitGatewayPeeringAttachment()
    * - .toDeleteTransitGatewayPolicyTable()
+   * - .toDeleteTransitGatewayPolicyTableEntry()
    * - .toDeleteTransitGatewayPrefixListReference()
    * - .toDeleteTransitGatewayRoute()
    * - .toDeleteTransitGatewayRouteTable()
@@ -17759,6 +18024,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeAddresses()
    * - .toDescribeAddressesAttribute()
    * - .toDescribeAggregateIdFormat()
+   * - .toDescribeApplicationStatus()
+   * - .toDescribeApplicationStatusCheckAssociations()
+   * - .toDescribeApplicationStatusChecks()
    * - .toDescribeAvailabilityZones()
    * - .toDescribeAwsNetworkPerformanceMetricSubscriptions()
    * - .toDescribeBundleTasks()
@@ -17950,6 +18218,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVpnGateway()
    * - .toDisableAddressTransfer()
    * - .toDisableAllowedImagesSettings()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableAwsNetworkPerformanceMetricSubscription()
    * - .toDisableCapacityManager()
    * - .toDisableEbsEncryptionByDefault()
@@ -17970,6 +18239,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableVpcClassicLink()
    * - .toDisableVpcClassicLinkDnsSupport()
    * - .toDisassociateAddress()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toDisassociateClientVpnTargetNetwork()
    * - .toDisassociateEnclaveCertificateIamRole()
@@ -17989,6 +18259,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateVpcCidrBlock()
    * - .toEnableAddressTransfer()
    * - .toEnableAllowedImagesSettings()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableAwsNetworkPerformanceMetricSubscription()
    * - .toEnableCapacityManager()
    * - .toEnableEbsEncryptionByDefault()
@@ -18096,6 +18367,7 @@ export class Ec2 extends PolicyStatement {
    * - .toListVolumesInRecycleBin()
    * - .toLockSnapshot()
    * - .toModifyAddressAttribute()
+   * - .toModifyApplicationStatusCheck()
    * - .toModifyAvailabilityZoneGroup()
    * - .toModifyCapacityReservation()
    * - .toModifyCapacityReservationFleet()
@@ -18148,6 +18420,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyTrafficMirrorSession()
    * - .toModifyTransitGateway()
    * - .toModifyTransitGatewayMeteringPolicy()
+   * - .toModifyTransitGatewayPolicyTableEntry()
    * - .toModifyTransitGatewayPrefixListReference()
    * - .toModifyTransitGatewayVpcAttachment()
    * - .toModifyVerifiedAccessEndpoint()
@@ -18165,6 +18438,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVpcEncryptionControl()
    * - .toModifyVpcEndpoint()
    * - .toModifyVpcEndpointConnectionNotification()
+   * - .toModifyVpcEndpointPayerResponsibility()
    * - .toModifyVpcEndpointServiceConfiguration()
    * - .toModifyVpcEndpointServicePayerResponsibility()
    * - .toModifyVpcEndpointServicePermissions()
@@ -18280,6 +18554,7 @@ export class Ec2 extends PolicyStatement {
    * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
+   * - application-status-check
    * - capacity-block
    * - capacity-manager-data-export
    * - capacity-reservation
@@ -18559,6 +18834,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssignPrivateIpAddresses()
    * - .toAssignPrivateNatGatewayAddress()
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toAssociateClientVpnTargetNetwork()
    * - .toAssociateDhcpOptions()
@@ -18592,6 +18868,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCancelImportTask()
    * - .toCancelSpotFleetRequests()
    * - .toCancelSpotInstanceRequests()
+   * - .toCreateApplicationStatusCheck()
    * - .toCreateCapacityReservationBySplitting()
    * - .toCreateCapacityReservationCancellationQuote()
    * - .toCreateCarrierGateway()
@@ -18649,6 +18926,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
    * - .toCreateTransitGatewayPolicyTable()
+   * - .toCreateTransitGatewayPolicyTableEntry()
    * - .toCreateTransitGatewayPrefixListReference()
    * - .toCreateTransitGatewayRoute()
    * - .toCreateTransitGatewayRouteTable()
@@ -18666,6 +18944,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVpnConcentrator()
    * - .toCreateVpnConnection()
    * - .toCreateVpnConnectionRoute()
+   * - .toDeleteApplicationStatusCheck()
    * - .toDeleteCapacityManagerDataExport()
    * - .toDeleteCarrierGateway()
    * - .toDeleteClientVpnEndpoint()
@@ -18736,6 +19015,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteTransitGatewayMulticastDomain()
    * - .toDeleteTransitGatewayPeeringAttachment()
    * - .toDeleteTransitGatewayPolicyTable()
+   * - .toDeleteTransitGatewayPolicyTableEntry()
    * - .toDeleteTransitGatewayPrefixListReference()
    * - .toDeleteTransitGatewayRoute()
    * - .toDeleteTransitGatewayRouteTable()
@@ -18788,6 +19068,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDetachVpnGateway()
    * - .toDisableAddressTransfer()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableFastLaunch()
    * - .toDisableFastSnapshotRestores()
    * - .toDisableImage()
@@ -18801,6 +19082,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableVpcClassicLink()
    * - .toDisableVpcClassicLinkDnsSupport()
    * - .toDisassociateAddress()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toDisassociateClientVpnTargetNetwork()
    * - .toDisassociateIamInstanceProfile()
@@ -18816,6 +19098,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateTransitGatewayRouteTable()
    * - .toDisassociateVpcCidrBlock()
    * - .toEnableAddressTransfer()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableFastLaunch()
    * - .toEnableFastSnapshotRestores()
    * - .toEnableImage()
@@ -18882,6 +19165,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportVolume()
    * - .toLockSnapshot()
    * - .toModifyAddressAttribute()
+   * - .toModifyApplicationStatusCheck()
    * - .toModifyCapacityReservationFleet()
    * - .toModifyClientVpnEndpoint()
    * - .toModifyFleet()
@@ -18926,6 +19210,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyTrafficMirrorSession()
    * - .toModifyTransitGateway()
    * - .toModifyTransitGatewayMeteringPolicy()
+   * - .toModifyTransitGatewayPolicyTableEntry()
    * - .toModifyTransitGatewayPrefixListReference()
    * - .toModifyTransitGatewayVpcAttachment()
    * - .toModifyVerifiedAccessEndpoint()
@@ -18942,6 +19227,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVpcEncryptionControl()
    * - .toModifyVpcEndpoint()
    * - .toModifyVpcEndpointConnectionNotification()
+   * - .toModifyVpcEndpointPayerResponsibility()
    * - .toModifyVpcEndpointServiceConfiguration()
    * - .toModifyVpcEndpointServicePayerResponsibility()
    * - .toModifyVpcEndpointServicePermissions()
@@ -19038,6 +19324,7 @@ export class Ec2 extends PolicyStatement {
    * - .toSendSpotInstanceInterruptions()
    *
    * Applies to resource types:
+   * - application-status-check
    * - capacity-block
    * - capacity-manager-data-export
    * - capacity-reservation
@@ -19172,6 +19459,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateIamInstanceProfile()
    * - .toAttachClassicLinkVpc()
    * - .toAttachImageWatermark()
@@ -19196,12 +19484,15 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachImageWatermark()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableFastLaunch()
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
    * - .toDisableImageDeregistrationProtection()
    * - .toDisableInstanceSqlHaStandbyDetections()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableFastLaunch()
    * - .toEnableImage()
    * - .toEnableImageDeprecation()
@@ -19756,6 +20047,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAcceptVpcPeeringConnection()
    * - .toApplySecurityGroupsToClientVpnTargetNetwork()
    * - .toAssociateAddress()
+   * - .toAssociateApplicationStatusCheck()
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toAssociateDhcpOptions()
    * - .toAssociateIamInstanceProfile()
@@ -19802,14 +20094,17 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
    * - .toDetachVpnGateway()
+   * - .toDisableApplicationStatusCheckSuppression()
    * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisableVpcClassicLink()
    * - .toDisableVpcClassicLinkDnsSupport()
+   * - .toDisassociateApplicationStatusCheck()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toDisassociateIamInstanceProfile()
    * - .toDisassociateRouteServer()
    * - .toDisassociateSecurityGroupVpc()
    * - .toDisassociateVpcCidrBlock()
+   * - .toEnableApplicationStatusCheckSuppression()
    * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toEnableVpcClassicLink()
    * - .toEnableVpcClassicLinkDnsSupport()
@@ -20123,6 +20418,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachNetworkInterface()
    * - .toAuthorizeSecurityGroupEgress()
    * - .toAuthorizeSecurityGroupIngress()
+   * - .toCreateApplicationStatusCheck()
    * - .toCreateFleet()
    * - .toCreateFlowLogs()
    * - .toCreateInstanceConnectEndpoint()
@@ -20165,6 +20461,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableVgwRoutePropagation()
    * - .toGetRouteServerPropagations()
    * - .toImportInstance()
+   * - .toModifyApplicationStatusCheck()
    * - .toModifyClientVpnEndpoint()
    * - .toModifyFleet()
    * - .toModifyInstanceAttribute()
@@ -20311,6 +20608,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeVpcEndpointServicePermissions()
    * - .toModifyVpcEndpoint()
    * - .toModifyVpcEndpointConnectionNotification()
+   * - .toModifyVpcEndpointPayerResponsibility()
    * - .toModifyVpcEndpointServiceConfiguration()
    * - .toModifyVpcEndpointServicePayerResponsibility()
    * - .toModifyVpcEndpointServicePermissions()
@@ -20458,6 +20756,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteVpcEndpointServiceConfigurations()
    * - .toDescribeVpcEndpointServicePermissions()
    * - .toModifyVpcEndpointConnectionNotification()
+   * - .toModifyVpcEndpointPayerResponsibility()
    * - .toModifyVpcEndpointServiceConfiguration()
    * - .toModifyVpcEndpointServicePayerResponsibility()
    * - .toModifyVpcEndpointServicePermissions()
@@ -20631,10 +20930,13 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateTransitGatewayPolicyTable()
    * - .toCreateTags()
    * - .toCreateTransitGatewayPolicyTable()
+   * - .toCreateTransitGatewayPolicyTableEntry()
    * - .toDeleteTransitGatewayPolicyTable()
+   * - .toDeleteTransitGatewayPolicyTableEntry()
    * - .toDisassociateTransitGatewayPolicyTable()
    * - .toGetTransitGatewayPolicyTableAssociations()
    * - .toGetTransitGatewayPolicyTableEntries()
+   * - .toModifyTransitGatewayPolicyTableEntry()
    *
    * Applies to resource types:
    * - transit-gateway-policy-table
@@ -20672,6 +20974,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAssociateTransitGatewayRouteTable()
    * - .toCreateTags()
+   * - .toCreateTransitGatewayPolicyTableEntry()
    * - .toCreateTransitGatewayPrefixListReference()
    * - .toCreateTransitGatewayRoute()
    * - .toCreateTransitGatewayRouteTable()
@@ -20683,6 +20986,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateTransitGatewayRouteTable()
    * - .toEnableTransitGatewayRouteTablePropagation()
    * - .toModifyTransitGateway()
+   * - .toModifyTransitGatewayPolicyTableEntry()
    * - .toModifyTransitGatewayPrefixListReference()
    * - .toReplaceTransitGatewayRoute()
    * - .toSearchTransitGatewayRoutes()
