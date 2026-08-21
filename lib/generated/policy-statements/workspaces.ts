@@ -1110,6 +1110,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to use WorkSpaces Advisor for WorkSpace onboarding
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
+   */
+  public toInvokeOnboardingAgent() {
+    return this.to('InvokeOnboardingAgent');
+  }
+
+  /**
    * Grants permission to invoke troubleshooting investigation
    *
    * Access Level: Read
@@ -1129,6 +1140,17 @@ export class Workspaces extends PolicyStatement {
    */
   public toListTroubleshootingRecommendations() {
     return this.to('ListTroubleshootingRecommendations');
+  }
+
+  /**
+   * Grants permission to manage features that enable personalization of the WorkSpaces console experience
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
+   */
+  public toPersonalization() {
+    return this.to('Personalization');
   }
 
   /**
@@ -1222,6 +1244,8 @@ export class Workspaces extends PolicyStatement {
       'UpdateWorkspacesPool',
       'CreateRootClientCertificate',
       'DeleteRootClientCertificate',
+      'InvokeOnboardingAgent',
+      'Personalization',
       'UpdateConsent',
       'UpdateRootClientCertificate'
     ],

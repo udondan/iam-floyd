@@ -26,6 +26,7 @@ lambda:DeleteMicrovmImage;Write
 lambda:DeleteMicrovmImageVersion;Write
 lambda:DeleteNetworkConnector;Write
 lambda:DeleteProvisionedConcurrencyConfig;Write
+lambda:DeleteResourcePolicy;Permissions management, Write
 lambda:DisableReplication;Permissions management, Write
 lambda:EnableReplication;Permissions management, Write
 lambda:GetAccountSettings;Read
@@ -53,6 +54,7 @@ lambda:GetMicrovmImageVersion;Read
 lambda:GetNetworkConnector;Read
 lambda:GetPolicy;Read
 lambda:GetProvisionedConcurrencyConfig;Read
+lambda:GetResourcePolicy;Read
 lambda:GetRuntimeManagementConfig;Read
 lambda:InvokeAsync;Write
 lambda:InvokeFunction;Write
@@ -89,6 +91,7 @@ lambda:PutFunctionEventInvokeConfig;Write
 lambda:PutFunctionRecursionConfig;Write
 lambda:PutFunctionScalingConfig;Write
 lambda:PutProvisionedConcurrencyConfig;Write
+lambda:PutResourcePolicy;Permissions management, Write
 lambda:PutRuntimeManagementConfig;Write
 lambda:RemoveLayerVersionPermission;Permissions management, Write
 lambda:RemovePermission;Permissions management, Write

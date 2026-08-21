@@ -61,6 +61,7 @@ workspaces:GetTroubleshootingRecommendation;Read
 workspaces:ImportClientBranding;Write
 workspaces:ImportCustomWorkspaceImage;Write
 workspaces:ImportWorkspaceImage;Write
+workspaces:InvokeOnboardingAgent;Write
 workspaces:InvokeTroubleshootingInvestigation;Read
 workspaces:ListAccountLinks;List
 workspaces:ListAvailableManagementCidrRanges;List
@@ -77,6 +78,7 @@ workspaces:ModifyWorkspaceAccessProperties;Write
 workspaces:ModifyWorkspaceCreationProperties;Write
 workspaces:ModifyWorkspaceProperties;Write
 workspaces:ModifyWorkspaceState;Write
+workspaces:Personalization;Write
 workspaces:RebootWorkspaces;Write
 workspaces:RebuildWorkspaces;Write
 workspaces:RegisterWorkspaceDirectory;Write

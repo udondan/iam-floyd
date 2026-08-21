@@ -643,6 +643,7 @@ export class Outposts extends PolicyStatement {
    * - .toListAssets()
    * - .toListBlockingInstancesForCapacityTask()
    * - .toStartCapacityTask()
+   * - .toStartConnection()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateOutpost()

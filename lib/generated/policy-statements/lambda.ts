@@ -329,6 +329,17 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to detach a policy from an AWS Lambda resource
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to view details about an account's limits and usage in an AWS Region
    *
    * Access Level: Read
@@ -601,6 +612,17 @@ export class Lambda extends PolicyStatement {
    */
   public toGetProvisionedConcurrencyConfig() {
     return this.to('GetProvisionedConcurrencyConfig');
+  }
+
+  /**
+   * Grants permission to view a policy for an AWS Lambda resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_GetResourcePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
   }
 
   /**
@@ -967,6 +989,17 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach a policy to an AWS Lambda resource
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Grants permission to update the runtime management configuration of an AWS Lambda function
    *
    * Access Level: Write
@@ -1311,6 +1344,8 @@ export class Lambda extends PolicyStatement {
     'Permissions management': [
       'AddLayerVersionPermission',
       'AddPermission',
+      'DeleteResourcePolicy',
+      'PutResourcePolicy',
       'RemoveLayerVersionPermission',
       'RemovePermission',
       'DisableReplication',
@@ -1344,6 +1379,7 @@ export class Lambda extends PolicyStatement {
       'DeleteMicrovmImageVersion',
       'DeleteNetworkConnector',
       'DeleteProvisionedConcurrencyConfig',
+      'DeleteResourcePolicy',
       'InvokeAsync',
       'InvokeFunction',
       'PublishLayerVersion',
@@ -1354,6 +1390,7 @@ export class Lambda extends PolicyStatement {
       'PutFunctionRecursionConfig',
       'PutFunctionScalingConfig',
       'PutProvisionedConcurrencyConfig',
+      'PutResourcePolicy',
       'PutRuntimeManagementConfig',
       'RemoveLayerVersionPermission',
       'RemovePermission',
@@ -1412,6 +1449,7 @@ export class Lambda extends PolicyStatement {
       'GetNetworkConnector',
       'GetPolicy',
       'GetProvisionedConcurrencyConfig',
+      'GetResourcePolicy',
       'GetRuntimeManagementConfig',
       'ListTags'
     ],
@@ -1681,6 +1719,7 @@ export class Lambda extends PolicyStatement {
    * - .toDeleteMicrovmImageVersion()
    * - .toDeleteNetworkConnector()
    * - .toDeleteProvisionedConcurrencyConfig()
+   * - .toDeleteResourcePolicy()
    * - .toGetAlias()
    * - .toGetCapacityProvider()
    * - .toGetCodeSigningConfig()
@@ -1703,6 +1742,7 @@ export class Lambda extends PolicyStatement {
    * - .toGetNetworkConnector()
    * - .toGetPolicy()
    * - .toGetProvisionedConcurrencyConfig()
+   * - .toGetResourcePolicy()
    * - .toGetRuntimeManagementConfig()
    * - .toInvokeAsync()
    * - .toInvokeFunction()
@@ -1725,6 +1765,7 @@ export class Lambda extends PolicyStatement {
    * - .toPutFunctionRecursionConfig()
    * - .toPutFunctionScalingConfig()
    * - .toPutProvisionedConcurrencyConfig()
+   * - .toPutResourcePolicy()
    * - .toPutRuntimeManagementConfig()
    * - .toRemovePermission()
    * - .toResumeMicrovm()
@@ -1909,6 +1950,8 @@ export class Lambda extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddPermission()
+   * - .toDeleteResourcePolicy()
+   * - .toPutResourcePolicy()
    * - .toRemovePermission()
    *
    * @param value The value(s) to check
