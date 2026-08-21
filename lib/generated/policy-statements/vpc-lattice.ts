@@ -958,7 +958,6 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   * - .ifCreateAction()
    */
   public onAccessLogSubscription(accessLogSubscriptionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accesslogsubscription/${ accessLogSubscriptionId }`);
@@ -978,7 +977,6 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   * - .ifCreateAction()
    * - .ifDomainName()
    */
   public onDomainVerification(domainVerificationId: string, account?: string, region?: string, partition?: string) {
@@ -1000,7 +998,6 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   * - .ifCreateAction()
    * - .ifProtocol()
    * - .ifTargetGroupArns()
    */
@@ -1022,7 +1019,6 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   * - .ifCreateAction()
    */
   public onResourceConfiguration(resourceConfigurationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resourceconfiguration/${ resourceConfigurationId }`);
@@ -1063,7 +1059,6 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   * - .ifCreateAction()
    * - .ifVpcId()
    */
   public onResourceGateway(resourceGatewayId: string, account?: string, region?: string, partition?: string) {
@@ -1086,7 +1081,6 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   * - .ifCreateAction()
    * - .ifTargetGroupArns()
    */
   public onRule(serviceId: string, listenerId: string, ruleId: string, account?: string, region?: string, partition?: string) {
@@ -1108,7 +1102,6 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAuthType()
-   * - .ifCreateAction()
    */
   public onService(serviceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceId }`);
@@ -1129,7 +1122,6 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAuthType()
-   * - .ifCreateAction()
    */
   public onServiceNetwork(serviceNetworkId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:servicenetwork/${ serviceNetworkId }`);
@@ -1149,7 +1141,6 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   * - .ifCreateAction()
    * - .ifResourceConfigurationArn()
    * - .ifServiceNetworkArn()
    */
@@ -1171,7 +1162,6 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   * - .ifCreateAction()
    * - .ifServiceArn()
    * - .ifServiceNetworkArn()
    */
@@ -1193,7 +1183,6 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   * - .ifCreateAction()
    * - .ifPrivateDnsPreference()
    * - .ifPrivateDnsSpecifiedDomains()
    * - .ifSecurityGroupIds()
@@ -1218,7 +1207,6 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   * - .ifCreateAction()
    * - .ifVpcId()
    */
   public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
@@ -1524,81 +1512,12 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
-   * Filters access by the name of a resource-creating API action
+   * Filters access by the name of a resource-creating API action and only available during tagging resources on creation
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/
    *
    * Applies to actions:
-   * - .toCreateAccessLogSubscription()
-   * - .toCreateListener()
-   * - .toCreateResourceConfiguration()
-   * - .toCreateResourceGateway()
-   * - .toCreateRule()
-   * - .toCreateService()
-   * - .toCreateServiceNetwork()
-   * - .toCreateServiceNetworkResourceAssociation()
-   * - .toCreateServiceNetworkServiceAssociation()
-   * - .toCreateServiceNetworkVpcAssociation()
-   * - .toCreateTargetGroup()
-   * - .toDeleteAccessLogSubscription()
-   * - .toDeleteAuthPolicy()
-   * - .toDeleteDomainVerification()
-   * - .toDeleteListener()
-   * - .toDeleteResourceConfiguration()
-   * - .toDeleteResourceGateway()
-   * - .toDeleteResourcePolicy()
-   * - .toDeleteRule()
-   * - .toDeleteService()
-   * - .toDeleteServiceNetwork()
-   * - .toDeleteServiceNetworkResourceAssociation()
-   * - .toDeleteServiceNetworkServiceAssociation()
-   * - .toDeleteServiceNetworkVpcAssociation()
-   * - .toDeleteTargetGroup()
-   * - .toDeregisterTargets()
-   * - .toGetAccessLogSubscription()
-   * - .toGetAuthPolicy()
-   * - .toGetDomainVerification()
-   * - .toGetListener()
-   * - .toGetResourceConfiguration()
-   * - .toGetResourceGateway()
-   * - .toGetResourcePolicy()
-   * - .toGetRule()
-   * - .toGetService()
-   * - .toGetServiceNetwork()
-   * - .toGetServiceNetworkResourceAssociation()
-   * - .toGetServiceNetworkServiceAssociation()
-   * - .toGetServiceNetworkVpcAssociation()
-   * - .toGetTargetGroup()
-   * - .toListTargets()
-   * - .toPutAuthPolicy()
-   * - .toPutResourcePolicy()
-   * - .toRegisterTargets()
-   * - .toStartDomainVerification()
    * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateAccessLogSubscription()
-   * - .toUpdateListener()
-   * - .toUpdateResourceConfiguration()
-   * - .toUpdateResourceGateway()
-   * - .toUpdateRule()
-   * - .toUpdateService()
-   * - .toUpdateServiceNetwork()
-   * - .toUpdateServiceNetworkVpcAssociation()
-   * - .toUpdateTargetGroup()
-   *
-   * Applies to resource types:
-   * - AccessLogSubscription
-   * - DomainVerification
-   * - Listener
-   * - ResourceConfiguration
-   * - ResourceGateway
-   * - Rule
-   * - Service
-   * - ServiceNetwork
-   * - ServiceNetworkResourceAssociation
-   * - ServiceNetworkServiceAssociation
-   * - ServiceNetworkVpcAssociation
-   * - TargetGroup
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
