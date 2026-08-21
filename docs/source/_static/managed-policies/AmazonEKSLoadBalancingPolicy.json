@@ -21,7 +21,11 @@
             "ingress.eks.amazonaws.com/stack",
             "ingress.eks.amazonaws.com/resource",
             "service.eks.amazonaws.com/stack",
-            "service.eks.amazonaws.com/resource"
+            "service.eks.amazonaws.com/resource",
+            "gateway.eks.amazonaws.com.alb/stack",
+            "gateway.eks.amazonaws.com.alb/resource",
+            "gateway.eks.amazonaws.com.nlb/stack",
+            "gateway.eks.amazonaws.com.nlb/resource"
           ]
         }
       }
@@ -170,7 +174,11 @@
             "ingress.eks.amazonaws.com/stack",
             "ingress.eks.amazonaws.com/resource",
             "service.eks.amazonaws.com/stack",
-            "service.eks.amazonaws.com/resource"
+            "service.eks.amazonaws.com/resource",
+            "gateway.eks.amazonaws.com.alb/stack",
+            "gateway.eks.amazonaws.com.alb/resource",
+            "gateway.eks.amazonaws.com.nlb/stack",
+            "gateway.eks.amazonaws.com.nlb/resource"
           ]
         }
       }
@@ -183,6 +191,7 @@
         "acm:DescribeCertificate",
         "wafv2:GetWebACL",
         "wafv2:GetWebACLForResource",
+        "wafv2:ListWebACLs",
         "elasticloadbalancing:SetWebAcl",
         "elasticloadbalancing:DescribeTargetGroups",
         "elasticloadbalancing:SetRulePriorities"
