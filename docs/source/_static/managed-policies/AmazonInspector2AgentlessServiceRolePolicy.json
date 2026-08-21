@@ -143,6 +143,50 @@
       }
     },
     {
+      "Sid": "DecryptCrossAccountOrgVolContext",
+      "Effect": "Allow",
+      "Action": "kms:Decrypt",
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceOrgID": "${aws:PrincipalOrgID}"
+        },
+        "StringLike": {
+          "kms:ViaService": "ec2.*.amazonaws.com",
+          "kms:EncryptionContext:aws:ebs:id": "vol-*"
+        }
+      }
+    },
+    {
+      "Sid": "DecryptCrossAccountOrgSnapContext",
+      "Effect": "Allow",
+      "Action": "kms:Decrypt",
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceOrgID": "${aws:PrincipalOrgID}"
+        },
+        "StringLike": {
+          "kms:ViaService": "ec2.*.amazonaws.com",
+          "kms:EncryptionContext:aws:ebs:id": "snap-*"
+        }
+      }
+    },
+    {
+      "Sid": "DescribeCrossAccountOrgKeysForEbsOperations",
+      "Effect": "Allow",
+      "Action": "kms:DescribeKey",
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceOrgID": "${aws:PrincipalOrgID}"
+        },
+        "StringLike": {
+          "kms:ViaService": "ec2.*.amazonaws.com"
+        }
+      }
+    },
+    {
       "Sid": "ListKeyResourceTags",
       "Effect": "Allow",
       "Action": "kms:ListResourceTags",
