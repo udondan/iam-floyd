@@ -44,6 +44,7 @@
         "ec2:GetSecurityGroupsForVpc",
         "eks:DescribeCluster",
         "ec2:DescribeIpamPools",
+        "ec2:DescribeTrunkInterfaceAssociations",
         "elasticloadbalancing:DescribeListenerAttributes",
         "elasticloadbalancing:DescribeListenerCertificates",
         "elasticloadbalancing:DescribeListeners",

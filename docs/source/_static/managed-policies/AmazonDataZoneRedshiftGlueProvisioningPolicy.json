@@ -63,7 +63,8 @@
       "Effect": "Allow",
       "Action": [
         "cloudformation:CreateStack",
-        "cloudformation:TagResource"
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
       ],
       "Resource": [
         "arn:aws:cloudformation:*:*:stack/DataZone*"

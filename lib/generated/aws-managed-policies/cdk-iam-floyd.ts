@@ -79,6 +79,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsOperatorAppAccessPolicy);
     }
 
+    /** Provides permissions for AWS DevOps Agent to create and manage network interfaces in your VPC so that release management agents can access private resources */
+    public AIDevOpsReleaseManagementVPCPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsReleaseManagementVPCPolicy);
+    }
+
     /** Provides permissions required by the Amazon AI Operations Assistant to generate incident report of the investigation. */
     public AIOpsAssistantIncidentReportPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIOpsAssistantIncidentReportPolicy);

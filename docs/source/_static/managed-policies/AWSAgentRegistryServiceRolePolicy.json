@@ -2,6 +2,78 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AllowOrganizationsReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowSLRCreationForAWSConfig",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "config.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowConfigRecorderWrite",
+      "Effect": "Allow",
+      "Action": [
+        "config:DeleteServiceLinkedConfigurationRecorder",
+        "config:PutServiceLinkedConfigurationRecorder"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "config:ConfigurationRecorderServicePrincipal": [
+            "agent-registry.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowConfigRecorderRead",
+      "Effect": "Allow",
+      "Action": [
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus"
+      ],
+      "Resource": [
+        "arn:aws:config:*:*:configuration-recorder/AWSConfigurationRecorderForAgentRegistry*"
+      ]
+    },
+    {
+      "Sid": "AllowRegistryRecordReadWrite",
+      "Effect": "Allow",
+      "Action": [
+        "agent-registry:CreateRegistryRecord",
+        "agent-registry:DeleteRegistryRecord",
+        "agent-registry:GetRegistryRecord",
+        "agent-registry:ListRegistryRecords",
+        "agent-registry:UpdateRegistryRecord"
+      ],
+      "Resource": [
+        "arn:aws:agent-registry:*:*:registry/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "AllowPublishCloudWatchMetrics",
       "Effect": "Allow",
       "Action": [
