@@ -28,6 +28,8 @@ export class AwsManagedPolicy {
     public static AIDevOpsConstellationAccessPolicy = 'service-role/AIDevOpsConstellationAccessPolicy';
     /** Provides access to use the AWS DevOps operator web app for an Agent Space. */
     public static AIDevOpsOperatorAppAccessPolicy = 'AIDevOpsOperatorAppAccessPolicy';
+    /** Provides permissions for AWS DevOps Agent to create and manage network interfaces in your VPC so that release management agents can access private resources */
+    public static AIDevOpsReleaseManagementVPCPolicy = 'AIDevOpsReleaseManagementVPCPolicy';
     /** Provides permissions required by the Amazon AI Operations Assistant to generate incident report of the investigation. */
     public static AIOpsAssistantIncidentReportPolicy = 'AIOpsAssistantIncidentReportPolicy';
     /** Provides ReadOnly permissions required by the Amazon AI Operations Assistant to do analysis on customer AWS resources during investigations. */
