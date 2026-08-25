@@ -2,4 +2,6 @@ customer-verification:CreateCustomerVerificationDetails;Write
 customer-verification:CreateUploadUrls;Write
 customer-verification:GetCustomerVerificationDetails;Read
 customer-verification:GetCustomerVerificationEligibility;Read
+customer-verification:GetInheritanceConfig;Read
+customer-verification:PutInheritanceConfig;Write
 customer-verification:UpdateCustomerVerificationDetails;Write

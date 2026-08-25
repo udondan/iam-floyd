@@ -513,6 +513,15 @@ export class Batch extends PolicyStatement {
     return this.to('UpdateServiceJob');
   }
 
+  /**
+   * Grants permission to set capacity tags on an AWS Batch compute environment in your account
+   *
+   * Access Level: Tagging, Write
+   */
+  public toSetCapacityTags() {
+    return this.to('SetCapacityTags');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelJob',
@@ -542,7 +551,8 @@ export class Batch extends PolicyStatement {
       'UpdateQuotaShare',
       'UpdateSchedulingPolicy',
       'UpdateServiceEnvironment',
-      'UpdateServiceJob'
+      'UpdateServiceJob',
+      'SetCapacityTags'
     ],
     Read: [
       'DescribeComputeEnvironments',
@@ -567,7 +577,8 @@ export class Batch extends PolicyStatement {
     ],
     Tagging: [
       'TagResource',
-      'UntagResource'
+      'UntagResource',
+      'SetCapacityTags'
     ]
   };
 
@@ -756,6 +767,7 @@ export class Batch extends PolicyStatement {
    * - .toSubmitJob()
    * - .toSubmitServiceJob()
    * - .toTagResource()
+   * - .toSetCapacityTags()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -805,6 +817,7 @@ export class Batch extends PolicyStatement {
    * - .toUpdateSchedulingPolicy()
    * - .toUpdateServiceEnvironment()
    * - .toUpdateServiceJob()
+   * - .toSetCapacityTags()
    *
    * Applies to resource types:
    * - compute-environment
@@ -842,6 +855,7 @@ export class Batch extends PolicyStatement {
    * - .toSubmitServiceJob()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toSetCapacityTags()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
