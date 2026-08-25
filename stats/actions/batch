@@ -30,6 +30,7 @@ batch:ListSchedulingPolicies;Read
 batch:ListServiceJobs;List
 batch:ListTagsForResource;Read
 batch:RegisterJobDefinition;Write
+batch:SetCapacityTags;Tagging, Write
 batch:SubmitJob;Write
 batch:SubmitServiceJob;Write
 batch:TagResource;Tagging, Write

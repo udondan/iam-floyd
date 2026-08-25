@@ -63,6 +63,28 @@ export class CustomerVerification extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get inheritance configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toGetInheritanceConfig() {
+    return this.to('GetInheritanceConfig');
+  }
+
+  /**
+   * Grants permission to put inheritance configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toPutInheritanceConfig() {
+    return this.to('PutInheritanceConfig');
+  }
+
+  /**
    * Grants permission to update customer verification data
    *
    * Access Level: Write
@@ -77,11 +99,13 @@ export class CustomerVerification extends PolicyStatement {
     Write: [
       'CreateCustomerVerificationDetails',
       'CreateUploadUrls',
+      'PutInheritanceConfig',
       'UpdateCustomerVerificationDetails'
     ],
     Read: [
       'GetCustomerVerificationDetails',
-      'GetCustomerVerificationEligibility'
+      'GetCustomerVerificationEligibility',
+      'GetInheritanceConfig'
     ]
   };
 }

@@ -231,6 +231,39 @@ export class AgentRegistry extends PolicyStatement {
     return this.to('UpdateRegistryRecordStatus');
   }
 
+  /**
+   * Grants permission to delete the resource-based policy from a specified resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/agent-registry/latest/APIReference/
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to retrieve the resource-based policy for a specified resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/agent-registry/latest/APIReference/
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to set a resource-based policy for a specified resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/agent-registry/latest/APIReference/
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateRegistry',
@@ -242,14 +275,17 @@ export class AgentRegistry extends PolicyStatement {
       'UntagResource',
       'UpdateRegistry',
       'UpdateRegistryRecord',
-      'UpdateRegistryRecordStatus'
+      'UpdateRegistryRecordStatus',
+      'DeleteResourcePolicy',
+      'PutResourcePolicy'
     ],
     Read: [
       'GetDiscoverableRegistryRecord',
       'GetRegistry',
       'GetRegistryRecord',
       'InvokeRegistryMcp',
-      'SearchDiscoverableRegistryRecords'
+      'SearchDiscoverableRegistryRecords',
+      'GetResourcePolicy'
     ],
     List: [
       'ListDiscoverableRegistryRecords',
@@ -299,6 +335,18 @@ export class AgentRegistry extends PolicyStatement {
   }
 
   /**
+   * Filters access by the AWS account ID of the principal that created the registry record
+   *
+   * https://docs.aws.amazon.com/agent-registry/latest/APIReference/
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRecordCreatorAccount(value: string | string[], operator?: Operator | string) {
+    return this.if(`RecordCreatorAccount`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by creating requests based on the allowed set of values for each of the mandatory tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
@@ -339,6 +387,9 @@ export class AgentRegistry extends PolicyStatement {
    * - .toUpdateRegistry()
    * - .toUpdateRegistryRecord()
    * - .toUpdateRegistryRecordStatus()
+   * - .toDeleteResourcePolicy()
+   * - .toGetResourcePolicy()
+   * - .toPutResourcePolicy()
    *
    * Applies to resource types:
    * - registry
