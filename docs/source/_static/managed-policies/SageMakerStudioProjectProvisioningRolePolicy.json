@@ -6,7 +6,8 @@
       "Effect": "Allow",
       "Action": [
         "cloudformation:CreateStack",
-        "cloudformation:TagResource"
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
       ],
       "Resource": [
         "arn:aws:cloudformation:*:*:stack/DataZone*"
@@ -1948,15 +1949,14 @@
       }
     },
     {
-      "Sid": "SMAppDelete",
+      "Sid": "SMApp",
       "Effect": "Allow",
-      "Action": "sagemaker:DeleteApp",
-      "Resource": [
-        "arn:aws:sagemaker:*:*:app/*/*/codeeditor/*",
-        "arn:aws:sagemaker:*:*:app/*/*/CodeEditor/*",
-        "arn:aws:sagemaker:*:*:app/*/*/jupyterlab/*",
-        "arn:aws:sagemaker:*:*:app/*/*/JupyterLab/*"
+      "Action": [
+        "sagemaker:CreateApp",
+        "sagemaker:AddTags",
+        "sagemaker:DeleteApp"
       ],
+      "Resource": "arn:aws:sagemaker:*:*:app/*",
       "Condition": {
         "Null": {
           "aws:ResourceTag/AmazonDataZoneProject": "false"

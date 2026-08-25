@@ -81,6 +81,19 @@
       "Resource": "*"
     },
     {
+      "Sid": "S3BucketTagReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:s3:::*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalAccount": "${aws:ResourceAccount}"
+        }
+      }
+    },
+    {
       "Sid": "RecoveryPointTaggingPermissions",
       "Effect": "Allow",
       "Action": [

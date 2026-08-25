@@ -8,9 +8,32 @@
         "supportplans:GetSupportPlanUpdateStatus",
         "supportplans:ListSupportPlanModifiers",
         "supportplans:StartSupportPlanUpdate",
-        "supportplans:CreateSupportPlanSchedule"
+        "supportplans:CreateSupportPlanSchedule",
+        "supportplans:AcceptSupportAgreement",
+        "supportplans:CancelSupportAgreement",
+        "supportplans:CreateSupportAgreement",
+        "supportplans:GetSupportAgreement",
+        "supportplans:ListSupportAgreements",
+        "supportplans:ListSupportAgreementRevisions",
+        "supportplans:RejectSupportAgreement",
+        "supportplans:UpdateSupportAgreement"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/supportplans.amazonaws.com/AWSServiceRoleForSupportPlans",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "supportplans.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:GetRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/supportplans.amazonaws.com/AWSServiceRoleForSupportPlans"
     }
   ]
 }
