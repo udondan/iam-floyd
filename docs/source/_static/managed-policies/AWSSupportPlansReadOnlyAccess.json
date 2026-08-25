@@ -6,7 +6,10 @@
       "Action": [
         "supportplans:GetSupportPlan",
         "supportplans:GetSupportPlanUpdateStatus",
-        "supportplans:ListSupportPlanModifiers"
+        "supportplans:ListSupportPlanModifiers",
+        "supportplans:GetSupportAgreement",
+        "supportplans:ListSupportAgreements",
+        "supportplans:ListSupportAgreementRevisions"
       ],
       "Resource": "*"
     }
