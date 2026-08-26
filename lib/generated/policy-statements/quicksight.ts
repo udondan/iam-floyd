@@ -1090,28 +1090,6 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe an automation group
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAutomationGroup.html
-   */
-  public toDescribeAutomationGroup() {
-    return this.to('DescribeAutomationGroup');
-  }
-
-  /**
-   * Grants permission to describe permissions for an automation group
-   *
-   * Access Level: Permissions management, Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAutomationGroupPermissions.html
-   */
-  public toDescribeAutomationGroupPermissions() {
-    return this.to('DescribeAutomationGroupPermissions');
-  }
-
-  /**
    * Grants permission to describe an automation job
    *
    * Access Level: Read
@@ -1841,17 +1819,6 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all automation groups in an account
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListAutomationGroups.html
-   */
-  public toListAutomationGroups() {
-    return this.to('ListAutomationGroups');
-  }
-
-  /**
    * Grants permission to lists all brands in an Amazon QuickSight account
    *
    * Access Level: List
@@ -2397,17 +2364,6 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to search for automation groups in an account
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchAutomationGroups.html
-   */
-  public toSearchAutomationGroups() {
-    return this.to('SearchAutomationGroups');
-  }
-
-  /**
    * Grants permission to search for a sub-set of QuickSight Dashboards
    *
    * Access Level: List
@@ -2713,17 +2669,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toUpdateApprovalPolicy() {
     return this.to('UpdateApprovalPolicy');
-  }
-
-  /**
-   * Grants permission to update permissions for an automation group
-   *
-   * Access Level: Permissions management, Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAutomationGroupPermissions.html
-   */
-  public toUpdateAutomationGroupPermissions() {
-    return this.to('UpdateAutomationGroupPermissions');
   }
 
   /**
@@ -3508,6 +3453,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list assignment information of the custom permission profile in an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toListCustomPermissionAssignments() {
+    return this.to('ListCustomPermissionAssignments');
+  }
+
+  /**
    * Grants permission to list all registered customer managed keys
    *
    * Access Level: List
@@ -3856,7 +3812,6 @@ export class Quicksight extends PolicyStatement {
       'DeleteUserByPrincipalId',
       'DeleteUserCustomPermission',
       'DeleteVPCConnection',
-      'DescribeAutomationGroupPermissions',
       'DescribeKnowledgeBasePermissions',
       'DescribeSpacePermissions',
       'DescribeTopicPermissions',
@@ -3885,7 +3840,6 @@ export class Quicksight extends PolicyStatement {
       'UpdateAppPermissions',
       'UpdateApplicationWithTokenExchangeGrant',
       'UpdateApprovalPolicy',
-      'UpdateAutomationGroupPermissions',
       'UpdateBrand',
       'UpdateBrandAssignment',
       'UpdateBrandPublishedVersion',
@@ -3978,7 +3932,6 @@ export class Quicksight extends PolicyStatement {
       'DescribeApprovalPolicy',
       'DescribeAssetBundleExportJob',
       'DescribeAssetBundleImportJob',
-      'DescribeAutomationGroup',
       'DescribeAutomationJob',
       'DescribeBrand',
       'DescribeBrandAssignment',
@@ -4052,7 +4005,6 @@ export class Quicksight extends PolicyStatement {
       'QuickSuiteUsageMetrics'
     ],
     'Permissions management': [
-      'DescribeAutomationGroupPermissions',
       'DescribeKnowledgeBasePermissions',
       'DescribeSpacePermissions',
       'DescribeTopicPermissions',
@@ -4060,7 +4012,6 @@ export class Quicksight extends PolicyStatement {
       'UpdateAgentPermissions',
       'UpdateAnalysisPermissions',
       'UpdateAppPermissions',
-      'UpdateAutomationGroupPermissions',
       'UpdateDashboardPermissions',
       'UpdateDataSetPermissions',
       'UpdateDataSourcePermissions',
@@ -4081,7 +4032,6 @@ export class Quicksight extends PolicyStatement {
       'ListApps',
       'ListAssetBundleExportJobs',
       'ListAssetBundleImportJobs',
-      'ListAutomationGroups',
       'ListBrands',
       'ListCustomPermissions',
       'ListDashboardVersions',
@@ -4123,7 +4073,6 @@ export class Quicksight extends PolicyStatement {
       'SearchAgents',
       'SearchAnalyses',
       'SearchApps',
-      'SearchAutomationGroups',
       'SearchDashboards',
       'SearchDataSets',
       'SearchDataSources',
@@ -4132,6 +4081,7 @@ export class Quicksight extends PolicyStatement {
       'SearchKnowledgeBases',
       'SearchSpaces',
       'SearchTopics',
+      'ListCustomPermissionAssignments',
       'ListCustomerManagedKeys',
       'ListDlpLabels',
       'ListExtensionAccesses',

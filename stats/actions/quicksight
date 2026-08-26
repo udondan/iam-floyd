@@ -104,8 +104,6 @@ quicksight:DescribeAppPermissions;Read
 quicksight:DescribeApprovalPolicy;Read
 quicksight:DescribeAssetBundleExportJob;Read
 quicksight:DescribeAssetBundleImportJob;Read
-quicksight:DescribeAutomationGroup;Read
-quicksight:DescribeAutomationGroupPermissions;Permissions management, Write
 quicksight:DescribeAutomationJob;Read
 quicksight:DescribeBrand;Read
 quicksight:DescribeBrandAssignment;Read
@@ -181,8 +179,8 @@ quicksight:ListApprovalPolicies;List
 quicksight:ListApps;List
 quicksight:ListAssetBundleExportJobs;List
 quicksight:ListAssetBundleImportJobs;List
-quicksight:ListAutomationGroups;List
 quicksight:ListBrands;List
+quicksight:ListCustomPermissionAssignments;List
 quicksight:ListCustomPermissions;List
 quicksight:ListCustomerManagedKeys;List
 quicksight:ListDashboardVersions;List
@@ -241,7 +239,6 @@ quicksight:SearchActionConnectors;List
 quicksight:SearchAgents;List
 quicksight:SearchAnalyses;List
 quicksight:SearchApps;List
-quicksight:SearchAutomationGroups;List
 quicksight:SearchDashboards;List
 quicksight:SearchDataSets;List
 quicksight:SearchDataSources;List
@@ -277,7 +274,6 @@ quicksight:UpdateAnalysisPermissions;Permissions management, Write
 quicksight:UpdateAppPermissions;Permissions management, Write
 quicksight:UpdateApplicationWithTokenExchangeGrant;Write
 quicksight:UpdateApprovalPolicy;Write
-quicksight:UpdateAutomationGroupPermissions;Permissions management, Write
 quicksight:UpdateBrand;Write
 quicksight:UpdateBrandAssignment;Write
 quicksight:UpdateBrandPublishedVersion;Write

@@ -1194,6 +1194,23 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
+   * Filters access based on the target capacity types present in the distribution segments of a mixed instances policy. Use it to qualify which capacity types can be explicitly defined in the policy
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateAutoScalingGroup()
+   * - .toStartInstanceRefresh()
+   * - .toUpdateAutoScalingGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTargetCapacityTypes(value: string | string[], operator?: Operator | string) {
+    return this.if(`TargetCapacityTypes`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access based on the ARN of a target group
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
