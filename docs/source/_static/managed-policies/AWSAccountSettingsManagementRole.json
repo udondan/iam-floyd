@@ -103,7 +103,8 @@
         "support:DescribeSeverityLevels",
         "support:DescribeCases",
         "support:AddCommunicationToCase",
-        "support:ResolveCase"
+        "support:ResolveCase",
+        "support:AddAttachmentsToSet"
       ],
       "Resource": "*"
     }

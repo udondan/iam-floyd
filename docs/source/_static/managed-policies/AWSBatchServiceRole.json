@@ -60,6 +60,7 @@
         "ecs:RunTask",
         "ecs:StartTask",
         "ecs:StopTask",
+        "ecs:UpdateCluster",
         "ecs:UpdateContainerAgent",
         "ecs:DeregisterContainerInstance",
         "logs:CreateLogGroup",
