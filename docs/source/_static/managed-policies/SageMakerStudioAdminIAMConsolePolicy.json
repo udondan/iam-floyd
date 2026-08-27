@@ -330,6 +330,7 @@
       "Resource": "*",
       "Condition": {
         "StringEquals": {
+          "aws:RequestTag/CreatedForUseWithSageMakerUnifiedStudio": "true",
           "ec2:CreateAction": [
             "CreateVpc",
             "CreateSubnet",
@@ -338,8 +339,7 @@
             "CreateNatGateway",
             "CreateRouteTable",
             "CreateVpcEndpoint"
-          ],
-          "aws:RequestTag/CreatedForUseWithSageMakerUnifiedStudio": "true"
+          ]
         }
       }
     },
@@ -366,6 +366,22 @@
         "cloudformation:DescribeStackEvents"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "CloudFormationTagOnCreate",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudformation:CreateAction": [
+            "CreateStack"
+          ]
+        }
+      }
     },
     {
       "Sid": "DeleteTaggedVpcResources",
@@ -435,11 +451,11 @@
       ],
       "Resource": "*",
       "Condition": {
-        "StringLike": {
-          "kms:ViaService": "datazone.*.amazonaws.com"
-        },
         "ForAnyValue:StringEquals": {
           "kms:EncryptionContextKeys": "aws:datazone:domainId"
+        },
+        "StringLike": {
+          "kms:ViaService": "datazone.*.amazonaws.com"
         }
       }
     },
@@ -451,14 +467,14 @@
       ],
       "Resource": "*",
       "Condition": {
-        "StringLike": {
-          "kms:ViaService": "datazone.*.amazonaws.com"
-        },
         "Bool": {
           "kms:GrantIsForAWSResource": "true"
         },
         "ForAnyValue:StringEquals": {
           "kms:EncryptionContextKeys": "aws:datazone:domainId"
+        },
+        "StringLike": {
+          "kms:ViaService": "datazone.*.amazonaws.com"
         }
       }
     },
@@ -480,11 +496,11 @@
         "arn:aws:sso::*:application/*/*"
       ],
       "Condition": {
-        "ForAnyValue:StringEquals": {
-          "aws:CalledVia": "datazone.amazonaws.com"
-        },
         "Bool": {
           "aws:ViaAWSService": "true"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "datazone.amazonaws.com"
         }
       }
     },
@@ -496,11 +512,11 @@
       ],
       "Resource": "*",
       "Condition": {
-        "StringLike": {
-          "kms:ViaService": "sso.*.amazonaws.com"
-        },
         "Null": {
           "kms:EncryptionContext:aws:sso:instance-arn": "false"
+        },
+        "StringLike": {
+          "kms:ViaService": "sso.*.amazonaws.com"
         }
       }
     }

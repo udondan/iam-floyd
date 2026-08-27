@@ -69,6 +69,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsAgentReadOnlyAccess);
     }
 
+    /** Provide access to chat and manage investigations through AWS DevOps Agent for your AgentSpaces */
+    public AIDevOpsChannelAccessPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsChannelAccessPolicy);
+    }
+
     /** Provides permissions required by the AWS DevOps Agent to coordinate with AgentSpaces connected through Agent Space Constellation. */
     public AIDevOpsConstellationAccessPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsConstellationAccessPolicy);
@@ -2837,6 +2842,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allows AppStudio to manage associated AWS resources on your behalf. */
     public AppStudioServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AppStudioServiceRolePolicy);
+    }
+
+    /** Allows AWS Assurance to access your resources for compliance assessments and evidence collection. */
+    public AssuranceServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AssuranceServiceRolePolicy);
     }
 
     /** Policy for Amazon Aurora DSQL Service Linked Role */
