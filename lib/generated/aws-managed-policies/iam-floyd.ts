@@ -24,6 +24,8 @@ export class AwsManagedPolicy {
     public static AIDevOpsAgentFullAccess = 'AIDevOpsAgentFullAccess';
     /** Provides read only access to Amazon DevOps Agent via the AWS Management Console */
     public static AIDevOpsAgentReadOnlyAccess = 'AIDevOpsAgentReadOnlyAccess';
+    /** Provide access to chat and manage investigations through AWS DevOps Agent for your AgentSpaces */
+    public static AIDevOpsChannelAccessPolicy = 'service-role/AIDevOpsChannelAccessPolicy';
     /** Provides permissions required by the AWS DevOps Agent to coordinate with AgentSpaces connected through Agent Space Constellation. */
     public static AIDevOpsConstellationAccessPolicy = 'service-role/AIDevOpsConstellationAccessPolicy';
     /** Provides access to use the AWS DevOps operator web app for an Agent Space. */
@@ -1132,6 +1134,8 @@ export class AwsManagedPolicy {
     public static AppRunnerServiceRolePolicy = 'aws-service-role/AppRunnerServiceRolePolicy';
     /** Allows AppStudio to manage associated AWS resources on your behalf. */
     public static AppStudioServiceRolePolicy = 'aws-service-role/AppStudioServiceRolePolicy';
+    /** Allows AWS Assurance to access your resources for compliance assessments and evidence collection. */
+    public static AssuranceServiceRolePolicy = 'aws-service-role/AssuranceServiceRolePolicy';
     /** Policy for Amazon Aurora DSQL Service Linked Role */
     public static AuroraDsqlServiceLinkedRolePolicy = 'aws-service-role/AuroraDsqlServiceLinkedRolePolicy';
     /** Provides full access to Auto Scaling via the AWS Management Console. */
