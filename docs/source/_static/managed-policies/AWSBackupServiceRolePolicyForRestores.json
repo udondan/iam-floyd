@@ -400,7 +400,8 @@
       "Action": [
         "cloudformation:CreateChangeSet",
         "cloudformation:DescribeChangeSet",
-        "cloudformation:TagResource"
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
       ],
       "Resource": "arn:aws:cloudformation:*:*:*/*/*"
     },
@@ -532,8 +533,8 @@
       "Resource": "arn:aws:eks:*:*:access-entry/*",
       "Condition": {
         "StringEquals": {
-          "eks:policyArn": "arn:aws:eks::aws:cluster-access-policy/AWSBackupFullAccessPolicyForRestore",
-          "eks:accessScope": "cluster"
+          "eks:accessScope": "cluster",
+          "eks:policyArn": "arn:aws:eks::aws:cluster-access-policy/AWSBackupFullAccessPolicyForRestore"
         }
       }
     },

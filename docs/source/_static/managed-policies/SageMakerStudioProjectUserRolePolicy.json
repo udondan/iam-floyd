@@ -1046,7 +1046,8 @@
       "Action": [
         "glue:PassConnection",
         "glue:GetConnection",
-        "glue:GetConnections"
+        "glue:GetConnections",
+        "glue:RefreshOAuth2Tokens"
       ],
       "Resource": "*",
       "Condition": {
@@ -1060,7 +1061,8 @@
       "Effect": "Allow",
       "Action": [
         "glue:GetConnection",
-        "glue:GetConnections"
+        "glue:GetConnections",
+        "glue:RefreshOAuth2Tokens"
       ],
       "Resource": "arn:aws:glue:*:*:catalog"
     },
