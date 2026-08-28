@@ -64,6 +64,7 @@ mgn:ListNetworkMigrationDefinitions;List
 mgn:ListNetworkMigrationDeployedStacks;List
 mgn:ListNetworkMigrationDeployedStacksDeletions;List
 mgn:ListNetworkMigrationDeployments;List
+mgn:ListNetworkMigrationExecutionArtifacts;List
 mgn:ListNetworkMigrationExecutions;List
 mgn:ListNetworkMigrationMapperSegmentConstructs;List
 mgn:ListNetworkMigrationMapperSegments;List

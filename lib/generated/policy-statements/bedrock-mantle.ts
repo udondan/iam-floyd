@@ -63,6 +63,17 @@ export class BedrockMantle extends PolicyStatement {
   }
 
   /**
+   * Grants permission to count the tokens in an inference request
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toCountTokens() {
+    return this.to('CountTokens');
+  }
+
+  /**
    * Grants permission to import a customized model with custom weights
    *
    * Access Level: Write
@@ -96,7 +107,7 @@ export class BedrockMantle extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a chat completion inference request
+   * Grants permission to create an inference request
    *
    * Access Level: Write
    *
@@ -453,6 +464,7 @@ export class BedrockMantle extends PolicyStatement {
       'UpdateReservation'
     ],
     Read: [
+      'CountTokens',
       'GetAccountDataRetention',
       'GetCustomizedModel',
       'GetFile',
@@ -559,6 +571,7 @@ export class BedrockMantle extends PolicyStatement {
    * - .toAssociateCustomizedModel()
    * - .toCancelFineTuningJob()
    * - .toCancelInference()
+   * - .toCountTokens()
    * - .toCreateCustomizedModel()
    * - .toCreateFile()
    * - .toCreateFineTuningJob()
@@ -709,6 +722,7 @@ export class BedrockMantle extends PolicyStatement {
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockmantle.html#amazonbedrockmantle-policy-keys
    *
    * Applies to actions:
+   * - .toCountTokens()
    * - .toCreateFineTuningJob()
    * - .toCreateInference()
    *

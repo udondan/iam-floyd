@@ -615,6 +615,17 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list network migration execution artifacts
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationExecutionArtifacts.html
+   */
+  public toListNetworkMigrationExecutionArtifacts() {
+    return this.to('ListNetworkMigrationExecutionArtifacts');
+  }
+
+  /**
    * Grants permission to list network migration executions
    *
    * Access Level: List
@@ -1676,6 +1687,7 @@ export class Mgn extends PolicyStatement {
       'ListNetworkMigrationDeployedStacks',
       'ListNetworkMigrationDeployedStacksDeletions',
       'ListNetworkMigrationDeployments',
+      'ListNetworkMigrationExecutionArtifacts',
       'ListNetworkMigrationExecutions',
       'ListNetworkMigrationMapperSegmentConstructs',
       'ListNetworkMigrationMapperSegments',
@@ -1945,6 +1957,7 @@ export class Mgn extends PolicyStatement {
    * - .toListNetworkMigrationDeployedStacks()
    * - .toListNetworkMigrationDeployedStacksDeletions()
    * - .toListNetworkMigrationDeployments()
+   * - .toListNetworkMigrationExecutionArtifacts()
    * - .toListNetworkMigrationExecutions()
    * - .toListNetworkMigrationMapperSegmentConstructs()
    * - .toListNetworkMigrationMapperSegments()

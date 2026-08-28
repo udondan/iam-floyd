@@ -3,6 +3,7 @@ bedrock-mantle:AssociateCustomizedModel;Write
 bedrock-mantle:CallWithBearerToken;List
 bedrock-mantle:CancelFineTuningJob;Write
 bedrock-mantle:CancelInference;Write
+bedrock-mantle:CountTokens;Read
 bedrock-mantle:CreateCustomizedModel;Write
 bedrock-mantle:CreateFile;Write
 bedrock-mantle:CreateFineTuningJob;Write
