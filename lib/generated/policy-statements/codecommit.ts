@@ -910,6 +910,15 @@ export class Codecommit extends PolicyStatement {
   }
 
   /**
+   * Grants permission to compute a structured, line-level diff between two blob versions in an AWS CodeCommit repository
+   *
+   * Access Level: Read
+   */
+  public toGetBlobDifferences() {
+    return this.to('GetBlobDifferences');
+  }
+
+  /**
    * Grants permission to get information about the history of commits in a repository
    *
    * Access Level: Read
@@ -1087,6 +1096,7 @@ export class Codecommit extends PolicyStatement {
       'GetRepositoryTriggers',
       'BatchGetPullRequests',
       'CancelUploadArchive',
+      'GetBlobDifferences',
       'GetCommitHistory',
       'GetCommitsFromMergeBase',
       'GetObjectIdentifier',
@@ -1223,6 +1233,7 @@ export class Codecommit extends PolicyStatement {
    * - .toUpdateRepositoryName()
    * - .toBatchGetPullRequests()
    * - .toCancelUploadArchive()
+   * - .toGetBlobDifferences()
    * - .toGetCommitHistory()
    * - .toGetCommitsFromMergeBase()
    * - .toGetObjectIdentifier()

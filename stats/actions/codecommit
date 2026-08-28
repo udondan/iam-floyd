@@ -25,6 +25,7 @@ codecommit:DisassociateApprovalRuleTemplateFromRepository;Write
 codecommit:EvaluatePullRequestApprovalRules;Read
 codecommit:GetApprovalRuleTemplate;Read
 codecommit:GetBlob;Read
+codecommit:GetBlobDifferences;Read
 codecommit:GetBranch;Read
 codecommit:GetComment;Read
 codecommit:GetCommentReactions;Read
