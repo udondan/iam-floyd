@@ -39,6 +39,7 @@ healthlake:ProcessBundle;Write
 healthlake:PublishDataTransformationProfile;Write
 healthlake:QuestionnairePackage;Read
 healthlake:ReadResource;Read
+healthlake:RestoreFHIRDatastore;Write
 healthlake:RetrieveAttributionStatus;Write
 healthlake:SearchEverything;Read
 healthlake:SearchWithGet;Read

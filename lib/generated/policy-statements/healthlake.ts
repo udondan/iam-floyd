@@ -480,6 +480,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to restore a backup-enabled datastore to a point in time, creating a new datastore from the backup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_RestoreFHIRDatastore.html
+   */
+  public toRestoreFHIRDatastore() {
+    return this.to('RestoreFHIRDatastore');
+  }
+
+  /**
    * Grants permission to retrieve member attribution status
    *
    * Access Level: Write
@@ -761,6 +772,7 @@ export class Healthlake extends PolicyStatement {
       'PatchResource',
       'ProcessBundle',
       'PublishDataTransformationProfile',
+      'RestoreFHIRDatastore',
       'RetrieveAttributionStatus',
       'StartDataTransformationJob',
       'StartFHIRBulkDeleteJob',
@@ -863,6 +875,7 @@ export class Healthlake extends PolicyStatement {
    * Applies to actions:
    * - .toCreateDataTransformationProfile()
    * - .toCreateFHIRDatastore()
+   * - .toRestoreFHIRDatastore()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -916,6 +929,7 @@ export class Healthlake extends PolicyStatement {
    * - .toPublishDataTransformationProfile()
    * - .toQuestionnairePackage()
    * - .toReadResource()
+   * - .toRestoreFHIRDatastore()
    * - .toRetrieveAttributionStatus()
    * - .toSearchEverything()
    * - .toSearchWithGet()
@@ -960,6 +974,7 @@ export class Healthlake extends PolicyStatement {
    * Applies to actions:
    * - .toCreateDataTransformationProfile()
    * - .toCreateFHIRDatastore()
+   * - .toRestoreFHIRDatastore()
    * - .toTagResource()
    * - .toUntagResource()
    *

@@ -9,6 +9,8 @@ sagemaker:BatchDescribeModelPackage;Read
 sagemaker:BatchGetMetrics;Read
 sagemaker:BatchGetRecord;Read
 sagemaker:BatchPutMetrics;Write
+sagemaker:BatchRebootClusterNodes;Write
+sagemaker:BatchReplaceClusterNodes;Write
 sagemaker:BatchWriteRecord;Write
 sagemaker:CallMlflowAppApi;Write
 sagemaker:CallPartnerAppApi;Write
@@ -229,6 +231,7 @@ sagemaker:DescribeStudioLifecycleConfig;Read
 sagemaker:DescribeSubscribedWorkteam;Read
 sagemaker:DescribeTrainingJob;Read
 sagemaker:DescribeTrainingPlan;Read
+sagemaker:DescribeTrainingPlanExtensionHistory;Read
 sagemaker:DescribeTransformJob;Read
 sagemaker:DescribeTrial;Read
 sagemaker:DescribeTrialComponent;Read
@@ -239,6 +242,7 @@ sagemaker:DetachClusterNodeVolume;Write
 sagemaker:DisableSagemakerServicecatalogPortfolio;Write
 sagemaker:DisassociateTrialComponent;Write
 sagemaker:EnableSagemakerServicecatalogPortfolio;Write
+sagemaker:ExtendTrainingPlan;Write
 sagemaker:GetDeployments;Read
 sagemaker:GetDeviceFleetReport;Read
 sagemaker:GetDeviceRegistration;Read

@@ -1,5 +1,6 @@
 sagemaker:AcceleratorTypes
 sagemaker:AppNetworkAccessType
+sagemaker:AuthMode
 sagemaker:BearerTokenType
 sagemaker:CurrentCustomerMetadataProperties/${MetadataKey}
 sagemaker:CurrentModelLifeCycleStage
@@ -29,6 +30,7 @@ sagemaker:ImageArns
 sagemaker:ImageVersionArns
 sagemaker:InstanceTypes
 sagemaker:InterContainerTrafficEncryption
+sagemaker:IsUpdateRecord
 sagemaker:KeepAlivePeriod
 sagemaker:MaxRuntimeInSeconds
 sagemaker:MinimumInstanceMetadataServiceVersion
@@ -54,6 +56,7 @@ sagemaker:StudioLifecycleConfigArns
 sagemaker:TagKeys
 sagemaker:TaggingAction
 sagemaker:TargetModel
+sagemaker:UpdatableFeatures
 sagemaker:UserProfileName
 sagemaker:VolumeKmsKey
 sagemaker:VolumeKmsKeyArn
