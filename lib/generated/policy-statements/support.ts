@@ -41,6 +41,17 @@ export class Support extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a related item to an AWS Support case. This is an internally managed function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
+   */
+  public toAddRelatedItemToCase() {
+    return this.to('AddRelatedItemToCase');
+  }
+
+  /**
    * Grants permission to creates a new AWS Support case
    *
    * Access Level: Write
@@ -140,6 +151,17 @@ export class Support extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the related items for an AWS Support case. This is an internally managed function
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
+   */
+  public toDescribeRelatedItems() {
+    return this.to('DescribeRelatedItems');
+  }
+
+  /**
    * Grants permission to list AWS services and categories that applies to each service
    *
    * Access Level: Read
@@ -225,6 +247,28 @@ export class Support extends PolicyStatement {
    */
   public toDescribeTrustedAdvisorChecks() {
     return this.to('DescribeTrustedAdvisorChecks');
+  }
+
+  /**
+   * Grants permission to disconnect a live contact on AWS Support Center. This is an internally managed function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
+   */
+  public toDisconnectLiveContactForCase() {
+    return this.to('DisconnectLiveContactForCase');
+  }
+
+  /**
+   * Grants permission to get a presigned URL to download an attachment from an AWS Support case
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_GetAttachmentDownloadLink.html
+   */
+  public toDownloadAttachment() {
+    return this.to('DownloadAttachment');
   }
 
   /**
@@ -392,11 +436,25 @@ export class Support extends PolicyStatement {
     return this.to('UpdateInteraction');
   }
 
+  /**
+   * Grants permission to get a presigned URL to upload an attachment to an AWS Support case
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_GetAttachmentUploadLinks.html
+   */
+  public toUploadAttachment() {
+    return this.to('UploadAttachment');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddAttachmentsToSet',
       'AddCommunicationToCase',
+      'AddRelatedItemToCase',
       'CreateCase',
+      'DisconnectLiveContactForCase',
+      'DownloadAttachment',
       'InitiateCallForCase',
       'InitiateChatForCase',
       'InitiateLiveContactForCase',
@@ -407,7 +465,8 @@ export class Support extends PolicyStatement {
       'ResolveInteraction',
       'StartInteraction',
       'UpdateCaseSeverity',
-      'UpdateInteraction'
+      'UpdateInteraction',
+      'UploadAttachment'
     ],
     Read: [
       'DescribeAttachment',
@@ -418,6 +477,7 @@ export class Support extends PolicyStatement {
       'DescribeCommunications',
       'DescribeCreateCaseOptions',
       'DescribeIssueTypes',
+      'DescribeRelatedItems',
       'DescribeServices',
       'DescribeSeverityLevels',
       'DescribeSupportLevel',

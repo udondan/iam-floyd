@@ -1,5 +1,6 @@
 support:AddAttachmentsToSet;Write
 support:AddCommunicationToCase;Write
+support:AddRelatedItemToCase;Write
 support:CreateCase;Write
 support:DescribeAttachment;Read
 support:DescribeCaseAttributes;Read
@@ -9,6 +10,7 @@ support:DescribeCommunication;Read
 support:DescribeCommunications;Read
 support:DescribeCreateCaseOptions;Read
 support:DescribeIssueTypes;Read
+support:DescribeRelatedItems;Read
 support:DescribeServices;Read
 support:DescribeSeverityLevels;Read
 support:DescribeSupportLevel;Read
@@ -17,6 +19,8 @@ support:DescribeTrustedAdvisorCheckRefreshStatuses;Read
 support:DescribeTrustedAdvisorCheckResult;Read
 support:DescribeTrustedAdvisorCheckSummaries;Read
 support:DescribeTrustedAdvisorChecks;Read
+support:DisconnectLiveContactForCase;Write
+support:DownloadAttachment;Write
 support:GetInteraction;Read
 support:InitiateCallForCase;Write
 support:InitiateChatForCase;Write
@@ -32,3 +36,4 @@ support:SearchForCases;Read
 support:StartInteraction;Write
 support:UpdateCaseSeverity;Write
 support:UpdateInteraction;Write
+support:UploadAttachment;Write

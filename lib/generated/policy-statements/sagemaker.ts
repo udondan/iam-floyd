@@ -129,6 +129,28 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reboot nodes in a SageMaker HyperPod cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_BatchRebootClusterNodes.html
+   */
+  public toBatchRebootClusterNodes() {
+    return this.to('BatchRebootClusterNodes');
+  }
+
+  /**
+   * Grants permission to replace nodes in a SageMaker HyperPod cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_BatchReplaceClusterNodes.html
+   */
+  public toBatchReplaceClusterNodes() {
+    return this.to('BatchReplaceClusterNodes');
+  }
+
+  /**
    * Grants permission to put a batch of records to one or more feature groups
    *
    * Access Level: Write
@@ -2483,6 +2505,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the extension history for a specified training plan
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingPlanExtensionHistory.html
+   */
+  public toDescribeTrainingPlanExtensionHistory() {
+    return this.to('DescribeTrainingPlanExtensionHistory');
+  }
+
+  /**
    * Grants permission to return information about a transform job
    *
    * Access Level: Read
@@ -2590,6 +2623,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toEnableSagemakerServicecatalogPortfolio() {
     return this.to('EnableSagemakerServicecatalogPortfolio');
+  }
+
+  /**
+   * Grants permission to extend an existing training plan by purchasing an extension offering
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ExtendTrainingPlan.html
+   */
+  public toExtendTrainingPlan() {
+    return this.to('ExtendTrainingPlan');
   }
 
   /**
@@ -4917,6 +4961,8 @@ export class Sagemaker extends PolicyStatement {
       'BatchAddClusterNodes',
       'BatchDeleteClusterNodes',
       'BatchPutMetrics',
+      'BatchRebootClusterNodes',
+      'BatchReplaceClusterNodes',
       'BatchWriteRecord',
       'CallMlflowAppApi',
       'CallPartnerAppApi',
@@ -5064,6 +5110,7 @@ export class Sagemaker extends PolicyStatement {
       'DisableSagemakerServicecatalogPortfolio',
       'DisassociateTrialComponent',
       'EnableSagemakerServicecatalogPortfolio',
+      'ExtendTrainingPlan',
       'ImportHubContent',
       'PutLineageGroupPolicy',
       'PutModelPackageGroupPolicy',
@@ -5238,6 +5285,7 @@ export class Sagemaker extends PolicyStatement {
       'DescribeSubscribedWorkteam',
       'DescribeTrainingJob',
       'DescribeTrainingPlan',
+      'DescribeTrainingPlanExtensionHistory',
       'DescribeTransformJob',
       'DescribeTrial',
       'DescribeTrialComponent',
@@ -6773,6 +6821,8 @@ export class Sagemaker extends PolicyStatement {
    * - .toBatchGetMetrics()
    * - .toBatchGetRecord()
    * - .toBatchPutMetrics()
+   * - .toBatchRebootClusterNodes()
+   * - .toBatchReplaceClusterNodes()
    * - .toBatchWriteRecord()
    * - .toCallMlflowAppApi()
    * - .toCallPartnerAppApi()
@@ -6981,6 +7031,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toDescribeSubscribedWorkteam()
    * - .toDescribeTrainingJob()
    * - .toDescribeTrainingPlan()
+   * - .toDescribeTrainingPlanExtensionHistory()
    * - .toDescribeTransformJob()
    * - .toDescribeTrial()
    * - .toDescribeTrialComponent()
@@ -7299,6 +7350,21 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifAppNetworkAccessType(value: string | string[], operator?: Operator | string) {
     return this.if(`AppNetworkAccessType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the authentication mode specified in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateDomain()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAuthMode(value: string | string[], operator?: Operator | string) {
+    return this.if(`AuthMode`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -7809,6 +7875,20 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Filters access by whether the PutRecord authorization was triggered by an UpdateRecord API call. Set to true on UpdateRecord and false on direct PutRecord calls
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toPutRecord()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifIsUpdateRecord(value?: boolean) {
+    return this.if(`IsUpdateRecord`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
    * Filters access by the keep-alive period associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
@@ -8072,6 +8152,8 @@ export class Sagemaker extends PolicyStatement {
    * - .toBatchGetMetrics()
    * - .toBatchGetRecord()
    * - .toBatchPutMetrics()
+   * - .toBatchRebootClusterNodes()
+   * - .toBatchReplaceClusterNodes()
    * - .toBatchWriteRecord()
    * - .toCallMlflowAppApi()
    * - .toCallPartnerAppApi()
@@ -8280,6 +8362,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toDescribeSubscribedWorkteam()
    * - .toDescribeTrainingJob()
    * - .toDescribeTrainingPlan()
+   * - .toDescribeTrainingPlanExtensionHistory()
    * - .toDescribeTransformJob()
    * - .toDescribeTrial()
    * - .toDescribeTrialComponent()
@@ -8612,6 +8695,21 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifTargetModel(value: string | string[], operator?: Operator | string) {
     return this.if(`TargetModel`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the list of feature names being updated by an UpdateRecord API call. Absent on direct PutRecord calls
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toPutRecord()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifUpdatableFeatures(value: string | string[], operator?: Operator | string) {
+    return this.if(`UpdatableFeatures`, value, operator ?? 'StringLike');
   }
 
   /**
