@@ -19,8 +19,10 @@
       ],
       "Resource": [
         "arn:aws:ssm:*:*:document/AWS-*UnmanagedEC2*",
+        "arn:aws:ssm:*:*:document/AWS-DiagnoseHybridActivationIssues",
         "arn:aws:ssm:*:*:automation-execution/*",
-        "arn:aws:ssm:*:*:automation-definition/AWS-*UnmanagedEC2*:*"
+        "arn:aws:ssm:*:*:automation-definition/AWS-*UnmanagedEC2*:*",
+        "arn:aws:ssm:*:*:automation-definition/AWS-DiagnoseHybridActivationIssues:*"
       ]
     },
     {
