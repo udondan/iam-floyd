@@ -1,4 +1,5 @@
 profile:AddProfileKey;Write
+profile:AssociateStreamForSegments;Write
 profile:BatchGetCalculatedAttributeForProfile;Read
 profile:BatchGetProfile;Read
 profile:CreateCalculatedAttributeDefinition;Write
@@ -31,8 +32,10 @@ profile:DeleteRecommender;Write
 profile:DeleteRecommenderFilter;Write
 profile:DeleteRecommenderSchema;Write
 profile:DeleteSegmentDefinition;Write
+profile:DeleteSegmentSubscription;Write
 profile:DeleteWorkflow;Write
 profile:DetectProfileObjectType;Read
+profile:DisassociateStreamForSegments;Write
 profile:GetAutoMergingPreview;Read
 profile:GetCalculatedAttributeDefinition;Read
 profile:GetCalculatedAttributeForProfile;Read
@@ -57,8 +60,10 @@ profile:GetSegmentDefinition;Read
 profile:GetSegmentEstimate;Read
 profile:GetSegmentMembership;Read
 profile:GetSegmentSnapshot;Read
+profile:GetSegmentSubscription;Read
 profile:GetSimilarProfiles;List
 profile:GetSnapshot;Read
+profile:GetStreamForSegments;Read
 profile:GetUploadJob;Read
 profile:GetUploadJobPath;Read
 profile:GetWorkflow;Read
@@ -87,6 +92,7 @@ profile:ListRecommenderSchemas;List
 profile:ListRecommenders;List
 profile:ListRuleBasedMatches;List
 profile:ListSegmentDefinitions;List
+profile:ListSegmentSubscriptionEvents;Read
 profile:ListTagsForResource;Read
 profile:ListUploadJobs;List
 profile:ListWorkflows;List
@@ -95,6 +101,7 @@ profile:PutDomainObjectType;Write
 profile:PutIntegration;Write
 profile:PutProfileObject;Write
 profile:PutProfileObjectType;Write
+profile:PutSegmentSubscription;Write
 profile:SearchProfiles;Read
 profile:StartRecommender;Write
 profile:StartUploadJob;Write
