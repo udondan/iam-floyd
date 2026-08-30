@@ -30,6 +30,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an Amazon Kinesis data stream to receive segment membership events for a domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_AssociateStreamForSegments.html
+   */
+  public toAssociateStreamForSegments() {
+    return this.to('AssociateStreamForSegments');
+  }
+
+  /**
    * Grants permission to retrieve a calculated attribute for the specific profiles in the domain
    *
    * Access Level: Read
@@ -371,6 +382,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a segment subscription for membership events
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteSegmentSubscription.html
+   */
+  public toDeleteSegmentSubscription() {
+    return this.to('DeleteSegmentSubscription');
+  }
+
+  /**
    * Grants permission to delete a workflow in a domain
    *
    * Access Level: Write
@@ -390,6 +412,17 @@ export class Profile extends PolicyStatement {
    */
   public toDetectProfileObjectType() {
     return this.to('DetectProfileObjectType');
+  }
+
+  /**
+   * Grants permission to disassociate the Amazon Kinesis data stream configured for segment membership events in a domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DisassociateStreamForSegments.html
+   */
+  public toDisassociateStreamForSegments() {
+    return this.to('DisassociateStreamForSegments');
   }
 
   /**
@@ -657,6 +690,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the configuration, schedule, and status of a segment subscription for membership events
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetSegmentSubscription.html
+   */
+  public toGetSegmentSubscription() {
+    return this.to('GetSegmentSubscription');
+  }
+
+  /**
    * Grants permission to get all the similar profiles in the domain
    *
    * Access Level: List
@@ -665,6 +709,17 @@ export class Profile extends PolicyStatement {
    */
   public toGetSimilarProfiles() {
     return this.to('GetSimilarProfiles');
+  }
+
+  /**
+   * Grants permission to get information about the segment membership event stream configured for a domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetStreamForSegments.html
+   */
+  public toGetStreamForSegments() {
+    return this.to('GetStreamForSegments');
   }
 
   /**
@@ -976,6 +1031,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the most recent segment membership events for a segment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListSegmentSubscriptionEvents.html
+   */
+  public toListSegmentSubscriptionEvents() {
+    return this.to('ListSegmentSubscriptionEvents');
+  }
+
+  /**
    * Grants permission to list tags for a resource
    *
    * Access Level: Read
@@ -1061,6 +1127,17 @@ export class Profile extends PolicyStatement {
    */
   public toPutProfileObjectType() {
     return this.to('PutProfileObjectType');
+  }
+
+  /**
+   * Grants permission to create or update a segment subscription for membership events
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_PutSegmentSubscription.html
+   */
+  public toPutSegmentSubscription() {
+    return this.to('PutSegmentSubscription');
   }
 
   /**
@@ -1227,6 +1304,7 @@ export class Profile extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddProfileKey',
+      'AssociateStreamForSegments',
       'CreateCalculatedAttributeDefinition',
       'CreateDomain',
       'CreateDomainLayout',
@@ -1256,12 +1334,15 @@ export class Profile extends PolicyStatement {
       'DeleteRecommenderFilter',
       'DeleteRecommenderSchema',
       'DeleteSegmentDefinition',
+      'DeleteSegmentSubscription',
       'DeleteWorkflow',
+      'DisassociateStreamForSegments',
       'MergeProfiles',
       'PutDomainObjectType',
       'PutIntegration',
       'PutProfileObject',
       'PutProfileObjectType',
+      'PutSegmentSubscription',
       'StartRecommender',
       'StartUploadJob',
       'StopRecommender',
@@ -1303,10 +1384,13 @@ export class Profile extends PolicyStatement {
       'GetSegmentEstimate',
       'GetSegmentMembership',
       'GetSegmentSnapshot',
+      'GetSegmentSubscription',
+      'GetStreamForSegments',
       'GetUploadJob',
       'GetUploadJobPath',
       'GetWorkflow',
       'GetWorkflowSteps',
+      'ListSegmentSubscriptionEvents',
       'ListTagsForResource',
       'SearchProfiles',
       'GetSnapshot'
@@ -1598,6 +1682,7 @@ export class Profile extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddProfileKey()
+   * - .toAssociateStreamForSegments()
    * - .toBatchGetCalculatedAttributeForProfile()
    * - .toBatchGetProfile()
    * - .toCreateCalculatedAttributeDefinition()
@@ -1629,8 +1714,10 @@ export class Profile extends PolicyStatement {
    * - .toDeleteRecommenderFilter()
    * - .toDeleteRecommenderSchema()
    * - .toDeleteSegmentDefinition()
+   * - .toDeleteSegmentSubscription()
    * - .toDeleteWorkflow()
    * - .toDetectProfileObjectType()
+   * - .toDisassociateStreamForSegments()
    * - .toGetAutoMergingPreview()
    * - .toGetCalculatedAttributeDefinition()
    * - .toGetCalculatedAttributeForProfile()
@@ -1654,7 +1741,9 @@ export class Profile extends PolicyStatement {
    * - .toGetSegmentEstimate()
    * - .toGetSegmentMembership()
    * - .toGetSegmentSnapshot()
+   * - .toGetSegmentSubscription()
    * - .toGetSimilarProfiles()
+   * - .toGetStreamForSegments()
    * - .toGetUploadJob()
    * - .toGetUploadJobPath()
    * - .toGetWorkflow()
@@ -1679,6 +1768,7 @@ export class Profile extends PolicyStatement {
    * - .toListRecommenders()
    * - .toListRuleBasedMatches()
    * - .toListSegmentDefinitions()
+   * - .toListSegmentSubscriptionEvents()
    * - .toListTagsForResource()
    * - .toListUploadJobs()
    * - .toListWorkflows()
@@ -1687,6 +1777,7 @@ export class Profile extends PolicyStatement {
    * - .toPutIntegration()
    * - .toPutProfileObject()
    * - .toPutProfileObjectType()
+   * - .toPutSegmentSubscription()
    * - .toSearchProfiles()
    * - .toStartRecommender()
    * - .toStartUploadJob()
