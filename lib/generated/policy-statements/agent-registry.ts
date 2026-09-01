@@ -236,7 +236,7 @@ export class AgentRegistry extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/agent-registry/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-cross-account-sharing.html
    */
   public toDeleteResourcePolicy() {
     return this.to('DeleteResourcePolicy');
@@ -247,7 +247,7 @@ export class AgentRegistry extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/agent-registry/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-cross-account-sharing.html
    */
   public toGetResourcePolicy() {
     return this.to('GetResourcePolicy');
@@ -258,7 +258,7 @@ export class AgentRegistry extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/agent-registry/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-cross-account-sharing.html
    */
   public toPutResourcePolicy() {
     return this.to('PutResourcePolicy');
@@ -344,6 +344,18 @@ export class AgentRegistry extends PolicyStatement {
    */
   public ifRecordCreatorAccount(value: string | string[], operator?: Operator | string) {
     return this.if(`RecordCreatorAccount`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the AWS account ID of the source resource associated with a registry record
+   *
+   * https://docs.aws.amazon.com/agent-registry/latest/APIReference/
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRecordSourceAccount(value: string | string[], operator?: Operator | string) {
+    return this.if(`RecordSourceAccount`, value, operator ?? 'StringLike');
   }
 
   /**

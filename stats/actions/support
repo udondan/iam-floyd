@@ -20,7 +20,7 @@ support:DescribeTrustedAdvisorCheckResult;Read
 support:DescribeTrustedAdvisorCheckSummaries;Read
 support:DescribeTrustedAdvisorChecks;Read
 support:DisconnectLiveContactForCase;Write
-support:DownloadAttachment;Write
+support:DownloadAttachment;Read
 support:GetInteraction;Read
 support:InitiateCallForCase;Write
 support:InitiateChatForCase;Write
