@@ -86,7 +86,9 @@
         "customer-verification:CreateUploadUrls",
         "customer-verification:GetCustomerVerificationDetails",
         "customer-verification:GetCustomerVerificationEligibility",
-        "customer-verification:UpdateCustomerVerificationDetails"
+        "customer-verification:UpdateCustomerVerificationDetails",
+        "customer-verification:GetInheritanceConfig",
+        "customer-verification:PutInheritanceConfig"
       ],
       "Resource": "*"
     },
