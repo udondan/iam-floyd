@@ -1,4 +1,5 @@
 agent-registry:RecordCreatorAccount
+agent-registry:RecordSourceAccount
 agent-registry:RequestTag/${TagKey}
 agent-registry:ResourceTag/${TagKey}
 agent-registry:TagKeys

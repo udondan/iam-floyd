@@ -263,7 +263,7 @@ export class Support extends PolicyStatement {
   /**
    * Grants permission to get a presigned URL to download an attachment from an AWS Support case
    *
-   * Access Level: Write
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_GetAttachmentDownloadLink.html
    */
@@ -454,7 +454,6 @@ export class Support extends PolicyStatement {
       'AddRelatedItemToCase',
       'CreateCase',
       'DisconnectLiveContactForCase',
-      'DownloadAttachment',
       'InitiateCallForCase',
       'InitiateChatForCase',
       'InitiateLiveContactForCase',
@@ -486,6 +485,7 @@ export class Support extends PolicyStatement {
       'DescribeTrustedAdvisorCheckResult',
       'DescribeTrustedAdvisorCheckSummaries',
       'DescribeTrustedAdvisorChecks',
+      'DownloadAttachment',
       'GetInteraction',
       'ListInteractionEntries',
       'ListInteractions',
