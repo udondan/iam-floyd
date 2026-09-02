@@ -12,6 +12,7 @@ connect:customer-managed-view-version
 connect:data-table
 connect:email-address
 connect:evaluation-form
+connect:extraction-definition
 connect:hierarchy-group
 connect:hours-of-operation
 connect:instance

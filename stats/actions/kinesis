@@ -1,10 +1,14 @@
 kinesis:AddTagsToStream;Tagging, Write
+kinesis:AssociateStreamsWithChannel;Write
+kinesis:CreateChannel;Tagging, Write
 kinesis:CreateStream;Write
 kinesis:DecreaseStreamRetentionPeriod;Write
+kinesis:DeleteChannel;Write
 kinesis:DeleteResourcePolicy;Write
 kinesis:DeleteStream;Write
 kinesis:DeregisterStreamConsumer;Write
 kinesis:DescribeAccountSettings;Read
+kinesis:DescribeChannel;Read
 kinesis:DescribeLimits;Read
 kinesis:DescribeStream;Read
 kinesis:DescribeStreamConsumer;Read
@@ -16,6 +20,7 @@ kinesis:GetResourcePolicy;Read
 kinesis:GetShardIterator;Read
 kinesis:IncreaseStreamRetentionPeriod;Write
 kinesis:InjectApiError;Write
+kinesis:ListChannels;List
 kinesis:ListShards;List
 kinesis:ListStreamConsumers;List
 kinesis:ListStreams;List
@@ -34,6 +39,7 @@ kinesis:SubscribeToShard;Read
 kinesis:TagResource;Tagging, Write
 kinesis:UntagResource;Tagging, Write
 kinesis:UpdateAccountSettings;Write
+kinesis:UpdateChannel;Write
 kinesis:UpdateMaxRecordSize;Write
 kinesis:UpdateShardCount;Write
 kinesis:UpdateStreamMode;Write

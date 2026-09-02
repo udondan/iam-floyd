@@ -1,6 +1,8 @@
 guardduty:AcceptAdministratorInvitation;Write
 guardduty:AcceptInvitation;Write
 guardduty:ArchiveFindings;Write
+guardduty:CreateCustomDetectionRuleAssociation;Write
+guardduty:CreateCustomDetectionRuleOrgConfiguration;Write
 guardduty:CreateDetector;Write
 guardduty:CreateFilter;Write
 guardduty:CreateIPSet;Write
@@ -13,6 +15,8 @@ guardduty:CreateThreatEntitySet;Write
 guardduty:CreateThreatIntelSet;Write
 guardduty:CreateTrustedEntitySet;Write
 guardduty:DeclineInvitations;Write
+guardduty:DeleteCustomDetectionRuleAssociation;Write
+guardduty:DeleteCustomDetectionRuleOrgConfiguration;Write
 guardduty:DeleteDetector;Write
 guardduty:DeleteFilter;Write
 guardduty:DeleteIPSet;Write
@@ -33,6 +37,9 @@ guardduty:DisassociateMembers;Write
 guardduty:EnableOrganizationAdminAccount;Write
 guardduty:GetAdministratorAccount;Read
 guardduty:GetCoverageStatistics;Read
+guardduty:GetCustomDetectionRule;Read
+guardduty:GetCustomDetectionRuleAssociation;Read
+guardduty:GetCustomDetectionRuleOrgConfiguration;Read
 guardduty:GetDetector;Read
 guardduty:GetFilter;Read
 guardduty:GetFindings;Read
@@ -54,6 +61,9 @@ guardduty:GetTrustedEntitySet;Read
 guardduty:GetUsageStatistics;Read
 guardduty:InviteMembers;Write
 guardduty:ListCoverage;List
+guardduty:ListCustomDetectionRuleAssociations;List
+guardduty:ListCustomDetectionRuleOrgConfigurations;List
+guardduty:ListCustomDetectionRules;List
 guardduty:ListDetectors;List
 guardduty:ListFilters;List
 guardduty:ListFindings;List
@@ -77,6 +87,8 @@ guardduty:StopMonitoringMembers;Write
 guardduty:TagResource;Tagging, Write
 guardduty:UnarchiveFindings;Write
 guardduty:UntagResource;Tagging, Write
+guardduty:UpdateCustomDetectionRuleAssociation;Write
+guardduty:UpdateCustomDetectionRuleOrgConfiguration;Write
 guardduty:UpdateDetector;Write
 guardduty:UpdateFilter;Write
 guardduty:UpdateFindingsFeedback;Write

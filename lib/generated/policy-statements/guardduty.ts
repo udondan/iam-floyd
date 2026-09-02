@@ -52,6 +52,32 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a GuardDuty custom detection rule association
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateCustomDetectionRuleAssociation.html
+   */
+  public toCreateCustomDetectionRuleAssociation() {
+    return this.to('CreateCustomDetectionRuleAssociation');
+  }
+
+  /**
+   * Grants permission to create the organization configuration for a GuardDuty custom detection rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateCustomDetectionRuleOrgConfiguration.html
+   */
+  public toCreateCustomDetectionRuleOrgConfiguration() {
+    return this.to('CreateCustomDetectionRuleOrgConfiguration');
+  }
+
+  /**
    * Grants permission to create a detector
    *
    * Access Level: Write
@@ -214,6 +240,28 @@ export class Guardduty extends PolicyStatement {
    */
   public toDeclineInvitations() {
     return this.to('DeclineInvitations');
+  }
+
+  /**
+   * Grants permission to delete a GuardDuty custom detection rule association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteCustomDetectionRuleAssociation.html
+   */
+  public toDeleteCustomDetectionRuleAssociation() {
+    return this.to('DeleteCustomDetectionRuleAssociation');
+  }
+
+  /**
+   * Grants permission to delete the organization configuration for a GuardDuty custom detection rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteCustomDetectionRuleOrgConfiguration.html
+   */
+  public toDeleteCustomDetectionRuleOrgConfiguration() {
+    return this.to('DeleteCustomDetectionRuleOrgConfiguration');
   }
 
   /**
@@ -434,6 +482,39 @@ export class Guardduty extends PolicyStatement {
    */
   public toGetCoverageStatistics() {
     return this.to('GetCoverageStatistics');
+  }
+
+  /**
+   * Grants permission to retrieve a GuardDuty custom detection rule
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetCustomDetectionRule.html
+   */
+  public toGetCustomDetectionRule() {
+    return this.to('GetCustomDetectionRule');
+  }
+
+  /**
+   * Grants permission to retrieve a GuardDuty custom detection rule association
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetCustomDetectionRuleAssociation.html
+   */
+  public toGetCustomDetectionRuleAssociation() {
+    return this.to('GetCustomDetectionRuleAssociation');
+  }
+
+  /**
+   * Grants permission to retrieve the organization configuration for a GuardDuty custom detection rule
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetCustomDetectionRuleOrgConfiguration.html
+   */
+  public toGetCustomDetectionRuleOrgConfiguration() {
+    return this.to('GetCustomDetectionRuleOrgConfiguration');
   }
 
   /**
@@ -665,6 +746,39 @@ export class Guardduty extends PolicyStatement {
    */
   public toListCoverage() {
     return this.to('ListCoverage');
+  }
+
+  /**
+   * Grants permission to retrieve a list of GuardDuty custom detection rule associations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListCustomDetectionRuleAssociations.html
+   */
+  public toListCustomDetectionRuleAssociations() {
+    return this.to('ListCustomDetectionRuleAssociations');
+  }
+
+  /**
+   * Grants permission to retrieve a list of organization configurations for GuardDuty custom detection rules
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListCustomDetectionRuleOrgConfigurations.html
+   */
+  public toListCustomDetectionRuleOrgConfigurations() {
+    return this.to('ListCustomDetectionRuleOrgConfigurations');
+  }
+
+  /**
+   * Grants permission to retrieve a list of GuardDuty custom detection rules
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListCustomDetectionRules.html
+   */
+  public toListCustomDetectionRules() {
+    return this.to('ListCustomDetectionRules');
   }
 
   /**
@@ -921,6 +1035,28 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a GuardDuty custom detection rule association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateCustomDetectionRuleAssociation.html
+   */
+  public toUpdateCustomDetectionRuleAssociation() {
+    return this.to('UpdateCustomDetectionRuleAssociation');
+  }
+
+  /**
+   * Grants permission to update the organization configuration for a GuardDuty custom detection rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateCustomDetectionRuleOrgConfiguration.html
+   */
+  public toUpdateCustomDetectionRuleOrgConfiguration() {
+    return this.to('UpdateCustomDetectionRuleOrgConfiguration');
+  }
+
+  /**
    * Grants permission to update GuardDuty detectors
    *
    * Access Level: Write
@@ -1057,6 +1193,8 @@ export class Guardduty extends PolicyStatement {
       'AcceptAdministratorInvitation',
       'AcceptInvitation',
       'ArchiveFindings',
+      'CreateCustomDetectionRuleAssociation',
+      'CreateCustomDetectionRuleOrgConfiguration',
       'CreateDetector',
       'CreateFilter',
       'CreateIPSet',
@@ -1069,6 +1207,8 @@ export class Guardduty extends PolicyStatement {
       'CreateThreatIntelSet',
       'CreateTrustedEntitySet',
       'DeclineInvitations',
+      'DeleteCustomDetectionRuleAssociation',
+      'DeleteCustomDetectionRuleOrgConfiguration',
       'DeleteDetector',
       'DeleteFilter',
       'DeleteIPSet',
@@ -1093,6 +1233,8 @@ export class Guardduty extends PolicyStatement {
       'TagResource',
       'UnarchiveFindings',
       'UntagResource',
+      'UpdateCustomDetectionRuleAssociation',
+      'UpdateCustomDetectionRuleOrgConfiguration',
       'UpdateDetector',
       'UpdateFilter',
       'UpdateFindingsFeedback',
@@ -1112,6 +1254,9 @@ export class Guardduty extends PolicyStatement {
       'DescribePublishingDestination',
       'GetAdministratorAccount',
       'GetCoverageStatistics',
+      'GetCustomDetectionRule',
+      'GetCustomDetectionRuleAssociation',
+      'GetCustomDetectionRuleOrgConfiguration',
       'GetDetector',
       'GetFilter',
       'GetFindings',
@@ -1135,6 +1280,9 @@ export class Guardduty extends PolicyStatement {
     ],
     List: [
       'ListCoverage',
+      'ListCustomDetectionRuleAssociations',
+      'ListCustomDetectionRuleOrgConfigurations',
+      'ListCustomDetectionRules',
       'ListDetectors',
       'ListFilters',
       'ListFindings',
@@ -1155,6 +1303,36 @@ export class Guardduty extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type customdetectionrule to the statement
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
+   *
+   * @param ruleId - Identifier for the ruleId.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onCustomdetectionrule(ruleId: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty::aws:detection-rule/custom/${ ruleId }`);
+  }
+
+  /**
+   * Adds a resource of type customdetectionruleassociation to the statement
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
+   *
+   * @param ruleId - Identifier for the ruleId.
+   * @param associationId - Identifier for the associationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustomdetectionruleassociation(ruleId: string, associationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detection-rule/custom/${ ruleId }/association/${ associationId }`);
+  }
 
   /**
    * Adds a resource of type detector to the statement
@@ -1304,6 +1482,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateCustomDetectionRuleAssociation()
    * - .toCreateDetector()
    * - .toCreateFilter()
    * - .toCreateIPSet()
@@ -1334,6 +1513,7 @@ export class Guardduty extends PolicyStatement {
    * - .toCreateMalwareProtectionPlan()
    * - .toCreatePublishingDestination()
    * - .toCreateTrustedEntitySet()
+   * - .toDeleteCustomDetectionRuleAssociation()
    * - .toDeleteDetector()
    * - .toDeleteFilter()
    * - .toDeleteIPSet()
@@ -1344,6 +1524,7 @@ export class Guardduty extends PolicyStatement {
    * - .toDeleteTrustedEntitySet()
    * - .toDescribePublishingDestination()
    * - .toGetCoverageStatistics()
+   * - .toGetCustomDetectionRuleAssociation()
    * - .toGetDetector()
    * - .toGetFilter()
    * - .toGetIPSet()
@@ -1355,6 +1536,7 @@ export class Guardduty extends PolicyStatement {
    * - .toListTagsForResource()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateCustomDetectionRuleAssociation()
    * - .toUpdateDetector()
    * - .toUpdateFilter()
    * - .toUpdateIPSet()
@@ -1365,6 +1547,7 @@ export class Guardduty extends PolicyStatement {
    * - .toUpdateTrustedEntitySet()
    *
    * Applies to resource types:
+   * - customdetectionruleassociation
    * - detector
    * - filter
    * - ipset
@@ -1388,6 +1571,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateCustomDetectionRuleAssociation()
    * - .toCreateDetector()
    * - .toCreateFilter()
    * - .toCreateIPSet()

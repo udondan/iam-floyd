@@ -74,6 +74,17 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a user's software token
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteSoftwareToken.html
+   */
+  public toAdminDeleteSoftwareToken() {
+    return this.to('AdminDeleteSoftwareToken');
+  }
+
+  /**
    * Grants permission to delete any user
    *
    * Access Level: Write
@@ -1430,6 +1441,7 @@ export class CognitoIdp extends PolicyStatement {
       'AdminAddUserToGroup',
       'AdminConfirmSignUp',
       'AdminCreateUser',
+      'AdminDeleteSoftwareToken',
       'AdminDeleteUser',
       'AdminDeleteUserAttributes',
       'AdminDisableProviderForUser',
@@ -1626,6 +1638,7 @@ export class CognitoIdp extends PolicyStatement {
    * - .toAdminAddUserToGroup()
    * - .toAdminConfirmSignUp()
    * - .toAdminCreateUser()
+   * - .toAdminDeleteSoftwareToken()
    * - .toAdminDeleteUser()
    * - .toAdminDeleteUserAttributes()
    * - .toAdminDisableProviderForUser()

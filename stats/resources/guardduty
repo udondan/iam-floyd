@@ -1,3 +1,5 @@
+guardduty:customdetectionrule
+guardduty:customdetectionruleassociation
 guardduty:detector
 guardduty:filter
 guardduty:ipset
