@@ -506,6 +506,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an extraction definition in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateExtractionDefinition.html
+   */
+  public toCreateExtractionDefinition() {
+    return this.to('CreateExtractionDefinition');
+  }
+
+  /**
    * Grants permission to create hours of operation in an Amazon Connect instance
    *
    * Access Level: Write
@@ -928,6 +939,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an extraction definition in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteExtractionDefinition.html
+   */
+  public toDeleteExtractionDefinition() {
+    return this.to('DeleteExtractionDefinition');
+  }
+
+  /**
    * Grants permission to delete hours of operation in an Amazon Connect instance
    *
    * Access Level: Write
@@ -1332,6 +1354,17 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeEvaluationForm() {
     return this.to('DescribeEvaluationForm');
+  }
+
+  /**
+   * Grants permission to describe an extraction definition in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeExtractionDefinition.html
+   */
+  public toDescribeExtractionDefinition() {
+    return this.to('DescribeExtractionDefinition');
   }
 
   /**
@@ -1817,6 +1850,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the cross-region routing configuration for an Amazon Connect Global Resiliency instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetCrossRegionRouting.html
+   */
+  public toGetCrossRegionRouting() {
+    return this.to('GetCrossRegionRouting');
+  }
+
+  /**
    * Grants permission to retrieve current metric data for queues and routing profiles in an Amazon Connect instance
    *
    * Access Level: Read
@@ -2206,6 +2250,17 @@ export class Connect extends PolicyStatement {
    */
   public toListEvaluationForms() {
     return this.to('ListEvaluationForms');
+  }
+
+  /**
+   * Grants permission to list extraction definitions associated with an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListExtractionDefinitions.html
+   */
+  public toListExtractionDefinitions() {
+    return this.to('ListExtractionDefinitions');
   }
 
   /**
@@ -3529,6 +3584,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the cross-region routing configuration for an Amazon Connect Global Resiliency instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateCrossRegionRouting.html
+   */
+  public toUpdateCrossRegionRouting() {
+    return this.to('UpdateCrossRegionRouting');
+  }
+
+  /**
    * Grants permission to update an attribute of a data table in an Amazon Connect instance
    *
    * Access Level: Write
@@ -3581,6 +3647,17 @@ export class Connect extends PolicyStatement {
    */
   public toUpdateEvaluationForm() {
     return this.to('UpdateEvaluationForm');
+  }
+
+  /**
+   * Grants permission to update an extraction definition in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateExtractionDefinition.html
+   */
+  public toUpdateExtractionDefinition() {
+    return this.to('UpdateExtractionDefinition');
   }
 
   /**
@@ -4210,6 +4287,7 @@ export class Connect extends PolicyStatement {
       'CreateDataTableAttribute',
       'CreateEmailAddress',
       'CreateEvaluationForm',
+      'CreateExtractionDefinition',
       'CreateHoursOfOperation',
       'CreateHoursOfOperationOverride',
       'CreateInstance',
@@ -4248,6 +4326,7 @@ export class Connect extends PolicyStatement {
       'DeleteDataTableAttribute',
       'DeleteEmailAddress',
       'DeleteEvaluationForm',
+      'DeleteExtractionDefinition',
       'DeleteHoursOfOperation',
       'DeleteHoursOfOperationOverride',
       'DeleteInstance',
@@ -4342,11 +4421,13 @@ export class Connect extends PolicyStatement {
       'UpdateContactFlowName',
       'UpdateContactRoutingData',
       'UpdateContactSchedule',
+      'UpdateCrossRegionRouting',
       'UpdateDataTableAttribute',
       'UpdateDataTableMetadata',
       'UpdateDataTablePrimaryValues',
       'UpdateEmailAddressMetadata',
       'UpdateEvaluationForm',
+      'UpdateExtractionDefinition',
       'UpdateHoursOfOperation',
       'UpdateHoursOfOperationOverride',
       'UpdateInstanceAttribute',
@@ -4415,6 +4496,7 @@ export class Connect extends PolicyStatement {
       'DescribeDataTableAttribute',
       'DescribeEmailAddress',
       'DescribeEvaluationForm',
+      'DescribeExtractionDefinition',
       'DescribeHoursOfOperation',
       'DescribeHoursOfOperationOverride',
       'DescribeInstance',
@@ -4441,6 +4523,7 @@ export class Connect extends PolicyStatement {
       'GetAttachedFile',
       'GetContactAttributes',
       'GetContactMetrics',
+      'GetCrossRegionRouting',
       'GetCurrentMetricData',
       'GetCurrentUserData',
       'GetEffectiveHoursOfOperations',
@@ -4507,6 +4590,7 @@ export class Connect extends PolicyStatement {
       'ListEntitySecurityProfiles',
       'ListEvaluationFormVersions',
       'ListEvaluationForms',
+      'ListExtractionDefinitions',
       'ListFlowAssociations',
       'ListHoursOfOperationOverrides',
       'ListHoursOfOperations',
@@ -4804,6 +4888,24 @@ export class Connect extends PolicyStatement {
    */
   public onEvaluationForm(instanceId: string, formId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/evaluation-form/${ formId }`);
+  }
+
+  /**
+   * Adds a resource of type extraction-definition to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/extraction-definitions.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param extractionDefinitionId - Identifier for the extractionDefinitionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onExtractionDefinition(instanceId: string, extractionDefinitionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/extraction-definition/${ extractionDefinitionId }`);
   }
 
   /**
@@ -5318,6 +5420,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
    * - .toCreateEmailAddress()
+   * - .toCreateExtractionDefinition()
    * - .toCreateHoursOfOperation()
    * - .toCreateInstance()
    * - .toCreateIntegrationAssociation()
@@ -5403,6 +5506,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateDataTableAttribute()
    * - .toCreateEmailAddress()
    * - .toCreateEvaluationForm()
+   * - .toCreateExtractionDefinition()
    * - .toCreateHoursOfOperation()
    * - .toCreateHoursOfOperationOverride()
    * - .toCreateIntegrationAssociation()
@@ -5440,6 +5544,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteDataTableAttribute()
    * - .toDeleteEmailAddress()
    * - .toDeleteEvaluationForm()
+   * - .toDeleteExtractionDefinition()
    * - .toDeleteHoursOfOperation()
    * - .toDeleteHoursOfOperationOverride()
    * - .toDeleteInstance()
@@ -5477,6 +5582,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeDataTableAttribute()
    * - .toDescribeEmailAddress()
    * - .toDescribeEvaluationForm()
+   * - .toDescribeExtractionDefinition()
    * - .toDescribeHoursOfOperation()
    * - .toDescribeHoursOfOperationOverride()
    * - .toDescribeInstance()
@@ -5521,6 +5627,7 @@ export class Connect extends PolicyStatement {
    * - .toGetAttachedFile()
    * - .toGetContactAttributes()
    * - .toGetContactMetrics()
+   * - .toGetCrossRegionRouting()
    * - .toGetCurrentMetricData()
    * - .toGetCurrentUserData()
    * - .toGetEffectiveHoursOfOperations()
@@ -5555,6 +5662,7 @@ export class Connect extends PolicyStatement {
    * - .toListEntitySecurityProfiles()
    * - .toListEvaluationFormVersions()
    * - .toListEvaluationForms()
+   * - .toListExtractionDefinitions()
    * - .toListFlowAssociations()
    * - .toListHoursOfOperationOverrides()
    * - .toListHoursOfOperations()
@@ -5669,11 +5777,13 @@ export class Connect extends PolicyStatement {
    * - .toUpdateContactFlowName()
    * - .toUpdateContactRoutingData()
    * - .toUpdateContactSchedule()
+   * - .toUpdateCrossRegionRouting()
    * - .toUpdateDataTableAttribute()
    * - .toUpdateDataTableMetadata()
    * - .toUpdateDataTablePrimaryValues()
    * - .toUpdateEmailAddressMetadata()
    * - .toUpdateEvaluationForm()
+   * - .toUpdateExtractionDefinition()
    * - .toUpdateHoursOfOperation()
    * - .toUpdateHoursOfOperationOverride()
    * - .toUpdateInstanceAttribute()
@@ -5741,6 +5851,7 @@ export class Connect extends PolicyStatement {
    * - data-table
    * - email-address
    * - evaluation-form
+   * - extraction-definition
    * - hierarchy-group
    * - hours-of-operation
    * - instance
@@ -5786,6 +5897,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
    * - .toCreateEmailAddress()
+   * - .toCreateExtractionDefinition()
    * - .toCreateHoursOfOperation()
    * - .toCreateInstance()
    * - .toCreateIntegrationAssociation()
@@ -6018,6 +6130,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateDataTableAttribute()
    * - .toCreateEmailAddress()
    * - .toCreateEvaluationForm()
+   * - .toCreateExtractionDefinition()
    * - .toCreateHoursOfOperation()
    * - .toCreateHoursOfOperationOverride()
    * - .toCreateIntegrationAssociation()
@@ -6054,6 +6167,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteDataTableAttribute()
    * - .toDeleteEmailAddress()
    * - .toDeleteEvaluationForm()
+   * - .toDeleteExtractionDefinition()
    * - .toDeleteHoursOfOperation()
    * - .toDeleteHoursOfOperationOverride()
    * - .toDeleteInstance()
@@ -6090,6 +6204,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeDataTableAttribute()
    * - .toDescribeEmailAddress()
    * - .toDescribeEvaluationForm()
+   * - .toDescribeExtractionDefinition()
    * - .toDescribeHoursOfOperation()
    * - .toDescribeHoursOfOperationOverride()
    * - .toDescribeInstance()
@@ -6132,6 +6247,7 @@ export class Connect extends PolicyStatement {
    * - .toGetAttachedFile()
    * - .toGetContactAttributes()
    * - .toGetContactMetrics()
+   * - .toGetCrossRegionRouting()
    * - .toGetCurrentMetricData()
    * - .toGetCurrentUserData()
    * - .toGetEffectiveHoursOfOperations()
@@ -6164,6 +6280,7 @@ export class Connect extends PolicyStatement {
    * - .toListEntitySecurityProfiles()
    * - .toListEvaluationFormVersions()
    * - .toListEvaluationForms()
+   * - .toListExtractionDefinitions()
    * - .toListFlowAssociations()
    * - .toListHoursOfOperationOverrides()
    * - .toListHoursOfOperations()
@@ -6261,11 +6378,13 @@ export class Connect extends PolicyStatement {
    * - .toUpdateContactFlowName()
    * - .toUpdateContactRoutingData()
    * - .toUpdateContactSchedule()
+   * - .toUpdateCrossRegionRouting()
    * - .toUpdateDataTableAttribute()
    * - .toUpdateDataTableMetadata()
    * - .toUpdateDataTablePrimaryValues()
    * - .toUpdateEmailAddressMetadata()
    * - .toUpdateEvaluationForm()
+   * - .toUpdateExtractionDefinition()
    * - .toUpdateHoursOfOperation()
    * - .toUpdateHoursOfOperationOverride()
    * - .toUpdateInstanceAttribute()

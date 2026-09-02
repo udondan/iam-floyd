@@ -32,6 +32,7 @@ ec2:instance-event-window
 ec2:internet-gateway
 ec2:ipam
 ec2:ipam-external-resource-verification-token
+ec2:ipam-internet-registry-association
 ec2:ipam-policy
 ec2:ipam-pool
 ec2:ipam-pool-allocation

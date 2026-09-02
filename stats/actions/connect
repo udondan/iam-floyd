@@ -44,6 +44,7 @@ connect:CreateDataTable;Write
 connect:CreateDataTableAttribute;Write
 connect:CreateEmailAddress;Write
 connect:CreateEvaluationForm;Write
+connect:CreateExtractionDefinition;Write
 connect:CreateHoursOfOperation;Write
 connect:CreateHoursOfOperationOverride;Write
 connect:CreateInstance;Write
@@ -82,6 +83,7 @@ connect:DeleteDataTable;Write
 connect:DeleteDataTableAttribute;Write
 connect:DeleteEmailAddress;Write
 connect:DeleteEvaluationForm;Write
+connect:DeleteExtractionDefinition;Write
 connect:DeleteHoursOfOperation;Write
 connect:DeleteHoursOfOperationOverride;Write
 connect:DeleteInstance;Write
@@ -119,6 +121,7 @@ connect:DescribeDataTable;Read
 connect:DescribeDataTableAttribute;Read
 connect:DescribeEmailAddress;Read
 connect:DescribeEvaluationForm;Read
+connect:DescribeExtractionDefinition;Read
 connect:DescribeForecastingPlanningSchedulingIntegration;Read
 connect:DescribeHoursOfOperation;Read
 connect:DescribeHoursOfOperationOverride;Read
@@ -165,6 +168,7 @@ connect:EvaluateDataTableValues;Read
 connect:GetAttachedFile;Read
 connect:GetContactAttributes;Read
 connect:GetContactMetrics;Read
+connect:GetCrossRegionRouting;Read
 connect:GetCurrentMetricData;Read
 connect:GetCurrentUserData;Read
 connect:GetEffectiveHoursOfOperations;Read
@@ -201,6 +205,7 @@ connect:ListDefaultVocabularies;List
 connect:ListEntitySecurityProfiles;List
 connect:ListEvaluationFormVersions;List
 connect:ListEvaluationForms;List
+connect:ListExtractionDefinitions;List
 connect:ListFlowAssociations;List
 connect:ListHoursOfOperationOverrides;List
 connect:ListHoursOfOperations;List
@@ -326,11 +331,13 @@ connect:UpdateContactFlowModuleMetadata;Write
 connect:UpdateContactFlowName;Write
 connect:UpdateContactRoutingData;Write
 connect:UpdateContactSchedule;Write
+connect:UpdateCrossRegionRouting;Write
 connect:UpdateDataTableAttribute;Write
 connect:UpdateDataTableMetadata;Write
 connect:UpdateDataTablePrimaryValues;Write
 connect:UpdateEmailAddressMetadata;Write
 connect:UpdateEvaluationForm;Write
+connect:UpdateExtractionDefinition;Write
 connect:UpdateHoursOfOperation;Write
 connect:UpdateHoursOfOperationOverride;Write
 connect:UpdateInstanceAttribute;Write

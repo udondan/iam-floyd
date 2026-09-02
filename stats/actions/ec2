@@ -48,6 +48,7 @@ ec2:AttachVpnGateway;Write
 ec2:AuthorizeClientVpnIngress;Write
 ec2:AuthorizeSecurityGroupEgress;Write
 ec2:AuthorizeSecurityGroupIngress;Write
+ec2:BatchModifyIpamRoutingPolicyRegistrations;Write
 ec2:BundleInstance;Write
 ec2:CancelBundleTask;Write
 ec2:CancelCapacityReservation;Write
@@ -95,11 +96,13 @@ ec2:CreateInternetGateway;Write
 ec2:CreateInterruptibleCapacityReservationAllocation;Write
 ec2:CreateIpam;Write
 ec2:CreateIpamExternalResourceVerificationToken;Write
+ec2:CreateIpamInternetRegistryAssociation;Write
 ec2:CreateIpamPolicy;Write
 ec2:CreateIpamPool;Write
 ec2:CreateIpamPrefixListResolver;Write
 ec2:CreateIpamPrefixListResolverTarget;Write
 ec2:CreateIpamResourceDiscovery;Write
+ec2:CreateIpamRoutingPolicyRegistration;Write
 ec2:CreateIpamScope;Write
 ec2:CreateKeyPair;Write
 ec2:CreateLaunchTemplate;Write
@@ -195,11 +198,13 @@ ec2:DeleteInstanceEventWindow;Write
 ec2:DeleteInternetGateway;Write
 ec2:DeleteIpam;Write
 ec2:DeleteIpamExternalResourceVerificationToken;Write
+ec2:DeleteIpamInternetRegistryAssociation;Write
 ec2:DeleteIpamPolicy;Write
 ec2:DeleteIpamPool;Write
 ec2:DeleteIpamPrefixListResolver;Write
 ec2:DeleteIpamPrefixListResolverTarget;Write
 ec2:DeleteIpamResourceDiscovery;Write
+ec2:DeleteIpamRoutingPolicyRegistration;Write
 ec2:DeleteIpamScope;Write
 ec2:DeleteKeyPair;Write
 ec2:DeleteLaunchTemplate;Write
@@ -283,6 +288,7 @@ ec2:DeregisterInstanceEventNotificationAttributes;Write
 ec2:DeregisterTransitGatewayMulticastGroupMembers;Write
 ec2:DeregisterTransitGatewayMulticastGroupSources;Write
 ec2:DescribeAccountAttributes;List
+ec2:DescribeAccountVpcEncryptionControl;List
 ec2:DescribeAddressTransfers;List
 ec2:DescribeAddresses;List
 ec2:DescribeAddressesAttribute;List
@@ -358,6 +364,7 @@ ec2:DescribeInstances;List
 ec2:DescribeInternetGateways;List
 ec2:DescribeIpamByoasn;List
 ec2:DescribeIpamExternalResourceVerificationTokens;List
+ec2:DescribeIpamInternetRegistryAssociations;List
 ec2:DescribeIpamPolicies;List
 ec2:DescribeIpamPoolAllocations;List
 ec2:DescribeIpamPools;List
@@ -538,6 +545,7 @@ ec2:EnableImageBlockPublicAccess;Permissions management, Write
 ec2:EnableImageDeprecation;Write
 ec2:EnableImageDeregistrationProtection;Write
 ec2:EnableInstanceSqlHaStandbyDetections;Write
+ec2:EnableIpamInternetRegistryAssociation;Write
 ec2:EnableIpamOrganizationAdminAccount;Write
 ec2:EnableIpamPolicy;Write
 ec2:EnableReachabilityAnalyzerOrganizationSharing;Write
@@ -585,6 +593,9 @@ ec2:GetIpamAddressHistory;Read
 ec2:GetIpamDiscoveredAccounts;Read
 ec2:GetIpamDiscoveredPublicAddresses;Read
 ec2:GetIpamDiscoveredResourceCidrs;Read
+ec2:GetIpamDiscoveredRoutes;Read
+ec2:GetIpamInternetRegistryAssociationAsns;Read
+ec2:GetIpamInternetRegistryAssociationCidrs;Read
 ec2:GetIpamPolicyAllocationRules;List
 ec2:GetIpamPolicyOrganizationTargets;List
 ec2:GetIpamPoolAllocations;List
@@ -593,6 +604,10 @@ ec2:GetIpamPrefixListResolverRules;Read
 ec2:GetIpamPrefixListResolverVersionEntries;Read
 ec2:GetIpamPrefixListResolverVersions;Read
 ec2:GetIpamResourceCidrs;Read
+ec2:GetIpamRouteOriginAuthorizations;Read
+ec2:GetIpamRouteProtectionFindings;Read
+ec2:GetIpamRoutingPolicyRegistrationDeltas;Read
+ec2:GetIpamRoutingPolicyRegistrations;Read
 ec2:GetLaunchTemplateData;Read
 ec2:GetManagedPrefixListAssociations;Read
 ec2:GetManagedPrefixListEntries;Read
@@ -639,6 +654,7 @@ ec2:ListImagesInRecycleBin;List
 ec2:ListSnapshotsInRecycleBin;List
 ec2:ListVolumesInRecycleBin;List
 ec2:LockSnapshot;Write
+ec2:ModifyAccountVpcEncryptionControl;Write
 ec2:ModifyAddressAttribute;Write
 ec2:ModifyApplicationStatusCheck;Write
 ec2:ModifyAvailabilityZoneGroup;Write
@@ -673,6 +689,7 @@ ec2:ModifyIpamPrefixListResolver;Write
 ec2:ModifyIpamPrefixListResolverTarget;Write
 ec2:ModifyIpamResourceCidr;Write
 ec2:ModifyIpamResourceDiscovery;Write
+ec2:ModifyIpamRoutingPolicyRegistration;Write
 ec2:ModifyIpamScope;Write
 ec2:ModifyLaunchTemplate;Write
 ec2:ModifyLocalGatewayRoute;Write

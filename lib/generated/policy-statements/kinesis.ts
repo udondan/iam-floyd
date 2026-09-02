@@ -30,6 +30,28 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a stream with a channel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_AssociateStreamsWithChannel.html
+   */
+  public toAssociateStreamsWithChannel() {
+    return this.to('AssociateStreamsWithChannel');
+  }
+
+  /**
+   * Grants permission to create a channel that delivers data from a selected single stream to a destination
+   *
+   * Access Level: Tagging, Write
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateChannel.html
+   */
+  public toCreateChannel() {
+    return this.to('CreateChannel');
+  }
+
+  /**
    * Grants permission to create a Amazon Kinesis stream
    *
    * Access Level: Write
@@ -49,6 +71,17 @@ export class Kinesis extends PolicyStatement {
    */
   public toDecreaseStreamRetentionPeriod() {
     return this.to('DecreaseStreamRetentionPeriod');
+  }
+
+  /**
+   * Grants permission to delete the specified channel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteChannel.html
+   */
+  public toDeleteChannel() {
+    return this.to('DeleteChannel');
   }
 
   /**
@@ -93,6 +126,17 @@ export class Kinesis extends PolicyStatement {
    */
   public toDescribeAccountSettings() {
     return this.to('DescribeAccountSettings');
+  }
+
+  /**
+   * Grants permission to describe the specified channel
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeChannel.html
+   */
+  public toDescribeChannel() {
+    return this.to('DescribeChannel');
   }
 
   /**
@@ -203,6 +247,17 @@ export class Kinesis extends PolicyStatement {
    */
   public toIncreaseStreamRetentionPeriod() {
     return this.to('IncreaseStreamRetentionPeriod');
+  }
+
+  /**
+   * Grants permission to list the channels in the account, optionally filtered by stream
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListChannels.html
+   */
+  public toListChannels() {
+    return this.to('ListChannels');
   }
 
   /**
@@ -404,6 +459,17 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the logging configuration and destination data freshness for the specified channel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateChannel.html
+   */
+  public toUpdateChannel() {
+    return this.to('UpdateChannel');
+  }
+
+  /**
    * Grants permission to update the maximum record size for a Kinesis data stream
    *
    * Access Level: Write
@@ -466,14 +532,18 @@ export class Kinesis extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddTagsToStream',
+      'CreateChannel',
       'RemoveTagsFromStream',
       'TagResource',
       'UntagResource'
     ],
     Write: [
       'AddTagsToStream',
+      'AssociateStreamsWithChannel',
+      'CreateChannel',
       'CreateStream',
       'DecreaseStreamRetentionPeriod',
+      'DeleteChannel',
       'DeleteResourcePolicy',
       'DeleteStream',
       'DeregisterStreamConsumer',
@@ -492,6 +562,7 @@ export class Kinesis extends PolicyStatement {
       'TagResource',
       'UntagResource',
       'UpdateAccountSettings',
+      'UpdateChannel',
       'UpdateMaxRecordSize',
       'UpdateShardCount',
       'UpdateStreamMode',
@@ -500,6 +571,7 @@ export class Kinesis extends PolicyStatement {
     ],
     Read: [
       'DescribeAccountSettings',
+      'DescribeChannel',
       'DescribeLimits',
       'DescribeStream',
       'DescribeStreamConsumer',
@@ -512,11 +584,29 @@ export class Kinesis extends PolicyStatement {
       'SubscribeToShard'
     ],
     List: [
+      'ListChannels',
       'ListShards',
       'ListStreamConsumers',
       'ListStreams'
     ]
   };
+
+  /**
+   * Adds a resource of type channel to the statement
+   *
+   * https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#data-delivery-concept
+   *
+   * @param channelId - Identifier for the channelId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onChannel(channelId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kinesis:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:channel/${ channelId }`);
+  }
 
   /**
    * Adds a resource of type consumer to the statement
@@ -579,6 +669,7 @@ export class Kinesis extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddTagsToStream()
+   * - .toCreateChannel()
    * - .toCreateStream()
    * - .toRegisterStreamConsumer()
    * - .toTagResource()
@@ -598,11 +689,15 @@ export class Kinesis extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddTagsToStream()
+   * - .toAssociateStreamsWithChannel()
+   * - .toCreateChannel()
    * - .toCreateStream()
    * - .toDecreaseStreamRetentionPeriod()
+   * - .toDeleteChannel()
    * - .toDeleteResourcePolicy()
    * - .toDeleteStream()
    * - .toDeregisterStreamConsumer()
+   * - .toDescribeChannel()
    * - .toDescribeStream()
    * - .toDescribeStreamConsumer()
    * - .toDescribeStreamSummary()
@@ -626,10 +721,12 @@ export class Kinesis extends PolicyStatement {
    * - .toSubscribeToShard()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateChannel()
    * - .toUpdateMaxRecordSize()
    * - .toUpdateStreamWarmThroughput()
    *
    * Applies to resource types:
+   * - channel
    * - consumer
    * - kmsKey
    * - stream
@@ -649,6 +746,7 @@ export class Kinesis extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddTagsToStream()
+   * - .toCreateChannel()
    * - .toCreateStream()
    * - .toRegisterStreamConsumer()
    * - .toRemoveTagsFromStream()

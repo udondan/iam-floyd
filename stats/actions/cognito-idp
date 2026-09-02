@@ -3,6 +3,7 @@ cognito-idp:AddUserPoolClientSecret;Write
 cognito-idp:AdminAddUserToGroup;Write
 cognito-idp:AdminConfirmSignUp;Write
 cognito-idp:AdminCreateUser;Write
+cognito-idp:AdminDeleteSoftwareToken;Write
 cognito-idp:AdminDeleteUser;Write
 cognito-idp:AdminDeleteUserAttributes;Write
 cognito-idp:AdminDisableProviderForUser;Write

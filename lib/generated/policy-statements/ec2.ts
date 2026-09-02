@@ -545,6 +545,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify multiple routing policy registrations in a single operation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BatchModifyIpamRoutingPolicyRegistrations.html
+   */
+  public toBatchModifyIpamRoutingPolicyRegistrations() {
+    return this.to('BatchModifyIpamRoutingPolicyRegistrations');
+  }
+
+  /**
    * Grants permission to bundle an instance store-backed Windows instance
    *
    * Access Level: Write
@@ -1072,6 +1083,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an association between an IPAM and a Regional Internet Registry (RIR) for Resource Public Key Infrastructure (RPKI) management
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamInternetRegistryAssociation.html
+   */
+  public toCreateIpamInternetRegistryAssociation() {
+    return this.to('CreateIpamInternetRegistryAssociation');
+  }
+
+  /**
    * Grants permission to create a policy in Amazon VPC IP Address Manager (IPAM) that defines rules for allocating public IPv4 addresses from IPAM pools to AWS resources
    *
    * Access Level: Write
@@ -1124,6 +1146,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreateIpamResourceDiscovery() {
     return this.to('CreateIpamResourceDiscovery');
+  }
+
+  /**
+   * Grants permission to create a routing policy registration and publish Route Origin Authorizations (ROAs) to the RPKI
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamRoutingPolicyRegistration.html
+   */
+  public toCreateIpamRoutingPolicyRegistration() {
+    return this.to('CreateIpamRoutingPolicyRegistration');
   }
 
   /**
@@ -2145,6 +2178,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an IPAM internet registry association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamInternetRegistryAssociation.html
+   */
+  public toDeleteIpamInternetRegistryAssociation() {
+    return this.to('DeleteIpamInternetRegistryAssociation');
+  }
+
+  /**
    * Grants permission to delete an Amazon VPC IP Address Manager (IPAM) policy
    *
    * Access Level: Write
@@ -2197,6 +2241,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toDeleteIpamResourceDiscovery() {
     return this.to('DeleteIpamResourceDiscovery');
+  }
+
+  /**
+   * Grants permission to delete a routing policy registration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamRoutingPolicyRegistration.html
+   */
+  public toDeleteIpamRoutingPolicyRegistration() {
+    return this.to('DeleteIpamRoutingPolicyRegistration');
   }
 
   /**
@@ -3092,6 +3147,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDescribeAccountAttributes() {
     return this.to('DescribeAccountAttributes');
+  }
+
+  /**
+   * Grants permission to describe the account-level VPC Encryption Control configuration
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAccountVpcEncryptionControl.html
+   */
+  public toDescribeAccountVpcEncryptionControl() {
+    return this.to('DescribeAccountVpcEncryptionControl');
   }
 
   /**
@@ -4112,6 +4181,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDescribeIpamExternalResourceVerificationTokens() {
     return this.to('DescribeIpamExternalResourceVerificationTokens');
+  }
+
+  /**
+   * Grants permission to describe IPAM internet registry associations
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamInternetRegistryAssociations.html
+   */
+  public toDescribeIpamInternetRegistryAssociations() {
+    return this.to('DescribeIpamInternetRegistryAssociations');
   }
 
   /**
@@ -6406,6 +6489,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable Resource Public Key Infrastructure (RPKI) on an IPAM internet registry association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableIpamInternetRegistryAssociation.html
+   */
+  public toEnableIpamInternetRegistryAssociation() {
+    return this.to('EnableIpamInternetRegistryAssociation');
+  }
+
+  /**
    * Grants permission to enable an AWS Organizations member account as an Amazon VPC IP Address Manager (IPAM) admin account
    *
    * Access Level: Write
@@ -6980,6 +7074,39 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve Border Gateway Protocol (BGP) routes discovered by IPAM resource discovery
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamDiscoveredRoutes.html
+   */
+  public toGetIpamDiscoveredRoutes() {
+    return this.to('GetIpamDiscoveredRoutes');
+  }
+
+  /**
+   * Grants permission to retrieve Autonomous System Numbers (ASNs) registered with an internet registry for an IPAM internet registry association
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamInternetRegistryAssociationAsns.html
+   */
+  public toGetIpamInternetRegistryAssociationAsns() {
+    return this.to('GetIpamInternetRegistryAssociationAsns');
+  }
+
+  /**
+   * Grants permission to retrieve IP address CIDRs registered with an internet registry for an IPAM internet registry association
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamInternetRegistryAssociationCidrs.html
+   */
+  public toGetIpamInternetRegistryAssociationCidrs() {
+    return this.to('GetIpamInternetRegistryAssociationCidrs');
+  }
+
+  /**
    * Grants permission to describe the rules that define how Amazon VPC IP Address Manager (IPAM) pools allocate IP addresses to AWS resource types within an IPAM policy
    *
    * Access Level: List
@@ -7065,6 +7192,50 @@ export class Ec2 extends PolicyStatement {
    */
   public toGetIpamResourceCidrs() {
     return this.to('GetIpamResourceCidrs');
+  }
+
+  /**
+   * Grants permission to retrieve the current Route Origin Authorizations (ROAs) published to the RPKI for an IPAM internet registry association
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamRouteOriginAuthorizations.html
+   */
+  public toGetIpamRouteOriginAuthorizations() {
+    return this.to('GetIpamRouteOriginAuthorizations');
+  }
+
+  /**
+   * Grants permission to retrieve route protection findings for an IPAM
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamRouteProtectionFindings.html
+   */
+  public toGetIpamRouteProtectionFindings() {
+    return this.to('GetIpamRouteProtectionFindings');
+  }
+
+  /**
+   * Grants permission to retrieve the history of routing policy registration changes for an IPAM internet registry association
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamRoutingPolicyRegistrationDeltas.html
+   */
+  public toGetIpamRoutingPolicyRegistrationDeltas() {
+    return this.to('GetIpamRoutingPolicyRegistrationDeltas');
+  }
+
+  /**
+   * Grants permission to retrieve routing policy registrations for an IPAM internet registry association
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamRoutingPolicyRegistrations.html
+   */
+  public toGetIpamRoutingPolicyRegistrations() {
+    return this.to('GetIpamRoutingPolicyRegistrations');
   }
 
   /**
@@ -7558,6 +7729,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the account-level VPC Encryption Control configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyAccountVpcEncryptionControl.html
+   */
+  public toModifyAccountVpcEncryptionControl() {
+    return this.to('ModifyAccountVpcEncryptionControl');
+  }
+
+  /**
    * Grants permission to modify an attribute of the specified Elastic IP address
    *
    * Access Level: Write
@@ -7948,6 +8133,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyIpamResourceDiscovery() {
     return this.to('ModifyIpamResourceDiscovery');
+  }
+
+  /**
+   * Grants permission to modify an existing routing policy registration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamRoutingPolicyRegistration.html
+   */
+  public toModifyIpamRoutingPolicyRegistration() {
+    return this.to('ModifyIpamRoutingPolicyRegistration');
   }
 
   /**
@@ -9727,6 +9923,7 @@ export class Ec2 extends PolicyStatement {
       'AuthorizeClientVpnIngress',
       'AuthorizeSecurityGroupEgress',
       'AuthorizeSecurityGroupIngress',
+      'BatchModifyIpamRoutingPolicyRegistrations',
       'BundleInstance',
       'CancelBundleTask',
       'CancelCapacityReservation',
@@ -9773,11 +9970,13 @@ export class Ec2 extends PolicyStatement {
       'CreateInterruptibleCapacityReservationAllocation',
       'CreateIpam',
       'CreateIpamExternalResourceVerificationToken',
+      'CreateIpamInternetRegistryAssociation',
       'CreateIpamPolicy',
       'CreateIpamPool',
       'CreateIpamPrefixListResolver',
       'CreateIpamPrefixListResolverTarget',
       'CreateIpamResourceDiscovery',
+      'CreateIpamRoutingPolicyRegistration',
       'CreateIpamScope',
       'CreateKeyPair',
       'CreateLaunchTemplate',
@@ -9870,11 +10069,13 @@ export class Ec2 extends PolicyStatement {
       'DeleteInternetGateway',
       'DeleteIpam',
       'DeleteIpamExternalResourceVerificationToken',
+      'DeleteIpamInternetRegistryAssociation',
       'DeleteIpamPolicy',
       'DeleteIpamPool',
       'DeleteIpamPrefixListResolver',
       'DeleteIpamPrefixListResolverTarget',
       'DeleteIpamResourceDiscovery',
+      'DeleteIpamRoutingPolicyRegistration',
       'DeleteIpamScope',
       'DeleteKeyPair',
       'DeleteLaunchTemplate',
@@ -10015,6 +10216,7 @@ export class Ec2 extends PolicyStatement {
       'EnableImageDeprecation',
       'EnableImageDeregistrationProtection',
       'EnableInstanceSqlHaStandbyDetections',
+      'EnableIpamInternetRegistryAssociation',
       'EnableIpamOrganizationAdminAccount',
       'EnableIpamPolicy',
       'EnableReachabilityAnalyzerOrganizationSharing',
@@ -10035,6 +10237,7 @@ export class Ec2 extends PolicyStatement {
       'ImportSnapshot',
       'ImportVolume',
       'LockSnapshot',
+      'ModifyAccountVpcEncryptionControl',
       'ModifyAddressAttribute',
       'ModifyApplicationStatusCheck',
       'ModifyAvailabilityZoneGroup',
@@ -10069,6 +10272,7 @@ export class Ec2 extends PolicyStatement {
       'ModifyIpamPrefixListResolverTarget',
       'ModifyIpamResourceCidr',
       'ModifyIpamResourceDiscovery',
+      'ModifyIpamRoutingPolicyRegistration',
       'ModifyIpamScope',
       'ModifyLaunchTemplate',
       'ModifyLocalGatewayRoute',
@@ -10245,6 +10449,7 @@ export class Ec2 extends PolicyStatement {
     ],
     List: [
       'DescribeAccountAttributes',
+      'DescribeAccountVpcEncryptionControl',
       'DescribeAddressTransfers',
       'DescribeAddresses',
       'DescribeAddressesAttribute',
@@ -10320,6 +10525,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeInternetGateways',
       'DescribeIpamByoasn',
       'DescribeIpamExternalResourceVerificationTokens',
+      'DescribeIpamInternetRegistryAssociations',
       'DescribeIpamPolicies',
       'DescribeIpamPoolAllocations',
       'DescribeIpamPools',
@@ -10498,11 +10704,18 @@ export class Ec2 extends PolicyStatement {
       'GetIpamDiscoveredAccounts',
       'GetIpamDiscoveredPublicAddresses',
       'GetIpamDiscoveredResourceCidrs',
+      'GetIpamDiscoveredRoutes',
+      'GetIpamInternetRegistryAssociationAsns',
+      'GetIpamInternetRegistryAssociationCidrs',
       'GetIpamPoolCidrs',
       'GetIpamPrefixListResolverRules',
       'GetIpamPrefixListResolverVersionEntries',
       'GetIpamPrefixListResolverVersions',
       'GetIpamResourceCidrs',
+      'GetIpamRouteOriginAuthorizations',
+      'GetIpamRouteProtectionFindings',
+      'GetIpamRoutingPolicyRegistrationDeltas',
+      'GetIpamRoutingPolicyRegistrations',
       'GetLaunchTemplateData',
       'GetManagedPrefixListAssociations',
       'GetManagedPrefixListEntries',
@@ -11324,6 +11537,28 @@ export class Ec2 extends PolicyStatement {
    */
   public onIpamExternalResourceVerificationToken(ipamExternalResourceVerificationTokenId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ec2::${ account ?? this.defaultAccount }:ipam-external-resource-verification-token/${ ipamExternalResourceVerificationTokenId }`);
+  }
+
+  /**
+   * Adds a resource of type ipam-internet-registry-association to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
+   *
+   * @param ipamInternetRegistryAssociationId - Identifier for the ipamInternetRegistryAssociationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAttribute()
+   * - .ifAttribute()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onIpamInternetRegistryAssociation(ipamInternetRegistryAssociationId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2::${ account ?? this.defaultAccount }:ipam-internet-registry-association/${ ipamInternetRegistryAssociationId }`);
   }
 
   /**
@@ -13189,6 +13424,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toCreateIpam()
    * - .toCreateIpamExternalResourceVerificationToken()
+   * - .toCreateIpamInternetRegistryAssociation()
    * - .toCreateIpamPolicy()
    * - .toCreateIpamPool()
    * - .toCreateIpamPrefixListResolver()
@@ -13297,6 +13533,7 @@ export class Ec2 extends PolicyStatement {
    * - internet-gateway
    * - ipam
    * - ipam-external-resource-verification-token
+   * - ipam-internet-registry-association
    * - ipam-policy
    * - ipam-pool
    * - ipam-pool-allocation
@@ -13429,6 +13666,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAuthorizeClientVpnIngress()
    * - .toAuthorizeSecurityGroupEgress()
    * - .toAuthorizeSecurityGroupIngress()
+   * - .toBatchModifyIpamRoutingPolicyRegistrations()
    * - .toCancelCapacityReservation()
    * - .toCancelCapacityReservationFleets()
    * - .toCancelDeclarativePoliciesReport()
@@ -13454,10 +13692,12 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInstanceConnectEndpoint()
    * - .toCreateInstanceExportTask()
    * - .toCreateIpamExternalResourceVerificationToken()
+   * - .toCreateIpamInternetRegistryAssociation()
    * - .toCreateIpamPolicy()
    * - .toCreateIpamPool()
    * - .toCreateIpamPrefixListResolver()
    * - .toCreateIpamPrefixListResolverTarget()
+   * - .toCreateIpamRoutingPolicyRegistration()
    * - .toCreateIpamScope()
    * - .toCreateLaunchTemplateVersion()
    * - .toCreateLocalGatewayRoute()
@@ -13532,11 +13772,13 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteInternetGateway()
    * - .toDeleteIpam()
    * - .toDeleteIpamExternalResourceVerificationToken()
+   * - .toDeleteIpamInternetRegistryAssociation()
    * - .toDeleteIpamPolicy()
    * - .toDeleteIpamPool()
    * - .toDeleteIpamPrefixListResolver()
    * - .toDeleteIpamPrefixListResolverTarget()
    * - .toDeleteIpamResourceDiscovery()
+   * - .toDeleteIpamRoutingPolicyRegistration()
    * - .toDeleteIpamScope()
    * - .toDeleteKeyPair()
    * - .toDeleteLaunchTemplate()
@@ -13674,6 +13916,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableImageDeprecation()
    * - .toEnableImageDeregistrationProtection()
    * - .toEnableInstanceSqlHaStandbyDetections()
+   * - .toEnableIpamInternetRegistryAssociation()
    * - .toEnableIpamPolicy()
    * - .toEnableRouteServerPropagation()
    * - .toEnableTransitGatewayRouteTablePropagation()
@@ -13700,6 +13943,9 @@ export class Ec2 extends PolicyStatement {
    * - .toGetIpamDiscoveredAccounts()
    * - .toGetIpamDiscoveredPublicAddresses()
    * - .toGetIpamDiscoveredResourceCidrs()
+   * - .toGetIpamDiscoveredRoutes()
+   * - .toGetIpamInternetRegistryAssociationAsns()
+   * - .toGetIpamInternetRegistryAssociationCidrs()
    * - .toGetIpamPolicyAllocationRules()
    * - .toGetIpamPolicyOrganizationTargets()
    * - .toGetIpamPoolAllocations()
@@ -13708,6 +13954,10 @@ export class Ec2 extends PolicyStatement {
    * - .toGetIpamPrefixListResolverVersionEntries()
    * - .toGetIpamPrefixListResolverVersions()
    * - .toGetIpamResourceCidrs()
+   * - .toGetIpamRouteOriginAuthorizations()
+   * - .toGetIpamRouteProtectionFindings()
+   * - .toGetIpamRoutingPolicyRegistrationDeltas()
+   * - .toGetIpamRoutingPolicyRegistrations()
    * - .toGetLaunchTemplateData()
    * - .toGetManagedPrefixListAssociations()
    * - .toGetManagedPrefixListEntries()
@@ -13762,6 +14012,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyIpamPrefixListResolverTarget()
    * - .toModifyIpamResourceCidr()
    * - .toModifyIpamResourceDiscovery()
+   * - .toModifyIpamRoutingPolicyRegistration()
    * - .toModifyIpamScope()
    * - .toModifyLaunchTemplate()
    * - .toModifyLocalGatewayRoute()
@@ -13927,6 +14178,7 @@ export class Ec2 extends PolicyStatement {
    * - internet-gateway
    * - ipam
    * - ipam-external-resource-verification-token
+   * - ipam-internet-registry-association
    * - ipam-policy
    * - ipam-pool
    * - ipam-pool-allocation
@@ -14052,6 +14304,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toCreateIpam()
    * - .toCreateIpamExternalResourceVerificationToken()
+   * - .toCreateIpamInternetRegistryAssociation()
    * - .toCreateIpamPolicy()
    * - .toCreateIpamPool()
    * - .toCreateIpamPrefixListResolver()
@@ -14160,6 +14413,7 @@ export class Ec2 extends PolicyStatement {
    * - internet-gateway
    * - ipam
    * - ipam-external-resource-verification-token
+   * - ipam-internet-registry-association
    * - ipam-policy
    * - ipam-pool
    * - ipam-pool-allocation
@@ -14381,6 +14635,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyIpamPrefixListResolver()
    * - .toModifyIpamResourceCidr()
    * - .toModifyIpamResourceDiscovery()
+   * - .toModifyIpamRoutingPolicyRegistration()
    * - .toModifyIpamScope()
    * - .toModifyLaunchTemplate()
    * - .toModifyManagedPrefixList()
@@ -14438,6 +14693,7 @@ export class Ec2 extends PolicyStatement {
    * - instance-event-window
    * - ipam
    * - ipam-external-resource-verification-token
+   * - ipam-internet-registry-association
    * - ipam-policy
    * - ipam-pool
    * - ipam-pool-allocation
@@ -14509,6 +14765,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyIpamPrefixListResolver()
    * - .toModifyIpamResourceCidr()
    * - .toModifyIpamResourceDiscovery()
+   * - .toModifyIpamRoutingPolicyRegistration()
    * - .toModifyIpamScope()
    * - .toModifyLaunchTemplate()
    * - .toModifyLocalGatewayRoute()
@@ -14574,6 +14831,7 @@ export class Ec2 extends PolicyStatement {
    * - instance-event-window
    * - ipam
    * - ipam-external-resource-verification-token
+   * - ipam-internet-registry-association
    * - ipam-policy
    * - ipam-pool
    * - ipam-pool-allocation
@@ -17792,6 +18050,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAuthorizeClientVpnIngress()
    * - .toAuthorizeSecurityGroupEgress()
    * - .toAuthorizeSecurityGroupIngress()
+   * - .toBatchModifyIpamRoutingPolicyRegistrations()
    * - .toBundleInstance()
    * - .toCancelBundleTask()
    * - .toCancelCapacityReservation()
@@ -17838,11 +18097,13 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toCreateIpam()
    * - .toCreateIpamExternalResourceVerificationToken()
+   * - .toCreateIpamInternetRegistryAssociation()
    * - .toCreateIpamPolicy()
    * - .toCreateIpamPool()
    * - .toCreateIpamPrefixListResolver()
    * - .toCreateIpamPrefixListResolverTarget()
    * - .toCreateIpamResourceDiscovery()
+   * - .toCreateIpamRoutingPolicyRegistration()
    * - .toCreateIpamScope()
    * - .toCreateKeyPair()
    * - .toCreateLaunchTemplate()
@@ -17935,11 +18196,13 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteInternetGateway()
    * - .toDeleteIpam()
    * - .toDeleteIpamExternalResourceVerificationToken()
+   * - .toDeleteIpamInternetRegistryAssociation()
    * - .toDeleteIpamPolicy()
    * - .toDeleteIpamPool()
    * - .toDeleteIpamPrefixListResolver()
    * - .toDeleteIpamPrefixListResolverTarget()
    * - .toDeleteIpamResourceDiscovery()
+   * - .toDeleteIpamRoutingPolicyRegistration()
    * - .toDeleteIpamScope()
    * - .toDeleteKeyPair()
    * - .toDeleteLaunchTemplate()
@@ -18020,6 +18283,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeregisterTransitGatewayMulticastGroupMembers()
    * - .toDeregisterTransitGatewayMulticastGroupSources()
    * - .toDescribeAccountAttributes()
+   * - .toDescribeAccountVpcEncryptionControl()
    * - .toDescribeAddressTransfers()
    * - .toDescribeAddresses()
    * - .toDescribeAddressesAttribute()
@@ -18095,6 +18359,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeInternetGateways()
    * - .toDescribeIpamByoasn()
    * - .toDescribeIpamExternalResourceVerificationTokens()
+   * - .toDescribeIpamInternetRegistryAssociations()
    * - .toDescribeIpamPolicies()
    * - .toDescribeIpamPoolAllocations()
    * - .toDescribeIpamPools()
@@ -18270,6 +18535,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableImageDeprecation()
    * - .toEnableImageDeregistrationProtection()
    * - .toEnableInstanceSqlHaStandbyDetections()
+   * - .toEnableIpamInternetRegistryAssociation()
    * - .toEnableIpamOrganizationAdminAccount()
    * - .toEnableIpamPolicy()
    * - .toEnableReachabilityAnalyzerOrganizationSharing()
@@ -18317,6 +18583,9 @@ export class Ec2 extends PolicyStatement {
    * - .toGetIpamDiscoveredAccounts()
    * - .toGetIpamDiscoveredPublicAddresses()
    * - .toGetIpamDiscoveredResourceCidrs()
+   * - .toGetIpamDiscoveredRoutes()
+   * - .toGetIpamInternetRegistryAssociationAsns()
+   * - .toGetIpamInternetRegistryAssociationCidrs()
    * - .toGetIpamPolicyAllocationRules()
    * - .toGetIpamPolicyOrganizationTargets()
    * - .toGetIpamPoolAllocations()
@@ -18325,6 +18594,10 @@ export class Ec2 extends PolicyStatement {
    * - .toGetIpamPrefixListResolverVersionEntries()
    * - .toGetIpamPrefixListResolverVersions()
    * - .toGetIpamResourceCidrs()
+   * - .toGetIpamRouteOriginAuthorizations()
+   * - .toGetIpamRouteProtectionFindings()
+   * - .toGetIpamRoutingPolicyRegistrationDeltas()
+   * - .toGetIpamRoutingPolicyRegistrations()
    * - .toGetLaunchTemplateData()
    * - .toGetManagedPrefixListAssociations()
    * - .toGetManagedPrefixListEntries()
@@ -18366,6 +18639,7 @@ export class Ec2 extends PolicyStatement {
    * - .toListSnapshotsInRecycleBin()
    * - .toListVolumesInRecycleBin()
    * - .toLockSnapshot()
+   * - .toModifyAccountVpcEncryptionControl()
    * - .toModifyAddressAttribute()
    * - .toModifyApplicationStatusCheck()
    * - .toModifyAvailabilityZoneGroup()
@@ -18400,6 +18674,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyIpamPrefixListResolverTarget()
    * - .toModifyIpamResourceCidr()
    * - .toModifyIpamResourceDiscovery()
+   * - .toModifyIpamRoutingPolicyRegistration()
    * - .toModifyIpamScope()
    * - .toModifyLaunchTemplate()
    * - .toModifyLocalGatewayRoute()
@@ -18585,6 +18860,7 @@ export class Ec2 extends PolicyStatement {
    * - internet-gateway
    * - ipam
    * - ipam-external-resource-verification-token
+   * - ipam-internet-registry-association
    * - ipam-policy
    * - ipam-pool
    * - ipam-pool-allocation
@@ -18860,6 +19136,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAuthorizeClientVpnIngress()
    * - .toAuthorizeSecurityGroupEgress()
    * - .toAuthorizeSecurityGroupIngress()
+   * - .toBatchModifyIpamRoutingPolicyRegistrations()
    * - .toCancelCapacityReservation()
    * - .toCancelCapacityReservationFleets()
    * - .toCancelDeclarativePoliciesReport()
@@ -18885,10 +19162,12 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInstanceConnectEndpoint()
    * - .toCreateInstanceExportTask()
    * - .toCreateIpamExternalResourceVerificationToken()
+   * - .toCreateIpamInternetRegistryAssociation()
    * - .toCreateIpamPolicy()
    * - .toCreateIpamPool()
    * - .toCreateIpamPrefixListResolver()
    * - .toCreateIpamPrefixListResolverTarget()
+   * - .toCreateIpamRoutingPolicyRegistration()
    * - .toCreateIpamScope()
    * - .toCreateLaunchTemplateVersion()
    * - .toCreateLocalGatewayRoute()
@@ -18963,11 +19242,13 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteInternetGateway()
    * - .toDeleteIpam()
    * - .toDeleteIpamExternalResourceVerificationToken()
+   * - .toDeleteIpamInternetRegistryAssociation()
    * - .toDeleteIpamPolicy()
    * - .toDeleteIpamPool()
    * - .toDeleteIpamPrefixListResolver()
    * - .toDeleteIpamPrefixListResolverTarget()
    * - .toDeleteIpamResourceDiscovery()
+   * - .toDeleteIpamRoutingPolicyRegistration()
    * - .toDeleteIpamScope()
    * - .toDeleteKeyPair()
    * - .toDeleteLaunchTemplate()
@@ -19105,6 +19386,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableImageDeprecation()
    * - .toEnableImageDeregistrationProtection()
    * - .toEnableInstanceSqlHaStandbyDetections()
+   * - .toEnableIpamInternetRegistryAssociation()
    * - .toEnableIpamPolicy()
    * - .toEnableRouteServerPropagation()
    * - .toEnableTransitGatewayRouteTablePropagation()
@@ -19130,6 +19412,9 @@ export class Ec2 extends PolicyStatement {
    * - .toGetIpamDiscoveredAccounts()
    * - .toGetIpamDiscoveredPublicAddresses()
    * - .toGetIpamDiscoveredResourceCidrs()
+   * - .toGetIpamDiscoveredRoutes()
+   * - .toGetIpamInternetRegistryAssociationAsns()
+   * - .toGetIpamInternetRegistryAssociationCidrs()
    * - .toGetIpamPolicyAllocationRules()
    * - .toGetIpamPolicyOrganizationTargets()
    * - .toGetIpamPoolAllocations()
@@ -19138,6 +19423,10 @@ export class Ec2 extends PolicyStatement {
    * - .toGetIpamPrefixListResolverVersionEntries()
    * - .toGetIpamPrefixListResolverVersions()
    * - .toGetIpamResourceCidrs()
+   * - .toGetIpamRouteOriginAuthorizations()
+   * - .toGetIpamRouteProtectionFindings()
+   * - .toGetIpamRoutingPolicyRegistrationDeltas()
+   * - .toGetIpamRoutingPolicyRegistrations()
    * - .toGetLaunchTemplateData()
    * - .toGetManagedPrefixListAssociations()
    * - .toGetManagedPrefixListEntries()
@@ -19191,6 +19480,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyIpamPrefixListResolverTarget()
    * - .toModifyIpamResourceCidr()
    * - .toModifyIpamResourceDiscovery()
+   * - .toModifyIpamRoutingPolicyRegistration()
    * - .toModifyIpamScope()
    * - .toModifyLaunchTemplate()
    * - .toModifyLocalGatewayRoute()
@@ -19355,6 +19645,7 @@ export class Ec2 extends PolicyStatement {
    * - internet-gateway
    * - ipam
    * - ipam-external-resource-verification-token
+   * - ipam-internet-registry-association
    * - ipam-policy
    * - ipam-pool
    * - ipam-pool-allocation
