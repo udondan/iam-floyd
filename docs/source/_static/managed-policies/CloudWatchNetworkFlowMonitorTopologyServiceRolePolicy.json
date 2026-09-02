@@ -2,16 +2,17 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "TransitGatewayAndVPNStatement",
       "Effect": "Allow",
       "Action": [
+        "ec2:DescribeCustomerGateways",
         "ec2:DescribeTransitGatewayAttachments",
         "ec2:DescribeTransitGatewayConnects",
         "ec2:DescribeTransitGatewayPeeringAttachments",
         "ec2:DescribeTransitGatewayRouteTables",
-        "ec2:DescribeTransitGateways",
         "ec2:DescribeTransitGatewayVpcAttachments",
+        "ec2:DescribeTransitGateways",
         "ec2:DescribeVpnConnections",
-        "ec2:DescribeCustomerGateways",
         "ec2:GetTransitGatewayRouteTableAssociations",
         "ec2:GetTransitGatewayRouteTablePropagations",
         "ec2:SearchTransitGatewayRoutes"
@@ -35,6 +36,73 @@
         "ec2:DescribeVpcEndpointServiceConfigurations"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "LoadBalancerStatement",
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeTags",
+        "elasticloadbalancing:DescribeListeners",
+        "elasticloadbalancing:DescribeRules",
+        "elasticloadbalancing:DescribeTargetGroups",
+        "elasticloadbalancing:DescribeLoadBalancerAttributes",
+        "elasticloadbalancing:DescribeTargetHealth",
+        "elasticloadbalancing:DescribeTargetGroupAttributes"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWANStatement",
+      "Effect": "Allow",
+      "Action": [
+        "networkmanager:ListCoreNetworks",
+        "networkmanager:GetCoreNetwork",
+        "networkmanager:GetCoreNetworkPolicy",
+        "networkmanager:ListAttachments",
+        "networkmanager:GetVpcAttachment",
+        "networkmanager:GetNetworkRoutes"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ConfigRecorderCreateDelete",
+      "Effect": "Allow",
+      "Action": [
+        "config:PutServiceLinkedConfigurationRecorder",
+        "config:DeleteServiceLinkedConfigurationRecorder"
+      ],
+      "Resource": [
+        "arn:aws:config:*:*:configuration-recorder/AWSConfigurationRecorderForNetworkFlowMonitorTopologyService/*"
+      ]
+    },
+    {
+      "Sid": "ConfigRecorderDescribe",
+      "Effect": "Allow",
+      "Action": [
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "ConfigRecorderSlrCreation",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "config.amazonaws.com"
+          ]
+        }
+      }
     }
   ]
 }

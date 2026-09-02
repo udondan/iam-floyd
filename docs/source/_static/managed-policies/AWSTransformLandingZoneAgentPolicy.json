@@ -17,6 +17,7 @@
         "s3:ListBucket",
         "s3:ListBucketMultipartUploads",
         "s3:ListMultipartUploadParts",
+        "s3:PutBucketPolicy",
         "s3:PutBucketTagging",
         "s3:PutEncryptionConfiguration",
         "s3:PutObject"

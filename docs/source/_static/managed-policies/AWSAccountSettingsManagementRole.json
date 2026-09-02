@@ -104,7 +104,9 @@
         "support:DescribeCases",
         "support:AddCommunicationToCase",
         "support:ResolveCase",
-        "support:AddAttachmentsToSet"
+        "support:AddAttachmentsToSet",
+        "support:DescribeAttachment",
+        "support:DescribeCommunications"
       ],
       "Resource": "*"
     }

@@ -589,10 +589,11 @@
       }
     },
     {
-      "Sid": "LambdaViaCfnNetworkMigrationFunctionOperationsReadOnly",
+      "Sid": "LambdaViaCfnNetworkMigrationFunctionReadOnly",
       "Effect": "Allow",
       "Action": [
-        "lambda:GetFunction"
+        "lambda:GetFunction",
+        "lambda:ListTags"
       ],
       "Resource": "arn:aws:lambda:*:*:function:network-migration*",
       "Condition": {
@@ -736,6 +737,7 @@
         "mgn:ListNetworkMigrationExecutions",
         "mgn:ListNetworkMigrationMapperSegmentConstructs",
         "mgn:ListNetworkMigrationMapperSegments",
+        "mgn:ListNetworkMigrationExecutionArtifacts",
         "mgn:ListNetworkMigrationMappings"
       ],
       "Resource": "*",
@@ -1164,9 +1166,7 @@
       "Action": [
         "ssm:DeleteParameter",
         "ssm:DeleteResourcePolicy",
-        "ssm:GetResourcePolicies",
-        "ssm:ListTagsForResource",
-        "ssm:PutResourcePolicy"
+        "ssm:ListTagsForResource"
       ],
       "Resource": "arn:aws:ssm:*:*:parameter/network-migration/*",
       "Condition": {
@@ -1179,6 +1179,26 @@
           "aws:RequestedRegion": "${aws:PrincipalTag/TargetRegion}",
           "aws:ResourceAccount": "${aws:PrincipalAccount}",
           "aws:ResourceTag/CreatedBy": "AWSApplicationMigrationService"
+        }
+      }
+    },
+    {
+      "Sid": "SsmParametersViaCfnRamSharingOperations",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetResourcePolicies",
+        "ssm:PutResourcePolicy"
+      ],
+      "Resource": "arn:aws:ssm:*:*:parameter/network-migration/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "cloudformation.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestedRegion": "${aws:PrincipalTag/TargetRegion}",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
     },
