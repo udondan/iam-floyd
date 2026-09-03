@@ -5,7 +5,6 @@
       "Action": [
         "autoscaling:*",
         "cloudwatch:*",
-        "cloudformation:CreateStack",
         "cloudformation:DescribeStackEvents",
         "datapipeline:Describe*",
         "datapipeline:ListPipelines",
@@ -56,6 +55,35 @@
       ],
       "Effect": "Allow",
       "Resource": "*"
+    },
+    {
+      "Sid": "CloudFormationCreateStackSameAccount",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "CloudFormationTagOnCreate",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudformation:CreateAction": [
+            "CreateStack"
+          ],
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     },
     {
       "Effect": "Allow",

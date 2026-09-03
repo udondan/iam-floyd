@@ -244,6 +244,23 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "CloudFormationTagOnCreate",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudformation:CreateAction": [
+            "CreateStack",
+            "UpdateStack"
+          ]
+        }
+      }
     }
   ]
 }

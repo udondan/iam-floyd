@@ -12,7 +12,8 @@
       ],
       "Resource": [
         "arn:aws:cloudformation:*:*:stack/atx-*/*",
-        "arn:aws:cloudformation:*:*:stack/AtxSecurityAgentStack-*/*"
+        "arn:aws:cloudformation:*:*:stack/AtxSecurityAgentStack-*/*",
+        "arn:aws:cloudformation:*:*:stack/AtxDispatcherStack/*"
       ]
     },
     {
@@ -288,6 +289,17 @@
       "Effect": "Allow",
       "Action": "cloudformation:ListStacks",
       "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "SQSEnqueueToDispatcher",
+      "Effect": "Allow",
+      "Action": "sqs:SendMessage",
+      "Resource": "arn:aws:sqs:*:*:atx-dispatcher-queue",
       "Condition": {
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
