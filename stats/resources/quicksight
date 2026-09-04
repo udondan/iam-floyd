@@ -19,6 +19,7 @@ quicksight:dataset
 quicksight:datasource
 quicksight:dlpSetting
 quicksight:emailCustomizationTemplate
+quicksight:extension
 quicksight:extensionaccess
 quicksight:flow
 quicksight:folder

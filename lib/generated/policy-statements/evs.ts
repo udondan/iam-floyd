@@ -133,6 +133,17 @@ export class Evs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get EVS account settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/evs/latest/APIReference/API_GetAccountSettings.html
+   */
+  public toGetAccountSettings() {
+    return this.to('GetAccountSettings');
+  }
+
+  /**
    * Grants permission to get an Amazon EVS environment depot url
    *
    * Access Level: Read
@@ -232,6 +243,17 @@ export class Evs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get EVS account settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/evs/latest/APIReference/API_PutAccountSettings.html
+   */
+  public toPutAccountSettings() {
+    return this.to('PutAccountSettings');
+  }
+
+  /**
    * Grants permission to tag a specified resource ARN
    *
    * Access Level: Tagging, Write
@@ -276,11 +298,13 @@ export class Evs extends PolicyStatement {
       'DeleteEnvironmentConnector',
       'DeleteEnvironmentHost',
       'DisassociateEipFromVlan',
+      'PutAccountSettings',
       'TagResource',
       'UntagResource',
       'UpdateEnvironmentConnector'
     ],
     Read: [
+      'GetAccountSettings',
       'GetDepotUrl',
       'GetEnvironment',
       'GetVersions',
