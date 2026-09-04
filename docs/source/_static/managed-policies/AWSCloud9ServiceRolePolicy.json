@@ -14,13 +14,7 @@
         "cloudformation:CreateStack",
         "cloudformation:DescribeStacks",
         "cloudformation:DescribeStackEvents",
-        "cloudformation:DescribeStackResources"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
+        "cloudformation:DescribeStackResources",
         "ec2:TerminateInstances",
         "ec2:DeleteSecurityGroup",
         "ec2:AuthorizeSecurityGroupIngress"
@@ -93,6 +87,21 @@
       "Condition": {
         "StringLike": {
           "iam:PassedToService": "ec2.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CloudFormationTagOnCreate",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudformation:CreateAction": [
+            "CreateStack"
+          ]
         }
       }
     }
