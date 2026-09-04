@@ -17,7 +17,8 @@
         "ec2:DescribeSecurityGroups",
         "ec2:DescribeVpcEndpoints",
         "s3:ListAllMyBuckets",
-        "ds:DescribeDirectories"
+        "ds:DescribeDirectories",
+        "application-autoscaling:DescribeScalableTargets"
       ],
       "Resource": "*"
     },

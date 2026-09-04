@@ -68,6 +68,36 @@
           "aws:ResourceTag/createdBy": "AWSForWordPressPlugin"
         }
       }
+    },
+    {
+      "Sid": "CloudFormationTagOnCreateStack",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1",
+          "cloudformation:CreateAction": "CreateStack"
+        }
+      }
+    },
+    {
+      "Sid": "CloudFormationTagOnUpdateStack",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/createdBy": "AWSForWordPressPlugin",
+          "cloudformation:CreateAction": "UpdateStack"
+        }
+      }
     }
   ]
 }

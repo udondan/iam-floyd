@@ -412,6 +412,23 @@
       ]
     },
     {
+      "Sid": "AgentCoreEvaluationCloudWatchLogCustomLogGroupCreate",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "AgentCoreEvaluationCloudWatchLogIndexAccess",
       "Effect": "Allow",
       "Action": [
