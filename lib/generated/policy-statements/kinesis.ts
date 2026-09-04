@@ -34,7 +34,7 @@ export class Kinesis extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_AssociateStreamsWithChannel.html
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateChannel.html
    */
   public toAssociateStreamsWithChannel() {
     return this.to('AssociateStreamsWithChannel');

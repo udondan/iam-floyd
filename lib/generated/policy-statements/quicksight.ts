@@ -3299,6 +3299,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an extension
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toCreateExtension() {
+    return this.to('CreateExtension');
+  }
+
+  /**
    * Grants permission to create an extension access
    *
    * Access Level: Write
@@ -3340,6 +3351,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDeleteEmailCustomizationTemplate() {
     return this.to('DeleteEmailCustomizationTemplate');
+  }
+
+  /**
+   * Grants permission to delete an extension
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toDeleteExtension() {
+    return this.to('DeleteExtension');
   }
 
   /**
@@ -3387,6 +3409,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an extension
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toDescribeExtension() {
+    return this.to('DescribeExtension');
+  }
+
+  /**
    * Grants permission to describe an extension access
    *
    * Access Level: Read
@@ -3395,6 +3428,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeExtensionAccess() {
     return this.to('DescribeExtensionAccess');
+  }
+
+  /**
+   * Grants permission to describe the permissions of an extension
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toDescribeExtensionPermissions() {
+    return this.to('DescribeExtensionPermissions');
   }
 
   /**
@@ -3494,6 +3538,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toListExtensionAccesses() {
     return this.to('ListExtensionAccesses');
+  }
+
+  /**
+   * Grants permission to list extensions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toListExtensions() {
+    return this.to('ListExtensions');
   }
 
   /**
@@ -3640,6 +3695,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start installation of an extension
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toStartExtensionInstallation() {
+    return this.to('StartExtensionInstallation');
+  }
+
+  /**
    * Grants permission to subscribe to Amazon QuickSight, and also to allow the user to upgrade the subscription to Enterprise edition
    *
    * Access Level: Write
@@ -3699,6 +3765,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an extension
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toUpdateExtension() {
+    return this.to('UpdateExtension');
+  }
+
+  /**
    * Grants permission to update an extension access
    *
    * Access Level: Write
@@ -3707,6 +3784,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toUpdateExtensionAccess() {
     return this.to('UpdateExtensionAccess');
+  }
+
+  /**
+   * Grants permission to update the permissions of an extension
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toUpdateExtensionPermissions() {
+    return this.to('UpdateExtensionPermissions');
   }
 
   /**
@@ -3896,22 +3984,27 @@ export class Quicksight extends PolicyStatement {
       'BatchUpdatePreferences',
       'CreateAdmin',
       'CreateEmailCustomizationTemplate',
+      'CreateExtension',
       'CreateExtensionAccess',
       'CreateReader',
       'CreateUser',
       'DeleteEmailCustomizationTemplate',
+      'DeleteExtension',
       'DeleteExtensionAccess',
       'RegisterCustomerManagedKey',
       'RemoveCustomerManagedKey',
       'ScopeDownPolicy',
       'SetGroupMapping',
       'StartDlpJob',
+      'StartExtensionInstallation',
       'Subscribe',
       'UnpublishFlow',
       'Unsubscribe',
       'UpdateChatConfiguration',
       'UpdateEmailCustomizationTemplate',
+      'UpdateExtension',
       'UpdateExtensionAccess',
+      'UpdateExtensionPermissions',
       'UpdateQuickIndexCapacity',
       'UpdateResourcePermissions'
     ],
@@ -3993,7 +4086,9 @@ export class Quicksight extends PolicyStatement {
       'DescribeChatConfiguration',
       'DescribeDlpJob',
       'DescribeEmailCustomizationTemplate',
+      'DescribeExtension',
       'DescribeExtensionAccess',
+      'DescribeExtensionPermissions',
       'DescribeQuickIndexCapacity',
       'GetAnonymousUserEmbedUrl',
       'GetAuthCode',
@@ -4022,7 +4117,8 @@ export class Quicksight extends PolicyStatement {
       'UpdateTemplatePermissions',
       'UpdateThemePermissions',
       'UpdateTopicPermissions',
-      'AllowVendedLogDeliveryForResource'
+      'AllowVendedLogDeliveryForResource',
+      'UpdateExtensionPermissions'
     ],
     List: [
       'ListActionConnectors',
@@ -4085,6 +4181,7 @@ export class Quicksight extends PolicyStatement {
       'ListCustomerManagedKeys',
       'ListDlpLabels',
       'ListExtensionAccesses',
+      'ListExtensions',
       'ListKMSKeysForUser',
       'ListUsersIndexCapacity',
       'SearchDirectoryGroups',
@@ -4427,6 +4524,20 @@ export class Quicksight extends PolicyStatement {
    */
   public onEmailCustomizationTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:email-customization-template/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type extension to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onExtension(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:extension/${ resourceId }`);
   }
 
   /**

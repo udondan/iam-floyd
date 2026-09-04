@@ -21,6 +21,7 @@ quicksight:CreateDataSet;Write
 quicksight:CreateDataSource;Write
 quicksight:CreateDlpSetting;Write
 quicksight:CreateEmailCustomizationTemplate;Write
+quicksight:CreateExtension;Write
 quicksight:CreateExtensionAccess;Write
 quicksight:CreateFlow;Write
 quicksight:CreateFolder;Write
@@ -63,6 +64,7 @@ quicksight:DeleteDataSource;Write
 quicksight:DeleteDefaultQBusinessApplication;Write
 quicksight:DeleteDlpSetting;Write
 quicksight:DeleteEmailCustomizationTemplate;Write
+quicksight:DeleteExtension;Write
 quicksight:DeleteExtensionAccess;Write
 quicksight:DeleteFlow;Write
 quicksight:DeleteFolder;Write
@@ -124,7 +126,9 @@ quicksight:DescribeDefaultQBusinessApplication;Read
 quicksight:DescribeDlpJob;Read
 quicksight:DescribeDlpSetting;Read
 quicksight:DescribeEmailCustomizationTemplate;Read
+quicksight:DescribeExtension;Read
 quicksight:DescribeExtensionAccess;Read
+quicksight:DescribeExtensionPermissions;Read
 quicksight:DescribeFlow;Read
 quicksight:DescribeFolder;Read
 quicksight:DescribeFolderPermissions;Read
@@ -190,6 +194,7 @@ quicksight:ListDataSources;List
 quicksight:ListDlpLabels;List
 quicksight:ListDlpSettings;List
 quicksight:ListExtensionAccesses;List
+quicksight:ListExtensions;List
 quicksight:ListFlows;List
 quicksight:ListFolderMembers;Read
 quicksight:ListFolders;List
@@ -257,6 +262,7 @@ quicksight:StartAutomationJob;Write
 quicksight:StartDashboardSnapshotJob;Write
 quicksight:StartDashboardSnapshotJobSchedule;Write
 quicksight:StartDlpJob;Write
+quicksight:StartExtensionInstallation;Write
 quicksight:Subscribe;Write
 quicksight:TagResource;Tagging, Write
 quicksight:UnpublishFlow;Write
@@ -291,7 +297,9 @@ quicksight:UpdateDataSourcePermissions;Permissions management, Write
 quicksight:UpdateDefaultQBusinessApplication;Write
 quicksight:UpdateDlpSetting;Write
 quicksight:UpdateEmailCustomizationTemplate;Write
+quicksight:UpdateExtension;Write
 quicksight:UpdateExtensionAccess;Write
+quicksight:UpdateExtensionPermissions;Permissions management, Write
 quicksight:UpdateFlow;Write
 quicksight:UpdateFlowPermissions;Permissions management, Write
 quicksight:UpdateFolder;Write
