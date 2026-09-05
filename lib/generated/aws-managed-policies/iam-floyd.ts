@@ -698,10 +698,18 @@ export class AwsManagedPolicy {
     public static AmazonNimbleStudioStudioAdmin = 'AmazonNimbleStudio-StudioAdmin';
     /** This policy grants access to Amazon Nimble Studio resources associated with the studio user and related studio resources in other services. Attach this policy to the User role associated with your studio. */
     public static AmazonNimbleStudioStudioUser = 'AmazonNimbleStudio-StudioUser';
+    /** Provides administrative access to manage Autonomous Database resources in Oracle Database@AWS. */
+    public static AmazonODBAutonomousDatabaseAdmin = 'job-function/AmazonODBAutonomousDatabaseAdmin';
     /** Provides administrative access to manage Autonomous VM cluster resources in Oracle Database@AWS */
     public static AmazonODBAutonomousVmClusterAdmin = 'job-function/AmazonODBAutonomousVmClusterAdmin';
     /** Provides administrative access to manage Exadata Infrastructure resources in Oracle Database@AWS */
     public static AmazonODBExadataInfrastructureAdmin = 'job-function/AmazonODBExadataInfrastructureAdmin';
+    /** Provides administrative access to manage Exadata VM cluster resources in Oracle Database@AWS. */
+    public static AmazonODBExadataVmClusterAdmin = 'job-function/AmazonODBExadataVmClusterAdmin';
+    /** Provides administrative access to manage Exascale storage vault resources in Oracle Database@AWS. */
+    public static AmazonODBExascaleStorageVaultAdmin = 'job-function/AmazonODBExascaleStorageVaultAdmin';
+    /** Provides administrative access to manage Exascale VM cluster resources in Oracle Database@AWS. */
+    public static AmazonODBExascaleVmClusterAdmin = 'job-function/AmazonODBExascaleVmClusterAdmin';
     /** Provides full access to resources in Oracle Database@AWS */
     public static AmazonODBFullAccess = 'AmazonODBFullAccess';
     /** Provides administrative access to networking resources for Oracle Database@AWS */

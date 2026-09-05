@@ -170,6 +170,7 @@
       "Sid": "SageMakerBYOIPermissions",
       "Effect": "Allow",
       "Action": [
+        "sagemaker:DescribeAppImageConfig",
         "sagemaker:DescribeImageVersion",
         "sagemaker:ListImageVersions"
       ],
