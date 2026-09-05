@@ -18,6 +18,7 @@
         "odb:GetDbServer",
         "odb:ListDbServers",
         "odb:ListDbSystemShapes",
+        "odb:ListFlexComponents",
         "odb:PutResourcePolicy",
         "odb:GetResourcePolicy",
         "odb:DeleteResourcePolicy",

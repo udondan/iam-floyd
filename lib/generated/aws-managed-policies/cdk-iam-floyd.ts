@@ -1754,6 +1754,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonNimbleStudioStudioUser);
     }
 
+    /** Provides administrative access to manage Autonomous Database resources in Oracle Database@AWS. */
+    public AmazonODBAutonomousDatabaseAdmin(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonODBAutonomousDatabaseAdmin);
+    }
+
     /** Provides administrative access to manage Autonomous VM cluster resources in Oracle Database@AWS */
     public AmazonODBAutonomousVmClusterAdmin(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonODBAutonomousVmClusterAdmin);
@@ -1762,6 +1767,21 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides administrative access to manage Exadata Infrastructure resources in Oracle Database@AWS */
     public AmazonODBExadataInfrastructureAdmin(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonODBExadataInfrastructureAdmin);
+    }
+
+    /** Provides administrative access to manage Exadata VM cluster resources in Oracle Database@AWS. */
+    public AmazonODBExadataVmClusterAdmin(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonODBExadataVmClusterAdmin);
+    }
+
+    /** Provides administrative access to manage Exascale storage vault resources in Oracle Database@AWS. */
+    public AmazonODBExascaleStorageVaultAdmin(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonODBExascaleStorageVaultAdmin);
+    }
+
+    /** Provides administrative access to manage Exascale VM cluster resources in Oracle Database@AWS. */
+    public AmazonODBExascaleVmClusterAdmin(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonODBExascaleVmClusterAdmin);
     }
 
     /** Provides full access to resources in Oracle Database@AWS */

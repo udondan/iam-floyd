@@ -7,16 +7,16 @@
       "Action": [
         "odb:GetOciOnboardingStatus",
         "odb:InitializeService",
-        "odb:CreateOdbNetwork",
-        "odb:GetOdbNetwork",
-        "odb:UpdateOdbNetwork",
-        "odb:DeleteOdbNetwork",
-        "odb:ListOdbNetworks",
-        "odb:CreateOdbPeeringConnection",
-        "odb:GetOdbPeeringConnection",
-        "odb:UpdateOdbPeeringConnection",
-        "odb:DeleteOdbPeeringConnection",
-        "odb:ListOdbPeeringConnections",
+        "odb:CreateExascaleDbStorageVault",
+        "odb:GetExascaleDbStorageVault",
+        "odb:UpdateExascaleDbStorageVault",
+        "odb:DeleteExascaleDbStorageVault",
+        "odb:ListExascaleDbStorageVaults",
+        "odb:ListExadbVmClusters",
+        "odb:GetDbServer",
+        "odb:ListDbServers",
+        "odb:ListDbSystemShapes",
+        "odb:ListFlexComponents",
         "odb:PutResourcePolicy",
         "odb:GetResourcePolicy",
         "odb:DeleteResourcePolicy",
@@ -28,18 +28,7 @@
       "Sid": "AllowEC2Actions",
       "Effect": "Allow",
       "Action": [
-        "ec2:DescribeAvailabilityZones",
-        "ec2:DescribeVpcs"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AllowOdbNetworkPeeringActions",
-      "Effect": "Allow",
-      "Action": [
-        "ec2:CreateOdbNetworkPeering",
-        "ec2:ModifyOdbNetworkPeering",
-        "ec2:DeleteOdbNetworkPeering"
+        "ec2:DescribeAvailabilityZones"
       ],
       "Resource": "*"
     },
@@ -53,8 +42,7 @@
       "Condition": {
         "StringEquals": {
           "iam:AWSServiceName": [
-            "odb.amazonaws.com",
-            "vpc-lattice.amazonaws.com"
+            "odb.amazonaws.com"
           ]
         }
       }
@@ -67,8 +55,7 @@
         "odb:UntagResource"
       ],
       "Resource": [
-        "arn:aws:odb:*:*:odb-network/*",
-        "arn:aws:odb:*:*:odb-peering-connection/*"
+        "arn:aws:odb:*:*:exascale-db-storage-vault/*"
       ]
     }
   ]
