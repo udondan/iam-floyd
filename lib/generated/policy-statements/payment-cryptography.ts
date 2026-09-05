@@ -59,6 +59,7 @@ export class PaymentCryptography extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifDeriveKeyUsage()
    * - .ifKeyAlgorithm()
    * - .ifKeyClass()
    * - .ifKeyUsage()
@@ -177,6 +178,17 @@ export class PaymentCryptography extends PolicyStatement {
    */
   public toGenerateAs2805KekValidation() {
     return this.to('GenerateAs2805KekValidation');
+  }
+
+  /**
+   * Grants permission to generate an Authorization Request Cryptogram (ARQC) for an EMV chip payment card authorization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GenerateAuthRequestCryptogram.html
+   */
+  public toGenerateAuthRequestCryptogram() {
+    return this.to('GenerateAuthRequestCryptogram');
   }
 
   /**
@@ -332,6 +344,7 @@ export class PaymentCryptography extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifCertificateAuthorityPublicKeyIdentifier()
    * - .ifImportKeyMaterial()
+   * - .ifPrivateKeyIdentifier()
    * - .ifWrappingKeyIdentifier()
    *
    * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html
@@ -554,6 +567,7 @@ export class PaymentCryptography extends PolicyStatement {
       'EncryptData',
       'ExportKey',
       'GenerateAs2805KekValidation',
+      'GenerateAuthRequestCryptogram',
       'GenerateCardValidationData',
       'GenerateMac',
       'GenerateMacEmvPinChange',
@@ -673,7 +687,7 @@ export class PaymentCryptography extends PolicyStatement {
   /**
    * Filters access by tags assigned to a key for the specified operation
    *
-   * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
    * - .toAddKeyReplicationRegions()
@@ -686,6 +700,7 @@ export class PaymentCryptography extends PolicyStatement {
    * - .toEncryptData()
    * - .toExportKey()
    * - .toGenerateAs2805KekValidation()
+   * - .toGenerateAuthRequestCryptogram()
    * - .toGenerateCardValidationData()
    * - .toGenerateMac()
    * - .toGenerateMacEmvPinChange()
@@ -749,6 +764,8 @@ export class PaymentCryptography extends PolicyStatement {
   /**
    * Filters access by the CertificateAuthorityPublicKeyIdentifier specified in the request or the ImportKey, and ExportKey operations
    *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html
+   *
    * Applies to actions:
    * - .toExportKey()
    * - .toImportKey()
@@ -761,7 +778,53 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
+   * Filters access by the DeriveKeyUsage specified in the request for the CreateKey operation
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateKey()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDeriveKeyUsage(value: string | string[], operator?: Operator | string) {
+    return this.if(`DeriveKeyUsage`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by whether the request is to export a DUKPT initial key for the ExportKey operation
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html
+   *
+   * Applies to actions:
+   * - .toExportKey()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifExportDukptInitialKey(value?: boolean) {
+    return this.if(`ExportDukptInitialKey`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the type of key material being exported [Tr34KeyBlock, Tr31KeyBlock, DiffieHellmanTr31KeyBlock, As2805KeyCryptogram, KeyCryptogram] for the ExportKey operation
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html
+   *
+   * Applies to actions:
+   * - .toExportKey()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifExportKeyMaterial(value: string | string[], operator?: Operator | string) {
+    return this.if(`ExportKeyMaterial`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the type of key material being imported [RootCertificatePublicKey, TrustedCertificatePublicKey, Tr34KeyBlock, Tr31KeyBlock, DiffieHellmanTr31KeyBlock, As2805KeyCryptogram, KeyCryptogram] for the ImportKey operation
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html
    *
    * Applies to actions:
    * - .toImportKey()
@@ -776,6 +839,8 @@ export class PaymentCryptography extends PolicyStatement {
   /**
    * Filters access by KeyAlgorithm specified in the request for the CreateKey operation
    *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html
+   *
    * Applies to actions:
    * - .toCreateKey()
    *
@@ -789,6 +854,8 @@ export class PaymentCryptography extends PolicyStatement {
   /**
    * Filters access by KeyClass specified in the request for the CreateKey operation
    *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html
+   *
    * Applies to actions:
    * - .toCreateKey()
    *
@@ -800,7 +867,9 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
-   * Filters access by KeyClass specified in the request or associated with a key for the CreateKey operation
+   * Filters access by KeyUsage specified in the request or associated with a key for the CreateKey operation
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html
    *
    * Applies to actions:
    * - .toCreateKey()
@@ -813,7 +882,25 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
+   * Filters access by the PrivateKeyIdentifier specified in the request for the ImportKey and ExportKey operations
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html
+   *
+   * Applies to actions:
+   * - .toExportKey()
+   * - .toImportKey()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPrivateKeyIdentifier(value: string | string[], operator?: Operator | string) {
+    return this.if(`PrivateKeyIdentifier`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by aliases in the request for the specified operation
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html
    *
    * Applies to actions:
    * - .toAddKeyReplicationRegions()
@@ -822,6 +909,7 @@ export class PaymentCryptography extends PolicyStatement {
    * - .toEncryptData()
    * - .toExportKey()
    * - .toGenerateAs2805KekValidation()
+   * - .toGenerateAuthRequestCryptogram()
    * - .toGenerateCardValidationData()
    * - .toGenerateMac()
    * - .toGenerateMacEmvPinChange()
@@ -851,6 +939,8 @@ export class PaymentCryptography extends PolicyStatement {
   /**
    * Filters access by aliases associated with a key for the specified operation
    *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html
+   *
    * Applies to actions:
    * - .toAddKeyReplicationRegions()
    * - .toCreateAlias()
@@ -861,6 +951,7 @@ export class PaymentCryptography extends PolicyStatement {
    * - .toEncryptData()
    * - .toExportKey()
    * - .toGenerateAs2805KekValidation()
+   * - .toGenerateAuthRequestCryptogram()
    * - .toGenerateCardValidationData()
    * - .toGenerateMac()
    * - .toGenerateMacEmvPinChange()
@@ -899,7 +990,24 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
+   * Filters access by the SigningKeyIdentifier specified in the request for the ExportKey operation
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html
+   *
+   * Applies to actions:
+   * - .toExportKey()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSigningKeyIdentifier(value: string | string[], operator?: Operator | string) {
+    return this.if(`SigningKeyIdentifier`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the WrappingKeyIdentifier specified in the request for the ImportKey, and ExportKey operations
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html
    *
    * Applies to actions:
    * - .toExportKey()

@@ -1,11 +1,16 @@
 payment-cryptography:CertificateAuthorityPublicKeyIdentifier
+payment-cryptography:DeriveKeyUsage
+payment-cryptography:ExportDukptInitialKey
+payment-cryptography:ExportKeyMaterial
 payment-cryptography:ImportKeyMaterial
 payment-cryptography:KeyAlgorithm
 payment-cryptography:KeyClass
 payment-cryptography:KeyUsage
+payment-cryptography:PrivateKeyIdentifier
 payment-cryptography:RequestAlias
 payment-cryptography:RequestTag/${TagKey}
 payment-cryptography:ResourceAliases
 payment-cryptography:ResourceTag/${TagKey}
+payment-cryptography:SigningKeyIdentifier
 payment-cryptography:TagKeys
 payment-cryptography:WrappingKeyIdentifier
