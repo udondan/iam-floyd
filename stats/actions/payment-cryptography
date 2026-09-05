@@ -12,6 +12,7 @@ payment-cryptography:EnableDefaultKeyReplicationRegions;Write
 payment-cryptography:EncryptData;Write
 payment-cryptography:ExportKey;Write
 payment-cryptography:GenerateAs2805KekValidation;Write
+payment-cryptography:GenerateAuthRequestCryptogram;Write
 payment-cryptography:GenerateCardValidationData;Write
 payment-cryptography:GenerateMac;Write
 payment-cryptography:GenerateMacEmvPinChange;Write
