@@ -33,6 +33,27 @@
       ]
     },
     {
+      "Sid": "CfnTagOnMutate",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/StackSet-AWS-QuickSetup-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "cloudformation:CreateAction": [
+            "CreateStack",
+            "UpdateStack",
+            "CreateChangeSet",
+            "ExecuteChangeSet"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "RGroupsGet",
       "Effect": "Allow",
       "Action": [
