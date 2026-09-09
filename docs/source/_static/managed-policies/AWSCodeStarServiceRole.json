@@ -42,6 +42,30 @@
       "Resource": "*"
     },
     {
+      "Sid": "CloudFormationTagOnCreate",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/awscodestar-*",
+        "arn:aws:cloudformation:*:*:stack/awseb-*",
+        "arn:aws:cloudformation:*:*:stack/aws-cloud9-*",
+        "arn:aws:cloudformation:*:aws:transform/CodeStar*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "cloudformation:CreateAction": [
+            "CreateStack",
+            "UpdateStack",
+            "CreateChangeSet",
+            "ExecuteChangeSet"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "ProjectQuickstarts",
       "Effect": "Allow",
       "Action": [
