@@ -270,6 +270,23 @@
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
+    },
+    {
+      "Sid": "GdLatticeCreateManagedSnvaAssociation",
+      "Effect": "Allow",
+      "Action": "vpc-lattice:CreateServiceNetworkVpcAssociation",
+      "Resource": "arn:aws:vpc-lattice:*:*:servicenetworkvpcassociation/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "GdLatticeAssociateViaAwsService",
+      "Effect": "Allow",
+      "Action": "vpc-lattice:AssociateViaAWSService",
+      "Resource": "*"
     }
   ]
 }
