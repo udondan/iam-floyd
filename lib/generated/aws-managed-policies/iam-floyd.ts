@@ -940,6 +940,8 @@ export class AwsManagedPolicy {
     public static AmazonSageMakerHyperPodGatedModelAccess = 'AmazonSageMakerHyperPodGatedModelAccess';
     /** This policy provides administrative privileges required for setting up the SageMaker HyperPod inference operator. It enables the inference operator to access AWS networking resources, Amazon S3, Amazon ECR, Amazon CloudWatch, AWS Certificate Manager, and SageMaker resources necessary to deploy and manage inference workloads on HyperPod clusters */
     public static AmazonSageMakerHyperPodInferenceAccess = 'AmazonSageMakerHyperPodInferenceAccess';
+    /** This policy provides the permissions required to set up and operate the SageMaker HyperPod inference gateway. It enables the gateway to manage AWS Certificate Manager (ACM) certificates for TLS termination when deploying and serving inference workloads on HyperPod clusters. */
+    public static AmazonSageMakerHyperPodInferenceGatewayAccess = 'AmazonSageMakerHyperPodInferenceGatewayAccess';
     /** This policy provides administrative privileges required for setting up SageMaker HyperPod observability. It enables access to Amazon Managed Prometheus, Amazon Managed Grafana and EKS Addons. The policy also includes broad access to Grafana HTTP APIs through ServiceAccountTokens across all Amazon Managed Grafana workspaces in your account. */
     public static AmazonSageMakerHyperPodObservabilityAdminAccess = 'AmazonSageMakerHyperPodObservabilityAdminAccess';
     /** This policy grants permissions to Amazon SageMaker HyperPod to related AWS services such as Amazon EKS, Amazon CloudWatch etc. */

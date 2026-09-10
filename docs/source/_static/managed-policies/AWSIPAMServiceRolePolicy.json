@@ -19,6 +19,7 @@
         "ec2:GetIpamDiscoveredAccounts",
         "ec2:GetIpamDiscoveredPublicAddresses",
         "ec2:GetIpamDiscoveredResourceCidrs",
+        "ec2:GetIpamDiscoveredRoutes",
         "globalaccelerator:ListAccelerators",
         "globalaccelerator:ListByoipCidrs",
         "organizations:DescribeAccount",
