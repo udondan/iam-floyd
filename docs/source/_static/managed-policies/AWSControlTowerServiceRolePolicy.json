@@ -209,6 +209,29 @@
         "cloudformation:DescribeOrganizationsAccess"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "CloudFormationTagOnCreate",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:type/resource/AWS-IAM-Role",
+        "arn:aws:cloudformation:*:*:stack/AWSControlTower*/*",
+        "arn:aws:cloudformation:*:*:stack/StackSet-AWSControlTower*/*",
+        "arn:aws:cloudformation:*:*:stackset/AWSControlTower*:*",
+        "arn:aws:cloudformation:*:*:stackset-target/AWSControlTower*/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "cloudformation:CreateAction": [
+            "CreateStack",
+            "UpdateStack"
+          ]
+        }
+      }
     }
   ]
 }

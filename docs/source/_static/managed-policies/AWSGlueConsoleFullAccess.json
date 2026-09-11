@@ -95,6 +95,22 @@
       "Resource": "arn:aws:cloudformation:*:*:stack/aws-glue*/*"
     },
     {
+      "Sid": "CloudFormationTagOnCreate",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
+      ],
+      "Resource": "arn:aws:cloudformation:*:*:stack/aws-glue*/*",
+      "Condition": {
+        "StringEquals": {
+          "cloudformation:CreateAction": [
+            "CreateStack"
+          ]
+        }
+      }
+    },
+    {
       "Effect": "Allow",
       "Action": [
         "ec2:RunInstances"
