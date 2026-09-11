@@ -207,6 +207,19 @@
       }
     },
     {
+      "Sid": "TelemetryReadForWafLoggingConfigurations",
+      "Effect": "Allow",
+      "Action": [
+        "wafv2:ListLoggingConfigurations"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "TelemetryOperationsForWafLogDelivery",
       "Effect": "Allow",
       "Action": [
@@ -584,6 +597,145 @@
       "Condition": {
         "StringEquals": {
           "aws:PrincipalOrgId": "${aws:ResourceOrgId}"
+        }
+      }
+    },
+    {
+      "Sid": "InspectTemplate",
+      "Effect": "Allow",
+      "Action": "iam:GetRoleTemplateVersion",
+      "Resource": "arn:aws:iam::aws:role-template/telemetry-enablement.observabilityadmin.amazonaws.com/CloudWatchTelemetryRuleEKSAddonRoleTemplate:1"
+    },
+    {
+      "Sid": "AcquireRoleFromTemplate",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:TagRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/service-role/CloudWatchTelemetryRuleEKSAddonRole",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "iam:RoleTemplateARN": "arn:aws:iam::aws:role-template/telemetry-enablement.observabilityadmin.amazonaws.com/CloudWatchTelemetryRuleEKSAddonRoleTemplate:1"
+        }
+      }
+    },
+    {
+      "Sid": "AttachManagedPolicyFromTemplate",
+      "Effect": "Allow",
+      "Action": "iam:AttachRolePolicy",
+      "Resource": "arn:aws:iam::*:role/service-role/CloudWatchTelemetryRuleEKSAddonRole",
+      "Condition": {
+        "ArnEquals": {
+          "iam:PolicyARN": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "iam:RoleTemplateARN": "arn:aws:iam::aws:role-template/telemetry-enablement.observabilityadmin.amazonaws.com/CloudWatchTelemetryRuleEKSAddonRoleTemplate:1"
+        }
+      }
+    },
+    {
+      "Sid": "ReadRole",
+      "Effect": "Allow",
+      "Action": "iam:GetRole",
+      "Resource": [
+        "arn:aws:iam::*:role/service-role/CloudWatchTelemetryRuleEKSAddonRole",
+        "arn:aws:iam::*:role/CloudWatchTelemetryRuleEKSAddonRole"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "PassRoleToPodIdentity",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/service-role/CloudWatchTelemetryRuleEKSAddonRole",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "iam:PassedToService": "pods.eks.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "InstallAddon",
+      "Effect": "Allow",
+      "Action": "eks:CreateAddon",
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "FixAddon",
+      "Effect": "Allow",
+      "Action": "eks:UpdateAddon",
+      "Resource": "arn:aws:eks:*:*:addon/*/amazon-cloudwatch-observability/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "CreatePodIdentityAssociation",
+      "Effect": "Allow",
+      "Action": "eks:CreatePodIdentityAssociation",
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "FixPodIdentityAssociation",
+      "Effect": "Allow",
+      "Action": "eks:UpdatePodIdentityAssociation",
+      "Resource": "arn:aws:eks:*:*:podidentityassociation/*/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "EvaluateAddon",
+      "Effect": "Allow",
+      "Action": "eks:DescribeAddon",
+      "Resource": "arn:aws:eks:*:*:addon/*/amazon-cloudwatch-observability/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ListPodIdentityAssociations",
+      "Effect": "Allow",
+      "Action": "eks:ListPodIdentityAssociations",
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "EvaluatePodIdentityAssociation",
+      "Effect": "Allow",
+      "Action": "eks:DescribePodIdentityAssociation",
+      "Resource": "arn:aws:eks:*:*:podidentityassociation/*/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
     }
