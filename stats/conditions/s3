@@ -33,6 +33,8 @@ s3:locationconstraint
 s3:logType
 s3:max-annotation-results
 s3:max-keys
+s3:object-lock-event-hold
+s3:object-lock-event-hold-duration-days
 s3:object-lock-legal-hold
 s3:object-lock-mode
 s3:object-lock-remaining-retention-days

@@ -4343,6 +4343,40 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Filters access by object event hold status (ON or OFF)
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-managing-condition-event-hold
+   *
+   * Applies to actions:
+   * - .toPutObject()
+   * - .toPutObjectRetention()
+   * - .toReplicateObject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifObjectLockEventHold(value: string | string[], operator?: Operator | string) {
+    return this.if(`object-lock-event-hold`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by object event hold duration in days
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-managing-condition-event-hold-duration-days
+   *
+   * Applies to actions:
+   * - .toPutObject()
+   * - .toPutObjectRetention()
+   * - .toReplicateObject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifObjectLockEventHoldDurationDays(value: number | number[], operator?: Operator | string) {
+    return this.if(`object-lock-event-hold-duration-days`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
    * Filters access by object legal hold status
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html#object-lock-legal-holds

@@ -22,6 +22,8 @@ export class SupportConsole extends PolicyStatement {
    * Grants permission to check whether the account has access to given product
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html
    */
   public toCheckSubscription() {
     return this.to('CheckSubscription');
@@ -31,6 +33,8 @@ export class SupportConsole extends PolicyStatement {
    * Grants permission to create or update case draft for the given case type
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html
    */
   public toCreateCaseDraft() {
     return this.to('CreateCaseDraft');
@@ -40,6 +44,8 @@ export class SupportConsole extends PolicyStatement {
    * Grants permission to create an authenticated contact for the given contact type
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html
    */
   public toCreateContact() {
     return this.to('CreateContact');
@@ -49,6 +55,8 @@ export class SupportConsole extends PolicyStatement {
    * Grants permission to delete a case draft for the given case type
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html
    */
   public toDeleteCaseDraft() {
     return this.to('DeleteCaseDraft');
@@ -58,6 +66,8 @@ export class SupportConsole extends PolicyStatement {
    * Grants permission to get dynamic help resources for given service and category
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html
    */
   public toDescribeDynamicHelp() {
     return this.to('DescribeDynamicHelp');
@@ -67,6 +77,8 @@ export class SupportConsole extends PolicyStatement {
    * Grants permission to determines whether the calling account is GovCloud enabled
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html
    */
   public toGetAccountGovCloudEnabled() {
     return this.to('GetAccountGovCloudEnabled');
@@ -76,6 +88,8 @@ export class SupportConsole extends PolicyStatement {
    * Grants permission to get the state of the calling account
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html
    */
   public toGetAccountState() {
     return this.to('GetAccountState');
@@ -85,6 +99,8 @@ export class SupportConsole extends PolicyStatement {
    * Grants permission to get the support banner information
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html
    */
   public toGetBanner() {
     return this.to('GetBanner');
@@ -94,6 +110,8 @@ export class SupportConsole extends PolicyStatement {
    * Grants permission to get a case draft for given case type
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html
    */
   public toGetCaseDraft() {
     return this.to('GetCaseDraft');
@@ -103,6 +121,8 @@ export class SupportConsole extends PolicyStatement {
    * Grants permission to get classification predictions of an issue
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html
    */
   public toGetIssueClassificationPredictions() {
     return this.to('GetIssueClassificationPredictions');
@@ -112,6 +132,8 @@ export class SupportConsole extends PolicyStatement {
    * Grants permission to get a generated text summary of an issue
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html
    */
   public toGetIssueTextSummary() {
     return this.to('GetIssueTextSummary');
@@ -121,6 +143,8 @@ export class SupportConsole extends PolicyStatement {
    * Grants permission to get a feedback questionnaire
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html
    */
   public toGetQuestionnaire() {
     return this.to('GetQuestionnaire');
@@ -130,6 +154,8 @@ export class SupportConsole extends PolicyStatement {
    * Grants permission to save questionnaire feedback
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html
    */
   public toSaveFeedback() {
     return this.to('SaveFeedback');

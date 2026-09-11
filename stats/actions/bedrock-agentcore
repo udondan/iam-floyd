@@ -17,6 +17,7 @@ bedrock-agentcore:CreateBrowserProfile;Write
 bedrock-agentcore:CreateCapacityProvider;Write
 bedrock-agentcore:CreateCodeInterpreter;Write
 bedrock-agentcore:CreateConfigurationBundle;Write
+bedrock-agentcore:CreateConsentPortal;Write
 bedrock-agentcore:CreateDataset;Write
 bedrock-agentcore:CreateDatasetVersion;Write
 bedrock-agentcore:CreateEvaluator;Write
@@ -51,6 +52,7 @@ bedrock-agentcore:DeleteCapacityProvider;Write
 bedrock-agentcore:DeleteCapacityProviderSession;Write
 bedrock-agentcore:DeleteCodeInterpreter;Write
 bedrock-agentcore:DeleteConfigurationBundle;Write
+bedrock-agentcore:DeleteConsentPortal;Write
 bedrock-agentcore:DeleteDataset;Write
 bedrock-agentcore:DeleteDatasetExamples;Write
 bedrock-agentcore:DeleteEvaluator;Write
@@ -96,6 +98,7 @@ bedrock-agentcore:GetCodeInterpreter;Read
 bedrock-agentcore:GetCodeInterpreterSession;Read
 bedrock-agentcore:GetConfigurationBundle;Read
 bedrock-agentcore:GetConfigurationBundleVersion;Read
+bedrock-agentcore:GetConsentPortal;Read
 bedrock-agentcore:GetDataset;Read
 bedrock-agentcore:GetEvaluator;Read
 bedrock-agentcore:GetEvent;Read
@@ -160,6 +163,7 @@ bedrock-agentcore:ListCodeInterpreterSessions;List
 bedrock-agentcore:ListCodeInterpreters;List
 bedrock-agentcore:ListConfigurationBundleVersions;List
 bedrock-agentcore:ListConfigurationBundles;List
+bedrock-agentcore:ListConsentPortals;List
 bedrock-agentcore:ListDatasetExamples;List
 bedrock-agentcore:ListDatasetVersions;List
 bedrock-agentcore:ListDatasets;List
@@ -227,6 +231,7 @@ bedrock-agentcore:UpdateApiKeyCredentialProvider;Write
 bedrock-agentcore:UpdateBrowserStream;Write
 bedrock-agentcore:UpdateCapacityProvider;Write
 bedrock-agentcore:UpdateConfigurationBundle;Write
+bedrock-agentcore:UpdateConsentPortal;Write
 bedrock-agentcore:UpdateDataset;Write
 bedrock-agentcore:UpdateDatasetExamples;Write
 bedrock-agentcore:UpdateEvaluator;Write
