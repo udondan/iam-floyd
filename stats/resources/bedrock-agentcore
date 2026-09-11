@@ -8,6 +8,7 @@ bedrock-agentcore:capacity-provider
 bedrock-agentcore:code-interpreter
 bedrock-agentcore:code-interpreter-custom
 bedrock-agentcore:configuration-bundle
+bedrock-agentcore:consent-portal
 bedrock-agentcore:dataset
 bedrock-agentcore:evaluator
 bedrock-agentcore:gateway

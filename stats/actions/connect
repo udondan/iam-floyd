@@ -203,6 +203,7 @@ connect:ListDataTableValues;List
 connect:ListDataTables;List
 connect:ListDefaultVocabularies;List
 connect:ListEntitySecurityProfiles;List
+connect:ListEvaluationFormAIVersions;List
 connect:ListEvaluationFormVersions;List
 connect:ListEvaluationForms;List
 connect:ListExtractionDefinitions;List

@@ -2231,6 +2231,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the AI versions for evaluation forms in the specified Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListEvaluationFormAIVersions.html
+   */
+  public toListEvaluationFormAIVersions() {
+    return this.to('ListEvaluationFormAIVersions');
+  }
+
+  /**
    * Grants permission to list versions of an evaluation form in the specified Amazon Connect instance
    *
    * Access Level: List
@@ -4588,6 +4599,7 @@ export class Connect extends PolicyStatement {
       'ListDataTables',
       'ListDefaultVocabularies',
       'ListEntitySecurityProfiles',
+      'ListEvaluationFormAIVersions',
       'ListEvaluationFormVersions',
       'ListEvaluationForms',
       'ListExtractionDefinitions',
@@ -5660,6 +5672,7 @@ export class Connect extends PolicyStatement {
    * - .toListDataTables()
    * - .toListDefaultVocabularies()
    * - .toListEntitySecurityProfiles()
+   * - .toListEvaluationFormAIVersions()
    * - .toListEvaluationFormVersions()
    * - .toListEvaluationForms()
    * - .toListExtractionDefinitions()
@@ -6278,6 +6291,7 @@ export class Connect extends PolicyStatement {
    * - .toListDataTables()
    * - .toListDefaultVocabularies()
    * - .toListEntitySecurityProfiles()
+   * - .toListEvaluationFormAIVersions()
    * - .toListEvaluationFormVersions()
    * - .toListEvaluationForms()
    * - .toListExtractionDefinitions()

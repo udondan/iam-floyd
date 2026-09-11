@@ -234,6 +234,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new consent portal
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateConsentPortal.html
+   */
+  public toCreateConsentPortal() {
+    return this.to('CreateConsentPortal');
+  }
+
+  /**
    * Grants permission to create a new dataset
    *
    * Access Level: Write
@@ -642,6 +653,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toDeleteConfigurationBundle() {
     return this.to('DeleteConfigurationBundle');
+  }
+
+  /**
+   * Grants permission to delete a consent portal
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteConsentPortal.html
+   */
+  public toDeleteConsentPortal() {
+    return this.to('DeleteConsentPortal');
   }
 
   /**
@@ -1093,6 +1115,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toGetConfigurationBundleVersion() {
     return this.to('GetConfigurationBundleVersion');
+  }
+
+  /**
+   * Grants permission to retrieve information about a consent portal
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetConsentPortal.html
+   */
+  public toGetConsentPortal() {
+    return this.to('GetConsentPortal');
   }
 
   /**
@@ -1778,6 +1811,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all of the consent portals in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListConsentPortals.html
+   */
+  public toListConsentPortals() {
+    return this.to('ListConsentPortals');
+  }
+
+  /**
    * Grants permission to list examples in a dataset
    *
    * Access Level: List
@@ -2449,6 +2493,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an existing consent portal
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateConsentPortal.html
+   */
+  public toUpdateConsentPortal() {
+    return this.to('UpdateConsentPortal');
+  }
+
+  /**
    * Grants permission to update a dataset
    *
    * Access Level: Write
@@ -2849,6 +2904,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'CreateCapacityProvider',
       'CreateCodeInterpreter',
       'CreateConfigurationBundle',
+      'CreateConsentPortal',
       'CreateDataset',
       'CreateDatasetVersion',
       'CreateEvaluator',
@@ -2883,6 +2939,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'DeleteCapacityProviderSession',
       'DeleteCodeInterpreter',
       'DeleteConfigurationBundle',
+      'DeleteConsentPortal',
       'DeleteDataset',
       'DeleteDatasetExamples',
       'DeleteEvaluator',
@@ -2945,6 +3002,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'UpdateBrowserStream',
       'UpdateCapacityProvider',
       'UpdateConfigurationBundle',
+      'UpdateConsentPortal',
       'UpdateDataset',
       'UpdateDatasetExamples',
       'UpdateEvaluator',
@@ -2997,6 +3055,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'GetCodeInterpreterSession',
       'GetConfigurationBundle',
       'GetConfigurationBundleVersion',
+      'GetConsentPortal',
       'GetDataset',
       'GetEvaluator',
       'GetEvent',
@@ -3054,6 +3113,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'ListCodeInterpreters',
       'ListConfigurationBundleVersions',
       'ListConfigurationBundles',
+      'ListConsentPortals',
       'ListDatasetExamples',
       'ListDatasetVersions',
       'ListDatasets',
@@ -3267,6 +3327,23 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public onConfigurationBundle(configurationBundleId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configuration-bundle/${ configurationBundleId }`);
+  }
+
+  /**
+   * Adds a resource of type consent-portal to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity-consent-portal.html
+   *
+   * @param consentPortalId - Identifier for the consentPortalId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConsentPortal(consentPortalId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:consent-portal/${ consentPortalId }`);
   }
 
   /**
@@ -3648,6 +3725,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateBrowserProfile()
    * - .toCreateCapacityProvider()
    * - .toCreateCodeInterpreter()
+   * - .toCreateConsentPortal()
    * - .toCreateDataset()
    * - .toCreateEvaluator()
    * - .toCreateGateway()
@@ -3685,6 +3763,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateAgentRuntimeEndpoint()
    * - .toCreateApiKeyCredentialProvider()
    * - .toCreateCapacityProvider()
+   * - .toCreateConsentPortal()
    * - .toCreateDataset()
    * - .toCreateDatasetVersion()
    * - .toCreateEvaluator()
@@ -3712,6 +3791,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toDeleteCapacityProviderSession()
    * - .toDeleteCodeInterpreter()
    * - .toDeleteConfigurationBundle()
+   * - .toDeleteConsentPortal()
    * - .toDeleteDataset()
    * - .toDeleteDatasetExamples()
    * - .toDeleteEvaluator()
@@ -3751,6 +3831,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toGetCodeInterpreterSession()
    * - .toGetConfigurationBundle()
    * - .toGetConfigurationBundleVersion()
+   * - .toGetConsentPortal()
    * - .toGetDataset()
    * - .toGetEvaluator()
    * - .toGetEvent()
@@ -3841,6 +3922,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toUpdateBrowserStream()
    * - .toUpdateCapacityProvider()
    * - .toUpdateConfigurationBundle()
+   * - .toUpdateConsentPortal()
    * - .toUpdateDataset()
    * - .toUpdateDatasetExamples()
    * - .toUpdateEvaluator()
@@ -3880,6 +3962,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - capacity-provider
    * - code-interpreter-custom
    * - configuration-bundle
+   * - consent-portal
    * - dataset
    * - evaluator
    * - gateway
@@ -3919,6 +4002,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateBrowserProfile()
    * - .toCreateCapacityProvider()
    * - .toCreateCodeInterpreter()
+   * - .toCreateConsentPortal()
    * - .toCreateDataset()
    * - .toCreateEvaluator()
    * - .toCreateGateway()
