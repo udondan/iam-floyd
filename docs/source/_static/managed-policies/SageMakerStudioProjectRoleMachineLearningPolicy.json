@@ -666,7 +666,8 @@
       "Effect": "Allow",
       "Action": [
         "sagemaker:CreateUserProfile",
-        "sagemaker:DeleteUserProfile"
+        "sagemaker:DeleteUserProfile",
+        "sagemaker:UpdateUserProfile"
       ],
       "Resource": "arn:aws:sagemaker:*:*:user-profile/*/${aws:PrincipalTag/datazone:userId}",
       "Condition": {
@@ -680,7 +681,8 @@
       "Effect": "Allow",
       "Action": [
         "sagemaker:CreateUserProfile",
-        "sagemaker:DeleteUserProfile"
+        "sagemaker:DeleteUserProfile",
+        "sagemaker:UpdateUserProfile"
       ],
       "Resource": "arn:aws:sagemaker:*:*:user-profile/*",
       "Condition": {
