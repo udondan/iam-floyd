@@ -1115,6 +1115,54 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Filters access by the source AgentSpace ARN on the request. Set by the service from the request context, not supplied by the caller
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/
+   *
+   * Applies to actions:
+   * - .toCreateBacklogTask()
+   * - .toGetAsset()
+   * - .toGetAssetContent()
+   * - .toGetAssetFile()
+   * - .toGetBacklogTask()
+   * - .toListAssetFiles()
+   * - .toListAssets()
+   * - .toListBacklogTasks()
+   * - .toListExecutions()
+   * - .toListJournalRecords()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSourceAgentSpaceArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`SourceAgentSpaceArn`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the target AgentSpace ARN on the request. Set by the service from the request context, not supplied by the caller
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/
+   *
+   * Applies to actions:
+   * - .toCreateBacklogTask()
+   * - .toGetAsset()
+   * - .toGetAssetContent()
+   * - .toGetAssetFile()
+   * - .toGetBacklogTask()
+   * - .toListAssetFiles()
+   * - .toListAssets()
+   * - .toListBacklogTasks()
+   * - .toListExecutions()
+   * - .toListJournalRecords()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTargetAgentSpaceArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`TargetAgentSpaceArn`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag

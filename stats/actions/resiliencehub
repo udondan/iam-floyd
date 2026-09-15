@@ -90,7 +90,9 @@ resiliencehub:ListSystemEvents;Read
 resiliencehub:ListSystems;Read
 resiliencehub:ListTagsForResource;Read
 resiliencehub:ListTestRecommendations;List
+resiliencehub:ListTestRunDependencies;Read
 resiliencehub:ListTestRunEvents;Read
+resiliencehub:ListTestRunSourceEvents;Read
 resiliencehub:ListTestRunSources;Read
 resiliencehub:ListTestRuns;Read
 resiliencehub:ListTestSources;Read
