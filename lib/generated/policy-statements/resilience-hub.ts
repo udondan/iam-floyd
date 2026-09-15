@@ -1031,6 +1031,17 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list snapshotted dependencies for a test run
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTestRunDependencies.html
+   */
+  public toListTestRunDependencies() {
+    return this.to('ListTestRunDependencies');
+  }
+
+  /**
    * Grants permission to list events for a test run
    *
    * Access Level: Read
@@ -1039,6 +1050,17 @@ export class Resiliencehub extends PolicyStatement {
    */
   public toListTestRunEvents() {
     return this.to('ListTestRunEvents');
+  }
+
+  /**
+   * Grants permission to list source events for a test run
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTestRunSourceEvents.html
+   */
+  public toListTestRunSourceEvents() {
+    return this.to('ListTestRunSourceEvents');
   }
 
   /**
@@ -1531,7 +1553,9 @@ export class Resiliencehub extends PolicyStatement {
       'ListSystemEvents',
       'ListSystems',
       'ListTagsForResource',
+      'ListTestRunDependencies',
       'ListTestRunEvents',
+      'ListTestRunSourceEvents',
       'ListTestRunSources',
       'ListTestRuns',
       'ListTestSources',
@@ -1812,7 +1836,9 @@ export class Resiliencehub extends PolicyStatement {
    * - .toListSystemEvents()
    * - .toListTagsForResource()
    * - .toListTestRecommendations()
+   * - .toListTestRunDependencies()
    * - .toListTestRunEvents()
+   * - .toListTestRunSourceEvents()
    * - .toListTestRunSources()
    * - .toListTestRuns()
    * - .toListTestSources()
