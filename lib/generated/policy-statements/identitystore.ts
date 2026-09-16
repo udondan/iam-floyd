@@ -144,9 +144,6 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifPrimaryRegion()
-   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDescribeRegion() {
@@ -154,7 +151,7 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about user in the specified IdentityStore
+   * Grants permission to retrieve information about a user in the specified IdentityStore
    *
    * Access Level: Read
    *
@@ -165,7 +162,7 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve ID information about group in the specified IdentityStore
+   * Grants permission to retrieve ID information about a group in the specified IdentityStore
    *
    * Access Level: Read
    *
@@ -187,7 +184,7 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieves ID information about user in the specified IdentityStore
+   * Grants permission to retrieve ID information about a user in the specified IdentityStore
    *
    * Access Level: Read
    *
@@ -231,7 +228,7 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to search for groups within the specified IdentityStore
+   * Grants permission to retrieve information about all groups in the specified IdentityStore
    *
    * Access Level: List
    *
@@ -246,9 +243,6 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifPrimaryRegion()
-   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListRegions() {
@@ -256,7 +250,7 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to search for users in the specified IdentityStore
+   * Grants permission to retrieve information about all users in the specified IdentityStore
    *
    * Access Level: List
    *

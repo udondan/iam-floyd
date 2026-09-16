@@ -5,6 +5,7 @@ directconnect:AllocatePrivateVirtualInterface;Write
 directconnect:AllocatePublicVirtualInterface;Write
 directconnect:AllocateTransitVirtualInterface;Write
 directconnect:AssociateConnectionWithLag;Write
+directconnect:AssociateConnectionsToResiliencyGroup;Write
 directconnect:AssociateHostedConnection;Write
 directconnect:AssociateMacSecKey;Write
 directconnect:AssociateVirtualInterface;Write
@@ -22,6 +23,7 @@ directconnect:CreateInterconnect;Write
 directconnect:CreateLag;Write
 directconnect:CreatePrivateVirtualInterface;Write
 directconnect:CreatePublicVirtualInterface;Write
+directconnect:CreateResiliencyGroup;Write
 directconnect:CreateTransitVirtualInterface;Write
 directconnect:DeleteBGPPeer;Write
 directconnect:DeleteConnection;Write
@@ -30,6 +32,7 @@ directconnect:DeleteDirectConnectGatewayAssociation;Write
 directconnect:DeleteDirectConnectGatewayAssociationProposal;Write
 directconnect:DeleteInterconnect;Write
 directconnect:DeleteLag;Write
+directconnect:DeleteResiliencyGroup;Write
 directconnect:DeleteVirtualInterface;Write
 directconnect:DescribeConnectionLoa;Read
 directconnect:DescribeConnections;Read
@@ -50,7 +53,11 @@ directconnect:DescribeTags;Read
 directconnect:DescribeVirtualGateways;Read
 directconnect:DescribeVirtualInterfaces;Read
 directconnect:DisassociateConnectionFromLag;Write
+directconnect:DisassociateConnectionsFromResiliencyGroup;Write
 directconnect:DisassociateMacSecKey;Write
+directconnect:GetResiliencyGroup;Read
+directconnect:ListResiliencyGroupAssociations;List
+directconnect:ListResiliencyGroups;List
 directconnect:ListVirtualInterfaceRoutes;List
 directconnect:ListVirtualInterfaceTestHistory;List
 directconnect:StartBgpFailoverTest;Write
@@ -58,7 +65,9 @@ directconnect:StopBgpFailoverTest;Write
 directconnect:TagResource;Tagging, Write
 directconnect:UntagResource;Tagging, Write
 directconnect:UpdateConnection;Write
+directconnect:UpdateConnectionsBillingMode;Write
 directconnect:UpdateDirectConnectGateway;Write
 directconnect:UpdateDirectConnectGatewayAssociation;Write
 directconnect:UpdateLag;Write
+directconnect:UpdateResiliencyGroup;Write
 directconnect:UpdateVirtualInterfaceAttributes;Write

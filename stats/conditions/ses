@@ -1,5 +1,7 @@
 ses:AddonSubscriptionArn
 ses:ApiVersion
+ses:ClickTrackingEnabled
+ses:ConfigurationSetOptions
 ses:ExportSourceType
 ses:FeedbackAddress
 ses:FromAddress
@@ -8,6 +10,7 @@ ses:MailManagerIngressPointType
 ses:MailManagerRuleSetArn
 ses:MailManagerTrafficPolicyArn
 ses:MultiRegionEndpointId
+ses:OpenTrackingEnabled
 ses:Recipients
 ses:ReplicaRegion
 ses:RequestTag/${TagKey}
