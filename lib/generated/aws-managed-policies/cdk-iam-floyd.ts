@@ -6544,6 +6544,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSWAFReadOnlyAccess);
     }
 
+    /** Allows AWS Well-Architected Agent to access organizational structure and delegated administrator information in AWS Organizations on your behalf */
+    public AWSWellArchitectedAgentOrganizationsServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSWellArchitectedAgentOrganizationsServiceRolePolicy);
+    }
+
     /** Grants the AWS Well-Architected Agent read-only access to AWS resource configurations, security settings, and operational data to generate optimization recommendations */
     public AWSWellArchitectedAgentResourceScanningServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSWellArchitectedAgentResourceScanningServiceRolePolicy);

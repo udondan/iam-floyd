@@ -1075,6 +1075,21 @@
       }
     },
     {
+      "Sid": "CreateTransitGatewaySLR",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/transitgateway.amazonaws.com/AWSServiceRoleForVPCTransitGateway"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "transitgateway.amazonaws.com"
+        }
+      }
+    },
+    {
       "Sid": "AnalyzerENIResourceTag",
       "Effect": "Allow",
       "Action": [
