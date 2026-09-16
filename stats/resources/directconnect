@@ -1,4 +1,5 @@
 directconnect:dx-gateway
+directconnect:dx-resiliency-group
 directconnect:dxcon
 directconnect:dxlag
 directconnect:dxvif

@@ -96,6 +96,17 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate one or more connections with a resiliency group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AssociateConnectionsToResiliencyGroup.html
+   */
+  public toAssociateConnectionsToResiliencyGroup() {
+    return this.to('AssociateConnectionsToResiliencyGroup');
+  }
+
+  /**
    * Grants permission to associate a hosted connection and its virtual interfaces with a link aggregation group (LAG) or interconnect
    *
    * Access Level: Write
@@ -287,6 +298,21 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a resiliency group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateResiliencyGroup.html
+   */
+  public toCreateResiliencyGroup() {
+    return this.to('CreateResiliencyGroup');
+  }
+
+  /**
    * Grants permission to create a new transit virtual interface
    *
    * Access Level: Write
@@ -372,6 +398,17 @@ export class Directconnect extends PolicyStatement {
    */
   public toDeleteLag() {
     return this.to('DeleteLag');
+  }
+
+  /**
+   * Grants permission to delete a resiliency group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteResiliencyGroup.html
+   */
+  public toDeleteResiliencyGroup() {
+    return this.to('DeleteResiliencyGroup');
   }
 
   /**
@@ -595,6 +632,17 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate one or more connections from a resiliency group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DisassociateConnectionsFromResiliencyGroup.html
+   */
+  public toDisassociateConnectionsFromResiliencyGroup() {
+    return this.to('DisassociateConnectionsFromResiliencyGroup');
+  }
+
+  /**
    * Grants permission to remove the association between a MAC Security (MACsec) security key and an AWS Direct Connect dedicated connection
    *
    * Access Level: Write
@@ -603,6 +651,39 @@ export class Directconnect extends PolicyStatement {
    */
   public toDisassociateMacSecKey() {
     return this.to('DisassociateMacSecKey');
+  }
+
+  /**
+   * Grants permission to describe a resiliency group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_GetResiliencyGroup.html
+   */
+  public toGetResiliencyGroup() {
+    return this.to('GetResiliencyGroup');
+  }
+
+  /**
+   * Grants permission to list the connection associations of a resiliency group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListResiliencyGroupAssociations.html
+   */
+  public toListResiliencyGroupAssociations() {
+    return this.to('ListResiliencyGroupAssociations');
+  }
+
+  /**
+   * Grants permission to list all resiliency groups owned by the AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListResiliencyGroups.html
+   */
+  public toListResiliencyGroups() {
+    return this.to('ListResiliencyGroups');
   }
 
   /**
@@ -683,6 +764,17 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the billing mode for up to 200 AWS Direct Connect connections in a single request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UpdateConnectionsBillingMode.html
+   */
+  public toUpdateConnectionsBillingMode() {
+    return this.to('UpdateConnectionsBillingMode');
+  }
+
+  /**
    * Grants permission to update the name of a Direct Connect gateway
    *
    * Access Level: Write
@@ -716,6 +808,17 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the attributes of a resiliency group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UpdateResiliencyGroup.html
+   */
+  public toUpdateResiliencyGroup() {
+    return this.to('UpdateResiliencyGroup');
+  }
+
+  /**
    * Grants permission to update the specified attributes of the specified virtual private interface
    *
    * Access Level: Write
@@ -735,6 +838,7 @@ export class Directconnect extends PolicyStatement {
       'AllocatePublicVirtualInterface',
       'AllocateTransitVirtualInterface',
       'AssociateConnectionWithLag',
+      'AssociateConnectionsToResiliencyGroup',
       'AssociateHostedConnection',
       'AssociateMacSecKey',
       'AssociateVirtualInterface',
@@ -752,6 +856,7 @@ export class Directconnect extends PolicyStatement {
       'CreateLag',
       'CreatePrivateVirtualInterface',
       'CreatePublicVirtualInterface',
+      'CreateResiliencyGroup',
       'CreateTransitVirtualInterface',
       'DeleteBGPPeer',
       'DeleteConnection',
@@ -760,17 +865,21 @@ export class Directconnect extends PolicyStatement {
       'DeleteDirectConnectGatewayAssociationProposal',
       'DeleteInterconnect',
       'DeleteLag',
+      'DeleteResiliencyGroup',
       'DeleteVirtualInterface',
       'DisassociateConnectionFromLag',
+      'DisassociateConnectionsFromResiliencyGroup',
       'DisassociateMacSecKey',
       'StartBgpFailoverTest',
       'StopBgpFailoverTest',
       'TagResource',
       'UntagResource',
       'UpdateConnection',
+      'UpdateConnectionsBillingMode',
       'UpdateDirectConnectGateway',
       'UpdateDirectConnectGatewayAssociation',
       'UpdateLag',
+      'UpdateResiliencyGroup',
       'UpdateVirtualInterfaceAttributes'
     ],
     Read: [
@@ -791,9 +900,12 @@ export class Directconnect extends PolicyStatement {
       'DescribeRouterConfiguration',
       'DescribeTags',
       'DescribeVirtualGateways',
-      'DescribeVirtualInterfaces'
+      'DescribeVirtualInterfaces',
+      'GetResiliencyGroup'
     ],
     List: [
+      'ListResiliencyGroupAssociations',
+      'ListResiliencyGroups',
       'ListVirtualInterfaceRoutes',
       'ListVirtualInterfaceTestHistory'
     ],
@@ -817,6 +929,22 @@ export class Directconnect extends PolicyStatement {
    */
   public onDxGateway(directConnectGatewayId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:directconnect::${ account ?? this.defaultAccount }:dx-gateway/${ directConnectGatewayId }`);
+  }
+
+  /**
+   * Adds a resource of type dx-resiliency-group to the statement
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ResiliencyGroup.html
+   *
+   * @param resiliencyGroupId - Identifier for the resiliencyGroupId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDxResiliencyGroup(resiliencyGroupId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:directconnect::${ account ?? this.defaultAccount }:dx-resiliency-group/${ resiliencyGroupId }`);
   }
 
   /**
@@ -886,6 +1014,7 @@ export class Directconnect extends PolicyStatement {
    * - .toCreateLag()
    * - .toCreatePrivateVirtualInterface()
    * - .toCreatePublicVirtualInterface()
+   * - .toCreateResiliencyGroup()
    * - .toCreateTransitVirtualInterface()
    * - .toTagResource()
    *
@@ -910,6 +1039,7 @@ export class Directconnect extends PolicyStatement {
    * - .toAllocatePublicVirtualInterface()
    * - .toAllocateTransitVirtualInterface()
    * - .toAssociateConnectionWithLag()
+   * - .toAssociateConnectionsToResiliencyGroup()
    * - .toAssociateHostedConnection()
    * - .toAssociateMacSecKey()
    * - .toAssociateVirtualInterface()
@@ -932,6 +1062,7 @@ export class Directconnect extends PolicyStatement {
    * - .toDeleteDirectConnectGatewayAssociation()
    * - .toDeleteInterconnect()
    * - .toDeleteLag()
+   * - .toDeleteResiliencyGroup()
    * - .toDeleteVirtualInterface()
    * - .toDescribeConnectionLoa()
    * - .toDescribeConnections()
@@ -949,7 +1080,10 @@ export class Directconnect extends PolicyStatement {
    * - .toDescribeTags()
    * - .toDescribeVirtualInterfaces()
    * - .toDisassociateConnectionFromLag()
+   * - .toDisassociateConnectionsFromResiliencyGroup()
    * - .toDisassociateMacSecKey()
+   * - .toGetResiliencyGroup()
+   * - .toListResiliencyGroupAssociations()
    * - .toListVirtualInterfaceRoutes()
    * - .toListVirtualInterfaceTestHistory()
    * - .toStartBgpFailoverTest()
@@ -957,12 +1091,15 @@ export class Directconnect extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateConnection()
+   * - .toUpdateConnectionsBillingMode()
    * - .toUpdateDirectConnectGateway()
    * - .toUpdateLag()
+   * - .toUpdateResiliencyGroup()
    * - .toUpdateVirtualInterfaceAttributes()
    *
    * Applies to resource types:
    * - dx-gateway
+   * - dx-resiliency-group
    * - dxcon
    * - dxlag
    * - dxvif
@@ -991,6 +1128,7 @@ export class Directconnect extends PolicyStatement {
    * - .toCreateLag()
    * - .toCreatePrivateVirtualInterface()
    * - .toCreatePublicVirtualInterface()
+   * - .toCreateResiliencyGroup()
    * - .toCreateTransitVirtualInterface()
    * - .toTagResource()
    * - .toUntagResource()

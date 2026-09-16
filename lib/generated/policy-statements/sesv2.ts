@@ -19,6 +19,17 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a certificate with an email identity
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_AssociateEmailIdentityCertificate.html
+   */
+  public toAssociateEmailIdentityCertificate() {
+    return this.to('AssociateEmailIdentityCertificate');
+  }
+
+  /**
    * Grants permission to get metric data on your activity
    *
    * Access Level: Read
@@ -358,6 +369,17 @@ export class SesV2 extends PolicyStatement {
    */
   public toDeleteTenantResourceAssociation() {
     return this.to('DeleteTenantResourceAssociation');
+  }
+
+  /**
+   * Grants permission to disassociate a certificate from an email identity
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DisassociateEmailIdentityCertificate.html
+   */
+  public toDisassociateEmailIdentityCertificate() {
+    return this.to('DisassociateEmailIdentityCertificate');
   }
 
   /**
@@ -766,6 +788,17 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the certificates associated with an email identity
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListEmailIdentityCertificates.html
+   */
+  public toListEmailIdentityCertificates() {
+    return this.to('ListEmailIdentityCertificates');
+  }
+
+  /**
    * Grants permission to list all of the email templates for your account
    *
    * Access Level: List
@@ -849,7 +882,7 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListResourceTenants
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListResourceTenants.html
    */
   public toListResourceTenants() {
     return this.to('ListResourceTenants');
@@ -882,7 +915,7 @@ export class SesV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListTenantResources
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListTenantResources.html
    */
   public toListTenantResources() {
     return this.to('ListTenantResources');
@@ -896,7 +929,7 @@ export class SesV2 extends PolicyStatement {
    * Possible conditions:
    * - .ifApiVersion()
    *
-   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListTenants
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListTenants.html
    */
   public toListTenants() {
     return this.to('ListTenants');
@@ -1257,6 +1290,17 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a configuration set
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateConfigurationSet.html
+   */
+  public toUpdateConfigurationSet() {
+    return this.to('UpdateConfigurationSet');
+  }
+
+  /**
    * Grants permission to update the configuration of an event destination for a configuration set
    *
    * Access Level: Write
@@ -1345,15 +1389,106 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to apply tracking configuration overrides when sending email
+   *
+   * Access Level: Permissions management, Write
+   *
+   * Possible conditions:
+   * - .ifClickTrackingEnabled()
+   * - .ifOpenTrackingEnabled()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ConfigurationOverrides.html
+   */
+  public toApplyTrackingConfigurationOverrides() {
+    return this.to('ApplyTrackingConfigurationOverrides');
+  }
+
+  /**
    * Grants permission to replicate email identity DKIM signing key
    *
    * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-deed.html
    */
   public toReplicateEmailIdentityDkimSigningKey() {
     return this.to('ReplicateEmailIdentityDkimSigningKey');
   }
 
   protected accessLevelList: AccessLevelList = {
+    Write: [
+      'AssociateEmailIdentityCertificate',
+      'CancelExportJob',
+      'CreateConfigurationSet',
+      'CreateConfigurationSetEventDestination',
+      'CreateContact',
+      'CreateContactList',
+      'CreateCustomVerificationEmailTemplate',
+      'CreateDedicatedIpPool',
+      'CreateDeliverabilityTestReport',
+      'CreateEmailIdentity',
+      'CreateEmailIdentityPolicy',
+      'CreateEmailTemplate',
+      'CreateExportJob',
+      'CreateImportJob',
+      'CreateMultiRegionEndpoint',
+      'CreateTenant',
+      'CreateTenantResourceAssociation',
+      'DeleteConfigurationSet',
+      'DeleteConfigurationSetEventDestination',
+      'DeleteContact',
+      'DeleteContactList',
+      'DeleteCustomVerificationEmailTemplate',
+      'DeleteDedicatedIpPool',
+      'DeleteEmailIdentity',
+      'DeleteEmailIdentityPolicy',
+      'DeleteEmailTemplate',
+      'DeleteMultiRegionEndpoint',
+      'DeleteSuppressedDestination',
+      'DeleteTenant',
+      'DeleteTenantResourceAssociation',
+      'DisassociateEmailIdentityCertificate',
+      'PutAccountDedicatedIpWarmupAttributes',
+      'PutAccountDetails',
+      'PutAccountPricingAttributes',
+      'PutAccountSendingAttributes',
+      'PutAccountSuppressionAttributes',
+      'PutAccountVdmAttributes',
+      'PutConfigurationSetArchivingOptions',
+      'PutConfigurationSetDeliveryOptions',
+      'PutConfigurationSetReputationOptions',
+      'PutConfigurationSetSendingOptions',
+      'PutConfigurationSetSuppressionOptions',
+      'PutConfigurationSetTrackingOptions',
+      'PutConfigurationSetVdmOptions',
+      'PutDedicatedIpInPool',
+      'PutDedicatedIpPoolScalingAttributes',
+      'PutDedicatedIpWarmupAttributes',
+      'PutDeliverabilityDashboardOption',
+      'PutEmailIdentityConfigurationSetAttributes',
+      'PutEmailIdentityDkimAttributes',
+      'PutEmailIdentityDkimSigningAttributes',
+      'PutEmailIdentityFeedbackAttributes',
+      'PutEmailIdentityMailFromAttributes',
+      'PutSuppressedDestination',
+      'PutTenantSuppressionAttributes',
+      'SendBulkEmail',
+      'SendCustomVerificationEmail',
+      'SendEmail',
+      'TagResource',
+      'TestRenderEmailTemplate',
+      'UntagResource',
+      'UpdateConfigurationSet',
+      'UpdateConfigurationSetEventDestination',
+      'UpdateContact',
+      'UpdateContactList',
+      'UpdateCustomVerificationEmailTemplate',
+      'UpdateEmailIdentityPolicy',
+      'UpdateEmailTemplate',
+      'UpdateReputationEntityCustomerManagedStatus',
+      'UpdateReputationEntityPolicy',
+      'ApplyTrackingConfigurationOverrides',
+      'ReplicateEmailIdentityDkimSigningKey'
+    ],
     Read: [
       'BatchGetMetricData',
       'GetAccount',
@@ -1386,80 +1521,11 @@ export class SesV2 extends PolicyStatement {
       'ListSuppressedDestinations',
       'ListTagsForResource'
     ],
-    Write: [
-      'CancelExportJob',
-      'CreateConfigurationSet',
-      'CreateConfigurationSetEventDestination',
-      'CreateContact',
-      'CreateContactList',
-      'CreateCustomVerificationEmailTemplate',
-      'CreateDedicatedIpPool',
-      'CreateDeliverabilityTestReport',
-      'CreateEmailIdentity',
-      'CreateEmailIdentityPolicy',
-      'CreateEmailTemplate',
-      'CreateExportJob',
-      'CreateImportJob',
-      'CreateMultiRegionEndpoint',
-      'CreateTenant',
-      'CreateTenantResourceAssociation',
-      'DeleteConfigurationSet',
-      'DeleteConfigurationSetEventDestination',
-      'DeleteContact',
-      'DeleteContactList',
-      'DeleteCustomVerificationEmailTemplate',
-      'DeleteDedicatedIpPool',
-      'DeleteEmailIdentity',
-      'DeleteEmailIdentityPolicy',
-      'DeleteEmailTemplate',
-      'DeleteMultiRegionEndpoint',
-      'DeleteSuppressedDestination',
-      'DeleteTenant',
-      'DeleteTenantResourceAssociation',
-      'PutAccountDedicatedIpWarmupAttributes',
-      'PutAccountDetails',
-      'PutAccountPricingAttributes',
-      'PutAccountSendingAttributes',
-      'PutAccountSuppressionAttributes',
-      'PutAccountVdmAttributes',
-      'PutConfigurationSetArchivingOptions',
-      'PutConfigurationSetDeliveryOptions',
-      'PutConfigurationSetReputationOptions',
-      'PutConfigurationSetSendingOptions',
-      'PutConfigurationSetSuppressionOptions',
-      'PutConfigurationSetTrackingOptions',
-      'PutConfigurationSetVdmOptions',
-      'PutDedicatedIpInPool',
-      'PutDedicatedIpPoolScalingAttributes',
-      'PutDedicatedIpWarmupAttributes',
-      'PutDeliverabilityDashboardOption',
-      'PutEmailIdentityConfigurationSetAttributes',
-      'PutEmailIdentityDkimAttributes',
-      'PutEmailIdentityDkimSigningAttributes',
-      'PutEmailIdentityFeedbackAttributes',
-      'PutEmailIdentityMailFromAttributes',
-      'PutSuppressedDestination',
-      'PutTenantSuppressionAttributes',
-      'SendBulkEmail',
-      'SendCustomVerificationEmail',
-      'SendEmail',
-      'TagResource',
-      'TestRenderEmailTemplate',
-      'UntagResource',
-      'UpdateConfigurationSetEventDestination',
-      'UpdateContact',
-      'UpdateContactList',
-      'UpdateCustomVerificationEmailTemplate',
-      'UpdateEmailIdentityPolicy',
-      'UpdateEmailTemplate',
-      'UpdateReputationEntityCustomerManagedStatus',
-      'UpdateReputationEntityPolicy',
-      'ReplicateEmailIdentityDkimSigningKey'
-    ],
     'Permissions management': [
       'CreateEmailIdentityPolicy',
       'DeleteEmailIdentityPolicy',
       'UpdateEmailIdentityPolicy',
+      'ApplyTrackingConfigurationOverrides',
       'ReplicateEmailIdentityDkimSigningKey'
     ],
     List: [
@@ -1470,6 +1536,7 @@ export class SesV2 extends PolicyStatement {
       'ListDedicatedIpPools',
       'ListDeliverabilityTestReports',
       'ListEmailIdentities',
+      'ListEmailIdentityCertificates',
       'ListEmailTemplates',
       'ListExportJobs',
       'ListImportJobs',
@@ -1726,6 +1793,7 @@ export class SesV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toAssociateEmailIdentityCertificate()
    * - .toBatchGetMetricData()
    * - .toCreateConfigurationSet()
    * - .toCreateConfigurationSetEventDestination()
@@ -1752,6 +1820,7 @@ export class SesV2 extends PolicyStatement {
    * - .toDeleteSuppressedDestination()
    * - .toDeleteTenant()
    * - .toDeleteTenantResourceAssociation()
+   * - .toDisassociateEmailIdentityCertificate()
    * - .toGetConfigurationSet()
    * - .toGetConfigurationSetEventDestinations()
    * - .toGetContact()
@@ -1769,6 +1838,7 @@ export class SesV2 extends PolicyStatement {
    * - .toGetSuppressedDestination()
    * - .toGetTenant()
    * - .toListContacts()
+   * - .toListEmailIdentityCertificates()
    * - .toListRecommendations()
    * - .toListReputationEntities()
    * - .toListResourceTenants()
@@ -1797,6 +1867,7 @@ export class SesV2 extends PolicyStatement {
    * - .toTagResource()
    * - .toTestRenderEmailTemplate()
    * - .toUntagResource()
+   * - .toUpdateConfigurationSet()
    * - .toUpdateConfigurationSetEventDestination()
    * - .toUpdateContact()
    * - .toUpdateContactList()
@@ -1858,6 +1929,7 @@ export class SesV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *
    * Applies to actions:
+   * - .toAssociateEmailIdentityCertificate()
    * - .toBatchGetMetricData()
    * - .toCancelExportJob()
    * - .toCreateConfigurationSet()
@@ -1888,6 +1960,7 @@ export class SesV2 extends PolicyStatement {
    * - .toDeleteSuppressedDestination()
    * - .toDeleteTenant()
    * - .toDeleteTenantResourceAssociation()
+   * - .toDisassociateEmailIdentityCertificate()
    * - .toGetAccount()
    * - .toGetBlacklistReports()
    * - .toGetConfigurationSet()
@@ -1921,6 +1994,7 @@ export class SesV2 extends PolicyStatement {
    * - .toListDeliverabilityTestReports()
    * - .toListDomainDeliverabilityCampaigns()
    * - .toListEmailIdentities()
+   * - .toListEmailIdentityCertificates()
    * - .toListEmailTemplates()
    * - .toListExportJobs()
    * - .toListImportJobs()
@@ -1962,6 +2036,7 @@ export class SesV2 extends PolicyStatement {
    * - .toTagResource()
    * - .toTestRenderEmailTemplate()
    * - .toUntagResource()
+   * - .toUpdateConfigurationSet()
    * - .toUpdateConfigurationSetEventDestination()
    * - .toUpdateContact()
    * - .toUpdateContactList()
@@ -1976,6 +2051,36 @@ export class SesV2 extends PolicyStatement {
    */
   public ifApiVersion(value: string | string[], operator?: Operator | string) {
     return this.if(`ApiVersion`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the click tracking override value specified in configuration overrides
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
+   *
+   * Applies to actions:
+   * - .toApplyTrackingConfigurationOverrides()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifClickTrackingEnabled(value: string | string[], operator?: Operator | string) {
+    return this.if(`ClickTrackingEnabled`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the configuration set options included in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
+   *
+   * Applies to actions:
+   * - .toUpdateConfigurationSet()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifConfigurationSetOptions(value: string | string[], operator?: Operator | string) {
+    return this.if(`ConfigurationSetOptions`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2018,6 +2123,8 @@ export class SesV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *
    * Applies to actions:
+   * - .toAssociateEmailIdentityCertificate()
+   * - .toDisassociateEmailIdentityCertificate()
    * - .toSendCustomVerificationEmail()
    * - .toSendEmail()
    *
@@ -2058,6 +2165,21 @@ export class SesV2 extends PolicyStatement {
    */
   public ifMultiRegionEndpointId(value: string | string[], operator?: Operator | string) {
     return this.if(`MultiRegionEndpointId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the open tracking override value specified in configuration overrides
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
+   *
+   * Applies to actions:
+   * - .toApplyTrackingConfigurationOverrides()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifOpenTrackingEnabled(value: string | string[], operator?: Operator | string) {
+    return this.if(`OpenTrackingEnabled`, value, operator ?? 'StringLike');
   }
 
   /**

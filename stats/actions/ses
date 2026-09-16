@@ -1,4 +1,6 @@
 ses:AllowVendedLogDeliveryForResource;Permissions management, Write
+ses:ApplyTrackingConfigurationOverrides;Permissions management, Write
+ses:AssociateEmailIdentityCertificate;Write
 ses:BatchGetMetricData;Read
 ses:CancelExportJob;Write
 ses:CloneReceiptRuleSet;Write
@@ -65,6 +67,7 @@ ses:DescribeActiveReceiptRuleSet;Read
 ses:DescribeConfigurationSet;Read
 ses:DescribeReceiptRule;Read
 ses:DescribeReceiptRuleSet;Read
+ses:DisassociateEmailIdentityCertificate;Write
 ses:GetAccount;Read
 ses:GetAccountSendingEnabled;Read
 ses:GetAddonInstance;Read
@@ -129,6 +132,7 @@ ses:ListDedicatedIpPools;List
 ses:ListDeliverabilityTestReports;List
 ses:ListDomainDeliverabilityCampaigns;Read
 ses:ListEmailIdentities;List
+ses:ListEmailIdentityCertificates;List
 ses:ListEmailTemplates;List
 ses:ListExportJobs;List
 ses:ListIdentities;List
@@ -205,6 +209,7 @@ ses:TestRenderTemplate;Write
 ses:UntagResource;Tagging, Write
 ses:UpdateAccountSendingEnabled;Write
 ses:UpdateArchive;Write
+ses:UpdateConfigurationSet;Write
 ses:UpdateConfigurationSetEventDestination;Write
 ses:UpdateConfigurationSetReputationMetricsEnabled;Write
 ses:UpdateConfigurationSetSendingEnabled;Write
