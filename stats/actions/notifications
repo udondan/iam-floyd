@@ -1,3 +1,4 @@
+notifications:AccessSensitiveEvents;Read
 notifications:AssociateChannel;Write
 notifications:AssociateManagedNotificationAccountContact;Write
 notifications:AssociateManagedNotificationAdditionalChannel;Write
@@ -35,7 +36,9 @@ notifications:ListOrganizationalUnits;List
 notifications:ListTagsForResource;List
 notifications:PutFeatureOptInStatus;Write
 notifications:RegisterNotificationHub;Write
+notifications:SubscribeSensitiveEvents;Write
 notifications:TagResource;Tagging, Write
 notifications:UntagResource;Tagging, Write
 notifications:UpdateEventRule;Write
+notifications:UpdateManagedNotificationChannelAssociation;Write
 notifications:UpdateNotificationConfiguration;Write
