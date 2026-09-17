@@ -9,6 +9,7 @@ healthlake:DeleteResource;Write
 healthlake:DescribeDataTransformationJob;Read
 healthlake:DescribeFHIRBulkDeleteJob;Read
 healthlake:DescribeFHIRBulkMemberMatchJob;Read
+healthlake:DescribeFHIRBulkPatchJob;Read
 healthlake:DescribeFHIRDatastore;Read
 healthlake:DescribeFHIRExportJob;Read
 healthlake:DescribeFHIRExportJobWithGet;Read
@@ -47,6 +48,7 @@ healthlake:SearchWithPost;Read
 healthlake:StartDataTransformationJob;Write
 healthlake:StartFHIRBulkDeleteJob;Write
 healthlake:StartFHIRBulkMemberMatchJob;Write
+healthlake:StartFHIRBulkPatchJob;Write
 healthlake:StartFHIRExportJob;Write
 healthlake:StartFHIRExportJobWithGet;Write
 healthlake:StartFHIRExportJobWithPost;Write

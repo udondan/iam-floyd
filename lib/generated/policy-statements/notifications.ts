@@ -166,7 +166,7 @@ export class Notifications extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate an Organizational Unit to a particular Notification Configuration
+   * Grants permission to remove an Organizational Unit from a NotificationConfiguration
    *
    * Access Level: Write
    *
@@ -331,7 +331,7 @@ export class Notifications extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list Member Accounts for a Notification Configuration
+   * Grants permission to list MemberAccounts by AdminNotificationConfiguration
    *
    * Access Level: List
    *
@@ -375,7 +375,7 @@ export class Notifications extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list Organizational Units for a Notification Configuration
+   * Grants permission to list Organizational Units by NotificationConfiguration
    *
    * Access Level: List
    *
@@ -441,6 +441,17 @@ export class Notifications extends PolicyStatement {
   }
 
   /**
+   * Grants permission to toggle the sensitive-events subscription on an existing Managed Notification channel association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_UpdateManagedNotificationChannelAssociation.html
+   */
+  public toUpdateManagedNotificationChannelAssociation() {
+    return this.to('UpdateManagedNotificationChannelAssociation');
+  }
+
+  /**
    * Grants permission to update a NotificationConfiguration
    *
    * Access Level: Write
@@ -449,6 +460,17 @@ export class Notifications extends PolicyStatement {
    */
   public toUpdateNotificationConfiguration() {
     return this.to('UpdateNotificationConfiguration');
+  }
+
+  /**
+   * Grants permission to access sensitive Notification events
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/notifications/latest/userguide/AccessSensitiveEvents-security-iam.html
+   */
+  public toAccessSensitiveEvents() {
+    return this.to('AccessSensitiveEvents');
   }
 
   /**
@@ -473,6 +495,17 @@ export class Notifications extends PolicyStatement {
     return this.to('PutFeatureOptInStatus');
   }
 
+  /**
+   * Grants permission to subscribe to sensitive events on an existing Managed Notification channel association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/notifications/latest/userguide/SubscribeSensitiveEvents-security-iam.html
+   */
+  public toSubscribeSensitiveEvents() {
+    return this.to('SubscribeSensitiveEvents');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateChannel',
@@ -494,8 +527,10 @@ export class Notifications extends PolicyStatement {
       'TagResource',
       'UntagResource',
       'UpdateEventRule',
+      'UpdateManagedNotificationChannelAssociation',
       'UpdateNotificationConfiguration',
-      'PutFeatureOptInStatus'
+      'PutFeatureOptInStatus',
+      'SubscribeSensitiveEvents'
     ],
     'Permissions management': [
       'DisableNotificationsAccessForOrganization',
@@ -509,6 +544,7 @@ export class Notifications extends PolicyStatement {
       'GetNotificationConfiguration',
       'GetNotificationEvent',
       'GetNotificationsAccessForOrganization',
+      'AccessSensitiveEvents',
       'GetFeatureOptInStatus'
     ],
     List: [

@@ -150,6 +150,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a FHIR Bulk Patch Job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-bulk-patch.html
+   */
+  public toDescribeFHIRBulkPatchJob() {
+    return this.to('DescribeFHIRBulkPatchJob');
+  }
+
+  /**
    * Grants permission to get the properties associated with the FHIR datastore, including the datastore ID, datastore ARN, datastore name, datastore status, created at, datastore type version, and datastore endpoint
    *
    * Access Level: Read
@@ -568,6 +579,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to begin a FHIR Bulk Patch Job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-bulk-patch.html
+   */
+  public toStartFHIRBulkPatchJob() {
+    return this.to('StartFHIRBulkPatchJob');
+  }
+
+  /**
    * Grants permission to begin a FHIR Export job
    *
    * Access Level: Write
@@ -777,6 +799,7 @@ export class Healthlake extends PolicyStatement {
       'StartDataTransformationJob',
       'StartFHIRBulkDeleteJob',
       'StartFHIRBulkMemberMatchJob',
+      'StartFHIRBulkPatchJob',
       'StartFHIRExportJob',
       'StartFHIRExportJobWithGet',
       'StartFHIRExportJobWithPost',
@@ -794,6 +817,7 @@ export class Healthlake extends PolicyStatement {
       'DescribeDataTransformationJob',
       'DescribeFHIRBulkDeleteJob',
       'DescribeFHIRBulkMemberMatchJob',
+      'DescribeFHIRBulkPatchJob',
       'DescribeFHIRDatastore',
       'DescribeFHIRExportJob',
       'DescribeFHIRExportJobWithGet',
@@ -902,6 +926,7 @@ export class Healthlake extends PolicyStatement {
    * - .toDeleteResource()
    * - .toDescribeFHIRBulkDeleteJob()
    * - .toDescribeFHIRBulkMemberMatchJob()
+   * - .toDescribeFHIRBulkPatchJob()
    * - .toDescribeFHIRDatastore()
    * - .toDescribeFHIRExportJob()
    * - .toDescribeFHIRExportJobWithGet()
@@ -937,6 +962,7 @@ export class Healthlake extends PolicyStatement {
    * - .toStartDataTransformationJob()
    * - .toStartFHIRBulkDeleteJob()
    * - .toStartFHIRBulkMemberMatchJob()
+   * - .toStartFHIRBulkPatchJob()
    * - .toStartFHIRExportJob()
    * - .toStartFHIRExportJobWithGet()
    * - .toStartFHIRExportJobWithPost()
