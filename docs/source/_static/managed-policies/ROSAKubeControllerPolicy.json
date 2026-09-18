@@ -79,6 +79,7 @@
         "elasticloadbalancing:ModifyTargetGroup",
         "elasticloadbalancing:DeleteTargetGroup",
         "elasticloadbalancing:ApplySecurityGroupsToLoadBalancer",
+        "elasticloadbalancing:SetSecurityGroups",
         "elasticloadbalancing:CreateLoadBalancerListeners",
         "elasticloadbalancing:DeleteLoadBalancerListeners",
         "elasticloadbalancing:AttachLoadBalancerToSubnets",
