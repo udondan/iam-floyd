@@ -272,6 +272,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve multiple validation runs in a single request
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchGetValidationRuns.html
+   */
+  public toBatchGetValidationRuns() {
+    return this.to('BatchGetValidationRuns');
+  }
+
+  /**
    * Grants permission to batch update security requirements within a customer managed pack
    *
    * Access Level: Write
@@ -798,6 +809,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list discovered domains associated with a pentest
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListDiscoveredDomains.html
+   */
+  public toListDiscoveredDomains() {
+    return this.to('ListDiscoveredDomains');
+  }
+
+  /**
    * Grants permission to list discovered endpoints associated with a pentest job with optional URI prefix filtering
    *
    * Access Level: List
@@ -1051,6 +1073,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate the execution of a validation run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_StartValidationRun.html
+   */
+  public toStartValidationRun() {
+    return this.to('StartValidationRun');
+  }
+
+  /**
    * Grants permission to stop the execution of a running code review
    *
    * Access Level: Write
@@ -1147,6 +1180,17 @@ export class Securityagent extends PolicyStatement {
    */
   public toUpdateCodeReview() {
     return this.to('UpdateCodeReview');
+  }
+
+  /**
+   * Grants permission to update classification of multiple discovered domain in a single request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_UpdateDiscoveredDomains.html
+   */
+  public toUpdateDiscoveredDomains() {
+    return this.to('UpdateDiscoveredDomains');
   }
 
   /**
@@ -1301,6 +1345,7 @@ export class Securityagent extends PolicyStatement {
       'StartCodeReviewJob',
       'StartPentestJob',
       'StartThreatModelJob',
+      'StartValidationRun',
       'StopCodeReviewJob',
       'StopPentestJob',
       'StopThreatModelJob',
@@ -1310,6 +1355,7 @@ export class Securityagent extends PolicyStatement {
       'UpdateAgentSpace',
       'UpdateApplication',
       'UpdateCodeReview',
+      'UpdateDiscoveredDomains',
       'UpdateFinding',
       'UpdateIntegratedResources',
       'UpdatePentest',
@@ -1338,6 +1384,7 @@ export class Securityagent extends PolicyStatement {
       'BatchGetThreatModelJobs',
       'BatchGetThreatModels',
       'BatchGetThreats',
+      'BatchGetValidationRuns',
       'DescribePrivateConnection',
       'GetApplication',
       'GetArtifact',
@@ -1359,6 +1406,7 @@ export class Securityagent extends PolicyStatement {
       'ListCodeReviews',
       'ListDesignReviewComments',
       'ListDesignReviews',
+      'ListDiscoveredDomains',
       'ListDiscoveredEndpoints',
       'ListFindings',
       'ListIntegratedResources',
@@ -1535,6 +1583,7 @@ export class Securityagent extends PolicyStatement {
    * - .toBatchGetThreatModelJobs()
    * - .toBatchGetThreatModels()
    * - .toBatchGetThreats()
+   * - .toBatchGetValidationRuns()
    * - .toBatchUpdateSecurityRequirements()
    * - .toCreateCodeReview()
    * - .toCreateDesignReview()
@@ -1570,6 +1619,7 @@ export class Securityagent extends PolicyStatement {
    * - .toListCodeReviews()
    * - .toListDesignReviewComments()
    * - .toListDesignReviews()
+   * - .toListDiscoveredDomains()
    * - .toListDiscoveredEndpoints()
    * - .toListFindings()
    * - .toListIntegratedResources()
@@ -1589,6 +1639,7 @@ export class Securityagent extends PolicyStatement {
    * - .toStartCodeReviewJob()
    * - .toStartPentestJob()
    * - .toStartThreatModelJob()
+   * - .toStartValidationRun()
    * - .toStopCodeReviewJob()
    * - .toStopPentestJob()
    * - .toStopThreatModelJob()
@@ -1598,6 +1649,7 @@ export class Securityagent extends PolicyStatement {
    * - .toUpdateAgentSpace()
    * - .toUpdateApplication()
    * - .toUpdateCodeReview()
+   * - .toUpdateDiscoveredDomains()
    * - .toUpdateFinding()
    * - .toUpdateIntegratedResources()
    * - .toUpdatePentest()

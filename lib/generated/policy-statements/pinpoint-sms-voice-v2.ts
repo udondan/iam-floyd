@@ -777,6 +777,17 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list available phone numbers for purchase
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ListAvailablePhoneNumbers.html
+   */
+  public toListAvailablePhoneNumbers() {
+    return this.to('ListAvailablePhoneNumbers');
+  }
+
+  /**
    * Grants permission to list countries that support notify messaging
    *
    * Access Level: Read
@@ -1361,6 +1372,7 @@ export class SmsVoiceV2 extends PolicyStatement {
       'DescribeVerifiedDestinationNumbers',
       'GetProtectConfigurationCountryRuleSet',
       'GetResourcePolicy',
+      'ListAvailablePhoneNumbers',
       'ListNotifyCountries',
       'ListPoolOriginationIdentities',
       'ListProtectConfigurationRuleSetNumberOverrides',
