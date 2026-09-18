@@ -19,6 +19,28 @@ export class UserSubscriptions extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a User subscription purchase session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toCancelPurchaseSession() {
+    return this.to('CancelPurchaseSession');
+  }
+
+  /**
+   * Grants permission to confirm a User subscription purchase session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toConfirmPurchaseSession() {
+    return this.to('ConfirmPurchaseSession');
+  }
+
+  /**
    * Grants permission to create a User subscription Claim
    *
    * Access Level: Write
@@ -41,6 +63,28 @@ export class UserSubscriptions extends PolicyStatement {
    */
   public toCreateClaimAddOn() {
     return this.to('CreateClaimAddOn');
+  }
+
+  /**
+   * Grants permission to create a User subscription purchase session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toCreatePurchaseSession() {
+    return this.to('CreatePurchaseSession');
+  }
+
+  /**
+   * Grants permission to create a preview of a User subscription plan update
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toCreateUpdatePlanPreview() {
+    return this.to('CreateUpdatePlanPreview');
   }
 
   /**
@@ -77,6 +121,17 @@ export class UserSubscriptions extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the current plan details for a User subscription
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toGetCurrentPlanDetails() {
+    return this.to('GetCurrentPlanDetails');
+  }
+
+  /**
    * Grants permission to get a User subscription effective usage limit
    *
    * Access Level: Read
@@ -85,6 +140,17 @@ export class UserSubscriptions extends PolicyStatement {
    */
   public toGetEffectiveUsageLimit() {
     return this.to('GetEffectiveUsageLimit');
+  }
+
+  /**
+   * Grants permission to get a User subscription purchase session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toGetPurchaseSession() {
+    return this.to('GetPurchaseSession');
   }
 
   /**
@@ -210,8 +276,12 @@ export class UserSubscriptions extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CancelPurchaseSession',
+      'ConfirmPurchaseSession',
       'CreateClaim',
       'CreateClaimAddOn',
+      'CreatePurchaseSession',
+      'CreateUpdatePlanPreview',
       'DeleteAutoTopUpRule',
       'DeleteClaim',
       'SetAutoTopUpRule',
@@ -221,7 +291,9 @@ export class UserSubscriptions extends PolicyStatement {
     ],
     Read: [
       'GetAutoTopUpRule',
+      'GetCurrentPlanDetails',
       'GetEffectiveUsageLimit',
+      'GetPurchaseSession',
       'GetUsageLimitHistory'
     ],
     List: [

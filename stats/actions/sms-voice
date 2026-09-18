@@ -67,6 +67,7 @@ sms-voice:DiscardRegistrationVersion;Write
 sms-voice:GetConfigurationSetEventDestinations;Read
 sms-voice:GetProtectConfigurationCountryRuleSet;Read
 sms-voice:GetResourcePolicy;Read
+sms-voice:ListAvailablePhoneNumbers;Read
 sms-voice:ListConfigurationSets;Read
 sms-voice:ListNotifyCountries;Read
 sms-voice:ListPoolOriginationIdentities;Read

@@ -21,6 +21,7 @@ securityagent:BatchGetThreatModelJobTasks;Read
 securityagent:BatchGetThreatModelJobs;Read
 securityagent:BatchGetThreatModels;Read
 securityagent:BatchGetThreats;Read
+securityagent:BatchGetValidationRuns;Read
 securityagent:BatchUpdateSecurityRequirements;Write
 securityagent:CreateAgentSpace;Write
 securityagent:CreateApplication;Write
@@ -67,6 +68,7 @@ securityagent:ListCodeReviewJobsForCodeReview;List
 securityagent:ListCodeReviews;List
 securityagent:ListDesignReviewComments;List
 securityagent:ListDesignReviews;List
+securityagent:ListDiscoveredDomains;List
 securityagent:ListDiscoveredEndpoints;List
 securityagent:ListFindings;List
 securityagent:ListIntegratedResources;List
@@ -90,6 +92,7 @@ securityagent:StartCodeRemediation;Write
 securityagent:StartCodeReviewJob;Write
 securityagent:StartPentestJob;Write
 securityagent:StartThreatModelJob;Write
+securityagent:StartValidationRun;Write
 securityagent:StopCodeReviewJob;Write
 securityagent:StopPentestJob;Write
 securityagent:StopThreatModelJob;Write
@@ -99,6 +102,7 @@ securityagent:UntagResource;Tagging, Write
 securityagent:UpdateAgentSpace;Write
 securityagent:UpdateApplication;Write
 securityagent:UpdateCodeReview;Write
+securityagent:UpdateDiscoveredDomains;Write
 securityagent:UpdateFinding;Write
 securityagent:UpdateIntegratedResources;Write
 securityagent:UpdatePentest;Write

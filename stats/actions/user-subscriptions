@@ -1,9 +1,15 @@
+user-subscriptions:CancelPurchaseSession;Write
+user-subscriptions:ConfirmPurchaseSession;Write
 user-subscriptions:CreateClaim;Write
 user-subscriptions:CreateClaimAddOn;Write
+user-subscriptions:CreatePurchaseSession;Write
+user-subscriptions:CreateUpdatePlanPreview;Write
 user-subscriptions:DeleteAutoTopUpRule;Write
 user-subscriptions:DeleteClaim;Write
 user-subscriptions:GetAutoTopUpRule;Read
+user-subscriptions:GetCurrentPlanDetails;Read
 user-subscriptions:GetEffectiveUsageLimit;Read
+user-subscriptions:GetPurchaseSession;Read
 user-subscriptions:GetUsageLimitHistory;Read
 user-subscriptions:ListApplicationClaims;List
 user-subscriptions:ListClaimAddOns;List
