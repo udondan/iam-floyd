@@ -188,6 +188,17 @@ export class Billingconductor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the billing transfer preference
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_GetBillingTransferPreference.html
+   */
+  public toGetBillingTransferPreference() {
+    return this.to('GetBillingTransferPreference');
+  }
+
+  /**
    * Grants permission to list the linked accounts of the payer account for the given billing period while also providing the billing group the linked accounts belong to
    *
    * Access Level: List
@@ -342,6 +353,20 @@ export class Billingconductor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the billing transfer preference
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPricingPlanArn()
+   *
+   * https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_UpdateBillingTransferPreference.html
+   */
+  public toUpdateBillingTransferPreference() {
+    return this.to('UpdateBillingTransferPreference');
+  }
+
+  /**
    * Grants permission to update a custom line item
    *
    * Access Level: Write
@@ -393,12 +418,14 @@ export class Billingconductor extends PolicyStatement {
       'TagResource',
       'UntagResource',
       'UpdateBillingGroup',
+      'UpdateBillingTransferPreference',
       'UpdateCustomLineItem',
       'UpdatePricingPlan',
       'UpdatePricingRule'
     ],
     Read: [
       'GetBillingGroupCostReport',
+      'GetBillingTransferPreference',
       'ListBillingGroupCostReports',
       'ListBillingGroups',
       'ListCustomLineItemVersions',
@@ -569,5 +596,20 @@ export class Billingconductor extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the pricing plan ARN specified in the request
+   *
+   * https://docs.aws.amazon.com/billingconductor/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toUpdateBillingTransferPreference()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifPricingPlanArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`PricingPlanArn`, value, operator ?? 'ArnLike');
   }
 }

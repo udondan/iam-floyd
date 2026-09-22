@@ -13,6 +13,7 @@ billingconductor:DeletePricingRule;Write
 billingconductor:DisassociateAccounts;Write
 billingconductor:DisassociatePricingRules;Write
 billingconductor:GetBillingGroupCostReport;Read
+billingconductor:GetBillingTransferPreference;Read
 billingconductor:ListAccountAssociations;List
 billingconductor:ListBillingGroupCostReports;Read
 billingconductor:ListBillingGroups;Read
@@ -27,6 +28,7 @@ billingconductor:ListTagsForResource;Read
 billingconductor:TagResource;Tagging, Write
 billingconductor:UntagResource;Tagging, Write
 billingconductor:UpdateBillingGroup;Write
+billingconductor:UpdateBillingTransferPreference;Write
 billingconductor:UpdateCustomLineItem;Write
 billingconductor:UpdatePricingPlan;Write
 billingconductor:UpdatePricingRule;Write
