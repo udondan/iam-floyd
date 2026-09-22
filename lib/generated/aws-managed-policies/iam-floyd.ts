@@ -1374,6 +1374,8 @@ export class AwsManagedPolicy {
     public static AWSBillingConductorFullAccess = 'AWSBillingConductorFullAccess';
     /** Use the AWSBillingConductorReadOnlyAccess managed policy to allow read only access to AWS Billing Conductor (ABC) console and APIs. This policy grants permission to view and list all ABC resources. It does not include the ability to create or delete resources. */
     public static AWSBillingConductorReadOnlyAccess = 'AWSBillingConductorReadOnlyAccess';
+    /** Provides AWS Billing Conductor access to manage billing groups and related resources */
+    public static AWSBillingConductorRolePolicy = 'aws-service-role/AWSBillingConductorRolePolicy';
     /** Allows users to view bills on the Billing Console. */
     public static AWSBillingReadOnlyAccess = 'AWSBillingReadOnlyAccess';
     /** Allows billing service to validate access to billing view data for derived billing views */
