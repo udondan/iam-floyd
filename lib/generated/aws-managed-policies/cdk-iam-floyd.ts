@@ -3444,6 +3444,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBillingConductorReadOnlyAccess);
     }
 
+    /** Provides AWS Billing Conductor access to manage billing groups and related resources */
+    public AWSBillingConductorRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBillingConductorRolePolicy);
+    }
+
     /** Allows users to view bills on the Billing Console. */
     public AWSBillingReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBillingReadOnlyAccess);
