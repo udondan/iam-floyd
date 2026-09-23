@@ -1462,6 +1462,8 @@ export class AwsManagedPolicy {
     public static AWSCloudTrailReadOnlyAccess = 'AWSCloudTrail_ReadOnlyAccess';
     /** This policy is used by the service-linked role named AWSServiceRoleForCloudWatchAlarms_ActionSSMIncidents. CloudWatch uses this service-linked role to perform AWS System Manager Incident Manager actions when a CloudWatch alarm goes in to ALARM state. This policy grants permission to start incidents on your behalf. */
     public static AWSCloudWatchAlarmsActionSSMIncidentsServiceRolePolicy = 'aws-service-role/AWSCloudWatchAlarms_ActionSSMIncidentsServiceRolePolicy';
+    /** Provides CloudWatch Omni access to manage AWS Config recorder resources, telemetry configurations, and supporting IAM roles for organization enablement. */
+    public static AWSCloudWatchOmniServiceRolePolicy = 'aws-service-role/AWSCloudWatchOmniServiceRolePolicy';
     /** Provides full access to AWS CodeArtifact via the AWS Management Console. */
     public static AWSCodeArtifactAdminAccess = 'AWSCodeArtifactAdminAccess';
     /** Provides read only access to AWS CodeArtifact via the AWS Management Console. */
@@ -2552,6 +2554,8 @@ export class AwsManagedPolicy {
     public static AWSTransferLoggingAccess = 'service-role/AWSTransferLoggingAccess';
     /** Provide readonly access to AWS Transfer services. */
     public static AWSTransferReadOnlyAccess = 'AWSTransferReadOnlyAccess';
+    /** Allows Transfer to integrate with other AWS services on your behalf */
+    public static AWSTransferServiceRolePolicy = 'aws-service-role/AWSTransferServiceRolePolicy';
     /** Enables the AWS Transform service to deploy transformed .NET applications by creating and managing AWS resources. This policy grants permissions to provision infrastructure, manage compute resources, and configure deployment settings across various AWS services. */
     public static AWSTransformApplicationDeploymentPolicy = 'service-role/AWSTransformApplicationDeploymentPolicy';
     /** Enables the AWS Transform to deploy applications to Amazon Elastic Container Service (ECS) with Fargate. It grants permissions to provision, configure, and manage the underlying infrastructure required to run applications on ECS. */
@@ -2746,6 +2750,14 @@ export class AwsManagedPolicy {
     public static CloudWatchNetworkFlowMonitorTopologyServiceRolePolicy = 'aws-service-role/CloudWatchNetworkFlowMonitorTopologyServiceRolePolicy';
     /** Allows CloudWatch Network Monitor to access and manage EC2 and VPC resources, publish data to CloudWatch and access other required services on your behalf. */
     public static CloudWatchNetworkMonitorServiceRolePolicy = 'aws-service-role/CloudWatchNetworkMonitorServiceRolePolicy';
+    /** Provides permissions required by CloudWatch Omni to discover and read AWS resource topology */
+    public static CloudWatchOmniAWSIntegrationPolicy = 'CloudWatchOmniAWSIntegrationPolicy';
+    /** Provides permissions required to manage CloudWatch Omni domain access. */
+    public static CloudWatchOmniDomainAccessPolicy = 'CloudWatchOmniDomainAccessPolicy';
+    /** Managed policy for customers to attach to CloudWatch Omni so that CloudWatch Omni features can make Bedrock Model Inference calls such as in Agent Playground or Evaluations */
+    public static CloudWatchOmniModelInferencePolicy = 'CloudWatchOmniModelInferencePolicy';
+    /** Provides access to manage CloudWatch Omni spaces, view Applications Telemetry, and other Observability and Monitoring features through the new CloudWatch Omni Product */
+    public static CloudWatchOmniSpaceAccessPolicy = 'CloudWatchOmniSpaceAccessPolicy';
     /** This policy provides user access to view OpenSearch dashboards on the CloudWatch Logs console. */
     public static CloudWatchOpenSearchDashboardAccess = 'CloudWatchOpenSearchDashboardAccess';
     /** This policy provides user access to create integration with OpenSearch to create, update, delete or view dashboards on the CloudWatch Logs console. */
