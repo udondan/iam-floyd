@@ -75,6 +75,7 @@ logs:GetScheduledQuery;Read
 logs:GetScheduledQueryHistory;Read
 logs:GetStorageTierPolicy;Read
 logs:GetTransformer;Read
+logs:IntegrateWithDataset;Write
 logs:IntegrateWithS3Table;Write
 logs:Link;Write
 logs:ListAggregateLogGroupSummaries;List

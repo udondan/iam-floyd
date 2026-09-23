@@ -1,4 +1,5 @@
 cloudwatch:AlarmActions
+cloudwatch:HasAccessGrant
 cloudwatch:RequestTag/${TagKey}
 cloudwatch:ResourceTag/${TagKey}
 cloudwatch:TagKeys

@@ -233,6 +233,7 @@ connect:ListRoutingProfileQueues;List
 connect:ListRoutingProfiles;List
 connect:ListRules;List
 connect:ListSecurityKeys;List
+connect:ListSecurityProfileAIAgents;List
 connect:ListSecurityProfileApplications;List
 connect:ListSecurityProfileFlowModules;List
 connect:ListSecurityProfilePermissions;List

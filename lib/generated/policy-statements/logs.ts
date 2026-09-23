@@ -1361,6 +1361,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to mirror log group data into CloudWatch Dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toIntegrateWithDataset() {
+    return this.to('IntegrateWithDataset');
+  }
+
+  /**
    * Grants permission to deliver log events to S3 Tables
    *
    * Access Level: Write
@@ -1540,6 +1551,7 @@ export class Logs extends PolicyStatement {
       'CreateLogDelivery',
       'DeleteLogDelivery',
       'DeletePipelineRule',
+      'IntegrateWithDataset',
       'IntegrateWithS3Table',
       'Link',
       'ProcessWithPipeline',
@@ -1879,6 +1891,7 @@ export class Logs extends PolicyStatement {
    * - .toUpdateLogAnomalyDetector()
    * - .toUpdateLookupTable()
    * - .toUpdateScheduledQuery()
+   * - .toIntegrateWithDataset()
    * - .toIntegrateWithS3Table()
    * - .toProcessWithPipeline()
    * - .toUnmask()

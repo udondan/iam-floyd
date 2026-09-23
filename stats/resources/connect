@@ -1,5 +1,6 @@
 connect:agent-status
 connect:ai-agent
+connect:application
 connect:attached-file
 connect:authentication-profile
 connect:aws-managed-view
