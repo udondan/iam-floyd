@@ -133,6 +133,16 @@
       "Resource": "arn:aws:s3:::amazon-sagemaker-cf-templates*/*"
     },
     {
+      "Sid": "DataZoneEnvironmentResources",
+      "Effect": "Allow",
+      "Action": [
+        "datazone:*Connection",
+        "datazone:*DataSource",
+        "datazone:*SubscriptionTarget"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "CcCreate",
       "Effect": "Allow",
       "Action": [
@@ -661,6 +671,7 @@
       "Condition": {
         "StringEquals": {
           "iam:PassedToService": [
+            "datazone.amazonaws.com",
             "sagemaker.amazonaws.com",
             "redshift-serverless.amazonaws.com",
             "bedrock.amazonaws.com"

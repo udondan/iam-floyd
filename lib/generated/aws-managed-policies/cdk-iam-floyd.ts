@@ -3664,6 +3664,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCloudWatchAlarmsActionSSMIncidentsServiceRolePolicy);
     }
 
+    /** Provides CloudWatch Omni access to manage AWS Config recorder resources, telemetry configurations, and supporting IAM roles for organization enablement. */
+    public AWSCloudWatchOmniServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCloudWatchOmniServiceRolePolicy);
+    }
+
     /** Provides full access to AWS CodeArtifact via the AWS Management Console. */
     public AWSCodeArtifactAdminAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCodeArtifactAdminAccess);
@@ -6389,6 +6394,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransferReadOnlyAccess);
     }
 
+    /** Allows Transfer to integrate with other AWS services on your behalf */
+    public AWSTransferServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransferServiceRolePolicy);
+    }
+
     /** Enables the AWS Transform service to deploy transformed .NET applications by creating and managing AWS resources. This policy grants permissions to provision infrastructure, manage compute resources, and configure deployment settings across various AWS services. */
     public AWSTransformApplicationDeploymentPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformApplicationDeploymentPolicy);
@@ -6872,6 +6882,26 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allows CloudWatch Network Monitor to access and manage EC2 and VPC resources, publish data to CloudWatch and access other required services on your behalf. */
     public CloudWatchNetworkMonitorServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchNetworkMonitorServiceRolePolicy);
+    }
+
+    /** Provides permissions required by CloudWatch Omni to discover and read AWS resource topology */
+    public CloudWatchOmniAWSIntegrationPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchOmniAWSIntegrationPolicy);
+    }
+
+    /** Provides permissions required to manage CloudWatch Omni domain access. */
+    public CloudWatchOmniDomainAccessPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchOmniDomainAccessPolicy);
+    }
+
+    /** Managed policy for customers to attach to CloudWatch Omni so that CloudWatch Omni features can make Bedrock Model Inference calls such as in Agent Playground or Evaluations */
+    public CloudWatchOmniModelInferencePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchOmniModelInferencePolicy);
+    }
+
+    /** Provides access to manage CloudWatch Omni spaces, view Applications Telemetry, and other Observability and Monitoring features through the new CloudWatch Omni Product */
+    public CloudWatchOmniSpaceAccessPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchOmniSpaceAccessPolicy);
     }
 
     /** This policy provides user access to view OpenSearch dashboards on the CloudWatch Logs console. */

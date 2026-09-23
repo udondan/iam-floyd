@@ -60,6 +60,11 @@
         "observabilityadmin:GetS3TableIntegration",
         "observabilityadmin:ListS3TableIntegrations",
         "observabilityadmin:DeleteS3TableIntegration",
+        "observabilityadmin:CreateDatasetIntegration",
+        "observabilityadmin:GetDatasetIntegration",
+        "observabilityadmin:ListDatasetIntegrations",
+        "observabilityadmin:UpdateDatasetIntegration",
+        "observabilityadmin:DeleteDatasetIntegration",
         "rum:*",
         "synthetics:*",
         "xray:*"
