@@ -2561,6 +2561,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the AI agents associated with a specific security profile in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListSecurityProfileAIAgents.html
+   */
+  public toListSecurityProfileAIAgents() {
+    return this.to('ListSecurityProfileAIAgents');
+  }
+
+  /**
    * Grants permission to list applications associated with a specific security profile in an Amazon Connect instance
    *
    * Access Level: List
@@ -4627,6 +4638,7 @@ export class Connect extends PolicyStatement {
       'ListRoutingProfiles',
       'ListRules',
       'ListSecurityKeys',
+      'ListSecurityProfileAIAgents',
       'ListSecurityProfileApplications',
       'ListSecurityProfileFlowModules',
       'ListSecurityProfilePermissions',
@@ -4688,6 +4700,23 @@ export class Connect extends PolicyStatement {
    */
   public onAiAgent(assistantId: string, aIAgentId: string, version: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:wisdom:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ai-agent/${ assistantId }/${ aIAgentId }:${ version }`);
+  }
+
+  /**
+   * Adds a resource of type application to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-app-integrations_CreateApplication.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:app-integrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }`);
   }
 
   /**
@@ -5698,6 +5727,7 @@ export class Connect extends PolicyStatement {
    * - .toListRoutingProfiles()
    * - .toListRules()
    * - .toListSecurityKeys()
+   * - .toListSecurityProfileAIAgents()
    * - .toListSecurityProfileApplications()
    * - .toListSecurityProfileFlowModules()
    * - .toListSecurityProfilePermissions()
@@ -5853,6 +5883,7 @@ export class Connect extends PolicyStatement {
    * Applies to resource types:
    * - agent-status
    * - ai-agent
+   * - application
    * - attached-file
    * - authentication-profile
    * - contact
@@ -6314,6 +6345,7 @@ export class Connect extends PolicyStatement {
    * - .toListRoutingProfiles()
    * - .toListRules()
    * - .toListSecurityKeys()
+   * - .toListSecurityProfileAIAgents()
    * - .toListSecurityProfileApplications()
    * - .toListSecurityProfileFlowModules()
    * - .toListSecurityProfilePermissions()

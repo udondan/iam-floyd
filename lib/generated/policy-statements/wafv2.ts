@@ -692,6 +692,28 @@ export class Wafv2 extends PolicyStatement {
     return this.to('PutFirewallManagerRuleGroups');
   }
 
+  /**
+   * Grants permission to AWS Network Security Manager to validate a Rule configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_ValidateNetworkSecurityManagerRuleConfiguration.html
+   */
+  public toValidateNetworkSecurityManagerRuleConfiguration() {
+    return this.to('ValidateNetworkSecurityManagerRuleConfiguration');
+  }
+
+  /**
+   * Grants permission to AWS Network Security Manager to validate a WebACL configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_ValidateNetworkSecurityManagerWebACLConfiguration.html
+   */
+  public toValidateNetworkSecurityManagerWebACLConfiguration() {
+    return this.to('ValidateNetworkSecurityManagerWebACLConfiguration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateWebACL',
@@ -744,7 +766,9 @@ export class Wafv2 extends PolicyStatement {
       'GetTopPathStatisticsByTraffic',
       'GetWebACL',
       'GetWebACLForResource',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'ValidateNetworkSecurityManagerRuleConfiguration',
+      'ValidateNetworkSecurityManagerWebACLConfiguration'
     ],
     'Permissions management': [
       'DeletePermissionPolicy',

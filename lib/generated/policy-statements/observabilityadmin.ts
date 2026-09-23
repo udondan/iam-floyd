@@ -30,6 +30,17 @@ export class Observabilityadmin extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a dataset integration for the account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateDatasetIntegration.html
+   */
+  public toCreateDatasetIntegration() {
+    return this.to('CreateDatasetIntegration');
+  }
+
+  /**
    * Grants permission to create a new s3 table integration with the specified configuration
    *
    * Access Level: Write
@@ -85,6 +96,17 @@ export class Observabilityadmin extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the specified dataset integration for the account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteDatasetIntegration.html
+   */
+  public toDeleteDatasetIntegration() {
+    return this.to('DeleteDatasetIntegration');
+  }
+
+  /**
    * Grants permission to delete the s3 table integration with the specified arn
    *
    * Access Level: Write
@@ -137,6 +159,17 @@ export class Observabilityadmin extends PolicyStatement {
    */
   public toGetCentralizationRuleForOrganization() {
     return this.to('GetCentralizationRuleForOrganization');
+  }
+
+  /**
+   * Grants permission to retrieve the specified dataset integration for the account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetDatasetIntegration.html
+   */
+  public toGetDatasetIntegration() {
+    return this.to('GetDatasetIntegration');
   }
 
   /**
@@ -225,6 +258,17 @@ export class Observabilityadmin extends PolicyStatement {
    */
   public toListCentralizationRulesForOrganization() {
     return this.to('ListCentralizationRulesForOrganization');
+  }
+
+  /**
+   * Grants permission to list dataset integrations for the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListDatasetIntegrations.html
+   */
+  public toListDatasetIntegrations() {
+    return this.to('ListDatasetIntegrations');
   }
 
   /**
@@ -427,6 +471,17 @@ export class Observabilityadmin extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the specified dataset integration for the account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UpdateDatasetIntegration.html
+   */
+  public toUpdateDatasetIntegration() {
+    return this.to('UpdateDatasetIntegration');
+  }
+
+  /**
    * Grants permission to Update the telemetry pipeline with the specified arn
    *
    * Access Level: Write
@@ -473,11 +528,13 @@ export class Observabilityadmin extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateCentralizationRuleForOrganization',
+      'CreateDatasetIntegration',
       'CreateS3TableIntegration',
       'CreateTelemetryPipeline',
       'CreateTelemetryRule',
       'CreateTelemetryRuleForOrganization',
       'DeleteCentralizationRuleForOrganization',
+      'DeleteDatasetIntegration',
       'DeleteS3TableIntegration',
       'DeleteTelemetryPipeline',
       'DeleteTelemetryRule',
@@ -491,12 +548,14 @@ export class Observabilityadmin extends PolicyStatement {
       'TagResource',
       'UntagResource',
       'UpdateCentralizationRuleForOrganization',
+      'UpdateDatasetIntegration',
       'UpdateTelemetryPipeline',
       'UpdateTelemetryRule',
       'UpdateTelemetryRuleForOrganization'
     ],
     Read: [
       'GetCentralizationRuleForOrganization',
+      'GetDatasetIntegration',
       'GetS3TableIntegration',
       'GetTelemetryEnrichmentStatus',
       'GetTelemetryEvaluationStatus',
@@ -511,6 +570,7 @@ export class Observabilityadmin extends PolicyStatement {
     ],
     List: [
       'ListCentralizationRulesForOrganization',
+      'ListDatasetIntegrations',
       'ListS3TableIntegrations',
       'ListTagsForResource',
       'ListTelemetryPipelines',
@@ -522,6 +582,23 @@ export class Observabilityadmin extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type dataset-integration to the statement
+   *
+   * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DatasetIntegration.html
+   *
+   * @param datasetIntegrationIdentifier - Identifier for the datasetIntegrationIdentifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDatasetIntegration(datasetIntegrationIdentifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:observabilityadmin:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset-integration/${ datasetIntegrationIdentifier }`);
+  }
 
   /**
    * Adds a resource of type organization-centralization-rule to the statement
@@ -615,6 +692,7 @@ export class Observabilityadmin extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateCentralizationRuleForOrganization()
+   * - .toCreateDatasetIntegration()
    * - .toCreateS3TableIntegration()
    * - .toCreateTelemetryPipeline()
    * - .toCreateTelemetryRule()
@@ -636,16 +714,19 @@ export class Observabilityadmin extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateCentralizationRuleForOrganization()
+   * - .toCreateDatasetIntegration()
    * - .toCreateS3TableIntegration()
    * - .toCreateTelemetryPipeline()
    * - .toCreateTelemetryRule()
    * - .toCreateTelemetryRuleForOrganization()
    * - .toDeleteCentralizationRuleForOrganization()
+   * - .toDeleteDatasetIntegration()
    * - .toDeleteS3TableIntegration()
    * - .toDeleteTelemetryPipeline()
    * - .toDeleteTelemetryRule()
    * - .toDeleteTelemetryRuleForOrganization()
    * - .toGetCentralizationRuleForOrganization()
+   * - .toGetDatasetIntegration()
    * - .toGetS3TableIntegration()
    * - .toGetTelemetryPipeline()
    * - .toGetTelemetryRule()
@@ -654,11 +735,13 @@ export class Observabilityadmin extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateCentralizationRuleForOrganization()
+   * - .toUpdateDatasetIntegration()
    * - .toUpdateTelemetryPipeline()
    * - .toUpdateTelemetryRule()
    * - .toUpdateTelemetryRuleForOrganization()
    *
    * Applies to resource types:
+   * - dataset-integration
    * - organization-centralization-rule
    * - organization-telemetry-rule
    * - s3tableintegration
@@ -680,6 +763,7 @@ export class Observabilityadmin extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateCentralizationRuleForOrganization()
+   * - .toCreateDatasetIntegration()
    * - .toCreateS3TableIntegration()
    * - .toCreateTelemetryPipeline()
    * - .toCreateTelemetryRule()
