@@ -298,6 +298,7 @@ export { NeptuneGraph } from './policy-statements/neptune-graph';
 export { NeptuneDb } from './policy-statements/neptunedata';
 export { NetworkFirewall } from './policy-statements/network-firewall';
 export { NetworkSecurityDirector } from './policy-statements/network-security-director';
+export { NetworkSecurityManager } from './policy-statements/network-security-manager';
 export { Networkflowmonitor } from './policy-statements/networkflowmonitor';
 export { Networkmanager } from './policy-statements/networkmanager';
 export { NetworkmanagerChat } from './policy-statements/networkmanager-chat';

@@ -17,6 +17,7 @@ billing:GetEnterpriseSupportContractDetails;Read
 billing:GetIAMAccessPreference;Read
 billing:GetResourcePolicy;Permissions management, Write
 billing:GetSellerOfRecord;Read
+billing:ListBillingViewSegments;List
 billing:ListBillingViews;Read
 billing:ListEnterpriseSupportLinkedAccountCharges;List
 billing:ListSourceViewsForBillingView;List
