@@ -503,6 +503,17 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the record distribution strategy for a Kinesis data stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateStreamRecordDistributionStrategy.html
+   */
+  public toUpdateStreamRecordDistributionStrategy() {
+    return this.to('UpdateStreamRecordDistributionStrategy');
+  }
+
+  /**
    * Grants permission to update the warm throughput for a Kinesis on-demand data stream
    *
    * Access Level: Write
@@ -566,6 +577,7 @@ export class Kinesis extends PolicyStatement {
       'UpdateMaxRecordSize',
       'UpdateShardCount',
       'UpdateStreamMode',
+      'UpdateStreamRecordDistributionStrategy',
       'UpdateStreamWarmThroughput',
       'InjectApiError'
     ],
@@ -723,6 +735,7 @@ export class Kinesis extends PolicyStatement {
    * - .toUntagResource()
    * - .toUpdateChannel()
    * - .toUpdateMaxRecordSize()
+   * - .toUpdateStreamRecordDistributionStrategy()
    * - .toUpdateStreamWarmThroughput()
    *
    * Applies to resource types:

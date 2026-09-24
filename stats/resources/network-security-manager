@@ -1,0 +1,10 @@
+network-security-manager:deployment
+network-security-manager:deployment-snapshot
+network-security-manager:policy
+network-security-manager:policy-snapshot
+network-security-manager:rule
+network-security-manager:rule-snapshot
+network-security-manager:scope
+network-security-manager:scope-snapshot
+network-security-manager:template
+network-security-manager:template-snapshot

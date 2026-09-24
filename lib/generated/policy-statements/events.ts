@@ -1183,7 +1183,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Filters access by whether the event was generated via API or cross-account bus invocation to PutEvents actions
+   * Filters access to PutEvents and PutRawEvents by whether an event was forwarded from an event bus rather than published through a direct API call
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-bus-invocation
    *
@@ -1198,7 +1198,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Filters access by the AWS service or AWS partner event source that generated the event to PutEvents and PutRule actions. Matches the literal string of the source field of the event
+   * Filters access by the AWS service or AWS partner event source that generated the event to PutEvents and PutRule actions, or by the configured source of an event source to the CreateEventSource and UpdateEventSource actions. Matches the literal string of the source field of the event
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-limit-access-control
    *

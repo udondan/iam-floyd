@@ -43,4 +43,5 @@ kinesis:UpdateChannel;Write
 kinesis:UpdateMaxRecordSize;Write
 kinesis:UpdateShardCount;Write
 kinesis:UpdateStreamMode;Write
+kinesis:UpdateStreamRecordDistributionStrategy;Write
 kinesis:UpdateStreamWarmThroughput;Write

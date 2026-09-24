@@ -140,6 +140,17 @@ export class Billing extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the list of billing view segments for a specified billing view
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_ListBillingViewSegments.html
+   */
+  public toListBillingViewSegments() {
+    return this.to('ListBillingViewSegments');
+  }
+
+  /**
    * Grants permission to get a list of all your available billing views
    *
    * Access Level: Read
@@ -409,6 +420,7 @@ export class Billing extends PolicyStatement {
       'PutResourcePolicy'
     ],
     List: [
+      'ListBillingViewSegments',
       'ListEnterpriseSupportLinkedAccountCharges',
       'ListSourceViewsForBillingView'
     ],
