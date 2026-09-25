@@ -9,6 +9,7 @@ identitystore:DeleteIdentityStore;Write
 identitystore:DeleteUser;Write
 identitystore:DescribeGroup;Read
 identitystore:DescribeGroupMembership;Read
+identitystore:DescribeIdentityStore;Read
 identitystore:DescribeRegion;Read
 identitystore:DescribeUser;Read
 identitystore:GetGroupId;Read
@@ -18,6 +19,7 @@ identitystore:IsMemberInGroups;Read
 identitystore:ListGroupMemberships;List
 identitystore:ListGroupMembershipsForMember;List
 identitystore:ListGroups;List
+identitystore:ListIdentityStores;List
 identitystore:ListRegions;List
 identitystore:ListUsers;List
 identitystore:RemoveRegion;Write

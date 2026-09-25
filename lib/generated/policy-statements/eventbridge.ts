@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [events](https://docs.aws.amazon.com/service-authorization/latest/reference/list_events.html).
+ * Statement provider for service [events](https://docs.aws.amazon.com/service-authorization/latest/reference/list_eventbridge.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Events extends PolicyStatement {
   public servicePrefix = 'events';
 
   /**
-   * Statement provider for service [events](https://docs.aws.amazon.com/service-authorization/latest/reference/list_events.html).
+   * Statement provider for service [events](https://docs.aws.amazon.com/service-authorization/latest/reference/list_eventbridge.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -96,6 +96,17 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an event source that forwards events to an event bus
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEventSource.html
+   */
+  public toCreateEventSource() {
+    return this.to('CreateEventSource');
+  }
+
+  /**
    * Grants permission to create partner event sources
    *
    * Access Level: Write
@@ -104,6 +115,17 @@ export class Events extends PolicyStatement {
    */
   public toCreatePartnerEventSource() {
     return this.to('CreatePartnerEventSource');
+  }
+
+  /**
+   * Grants permission to create a subscriber
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateSubscriber.html
+   */
+  public toCreateSubscriber() {
+    return this.to('CreateSubscriber');
   }
 
   /**
@@ -184,6 +206,17 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an event source
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteEventSource.html
+   */
+  public toDeleteEventSource() {
+    return this.to('DeleteEventSource');
+  }
+
+  /**
    * Grants permission to delete partner event sources
    *
    * Access Level: Write
@@ -195,6 +228,17 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a resource policy attached to an event bus
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to delete rules
    *
    * Access Level: Write
@@ -203,6 +247,17 @@ export class Events extends PolicyStatement {
    */
   public toDeleteRule() {
     return this.to('DeleteRule');
+  }
+
+  /**
+   * Grants permission to delete a subscriber
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteSubscriber.html
+   */
+  public toDeleteSubscriber() {
+    return this.to('DeleteSubscriber');
   }
 
   /**
@@ -305,6 +360,17 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details about a subscriber
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeSubscriber.html
+   */
+  public toDescribeSubscriber() {
+    return this.to('DescribeSubscriber');
+  }
+
+  /**
    * Grants permission to disable rules
    *
    * Access Level: Write
@@ -324,6 +390,17 @@ export class Events extends PolicyStatement {
    */
   public toEnableRule() {
     return this.to('EnableRule');
+  }
+
+  /**
+   * Grants permission to retrieve the resource policy attached to an event bus
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_GetResourcePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
   }
 
   /**
@@ -426,6 +503,17 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the resource policies attached to an event bus
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListResourcePolicies.html
+   */
+  public toListResourcePolicies() {
+    return this.to('ListResourcePolicies');
+  }
+
+  /**
    * Grants permission to retrieve a list of the names of the rules associated with a target
    *
    * Access Level: List
@@ -445,6 +533,17 @@ export class Events extends PolicyStatement {
    */
   public toListRules() {
     return this.to('ListRules');
+  }
+
+  /**
+   * Grants permission to retrieve a list of subscribers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListSubscribers.html
+   */
+  public toListSubscribers() {
+    return this.to('ListSubscribers');
   }
 
   /**
@@ -503,6 +602,28 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to publish raw-format events with custom content types, metadata, binary payloads, and FIFO ordering to Amazon EventBridge
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutRawEvents.html
+   */
+  public toPutRawEvents() {
+    return this.to('PutRawEvents');
+  }
+
+  /**
+   * Grants permission to attach a resource policy to an event bus
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Grants permission to create or updates rules
    *
    * Access Level: Write
@@ -544,6 +665,17 @@ export class Events extends PolicyStatement {
    */
   public toRemoveTargets() {
     return this.to('RemoveTargets');
+  }
+
+  /**
+   * Grants permission to revoke a subscriber or an event source on an event bus
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RevokeResource.html
+   */
+  public toRevokeResource() {
+    return this.to('RevokeResource');
   }
 
   /**
@@ -646,6 +778,28 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an event source
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateEventSource.html
+   */
+  public toUpdateEventSource() {
+    return this.to('UpdateEventSource');
+  }
+
+  /**
+   * Grants permission to update a subscriber
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateSubscriber.html
+   */
+  public toUpdateSubscriber() {
+    return this.to('UpdateSubscriber');
+  }
+
+  /**
    * Grants permission to configure vended log delivery for EventBridge
    *
    * Access Level: Write
@@ -687,7 +841,9 @@ export class Events extends PolicyStatement {
       'CreateConnection',
       'CreateEndpoint',
       'CreateEventBus',
+      'CreateEventSource',
       'CreatePartnerEventSource',
+      'CreateSubscriber',
       'DeactivateEventSource',
       'DeauthorizeConnection',
       'DeleteApiDestination',
@@ -695,17 +851,23 @@ export class Events extends PolicyStatement {
       'DeleteConnection',
       'DeleteEndpoint',
       'DeleteEventBus',
+      'DeleteEventSource',
       'DeletePartnerEventSource',
+      'DeleteResourcePolicy',
       'DeleteRule',
+      'DeleteSubscriber',
       'DisableRule',
       'EnableRule',
       'PutEvents',
       'PutPartnerEvents',
       'PutPermission',
+      'PutRawEvents',
+      'PutResourcePolicy',
       'PutRule',
       'PutTargets',
       'RemovePermission',
       'RemoveTargets',
+      'RevokeResource',
       'StartReplay',
       'TagResource',
       'UntagResource',
@@ -714,9 +876,17 @@ export class Events extends PolicyStatement {
       'UpdateConnection',
       'UpdateEndpoint',
       'UpdateEventBus',
+      'UpdateEventSource',
+      'UpdateSubscriber',
       'AllowVendedLogDeliveryForResource',
       'InvokeApiDestination',
       'RetrieveConnectionCredentials'
+    ],
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'PutPermission',
+      'PutResourcePolicy',
+      'RemovePermission'
     ],
     Read: [
       'DescribeApiDestination',
@@ -728,6 +898,8 @@ export class Events extends PolicyStatement {
       'DescribePartnerEventSource',
       'DescribeReplay',
       'DescribeRule',
+      'DescribeSubscriber',
+      'GetResourcePolicy',
       'TestEventPattern'
     ],
     List: [
@@ -740,14 +912,12 @@ export class Events extends PolicyStatement {
       'ListPartnerEventSourceAccounts',
       'ListPartnerEventSources',
       'ListReplays',
+      'ListResourcePolicies',
       'ListRuleNamesByTarget',
       'ListRules',
+      'ListSubscribers',
       'ListTagsForResource',
       'ListTargetsByRule'
-    ],
-    'Permissions management': [
-      'PutPermission',
-      'RemovePermission'
     ],
     Tagging: [
       'TagResource',
@@ -856,6 +1026,24 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type event-busv2 to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
+   *
+   * @param eventBusName - Identifier for the eventBusName.
+   * @param opaqueId - Identifier for the opaqueId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEventBusv2(eventBusName: string, opaqueId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-busv2/${ eventBusName }/${ opaqueId }`);
+  }
+
+  /**
    * Adds a resource of type event-source to the statement
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
@@ -866,6 +1054,25 @@ export class Events extends PolicyStatement {
    */
   public onEventSource(eventSourceName: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }::event-source/${ eventSourceName }`);
+  }
+
+  /**
+   * Adds a resource of type event-sourcev2 to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
+   *
+   * @param sourceType - Identifier for the sourceType.
+   * @param eventSourceName - Identifier for the eventSourceName.
+   * @param opaqueId - Identifier for the opaqueId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEventSourcev2(sourceType: string, eventSourceName: string, opaqueId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-sourcev2/${ sourceType }/${ eventSourceName }/${ opaqueId }`);
   }
 
   /**
@@ -958,6 +1165,24 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type subscriber to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
+   *
+   * @param subscriberName - Identifier for the subscriberName.
+   * @param opaqueId - Identifier for the opaqueId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSubscriber(subscriberName: string, opaqueId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:subscriber/${ subscriberName }/${ opaqueId }`);
+  }
+
+  /**
    * Adds a resource of type terminate-instance to the statement
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
@@ -977,6 +1202,8 @@ export class Events extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateEventBus()
+   * - .toCreateEventSource()
+   * - .toCreateSubscriber()
    * - .toPutRule()
    * - .toTagResource()
    *
@@ -996,28 +1223,45 @@ export class Events extends PolicyStatement {
    * Applies to actions:
    * - .toCreateArchive()
    * - .toCreateEventBus()
+   * - .toCreateEventSource()
+   * - .toCreateSubscriber()
    * - .toDeleteEventBus()
+   * - .toDeleteEventSource()
+   * - .toDeleteResourcePolicy()
    * - .toDeleteRule()
+   * - .toDeleteSubscriber()
    * - .toDescribeEventBus()
+   * - .toDescribeEventSource()
    * - .toDescribeRule()
+   * - .toDescribeSubscriber()
    * - .toDisableRule()
    * - .toEnableRule()
+   * - .toGetResourcePolicy()
+   * - .toListResourcePolicies()
    * - .toListTagsForResource()
    * - .toListTargetsByRule()
    * - .toPutEvents()
+   * - .toPutRawEvents()
+   * - .toPutResourcePolicy()
    * - .toPutRule()
    * - .toPutTargets()
    * - .toRemoveTargets()
+   * - .toRevokeResource()
    * - .toStartReplay()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateEventBus()
+   * - .toUpdateEventSource()
+   * - .toUpdateSubscriber()
    * - .toAllowVendedLogDeliveryForResource()
    *
    * Applies to resource types:
    * - event-bus
+   * - event-busv2
+   * - event-sourcev2
    * - rule-on-custom-event-bus
    * - rule-on-default-event-bus
+   * - subscriber
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1034,6 +1278,8 @@ export class Events extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateEventBus()
+   * - .toCreateEventSource()
+   * - .toCreateSubscriber()
    * - .toPutRule()
    * - .toTagResource()
    * - .toUntagResource()
@@ -1043,6 +1289,21 @@ export class Events extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by whether a subscriber declares a payload-scope content filter to CreateSubscriber and UpdateSubscriber actions
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html
+   *
+   * Applies to actions:
+   * - .toCreateSubscriber()
+   * - .toUpdateSubscriber()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifContentFilterPresent(value?: boolean) {
+    return this.if(`ContentFilterPresent`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -1079,6 +1340,106 @@ export class Events extends PolicyStatement {
    */
   public ifManagedBy(value: string | string[], operator?: Operator | string) {
     return this.if(`ManagedBy`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a metadata key-value pair on the published event to PutRawEvents actions, or by the exact-match values declared for that key in a subscriber's metadata filter to CreateSubscriber and UpdateSubscriber actions
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html
+   *
+   * Applies to actions:
+   * - .toCreateSubscriber()
+   * - .toPutRawEvents()
+   * - .toUpdateSubscriber()
+   *
+   * @param metadataKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifMetadataMetadataKey(metadataKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`Metadata/${ metadataKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the match type declared for a metadata key in a subscriber's filter to CreateSubscriber and UpdateSubscriber actions
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html
+   *
+   * Applies to actions:
+   * - .toCreateSubscriber()
+   * - .toUpdateSubscriber()
+   *
+   * @param metadataKeyMatcher The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifMetadataMetadataKeyMatcher(metadataKeyMatcher: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`Metadata/${ metadataKeyMatcher }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the name of the resource policy specified in the request to resource policy actions
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html
+   *
+   * Applies to actions:
+   * - .toDeleteResourcePolicy()
+   * - .toGetResourcePolicy()
+   * - .toPutResourcePolicy()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPolicyName(value: string | string[], operator?: Operator | string) {
+    return this.if(`PolicyName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the detail type recorded in the system metadata of an event forwarded onto an event bus to PutEvents and PutRawEvents actions
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html
+   *
+   * Applies to actions:
+   * - .toPutEvents()
+   * - .toPutRawEvents()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSystemMetadataAwsDetailType(value: string | string[], operator?: Operator | string) {
+    return this.if(`SystemMetadata/AwsDetailType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the source recorded in the system metadata of an event forwarded onto an event bus to PutEvents and PutRawEvents actions
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html
+   *
+   * Applies to actions:
+   * - .toPutEvents()
+   * - .toPutRawEvents()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSystemMetadataAwsSource(value: string | string[], operator?: Operator | string) {
+    return this.if(`SystemMetadata/AwsSource`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the content type declared on an event for PutRawEvents and for forwarded events authorized as PutEvents
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html
+   *
+   * Applies to actions:
+   * - .toPutEvents()
+   * - .toPutRawEvents()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSystemMetadataContentType(value: string | string[], operator?: Operator | string) {
+    return this.if(`SystemMetadata/ContentType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1189,6 +1550,7 @@ export class Events extends PolicyStatement {
    *
    * Applies to actions:
    * - .toPutEvents()
+   * - .toPutRawEvents()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1203,8 +1565,10 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-limit-access-control
    *
    * Applies to actions:
+   * - .toCreateEventSource()
    * - .toPutEvents()
    * - .toPutRule()
+   * - .toUpdateEventSource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

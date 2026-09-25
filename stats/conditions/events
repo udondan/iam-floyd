@@ -1,7 +1,14 @@
+events:ContentFilterPresent
 events:EventBusArn
 events:ManagedBy
+events:Metadata/${MetadataKey}
+events:Metadata/${MetadataKey}/Matcher
+events:PolicyName
 events:RequestTag/${TagKey}
 events:ResourceTag/${TagKey}
+events:SystemMetadata/AwsDetailType
+events:SystemMetadata/AwsSource
+events:SystemMetadata/ContentType
 events:TagKeys
 events:TargetArn
 events:creatorAccount

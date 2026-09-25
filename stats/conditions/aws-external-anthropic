@@ -1,6 +1,7 @@
 aws-external-anthropic:BearerTokenType
 aws-external-anthropic:CalledViaConsole
 aws-external-anthropic:Capability
+aws-external-anthropic:KeyArn
 aws-external-anthropic:RequestTag/${TagKey}
 aws-external-anthropic:ResourceTag/${TagKey}
 aws-external-anthropic:TagKeys

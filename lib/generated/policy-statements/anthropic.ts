@@ -258,6 +258,7 @@ export class Anthropic extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifKeyArn()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -356,6 +357,20 @@ export class Anthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable an external encryption key
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifKeyArn()
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
+   */
+  public toDisableKey() {
+    return this.to('DisableKey');
+  }
+
+  /**
    * Grants permission to retrieve the status of account setup and AWS Marketplace registration
    *
    * Access Level: Read
@@ -408,6 +423,20 @@ export class Anthropic extends PolicyStatement {
    */
   public toGetFile() {
     return this.to('GetFile');
+  }
+
+  /**
+   * Grants permission to get an external encryption key
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifKeyArn()
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
+   */
+  public toGetKey() {
+    return this.to('GetKey');
   }
 
   /**
@@ -543,6 +572,17 @@ export class Anthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list external encryption keys
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
+   */
+  public toListKeys() {
+    return this.to('ListKeys');
+  }
+
+  /**
    * Grants permission to list managed agent memory stores in a workspace
    *
    * Access Level: List
@@ -653,6 +693,17 @@ export class Anthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to register an external encryption key
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
+   */
+  public toRegisterKey() {
+    return this.to('RegisterKey');
+  }
+
+  /**
    * Grants permission to rotate the signing secret of a webhook
    *
    * Access Level: Write
@@ -705,6 +756,20 @@ export class Anthropic extends PolicyStatement {
    */
   public toUpdateEnvironment() {
     return this.to('UpdateEnvironment');
+  }
+
+  /**
+   * Grants permission to update an external encryption key
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifKeyArn()
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
+   */
+  public toUpdateKey() {
+    return this.to('UpdateKey');
   }
 
   /**
@@ -830,12 +895,15 @@ export class Anthropic extends PolicyStatement {
       'DeleteSkill',
       'DeleteVault',
       'DeleteWebhook',
+      'DisableKey',
       'ProcessEnvironmentWork',
+      'RegisterKey',
       'RotateWebhookSecret',
       'TagResource',
       'UntagResource',
       'UpdateAgent',
       'UpdateEnvironment',
+      'UpdateKey',
       'UpdateMemoryStore',
       'UpdateSession',
       'UpdateSkill',
@@ -850,6 +918,7 @@ export class Anthropic extends PolicyStatement {
       'GetBatchInference',
       'GetEnvironment',
       'GetFile',
+      'GetKey',
       'GetMemoryStore',
       'GetModel',
       'GetSession',
@@ -865,6 +934,7 @@ export class Anthropic extends PolicyStatement {
       'ListBatchInferences',
       'ListEnvironments',
       'ListFiles',
+      'ListKeys',
       'ListMemoryStores',
       'ListModels',
       'ListSessions',
@@ -937,6 +1007,25 @@ export class Anthropic extends PolicyStatement {
    */
   public ifCapability(value: string | string[], operator?: Operator | string) {
     return this.if(`Capability`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the KMS key ARN associated with the external key
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-policies.html
+   *
+   * Applies to actions:
+   * - .toCreateWorkspace()
+   * - .toDisableKey()
+   * - .toGetKey()
+   * - .toUpdateKey()
+   * - .toUpdateWorkspace()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifKeyArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`KeyArn`, value, operator ?? 'ArnLike');
   }
 
   /**

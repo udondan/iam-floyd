@@ -22,6 +22,7 @@ datazone:CreateAssetType;Write
 datazone:CreateCell;Write
 datazone:CreateCellRun;Write
 datazone:CreateConnection;Write
+datazone:CreateDataApp;Write
 datazone:CreateDataProduct;Write
 datazone:CreateDataProductRevision;Write
 datazone:CreateDataSource;Write
@@ -53,6 +54,8 @@ datazone:DeleteAssetType;Write
 datazone:DeleteCell;Write
 datazone:DeleteCellRun;Write
 datazone:DeleteConnection;Write
+datazone:DeleteConversation;Write
+datazone:DeleteDataApp;Write
 datazone:DeleteDataExportConfiguration;Write
 datazone:DeleteDataProduct;Write
 datazone:DeleteDataSource;Write
@@ -79,6 +82,7 @@ datazone:DeleteSubscriptionGrant;Write
 datazone:DeleteSubscriptionRequest;Write
 datazone:DeleteSubscriptionTarget;Write
 datazone:DeleteTimeSeriesDataPoints;Write
+datazone:DeregisterAgentArtifact;Write
 datazone:DisassociateEnvironmentRole;Write
 datazone:DisassociateGovernedTerms;Write
 datazone:GenerateCode;Write
@@ -93,6 +97,7 @@ datazone:GetCompute;Read
 datazone:GetConnection;Read
 datazone:GetConversation;Read
 datazone:GetCurrentEffectivePolicy;Read
+datazone:GetDataApp;Read
 datazone:GetDataExportConfiguration;Read
 datazone:GetDataProduct;Read
 datazone:GetDataSource;Read
@@ -134,14 +139,18 @@ datazone:GetSubscriptionTarget;Read
 datazone:GetTimeSeriesDataPoint;Read
 datazone:GetUpdateEligibility;Read
 datazone:GetUserProfile;Read
+datazone:InvokeAgent;Write
 datazone:ListAccountEnvironments;List
 datazone:ListAccountPools;List
 datazone:ListAccountsInAccountPool;List
+datazone:ListAgentArtifacts;List
+datazone:ListAgentSessionRecords;List
 datazone:ListAssetFilters;List
 datazone:ListAssetRevisions;List
 datazone:ListCellRuns;List
 datazone:ListConnections;List
 datazone:ListConversations;List
+datazone:ListDataApps;List
 datazone:ListDataProductRevisions;List
 datazone:ListDataSourceRunActivities;List
 datazone:ListDataSourceRuns;List
@@ -170,6 +179,7 @@ datazone:ListProjectMemberships;List
 datazone:ListProjectProfiles;List
 datazone:ListProjects;List
 datazone:ListRules;List
+datazone:ListSharedDataApps;List
 datazone:ListSubscriptionGrants;List
 datazone:ListSubscriptionRequests;List
 datazone:ListSubscriptionTargets;List
@@ -186,6 +196,7 @@ datazone:PutDomainSharingPolicy;Permissions management, Write
 datazone:PutEnvironmentBlueprintConfiguration;Write
 datazone:QueryGraph;List
 datazone:RefreshToken;Write
+datazone:RegisterAgentArtifact;Write
 datazone:RejectPredictions;Write
 datazone:RejectSubscriptionRequest;Write
 datazone:RemoveEntityOwner;Write
@@ -210,6 +221,7 @@ datazone:StartNotebookExport;Write
 datazone:StartNotebookImport;Write
 datazone:StartNotebookRun;Write
 datazone:StartNotebookSync;Write
+datazone:StopAgent;Write
 datazone:StopCompute;Write
 datazone:StopMetadataGenerationRun;Write
 datazone:StopNotebookCompute;Write
@@ -221,6 +233,8 @@ datazone:UpdateAssetFilter;Write
 datazone:UpdateCell;Write
 datazone:UpdateCellRun;Write
 datazone:UpdateConnection;Write
+datazone:UpdateConversation;Write
+datazone:UpdateDataApp;Write
 datazone:UpdateDataSource;Write
 datazone:UpdateDataSourceRunActivities;Write
 datazone:UpdateDesignation;Write

@@ -721,6 +721,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the MFA messages received for an actor at its server-generated address
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListActorMessages.html
+   */
+  public toListActorMessages() {
+    return this.to('ListActorMessages');
+  }
+
+  /**
    * Grants permission to list agent spaces
    *
    * Access Level: List
@@ -1398,6 +1409,7 @@ export class Securityagent extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'ListActorMessages',
       'ListAgentSpaces',
       'ListApplications',
       'ListArtifacts',
@@ -1613,6 +1625,7 @@ export class Securityagent extends PolicyStatement {
    * - .toGetSecurityRequirement()
    * - .toGetSecurityRequirementPack()
    * - .toImportSecurityRequirements()
+   * - .toListActorMessages()
    * - .toListArtifacts()
    * - .toListCodeReviewJobTasks()
    * - .toListCodeReviewJobsForCodeReview()

@@ -60,6 +60,7 @@ securityagent:GetSecurityRequirementPack;Read
 securityagent:HandleProviderRegistrationCallback;Write
 securityagent:ImportSecurityRequirements;Write
 securityagent:InitiateProviderRegistration;Write
+securityagent:ListActorMessages;List
 securityagent:ListAgentSpaces;List
 securityagent:ListApplications;List
 securityagent:ListArtifacts;List
