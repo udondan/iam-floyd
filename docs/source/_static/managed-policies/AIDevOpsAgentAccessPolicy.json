@@ -34,6 +34,7 @@
         "aidevops:ListAssetTypes",
         "aidevops:ListAssetVersions",
         "aidevops:ListKnowledgeItems",
+        "airflow:GetEnvironment",
         "airflow:List*",
         "amplify:GetApp",
         "amplify:GetBranch",
@@ -174,6 +175,7 @@
         "cloudwatch:GetMetricData",
         "cloudwatch:GetMetricStatistics",
         "cloudwatch:GetMetricStream",
+        "cloudwatch:GetOTelEnrichment",
         "cloudwatch:GetService",
         "cloudwatch:GetServiceLevelObjective",
         "cloudwatch:List*",
@@ -261,6 +263,7 @@
         "config:List*",
         "config:SelectAggregateResourceConfig",
         "connect:Describe*",
+        "connect:GetMetricDataV2",
         "connect:GetTaskTemplate",
         "connect:List*",
         "cur:Describe*",
@@ -400,6 +403,7 @@
         "glue:GetDatabase",
         "glue:GetDatabases",
         "glue:GetDataCatalogEncryptionSettings",
+        "glue:GetDataQualityResult",
         "glue:GetJob",
         "glue:GetJobBookmark",
         "glue:GetJobRun",
@@ -457,6 +461,7 @@
         "iam:GetUserPolicy",
         "iam:ListAccountAliases",
         "iam:ListAttachedRolePolicies",
+        "iam:ListEntitiesForPolicy",
         "iam:ListOpenIDConnectProviders",
         "iam:ListRolePolicies",
         "iam:ListRoles",
@@ -748,6 +753,7 @@
         "rum:List*",
         "s3-outposts:ListEndpoints",
         "s3-outposts:ListOutpostsWithS3",
+        "s3:GetAccelerateConfiguration",
         "s3:GetAccessGrant",
         "s3:GetAccessGrantsInstance",
         "s3:GetAccessGrantsLocation",
@@ -757,6 +763,7 @@
         "s3:GetAccessPointPolicy",
         "s3:GetAccessPointPolicyForObjectLambda",
         "s3:GetAccessPointPolicyStatusForObjectLambda",
+        "s3:GetAnalyticsConfiguration",
         "s3:GetBucketAbac",
         "s3:GetBucketAcl",
         "s3:GetBucketCORS",
@@ -770,10 +777,12 @@
         "s3:GetBucketPublicAccessBlock",
         "s3:GetBucketTagging",
         "s3:GetBucketVersioning",
+        "s3:GetBucketWebsite",
         "s3:GetEncryptionConfiguration",
         "s3:GetIntelligentTieringConfiguration",
         "s3:GetInventoryConfiguration",
         "s3:GetLifecycleConfiguration",
+        "s3:GetMetricsConfiguration",
         "s3:GetMultiRegionAccessPoint",
         "s3:GetMultiRegionAccessPointPolicy",
         "s3:GetMultiRegionAccessPointPolicyStatus",
@@ -782,6 +791,7 @@
         "s3:GetStorageLensConfigurationTagging",
         "s3:GetStorageLensGroup",
         "s3:ListAllMyBuckets",
+        "s3:ListTagsForResource",
         "sagemaker:Describe*",
         "sagemaker:List*",
         "scheduler:GetSchedule",
@@ -905,9 +915,15 @@
         "wafv2:GetLoggingConfiguration",
         "wafv2:GetRegexPatternSet",
         "wafv2:GetRuleGroup",
+        "wafv2:GetSampledRequests",
         "wafv2:GetWebACL",
         "wafv2:GetWebACLForResource",
         "wafv2:List*",
+        "wisdom:Get*",
+        "wisdom:List*",
+        "wisdom:Query*",
+        "wisdom:Retrieve",
+        "wisdom:Search*",
         "workspaces-web:GetBrowserSettings",
         "workspaces-web:GetIdentityProvider",
         "workspaces-web:GetNetworkSettings",
@@ -954,6 +970,20 @@
         "arn:aws:apigateway:*::/domainnames",
         "arn:aws:apigateway:*::/domainnames/*"
       ]
+    },
+    {
+      "Sid": "AllowListBucketAWSLogs",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::*",
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": [
+            "AWSLogs/*",
+            "*/AWSLogs/*"
+          ]
+        }
+      }
     }
   ]
 }

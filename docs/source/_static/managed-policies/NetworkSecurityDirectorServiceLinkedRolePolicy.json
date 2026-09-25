@@ -217,6 +217,19 @@
         }
       },
       "Resource": "*"
+    },
+    {
+      "Sid": "DisableNSDPolicyType",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DisablePolicyType"
+      ],
+      "Resource": "arn:aws:organizations::*:root/o-*/r-*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:PolicyType": "NETWORK_SECURITY_DIRECTOR_POLICY"
+        }
+      }
     }
   ]
 }
