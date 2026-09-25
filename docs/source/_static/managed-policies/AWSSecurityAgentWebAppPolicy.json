@@ -51,6 +51,7 @@
         "securityagent:GetDesignReview",
         "securityagent:GetDesignReviewArtifact",
         "securityagent:GetDesignReviewFeedback",
+        "securityagent:ListActorMessages",
         "securityagent:ListArtifacts",
         "securityagent:ListCodeReviewJobsForCodeReview",
         "securityagent:ListCodeReviewJobTasks",

@@ -137,6 +137,17 @@
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
+    },
+    {
+      "Sid": "GetCloudWatchOmniAWSIntegrationRole",
+      "Effect": "Allow",
+      "Action": "iam:GetRole",
+      "Resource": "arn:aws:iam::*:role/service-role/CloudWatchOmniAWSIntegrationRole-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }

@@ -130,7 +130,9 @@
         "savingsplans:DescribeSavingsPlanRates",
         "savingsplans:DescribeSavingsPlansOfferings",
         "savingsplans:DescribeSavingsPlansOfferingRates",
-        "savingsplans:ListTagsForResource"
+        "savingsplans:ListTagsForResource",
+        "cost-optimization-hub:ListEfficiencyMetrics",
+        "billing:GetBillingPreferences"
       ],
       "Resource": "*"
     },
