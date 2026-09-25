@@ -29,11 +29,13 @@ aws-external-anthropic:DeleteSession;Write
 aws-external-anthropic:DeleteSkill;Write
 aws-external-anthropic:DeleteVault;Write
 aws-external-anthropic:DeleteWebhook;Write
+aws-external-anthropic:DisableKey;Write
 aws-external-anthropic:GetAccountStatus;Read
 aws-external-anthropic:GetAgent;Read
 aws-external-anthropic:GetBatchInference;Read
 aws-external-anthropic:GetEnvironment;Read
 aws-external-anthropic:GetFile;Read
+aws-external-anthropic:GetKey;Read
 aws-external-anthropic:GetMemoryStore;Read
 aws-external-anthropic:GetModel;Read
 aws-external-anthropic:GetSession;Read
@@ -46,6 +48,7 @@ aws-external-anthropic:ListAgents;List
 aws-external-anthropic:ListBatchInferences;List
 aws-external-anthropic:ListEnvironments;List
 aws-external-anthropic:ListFiles;List
+aws-external-anthropic:ListKeys;List
 aws-external-anthropic:ListMemoryStores;List
 aws-external-anthropic:ListModels;List
 aws-external-anthropic:ListSessions;List
@@ -56,11 +59,13 @@ aws-external-anthropic:ListVaults;List
 aws-external-anthropic:ListWebhooks;List
 aws-external-anthropic:ListWorkspaces;List
 aws-external-anthropic:ProcessEnvironmentWork;Write
+aws-external-anthropic:RegisterKey;Write
 aws-external-anthropic:RotateWebhookSecret;Write
 aws-external-anthropic:TagResource;Tagging, Write
 aws-external-anthropic:UntagResource;Tagging, Write
 aws-external-anthropic:UpdateAgent;Write
 aws-external-anthropic:UpdateEnvironment;Write
+aws-external-anthropic:UpdateKey;Write
 aws-external-anthropic:UpdateMemoryStore;Write
 aws-external-anthropic:UpdateSession;Write
 aws-external-anthropic:UpdateSkill;Write

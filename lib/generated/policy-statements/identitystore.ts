@@ -140,6 +140,15 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about an IdentityStore
+   *
+   * Access Level: Read
+   */
+  public toDescribeIdentityStore() {
+    return this.to('DescribeIdentityStore');
+  }
+
+  /**
    * Grants permission to retrieve configuration details for a specific IdentityStore region
    *
    * Access Level: Read
@@ -239,6 +248,15 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list IdentityStores in an AWS account
+   *
+   * Access Level: List
+   */
+  public toListIdentityStores() {
+    return this.to('ListIdentityStores');
+  }
+
+  /**
    * Grants permission to list all regions configured for an IdentityStore
    *
    * Access Level: List
@@ -335,6 +353,7 @@ export class Identitystore extends PolicyStatement {
     Read: [
       'DescribeGroup',
       'DescribeGroupMembership',
+      'DescribeIdentityStore',
       'DescribeRegion',
       'DescribeUser',
       'GetGroupId',
@@ -346,6 +365,7 @@ export class Identitystore extends PolicyStatement {
       'ListGroupMemberships',
       'ListGroupMembershipsForMember',
       'ListGroups',
+      'ListIdentityStores',
       'ListRegions',
       'ListUsers'
     ]
@@ -463,6 +483,7 @@ export class Identitystore extends PolicyStatement {
    * - .toDeleteUser()
    * - .toDescribeGroup()
    * - .toDescribeGroupMembership()
+   * - .toDescribeIdentityStore()
    * - .toDescribeRegion()
    * - .toDescribeUser()
    * - .toGetGroupId()

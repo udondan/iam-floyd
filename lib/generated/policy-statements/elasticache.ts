@@ -991,6 +991,9 @@ export class Elasticache extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    * - .ifAtRestEncryptionEnabled()
    * - .ifAuthTokenEnabled()
    * - .ifAutomaticFailoverEnabled()
@@ -1253,11 +1256,13 @@ export class Elasticache extends PolicyStatement {
    * - .toCreateSnapshot()
    * - .toCreateUser()
    * - .toCreateUserGroup()
+   * - .toDecreaseNodeGroupsInGlobalReplicationGroup()
    * - .toDecreaseReplicaCount()
    * - .toDeleteCacheCluster()
    * - .toDeleteCacheParameterGroup()
    * - .toDeleteCacheSecurityGroup()
    * - .toDeleteCacheSubnetGroup()
+   * - .toDeleteGlobalReplicationGroup()
    * - .toDeleteReplicationGroup()
    * - .toDeleteServerlessCache()
    * - .toDeleteServerlessCacheSnapshot()
@@ -1269,6 +1274,7 @@ export class Elasticache extends PolicyStatement {
    * - .toDescribeCacheParameters()
    * - .toDescribeCacheSecurityGroups()
    * - .toDescribeCacheSubnetGroups()
+   * - .toDescribeGlobalReplicationGroups()
    * - .toDescribeReplicationGroups()
    * - .toDescribeReservedCacheNodes()
    * - .toDescribeServerlessCacheSnapshots()
@@ -1277,19 +1283,24 @@ export class Elasticache extends PolicyStatement {
    * - .toDescribeUpdateActions()
    * - .toDescribeUserGroups()
    * - .toDescribeUsers()
+   * - .toDisassociateGlobalReplicationGroup()
    * - .toExportServerlessCacheSnapshot()
+   * - .toFailoverGlobalReplicationGroup()
+   * - .toIncreaseNodeGroupsInGlobalReplicationGroup()
    * - .toIncreaseReplicaCount()
    * - .toListAllowedNodeTypeModifications()
    * - .toListTagsForResource()
    * - .toModifyCacheCluster()
    * - .toModifyCacheParameterGroup()
    * - .toModifyCacheSubnetGroup()
+   * - .toModifyGlobalReplicationGroup()
    * - .toModifyReplicationGroup()
    * - .toModifyReplicationGroupShardConfiguration()
    * - .toModifyServerlessCache()
    * - .toModifyUser()
    * - .toModifyUserGroup()
    * - .toPurchaseReservedCacheNodesOffering()
+   * - .toRebalanceSlotsInGlobalReplicationGroup()
    * - .toRebootCacheCluster()
    * - .toRemoveTagsFromResource()
    * - .toResetCacheParameterGroup()
@@ -1301,6 +1312,7 @@ export class Elasticache extends PolicyStatement {
    *
    * Applies to resource types:
    * - cluster
+   * - globalreplicationgroup
    * - parametergroup
    * - replicationgroup
    * - reserved-instance
@@ -1345,11 +1357,13 @@ export class Elasticache extends PolicyStatement {
    * - .toCreateSnapshot()
    * - .toCreateUser()
    * - .toCreateUserGroup()
+   * - .toDecreaseNodeGroupsInGlobalReplicationGroup()
    * - .toDecreaseReplicaCount()
    * - .toDeleteCacheCluster()
    * - .toDeleteCacheParameterGroup()
    * - .toDeleteCacheSecurityGroup()
    * - .toDeleteCacheSubnetGroup()
+   * - .toDeleteGlobalReplicationGroup()
    * - .toDeleteReplicationGroup()
    * - .toDeleteServerlessCache()
    * - .toDeleteServerlessCacheSnapshot()
@@ -1361,6 +1375,7 @@ export class Elasticache extends PolicyStatement {
    * - .toDescribeCacheParameters()
    * - .toDescribeCacheSecurityGroups()
    * - .toDescribeCacheSubnetGroups()
+   * - .toDescribeGlobalReplicationGroups()
    * - .toDescribeReplicationGroups()
    * - .toDescribeReservedCacheNodes()
    * - .toDescribeServerlessCacheSnapshots()
@@ -1369,19 +1384,24 @@ export class Elasticache extends PolicyStatement {
    * - .toDescribeUpdateActions()
    * - .toDescribeUserGroups()
    * - .toDescribeUsers()
+   * - .toDisassociateGlobalReplicationGroup()
    * - .toExportServerlessCacheSnapshot()
+   * - .toFailoverGlobalReplicationGroup()
+   * - .toIncreaseNodeGroupsInGlobalReplicationGroup()
    * - .toIncreaseReplicaCount()
    * - .toListAllowedNodeTypeModifications()
    * - .toListTagsForResource()
    * - .toModifyCacheCluster()
    * - .toModifyCacheParameterGroup()
    * - .toModifyCacheSubnetGroup()
+   * - .toModifyGlobalReplicationGroup()
    * - .toModifyReplicationGroup()
    * - .toModifyReplicationGroupShardConfiguration()
    * - .toModifyServerlessCache()
    * - .toModifyUser()
    * - .toModifyUserGroup()
    * - .toPurchaseReservedCacheNodesOffering()
+   * - .toRebalanceSlotsInGlobalReplicationGroup()
    * - .toRebootCacheCluster()
    * - .toRemoveTagsFromResource()
    * - .toResetCacheParameterGroup()
@@ -1393,6 +1413,7 @@ export class Elasticache extends PolicyStatement {
    *
    * Applies to resource types:
    * - cluster
+   * - globalreplicationgroup
    * - parametergroup
    * - replicationgroup
    * - reserved-instance
@@ -1437,11 +1458,13 @@ export class Elasticache extends PolicyStatement {
    * - .toCreateSnapshot()
    * - .toCreateUser()
    * - .toCreateUserGroup()
+   * - .toDecreaseNodeGroupsInGlobalReplicationGroup()
    * - .toDecreaseReplicaCount()
    * - .toDeleteCacheCluster()
    * - .toDeleteCacheParameterGroup()
    * - .toDeleteCacheSecurityGroup()
    * - .toDeleteCacheSubnetGroup()
+   * - .toDeleteGlobalReplicationGroup()
    * - .toDeleteReplicationGroup()
    * - .toDeleteServerlessCache()
    * - .toDeleteServerlessCacheSnapshot()
@@ -1453,6 +1476,7 @@ export class Elasticache extends PolicyStatement {
    * - .toDescribeCacheParameters()
    * - .toDescribeCacheSecurityGroups()
    * - .toDescribeCacheSubnetGroups()
+   * - .toDescribeGlobalReplicationGroups()
    * - .toDescribeReplicationGroups()
    * - .toDescribeReservedCacheNodes()
    * - .toDescribeServerlessCacheSnapshots()
@@ -1461,19 +1485,24 @@ export class Elasticache extends PolicyStatement {
    * - .toDescribeUpdateActions()
    * - .toDescribeUserGroups()
    * - .toDescribeUsers()
+   * - .toDisassociateGlobalReplicationGroup()
    * - .toExportServerlessCacheSnapshot()
+   * - .toFailoverGlobalReplicationGroup()
+   * - .toIncreaseNodeGroupsInGlobalReplicationGroup()
    * - .toIncreaseReplicaCount()
    * - .toListAllowedNodeTypeModifications()
    * - .toListTagsForResource()
    * - .toModifyCacheCluster()
    * - .toModifyCacheParameterGroup()
    * - .toModifyCacheSubnetGroup()
+   * - .toModifyGlobalReplicationGroup()
    * - .toModifyReplicationGroup()
    * - .toModifyReplicationGroupShardConfiguration()
    * - .toModifyServerlessCache()
    * - .toModifyUser()
    * - .toModifyUserGroup()
    * - .toPurchaseReservedCacheNodesOffering()
+   * - .toRebalanceSlotsInGlobalReplicationGroup()
    * - .toRebootCacheCluster()
    * - .toRemoveTagsFromResource()
    * - .toResetCacheParameterGroup()
@@ -1485,6 +1514,7 @@ export class Elasticache extends PolicyStatement {
    *
    * Applies to resource types:
    * - cluster
+   * - globalreplicationgroup
    * - parametergroup
    * - replicationgroup
    * - reserved-instance

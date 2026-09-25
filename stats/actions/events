@@ -6,7 +6,9 @@ events:CreateArchive;Write
 events:CreateConnection;Write
 events:CreateEndpoint;Write
 events:CreateEventBus;Write
+events:CreateEventSource;Write
 events:CreatePartnerEventSource;Write
+events:CreateSubscriber;Write
 events:DeactivateEventSource;Write
 events:DeauthorizeConnection;Write
 events:DeleteApiDestination;Write
@@ -14,8 +16,11 @@ events:DeleteArchive;Write
 events:DeleteConnection;Write
 events:DeleteEndpoint;Write
 events:DeleteEventBus;Write
+events:DeleteEventSource;Write
 events:DeletePartnerEventSource;Write
+events:DeleteResourcePolicy;Permissions management, Write
 events:DeleteRule;Write
+events:DeleteSubscriber;Write
 events:DescribeApiDestination;Read
 events:DescribeArchive;Read
 events:DescribeConnection;Read
@@ -25,8 +30,10 @@ events:DescribeEventSource;Read
 events:DescribePartnerEventSource;Read
 events:DescribeReplay;Read
 events:DescribeRule;Read
+events:DescribeSubscriber;Read
 events:DisableRule;Write
 events:EnableRule;Write
+events:GetResourcePolicy;Read
 events:InvokeApiDestination;Write
 events:ListApiDestinations;List
 events:ListArchives;List
@@ -37,18 +44,23 @@ events:ListEventSources;List
 events:ListPartnerEventSourceAccounts;List
 events:ListPartnerEventSources;List
 events:ListReplays;List
+events:ListResourcePolicies;List
 events:ListRuleNamesByTarget;List
 events:ListRules;List
+events:ListSubscribers;List
 events:ListTagsForResource;List
 events:ListTargetsByRule;List
 events:PutEvents;Write
 events:PutPartnerEvents;Write
 events:PutPermission;Permissions management, Write
+events:PutRawEvents;Write
+events:PutResourcePolicy;Permissions management, Write
 events:PutRule;Write
 events:PutTargets;Write
 events:RemovePermission;Permissions management, Write
 events:RemoveTargets;Write
 events:RetrieveConnectionCredentials;Write
+events:RevokeResource;Write
 events:StartReplay;Write
 events:TagResource;Tagging, Write
 events:TestEventPattern;Read
@@ -58,3 +70,5 @@ events:UpdateArchive;Write
 events:UpdateConnection;Write
 events:UpdateEndpoint;Write
 events:UpdateEventBus;Write
+events:UpdateEventSource;Write
+events:UpdateSubscriber;Write

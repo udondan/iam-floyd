@@ -166,7 +166,7 @@ export { EmrContainers } from './policy-statements/emr-containers';
 export { EmrServerless } from './policy-statements/emr-serverless';
 export { Entityresolution } from './policy-statements/entityresolution';
 export { Es } from './policy-statements/es';
-export { Events } from './policy-statements/events';
+export { Events } from './policy-statements/eventbridge';
 export { Eventsbilltoaws } from './policy-statements/eventsbilltoaws';
 export { Evidently } from './policy-statements/evidently';
 export { Evs } from './policy-statements/evs';

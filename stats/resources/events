@@ -5,11 +5,14 @@ events:connection
 events:create-snapshot
 events:endpoint
 events:event-bus
+events:event-busv2
 events:event-source
+events:event-sourcev2
 events:key
 events:reboot-instance
 events:replay
 events:rule-on-custom-event-bus
 events:rule-on-default-event-bus
 events:stop-instance
+events:subscriber
 events:terminate-instance
