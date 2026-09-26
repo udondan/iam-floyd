@@ -10,6 +10,7 @@ social-messaging:DeprecateWhatsAppFlow;Write
 social-messaging:DisassociateWhatsAppBusinessAccount;Write
 social-messaging:GetLinkedWhatsAppBusinessAccount;Read
 social-messaging:GetLinkedWhatsAppBusinessAccountPhoneNumber;Read
+social-messaging:GetWhatsAppCallPermission;Read
 social-messaging:GetWhatsAppFlow;Read
 social-messaging:GetWhatsAppFlowPreview;Read
 social-messaging:GetWhatsAppMessageMedia;Write
@@ -23,9 +24,11 @@ social-messaging:ListWhatsAppTemplateLibrary;List
 social-messaging:PostWhatsAppMessageMedia;Write
 social-messaging:PublishWhatsAppFlow;Write
 social-messaging:PutWhatsAppBusinessAccountEventDestinations;Write
+social-messaging:SendWhatsAppCallEvent;Write
 social-messaging:SendWhatsAppMessage;Write
 social-messaging:TagResource;Tagging, Write
 social-messaging:UntagResource;Tagging, Write
+social-messaging:UpdateLinkedWhatsAppBusinessAccountPhoneNumber;Write
 social-messaging:UpdateWhatsAppFlow;Write
 social-messaging:UpdateWhatsAppFlowAssets;Write
 social-messaging:UpdateWhatsAppMessageTemplate;Write
