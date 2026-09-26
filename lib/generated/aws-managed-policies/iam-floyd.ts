@@ -330,6 +330,8 @@ export class AwsManagedPolicy {
     public static AmazonECSComputeServiceRolePolicy = 'aws-service-role/AmazonECSComputeServiceRolePolicy';
     /** These permissions enable Amazon ECS to automatically provision and manage the infrastructure components required for Express Gateway Services, including load balancing, security groups, SSL certificates, and auto scaling configurations. */
     public static AmazonECSInfrastructureRoleforExpressGatewayServices = 'service-role/AmazonECSInfrastructureRoleforExpressGatewayServices';
+    /** Default policy for the Amazon ECS Infrastructure Role for Amazon ECS Service Gateway Services. */
+    public static AmazonECSInfrastructureRoleForGatewayHostSharedALB = 'AmazonECSInfrastructureRoleForGatewayHostSharedALB';
     /** Provides access to other AWS service resources required to manage load balancers associated with ECS workloads on your behalf. */
     public static AmazonECSInfrastructureRolePolicyForLoadBalancers = 'AmazonECSInfrastructureRolePolicyForLoadBalancers';
     /** Provides ECS access to create and manage EC2 managed resources */

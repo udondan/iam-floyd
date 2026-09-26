@@ -64,6 +64,15 @@
       "Effect": "Allow",
       "Action": "sts:TagGetWebIdentityToken",
       "Resource": "*"
+    },
+    {
+      "Sid": "AnthropicReadOnlyKMS",
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:ListKeys"
+      ],
+      "Resource": "*"
     }
   ]
 }

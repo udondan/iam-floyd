@@ -15,7 +15,18 @@
       "Effect": "Allow",
       "Action": [
         "aws-external-anthropic:GetAccountStatus",
-        "aws-external-anthropic:CallWithBearerToken"
+        "aws-external-anthropic:CallWithBearerToken",
+        "aws-external-anthropic:ListKeys",
+        "aws-external-anthropic:GetKey"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AnthropicReadOnlyKMS",
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:ListKeys"
       ],
       "Resource": "*"
     },
