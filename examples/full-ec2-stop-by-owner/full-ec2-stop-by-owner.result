@@ -305,7 +305,8 @@
                 "ec2:SearchLocalGatewayRoutes",
                 "ec2:SearchTransitGatewayMulticastGroups",
                 "ec2:SearchTransitGatewayRoutes",
-                "ec2:StartDeclarativePoliciesReport"
+                "ec2:StartDeclarativePoliciesReport",
+                "ec2:ValidateSecurityGroupQuotasForInterface"
             ],
             "Resource": "*",
             "Effect": "Allow"

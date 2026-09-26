@@ -156,6 +156,17 @@ export class SocialMessaging extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve voice calling permission for a WhatsApp phone number
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetWhatsAppCallPermission.html
+   */
+  public toGetWhatsAppCallPermission() {
+    return this.to('GetWhatsAppCallPermission');
+  }
+
+  /**
    * Grants permission to retrieve the metadata and status of a WhatsApp Flow
    *
    * Access Level: Read
@@ -299,6 +310,17 @@ export class SocialMessaging extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send a voice calling event through WhatsApp
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_SendWhatsAppCallEvent.html
+   */
+  public toSendWhatsAppCallEvent() {
+    return this.to('SendWhatsAppCallEvent');
+  }
+
+  /**
    * Grants permission to send a message through WhatsApp
    *
    * Access Level: Write
@@ -329,6 +351,17 @@ export class SocialMessaging extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update the settings of a linked WhatsApp phone number
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_UpdateLinkedWhatsAppBusinessAccountPhoneNumber.html
+   */
+  public toUpdateLinkedWhatsAppBusinessAccountPhoneNumber() {
+    return this.to('UpdateLinkedWhatsAppBusinessAccountPhoneNumber');
   }
 
   /**
@@ -380,9 +413,11 @@ export class SocialMessaging extends PolicyStatement {
       'PostWhatsAppMessageMedia',
       'PublishWhatsAppFlow',
       'PutWhatsAppBusinessAccountEventDestinations',
+      'SendWhatsAppCallEvent',
       'SendWhatsAppMessage',
       'TagResource',
       'UntagResource',
+      'UpdateLinkedWhatsAppBusinessAccountPhoneNumber',
       'UpdateWhatsAppFlow',
       'UpdateWhatsAppFlowAssets',
       'UpdateWhatsAppMessageTemplate'
@@ -390,6 +425,7 @@ export class SocialMessaging extends PolicyStatement {
     Read: [
       'GetLinkedWhatsAppBusinessAccount',
       'GetLinkedWhatsAppBusinessAccountPhoneNumber',
+      'GetWhatsAppCallPermission',
       'GetWhatsAppFlow',
       'GetWhatsAppFlowPreview',
       'GetWhatsAppMessageTemplate',
@@ -477,6 +513,7 @@ export class SocialMessaging extends PolicyStatement {
    * - .toDisassociateWhatsAppBusinessAccount()
    * - .toGetLinkedWhatsAppBusinessAccount()
    * - .toGetLinkedWhatsAppBusinessAccountPhoneNumber()
+   * - .toGetWhatsAppCallPermission()
    * - .toGetWhatsAppFlow()
    * - .toGetWhatsAppFlowPreview()
    * - .toGetWhatsAppMessageMedia()
@@ -489,9 +526,11 @@ export class SocialMessaging extends PolicyStatement {
    * - .toPostWhatsAppMessageMedia()
    * - .toPublishWhatsAppFlow()
    * - .toPutWhatsAppBusinessAccountEventDestinations()
+   * - .toSendWhatsAppCallEvent()
    * - .toSendWhatsAppMessage()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateLinkedWhatsAppBusinessAccountPhoneNumber()
    * - .toUpdateWhatsAppFlow()
    * - .toUpdateWhatsAppFlowAssets()
    * - .toUpdateWhatsAppMessageTemplate()

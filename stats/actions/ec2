@@ -771,6 +771,7 @@ ec2:ReleaseHosts;Write
 ec2:ReleaseIpamPoolAllocation;Write
 ec2:ReplaceIamInstanceProfileAssociation;Write
 ec2:ReplaceImageCriteriaInAllowedImagesSettings;Write
+ec2:ReplaceImageInstanceTypeSpecification;Write
 ec2:ReplaceNetworkAclAssociation;Write
 ec2:ReplaceNetworkAclEntry;Write
 ec2:ReplaceRoute;Write
@@ -821,4 +822,5 @@ ec2:UpdateCapacityManagerOrganizationsAccess;Write
 ec2:UpdateInterruptibleCapacityReservationAllocation;Write
 ec2:UpdateSecurityGroupRuleDescriptionsEgress;Write
 ec2:UpdateSecurityGroupRuleDescriptionsIngress;Write
+ec2:ValidateSecurityGroupQuotasForInterface;Read
 ec2:WithdrawByoipCidr;Write

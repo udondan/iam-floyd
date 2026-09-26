@@ -9029,6 +9029,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to replace or remove the instance type specification for an Amazon Machine Image (AMI)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceImageInstanceTypeSpecification.html
+   */
+  public toReplaceImageInstanceTypeSpecification() {
+    return this.to('ReplaceImageInstanceTypeSpecification');
+  }
+
+  /**
    * Grants permission to change which network ACL a subnet is associated with
    *
    * Access Level: Write
@@ -9583,6 +9594,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toUpdateSecurityGroupRuleDescriptionsIngress() {
     return this.to('UpdateSecurityGroupRuleDescriptionsIngress');
+  }
+
+  /**
+   * Grants permission to validate whether the specified security groups can be associated with a single network interface without exceeding applicable quotas
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ValidateSecurityGroupQuotasForInterface.html
+   */
+  public toValidateSecurityGroupQuotasForInterface() {
+    return this.to('ValidateSecurityGroupQuotasForInterface');
   }
 
   /**
@@ -10351,6 +10373,7 @@ export class Ec2 extends PolicyStatement {
       'ReleaseIpamPoolAllocation',
       'ReplaceIamInstanceProfileAssociation',
       'ReplaceImageCriteriaInAllowedImagesSettings',
+      'ReplaceImageInstanceTypeSpecification',
       'ReplaceNetworkAclAssociation',
       'ReplaceNetworkAclEntry',
       'ReplaceRoute',
@@ -10732,6 +10755,7 @@ export class Ec2 extends PolicyStatement {
       'GetSpotPlacementScores',
       'GetSubnetCidrReservations',
       'StartDeclarativePoliciesReport',
+      'ValidateSecurityGroupQuotasForInterface',
       'GetResourcePolicy'
     ]
   };
@@ -11304,6 +11328,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAttribute()
    * - .ifAttribute()
+   * - .ifBootModeOverride()
    * - .ifImageID()
    * - .ifImageType()
    * - .ifIsLaunchTemplateResource()
@@ -14082,6 +14107,7 @@ export class Ec2 extends PolicyStatement {
    * - .toReleaseHosts()
    * - .toReleaseIpamPoolAllocation()
    * - .toReplaceIamInstanceProfileAssociation()
+   * - .toReplaceImageInstanceTypeSpecification()
    * - .toReplaceNetworkAclAssociation()
    * - .toReplaceNetworkAclEntry()
    * - .toReplaceRoute()
@@ -14124,6 +14150,7 @@ export class Ec2 extends PolicyStatement {
    * - .toUpdateInterruptibleCapacityReservationAllocation()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()
    * - .toUpdateSecurityGroupRuleDescriptionsIngress()
+   * - .toValidateSecurityGroupQuotasForInterface()
    * - .toAssociateVerifiedAccessInstanceWebAcl()
    * - .toAttachApplianceToNatGateway()
    * - .toAttachResourcesToPlacementGroup()
@@ -15235,6 +15262,24 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by the boot mode
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toCreateImage()
+   *
+   * Applies to resource types:
+   * - image
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifBootModeOverride(value: string | string[], operator?: Operator | string) {
+    return this.if(`BootModeOverride`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the ARN of the Capacity Reservation Fleet
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
@@ -15527,13 +15572,9 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
-   * - .toAcceptCapacityReservationBillingOwnership()
-   * - .toAssociateCapacityReservationBillingOwner()
    * - .toCreateCapacityReservationBySplitting()
    * - .toDescribeCapacityBlockExtensionOfferings()
-   * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
-   * - .toRejectCapacityReservationBillingOwnership()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -15977,6 +16018,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyFleet()
    * - .toModifyImageAttribute()
    * - .toRegisterImage()
+   * - .toReplaceImageInstanceTypeSpecification()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toResetImageAttribute()
@@ -16022,6 +16064,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportImage()
    * - .toModifyFleet()
    * - .toModifyImageAttribute()
+   * - .toReplaceImageInstanceTypeSpecification()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toResetImageAttribute()
@@ -17420,6 +17463,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifySnapshotAttribute()
    * - .toModifySnapshotTier()
    * - .toRegisterImage()
+   * - .toReplaceImageInstanceTypeSpecification()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toResetFpgaImageAttribute()
@@ -17932,6 +17976,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyFleet()
    * - .toModifyFpgaImageAttribute()
    * - .toModifyImageAttribute()
+   * - .toReplaceImageInstanceTypeSpecification()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toResetFpgaImageAttribute()
@@ -18753,6 +18798,7 @@ export class Ec2 extends PolicyStatement {
    * - .toReleaseIpamPoolAllocation()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toReplaceImageCriteriaInAllowedImagesSettings()
+   * - .toReplaceImageInstanceTypeSpecification()
    * - .toReplaceNetworkAclAssociation()
    * - .toReplaceNetworkAclEntry()
    * - .toReplaceRoute()
@@ -18802,6 +18848,7 @@ export class Ec2 extends PolicyStatement {
    * - .toUpdateInterruptibleCapacityReservationAllocation()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()
    * - .toUpdateSecurityGroupRuleDescriptionsIngress()
+   * - .toValidateSecurityGroupQuotasForInterface()
    * - .toWithdrawByoipCidr()
    * - .toAssociateVerifiedAccessInstanceWebAcl()
    * - .toAttachApplianceToNatGateway()
@@ -19549,6 +19596,7 @@ export class Ec2 extends PolicyStatement {
    * - .toReleaseHosts()
    * - .toReleaseIpamPoolAllocation()
    * - .toReplaceIamInstanceProfileAssociation()
+   * - .toReplaceImageInstanceTypeSpecification()
    * - .toReplaceNetworkAclAssociation()
    * - .toReplaceNetworkAclEntry()
    * - .toReplaceRoute()
@@ -19591,6 +19639,7 @@ export class Ec2 extends PolicyStatement {
    * - .toUpdateInterruptibleCapacityReservationAllocation()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()
    * - .toUpdateSecurityGroupRuleDescriptionsIngress()
+   * - .toValidateSecurityGroupQuotasForInterface()
    * - .toAssociateVerifiedAccessInstanceWebAcl()
    * - .toAttachApplianceToNatGateway()
    * - .toAttachResourcesToPlacementGroup()
@@ -19814,6 +19863,7 @@ export class Ec2 extends PolicyStatement {
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
+   * - .toReplaceImageInstanceTypeSpecification()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toResetImageAttribute()
@@ -19959,6 +20009,7 @@ export class Ec2 extends PolicyStatement {
    * - .toRunInstances()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()
    * - .toUpdateSecurityGroupRuleDescriptionsIngress()
+   * - .toValidateSecurityGroupQuotasForInterface()
    *
    * Applies to resource types:
    * - security-group
@@ -20155,14 +20206,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
-   * - .toAcceptCapacityReservationBillingOwnership()
-   * - .toAssociateCapacityReservationBillingOwner()
    * - .toCreateCapacityReservationBySplitting()
    * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toDescribeCapacityBlockExtensionOfferings()
-   * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
-   * - .toRejectCapacityReservationBillingOwnership()
    * - .toUpdateInterruptibleCapacityReservationAllocation()
    *
    * Applies to resource types:
@@ -20782,6 +20829,7 @@ export class Ec2 extends PolicyStatement {
    * - .toUnassignPrivateIpAddresses()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()
    * - .toUpdateSecurityGroupRuleDescriptionsIngress()
+   * - .toValidateSecurityGroupQuotasForInterface()
    *
    * Applies to resource types:
    * - carrier-gateway

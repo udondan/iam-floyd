@@ -3,14 +3,17 @@ elemental-inference:CreateDictionary;Write
 elemental-inference:CreateFeed;Write
 elemental-inference:DeleteDictionary;Write
 elemental-inference:DeleteFeed;Write
+elemental-inference:DeleteFeedPolicy;Write
 elemental-inference:DisassociateFeed;Write
 elemental-inference:ExportDictionaryEntries;Read
 elemental-inference:GetDictionary;Read
 elemental-inference:GetFeed;Read
+elemental-inference:GetFeedPolicy;Read
 elemental-inference:GetMetadata;Read
 elemental-inference:ListDictionaries;List
 elemental-inference:ListFeeds;List
 elemental-inference:ListTagsForResource;Read
+elemental-inference:PutFeedPolicy;Write
 elemental-inference:PutMedia;Write
 elemental-inference:TagResource;Tagging, Write
 elemental-inference:UntagResource;Tagging, Write

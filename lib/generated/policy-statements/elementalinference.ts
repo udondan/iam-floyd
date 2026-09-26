@@ -82,6 +82,17 @@ export class ElementalInference extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the resource-based policy of a feed
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_DeleteFeedPolicy.html
+   */
+  public toDeleteFeedPolicy() {
+    return this.to('DeleteFeedPolicy');
+  }
+
+  /**
    * Grants permission to disassociate a feed from an AWS resource
    *
    * Access Level: Write
@@ -126,6 +137,17 @@ export class ElementalInference extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the resource-based policy of a feed
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_GetFeedPolicy.html
+   */
+  public toGetFeedPolicy() {
+    return this.to('GetFeedPolicy');
+  }
+
+  /**
    * Grants permission to retrieve metadata for a specific feed output
    *
    * Access Level: Read
@@ -167,6 +189,17 @@ export class ElementalInference extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to put a resource-based policy on a feed
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_PutFeedPolicy.html
+   */
+  public toPutFeedPolicy() {
+    return this.to('PutFeedPolicy');
   }
 
   /**
@@ -231,7 +264,9 @@ export class ElementalInference extends PolicyStatement {
       'CreateFeed',
       'DeleteDictionary',
       'DeleteFeed',
+      'DeleteFeedPolicy',
       'DisassociateFeed',
+      'PutFeedPolicy',
       'PutMedia',
       'TagResource',
       'UntagResource',
@@ -242,6 +277,7 @@ export class ElementalInference extends PolicyStatement {
       'ExportDictionaryEntries',
       'GetDictionary',
       'GetFeed',
+      'GetFeedPolicy',
       'GetMetadata',
       'ListTagsForResource'
     ],
@@ -316,11 +352,14 @@ export class ElementalInference extends PolicyStatement {
    * - .toAssociateFeed()
    * - .toDeleteDictionary()
    * - .toDeleteFeed()
+   * - .toDeleteFeedPolicy()
    * - .toDisassociateFeed()
    * - .toExportDictionaryEntries()
    * - .toGetDictionary()
    * - .toGetFeed()
+   * - .toGetFeedPolicy()
    * - .toGetMetadata()
+   * - .toPutFeedPolicy()
    * - .toPutMedia()
    * - .toTagResource()
    * - .toUntagResource()
