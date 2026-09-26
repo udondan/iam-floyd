@@ -48,7 +48,8 @@
         "rds:DescribeDBInstanceAutomatedBackups",
         "rds:DescribeDBClusterAutomatedBackups",
         "rds:ListTagsForResource",
-        "redshift:DescribeClusters"
+        "redshift:DescribeClusters",
+        "redshift:DescribeTags"
       ],
       "Resource": "*"
     },

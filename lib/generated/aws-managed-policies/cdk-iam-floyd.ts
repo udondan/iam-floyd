@@ -834,6 +834,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonECSInfrastructureRoleforExpressGatewayServices);
     }
 
+    /** Default policy for the Amazon ECS Infrastructure Role for Amazon ECS Service Gateway Services. */
+    public AmazonECSInfrastructureRoleForGatewayHostSharedALB(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonECSInfrastructureRoleForGatewayHostSharedALB);
+    }
+
     /** Provides access to other AWS service resources required to manage load balancers associated with ECS workloads on your behalf. */
     public AmazonECSInfrastructureRolePolicyForLoadBalancers(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonECSInfrastructureRolePolicyForLoadBalancers);
