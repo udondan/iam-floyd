@@ -52,6 +52,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach an elastic network interface to a SageMaker HyperPod cluster node
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AttachClusterNodeNetworkInterface.html
+   */
+  public toAttachClusterNodeNetworkInterface() {
+    return this.to('AttachClusterNodeNetworkInterface');
+  }
+
+  /**
    * Grants permission to attach an Amazon EBS volume to a SageMaker HyperPod cluster node
    *
    * Access Level: Write
@@ -4957,6 +4968,7 @@ export class Sagemaker extends PolicyStatement {
       'AddAssociation',
       'AddTags',
       'AssociateTrialComponent',
+      'AttachClusterNodeNetworkInterface',
       'AttachClusterNodeVolume',
       'BatchAddClusterNodes',
       'BatchDeleteClusterNodes',
@@ -6790,7 +6802,6 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateUserProfile()
    * - .toCreateWorkforce()
    * - .toCreateWorkteam()
-   * - .toDeleteFeatureGroup()
    * - .toImportHubContent()
    * - .toRegisterDevices()
    * - .toUpdateMonitoringSchedule()
@@ -6814,6 +6825,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toAddAssociation()
    * - .toAddTags()
    * - .toAssociateTrialComponent()
+   * - .toAttachClusterNodeNetworkInterface()
    * - .toAttachClusterNodeVolume()
    * - .toBatchAddClusterNodes()
    * - .toBatchDeleteClusterNodes()
@@ -8145,6 +8157,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toAddAssociation()
    * - .toAddTags()
    * - .toAssociateTrialComponent()
+   * - .toAttachClusterNodeNetworkInterface()
    * - .toAttachClusterNodeVolume()
    * - .toBatchAddClusterNodes()
    * - .toBatchDeleteClusterNodes()

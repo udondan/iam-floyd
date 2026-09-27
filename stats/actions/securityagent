@@ -57,6 +57,7 @@ securityagent:GetIntegration;Read
 securityagent:GetProviderRegistrationManifest;Read
 securityagent:GetSecurityRequirement;Read
 securityagent:GetSecurityRequirementPack;Read
+securityagent:HandleProviderCallback;Write
 securityagent:HandleProviderRegistrationCallback;Write
 securityagent:ImportSecurityRequirements;Write
 securityagent:InitiateProviderRegistration;Write
@@ -106,6 +107,7 @@ securityagent:UpdateCodeReview;Write
 securityagent:UpdateDiscoveredDomains;Write
 securityagent:UpdateFinding;Write
 securityagent:UpdateIntegratedResources;Write
+securityagent:UpdateIntegration;Write
 securityagent:UpdatePentest;Write
 securityagent:UpdatePrivateConnectionCertificate;Write
 securityagent:UpdateSecurityRequirement;Write
