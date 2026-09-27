@@ -2,6 +2,7 @@ sagemaker:AccessModelPackage;Read
 sagemaker:AddAssociation;Write
 sagemaker:AddTags;Tagging, Write
 sagemaker:AssociateTrialComponent;Write
+sagemaker:AttachClusterNodeNetworkInterface;Write
 sagemaker:AttachClusterNodeVolume;Write
 sagemaker:BatchAddClusterNodes;Write
 sagemaker:BatchDeleteClusterNodes;Write

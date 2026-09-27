@@ -692,6 +692,17 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * https://docs.aws.amazon.com/securityagent/API_HandleProviderCallback.html
+   */
+  public toHandleProviderCallback() {
+    return this.to('HandleProviderCallback');
+  }
+
+  /**
+   * Grants permission to handle the provider OAuth registration callback that completes integration setup
+   *
+   * Access Level: Write
+   *
    * https://docs.aws.amazon.com/securityagent/API_HandleProviderRegistrationCallback.html
    */
   public toHandleProviderRegistrationCallback() {
@@ -1227,6 +1238,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_UpdateIntegration.html
+   */
+  public toUpdateIntegration() {
+    return this.to('UpdateIntegration');
+  }
+
+  /**
    * Grants permission to update an existing penetration test with new configuration or settings
    *
    * Access Level: Write
@@ -1348,6 +1370,7 @@ export class Securityagent extends PolicyStatement {
       'DeleteSecurityRequirement',
       'DeleteSecurityRequirementPack',
       'DeleteTargetDomain',
+      'HandleProviderCallback',
       'HandleProviderRegistrationCallback',
       'ImportSecurityRequirements',
       'InitiateProviderRegistration',
@@ -1369,6 +1392,7 @@ export class Securityagent extends PolicyStatement {
       'UpdateDiscoveredDomains',
       'UpdateFinding',
       'UpdateIntegratedResources',
+      'UpdateIntegration',
       'UpdatePentest',
       'UpdatePrivateConnectionCertificate',
       'UpdateSecurityRequirement',
@@ -1665,6 +1689,7 @@ export class Securityagent extends PolicyStatement {
    * - .toUpdateDiscoveredDomains()
    * - .toUpdateFinding()
    * - .toUpdateIntegratedResources()
+   * - .toUpdateIntegration()
    * - .toUpdatePentest()
    * - .toUpdatePrivateConnectionCertificate()
    * - .toUpdateSecurityRequirement()
