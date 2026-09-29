@@ -173,6 +173,17 @@ export class ArcRegionSwitch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list service quota warnings for plans that have opted in to the feature
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/arc-region-switch/latest/api/API_ListServiceQuotaWarnings.html
+   */
+  public toListServiceQuotaWarnings() {
+    return this.to('ListServiceQuotaWarnings');
+  }
+
+  /**
    * Grants permission to list tags for a resource
    *
    * Access Level: Read
@@ -311,7 +322,8 @@ export class ArcRegionSwitch extends PolicyStatement {
       'ListPlans',
       'ListPlansInRegion',
       'ListRoute53HealthChecks',
-      'ListRoute53HealthChecksInRegion'
+      'ListRoute53HealthChecksInRegion',
+      'ListServiceQuotaWarnings'
     ],
     Tagging: [
       'TagResource',

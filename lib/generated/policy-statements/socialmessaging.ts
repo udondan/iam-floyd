@@ -35,6 +35,17 @@ export class SocialMessaging extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new WhatsApp dataset for a WhatsApp Business Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_CreateWhatsAppDataset.html
+   */
+  public toCreateWhatsAppDataset() {
+    return this.to('CreateWhatsAppDataset');
+  }
+
+  /**
    * Grants permission to create a new WhatsApp Flow
    *
    * Access Level: Write
@@ -153,6 +164,17 @@ export class SocialMessaging extends PolicyStatement {
    */
   public toGetLinkedWhatsAppBusinessAccountPhoneNumber() {
     return this.to('GetLinkedWhatsAppBusinessAccountPhoneNumber');
+  }
+
+  /**
+   * Grants permission to retrieve the WhatsApp business public key for a phone number
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetWhatsAppBusinessPublicKey.html
+   */
+  public toGetWhatsAppBusinessPublicKey() {
+    return this.to('GetWhatsAppBusinessPublicKey');
   }
 
   /**
@@ -310,6 +332,17 @@ export class SocialMessaging extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set the WhatsApp business public key for a phone number
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_PutWhatsAppBusinessPublicKey.html
+   */
+  public toPutWhatsAppBusinessPublicKey() {
+    return this.to('PutWhatsAppBusinessPublicKey');
+  }
+
+  /**
    * Grants permission to send a voice calling event through WhatsApp
    *
    * Access Level: Write
@@ -318,6 +351,17 @@ export class SocialMessaging extends PolicyStatement {
    */
   public toSendWhatsAppCallEvent() {
     return this.to('SendWhatsAppCallEvent');
+  }
+
+  /**
+   * Grants permission to send a conversion event through WhatsApp
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_SendWhatsAppConversionEvent.html
+   */
+  public toSendWhatsAppConversionEvent() {
+    return this.to('SendWhatsAppConversionEvent');
   }
 
   /**
@@ -400,6 +444,7 @@ export class SocialMessaging extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateWhatsAppBusinessAccount',
+      'CreateWhatsAppDataset',
       'CreateWhatsAppFlow',
       'CreateWhatsAppMessageTemplate',
       'CreateWhatsAppMessageTemplateFromLibrary',
@@ -413,7 +458,9 @@ export class SocialMessaging extends PolicyStatement {
       'PostWhatsAppMessageMedia',
       'PublishWhatsAppFlow',
       'PutWhatsAppBusinessAccountEventDestinations',
+      'PutWhatsAppBusinessPublicKey',
       'SendWhatsAppCallEvent',
+      'SendWhatsAppConversionEvent',
       'SendWhatsAppMessage',
       'TagResource',
       'UntagResource',
@@ -425,6 +472,7 @@ export class SocialMessaging extends PolicyStatement {
     Read: [
       'GetLinkedWhatsAppBusinessAccount',
       'GetLinkedWhatsAppBusinessAccountPhoneNumber',
+      'GetWhatsAppBusinessPublicKey',
       'GetWhatsAppCallPermission',
       'GetWhatsAppFlow',
       'GetWhatsAppFlowPreview',
@@ -502,6 +550,7 @@ export class SocialMessaging extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateWhatsAppBusinessAccount()
+   * - .toCreateWhatsAppDataset()
    * - .toCreateWhatsAppFlow()
    * - .toCreateWhatsAppMessageTemplate()
    * - .toCreateWhatsAppMessageTemplateFromLibrary()
@@ -513,6 +562,7 @@ export class SocialMessaging extends PolicyStatement {
    * - .toDisassociateWhatsAppBusinessAccount()
    * - .toGetLinkedWhatsAppBusinessAccount()
    * - .toGetLinkedWhatsAppBusinessAccountPhoneNumber()
+   * - .toGetWhatsAppBusinessPublicKey()
    * - .toGetWhatsAppCallPermission()
    * - .toGetWhatsAppFlow()
    * - .toGetWhatsAppFlowPreview()
@@ -526,7 +576,9 @@ export class SocialMessaging extends PolicyStatement {
    * - .toPostWhatsAppMessageMedia()
    * - .toPublishWhatsAppFlow()
    * - .toPutWhatsAppBusinessAccountEventDestinations()
+   * - .toPutWhatsAppBusinessPublicKey()
    * - .toSendWhatsAppCallEvent()
+   * - .toSendWhatsAppConversionEvent()
    * - .toSendWhatsAppMessage()
    * - .toTagResource()
    * - .toUntagResource()

@@ -425,6 +425,7 @@ export { SsmSap } from './policy-statements/ssm-sap';
 export { Ssmmessages } from './policy-statements/ssmmessages';
 export { SsoDirectory } from './policy-statements/sso-directory';
 export { SsoOauth } from './policy-statements/sso-oidc';
+export { Startups } from './policy-statements/startups';
 export { States } from './policy-statements/stepfunctions';
 export { Storagegateway } from './policy-statements/storagegateway';
 export { Sts } from './policy-statements/sts';
