@@ -404,6 +404,7 @@ ssmmessages
 sso
 sso-directory
 sso-oauth
+startups
 states
 storagegateway
 sts
