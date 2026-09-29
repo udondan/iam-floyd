@@ -53,7 +53,7 @@ jobs:
           python-version: 3.14
 
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
           fetch-depth: 0
@@ -123,7 +123,7 @@ jobs:
         run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
 
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
           fetch-depth: 0
@@ -173,7 +173,7 @@ jobs:
         run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
 
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
           fetch-depth: 0
@@ -225,7 +225,7 @@ jobs:
         run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
 
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
           fetch-depth: 0
@@ -278,7 +278,7 @@ jobs:
         run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
 
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
           fetch-depth: 0
@@ -319,7 +319,7 @@ jobs:
         run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
 
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
           fetch-depth: 0
