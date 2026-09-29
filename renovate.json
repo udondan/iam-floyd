@@ -1,20 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":semanticCommitTypeAll(chore)"],
-  "mode": "full",
-  "semanticCommits": "enabled",
-  "labels": ["renovate"],
-  "dependencyDashboard": true,
+  "extends": ["github>udondan/renovate-config"],
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
-    },
-    {
+      "description": "Ignore docutils updates due to sphinx-tabs incompatibility - see https://github.com/executablebooks/sphinx-tabs/issues/212",
       "matchPackageNames": ["docutils"],
-      "enabled": false,
-      "description": "Ignore docutils updates due to sphinx-tabs incompatibility - see https://github.com/executablebooks/sphinx-tabs/issues/212"
+      "enabled": false
     }
-  ],
-  "rebaseWhen": "auto"
+  ]
 }
