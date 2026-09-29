@@ -3,7 +3,7 @@
   "extends": ["config:recommended", ":semanticCommitTypeAll(chore)"],
   "mode": "full",
   "semanticCommits": "enabled",
-  "dependencyDashboard": false,
+  "dependencyDashboard": true,
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
