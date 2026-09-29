@@ -22,7 +22,7 @@ packaging==26.3
 Pygments==2.21.0
 requests==2.33.1
 roman-numerals==4.1.0
-snowballstemmer==3.0.1
+snowballstemmer==3.1.1
 sphinxcontrib-applehelp==2.0.0
 sphinxcontrib-devhelp==2.0.0
 sphinxcontrib-htmlhelp==2.1.0
