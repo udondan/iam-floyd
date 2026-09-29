@@ -5,10 +5,6 @@ permissions:
   id-token: write # Required for OIDC
   contents: read
 
-concurrency:
-  group: test-${{ github.head_ref }}
-  cancel-in-progress: true
-
 on:
   push:
     branches:
@@ -21,6 +17,32 @@ on:
   workflow_dispatch:
 
 jobs:
+  # Only one run at a time may deploy to the AWS test account.
+  wait-for-turn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      actions: read
+      contents: write # lock refs under refs/wait-for-turn/
+      pull-requests: read # labels for label-weights
+    # A new commit on the branch cancels the waiting of the outdated run, so the
+    # new run doesn't queue behind it. Once a run has the turn, this job is
+    # done: test jobs that already run are never cancelled.
+    concurrency:
+      group: test-wait-${{ github.head_ref || github.ref }}
+      cancel-in-progress: true
+    steps:
+      # Queue order: manual PRs and releases first, then Renovate updates.
+      # Fails right away if the branch is behind main. Branch protection
+      # requires PRs to be up to date, so testing an outdated branch is wasted
+      # time: it has to be updated and tested again.
+      - name: Wait for turn
+        uses: udondan/wait-for-turn@4a9f5171a1dbc3eb182410c772dae951e8ac26e3 # v1.3.0
+        with:
+          require-up-to-date: true
+          label-weights: |
+            renovate=-5
+
   finalize:
     name: Finalize
     runs-on: ubuntu-latest
@@ -123,12 +145,18 @@ jobs:
 
   test-cdk-iam-floyd:
     name: Test cdk-iam-floyd
-    needs: finalize
+    needs:
+      - wait-for-turn
+      - finalize
+    # A skipped job counts as passed for required checks. Run the job even if
+    # wait-for-turn failed and fail it in the first step.
+    if: ${{ !cancelled() && needs.finalize.result == 'success' }}
     runs-on: ubuntu-latest
-    concurrency:
-      group: cdk-deployment
-      cancel-in-progress: false
     steps:
+      - name: Check turn
+        if: needs.wait-for-turn.result != 'success'
+        run: exit 1
+
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
@@ -313,11 +341,17 @@ jobs:
 
   success:
     name: Test succeeded
-    if: github.event_name == 'pull_request'
+    # A skipped job counts as passed for required checks, so this job must not
+    # be skipped when a test failed.
+    if: ${{ !cancelled() && github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     needs:
       - test-iam-floyd
       - test-cdk-iam-floyd
     steps:
+      - name: Check tests
+        if: needs.test-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd.result != 'success'
+        run: exit 1
+
       - name: Report success
         run: echo 'Success'
