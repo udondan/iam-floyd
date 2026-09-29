@@ -1,14 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>udondan/renovate-config"],
-  "minimumReleaseAge": null,
-  "automerge": false,
-  "rebaseWhen": "auto",
   "packageRules": [
-    {
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
-    },
     {
       "description": "Ignore docutils updates due to sphinx-tabs incompatibility - see https://github.com/executablebooks/sphinx-tabs/issues/212",
       "matchPackageNames": ["docutils"],
