@@ -29,7 +29,8 @@
         "organizations:DescribeOrganizationalUnit",
         "organizations:DescribeAccount",
         "organizations:DescribeOrganization",
-        "organizations:ListAccounts"
+        "organizations:ListAccounts",
+        "organizations:ListRoots"
       ],
       "Resource": "*"
     },
