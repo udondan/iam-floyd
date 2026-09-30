@@ -384,21 +384,6 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonCloudDirectoryReadOnlyAccess);
     }
 
-    /** Provides full only access to Amazon CloudWatch Evidently. Also provides access to related Amazon S3, Amazon SNS, Amazon CloudWatch, and other related services. */
-    public AmazonCloudWatchEvidentlyFullAccess(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonCloudWatchEvidentlyFullAccess);
-    }
-
-    /** Provides read only access to Amazon CloudWatch Evidently */
-    public AmazonCloudWatchEvidentlyReadOnlyAccess(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonCloudWatchEvidentlyReadOnlyAccess);
-    }
-
-    /** Allows CloudWatch Evidently Service to manage associated AWS Resources on behalf of the customer */
-    public AmazonCloudWatchEvidentlyServiceRolePolicy(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonCloudWatchEvidentlyServiceRolePolicy);
-    }
-
     /** Grants full access permissions for the Amazon CloudWatch RUM service */
     public AmazonCloudWatchRUMFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonCloudWatchRUMFullAccess);
@@ -7177,6 +7162,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** This policy grants read-only permissions that allow the WAL service for Amazon EMR to find and return the status of a cluster */
     public EMRDescribeClusterPolicyForEMRWAL(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.EMRDescribeClusterPolicyForEMRWAL);
+    }
+
+    /** Allows EndUserMessaging to publish metrics to CloudWatch on your behalf */
+    public EndUserMessagingServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.EndUserMessagingServiceRolePolicy);
     }
 
     /** Provides permissions required by the AWS FinOps Agent to perform cost analysis and spot cost saving opportunity on customer AWS resources. */
