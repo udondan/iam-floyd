@@ -21,6 +21,9 @@ on:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write # OIDC token for assuming the AWS role
+      contents: read # checkout
 
     steps:
       - name: Setup node
@@ -85,12 +88,16 @@ jobs:
           git add CHANGELOG/*
         if: steps.changes.outputs.CHANGED >= 3
 
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        if: steps.changes.outputs.CHANGED >= 3
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
       - name: Regenerate code example results
         run: make regenerate-code-example-results
         if: steps.changes.outputs.CHANGED >= 3
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Add all changes
         run: |
