@@ -83,6 +83,7 @@ securityhub:GetInvitationsCount;Read
 securityhub:GetMasterAccount;Read
 securityhub:GetMembers;Read
 securityhub:GetRecommendedPolicyV2;Read
+securityhub:GetRemediationsV2;Read
 securityhub:GetResourcesStatisticsV2;Read
 securityhub:GetResourcesTrendsV2;Read
 securityhub:GetResourcesV2;Read
@@ -100,6 +101,7 @@ securityhub:ListConnectors;List
 securityhub:ListConnectorsV2;List
 securityhub:ListControlEvaluationSummaries;Read
 securityhub:ListEnabledProductsForImport;List
+securityhub:ListExposuresByRemediationV2;List
 securityhub:ListFindingAggregators;List
 securityhub:ListFreeTrialStatusesV2;List
 securityhub:ListInvitations;List

@@ -167,7 +167,6 @@ entityresolution
 es
 events
 eventsbilltoaws
-evidently
 evs
 execute-api
 finops-agent
@@ -216,7 +215,6 @@ iot
 iot-device-tester
 iotanalytics
 iotdeviceadvisor
-iotevents
 iotfleethub
 iotfleetwise
 iotjobsdata

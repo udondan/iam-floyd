@@ -208,15 +208,6 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create data apps
-   *
-   * Access Level: Write
-   */
-  public toCreateDataApp() {
-    return this.to('CreateDataApp');
-  }
-
-  /**
    * Grants permission to create data product
    *
    * Access Level: Write
@@ -500,24 +491,6 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete conversations
-   *
-   * Access Level: Write
-   */
-  public toDeleteConversation() {
-    return this.to('DeleteConversation');
-  }
-
-  /**
-   * Grants permission to delete data apps
-   *
-   * Access Level: Write
-   */
-  public toDeleteDataApp() {
-    return this.to('DeleteDataApp');
-  }
-
-  /**
    * Grants permission to delete DataZone catalog data export configuration
    *
    * Access Level: Write
@@ -743,15 +716,6 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deregister agent artifacts
-   *
-   * Access Level: Write
-   */
-  public toDeregisterAgentArtifact() {
-    return this.to('DeregisterAgentArtifact');
-  }
-
-  /**
    * Grants permission to disassociate a role in a default service blueprint environment
    *
    * Access Level: Write
@@ -875,15 +839,6 @@ export class Datazone extends PolicyStatement {
    */
   public toGetCurrentEffectivePolicy() {
     return this.to('GetCurrentEffectivePolicy');
-  }
-
-  /**
-   * Grants permission to get data apps
-   *
-   * Access Level: Read
-   */
-  public toGetDataApp() {
-    return this.to('GetDataApp');
   }
 
   /**
@@ -1220,15 +1175,6 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
-   * Grants permission to invoke agent
-   *
-   * Access Level: Write
-   */
-  public toInvokeAgent() {
-    return this.to('InvokeAgent');
-  }
-
-  /**
    * Grants permission to list Environments across all domains in an AWS Account
    *
    * Access Level: List
@@ -1253,24 +1199,6 @@ export class Datazone extends PolicyStatement {
    */
   public toListAccountsInAccountPool() {
     return this.to('ListAccountsInAccountPool');
-  }
-
-  /**
-   * Grants permission to list agent artifacts
-   *
-   * Access Level: List
-   */
-  public toListAgentArtifacts() {
-    return this.to('ListAgentArtifacts');
-  }
-
-  /**
-   * Grants permission to list agent session records
-   *
-   * Access Level: List
-   */
-  public toListAgentSessionRecords() {
-    return this.to('ListAgentSessionRecords');
   }
 
   /**
@@ -1316,15 +1244,6 @@ export class Datazone extends PolicyStatement {
    */
   public toListConversations() {
     return this.to('ListConversations');
-  }
-
-  /**
-   * Grants permission to list data apps
-   *
-   * Access Level: List
-   */
-  public toListDataApps() {
-    return this.to('ListDataApps');
   }
 
   /**
@@ -1562,15 +1481,6 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list shared data apps
-   *
-   * Access Level: List
-   */
-  public toListSharedDataApps() {
-    return this.to('ListSharedDataApps');
-  }
-
-  /**
    * Grants permission to List subscription grants for a subscribed principal
    *
    * Access Level: List
@@ -1676,15 +1586,6 @@ export class Datazone extends PolicyStatement {
    */
   public toQueryGraph() {
     return this.to('QueryGraph');
-  }
-
-  /**
-   * Grants permission to register agent artifacts
-   *
-   * Access Level: Write
-   */
-  public toRegisterAgentArtifact() {
-    return this.to('RegisterAgentArtifact');
   }
 
   /**
@@ -1868,15 +1769,6 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
-   * Grants permission to stop agent
-   *
-   * Access Level: Write
-   */
-  public toStopAgent() {
-    return this.to('StopAgent');
-  }
-
-  /**
    * Grants permission to stop compute
    *
    * Access Level: Write
@@ -1973,24 +1865,6 @@ export class Datazone extends PolicyStatement {
    */
   public toUpdateConnection() {
     return this.to('UpdateConnection');
-  }
-
-  /**
-   * Grants permission to update conversations
-   *
-   * Access Level: Write
-   */
-  public toUpdateConversation() {
-    return this.to('UpdateConversation');
-  }
-
-  /**
-   * Grants permission to update data apps
-   *
-   * Access Level: Write
-   */
-  public toUpdateDataApp() {
-    return this.to('UpdateDataApp');
   }
 
   /**
@@ -2391,7 +2265,6 @@ export class Datazone extends PolicyStatement {
       'CreateCell',
       'CreateCellRun',
       'CreateConnection',
-      'CreateDataApp',
       'CreateDataProduct',
       'CreateDataProductRevision',
       'CreateDataSource',
@@ -2423,8 +2296,6 @@ export class Datazone extends PolicyStatement {
       'DeleteCell',
       'DeleteCellRun',
       'DeleteConnection',
-      'DeleteConversation',
-      'DeleteDataApp',
       'DeleteDataExportConfiguration',
       'DeleteDataProduct',
       'DeleteDataSource',
@@ -2450,18 +2321,15 @@ export class Datazone extends PolicyStatement {
       'DeleteSubscriptionRequest',
       'DeleteSubscriptionTarget',
       'DeleteTimeSeriesDataPoints',
-      'DeregisterAgentArtifact',
       'DisassociateEnvironmentRole',
       'DisassociateGovernedTerms',
       'GenerateCode',
       'GetIamPortalLoginUrl',
-      'InvokeAgent',
       'PostLineageEvent',
       'PostTimeSeriesDataPoints',
       'PutCellRunResult',
       'PutDataExportConfiguration',
       'PutEnvironmentBlueprintConfiguration',
-      'RegisterAgentArtifact',
       'RejectPredictions',
       'RejectSubscriptionRequest',
       'RemoveEntityOwner',
@@ -2477,7 +2345,6 @@ export class Datazone extends PolicyStatement {
       'StartNotebookImport',
       'StartNotebookRun',
       'StartNotebookSync',
-      'StopAgent',
       'StopCompute',
       'StopMetadataGenerationRun',
       'StopNotebookCompute',
@@ -2489,8 +2356,6 @@ export class Datazone extends PolicyStatement {
       'UpdateCell',
       'UpdateCellRun',
       'UpdateConnection',
-      'UpdateConversation',
-      'UpdateDataApp',
       'UpdateDataSource',
       'UpdateDesignation',
       'UpdateDomain',
@@ -2548,7 +2413,6 @@ export class Datazone extends PolicyStatement {
       'GetConnection',
       'GetConversation',
       'GetCurrentEffectivePolicy',
-      'GetDataApp',
       'GetDataExportConfiguration',
       'GetDataProduct',
       'GetDataSource',
@@ -2596,14 +2460,11 @@ export class Datazone extends PolicyStatement {
       'ListAccountEnvironments',
       'ListAccountPools',
       'ListAccountsInAccountPool',
-      'ListAgentArtifacts',
-      'ListAgentSessionRecords',
       'ListAssetFilters',
       'ListAssetRevisions',
       'ListCellRuns',
       'ListConnections',
       'ListConversations',
-      'ListDataApps',
       'ListDataProductRevisions',
       'ListDataSourceRunActivities',
       'ListDataSourceRuns',
@@ -2630,7 +2491,6 @@ export class Datazone extends PolicyStatement {
       'ListProjectProfiles',
       'ListProjects',
       'ListRules',
-      'ListSharedDataApps',
       'ListSubscriptionGrants',
       'ListSubscriptionRequests',
       'ListSubscriptionTargets',

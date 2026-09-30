@@ -1045,7 +1045,6 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateListener()
-   * - .toCreateLoadBalancer()
    * - .toModifyListener()
    *
    * @param value The value(s) to check
