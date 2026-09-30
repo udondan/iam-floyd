@@ -150,12 +150,6 @@ export class AwsManagedPolicy {
     public static AmazonCloudDirectoryFullAccess = 'AmazonCloudDirectoryFullAccess';
     /** Provides read only access to Amazon Cloud Directory Service. */
     public static AmazonCloudDirectoryReadOnlyAccess = 'AmazonCloudDirectoryReadOnlyAccess';
-    /** Provides full only access to Amazon CloudWatch Evidently. Also provides access to related Amazon S3, Amazon SNS, Amazon CloudWatch, and other related services. */
-    public static AmazonCloudWatchEvidentlyFullAccess = 'AmazonCloudWatchEvidentlyFullAccess';
-    /** Provides read only access to Amazon CloudWatch Evidently */
-    public static AmazonCloudWatchEvidentlyReadOnlyAccess = 'AmazonCloudWatchEvidentlyReadOnlyAccess';
-    /** Allows CloudWatch Evidently Service to manage associated AWS Resources on behalf of the customer */
-    public static AmazonCloudWatchEvidentlyServiceRolePolicy = 'aws-service-role/AmazonCloudWatchEvidentlyServiceRolePolicy';
     /** Grants full access permissions for the Amazon CloudWatch RUM service */
     public static AmazonCloudWatchRUMFullAccess = 'AmazonCloudWatchRUMFullAccess';
     /** Grants read only permissions for the Amazon CloudWatch RUM service */
@@ -2868,6 +2862,8 @@ export class AwsManagedPolicy {
     public static ElementalSupportCenterFullAccess = 'ElementalSupportCenterFullAccess';
     /** This policy grants read-only permissions that allow the WAL service for Amazon EMR to find and return the status of a cluster */
     public static EMRDescribeClusterPolicyForEMRWAL = 'aws-service-role/EMRDescribeClusterPolicyForEMRWAL';
+    /** Allows EndUserMessaging to publish metrics to CloudWatch on your behalf */
+    public static EndUserMessagingServiceRolePolicy = 'aws-service-role/EndUserMessagingServiceRolePolicy';
     /** Provides permissions required by the AWS FinOps Agent to perform cost analysis and spot cost saving opportunity on customer AWS resources. */
     public static FinOpsAgentAgentPolicy = 'FinOpsAgentAgentPolicy';
     /** Provides access to use the AWS FinOps Agent web app for an Agent. */
