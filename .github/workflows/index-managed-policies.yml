@@ -63,8 +63,8 @@ jobs:
         uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.OVERRIDE_TOKEN }}
-          commit-message: Updates AWS managed policies
-          title: Updates AWS managed policies
+          commit-message: "feat: update AWS managed policies"
+          title: "feat: update AWS managed policies"
           body: Updates AWS managed policies
           branch: update-aws-managed-policies
           delete-branch: true
