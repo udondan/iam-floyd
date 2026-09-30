@@ -339,8 +339,8 @@ jobs:
       - name: Publish to npm
         run: make build publish
 
-  success:
-    name: Test succeeded
+  # The only test check the ruleset requires.
+  required:
     # A skipped job counts as passed for required checks, so this job must not
     # be skipped when a test failed.
     if: ${{ !cancelled() && github.event_name == 'pull_request' }}
