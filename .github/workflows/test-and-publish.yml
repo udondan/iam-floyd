@@ -104,9 +104,18 @@ jobs:
 
   test-iam-floyd:
     name: Test iam-floyd
-    needs: finalize
+    needs:
+      - wait-for-turn
+      - finalize
+    # A skipped job counts as passed for required checks. Run the job even if
+    # wait-for-turn failed and fail it in the first step.
+    if: ${{ !cancelled() && needs.finalize.result == 'success' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Check turn
+        if: needs.wait-for-turn.result != 'success'
+        run: exit 1
+
       - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
@@ -339,8 +348,8 @@ jobs:
       - name: Publish to npm
         run: make build publish
 
-  success:
-    name: Test succeeded
+  # The only test check the ruleset requires.
+  required:
     # A skipped job counts as passed for required checks, so this job must not
     # be skipped when a test failed.
     if: ${{ !cancelled() && github.event_name == 'pull_request' }}
