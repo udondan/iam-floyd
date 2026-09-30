@@ -194,7 +194,7 @@ export class Interconnect extends PolicyStatement {
   /**
    * Adds a resource of type connection to the statement
    *
-   * https://docs.aws.amazon.com/interconnect/latest/api/Connection.html
+   * https://docs.aws.amazon.com/interconnect/latest/api/API_Connection.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -211,7 +211,7 @@ export class Interconnect extends PolicyStatement {
   /**
    * Adds a resource of type environment to the statement
    *
-   * https://docs.aws.amazon.com/interconnect/latest/api/Environment.html
+   * https://docs.aws.amazon.com/interconnect/latest/api/API_Environment.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -280,5 +280,20 @@ export class Interconnect extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the remote partner account identifier supplied when creating a connection
+   *
+   * https://docs.aws.amazon.com/interconnect/latest/userguide/security-iam-service-with-iam.html#interconnect_RemoteAccount
+   *
+   * Applies to actions:
+   * - .toCreateConnection()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRemoteAccount(value: string | string[], operator?: Operator | string) {
+    return this.if(`RemoteAccount`, value, operator ?? 'StringLike');
   }
 }

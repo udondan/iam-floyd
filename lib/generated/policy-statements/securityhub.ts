@@ -879,6 +879,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of remediation targets and their metadata
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetRemediationsV2.html
+   */
+  public toGetRemediationsV2() {
+    return this.to('GetRemediationsV2');
+  }
+
+  /**
    * Grants permission to retrieve aggregate statistics about resources
    *
    * Access Level: Read
@@ -1019,6 +1030,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toListEnabledProductsForImport() {
     return this.to('ListEnabledProductsForImport');
+  }
+
+  /**
+   * Grants permission to retrieve a list of exposure findings associated with a remediation target
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListExposuresByRemediationV2.html
+   */
+  public toListExposuresByRemediationV2() {
+    return this.to('ListExposuresByRemediationV2');
   }
 
   /**
@@ -1558,6 +1580,7 @@ export class Securityhub extends PolicyStatement {
       'GetMasterAccount',
       'GetMembers',
       'GetRecommendedPolicyV2',
+      'GetRemediationsV2',
       'GetResourcesStatisticsV2',
       'GetResourcesTrendsV2',
       'GetResourcesV2',
@@ -1588,6 +1611,7 @@ export class Securityhub extends PolicyStatement {
       'ListConnectors',
       'ListConnectorsV2',
       'ListEnabledProductsForImport',
+      'ListExposuresByRemediationV2',
       'ListFindingAggregators',
       'ListFreeTrialStatusesV2',
       'ListInvitations',
@@ -1855,11 +1879,13 @@ export class Securityhub extends PolicyStatement {
    * - .toGetMasterAccount()
    * - .toGetMembers()
    * - .toGetRecommendedPolicyV2()
+   * - .toGetRemediationsV2()
    * - .toGetResourcesStatisticsV2()
    * - .toGetResourcesTrendsV2()
    * - .toGetResourcesV2()
    * - .toInviteMembers()
    * - .toListEnabledProductsForImport()
+   * - .toListExposuresByRemediationV2()
    * - .toListFreeTrialStatusesV2()
    * - .toListInvitations()
    * - .toListMembers()
