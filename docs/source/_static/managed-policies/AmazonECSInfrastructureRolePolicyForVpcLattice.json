@@ -29,6 +29,30 @@
       ]
     },
     {
+      "Sid": "GetRule",
+      "Effect": "Allow",
+      "Action": "vpc-lattice:GetRule",
+      "Resource": [
+        "arn:aws:vpc-lattice:*:*:service/*/listener/*/rule/*"
+      ]
+    },
+    {
+      "Sid": "UpdateRule",
+      "Effect": "Allow",
+      "Action": "vpc-lattice:UpdateRule",
+      "Resource": [
+        "arn:aws:vpc-lattice:*:*:service/*/listener/*/rule/*"
+      ]
+    },
+    {
+      "Sid": "UpdateListener",
+      "Effect": "Allow",
+      "Action": "vpc-lattice:UpdateListener",
+      "Resource": [
+        "arn:aws:vpc-lattice:*:*:service/*/listener/*"
+      ]
+    },
+    {
       "Sid": "DescribeEc2Resources",
       "Effect": "Allow",
       "Action": [

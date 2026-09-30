@@ -23,7 +23,9 @@
         "payments:MakePayment",
         "payments:UpdatePaymentPreferences",
         "payments:CreatePaymentInstrument",
-        "payments:UpdatePaymentInstrument"
+        "payments:UpdatePaymentInstrument",
+        "payments:DeletePaymentInstrument",
+        "payments:ListPaymentInstruments"
       ],
       "Resource": "*"
     },
