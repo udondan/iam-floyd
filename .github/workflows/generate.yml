@@ -110,8 +110,8 @@ jobs:
         uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.OVERRIDE_TOKEN }}
-          commit-message: Adds latest IAM updates from AWS
-          title: Adds latest IAM updates from AWS
+          commit-message: "feat: add latest IAM updates from AWS"
+          title: "feat: add latest IAM updates from AWS"
           body: Adds latest IAM updates from AWS
           branch: iam-updates
           delete-branch: true
