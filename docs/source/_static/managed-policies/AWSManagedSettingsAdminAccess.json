@@ -25,7 +25,12 @@
         "account:PutContactInformation",
         "account:StartPrimaryEmailUpdate",
         "account:AcceptPrimaryEmailUpdate",
-        "account:GetPrimaryEmailUpdateStatus"
+        "account:GetPrimaryEmailUpdateStatus",
+        "account:SendPhoneNumberVerification",
+        "account:VerifyPhoneNumber",
+        "notifications:AssociateManagedNotificationAccountContact",
+        "notifications:DisassociateManagedNotificationAccountContact",
+        "notifications:ListManagedNotificationChannelAssociations"
       ],
       "Resource": "*"
     },

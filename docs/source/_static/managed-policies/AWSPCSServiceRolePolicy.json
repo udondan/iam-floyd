@@ -140,7 +140,9 @@
         "arn:aws:ec2:*:*:capacity-reservation/*",
         "arn:aws:resource-groups:*:*:group/*",
         "arn:aws:ec2:*:*:fleet/*",
-        "arn:aws:ec2:*:*:spot-instances-request/*"
+        "arn:aws:ec2:*:*:spot-instances-request/*",
+        "arn:aws:ec2:*:*:secondary-interface/*",
+        "arn:aws:ec2:*:*:secondary-subnet/*"
       ]
     },
     {

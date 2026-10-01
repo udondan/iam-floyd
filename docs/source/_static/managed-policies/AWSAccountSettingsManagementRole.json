@@ -7,7 +7,9 @@
         "account:GetContactInformation",
         "account:PutContactInformation",
         "account:GetAccountInformation",
-        "account:CloseAccount"
+        "account:CloseAccount",
+        "account:SendPhoneNumberVerification",
+        "account:VerifyPhoneNumber"
       ],
       "Resource": "*"
     },
