@@ -12,8 +12,10 @@ s3vectors:ListIndexes;List
 s3vectors:ListTagsForResource;List
 s3vectors:ListVectorBuckets;List
 s3vectors:ListVectors;List
+s3vectors:PutVectorBucketDefaultIndexMode;Write
 s3vectors:PutVectorBucketPolicy;Permissions management, Write
 s3vectors:PutVectors;Write
 s3vectors:QueryVectors;Read
 s3vectors:TagResource;Tagging, Write
 s3vectors:UntagResource;Tagging, Write
+s3vectors:UpdateIndexMode;Write

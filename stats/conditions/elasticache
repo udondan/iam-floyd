@@ -4,6 +4,7 @@ elasticache:AutomaticFailoverEnabled
 elasticache:CacheNodeType
 elasticache:CacheParameterGroupName
 elasticache:ClusterModeEnabled
+elasticache:ConnectionType
 elasticache:DataStorageUnit
 elasticache:Durability
 elasticache:EngineType

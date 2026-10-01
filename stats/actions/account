@@ -14,4 +14,6 @@ account:ListRegions;List
 account:PutAccountName;Write
 account:PutAlternateContact;Write
 account:PutContactInformation;Write
+account:SendPhoneNumberVerification;Write
 account:StartPrimaryEmailUpdate;Write
+account:VerifyPhoneNumber;Write
