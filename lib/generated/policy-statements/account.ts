@@ -184,6 +184,17 @@ export class Account extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send a verification code to the primary contact phone number for an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_SendPhoneNumberVerification.html
+   */
+  public toSendPhoneNumberVerification() {
+    return this.to('SendPhoneNumberVerification');
+  }
+
+  /**
    * Grants permission to start the process to update the primary email address of an account
    *
    * Access Level: Write
@@ -192,6 +203,17 @@ export class Account extends PolicyStatement {
    */
   public toStartPrimaryEmailUpdate() {
     return this.to('StartPrimaryEmailUpdate');
+  }
+
+  /**
+   * Grants permission to verify the primary contact phone number for an account by submitting a verification code
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_VerifyPhoneNumber.html
+   */
+  public toVerifyPhoneNumber() {
+    return this.to('VerifyPhoneNumber');
   }
 
   /**
@@ -214,7 +236,9 @@ export class Account extends PolicyStatement {
       'PutAccountName',
       'PutAlternateContact',
       'PutContactInformation',
+      'SendPhoneNumberVerification',
       'StartPrimaryEmailUpdate',
+      'VerifyPhoneNumber',
       'CloseAccount'
     ],
     Read: [

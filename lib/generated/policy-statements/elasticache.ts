@@ -1846,6 +1846,21 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
+   * Filters access by the ConnectionType parameter in the request
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateServerlessCache()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifConnectionType(value: string | string[], operator?: Operator | string) {
+    return this.if(`ConnectionType`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the CacheUsageLimits.DataStorage.Unit parameter in the CreateServerlessCache and ModifyServerlessCache request
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions

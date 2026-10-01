@@ -173,6 +173,17 @@ export class S3vectors extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the default index mode for a specified vector bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_PutVectorBucketDefaultIndexMode.html
+   */
+  public toPutVectorBucketDefaultIndexMode() {
+    return this.to('PutVectorBucketDefaultIndexMode');
+  }
+
+  /**
    * Grants permission to add an IAM resource policy to a specified vector bucket
    *
    * Access Level: Permissions management, Write
@@ -227,6 +238,17 @@ export class S3vectors extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to update the index mode for a specified vector index
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_UpdateIndexMode.html
+   */
+  public toUpdateIndexMode() {
+    return this.to('UpdateIndexMode');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateIndex',
@@ -235,10 +257,12 @@ export class S3vectors extends PolicyStatement {
       'DeleteVectorBucket',
       'DeleteVectorBucketPolicy',
       'DeleteVectors',
+      'PutVectorBucketDefaultIndexMode',
       'PutVectorBucketPolicy',
       'PutVectors',
       'TagResource',
-      'UntagResource'
+      'UntagResource',
+      'UpdateIndexMode'
     ],
     'Permissions management': [
       'DeleteVectorBucketPolicy',
@@ -337,11 +361,13 @@ export class S3vectors extends PolicyStatement {
    * - .toListIndexes()
    * - .toListTagsForResource()
    * - .toListVectors()
+   * - .toPutVectorBucketDefaultIndexMode()
    * - .toPutVectorBucketPolicy()
    * - .toPutVectors()
    * - .toQueryVectors()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateIndexMode()
    *
    * Applies to resource types:
    * - Index
@@ -392,11 +418,13 @@ export class S3vectors extends PolicyStatement {
    * - .toListIndexes()
    * - .toListTagsForResource()
    * - .toListVectors()
+   * - .toPutVectorBucketDefaultIndexMode()
    * - .toPutVectorBucketPolicy()
    * - .toPutVectors()
    * - .toQueryVectors()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateIndexMode()
    *
    * Applies to resource types:
    * - Index

@@ -31,7 +31,9 @@
                 "account:PutAccountName",
                 "account:PutAlternateContact",
                 "account:PutContactInformation",
-                "account:StartPrimaryEmailUpdate"
+                "account:SendPhoneNumberVerification",
+                "account:StartPrimaryEmailUpdate",
+                "account:VerifyPhoneNumber"
             ],
             "Resource": "*",
             "Effect": "Deny"
