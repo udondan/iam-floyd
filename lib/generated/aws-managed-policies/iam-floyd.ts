@@ -1982,6 +1982,8 @@ export class AwsManagedPolicy {
     public static AWSLambdaExecute = 'AWSLambdaExecute';
     /** Provides read access to DynamoDB Streams. */
     public static AWSLambdaInvocationDynamoDB = 'AWSLambdaInvocation-DynamoDB';
+    /** Grants permission to invoke AWS Lambda Web function endpoints. */
+    public static AWSLambdaInvokeWebFunctionEndpointAccess = 'AWSLambdaInvokeWebFunctionEndpointAccess';
     /** Provides list and read access to Kinesis streams and write permissions to CloudWatch logs. */
     public static AWSLambdaKinesisExecutionRole = 'service-role/AWSLambdaKinesisExecutionRole';
     /** This policy grants permissions to to create and administer EC2 resources managed by the Lambda Managed Instances, and descriptive permissions. */
