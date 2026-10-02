@@ -155,6 +155,20 @@
     {
       "Effect": "Allow",
       "Action": [
+        "eks:CreateCertificateAuthority",
+        "eks:DeleteCertificateAuthority",
+        "eks:ActivateCertificateAuthority"
+      ],
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
         "eks:CreateAccessEntry",
         "eks:DeleteAccessEntry"
       ],
@@ -264,7 +278,8 @@
       "Effect": "Allow",
       "Action": [
         "ec2:DeleteLaunchTemplate",
-        "ec2:TerminateInstances"
+        "ec2:TerminateInstances",
+        "ec2:RebootInstances"
       ],
       "Resource": [
         "arn:aws:ec2:*:*:launch-template/*",
@@ -280,7 +295,8 @@
       "Effect": "Allow",
       "Action": [
         "ec2:DeleteLaunchTemplate",
-        "ec2:TerminateInstances"
+        "ec2:TerminateInstances",
+        "ec2:RebootInstances"
       ],
       "Resource": "*",
       "Condition": {

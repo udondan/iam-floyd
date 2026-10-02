@@ -4964,6 +4964,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSLambdaInvocationDynamoDB);
     }
 
+    /** Grants permission to invoke AWS Lambda Web function endpoints. */
+    public AWSLambdaInvokeWebFunctionEndpointAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSLambdaInvokeWebFunctionEndpointAccess);
+    }
+
     /** Provides list and read access to Kinesis streams and write permissions to CloudWatch logs. */
     public AWSLambdaKinesisExecutionRole(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSLambdaKinesisExecutionRole);
