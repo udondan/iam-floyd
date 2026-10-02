@@ -5,7 +5,9 @@ lambda:FunctionUrlAuthType
 lambda:InvokedViaFunctionUrl
 lambda:Layer
 lambda:Principal
+lambda:Request/WebFunctionAuthType
 lambda:RequestTag/${TagKey}
+lambda:Resource/WebFunctionAuthType
 lambda:ResourceTag/${TagKey}
 lambda:SecurityGroupIds
 lambda:SourceFunctionArn

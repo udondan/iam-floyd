@@ -7,6 +7,7 @@ security-ir:CreateMembership;Write
 security-ir:GetCase;Read
 security-ir:GetCaseAttachmentDownloadUrl;Read
 security-ir:GetCaseAttachmentUploadUrl;Write
+security-ir:GetFindingMetrics;Read
 security-ir:GetMembership;Read
 security-ir:ListCaseEdits;Read
 security-ir:ListCases;List

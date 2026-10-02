@@ -118,6 +118,17 @@ export class SecurityIr extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve finding-lifecycle metrics for a membership over a date range
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/security-ir/latest/APIReference/API_GetFindingMetrics.html
+   */
+  public toGetFindingMetrics() {
+    return this.to('GetFindingMetrics');
+  }
+
+  /**
    * Grants permission to get a membership
    *
    * Access Level: Read
@@ -287,6 +298,7 @@ export class SecurityIr extends PolicyStatement {
       'BatchGetMemberAccountDetails',
       'GetCase',
       'GetCaseAttachmentDownloadUrl',
+      'GetFindingMetrics',
       'GetMembership',
       'ListCaseEdits',
       'ListComments',
@@ -386,6 +398,7 @@ export class SecurityIr extends PolicyStatement {
    * - .toGetCase()
    * - .toGetCaseAttachmentDownloadUrl()
    * - .toGetCaseAttachmentUploadUrl()
+   * - .toGetFindingMetrics()
    * - .toGetMembership()
    * - .toListCaseEdits()
    * - .toListComments()

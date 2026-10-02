@@ -13,6 +13,7 @@ cloudwatch:CreateIntegration;Write
 cloudwatch:CreateOmniDashboard;Write
 cloudwatch:CreateOmniThread;Write
 cloudwatch:CreateOneTimeDeepLinkCode;Write
+cloudwatch:CreateResourceMetricsConfiguration;Write
 cloudwatch:CreateServiceLevelObjective;Write
 cloudwatch:CreateSpace;Write
 cloudwatch:CreateView;Write
@@ -33,6 +34,7 @@ cloudwatch:DeleteMetricStream;Write
 cloudwatch:DeleteOmniDashboard;Write
 cloudwatch:DeleteOmniThread;Write
 cloudwatch:DeletePipelineRule;Write
+cloudwatch:DeleteResourceMetricsConfiguration;Write
 cloudwatch:DeleteServiceLevelObjective;Write
 cloudwatch:DeleteSpace;Write
 cloudwatch:DeleteView;Write
@@ -72,6 +74,7 @@ cloudwatch:GetOmniDashboard;Read
 cloudwatch:GetOmniThread;Read
 cloudwatch:GetPreferences;Read
 cloudwatch:GetRecords;Read
+cloudwatch:GetResourceMetricsConfiguration;Read
 cloudwatch:GetService;Read
 cloudwatch:GetServiceData;Read
 cloudwatch:GetServiceLevelObjective;Read
@@ -142,9 +145,11 @@ cloudwatch:UpdateDomain;Write
 cloudwatch:UpdateDomainForOrganization;Write
 cloudwatch:UpdateIngestionEndpoint;Write
 cloudwatch:UpdateIntegration;Write
+cloudwatch:UpdateOTelEnrichment;Write
 cloudwatch:UpdateOmniDashboard;Write
 cloudwatch:UpdateOmniThread;Write
 cloudwatch:UpdatePreferences;Write
+cloudwatch:UpdateResourceMetricsConfiguration;Write
 cloudwatch:UpdateServiceLevelObjective;Write
 cloudwatch:UpdateSpace;Write
 cloudwatch:UpdateView;Write

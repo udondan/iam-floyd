@@ -12,6 +12,9 @@ lambda:CreateMicrovmAuthToken;Write
 lambda:CreateMicrovmImage;Write
 lambda:CreateMicrovmShellAuthToken;Write
 lambda:CreateNetworkConnector;Write
+lambda:CreateWebFunction;Write
+lambda:CreateWebFunctionEndpoint;Write
+lambda:CreateWebFunctionRevision;Write
 lambda:DeleteAlias;Write
 lambda:DeleteCapacityProvider;Write
 lambda:DeleteCodeSigningConfig;Write
@@ -27,6 +30,9 @@ lambda:DeleteMicrovmImageVersion;Write
 lambda:DeleteNetworkConnector;Write
 lambda:DeleteProvisionedConcurrencyConfig;Write
 lambda:DeleteResourcePolicy;Permissions management, Write
+lambda:DeleteWebFunction;Write
+lambda:DeleteWebFunctionEndpoint;Write
+lambda:DeleteWebFunctionRevision;Write
 lambda:DisableReplication;Permissions management, Write
 lambda:EnableReplication;Permissions management, Write
 lambda:GetAccountSettings;Read
@@ -56,9 +62,14 @@ lambda:GetPolicy;Read
 lambda:GetProvisionedConcurrencyConfig;Read
 lambda:GetResourcePolicy;Read
 lambda:GetRuntimeManagementConfig;Read
+lambda:GetWebAccountSettings;Read
+lambda:GetWebFunction;Read
+lambda:GetWebFunctionEndpoint;Read
+lambda:GetWebFunctionRevision;Read
 lambda:InvokeAsync;Write
 lambda:InvokeFunction;Write
 lambda:InvokeFunctionUrl;Write
+lambda:InvokeWebFunctionEndpoint;Write
 lambda:ListAliases;List
 lambda:ListCapacityProviders;List
 lambda:ListCodeSigningConfigs;List
@@ -81,6 +92,9 @@ lambda:ListNetworkConnectors;List
 lambda:ListProvisionedConcurrencyConfigs;List
 lambda:ListTags;Read
 lambda:ListVersionsByFunction;List
+lambda:ListWebFunctionEndpoints;List
+lambda:ListWebFunctionRevisions;List
+lambda:ListWebFunctions;List
 lambda:PassCapacityProvider;Write
 lambda:PassNetworkConnector;Write
 lambda:PublishLayerVersion;Write
@@ -117,3 +131,4 @@ lambda:UpdateFunctionUrlConfig;Write
 lambda:UpdateMicrovmImage;Write
 lambda:UpdateMicrovmImageVersion;Write
 lambda:UpdateNetworkConnector;Write
+lambda:UpdateWebFunctionEndpoint;Write
