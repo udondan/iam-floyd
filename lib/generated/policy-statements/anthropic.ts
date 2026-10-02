@@ -209,7 +209,7 @@ export class Anthropic extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a user profile in a workspace
+   * Grants permission to create a user profile
    *
    * Access Level: Write
    *
@@ -638,7 +638,7 @@ export class Anthropic extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list user profiles in a workspace
+   * Grants permission to list user profiles
    *
    * Access Level: List
    *
@@ -806,7 +806,7 @@ export class Anthropic extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a user profile in a workspace
+   * Grants permission to update a user profile
    *
    * Access Level: Write
    *
@@ -1067,8 +1067,6 @@ export class Anthropic extends PolicyStatement {
    * - .toCreateMemoryStore()
    * - .toCreateSession()
    * - .toCreateSkill()
-   * - .toCreateUserProfile()
-   * - .toCreateUserProfileEnrollmentUrl()
    * - .toCreateVault()
    * - .toCreateWebhook()
    * - .toDeleteBatchInference()
@@ -1087,7 +1085,6 @@ export class Anthropic extends PolicyStatement {
    * - .toGetModel()
    * - .toGetSession()
    * - .toGetSkill()
-   * - .toGetUserProfile()
    * - .toGetVault()
    * - .toGetWebhook()
    * - .toGetWorkspace()
@@ -1100,7 +1097,6 @@ export class Anthropic extends PolicyStatement {
    * - .toListSessions()
    * - .toListSkills()
    * - .toListTagsForResource()
-   * - .toListUserProfiles()
    * - .toListVaults()
    * - .toListWebhooks()
    * - .toProcessEnvironmentWork()
@@ -1112,7 +1108,6 @@ export class Anthropic extends PolicyStatement {
    * - .toUpdateMemoryStore()
    * - .toUpdateSession()
    * - .toUpdateSkill()
-   * - .toUpdateUserProfile()
    * - .toUpdateVault()
    * - .toUpdateWebhook()
    * - .toUpdateWorkspace()

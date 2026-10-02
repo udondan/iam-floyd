@@ -583,7 +583,6 @@ export class VpcLattice extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifServiceNetworkArn()
-   * - .ifVpcId()
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListServiceNetworkVpcAssociations.html
    */
@@ -1789,7 +1788,6 @@ export class VpcLattice extends PolicyStatement {
    * - .toGetResourceGateway()
    * - .toGetServiceNetworkVpcAssociation()
    * - .toGetTargetGroup()
-   * - .toListServiceNetworkVpcAssociations()
    * - .toListTargets()
    * - .toRegisterTargets()
    * - .toTagResource()

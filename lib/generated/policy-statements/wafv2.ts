@@ -671,6 +671,17 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the top contributors of an event detected by the AWS WAF anti-DDoS managed rule group, used by shield:DescribeAttack
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_DescribeTopContributorsByEvent.html
+   */
+  public toDescribeTopContributorsByEvent() {
+    return this.to('DescribeTopContributorsByEvent');
+  }
+
+  /**
    * Grants permission to disassociate Firewall Manager from a WebACL
    *
    * Access Level: Write
@@ -767,6 +778,7 @@ export class Wafv2 extends PolicyStatement {
       'GetWebACL',
       'GetWebACLForResource',
       'ListTagsForResource',
+      'DescribeTopContributorsByEvent',
       'ValidateNetworkSecurityManagerRuleConfiguration',
       'ValidateNetworkSecurityManagerWebACLConfiguration'
     ],

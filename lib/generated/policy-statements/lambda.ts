@@ -175,6 +175,39 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Lambda web function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/API_CreateWebFunction.html
+   */
+  public toCreateWebFunction() {
+    return this.to('CreateWebFunction');
+  }
+
+  /**
+   * Grants permission to create an endpoint for a Lambda web function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/API_CreateWebFunctionEndpoint.html
+   */
+  public toCreateWebFunctionEndpoint() {
+    return this.to('CreateWebFunctionEndpoint');
+  }
+
+  /**
+   * Grants permission to create a revision for a Lambda web function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/API_CreateWebFunctionRevision.html
+   */
+  public toCreateWebFunctionRevision() {
+    return this.to('CreateWebFunctionRevision');
+  }
+
+  /**
    * Grants permission to delete an AWS Lambda function alias
    *
    * Access Level: Write
@@ -329,7 +362,7 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to detach a policy from an AWS Lambda resource
+   * Grants permission to detach a policy from an AWS Lambda resource, additionally requiring lambda:RemovePermission only for a function resource
    *
    * Access Level: Permissions management, Write
    *
@@ -337,6 +370,39 @@ export class Lambda extends PolicyStatement {
    */
   public toDeleteResourcePolicy() {
     return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to delete a Lambda web function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/API_DeleteWebFunction.html
+   */
+  public toDeleteWebFunction() {
+    return this.to('DeleteWebFunction');
+  }
+
+  /**
+   * Grants permission to delete an endpoint for a Lambda web function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/API_DeleteWebFunctionEndpoint.html
+   */
+  public toDeleteWebFunctionEndpoint() {
+    return this.to('DeleteWebFunctionEndpoint');
+  }
+
+  /**
+   * Grants permission to delete a revision for a Lambda web function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/API_DeleteWebFunctionRevision.html
+   */
+  public toDeleteWebFunctionRevision() {
+    return this.to('DeleteWebFunctionRevision');
   }
 
   /**
@@ -615,7 +681,7 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view a policy for an AWS Lambda resource
+   * Grants permission to view a policy for an AWS Lambda resource, additionally requiring lambda:GetPolicy only for a function resource
    *
    * Access Level: Read
    *
@@ -634,6 +700,50 @@ export class Lambda extends PolicyStatement {
    */
   public toGetRuntimeManagementConfig() {
     return this.to('GetRuntimeManagementConfig');
+  }
+
+  /**
+   * Grants permission to view the account settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/API_GetWebAccountSettings.html
+   */
+  public toGetWebAccountSettings() {
+    return this.to('GetWebAccountSettings');
+  }
+
+  /**
+   * Grants permission to view details about a Lambda web function
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/API_GetWebFunction.html
+   */
+  public toGetWebFunction() {
+    return this.to('GetWebFunction');
+  }
+
+  /**
+   * Grants permission to view details about an endpoint for a Lambda web function
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/API_GetWebFunctionEndpoint.html
+   */
+  public toGetWebFunctionEndpoint() {
+    return this.to('GetWebFunctionEndpoint');
+  }
+
+  /**
+   * Grants permission to view details about a revision for a Lambda web function
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/API_GetWebFunctionRevision.html
+   */
+  public toGetWebFunctionRevision() {
+    return this.to('GetWebFunctionRevision');
   }
 
   /**
@@ -879,7 +989,7 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of tags for an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector or MicroVM image resource
+   * Grants permission to retrieve a list of tags for an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector, MicroVM image resource, or a web function resource
    *
    * Access Level: Read
    *
@@ -898,6 +1008,39 @@ export class Lambda extends PolicyStatement {
    */
   public toListVersionsByFunction() {
     return this.to('ListVersionsByFunction');
+  }
+
+  /**
+   * Grants permission to retrieve a list of endpoints for a Lambda web function
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/API_ListWebFunctionEndpoints.html
+   */
+  public toListWebFunctionEndpoints() {
+    return this.to('ListWebFunctionEndpoints');
+  }
+
+  /**
+   * Grants permission to retrieve a list of revisions for a Lambda web function
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/API_ListWebFunctionRevisions.html
+   */
+  public toListWebFunctionRevisions() {
+    return this.to('ListWebFunctionRevisions');
+  }
+
+  /**
+   * Grants permission to retrieve a list of Lambda web functions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/API_ListWebFunctions.html
+   */
+  public toListWebFunctions() {
+    return this.to('ListWebFunctions');
   }
 
   /**
@@ -989,7 +1132,7 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to attach a policy to an AWS Lambda resource
+   * Grants permission to attach a policy to an AWS Lambda resource, additionally requiring lambda:AddPermission and lambda:RemovePermission only for a function resource
    *
    * Access Level: Permissions management, Write
    *
@@ -1110,7 +1253,7 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add tags to an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector or MicroVM image resource
+   * Grants permission to add tags to an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector, MicroVM image resource, or a web function resource
    *
    * Access Level: Tagging, Write
    *
@@ -1132,7 +1275,7 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector or MicroVM image resource
+   * Grants permission to remove tags from an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector, MicroVM image resource, or a web function resource
    *
    * Access Level: Tagging, Write
    *
@@ -1275,6 +1418,17 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an endpoint for a Lambda web function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/API_UpdateWebFunctionEndpoint.html
+   */
+  public toUpdateWebFunctionEndpoint() {
+    return this.to('UpdateWebFunctionEndpoint');
+  }
+
+  /**
    * Grants permission to connect to a Lambda MicroVM via HTTP (VPC Endpoint only)
    *
    * Access Level: Write
@@ -1316,6 +1470,17 @@ export class Lambda extends PolicyStatement {
    */
   public toInvokeFunctionUrl() {
     return this.to('InvokeFunctionUrl');
+  }
+
+  /**
+   * Grants permission to invoke a Lambda web function endpoint via HTTP
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/API_InvokeWebFunctionEndpoint.html
+   */
+  public toInvokeWebFunctionEndpoint() {
+    return this.to('InvokeWebFunctionEndpoint');
   }
 
   /**
@@ -1365,6 +1530,9 @@ export class Lambda extends PolicyStatement {
       'CreateMicrovmImage',
       'CreateMicrovmShellAuthToken',
       'CreateNetworkConnector',
+      'CreateWebFunction',
+      'CreateWebFunctionEndpoint',
+      'CreateWebFunctionRevision',
       'DeleteAlias',
       'DeleteCapacityProvider',
       'DeleteCodeSigningConfig',
@@ -1380,6 +1548,9 @@ export class Lambda extends PolicyStatement {
       'DeleteNetworkConnector',
       'DeleteProvisionedConcurrencyConfig',
       'DeleteResourcePolicy',
+      'DeleteWebFunction',
+      'DeleteWebFunctionEndpoint',
+      'DeleteWebFunctionRevision',
       'InvokeAsync',
       'InvokeFunction',
       'PublishLayerVersion',
@@ -1416,10 +1587,12 @@ export class Lambda extends PolicyStatement {
       'UpdateMicrovmImage',
       'UpdateMicrovmImageVersion',
       'UpdateNetworkConnector',
+      'UpdateWebFunctionEndpoint',
       'ConnectMicrovm',
       'DisableReplication',
       'EnableReplication',
       'InvokeFunctionUrl',
+      'InvokeWebFunctionEndpoint',
       'PassCapacityProvider',
       'PassNetworkConnector'
     ],
@@ -1451,6 +1624,10 @@ export class Lambda extends PolicyStatement {
       'GetProvisionedConcurrencyConfig',
       'GetResourcePolicy',
       'GetRuntimeManagementConfig',
+      'GetWebAccountSettings',
+      'GetWebFunction',
+      'GetWebFunctionEndpoint',
+      'GetWebFunctionRevision',
       'ListTags'
     ],
     List: [
@@ -1474,7 +1651,10 @@ export class Lambda extends PolicyStatement {
       'ListMicrovms',
       'ListNetworkConnectors',
       'ListProvisionedConcurrencyConfigs',
-      'ListVersionsByFunction'
+      'ListVersionsByFunction',
+      'ListWebFunctionEndpoints',
+      'ListWebFunctionRevisions',
+      'ListWebFunctions'
     ],
     Tagging: [
       'TagResource',
@@ -1670,6 +1850,59 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type webFunction to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param functionName - Identifier for the functionName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWebFunction(functionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:web-function/${ functionName }`);
+  }
+
+  /**
+   * Adds a resource of type webFunctionEndpoint to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param functionName - Identifier for the functionName.
+   * @param endpointName - Identifier for the endpointName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWebFunctionEndpoint(functionName: string, endpointName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:web-function/${ functionName }/endpoint/${ endpointName }`);
+  }
+
+  /**
+   * Adds a resource of type webFunctionRevision to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param functionName - Identifier for the functionName.
+   * @param revisionId - Identifier for the revisionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWebFunctionRevision(functionName: string, revisionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:web-function/${ functionName }/revision/${ revisionId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1681,6 +1914,7 @@ export class Lambda extends PolicyStatement {
    * - .toCreateFunction()
    * - .toCreateMicrovmImage()
    * - .toCreateNetworkConnector()
+   * - .toCreateWebFunction()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1706,6 +1940,9 @@ export class Lambda extends PolicyStatement {
    * - .toCreateMicrovmAuthToken()
    * - .toCreateMicrovmShellAuthToken()
    * - .toCreateNetworkConnector()
+   * - .toCreateWebFunction()
+   * - .toCreateWebFunctionEndpoint()
+   * - .toCreateWebFunctionRevision()
    * - .toDeleteAlias()
    * - .toDeleteCapacityProvider()
    * - .toDeleteCodeSigningConfig()
@@ -1720,6 +1957,9 @@ export class Lambda extends PolicyStatement {
    * - .toDeleteNetworkConnector()
    * - .toDeleteProvisionedConcurrencyConfig()
    * - .toDeleteResourcePolicy()
+   * - .toDeleteWebFunction()
+   * - .toDeleteWebFunctionEndpoint()
+   * - .toDeleteWebFunctionRevision()
    * - .toGetAlias()
    * - .toGetCapacityProvider()
    * - .toGetCodeSigningConfig()
@@ -1744,6 +1984,9 @@ export class Lambda extends PolicyStatement {
    * - .toGetProvisionedConcurrencyConfig()
    * - .toGetResourcePolicy()
    * - .toGetRuntimeManagementConfig()
+   * - .toGetWebFunction()
+   * - .toGetWebFunctionEndpoint()
+   * - .toGetWebFunctionRevision()
    * - .toInvokeAsync()
    * - .toInvokeFunction()
    * - .toListAliases()
@@ -1758,6 +2001,8 @@ export class Lambda extends PolicyStatement {
    * - .toListProvisionedConcurrencyConfigs()
    * - .toListTags()
    * - .toListVersionsByFunction()
+   * - .toListWebFunctionEndpoints()
+   * - .toListWebFunctionRevisions()
    * - .toPublishVersion()
    * - .toPutFunctionCodeSigningConfig()
    * - .toPutFunctionConcurrency()
@@ -1790,9 +2035,11 @@ export class Lambda extends PolicyStatement {
    * - .toUpdateMicrovmImage()
    * - .toUpdateMicrovmImageVersion()
    * - .toUpdateNetworkConnector()
+   * - .toUpdateWebFunctionEndpoint()
    * - .toDisableReplication()
    * - .toEnableReplication()
    * - .toInvokeFunctionUrl()
+   * - .toInvokeWebFunctionEndpoint()
    * - .toPassCapacityProvider()
    *
    * Applies to resource types:
@@ -1805,6 +2052,9 @@ export class Lambda extends PolicyStatement {
    * - function version
    * - microvmImage
    * - networkConnector
+   * - webFunction
+   * - webFunctionEndpoint
+   * - webFunctionRevision
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1826,6 +2076,7 @@ export class Lambda extends PolicyStatement {
    * - .toCreateFunction()
    * - .toCreateMicrovmImage()
    * - .toCreateNetworkConnector()
+   * - .toCreateWebFunction()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -1959,6 +2210,41 @@ export class Lambda extends PolicyStatement {
    */
   public ifPrincipal(value: string | string[], operator?: Operator | string) {
     return this.if(`Principal`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the auth type specified in the request. Available during CreateWebFunction, CreateWebFunctionEndpoint, and UpdateWebFunctionEndpoint operations
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/permissions.html
+   *
+   * Applies to actions:
+   * - .toCreateWebFunction()
+   * - .toCreateWebFunctionEndpoint()
+   * - .toUpdateWebFunctionEndpoint()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestWebFunctionAuthType(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/WebFunctionAuthType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the auth type configured on the web function endpoint resource. Available during InvokeWebFunctionEndpoint, UpdateWebFunctionEndpoint, DeleteWebFunctionEndpoint, and GetWebFunctionEndpoint operations
+   *
+   * https://docs.aws.amazon.com/lambda/latest/lambda-web/permissions.html
+   *
+   * Applies to actions:
+   * - .toDeleteWebFunctionEndpoint()
+   * - .toGetWebFunctionEndpoint()
+   * - .toUpdateWebFunctionEndpoint()
+   * - .toInvokeWebFunctionEndpoint()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceWebFunctionAuthType(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/WebFunctionAuthType`, value, operator ?? 'StringLike');
   }
 
   /**

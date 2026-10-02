@@ -197,6 +197,20 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a resource metrics configuration that enables detailed monitoring for a resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifResourceArn()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_CreateResourceMetricsConfiguration.html
+   */
+  public toCreateResourceMetricsConfiguration() {
+    return this.to('CreateResourceMetricsConfiguration');
+  }
+
+  /**
    * Grants permission to create a service level objective
    *
    * Access Level: Write
@@ -413,6 +427,20 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toDeleteOmniThread() {
     return this.to('DeleteOmniThread');
+  }
+
+  /**
+   * Grants permission to delete a resource metrics configuration and disable detailed monitoring for a resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifResourceArn()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteResourceMetricsConfiguration.html
+   */
+  public toDeleteResourceMetricsConfiguration() {
+    return this.to('DeleteResourceMetricsConfiguration');
   }
 
   /**
@@ -846,6 +874,20 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toGetRecords() {
     return this.to('GetRecords');
+  }
+
+  /**
+   * Grants permission to retrieve the resource metrics configuration and detailed monitoring status for a resource
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifResourceArn()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetResourceMetricsConfiguration.html
+   */
+  public toGetResourceMetricsConfiguration() {
+    return this.to('GetResourceMetricsConfiguration');
   }
 
   /**
@@ -1663,6 +1705,20 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the resource metrics configuration for a resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifResourceArn()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateResourceMetricsConfiguration.html
+   */
+  public toUpdateResourceMetricsConfiguration() {
+    return this.to('UpdateResourceMetricsConfiguration');
+  }
+
+  /**
    * Grants permission to update a service level objective
    *
    * Access Level: Write
@@ -1805,6 +1861,17 @@ export class Cloudwatch extends PolicyStatement {
     return this.to('StopOTelEnrichment');
   }
 
+  /**
+   * Grants permission to update the metric filters of OTel Enrichment of vended metrics for PromQL querying
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toUpdateOTelEnrichment() {
+    return this.to('UpdateOTelEnrichment');
+  }
+
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AssumeAccessProfile',
@@ -1829,6 +1896,7 @@ export class Cloudwatch extends PolicyStatement {
       'CreateOmniDashboard',
       'CreateOmniThread',
       'CreateOneTimeDeepLinkCode',
+      'CreateResourceMetricsConfiguration',
       'CreateServiceLevelObjective',
       'CreateSpace',
       'CreateView',
@@ -1848,6 +1916,7 @@ export class Cloudwatch extends PolicyStatement {
       'DeleteMetricStream',
       'DeleteOmniDashboard',
       'DeleteOmniThread',
+      'DeleteResourceMetricsConfiguration',
       'DeleteServiceLevelObjective',
       'DeleteSpace',
       'DeleteView',
@@ -1890,6 +1959,7 @@ export class Cloudwatch extends PolicyStatement {
       'UpdateOmniDashboard',
       'UpdateOmniThread',
       'UpdatePreferences',
+      'UpdateResourceMetricsConfiguration',
       'UpdateServiceLevelObjective',
       'UpdateSpace',
       'UpdateView',
@@ -1898,7 +1968,8 @@ export class Cloudwatch extends PolicyStatement {
       'Link',
       'PutPipelineRule',
       'StartOTelEnrichment',
-      'StopOTelEnrichment'
+      'StopOTelEnrichment',
+      'UpdateOTelEnrichment'
     ],
     Read: [
       'BatchGetServiceLevelIndicatorReport',
@@ -1933,6 +2004,7 @@ export class Cloudwatch extends PolicyStatement {
       'GetOmniThread',
       'GetPreferences',
       'GetRecords',
+      'GetResourceMetricsConfiguration',
       'GetService',
       'GetServiceLevelObjective',
       'GetSpace',
@@ -2559,6 +2631,24 @@ export class Cloudwatch extends PolicyStatement {
    */
   public ifHasAccessGrant(value: string | string[], operator?: Operator | string) {
     return this.if(`HasAccessGrant`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ARN of the AWS resource that a resource metrics configuration request targets
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-resource-arn.html
+   *
+   * Applies to actions:
+   * - .toCreateResourceMetricsConfiguration()
+   * - .toDeleteResourceMetricsConfiguration()
+   * - .toGetResourceMetricsConfiguration()
+   * - .toUpdateResourceMetricsConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifResourceArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ResourceArn`, value, operator ?? 'ArnLike');
   }
 
   /**

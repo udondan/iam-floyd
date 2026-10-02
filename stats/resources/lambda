@@ -9,3 +9,6 @@ lambda:layer
 lambda:layerVersion
 lambda:microvmImage
 lambda:networkConnector
+lambda:webFunction
+lambda:webFunctionEndpoint
+lambda:webFunctionRevision

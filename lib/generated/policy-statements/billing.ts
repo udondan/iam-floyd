@@ -162,6 +162,28 @@ export class Billing extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view Business Support charges broken down by linked account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toListBusinessSupportAccountCharges() {
+    return this.to('ListBusinessSupportAccountCharges');
+  }
+
+  /**
+   * Grants permission to view Business Support subscription contract history
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toListBusinessSupportSubscriptionHistory() {
+    return this.to('ListBusinessSupportSubscriptionHistory');
+  }
+
+  /**
    * Grants permission to view Enterprise Support charges broken down by linked account
    *
    * Access Level: List
@@ -421,6 +443,8 @@ export class Billing extends PolicyStatement {
     ],
     List: [
       'ListBillingViewSegments',
+      'ListBusinessSupportAccountCharges',
+      'ListBusinessSupportSubscriptionHistory',
       'ListEnterpriseSupportLinkedAccountCharges',
       'ListSourceViewsForBillingView'
     ],

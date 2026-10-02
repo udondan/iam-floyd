@@ -19,6 +19,8 @@ billing:GetResourcePolicy;Permissions management, Write
 billing:GetSellerOfRecord;Read
 billing:ListBillingViewSegments;List
 billing:ListBillingViews;Read
+billing:ListBusinessSupportAccountCharges;List
+billing:ListBusinessSupportSubscriptionHistory;List
 billing:ListEnterpriseSupportLinkedAccountCharges;List
 billing:ListSourceViewsForBillingView;List
 billing:ListTagsForResource;Read
