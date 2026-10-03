@@ -35,15 +35,14 @@ jobs:
           role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Toot latest version
-        run: make toot
-        if: ${{ github.event_name == 'release' }}
+      - name: Get release notes
+        run: gh release view "v${VERSION#v}" --repo "${{ github.repository }}" --json body --jq .body > "${RUNNER_TEMP}/notes.md"
         env:
-          AWS_SQS_URL: ${{ secrets.AWS_SQS_URL_MASTODON }}
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ github.event.release.tag_name || github.event.inputs.changelog }}
 
-      - name: Toot specified version
+      - name: Toot
         run: make toot
-        if: ${{ github.event_name == 'workflow_dispatch' }}
         env:
-          CHANGELOG: ${{ github.event.inputs.changelog }}
+          RELEASE_NOTES: ${{ runner.temp }}/notes.md
           AWS_SQS_URL: ${{ secrets.AWS_SQS_URL_MASTODON }}

@@ -1,28 +1,29 @@
 #!/usr/bin/env bash
 
-# These are only used for creating a changelog file manually. by default the version is taken form the VERSION file
-VERSION=$1
-BEFORE=$2
+# Prints the changes of the AWS managed policies and of the services, actions, resource types and
+# condition keys between a git ref and the working tree as markdown. Prints nothing if there are
+# no changes.
+#
+# Usage: bin/mkchangelog [ref, default: the latest tag]
 
+set -euo pipefail
 export LC_ALL=C
+
+REF="${1:-$(git describe --tags --abbrev=0)}"
 
 TMP=$(mktemp -d)
 trap 'rm -rf "${TMP}"' EXIT
 
-function getLastTag() {
-  git describe --tags --abbrev=0
+MANAGED_POLICIES="lib/generated/aws-managed-policies/iam-floyd.ts"
+
+# Names of the AWS managed policies in a file of the AwsManagedPolicy class
+function policyNames() {
+  sed -n "s/^ *public static [A-Za-z0-9_]* = '\(.*\)';$/\1/p" "$1" |
+    sed 's|.*/||' | sort -u
 }
 
-function getVersion() {
-  if [[ -n "${VERSION}" ]]; then
-    echo "${VERSION}"
-  else
-    echo "v$(cat VERSION)"
-  fi
-}
-
-# Writes the lists of services, actions, resource types and condition keys of a git ref (or of
-# the working tree, if no ref is given) to the directory $1
+# Writes the lists of services, actions, resource types, condition keys and managed policies of a
+# git ref (or of the working tree, if no ref is given) to the directory $1
 function writeLists() {
   local out="$1"
   local ref="${2:-}"
@@ -30,6 +31,9 @@ function writeLists() {
   mkdir -p "${out}"
 
   if [[ -n "${ref}" ]]; then
+    git show "${ref}:${MANAGED_POLICIES}" > "${out}/policies.ts"
+    policyNames "${out}/policies.ts" > "${out}/policies"
+
     local src="${out}/src"
     mkdir -p "${src}"
     if git cat-file -e "${ref}:lib/generated/model" 2> /dev/null; then
@@ -38,13 +42,15 @@ function writeLists() {
     else
       # releases before the service models were committed only have the stats folder
       git archive "${ref}" stats | tar -x -C "${src}"
-      sort -u "${src}/stats/services" > "${out}/services"
+      sort -u "${src}/stats/services" | sed "/^$/d" > "${out}/services"
       for kind in actions resources conditions; do
         find "${src}/stats/${kind}" -maxdepth 1 -type f -print0 |
-          xargs -0 cat | sort -u > "${out}/${kind}"
+          xargs -0 cat | sort -u | sed "/^$/d" > "${out}/${kind}"
       done
       return
     fi
+  else
+    policyNames "${MANAGED_POLICIES}" > "${out}/policies"
   fi
 
   for kind in services actions resources conditions; do
@@ -52,13 +58,8 @@ function writeLists() {
   done
 }
 
-if [[ -n "${VERSION}" && -n "${BEFORE}" ]]; then
-  writeLists "${TMP}/before" "${BEFORE}"
-  writeLists "${TMP}/after" "${VERSION}"
-else
-  writeLists "${TMP}/before" "$(getLastTag)"
-  writeLists "${TMP}/after"
-fi
+writeLists "${TMP}/before" "${REF}"
+writeLists "${TMP}/after"
 
 # Lines only in the new state
 function added() {
@@ -74,17 +75,11 @@ function toList() {
   sed "s/^/- /g"
 }
 
-# Services
-newServices=$(added services | toList)
-removedServices=$(removed services | toList)
-
 # Actions. An action with a changed access level is in both lists
 added actions > "${TMP}/actions-added"
 removed actions > "${TMP}/actions-removed"
 sed "s/;.*//g" "${TMP}/actions-added" | sort -u > "${TMP}/actions-added-names"
 sed "s/;.*//g" "${TMP}/actions-removed" | sort -u > "${TMP}/actions-removed-names"
-newActions=$(comm -23 "${TMP}/actions-added-names" "${TMP}/actions-removed-names" | toList)
-removedActions=$(comm -13 "${TMP}/actions-added-names" "${TMP}/actions-removed-names" | toList)
 updatedAccessLevels=$(
   comm -12 "${TMP}/actions-added-names" "${TMP}/actions-removed-names" |
     while read -r action; do
@@ -94,80 +89,39 @@ updatedAccessLevels=$(
     done
 )
 
-# Resource types
-newResourceTypes=$(added resources | toList)
-removedResourceTypes=$(removed resources | toList)
+# The sections of a block are separated by an empty line, the blocks by a horizontal line
+blockHasContent=false
+outputHasContent=false
 
-# Conditions
-newConditions=$(added conditions | toList)
-removedConditions=$(removed conditions | toList)
+function section() {
+  local title="$1"
+  local content="$2"
+  [[ -z "${content}" ]] && return
+  if [[ "${blockHasContent}" = true ]]; then
+    echo ""
+  elif [[ "${outputHasContent}" = true ]]; then
+    printf "\n---\n\n"
+  fi
+  printf "%s\n\n%s\n" "${title}" "${content}"
+  blockHasContent=true
+  outputHasContent=true
+}
 
-file="CHANGELOG/$(getVersion).md"
-hasContent=false
+function endBlock() {
+  blockHasContent=false
+}
 
-[[ -f "$file" ]] && printf "\n---\n" >> "$file" && hasContent=true
-touch "${file}"
+section ":warning: **Removed AWS managed policies:**" "$(removed policies | toList)"
+section "**New AWS managed policies:**" "$(added policies | toList)"
+endBlock
 
-
-if [ -n "${removedServices}" ]; then
-  [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf ":warning: **Removed services:**\n\n" >> "$file"
-  echo "${removedServices}" >> "$file"
-  hasContent=true
-fi
-
-if [ -n "${removedActions}" ]; then
-  [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf ":warning: **Removed actions:**\n\n" >> "$file"
-  echo "${removedActions}" >> "$file"
-  hasContent=true
-fi
-
-if [ -n "${removedConditions}" ]; then
-  [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf ":warning: **Removed condition keys:**\n\n" >> "$file"
-  echo "${removedConditions}" >> "$file"
-  hasContent=true
-fi
-
-if [ -n "${removedResourceTypes}" ]; then
-  [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf ":warning: **Removed resource types:**\n\n" >> "$file"
-  echo "${removedResourceTypes}" >> "$file"
-  hasContent=true
-fi
-
-if [ "${newServices}" ]; then
-  [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**New services:**\n\n" >> "$file"
-  echo "${newServices}" >> "$file"
-  hasContent=true
-fi
-
-if [ -n "${newActions}" ]; then
-  [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**New actions:**\n\n" >> "$file"
-  echo "${newActions}" >> "$file"
-  hasContent=true
-fi
-
-if [ -n "${updatedAccessLevels}" ]; then
-  [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**Updated action access level:**\n\n" >> "$file"
-  echo "${updatedAccessLevels}" >> "$file"
-  hasContent=true
-fi
-
-if [ -n "${newResourceTypes}" ]; then
-  [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**New resource types:**\n\n" >> "$file"
-  echo "${newResourceTypes}" >> "$file"
-  hasContent=true
-fi
-
-if [ -n "${newConditions}" ]; then
-  [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**New condition keys:**\n\n" >> "$file"
-  echo "${newConditions}" >> "$file"
-  hasContent=true
-fi
+section ":warning: **Removed services:**" "$(removed services | toList)"
+section ":warning: **Removed actions:**" "$(comm -13 "${TMP}/actions-added-names" "${TMP}/actions-removed-names" | toList)"
+section ":warning: **Removed condition keys:**" "$(removed conditions | toList)"
+section ":warning: **Removed resource types:**" "$(removed resources | toList)"
+section "**New services:**" "$(added services | toList)"
+section "**New actions:**" "$(comm -23 "${TMP}/actions-added-names" "${TMP}/actions-removed-names" | toList)"
+section "**Updated action access level:**" "${updatedAccessLevels}"
+section "**New resource types:**" "$(added resources | toList)"
+section "**New condition keys:**" "$(added conditions | toList)"
+endBlock

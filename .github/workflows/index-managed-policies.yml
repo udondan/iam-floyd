@@ -3,10 +3,11 @@ name: Index managed policies
 
 on:
   schedule:
+    # Weekly on Sunday, the release PR is merged on Monday (automerge-schedule.yml).
     # Why 0:57 not and 1:00? Because most hourly jobs probably run at the hour.
     # Keeping concurrent jobs low reduces hardware requirements, being nice to
     # GitHub and the environment.
-    - cron: 57 0 * * *
+    - cron: 57 0 * * 0
   workflow_dispatch:
 
 jobs:

@@ -1,24 +1,30 @@
 ---
-name: Test / Publish / Release
+name: Test / Publish
 
 permissions:
   id-token: write # Required for OIDC
   contents: read
 
+# Pull requests run the tests. release-please.yml starts this workflow with the tag of the draft
+# release that release-please created: the packages are built from the tag, published, and the
+# release is published last. The workflow is started, not called, because trusted publishing on
+# npm, PyPI and NuGet is configured for this workflow file, and PyPI doesn't support reusable
+# workflows.
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - VERSION
   pull_request:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      tag:
+        description: Tag of the draft release to publish, e.g. v1.2.3
+        type: string
+        required: true
 
 jobs:
   # Only one run at a time may deploy to the AWS test account.
   wait-for-turn:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 180
     permissions:
@@ -43,73 +49,12 @@ jobs:
           label-weights: |
             renovate=-5
 
-  finalize:
-    name: Finalize
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: 3.14
-
-      - name: Checkout code
-        uses: actions/checkout@v7
-        with:
-          persist-credentials: false
-          fetch-depth: 0
-
-      - name: Get the version
-        id: get_version
-        run: echo "VERSION=$(cat VERSION)" >> $GITHUB_OUTPUT
-
-      - name: Update version references
-        run: make update-version-refs
-
-      - name: Ensure CHANGELOG exists for version
-        run: |
-          if [ ! -f CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md ]; then
-            echo "CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md does not exist"
-            exit 1
-          fi
-
-      - name: Check for changes
-        id: changes
-        run: |
-          set -xuo pipefail # we intentionally do not use -e here, as rc=1 means we have changes
-          git diff
-          echo "CHANGED=$(git ls-files -m | wc -l | xargs)" >> $GITHUB_OUTPUT
-
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git diff --exit-code || git commit -m "Finalize v${{ steps.get_version.outputs.VERSION }}" -a
-        if: steps.changes.outputs.CHANGED > 0
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.OVERRIDE_TOKEN }}
-          branch: ${{ github.head_ref }}
-        if: steps.changes.outputs.CHANGED > 0
-
-      - name: Get current SHA
-        run: git rev-parse HEAD > /tmp/sha
-
-      - name: Store SHA as artifacts
-        uses: actions/upload-artifact@v7
-        with:
-          name: ${{ github.run_id }}
-          path: /tmp/sha
-
   test-iam-floyd:
     name: Test iam-floyd
-    needs:
-      - wait-for-turn
-      - finalize
+    needs: wait-for-turn
     # A skipped job counts as passed for required checks. Run the job even if
     # wait-for-turn failed and fail it in the first step.
-    if: ${{ !cancelled() && needs.finalize.result == 'success' }}
+    if: ${{ !cancelled() && github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
       - name: Check turn
@@ -121,22 +66,11 @@ jobs:
         with:
           node-version: x
 
-      - name: Fetch latest SHA
-        uses: actions/download-artifact@v8
-        with:
-          name: ${{ github.run_id }}
-          path: /tmp/sha
-
-      - name: Store latest SHA as output
-        id: get_sha
-        run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
-
       - name: Checkout code
         uses: actions/checkout@v7
         with:
           persist-credentials: false
           fetch-depth: 0
-          ref: ${{ steps.get_sha.outputs.SHA }}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
@@ -147,22 +81,15 @@ jobs:
       - name: Test npm package
         run: make install test-typescript
 
-      - name: Update package version
-        run: |
-          npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
-          grep version package.json
-
       - name: Dry run npm publish
         run: make build publish
 
   test-cdk-iam-floyd:
     name: Test cdk-iam-floyd
-    needs:
-      - wait-for-turn
-      - finalize
+    needs: wait-for-turn
     # A skipped job counts as passed for required checks. Run the job even if
     # wait-for-turn failed and fail it in the first step.
-    if: ${{ !cancelled() && needs.finalize.result == 'success' }}
+    if: ${{ !cancelled() && github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
       - name: Check turn
@@ -174,22 +101,11 @@ jobs:
         with:
           node-version: 24.x
 
-      - name: Fetch latest SHA
-        uses: actions/download-artifact@v8
-        with:
-          name: ${{ github.run_id }}
-          path: /tmp/sha
-
-      - name: Store latest SHA as output
-        id: get_sha
-        run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
-
       - name: Checkout code
         uses: actions/checkout@v7
         with:
           persist-credentials: false
           fetch-depth: 0
-          ref: ${{ steps.get_sha.outputs.SHA }}
 
       - name: Build CDK variant
         run: |
@@ -210,11 +126,10 @@ jobs:
           make cdk-test
 
   # Python, Java, .NET and Go packages of cdk-iam-floyd, built with jsii-pacmak. One job per
-  # language for speed; TypeScript is the baseline the others are compared to. The packages built
-  # here are the ones the publish jobs publish.
+  # language for speed; TypeScript is the baseline the others are compared to. When publishing,
+  # the packages built here are the ones the publish jobs publish.
   test-cdk-iam-floyd-jsii:
     name: Test cdk-iam-floyd in ${{ matrix.language }}
-    needs: finalize
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -252,22 +167,12 @@ jobs:
           go-version: stable
           cache: false
 
-      - name: Fetch latest SHA
-        uses: actions/download-artifact@v8
-        with:
-          name: ${{ github.run_id }}
-          path: /tmp/sha
-
-      - name: Store latest SHA as output
-        id: get_sha
-        run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
-
       - name: Checkout code
         uses: actions/checkout@v7
         with:
           persist-credentials: false
           fetch-depth: 0
-          ref: ${{ steps.get_sha.outputs.SHA }}
+          ref: ${{ inputs.tag }}
 
       - name: Build packages
         run: |
@@ -292,7 +197,7 @@ jobs:
           MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
 
       - name: Store packages
-        if: matrix.language != 'typescript' && github.event_name != 'pull_request'
+        if: matrix.language != 'typescript' && github.event_name == 'workflow_dispatch'
         uses: actions/upload-artifact@v7
         with:
           name: packages-${{ matrix.language }}
@@ -300,68 +205,48 @@ jobs:
           if-no-files-found: error
           retention-days: 1
 
+  # Assets can only be added to a draft release, published releases are immutable
   release:
-    name: Release
-    if: |
-      github.ref == 'refs/heads/main' && (
-        github.event_name == 'push' ||
-        github.event_name == 'workflow_dispatch'
-      )
-    needs:
-      - test-iam-floyd
-      - test-cdk-iam-floyd
-      - test-cdk-iam-floyd-jsii
+    name: Check release
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.get_version.outputs.VERSION }}
     steps:
-      - name: Fetch latest SHA
-        uses: actions/download-artifact@v8
-        with:
-          name: ${{ github.run_id }}
-          path: /tmp/sha
-
-      - name: Store latest SHA as output
-        id: get_sha
-        run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
-
       - name: Checkout code
         uses: actions/checkout@v7
         with:
           persist-credentials: false
-          fetch-depth: 0
-          ref: ${{ steps.get_sha.outputs.SHA }}
+          ref: ${{ inputs.tag }}
 
       - name: Get the version
         id: get_version
-        run: echo "VERSION=$(cat VERSION)" >> $GITHUB_OUTPUT
-
-      - name: Create tag
         run: |
-          git config --local user.email "${{ secrets.RELEASE_MAIL }}"
-          git config --local user.name "udondan"
-          git tag -a "v${{ steps.get_version.outputs.VERSION }}" -m "Creates tag v${{ steps.get_version.outputs.VERSION }}"
-          git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags
-          touch CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
-
-      # A draft, so the publish jobs can attach assets. Published releases are immutable
-      - name: Create release
-        run: |
-          gh release create "v${{ steps.get_version.outputs.VERSION }}" \
-            --draft \
-            --title "v${{ steps.get_version.outputs.VERSION }}" \
-            --notes-file "CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md"
+          set -euo pipefail
+          VERSION="$(jq -r .version package.json)"
+          if [[ "v${VERSION}" != "${TAG}" ]]; then
+            echo "::error::The version ${VERSION} in package.json does not match the tag ${TAG}"
+            exit 1
+          fi
+          echo "VERSION=${VERSION}" >> "$GITHUB_OUTPUT"
         env:
-          GH_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
+          TAG: ${{ inputs.tag }}
+
+      - name: Check that the release is a draft
+        run: |
+          if [[ "$(gh release view "${TAG}" --repo "${{ github.repository }}" --json isDraft --jq .isDraft)" != "true" ]]; then
+            echo "::error::Release ${TAG} is not a draft"
+            exit 1
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.OVERRIDE_TOKEN }} # draft releases need write access
+          TAG: ${{ inputs.tag }}
 
   publish-iam-floyd:
     name: Publish iam-floyd
-    if: |
-      github.ref == 'refs/heads/main' && (
-        github.event_name == 'push' ||
-        github.event_name == 'workflow_dispatch'
-      )
-    needs: release
+    needs:
+      - release
+      - test-cdk-iam-floyd-jsii
     runs-on: ubuntu-latest
     steps:
       - name: Set up Node.js
@@ -370,27 +255,12 @@ jobs:
           node-version: 24.x
           registry-url: https://registry.npmjs.org
 
-      - name: Fetch latest SHA
-        uses: actions/download-artifact@v8
-        with:
-          name: ${{ github.run_id }}
-          path: /tmp/sha
-
-      - name: Store latest SHA as output
-        id: get_sha
-        run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
-
       - name: Checkout code
         uses: actions/checkout@v7
         with:
           persist-credentials: false
           fetch-depth: 0
-          ref: ${{ steps.get_sha.outputs.SHA }}
-
-      - name: Update package version
-        run: |
-          npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
-          grep version package.json
+          ref: ${{ inputs.tag }}
 
       # npm authenticates with OIDC, there is no token
       - name: Publish to npm
@@ -400,12 +270,9 @@ jobs:
 
   publish-cdk-iam-floyd:
     name: Publish cdk-iam-floyd
-    if: |
-      github.ref == 'refs/heads/main' && (
-        github.event_name == 'push' ||
-        github.event_name == 'workflow_dispatch'
-      )
-    needs: release
+    needs:
+      - release
+      - test-cdk-iam-floyd-jsii
     runs-on: ubuntu-latest
     steps:
       - name: Set up Node.js
@@ -414,27 +281,12 @@ jobs:
           node-version: 24.x
           registry-url: https://registry.npmjs.org
 
-      - name: Fetch latest SHA
-        uses: actions/download-artifact@v8
-        with:
-          name: ${{ github.run_id }}
-          path: /tmp/sha
-
-      - name: Store latest SHA as output
-        id: get_sha
-        run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
-
       - name: Checkout code
         uses: actions/checkout@v7
         with:
           persist-credentials: false
           fetch-depth: 0
-          ref: ${{ steps.get_sha.outputs.SHA }}
-
-      - name: Update package version
-        run: |
-          npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
-          grep version package.json
+          ref: ${{ inputs.tag }}
 
       - name: Build CDK variant
         run: |
@@ -450,12 +302,9 @@ jobs:
 
   publish-cdk-iam-floyd-python:
     name: Publish cdk-iam-floyd to PyPI
-    if: |
-      github.ref == 'refs/heads/main' && (
-        github.event_name == 'push' ||
-        github.event_name == 'workflow_dispatch'
-      )
-    needs: release
+    needs:
+      - release
+      - test-cdk-iam-floyd-jsii
     runs-on: ubuntu-latest
     steps:
       - name: Fetch packages
@@ -471,12 +320,9 @@ jobs:
 
   publish-cdk-iam-floyd-dotnet:
     name: Publish cdk-iam-floyd to NuGet
-    if: |
-      github.ref == 'refs/heads/main' && (
-        github.event_name == 'push' ||
-        github.event_name == 'workflow_dispatch'
-      )
-    needs: release
+    needs:
+      - release
+      - test-cdk-iam-floyd-jsii
     runs-on: ubuntu-latest
     steps:
       - name: Set up .NET
@@ -505,18 +351,16 @@ jobs:
 
   publish-cdk-iam-floyd-java:
     name: Publish cdk-iam-floyd to Maven Central
-    if: |
-      github.ref == 'refs/heads/main' && (
-        github.event_name == 'push' ||
-        github.event_name == 'workflow_dispatch'
-      )
-    needs: release
+    needs:
+      - release
+      - test-cdk-iam-floyd-jsii
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
         with:
           persist-credentials: false
+          ref: ${{ inputs.tag }}
 
       - name: Fetch packages
         uses: actions/download-artifact@v8
@@ -536,12 +380,9 @@ jobs:
   # version is a release asset; the proxy serves the newest of them.
   publish-cdk-iam-floyd-go:
     name: Publish cdk-iam-floyd for Go
-    if: |
-      github.ref == 'refs/heads/main' && (
-        github.event_name == 'push' ||
-        github.event_name == 'workflow_dispatch'
-      )
-    needs: release
+    needs:
+      - release
+      - test-cdk-iam-floyd-jsii
     runs-on: ubuntu-latest
     permissions:
       contents: write # release assets
@@ -555,6 +396,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           persist-credentials: false
+          ref: ${{ inputs.tag }}
 
       - name: Fetch packages
         uses: actions/download-artifact@v8
@@ -593,11 +435,6 @@ jobs:
   # The release stays a draft until everything is published and all assets are attached
   publish-release:
     name: Publish release
-    if: |
-      github.ref == 'refs/heads/main' && (
-        github.event_name == 'push' ||
-        github.event_name == 'workflow_dispatch'
-      )
     needs:
       - release
       - publish-iam-floyd
@@ -608,10 +445,36 @@ jobs:
       - publish-cdk-iam-floyd-go
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.tag }}
+
+      # release-please takes the notes from the body of the release PR, which has no IAM changes.
+      # The entry of this version in CHANGELOG.md has them, see release-please.yml
+      - name: Get release notes
+        run: |
+          set -euo pipefail
+          awk -v version="${VERSION}" '
+            /^##+ \[/ { if (found) exit; if (index($0, "[" version "]")) found = 1 }
+            found
+          ' CHANGELOG.md > notes.md
+          if [[ ! -s notes.md ]]; then
+            echo "::error::CHANGELOG.md has no entry for ${VERSION}"
+            exit 1
+          fi
+          cat notes.md
+        env:
+          VERSION: ${{ needs.release.outputs.version }}
+
       - name: Publish release
-        run: gh release edit "v${{ needs.release.outputs.version }}" --repo "${{ github.repository }}" --draft=false
+        run: |
+          gh release edit "v${VERSION}" --repo "${{ github.repository }}" --notes-file notes.md
+          gh release edit "v${VERSION}" --repo "${{ github.repository }}" --draft=false --latest
         env:
           GH_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
+          VERSION: ${{ needs.release.outputs.version }}
 
   # The only test check the ruleset requires.
   required:

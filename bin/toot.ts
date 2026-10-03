@@ -5,16 +5,12 @@ const maxLength = 500;
 
 const sqsClient = new SQSClient({ region: 'us-east-1' });
 
+// The notes of the GitHub release, see toot.yml
 function getChangelog() {
-  let version = process.env.CHANGELOG ?? false;
-  if (!version) {
-    version = fs.readFileSync('VERSION', 'utf8').trim();
-  }
-
-  const changelogFile = `CHANGELOG/v${version}.md`;
+  const changelogFile = process.env.RELEASE_NOTES!;
   console.log(`reading ${changelogFile}`);
   const changelog = fs.readFileSync(changelogFile, 'utf8');
-  return changelog;
+  return changelog.replace(/^---$/gm, '');
 }
 
 function enqueueToot(content: string) {

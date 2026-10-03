@@ -3,7 +3,7 @@
  * Prepares the built CDK variant for jsii-pacmak, which generates the Python, Java, .NET and Go
  * packages from the npm package and its jsii assembly. Run after `make cdk build`.
  *
- * - sets the package version and the jsii targets in package.json
+ * - sets the jsii targets in package.json
  * - bundles the dependencies, as other languages only install the npm tarball
  * - writes the jsii assembly (`.jsii`) from the service models
  * - appends the jsii runtime type information to `lib/index.js`
@@ -17,14 +17,12 @@ import { ServiceModel } from '../lib/generator/model';
 const modelDir = 'lib/generated/model';
 
 const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+const version: string = packageJson.version;
 if (packageJson.name !== 'cdk-iam-floyd') {
   console.error('Run `make cdk` first');
   process.exit(1);
 }
 
-const version = fs.readFileSync('VERSION', 'utf8').trim();
-
-packageJson.version = version;
 packageJson.jsii = {
   outdir: 'dist',
   targets: {

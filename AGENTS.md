@@ -65,7 +65,7 @@ make generate        # scrape AWS docs into lib/generated/model/ and emit (25hr 
 make generate-force  # NOCACHE=1 - ignores time-based cache
 make index-managed-policies  # regenerate AWS managed policies index
 make stats           # update the counts in README.md and docs from the model
-make changelog       # write CHANGELOG/v<VERSION>.md from the model changes since the last tag
+make changelog       # print the changes of the managed policies and the model since the last tag
 ```
 
 `bin/model-list <services|actions|resources|conditions>` prints those lists from the model, and `bin/model-diff [ref]` prints the differences to a git ref (default `HEAD`).
@@ -257,8 +257,10 @@ Follow conventional commits:
 
 ## CI Workflows (`.github/workflows/`)
 
-- `generate.yml` - Daily: scrapes AWS docs, bumps patch version, opens PR with `automerge` label
-- `index-managed-policies.yml` - Daily: updates managed policies, opens PR with `automerge` label
-- `test-and-publish.yml` - On PR/push to main: `make install test-typescript` + CDK deploy test + `make package-jsii test-jsii` per language + publish to npm, PyPI, NuGet, Maven Central and the Go module proxy on GitHub Pages
+- `generate.yml` - Weekly on Sunday: scrapes AWS docs, opens a `feat:` PR with `automerge` label if the model changed
+- `index-managed-policies.yml` - Weekly on Sunday: updates managed policies, opens a `feat:` PR with `automerge` label
+- `release-please.yml` - On push to main: release-please maintains the release PR (version in `package.json` and `docs/source/conf.py`, `CHANGELOG.md`). After each run, `bin/changelog-add-iam-changes` adds the changes of the managed policies and the model since the last release to the new changelog entry of the PR. Merging the PR creates the tag and a draft release, and starts `test-and-publish.yml` with the tag
+- `automerge-schedule.yml` - Weekly on Monday: merges the release PR
+- `test-and-publish.yml` - On PR: `make install test-typescript` + CDK deploy test + `make package-jsii test-jsii` per language. Started by `release-please.yml` with a tag: builds the packages from the tag, publishes to npm, PyPI, NuGet, Maven Central and the Go module proxy on GitHub Pages, sets the notes of the release from `CHANGELOG.md` and publishes the release
 - `automerge.yml` - Auto-merges PRs labeled `automerge` after tests pass
 - `test-docs.yml` - Builds Sphinx docs on `docs/**` changes
