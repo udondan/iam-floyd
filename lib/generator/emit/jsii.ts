@@ -1039,6 +1039,18 @@ export function emitJsii(models: ServiceModel[], options: JsiiOptions) {
       m,
     ]),
   );
+  // Hand-written subclasses of the base class, like `Statement.All`, need its fluent methods
+  // declared like the services do
+  for (const type of Object.values(types)) {
+    if (type.kind != 'class' || !shared.base || type.base != shared.base) {
+      continue;
+    }
+    const declared = new Set((type.methods ?? []).map((m) => m.name));
+    const fluent = [...baseMethods.values()]
+      .filter((m) => !declared.has(m.name) && isFluent(m, shared.base))
+      .map((m) => redeclare(m, shared.base, { fqn: type.fqn }));
+    type.methods = sortMembers([...(type.methods ?? []), ...fluent]);
+  }
   for (const model of models) {
     const type = serviceType(name, model, variant, shared, baseMethods);
     if (types[type.fqn]) throw new Error(`Duplicate type ${type.fqn}`);
