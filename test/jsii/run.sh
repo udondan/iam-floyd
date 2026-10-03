@@ -106,9 +106,20 @@ EOF
 
 run_go() {
   cp -R "${TEST}/go" "${OUT}/go"
+  # cdk-iam-floyd comes from the module zip that is published, through a local copy of the proxy
+  "${ROOT}/bin/go-proxy" site "${OUT}/go-proxy" "${ROOT}/dist/go-module/"*.zip >&2
+  export GOPROXY="file://${OUT}/go-proxy/go,https://proxy.golang.org" GONOSUMDB=udondan.github.io
+  # the module cache and the module index (goindex) would keep the module of an earlier run with the same version
+  export GODEBUG=goindex=0
+  local cache
+  cache=$(go env GOMODCACHE)
+  rm -rf "${cache}/cache/download/udondan.github.io"
+  if [[ -d "${cache}/udondan.github.io" ]]; then
+    chmod -R u+w "${cache}/udondan.github.io"
+    rm -rf "${cache}/udondan.github.io"
+  fi
   cd "${OUT}/go"
   go mod init scenarios
-  go mod edit -replace "udondan.github.io/iam-floyd/go/cdkiamfloyd=${ROOT}/dist/go/cdkiamfloyd"
   go mod edit -replace "example.com/floyd-consumer-go/floydconsumer=${CONSUMER}/go/floydconsumer"
   go mod edit -require "udondan.github.io/iam-floyd/go/cdkiamfloyd@v${VERSION}"
   go mod edit -require example.com/floyd-consumer-go/floydconsumer@v1.0.0

@@ -42,11 +42,15 @@ package: build
 
 # Python, Java, .NET and Go packages of cdk-iam-floyd in dist/, run after `make cdk`.
 # Set LANGUAGES to build only some of them, e.g. `make package-jsii LANGUAGES=python`
+# The runtime type checks of jsii-pacmak are left out: they add a third to the code, and in Go they
+# reject nil for optional union parameters like the operator of `if*` methods. bin/jsii-pack.ts
+# writes a smaller npm tarball for embedding in the packages.
 package-jsii: build
 	@echo -e "$(TARGET_COLOR)Running package-jsii$(NO_COLOR)"
 	@npx ts-node bin/jsii.ts
 	@rm -rf dist
-	$(if $(JSII_TARGETS),@npx jsii-pacmak --targets $(subst $(SPACE),$(COMMA),$(JSII_TARGETS)))
+	$(if $(JSII_TARGETS),@npx jsii-pacmak --targets $(subst $(SPACE),$(COMMA),$(JSII_TARGETS)) --no-runtime-type-checking --pack-command "node $(CURDIR)/node_modules/ts-node/dist/bin.js $(CURDIR)/bin/jsii-pack.ts")
+	$(if $(filter go,$(JSII_TARGETS)),@bin/go-proxy zip dist/go/cdkiamfloyd v$(VERSION) dist/go-module/cdk-iam-floyd-go-module-v$(VERSION).zip)
 
 cdk:
 	@echo -e "$(TARGET_COLOR)Running cdk$(NO_COLOR)"
@@ -139,6 +143,10 @@ publish:
 	fi
 	@if ! grep -q "lib/index.d.ts" publish_output.txt; then \
 		echo "❌ lib/index.d.ts is NOT included in the package"; \
+		exit 1; \
+	fi
+	@if [ "$$(node -p "require('./package.json').name")" == "cdk-iam-floyd" ] && ! grep -q " .jsii.gz$$" publish_output.txt; then \
+		echo "❌ The jsii assembly is NOT included in the package, run \`make package-jsii\` first"; \
 		exit 1; \
 	fi
 	@rm publish_output.txt
