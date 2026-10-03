@@ -1,0 +1,55 @@
+{
+  "name": "floyd-consumer",
+  "version": "1.0.0",
+  "description": "A jsii construct library that depends on cdk-iam-floyd",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Test",
+    "email": "test@example.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://example.com/floyd-consumer.git"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "jsii": {
+    "outdir": "dist",
+    "tsc": {
+      "outDir": "lib",
+      "rootDir": "src"
+    },
+    "targets": {
+      "python": {
+        "distName": "floyd-consumer",
+        "module": "floyd_consumer"
+      },
+      "java": {
+        "package": "com.example.floydconsumer",
+        "maven": {
+          "groupId": "com.example",
+          "artifactId": "floyd-consumer"
+        }
+      },
+      "dotnet": {
+        "namespace": "Floyd.Consumer",
+        "packageId": "Floyd.Consumer"
+      },
+      "go": {
+        "moduleName": "example.com/floyd-consumer-go"
+      }
+    }
+  },
+  "peerDependencies": {
+    "aws-cdk-lib": "^2.271.0",
+    "cdk-iam-floyd": "0.0.0",
+    "constructs": "^10.8.1"
+  },
+  "devDependencies": {
+    "aws-cdk-lib": "2.271.0",
+    "cdk-iam-floyd": "0.0.0",
+    "constructs": "10.8.1",
+    "jsii": "5.9.54",
+    "jsii-pacmak": "1.141.0"
+  }
+}

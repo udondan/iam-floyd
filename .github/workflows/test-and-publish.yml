@@ -217,6 +217,65 @@ jobs:
       - name: Dry run npm publish
         run: make publish
 
+  # Python, Java, .NET and Go packages of cdk-iam-floyd, built with jsii-pacmak
+  test-cdk-iam-floyd-jsii:
+    name: Test cdk-iam-floyd in other languages
+    needs: finalize
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24.x
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: 3.14
+
+      - name: Set up Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.x
+
+      - name: Set up Go
+        uses: actions/setup-go@v7
+        with:
+          go-version: stable
+          cache: false
+
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v8
+        with:
+          name: ${{ github.run_id }}
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo "SHA=$(cat /tmp/sha/sha)" >> $GITHUB_OUTPUT
+
+      - name: Checkout code
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Build packages
+        run: |
+          make install
+          make cdk
+          make package-jsii
+
+      - name: Test packages
+        run: make test-jsii
+
   release:
     name: Release
     if: |
@@ -227,6 +286,7 @@ jobs:
     needs:
       - test-iam-floyd
       - test-cdk-iam-floyd
+      - test-cdk-iam-floyd-jsii
     runs-on: ubuntu-latest
     steps:
       - name: Fetch latest SHA
@@ -363,9 +423,10 @@ jobs:
     needs:
       - test-iam-floyd
       - test-cdk-iam-floyd
+      - test-cdk-iam-floyd-jsii
     steps:
       - name: Check tests
-        if: needs.test-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd.result != 'success'
+        if: needs.test-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd-jsii.result != 'success'
         run: exit 1
 
       - name: Report success

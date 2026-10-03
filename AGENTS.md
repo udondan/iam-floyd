@@ -38,6 +38,12 @@ One codebase produces two npm packages:
 
 `bin/mkcdk.ts` transforms between variants by swapping `*.CDK.ts` files and emitting the CDK variant of the service classes from the model.
 
+### Other Languages (jsii)
+
+`cdk-iam-floyd` is also packaged for Python, Java, .NET and Go with `jsii-pacmak`. The jsii compiler is not used: `lib/generator/emit/jsii.ts` writes the `.jsii` assembly from the model, and `bin/jsii.ts` adds the `jsii` targets to package.json, writes the assembly and appends the jsii type info to `lib/index.js`. The same `.jsii` is what Construct Hub renders the API docs from.
+
+`test/jsii/` builds `floyd-consumer`, a jsii library that depends on `cdk-iam-floyd`, and runs the same scenarios in TypeScript (the baseline, without jsii), Python, Java, .NET and Go against `test/jsii/expected.json`.
+
 ## Development Commands
 
 ### Build
@@ -71,6 +77,7 @@ make test            # compile examples/ + diff against *.result files (standalo
 make test-typescript # same, via Test.TypeScript.Makefile
 make cdk-test        # CDK test: real deploy + destroy via AWS CDK
 make cdk-all         # cdk + install + build + cdk-test
+make test-jsii       # test the packages of `make package-jsii` in Python, Java, .NET and Go (needs all four toolchains)
 ```
 
 **Run a single example test manually:**
@@ -104,6 +111,7 @@ make eslint          # npx eslint .
 ```bash
 make cdk             # transforms codebase to CDK variant (modifies lib/shared, lib/generated, package.json)
 make uncdk           # reverts via git stash (lib/generated/aws-managed-policies, lib/shared, package.json) and re-emits
+make package-jsii    # after `make cdk`: build, write .jsii and run jsii-pacmak into dist/
 ```
 
 ## Fixing AWS Documentation Errors (`lib/generator/fixes.ts`)
@@ -248,6 +256,6 @@ Follow conventional commits:
 
 - `generate.yml` - Daily: scrapes AWS docs, bumps patch version, opens PR with `automerge` label
 - `index-managed-policies.yml` - Daily: updates managed policies, opens PR with `automerge` label
-- `test-and-publish.yml` - On PR/push to main: `make install test-typescript` + CDK deploy test + npm publish
+- `test-and-publish.yml` - On PR/push to main: `make install test-typescript` + CDK deploy test + `make package-jsii test-jsii` + npm publish
 - `automerge.yml` - Auto-merges PRs labeled `automerge` after tests pass
 - `test-docs.yml` - Builds Sphinx docs on `docs/**` changes

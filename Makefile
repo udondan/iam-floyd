@@ -4,7 +4,7 @@ VERSION := $(shell cat VERSION)
 NO_COLOR=\x1b[0m
 TARGET_COLOR=\x1b[96m
 
-.PHONY: build emit generate package test tag untag release re-release changelog cdk docs stats
+.PHONY: build emit generate package package-jsii test test-jsii tag untag release re-release changelog cdk docs stats
 
 build: emit
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
@@ -34,6 +34,13 @@ package: build
 	@echo -e "$(TARGET_COLOR)Running package$(NO_COLOR)"
 	@npm pack
 
+# Python, Java, .NET and Go packages of cdk-iam-floyd in dist/, run after `make cdk`
+package-jsii: build
+	@echo -e "$(TARGET_COLOR)Running package-jsii$(NO_COLOR)"
+	@npx ts-node bin/jsii.ts
+	@rm -rf dist
+	@npx jsii-pacmak --targets python,java,dotnet,go
+
 cdk:
 	@echo -e "$(TARGET_COLOR)Running cdk$(NO_COLOR)"
 	@npx ts-node bin/mkcdk.ts
@@ -56,6 +63,10 @@ cdk-test:
 
 cdk-all: cdk install build cdk-test
 
+test-jsii:
+	@echo -e "$(TARGET_COLOR)Running jsii test$(NO_COLOR)"
+	@test/jsii/run.sh
+
 changelog:
 	@echo -e "$(TARGET_COLOR)Running changelog$(NO_COLOR)"
 	@bin/mkchangelog
@@ -66,7 +77,7 @@ stats:
 
 clean:
 	@echo -e "$(TARGET_COLOR)Running clean$(NO_COLOR)"
-	@rm -rf node_modules package-lock.json test/node_modules test/package-lock.json
+	@rm -rf node_modules package-lock.json test/node_modules test/package-lock.json dist .jsii .jsii.gz test/jsii/out
 	@find . -not -path "./docs/*" -type f \( -iname \*.js -o -iname \*.d.ts \) -delete
 
 install: clean
