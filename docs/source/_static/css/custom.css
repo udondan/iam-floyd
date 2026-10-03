@@ -7,6 +7,11 @@
   margin: 0 !important;
 }
 
+/* Spacing between the code blocks and paragraphs of a tab */
+.sphinx-tabs-panel > div[class*='highlight-']:not(:last-child) {
+  margin-bottom: 24px !important;
+}
+
 .sphinx-tabs .ui.segment.sphinx-tab {
   padding: 0 !important;
   margin: 0 !important;
