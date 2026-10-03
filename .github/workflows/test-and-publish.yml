@@ -480,7 +480,7 @@ jobs:
         id: nuget
         uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
         with:
-          user: ${{ secrets.NUGET_USER }}
+          user: udondan
 
       # The symbols package (.snupkg) next to it is pushed with it
       - name: Publish to NuGet
