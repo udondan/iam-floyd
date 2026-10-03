@@ -1,0 +1,49 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateSystemsManagerSLRPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/ssm.amazonaws.com/AWSServiceRoleForAmazonSSM"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "ssm.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "ReadOnlyPermissionsForEnablingExplorer",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles",
+        "config:DescribeConfigurationRecorders",
+        "compute-optimizer:GetEnrollmentStatus",
+        "support:DescribeTrustedAdvisorChecks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSMExplorerServiceSettingsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:UpdateServiceSetting",
+        "ssm:GetServiceSetting"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsitem/ssm-patchmanager",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsitem/EC2",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/ExplorerOnboarded",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/Association",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/ComputeOptimizer",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/ConfigCompliance",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/OpsData-TrustedAdvisor",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/SupportCenterCase"
+      ]
+    }
+  ]
+}

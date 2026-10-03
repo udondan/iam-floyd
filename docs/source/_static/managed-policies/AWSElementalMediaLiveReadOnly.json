@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSElementalMediaLiveReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "medialive:Get*",
+        "medialive:List*",
+        "medialive:Describe*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

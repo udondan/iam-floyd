@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": [
+      "dynamodb:PutItem",
+      "kinesis:PutRecord",
+      "iot:Publish",
+      "s3:PutObject",
+      "sns:Publish",
+      "sqs:SendMessage*",
+      "cloudwatch:SetAlarmState",
+      "cloudwatch:PutMetricData",
+      "es:ESHttpPut",
+      "firehose:PutRecord"
+    ],
+    "Resource": "*"
+  }
+}

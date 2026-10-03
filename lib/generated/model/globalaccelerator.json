@@ -1,0 +1,711 @@
+{
+  "schemaVersion": 1,
+  "filename": "globalaccelerator",
+  "className": "Globalaccelerator",
+  "name": "globalaccelerator",
+  "servicePrefix": "globalaccelerator",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_globalaccelerator.html",
+  "accessLevelList": {
+    "Write": [
+      "AddCustomRoutingEndpoints",
+      "AddEndpoints",
+      "AdvertiseByoipCidr",
+      "AllowCustomRoutingTraffic",
+      "CreateAccelerator",
+      "CreateCrossAccountAttachment",
+      "CreateCustomRoutingAccelerator",
+      "CreateCustomRoutingEndpointGroup",
+      "CreateCustomRoutingListener",
+      "CreateEndpointGroup",
+      "CreateListener",
+      "DeleteAccelerator",
+      "DeleteCrossAccountAttachment",
+      "DeleteCustomRoutingAccelerator",
+      "DeleteCustomRoutingEndpointGroup",
+      "DeleteCustomRoutingListener",
+      "DeleteEndpointGroup",
+      "DeleteListener",
+      "DenyCustomRoutingTraffic",
+      "DeprovisionByoipCidr",
+      "ProvisionByoipCidr",
+      "RemoveCustomRoutingEndpoints",
+      "RemoveEndpoints",
+      "TagResource",
+      "UntagResource",
+      "UpdateAccelerator",
+      "UpdateAcceleratorAttributes",
+      "UpdateCrossAccountAttachment",
+      "UpdateCustomRoutingAccelerator",
+      "UpdateCustomRoutingAcceleratorAttributes",
+      "UpdateCustomRoutingListener",
+      "UpdateEndpointGroup",
+      "UpdateListener",
+      "WithdrawByoipCidr"
+    ],
+    "Read": [
+      "DescribeAccelerator",
+      "DescribeAcceleratorAttributes",
+      "DescribeCrossAccountAttachment",
+      "DescribeCustomRoutingAccelerator",
+      "DescribeCustomRoutingAcceleratorAttributes",
+      "DescribeCustomRoutingEndpointGroup",
+      "DescribeCustomRoutingListener",
+      "DescribeEndpointGroup",
+      "DescribeListener",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAccelerators",
+      "ListByoipCidrs",
+      "ListCrossAccountAttachments",
+      "ListCrossAccountResourceAccounts",
+      "ListCrossAccountResources",
+      "ListCustomRoutingAccelerators",
+      "ListCustomRoutingEndpointGroups",
+      "ListCustomRoutingListeners",
+      "ListCustomRoutingPortMappings",
+      "ListCustomRoutingPortMappingsByDestination",
+      "ListEndpointGroups",
+      "ListListeners"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddCustomRoutingEndpoints",
+      "methodName": "toAddCustomRoutingEndpoints",
+      "description": "Grants permission to add a virtual private cloud (VPC) subnet endpoint to a custom routing accelerator endpoint group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_AddCustomRoutingEndpoints.html"
+    },
+    {
+      "name": "AddEndpoints",
+      "methodName": "toAddEndpoints",
+      "description": "Grants permission to add an endpoint to a standard accelerator endpoint group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_AddEndpoints.html"
+    },
+    {
+      "name": "AdvertiseByoipCidr",
+      "methodName": "toAdvertiseByoipCidr",
+      "description": "Grants permission to advertises an IPv4 address range that is provisioned for use with your accelerator through bring your own IP addresses (BYOIP)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_AdvertiseByoipCidr.html"
+    },
+    {
+      "name": "AllowCustomRoutingTraffic",
+      "methodName": "toAllowCustomRoutingTraffic",
+      "description": "Grants permission to allows custom routing of user traffic to a private destination IP:PORT in a specific VPC subnet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html"
+    },
+    {
+      "name": "CreateAccelerator",
+      "methodName": "toCreateAccelerator",
+      "description": "Grants permission to create a standard accelerator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateAccelerator.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateCrossAccountAttachment",
+      "methodName": "toCreateCrossAccountAttachment",
+      "description": "Grants permission to create a CrossAccountAttachment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateCrossAccountAttachment.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateCustomRoutingAccelerator",
+      "methodName": "toCreateCustomRoutingAccelerator",
+      "description": "Grants permission to create a Custom Routing accelerator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateCustomRoutingAccelerator.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateCustomRoutingEndpointGroup",
+      "methodName": "toCreateCustomRoutingEndpointGroup",
+      "description": "Grants permission to create an endpoint group for the specified listener for a custom routing accelerator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateCustomRoutingEndpointGroup.html"
+    },
+    {
+      "name": "CreateCustomRoutingListener",
+      "methodName": "toCreateCustomRoutingListener",
+      "description": "Grants permission to create a listener to process inbound connections from clients to a custom routing accelerator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateCustomRoutingListener.html"
+    },
+    {
+      "name": "CreateEndpointGroup",
+      "methodName": "toCreateEndpointGroup",
+      "description": "Grants permission to add an endpoint group to a standard accelerator listener",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html"
+    },
+    {
+      "name": "CreateListener",
+      "methodName": "toCreateListener",
+      "description": "Grants permission to add a listener to a standard accelerator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateListener.html"
+    },
+    {
+      "name": "DeleteAccelerator",
+      "methodName": "toDeleteAccelerator",
+      "description": "Grants permission to delete a standard accelerator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteAccelerator.html"
+    },
+    {
+      "name": "DeleteCrossAccountAttachment",
+      "methodName": "toDeleteCrossAccountAttachment",
+      "description": "Grants permission to delete a CrossAccountAttachment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteCrossAccountAttachment.html"
+    },
+    {
+      "name": "DeleteCustomRoutingAccelerator",
+      "methodName": "toDeleteCustomRoutingAccelerator",
+      "description": "Grants permission to delete a custom routing accelerator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteCustomRoutingAccelerator.html"
+    },
+    {
+      "name": "DeleteCustomRoutingEndpointGroup",
+      "methodName": "toDeleteCustomRoutingEndpointGroup",
+      "description": "Grants permission to delete an endpoint group from a listener for a custom routing accelerator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteCustomRoutingEndpointGroup.html"
+    },
+    {
+      "name": "DeleteCustomRoutingListener",
+      "methodName": "toDeleteCustomRoutingListener",
+      "description": "Grants permission to delete a listener for a custom routing accelerator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteCustomRoutingListener.html"
+    },
+    {
+      "name": "DeleteEndpointGroup",
+      "methodName": "toDeleteEndpointGroup",
+      "description": "Grants permission to delete an endpoint group associated with a standard accelerator listener",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteEndpointGroup.html"
+    },
+    {
+      "name": "DeleteListener",
+      "methodName": "toDeleteListener",
+      "description": "Grants permission to delete a listener from a standard accelerator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteListener.html"
+    },
+    {
+      "name": "DenyCustomRoutingTraffic",
+      "methodName": "toDenyCustomRoutingTraffic",
+      "description": "Grants permission to disallows custom routing of user traffic to a private destination IP:PORT in a specific VPC subnet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DenyCustomRoutingTraffic.html"
+    },
+    {
+      "name": "DeprovisionByoipCidr",
+      "methodName": "toDeprovisionByoipCidr",
+      "description": "Grants permission to releases the specified address range that you provisioned for use with your accelerator through bring your own IP addresses (BYOIP)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeprovisionByoipCidr.html"
+    },
+    {
+      "name": "DescribeAccelerator",
+      "methodName": "toDescribeAccelerator",
+      "description": "Grants permissions to describe a standard accelerator",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html"
+    },
+    {
+      "name": "DescribeAcceleratorAttributes",
+      "methodName": "toDescribeAcceleratorAttributes",
+      "description": "Grants permission to describe a standard accelerator attributes",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAcceleratorAttributes.html"
+    },
+    {
+      "name": "DescribeCrossAccountAttachment",
+      "methodName": "toDescribeCrossAccountAttachment",
+      "description": "Grants permissions to describe a CrossAccountAttachment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeCrossAccountAttachment.html"
+    },
+    {
+      "name": "DescribeCustomRoutingAccelerator",
+      "methodName": "toDescribeCustomRoutingAccelerator",
+      "description": "Grants permission to describe a custom routing accelerator",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeCustomRoutingAccelerator.html"
+    },
+    {
+      "name": "DescribeCustomRoutingAcceleratorAttributes",
+      "methodName": "toDescribeCustomRoutingAcceleratorAttributes",
+      "description": "Grants permission to describe the attributes of a custom routing accelerator",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeCustomRoutingAcceleratorAttributes.html"
+    },
+    {
+      "name": "DescribeCustomRoutingEndpointGroup",
+      "methodName": "toDescribeCustomRoutingEndpointGroup",
+      "description": "Grants permission to describe an endpoint group for a custom routing accelerator",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeCustomRoutingEndpointGroup.html"
+    },
+    {
+      "name": "DescribeCustomRoutingListener",
+      "methodName": "toDescribeCustomRoutingListener",
+      "description": "Grants permission to describe a listener for a custom routing accelerator",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeCustomRoutingListener.html"
+    },
+    {
+      "name": "DescribeEndpointGroup",
+      "methodName": "toDescribeEndpointGroup",
+      "description": "Grants permission to describe a standard accelerator endpoint group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeEndpointGroup.html"
+    },
+    {
+      "name": "DescribeListener",
+      "methodName": "toDescribeListener",
+      "description": "Grants permission to describe a standard accelerator listener",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeListener.html"
+    },
+    {
+      "name": "ListAccelerators",
+      "methodName": "toListAccelerators",
+      "description": "Grants permission to list all standard accelerators",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListAccelerators.html"
+    },
+    {
+      "name": "ListByoipCidrs",
+      "methodName": "toListByoipCidrs",
+      "description": "Grants permission to list the BYOIP cidrs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListByoipCidrs.html"
+    },
+    {
+      "name": "ListCrossAccountAttachments",
+      "methodName": "toListCrossAccountAttachments",
+      "description": "Grants permission to list all CrossAccountAttachments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCrossAccountAttachments.html"
+    },
+    {
+      "name": "ListCrossAccountResourceAccounts",
+      "methodName": "toListCrossAccountResourceAccounts",
+      "description": "Grants permission to list accounts with CrossAccountAttachments listing caller as a principal",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCrossAccountResourceAccounts.html"
+    },
+    {
+      "name": "ListCrossAccountResources",
+      "methodName": "toListCrossAccountResources",
+      "description": "Grants permission to list all CrossAccountAttachment resources usable by caller",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCrossAccountResources.html"
+    },
+    {
+      "name": "ListCustomRoutingAccelerators",
+      "methodName": "toListCustomRoutingAccelerators",
+      "description": "Grants permission to list the custom routing accelerators for an AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCustomRoutingAccelerators.html"
+    },
+    {
+      "name": "ListCustomRoutingEndpointGroups",
+      "methodName": "toListCustomRoutingEndpointGroups",
+      "description": "Grants permission to list the endpoint groups that are associated with a listener for a custom routing accelerator",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCustomRoutingEndpointGroups.html"
+    },
+    {
+      "name": "ListCustomRoutingListeners",
+      "methodName": "toListCustomRoutingListeners",
+      "description": "Grants permission to list the listeners for a custom routing accelerator",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCustomRoutingListeners.html"
+    },
+    {
+      "name": "ListCustomRoutingPortMappings",
+      "methodName": "toListCustomRoutingPortMappings",
+      "description": "Grants permission to list the port mappings for a custom routing accelerator",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCustomRoutingPortMappings.html"
+    },
+    {
+      "name": "ListCustomRoutingPortMappingsByDestination",
+      "methodName": "toListCustomRoutingPortMappingsByDestination",
+      "description": "Grants permission to list the port mappings for a specific endpoint IP address (a destination address) in a subnet",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCustomRoutingPortMappingsByDestination.html"
+    },
+    {
+      "name": "ListEndpointGroups",
+      "methodName": "toListEndpointGroups",
+      "description": "Grants permission to list all endpoint groups associated with a standard accelerator listener",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListEndpointGroups.html"
+    },
+    {
+      "name": "ListListeners",
+      "methodName": "toListListeners",
+      "description": "Grants permission to list all listeners associated with a standard accelerator",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListListeners.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a globalaccelerator resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ProvisionByoipCidr",
+      "methodName": "toProvisionByoipCidr",
+      "description": "Grants permission to provisions an address range for use with your accelerator through bring your own IP addresses (BYOIP)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_ProvisionByoipCidr.html"
+    },
+    {
+      "name": "RemoveCustomRoutingEndpoints",
+      "methodName": "toRemoveCustomRoutingEndpoints",
+      "description": "Grants permission to remove virtual private cloud (VPC) subnet endpoints from a custom routing accelerator endpoint group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_RemoveCustomRoutingEndpoints.html"
+    },
+    {
+      "name": "RemoveEndpoints",
+      "methodName": "toRemoveEndpoints",
+      "description": "Grants permission to remove an endpoint from a standard accelerator endpoint group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_RemoveEndpoints.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a globalaccelerator resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a globalaccelerator resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAccelerator",
+      "methodName": "toUpdateAccelerator",
+      "description": "Grants permission to update a standard accelerator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateAccelerator.html"
+    },
+    {
+      "name": "UpdateAcceleratorAttributes",
+      "methodName": "toUpdateAcceleratorAttributes",
+      "description": "Grants permission to update a standard accelerator attributes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateAcceleratorAttributes.html"
+    },
+    {
+      "name": "UpdateCrossAccountAttachment",
+      "methodName": "toUpdateCrossAccountAttachment",
+      "description": "Grants permission to update a CrossAccountAttachment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateCrossAccountAttachment.html"
+    },
+    {
+      "name": "UpdateCustomRoutingAccelerator",
+      "methodName": "toUpdateCustomRoutingAccelerator",
+      "description": "Grants permission to update a custom routing accelerator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateCustomRoutingAccelerator.html"
+    },
+    {
+      "name": "UpdateCustomRoutingAcceleratorAttributes",
+      "methodName": "toUpdateCustomRoutingAcceleratorAttributes",
+      "description": "Grants permission to update the attributes for a custom routing accelerator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateCustomRoutingAcceleratorAttributes.html"
+    },
+    {
+      "name": "UpdateCustomRoutingListener",
+      "methodName": "toUpdateCustomRoutingListener",
+      "description": "Grants permission to update a listener for a custom routing accelerator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateCustomRoutingListener.html"
+    },
+    {
+      "name": "UpdateEndpointGroup",
+      "methodName": "toUpdateEndpointGroup",
+      "description": "Grants permission to update an endpoint group on a standard accelerator listener",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html"
+    },
+    {
+      "name": "UpdateListener",
+      "methodName": "toUpdateListener",
+      "description": "Grants permission to update a listener on a standard accelerator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateListener.html"
+    },
+    {
+      "name": "WithdrawByoipCidr",
+      "methodName": "toWithdrawByoipCidr",
+      "description": "Grants permission to stops advertising a BYOIP IPv4 address",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_WithdrawByoipCidr.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "accelerator",
+      "methodName": "onAccelerator",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_Accelerator.html",
+      "arn": "arn:${Partition}:globalaccelerator::${Account}:accelerator/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "attachment",
+      "methodName": "onAttachment",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_CrossAccountAttachment.html",
+      "arn": "arn:${Partition}:globalaccelerator::${Account}:attachment/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "endpointgroup",
+      "methodName": "onEndpointgroup",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_EndpointGroup.html",
+      "arn": "arn:${Partition}:globalaccelerator::${Account}:accelerator/${ResourceId}/listener/${ListenerId}/endpoint-group/${EndpointGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ListenerId",
+          "name": "listenerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EndpointGroupId",
+          "name": "endpointGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "listener",
+      "methodName": "onListener",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_Listener.html",
+      "arn": "arn:${Partition}:globalaccelerator::${Account}:accelerator/${ResourceId}/listener/${ListenerId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ListenerId",
+          "name": "listenerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAccelerator",
+        "toCreateCrossAccountAttachment",
+        "toCreateCustomRoutingAccelerator",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddCustomRoutingEndpoints",
+        "toAddEndpoints",
+        "toAllowCustomRoutingTraffic",
+        "toCreateCustomRoutingEndpointGroup",
+        "toCreateCustomRoutingListener",
+        "toCreateEndpointGroup",
+        "toCreateListener",
+        "toDeleteAccelerator",
+        "toDeleteCrossAccountAttachment",
+        "toDeleteCustomRoutingAccelerator",
+        "toDeleteCustomRoutingEndpointGroup",
+        "toDeleteCustomRoutingListener",
+        "toDeleteEndpointGroup",
+        "toDeleteListener",
+        "toDenyCustomRoutingTraffic",
+        "toDescribeAccelerator",
+        "toDescribeAcceleratorAttributes",
+        "toDescribeCrossAccountAttachment",
+        "toDescribeCustomRoutingAccelerator",
+        "toDescribeCustomRoutingAcceleratorAttributes",
+        "toDescribeCustomRoutingEndpointGroup",
+        "toDescribeCustomRoutingListener",
+        "toDescribeEndpointGroup",
+        "toDescribeListener",
+        "toListCustomRoutingEndpointGroups",
+        "toListCustomRoutingListeners",
+        "toListCustomRoutingPortMappings",
+        "toListEndpointGroups",
+        "toListListeners",
+        "toListTagsForResource",
+        "toRemoveCustomRoutingEndpoints",
+        "toRemoveEndpoints",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAccelerator",
+        "toUpdateAcceleratorAttributes",
+        "toUpdateCrossAccountAttachment",
+        "toUpdateCustomRoutingAccelerator",
+        "toUpdateCustomRoutingAcceleratorAttributes",
+        "toUpdateCustomRoutingListener",
+        "toUpdateEndpointGroup",
+        "toUpdateListener"
+      ],
+      "relatedResourceTypes": [
+        "accelerator",
+        "attachment",
+        "endpointgroup",
+        "listener"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAccelerator",
+        "toCreateCrossAccountAttachment",
+        "toCreateCustomRoutingAccelerator",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

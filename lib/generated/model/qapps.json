@@ -1,0 +1,645 @@
+{
+  "schemaVersion": 1,
+  "filename": "qapps",
+  "className": "Qapps",
+  "name": "qapps",
+  "servicePrefix": "qapps",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_qapps.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateLibraryItemReview",
+      "AssociateQAppWithUser",
+      "BatchCreateCategory",
+      "BatchDeleteCategory",
+      "BatchUpdateCategory",
+      "CreateLibraryItem",
+      "CreateQApp",
+      "DeleteLibraryItem",
+      "DeleteQApp",
+      "DisassociateLibraryItemReview",
+      "DisassociateQAppFromUser",
+      "ExportQAppSessionData",
+      "ImportDocument",
+      "PredictQApp",
+      "StartQAppSession",
+      "StopQAppSession",
+      "TagResource",
+      "UntagResource",
+      "UpdateLibraryItem",
+      "UpdateLibraryItemMetadata",
+      "UpdateQApp",
+      "UpdateQAppPermissions",
+      "UpdateQAppSession",
+      "UpdateQAppSessionMetadata",
+      "CopyQApp",
+      "CreateLibraryItemReview",
+      "CreateSubscriptionToken",
+      "PredictProblemStatementFromConversation",
+      "PredictQAppFromProblemStatement"
+    ],
+    "Read": [
+      "DescribeQAppPermissions",
+      "GetLibraryItem",
+      "GetQApp",
+      "GetQAppSession",
+      "GetQAppSessionMetadata",
+      "ListQAppSessionData",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListCategories",
+      "ListLibraryItems",
+      "ListQApps"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateLibraryItemReview",
+      "methodName": "toAssociateLibraryItemReview",
+      "description": "Grants permission to associate a library item review in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_AssociateLibraryItemReview.html"
+    },
+    {
+      "name": "AssociateQAppWithUser",
+      "methodName": "toAssociateQAppWithUser",
+      "description": "Grants permission to associate Q App with a user in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_AssociateQAppWithUser.html"
+    },
+    {
+      "name": "BatchCreateCategory",
+      "methodName": "toBatchCreateCategory",
+      "description": "Grants permission to create the categories of a library in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_BatchCreateCategory.html"
+    },
+    {
+      "name": "BatchDeleteCategory",
+      "methodName": "toBatchDeleteCategory",
+      "description": "Grants permission to delete the categories of a library in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_BatchDeleteCategory.html"
+    },
+    {
+      "name": "BatchUpdateCategory",
+      "methodName": "toBatchUpdateCategory",
+      "description": "Grants permission to update the categories of a library in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_BatchUpdateCategory.html"
+    },
+    {
+      "name": "CreateLibraryItem",
+      "methodName": "toCreateLibraryItem",
+      "description": "Grants permission to create a library item in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_CreateLibraryItem.html"
+    },
+    {
+      "name": "CreateQApp",
+      "methodName": "toCreateQApp",
+      "description": "Grants permission to create Q App in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_CreateQApp.html"
+    },
+    {
+      "name": "DeleteLibraryItem",
+      "methodName": "toDeleteLibraryItem",
+      "description": "Grants permission to delete a library item in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_DeleteLibraryItem.html"
+    },
+    {
+      "name": "DeleteQApp",
+      "methodName": "toDeleteQApp",
+      "description": "Grants permission to delete Q App in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_DeleteQApp.html"
+    },
+    {
+      "name": "DescribeQAppPermissions",
+      "methodName": "toDescribeQAppPermissions",
+      "description": "Grants permission to get Q App sharing permissions in the Q Business application environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_DescribeQAppPermissions.html"
+    },
+    {
+      "name": "DisassociateLibraryItemReview",
+      "methodName": "toDisassociateLibraryItemReview",
+      "description": "Grants permission to disassociate a library item review in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_DisassociateLibraryItemReview.html"
+    },
+    {
+      "name": "DisassociateQAppFromUser",
+      "methodName": "toDisassociateQAppFromUser",
+      "description": "Grants permission to disassociate Q App with a user in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_DisassociateQAppFromUser.html"
+    },
+    {
+      "name": "ExportQAppSessionData",
+      "methodName": "toExportQAppSessionData",
+      "description": "Grants permission to export Q App session data in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html"
+    },
+    {
+      "name": "GetLibraryItem",
+      "methodName": "toGetLibraryItem",
+      "description": "Grants permission to get a library item in the Q Business application environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_GetLibraryItem.html"
+    },
+    {
+      "name": "GetQApp",
+      "methodName": "toGetQApp",
+      "description": "Grants permission to get Q App in the Q Business application environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_GetQApp.html"
+    },
+    {
+      "name": "GetQAppSession",
+      "methodName": "toGetQAppSession",
+      "description": "Grants permission to get Q App session in the Q Business application environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_GetQAppSession.html"
+    },
+    {
+      "name": "GetQAppSessionMetadata",
+      "methodName": "toGetQAppSessionMetadata",
+      "description": "Grants permission to get Q App session metadata in the Q Business application environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html"
+    },
+    {
+      "name": "ImportDocument",
+      "methodName": "toImportDocument",
+      "description": "Grants permission to import a document to Q App or Q App Session in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_ImportDocument.html"
+    },
+    {
+      "name": "ListCategories",
+      "methodName": "toListCategories",
+      "description": "Grants permission to list categories in the Q Business application environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_ListCategories.html"
+    },
+    {
+      "name": "ListLibraryItems",
+      "methodName": "toListLibraryItems",
+      "description": "Grants permission to list library items in the Q Business application environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_ListLibraryItems.html"
+    },
+    {
+      "name": "ListQAppSessionData",
+      "methodName": "toListQAppSessionData",
+      "description": "Grants permission to get Q App session data in the Q Business application environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html"
+    },
+    {
+      "name": "ListQApps",
+      "methodName": "toListQApps",
+      "description": "Grants permission to list Q Apps in the Q Business application environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_ListQApps.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PredictQApp",
+      "methodName": "toPredictQApp",
+      "description": "Grants permission to predict Q App from conversation log or problem statement in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_PredictQApp.html"
+    },
+    {
+      "name": "StartQAppSession",
+      "methodName": "toStartQAppSession",
+      "description": "Grants permission to start Q App session in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_StartQAppSession.html"
+    },
+    {
+      "name": "StopQAppSession",
+      "methodName": "toStopQAppSession",
+      "description": "Grants permission to stop Q App session in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_StopQAppSession.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource with given key value pairs",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the tag with the given key from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateLibraryItem",
+      "methodName": "toUpdateLibraryItem",
+      "description": "Grants permission to update a library item in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_UpdateLibraryItem.html"
+    },
+    {
+      "name": "UpdateLibraryItemMetadata",
+      "methodName": "toUpdateLibraryItemMetadata",
+      "description": "Grants permission to update the metadata of a library item in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_UpdateLibraryItemMetadata.html"
+    },
+    {
+      "name": "UpdateQApp",
+      "methodName": "toUpdateQApp",
+      "description": "Grants permission to update Q App in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_UpdateQApp.html"
+    },
+    {
+      "name": "UpdateQAppPermissions",
+      "methodName": "toUpdateQAppPermissions",
+      "description": "Grants permission to update Q App sharing permissions in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_UpdateQAppPermissions.html"
+    },
+    {
+      "name": "UpdateQAppSession",
+      "methodName": "toUpdateQAppSession",
+      "description": "Grants permission to update Q App session in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_UpdateQAppSession.html"
+    },
+    {
+      "name": "UpdateQAppSessionMetadata",
+      "methodName": "toUpdateQAppSessionMetadata",
+      "description": "Grants permission to update Q App session metadata in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html"
+    },
+    {
+      "name": "CopyQApp",
+      "methodName": "toCopyQApp",
+      "description": "Grants permission to copy Q App in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html"
+    },
+    {
+      "name": "CreateLibraryItemReview",
+      "methodName": "toCreateLibraryItemReview",
+      "description": "Grants permission to create a library item review in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html"
+    },
+    {
+      "name": "CreateSubscriptionToken",
+      "methodName": "toCreateSubscriptionToken",
+      "description": "Grants permission to subscribe to a Q App event bus topic in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html"
+    },
+    {
+      "name": "PredictProblemStatementFromConversation",
+      "methodName": "toPredictProblemStatementFromConversation",
+      "description": "Grants permission to predict problem statement from conversation log in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html"
+    },
+    {
+      "name": "PredictQAppFromProblemStatement",
+      "methodName": "toPredictQAppFromProblemStatement",
+      "description": "Grants permission to predict Q App metadata from problem statement in the Q Business application environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/create-app.html",
+      "arn": "arn:${Partition}:qbusiness:${Region}:${Account}:application/${ApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "qapp",
+      "methodName": "onQapp",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html",
+      "arn": "arn:${Partition}:qapps:${Region}:${Account}:application/${ApplicationId}/qapp/${AppId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "qapp-session",
+      "methodName": "onQappSession",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html",
+      "arn": "arn:${Partition}:qapps:${Region}:${Account}:application/${ApplicationId}/qapp/${AppId}/session/${SessionId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SessionId",
+          "name": "sessionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateQApp",
+        "toStartQAppSession",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateLibraryItemReview",
+        "toAssociateQAppWithUser",
+        "toCreateLibraryItem",
+        "toDeleteLibraryItem",
+        "toDeleteQApp",
+        "toDescribeQAppPermissions",
+        "toDisassociateLibraryItemReview",
+        "toDisassociateQAppFromUser",
+        "toExportQAppSessionData",
+        "toGetLibraryItem",
+        "toGetQApp",
+        "toGetQAppSession",
+        "toGetQAppSessionMetadata",
+        "toImportDocument",
+        "toListQAppSessionData",
+        "toListTagsForResource",
+        "toStartQAppSession",
+        "toStopQAppSession",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLibraryItem",
+        "toUpdateLibraryItemMetadata",
+        "toUpdateQApp",
+        "toUpdateQAppPermissions",
+        "toUpdateQAppSession",
+        "toUpdateQAppSessionMetadata",
+        "toCopyQApp",
+        "toCreateLibraryItemReview"
+      ],
+      "relatedResourceTypes": [
+        "qapp",
+        "qapp-session"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateQApp",
+        "toStartQAppSession",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "qapps:AppIsPublished",
+      "methodName": "ifAppIsPublished",
+      "description": "Filters access by whether Q App is published",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/security-iam.html",
+      "relatedActionMethods": [
+        "toAssociateLibraryItemReview",
+        "toAssociateQAppWithUser",
+        "toCreateLibraryItem",
+        "toDeleteLibraryItem",
+        "toDeleteQApp",
+        "toDescribeQAppPermissions",
+        "toDisassociateLibraryItemReview",
+        "toDisassociateQAppFromUser",
+        "toGetLibraryItem",
+        "toGetQApp",
+        "toGetQAppSession",
+        "toImportDocument",
+        "toStartQAppSession",
+        "toStopQAppSession",
+        "toUpdateLibraryItem",
+        "toUpdateLibraryItemMetadata",
+        "toUpdateQApp",
+        "toUpdateQAppPermissions",
+        "toUpdateQAppSession",
+        "toCopyQApp",
+        "toCreateLibraryItemReview"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AppIsPublished",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "qapps:SessionIsShared",
+      "methodName": "ifSessionIsShared",
+      "description": "Filters access by whether Q App Session is shared",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/security-iam.html",
+      "relatedActionMethods": [
+        "toGetQAppSession",
+        "toImportDocument",
+        "toStopQAppSession",
+        "toUpdateQAppSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SessionIsShared",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "qapps:UserIsAppOwner",
+      "methodName": "ifUserIsAppOwner",
+      "description": "Filters access by whether requester is Q App owner",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/security-iam.html",
+      "relatedActionMethods": [
+        "toAssociateLibraryItemReview",
+        "toAssociateQAppWithUser",
+        "toCreateLibraryItem",
+        "toDeleteLibraryItem",
+        "toDeleteQApp",
+        "toDescribeQAppPermissions",
+        "toDisassociateLibraryItemReview",
+        "toDisassociateQAppFromUser",
+        "toGetLibraryItem",
+        "toGetQApp",
+        "toGetQAppSession",
+        "toImportDocument",
+        "toStartQAppSession",
+        "toStopQAppSession",
+        "toUpdateLibraryItem",
+        "toUpdateQApp",
+        "toUpdateQAppPermissions",
+        "toUpdateQAppSession",
+        "toCopyQApp",
+        "toCreateLibraryItemReview"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "UserIsAppOwner",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "qapps:UserIsSessionModerator",
+      "methodName": "ifUserIsSessionModerator",
+      "description": "Filters access by whether requester is Q App Session moderator",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/security-iam.html",
+      "relatedActionMethods": [
+        "toGetQAppSession",
+        "toImportDocument",
+        "toStopQAppSession",
+        "toUpdateQAppSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "UserIsSessionModerator",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

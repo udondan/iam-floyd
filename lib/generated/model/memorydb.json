@@ -1,0 +1,842 @@
+{
+  "schemaVersion": 1,
+  "filename": "memorydb",
+  "className": "Memorydb",
+  "name": "memorydb",
+  "servicePrefix": "memorydb",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_memorydb.html",
+  "accessLevelList": {
+    "Write": [
+      "BatchUpdateCluster",
+      "Connect",
+      "CopySnapshot",
+      "CreateAcl",
+      "CreateCluster",
+      "CreateMultiRegionCluster",
+      "CreateParameterGroup",
+      "CreateSnapshot",
+      "CreateSubnetGroup",
+      "CreateUser",
+      "DeleteAcl",
+      "DeleteCluster",
+      "DeleteMultiRegionCluster",
+      "DeleteParameterGroup",
+      "DeleteSnapshot",
+      "DeleteSubnetGroup",
+      "DeleteUser",
+      "FailoverShard",
+      "PurchaseReservedNodesOffering",
+      "ResetParameterGroup",
+      "TagResource",
+      "UntagResource",
+      "UpdateAcl",
+      "UpdateCluster",
+      "UpdateMultiRegionCluster",
+      "UpdateParameterGroup",
+      "UpdateSubnetGroup",
+      "UpdateUser",
+      "PauseMultiRegionClusterReplication"
+    ],
+    "Read": [
+      "DescribeAcls",
+      "DescribeClusters",
+      "DescribeEngineVersions",
+      "DescribeEvents",
+      "DescribeMultiRegionClusters",
+      "DescribeMultiRegionParameterGroups",
+      "DescribeMultiRegionParameters",
+      "DescribeParameterGroups",
+      "DescribeParameters",
+      "DescribeReservedNodes",
+      "DescribeReservedNodesOfferings",
+      "DescribeServiceUpdates",
+      "DescribeSnapshots",
+      "DescribeSubnetGroups",
+      "DescribeUsers",
+      "ListAllowedMultiRegionClusterUpdates",
+      "ListAllowedNodeTypeUpdates",
+      "ListTags"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchUpdateCluster",
+      "methodName": "toBatchUpdateCluster",
+      "description": "Grants permissions to apply service updates",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_BatchUpdateCluster.html"
+    },
+    {
+      "name": "Connect",
+      "methodName": "toConnect",
+      "description": "Allows an IAM user or role to connect as a specified MemoryDB user to a node in a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/devguide/auth-iam.html"
+    },
+    {
+      "name": "CopySnapshot",
+      "methodName": "toCopySnapshot",
+      "description": "Grants permissions to make a copy of an existing snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CopySnapshot.html"
+    },
+    {
+      "name": "CreateAcl",
+      "methodName": "toCreateAcl",
+      "description": "Grants permissions to create a new access control list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CreateAcl.html"
+    },
+    {
+      "name": "CreateCluster",
+      "methodName": "toCreateCluster",
+      "description": "Grants permissions to create a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CreateCluster.html"
+    },
+    {
+      "name": "CreateMultiRegionCluster",
+      "methodName": "toCreateMultiRegionCluster",
+      "description": "Grants permissions to create a Multi-Region cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CreateMultiRegionCluster.html"
+    },
+    {
+      "name": "CreateParameterGroup",
+      "methodName": "toCreateParameterGroup",
+      "description": "Grants permissions to create a new parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CreateParameterGroup.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateSnapshot",
+      "methodName": "toCreateSnapshot",
+      "description": "Grants permissions to create a backup of a cluster at the current point in time",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CreateSnapshot.html"
+    },
+    {
+      "name": "CreateSubnetGroup",
+      "methodName": "toCreateSubnetGroup",
+      "description": "Grants permissions to create a new subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CreateSubnetGroup.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateUser",
+      "methodName": "toCreateUser",
+      "description": "Grants permissions to create a new user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_CreateUser.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifUserAuthenticationMode"
+      ]
+    },
+    {
+      "name": "DeleteAcl",
+      "methodName": "toDeleteAcl",
+      "description": "Grants permissions to delete an access control list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DeleteAcl.html"
+    },
+    {
+      "name": "DeleteCluster",
+      "methodName": "toDeleteCluster",
+      "description": "Grants permissions to delete a previously provisioned cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DeleteCluster.html"
+    },
+    {
+      "name": "DeleteMultiRegionCluster",
+      "methodName": "toDeleteMultiRegionCluster",
+      "description": "Grants permissions to delete a Multi-Region cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DeleteMultiRegionCluster.html"
+    },
+    {
+      "name": "DeleteParameterGroup",
+      "methodName": "toDeleteParameterGroup",
+      "description": "Grants permissions to delete a parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DeleteParameterGroup.html"
+    },
+    {
+      "name": "DeleteSnapshot",
+      "methodName": "toDeleteSnapshot",
+      "description": "Grants permissions to delete a snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DeleteSnapshot.html"
+    },
+    {
+      "name": "DeleteSubnetGroup",
+      "methodName": "toDeleteSubnetGroup",
+      "description": "Grants permissions to delete a subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DeleteSubnetGroup.html"
+    },
+    {
+      "name": "DeleteUser",
+      "methodName": "toDeleteUser",
+      "description": "Grants permissions to delete a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DeleteUser.html"
+    },
+    {
+      "name": "DescribeAcls",
+      "methodName": "toDescribeAcls",
+      "description": "Grants permissions to retrieve information about access control lists",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeAcls.html"
+    },
+    {
+      "name": "DescribeClusters",
+      "methodName": "toDescribeClusters",
+      "description": "Grants permissions to retrieve information about all provisioned clusters if no cluster identifier is specified, or about a specific cluster if a cluster identifier is supplied",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeClusters.html"
+    },
+    {
+      "name": "DescribeEngineVersions",
+      "methodName": "toDescribeEngineVersions",
+      "description": "Grants permissions to list of the available engines and their versions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeEngineVersions.html"
+    },
+    {
+      "name": "DescribeEvents",
+      "methodName": "toDescribeEvents",
+      "description": "Grants permissions to retrieve events related to clusters, subnet groups, and parameter groups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeEvents.html"
+    },
+    {
+      "name": "DescribeMultiRegionClusters",
+      "methodName": "toDescribeMultiRegionClusters",
+      "description": "Grants permissions to retrieve information about all Multi-Region clusters if no cluster identifier is specified, or about a specific Multi-Region cluster if a cluster identifier is supplied",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeMultiRegionClusters.html"
+    },
+    {
+      "name": "DescribeMultiRegionParameterGroups",
+      "methodName": "toDescribeMultiRegionParameterGroups",
+      "description": "Grants permissions to retrieve information about Multi-Region parameter groups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeMultiRegionParameterGroups.html"
+    },
+    {
+      "name": "DescribeMultiRegionParameters",
+      "methodName": "toDescribeMultiRegionParameters",
+      "description": "Grants permissions to retrieve a detailed parameter list for a particular Multi-Region parameter group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeMultiRegionParameters.html"
+    },
+    {
+      "name": "DescribeParameterGroups",
+      "methodName": "toDescribeParameterGroups",
+      "description": "Grants permissions to retrieve information about parameter groups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeParameterGroups.html"
+    },
+    {
+      "name": "DescribeParameters",
+      "methodName": "toDescribeParameters",
+      "description": "Grants permissions to retrieve a detailed parameter list for a particular parameter group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeParameters.html"
+    },
+    {
+      "name": "DescribeReservedNodes",
+      "methodName": "toDescribeReservedNodes",
+      "description": "Grants permissions to retrieve reserved nodes",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeReservedNodes.html"
+    },
+    {
+      "name": "DescribeReservedNodesOfferings",
+      "methodName": "toDescribeReservedNodesOfferings",
+      "description": "Grants permissions to retrieve reserved nodes offerings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeReservedNodesOfferings.html"
+    },
+    {
+      "name": "DescribeServiceUpdates",
+      "methodName": "toDescribeServiceUpdates",
+      "description": "Grants permissions to retrieve details of the service updates",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeServiceUpdates.html"
+    },
+    {
+      "name": "DescribeSnapshots",
+      "methodName": "toDescribeSnapshots",
+      "description": "Grants permissions to retrieve information about cluster snapshots",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeSnapshots.html"
+    },
+    {
+      "name": "DescribeSubnetGroups",
+      "methodName": "toDescribeSubnetGroups",
+      "description": "Grants permissions to retrieve a list of subnet group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeSubnetGroups.html"
+    },
+    {
+      "name": "DescribeUsers",
+      "methodName": "toDescribeUsers",
+      "description": "Grants permissions to retrieve information about users",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_DescribeUsers.html"
+    },
+    {
+      "name": "FailoverShard",
+      "methodName": "toFailoverShard",
+      "description": "Grants permissions to test automatic failover on a specified shard in a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_FailoverShard.html"
+    },
+    {
+      "name": "ListAllowedMultiRegionClusterUpdates",
+      "methodName": "toListAllowedMultiRegionClusterUpdates",
+      "description": "Grants permissions to list available Multi-Region cluster updates",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_ListAllowedMultiRegionClusterUpdates.html"
+    },
+    {
+      "name": "ListAllowedNodeTypeUpdates",
+      "methodName": "toListAllowedNodeTypeUpdates",
+      "description": "Grants permissions to list available node type updates",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_ListAllowedNodeTypeUpdates.html"
+    },
+    {
+      "name": "ListTags",
+      "methodName": "toListTags",
+      "description": "Grants permissions to list cost allocation tags",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_ListTags.html"
+    },
+    {
+      "name": "PurchaseReservedNodesOffering",
+      "methodName": "toPurchaseReservedNodesOffering",
+      "description": "Grants permissions to purchase a new reserved node",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_PurchaseReservedNodesOffering.html"
+    },
+    {
+      "name": "ResetParameterGroup",
+      "methodName": "toResetParameterGroup",
+      "description": "Grants permissions to modify the parameters of a parameter group to the engine or system default value",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_ResetParameterGroup.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permissions to add up to 10 cost allocation tags to the named resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permissions to remove the tags identified by the TagKeys list from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAcl",
+      "methodName": "toUpdateAcl",
+      "description": "Grants permissions to update an access control list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_UpdateAcl.html"
+    },
+    {
+      "name": "UpdateCluster",
+      "methodName": "toUpdateCluster",
+      "description": "Grants permissions to update the settings for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_UpdateCluster.html"
+    },
+    {
+      "name": "UpdateMultiRegionCluster",
+      "methodName": "toUpdateMultiRegionCluster",
+      "description": "Grants permissions to update the settings for a Multi-Region cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_UpdateMultiRegionCluster.html"
+    },
+    {
+      "name": "UpdateParameterGroup",
+      "methodName": "toUpdateParameterGroup",
+      "description": "Grants permissions to update parameters in a parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_UpdateParameterGroup.html"
+    },
+    {
+      "name": "UpdateSubnetGroup",
+      "methodName": "toUpdateSubnetGroup",
+      "description": "Grants permissions to update a subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_UpdateSubnetGroup.html"
+    },
+    {
+      "name": "UpdateUser",
+      "methodName": "toUpdateUser",
+      "description": "Grants permissions to update a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_UpdateUser.html"
+    },
+    {
+      "name": "PauseMultiRegionClusterReplication",
+      "methodName": "toPauseMultiRegionClusterReplication",
+      "description": "Grants permission to pause replication for a Multi-Region cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#memorydb-actions-reference"
+    }
+  ],
+  "resources": [
+    {
+      "name": "acl",
+      "methodName": "onAcl",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html",
+      "arn": "arn:${Partition}:memorydb:${Region}:${Account}:acl/${AclName}",
+      "placeholders": [
+        {
+          "placeholder": "AclName",
+          "name": "aclName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cluster",
+      "methodName": "onCluster",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html",
+      "arn": "arn:${Partition}:memorydb:${Region}:${Account}:cluster/${ClusterName}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "multiregioncluster",
+      "methodName": "onMultiregioncluster",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html",
+      "arn": "arn:${Partition}:memorydb::${Account}:multiregioncluster/${ClusterName}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifTLSEnabled"
+      ]
+    },
+    {
+      "name": "multiregionparametergroup",
+      "methodName": "onMultiregionparametergroup",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html",
+      "arn": "arn:${Partition}:memorydb::${Account}:multiregionparametergroup/${MultiRegionParameterGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "MultiRegionParameterGroupName",
+          "name": "multiRegionParameterGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "parametergroup",
+      "methodName": "onParametergroup",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html",
+      "arn": "arn:${Partition}:memorydb:${Region}:${Account}:parametergroup/${ParameterGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "ParameterGroupName",
+          "name": "parameterGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "reservednode",
+      "methodName": "onReservednode",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html",
+      "arn": "arn:${Partition}:memorydb:${Region}:${Account}:reservednode/${ReservationID}",
+      "placeholders": [
+        {
+          "placeholder": "ReservationID",
+          "name": "reservationID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "snapshot",
+      "methodName": "onSnapshot",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html",
+      "arn": "arn:${Partition}:memorydb:${Region}:${Account}:snapshot/${SnapshotName}",
+      "placeholders": [
+        {
+          "placeholder": "SnapshotName",
+          "name": "snapshotName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "subnetgroup",
+      "methodName": "onSubnetgroup",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html",
+      "arn": "arn:${Partition}:memorydb:${Region}:${Account}:subnetgroup/${SubnetGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "SubnetGroupName",
+          "name": "subnetGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "user",
+      "methodName": "onUser",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.Components.html",
+      "arn": "arn:${Partition}:memorydb:${Region}:${Account}:user/${UserName}",
+      "placeholders": [
+        {
+          "placeholder": "UserName",
+          "name": "userName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters actions based on the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCopySnapshot",
+        "toCreateAcl",
+        "toCreateCluster",
+        "toCreateMultiRegionCluster",
+        "toCreateParameterGroup",
+        "toCreateSnapshot",
+        "toCreateSubnetGroup",
+        "toCreateUser",
+        "toPurchaseReservedNodesOffering",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchUpdateCluster",
+        "toConnect",
+        "toCopySnapshot",
+        "toCreateAcl",
+        "toCreateCluster",
+        "toCreateMultiRegionCluster",
+        "toCreateSnapshot",
+        "toDeleteAcl",
+        "toDeleteCluster",
+        "toDeleteMultiRegionCluster",
+        "toDeleteParameterGroup",
+        "toDeleteSnapshot",
+        "toDeleteSubnetGroup",
+        "toDeleteUser",
+        "toDescribeAcls",
+        "toDescribeClusters",
+        "toDescribeMultiRegionClusters",
+        "toDescribeParameterGroups",
+        "toDescribeParameters",
+        "toDescribeReservedNodes",
+        "toDescribeSnapshots",
+        "toDescribeSubnetGroups",
+        "toDescribeUsers",
+        "toFailoverShard",
+        "toListAllowedMultiRegionClusterUpdates",
+        "toListAllowedNodeTypeUpdates",
+        "toListTags",
+        "toPurchaseReservedNodesOffering",
+        "toResetParameterGroup",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAcl",
+        "toUpdateCluster",
+        "toUpdateMultiRegionCluster",
+        "toUpdateParameterGroup",
+        "toUpdateSubnetGroup",
+        "toUpdateUser",
+        "toPauseMultiRegionClusterReplication"
+      ],
+      "relatedResourceTypes": [
+        "acl",
+        "cluster",
+        "multiregioncluster",
+        "parametergroup",
+        "reservednode",
+        "snapshot",
+        "subnetgroup",
+        "user"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters actions based on the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCopySnapshot",
+        "toCreateAcl",
+        "toCreateCluster",
+        "toCreateMultiRegionCluster",
+        "toCreateParameterGroup",
+        "toCreateSnapshot",
+        "toCreateSubnetGroup",
+        "toCreateUser",
+        "toPurchaseReservedNodesOffering",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "memorydb:TLSEnabled",
+      "methodName": "ifTLSEnabled",
+      "description": "Filters access by the TLSEnabled parameter present in the request or defaults to true value if parameter is not present",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/devguide/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toCreateMultiRegionCluster",
+        "toDeleteCluster",
+        "toDeleteMultiRegionCluster",
+        "toDescribeMultiRegionClusters",
+        "toListAllowedMultiRegionClusterUpdates",
+        "toListTags",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateMultiRegionCluster",
+        "toPauseMultiRegionClusterReplication"
+      ],
+      "relatedResourceTypes": [
+        "multiregioncluster"
+      ],
+      "keyLiteral": "TLSEnabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "memorydb:UserAuthenticationMode",
+      "methodName": "ifUserAuthenticationMode",
+      "description": "Filters access by the UserAuthenticationMode.Type parameter in the request",
+      "url": "https://docs.aws.amazon.com/memorydb/latest/devguide/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toCreateUser",
+        "toUpdateUser"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "UserAuthenticationMode",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

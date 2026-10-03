@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SageMaker",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DescribeEndpoint",
+        "sagemaker:DescribeEndpointConfig",
+        "sagemaker:DescribeInferenceComponent",
+        "sagemaker:UpdateEndpointWeightsAndCapacities",
+        "sagemaker:UpdateInferenceComponentRuntimeConfig",
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "SageMakerCloudWatchUpdate",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricAlarm",
+        "cloudwatch:DeleteAlarms"
+      ],
+      "Resource": [
+        "arn:aws:cloudwatch:*:*:alarm:TargetTracking*"
+      ]
+    }
+  ]
+}

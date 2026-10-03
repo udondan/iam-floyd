@@ -1,0 +1,78 @@
+{
+  "scripts": {
+    "pregenerate": "find lib bin -name \"*.js\" -type f -exec rm -vf {} \\;",
+    "generate": "npx ts-node bin/generate.ts",
+    "preemit": "find lib/generator bin -name \"*.js\" -type f -exec rm -vf {} \\;",
+    "emit": "npx ts-node bin/emit.ts",
+    "index-managed-policies": "npx ts-node bin/index-managed-policies.ts",
+    "build": "npx tsc --build --force --verbose tsconfig.main.json tsconfig.types.json"
+  },
+  "name": "iam-floyd",
+  "description": "AWS IAM policy statement generator with fluent interface",
+  "version": "0.847.0",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Daniel Schroeder",
+    "url": "https://www.udondan.com/"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/udondan"
+    }
+  ],
+  "homepage": "https://github.com/udondan/iam-floyd",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udondan/iam-floyd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/udondan/iam-floyd/issues"
+  },
+  "keywords": [
+    "aws",
+    "iam",
+    "policy",
+    "iam-floyd"
+  ],
+  "stability": "experimental",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "devDependencies": {
+    "@aws-sdk/client-iam": "^3.721.0",
+    "@aws-sdk/client-s3": "^3.722.0",
+    "@aws-sdk/client-sqs": "^3.721.0",
+    "@jsii/spec": "1.141.0",
+    "@swc/core": "^1.10.4",
+    "@swc/helpers": "^0.5.15",
+    "@types/cheerio": "^1.0.0",
+    "@types/glob": "^9.0.0",
+    "@types/lodash": "^4.17.14",
+    "@types/node": "24.19.0",
+    "@types/request": "^2.48.12",
+    "@types/request-promise-native": "^1.0.21",
+    "@typescript-eslint/eslint-plugin": "8.71.0",
+    "@typescript-eslint/parser": "8.71.0",
+    "aws-cdk-lib": "2.271.0",
+    "cheerio": "^1.0.0",
+    "colors": "1.4.0",
+    "eslint": "10.11.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.6",
+    "glob": "^13.0.0",
+    "jsii-docgen": "10.12.6",
+    "jsii-pacmak": "1.141.0",
+    "prettier": "3.9.9",
+    "publib": "^0.3.0",
+    "regenerator-runtime": "^0.14.1",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9",
+    "ts-morph": "^28.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@udondan/common-substrings": "3.0.2",
+    "regex-parser": "2.3.1"
+  }
+}

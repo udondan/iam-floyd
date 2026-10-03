@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "filename": "bcm-dashboards",
+  "className": "BcmDashboards",
+  "name": "bcm-dashboards",
+  "servicePrefix": "bcm-dashboards",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_bcm-dashboards.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateDashboard",
+      "CreateScheduledReport",
+      "DeleteDashboard",
+      "DeleteScheduledReport",
+      "ExecuteScheduledReport",
+      "TagResource",
+      "UntagResource",
+      "UpdateDashboard",
+      "UpdateScheduledReport"
+    ],
+    "Read": [
+      "GetDashboard",
+      "GetResourcePolicy",
+      "GetScheduledReport",
+      "ListDashboards",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListScheduledReports"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateDashboard",
+      "methodName": "toCreateDashboard",
+      "description": "Grants permission to create a dashboard",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_CreateDashboard.html"
+    },
+    {
+      "name": "CreateScheduledReport",
+      "methodName": "toCreateScheduledReport",
+      "description": "Grants permission to create a scheduled report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_CreateScheduledReport.html",
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteDashboard",
+      "methodName": "toDeleteDashboard",
+      "description": "Grants permission to delete a dashboard",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_DeleteDashboard.html"
+    },
+    {
+      "name": "DeleteScheduledReport",
+      "methodName": "toDeleteScheduledReport",
+      "description": "Grants permission to delete a scheduled report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_DeleteScheduledReport.html"
+    },
+    {
+      "name": "ExecuteScheduledReport",
+      "methodName": "toExecuteScheduledReport",
+      "description": "Grants permission to execute a scheduled report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_ExecuteScheduledReport.html"
+    },
+    {
+      "name": "GetDashboard",
+      "methodName": "toGetDashboard",
+      "description": "Grants permission to get dashboard information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_GetDashboard.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to get the resource policy for a dashboard",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_GetResourcePolicy.html"
+    },
+    {
+      "name": "GetScheduledReport",
+      "methodName": "toGetScheduledReport",
+      "description": "Grants permission to get scheduled report information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_GetScheduledReport.html"
+    },
+    {
+      "name": "ListDashboards",
+      "methodName": "toListDashboards",
+      "description": "Grants permission to list information about all of the dashboards for a user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_ListDashboards.html"
+    },
+    {
+      "name": "ListScheduledReports",
+      "methodName": "toListScheduledReports",
+      "description": "Grants permission to list information about all of the scheduled reports for a user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_ListScheduledReports.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all of the tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_ListTagsForResource.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to create a tag for a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_TagResource.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag for a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_UntagResource.html",
+      "conditionMethods": [
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "UpdateDashboard",
+      "methodName": "toUpdateDashboard",
+      "description": "Grants permission to update an existing dashboard",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_UpdateDashboard.html"
+    },
+    {
+      "name": "UpdateScheduledReport",
+      "methodName": "toUpdateScheduledReport",
+      "description": "Grants permission to update an existing scheduled report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_UpdateScheduledReport.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "dashboard",
+      "methodName": "onDashboard",
+      "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/",
+      "arn": "arn:${Partition}:bcm-dashboards::${Account}:dashboard/${DashboardName}",
+      "placeholders": [
+        {
+          "placeholder": "DashboardName",
+          "name": "dashboardName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "scheduled-report",
+      "methodName": "onScheduledReport",
+      "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/",
+      "arn": "arn:${Partition}:bcm-dashboards::${Account}:scheduled-report/${ScheduledReportName}",
+      "placeholders": [
+        {
+          "placeholder": "ScheduledReportName",
+          "name": "scheduledReportName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toCreateScheduledReport"
+      ],
+      "relatedResourceTypes": [
+        "dashboard",
+        "scheduled-report"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateScheduledReport",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "dashboard",
+        "scheduled-report"
+      ],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

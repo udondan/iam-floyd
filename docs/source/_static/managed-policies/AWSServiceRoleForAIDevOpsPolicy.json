@@ -1,0 +1,93 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "sid1",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": [
+            "AWS/AIDevOps"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "LatticeCreateResourceGateway",
+      "Effect": "Allow",
+      "Action": [
+        "vpc-lattice:CreateResourceGateway"
+      ],
+      "Resource": "arn:aws:vpc-lattice:*:*:resourcegateway/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/AWSAIDevOpsManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "LatticeTagResourceGateway",
+      "Effect": "Allow",
+      "Action": [
+        "vpc-lattice:TagResource"
+      ],
+      "Resource": "arn:aws:vpc-lattice:*:*:resourcegateway/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/AWSAIDevOpsManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "LatticeManageTaggedResourceGateways",
+      "Effect": "Allow",
+      "Action": [
+        "vpc-lattice:DeleteResourceGateway"
+      ],
+      "Resource": "arn:aws:vpc-lattice:*:*:resourcegateway/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AWSAIDevOpsManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "LatticeGetResourceGateway",
+      "Effect": "Allow",
+      "Action": [
+        "vpc-lattice:GetResourceGateway"
+      ],
+      "Resource": "arn:aws:vpc-lattice:*:*:resourcegateway/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AWSAIDevOpsManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "DescribeApis",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateLatticeServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/vpc-lattice.amazonaws.com/AWSServiceRoleForVpcLattice",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "vpc-lattice.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

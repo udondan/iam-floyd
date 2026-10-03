@@ -1,0 +1,42 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonEKSDashboardReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "eks:ListDashboardData",
+        "eks:ListDashboardResources",
+        "eks:DescribeClusterVersions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AmazonOrganizationsReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListRoots",
+        "organizations:ListAccountsForParent",
+        "organizations:ListOrganizationalUnitsForParent"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AmazonOrganizationsDelegatedAdmin",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": "eks.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

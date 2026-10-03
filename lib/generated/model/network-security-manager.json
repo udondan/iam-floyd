@@ -1,0 +1,854 @@
+{
+  "schemaVersion": 1,
+  "filename": "network-security-manager",
+  "className": "NetworkSecurityManager",
+  "name": "network-security-manager",
+  "servicePrefix": "network-security-manager",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_network-security-manager.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateDeployment",
+      "CreateDeploymentSnapshot",
+      "CreatePolicy",
+      "CreatePolicySnapshot",
+      "CreateRule",
+      "CreateRuleSnapshot",
+      "CreateScope",
+      "CreateScopeSnapshot",
+      "CreateTemplate",
+      "CreateTemplateSnapshot",
+      "DeleteAdminAccount",
+      "DeleteDeployment",
+      "DeletePolicy",
+      "DeleteRule",
+      "DeleteScope",
+      "DeleteTemplate",
+      "GenerateRuleConfiguration",
+      "PutAdminAccount",
+      "TagResource",
+      "UntagResource",
+      "UpdateDeployment",
+      "UpdatePolicy",
+      "UpdateRule",
+      "UpdateScope",
+      "UpdateTemplate"
+    ],
+    "Read": [
+      "GetAdminAccount",
+      "GetDeployment",
+      "GetPolicy",
+      "GetRule",
+      "GetScope",
+      "GetTemplate",
+      "ListAggregateResourceSynchronizationStatuses",
+      "ListDeploymentSnapshots",
+      "ListPolicySnapshots",
+      "ListResourceAssociations",
+      "ListResourceSynchronizationStatuses",
+      "ListRuleSnapshots",
+      "ListScopeSnapshots",
+      "ListTagsForResource",
+      "ListTemplateSnapshots"
+    ],
+    "List": [
+      "ListAdminAccounts",
+      "ListDeployments",
+      "ListPolicies",
+      "ListRules",
+      "ListScopes",
+      "ListTemplates"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateDeployment",
+      "methodName": "toCreateDeployment",
+      "description": "Grants permission to create a deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateDeployment.html"
+    },
+    {
+      "name": "CreateDeploymentSnapshot",
+      "methodName": "toCreateDeploymentSnapshot",
+      "description": "Grants permission to create a snapshot of a deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateDeploymentSnapshot.html"
+    },
+    {
+      "name": "CreatePolicy",
+      "methodName": "toCreatePolicy",
+      "description": "Grants permission to create a policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreatePolicy.html"
+    },
+    {
+      "name": "CreatePolicySnapshot",
+      "methodName": "toCreatePolicySnapshot",
+      "description": "Grants permission to create a snapshot of a policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreatePolicySnapshot.html"
+    },
+    {
+      "name": "CreateRule",
+      "methodName": "toCreateRule",
+      "description": "Grants permission to create a rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateRule.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateRuleSnapshot",
+      "methodName": "toCreateRuleSnapshot",
+      "description": "Grants permission to create a snapshot of a rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateRuleSnapshot.html"
+    },
+    {
+      "name": "CreateScope",
+      "methodName": "toCreateScope",
+      "description": "Grants permission to create a scope",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateScope.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateScopeSnapshot",
+      "methodName": "toCreateScopeSnapshot",
+      "description": "Grants permission to create a snapshot of a scope",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateScopeSnapshot.html"
+    },
+    {
+      "name": "CreateTemplate",
+      "methodName": "toCreateTemplate",
+      "description": "Grants permission to create a template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateTemplate.html"
+    },
+    {
+      "name": "CreateTemplateSnapshot",
+      "methodName": "toCreateTemplateSnapshot",
+      "description": "Grants permission to create a snapshot of a template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateTemplateSnapshot.html"
+    },
+    {
+      "name": "DeleteAdminAccount",
+      "methodName": "toDeleteAdminAccount",
+      "description": "Grants permission to remove a Network Security Manager administrator account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_DeleteAdminAccount.html"
+    },
+    {
+      "name": "DeleteDeployment",
+      "methodName": "toDeleteDeployment",
+      "description": "Grants permission to delete a deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_DeleteDeployment.html"
+    },
+    {
+      "name": "DeletePolicy",
+      "methodName": "toDeletePolicy",
+      "description": "Grants permission to delete a policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_DeletePolicy.html"
+    },
+    {
+      "name": "DeleteRule",
+      "methodName": "toDeleteRule",
+      "description": "Grants permission to delete a rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_DeleteRule.html"
+    },
+    {
+      "name": "DeleteScope",
+      "methodName": "toDeleteScope",
+      "description": "Grants permission to delete a scope",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_DeleteScope.html"
+    },
+    {
+      "name": "DeleteTemplate",
+      "methodName": "toDeleteTemplate",
+      "description": "Grants permission to delete a template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_DeleteTemplate.html"
+    },
+    {
+      "name": "GenerateRuleConfiguration",
+      "methodName": "toGenerateRuleConfiguration",
+      "description": "Grants permission to generate a rule configuration from a natural-language prompt",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_GenerateRuleConfiguration.html"
+    },
+    {
+      "name": "GetAdminAccount",
+      "methodName": "toGetAdminAccount",
+      "description": "Grants permission to retrieve a Network Security Manager administrator account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_GetAdminAccount.html"
+    },
+    {
+      "name": "GetDeployment",
+      "methodName": "toGetDeployment",
+      "description": "Grants permission to retrieve a deployment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_GetDeployment.html"
+    },
+    {
+      "name": "GetPolicy",
+      "methodName": "toGetPolicy",
+      "description": "Grants permission to retrieve a policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_GetPolicy.html"
+    },
+    {
+      "name": "GetRule",
+      "methodName": "toGetRule",
+      "description": "Grants permission to retrieve a rule",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_GetRule.html"
+    },
+    {
+      "name": "GetScope",
+      "methodName": "toGetScope",
+      "description": "Grants permission to retrieve a scope",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_GetScope.html"
+    },
+    {
+      "name": "GetTemplate",
+      "methodName": "toGetTemplate",
+      "description": "Grants permission to retrieve a template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_GetTemplate.html"
+    },
+    {
+      "name": "ListAdminAccounts",
+      "methodName": "toListAdminAccounts",
+      "description": "Grants permission to list Network Security Manager administrator accounts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListAdminAccounts.html"
+    },
+    {
+      "name": "ListAggregateResourceSynchronizationStatuses",
+      "methodName": "toListAggregateResourceSynchronizationStatuses",
+      "description": "Grants permission to list aggregate resource synchronization statuses across the caller's deployments",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListAggregateResourceSynchronizationStatuses.html"
+    },
+    {
+      "name": "ListDeploymentSnapshots",
+      "methodName": "toListDeploymentSnapshots",
+      "description": "Grants permission to list the snapshots of a deployment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListDeploymentSnapshots.html"
+    },
+    {
+      "name": "ListDeployments",
+      "methodName": "toListDeployments",
+      "description": "Grants permission to list deployments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListDeployments.html"
+    },
+    {
+      "name": "ListPolicies",
+      "methodName": "toListPolicies",
+      "description": "Grants permission to list policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListPolicies.html"
+    },
+    {
+      "name": "ListPolicySnapshots",
+      "methodName": "toListPolicySnapshots",
+      "description": "Grants permission to list the snapshots of a policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListPolicySnapshots.html"
+    },
+    {
+      "name": "ListResourceAssociations",
+      "methodName": "toListResourceAssociations",
+      "description": "Grants permission to list the associations of a Network Security Manager resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListResourceAssociations.html"
+    },
+    {
+      "name": "ListResourceSynchronizationStatuses",
+      "methodName": "toListResourceSynchronizationStatuses",
+      "description": "Grants permission to list resource synchronization statuses for a deployment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListResourceSynchronizationStatuses.html"
+    },
+    {
+      "name": "ListRuleSnapshots",
+      "methodName": "toListRuleSnapshots",
+      "description": "Grants permission to list the snapshots of a rule",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListRuleSnapshots.html"
+    },
+    {
+      "name": "ListRules",
+      "methodName": "toListRules",
+      "description": "Grants permission to list rules",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListRules.html"
+    },
+    {
+      "name": "ListScopeSnapshots",
+      "methodName": "toListScopeSnapshots",
+      "description": "Grants permission to list the snapshots of a scope",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListScopeSnapshots.html"
+    },
+    {
+      "name": "ListScopes",
+      "methodName": "toListScopes",
+      "description": "Grants permission to list scopes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListScopes.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags of a Network Security Manager resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTemplateSnapshots",
+      "methodName": "toListTemplateSnapshots",
+      "description": "Grants permission to list the snapshots of a template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListTemplateSnapshots.html"
+    },
+    {
+      "name": "ListTemplates",
+      "methodName": "toListTemplates",
+      "description": "Grants permission to list templates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListTemplates.html"
+    },
+    {
+      "name": "PutAdminAccount",
+      "methodName": "toPutAdminAccount",
+      "description": "Grants permission to set a Network Security Manager administrator account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_PutAdminAccount.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or overwrite tags on a Network Security Manager resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a Network Security Manager resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDeployment",
+      "methodName": "toUpdateDeployment",
+      "description": "Grants permission to update a deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_UpdateDeployment.html"
+    },
+    {
+      "name": "UpdatePolicy",
+      "methodName": "toUpdatePolicy",
+      "description": "Grants permission to update a policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_UpdatePolicy.html"
+    },
+    {
+      "name": "UpdateRule",
+      "methodName": "toUpdateRule",
+      "description": "Grants permission to update a rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_UpdateRule.html"
+    },
+    {
+      "name": "UpdateScope",
+      "methodName": "toUpdateScope",
+      "description": "Grants permission to update a scope",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_UpdateScope.html"
+    },
+    {
+      "name": "UpdateTemplate",
+      "methodName": "toUpdateTemplate",
+      "description": "Grants permission to update a template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_UpdateTemplate.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "deployment",
+      "methodName": "onDeployment",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateDeployment.html",
+      "arn": "arn:${Partition}:network-security-manager:${Region}:${Account}:deployment:${DeploymentId}",
+      "placeholders": [
+        {
+          "placeholder": "DeploymentId",
+          "name": "deploymentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "deployment-snapshot",
+      "methodName": "onDeploymentSnapshot",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateDeployment.html",
+      "arn": "arn:${Partition}:network-security-manager:${Region}:${Account}:deployment:${DeploymentId}:${VersionNumber}",
+      "placeholders": [
+        {
+          "placeholder": "DeploymentId",
+          "name": "deploymentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VersionNumber",
+          "name": "versionNumber",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "policy",
+      "methodName": "onPolicy",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreatePolicy.html",
+      "arn": "arn:${Partition}:network-security-manager:${Region}:${Account}:policy:${PolicyId}",
+      "placeholders": [
+        {
+          "placeholder": "PolicyId",
+          "name": "policyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "policy-snapshot",
+      "methodName": "onPolicySnapshot",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreatePolicySnapshot.html",
+      "arn": "arn:${Partition}:network-security-manager:${Region}:${Account}:policy:${PolicyId}:${VersionNumber}",
+      "placeholders": [
+        {
+          "placeholder": "PolicyId",
+          "name": "policyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VersionNumber",
+          "name": "versionNumber",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "rule",
+      "methodName": "onRule",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateRule.html",
+      "arn": "arn:${Partition}:network-security-manager:${Region}:${Account}:rule:${RuleId}",
+      "placeholders": [
+        {
+          "placeholder": "RuleId",
+          "name": "ruleId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "rule-snapshot",
+      "methodName": "onRuleSnapshot",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateRuleSnapshot.html",
+      "arn": "arn:${Partition}:network-security-manager:${Region}:${Account}:rule:${RuleId}:${VersionNumber}",
+      "placeholders": [
+        {
+          "placeholder": "RuleId",
+          "name": "ruleId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VersionNumber",
+          "name": "versionNumber",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "scope",
+      "methodName": "onScope",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateScope.html",
+      "arn": "arn:${Partition}:network-security-manager:${Region}:${Account}:scope:${ScopeId}",
+      "placeholders": [
+        {
+          "placeholder": "ScopeId",
+          "name": "scopeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "scope-snapshot",
+      "methodName": "onScopeSnapshot",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateScopeSnapshot.html",
+      "arn": "arn:${Partition}:network-security-manager:${Region}:${Account}:scope:${ScopeId}:${VersionNumber}",
+      "placeholders": [
+        {
+          "placeholder": "ScopeId",
+          "name": "scopeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VersionNumber",
+          "name": "versionNumber",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "template",
+      "methodName": "onTemplate",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateTemplate.html",
+      "arn": "arn:${Partition}:network-security-manager:${Region}:${Account}:template:${TemplateId}",
+      "placeholders": [
+        {
+          "placeholder": "TemplateId",
+          "name": "templateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "template-snapshot",
+      "methodName": "onTemplateSnapshot",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_CreateTemplateSnapshot.html",
+      "arn": "arn:${Partition}:network-security-manager:${Region}:${Account}:template:${TemplateId}:${VersionNumber}",
+      "placeholders": [
+        {
+          "placeholder": "TemplateId",
+          "name": "templateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VersionNumber",
+          "name": "versionNumber",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDeployment",
+        "toCreateDeploymentSnapshot",
+        "toCreatePolicy",
+        "toCreatePolicySnapshot",
+        "toCreateRule",
+        "toCreateRuleSnapshot",
+        "toCreateScope",
+        "toCreateScopeSnapshot",
+        "toCreateTemplate",
+        "toCreateTemplateSnapshot",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateDeployment",
+        "toCreateDeploymentSnapshot",
+        "toCreatePolicy",
+        "toCreatePolicySnapshot",
+        "toCreateRuleSnapshot",
+        "toCreateScopeSnapshot",
+        "toCreateTemplate",
+        "toCreateTemplateSnapshot",
+        "toDeleteDeployment",
+        "toDeletePolicy",
+        "toDeleteRule",
+        "toDeleteScope",
+        "toDeleteTemplate",
+        "toGetDeployment",
+        "toGetPolicy",
+        "toGetRule",
+        "toGetScope",
+        "toGetTemplate",
+        "toListDeploymentSnapshots",
+        "toListPolicySnapshots",
+        "toListResourceAssociations",
+        "toListResourceSynchronizationStatuses",
+        "toListRuleSnapshots",
+        "toListScopeSnapshots",
+        "toListTagsForResource",
+        "toListTemplateSnapshots",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDeployment",
+        "toUpdatePolicy",
+        "toUpdateRule",
+        "toUpdateScope",
+        "toUpdateTemplate"
+      ],
+      "relatedResourceTypes": [
+        "deployment",
+        "deployment-snapshot",
+        "policy",
+        "policy-snapshot",
+        "rule",
+        "rule-snapshot",
+        "scope",
+        "scope-snapshot",
+        "template",
+        "template-snapshot"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDeployment",
+        "toCreateDeploymentSnapshot",
+        "toCreatePolicy",
+        "toCreatePolicySnapshot",
+        "toCreateRule",
+        "toCreateRuleSnapshot",
+        "toCreateScope",
+        "toCreateScopeSnapshot",
+        "toCreateTemplate",
+        "toCreateTemplateSnapshot",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTransitGatewayRouteTableAnnouncement",
+        "ec2:DeleteTransitGatewayRouteTableAnnouncement",
+        "ec2:EnableTransitGatewayRouteTablePropagation",
+        "ec2:DisableTransitGatewayRouteTablePropagation"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

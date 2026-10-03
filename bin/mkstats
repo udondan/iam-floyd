@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+function count() {
+  bin/model-list "$1" | wc -l | xargs
+}
+
+function getNoGlobalConditions() {
+  grep -R --include="*.ts" "public ifAws" lib/shared | wc -l | xargs
+}
+
+function getNoConditions() {
+  global="$(getNoGlobalConditions)"
+  service="$(count conditions)"
+  echo "$((global + service))"
+}
+
+read -r -d '' stats << EOF
+Support for:
+
+- $(count services) Services
+- $(count actions) Actions
+- $(count resources) Resource Types
+- $(getNoConditions) Condition keys
+EOF
+
+perl -0777 -pi -e "s/^(<!-- stats -->)[\s\n\w*-:\d<>]+(<!-- \/stats -->)/\\1\\n${stats}\\n\\2/gm" README.md
+perl -0777 -pi -e "s/^(..\\n   stats\\n)[\s\n\w*-:\d<>]+(\\n..\\n   \/stats)/\\1\\n${stats}\\n\\2/gm" docs/source/index.rst

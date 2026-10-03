@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "filename": "ssm-guiconnect",
+  "className": "SsmGuiconnect",
+  "name": "ssm-guiconnect",
+  "servicePrefix": "ssm-guiconnect",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ssm-guiconnect.html",
+  "accessLevelList": {
+    "Write": [
+      "DeleteConnectionRecordingPreferences",
+      "UpdateConnectionRecordingPreferences",
+      "CancelConnection",
+      "StartConnection"
+    ],
+    "Read": [
+      "GetConnectionRecordingPreferences",
+      "GetConnection"
+    ],
+    "List": [
+      "ListConnections"
+    ]
+  },
+  "actions": [
+    {
+      "name": "DeleteConnectionRecordingPreferences",
+      "methodName": "toDeleteConnectionRecordingPreferences",
+      "description": "Grants permission to remove GUI Connect connection recording preferences",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ssm-guiconnect/latest/APIReference/API_DeleteConnectionRecordingPreferences.html"
+    },
+    {
+      "name": "GetConnectionRecordingPreferences",
+      "methodName": "toGetConnectionRecordingPreferences",
+      "description": "Grants permission to get GUI Connect connection recording preferences",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ssm-guiconnect/latest/APIReference/API_GetConnectionRecordingPreferences.html"
+    },
+    {
+      "name": "UpdateConnectionRecordingPreferences",
+      "methodName": "toUpdateConnectionRecordingPreferences",
+      "description": "Grants permission to update GUI Connect connection recording preferences",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ssm-guiconnect/latest/APIReference/API_UpdateConnectionRecordingPreferences.html"
+    },
+    {
+      "name": "CancelConnection",
+      "methodName": "toCancelConnection",
+      "description": "Grants permission to terminate a GUI Connect connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html"
+    },
+    {
+      "name": "GetConnection",
+      "methodName": "toGetConnection",
+      "description": "Grants permission to get the metadata for a GUI Connect connection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html"
+    },
+    {
+      "name": "ListConnections",
+      "methodName": "toListConnections",
+      "description": "Grants permission to list the metadata for GUI Connect connections",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html"
+    },
+    {
+      "name": "StartConnection",
+      "methodName": "toStartConnection",
+      "description": "Grants permission to start a GUI Connect connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

@@ -1,0 +1,37 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SecurityIRCaseFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "security-ir:GetCase",
+        "security-ir:ListCases",
+        "security-ir:GetCaseAttachmentDownloadUrl",
+        "security-ir:ListComments",
+        "security-ir:ListCaseEdits",
+        "security-ir:CreateCase",
+        "security-ir:UpdateCase",
+        "security-ir:CloseCase",
+        "security-ir:UpdateCaseStatus",
+        "security-ir:UpdateResolverType",
+        "security-ir:GetCaseAttachmentUploadUrl",
+        "security-ir:CreateCaseComment",
+        "security-ir:UpdateCaseComment",
+        "security-ir:SendFeedback",
+        "security-ir:ListInvestigations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SecurityIRCaseTagFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "security-ir:ListTagsForResource",
+        "security-ir:TagResource",
+        "security-ir:UntagResource"
+      ],
+      "Resource": "arn:aws:security-ir:*:*:case/*"
+    }
+  ]
+}

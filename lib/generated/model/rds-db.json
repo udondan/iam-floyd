@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "filename": "rds-db",
+  "className": "RdsDb",
+  "name": "rds-db",
+  "servicePrefix": "rds-db",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_rds-db.html",
+  "accessLevelList": {
+    "Permissions management": [
+      "connect"
+    ],
+    "Write": [
+      "connect"
+    ]
+  },
+  "actions": [
+    {
+      "name": "connect",
+      "methodName": "toConnect",
+      "description": "Allows IAM role or user to connect to RDS database",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.IAMPolicy.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "db-user",
+      "methodName": "onDbUser",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.DBAccounts.html",
+      "arn": "arn:${Partition}:rds-db:${Region}:${Account}:dbuser:${DbiResourceId}/${DbUserName}",
+      "placeholders": [
+        {
+          "placeholder": "DbiResourceId",
+          "name": "dbiResourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DbUserName",
+          "name": "dbUserName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

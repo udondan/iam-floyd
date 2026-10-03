@@ -1,0 +1,72 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "a4b:DisassociateDeviceFromRoom",
+        "a4b:DeleteDevice",
+        "a4b:UpdateDevice",
+        "a4b:GetDevice"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:a4b:us-east-1:*:device/*/*:A238TWV36W3S92",
+        "arn:aws:a4b:us-east-1:*:device/*/*:A1FUZ1SC53VJXD"
+      ]
+    },
+    {
+      "Action": [
+        "a4b:RegisterAVSDevice"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "a4b:amazonId": [
+            "A238TWV36W3S92",
+            "A1FUZ1SC53VJXD"
+          ]
+        }
+      }
+    },
+    {
+      "Action": [
+        "a4b:SearchDevices"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Action": [
+        "a4b:AssociateDeviceWithRoom"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:a4b:us-east-1:*:device/*/*:A238TWV36W3S92",
+        "arn:aws:a4b:us-east-1:*:device/*/*:A1FUZ1SC53VJXD",
+        "arn:aws:a4b:us-east-1:*:room/*"
+      ]
+    },
+    {
+      "Action": [
+        "a4b:GetRoom",
+        "a4b:SearchRooms",
+        "a4b:CreateRoom",
+        "a4b:GetProfile",
+        "a4b:SearchSkillGroups",
+        "a4b:DisassociateSkillGroupFromRoom",
+        "a4b:AssociateSkillGroupWithRoom",
+        "a4b:GetSkillGroup",
+        "a4b:SearchProfiles",
+        "a4b:GetAddressBook",
+        "a4b:UpdateRoom"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

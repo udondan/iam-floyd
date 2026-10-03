@@ -1,0 +1,478 @@
+{
+  "schemaVersion": 1,
+  "filename": "dsql",
+  "className": "Dsql",
+  "name": "dsql",
+  "servicePrefix": "dsql",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_dsql.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateCluster",
+      "CreateStream",
+      "DbConnect",
+      "DbConnectAdmin",
+      "DeleteCluster",
+      "DeleteClusterPolicy",
+      "DeleteStream",
+      "PutClusterPolicy",
+      "StartBackupJob",
+      "StartRestoreJob",
+      "StopBackupJob",
+      "StopRestoreJob",
+      "TagResource",
+      "UntagResource",
+      "UpdateCluster",
+      "UpdateStream",
+      "AddPeerCluster",
+      "InjectError",
+      "PutMultiRegionProperties",
+      "PutWitnessRegion",
+      "RemovePeerCluster"
+    ],
+    "Read": [
+      "GetBackupJob",
+      "GetCluster",
+      "GetClusterPolicy",
+      "GetRestoreJob",
+      "GetStream",
+      "GetVpcEndpointServiceName",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListClusters",
+      "ListStreams"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateCluster",
+      "methodName": "toCreateCluster",
+      "description": "Grants permission to create new clusters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html"
+    },
+    {
+      "name": "CreateStream",
+      "methodName": "toCreateStream",
+      "description": "Grants permission to create a Change Stream for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html"
+    },
+    {
+      "name": "DbConnect",
+      "methodName": "toDbConnect",
+      "description": "Grants permission to connect to the database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/accessing-sql-clients.html"
+    },
+    {
+      "name": "DbConnectAdmin",
+      "methodName": "toDbConnectAdmin",
+      "description": "Grants permission to connect to the database with admin role. Connecting with any other role requires DbConnect permission",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/accessing-sql-clients.html"
+    },
+    {
+      "name": "DeleteCluster",
+      "methodName": "toDeleteCluster",
+      "description": "Grants permission to delete a cluster and all of its data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_DeleteCluster.html"
+    },
+    {
+      "name": "DeleteClusterPolicy",
+      "methodName": "toDeleteClusterPolicy",
+      "description": "Grants permission to remove the inline resource-based policy attached to a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/rbp-api-operations.html"
+    },
+    {
+      "name": "DeleteStream",
+      "methodName": "toDeleteStream",
+      "description": "Grants permission to delete a Change Stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html"
+    },
+    {
+      "name": "GetBackupJob",
+      "methodName": "toGetBackupJob",
+      "description": "Grants permission to get the status of an Aurora DSQL cluster backup job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html"
+    },
+    {
+      "name": "GetCluster",
+      "methodName": "toGetCluster",
+      "description": "Grants permission to get information about a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_GetCluster.html"
+    },
+    {
+      "name": "GetClusterPolicy",
+      "methodName": "toGetClusterPolicy",
+      "description": "Grants permission to retrieve the inline resource-based policy attached to a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/rbp-api-operations.html"
+    },
+    {
+      "name": "GetRestoreJob",
+      "methodName": "toGetRestoreJob",
+      "description": "Grants permission to get the status of an Aurora DSQL cluster restore job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html"
+    },
+    {
+      "name": "GetStream",
+      "methodName": "toGetStream",
+      "description": "Grants permission to get information about a Change Stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html"
+    },
+    {
+      "name": "GetVpcEndpointServiceName",
+      "methodName": "toGetVpcEndpointServiceName",
+      "description": "Grants permission to retrieve the VPC endpoint service name for a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_GetVpcEndpointServiceName.html"
+    },
+    {
+      "name": "ListClusters",
+      "methodName": "toListClusters",
+      "description": "Grants permission to retrieve a list of clusters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_ListClusters.html"
+    },
+    {
+      "name": "ListStreams",
+      "methodName": "toListStreams",
+      "description": "Grants permission to retrieve a list of Change Streams for a cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags on an Aurora DSQL resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutClusterPolicy",
+      "methodName": "toPutClusterPolicy",
+      "description": "Grants permission to attach or update the inline resource-based policy attached to a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/rbp-api-operations.html"
+    },
+    {
+      "name": "StartBackupJob",
+      "methodName": "toStartBackupJob",
+      "description": "Grants permission to start a backup job for an Aurora DSQL cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html"
+    },
+    {
+      "name": "StartRestoreJob",
+      "methodName": "toStartRestoreJob",
+      "description": "Grants permission to start a restore job for an Aurora DSQL cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html"
+    },
+    {
+      "name": "StopBackupJob",
+      "methodName": "toStopBackupJob",
+      "description": "Grants permission to stop a backup job for an Aurora DSQL cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html"
+    },
+    {
+      "name": "StopRestoreJob",
+      "methodName": "toStopRestoreJob",
+      "description": "Grants permission to stop a restore job for an Aurora DSQL Cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to Aurora DSQL resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from Aurora DSQL resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateCluster",
+      "methodName": "toUpdateCluster",
+      "description": "Grants permission to modify cluster attributes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_UpdateCluster.html"
+    },
+    {
+      "name": "UpdateStream",
+      "methodName": "toUpdateStream",
+      "description": "Grants permission to modify Change Stream attributes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html"
+    },
+    {
+      "name": "AddPeerCluster",
+      "methodName": "toAddPeerCluster",
+      "description": "Grants permission to add a peer cluster to a multi-Region cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html"
+    },
+    {
+      "name": "InjectError",
+      "methodName": "toInjectError",
+      "description": "Grants permission to inject errors in targeted clusters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html",
+      "conditionMethods": [
+        "ifFisActionId",
+        "ifFisTargetArns"
+      ]
+    },
+    {
+      "name": "PutMultiRegionProperties",
+      "methodName": "toPutMultiRegionProperties",
+      "description": "Grants permission to update multi-Region properties of a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html"
+    },
+    {
+      "name": "PutWitnessRegion",
+      "methodName": "toPutWitnessRegion",
+      "description": "Grants permission to configure and update the witness Region of a multi-Region cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html"
+    },
+    {
+      "name": "RemovePeerCluster",
+      "methodName": "toRemovePeerCluster",
+      "description": "Grants permission to remove a peer cluster from a multi-Region cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_UpdateCluster.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Cluster",
+      "methodName": "onCluster",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/what-is-aurora-dsql.html",
+      "arn": "arn:${Partition}:dsql:${Region}:${Account}:cluster/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Stream",
+      "methodName": "onStream",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html",
+      "arn": "arn:${Partition}:dsql:${Region}:${Account}:cluster/${ClusterId}/stream/${StreamId}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterId",
+          "name": "clusterId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StreamId",
+          "name": "streamId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toCreateStream",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toCreateStream",
+        "toDbConnect",
+        "toDbConnectAdmin",
+        "toDeleteCluster",
+        "toDeleteClusterPolicy",
+        "toDeleteStream",
+        "toGetBackupJob",
+        "toGetCluster",
+        "toGetClusterPolicy",
+        "toGetRestoreJob",
+        "toGetStream",
+        "toGetVpcEndpointServiceName",
+        "toListStreams",
+        "toListTagsForResource",
+        "toPutClusterPolicy",
+        "toStartBackupJob",
+        "toStartRestoreJob",
+        "toStopBackupJob",
+        "toStopRestoreJob",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateCluster",
+        "toUpdateStream",
+        "toAddPeerCluster",
+        "toPutMultiRegionProperties",
+        "toPutWitnessRegion",
+        "toRemovePeerCluster"
+      ],
+      "relatedResourceTypes": [
+        "Cluster",
+        "Stream"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toCreateStream",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dsql:FisActionId",
+      "methodName": "ifFisActionId",
+      "description": "Filters access by the ID of an AWS FIS action",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html",
+      "relatedActionMethods": [
+        "toInjectError"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FisActionId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dsql:FisTargetArns",
+      "methodName": "ifFisTargetArns",
+      "description": "Filters access by the ARN of an AWS FIS target",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html",
+      "relatedActionMethods": [
+        "toInjectError"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FisTargetArns",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "dsql:WitnessRegion",
+      "methodName": "ifWitnessRegion",
+      "description": "Filters access by the witness region of multi-Region clusters",
+      "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/using-iam-condition-keys.html#using-iam-condition-keys-create-mr-cluster-witness",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateCluster",
+        "toPutWitnessRegion"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "WitnessRegion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

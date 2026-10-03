@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "filename": "workspaces-thin-client",
+  "className": "Thinclient",
+  "name": "thinclient",
+  "servicePrefix": "thinclient",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_workspaces-thin-client.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateEnvironment",
+      "DeleteDevice",
+      "DeleteEnvironment",
+      "DeregisterDevice",
+      "TagResource",
+      "UntagResource",
+      "UpdateDevice",
+      "UpdateEnvironment",
+      "UpdateSoftwareSet"
+    ],
+    "Read": [
+      "GetDevice",
+      "GetEnvironment",
+      "GetSoftwareSet",
+      "GetDeviceDetails"
+    ],
+    "List": [
+      "ListDevices",
+      "ListEnvironments",
+      "ListSoftwareSets",
+      "ListTagsForResource",
+      "ListDeviceSessions"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateEnvironment",
+      "methodName": "toCreateEnvironment",
+      "description": "Grants permission to create environments",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_CreateEnvironment.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteDevice",
+      "methodName": "toDeleteDevice",
+      "description": "Grants permission to delete devices",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_DeleteDevice.html"
+    },
+    {
+      "name": "DeleteEnvironment",
+      "methodName": "toDeleteEnvironment",
+      "description": "Grants permission to delete environments",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_DeleteEnvironment.html"
+    },
+    {
+      "name": "DeregisterDevice",
+      "methodName": "toDeregisterDevice",
+      "description": "Grants permission to deregister devices",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_DeregisterDevice.html"
+    },
+    {
+      "name": "GetDevice",
+      "methodName": "toGetDevice",
+      "description": "Grants permission to get devices",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_GetDevice.html"
+    },
+    {
+      "name": "GetEnvironment",
+      "methodName": "toGetEnvironment",
+      "description": "Grants permission to get details of environments",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_GetEnvironment.html"
+    },
+    {
+      "name": "GetSoftwareSet",
+      "methodName": "toGetSoftwareSet",
+      "description": "Grants permission to get details of software sets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_GetSoftwareSet.html"
+    },
+    {
+      "name": "ListDevices",
+      "methodName": "toListDevices",
+      "description": "Grants permission to list devices",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_ListDevices.html"
+    },
+    {
+      "name": "ListEnvironments",
+      "methodName": "toListEnvironments",
+      "description": "Grants permission to list environments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_ListEnvironments.html"
+    },
+    {
+      "name": "ListSoftwareSets",
+      "methodName": "toListSoftwareSets",
+      "description": "Grants permission to list software sets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_ListSoftwareSets.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add one or more tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove one or more tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDevice",
+      "methodName": "toUpdateDevice",
+      "description": "Grants permission to update devices",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_UpdateDevice.html"
+    },
+    {
+      "name": "UpdateEnvironment",
+      "methodName": "toUpdateEnvironment",
+      "description": "Grants permission to update environments",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_UpdateEnvironment.html"
+    },
+    {
+      "name": "UpdateSoftwareSet",
+      "methodName": "toUpdateSoftwareSet",
+      "description": "Grants permission to update software set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_UpdateSoftwareSet.html"
+    },
+    {
+      "name": "GetDeviceDetails",
+      "methodName": "toGetDeviceDetails",
+      "description": "Grants permission to get details of devices",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "ListDeviceSessions",
+      "methodName": "toListDeviceSessions",
+      "description": "Grants permission to list device sessions",
+      "accessLevel": "List",
+      "url": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "device",
+      "methodName": "onDevice",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_Device.html",
+      "arn": "arn:${Partition}:thinclient:${Region}:${Account}:device/${DeviceId}",
+      "placeholders": [
+        {
+          "placeholder": "DeviceId",
+          "name": "deviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "environment",
+      "methodName": "onEnvironment",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_Environment.html",
+      "arn": "arn:${Partition}:thinclient:${Region}:${Account}:environment/${EnvironmentId}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "softwareset",
+      "methodName": "onSoftwareset",
+      "url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_SoftwareSet.html",
+      "arn": "arn:${Partition}:thinclient:${Region}:${Account}:softwareset/${SoftwareSetId}",
+      "placeholders": [
+        {
+          "placeholder": "SoftwareSetId",
+          "name": "softwareSetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateEnvironment",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateEnvironment",
+        "toDeleteDevice",
+        "toDeleteEnvironment",
+        "toDeregisterDevice",
+        "toGetDevice",
+        "toGetEnvironment",
+        "toGetSoftwareSet",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDevice",
+        "toUpdateEnvironment",
+        "toUpdateSoftwareSet",
+        "toGetDeviceDetails",
+        "toListDeviceSessions"
+      ],
+      "relatedResourceTypes": [
+        "device",
+        "environment",
+        "softwareset"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateEnvironment",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

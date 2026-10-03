@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "filename": "account",
+  "className": "Account",
+  "name": "account",
+  "servicePrefix": "account",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptPrimaryEmailUpdate",
+      "DeleteAlternateContact",
+      "DisableRegion",
+      "EnableRegion",
+      "PutAccountName",
+      "PutAlternateContact",
+      "PutContactInformation",
+      "SendPhoneNumberVerification",
+      "StartPrimaryEmailUpdate",
+      "VerifyPhoneNumber",
+      "CloseAccount"
+    ],
+    "Read": [
+      "GetAccountInformation",
+      "GetAlternateContact",
+      "GetContactInformation",
+      "GetGovCloudAccountInformation",
+      "GetPrimaryEmail",
+      "GetPrimaryEmailUpdateStatus",
+      "GetRegionOptStatus"
+    ],
+    "List": [
+      "ListRegions"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptPrimaryEmailUpdate",
+      "methodName": "toAcceptPrimaryEmailUpdate",
+      "description": "Grants permission to accept the process to update the primary email address of an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_AcceptPrimaryEmailUpdate.html"
+    },
+    {
+      "name": "DeleteAlternateContact",
+      "methodName": "toDeleteAlternateContact",
+      "description": "Grants permission to delete the alternate contacts for an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_DeleteAlternateContact.html"
+    },
+    {
+      "name": "DisableRegion",
+      "methodName": "toDisableRegion",
+      "description": "Grants permission to disable use of a Region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_DisableRegion.html"
+    },
+    {
+      "name": "EnableRegion",
+      "methodName": "toEnableRegion",
+      "description": "Grants permission to enable use of a Region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_EnableRegion.html"
+    },
+    {
+      "name": "GetAccountInformation",
+      "methodName": "toGetAccountInformation",
+      "description": "Grants permission to retrieve the account information for an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_GetAccountInformation.html"
+    },
+    {
+      "name": "GetAlternateContact",
+      "methodName": "toGetAlternateContact",
+      "description": "Grants permission to retrieve the alternate contacts for an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_GetAlternateContact.html"
+    },
+    {
+      "name": "GetContactInformation",
+      "methodName": "toGetContactInformation",
+      "description": "Grants permission to retrieve the primary contact information for an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_GetContactInformation.html"
+    },
+    {
+      "name": "GetGovCloudAccountInformation",
+      "methodName": "toGetGovCloudAccountInformation",
+      "description": "Grants permission to retrieve the linked GovCloud account information for an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_GetGovCloudAccountInformation.html"
+    },
+    {
+      "name": "GetPrimaryEmail",
+      "methodName": "toGetPrimaryEmail",
+      "description": "Grants permission to retrieve the primary email address of an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_GetPrimaryEmail.html"
+    },
+    {
+      "name": "GetPrimaryEmailUpdateStatus",
+      "methodName": "toGetPrimaryEmailUpdateStatus",
+      "description": "Grants permission to retrieve information about the most recent primary email update for the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_GetPrimaryEmailUpdateStatus.html"
+    },
+    {
+      "name": "GetRegionOptStatus",
+      "methodName": "toGetRegionOptStatus",
+      "description": "Grants permission to get the opt-in status of a Region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_GetRegionOptStatus.html"
+    },
+    {
+      "name": "ListRegions",
+      "methodName": "toListRegions",
+      "description": "Grants permission to list the available Regions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_ListRegions.html"
+    },
+    {
+      "name": "PutAccountName",
+      "methodName": "toPutAccountName",
+      "description": "Grants permission to update the name for an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_PutAccountName.html"
+    },
+    {
+      "name": "PutAlternateContact",
+      "methodName": "toPutAlternateContact",
+      "description": "Grants permission to modify the alternate contacts for an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_PutAlternateContact.html"
+    },
+    {
+      "name": "PutContactInformation",
+      "methodName": "toPutContactInformation",
+      "description": "Grants permission to update the primary contact information for an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_PutContactInformation.html"
+    },
+    {
+      "name": "SendPhoneNumberVerification",
+      "methodName": "toSendPhoneNumberVerification",
+      "description": "Grants permission to send a verification code to the primary contact phone number for an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_SendPhoneNumberVerification.html"
+    },
+    {
+      "name": "StartPrimaryEmailUpdate",
+      "methodName": "toStartPrimaryEmailUpdate",
+      "description": "Grants permission to start the process to update the primary email address of an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_StartPrimaryEmailUpdate.html"
+    },
+    {
+      "name": "VerifyPhoneNumber",
+      "methodName": "toVerifyPhoneNumber",
+      "description": "Grants permission to verify the primary contact phone number for an account by submitting a verification code",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/API_VerifyPhoneNumber.html"
+    },
+    {
+      "name": "CloseAccount",
+      "methodName": "toCloseAccount",
+      "description": "Grants permission to close an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/security_account-permissions-ref.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "account",
+      "methodName": "onAccount",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources",
+      "arn": "arn:${Partition}:account::${Account}:account",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "accountInOrganization",
+      "methodName": "onAccountInOrganization",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources",
+      "arn": "arn:${Partition}:account::${ManagementAccountId}:account/o-${OrganizationId}/${MemberAccountId}",
+      "placeholders": [
+        {
+          "placeholder": "ManagementAccountId",
+          "name": "managementAccountId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "OrganizationId",
+          "name": "organizationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "MemberAccountId",
+          "name": "memberAccountId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "account:AccountResourceOrgPaths",
+      "methodName": "ifAccountResourceOrgPaths",
+      "description": "Filters access by the resource path for an account in an organization",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AccountResourceOrgPaths",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "account:AccountResourceOrgTags/${TagKey}",
+      "methodName": "ifAccountResourceOrgTags",
+      "description": "Filters access by resource tags for an account in an organization",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AccountResourceOrgTags/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "account:AlternateContactTypes",
+      "methodName": "ifAlternateContactTypes",
+      "description": "Filters access by alternate contact types",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toDeleteAlternateContact",
+        "toGetAlternateContact",
+        "toPutAlternateContact"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AlternateContactTypes",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "account:EmailTargetDomain",
+      "methodName": "ifEmailTargetDomain",
+      "description": "Filters access by email domain of the target email address",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toAcceptPrimaryEmailUpdate",
+        "toStartPrimaryEmailUpdate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EmailTargetDomain",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "account:TargetRegion",
+      "methodName": "ifTargetRegion",
+      "description": "Filters access by a list of Regions. Enables or disables all the Regions specified here",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toDisableRegion",
+        "toEnableRegion",
+        "toGetRegionOptStatus"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TargetRegion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

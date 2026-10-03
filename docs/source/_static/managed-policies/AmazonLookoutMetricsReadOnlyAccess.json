@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "lookoutmetrics:DescribeMetricSet",
+        "lookoutmetrics:ListMetricSets",
+        "lookoutmetrics:DescribeAnomalyDetector",
+        "lookoutmetrics:ListAnomalyDetectors",
+        "lookoutmetrics:DescribeAnomalyDetectionExecutions",
+        "lookoutmetrics:DescribeAlert",
+        "lookoutmetrics:ListAlerts",
+        "lookoutmetrics:ListTagsForResource",
+        "lookoutmetrics:ListAnomalyGroupSummaries",
+        "lookoutmetrics:ListAnomalyGroupTimeSeries",
+        "lookoutmetrics:ListAnomalyGroupRelatedMetrics",
+        "lookoutmetrics:GetAnomalyGroup",
+        "lookoutmetrics:GetDataQualityMetrics",
+        "lookoutmetrics:GetSampleData",
+        "lookoutmetrics:GetFeedback"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

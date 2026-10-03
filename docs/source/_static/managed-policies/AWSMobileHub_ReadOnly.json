@@ -1,0 +1,45 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:DescribeTable",
+        "iam:ListSAMLProviders",
+        "lambda:ListFunctions",
+        "sns:ListTopics",
+        "lex:GetIntent",
+        "lex:GetIntents",
+        "lex:GetSlotType",
+        "lex:GetSlotTypes",
+        "lex:GetBot",
+        "lex:GetBots",
+        "lex:GetBotAlias",
+        "lex:GetBotAliases",
+        "mobilehub:ExportProject",
+        "mobilehub:GenerateProjectParameters",
+        "mobilehub:GetProject",
+        "mobilehub:SynchronizeProject",
+        "mobilehub:GetProjectSnapshot",
+        "mobilehub:ListProjectSnapshots",
+        "mobilehub:ListAvailableConnectors",
+        "mobilehub:ListAvailableFeatures",
+        "mobilehub:ListAvailableRegions",
+        "mobilehub:ListProjects",
+        "mobilehub:ValidateProject",
+        "mobilehub:VerifyServiceRole",
+        "mobilehub:DescribeBundle",
+        "mobilehub:ExportBundle",
+        "mobilehub:ListBundles"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::*/aws-my-sample-app*.zip"
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "filename": "ts",
+  "className": "Ts",
+  "name": "ts",
+  "servicePrefix": "ts",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ts.html",
+  "accessLevelList": {
+    "Read": [
+      "GetExecution",
+      "GetExecutionOutput",
+      "GetTool",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListExecutions",
+      "ListTools"
+    ],
+    "Write": [
+      "StartExecution",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetExecution",
+      "methodName": "toGetExecution",
+      "description": "Grants permission to get details about specific execution within AWS Diagnostic tools",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/diagnostic-tools/latest/APIReference/API_GetExecution.html"
+    },
+    {
+      "name": "GetExecutionOutput",
+      "methodName": "toGetExecutionOutput",
+      "description": "Grants permission to get details about specific execution output within AWS Diagnostic tools",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/diagnostic-tools/latest/APIReference/API_GetExecutionOutput.html"
+    },
+    {
+      "name": "GetTool",
+      "methodName": "toGetTool",
+      "description": "Grants permission to get details about specific tool within AWS Diagnostic tools",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/diagnostic-tools/latest/APIReference/API_GetTool.html"
+    },
+    {
+      "name": "ListExecutions",
+      "methodName": "toListExecutions",
+      "description": "Grants permission to list all available execution within AWS Diagnostic tools",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/diagnostic-tools/latest/APIReference/API_ListExecutions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for an AWS Diagnostic tools resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/diagnostic-tools/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTools",
+      "methodName": "toListTools",
+      "description": "Grants permission to list all available tools within AWS Diagnostic tools",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/diagnostic-tools/latest/APIReference/API_ListTools.html"
+    },
+    {
+      "name": "StartExecution",
+      "methodName": "toStartExecution",
+      "description": "Grants permission to start an execution workflow of specific tool within AWS Diagnostic tools",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/diagnostic-tools/latest/APIReference/API_StartExecution.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an AWS Diagnostic tools resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/diagnostic-tools/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag an AWS Diagnostic tools resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/diagnostic-tools/latest/APIReference/API_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "execution",
+      "methodName": "onExecution",
+      "url": "https://docs.aws.amazon.com/diagnostic-tools/latest/APIReference/API_Execution.html",
+      "arn": "arn:${Partition}:ts::${Account}:execution/${UserId}/${ToolId}/${ExecutionId}",
+      "placeholders": [
+        {
+          "placeholder": "UserId",
+          "name": "userId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ToolId",
+          "name": "toolId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExecutionId",
+          "name": "executionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "tool",
+      "methodName": "onTool",
+      "url": "https://docs.aws.amazon.com/diagnostic-tools/latest/APIReference/API_Tool.html",
+      "arn": "arn:${Partition}:ts::aws:tool/${ToolId}",
+      "placeholders": [
+        {
+          "placeholder": "ToolId",
+          "name": "toolId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toListTagsForResource",
+        "toStartExecution",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag-value associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toGetExecution",
+        "toGetExecutionOutput",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "execution"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toListTagsForResource",
+        "toStartExecution",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

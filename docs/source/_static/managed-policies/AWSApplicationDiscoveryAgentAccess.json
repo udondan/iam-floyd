@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "arsenal:RegisterOnPremisesAgent"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "mgh:GetHomeRegion"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

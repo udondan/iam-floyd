@@ -1,0 +1,65 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloud9:GetUserSettings",
+        "cloud9:UpdateUserSettings",
+        "cloud9:GetMigrationExperiences",
+        "iam:GetUser",
+        "iam:ListUsers"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloud9:DescribeEnvironmentMemberships"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "Null": {
+          "cloud9:UserArn": "true",
+          "cloud9:EnvironmentId": "true"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:StartSession",
+        "ssm:GetConnectionStatus"
+      ],
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "StringLike": {
+          "ssm:resourceTag/aws:cloud9:environment": "*"
+        },
+        "StringEquals": {
+          "aws:CalledViaFirst": "cloud9.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:StartSession"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:document/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssmmessages:OpenDataChannel"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:session/*"
+      ]
+    }
+  ]
+}

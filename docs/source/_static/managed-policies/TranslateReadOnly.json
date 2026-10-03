@@ -1,0 +1,22 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "translate:TranslateText",
+        "translate:TranslateDocument",
+        "translate:GetTerminology",
+        "translate:ListTerminologies",
+        "translate:ListTextTranslationJobs",
+        "translate:DescribeTextTranslationJob",
+        "translate:GetParallelData",
+        "translate:ListParallelData",
+        "comprehend:DetectDominantLanguage",
+        "cloudwatch:GetMetricStatistics",
+        "cloudwatch:ListMetrics"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

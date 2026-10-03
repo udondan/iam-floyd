@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 1,
+  "filename": "internetmonitor",
+  "className": "Internetmonitor",
+  "name": "internetmonitor",
+  "servicePrefix": "internetmonitor",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_internetmonitor.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateMonitor",
+      "DeleteMonitor",
+      "TagResource",
+      "UntagResource",
+      "UpdateMonitor",
+      "Link"
+    ],
+    "Read": [
+      "GetHealthEvent",
+      "GetInternetEvent",
+      "GetMonitor",
+      "GetQueryResults",
+      "GetQueryStatus",
+      "ListTagsForResource",
+      "StartQuery",
+      "StopQuery"
+    ],
+    "List": [
+      "ListHealthEvents",
+      "ListInternetEvents",
+      "ListMonitors"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateMonitor",
+      "methodName": "toCreateMonitor",
+      "description": "Grants permission to create a monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_CreateMonitor.html"
+    },
+    {
+      "name": "DeleteMonitor",
+      "methodName": "toDeleteMonitor",
+      "description": "Grants permission to delete a monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_DeleteMonitor.html"
+    },
+    {
+      "name": "GetHealthEvent",
+      "methodName": "toGetHealthEvent",
+      "description": "Grants permission to get information about a health event for a specified monitor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_GetHealthEvent.html"
+    },
+    {
+      "name": "GetInternetEvent",
+      "methodName": "toGetInternetEvent",
+      "description": "Grants permission to get information about a specified internet event",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_GetInternetEvent.html"
+    },
+    {
+      "name": "GetMonitor",
+      "methodName": "toGetMonitor",
+      "description": "Grants permission to get information about a monitor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_GetMonitor.html"
+    },
+    {
+      "name": "GetQueryResults",
+      "methodName": "toGetQueryResults",
+      "description": "Grants permission to get results for a data query for a monitor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_GetQueryResults.html"
+    },
+    {
+      "name": "GetQueryStatus",
+      "methodName": "toGetQueryStatus",
+      "description": "Grants permission to get status for a data query for a monitor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_GetQueryStatus.html"
+    },
+    {
+      "name": "ListHealthEvents",
+      "methodName": "toListHealthEvents",
+      "description": "Grants permission to list all health events for a monitor",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_ListHealthEvents.html"
+    },
+    {
+      "name": "ListInternetEvents",
+      "methodName": "toListInternetEvents",
+      "description": "Grants permission to list all internet events",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_ListInternetEvents.html"
+    },
+    {
+      "name": "ListMonitors",
+      "methodName": "toListMonitors",
+      "description": "Grants permission to list all monitors in an account and their statuses",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_ListMonitors.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "StartQuery",
+      "methodName": "toStartQuery",
+      "description": "Grants permission to start a data query for a monitor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_StartQuery.html"
+    },
+    {
+      "name": "StopQuery",
+      "methodName": "toStopQuery",
+      "description": "Grants permission to stop a data query for a monitor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_StopQuery.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateMonitor",
+      "methodName": "toUpdateMonitor",
+      "description": "Grants permission to update a monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/internet-monitor/latest/api/API_UpdateMonitor.html"
+    },
+    {
+      "name": "Link",
+      "methodName": "toLink",
+      "description": "Grants permission to share Internet Monitor resources with a monitoring account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions"
+    }
+  ],
+  "resources": [
+    {
+      "name": "HealthEvent",
+      "methodName": "onHealthEvent",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-components.html",
+      "arn": "arn:${Partition}:internetmonitor:${Region}:${Account}:monitor/${MonitorName}/health-event/${EventId}",
+      "placeholders": [
+        {
+          "placeholder": "MonitorName",
+          "name": "monitorName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EventId",
+          "name": "eventId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "InternetEvent",
+      "methodName": "onInternetEvent",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-components.html",
+      "arn": "arn:${Partition}:internetmonitor::${Account}:internet-event/${InternetEventId}",
+      "placeholders": [
+        {
+          "placeholder": "InternetEventId",
+          "name": "internetEventId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "Monitor",
+      "methodName": "onMonitor",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-components.html",
+      "arn": "arn:${Partition}:internetmonitor:${Region}:${Account}:monitor/${MonitorName}",
+      "placeholders": [
+        {
+          "placeholder": "MonitorName",
+          "name": "monitorName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateMonitor",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateMonitor",
+        "toDeleteMonitor",
+        "toGetHealthEvent",
+        "toGetMonitor",
+        "toGetQueryResults",
+        "toGetQueryStatus",
+        "toListHealthEvents",
+        "toListTagsForResource",
+        "toStartQuery",
+        "toStopQuery",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateMonitor"
+      ],
+      "relatedResourceTypes": [
+        "HealthEvent",
+        "Monitor"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateMonitor",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

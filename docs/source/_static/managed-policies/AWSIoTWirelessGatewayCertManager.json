@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "IoTWirelessGatewayCertManager",
+      "Effect": "Allow",
+      "Action": [
+        "iot:CreateKeysAndCertificate",
+        "iot:DescribeCertificate",
+        "iot:ListCertificates"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

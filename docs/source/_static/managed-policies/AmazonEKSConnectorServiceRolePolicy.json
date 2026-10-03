@@ -1,0 +1,84 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AccessSSMService",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:CreateActivation",
+        "ssm:DescribeInstanceInformation",
+        "ssm:DeleteActivation"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ConnectorAgentStartSession",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:StartSession"
+      ],
+      "Resource": [
+        "arn:aws:eks:*:*:cluster/*",
+        "arn:aws:ssm:*::document/AmazonEKS-ExecuteNonInteractiveCommand"
+      ]
+    },
+    {
+      "Sid": "ConnectorAgentDeregister",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:DeregisterManagedInstance"
+      ],
+      "Resource": [
+        "arn:aws:eks:*:*:cluster/*"
+      ]
+    },
+    {
+      "Sid": "PassAnyRoleToSsm",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "ssm.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "PutManagedEventRule",
+      "Effect": "Allow",
+      "Action": "events:PutRule",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "events:ManagedBy": "eks-connector.amazonaws.com"
+        },
+        "ForAllValues:StringEquals": {
+          "events:source": "aws.ssm"
+        }
+      }
+    },
+    {
+      "Sid": "PutManagedEventTarget",
+      "Effect": "Allow",
+      "Action": "events:PutTargets",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "events:ManagedBy": "eks-connector.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "OpenDataChannel",
+      "Effect": "Allow",
+      "Action": [
+        "ssmmessages:OpenDataChannel"
+      ],
+      "Resource": "arn:aws:ssm:*:*:session/*"
+    }
+  ]
+}

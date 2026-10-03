@@ -1,0 +1,210 @@
+{
+  "a direct use": {
+    "RoleDefaultPolicy5FFB7DAB": [
+      {
+        "Action": "s3:GetObject",
+        "Condition": {
+          "IpAddress": {
+            "aws:SourceIp": "10.0.0.0/8"
+          }
+        },
+        "Effect": "Allow",
+        "Resource": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":s3:::my-bucket/*"
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "b library uses floyd internally": {
+    "ReaderRoleDefaultPolicyCB392173": [
+      {
+        "Action": "s3:GetObject",
+        "Effect": "Allow",
+        "Resource": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":s3:::bucket/*"
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "c statements passed as iam.PolicyStatement[]": {
+    "ReaderRoleDefaultPolicyCB392173": [
+      {
+        "Action": "s3:GetObject",
+        "Effect": "Allow",
+        "Resource": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":s3:::bucket/*"
+            ]
+          ]
+        }
+      },
+      {
+        "Action": "dynamodb:GetItem",
+        "Effect": "Allow",
+        "Resource": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":dynamodb:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":table/t"
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "d statement passed as Statement.S3": {
+    "ReaderRoleDefaultPolicyCB392173": [
+      {
+        "Action": "s3:GetObject",
+        "Effect": "Allow",
+        "Resource": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":s3:::bucket/*"
+            ]
+          ]
+        }
+      },
+      {
+        "Action": "s3:PutObject",
+        "Effect": "Allow",
+        "Resource": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":s3:::b"
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "e library calls a floyd method on a passed statement": {
+    "ReaderRoleDefaultPolicyCB392173": [
+      {
+        "Action": "s3:GetObject",
+        "Effect": "Allow",
+        "Resource": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":s3:::bucket/*"
+            ]
+          ]
+        }
+      },
+      {
+        "Action": "s3:ListBucket",
+        "Effect": "Allow",
+        "Resource": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":s3:::b"
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "f1 statement returned as iam.PolicyStatement": {
+    "RoleDefaultPolicy5FFB7DAB": [
+      {
+        "Action": ["sqs:DeleteMessage", "sqs:ReceiveMessage"],
+        "Effect": "Allow",
+        "Resource": "*"
+      }
+    ]
+  },
+  "f2 statement returned as Statement.S3, then chained": {
+    "RoleDefaultPolicy5FFB7DAB": [
+      {
+        "Action": "s3:GetObject",
+        "Effect": "Deny",
+        "Resource": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":s3:::chained"
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "g library subclasses a floyd class": {
+    "RoleDefaultPolicy5FFB7DAB": [
+      {
+        "Action": ["s3:ListAllMyBuckets", "s3:ListBucket"],
+        "Effect": "Allow",
+        "Resource": "*"
+      }
+    ]
+  },
+  "h statement passed as floyd base class": {
+    "RoleDefaultPolicy5FFB7DAB": [
+      {
+        "Action": "s3:GetObject",
+        "Effect": "Deny",
+        "Resource": "*"
+      }
+    ]
+  }
+}

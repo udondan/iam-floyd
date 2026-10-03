@@ -1,0 +1,50 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DevOpsGuruOrganizationsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "devops-guru:DescribeOrganizationHealth",
+        "devops-guru:DescribeOrganizationResourceCollectionHealth",
+        "devops-guru:DescribeOrganizationOverview",
+        "devops-guru:ListOrganizationInsights",
+        "devops-guru:SearchOrganizationInsights"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "OrganizationsDataAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListChildren",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListRoots"
+      ],
+      "Resource": "arn:aws:organizations::*:"
+    },
+    {
+      "Sid": "OrganizationsAdminDataAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DeregisterDelegatedAdministrator",
+        "organizations:RegisterDelegatedAdministrator",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:EnableAWSServiceAccess",
+        "organizations:DisableAWSServiceAccess"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "devops-guru.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "filename": "aws-marketplace-discovery",
+  "className": "AwsMarketplaceDiscovery",
+  "name": "aws-marketplace-discovery",
+  "servicePrefix": "aws-marketplace",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_marketplace-discovery.html",
+  "accessLevelList": {
+    "Read": [
+      "GetListing",
+      "GetOffer",
+      "GetOfferSet",
+      "GetOfferTerms",
+      "GetProduct"
+    ],
+    "List": [
+      "ListFulfillmentOptions",
+      "ListPrivateListings",
+      "ListPurchaseOptions",
+      "SearchFacets",
+      "SearchListings"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetListing",
+      "methodName": "toGetListing",
+      "description": "Grants permission to retrieve information about a listing",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_GetListing.html"
+    },
+    {
+      "name": "GetOffer",
+      "methodName": "toGetOffer",
+      "description": "Grants permission to retrieve information about an offer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_GetOffer.html"
+    },
+    {
+      "name": "GetOfferSet",
+      "methodName": "toGetOfferSet",
+      "description": "Grants permission to retrieve information about an offer set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_GetOfferSet.html"
+    },
+    {
+      "name": "GetOfferTerms",
+      "methodName": "toGetOfferTerms",
+      "description": "Grants permission to retrieve terms for an offer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_GetOfferTerms.html"
+    },
+    {
+      "name": "GetProduct",
+      "methodName": "toGetProduct",
+      "description": "Grants permission to retrieve information about a product",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_GetProduct.html"
+    },
+    {
+      "name": "ListFulfillmentOptions",
+      "methodName": "toListFulfillmentOptions",
+      "description": "Grants permission to list fulfillment options for a product",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_ListFulfillmentOptions.html"
+    },
+    {
+      "name": "ListPrivateListings",
+      "methodName": "toListPrivateListings",
+      "description": "Grants permission to list private offers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-offers-page.html"
+    },
+    {
+      "name": "ListPurchaseOptions",
+      "methodName": "toListPurchaseOptions",
+      "description": "Grants permission to list purchase options available to the buyer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_ListPurchaseOptions.html"
+    },
+    {
+      "name": "SearchFacets",
+      "methodName": "toSearchFacets",
+      "description": "Grants permission to search for facet values to filter listings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_SearchFacets.html"
+    },
+    {
+      "name": "SearchListings",
+      "methodName": "toSearchListings",
+      "description": "Grants permission to search for product listings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_SearchListings.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "AllListings",
+      "methodName": "onAllListings",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-apis.html#discovery-data-model",
+      "arn": "arn:${Partition}:aws-marketplace:::catalog/${CatalogName}/listing/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "CatalogName",
+          "name": "catalogName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "AllPurchaseOptions",
+      "methodName": "onAllPurchaseOptions",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-apis.html#discovery-data-model",
+      "arn": "arn:${Partition}:aws-marketplace:::catalog/${CatalogName}/purchaseOption/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "CatalogName",
+          "name": "catalogName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "Listing",
+      "methodName": "onListing",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-apis.html#discovery-data-model",
+      "arn": "arn:${Partition}:aws-marketplace:::catalog/${CatalogName}/listing/${ListingId}",
+      "placeholders": [
+        {
+          "placeholder": "CatalogName",
+          "name": "catalogName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ListingId",
+          "name": "listingId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "Offer",
+      "methodName": "onOffer",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-apis.html#discovery-data-model",
+      "arn": "arn:${Partition}:aws-marketplace:::catalog/${CatalogName}/offer/${OfferId}",
+      "placeholders": [
+        {
+          "placeholder": "CatalogName",
+          "name": "catalogName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "OfferId",
+          "name": "offerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "OfferSet",
+      "methodName": "onOfferSet",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-apis.html#discovery-data-model",
+      "arn": "arn:${Partition}:aws-marketplace:::catalog/${CatalogName}/offerSet/${OfferSetId}",
+      "placeholders": [
+        {
+          "placeholder": "CatalogName",
+          "name": "catalogName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "OfferSetId",
+          "name": "offerSetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "Product",
+      "methodName": "onProduct",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-apis.html#discovery-data-model",
+      "arn": "arn:${Partition}:aws-marketplace:::catalog/${CatalogName}/product/${ProductId}",
+      "placeholders": [
+        {
+          "placeholder": "CatalogName",
+          "name": "catalogName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProductId",
+          "name": "productId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "PurchaseOption",
+      "methodName": "onPurchaseOption",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-apis.html#discovery-data-model",
+      "arn": "arn:${Partition}:aws-marketplace:::catalog/${CatalogName}/purchaseOption/${PurchaseOptionId}",
+      "placeholders": [
+        {
+          "placeholder": "CatalogName",
+          "name": "catalogName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PurchaseOptionId",
+          "name": "purchaseOptionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

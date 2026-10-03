@@ -1,0 +1,38 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSGrafanaOrganizationAdmin",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GrafanaIAMGetRolePermission",
+      "Effect": "Allow",
+      "Action": "iam:GetRole",
+      "Resource": "arn:aws:iam::*:role/*"
+    },
+    {
+      "Sid": "AWSGrafanaPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "grafana:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GrafanaIAMPassRolePermission",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringLike": {
+          "iam:PassedToService": "grafana.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

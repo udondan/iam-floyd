@@ -1,0 +1,117 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GlueDataPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetDatabases",
+        "glue:GetPartitions",
+        "glue:GetTable",
+        "glue:GetTables",
+        "glue:GetConnection"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "GluePIIPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:BatchGetCustomEntityTypes",
+        "glue:GetCustomEntityType"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "S3PublicDatasetAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::databrew-public-datasets-*"
+      ]
+    },
+    {
+      "Sid": "EC2NetworkingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcAttribute",
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "EC2DeleteGlueNetworkInterfacePermissions",
+      "Effect": "Allow",
+      "Action": "ec2:DeleteNetworkInterface",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/aws-glue-service-resource": "*"
+        }
+      },
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "EC2GlueTaggingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "aws-glue-service-resource"
+          ]
+        }
+      },
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ]
+    },
+    {
+      "Sid": "GlueDatabrewLogGroupPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws-glue-databrew/*"
+      ]
+    },
+    {
+      "Sid": "LakeFormationPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "lakeformation:GetDataAccess"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SecretsManagerPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:databrew!default-*"
+    }
+  ]
+}

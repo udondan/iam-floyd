@@ -1,0 +1,118 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "NotebokAllowActions0",
+      "Effect": "Allow",
+      "Action": [
+        "glue:CreateSession"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:session/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/owner": "${aws:PrincipalTag/owner}"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": [
+            "owner"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowGlueTaggingAction",
+      "Effect": "Allow",
+      "Action": [
+        "glue:TagResource"
+      ],
+      "Resource": "arn:aws:glue:*:*:session/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/owner": "${aws:PrincipalTag/owner}",
+          "aws:RequestTag/owner": "${aws:PrincipalTag/owner}"
+        }
+      }
+    },
+    {
+      "Sid": "NotebookAllowActions1",
+      "Effect": "Allow",
+      "Action": [
+        "glue:StartCompletion",
+        "glue:GetCompletion"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:completion/*"
+      ]
+    },
+    {
+      "Sid": "NotebookAllowActions2",
+      "Effect": "Allow",
+      "Action": [
+        "glue:RunStatement",
+        "glue:GetStatement",
+        "glue:ListStatements",
+        "glue:CancelStatement",
+        "glue:StopSession",
+        "glue:DeleteSession",
+        "glue:GetSession"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:session/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/owner": "${aws:PrincipalTag/owner}"
+        }
+      }
+    },
+    {
+      "Sid": "NotebookAllowActions3",
+      "Effect": "Allow",
+      "Action": [
+        "glue:ListSessions"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "NotebookDenyActions",
+      "Effect": "Deny",
+      "Action": [
+        "glue:UntagResource",
+        "tag:TagResources",
+        "tag:UntagResources"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:session/*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": [
+            "owner"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "NotebookPassRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/service-role/AwsGlueSessionServiceRoleUserRestrictedForNotebook*",
+        "arn:aws:iam::*:role/AwsGlueSessionUserRestrictedNotebookServiceRole*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "iam:PassedToService": [
+            "glue.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

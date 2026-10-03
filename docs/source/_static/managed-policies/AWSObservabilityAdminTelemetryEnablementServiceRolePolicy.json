@@ -1,0 +1,743 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "TelemetryOperations",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeFlowLogs",
+        "ec2:DescribeVpcs",
+        "logs:DescribeLogGroups",
+        "logs:DescribeResourcePolicies",
+        "logs:ListLogGroups",
+        "ec2:MonitorInstances",
+        "logs:DescribeDeliverySources",
+        "logs:DescribeDeliveries",
+        "logs:DescribeDeliveryDestinations"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TagOperationForEC2",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": "CloudWatchTelemetryRuleManaged"
+        },
+        "StringEquals": {
+          "aws:RequestTag/CloudWatchTelemetryRuleManaged": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "ec2:CreateAction": "CreateFlowLogs"
+        }
+      }
+    },
+    {
+      "Sid": "TagOperationForLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": "CloudWatchTelemetryRuleManaged"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/CloudWatchTelemetryRuleManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForVPCLogs",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateFlowLogs"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForVPCFlowLogs",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateFlowLogs"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc-flow-log/*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": "CloudWatchTelemetryRuleManaged"
+        },
+        "StringEquals": {
+          "aws:RequestTag/CloudWatchTelemetryRuleManaged": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForLogs",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteFlowLogs",
+        "logs:CreateDelivery",
+        "logs:CreateLogGroup",
+        "logs:PutResourcePolicy",
+        "logs:PutRetentionPolicy",
+        "logs:PutDeliveryDestination",
+        "logs:PutDeliverySource",
+        "logs:CreateLogStream",
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/CloudWatchTelemetryRuleManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForEKSApiLogs",
+      "Effect": "Allow",
+      "Action": [
+        "eks:UpdateClusterConfig"
+      ],
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "Bool": {
+          "eks:loggingType/api": "true"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForEKSAuditLogs",
+      "Effect": "Allow",
+      "Action": [
+        "eks:UpdateClusterConfig"
+      ],
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "Bool": {
+          "eks:loggingType/audit": "true"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForEKSAuthenticatorLogs",
+      "Effect": "Allow",
+      "Action": [
+        "eks:UpdateClusterConfig"
+      ],
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "Bool": {
+          "eks:loggingType/authenticator": "true"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForEKSControllerManagerLogs",
+      "Effect": "Allow",
+      "Action": [
+        "eks:UpdateClusterConfig"
+      ],
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "Bool": {
+          "eks:loggingType/controllerManager": "true"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForEKSSchedulerLogs",
+      "Effect": "Allow",
+      "Action": [
+        "eks:UpdateClusterConfig"
+      ],
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "Bool": {
+          "eks:loggingType/scheduler": "true"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForWafLoggingConfigurations",
+      "Effect": "Allow",
+      "Action": [
+        "wafv2:PutLoggingConfiguration"
+      ],
+      "Resource": "arn:aws:wafv2:*:*:*/webacl/*",
+      "Condition": {
+        "ArnLike": {
+          "wafv2:LogDestinationResource": "arn:aws:logs:*:*:log-group:*"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "wafv2:LogScope": "CloudwatchTelemetryRuleManaged"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryReadForWafLoggingConfigurations",
+      "Effect": "Allow",
+      "Action": [
+        "wafv2:ListLoggingConfigurations"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForWafLogDelivery",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogDelivery"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "wafv2.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForELB",
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:AllowVendedLogDeliveryForResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForBedrock",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:AllowVendedLogDeliveryForResource",
+        "bedrock:AllowVendedLogDeliveryForResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForS3",
+      "Effect": "Allow",
+      "Action": [
+        "s3:AllowVendedLogDeliveryForResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForSecurityHub",
+      "Effect": "Allow",
+      "Action": [
+        "securityhub:AllowVendedLogDeliveryForResource",
+        "securityhub:DescribeHub",
+        "securityhub:DescribeSecurityHubV2"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForCloudfront",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:AllowVendedLogDeliveryForResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForCloudTrailLogs",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:CreateServiceLinkedChannel",
+        "cloudtrail:UpdateServiceLinkedChannel",
+        "cloudtrail:DeleteServiceLinkedChannel"
+      ],
+      "Resource": "arn:aws:cloudtrail:*:*:channel/aws-service-channel/cloudwatch/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForManagedLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:PutResourcePolicy",
+        "logs:PutRetentionPolicy"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:aws/cloudtrail",
+        "arn:aws:logs:*:*:log-group:aws/cloudtrail/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "Route53QueryLoggingListOperations",
+      "Effect": "Allow",
+      "Action": [
+        "route53resolver:ListResolverQueryLogConfigs",
+        "route53resolver:ListResolverQueryLogConfigAssociations"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "Route53QueryLoggingGetOperations",
+      "Effect": "Allow",
+      "Action": [
+        "route53resolver:GetResolverQueryLogConfig",
+        "route53resolver:ListTagsForResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/CloudWatchTelemetryRuleManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "Route53QueryLoggingConfigCreation",
+      "Effect": "Allow",
+      "Action": [
+        "route53resolver:CreateResolverQueryLogConfig",
+        "route53resolver:TagResource"
+      ],
+      "Resource": "arn:aws:route53resolver:*:*:resolver-query-log-config/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/CloudWatchTelemetryRuleManaged": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "Route53QueryLoggingConfigAssociation",
+      "Effect": "Allow",
+      "Action": [
+        "route53resolver:AssociateResolverQueryLogConfig"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/CloudWatchTelemetryRuleManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForRoute53LogDeliverySLR",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "arn:*:iam::*:role/aws-service-role/route53resolver.amazonaws.com/AWSServiceRoleForRoute53Resolver",
+      "Condition": {
+        "BoolIfExists": {
+          "aws:ViaAWSService": "true"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "iam:AWSServiceName": [
+            "route53resolver.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForRoute53LogDelivery",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogDelivery"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAMOperationsForConfigServiceLinkedRecorder",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig"
+      ],
+      "Condition": {
+        "BoolIfExists": {
+          "aws:ViaAWSService": "true"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "iam:AWSServiceName": [
+            "config.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ManagementOperationsForServiceLinkedRecorder",
+      "Effect": "Allow",
+      "Action": [
+        "config:PutServiceLinkedConfigurationRecorder",
+        "config:DeleteServiceLinkedConfigurationRecorder",
+        "config:AssociateResourceTypes",
+        "config:DisassociateResourceTypes"
+      ],
+      "Resource": [
+        "arn:aws:config:*:*:configuration-recorder/AWSConfigurationRecorderForObservabilityAdmin_TelemetryEnablement/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ReadOperationsForServiceLinkedRecorder",
+      "Effect": "Allow",
+      "Action": [
+        "config:DescribeConfigurationRecorders"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "config:ConfigurationRecorderServicePrincipal": [
+            "telemetry-enablement.observabilityadmin.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForKafka",
+      "Effect": "Allow",
+      "Action": [
+        "kafka:UpdateMonitoring",
+        "kafka:DescribeCluster"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForOTelEnrichmentSimba",
+      "Effect": "Allow",
+      "Action": [
+        "observabilityadmin:GetTelemetryEnrichmentStatus",
+        "observabilityadmin:StartTelemetryEnrichment",
+        "observabilityadmin:StopTelemetryEnrichment"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForOTelEnrichmentResourceExplorer",
+      "Effect": "Allow",
+      "Action": [
+        "resource-explorer-2:CreateIndex",
+        "resource-explorer-2:CreateManagedView",
+        "resource-explorer-2:CreateStreamingAccessForService",
+        "resource-explorer-2:DeleteStreamingAccessForService"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Bool": {
+          "aws:ViaAWSService": "true"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForOTelEnrichmentCloudWatch",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetOTelEnrichment",
+        "cloudwatch:StartOTelEnrichment"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForOTelEnrichmentSLR",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/resource-explorer-2.amazonaws.com/*",
+      "Condition": {
+        "Bool": {
+          "aws:ViaAWSService": "true"
+        },
+        "StringEquals": {
+          "iam:AWSServiceName": "resource-explorer-2.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryReadTagsForLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:ListTagsForResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/CloudWatchTelemetryRuleManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryKMSOperationsForAccount",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Describe*",
+        "logs:AssociateKmsKey"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryKMSOperationsForOrganization",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Describe*",
+        "logs:AssociateKmsKey"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalOrgId": "${aws:ResourceOrgId}"
+        }
+      }
+    },
+    {
+      "Sid": "InspectTemplate",
+      "Effect": "Allow",
+      "Action": "iam:GetRoleTemplateVersion",
+      "Resource": "arn:aws:iam::aws:role-template/telemetry-enablement.observabilityadmin.amazonaws.com/CloudWatchTelemetryRuleEKSAddonRoleTemplate:1"
+    },
+    {
+      "Sid": "AcquireRoleFromTemplate",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:TagRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/service-role/CloudWatchTelemetryRuleEKSAddonRole",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "iam:RoleTemplateARN": "arn:aws:iam::aws:role-template/telemetry-enablement.observabilityadmin.amazonaws.com/CloudWatchTelemetryRuleEKSAddonRoleTemplate:1"
+        }
+      }
+    },
+    {
+      "Sid": "AttachManagedPolicyFromTemplate",
+      "Effect": "Allow",
+      "Action": "iam:AttachRolePolicy",
+      "Resource": "arn:aws:iam::*:role/service-role/CloudWatchTelemetryRuleEKSAddonRole",
+      "Condition": {
+        "ArnEquals": {
+          "iam:PolicyARN": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "iam:RoleTemplateARN": "arn:aws:iam::aws:role-template/telemetry-enablement.observabilityadmin.amazonaws.com/CloudWatchTelemetryRuleEKSAddonRoleTemplate:1"
+        }
+      }
+    },
+    {
+      "Sid": "ReadRole",
+      "Effect": "Allow",
+      "Action": "iam:GetRole",
+      "Resource": [
+        "arn:aws:iam::*:role/service-role/CloudWatchTelemetryRuleEKSAddonRole",
+        "arn:aws:iam::*:role/CloudWatchTelemetryRuleEKSAddonRole"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "PassRoleToPodIdentity",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/service-role/CloudWatchTelemetryRuleEKSAddonRole",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "iam:PassedToService": "pods.eks.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "InstallAddon",
+      "Effect": "Allow",
+      "Action": "eks:CreateAddon",
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "FixAddon",
+      "Effect": "Allow",
+      "Action": "eks:UpdateAddon",
+      "Resource": "arn:aws:eks:*:*:addon/*/amazon-cloudwatch-observability/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "CreatePodIdentityAssociation",
+      "Effect": "Allow",
+      "Action": "eks:CreatePodIdentityAssociation",
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "FixPodIdentityAssociation",
+      "Effect": "Allow",
+      "Action": "eks:UpdatePodIdentityAssociation",
+      "Resource": "arn:aws:eks:*:*:podidentityassociation/*/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "EvaluateAddon",
+      "Effect": "Allow",
+      "Action": "eks:DescribeAddon",
+      "Resource": "arn:aws:eks:*:*:addon/*/amazon-cloudwatch-observability/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ListPodIdentityAssociations",
+      "Effect": "Allow",
+      "Action": "eks:ListPodIdentityAssociations",
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "EvaluatePodIdentityAssociation",
+      "Effect": "Allow",
+      "Action": "eks:DescribePodIdentityAssociation",
+      "Resource": "arn:aws:eks:*:*:podidentityassociation/*/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "directconnect:DescribeDirectConnectGateways",
+        "directconnect:DescribeConnections",
+        "directconnect:DescribeDirectConnectGatewayAttachments",
+        "directconnect:DescribeLocations",
+        "directconnect:DescribeVirtualInterfaces",
+        "ec2:DescribeCustomerGateways",
+        "ec2:DescribeTransitGatewayAttachments",
+        "ec2:DescribeTransitGatewayRouteTables",
+        "ec2:DescribeTransitGateways",
+        "ec2:DescribeVpnConnections",
+        "ec2:DescribeVpcs",
+        "ec2:GetTransitGatewayRouteTableAssociations",
+        "ec2:GetTransitGatewayRouteTablePropagations",
+        "ec2:SearchTransitGatewayRoutes",
+        "ec2:DescribeTransitGatewayPeeringAttachments",
+        "ec2:DescribeTransitGatewayConnects",
+        "ec2:DescribeTransitGatewayConnectPeers",
+        "ec2:DescribeRegions",
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListDelegatedAdministrators",
+        "ec2:DescribeTransitGatewayRouteTableAnnouncements",
+        "ec2:DescribeTransitGatewayPolicyTables",
+        "ec2:GetTransitGatewayPolicyTableAssociations",
+        "ec2:GetTransitGatewayPolicyTableEntries"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

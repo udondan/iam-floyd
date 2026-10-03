@@ -1,0 +1,377 @@
+{
+  "schemaVersion": 1,
+  "filename": "signin",
+  "className": "Signin",
+  "name": "signin",
+  "servicePrefix": "signin",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_signin.html",
+  "accessLevelList": {
+    "Read": [
+      "Authenticate",
+      "AuthorizeOAuth2Access",
+      "CreateOAuth2Token",
+      "GetConsoleAuthorizationConfiguration",
+      "GetResourcePolicy",
+      "IntrospectOAuth2Token"
+    ],
+    "Write": [
+      "CreateOAuth2PublicClient",
+      "CreateTrustedIdentityPropagationApplicationForConsole",
+      "DeleteConsoleAuthorizationConfiguration",
+      "DeleteResourcePermissionStatement",
+      "PutConsoleAuthorizationConfiguration",
+      "PutResourcePermissionStatement",
+      "RevokeOAuth2Token",
+      "CreateAccount"
+    ],
+    "List": [
+      "ListResourcePermissionStatements",
+      "ListTrustedIdentityPropagationApplicationsForConsole"
+    ]
+  },
+  "actions": [
+    {
+      "name": "Authenticate",
+      "methodName": "toAuthenticate",
+      "description": "Grants permission to authenticate to the AWS Management Console",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_Authenticate.html"
+    },
+    {
+      "name": "AuthorizeOAuth2Access",
+      "methodName": "toAuthorizeOAuth2Access",
+      "description": "Grants permission to authenticate through a browser and obtain an OAuth 2.0 authorization code for credential exchange",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_AuthorizeOAuth2Access.html"
+    },
+    {
+      "name": "CreateOAuth2PublicClient",
+      "methodName": "toCreateOAuth2PublicClient",
+      "description": "Grants permission to dynamically register an OAuth 2.0 public client for use with AWS Sign-In",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_CreateOAuth2PublicClient.html"
+    },
+    {
+      "name": "CreateOAuth2Token",
+      "methodName": "toCreateOAuth2Token",
+      "description": "Grants permission to exchange an authorization code for OAuth 2.0 access token and refresh token that can be used to access AWS services from developer tools and applications",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_CreateOAuth2Token.html"
+    },
+    {
+      "name": "CreateTrustedIdentityPropagationApplicationForConsole",
+      "methodName": "toCreateTrustedIdentityPropagationApplicationForConsole",
+      "description": "Grants permission to create an Identity Center application that represents the AWS Management Console on an Identity Center organization instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_CreateTrustedIdentityPropagationApplicationForConsole.html"
+    },
+    {
+      "name": "DeleteConsoleAuthorizationConfiguration",
+      "methodName": "toDeleteConsoleAuthorizationConfiguration",
+      "description": "Grants permission to disable console authorization configuration for an AWS account or organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_DeleteConsoleAuthorizationConfiguration.html"
+    },
+    {
+      "name": "DeleteResourcePermissionStatement",
+      "methodName": "toDeleteResourcePermissionStatement",
+      "description": "Grants permission to remove a permission statement from the account's SignIn Resource Based Policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_DeleteResourcePermissionStatement.html"
+    },
+    {
+      "name": "GetConsoleAuthorizationConfiguration",
+      "methodName": "toGetConsoleAuthorizationConfiguration",
+      "description": "Grants permission to retrieve console authorization configuration for an AWS account or organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_GetConsoleAuthorizationConfiguration.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to retrieve SignIn Resource Based Policy document that is attached with your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "IntrospectOAuth2Token",
+      "methodName": "toIntrospectOAuth2Token",
+      "description": "Grants permission to inspect the metadata and active state of an OAuth 2.0 access token or refresh token",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_IntrospectOAuth2Token.html"
+    },
+    {
+      "name": "ListResourcePermissionStatements",
+      "methodName": "toListResourcePermissionStatements",
+      "description": "Grants permission to list the SignIn Resource Based Policy statements in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_ListResourcePermissionStatements.html"
+    },
+    {
+      "name": "ListTrustedIdentityPropagationApplicationsForConsole",
+      "methodName": "toListTrustedIdentityPropagationApplicationsForConsole",
+      "description": "Grants permission to list all Identity Center applications that represent the AWS Management Console",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_ListTrustedIdentityPropagationApplicationsForConsole.html"
+    },
+    {
+      "name": "PutConsoleAuthorizationConfiguration",
+      "methodName": "toPutConsoleAuthorizationConfiguration",
+      "description": "Grants permission to enable console authorization configuration for an AWS account or organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_PutConsoleAuthorizationConfiguration.html"
+    },
+    {
+      "name": "PutResourcePermissionStatement",
+      "methodName": "toPutResourcePermissionStatement",
+      "description": "Grants permission to create a permission statement in the account's SignIn resource-based policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_PutResourcePermissionStatement.html"
+    },
+    {
+      "name": "RevokeOAuth2Token",
+      "methodName": "toRevokeOAuth2Token",
+      "description": "Grants permission to revoke an OAuth 2.0 refresh token and its associated refresh tokens",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_RevokeOAuth2Token.html"
+    },
+    {
+      "name": "CreateAccount",
+      "methodName": "toCreateAccount",
+      "description": "Grants permission to create an AWS account through the AWS Management Console sign-up flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/console-private-access.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "console",
+      "methodName": "onConsole",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference",
+      "arn": "arn:${Partition}:signin:::console/${ConsoleName}",
+      "placeholders": [
+        {
+          "placeholder": "ConsoleName",
+          "name": "consoleName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "oauth2-public-client-localhost",
+      "methodName": "onOauth2PublicClientLocalhost",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference",
+      "arn": "arn:${Partition}:signin:${Region}:${Account}:oauth2/public-client/localhost",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "oauth2-public-client-registration",
+      "methodName": "onOauth2PublicClientRegistration",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference",
+      "arn": "arn:${Partition}:signin:${Region}::external-client/dcr/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "oauth2-public-client-remote",
+      "methodName": "onOauth2PublicClientRemote",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference",
+      "arn": "arn:${Partition}:signin:${Region}:${Account}:oauth2/public-client/remote",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "oauth2-resource-service-principal",
+      "methodName": "onOauth2ResourceServicePrincipal",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference",
+      "arn": "arn:${Partition}:signin:${Region}:${Account}:service-principal/${ServicePrincipalName}",
+      "placeholders": [
+        {
+          "placeholder": "ServicePrincipalName",
+          "name": "servicePrincipalName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "signin:OAuthClientAuthentication",
+      "methodName": "ifOAuthClientAuthentication",
+      "description": "Filters access by the client authentication method used in the OAuth token request",
+      "url": "https://docs.aws.amazon.com/signin/latest/userguide/reference-signin-condition-keys.html",
+      "relatedActionMethods": [
+        "toCreateOAuth2Token"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "OAuthClientAuthentication",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "signin:OAuthClientId",
+      "methodName": "ifOAuthClientId",
+      "description": "Filters access by the OAuth client ID used in the authorization or token request",
+      "url": "https://docs.aws.amazon.com/signin/latest/userguide/reference-signin-condition-keys.html",
+      "relatedActionMethods": [
+        "toAuthorizeOAuth2Access",
+        "toCreateOAuth2Token",
+        "toIntrospectOAuth2Token"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "OAuthClientId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "signin:OAuthGrantType",
+      "methodName": "ifOAuthGrantType",
+      "description": "Filters access by the OAuth grant type used in the token request",
+      "url": "https://docs.aws.amazon.com/signin/latest/userguide/reference-signin-condition-keys.html",
+      "relatedActionMethods": [
+        "toCreateOAuth2Token"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "OAuthGrantType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "signin:OAuthRedirectUri",
+      "methodName": "ifOAuthRedirectUri",
+      "description": "Filters access by the redirect URI specified in the OAuth authorization request",
+      "url": "https://docs.aws.amazon.com/signin/latest/userguide/reference-signin-condition-keys.html",
+      "relatedActionMethods": [
+        "toAuthorizeOAuth2Access",
+        "toCreateOAuth2PublicClient",
+        "toCreateOAuth2Token"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "OAuthRedirectUri",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "signin:OAuthTokenType",
+      "methodName": "ifOAuthTokenType",
+      "description": "Filters access by the type of OAuth token being operated on",
+      "url": "https://docs.aws.amazon.com/signin/latest/userguide/reference-signin-condition-keys.html",
+      "relatedActionMethods": [
+        "toIntrospectOAuth2Token",
+        "toRevokeOAuth2Token"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "OAuthTokenType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "signin:PrincipalArn",
+      "methodName": "ifPrincipalArn",
+      "description": "Filters access by the principal ARN during pre-authentication console sign-in",
+      "url": "https://docs.aws.amazon.com/signin/latest/userguide/reference-signin-condition-keys.html",
+      "relatedActionMethods": [
+        "toAuthenticate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PrincipalArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

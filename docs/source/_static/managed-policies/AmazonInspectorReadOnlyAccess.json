@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "inspector:Describe*",
+        "inspector:Get*",
+        "inspector:List*",
+        "inspector:Preview*",
+        "ec2:DescribeInstances",
+        "ec2:DescribeTags",
+        "sns:ListTopics",
+        "events:DescribeRule",
+        "events:ListRuleNamesByTarget"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

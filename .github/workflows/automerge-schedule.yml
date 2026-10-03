@@ -1,0 +1,40 @@
+---
+name: Schedule Release Automerge
+
+on:
+  schedule:
+    - cron: '0 9 * * 1' # Every Monday at 9am UTC
+  workflow_dispatch:
+
+jobs:
+  automerge:
+    if: ${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable auto-merge on release-please PR
+        env:
+          GH_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
+        run: |
+          PRS=$(gh pr list \
+            --repo "${{ github.repository }}" \
+            --label "autorelease: pending" \
+            --base "${{ github.event.repository.default_branch }}" \
+            --state open \
+            --json number)
+
+          PR_COUNT=$(printf '%s' "$PRS" | jq 'length')
+
+          if [ "$PR_COUNT" -gt 1 ]; then
+            echo "Expected at most one open release-please PR, found $PR_COUNT"
+            exit 1
+          fi
+
+          PR=$(printf '%s' "$PRS" | jq -r '.[0].number // empty')
+
+          if [ -n "$PR" ]; then
+            gh pr merge "$PR" --auto --squash --delete-branch \
+              --repo "${{ github.repository }}"
+            echo "Auto-merge enabled on PR #$PR"
+          else
+            echo "No open release-please PR found"
+          fi

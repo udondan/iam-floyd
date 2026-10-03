@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "filename": "lookoutmetrics",
+  "className": "Lookoutmetrics",
+  "name": "lookoutmetrics",
+  "servicePrefix": "lookoutmetrics",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lookoutmetrics.html",
+  "accessLevelList": {
+    "Write": [
+      "ActivateAnomalyDetector",
+      "BackTestAnomalyDetector",
+      "CreateAlert",
+      "CreateAnomalyDetector",
+      "CreateMetricSet",
+      "DeactivateAnomalyDetector",
+      "DeleteAlert",
+      "DeleteAnomalyDetector",
+      "DetectMetricSetConfig",
+      "PutFeedback",
+      "TagResource",
+      "UntagResource",
+      "UpdateAlert",
+      "UpdateAnomalyDetector",
+      "UpdateMetricSet"
+    ],
+    "Read": [
+      "DescribeAlert",
+      "DescribeAnomalyDetectionExecutions",
+      "DescribeAnomalyDetector",
+      "DescribeMetricSet",
+      "GetAnomalyGroup",
+      "GetDataQualityMetrics",
+      "GetFeedback",
+      "GetSampleData",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAlerts",
+      "ListAnomalyDetectors",
+      "ListAnomalyGroupRelatedMetrics",
+      "ListAnomalyGroupSummaries",
+      "ListAnomalyGroupTimeSeries",
+      "ListMetricSets"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ActivateAnomalyDetector",
+      "methodName": "toActivateAnomalyDetector",
+      "description": "Grants permission to activate an anomaly detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_ActivateAnomalyDetector.html"
+    },
+    {
+      "name": "BackTestAnomalyDetector",
+      "methodName": "toBackTestAnomalyDetector",
+      "description": "Grants permission to run a backtest with an anomaly detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_BackTestAnomalyDetector.html"
+    },
+    {
+      "name": "CreateAlert",
+      "methodName": "toCreateAlert",
+      "description": "Grants permission to create an alert for an anomaly detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_CreateAlert.html"
+    },
+    {
+      "name": "CreateAnomalyDetector",
+      "methodName": "toCreateAnomalyDetector",
+      "description": "Grants permission to create an anomaly detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_CreateAnomalyDetector.html"
+    },
+    {
+      "name": "CreateMetricSet",
+      "methodName": "toCreateMetricSet",
+      "description": "Grants permission to create a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_CreateMetricSet.html"
+    },
+    {
+      "name": "DeactivateAnomalyDetector",
+      "methodName": "toDeactivateAnomalyDetector",
+      "description": "Grants permission to deactivate an anomaly detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_DeactivateAnomalyDetector.html"
+    },
+    {
+      "name": "DeleteAlert",
+      "methodName": "toDeleteAlert",
+      "description": "Grants permission to delete an alert",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_DeleteAlert.html"
+    },
+    {
+      "name": "DeleteAnomalyDetector",
+      "methodName": "toDeleteAnomalyDetector",
+      "description": "Grants permission to delete an anomaly detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_DeleteAnomalyDetector.html"
+    },
+    {
+      "name": "DescribeAlert",
+      "methodName": "toDescribeAlert",
+      "description": "Grants permission to get details about an alert",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_DescribeAlert.html"
+    },
+    {
+      "name": "DescribeAnomalyDetectionExecutions",
+      "methodName": "toDescribeAnomalyDetectionExecutions",
+      "description": "Grants permission to get information about an anomaly detection job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_DescribeAnomalyDetectionExecutions.html"
+    },
+    {
+      "name": "DescribeAnomalyDetector",
+      "methodName": "toDescribeAnomalyDetector",
+      "description": "Grants permission to get details about an anomaly detector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_DescribeAnomalyDetector.html"
+    },
+    {
+      "name": "DescribeMetricSet",
+      "methodName": "toDescribeMetricSet",
+      "description": "Grants permission to get details about a dataset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_DescribeMetricSet.html"
+    },
+    {
+      "name": "DetectMetricSetConfig",
+      "methodName": "toDetectMetricSetConfig",
+      "description": "Grants permission to detect metric set config from data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_DetectMetricSetConfig.html"
+    },
+    {
+      "name": "GetAnomalyGroup",
+      "methodName": "toGetAnomalyGroup",
+      "description": "Grants permission to get details about a group of affected metrics",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_GetAnomalyGroup.html"
+    },
+    {
+      "name": "GetDataQualityMetrics",
+      "methodName": "toGetDataQualityMetrics",
+      "description": "Grants permission to get data quality metrics for an anomaly detector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_GetDataQualityMetrics.html"
+    },
+    {
+      "name": "GetFeedback",
+      "methodName": "toGetFeedback",
+      "description": "Grants permission to get feedback on affected metrics for an anomaly group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_GetFeedback.html"
+    },
+    {
+      "name": "GetSampleData",
+      "methodName": "toGetSampleData",
+      "description": "Grants permission to get a selection of sample records from an Amazon S3 datasource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_GetSampleData.html"
+    },
+    {
+      "name": "ListAlerts",
+      "methodName": "toListAlerts",
+      "description": "Grants permission to get a list of alerts for a detector",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_ListAlerts.html"
+    },
+    {
+      "name": "ListAnomalyDetectors",
+      "methodName": "toListAnomalyDetectors",
+      "description": "Grants permission to get a list of anomaly detectors",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_ListAnomalyDetectors.html"
+    },
+    {
+      "name": "ListAnomalyGroupRelatedMetrics",
+      "methodName": "toListAnomalyGroupRelatedMetrics",
+      "description": "Grants permission to get a list of related measures in an anomaly group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_ListAnomalyGroupRelatedMetrics.html"
+    },
+    {
+      "name": "ListAnomalyGroupSummaries",
+      "methodName": "toListAnomalyGroupSummaries",
+      "description": "Grants permission to get a list of anomaly groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_ListAnomalyGroupSummaries.html"
+    },
+    {
+      "name": "ListAnomalyGroupTimeSeries",
+      "methodName": "toListAnomalyGroupTimeSeries",
+      "description": "Grants permission to get a list of affected metrics for a measure in an anomaly group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_ListAnomalyGroupTimeSeries.html"
+    },
+    {
+      "name": "ListMetricSets",
+      "methodName": "toListMetricSets",
+      "description": "Grants permission to get a list of datasets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_ListMetricSets.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to get a list of tags for a detector, dataset, or alert",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutFeedback",
+      "methodName": "toPutFeedback",
+      "description": "Grants permission to add feedback for an affected metric in an anomaly group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_PutFeedback.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a detector, dataset, or alert",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a detector, dataset, or alert",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAlert",
+      "methodName": "toUpdateAlert",
+      "description": "Grants permission to update an alert for an anomaly detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_UpdateAlert.html"
+    },
+    {
+      "name": "UpdateAnomalyDetector",
+      "methodName": "toUpdateAnomalyDetector",
+      "description": "Grants permission to update an anomaly detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_UpdateAnomalyDetector.html"
+    },
+    {
+      "name": "UpdateMetricSet",
+      "methodName": "toUpdateMetricSet",
+      "description": "Grants permission to update a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_UpdateMetricSet.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Alert",
+      "methodName": "onAlert",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_AlertSummary.html",
+      "arn": "arn:${Partition}:lookoutmetrics:${Region}:${Account}:Alert:${AlertName}",
+      "placeholders": [
+        {
+          "placeholder": "AlertName",
+          "name": "alertName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "AnomalyDetector",
+      "methodName": "onAnomalyDetector",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_AnomalyDetectorSummary.html",
+      "arn": "arn:${Partition}:lookoutmetrics:${Region}:${Account}:AnomalyDetector:${AnomalyDetectorName}",
+      "placeholders": [
+        {
+          "placeholder": "AnomalyDetectorName",
+          "name": "anomalyDetectorName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "MetricSet",
+      "methodName": "onMetricSet",
+      "url": "https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_MetricSetSummary.html",
+      "arn": "arn:${Partition}:lookoutmetrics:${Region}:${Account}:MetricSet/${AnomalyDetectorName}/${MetricSetName}",
+      "placeholders": [
+        {
+          "placeholder": "AnomalyDetectorName",
+          "name": "anomalyDetectorName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "MetricSetName",
+          "name": "metricSetName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAlert",
+        "toCreateAnomalyDetector",
+        "toCreateMetricSet",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toActivateAnomalyDetector",
+        "toBackTestAnomalyDetector",
+        "toCreateAlert",
+        "toCreateAnomalyDetector",
+        "toCreateMetricSet",
+        "toDeactivateAnomalyDetector",
+        "toDeleteAlert",
+        "toDeleteAnomalyDetector",
+        "toDescribeAlert",
+        "toDescribeAnomalyDetectionExecutions",
+        "toDescribeAnomalyDetector",
+        "toDescribeMetricSet",
+        "toDetectMetricSetConfig",
+        "toGetAnomalyGroup",
+        "toGetDataQualityMetrics",
+        "toGetFeedback",
+        "toListAlerts",
+        "toListAnomalyGroupRelatedMetrics",
+        "toListAnomalyGroupSummaries",
+        "toListAnomalyGroupTimeSeries",
+        "toListMetricSets",
+        "toListTagsForResource",
+        "toPutFeedback",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAlert",
+        "toUpdateAnomalyDetector",
+        "toUpdateMetricSet"
+      ],
+      "relatedResourceTypes": [
+        "Alert",
+        "AnomalyDetector",
+        "MetricSet"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAlert",
+        "toCreateAnomalyDetector",
+        "toCreateMetricSet",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

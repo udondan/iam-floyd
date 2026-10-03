@@ -1,0 +1,1485 @@
+{
+  "schemaVersion": 1,
+  "filename": "pinpoint-sms-voice-v2",
+  "className": "SmsVoiceV2",
+  "name": "sms-voice-v2",
+  "servicePrefix": "sms-voice",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_pinpoint-sms-voice-v2.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateOriginationIdentity",
+      "AssociateProtectConfiguration",
+      "CreateConfigurationSet",
+      "CreateEventDestination",
+      "CreateNotifyConfiguration",
+      "CreateOptOutList",
+      "CreatePool",
+      "CreateProtectConfiguration",
+      "CreateRcsAgent",
+      "CreateRegistration",
+      "CreateRegistrationAssociation",
+      "CreateRegistrationAttachment",
+      "CreateRegistrationVersion",
+      "CreateVerifiedDestinationNumber",
+      "DeleteAccountDefaultProtectConfiguration",
+      "DeleteConfigurationSet",
+      "DeleteDefaultMessageType",
+      "DeleteDefaultSenderId",
+      "DeleteEventDestination",
+      "DeleteKeyword",
+      "DeleteMediaMessageSpendLimitOverride",
+      "DeleteNotifyConfiguration",
+      "DeleteNotifyMessageSpendLimitOverride",
+      "DeleteOptOutList",
+      "DeleteOptedOutNumber",
+      "DeletePool",
+      "DeleteProtectConfiguration",
+      "DeleteProtectConfigurationRuleSetNumberOverride",
+      "DeleteRcsAgent",
+      "DeleteRcsMessageSpendLimitOverride",
+      "DeleteRegistration",
+      "DeleteRegistrationAttachment",
+      "DeleteRegistrationFieldValue",
+      "DeleteResourcePolicy",
+      "DeleteTextMessageSpendLimitOverride",
+      "DeleteVerifiedDestinationNumber",
+      "DeleteVoiceMessageSpendLimitOverride",
+      "DisassociateOriginationIdentity",
+      "DisassociateProtectConfiguration",
+      "DiscardRegistrationVersion",
+      "PutKeyword",
+      "PutMessageFeedback",
+      "PutOptedOutNumber",
+      "PutProtectConfigurationRuleSetNumberOverride",
+      "PutRegistrationFieldValue",
+      "PutResourcePolicy",
+      "ReleasePhoneNumber",
+      "ReleaseSenderId",
+      "RequestPhoneNumber",
+      "RequestSenderId",
+      "SendDestinationNumberVerificationCode",
+      "SendMediaMessage",
+      "SendNotifyTextMessage",
+      "SendNotifyVoiceMessage",
+      "SendRcsMessage",
+      "SendTextMessage",
+      "SendVoiceMessage",
+      "SetAccountDefaultProtectConfiguration",
+      "SetDefaultMessageFeedbackEnabled",
+      "SetDefaultMessageType",
+      "SetDefaultSenderId",
+      "SetMediaMessageSpendLimitOverride",
+      "SetNotifyMessageSpendLimitOverride",
+      "SetRcsMessageSpendLimitOverride",
+      "SetTextMessageSpendLimitOverride",
+      "SetVoiceMessageSpendLimitOverride",
+      "SubmitRegistrationVersion",
+      "TagResource",
+      "UntagResource",
+      "UpdateEventDestination",
+      "UpdateNotifyConfiguration",
+      "UpdatePhoneNumber",
+      "UpdatePool",
+      "UpdateProtectConfiguration",
+      "UpdateProtectConfigurationCountryRuleSet",
+      "UpdateRcsAgent",
+      "UpdateSenderId",
+      "VerifyDestinationNumber"
+    ],
+    "Read": [
+      "CarrierLookup",
+      "DescribeAccountAttributes",
+      "DescribeAccountLimits",
+      "DescribeConfigurationSets",
+      "DescribeKeywords",
+      "DescribeNotifyConfigurations",
+      "DescribeNotifyTemplates",
+      "DescribeOptOutLists",
+      "DescribeOptedOutNumbers",
+      "DescribePhoneNumbers",
+      "DescribePools",
+      "DescribeProtectConfigurations",
+      "DescribeRcsAgentCountryLaunchStatus",
+      "DescribeRcsAgents",
+      "DescribeRegistrationAttachments",
+      "DescribeRegistrationFieldDefinitions",
+      "DescribeRegistrationFieldValues",
+      "DescribeRegistrationSectionDefinitions",
+      "DescribeRegistrationTypeDefinitions",
+      "DescribeRegistrationVersions",
+      "DescribeRegistrations",
+      "DescribeSenderIds",
+      "DescribeSpendLimits",
+      "DescribeVerifiedDestinationNumbers",
+      "GetProtectConfigurationCountryRuleSet",
+      "GetResourcePolicy",
+      "ListAvailablePhoneNumbers",
+      "ListNotifyCountries",
+      "ListPoolOriginationIdentities",
+      "ListProtectConfigurationRuleSetNumberOverrides",
+      "ListRegistrationAssociations",
+      "ListTagsForResource"
+    ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "PutResourcePolicy"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateOriginationIdentity",
+      "methodName": "toAssociateOriginationIdentity",
+      "description": "Grants permission to associate an origination phone number or sender ID to a pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_AssociateOriginationIdentity.html"
+    },
+    {
+      "name": "AssociateProtectConfiguration",
+      "methodName": "toAssociateProtectConfiguration",
+      "description": "Grants permission to associate a protect configuration to a configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_AssociateProtectConfiguration.html"
+    },
+    {
+      "name": "CarrierLookup",
+      "methodName": "toCarrierLookup",
+      "description": "Grants permission to look up carrier information for a phone number",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CarrierLookup.html"
+    },
+    {
+      "name": "CreateConfigurationSet",
+      "methodName": "toCreateConfigurationSet",
+      "description": "Grants permission to create a configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateConfigurationSet.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateEventDestination",
+      "methodName": "toCreateEventDestination",
+      "description": "Grants permission to create an event destination within a configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateEventDestination.html"
+    },
+    {
+      "name": "CreateNotifyConfiguration",
+      "methodName": "toCreateNotifyConfiguration",
+      "description": "Grants permission to create a notify configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateNotifyConfiguration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateOptOutList",
+      "methodName": "toCreateOptOutList",
+      "description": "Grants permission to create an opt-out list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateOptOutList.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreatePool",
+      "methodName": "toCreatePool",
+      "description": "Grants permission to create a pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreatePool.html"
+    },
+    {
+      "name": "CreateProtectConfiguration",
+      "methodName": "toCreateProtectConfiguration",
+      "description": "Grants permission to create a protect configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateProtectConfiguration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateRcsAgent",
+      "methodName": "toCreateRcsAgent",
+      "description": "Grants permission to create an RCS agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateRcsAgent.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateRegistration",
+      "methodName": "toCreateRegistration",
+      "description": "Grants permission to create a registration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateRegistration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateRegistrationAssociation",
+      "methodName": "toCreateRegistrationAssociation",
+      "description": "Grants permission to associate a registration with a phone number or another registration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateRegistrationAssociation.html"
+    },
+    {
+      "name": "CreateRegistrationAttachment",
+      "methodName": "toCreateRegistrationAttachment",
+      "description": "Grants permission to create a registration attachment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateRegistrationAttachment.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateRegistrationVersion",
+      "methodName": "toCreateRegistrationVersion",
+      "description": "Grants permission to create a registration version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateRegistrationVersion.html"
+    },
+    {
+      "name": "CreateVerifiedDestinationNumber",
+      "methodName": "toCreateVerifiedDestinationNumber",
+      "description": "Grants permission to create a verified destination number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateVerifiedDestinationNumber.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteAccountDefaultProtectConfiguration",
+      "methodName": "toDeleteAccountDefaultProtectConfiguration",
+      "description": "Grants permission to delete the account default protect configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteAccountDefaultProtectConfiguration.html"
+    },
+    {
+      "name": "DeleteConfigurationSet",
+      "methodName": "toDeleteConfigurationSet",
+      "description": "Grants permission to delete a configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteConfigurationSet.html"
+    },
+    {
+      "name": "DeleteDefaultMessageType",
+      "methodName": "toDeleteDefaultMessageType",
+      "description": "Grants permission to delete the default message type for a configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteDefaultMessageType.html"
+    },
+    {
+      "name": "DeleteDefaultSenderId",
+      "methodName": "toDeleteDefaultSenderId",
+      "description": "Grants permission to delete the default sender ID for a configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteDefaultSenderId.html"
+    },
+    {
+      "name": "DeleteEventDestination",
+      "methodName": "toDeleteEventDestination",
+      "description": "Grants permission to delete an event destination within a configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteEventDestination.html"
+    },
+    {
+      "name": "DeleteKeyword",
+      "methodName": "toDeleteKeyword",
+      "description": "Grants permission to delete a keyword for a pool or origination phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteKeyword.html"
+    },
+    {
+      "name": "DeleteMediaMessageSpendLimitOverride",
+      "methodName": "toDeleteMediaMessageSpendLimitOverride",
+      "description": "Grants permission to delete an override for your account's media messaging monthly spend limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteMediaMessageSpendLimitOverride.html"
+    },
+    {
+      "name": "DeleteNotifyConfiguration",
+      "methodName": "toDeleteNotifyConfiguration",
+      "description": "Grants permission to delete a notify configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteNotifyConfiguration.html"
+    },
+    {
+      "name": "DeleteNotifyMessageSpendLimitOverride",
+      "methodName": "toDeleteNotifyMessageSpendLimitOverride",
+      "description": "Grants permission to delete an override for your account's notify messaging monthly spend limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteNotifyMessageSpendLimitOverride.html"
+    },
+    {
+      "name": "DeleteOptOutList",
+      "methodName": "toDeleteOptOutList",
+      "description": "Grants permission to delete an opt-out list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteOptOutList.html"
+    },
+    {
+      "name": "DeleteOptedOutNumber",
+      "methodName": "toDeleteOptedOutNumber",
+      "description": "Grants permission to delete a destination phone number from an opt-out list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteOptedOutNumber.html"
+    },
+    {
+      "name": "DeletePool",
+      "methodName": "toDeletePool",
+      "description": "Grants permission to delete a pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeletePool.html"
+    },
+    {
+      "name": "DeleteProtectConfiguration",
+      "methodName": "toDeleteProtectConfiguration",
+      "description": "Grants permission to delete a protect configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteProtectConfiguration.html"
+    },
+    {
+      "name": "DeleteProtectConfigurationRuleSetNumberOverride",
+      "methodName": "toDeleteProtectConfigurationRuleSetNumberOverride",
+      "description": "Grants permission to delete a phone number override for a protect configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteProtectConfigurationRuleSetNumberOverride.html"
+    },
+    {
+      "name": "DeleteRcsAgent",
+      "methodName": "toDeleteRcsAgent",
+      "description": "Grants permission to delete an RCS agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteRcsAgent.html"
+    },
+    {
+      "name": "DeleteRcsMessageSpendLimitOverride",
+      "methodName": "toDeleteRcsMessageSpendLimitOverride",
+      "description": "Grants permission to delete an override for your account's RCS messaging monthly spend limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteRcsMessageSpendLimitOverride.html"
+    },
+    {
+      "name": "DeleteRegistration",
+      "methodName": "toDeleteRegistration",
+      "description": "Grants permission to delete a registration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteRegistration.html"
+    },
+    {
+      "name": "DeleteRegistrationAttachment",
+      "methodName": "toDeleteRegistrationAttachment",
+      "description": "Grants permission to delete a registration attachment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteRegistrationAttachment.html"
+    },
+    {
+      "name": "DeleteRegistrationFieldValue",
+      "methodName": "toDeleteRegistrationFieldValue",
+      "description": "Grants permission to delete an optional registration field value",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteRegistrationFieldValue.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete a resource policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteTextMessageSpendLimitOverride",
+      "methodName": "toDeleteTextMessageSpendLimitOverride",
+      "description": "Grants permission to delete an override for your account's text messaging monthly spend limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteTextMessageSpendLimitOverride.html"
+    },
+    {
+      "name": "DeleteVerifiedDestinationNumber",
+      "methodName": "toDeleteVerifiedDestinationNumber",
+      "description": "Grants permission to delete a verified destination number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteVerifiedDestinationNumber.html"
+    },
+    {
+      "name": "DeleteVoiceMessageSpendLimitOverride",
+      "methodName": "toDeleteVoiceMessageSpendLimitOverride",
+      "description": "Grants permission to delete an override for your account's voice messaging monthly spend limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteVoiceMessageSpendLimitOverride.html"
+    },
+    {
+      "name": "DescribeAccountAttributes",
+      "methodName": "toDescribeAccountAttributes",
+      "description": "Grants permission to describe the attributes of your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeAccountAttributes.html"
+    },
+    {
+      "name": "DescribeAccountLimits",
+      "methodName": "toDescribeAccountLimits",
+      "description": "Grants permission to describe the service quotas for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeAccountLimits.html"
+    },
+    {
+      "name": "DescribeConfigurationSets",
+      "methodName": "toDescribeConfigurationSets",
+      "description": "Grants permission to describe the configuration sets in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeConfigurationSets.html"
+    },
+    {
+      "name": "DescribeKeywords",
+      "methodName": "toDescribeKeywords",
+      "description": "Grants permission to describe the keywords for a pool or origination phone number",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeKeywords.html"
+    },
+    {
+      "name": "DescribeNotifyConfigurations",
+      "methodName": "toDescribeNotifyConfigurations",
+      "description": "Grants permission to describe the notify configurations in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeNotifyConfigurations.html"
+    },
+    {
+      "name": "DescribeNotifyTemplates",
+      "methodName": "toDescribeNotifyTemplates",
+      "description": "Grants permission to describe the notify templates available",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeNotifyTemplates.html"
+    },
+    {
+      "name": "DescribeOptOutLists",
+      "methodName": "toDescribeOptOutLists",
+      "description": "Grants permission to describe the opt-out lists in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeOptOutLists.html"
+    },
+    {
+      "name": "DescribeOptedOutNumbers",
+      "methodName": "toDescribeOptedOutNumbers",
+      "description": "Grants permission to describe the destination phone numbers in an opt-out list",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeOptedOutNumbers.html"
+    },
+    {
+      "name": "DescribePhoneNumbers",
+      "methodName": "toDescribePhoneNumbers",
+      "description": "Grants permission to describe the origination phone numbers in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribePhoneNumbers.html"
+    },
+    {
+      "name": "DescribePools",
+      "methodName": "toDescribePools",
+      "description": "Grants permission to describe the pools in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribePools.html"
+    },
+    {
+      "name": "DescribeProtectConfigurations",
+      "methodName": "toDescribeProtectConfigurations",
+      "description": "Grants permission to describe the protect configurations in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeProtectConfigurations.html"
+    },
+    {
+      "name": "DescribeRcsAgentCountryLaunchStatus",
+      "methodName": "toDescribeRcsAgentCountryLaunchStatus",
+      "description": "Grants permission to describe the country launch status for an RCS agent",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRcsAgentCountryLaunchStatus.html"
+    },
+    {
+      "name": "DescribeRcsAgents",
+      "methodName": "toDescribeRcsAgents",
+      "description": "Grants permission to describe the RCS agents in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRcsAgents.html"
+    },
+    {
+      "name": "DescribeRegistrationAttachments",
+      "methodName": "toDescribeRegistrationAttachments",
+      "description": "Grants permission to describe the registration attachments in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrationAttachments.html"
+    },
+    {
+      "name": "DescribeRegistrationFieldDefinitions",
+      "methodName": "toDescribeRegistrationFieldDefinitions",
+      "description": "Grants permission to describe the field definitions for a given registration type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrationFieldDefinitions.html"
+    },
+    {
+      "name": "DescribeRegistrationFieldValues",
+      "methodName": "toDescribeRegistrationFieldValues",
+      "description": "Grants permission to describe the field values for a given registration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrationFieldValues.html"
+    },
+    {
+      "name": "DescribeRegistrationSectionDefinitions",
+      "methodName": "toDescribeRegistrationSectionDefinitions",
+      "description": "Grants permission to describe the section definitions for a given registration type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrationSectionDefinitions.html"
+    },
+    {
+      "name": "DescribeRegistrationTypeDefinitions",
+      "methodName": "toDescribeRegistrationTypeDefinitions",
+      "description": "Grants permission to describe the registration types supported by the service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrationTypeDefinitions.html"
+    },
+    {
+      "name": "DescribeRegistrationVersions",
+      "methodName": "toDescribeRegistrationVersions",
+      "description": "Grants permission to describe the versions for a given registration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrationVersions.html"
+    },
+    {
+      "name": "DescribeRegistrations",
+      "methodName": "toDescribeRegistrations",
+      "description": "Grants permission to describe the registrations in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrations.html"
+    },
+    {
+      "name": "DescribeSenderIds",
+      "methodName": "toDescribeSenderIds",
+      "description": "Grants permission to describe the sender IDs in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeSenderIds.html"
+    },
+    {
+      "name": "DescribeSpendLimits",
+      "methodName": "toDescribeSpendLimits",
+      "description": "Grants permission to describe the monthly spend limits for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeSpendLimits.html"
+    },
+    {
+      "name": "DescribeVerifiedDestinationNumbers",
+      "methodName": "toDescribeVerifiedDestinationNumbers",
+      "description": "Grants permission to describe the verified destination numbers in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeVerifiedDestinationNumbers.html"
+    },
+    {
+      "name": "DisassociateOriginationIdentity",
+      "methodName": "toDisassociateOriginationIdentity",
+      "description": "Grants permission to disassociate an origination phone number or sender ID from a pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DisassociateOriginationIdentity.html"
+    },
+    {
+      "name": "DisassociateProtectConfiguration",
+      "methodName": "toDisassociateProtectConfiguration",
+      "description": "Grants permission to disassociate a protect configuration from a configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DisassociateProtectConfiguration.html"
+    },
+    {
+      "name": "DiscardRegistrationVersion",
+      "methodName": "toDiscardRegistrationVersion",
+      "description": "Grants permission to discard the latest version of a given registration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DiscardRegistrationVersion.html"
+    },
+    {
+      "name": "GetProtectConfigurationCountryRuleSet",
+      "methodName": "toGetProtectConfigurationCountryRuleSet",
+      "description": "Grants permission to get the country rule set for a protect configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_GetProtectConfigurationCountryRuleSet.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to get a resource policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "ListAvailablePhoneNumbers",
+      "methodName": "toListAvailablePhoneNumbers",
+      "description": "Grants permission to list available phone numbers for purchase",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ListAvailablePhoneNumbers.html"
+    },
+    {
+      "name": "ListNotifyCountries",
+      "methodName": "toListNotifyCountries",
+      "description": "Grants permission to list countries that support notify messaging",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ListNotifyCountries.html"
+    },
+    {
+      "name": "ListPoolOriginationIdentities",
+      "methodName": "toListPoolOriginationIdentities",
+      "description": "Grants permission to list all origination phone numbers and sender IDs associated to a pool",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ListPoolOriginationIdentities.html"
+    },
+    {
+      "name": "ListProtectConfigurationRuleSetNumberOverrides",
+      "methodName": "toListProtectConfigurationRuleSetNumberOverrides",
+      "description": "Grants permission to list all phone number overrides for a protect configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ListProtectConfigurationRuleSetNumberOverrides.html"
+    },
+    {
+      "name": "ListRegistrationAssociations",
+      "methodName": "toListRegistrationAssociations",
+      "description": "Grants permission to list all resources associated to a registration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ListRegistrationAssociations.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutKeyword",
+      "methodName": "toPutKeyword",
+      "description": "Grants permission to create or update a keyword for a pool or origination phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_PutKeyword.html"
+    },
+    {
+      "name": "PutMessageFeedback",
+      "methodName": "toPutMessageFeedback",
+      "description": "Grants permission to put feedback for a text, voice, or media message",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_PutMessageFeedback.html"
+    },
+    {
+      "name": "PutOptedOutNumber",
+      "methodName": "toPutOptedOutNumber",
+      "description": "Grants permission to put a destination phone number into an opt-out list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_PutOptedOutNumber.html"
+    },
+    {
+      "name": "PutProtectConfigurationRuleSetNumberOverride",
+      "methodName": "toPutProtectConfigurationRuleSetNumberOverride",
+      "description": "Grants permission to put a phone number override for a protect configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_PutProtectConfigurationRuleSetNumberOverride.html"
+    },
+    {
+      "name": "PutRegistrationFieldValue",
+      "methodName": "toPutRegistrationFieldValue",
+      "description": "Grants permission to put a registration field value",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_PutRegistrationFieldValue.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to put a resource policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "ReleasePhoneNumber",
+      "methodName": "toReleasePhoneNumber",
+      "description": "Grants permission to release an origination phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ReleasePhoneNumber.html"
+    },
+    {
+      "name": "ReleaseSenderId",
+      "methodName": "toReleaseSenderId",
+      "description": "Grants permission to release a sender ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ReleaseSenderId.html"
+    },
+    {
+      "name": "RequestPhoneNumber",
+      "methodName": "toRequestPhoneNumber",
+      "description": "Grants permission to request an origination phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_RequestPhoneNumber.html"
+    },
+    {
+      "name": "RequestSenderId",
+      "methodName": "toRequestSenderId",
+      "description": "Grants permission to request an unregistered sender ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_RequestSenderId.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "SendDestinationNumberVerificationCode",
+      "methodName": "toSendDestinationNumberVerificationCode",
+      "description": "Grants permission to send a text or voice message containing a verification code to a destination phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SendDestinationNumberVerificationCode.html"
+    },
+    {
+      "name": "SendMediaMessage",
+      "methodName": "toSendMediaMessage",
+      "description": "Grants permission to send a media message to a destination phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SendMediaMessage.html"
+    },
+    {
+      "name": "SendNotifyTextMessage",
+      "methodName": "toSendNotifyTextMessage",
+      "description": "Grants permission to send a notify text message to a destination phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SendNotifyTextMessage.html"
+    },
+    {
+      "name": "SendNotifyVoiceMessage",
+      "methodName": "toSendNotifyVoiceMessage",
+      "description": "Grants permission to send a notify voice message to a destination phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SendNotifyVoiceMessage.html"
+    },
+    {
+      "name": "SendRcsMessage",
+      "methodName": "toSendRcsMessage",
+      "description": "Grants permission to send an RCS message to a destination phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SendRcsMessage.html"
+    },
+    {
+      "name": "SendTextMessage",
+      "methodName": "toSendTextMessage",
+      "description": "Grants permission to send a text message to a destination phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SendTextMessage.html"
+    },
+    {
+      "name": "SendVoiceMessage",
+      "methodName": "toSendVoiceMessage",
+      "description": "Grants permission to send a voice message to a destination phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SendVoiceMessage.html"
+    },
+    {
+      "name": "SetAccountDefaultProtectConfiguration",
+      "methodName": "toSetAccountDefaultProtectConfiguration",
+      "description": "Grants permission to set a default protect configuration for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SetAccountDefaultProtectConfiguration.html"
+    },
+    {
+      "name": "SetDefaultMessageFeedbackEnabled",
+      "methodName": "toSetDefaultMessageFeedbackEnabled",
+      "description": "Grants permission to set the default message feedback for a configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SetDefaultMessageFeedbackEnabled.html"
+    },
+    {
+      "name": "SetDefaultMessageType",
+      "methodName": "toSetDefaultMessageType",
+      "description": "Grants permission to set the default message type for a configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SetDefaultMessageType.html"
+    },
+    {
+      "name": "SetDefaultSenderId",
+      "methodName": "toSetDefaultSenderId",
+      "description": "Grants permission to set the default sender ID for a configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SetDefaultSenderId.html"
+    },
+    {
+      "name": "SetMediaMessageSpendLimitOverride",
+      "methodName": "toSetMediaMessageSpendLimitOverride",
+      "description": "Grants permission to set an override for your account's media messaging monthly spend limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SetMediaMessageSpendLimitOverride.html"
+    },
+    {
+      "name": "SetNotifyMessageSpendLimitOverride",
+      "methodName": "toSetNotifyMessageSpendLimitOverride",
+      "description": "Grants permission to set an override for your account's notify messaging monthly spend limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SetNotifyMessageSpendLimitOverride.html"
+    },
+    {
+      "name": "SetRcsMessageSpendLimitOverride",
+      "methodName": "toSetRcsMessageSpendLimitOverride",
+      "description": "Grants permission to set an override for your account's RCS messaging monthly spend limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SetRcsMessageSpendLimitOverride.html"
+    },
+    {
+      "name": "SetTextMessageSpendLimitOverride",
+      "methodName": "toSetTextMessageSpendLimitOverride",
+      "description": "Grants permission to set an override for your account's text messaging monthly spend limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SetTextMessageSpendLimitOverride.html"
+    },
+    {
+      "name": "SetVoiceMessageSpendLimitOverride",
+      "methodName": "toSetVoiceMessageSpendLimitOverride",
+      "description": "Grants permission to set an override for your account's voice messaging monthly spend limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SetVoiceMessageSpendLimitOverride.html"
+    },
+    {
+      "name": "SubmitRegistrationVersion",
+      "methodName": "toSubmitRegistrationVersion",
+      "description": "Grants permission to submit the latest version of a given registration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SubmitRegistrationVersion.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateEventDestination",
+      "methodName": "toUpdateEventDestination",
+      "description": "Grants permission to update an event destination within a configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdateEventDestination.html"
+    },
+    {
+      "name": "UpdateNotifyConfiguration",
+      "methodName": "toUpdateNotifyConfiguration",
+      "description": "Grants permission to update a notify configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdateNotifyConfiguration.html"
+    },
+    {
+      "name": "UpdatePhoneNumber",
+      "methodName": "toUpdatePhoneNumber",
+      "description": "Grants permission to update an origination phone number's configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdatePhoneNumber.html"
+    },
+    {
+      "name": "UpdatePool",
+      "methodName": "toUpdatePool",
+      "description": "Grants permission to update a pool's configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdatePool.html"
+    },
+    {
+      "name": "UpdateProtectConfiguration",
+      "methodName": "toUpdateProtectConfiguration",
+      "description": "Grants permission to update a protect configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdateProtectConfiguration.html"
+    },
+    {
+      "name": "UpdateProtectConfigurationCountryRuleSet",
+      "methodName": "toUpdateProtectConfigurationCountryRuleSet",
+      "description": "Grants permission to update a country rule set for a protect configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdateProtectConfigurationCountryRuleSet.html"
+    },
+    {
+      "name": "UpdateRcsAgent",
+      "methodName": "toUpdateRcsAgent",
+      "description": "Grants permission to update an RCS agent's configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdateRcsAgent.html"
+    },
+    {
+      "name": "UpdateSenderId",
+      "methodName": "toUpdateSenderId",
+      "description": "Grants permission to update a sender ID's configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdateSenderId.html"
+    },
+    {
+      "name": "VerifyDestinationNumber",
+      "methodName": "toVerifyDestinationNumber",
+      "description": "Grants permission to verify a destination phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_VerifyDestinationNumber.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "ConfigurationSet",
+      "methodName": "onConfigurationSet",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateConfigurationSet.html",
+      "arn": "arn:${Partition}:sms-voice:${Region}:${Account}:configuration-set/${ConfigurationSetName}",
+      "placeholders": [
+        {
+          "placeholder": "ConfigurationSetName",
+          "name": "configurationSetName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Message",
+      "methodName": "onMessage",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_PutMessageFeedback.html",
+      "arn": "arn:${Partition}:sms-voice:${Region}:${Account}:message/${MessageId}",
+      "placeholders": [
+        {
+          "placeholder": "MessageId",
+          "name": "messageId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "NotifyConfiguration",
+      "methodName": "onNotifyConfiguration",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateNotifyConfiguration.html",
+      "arn": "arn:${Partition}:sms-voice:${Region}:${Account}:notify-configuration/${NotifyConfigurationId}",
+      "placeholders": [
+        {
+          "placeholder": "NotifyConfigurationId",
+          "name": "notifyConfigurationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "OptOutList",
+      "methodName": "onOptOutList",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateOptOutList.html",
+      "arn": "arn:${Partition}:sms-voice:${Region}:${Account}:opt-out-list/${OptOutListName}",
+      "placeholders": [
+        {
+          "placeholder": "OptOutListName",
+          "name": "optOutListName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "PhoneNumber",
+      "methodName": "onPhoneNumber",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_RequestPhoneNumber.html",
+      "arn": "arn:${Partition}:sms-voice:${Region}:${Account}:phone-number/${PhoneNumberId}",
+      "placeholders": [
+        {
+          "placeholder": "PhoneNumberId",
+          "name": "phoneNumberId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Pool",
+      "methodName": "onPool",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreatePool.html",
+      "arn": "arn:${Partition}:sms-voice:${Region}:${Account}:pool/${PoolId}",
+      "placeholders": [
+        {
+          "placeholder": "PoolId",
+          "name": "poolId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ProtectConfiguration",
+      "methodName": "onProtectConfiguration",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateProtectConfiguration.html",
+      "arn": "arn:${Partition}:sms-voice:${Region}:${Account}:protect-configuration/${ProtectConfigurationId}",
+      "placeholders": [
+        {
+          "placeholder": "ProtectConfigurationId",
+          "name": "protectConfigurationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "RcsAgent",
+      "methodName": "onRcsAgent",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateRcsAgent.html",
+      "arn": "arn:${Partition}:sms-voice:${Region}:${Account}:rcs-agent/${RcsAgentId}",
+      "placeholders": [
+        {
+          "placeholder": "RcsAgentId",
+          "name": "rcsAgentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Registration",
+      "methodName": "onRegistration",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrations.html",
+      "arn": "arn:${Partition}:sms-voice:${Region}:${Account}:registration/${RegistrationId}",
+      "placeholders": [
+        {
+          "placeholder": "RegistrationId",
+          "name": "registrationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "RegistrationAttachment",
+      "methodName": "onRegistrationAttachment",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeRegistrationAttachments.html",
+      "arn": "arn:${Partition}:sms-voice:${Region}:${Account}:registration-attachment/${RegistrationAttachmentId}",
+      "placeholders": [
+        {
+          "placeholder": "RegistrationAttachmentId",
+          "name": "registrationAttachmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "SenderId",
+      "methodName": "onSenderId",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeSenderIds.html",
+      "arn": "arn:${Partition}:sms-voice:${Region}:${Account}:sender-id/${SenderId}/${IsoCountryCode}",
+      "placeholders": [
+        {
+          "placeholder": "SenderId",
+          "name": "senderId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IsoCountryCode",
+          "name": "isoCountryCode",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "VerifiedDestinationNumber",
+      "methodName": "onVerifiedDestinationNumber",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeVerifiedDestinationNumbers.html",
+      "arn": "arn:${Partition}:sms-voice:${Region}:${Account}:verified-destination-number/${VerifiedDestinationNumberId}",
+      "placeholders": [
+        {
+          "placeholder": "VerifiedDestinationNumberId",
+          "name": "verifiedDestinationNumberId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateConfigurationSet",
+        "toCreateNotifyConfiguration",
+        "toCreateOptOutList",
+        "toCreatePool",
+        "toCreateProtectConfiguration",
+        "toCreateRcsAgent",
+        "toCreateRegistration",
+        "toCreateRegistrationAttachment",
+        "toCreateVerifiedDestinationNumber",
+        "toRequestPhoneNumber",
+        "toRequestSenderId",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateOriginationIdentity",
+        "toAssociateProtectConfiguration",
+        "toCreateEventDestination",
+        "toCreatePool",
+        "toCreateRegistrationAssociation",
+        "toCreateRegistrationVersion",
+        "toDeleteConfigurationSet",
+        "toDeleteDefaultMessageType",
+        "toDeleteDefaultSenderId",
+        "toDeleteEventDestination",
+        "toDeleteKeyword",
+        "toDeleteNotifyConfiguration",
+        "toDeleteOptOutList",
+        "toDeleteOptedOutNumber",
+        "toDeletePool",
+        "toDeleteProtectConfiguration",
+        "toDeleteProtectConfigurationRuleSetNumberOverride",
+        "toDeleteRcsAgent",
+        "toDeleteRegistration",
+        "toDeleteRegistrationAttachment",
+        "toDeleteRegistrationFieldValue",
+        "toDeleteResourcePolicy",
+        "toDeleteVerifiedDestinationNumber",
+        "toDescribeConfigurationSets",
+        "toDescribeKeywords",
+        "toDescribeNotifyConfigurations",
+        "toDescribeOptOutLists",
+        "toDescribeOptedOutNumbers",
+        "toDescribePhoneNumbers",
+        "toDescribePools",
+        "toDescribeProtectConfigurations",
+        "toDescribeRcsAgentCountryLaunchStatus",
+        "toDescribeRcsAgents",
+        "toDescribeRegistrationAttachments",
+        "toDescribeRegistrationFieldValues",
+        "toDescribeRegistrationVersions",
+        "toDescribeRegistrations",
+        "toDescribeSenderIds",
+        "toDescribeVerifiedDestinationNumbers",
+        "toDisassociateOriginationIdentity",
+        "toDisassociateProtectConfiguration",
+        "toDiscardRegistrationVersion",
+        "toGetProtectConfigurationCountryRuleSet",
+        "toGetResourcePolicy",
+        "toListPoolOriginationIdentities",
+        "toListProtectConfigurationRuleSetNumberOverrides",
+        "toListRegistrationAssociations",
+        "toListTagsForResource",
+        "toPutKeyword",
+        "toPutOptedOutNumber",
+        "toPutProtectConfigurationRuleSetNumberOverride",
+        "toPutRegistrationFieldValue",
+        "toPutResourcePolicy",
+        "toReleasePhoneNumber",
+        "toReleaseSenderId",
+        "toRequestPhoneNumber",
+        "toSendDestinationNumberVerificationCode",
+        "toSendMediaMessage",
+        "toSendNotifyTextMessage",
+        "toSendNotifyVoiceMessage",
+        "toSendRcsMessage",
+        "toSendTextMessage",
+        "toSendVoiceMessage",
+        "toSetAccountDefaultProtectConfiguration",
+        "toSetDefaultMessageFeedbackEnabled",
+        "toSetDefaultMessageType",
+        "toSetDefaultSenderId",
+        "toSubmitRegistrationVersion",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateEventDestination",
+        "toUpdateNotifyConfiguration",
+        "toUpdatePhoneNumber",
+        "toUpdatePool",
+        "toUpdateProtectConfiguration",
+        "toUpdateProtectConfigurationCountryRuleSet",
+        "toUpdateRcsAgent",
+        "toUpdateSenderId",
+        "toVerifyDestinationNumber"
+      ],
+      "relatedResourceTypes": [
+        "ConfigurationSet",
+        "NotifyConfiguration",
+        "OptOutList",
+        "PhoneNumber",
+        "Pool",
+        "ProtectConfiguration",
+        "RcsAgent",
+        "Registration",
+        "RegistrationAttachment",
+        "SenderId",
+        "VerifiedDestinationNumber"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateConfigurationSet",
+        "toCreateNotifyConfiguration",
+        "toCreateOptOutList",
+        "toCreatePool",
+        "toCreateProtectConfiguration",
+        "toCreateRcsAgent",
+        "toCreateRegistration",
+        "toCreateRegistrationAttachment",
+        "toCreateVerifiedDestinationNumber",
+        "toRequestPhoneNumber",
+        "toRequestSenderId",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

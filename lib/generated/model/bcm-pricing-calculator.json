@@ -1,0 +1,480 @@
+{
+  "schemaVersion": 1,
+  "filename": "bcm-pricing-calculator",
+  "className": "BcmPricingCalculator",
+  "name": "bcm-pricing-calculator",
+  "servicePrefix": "bcm-pricing-calculator",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_bcm-pricing-calculator.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateBillEstimate",
+      "CreateBillScenario",
+      "CreateBillScenarioCommitmentModification",
+      "CreateBillScenarioUsageModification",
+      "CreateWorkloadEstimate",
+      "CreateWorkloadEstimateUsage",
+      "DeleteBillEstimate",
+      "DeleteBillScenario",
+      "DeleteBillScenarioCommitmentModification",
+      "DeleteBillScenarioUsageModification",
+      "DeleteWorkloadEstimate",
+      "DeleteWorkloadEstimateUsage",
+      "ListTagsForResource",
+      "TagResource",
+      "UntagResource",
+      "UpdateBillEstimate",
+      "UpdateBillScenario",
+      "UpdateBillScenarioCommitmentModification",
+      "UpdateBillScenarioUsageModification",
+      "UpdatePreferences",
+      "UpdateWorkloadEstimate",
+      "UpdateWorkloadEstimateUsage"
+    ],
+    "Read": [
+      "GetBillEstimate",
+      "GetBillScenario",
+      "GetPreferences",
+      "GetWorkloadEstimate"
+    ],
+    "List": [
+      "ListBillEstimateCommitments",
+      "ListBillEstimateInputCommitmentModifications",
+      "ListBillEstimateInputUsageModifications",
+      "ListBillEstimateLineItems",
+      "ListBillEstimates",
+      "ListBillScenarioCommitmentModifications",
+      "ListBillScenarioUsageModifications",
+      "ListBillScenarios",
+      "ListWorkloadEstimateUsage",
+      "ListWorkloadEstimates"
+    ],
+    "Tagging": [
+      "ListTagsForResource",
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateBillEstimate",
+      "methodName": "toCreateBillEstimate",
+      "description": "Grants permission to create a new bill estimate. Charge is incurred for successful bill estimates",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_CreateBillEstimate.html"
+    },
+    {
+      "name": "CreateBillScenario",
+      "methodName": "toCreateBillScenario",
+      "description": "Grants permission to create a new bill scenario",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_CreateBillScenario.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateBillScenarioCommitmentModification",
+      "methodName": "toCreateBillScenarioCommitmentModification",
+      "description": "Grants permission to create new commitments or remove existing commitment from a specified bill scenario",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchCreateBillScenarioCommitmentModification.html"
+    },
+    {
+      "name": "CreateBillScenarioUsageModification",
+      "methodName": "toCreateBillScenarioUsageModification",
+      "description": "Grants permission to create usage in the specified bill scenario",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchCreateBillScenarioUsageModification.html"
+    },
+    {
+      "name": "CreateWorkloadEstimate",
+      "methodName": "toCreateWorkloadEstimate",
+      "description": "Grants permission to create a new Workload estimate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_CreateWorkloadEstimate.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateWorkloadEstimateUsage",
+      "methodName": "toCreateWorkloadEstimateUsage",
+      "description": "Grants permission to create usage in the specified workload estimate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchCreateWorkloadEstimateUsage.html"
+    },
+    {
+      "name": "DeleteBillEstimate",
+      "methodName": "toDeleteBillEstimate",
+      "description": "Grants permission to delete bill estimate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_DeleteBillEstimate.html"
+    },
+    {
+      "name": "DeleteBillScenario",
+      "methodName": "toDeleteBillScenario",
+      "description": "Grants permission to delete a bill scenario",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_DeleteBillScenario.html"
+    },
+    {
+      "name": "DeleteBillScenarioCommitmentModification",
+      "methodName": "toDeleteBillScenarioCommitmentModification",
+      "description": "Grants permission to delete newly added commitments from the specified bill scenario",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchDeleteBillScenarioCommitmentModification.html"
+    },
+    {
+      "name": "DeleteBillScenarioUsageModification",
+      "methodName": "toDeleteBillScenarioUsageModification",
+      "description": "Grants permission to delete newly added usage from the specified bill scenario",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchDeleteBillScenarioUsageModification.html"
+    },
+    {
+      "name": "DeleteWorkloadEstimate",
+      "methodName": "toDeleteWorkloadEstimate",
+      "description": "Grants permission to delete the specified workload estimate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_DeleteWorkloadEstimate.html"
+    },
+    {
+      "name": "DeleteWorkloadEstimateUsage",
+      "methodName": "toDeleteWorkloadEstimateUsage",
+      "description": "Grants permission to delete newly added usage from the specified workload estimate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchDeleteWorkloadEstimateUsage.html"
+    },
+    {
+      "name": "GetBillEstimate",
+      "methodName": "toGetBillEstimate",
+      "description": "Grants permission to retrieve details of a bill estimate including estimated cost",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_GetBillEstimate.html"
+    },
+    {
+      "name": "GetBillScenario",
+      "methodName": "toGetBillScenario",
+      "description": "Grants permission to retrieve information associated with a bill scenario",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_GetBillScenario.html"
+    },
+    {
+      "name": "GetPreferences",
+      "methodName": "toGetPreferences",
+      "description": "Grants permission to retrieve applicable rate type preferences for the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_GetPreferences.html"
+    },
+    {
+      "name": "GetWorkloadEstimate",
+      "methodName": "toGetWorkloadEstimate",
+      "description": "Grants permission to retrieve information associated with a workload estimate",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_GetWorkloadEstimate.html"
+    },
+    {
+      "name": "ListBillEstimateCommitments",
+      "methodName": "toListBillEstimateCommitments",
+      "description": "Grants permission to list commitments associated with the specified bill estimate",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_ListBillEstimateCommitments.html"
+    },
+    {
+      "name": "ListBillEstimateInputCommitmentModifications",
+      "methodName": "toListBillEstimateInputCommitmentModifications",
+      "description": "Grants permission to list added or removed commitments for a specified bill estimate",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_ListBillEstimateInputCommitmentModifications.html"
+    },
+    {
+      "name": "ListBillEstimateInputUsageModifications",
+      "methodName": "toListBillEstimateInputUsageModifications",
+      "description": "Grants permission to list added or modified usage for a specified bill estimate",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_ListBillEstimateInputUsageModifications.html"
+    },
+    {
+      "name": "ListBillEstimateLineItems",
+      "methodName": "toListBillEstimateLineItems",
+      "description": "Grants permission to list result line items for a specified bill estimate",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_ListBillEstimateLineItems.html"
+    },
+    {
+      "name": "ListBillEstimates",
+      "methodName": "toListBillEstimates",
+      "description": "Grants permission to list bill estimates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_ListBillEstimates.html"
+    },
+    {
+      "name": "ListBillScenarioCommitmentModifications",
+      "methodName": "toListBillScenarioCommitmentModifications",
+      "description": "Grants permission to list commitments included in a bill scenario",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_ListBillScenarioCommitmentModifications.html"
+    },
+    {
+      "name": "ListBillScenarioUsageModifications",
+      "methodName": "toListBillScenarioUsageModifications",
+      "description": "Grants permission to list usage lines of a specified bill scenario",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_ListBillScenarioUsageModifications.html"
+    },
+    {
+      "name": "ListBillScenarios",
+      "methodName": "toListBillScenarios",
+      "description": "Grants permission to list bill scenarios",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_ListBillScenarios.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to return a list of tags for a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWorkloadEstimateUsage",
+      "methodName": "toListWorkloadEstimateUsage",
+      "description": "Grants permission to list usage lines for the specified workload estimate",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_ListWorkloadEstimateUsage.html"
+    },
+    {
+      "name": "ListWorkloadEstimates",
+      "methodName": "toListWorkloadEstimates",
+      "description": "Grants permission to list workload estimates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_ListWorkloadEstimates.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add a tag to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_UntagResource.html"
+    },
+    {
+      "name": "UpdateBillEstimate",
+      "methodName": "toUpdateBillEstimate",
+      "description": "Grants permission to update bill estimate name and expiration date time",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_UpdateBillEstimate.html"
+    },
+    {
+      "name": "UpdateBillScenario",
+      "methodName": "toUpdateBillScenario",
+      "description": "Grants permission to update name and expiration date time of the specified bill scenario",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_UpdateBillScenario.html"
+    },
+    {
+      "name": "UpdateBillScenarioCommitmentModification",
+      "methodName": "toUpdateBillScenarioCommitmentModification",
+      "description": "Grants permission to update commitment group of commitments in the specified bill scenario",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchUpdateBillScenarioCommitmentModification.html"
+    },
+    {
+      "name": "UpdateBillScenarioUsageModification",
+      "methodName": "toUpdateBillScenarioUsageModification",
+      "description": "Grants permission to update usage amount, usage hour, and usage group in the specified bill scenario",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchUpdateBillScenarioUsageModification.html"
+    },
+    {
+      "name": "UpdatePreferences",
+      "methodName": "toUpdatePreferences",
+      "description": "Grants permission to update rate type preferences for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_UpdatePreferences.html"
+    },
+    {
+      "name": "UpdateWorkloadEstimate",
+      "methodName": "toUpdateWorkloadEstimate",
+      "description": "Grants permission to update name and expiration date time of the specified workload estimate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_UpdateWorkloadEstimate.html"
+    },
+    {
+      "name": "UpdateWorkloadEstimateUsage",
+      "methodName": "toUpdateWorkloadEstimateUsage",
+      "description": "Grants permission to update usage amount and usage group in the specified workload estimate based on the usage id",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchUpdateWorkloadEstimateUsage.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "bill-estimate",
+      "methodName": "onBillEstimate",
+      "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/pc-bill-estimate.html",
+      "arn": "arn:${Partition}:bcm-pricing-calculator::${Account}:bill-estimate/${BillEstimateId}",
+      "placeholders": [
+        {
+          "placeholder": "BillEstimateId",
+          "name": "billEstimateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "bill-scenario",
+      "methodName": "onBillScenario",
+      "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/pc-bill-scenario.html",
+      "arn": "arn:${Partition}:bcm-pricing-calculator::${Account}:bill-scenario/${BillScenarioId}",
+      "placeholders": [
+        {
+          "placeholder": "BillScenarioId",
+          "name": "billScenarioId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "workload-estimate",
+      "methodName": "onWorkloadEstimate",
+      "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/pc-workload-estimate.html",
+      "arn": "arn:${Partition}:bcm-pricing-calculator::${Account}:workload-estimate/${WorkloadEstimateId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkloadEstimateId",
+          "name": "workloadEstimateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateBillScenario",
+        "toCreateWorkloadEstimate",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateBillEstimate",
+        "toCreateBillScenarioCommitmentModification",
+        "toCreateBillScenarioUsageModification",
+        "toCreateWorkloadEstimateUsage",
+        "toDeleteBillScenario",
+        "toDeleteBillScenarioCommitmentModification",
+        "toDeleteBillScenarioUsageModification",
+        "toDeleteWorkloadEstimate",
+        "toDeleteWorkloadEstimateUsage",
+        "toGetBillScenario",
+        "toGetWorkloadEstimate",
+        "toListBillScenarioCommitmentModifications",
+        "toListBillScenarioUsageModifications",
+        "toListWorkloadEstimateUsage",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateBillScenario",
+        "toUpdateBillScenarioCommitmentModification",
+        "toUpdateBillScenarioUsageModification",
+        "toUpdateWorkloadEstimate",
+        "toUpdateWorkloadEstimateUsage"
+      ],
+      "relatedResourceTypes": [
+        "bill-scenario",
+        "workload-estimate"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateBillScenario",
+        "toCreateWorkloadEstimate",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

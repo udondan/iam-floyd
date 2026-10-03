@@ -1,0 +1,30 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CodeStarEC2",
+      "Effect": "Allow",
+      "Action": [
+        "codestar:*",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "cloud9:DescribeEnvironment*",
+        "cloud9:ValidateEnvironmentName"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CodeStarCF",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStack*",
+        "cloudformation:ListStacks*",
+        "cloudformation:GetTemplateSummary"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/awscodestar-*"
+      ]
+    }
+  ]
+}

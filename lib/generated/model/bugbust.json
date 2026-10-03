@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "filename": "bugbust",
+  "className": "Bugbust",
+  "name": "bugbust",
+  "servicePrefix": "bugbust",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_bugbust.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateEvent",
+      "EvaluateProfilingGroups",
+      "JoinEvent",
+      "TagResource",
+      "UntagResource",
+      "UpdateEvent",
+      "UpdateWorkItem",
+      "UpdateWorkItemAdmin"
+    ],
+    "Read": [
+      "GetEvent",
+      "GetJoinEventStatus",
+      "ListBugs",
+      "ListEventParticipants",
+      "ListEventScores",
+      "ListProfilingGroups",
+      "ListPullRequests",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListEvents"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateEvent",
+      "methodName": "toCreateEvent",
+      "description": "Grants permission to create a BugBust event",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "EvaluateProfilingGroups",
+      "methodName": "toEvaluateProfilingGroups",
+      "description": "Grants permission to evaluate checked-in profiling groups",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html"
+    },
+    {
+      "name": "GetEvent",
+      "methodName": "toGetEvent",
+      "description": "Grants permission to view customer details about an event",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html"
+    },
+    {
+      "name": "GetJoinEventStatus",
+      "methodName": "toGetJoinEventStatus",
+      "description": "Grants permission to view the status of a BugBust player's attempt to join a BugBust event",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html"
+    },
+    {
+      "name": "JoinEvent",
+      "methodName": "toJoinEvent",
+      "description": "Grants permission to join an event",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html"
+    },
+    {
+      "name": "ListBugs",
+      "methodName": "toListBugs",
+      "description": "Grants permission to view the bugs that were imported into an event for players to work on",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html"
+    },
+    {
+      "name": "ListEventParticipants",
+      "methodName": "toListEventParticipants",
+      "description": "Grants permission to view the participants of an event",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html"
+    },
+    {
+      "name": "ListEventScores",
+      "methodName": "toListEventScores",
+      "description": "Grants permission to view the scores of an event's players",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html"
+    },
+    {
+      "name": "ListEvents",
+      "methodName": "toListEvents",
+      "description": "Grants permission to List BugBust events",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html",
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ListProfilingGroups",
+      "methodName": "toListProfilingGroups",
+      "description": "Grants permission to view the profiling groups that were imported into an event for players to work on",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html"
+    },
+    {
+      "name": "ListPullRequests",
+      "methodName": "toListPullRequests",
+      "description": "Grants permission to view the pull requests used by players to submit fixes to their claimed bugs in an event",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to lists tag for a Bugbust resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a Bugbust resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a Bugbust resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html"
+    },
+    {
+      "name": "UpdateEvent",
+      "methodName": "toUpdateEvent",
+      "description": "Grants permission to update a BugBust event",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html"
+    },
+    {
+      "name": "UpdateWorkItem",
+      "methodName": "toUpdateWorkItem",
+      "description": "Grants permission to update a work item as claimed or unclaimed (bug or profiling group)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html"
+    },
+    {
+      "name": "UpdateWorkItemAdmin",
+      "methodName": "toUpdateWorkItemAdmin",
+      "description": "Grants permission to update an event's work item (bug or profiling group)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Event",
+      "methodName": "onEvent",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/event-managing.html",
+      "arn": "arn:${Partition}:bugbust:${Region}:${Account}:events/${EventId}",
+      "placeholders": [
+        {
+          "placeholder": "EventId",
+          "name": "eventId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access based on the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateEvent",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access based on the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toEvaluateProfilingGroups",
+        "toGetEvent",
+        "toGetJoinEventStatus",
+        "toJoinEvent",
+        "toListBugs",
+        "toListEventParticipants",
+        "toListEventScores",
+        "toListEvents",
+        "toListProfilingGroups",
+        "toListPullRequests",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateEvent",
+        "toUpdateWorkItem",
+        "toUpdateWorkItemAdmin"
+      ],
+      "relatedResourceTypes": [
+        "Event"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access based on the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateEvent",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonRoute53ProfilesReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "route53profiles:GetProfile",
+        "route53profiles:GetProfileAssociation",
+        "route53profiles:GetProfilePolicy",
+        "route53profiles:GetProfileResourceAssociation",
+        "route53profiles:ListProfileAssociations",
+        "route53profiles:ListProfileResourceAssociations",
+        "route53profiles:ListProfiles",
+        "route53profiles:ListTagsForResource",
+        "route53resolver:GetFirewallConfig",
+        "route53resolver:GetResolverConfig",
+        "route53resolver:GetResolverDnssecConfig",
+        "route53resolver:GetResolverQueryLogConfig"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

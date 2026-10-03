@@ -1,0 +1,90 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DevOpsGuruFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "devops-guru:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudFormationListStacksAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStacks",
+        "cloudformation:ListStacks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchGetMetricDataAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SnsListTopicsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sns:ListTopics"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SnsTopicOperations",
+      "Effect": "Allow",
+      "Action": [
+        "sns:CreateTopic",
+        "sns:GetTopicAttributes",
+        "sns:SetTopicAttributes",
+        "sns:Publish"
+      ],
+      "Resource": "arn:aws:sns:*:*:DevOps-Guru-*"
+    },
+    {
+      "Sid": "DevOpsGuruSlrCreation",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/devops-guru.amazonaws.com/AWSServiceRoleForDevOpsGuru",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "devops-guru.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "DevOpsGuruSlrDeletion",
+      "Effect": "Allow",
+      "Action": [
+        "iam:DeleteServiceLinkedRole",
+        "iam:GetServiceLinkedRoleDeletionStatus"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/devops-guru.amazonaws.com/AWSServiceRoleForDevOpsGuru"
+    },
+    {
+      "Sid": "RDSDescribeDBInstancesAccess",
+      "Effect": "Allow",
+      "Action": [
+        "rds:DescribeDBInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchLogsFilterLogEventsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "logs:FilterLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/DevOps-Guru-Analysis": "true"
+        }
+      }
+    }
+  ]
+}

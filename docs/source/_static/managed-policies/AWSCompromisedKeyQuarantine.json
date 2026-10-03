@@ -1,0 +1,41 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Deny",
+      "Action": [
+        "iam:AttachGroupPolicy",
+        "iam:AttachRolePolicy",
+        "iam:AttachUserPolicy",
+        "iam:ChangePassword",
+        "iam:CreateAccessKey",
+        "iam:CreateInstanceProfile",
+        "iam:CreateLoginProfile",
+        "iam:CreateRole",
+        "iam:CreateUser",
+        "iam:DetachUserPolicy",
+        "iam:PutUserPermissionsBoundary",
+        "iam:PutUserPolicy",
+        "iam:UpdateAccessKey",
+        "iam:UpdateAccountPasswordPolicy",
+        "iam:UpdateUser",
+        "ec2:RequestSpotInstances",
+        "ec2:RunInstances",
+        "ec2:StartInstances",
+        "organizations:CreateAccount",
+        "organizations:CreateOrganization",
+        "organizations:InviteAccountToOrganization",
+        "lambda:CreateFunction",
+        "lightsail:Create*",
+        "lightsail:Start*",
+        "lightsail:Delete*",
+        "lightsail:Update*",
+        "lightsail:GetInstanceAccessDetails",
+        "lightsail:DownloadDefaultKeyPair"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "elastictranscoder:Read*",
+        "elastictranscoder:List*",
+        "s3:ListAllMyBuckets",
+        "s3:ListBucket",
+        "iam:ListRoles",
+        "sns:ListTopics"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

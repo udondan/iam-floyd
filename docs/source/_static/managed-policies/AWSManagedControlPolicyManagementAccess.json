@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": [
+      "organizations:DescribePolicy",
+      "organizations:UpdatePolicy",
+      "organizations:ListPolicies",
+      "organizations:ListRoots",
+      "organizations:CreatePolicy",
+      "organizations:AttachPolicy",
+      "organizations:DetachPolicy",
+      "organizations:DeletePolicy",
+      "organizations:TagResource",
+      "organizations:UntagResource",
+      "organizations:ListTagsForResource"
+    ],
+    "Resource": "*"
+  }
+}

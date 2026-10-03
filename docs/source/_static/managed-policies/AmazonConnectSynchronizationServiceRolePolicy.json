@@ -1,0 +1,78 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowConnectActions",
+      "Effect": "Allow",
+      "Action": [
+        "connect:Create*",
+        "connect:BatchCreate*",
+        "connect:Update*",
+        "connect:BatchUpdate*",
+        "connect:Delete*",
+        "connect:BatchDelete*",
+        "connect:Describe*",
+        "connect:BatchDescribe*",
+        "connect:List*",
+        "connect:Search*",
+        "connect:Associate*",
+        "connect:Disassociate*",
+        "connect:Get*",
+        "connect:BatchGet*",
+        "connect:Import*",
+        "connect:TagResource",
+        "connect:UntagResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DisallowedConnectActions",
+      "Effect": "Deny",
+      "Action": [
+        "connect:Start*",
+        "connect:Stop*",
+        "connect:Resume*",
+        "connect:Suspend*",
+        "connect:*Contact",
+        "connect:SearchContacts",
+        "connect:*ContactAttributes*",
+        "connect:*RealtimeContact*",
+        "connect:*AnalyticsData*",
+        "connect:*MetricData*",
+        "connect:*UserData*",
+        "connect:*ContactEvaluation",
+        "connect:*AttachedFile*",
+        "connect:UpdateContactSchedule",
+        "connect:UpdateContactRoutingData",
+        "connect:ListContactReferences",
+        "connect:CreateParticipant",
+        "connect:CreatePersistentContactAssociation",
+        "connect:CreateInstance",
+        "connect:DeleteInstance",
+        "connect:ListInstances",
+        "connect:ReplicateInstance",
+        "connect:GetFederationToken",
+        "connect:ClaimPhoneNumber",
+        "connect:ImportPhoneNumber",
+        "connect:ReleasePhoneNumber",
+        "connect:SearchAvailablePhoneNumbers",
+        "connect:CreateTrafficDistributionGroup",
+        "connect:DeleteTrafficDistributionGroup",
+        "connect:GetTrafficDistribution",
+        "connect:UpdateTrafficDistribution"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowPutMetricsForConnectNamespace",
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/Connect"
+        }
+      }
+    }
+  ]
+}

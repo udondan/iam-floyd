@@ -1,0 +1,436 @@
+{
+  "schemaVersion": 1,
+  "filename": "detective",
+  "className": "Detective",
+  "name": "detective",
+  "servicePrefix": "detective",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_detective.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptInvitation",
+      "CreateGraph",
+      "CreateMembers",
+      "DeleteGraph",
+      "DeleteMembers",
+      "DisableOrganizationAdminAccount",
+      "DisassociateMembership",
+      "EnableOrganizationAdminAccount",
+      "RejectInvitation",
+      "StartInvestigation",
+      "StartMonitoringMember",
+      "TagResource",
+      "UntagResource",
+      "UpdateDatasourcePackages",
+      "UpdateInvestigationState",
+      "UpdateOrganizationConfiguration"
+    ],
+    "Read": [
+      "BatchGetGraphMemberDatasources",
+      "BatchGetMembershipDatasources",
+      "DescribeOrganizationConfiguration",
+      "GetInvestigation",
+      "GetMembers",
+      "GetFreeTrialEligibility",
+      "GetGraphIngestState",
+      "GetPricingInformation",
+      "GetUsageInformation",
+      "InvokeAssistant",
+      "SearchGraph"
+    ],
+    "List": [
+      "ListDatasourcePackages",
+      "ListGraphs",
+      "ListIndicators",
+      "ListInvestigations",
+      "ListInvitations",
+      "ListMembers",
+      "ListOrganizationAdminAccount",
+      "ListTagsForResource",
+      "ListHighDegreeEntities"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptInvitation",
+      "methodName": "toAcceptInvitation",
+      "description": "Grants permission to accept an invitation to become a member of a behavior graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_AcceptInvitation.html"
+    },
+    {
+      "name": "BatchGetGraphMemberDatasources",
+      "methodName": "toBatchGetGraphMemberDatasources",
+      "description": "Grants permission to retrieve the datasource package history for the specified member accounts in a behavior graph managed by this account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_BatchGetGraphMemberDatasources.html"
+    },
+    {
+      "name": "BatchGetMembershipDatasources",
+      "methodName": "toBatchGetMembershipDatasources",
+      "description": "Grants permission to retrieve the datasource package history of the caller account for the specified graphs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_BatchGetMembershipDatasources.html"
+    },
+    {
+      "name": "CreateGraph",
+      "methodName": "toCreateGraph",
+      "description": "Grants permission to create a behavior graph and begin to aggregate security information",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_CreateGraph.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMembers",
+      "methodName": "toCreateMembers",
+      "description": "Grants permission to request the membership of one or more accounts in a behavior graph managed by this account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_CreateMembers.html"
+    },
+    {
+      "name": "DeleteGraph",
+      "methodName": "toDeleteGraph",
+      "description": "Grants permission to delete a behavior graph and stop aggregating security information",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_DeleteGraph.html"
+    },
+    {
+      "name": "DeleteMembers",
+      "methodName": "toDeleteMembers",
+      "description": "Grants permission to remove member accounts from a behavior graph managed by this account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_DeleteMembers.html"
+    },
+    {
+      "name": "DescribeOrganizationConfiguration",
+      "methodName": "toDescribeOrganizationConfiguration",
+      "description": "Grants permission to view the current configuration related to the Amazon Detective integration with AWS Organizations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_DescribeOrganizationConfiguration.html"
+    },
+    {
+      "name": "DisableOrganizationAdminAccount",
+      "methodName": "toDisableOrganizationAdminAccount",
+      "description": "Grants permission to remove the Amazon Detective delegated administrator account for an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_DisableOrganizationAdminAccount.html"
+    },
+    {
+      "name": "DisassociateMembership",
+      "methodName": "toDisassociateMembership",
+      "description": "Grants permission to remove the association of this account with a behavior graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_DisassociateMembership.html"
+    },
+    {
+      "name": "EnableOrganizationAdminAccount",
+      "methodName": "toEnableOrganizationAdminAccount",
+      "description": "Grants permission to designate the Amazon Detective delegated administrator account for an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_EnableOrganizationAdminAccount.html"
+    },
+    {
+      "name": "GetInvestigation",
+      "methodName": "toGetInvestigation",
+      "description": "Grants permission to get an investigation's status and metadata",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_GetInvestigation.html"
+    },
+    {
+      "name": "GetMembers",
+      "methodName": "toGetMembers",
+      "description": "Grants permission to retrieve details on specified members of a behavior graph",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_GetMembers.html"
+    },
+    {
+      "name": "ListDatasourcePackages",
+      "methodName": "toListDatasourcePackages",
+      "description": "Grants permission to list a graph's datasource package ingest states and timestamps for the most recent state changes in a behavior graph managed by this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_ListDatasourcePackages.html"
+    },
+    {
+      "name": "ListGraphs",
+      "methodName": "toListGraphs",
+      "description": "Grants permission to list behavior graphs managed by this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_ListGraphs.html"
+    },
+    {
+      "name": "ListIndicators",
+      "methodName": "toListIndicators",
+      "description": "Grants permission to list the indicators of an investigation",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_ListIndicators.html"
+    },
+    {
+      "name": "ListInvestigations",
+      "methodName": "toListInvestigations",
+      "description": "Grants permission to list the investigations of a behavior graph",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_ListInvestigations.html"
+    },
+    {
+      "name": "ListInvitations",
+      "methodName": "toListInvitations",
+      "description": "Grants permission to retrieve details on the behavior graphs to which this account has been invited to join",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_ListInvitations.html"
+    },
+    {
+      "name": "ListMembers",
+      "methodName": "toListMembers",
+      "description": "Grants permission to retrieve details on all members of a behavior graph",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_ListMembers.html"
+    },
+    {
+      "name": "ListOrganizationAdminAccount",
+      "methodName": "toListOrganizationAdminAccount",
+      "description": "Grants permission to view the current Amazon Detective delegated administrator account for an organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_ListOrganizationAdminAccounts.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tag values that are assigned to a behavior graph",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RejectInvitation",
+      "methodName": "toRejectInvitation",
+      "description": "Grants permission to reject an invitation to become a member of a behavior graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_RejectInvitation.html"
+    },
+    {
+      "name": "StartInvestigation",
+      "methodName": "toStartInvestigation",
+      "description": "Grants permission to start investigations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_StartInvestigation.html"
+    },
+    {
+      "name": "StartMonitoringMember",
+      "methodName": "toStartMonitoringMember",
+      "description": "Grants permission to start data ingest for a member account that has a status of ACCEPTED_BUT_DISABLED",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_StartMonitoringMember.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to assign tag values to a behavior graph",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tag values from a behavior graph",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDatasourcePackages",
+      "methodName": "toUpdateDatasourcePackages",
+      "description": "Grants permission to enable or disable datasource package(s) in a behavior graph managed by this account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_UpdateDatasourcePackages.html"
+    },
+    {
+      "name": "UpdateInvestigationState",
+      "methodName": "toUpdateInvestigationState",
+      "description": "Grants permission to update an investigation's state and metadata",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_UpdateInvestigationState.html"
+    },
+    {
+      "name": "UpdateOrganizationConfiguration",
+      "methodName": "toUpdateOrganizationConfiguration",
+      "description": "Grants permission to update the current configuration related to the Amazon Detective integration with AWS Organizations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_UpdateOrganizationConfiguration.html"
+    },
+    {
+      "name": "GetFreeTrialEligibility",
+      "methodName": "toGetFreeTrialEligibility",
+      "description": "Grants permission to retrieve a behavior graph's eligibility for a free trial period",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/detective/latest/adminguide/free-trial-overview.html"
+    },
+    {
+      "name": "GetGraphIngestState",
+      "methodName": "toGetGraphIngestState",
+      "description": "Grants permission to retrieve the data ingestion state of a behavior graph",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/detective/latest/adminguide/detective-source-data-about.html"
+    },
+    {
+      "name": "GetPricingInformation",
+      "methodName": "toGetPricingInformation",
+      "description": "Grants permission to retrieve information about Amazon Detective's pricing",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/detective/latest/adminguide/usage-projected-cost-calculation.html"
+    },
+    {
+      "name": "GetUsageInformation",
+      "methodName": "toGetUsageInformation",
+      "description": "Grants permission to list usage information of a behavior graph",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/detective/latest/adminguide/tracking-usage-logging.html"
+    },
+    {
+      "name": "InvokeAssistant",
+      "methodName": "toInvokeAssistant",
+      "description": "Grants permission to invoke Detective's Assistant",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/detective/latest/userguide/finding-groups-summary.html"
+    },
+    {
+      "name": "ListHighDegreeEntities",
+      "methodName": "toListHighDegreeEntities",
+      "description": "Grants permission to retrieve high volume entities whose relationships cannot be stored by Detective",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/detective/latest/userguide/high-volume-entities.html"
+    },
+    {
+      "name": "SearchGraph",
+      "methodName": "toSearchGraph",
+      "description": "Grants permission to search the data stored in a behavior graph",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/detective/latest/userguide/detective-search.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Graph",
+      "methodName": "onGraph",
+      "url": "https://docs.aws.amazon.com/detective/latest/adminguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources",
+      "arn": "arn:${Partition}:detective:${Region}:${Account}:graph:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by specifying the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateGraph",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by specifying the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAcceptInvitation",
+        "toBatchGetGraphMemberDatasources",
+        "toCreateGraph",
+        "toCreateMembers",
+        "toDeleteGraph",
+        "toDeleteMembers",
+        "toDescribeOrganizationConfiguration",
+        "toDisassociateMembership",
+        "toGetInvestigation",
+        "toGetMembers",
+        "toListDatasourcePackages",
+        "toListIndicators",
+        "toListInvestigations",
+        "toListMembers",
+        "toListTagsForResource",
+        "toRejectInvitation",
+        "toStartInvestigation",
+        "toStartMonitoringMember",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDatasourcePackages",
+        "toUpdateInvestigationState",
+        "toUpdateOrganizationConfiguration",
+        "toGetFreeTrialEligibility",
+        "toGetGraphIngestState",
+        "toGetUsageInformation",
+        "toInvokeAssistant",
+        "toListHighDegreeEntities",
+        "toSearchGraph"
+      ],
+      "relatedResourceTypes": [
+        "Graph"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by specifying the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateGraph",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

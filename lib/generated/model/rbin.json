@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "filename": "rbin",
+  "className": "Rbin",
+  "name": "rbin",
+  "servicePrefix": "rbin",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_rbin.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateRule",
+      "DeleteRule",
+      "LockRule",
+      "TagResource",
+      "UnlockRule",
+      "UntagResource",
+      "UpdateRule"
+    ],
+    "Read": [
+      "GetRule",
+      "ListRules",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateRule",
+      "methodName": "toCreateRule",
+      "description": "Grants permission to create a Recycle Bin retention rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recyclebin/latest/APIReference/API_CreateRule.html"
+    },
+    {
+      "name": "DeleteRule",
+      "methodName": "toDeleteRule",
+      "description": "Grants permission to delete a Recycle Bin retention rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recyclebin/latest/APIReference/API_DeleteRule.html"
+    },
+    {
+      "name": "GetRule",
+      "methodName": "toGetRule",
+      "description": "Grants permission to get detailed information about a Recycle Bin retention rule",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recyclebin/latest/APIReference/API_GetRule.html"
+    },
+    {
+      "name": "ListRules",
+      "methodName": "toListRules",
+      "description": "Grants permission to list the Recycle Bin retention rules in the Region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recyclebin/latest/APIReference/API_ListRules.html",
+      "conditionMethods": [
+        "ifRequestResourceType"
+      ]
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags associated with a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recyclebin/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "LockRule",
+      "methodName": "toLockRule",
+      "description": "Grants permission to lock an existing Recycle Bin retention rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recyclebin/latest/APIReference/API_LockRule.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or update tags of a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/recyclebin/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UnlockRule",
+      "methodName": "toUnlockRule",
+      "description": "Grants permission to unlock an existing Recycle Bin retention rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recyclebin/latest/APIReference/API_UnlockRule.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags associated with a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/recyclebin/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateRule",
+      "methodName": "toUpdateRule",
+      "description": "Grants permission to update an existing Recycle Bin retention rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recyclebin/latest/APIReference/API_UpdateRule.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "rule",
+      "methodName": "onRule",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-recycle-bin.html#recycle-bin-concepts",
+      "arn": "arn:${Partition}:rbin:${Region}:${Account}:rule/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag's key and value in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateRule",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateRule",
+        "toDeleteRule",
+        "toGetRule",
+        "toListTagsForResource",
+        "toLockRule",
+        "toTagResource",
+        "toUnlockRule",
+        "toUntagResource",
+        "toUpdateRule"
+      ],
+      "relatedResourceTypes": [
+        "rule"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateRule",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rbin:Attribute/ResourceType",
+      "methodName": "ifAttributeResourceType",
+      "description": "Filters access by the resource type of the existing rule",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-perms.html#rbin-condition-keys",
+      "relatedActionMethods": [
+        "toDeleteRule",
+        "toGetRule",
+        "toListTagsForResource",
+        "toLockRule",
+        "toTagResource",
+        "toUnlockRule",
+        "toUntagResource",
+        "toUpdateRule"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Attribute/ResourceType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rbin:Request/ResourceType",
+      "methodName": "ifRequestResourceType",
+      "description": "Filters access by the resource type in a request",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-perms.html#rbin-condition-keys",
+      "relatedActionMethods": [
+        "toCreateRule",
+        "toListRules"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/ResourceType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

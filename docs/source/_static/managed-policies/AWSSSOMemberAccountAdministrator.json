@@ -1,0 +1,90 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSSSOMemberAccountAdministrator",
+      "Effect": "Allow",
+      "Action": [
+        "ds:DescribeDirectories",
+        "ds:AuthorizeApplication",
+        "ds:UnauthorizeApplication",
+        "ds:DescribeTrusts",
+        "iam:ListPolicies",
+        "organizations:EnableAWSServiceAccess",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeAccount",
+        "organizations:ListRoots",
+        "organizations:ListAccounts",
+        "organizations:ListAccountsForParent",
+        "organizations:ListParents",
+        "organizations:ListChildren",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListDelegatedAdministrators",
+        "sso:*",
+        "sso-directory:*",
+        "identitystore:*",
+        "identitystore-auth:*",
+        "ds:CreateAlias",
+        "access-analyzer:ValidatePolicy",
+        "signin:CreateTrustedIdentityPropagationApplicationForConsole",
+        "signin:ListTrustedIdentityPropagationApplicationsForConsole"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSSSOManageDelegatedAdministrator",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:RegisterDelegatedAdministrator",
+        "organizations:DeregisterDelegatedAdministrator"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": "sso.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowKMSKeyUseViaAWSIAMIdentityCenterService",
+      "Effect": "Allow",
+      "Action": [
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:Encrypt",
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "sso.*.amazonaws.com",
+          "kms:EncryptionContext:aws:sso:instance-arn": "*"
+        }
+      }
+    },
+    {
+      "Sid": "AllowKMSKeyUseViaAWSIdentityStoreService",
+      "Effect": "Allow",
+      "Action": [
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:Encrypt",
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "identitystore.*.amazonaws.com",
+          "kms:EncryptionContext:aws:identitystore:identitystore-arn": "*"
+        }
+      }
+    },
+    {
+      "Sid": "AllowKMSKeyDiscovery",
+      "Effect": "Allow",
+      "Action": [
+        "kms:ListAliases",
+        "kms:DescribeKey"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

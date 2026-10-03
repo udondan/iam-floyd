@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "config:Get*",
+        "config:Describe*",
+        "config:Deliver*",
+        "config:List*",
+        "config:Select*",
+        "tag:GetResources",
+        "tag:GetTagKeys",
+        "cloudtrail:DescribeTrails",
+        "cloudtrail:GetTrailStatus",
+        "cloudtrail:LookupEvents"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "route53:*",
+        "route53domains:*",
+        "cloudfront:ListDistributions",
+        "cloudfront:GetDistributionTenantByDomain",
+        "cloudfront:GetConnectionGroup",
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:GetMetricStatistics",
+        "cloudwatch:GetMetricData",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeRegions",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticbeanstalk:DescribeEnvironments",
+        "es:ListDomainNames",
+        "es:DescribeDomains",
+        "lightsail:GetContainerServices",
+        "s3:ListBucket",
+        "s3:GetBucketLocation",
+        "s3:GetBucketWebsite",
+        "sns:ListTopics",
+        "sns:ListSubscriptionsByTopic",
+        "tag:GetResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "apigateway:GET",
+      "Resource": "arn:aws:apigateway:*::/domainnames"
+    }
+  ]
+}

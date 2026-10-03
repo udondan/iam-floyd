@@ -1,0 +1,50 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "backup:CreateFramework",
+        "backup:UpdateFramework",
+        "backup:ListFrameworks",
+        "backup:DescribeFramework",
+        "backup:DeleteFramework",
+        "backup:ListBackupPlans",
+        "backup:ListBackupVaults",
+        "backup:CreateReportPlan",
+        "backup:UpdateReportPlan",
+        "backup:ListReportPlans",
+        "backup:DescribeReportPlan",
+        "backup:DeleteReportPlan",
+        "backup:StartReportJob",
+        "backup:ListReportJobs",
+        "backup:DescribeReportJob"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus",
+        "config:DescribeComplianceByConfigRule"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "config:GetComplianceDetailsByConfigRule"
+      ],
+      "Resource": "arn:aws:config:*:*:config-rule/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::*"
+    }
+  ]
+}

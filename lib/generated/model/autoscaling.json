@@ -1,0 +1,1155 @@
+{
+  "schemaVersion": 1,
+  "filename": "autoscaling",
+  "className": "Autoscaling",
+  "name": "autoscaling",
+  "servicePrefix": "autoscaling",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_autoscaling.html",
+  "accessLevelList": {
+    "Write": [
+      "AttachInstances",
+      "AttachLoadBalancerTargetGroups",
+      "AttachLoadBalancers",
+      "AttachTrafficSources",
+      "BatchDeleteScheduledAction",
+      "BatchPutScheduledUpdateGroupAction",
+      "CancelInstanceRefresh",
+      "CompleteLifecycleAction",
+      "CreateAutoScalingGroup",
+      "CreateLaunchConfiguration",
+      "CreateOrUpdateTags",
+      "DeleteAutoScalingGroup",
+      "DeleteLaunchConfiguration",
+      "DeleteLifecycleHook",
+      "DeleteNotificationConfiguration",
+      "DeletePolicy",
+      "DeleteScheduledAction",
+      "DeleteTags",
+      "DeleteWarmPool",
+      "DetachInstances",
+      "DetachLoadBalancerTargetGroups",
+      "DetachLoadBalancers",
+      "DetachTrafficSources",
+      "DisableMetricsCollection",
+      "EnableMetricsCollection",
+      "EnterStandby",
+      "ExecutePolicy",
+      "ExitStandby",
+      "LaunchInstances",
+      "PutAccountSetting",
+      "PutLifecycleHook",
+      "PutNotificationConfiguration",
+      "PutScalingPolicy",
+      "PutScheduledUpdateGroupAction",
+      "PutWarmPool",
+      "RecordLifecycleActionHeartbeat",
+      "ResumeProcesses",
+      "RollbackInstanceRefresh",
+      "SetDesiredCapacity",
+      "SetInstanceHealth",
+      "SetInstanceProtection",
+      "StartInstanceRefresh",
+      "SuspendProcesses",
+      "TerminateInstanceInAutoScalingGroup",
+      "UpdateAutoScalingGroup"
+    ],
+    "Tagging": [
+      "CreateOrUpdateTags",
+      "DeleteTags"
+    ],
+    "List": [
+      "DescribeAccountLimits",
+      "DescribeAccountSettings",
+      "DescribeAdjustmentTypes",
+      "DescribeAutoScalingGroups",
+      "DescribeAutoScalingInstances",
+      "DescribeAutoScalingNotificationTypes",
+      "DescribeInstanceRefreshes",
+      "DescribeLaunchConfigurations",
+      "DescribeLifecycleHookTypes",
+      "DescribeLifecycleHooks",
+      "DescribeLoadBalancerTargetGroups",
+      "DescribeLoadBalancers",
+      "DescribeMetricCollectionTypes",
+      "DescribeNotificationConfigurations",
+      "DescribePolicies",
+      "DescribeScalingActivities",
+      "DescribeScalingProcessTypes",
+      "DescribeScheduledActions",
+      "DescribeTerminationPolicyTypes",
+      "DescribeTrafficSources",
+      "DescribeWarmPool",
+      "GetPredictiveScalingForecast"
+    ],
+    "Read": [
+      "DescribeTags"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AttachInstances",
+      "methodName": "toAttachInstances",
+      "description": "Grants permission to attach one or more EC2 instances to the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_AttachInstances.html"
+    },
+    {
+      "name": "AttachLoadBalancerTargetGroups",
+      "methodName": "toAttachLoadBalancerTargetGroups",
+      "description": "Grants permission to attach one or more target groups to the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_AttachLoadBalancerTargetGroups.html"
+    },
+    {
+      "name": "AttachLoadBalancers",
+      "methodName": "toAttachLoadBalancers",
+      "description": "Grants permission to attach one or more load balancers to the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_AttachLoadBalancers.html"
+    },
+    {
+      "name": "AttachTrafficSources",
+      "methodName": "toAttachTrafficSources",
+      "description": "Grants permission to attach one or more traffic sources to an Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_AttachTrafficSources.html"
+    },
+    {
+      "name": "BatchDeleteScheduledAction",
+      "methodName": "toBatchDeleteScheduledAction",
+      "description": "Grants permission to delete the specified scheduled actions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_BatchDeleteScheduledAction.html"
+    },
+    {
+      "name": "BatchPutScheduledUpdateGroupAction",
+      "methodName": "toBatchPutScheduledUpdateGroupAction",
+      "description": "Grants permission to create or update multiple scheduled scaling actions for an Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_BatchPutScheduledUpdateGroupAction.html"
+    },
+    {
+      "name": "CancelInstanceRefresh",
+      "methodName": "toCancelInstanceRefresh",
+      "description": "Grants permission to cancel an instance refresh operation in progress",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CancelInstanceRefresh.html"
+    },
+    {
+      "name": "CompleteLifecycleAction",
+      "methodName": "toCompleteLifecycleAction",
+      "description": "Grants permission to complete the lifecycle action for the specified token or instance with the specified result",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CompleteLifecycleAction.html"
+    },
+    {
+      "name": "CreateAutoScalingGroup",
+      "methodName": "toCreateAutoScalingGroup",
+      "description": "Grants permission to create an Auto Scaling group with the specified name and attributes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateAutoScalingGroup.html"
+    },
+    {
+      "name": "CreateLaunchConfiguration",
+      "methodName": "toCreateLaunchConfiguration",
+      "description": "Grants permission to create a launch configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateLaunchConfiguration.html"
+    },
+    {
+      "name": "CreateOrUpdateTags",
+      "methodName": "toCreateOrUpdateTags",
+      "description": "Grants permission to create or update tags for the specified Auto Scaling group",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateOrUpdateTags.html"
+    },
+    {
+      "name": "DeleteAutoScalingGroup",
+      "methodName": "toDeleteAutoScalingGroup",
+      "description": "Grants permission to delete the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteAutoScalingGroup.html"
+    },
+    {
+      "name": "DeleteLaunchConfiguration",
+      "methodName": "toDeleteLaunchConfiguration",
+      "description": "Grants permission to delete the specified launch configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteLaunchConfiguration.html"
+    },
+    {
+      "name": "DeleteLifecycleHook",
+      "methodName": "toDeleteLifecycleHook",
+      "description": "Grants permission to deletes the specified lifecycle hook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteLifecycleHook.html"
+    },
+    {
+      "name": "DeleteNotificationConfiguration",
+      "methodName": "toDeleteNotificationConfiguration",
+      "description": "Grants permission to delete the specified notification",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteNotificationConfiguration.html"
+    },
+    {
+      "name": "DeletePolicy",
+      "methodName": "toDeletePolicy",
+      "description": "Grants permission to delete the specified Auto Scaling policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeletePolicy.html"
+    },
+    {
+      "name": "DeleteScheduledAction",
+      "methodName": "toDeleteScheduledAction",
+      "description": "Grants permission to delete the specified scheduled action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteScheduledAction.html"
+    },
+    {
+      "name": "DeleteTags",
+      "methodName": "toDeleteTags",
+      "description": "Grants permission to delete the specified tags",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteTags.html"
+    },
+    {
+      "name": "DeleteWarmPool",
+      "methodName": "toDeleteWarmPool",
+      "description": "Grants permission to delete the warm pool associated with the Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteWarmPool.html"
+    },
+    {
+      "name": "DescribeAccountLimits",
+      "methodName": "toDescribeAccountLimits",
+      "description": "Grants permission to describe the current Auto Scaling resource limits for your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeAccountLimits.html"
+    },
+    {
+      "name": "DescribeAccountSettings",
+      "methodName": "toDescribeAccountSettings",
+      "description": "Grants permission to describe the current Amazon EC2 Auto Scaling account settings for your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeAccountSettings.html"
+    },
+    {
+      "name": "DescribeAdjustmentTypes",
+      "methodName": "toDescribeAdjustmentTypes",
+      "description": "Grants permission to describe the policy adjustment types for use with PutScalingPolicy",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeAdjustmentTypes.html"
+    },
+    {
+      "name": "DescribeAutoScalingGroups",
+      "methodName": "toDescribeAutoScalingGroups",
+      "description": "Grants permission to describe one or more Auto Scaling groups. If a list of names is not provided, the call describes all Auto Scaling groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeAutoScalingGroups.html"
+    },
+    {
+      "name": "DescribeAutoScalingInstances",
+      "methodName": "toDescribeAutoScalingInstances",
+      "description": "Grants permission to describe one or more Auto Scaling instances. If a list is not provided, the call describes all instances",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeAutoScalingInstances.html"
+    },
+    {
+      "name": "DescribeAutoScalingNotificationTypes",
+      "methodName": "toDescribeAutoScalingNotificationTypes",
+      "description": "Grants permission to describe the notification types that are supported by Auto Scaling",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeAutoScalingNotificationTypes.html"
+    },
+    {
+      "name": "DescribeInstanceRefreshes",
+      "methodName": "toDescribeInstanceRefreshes",
+      "description": "Grants permission to describe one or more instance refreshes for an Auto Scaling group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeInstanceRefreshes.html"
+    },
+    {
+      "name": "DescribeLaunchConfigurations",
+      "methodName": "toDescribeLaunchConfigurations",
+      "description": "Grants permission to describe one or more launch configurations. If you omit the list of names, then the call describes all launch configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeLaunchConfigurations.html"
+    },
+    {
+      "name": "DescribeLifecycleHookTypes",
+      "methodName": "toDescribeLifecycleHookTypes",
+      "description": "Grants permission to describe the available types of lifecycle hooks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeLifecycleHookTypes.html"
+    },
+    {
+      "name": "DescribeLifecycleHooks",
+      "methodName": "toDescribeLifecycleHooks",
+      "description": "Grants permission to describe the lifecycle hooks for the specified Auto Scaling group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeLifecycleHooks.html"
+    },
+    {
+      "name": "DescribeLoadBalancerTargetGroups",
+      "methodName": "toDescribeLoadBalancerTargetGroups",
+      "description": "Grants permission to describe the target groups for the specified Auto Scaling group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeLoadBalancerTargetGroups.html"
+    },
+    {
+      "name": "DescribeLoadBalancers",
+      "methodName": "toDescribeLoadBalancers",
+      "description": "Grants permission to describe the load balancers for the specified Auto Scaling group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeLoadBalancers.html"
+    },
+    {
+      "name": "DescribeMetricCollectionTypes",
+      "methodName": "toDescribeMetricCollectionTypes",
+      "description": "Grants permission to describe the available CloudWatch metrics for Auto Scaling",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeMetricCollectionTypes.html"
+    },
+    {
+      "name": "DescribeNotificationConfigurations",
+      "methodName": "toDescribeNotificationConfigurations",
+      "description": "Grants permission to describe the notification actions associated with the specified Auto Scaling group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeNotificationConfigurations.html"
+    },
+    {
+      "name": "DescribePolicies",
+      "methodName": "toDescribePolicies",
+      "description": "Grants permission to describe the policies for the specified Auto Scaling group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribePolicies.html"
+    },
+    {
+      "name": "DescribeScalingActivities",
+      "methodName": "toDescribeScalingActivities",
+      "description": "Grants permission to describe one or more scaling activities for the specified Auto Scaling group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeScalingActivities.html"
+    },
+    {
+      "name": "DescribeScalingProcessTypes",
+      "methodName": "toDescribeScalingProcessTypes",
+      "description": "Grants permission to describe the scaling process types for use with ResumeProcesses and SuspendProcesses",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeScalingProcessTypes.html"
+    },
+    {
+      "name": "DescribeScheduledActions",
+      "methodName": "toDescribeScheduledActions",
+      "description": "Grants permission to describe the actions scheduled for your Auto Scaling group that haven't run",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeScheduledActions.html"
+    },
+    {
+      "name": "DescribeTags",
+      "methodName": "toDescribeTags",
+      "description": "Grants permission to describe the specified tags",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeTags.html"
+    },
+    {
+      "name": "DescribeTerminationPolicyTypes",
+      "methodName": "toDescribeTerminationPolicyTypes",
+      "description": "Grants permission to describe the termination policies supported by Auto Scaling",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeTerminationPolicyTypes.html"
+    },
+    {
+      "name": "DescribeTrafficSources",
+      "methodName": "toDescribeTrafficSources",
+      "description": "Grants permission to describe the target groups for the specified Auto Scaling group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeTrafficSources.html"
+    },
+    {
+      "name": "DescribeWarmPool",
+      "methodName": "toDescribeWarmPool",
+      "description": "Grants permission to describe the warm pool associated with the Auto Scaling group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeWarmPool.html"
+    },
+    {
+      "name": "DetachInstances",
+      "methodName": "toDetachInstances",
+      "description": "Grants permission to remove one or more instances from the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DetachInstances.html"
+    },
+    {
+      "name": "DetachLoadBalancerTargetGroups",
+      "methodName": "toDetachLoadBalancerTargetGroups",
+      "description": "Grants permission to detach one or more target groups from the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DetachLoadBalancerTargetGroups.html"
+    },
+    {
+      "name": "DetachLoadBalancers",
+      "methodName": "toDetachLoadBalancers",
+      "description": "Grants permission to remove one or more load balancers from the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DetachLoadBalancers.html"
+    },
+    {
+      "name": "DetachTrafficSources",
+      "methodName": "toDetachTrafficSources",
+      "description": "Grants permission to detach one or more traffic sources from an Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DetachTrafficSources.html"
+    },
+    {
+      "name": "DisableMetricsCollection",
+      "methodName": "toDisableMetricsCollection",
+      "description": "Grants permission to disable monitoring of the specified metrics for the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DisableMetricsCollection.html"
+    },
+    {
+      "name": "EnableMetricsCollection",
+      "methodName": "toEnableMetricsCollection",
+      "description": "Grants permission to enable monitoring of the specified metrics for the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_EnableMetricsCollection.html"
+    },
+    {
+      "name": "EnterStandby",
+      "methodName": "toEnterStandby",
+      "description": "Grants permission to move the specified instances into Standby mode",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_EnterStandby.html"
+    },
+    {
+      "name": "ExecutePolicy",
+      "methodName": "toExecutePolicy",
+      "description": "Grants permission to execute the specified policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_ExecutePolicy.html"
+    },
+    {
+      "name": "ExitStandby",
+      "methodName": "toExitStandby",
+      "description": "Grants permission to move the specified instances out of Standby mode",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_ExitStandby.html"
+    },
+    {
+      "name": "GetPredictiveScalingForecast",
+      "methodName": "toGetPredictiveScalingForecast",
+      "description": "Grants permission to retrieve the forecast data for a predictive scaling policy",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_GetPredictiveScalingForecast.html"
+    },
+    {
+      "name": "LaunchInstances",
+      "methodName": "toLaunchInstances",
+      "description": "Grants permission to launch one or more EC2 instances in the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_LaunchInstances.html"
+    },
+    {
+      "name": "PutAccountSetting",
+      "methodName": "toPutAccountSetting",
+      "description": "Grants permission to modify an account setting for your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutAccountSetting.html"
+    },
+    {
+      "name": "PutLifecycleHook",
+      "methodName": "toPutLifecycleHook",
+      "description": "Grants permission to create or update a lifecycle hook for the specified Auto Scaling Group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutLifecycleHook.html"
+    },
+    {
+      "name": "PutNotificationConfiguration",
+      "methodName": "toPutNotificationConfiguration",
+      "description": "Grants permission to configure an Auto Scaling group to send notifications when specified events take place",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutNotificationConfiguration.html"
+    },
+    {
+      "name": "PutScalingPolicy",
+      "methodName": "toPutScalingPolicy",
+      "description": "Grants permission to create or update a policy for an Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutScalingPolicy.html"
+    },
+    {
+      "name": "PutScheduledUpdateGroupAction",
+      "methodName": "toPutScheduledUpdateGroupAction",
+      "description": "Grants permission to create or update a scheduled scaling action for an Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutScheduledUpdateGroupAction.html"
+    },
+    {
+      "name": "PutWarmPool",
+      "methodName": "toPutWarmPool",
+      "description": "Grants permission to create or update the warm pool associated with the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutWarmPool.html"
+    },
+    {
+      "name": "RecordLifecycleActionHeartbeat",
+      "methodName": "toRecordLifecycleActionHeartbeat",
+      "description": "Grants permission to record a heartbeat for the lifecycle action associated with the specified token or instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_RecordLifecycleActionHeartbeat.html"
+    },
+    {
+      "name": "ResumeProcesses",
+      "methodName": "toResumeProcesses",
+      "description": "Grants permission to resume the specified suspended Auto Scaling processes, or all suspended process, for the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_ResumeProcesses.html"
+    },
+    {
+      "name": "RollbackInstanceRefresh",
+      "methodName": "toRollbackInstanceRefresh",
+      "description": "Grants permission to rollback an instance refresh operation in progress",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_RollbackInstanceRefresh.html"
+    },
+    {
+      "name": "SetDesiredCapacity",
+      "methodName": "toSetDesiredCapacity",
+      "description": "Grants permission to set the size of the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_SetDesiredCapacity.html"
+    },
+    {
+      "name": "SetInstanceHealth",
+      "methodName": "toSetInstanceHealth",
+      "description": "Grants permission to set the health status of the specified instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_SetInstanceHealth.html"
+    },
+    {
+      "name": "SetInstanceProtection",
+      "methodName": "toSetInstanceProtection",
+      "description": "Grants permission to update the instance protection settings of the specified instances",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_SetInstanceProtection.html"
+    },
+    {
+      "name": "StartInstanceRefresh",
+      "methodName": "toStartInstanceRefresh",
+      "description": "Grants permission to start a new instance refresh operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_StartInstanceRefresh.html"
+    },
+    {
+      "name": "SuspendProcesses",
+      "methodName": "toSuspendProcesses",
+      "description": "Grants permission to suspend the specified Auto Scaling processes, or all processes, for the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_SuspendProcesses.html"
+    },
+    {
+      "name": "TerminateInstanceInAutoScalingGroup",
+      "methodName": "toTerminateInstanceInAutoScalingGroup",
+      "description": "Grants permission to terminate the specified instance and optionally adjust the desired group size",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_TerminateInstanceInAutoScalingGroup.html"
+    },
+    {
+      "name": "UpdateAutoScalingGroup",
+      "methodName": "toUpdateAutoScalingGroup",
+      "description": "Grants permission to update the configuration for the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_UpdateAutoScalingGroup.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "autoScalingGroup",
+      "methodName": "onAutoScalingGroup",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-resources",
+      "arn": "arn:${Partition}:autoscaling:${Region}:${Account}:autoScalingGroup:${GroupId}:autoScalingGroupName/${GroupFriendlyName}",
+      "placeholders": [
+        {
+          "placeholder": "GroupId",
+          "name": "groupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "GroupFriendlyName",
+          "name": "groupFriendlyName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifResourceTag",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "launchConfiguration",
+      "methodName": "onLaunchConfiguration",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-resources",
+      "arn": "arn:${Partition}:autoscaling:${Region}:${Account}:launchConfiguration:${Id}:launchConfigurationName/${LaunchConfigurationName}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "LaunchConfigurationName",
+          "name": "launchConfigurationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "autoscaling:CapacityReservationIds",
+      "methodName": "ifCapacityReservationIds",
+      "description": "Filters access based on the Capacity Reservation IDs",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateAutoScalingGroup",
+        "toUpdateAutoScalingGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CapacityReservationIds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "autoscaling:CapacityReservationResourceGroupArns",
+      "methodName": "ifCapacityReservationResourceGroupArns",
+      "description": "Filters access based on the ARN of a Capacity Reservation resource group",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateAutoScalingGroup",
+        "toUpdateAutoScalingGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CapacityReservationResourceGroupArns",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "autoscaling:ForceDelete",
+      "methodName": "ifForceDelete",
+      "description": "Filters access based on whether the force delete option is specified when deleting an Auto Scaling group",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toDeleteAutoScalingGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ForceDelete",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "autoscaling:ImageId",
+      "methodName": "ifImageId",
+      "description": "Filters access based on the AMI ID for the launch configuration",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateAutoScalingGroup",
+        "toCreateLaunchConfiguration",
+        "toStartInstanceRefresh",
+        "toUpdateAutoScalingGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ImageId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "autoscaling:InstanceType",
+      "methodName": "ifInstanceType",
+      "description": "Filters access based on the instance type for the launch configuration",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateLaunchConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InstanceType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "autoscaling:InstanceTypes",
+      "methodName": "ifInstanceTypes",
+      "description": "Filters access based on the instance types present as overrides to a launch template for a mixed instances policy. Use it to qualify which instance types can be explicitly defined in the policy",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateAutoScalingGroup",
+        "toUpdateAutoScalingGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InstanceTypes",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "autoscaling:LaunchConfigurationName",
+      "methodName": "ifLaunchConfigurationName",
+      "description": "Filters access based on the name of a launch configuration",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateAutoScalingGroup",
+        "toUpdateAutoScalingGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "LaunchConfigurationName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "autoscaling:LaunchTemplateVersionSpecified",
+      "methodName": "ifLaunchTemplateVersionSpecified",
+      "description": "Filters access based on whether users can specify any version of a launch template or only the Latest or Default version",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateAutoScalingGroup",
+        "toUpdateAutoScalingGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "LaunchTemplateVersionSpecified",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "autoscaling:LoadBalancerNames",
+      "methodName": "ifLoadBalancerNames",
+      "description": "Filters access based on the name of the load balancer",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toAttachLoadBalancers",
+        "toCreateAutoScalingGroup",
+        "toDetachLoadBalancers"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "LoadBalancerNames",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "autoscaling:MaxSize",
+      "methodName": "ifMaxSize",
+      "description": "Filters access based on the maximum scaling size in the request",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateAutoScalingGroup",
+        "toPutScheduledUpdateGroupAction",
+        "toUpdateAutoScalingGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MaxSize",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "autoscaling:MetadataHttpEndpoint",
+      "methodName": "ifMetadataHttpEndpoint",
+      "description": "Filters access based on whether the HTTP endpoint is enabled for the instance metadata service",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateLaunchConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MetadataHttpEndpoint",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "autoscaling:MetadataHttpPutResponseHopLimit",
+      "methodName": "ifMetadataHttpPutResponseHopLimit",
+      "description": "Filters access based on the allowed number of hops when calling the instance metadata service",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateLaunchConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MetadataHttpPutResponseHopLimit",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "autoscaling:MetadataHttpTokens",
+      "methodName": "ifMetadataHttpTokens",
+      "description": "Filters access based on whether tokens are required when calling the instance metadata service (optional or required)",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateLaunchConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MetadataHttpTokens",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "autoscaling:MinSize",
+      "methodName": "ifMinSize",
+      "description": "Filters access based on the minimum scaling size in the request",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateAutoScalingGroup",
+        "toPutScheduledUpdateGroupAction",
+        "toUpdateAutoScalingGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MinSize",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "autoscaling:OperatorPrincipal",
+      "methodName": "ifOperatorPrincipal",
+      "description": "Filters access based on the the operator for EC2 Managed Instances",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateAutoScalingGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "OperatorPrincipal",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "autoscaling:ResourceTag/${TagKey}",
+      "methodName": "ifResourceTag",
+      "description": "Filters access based on the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toAttachInstances",
+        "toAttachLoadBalancerTargetGroups",
+        "toAttachLoadBalancers",
+        "toAttachTrafficSources",
+        "toBatchDeleteScheduledAction",
+        "toBatchPutScheduledUpdateGroupAction",
+        "toCancelInstanceRefresh",
+        "toCompleteLifecycleAction",
+        "toCreateAutoScalingGroup",
+        "toCreateOrUpdateTags",
+        "toDeleteAutoScalingGroup",
+        "toDeleteLifecycleHook",
+        "toDeleteNotificationConfiguration",
+        "toDeletePolicy",
+        "toDeleteScheduledAction",
+        "toDeleteTags",
+        "toDeleteWarmPool",
+        "toDetachInstances",
+        "toDetachLoadBalancerTargetGroups",
+        "toDetachLoadBalancers",
+        "toDetachTrafficSources",
+        "toDisableMetricsCollection",
+        "toEnableMetricsCollection",
+        "toEnterStandby",
+        "toExecutePolicy",
+        "toExitStandby",
+        "toLaunchInstances",
+        "toPutLifecycleHook",
+        "toPutNotificationConfiguration",
+        "toPutScalingPolicy",
+        "toPutScheduledUpdateGroupAction",
+        "toPutWarmPool",
+        "toRecordLifecycleActionHeartbeat",
+        "toResumeProcesses",
+        "toRollbackInstanceRefresh",
+        "toSetDesiredCapacity",
+        "toSetInstanceHealth",
+        "toSetInstanceProtection",
+        "toStartInstanceRefresh",
+        "toSuspendProcesses",
+        "toTerminateInstanceInAutoScalingGroup",
+        "toUpdateAutoScalingGroup"
+      ],
+      "relatedResourceTypes": [
+        "autoScalingGroup"
+      ],
+      "keyLiteral": "ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "autoscaling:SpotPrice",
+      "methodName": "ifSpotPrice",
+      "description": "Filters access based on the price for Spot Instances for the launch configuration",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateLaunchConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SpotPrice",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "autoscaling:TargetCapacityTypes",
+      "methodName": "ifTargetCapacityTypes",
+      "description": "Filters access based on the target capacity types present in the distribution segments of a mixed instances policy. Use it to qualify which capacity types can be explicitly defined in the policy",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateAutoScalingGroup",
+        "toStartInstanceRefresh",
+        "toUpdateAutoScalingGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TargetCapacityTypes",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "autoscaling:TargetGroupARNs",
+      "methodName": "ifTargetGroupARNs",
+      "description": "Filters access based on the ARN of a target group",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toAttachLoadBalancerTargetGroups",
+        "toCreateAutoScalingGroup",
+        "toDetachLoadBalancerTargetGroups"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TargetGroupARNs",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "autoscaling:TrafficSourceIdentifiers",
+      "methodName": "ifTrafficSourceIdentifiers",
+      "description": "Filters access based on the identifiers of the traffic sources",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toAttachTrafficSources",
+        "toCreateAutoScalingGroup",
+        "toDetachTrafficSources"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TrafficSourceIdentifiers",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "autoscaling:VPCZoneIdentifiers",
+      "methodName": "ifVPCZoneIdentifiers",
+      "description": "Filters access based on the identifier of a VPC zone",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateAutoScalingGroup",
+        "toUpdateAutoScalingGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "VPCZoneIdentifiers",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access based on the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateAutoScalingGroup",
+        "toCreateOrUpdateTags",
+        "toDeleteTags"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access based on the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toAttachInstances",
+        "toAttachLoadBalancerTargetGroups",
+        "toAttachLoadBalancers",
+        "toAttachTrafficSources",
+        "toBatchDeleteScheduledAction",
+        "toBatchPutScheduledUpdateGroupAction",
+        "toCancelInstanceRefresh",
+        "toCompleteLifecycleAction",
+        "toCreateAutoScalingGroup",
+        "toCreateOrUpdateTags",
+        "toDeleteAutoScalingGroup",
+        "toDeleteLifecycleHook",
+        "toDeleteNotificationConfiguration",
+        "toDeletePolicy",
+        "toDeleteScheduledAction",
+        "toDeleteTags",
+        "toDeleteWarmPool",
+        "toDetachInstances",
+        "toDetachLoadBalancerTargetGroups",
+        "toDetachLoadBalancers",
+        "toDetachTrafficSources",
+        "toDisableMetricsCollection",
+        "toEnableMetricsCollection",
+        "toEnterStandby",
+        "toExecutePolicy",
+        "toExitStandby",
+        "toLaunchInstances",
+        "toPutLifecycleHook",
+        "toPutNotificationConfiguration",
+        "toPutScalingPolicy",
+        "toPutScheduledUpdateGroupAction",
+        "toPutWarmPool",
+        "toRecordLifecycleActionHeartbeat",
+        "toResumeProcesses",
+        "toRollbackInstanceRefresh",
+        "toSetDesiredCapacity",
+        "toSetInstanceHealth",
+        "toSetInstanceProtection",
+        "toStartInstanceRefresh",
+        "toSuspendProcesses",
+        "toTerminateInstanceInAutoScalingGroup",
+        "toUpdateAutoScalingGroup"
+      ],
+      "relatedResourceTypes": [
+        "autoScalingGroup"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access based on the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys",
+      "relatedActionMethods": [
+        "toCreateAutoScalingGroup",
+        "toCreateOrUpdateTags",
+        "toDeleteTags"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

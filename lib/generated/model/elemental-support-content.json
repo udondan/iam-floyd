@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "elemental-support-content",
+  "className": "ElementalSupportContent",
+  "name": "elemental-support-content",
+  "servicePrefix": "elemental-support-content",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elemental-support-content.html",
+  "accessLevelList": {
+    "Read": [
+      "Query"
+    ]
+  },
+  "actions": [
+    {
+      "name": "Query",
+      "methodName": "toQuery",
+      "description": "Grants permission to search support content",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

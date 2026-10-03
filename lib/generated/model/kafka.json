@@ -1,0 +1,972 @@
+{
+  "schemaVersion": 1,
+  "filename": "kafka",
+  "className": "Kafka",
+  "name": "kafka",
+  "servicePrefix": "kafka",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kafka.html",
+  "accessLevelList": {
+    "Write": [
+      "BatchAssociateScramSecret",
+      "BatchDisassociateScramSecret",
+      "CreateChannel",
+      "CreateCluster",
+      "CreateClusterV2",
+      "CreateConfiguration",
+      "CreateReplicator",
+      "CreateTopic",
+      "CreateVpcConnection",
+      "DeleteChannel",
+      "DeleteCluster",
+      "DeleteClusterPolicy",
+      "DeleteConfiguration",
+      "DeleteReplicator",
+      "DeleteTopic",
+      "DeleteVpcConnection",
+      "PutClusterPolicy",
+      "RebootBroker",
+      "RejectClientVpcConnection",
+      "TagResource",
+      "UntagResource",
+      "UpdateBrokerCount",
+      "UpdateBrokerStorage",
+      "UpdateBrokerType",
+      "UpdateChannel",
+      "UpdateClusterConfiguration",
+      "UpdateClusterKafkaVersion",
+      "UpdateConfiguration",
+      "UpdateConnectivity",
+      "UpdateMonitoring",
+      "UpdateRebalancing",
+      "UpdateReplicationInfo",
+      "UpdateSecurity",
+      "UpdateStorage",
+      "UpdateTopic"
+    ],
+    "Read": [
+      "DescribeChannel",
+      "DescribeCluster",
+      "DescribeClusterOperation",
+      "DescribeClusterOperationV2",
+      "DescribeClusterV2",
+      "DescribeConfiguration",
+      "DescribeConfigurationRevision",
+      "DescribeReplicator",
+      "DescribeTopic",
+      "DescribeTopicPartitions",
+      "DescribeVpcConnection",
+      "GetBootstrapBrokers",
+      "GetClusterPolicy",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "GetCompatibleKafkaVersions",
+      "ListChannels",
+      "ListClientVpcConnections",
+      "ListClusterOperations",
+      "ListClusterOperationsV2",
+      "ListClusters",
+      "ListClustersV2",
+      "ListConfigurationRevisions",
+      "ListConfigurations",
+      "ListKafkaVersions",
+      "ListNodes",
+      "ListReplicators",
+      "ListScramSecrets",
+      "ListTopics",
+      "ListVpcConnections"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchAssociateScramSecret",
+      "methodName": "toBatchAssociateScramSecret",
+      "description": "Grants permission to associate one or more Scram Secrets with an Amazon MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#BatchAssociateScramSecret"
+    },
+    {
+      "name": "BatchDisassociateScramSecret",
+      "methodName": "toBatchDisassociateScramSecret",
+      "description": "Grants permission to disassociate one or more Scram Secrets from an Amazon MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#BatchDisassociateScramSecret"
+    },
+    {
+      "name": "CreateChannel",
+      "methodName": "toCreateChannel",
+      "description": "Grants permission to create an MSK Data Channel for an MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-channels.html#CreateChannel"
+    },
+    {
+      "name": "CreateCluster",
+      "methodName": "toCreateCluster",
+      "description": "Grants permission to create an MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#CreateCluster"
+    },
+    {
+      "name": "CreateClusterV2",
+      "methodName": "toCreateClusterV2",
+      "description": "Grants permission to create an MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/MSK/2.0/APIReference/v2-clusters.html#CreateClusterV2"
+    },
+    {
+      "name": "CreateConfiguration",
+      "methodName": "toCreateConfiguration",
+      "description": "Grants permission to create an MSK configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#CreateConfiguration"
+    },
+    {
+      "name": "CreateReplicator",
+      "methodName": "toCreateReplicator",
+      "description": "Grants permission to create a MSK replicator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/latest/developerguide/v1-replicators.html#CreateReplicator"
+    },
+    {
+      "name": "CreateTopic",
+      "methodName": "toCreateTopic",
+      "description": "Grants permission to create a Kafka topic in an MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics.html"
+    },
+    {
+      "name": "CreateVpcConnection",
+      "methodName": "toCreateVpcConnection",
+      "description": "Grants permission to create a MSK VPC connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/vpc-connection.html#CreateVpcConnection"
+    },
+    {
+      "name": "DeleteChannel",
+      "methodName": "toDeleteChannel",
+      "description": "Grants permission to delete an MSK Data Channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-channels-channelarn.html#DeleteChannel"
+    },
+    {
+      "name": "DeleteCluster",
+      "methodName": "toDeleteCluster",
+      "description": "Grants permission to delete an MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DeleteCluster"
+    },
+    {
+      "name": "DeleteClusterPolicy",
+      "methodName": "toDeleteClusterPolicy",
+      "description": "Grants permission to delete a cluster resource-based policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-policy.html#DeleteClusterPolicy"
+    },
+    {
+      "name": "DeleteConfiguration",
+      "methodName": "toDeleteConfiguration",
+      "description": "Grants permission to delete the specified MSK configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#DeleteConfiguration"
+    },
+    {
+      "name": "DeleteReplicator",
+      "methodName": "toDeleteReplicator",
+      "description": "Grants permission to delete a MSK replicator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/latest/developerguide/v1-replicators.html#DeleteReplicator"
+    },
+    {
+      "name": "DeleteTopic",
+      "methodName": "toDeleteTopic",
+      "description": "Grants permission to delete a Kafka topic from an MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics-topicname.html"
+    },
+    {
+      "name": "DeleteVpcConnection",
+      "methodName": "toDeleteVpcConnection",
+      "description": "Grants permission to delete a MSK VPC connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/vpc-connection-arn.html#DeleteVpcConnection"
+    },
+    {
+      "name": "DescribeChannel",
+      "methodName": "toDescribeChannel",
+      "description": "Grants permission to describe an MSK Data Channel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-channels-channelarn.html#DescribeChannel"
+    },
+    {
+      "name": "DescribeCluster",
+      "methodName": "toDescribeCluster",
+      "description": "Grants permission to describe an MSK cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DescribeCluster"
+    },
+    {
+      "name": "DescribeClusterOperation",
+      "methodName": "toDescribeClusterOperation",
+      "description": "Grants permission to describe the cluster operation that is specified by the given ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/operations-clusteroperationarn.html#DescribeClusterOperation"
+    },
+    {
+      "name": "DescribeClusterOperationV2",
+      "methodName": "toDescribeClusterOperationV2",
+      "description": "Grants permission to describe the cluster operation that is specified by the given ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/MSK/2.0/APIReference/v2-operations-clusteroperationarn.html#DescribeClusterOperationV2"
+    },
+    {
+      "name": "DescribeClusterV2",
+      "methodName": "toDescribeClusterV2",
+      "description": "Grants permission to describe an MSK cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/MSK/2.0/APIReference/v2-clusters-clusterarn.html#DescribeClusterV2"
+    },
+    {
+      "name": "DescribeConfiguration",
+      "methodName": "toDescribeConfiguration",
+      "description": "Grants permission to describe an MSK configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#DescribeConfiguration"
+    },
+    {
+      "name": "DescribeConfigurationRevision",
+      "methodName": "toDescribeConfigurationRevision",
+      "description": "Grants permission to describe an MSK configuration revision",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn-revisions-revision.html#DescribeConfigurationRevision"
+    },
+    {
+      "name": "DescribeReplicator",
+      "methodName": "toDescribeReplicator",
+      "description": "Grants permission to describe a MSK replicator",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/msk/latest/developerguide/v1-replicators.html#DescribeReplicator"
+    },
+    {
+      "name": "DescribeTopic",
+      "methodName": "toDescribeTopic",
+      "description": "Grants permission to return metadata details about a specific Kafka topic",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics-topicname.html"
+    },
+    {
+      "name": "DescribeTopicPartitions",
+      "methodName": "toDescribeTopicPartitions",
+      "description": "Grants permission to list all partitions of a specific topic",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics-topicname-partitions.html"
+    },
+    {
+      "name": "DescribeVpcConnection",
+      "methodName": "toDescribeVpcConnection",
+      "description": "Grants permission to describe a MSK VPC connection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/vpc-connection-arn.html#DescribeVpcConnection"
+    },
+    {
+      "name": "GetBootstrapBrokers",
+      "methodName": "toGetBootstrapBrokers",
+      "description": "Grants permission to get connection details for the brokers in an MSK cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-bootstrap-brokers.html#GetBootstrapBrokers"
+    },
+    {
+      "name": "GetClusterPolicy",
+      "methodName": "toGetClusterPolicy",
+      "description": "Grants permission to describe a cluster resource-based policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-policy.html#GetClusterPolicy"
+    },
+    {
+      "name": "GetCompatibleKafkaVersions",
+      "methodName": "toGetCompatibleKafkaVersions",
+      "description": "Grants permission to get a list of the Apache Kafka versions to which you can update an MSK cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/compatible-kafka-versions.html#GetCompatibleKafkaVersions"
+    },
+    {
+      "name": "ListChannels",
+      "methodName": "toListChannels",
+      "description": "Grants permission to list all MSK Data Channels for a specified MSK cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-channels.html#ListChannels"
+    },
+    {
+      "name": "ListClientVpcConnections",
+      "methodName": "toListClientVpcConnections",
+      "description": "Grants permission to list all MSK VPC connections created for a cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-client-vpc-connections.html#ListClientVpcConnections"
+    },
+    {
+      "name": "ListClusterOperations",
+      "methodName": "toListClusterOperations",
+      "description": "Grants permission to return a list of all the operations that have been performed on the specified MSK cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-operations.html#ListClusterOperations"
+    },
+    {
+      "name": "ListClusterOperationsV2",
+      "methodName": "toListClusterOperationsV2",
+      "description": "Grants permission to return a list of all the operations that have been performed on the specified MSK cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/MSK/2.0/APIReference/v2-clusters-clusterarn-operations.html#ListClusterOperationsV2"
+    },
+    {
+      "name": "ListClusters",
+      "methodName": "toListClusters",
+      "description": "Grants permission to list all MSK clusters in this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#ListClusters"
+    },
+    {
+      "name": "ListClustersV2",
+      "methodName": "toListClustersV2",
+      "description": "Grants permission to list all MSK clusters in this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/MSK/2.0/APIReference/v2-clusters.html#ListClustersV2"
+    },
+    {
+      "name": "ListConfigurationRevisions",
+      "methodName": "toListConfigurationRevisions",
+      "description": "Grants permission to list all revisions for an MSK configuration in this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn-revisions.html#ListConfigurationRevisions"
+    },
+    {
+      "name": "ListConfigurations",
+      "methodName": "toListConfigurations",
+      "description": "Grants permission to list all MSK configurations in this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#ListConfigurations"
+    },
+    {
+      "name": "ListKafkaVersions",
+      "methodName": "toListKafkaVersions",
+      "description": "Grants permission to list all Apache Kafka versions supported by Amazon MSK",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/kafka-versions.html#ListKafkaVersions"
+    },
+    {
+      "name": "ListNodes",
+      "methodName": "toListNodes",
+      "description": "Grants permission to list brokers in an MSK cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes.html#ListNodes"
+    },
+    {
+      "name": "ListReplicators",
+      "methodName": "toListReplicators",
+      "description": "Grants permission to list all MSK replicators in this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/latest/developerguide/v1-replicators.html#ListReplicators"
+    },
+    {
+      "name": "ListScramSecrets",
+      "methodName": "toListScramSecrets",
+      "description": "Grants permission to list the Scram Secrets associated with an Amazon MSK cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#ListScramSecrets"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags of an MSK resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#ListTagsForResource"
+    },
+    {
+      "name": "ListTopics",
+      "methodName": "toListTopics",
+      "description": "Grants permission to list all Kafka topics for a specified MSK cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics.html"
+    },
+    {
+      "name": "ListVpcConnections",
+      "methodName": "toListVpcConnections",
+      "description": "Grants permission to list all MSK VPC connections that this account uses",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/vpc-connections.html#ListVpcConnections"
+    },
+    {
+      "name": "PutClusterPolicy",
+      "methodName": "toPutClusterPolicy",
+      "description": "Grants permission to create or update the resource-based policy for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-policy.html#PutClusterPolicy"
+    },
+    {
+      "name": "RebootBroker",
+      "methodName": "toRebootBroker",
+      "description": "Grants permission to reboot broker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-reboot-broker.html#RebootBroker"
+    },
+    {
+      "name": "RejectClientVpcConnection",
+      "methodName": "toRejectClientVpcConnection",
+      "description": "Grants permission to reject a MSK VPC connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-client-vpc-connection.html#RejectClientVpcConnection"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an MSK resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#TagResource"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from an MSK resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#UntagResource"
+    },
+    {
+      "name": "UpdateBrokerCount",
+      "methodName": "toUpdateBrokerCount",
+      "description": "Grants permission to update the number of brokers of the MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-count.html#UpdateBrokerCount"
+    },
+    {
+      "name": "UpdateBrokerStorage",
+      "methodName": "toUpdateBrokerStorage",
+      "description": "Grants permission to update the storage size of the brokers of the MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-storage.html#UpdateBrokerStorage"
+    },
+    {
+      "name": "UpdateBrokerType",
+      "methodName": "toUpdateBrokerType",
+      "description": "Grants permission to update the broker type of an Amazon MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-type.html#UpdateBrokerType"
+    },
+    {
+      "name": "UpdateChannel",
+      "methodName": "toUpdateChannel",
+      "description": "Grants permission to update the configuration of an MSK Data Channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-channels-channelarn.html#UpdateChannel"
+    },
+    {
+      "name": "UpdateClusterConfiguration",
+      "methodName": "toUpdateClusterConfiguration",
+      "description": "Grants permission to update the configuration of the MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-configuration.html#UpdateClusterConfiguration"
+    },
+    {
+      "name": "UpdateClusterKafkaVersion",
+      "methodName": "toUpdateClusterKafkaVersion",
+      "description": "Grants permission to update the MSK cluster to the specified Apache Kafka version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-version.html#UpdateClusterKafkaVersion"
+    },
+    {
+      "name": "UpdateConfiguration",
+      "methodName": "toUpdateConfiguration",
+      "description": "Grants permission to create a new revision of the MSK configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#UpdateConfiguration"
+    },
+    {
+      "name": "UpdateConnectivity",
+      "methodName": "toUpdateConnectivity",
+      "description": "Grants permission to update the connectivity settings for the MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-connectivity.html#UpdateConnectivity"
+    },
+    {
+      "name": "UpdateMonitoring",
+      "methodName": "toUpdateMonitoring",
+      "description": "Grants permission to update the monitoring settings for the MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-monitoring.html#UpdateMonitoring"
+    },
+    {
+      "name": "UpdateRebalancing",
+      "methodName": "toUpdateRebalancing",
+      "description": "Grants permission to update the intelligent rebalancing status of the MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-rebalancing.html"
+    },
+    {
+      "name": "UpdateReplicationInfo",
+      "methodName": "toUpdateReplicationInfo",
+      "description": "Grants permission to update the replication info of the MSK replicator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/latest/developerguide/v1-replicators.html#UpdateReplicationInfo"
+    },
+    {
+      "name": "UpdateSecurity",
+      "methodName": "toUpdateSecurity",
+      "description": "Grants permission to update the security settings for the MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-security.html#UpdateSecurity"
+    },
+    {
+      "name": "UpdateStorage",
+      "methodName": "toUpdateStorage",
+      "description": "Grants permission to update the EBS storage (size or provisioned throughput) associated with MSK brokers or set cluster storage mode to TIERED",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-storage.html#UpdateStorage"
+    },
+    {
+      "name": "UpdateTopic",
+      "methodName": "toUpdateTopic",
+      "description": "Grants permission to update the configuration of a Kafka topic in an MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics-topicname.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "channel",
+      "methodName": "onChannel",
+      "url": "https://docs.aws.amazon.com/msk/latest/developerguide/msk-data-channel.html",
+      "arn": "arn:${Partition}:kafka:${Region}:${Account}:channel/${ClusterName}/${ClusterUuid}/${ChannelName}/${Uuid}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ClusterUuid",
+          "name": "clusterUuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ChannelName",
+          "name": "channelName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Uuid",
+          "name": "uuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cluster",
+      "methodName": "onCluster",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html",
+      "arn": "arn:${Partition}:kafka:${Region}:${Account}:cluster/${ClusterName}/${Uuid}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Uuid",
+          "name": "uuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "configuration",
+      "methodName": "onConfiguration",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html",
+      "arn": "arn:${Partition}:kafka:${Region}:${Account}:configuration/${ConfigurationName}/${Uuid}",
+      "placeholders": [
+        {
+          "placeholder": "ConfigurationName",
+          "name": "configurationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Uuid",
+          "name": "uuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "group",
+      "methodName": "onGroup",
+      "url": "https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html#msk-iam-resources",
+      "arn": "arn:${Partition}:kafka:${Region}:${Account}:group/${ClusterName}/${ClusterUuid}/${GroupName}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ClusterUuid",
+          "name": "clusterUuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "GroupName",
+          "name": "groupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "replicator",
+      "methodName": "onReplicator",
+      "url": "https://docs.aws.amazon.com/msk/latest/developerguide/v1-replicators.html",
+      "arn": "arn:${Partition}:kafka:${Region}:${Account}:replicator/${ReplicatorName}/${Uuid}",
+      "placeholders": [
+        {
+          "placeholder": "ReplicatorName",
+          "name": "replicatorName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Uuid",
+          "name": "uuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "topic",
+      "methodName": "onTopic",
+      "url": "https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html#msk-iam-resources",
+      "arn": "arn:${Partition}:kafka:${Region}:${Account}:topic/${ClusterName}/${ClusterUuid}/${TopicName}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ClusterUuid",
+          "name": "clusterUuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TopicName",
+          "name": "topicName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "transactional-id",
+      "methodName": "onTransactionalId",
+      "url": "https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html#msk-iam-resources",
+      "arn": "arn:${Partition}:kafka:${Region}:${Account}:transactional-id/${ClusterName}/${ClusterUuid}/${TransactionalId}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ClusterUuid",
+          "name": "clusterUuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TransactionalId",
+          "name": "transactionalId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "vpc-connection",
+      "methodName": "onVpcConnection",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/vpc-connections-arn.html",
+      "arn": "arn:${Partition}:kafka:${Region}:${VpcOwnerAccount}:vpc-connection/${ClusterOwnerAccount}/${ClusterName}/${Uuid}",
+      "placeholders": [
+        {
+          "placeholder": "VpcOwnerAccount",
+          "name": "vpcOwnerAccount",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ClusterOwnerAccount",
+          "name": "clusterOwnerAccount",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Uuid",
+          "name": "uuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateChannel",
+        "toCreateCluster",
+        "toCreateClusterV2",
+        "toCreateReplicator",
+        "toCreateVpcConnection",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchAssociateScramSecret",
+        "toBatchDisassociateScramSecret",
+        "toCreateChannel",
+        "toCreateCluster",
+        "toCreateClusterV2",
+        "toCreateReplicator",
+        "toCreateVpcConnection",
+        "toDeleteChannel",
+        "toDeleteCluster",
+        "toDeleteClusterPolicy",
+        "toDeleteReplicator",
+        "toDeleteVpcConnection",
+        "toDescribeChannel",
+        "toDescribeCluster",
+        "toDescribeClusterV2",
+        "toDescribeReplicator",
+        "toDescribeVpcConnection",
+        "toGetClusterPolicy",
+        "toListChannels",
+        "toListClientVpcConnections",
+        "toListClusterOperations",
+        "toListClusterOperationsV2",
+        "toListNodes",
+        "toListScramSecrets",
+        "toListTagsForResource",
+        "toListTopics",
+        "toPutClusterPolicy",
+        "toRebootBroker",
+        "toRejectClientVpcConnection",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateBrokerCount",
+        "toUpdateBrokerStorage",
+        "toUpdateBrokerType",
+        "toUpdateChannel",
+        "toUpdateClusterConfiguration",
+        "toUpdateClusterKafkaVersion",
+        "toUpdateConnectivity",
+        "toUpdateMonitoring",
+        "toUpdateRebalancing",
+        "toUpdateReplicationInfo",
+        "toUpdateSecurity",
+        "toUpdateStorage"
+      ],
+      "relatedResourceTypes": [
+        "channel",
+        "cluster",
+        "replicator",
+        "vpc-connection"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateChannel",
+        "toCreateCluster",
+        "toCreateClusterV2",
+        "toCreateReplicator",
+        "toCreateVpcConnection",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kafka:publicAccessEnabled",
+      "methodName": "ifPublicAccessEnabled",
+      "description": "Filters access by the presence of public access enabled in the request",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_apachekafkaapisforamazonmskclusters.html#apachekafkaapisforamazonmskclusters-policy-keys",
+      "relatedActionMethods": [
+        "toUpdateConnectivity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "publicAccessEnabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    }
+  ]
+}

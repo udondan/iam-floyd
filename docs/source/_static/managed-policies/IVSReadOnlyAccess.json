@@ -1,0 +1,47 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "IVSReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ivs:BatchGetChannel",
+        "ivs:GetAdConfiguration",
+        "ivs:GetChannel",
+        "ivs:GetComposition",
+        "ivs:GetEncoderConfiguration",
+        "ivs:GetIngestConfiguration",
+        "ivs:GetParticipant",
+        "ivs:GetPlaybackKeyPair",
+        "ivs:GetPlaybackRestrictionPolicy",
+        "ivs:GetPublicKey",
+        "ivs:GetRecordingConfiguration",
+        "ivs:GetStage",
+        "ivs:GetStageSession",
+        "ivs:GetStorageConfiguration",
+        "ivs:GetStream",
+        "ivs:GetStreamSession",
+        "ivs:ListAdConfigurations",
+        "ivs:ListChannels",
+        "ivs:ListCompositions",
+        "ivs:ListEncoderConfigurations",
+        "ivs:ListIngestConfigurations",
+        "ivs:ListParticipants",
+        "ivs:ListParticipantReplicas",
+        "ivs:ListParticipantEvents",
+        "ivs:ListPlaybackKeyPairs",
+        "ivs:ListPlaybackRestrictionPolicies",
+        "ivs:ListPublicKeys",
+        "ivs:ListRecordingConfigurations",
+        "ivs:ListStages",
+        "ivs:ListStageSessions",
+        "ivs:ListStorageConfigurations",
+        "ivs:ListStreamKeys",
+        "ivs:ListStreams",
+        "ivs:ListStreamSessions",
+        "ivs:ListTagsForResource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

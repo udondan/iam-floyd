@@ -1,0 +1,862 @@
+{
+  "schemaVersion": 1,
+  "filename": "license-manager",
+  "className": "LicenseManager",
+  "name": "license-manager",
+  "servicePrefix": "license-manager",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_license-manager.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptGrant",
+      "CheckInLicense",
+      "CheckoutBorrowLicense",
+      "CheckoutLicense",
+      "CreateGrant",
+      "CreateGrantVersion",
+      "CreateLicense",
+      "CreateLicenseAssetGroup",
+      "CreateLicenseAssetRuleset",
+      "CreateLicenseConfiguration",
+      "CreateLicenseConversionTaskForResource",
+      "CreateLicenseManagerReportGenerator",
+      "CreateLicenseVersion",
+      "CreateToken",
+      "DeleteGrant",
+      "DeleteLicense",
+      "DeleteLicenseAssetGroup",
+      "DeleteLicenseAssetRuleset",
+      "DeleteLicenseConfiguration",
+      "DeleteLicenseManagerReportGenerator",
+      "DeleteToken",
+      "ExtendLicenseConsumption",
+      "RejectGrant",
+      "TagResource",
+      "UntagResource",
+      "UpdateLicenseAssetGroup",
+      "UpdateLicenseAssetRuleset",
+      "UpdateLicenseConfiguration",
+      "UpdateLicenseManagerReportGenerator",
+      "UpdateLicenseSpecificationsForResource",
+      "UpdateServiceSettings"
+    ],
+    "Read": [
+      "GetAccessToken",
+      "GetGrant",
+      "GetLicense",
+      "GetLicenseAssetGroup",
+      "GetLicenseAssetRuleset",
+      "GetLicenseConfiguration",
+      "GetLicenseConversionTask",
+      "GetLicenseManagerReportGenerator",
+      "GetLicenseUsage",
+      "ListLicenses",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "GetServiceSettings",
+      "ListAssetsForLicenseAssetGroup",
+      "ListAssociationsForLicenseConfiguration",
+      "ListDistributedGrants",
+      "ListFailuresForLicenseConfigurationOperations",
+      "ListLicenseAssetGroups",
+      "ListLicenseAssetRulesets",
+      "ListLicenseConfigurations",
+      "ListLicenseConfigurationsForOrganization",
+      "ListLicenseConversionTasks",
+      "ListLicenseManagerReportGenerators",
+      "ListLicenseSpecificationsForResource",
+      "ListLicenseVersions",
+      "ListReceivedGrants",
+      "ListReceivedGrantsForOrganization",
+      "ListReceivedLicenses",
+      "ListReceivedLicensesForOrganization",
+      "ListResourceInventory",
+      "ListTokens",
+      "ListUsageForLicenseConfiguration"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "UpdateServiceSettings"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptGrant",
+      "methodName": "toAcceptGrant",
+      "description": "Grants permission to accept a grant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_AcceptGrant.html"
+    },
+    {
+      "name": "CheckInLicense",
+      "methodName": "toCheckInLicense",
+      "description": "Grants permission to check in license entitlements back to pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CheckInLicense.html"
+    },
+    {
+      "name": "CheckoutBorrowLicense",
+      "methodName": "toCheckoutBorrowLicense",
+      "description": "Grants permission to check out license entitlements for borrow use case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CheckoutBorrowLicense.html"
+    },
+    {
+      "name": "CheckoutLicense",
+      "methodName": "toCheckoutLicense",
+      "description": "Grants permission to check out license entitlements",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CheckoutLicense.html"
+    },
+    {
+      "name": "CreateGrant",
+      "methodName": "toCreateGrant",
+      "description": "Grants permission to create a new grant for license",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateGrant.html"
+    },
+    {
+      "name": "CreateGrantVersion",
+      "methodName": "toCreateGrantVersion",
+      "description": "Grants permission to create new version of grant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateGrantVersion.html"
+    },
+    {
+      "name": "CreateLicense",
+      "methodName": "toCreateLicense",
+      "description": "Grants permission to create a new license",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicense.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateLicenseAssetGroup",
+      "methodName": "toCreateLicenseAssetGroup",
+      "description": "Grants permission to create a license asset group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseAssetGroup.html"
+    },
+    {
+      "name": "CreateLicenseAssetRuleset",
+      "methodName": "toCreateLicenseAssetRuleset",
+      "description": "Grants permission to create a license asset ruleset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseAssetRuleset.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateLicenseConfiguration",
+      "methodName": "toCreateLicenseConfiguration",
+      "description": "Grants permission to create a new license configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseConfiguration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateLicenseConversionTaskForResource",
+      "methodName": "toCreateLicenseConversionTaskForResource",
+      "description": "Grants permission to create a license conversion task for a resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseConversionTaskForResource.html"
+    },
+    {
+      "name": "CreateLicenseManagerReportGenerator",
+      "methodName": "toCreateLicenseManagerReportGenerator",
+      "description": "Grants permission to create a report generator for supported license manager resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseManagerReportGenerator.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateLicenseVersion",
+      "methodName": "toCreateLicenseVersion",
+      "description": "Grants permission to create new version of license",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseVersion.html"
+    },
+    {
+      "name": "CreateToken",
+      "methodName": "toCreateToken",
+      "description": "Grants permission to create a new token for license",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateToken.html"
+    },
+    {
+      "name": "DeleteGrant",
+      "methodName": "toDeleteGrant",
+      "description": "Grants permission to delete a grant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteGrant.html"
+    },
+    {
+      "name": "DeleteLicense",
+      "methodName": "toDeleteLicense",
+      "description": "Grants permission to delete a license",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicense.html"
+    },
+    {
+      "name": "DeleteLicenseAssetGroup",
+      "methodName": "toDeleteLicenseAssetGroup",
+      "description": "Grants permission to delete a license asset group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicenseAssetGroup.html"
+    },
+    {
+      "name": "DeleteLicenseAssetRuleset",
+      "methodName": "toDeleteLicenseAssetRuleset",
+      "description": "Grants permission to delete a license asset ruleset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicenseAssetRuleset.html"
+    },
+    {
+      "name": "DeleteLicenseConfiguration",
+      "methodName": "toDeleteLicenseConfiguration",
+      "description": "Grants permission to permanently delete a license configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicenseConfiguration.html"
+    },
+    {
+      "name": "DeleteLicenseManagerReportGenerator",
+      "methodName": "toDeleteLicenseManagerReportGenerator",
+      "description": "Grants permission to delete a report generator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicenseManagerReportGenerator.html"
+    },
+    {
+      "name": "DeleteToken",
+      "methodName": "toDeleteToken",
+      "description": "Grants permission to delete token",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteToken.html"
+    },
+    {
+      "name": "ExtendLicenseConsumption",
+      "methodName": "toExtendLicenseConsumption",
+      "description": "Grants permission to extend consumption period of already checkout license entitlements",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ExtendLicenseConsumption.html"
+    },
+    {
+      "name": "GetAccessToken",
+      "methodName": "toGetAccessToken",
+      "description": "Grants permission to get access token",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetAccessToken.html"
+    },
+    {
+      "name": "GetGrant",
+      "methodName": "toGetGrant",
+      "description": "Grants permission to get a grant",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetGrant.html"
+    },
+    {
+      "name": "GetLicense",
+      "methodName": "toGetLicense",
+      "description": "Grants permission to get a license",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicense.html"
+    },
+    {
+      "name": "GetLicenseAssetGroup",
+      "methodName": "toGetLicenseAssetGroup",
+      "description": "Grants permission to get a license asset group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseAssetGroup.html"
+    },
+    {
+      "name": "GetLicenseAssetRuleset",
+      "methodName": "toGetLicenseAssetRuleset",
+      "description": "Grants permission to get a license asset ruleset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseAssetRuleset.html"
+    },
+    {
+      "name": "GetLicenseConfiguration",
+      "methodName": "toGetLicenseConfiguration",
+      "description": "Grants permission to get a license configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseConfiguration.html"
+    },
+    {
+      "name": "GetLicenseConversionTask",
+      "methodName": "toGetLicenseConversionTask",
+      "description": "Grants permission to retrieve a license conversion task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseConversionTask.html"
+    },
+    {
+      "name": "GetLicenseManagerReportGenerator",
+      "methodName": "toGetLicenseManagerReportGenerator",
+      "description": "Grants permission to get a report generator",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseManagerReportGenerator.html"
+    },
+    {
+      "name": "GetLicenseUsage",
+      "methodName": "toGetLicenseUsage",
+      "description": "Grants permission to get a license usage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseUsage.html"
+    },
+    {
+      "name": "GetServiceSettings",
+      "methodName": "toGetServiceSettings",
+      "description": "Grants permission to get service settings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetServiceSettings.html"
+    },
+    {
+      "name": "ListAssetsForLicenseAssetGroup",
+      "methodName": "toListAssetsForLicenseAssetGroup",
+      "description": "Grants permission to list assets for a license asset group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListAssetsForLicenseAssetGroup.html"
+    },
+    {
+      "name": "ListAssociationsForLicenseConfiguration",
+      "methodName": "toListAssociationsForLicenseConfiguration",
+      "description": "Grants permission to list associations for a selected license configuration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListAssociationsForLicenseConfiguration.html"
+    },
+    {
+      "name": "ListDistributedGrants",
+      "methodName": "toListDistributedGrants",
+      "description": "Grants permission to list distributed grants",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListDistributedGrants.html"
+    },
+    {
+      "name": "ListFailuresForLicenseConfigurationOperations",
+      "methodName": "toListFailuresForLicenseConfigurationOperations",
+      "description": "Grants permission to list the license configuration operations that failed",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListFailuresForLicenseConfigurationOperations.html"
+    },
+    {
+      "name": "ListLicenseAssetGroups",
+      "methodName": "toListLicenseAssetGroups",
+      "description": "Grants permission to list license asset groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseAssetGroups.html"
+    },
+    {
+      "name": "ListLicenseAssetRulesets",
+      "methodName": "toListLicenseAssetRulesets",
+      "description": "Grants permission to list license asset rulesets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseAssetRulesets.html"
+    },
+    {
+      "name": "ListLicenseConfigurations",
+      "methodName": "toListLicenseConfigurations",
+      "description": "Grants permission to list license configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseConfigurations.html"
+    },
+    {
+      "name": "ListLicenseConfigurationsForOrganization",
+      "methodName": "toListLicenseConfigurationsForOrganization",
+      "description": "Grants permission to list license configurations for organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseConfigurationsForOrganization.html"
+    },
+    {
+      "name": "ListLicenseConversionTasks",
+      "methodName": "toListLicenseConversionTasks",
+      "description": "Grants permission to list license conversion tasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseConversionTasks.html"
+    },
+    {
+      "name": "ListLicenseManagerReportGenerators",
+      "methodName": "toListLicenseManagerReportGenerators",
+      "description": "Grants permission to list report generators",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseManagerReportGenerators.html"
+    },
+    {
+      "name": "ListLicenseSpecificationsForResource",
+      "methodName": "toListLicenseSpecificationsForResource",
+      "description": "Grants permission to list license specifications associated with a selected resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseSpecificationsForResource.html"
+    },
+    {
+      "name": "ListLicenseVersions",
+      "methodName": "toListLicenseVersions",
+      "description": "Grants permission to list license versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseVersions.html"
+    },
+    {
+      "name": "ListLicenses",
+      "methodName": "toListLicenses",
+      "description": "Grants permission to list licenses",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenses.html"
+    },
+    {
+      "name": "ListReceivedGrants",
+      "methodName": "toListReceivedGrants",
+      "description": "Grants permission to list received grants",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListReceivedGrants.html"
+    },
+    {
+      "name": "ListReceivedGrantsForOrganization",
+      "methodName": "toListReceivedGrantsForOrganization",
+      "description": "Grants permission to list received grants for organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListReceivedGrantsForOrganization.html"
+    },
+    {
+      "name": "ListReceivedLicenses",
+      "methodName": "toListReceivedLicenses",
+      "description": "Grants permission to list received licenses",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListReceivedLicenses.html"
+    },
+    {
+      "name": "ListReceivedLicensesForOrganization",
+      "methodName": "toListReceivedLicensesForOrganization",
+      "description": "Grants permission to list received licenses for organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListReceivedLicensesForOrganization.html"
+    },
+    {
+      "name": "ListResourceInventory",
+      "methodName": "toListResourceInventory",
+      "description": "Grants permission to list resource inventory",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListResourceInventory.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a selected resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTokens",
+      "methodName": "toListTokens",
+      "description": "Grants permission to list tokens",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListTokens.html"
+    },
+    {
+      "name": "ListUsageForLicenseConfiguration",
+      "methodName": "toListUsageForLicenseConfiguration",
+      "description": "Grants permission to list usage records for selected license configuration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListUsageForLicenseConfiguration.html"
+    },
+    {
+      "name": "RejectGrant",
+      "methodName": "toRejectGrant",
+      "description": "Grants permission to reject a grant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_RejectGrant.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a selected resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a selected resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateLicenseAssetGroup",
+      "methodName": "toUpdateLicenseAssetGroup",
+      "description": "Grants permission to update a license asset group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseAssetGroup.html"
+    },
+    {
+      "name": "UpdateLicenseAssetRuleset",
+      "methodName": "toUpdateLicenseAssetRuleset",
+      "description": "Grants permission to update a license asset ruleset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseAssetRuleset.html"
+    },
+    {
+      "name": "UpdateLicenseConfiguration",
+      "methodName": "toUpdateLicenseConfiguration",
+      "description": "Grants permission to update an existing license configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseConfiguration.html"
+    },
+    {
+      "name": "UpdateLicenseManagerReportGenerator",
+      "methodName": "toUpdateLicenseManagerReportGenerator",
+      "description": "Grants permission to update a report generator for supported license manager resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseManagerReportGenerator.html"
+    },
+    {
+      "name": "UpdateLicenseSpecificationsForResource",
+      "methodName": "toUpdateLicenseSpecificationsForResource",
+      "description": "Grants permission to updates license specifications for a selected resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseSpecificationsForResource.html"
+    },
+    {
+      "name": "UpdateServiceSettings",
+      "methodName": "toUpdateServiceSettings",
+      "description": "Grants permission to updates service settings",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateServiceSettings.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "grant",
+      "methodName": "onGrant",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html",
+      "arn": "arn:${Partition}:license-manager::${Account}:grant:${GrantId}",
+      "placeholders": [
+        {
+          "placeholder": "GrantId",
+          "name": "grantId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "license",
+      "methodName": "onLicense",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/seller-issued-licenses.html",
+      "arn": "arn:${Partition}:license-manager::${Account}:license:${LicenseId}",
+      "placeholders": [
+        {
+          "placeholder": "LicenseId",
+          "name": "licenseId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "license-asset-group",
+      "methodName": "onLicenseAssetGroup",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/license-asset-group.html",
+      "arn": "arn:${Partition}:license-manager:${Region}:${Account}:license-asset-group:${LicenseAssetGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "LicenseAssetGroupId",
+          "name": "licenseAssetGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "license-asset-ruleset",
+      "methodName": "onLicenseAssetRuleset",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/license-asset-ruleset.html",
+      "arn": "arn:${Partition}:license-manager:${Region}:${Account}:license-asset-ruleset:${LicenseAssetRulesetId}",
+      "placeholders": [
+        {
+          "placeholder": "LicenseAssetRulesetId",
+          "name": "licenseAssetRulesetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "license-configuration",
+      "methodName": "onLicenseConfiguration",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/license-configurations.html",
+      "arn": "arn:${Partition}:license-manager:${Region}:${Account}:license-configuration:${LicenseConfigurationId}",
+      "placeholders": [
+        {
+          "placeholder": "LicenseConfigurationId",
+          "name": "licenseConfigurationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ]
+    },
+    {
+      "name": "report-generator",
+      "methodName": "onReportGenerator",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/license-reporting.html",
+      "arn": "arn:${Partition}:license-manager:${Region}:${Account}:report-generator:${ReportGeneratorId}",
+      "placeholders": [
+        {
+          "placeholder": "ReportGeneratorId",
+          "name": "reportGeneratorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/identity-access-management.html",
+      "relatedActionMethods": [
+        "toCreateGrant",
+        "toCreateLicense",
+        "toCreateLicenseAssetGroup",
+        "toCreateLicenseAssetRuleset",
+        "toCreateLicenseConfiguration",
+        "toCreateLicenseManagerReportGenerator",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "",
+      "relatedActionMethods": [
+        "toAcceptGrant",
+        "toCheckoutBorrowLicense",
+        "toCreateGrant",
+        "toCreateGrantVersion",
+        "toCreateLicenseAssetGroup",
+        "toCreateLicenseVersion",
+        "toCreateToken",
+        "toDeleteGrant",
+        "toDeleteLicense",
+        "toDeleteLicenseAssetGroup",
+        "toDeleteLicenseAssetRuleset",
+        "toDeleteLicenseConfiguration",
+        "toDeleteLicenseManagerReportGenerator",
+        "toGetGrant",
+        "toGetLicense",
+        "toGetLicenseAssetGroup",
+        "toGetLicenseAssetRuleset",
+        "toGetLicenseConfiguration",
+        "toGetLicenseManagerReportGenerator",
+        "toGetLicenseUsage",
+        "toListAssetsForLicenseAssetGroup",
+        "toListAssociationsForLicenseConfiguration",
+        "toListFailuresForLicenseConfigurationOperations",
+        "toListLicenseAssetGroups",
+        "toListLicenseAssetRulesets",
+        "toListLicenseManagerReportGenerators",
+        "toListLicenseVersions",
+        "toListTagsForResource",
+        "toListUsageForLicenseConfiguration",
+        "toRejectGrant",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLicenseAssetGroup",
+        "toUpdateLicenseAssetRuleset",
+        "toUpdateLicenseConfiguration",
+        "toUpdateLicenseManagerReportGenerator",
+        "toUpdateLicenseSpecificationsForResource"
+      ],
+      "relatedResourceTypes": [
+        "grant",
+        "license",
+        "license-asset-group",
+        "license-asset-ruleset",
+        "license-configuration",
+        "report-generator"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/identity-access-management.html",
+      "relatedActionMethods": [
+        "toCreateGrant",
+        "toCreateLicense",
+        "toCreateLicenseAssetGroup",
+        "toCreateLicenseAssetRuleset",
+        "toCreateLicenseConfiguration",
+        "toCreateLicenseManagerReportGenerator",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "license-manager:ResourceTag/${TagKey}",
+      "methodName": "ifResourceTag",
+      "description": "Filters access by the tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/identity-access-management.html",
+      "relatedActionMethods": [
+        "toDeleteLicenseConfiguration",
+        "toDeleteLicenseManagerReportGenerator",
+        "toGetLicenseConfiguration",
+        "toGetLicenseManagerReportGenerator",
+        "toListAssociationsForLicenseConfiguration",
+        "toListFailuresForLicenseConfigurationOperations",
+        "toListLicenseManagerReportGenerators",
+        "toListTagsForResource",
+        "toListUsageForLicenseConfiguration",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLicenseConfiguration",
+        "toUpdateLicenseManagerReportGenerator",
+        "toUpdateLicenseSpecificationsForResource"
+      ],
+      "relatedResourceTypes": [
+        "license-configuration",
+        "report-generator"
+      ],
+      "keyLiteral": "ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

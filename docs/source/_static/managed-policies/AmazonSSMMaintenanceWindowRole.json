@@ -1,0 +1,58 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetAutomationExecution",
+        "ssm:GetParameters",
+        "ssm:ListCommands",
+        "ssm:SendCommand",
+        "ssm:StartAutomationExecution"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "lambda:InvokeFunction"
+      ],
+      "Resource": [
+        "arn:aws:lambda:*:*:function:SSM*",
+        "arn:aws:lambda:*:*:function:*:SSM*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "states:DescribeExecution",
+        "states:StartExecution"
+      ],
+      "Resource": [
+        "arn:aws:states:*:*:stateMachine:SSM*",
+        "arn:aws:states:*:*:execution:SSM*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "resource-groups:ListGroups",
+        "resource-groups:ListGroupResources"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetResources"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

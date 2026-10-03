@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "filename": "invoicing",
+  "className": "Invoicing",
+  "name": "invoicing",
+  "servicePrefix": "invoicing",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_invoicing.html",
+  "accessLevelList": {
+    "Read": [
+      "BatchGetInvoiceProfile",
+      "GetInvoicePDF",
+      "GetInvoiceUnit",
+      "GetProcurementPortalPreference",
+      "ListInvoiceSummaries",
+      "ListTagsForResource",
+      "GetInvoiceCorrection",
+      "GetInvoiceEmailDeliveryPreferences"
+    ],
+    "Write": [
+      "CreateInvoiceUnit",
+      "CreateProcurementPortalPreference",
+      "DeleteInvoiceUnit",
+      "DeleteProcurementPortalPreference",
+      "PutProcurementPortalPreference",
+      "SendProcurementPortalValidation",
+      "TagResource",
+      "UntagResource",
+      "UpdateInvoiceUnit",
+      "UpdateProcurementPortalPreferenceStatus",
+      "VerifyProcurementPortalValidation",
+      "PutInvoiceEmailDeliveryPreferences",
+      "StartInvoiceCorrection"
+    ],
+    "List": [
+      "ListInvoiceUnits",
+      "ListProcurementPortalPreferences",
+      "ListProcurementPortalSuppliers",
+      "ListProcurementPortals",
+      "ListInvoiceCorrections"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchGetInvoiceProfile",
+      "methodName": "toBatchGetInvoiceProfile",
+      "description": "Grants permission to get invoice profile details for an account in your organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_BatchGetInvoiceProfile.html"
+    },
+    {
+      "name": "CreateInvoiceUnit",
+      "methodName": "toCreateInvoiceUnit",
+      "description": "Grants permission to create an invoice unit for your organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_CreateInvoiceUnit.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateProcurementPortalPreference",
+      "methodName": "toCreateProcurementPortalPreference",
+      "description": "Grants permission to create a procurement portal preference",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_CreateProcurementPortalPreference.html",
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "DeleteInvoiceUnit",
+      "methodName": "toDeleteInvoiceUnit",
+      "description": "Grants permission to update an invoice unit for your organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_DeleteInvoiceUnit.html"
+    },
+    {
+      "name": "DeleteProcurementPortalPreference",
+      "methodName": "toDeleteProcurementPortalPreference",
+      "description": "Grants permission to delete a procurement portal preference",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_DeleteProcurementPortalPreference.html",
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "GetInvoicePDF",
+      "methodName": "toGetInvoicePDF",
+      "description": "Grants permission to get downloadable Invoice document pre-signed URL with supplemental documents",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_GetInvoicePDF.html"
+    },
+    {
+      "name": "GetInvoiceUnit",
+      "methodName": "toGetInvoiceUnit",
+      "description": "Grants permission to get invoice units for your organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_GetInvoiceUnit.html"
+    },
+    {
+      "name": "GetProcurementPortalPreference",
+      "methodName": "toGetProcurementPortalPreference",
+      "description": "Grants permission to get a procurement portal preference",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_GetProcurementPortalPreference.html"
+    },
+    {
+      "name": "ListInvoiceSummaries",
+      "methodName": "toListInvoiceSummaries",
+      "description": "Grants permission to get Invoice summary information for your account or linked account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_ListInvoiceSummaries.html"
+    },
+    {
+      "name": "ListInvoiceUnits",
+      "methodName": "toListInvoiceUnits",
+      "description": "Grants permission to list invoice units for your organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_ListInvoiceUnits.html"
+    },
+    {
+      "name": "ListProcurementPortalPreferences",
+      "methodName": "toListProcurementPortalPreferences",
+      "description": "Grants permission to list procurement portal preferences for an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_ListProcurementPortalPreferences.html"
+    },
+    {
+      "name": "ListProcurementPortalSuppliers",
+      "methodName": "toListProcurementPortalSuppliers",
+      "description": "Grants permission to list suppliers for a procurement portal",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_ListProcurementPortalSuppliers.html"
+    },
+    {
+      "name": "ListProcurementPortals",
+      "methodName": "toListProcurementPortals",
+      "description": "Grants permission to list procurement portals for an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_ListProcurementPortals.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_ListTagsForResource.html"
+    },
+    {
+      "name": "PutProcurementPortalPreference",
+      "methodName": "toPutProcurementPortalPreference",
+      "description": "Grants permission to update a procurement portal preference",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_PutProcurementPortalPreference.html",
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "SendProcurementPortalValidation",
+      "methodName": "toSendProcurementPortalValidation",
+      "description": "Grants permission to send a one-time passcode (OTP) to validate a procurement portal preference",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_SendProcurementPortalValidation.html",
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_UntagResource.html"
+    },
+    {
+      "name": "UpdateInvoiceUnit",
+      "methodName": "toUpdateInvoiceUnit",
+      "description": "Grants permission to update an invoice unit for your organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_UpdateInvoiceUnit.html"
+    },
+    {
+      "name": "UpdateProcurementPortalPreferenceStatus",
+      "methodName": "toUpdateProcurementPortalPreferenceStatus",
+      "description": "Grants permission to update the status for a procurement portal preference",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_UpdateProcurementPortalPreferenceStatus.html",
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "VerifyProcurementPortalValidation",
+      "methodName": "toVerifyProcurementPortalValidation",
+      "description": "Grants permission to verify the one-time passcode (OTP) to validate a procurement portal preference",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_VerifyProcurementPortalValidation.html",
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "GetInvoiceCorrection",
+      "methodName": "toGetInvoiceCorrection",
+      "description": "Grants permission to get Invoice Correction",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_GetInvoiceCorrection.html"
+    },
+    {
+      "name": "GetInvoiceEmailDeliveryPreferences",
+      "methodName": "toGetInvoiceEmailDeliveryPreferences",
+      "description": "Grants permission to get Invoice Email Delivery Preferences",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
+    },
+    {
+      "name": "ListInvoiceCorrections",
+      "methodName": "toListInvoiceCorrections",
+      "description": "Grants permission to list Invoice Corrections",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_ListInvoiceCorrections.html"
+    },
+    {
+      "name": "PutInvoiceEmailDeliveryPreferences",
+      "methodName": "toPutInvoiceEmailDeliveryPreferences",
+      "description": "Grants permission to put Invoice Email Delivery Preferences",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
+    },
+    {
+      "name": "StartInvoiceCorrection",
+      "methodName": "toStartInvoiceCorrection",
+      "description": "Grants permission to start Invoice Correction",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_StartInvoiceCorrection.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "invoice-unit",
+      "methodName": "onInvoiceUnit",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_InvoiceUnit.html",
+      "arn": "arn:${Partition}:invoicing::${Account}:invoice-unit/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "procurement-portal-preference",
+      "methodName": "onProcurementPortalPreference",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_ProcurementPortalPreference.html",
+      "arn": "arn:${Partition}:invoicing::${Account}:procurement-portal-preference/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateInvoiceUnit",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag-value associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateProcurementPortalPreference",
+        "toDeleteInvoiceUnit",
+        "toDeleteProcurementPortalPreference",
+        "toGetInvoiceUnit",
+        "toListTagsForResource",
+        "toPutProcurementPortalPreference",
+        "toSendProcurementPortalValidation",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateInvoiceUnit",
+        "toUpdateProcurementPortalPreferenceStatus",
+        "toVerifyProcurementPortalValidation"
+      ],
+      "relatedResourceTypes": [
+        "invoice-unit",
+        "procurement-portal-preference"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateInvoiceUnit",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

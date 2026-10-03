@@ -1,0 +1,27 @@
+{
+  "name": "tooter",
+  "version": "0.1.0",
+  "bin": {
+    "tooter": "bin/app.js"
+  },
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.4.1",
+    "@swc/helpers": "^0.5.6",
+    "@types/aws-lambda": "^8.10.133",
+    "regenerator-runtime": "^0.14.1"
+  },
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.511.0",
+    "@aws-sdk/client-sqs": "^3.511.0",
+    "@types/node": "24.19.0",
+    "aws-cdk-lib": "2.271.0",
+    "constructs": "^10.3.0",
+    "esbuild": "^0.28.0",
+    "megalodon": "^10.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

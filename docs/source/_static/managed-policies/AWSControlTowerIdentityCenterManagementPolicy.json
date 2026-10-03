@@ -1,0 +1,45 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowIdentityCenterInstancePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sso:ListPermissionSets"
+      ],
+      "Resource": "arn:aws:sso:::instance/*"
+    },
+    {
+      "Sid": "AllowIdentityCenterManagementPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sso:DescribeRegisteredRegions",
+        "sso:ListDirectoryAssociations",
+        "sso:ListProfileAssociations",
+        "sso:AssociateProfile",
+        "sso:GetProfile",
+        "sso:CreateProfile",
+        "sso:UpdateProfile",
+        "sso:GetTrust",
+        "sso:CreateTrust",
+        "sso:UpdateTrust",
+        "sso:CreateApplicationInstance",
+        "sso:GetApplicationInstance",
+        "sso:GetSSOStatus"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowIdentityCenterDirectoryPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sso-directory:SearchGroups",
+        "sso-directory:CreateGroup",
+        "sso-directory:SearchUsers",
+        "sso-directory:CreateUser",
+        "sso-directory:DescribeDirectory"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

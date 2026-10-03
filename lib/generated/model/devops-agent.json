@@ -1,0 +1,1076 @@
+{
+  "schemaVersion": 1,
+  "filename": "devops-agent",
+  "className": "Aidevops",
+  "name": "aidevops",
+  "servicePrefix": "aidevops",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateService",
+      "CreateAccessToken",
+      "CreateAgentSpace",
+      "CreateAsset",
+      "CreateAssetFile",
+      "CreateBacklogTask",
+      "CreateChat",
+      "CreateKnowledgeItem",
+      "CreateOneTimeLoginSession",
+      "CreatePrivateConnection",
+      "CreateTrigger",
+      "DeleteAgentSpace",
+      "DeleteAsset",
+      "DeleteAssetFile",
+      "DeleteKnowledgeItem",
+      "DeletePrivateConnection",
+      "DeleteTrigger",
+      "DeregisterService",
+      "DescribeSupportLevel",
+      "DisableOperatorApp",
+      "DisassociateService",
+      "DiscoverTopology",
+      "EnableOperatorApp",
+      "EndChatForCase",
+      "InitiateChatForCase",
+      "RegisterService",
+      "RevokeAccessToken",
+      "RotateAccessToken",
+      "SendMessage",
+      "TagResource",
+      "UntagResource",
+      "UpdateAgentSpace",
+      "UpdateApprovalAction",
+      "UpdateAsset",
+      "UpdateAssetFile",
+      "UpdateAssociation",
+      "UpdateBacklogTask",
+      "UpdateGoal",
+      "UpdateKnowledgeItem",
+      "UpdateOperatorAppIdpConfig",
+      "UpdatePrivateConnectionCertificate",
+      "UpdateRecommendation",
+      "UpdateTrigger",
+      "ValidateAwsAssociations",
+      "AllowVendedLogDeliveryForResource"
+    ],
+    "Read": [
+      "DescribePrivateConnection",
+      "DescribeServices",
+      "GetAccessToken",
+      "GetAccountUsage",
+      "GetAgentSpace",
+      "GetAsset",
+      "GetAssetContent",
+      "GetAssetFile",
+      "GetAssociation",
+      "GetBacklogTask",
+      "GetKnowledgeItem",
+      "GetOperatorApp",
+      "GetRecommendation",
+      "GetService",
+      "GetTrigger",
+      "ListTagsForResource",
+      "SearchServiceAccessibleResource"
+    ],
+    "List": [
+      "ListAccessTokens",
+      "ListAgentSpaces",
+      "ListAssetFiles",
+      "ListAssetTypes",
+      "ListAssetVersions",
+      "ListAssets",
+      "ListAssociations",
+      "ListBacklogTasks",
+      "ListChats",
+      "ListExecutions",
+      "ListGoals",
+      "ListJournalRecords",
+      "ListKnowledgeItemVersions",
+      "ListKnowledgeItems",
+      "ListPendingMessages",
+      "ListPrivateConnections",
+      "ListRecommendations",
+      "ListServices",
+      "ListTriggers",
+      "ListWebhooks"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "AllowVendedLogDeliveryForResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateService",
+      "methodName": "toAssociateService",
+      "description": "Grants permission to associate service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_AssociateService.html"
+    },
+    {
+      "name": "CreateAccessToken",
+      "methodName": "toCreateAccessToken",
+      "description": "Grants permission to create an access token",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateAccessToken.html"
+    },
+    {
+      "name": "CreateAgentSpace",
+      "methodName": "toCreateAgentSpace",
+      "description": "Grants permission to create agentspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateAgentSpace.html"
+    },
+    {
+      "name": "CreateAsset",
+      "methodName": "toCreateAsset",
+      "description": "Grants permission to create an asset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateAsset.html"
+    },
+    {
+      "name": "CreateAssetFile",
+      "methodName": "toCreateAssetFile",
+      "description": "Grants permission to create an asset file",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateAssetFile.html"
+    },
+    {
+      "name": "CreateBacklogTask",
+      "methodName": "toCreateBacklogTask",
+      "description": "Grants permission to create a new backlog task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateBacklogTask.html"
+    },
+    {
+      "name": "CreateChat",
+      "methodName": "toCreateChat",
+      "description": "Grants permission to create a chat",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateChat.html"
+    },
+    {
+      "name": "CreateKnowledgeItem",
+      "methodName": "toCreateKnowledgeItem",
+      "description": "Grants permission to create a new knowledge item",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateKnowledgeItem.html"
+    },
+    {
+      "name": "CreateOneTimeLoginSession",
+      "methodName": "toCreateOneTimeLoginSession",
+      "description": "Grants permission to generate secure one-time session for initiating off-console Application login",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html"
+    },
+    {
+      "name": "CreatePrivateConnection",
+      "methodName": "toCreatePrivateConnection",
+      "description": "Grants permission to create a private connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreatePrivateConnection.html"
+    },
+    {
+      "name": "CreateTrigger",
+      "methodName": "toCreateTrigger",
+      "description": "Grants permission to create a trigger",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateTrigger.html"
+    },
+    {
+      "name": "DeleteAgentSpace",
+      "methodName": "toDeleteAgentSpace",
+      "description": "Grants permission to delete agentspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DeleteAgentSpace.html"
+    },
+    {
+      "name": "DeleteAsset",
+      "methodName": "toDeleteAsset",
+      "description": "Grants permission to delete an asset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DeleteAsset.html"
+    },
+    {
+      "name": "DeleteAssetFile",
+      "methodName": "toDeleteAssetFile",
+      "description": "Grants permission to delete an asset file",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DeleteAssetFile.html"
+    },
+    {
+      "name": "DeleteKnowledgeItem",
+      "methodName": "toDeleteKnowledgeItem",
+      "description": "Grants permission to delete a knowledge item",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html"
+    },
+    {
+      "name": "DeletePrivateConnection",
+      "methodName": "toDeletePrivateConnection",
+      "description": "Grants permission to delete a private connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DeletePrivateConnection.html"
+    },
+    {
+      "name": "DeleteTrigger",
+      "methodName": "toDeleteTrigger",
+      "description": "Grants permission to delete a trigger",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DeleteTrigger.html"
+    },
+    {
+      "name": "DeregisterService",
+      "methodName": "toDeregisterService",
+      "description": "Grants permission to deregister a service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DeregisterService.html"
+    },
+    {
+      "name": "DescribePrivateConnection",
+      "methodName": "toDescribePrivateConnection",
+      "description": "Grants permission to describe a private connection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DescribePrivateConnection.html"
+    },
+    {
+      "name": "DescribeServices",
+      "methodName": "toDescribeServices",
+      "description": "Grants permission to describe support services",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html"
+    },
+    {
+      "name": "DescribeSupportLevel",
+      "methodName": "toDescribeSupportLevel",
+      "description": "Grants permission to describe customer support level",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html"
+    },
+    {
+      "name": "DisableOperatorApp",
+      "methodName": "toDisableOperatorApp",
+      "description": "Grants permission to disable the Operator App access to the given AgentSpace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DisableOperatorApp.html"
+    },
+    {
+      "name": "DisassociateService",
+      "methodName": "toDisassociateService",
+      "description": "Grants permission to disassociate service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DisassociateService.html"
+    },
+    {
+      "name": "DiscoverTopology",
+      "methodName": "toDiscoverTopology",
+      "description": "Grants permission to discover topology information",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html"
+    },
+    {
+      "name": "EnableOperatorApp",
+      "methodName": "toEnableOperatorApp",
+      "description": "Grants permission to enable the Operator App to access the given AgentSpace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_EnableOperatorApp.html"
+    },
+    {
+      "name": "EndChatForCase",
+      "methodName": "toEndChatForCase",
+      "description": "Grants permission to end a chat for a case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html"
+    },
+    {
+      "name": "GetAccessToken",
+      "methodName": "toGetAccessToken",
+      "description": "Grants permission to get access token details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetAccessToken.html"
+    },
+    {
+      "name": "GetAccountUsage",
+      "methodName": "toGetAccountUsage",
+      "description": "Grants permission to retrieve account usage information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetAccountUsage.html"
+    },
+    {
+      "name": "GetAgentSpace",
+      "methodName": "toGetAgentSpace",
+      "description": "Grants permission to get agentspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetAgentSpace.html"
+    },
+    {
+      "name": "GetAsset",
+      "methodName": "toGetAsset",
+      "description": "Grants permission to get an asset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetAsset.html"
+    },
+    {
+      "name": "GetAssetContent",
+      "methodName": "toGetAssetContent",
+      "description": "Grants permission to get asset content",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetAssetContent.html"
+    },
+    {
+      "name": "GetAssetFile",
+      "methodName": "toGetAssetFile",
+      "description": "Grants permission to get an asset file",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetAssetFile.html"
+    },
+    {
+      "name": "GetAssociation",
+      "methodName": "toGetAssociation",
+      "description": "Grants permission to get association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetAssociation.html"
+    },
+    {
+      "name": "GetBacklogTask",
+      "methodName": "toGetBacklogTask",
+      "description": "Grants permission to get a backlog task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetBacklogTask.html"
+    },
+    {
+      "name": "GetKnowledgeItem",
+      "methodName": "toGetKnowledgeItem",
+      "description": "Grants permission to get a knowledge item",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html"
+    },
+    {
+      "name": "GetOperatorApp",
+      "methodName": "toGetOperatorApp",
+      "description": "Grants permission to get operator auth config for any enabled auth flow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetOperatorApp.html"
+    },
+    {
+      "name": "GetRecommendation",
+      "methodName": "toGetRecommendation",
+      "description": "Grants permission to get a recommendation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetRecommendation.html"
+    },
+    {
+      "name": "GetService",
+      "methodName": "toGetService",
+      "description": "Grants permission to get services",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetService.html"
+    },
+    {
+      "name": "GetTrigger",
+      "methodName": "toGetTrigger",
+      "description": "Grants permission to get a trigger",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetTrigger.html"
+    },
+    {
+      "name": "InitiateChatForCase",
+      "methodName": "toInitiateChatForCase",
+      "description": "Grants permission to initiate a chat for a case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html"
+    },
+    {
+      "name": "ListAccessTokens",
+      "methodName": "toListAccessTokens",
+      "description": "Grants permission to list access tokens",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAccessTokens.html"
+    },
+    {
+      "name": "ListAgentSpaces",
+      "methodName": "toListAgentSpaces",
+      "description": "Grants permission to list agentspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAgentSpaces.html"
+    },
+    {
+      "name": "ListAssetFiles",
+      "methodName": "toListAssetFiles",
+      "description": "Grants permission to list asset files",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAssetFiles.html"
+    },
+    {
+      "name": "ListAssetTypes",
+      "methodName": "toListAssetTypes",
+      "description": "Grants permission to list asset types",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAssetTypes.html"
+    },
+    {
+      "name": "ListAssetVersions",
+      "methodName": "toListAssetVersions",
+      "description": "Grants permission to list asset versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAssetVersions.html"
+    },
+    {
+      "name": "ListAssets",
+      "methodName": "toListAssets",
+      "description": "Grants permission to list assets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAssets.html"
+    },
+    {
+      "name": "ListAssociations",
+      "methodName": "toListAssociations",
+      "description": "Grants permission to list associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAssociations.html"
+    },
+    {
+      "name": "ListBacklogTasks",
+      "methodName": "toListBacklogTasks",
+      "description": "Grants permission to list backlog tasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListBacklogTasks.html"
+    },
+    {
+      "name": "ListChats",
+      "methodName": "toListChats",
+      "description": "Grants permission to list chats",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListChats.html"
+    },
+    {
+      "name": "ListExecutions",
+      "methodName": "toListExecutions",
+      "description": "Grants permission to list executions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListExecutions.html"
+    },
+    {
+      "name": "ListGoals",
+      "methodName": "toListGoals",
+      "description": "Grants permission to list goals",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListGoals.html"
+    },
+    {
+      "name": "ListJournalRecords",
+      "methodName": "toListJournalRecords",
+      "description": "Grants permission to list journal records",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListJournalRecords.html"
+    },
+    {
+      "name": "ListKnowledgeItemVersions",
+      "methodName": "toListKnowledgeItemVersions",
+      "description": "Grants permission to list knowledge item versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html"
+    },
+    {
+      "name": "ListKnowledgeItems",
+      "methodName": "toListKnowledgeItems",
+      "description": "Grants permission to list knowledge items",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html"
+    },
+    {
+      "name": "ListPendingMessages",
+      "methodName": "toListPendingMessages",
+      "description": "Grants permission to list pending messages",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListPendingMessages.html"
+    },
+    {
+      "name": "ListPrivateConnections",
+      "methodName": "toListPrivateConnections",
+      "description": "Grants permission to list private connections",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListPrivateConnections.html"
+    },
+    {
+      "name": "ListRecommendations",
+      "methodName": "toListRecommendations",
+      "description": "Grants permission to list recommendations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListRecommendations.html"
+    },
+    {
+      "name": "ListServices",
+      "methodName": "toListServices",
+      "description": "Grants permission to list services",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListServices.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTriggers",
+      "methodName": "toListTriggers",
+      "description": "Grants permission to list triggers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListTriggers.html"
+    },
+    {
+      "name": "ListWebhooks",
+      "methodName": "toListWebhooks",
+      "description": "Grants permission to list webhooks for association",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListWebhooks.html"
+    },
+    {
+      "name": "RegisterService",
+      "methodName": "toRegisterService",
+      "description": "Grants permission to register specific service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_RegisterService.html"
+    },
+    {
+      "name": "RevokeAccessToken",
+      "methodName": "toRevokeAccessToken",
+      "description": "Grants permission to revoke an access token",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_RevokeAccessToken.html"
+    },
+    {
+      "name": "RotateAccessToken",
+      "methodName": "toRotateAccessToken",
+      "description": "Grants permission to rotate an access token",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_RotateAccessToken.html"
+    },
+    {
+      "name": "SearchServiceAccessibleResource",
+      "methodName": "toSearchServiceAccessibleResource",
+      "description": "Grants permission to look up a registered service accessible resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html"
+    },
+    {
+      "name": "SendMessage",
+      "methodName": "toSendMessage",
+      "description": "Grants permission to send chat messages",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_SendMessage.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAgentSpace",
+      "methodName": "toUpdateAgentSpace",
+      "description": "Grants permission to update agentspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateAgentSpace.html"
+    },
+    {
+      "name": "UpdateApprovalAction",
+      "methodName": "toUpdateApprovalAction",
+      "description": "Grants permission to update an approval action (approve or reject) for an agent tool invocation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateApprovalAction.html"
+    },
+    {
+      "name": "UpdateAsset",
+      "methodName": "toUpdateAsset",
+      "description": "Grants permission to update an asset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateAsset.html"
+    },
+    {
+      "name": "UpdateAssetFile",
+      "methodName": "toUpdateAssetFile",
+      "description": "Grants permission to update an asset file",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateAssetFile.html"
+    },
+    {
+      "name": "UpdateAssociation",
+      "methodName": "toUpdateAssociation",
+      "description": "Grants permission to update association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateAssociation.html"
+    },
+    {
+      "name": "UpdateBacklogTask",
+      "methodName": "toUpdateBacklogTask",
+      "description": "Grants permission to update a task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateBacklogTask.html"
+    },
+    {
+      "name": "UpdateGoal",
+      "methodName": "toUpdateGoal",
+      "description": "Grants permission to update a goal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateGoal.html"
+    },
+    {
+      "name": "UpdateKnowledgeItem",
+      "methodName": "toUpdateKnowledgeItem",
+      "description": "Grants permission to update a knowledge item",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html"
+    },
+    {
+      "name": "UpdateOperatorAppIdpConfig",
+      "methodName": "toUpdateOperatorAppIdpConfig",
+      "description": "Grants permission to update the external Identity Provider configuration for the Operator App",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateOperatorAppIdpConfig.html"
+    },
+    {
+      "name": "UpdatePrivateConnectionCertificate",
+      "methodName": "toUpdatePrivateConnectionCertificate",
+      "description": "Grants permission to update a private connection certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdatePrivateConnectionCertificate.html"
+    },
+    {
+      "name": "UpdateRecommendation",
+      "methodName": "toUpdateRecommendation",
+      "description": "Grants permission to update a recommendation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateRecommendation.html"
+    },
+    {
+      "name": "UpdateTrigger",
+      "methodName": "toUpdateTrigger",
+      "description": "Grants permission to update a trigger",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateTrigger.html"
+    },
+    {
+      "name": "ValidateAwsAssociations",
+      "methodName": "toValidateAwsAssociations",
+      "description": "Grants permission to validate aws association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ValidateAwsAssociations.html"
+    },
+    {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to authorize vended logs",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/configuring-capabilities-for-aws-devops-agent-vended-logs-and-metrics.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "agentspace",
+      "methodName": "onAgentspace",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/",
+      "arn": "arn:${Partition}:aidevops:${Region}:${Account}:agentspace/${AgentSpaceId}",
+      "placeholders": [
+        {
+          "placeholder": "AgentSpaceId",
+          "name": "agentSpaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "asset",
+      "methodName": "onAsset",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/",
+      "arn": "arn:${Partition}:aidevops:${Region}:${Account}:agentspace/${AgentSpaceId}/asset/${AssetId}",
+      "placeholders": [
+        {
+          "placeholder": "AgentSpaceId",
+          "name": "agentSpaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AssetId",
+          "name": "assetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "associations",
+      "methodName": "onAssociations",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/",
+      "arn": "arn:${Partition}:aidevops:${Region}:${Account}:agentspace/${AgentSpaceId}/association/${AssociationId}",
+      "placeholders": [
+        {
+          "placeholder": "AgentSpaceId",
+          "name": "agentSpaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AssociationId",
+          "name": "associationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "private-connection",
+      "methodName": "onPrivateConnection",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/",
+      "arn": "arn:${Partition}:aidevops:${Region}:${Account}:private-connection/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "service",
+      "methodName": "onService",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/",
+      "arn": "arn:${Partition}:aidevops:${Region}:${Account}:service/${ServiceId}",
+      "placeholders": [
+        {
+          "placeholder": "ServiceId",
+          "name": "serviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "trigger",
+      "methodName": "onTrigger",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/",
+      "arn": "arn:${Partition}:aidevops:${Region}:${Account}:agentspace/${AgentSpaceId}/trigger/${TriggerId}",
+      "placeholders": [
+        {
+          "placeholder": "AgentSpaceId",
+          "name": "agentSpaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TriggerId",
+          "name": "triggerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aidevops:SourceAgentSpaceArn",
+      "methodName": "ifSourceAgentSpaceArn",
+      "description": "Filters access by the source AgentSpace ARN on the request. Set by the service from the request context, not supplied by the caller",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/",
+      "relatedActionMethods": [
+        "toCreateBacklogTask",
+        "toGetAsset",
+        "toGetAssetContent",
+        "toGetAssetFile",
+        "toGetBacklogTask",
+        "toListAssetFiles",
+        "toListAssets",
+        "toListBacklogTasks",
+        "toListExecutions",
+        "toListJournalRecords",
+        "toSendMessage",
+        "toUpdateBacklogTask"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SourceAgentSpaceArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "aidevops:TargetAgentSpaceArn",
+      "methodName": "ifTargetAgentSpaceArn",
+      "description": "Filters access by the target AgentSpace ARN on the request. Set by the service from the request context, not supplied by the caller",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/",
+      "relatedActionMethods": [
+        "toCreateBacklogTask",
+        "toGetAsset",
+        "toGetAssetContent",
+        "toGetAssetFile",
+        "toGetBacklogTask",
+        "toListAssetFiles",
+        "toListAssets",
+        "toListBacklogTasks",
+        "toListExecutions",
+        "toListJournalRecords",
+        "toSendMessage",
+        "toUpdateBacklogTask"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TargetAgentSpaceArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAgentSpace",
+        "toCreatePrivateConnection",
+        "toListTagsForResource",
+        "toRegisterService",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateService",
+        "toCreateAccessToken",
+        "toCreateAgentSpace",
+        "toCreateAsset",
+        "toCreateAssetFile",
+        "toCreateBacklogTask",
+        "toCreateChat",
+        "toCreateKnowledgeItem",
+        "toCreateOneTimeLoginSession",
+        "toCreatePrivateConnection",
+        "toCreateTrigger",
+        "toDeleteAgentSpace",
+        "toDeleteAsset",
+        "toDeleteAssetFile",
+        "toDeleteKnowledgeItem",
+        "toDeletePrivateConnection",
+        "toDeleteTrigger",
+        "toDeregisterService",
+        "toDescribePrivateConnection",
+        "toDescribeServices",
+        "toDescribeSupportLevel",
+        "toDisableOperatorApp",
+        "toDisassociateService",
+        "toDiscoverTopology",
+        "toEnableOperatorApp",
+        "toEndChatForCase",
+        "toGetAccessToken",
+        "toGetAgentSpace",
+        "toGetAsset",
+        "toGetAssetContent",
+        "toGetAssetFile",
+        "toGetAssociation",
+        "toGetBacklogTask",
+        "toGetKnowledgeItem",
+        "toGetOperatorApp",
+        "toGetRecommendation",
+        "toGetService",
+        "toGetTrigger",
+        "toInitiateChatForCase",
+        "toListAccessTokens",
+        "toListAssetFiles",
+        "toListAssetVersions",
+        "toListAssets",
+        "toListAssociations",
+        "toListBacklogTasks",
+        "toListChats",
+        "toListExecutions",
+        "toListGoals",
+        "toListJournalRecords",
+        "toListKnowledgeItemVersions",
+        "toListKnowledgeItems",
+        "toListPendingMessages",
+        "toListRecommendations",
+        "toListTagsForResource",
+        "toListTriggers",
+        "toListWebhooks",
+        "toRegisterService",
+        "toRevokeAccessToken",
+        "toRotateAccessToken",
+        "toSendMessage",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAgentSpace",
+        "toUpdateApprovalAction",
+        "toUpdateAsset",
+        "toUpdateAssetFile",
+        "toUpdateAssociation",
+        "toUpdateBacklogTask",
+        "toUpdateGoal",
+        "toUpdateKnowledgeItem",
+        "toUpdateOperatorAppIdpConfig",
+        "toUpdatePrivateConnectionCertificate",
+        "toUpdateRecommendation",
+        "toUpdateTrigger",
+        "toValidateAwsAssociations"
+      ],
+      "relatedResourceTypes": [
+        "agentspace",
+        "private-connection",
+        "service"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAgentSpace",
+        "toCreatePrivateConnection",
+        "toListTagsForResource",
+        "toRegisterService",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

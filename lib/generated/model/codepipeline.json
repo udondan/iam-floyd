@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "filename": "codepipeline",
+  "className": "Codepipeline",
+  "name": "codepipeline",
+  "servicePrefix": "codepipeline",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_codepipeline.html",
+  "accessLevelList": {
+    "Write": [
+      "AcknowledgeJob",
+      "AcknowledgeThirdPartyJob",
+      "CreateCustomActionType",
+      "CreatePipeline",
+      "DeleteCustomActionType",
+      "DeletePipeline",
+      "DeleteWebhook",
+      "DeregisterWebhookWithThirdParty",
+      "DisableStageTransition",
+      "EnableStageTransition",
+      "OverrideStageCondition",
+      "PollForJobs",
+      "PollForThirdPartyJobs",
+      "PutActionRevision",
+      "PutApprovalResult",
+      "PutJobFailureResult",
+      "PutJobSuccessResult",
+      "PutThirdPartyJobFailureResult",
+      "PutThirdPartyJobSuccessResult",
+      "PutWebhook",
+      "RegisterWebhookWithThirdParty",
+      "RetryStageExecution",
+      "RollbackStage",
+      "StartPipelineExecution",
+      "StopPipelineExecution",
+      "TagResource",
+      "UntagResource",
+      "UpdateActionType",
+      "UpdatePipeline"
+    ],
+    "Read": [
+      "GetActionType",
+      "GetJobDetails",
+      "GetPipeline",
+      "GetPipelineExecution",
+      "GetPipelineState",
+      "GetThirdPartyJobDetails",
+      "ListActionExecutions",
+      "ListActionTypes",
+      "ListDeployActionExecutionTargets",
+      "ListRuleExecutions",
+      "ListRuleTypes",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListPipelineExecutions",
+      "ListPipelines",
+      "ListWebhooks"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcknowledgeJob",
+      "methodName": "toAcknowledgeJob",
+      "description": "Grants permission to view information about a specified job and whether that job has been received by the job worker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_AcknowledgeJob.html"
+    },
+    {
+      "name": "AcknowledgeThirdPartyJob",
+      "methodName": "toAcknowledgeThirdPartyJob",
+      "description": "Grants permission to confirm that a job worker has received the specified job (partner actions only)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_AcknowledgeThirdPartyJob.html"
+    },
+    {
+      "name": "CreateCustomActionType",
+      "methodName": "toCreateCustomActionType",
+      "description": "Grants permission to create a custom action that you can use in the pipelines associated with your AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_CreateCustomActionType.html"
+    },
+    {
+      "name": "CreatePipeline",
+      "methodName": "toCreatePipeline",
+      "description": "Grants permission to create a uniquely named pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_CreatePipeline.html"
+    },
+    {
+      "name": "DeleteCustomActionType",
+      "methodName": "toDeleteCustomActionType",
+      "description": "Grants permission to delete a custom action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DeleteCustomActionType.html"
+    },
+    {
+      "name": "DeletePipeline",
+      "methodName": "toDeletePipeline",
+      "description": "Grants permission to delete a specified pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DeletePipeline.html"
+    },
+    {
+      "name": "DeleteWebhook",
+      "methodName": "toDeleteWebhook",
+      "description": "Grants permission to delete a specified webhook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DeleteWebhook.html"
+    },
+    {
+      "name": "DeregisterWebhookWithThirdParty",
+      "methodName": "toDeregisterWebhookWithThirdParty",
+      "description": "Grants permission to remove the registration of a webhook with the third party specified in its configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DeregisterWebhookWithThirdParty.html"
+    },
+    {
+      "name": "DisableStageTransition",
+      "methodName": "toDisableStageTransition",
+      "description": "Grants permission to prevent revisions from transitioning to the next stage in a pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DisableStageTransition.html"
+    },
+    {
+      "name": "EnableStageTransition",
+      "methodName": "toEnableStageTransition",
+      "description": "Grants permission to allow revisions to transition to the next stage in a pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_EnableStageTransition.html"
+    },
+    {
+      "name": "GetActionType",
+      "methodName": "toGetActionType",
+      "description": "Grants permission to view information about an action type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetActionType.html"
+    },
+    {
+      "name": "GetJobDetails",
+      "methodName": "toGetJobDetails",
+      "description": "Grants permission to view information about a job (custom actions only)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetJobDetails.html"
+    },
+    {
+      "name": "GetPipeline",
+      "methodName": "toGetPipeline",
+      "description": "Grants permission to retrieve information about a pipeline structure",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetPipeline.html"
+    },
+    {
+      "name": "GetPipelineExecution",
+      "methodName": "toGetPipelineExecution",
+      "description": "Grants permission to view information about an execution of a pipeline, including details about artifacts, the pipeline execution ID, and the name, version, and status of the pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetPipelineExecution.html"
+    },
+    {
+      "name": "GetPipelineState",
+      "methodName": "toGetPipelineState",
+      "description": "Grants permission to view information about the current state of the stages and actions of a pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetPipelineState.html"
+    },
+    {
+      "name": "GetThirdPartyJobDetails",
+      "methodName": "toGetThirdPartyJobDetails",
+      "description": "Grants permission to view the details of a job for a third-party action (partner actions only)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetThirdPartyJobDetails.html"
+    },
+    {
+      "name": "ListActionExecutions",
+      "methodName": "toListActionExecutions",
+      "description": "Grants permission to list the action executions that have occurred in a pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListActionExecutions.html"
+    },
+    {
+      "name": "ListActionTypes",
+      "methodName": "toListActionTypes",
+      "description": "Grants permission to list a summary of all the action types available for pipelines in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListActionTypes.html"
+    },
+    {
+      "name": "ListDeployActionExecutionTargets",
+      "methodName": "toListDeployActionExecutionTargets",
+      "description": "Grants permission to list the deployment details for deploy action executions that have occurred in a pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListDeployActionExecutionTargets.html"
+    },
+    {
+      "name": "ListPipelineExecutions",
+      "methodName": "toListPipelineExecutions",
+      "description": "Grants permission to list a summary of the most recent executions for a pipeline",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListPipelineExecutions.html"
+    },
+    {
+      "name": "ListPipelines",
+      "methodName": "toListPipelines",
+      "description": "Grants permission to list a summary of all the pipelines associated with your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListPipelines.html"
+    },
+    {
+      "name": "ListRuleExecutions",
+      "methodName": "toListRuleExecutions",
+      "description": "Grants permission to list the rule executions that have occurred in a pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListRuleExecutions.html"
+    },
+    {
+      "name": "ListRuleTypes",
+      "methodName": "toListRuleTypes",
+      "description": "Grants permission to list a summary of all the rule types available for pipelines in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListRuleTypes.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a CodePipeline resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWebhooks",
+      "methodName": "toListWebhooks",
+      "description": "Grants permission to list all of the webhooks associated with your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListWebhooks.html"
+    },
+    {
+      "name": "OverrideStageCondition",
+      "methodName": "toOverrideStageCondition",
+      "description": "Grants permission to resume the pipeline execution by overriding a condition in a stage",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_OverrideStageCondition.html"
+    },
+    {
+      "name": "PollForJobs",
+      "methodName": "toPollForJobs",
+      "description": "Grants permission to view information about any jobs for CodePipeline to act on",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PollForJobs.html"
+    },
+    {
+      "name": "PollForThirdPartyJobs",
+      "methodName": "toPollForThirdPartyJobs",
+      "description": "Grants permission to determine whether there are any third-party jobs for a job worker to act on (partner actions only)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PollForThirdPartyJobs.html"
+    },
+    {
+      "name": "PutActionRevision",
+      "methodName": "toPutActionRevision",
+      "description": "Grants permission to edit actions in a pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutActionRevision.html"
+    },
+    {
+      "name": "PutApprovalResult",
+      "methodName": "toPutApprovalResult",
+      "description": "Grants permission to provide a response (Approved or Rejected) to a manual approval request in CodePipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutApprovalResult.html"
+    },
+    {
+      "name": "PutJobFailureResult",
+      "methodName": "toPutJobFailureResult",
+      "description": "Grants permission to represent the failure of a job as returned to the pipeline by a job worker (custom actions only)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutJobFailureResult.html"
+    },
+    {
+      "name": "PutJobSuccessResult",
+      "methodName": "toPutJobSuccessResult",
+      "description": "Grants permission to represent the success of a job as returned to the pipeline by a job worker (custom actions only)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutJobSuccessResult.html"
+    },
+    {
+      "name": "PutThirdPartyJobFailureResult",
+      "methodName": "toPutThirdPartyJobFailureResult",
+      "description": "Grants permission to represent the failure of a third-party job as returned to the pipeline by a job worker (partner actions only)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutThirdPartyJobFailureResult.html"
+    },
+    {
+      "name": "PutThirdPartyJobSuccessResult",
+      "methodName": "toPutThirdPartyJobSuccessResult",
+      "description": "Grants permission to represent the success of a third-party job as returned to the pipeline by a job worker (partner actions only)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutThirdPartyJobSuccessResult.html"
+    },
+    {
+      "name": "PutWebhook",
+      "methodName": "toPutWebhook",
+      "description": "Grants permission to create or update a webhook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutWebhook.html"
+    },
+    {
+      "name": "RegisterWebhookWithThirdParty",
+      "methodName": "toRegisterWebhookWithThirdParty",
+      "description": "Grants permission to register a webhook with the third party specified in its configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_RegisterWebhookWithThirdParty.html"
+    },
+    {
+      "name": "RetryStageExecution",
+      "methodName": "toRetryStageExecution",
+      "description": "Grants permission to resume the pipeline execution by retrying the last failed actions in a stage",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_RetryStageExecution.html"
+    },
+    {
+      "name": "RollbackStage",
+      "methodName": "toRollbackStage",
+      "description": "Grants permission to rollback the stage to a previous successful execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_RollbackStage.html"
+    },
+    {
+      "name": "StartPipelineExecution",
+      "methodName": "toStartPipelineExecution",
+      "description": "Grants permission to run the most recent revision through the pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_StartPipelineExecution.html"
+    },
+    {
+      "name": "StopPipelineExecution",
+      "methodName": "toStopPipelineExecution",
+      "description": "Grants permission to stop an in-progress pipeline execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_StopPipelineExecution.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a CodePipeline resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag from a CodePipeline resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateActionType",
+      "methodName": "toUpdateActionType",
+      "description": "Grants permission to update an action type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_UpdateActionType.html"
+    },
+    {
+      "name": "UpdatePipeline",
+      "methodName": "toUpdatePipeline",
+      "description": "Grants permission to update a pipeline with changes to the structure of the pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_UpdatePipeline.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "action",
+      "methodName": "onAction",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format",
+      "arn": "arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}/${StageName}/${ActionName}",
+      "placeholders": [
+        {
+          "placeholder": "PipelineName",
+          "name": "pipelineName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StageName",
+          "name": "stageName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ActionName",
+          "name": "actionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "actiontype",
+      "methodName": "onActiontype",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format",
+      "arn": "arn:${Partition}:codepipeline:${Region}:${Account}:actiontype:${Owner}/${Category}/${Provider}/${Version}",
+      "placeholders": [
+        {
+          "placeholder": "Owner",
+          "name": "owner",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Category",
+          "name": "category",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Provider",
+          "name": "provider",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Version",
+          "name": "version",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "pipeline",
+      "methodName": "onPipeline",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format",
+      "arn": "arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}",
+      "placeholders": [
+        {
+          "placeholder": "PipelineName",
+          "name": "pipelineName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "stage",
+      "methodName": "onStage",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format",
+      "arn": "arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}/${StageName}",
+      "placeholders": [
+        {
+          "placeholder": "PipelineName",
+          "name": "pipelineName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StageName",
+          "name": "stageName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "webhook",
+      "methodName": "onWebhook",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format",
+      "arn": "arn:${Partition}:codepipeline:${Region}:${Account}:webhook:${WebhookName}",
+      "placeholders": [
+        {
+          "placeholder": "WebhookName",
+          "name": "webhookName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters actions based on the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateCustomActionType",
+        "toCreatePipeline",
+        "toPutWebhook",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateCustomActionType",
+        "toCreatePipeline",
+        "toDeleteCustomActionType",
+        "toDeletePipeline",
+        "toDeleteWebhook",
+        "toDeregisterWebhookWithThirdParty",
+        "toDisableStageTransition",
+        "toEnableStageTransition",
+        "toGetPipeline",
+        "toGetPipelineExecution",
+        "toGetPipelineState",
+        "toListActionExecutions",
+        "toListDeployActionExecutionTargets",
+        "toListPipelineExecutions",
+        "toListRuleExecutions",
+        "toListTagsForResource",
+        "toListWebhooks",
+        "toOverrideStageCondition",
+        "toPollForJobs",
+        "toPutActionRevision",
+        "toPutApprovalResult",
+        "toPutWebhook",
+        "toRegisterWebhookWithThirdParty",
+        "toRetryStageExecution",
+        "toRollbackStage",
+        "toStartPipelineExecution",
+        "toStopPipelineExecution",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateActionType",
+        "toUpdatePipeline"
+      ],
+      "relatedResourceTypes": [
+        "action",
+        "actiontype",
+        "pipeline",
+        "stage",
+        "webhook"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters actions based on the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateCustomActionType",
+        "toCreatePipeline",
+        "toPutWebhook",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

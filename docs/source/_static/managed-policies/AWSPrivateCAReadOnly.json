@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": [
+      "acm-pca:DescribeCertificateAuthority",
+      "acm-pca:DescribeCertificateAuthorityAuditReport",
+      "acm-pca:ListCertificateAuthorities",
+      "acm-pca:GetCertificateAuthorityCsr",
+      "acm-pca:GetCertificateAuthorityCertificate",
+      "acm-pca:GetCertificate",
+      "acm-pca:GetPolicy",
+      "acm-pca:ListPermissions",
+      "acm-pca:ListTags"
+    ],
+    "Resource": "*"
+  }
+}

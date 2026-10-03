@@ -1,0 +1,164 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AdditionalPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:DescribeGroup",
+        "identitystore:DescribeUser",
+        "identitystore:ListGroupMembershipsForMember",
+        "deadline:GetApplicationVersion",
+        "ec2:DescribeInstanceTypes",
+        "identitystore:ListUsers"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "OwnerLevelPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:AssociateMemberToJob",
+        "deadline:DisassociateMemberFromJob"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:JobMembershipLevels": [
+            "OWNER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ManagerLevelMemberAssociation",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:AssociateMemberToJob"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:JobMembershipLevels": [
+            "MANAGER"
+          ]
+        },
+        "StringEquals": {
+          "deadline:AssociatedMembershipLevel": [
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER",
+            ""
+          ],
+          "deadline:MembershipLevel": [
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ManagerLevelMemberDisassociation",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:DisassociateMemberFromJob"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:JobMembershipLevels": [
+            "MANAGER"
+          ]
+        },
+        "StringEquals": {
+          "deadline:AssociatedMembershipLevel": [
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "OwnerManagerPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:ListJobMembers",
+        "deadline:UpdateJob",
+        "deadline:UpdateSession",
+        "deadline:UpdateStep",
+        "deadline:UpdateTask"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:JobMembershipLevels": [
+            "OWNER",
+            "MANAGER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllLevelsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:GetJob",
+        "deadline:GetJobTemplate",
+        "deadline:GetSession",
+        "deadline:GetSessionAction",
+        "deadline:GetStep",
+        "deadline:GetTask",
+        "deadline:ListJobParameterDefinitions",
+        "deadline:ListSessionActions",
+        "deadline:ListSessions",
+        "deadline:ListStepConsumers",
+        "deadline:ListStepDependencies",
+        "deadline:ListSteps",
+        "deadline:ListTasks",
+        "deadline:SearchSteps",
+        "deadline:SearchTasks"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:JobMembershipLevels": [
+            "OWNER",
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ListBasedOnMembership",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:ListJobs"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "deadline:RequesterPrincipalId": "${deadline:PrincipalId}"
+        }
+      }
+    }
+  ]
+}

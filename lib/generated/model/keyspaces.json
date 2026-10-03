@@ -1,0 +1,392 @@
+{
+  "schemaVersion": 1,
+  "filename": "keyspaces",
+  "className": "Cassandra",
+  "name": "cassandra",
+  "servicePrefix": "cassandra",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_keyspaces.html",
+  "accessLevelList": {
+    "Write": [
+      "Alter",
+      "AlterMultiRegionResource",
+      "Create",
+      "CreateMultiRegionResource",
+      "Drop",
+      "DropMultiRegionResource",
+      "Modify",
+      "ModifyMultiRegionResource",
+      "Restore",
+      "RestoreMultiRegionTable",
+      "TagMultiRegionResource",
+      "TagResource",
+      "UnTagMultiRegionResource",
+      "UntagResource",
+      "UpdatePartitioner"
+    ],
+    "Read": [
+      "GetRecords",
+      "GetShardIterator",
+      "GetStream",
+      "Select",
+      "SelectMultiRegionResource"
+    ],
+    "List": [
+      "ListStreams"
+    ],
+    "Tagging": [
+      "TagMultiRegionResource",
+      "TagResource",
+      "UnTagMultiRegionResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "Alter",
+      "methodName": "toAlter",
+      "description": "Grants permission to alter a keyspace or table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "AlterMultiRegionResource",
+      "methodName": "toAlterMultiRegionResource",
+      "description": "Grants permission to alter a multiregion keyspace or table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "Create",
+      "methodName": "toCreate",
+      "description": "Grants permission to create a keyspace or table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "CreateMultiRegionResource",
+      "methodName": "toCreateMultiRegionResource",
+      "description": "Grants permission to create a multiregion keyspace or table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "Drop",
+      "methodName": "toDrop",
+      "description": "Grants permission to drop a keyspace or table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "DropMultiRegionResource",
+      "methodName": "toDropMultiRegionResource",
+      "description": "Grants permission to drop a multiregion keyspace or table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "GetRecords",
+      "methodName": "toGetRecords",
+      "description": "Grants permission to retrieve the CDC stream records from a given shard",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "GetShardIterator",
+      "methodName": "toGetShardIterator",
+      "description": "Grants permission to return a shard iterator",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "GetStream",
+      "methodName": "toGetStream",
+      "description": "Grants permission to return information about a CDC stream, including the composition of its shards",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "ListStreams",
+      "methodName": "toListStreams",
+      "description": "Grants permission to return an array of CDC stream ARNs associated with the current account and endpoint",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "Modify",
+      "methodName": "toModify",
+      "description": "Grants permission to INSERT, UPDATE or DELETE data in a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "ModifyMultiRegionResource",
+      "methodName": "toModifyMultiRegionResource",
+      "description": "Grants permission to INSERT, UPDATE or DELETE data in a multiregion table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "Restore",
+      "methodName": "toRestore",
+      "description": "Grants permission to restore table from a backup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "RestoreMultiRegionTable",
+      "methodName": "toRestoreMultiRegionTable",
+      "description": "Grants permission to restore multiregion table from a backup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "Select",
+      "methodName": "toSelect",
+      "description": "Grants permission to SELECT data from a table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "SelectMultiRegionResource",
+      "methodName": "toSelectMultiRegionResource",
+      "description": "Grants permission to SELECT data from a multiregion table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "TagMultiRegionResource",
+      "methodName": "toTagMultiRegionResource",
+      "description": "Grants permission to tag a multiregion keyspace or table",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a keyspace, table, or stream",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "UnTagMultiRegionResource",
+      "methodName": "toUnTagMultiRegionResource",
+      "description": "Grants permission to untag a multiregion keyspace or table",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a keyspace, table or stream",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    },
+    {
+      "name": "UpdatePartitioner",
+      "methodName": "toUpdatePartitioner",
+      "description": "Grants permission to UPDATE the partitioner in a system table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+    }
+  ],
+  "resources": [
+    {
+      "name": "keyspace",
+      "methodName": "onKeyspace",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is.html",
+      "arn": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}",
+      "placeholders": [
+        {
+          "placeholder": "KeyspaceName",
+          "name": "keyspaceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "stream",
+      "methodName": "onStream",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is.html",
+      "arn": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${TableName}/stream/${StreamLabel}",
+      "placeholders": [
+        {
+          "placeholder": "KeyspaceName",
+          "name": "keyspaceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TableName",
+          "name": "tableName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StreamLabel",
+          "name": "streamLabel",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "table",
+      "methodName": "onTable",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is.html",
+      "arn": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${TableName}",
+      "placeholders": [
+        {
+          "placeholder": "KeyspaceName",
+          "name": "keyspaceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TableName",
+          "name": "tableName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters actions based on the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAlter",
+        "toAlterMultiRegionResource",
+        "toCreate",
+        "toCreateMultiRegionResource",
+        "toTagMultiRegionResource",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAlter",
+        "toAlterMultiRegionResource",
+        "toCreate",
+        "toCreateMultiRegionResource",
+        "toDrop",
+        "toDropMultiRegionResource",
+        "toGetRecords",
+        "toGetShardIterator",
+        "toGetStream",
+        "toModify",
+        "toModifyMultiRegionResource",
+        "toRestore",
+        "toRestoreMultiRegionTable",
+        "toSelect",
+        "toSelectMultiRegionResource",
+        "toTagMultiRegionResource",
+        "toTagResource",
+        "toUnTagMultiRegionResource",
+        "toUntagResource",
+        "toUpdatePartitioner"
+      ],
+      "relatedResourceTypes": [
+        "keyspace",
+        "stream",
+        "table"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters actions based on the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAlter",
+        "toAlterMultiRegionResource",
+        "toCreate",
+        "toCreateMultiRegionResource",
+        "toTagMultiRegionResource",
+        "toTagResource",
+        "toUnTagMultiRegionResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

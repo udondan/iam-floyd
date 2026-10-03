@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "filename": "scheduler",
+  "className": "Scheduler",
+  "name": "scheduler",
+  "servicePrefix": "scheduler",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_scheduler.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateSchedule",
+      "CreateScheduleGroup",
+      "DeleteSchedule",
+      "DeleteScheduleGroup",
+      "TagResource",
+      "UntagResource",
+      "UpdateSchedule"
+    ],
+    "Read": [
+      "GetSchedule",
+      "GetScheduleGroup",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListScheduleGroups",
+      "ListSchedules",
+      "ListSchedulesByTarget"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateSchedule",
+      "methodName": "toCreateSchedule",
+      "description": "Grants permission to create an Amazon EventBridge Scheduler schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/scheduler/latest/APIReference/API_CreateSchedule.html"
+    },
+    {
+      "name": "CreateScheduleGroup",
+      "methodName": "toCreateScheduleGroup",
+      "description": "Grants permission to create an Amazon EventBridge Scheduler schedule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/scheduler/latest/APIReference/API_CreateScheduleGroup.html"
+    },
+    {
+      "name": "DeleteSchedule",
+      "methodName": "toDeleteSchedule",
+      "description": "Grants permission to delete an Amazon EventBridge Scheduler schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/scheduler/latest/APIReference/API_DeleteSchedule.html"
+    },
+    {
+      "name": "DeleteScheduleGroup",
+      "methodName": "toDeleteScheduleGroup",
+      "description": "Grants permission to delete an Amazon EventBridge Scheduler schedule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/scheduler/latest/APIReference/API_DeleteScheduleGroup.html"
+    },
+    {
+      "name": "GetSchedule",
+      "methodName": "toGetSchedule",
+      "description": "Grants permission to view details about an Amazon EventBridge Scheduler schedule",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/scheduler/latest/APIReference/API_GetSchedule.html"
+    },
+    {
+      "name": "GetScheduleGroup",
+      "methodName": "toGetScheduleGroup",
+      "description": "Grants permission to view details about an Amazon EventBridge Scheduler schedule group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/scheduler/latest/APIReference/API_GetScheduleGroup.html"
+    },
+    {
+      "name": "ListScheduleGroups",
+      "methodName": "toListScheduleGroups",
+      "description": "Grants permission to list the Amazon EventBridge Scheduler schedule groups in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/scheduler/latest/APIReference/API_ListScheduleGroups.html"
+    },
+    {
+      "name": "ListSchedules",
+      "methodName": "toListSchedules",
+      "description": "Grants permission to list the Amazon EventBridge Scheduler schedules in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/scheduler/latest/APIReference/API_ListSchedules.html"
+    },
+    {
+      "name": "ListSchedulesByTarget",
+      "methodName": "toListSchedulesByTarget",
+      "description": "Grants permission to list the Amazon EventBridge Scheduler schedules in your account associated with a target",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/scheduler/latest/UserGuide/"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to lists tag for an Amazon EventBridge Scheduler resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/scheduler/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an Amazon EventBridge Scheduler resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/scheduler/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag an Amazon EventBridge Scheduler resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/scheduler/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateSchedule",
+      "methodName": "toUpdateSchedule",
+      "description": "Grants permission to modify an Amazon EventBridge Scheduler schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/scheduler/latest/APIReference/API_UpdateSchedule.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "schedule",
+      "methodName": "onSchedule",
+      "url": "https://docs.aws.amazon.com/scheduler/latest/UserGuide/managing-schedule.html",
+      "arn": "arn:${Partition}:scheduler:${Region}:${Account}:schedule/${GroupName}/${ScheduleName}",
+      "placeholders": [
+        {
+          "placeholder": "GroupName",
+          "name": "groupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ScheduleName",
+          "name": "scheduleName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "schedule-group",
+      "methodName": "onScheduleGroup",
+      "url": "https://docs.aws.amazon.com/scheduler/latest/UserGuide/managing-schedule-group.html",
+      "arn": "arn:${Partition}:scheduler:${Region}:${Account}:schedule-group/${GroupName}",
+      "placeholders": [
+        {
+          "placeholder": "GroupName",
+          "name": "groupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateScheduleGroup",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateSchedule",
+        "toCreateScheduleGroup",
+        "toDeleteSchedule",
+        "toDeleteScheduleGroup",
+        "toGetSchedule",
+        "toGetScheduleGroup",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateSchedule"
+      ],
+      "relatedResourceTypes": [
+        "schedule-group"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateScheduleGroup",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,1065 @@
+{
+  "schemaVersion": 1,
+  "filename": "nimble",
+  "className": "Nimble",
+  "name": "nimble",
+  "servicePrefix": "nimble",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_nimble.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptEulas",
+      "CreateLaunchProfile",
+      "CreateStreamingImage",
+      "CreateStreamingSession",
+      "CreateStreamingSessionStream",
+      "CreateStudio",
+      "CreateStudioComponent",
+      "DeleteLaunchProfile",
+      "DeleteLaunchProfileMember",
+      "DeleteStreamingImage",
+      "DeleteStreamingSession",
+      "DeleteStudio",
+      "DeleteStudioComponent",
+      "DeleteStudioMember",
+      "PutLaunchProfileMembers",
+      "PutStudioMembers",
+      "StartStreamingSession",
+      "StartStudioSSOConfigurationRepair",
+      "StopStreamingSession",
+      "TagResource",
+      "UntagResource",
+      "UpdateLaunchProfile",
+      "UpdateLaunchProfileMember",
+      "UpdateStreamingImage",
+      "UpdateStudio",
+      "UpdateStudioComponent",
+      "PutStudioLogEvents"
+    ],
+    "Read": [
+      "GetEula",
+      "GetLaunchProfile",
+      "GetLaunchProfileDetails",
+      "GetLaunchProfileInitialization",
+      "GetLaunchProfileMember",
+      "GetStreamingImage",
+      "GetStreamingSession",
+      "GetStreamingSessionBackup",
+      "GetStreamingSessionStream",
+      "GetStudio",
+      "GetStudioComponent",
+      "GetStudioMember",
+      "ListEulaAcceptances",
+      "ListEulas",
+      "ListLaunchProfileMembers",
+      "ListLaunchProfiles",
+      "ListStreamingImages",
+      "ListStreamingSessionBackups",
+      "ListStreamingSessions",
+      "ListStudioComponents",
+      "ListStudioMembers",
+      "ListStudios",
+      "ListTagsForResource",
+      "GetFeatureMap"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptEulas",
+      "methodName": "toAcceptEulas",
+      "description": "Grants permission to accept EULAs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_AcceptEulas.html"
+    },
+    {
+      "name": "CreateLaunchProfile",
+      "methodName": "toCreateLaunchProfile",
+      "description": "Grants permission to create a launch profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_CreateLaunchProfile.html"
+    },
+    {
+      "name": "CreateStreamingImage",
+      "methodName": "toCreateStreamingImage",
+      "description": "Grants permission to create a streaming image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_CreateStreamingImage.html"
+    },
+    {
+      "name": "CreateStreamingSession",
+      "methodName": "toCreateStreamingSession",
+      "description": "Grants permission to create a streaming session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_CreateStreamingSession.html"
+    },
+    {
+      "name": "CreateStreamingSessionStream",
+      "methodName": "toCreateStreamingSessionStream",
+      "description": "Grants permission to create a StreamingSessionStream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_CreateStreamingSessionStream.html"
+    },
+    {
+      "name": "CreateStudio",
+      "methodName": "toCreateStudio",
+      "description": "Grants permission to create a studio",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_CreateStudio.html"
+    },
+    {
+      "name": "CreateStudioComponent",
+      "methodName": "toCreateStudioComponent",
+      "description": "Grants permission to create a studio component. A studio component designates a network resource to which a launch profile will provide access",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_CreateStudioComponent.html"
+    },
+    {
+      "name": "DeleteLaunchProfile",
+      "methodName": "toDeleteLaunchProfile",
+      "description": "Grants permission to delete a launch profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_DeleteLaunchProfile.html"
+    },
+    {
+      "name": "DeleteLaunchProfileMember",
+      "methodName": "toDeleteLaunchProfileMember",
+      "description": "Grants permission to delete a launch profile member",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_DeleteLaunchProfileMember.html"
+    },
+    {
+      "name": "DeleteStreamingImage",
+      "methodName": "toDeleteStreamingImage",
+      "description": "Grants permission to delete a streaming image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_DeleteStreamingImage.html"
+    },
+    {
+      "name": "DeleteStreamingSession",
+      "methodName": "toDeleteStreamingSession",
+      "description": "Grants permission to delete a streaming session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_DeleteStreamingSession.html"
+    },
+    {
+      "name": "DeleteStudio",
+      "methodName": "toDeleteStudio",
+      "description": "Grants permission to delete a studio",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_DeleteStudio.html"
+    },
+    {
+      "name": "DeleteStudioComponent",
+      "methodName": "toDeleteStudioComponent",
+      "description": "Grants permission to delete a studio component",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_DeleteStudioComponent.html"
+    },
+    {
+      "name": "DeleteStudioMember",
+      "methodName": "toDeleteStudioMember",
+      "description": "Grants permission to delete a studio member",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_DeleteStudioMember.html"
+    },
+    {
+      "name": "GetEula",
+      "methodName": "toGetEula",
+      "description": "Grants permission to get a EULA",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetEula.html"
+    },
+    {
+      "name": "GetLaunchProfile",
+      "methodName": "toGetLaunchProfile",
+      "description": "Grants permission to get a launch profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetLaunchProfile.html"
+    },
+    {
+      "name": "GetLaunchProfileDetails",
+      "methodName": "toGetLaunchProfileDetails",
+      "description": "Grants permission to get a launch profile's details, which includes the summary of studio components and streaming images used by the launch profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetLaunchProfileDetails.html"
+    },
+    {
+      "name": "GetLaunchProfileInitialization",
+      "methodName": "toGetLaunchProfileInitialization",
+      "description": "Grants permission to get a launch profile initialization. A launch profile initialization is a dereferenced version of a launch profile, including attached studio component connection information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetLaunchProfileInitialization.html"
+    },
+    {
+      "name": "GetLaunchProfileMember",
+      "methodName": "toGetLaunchProfileMember",
+      "description": "Grants permission to get a launch profile member",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetLaunchProfileMember.html"
+    },
+    {
+      "name": "GetStreamingImage",
+      "methodName": "toGetStreamingImage",
+      "description": "Grants permission to get a streaming image",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStreamingImage.html"
+    },
+    {
+      "name": "GetStreamingSession",
+      "methodName": "toGetStreamingSession",
+      "description": "Grants permission to get a streaming session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStreamingSession.html"
+    },
+    {
+      "name": "GetStreamingSessionBackup",
+      "methodName": "toGetStreamingSessionBackup",
+      "description": "Grants permission to get a streaming session backup",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStreamingSessionBackup.html"
+    },
+    {
+      "name": "GetStreamingSessionStream",
+      "methodName": "toGetStreamingSessionStream",
+      "description": "Grants permission to get a streaming session stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStreamingSessionStream.html"
+    },
+    {
+      "name": "GetStudio",
+      "methodName": "toGetStudio",
+      "description": "Grants permission to get a studio",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStudio.html"
+    },
+    {
+      "name": "GetStudioComponent",
+      "methodName": "toGetStudioComponent",
+      "description": "Grants permission to get a studio component",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStudioComponent.html"
+    },
+    {
+      "name": "GetStudioMember",
+      "methodName": "toGetStudioMember",
+      "description": "Grants permission to get a studio member",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStudioMember.html"
+    },
+    {
+      "name": "ListEulaAcceptances",
+      "methodName": "toListEulaAcceptances",
+      "description": "Grants permission to list EULA acceptances",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListEulaAcceptances.html"
+    },
+    {
+      "name": "ListEulas",
+      "methodName": "toListEulas",
+      "description": "Grants permission to list EULAs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListEulas.html"
+    },
+    {
+      "name": "ListLaunchProfileMembers",
+      "methodName": "toListLaunchProfileMembers",
+      "description": "Grants permission to list launch profile members",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListLaunchProfileMembers.html"
+    },
+    {
+      "name": "ListLaunchProfiles",
+      "methodName": "toListLaunchProfiles",
+      "description": "Grants permission to list launch profiles",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListLaunchProfiles.html"
+    },
+    {
+      "name": "ListStreamingImages",
+      "methodName": "toListStreamingImages",
+      "description": "Grants permission to list streaming images",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListStreamingImages.html"
+    },
+    {
+      "name": "ListStreamingSessionBackups",
+      "methodName": "toListStreamingSessionBackups",
+      "description": "Grants permission to list streaming session backups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListStreamingSessionBackups.html"
+    },
+    {
+      "name": "ListStreamingSessions",
+      "methodName": "toListStreamingSessions",
+      "description": "Grants permission to list streaming sessions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListStreamingSessions.html"
+    },
+    {
+      "name": "ListStudioComponents",
+      "methodName": "toListStudioComponents",
+      "description": "Grants permission to list studio components",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListStudioComponents.html"
+    },
+    {
+      "name": "ListStudioMembers",
+      "methodName": "toListStudioMembers",
+      "description": "Grants permission to list studio members",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListStudioMembers.html"
+    },
+    {
+      "name": "ListStudios",
+      "methodName": "toListStudios",
+      "description": "Grants permission to list all studios",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListStudios.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags on a Nimble Studio resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutLaunchProfileMembers",
+      "methodName": "toPutLaunchProfileMembers",
+      "description": "Grants permission to add/update launch profile members",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_PutLaunchProfileMembers.html"
+    },
+    {
+      "name": "PutStudioMembers",
+      "methodName": "toPutStudioMembers",
+      "description": "Grants permission to add/update studio members",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_PutStudioMembers.html"
+    },
+    {
+      "name": "StartStreamingSession",
+      "methodName": "toStartStreamingSession",
+      "description": "Grants permission to start a streaming session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StartStreamingSession.html"
+    },
+    {
+      "name": "StartStudioSSOConfigurationRepair",
+      "methodName": "toStartStudioSSOConfigurationRepair",
+      "description": "Grants permission to repair the studio's AWS IAM Identity Center configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StartStudioSSOConfigurationRepair.html"
+    },
+    {
+      "name": "StopStreamingSession",
+      "methodName": "toStopStreamingSession",
+      "description": "Grants permission to stop a streaming session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StopStreamingSession.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or overwrite one or more tags for the specified Nimble Studio resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to disassociate one or more tags from the specified Nimble Studio resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateLaunchProfile",
+      "methodName": "toUpdateLaunchProfile",
+      "description": "Grants permission to update a launch profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_UpdateLaunchProfile.html"
+    },
+    {
+      "name": "UpdateLaunchProfileMember",
+      "methodName": "toUpdateLaunchProfileMember",
+      "description": "Grants permission to update a launch profile member",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_UpdateLaunchProfileMember.html"
+    },
+    {
+      "name": "UpdateStreamingImage",
+      "methodName": "toUpdateStreamingImage",
+      "description": "Grants permission to update a streaming image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_UpdateStreamingImage.html"
+    },
+    {
+      "name": "UpdateStudio",
+      "methodName": "toUpdateStudio",
+      "description": "Grants permission to update a studio",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_UpdateStudio.html"
+    },
+    {
+      "name": "UpdateStudioComponent",
+      "methodName": "toUpdateStudioComponent",
+      "description": "Grants permission to update a studio component",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_UpdateStudioComponent.html"
+    },
+    {
+      "name": "GetFeatureMap",
+      "methodName": "toGetFeatureMap",
+      "description": "Grants permission to allow Nimble Studio portal to show the appropriate features for this account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html"
+    },
+    {
+      "name": "PutStudioLogEvents",
+      "methodName": "toPutStudioLogEvents",
+      "description": "Grants permission to report metrics and logs for the Nimble Studio portal to monitor application health",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "eula",
+      "methodName": "onEula",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_Eula.html",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:eula/${EulaId}",
+      "placeholders": [
+        {
+          "placeholder": "EulaId",
+          "name": "eulaId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "eula-acceptance",
+      "methodName": "onEulaAcceptance",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_EulaAcceptance.html",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:eula-acceptance/${EulaAcceptanceId}",
+      "placeholders": [
+        {
+          "placeholder": "EulaAcceptanceId",
+          "name": "eulaAcceptanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifStudioId"
+      ]
+    },
+    {
+      "name": "launch-profile",
+      "methodName": "onLaunchProfile",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_LaunchProfile.html",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:launch-profile/${LaunchProfileId}",
+      "placeholders": [
+        {
+          "placeholder": "LaunchProfileId",
+          "name": "launchProfileId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifStudioId"
+      ]
+    },
+    {
+      "name": "streaming-image",
+      "methodName": "onStreamingImage",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StreamingImage.html",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:streaming-image/${StreamingImageId}",
+      "placeholders": [
+        {
+          "placeholder": "StreamingImageId",
+          "name": "streamingImageId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifStudioId"
+      ]
+    },
+    {
+      "name": "streaming-session",
+      "methodName": "onStreamingSession",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StreamingSession.html",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:streaming-session/${StreamingSessionId}",
+      "placeholders": [
+        {
+          "placeholder": "StreamingSessionId",
+          "name": "streamingSessionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifCreatedBy",
+        "ifOwnedBy"
+      ]
+    },
+    {
+      "name": "streaming-session-backup",
+      "methodName": "onStreamingSessionBackup",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StreamingSessionBackup.html",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:streaming-session-backup/${StreamingSessionBackupId}",
+      "placeholders": [
+        {
+          "placeholder": "StreamingSessionBackupId",
+          "name": "streamingSessionBackupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifOwnedBy"
+      ]
+    },
+    {
+      "name": "studio",
+      "methodName": "onStudio",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_Studio.html",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:studio/${StudioId}",
+      "placeholders": [
+        {
+          "placeholder": "StudioId",
+          "name": "studioId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifStudioId"
+      ]
+    },
+    {
+      "name": "studio-component",
+      "methodName": "onStudioComponent",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StudioComponent.html",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:studio-component/${StudioComponentId}",
+      "placeholders": [
+        {
+          "placeholder": "StudioComponentId",
+          "name": "studioComponentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifStudioId"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateLaunchProfile",
+        "toCreateStreamingImage",
+        "toCreateStreamingSession",
+        "toCreateStreamingSessionStream",
+        "toCreateStudio",
+        "toCreateStudioComponent",
+        "toDeleteLaunchProfile",
+        "toDeleteLaunchProfileMember",
+        "toDeleteStreamingImage",
+        "toDeleteStreamingSession",
+        "toDeleteStudio",
+        "toDeleteStudioComponent",
+        "toDeleteStudioMember",
+        "toGetLaunchProfile",
+        "toGetLaunchProfileDetails",
+        "toGetLaunchProfileInitialization",
+        "toGetLaunchProfileMember",
+        "toGetStreamingImage",
+        "toGetStreamingSession",
+        "toGetStreamingSessionBackup",
+        "toGetStreamingSessionStream",
+        "toGetStudio",
+        "toGetStudioComponent",
+        "toGetStudioMember",
+        "toListLaunchProfileMembers",
+        "toListLaunchProfiles",
+        "toListStreamingImages",
+        "toListStreamingSessionBackups",
+        "toListStreamingSessions",
+        "toListStudioComponents",
+        "toListStudioMembers",
+        "toListTagsForResource",
+        "toPutLaunchProfileMembers",
+        "toPutStudioMembers",
+        "toStartStreamingSession",
+        "toStartStudioSSOConfigurationRepair",
+        "toStopStreamingSession",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLaunchProfile",
+        "toUpdateLaunchProfileMember",
+        "toUpdateStreamingImage",
+        "toUpdateStudio",
+        "toUpdateStudioComponent",
+        "toPutStudioLogEvents"
+      ],
+      "relatedResourceTypes": [
+        "launch-profile",
+        "streaming-image",
+        "streaming-session",
+        "streaming-session-backup",
+        "studio",
+        "studio-component"
+      ],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateLaunchProfile",
+        "toCreateStreamingImage",
+        "toCreateStreamingSession",
+        "toCreateStreamingSessionStream",
+        "toCreateStudio",
+        "toCreateStudioComponent",
+        "toDeleteLaunchProfile",
+        "toDeleteLaunchProfileMember",
+        "toDeleteStreamingImage",
+        "toDeleteStreamingSession",
+        "toDeleteStudio",
+        "toDeleteStudioComponent",
+        "toDeleteStudioMember",
+        "toGetLaunchProfile",
+        "toGetLaunchProfileDetails",
+        "toGetLaunchProfileInitialization",
+        "toGetLaunchProfileMember",
+        "toGetStreamingImage",
+        "toGetStreamingSession",
+        "toGetStreamingSessionBackup",
+        "toGetStreamingSessionStream",
+        "toGetStudio",
+        "toGetStudioComponent",
+        "toGetStudioMember",
+        "toListLaunchProfileMembers",
+        "toListLaunchProfiles",
+        "toListStreamingImages",
+        "toListStreamingSessionBackups",
+        "toListStreamingSessions",
+        "toListStudioComponents",
+        "toListStudioMembers",
+        "toListTagsForResource",
+        "toPutLaunchProfileMembers",
+        "toPutStudioMembers",
+        "toStartStreamingSession",
+        "toStartStudioSSOConfigurationRepair",
+        "toStopStreamingSession",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLaunchProfile",
+        "toUpdateLaunchProfileMember",
+        "toUpdateStreamingImage",
+        "toUpdateStudio",
+        "toUpdateStudioComponent",
+        "toPutStudioLogEvents"
+      ],
+      "relatedResourceTypes": [
+        "launch-profile",
+        "streaming-image",
+        "streaming-session",
+        "streaming-session-backup",
+        "studio",
+        "studio-component"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateLaunchProfile",
+        "toCreateStreamingImage",
+        "toCreateStreamingSession",
+        "toCreateStreamingSessionStream",
+        "toCreateStudio",
+        "toCreateStudioComponent",
+        "toDeleteLaunchProfile",
+        "toDeleteLaunchProfileMember",
+        "toDeleteStreamingImage",
+        "toDeleteStreamingSession",
+        "toDeleteStudio",
+        "toDeleteStudioComponent",
+        "toDeleteStudioMember",
+        "toGetLaunchProfile",
+        "toGetLaunchProfileDetails",
+        "toGetLaunchProfileInitialization",
+        "toGetLaunchProfileMember",
+        "toGetStreamingImage",
+        "toGetStreamingSession",
+        "toGetStreamingSessionBackup",
+        "toGetStreamingSessionStream",
+        "toGetStudio",
+        "toGetStudioComponent",
+        "toGetStudioMember",
+        "toListLaunchProfileMembers",
+        "toListLaunchProfiles",
+        "toListStreamingImages",
+        "toListStreamingSessionBackups",
+        "toListStreamingSessions",
+        "toListStudioComponents",
+        "toListStudioMembers",
+        "toListTagsForResource",
+        "toPutLaunchProfileMembers",
+        "toPutStudioMembers",
+        "toStartStreamingSession",
+        "toStartStudioSSOConfigurationRepair",
+        "toStopStreamingSession",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLaunchProfile",
+        "toUpdateLaunchProfileMember",
+        "toUpdateStreamingImage",
+        "toUpdateStudio",
+        "toUpdateStudioComponent",
+        "toPutStudioLogEvents"
+      ],
+      "relatedResourceTypes": [
+        "launch-profile",
+        "streaming-image",
+        "streaming-session",
+        "streaming-session-backup",
+        "studio",
+        "studio-component"
+      ],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "nimble:createdBy",
+      "methodName": "ifCreatedBy",
+      "description": "Filters access by the createdBy request parameter or the ID of the creator of the resource",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateStreamingSessionStream",
+        "toDeleteStreamingSession",
+        "toGetStreamingSession",
+        "toGetStreamingSessionStream",
+        "toListStreamingSessions",
+        "toListTagsForResource",
+        "toStartStreamingSession",
+        "toStopStreamingSession",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "streaming-session"
+      ],
+      "keyLiteral": "createdBy",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "nimble:ownedBy",
+      "methodName": "ifOwnedBy",
+      "description": "Filters access by the ownedBy request parameter or the ID of the owner of the resource",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateStreamingSessionStream",
+        "toDeleteStreamingSession",
+        "toGetStreamingSession",
+        "toGetStreamingSessionBackup",
+        "toGetStreamingSessionStream",
+        "toListStreamingSessions",
+        "toListTagsForResource",
+        "toStartStreamingSession",
+        "toStopStreamingSession",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "streaming-session",
+        "streaming-session-backup"
+      ],
+      "keyLiteral": "ownedBy",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "nimble:principalId",
+      "methodName": "ifPrincipalId",
+      "description": "Filters access by the principalId request parameter",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toListLaunchProfiles"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "principalId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "nimble:requesterPrincipalId",
+      "methodName": "ifRequesterPrincipalId",
+      "description": "Filters access by the ID of the logged in user",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateStreamingSessionStream",
+        "toDeleteStreamingSession",
+        "toGetStreamingSession",
+        "toGetStreamingSessionBackup",
+        "toGetStreamingSessionStream",
+        "toListLaunchProfiles",
+        "toListStreamingSessionBackups",
+        "toListStreamingSessions",
+        "toStartStreamingSession",
+        "toStopStreamingSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "requesterPrincipalId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "nimble:studioId",
+      "methodName": "ifStudioId",
+      "description": "Filters access by a specific studio",
+      "url": "https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateLaunchProfile",
+        "toCreateStreamingImage",
+        "toCreateStreamingSession",
+        "toCreateStudio",
+        "toCreateStudioComponent",
+        "toDeleteLaunchProfile",
+        "toDeleteLaunchProfileMember",
+        "toDeleteStreamingImage",
+        "toDeleteStudio",
+        "toDeleteStudioComponent",
+        "toDeleteStudioMember",
+        "toGetLaunchProfile",
+        "toGetLaunchProfileDetails",
+        "toGetLaunchProfileInitialization",
+        "toGetLaunchProfileMember",
+        "toGetStreamingImage",
+        "toGetStudio",
+        "toGetStudioComponent",
+        "toGetStudioMember",
+        "toListEulaAcceptances",
+        "toListLaunchProfileMembers",
+        "toListLaunchProfiles",
+        "toListStreamingImages",
+        "toListStreamingSessionBackups",
+        "toListStreamingSessions",
+        "toListStudioComponents",
+        "toListStudioMembers",
+        "toListTagsForResource",
+        "toPutLaunchProfileMembers",
+        "toPutStudioMembers",
+        "toStartStudioSSOConfigurationRepair",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLaunchProfile",
+        "toUpdateLaunchProfileMember",
+        "toUpdateStreamingImage",
+        "toUpdateStudio",
+        "toUpdateStudioComponent",
+        "toPutStudioLogEvents"
+      ],
+      "relatedResourceTypes": [
+        "eula-acceptance",
+        "launch-profile",
+        "streaming-image",
+        "studio",
+        "studio-component"
+      ],
+      "keyLiteral": "studioId",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

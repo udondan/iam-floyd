@@ -1,0 +1,14 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "NetworkFirewallPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "network-firewall:Describe*",
+        "network-firewall:List*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

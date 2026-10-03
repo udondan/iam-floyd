@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "filename": "eventsbilltoaws",
+  "className": "Eventsbilltoaws",
+  "name": "eventsbilltoaws",
+  "servicePrefix": "eventsbilltoaws",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_eventsbilltoaws.html",
+  "accessLevelList": {
+    "Write": [
+      "approve"
+    ],
+    "Read": [
+      "info"
+    ]
+  },
+  "actions": [
+    {
+      "name": "approve",
+      "methodName": "toApprove",
+      "description": "Grants permission to approve or deny the reinvent pass charge to AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventsbilltoaws/latest/reference/",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "info",
+      "methodName": "toInfo",
+      "description": "Grants permission to get the AWS reinvent pass purchase details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eventsbilltoaws/latest/reference/",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "approve",
+      "methodName": "onApprove",
+      "url": "https://docs.aws.amazon.com/eventsbilltoaws/latest/reference/security-iam.html",
+      "arn": "arn:${Partition}:eventsbilltoaws:${Region}:${Account}:${RelativeId}",
+      "placeholders": [
+        {
+          "placeholder": "RelativeId",
+          "name": "relativeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "info",
+      "methodName": "onInfo",
+      "url": "https://docs.aws.amazon.com/eventsbilltoaws/latest/reference/security-iam.html",
+      "arn": "arn:${Partition}:eventsbilltoaws:${Region}:${Account}:${RelativeId}",
+      "placeholders": [
+        {
+          "placeholder": "RelativeId",
+          "name": "relativeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toApprove",
+        "toInfo"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toApprove",
+        "toInfo"
+      ],
+      "relatedResourceTypes": [
+        "approve",
+        "info"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a key that is present in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toApprove",
+        "toInfo"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

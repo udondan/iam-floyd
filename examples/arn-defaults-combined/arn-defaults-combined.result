@@ -1,0 +1,8 @@
+{
+    "Action": "lambda:UpdateFunctionCode",
+    "Resource": [
+        "arn:aws:lambda:us-west-1:098765432109:function:my-function-1",
+        "arn:aws:lambda:us-west-1:098765432109:function:my-function-2"
+    ],
+    "Effect": "Allow"
+}

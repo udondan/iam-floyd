@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "filename": "ec2messages",
+  "className": "Ec2messages",
+  "name": "ec2messages",
+  "servicePrefix": "ec2messages",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ec2messages.html",
+  "accessLevelList": {
+    "Write": [
+      "AcknowledgeMessage",
+      "DeleteMessage",
+      "FailMessage",
+      "SendReply"
+    ],
+    "Read": [
+      "GetEndpoint",
+      "GetMessages"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcknowledgeMessage",
+      "methodName": "toAcknowledgeMessage",
+      "description": "Grants permission to acknowledge a message, ensuring it will not be delivered again",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html"
+    },
+    {
+      "name": "DeleteMessage",
+      "methodName": "toDeleteMessage",
+      "description": "Grants permission to delete a message",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html"
+    },
+    {
+      "name": "FailMessage",
+      "methodName": "toFailMessage",
+      "description": "Grants permission to fail a message, signifying the message could not be processed successfully, ensuring it cannot be replied to or delivered again",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html"
+    },
+    {
+      "name": "GetEndpoint",
+      "methodName": "toGetEndpoint",
+      "description": "Grants permission to route traffic to the correct endpoint based on the given destination for the messages",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html"
+    },
+    {
+      "name": "GetMessages",
+      "methodName": "toGetMessages",
+      "description": "Grants permission to deliver messages to clients/instances using long polling",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html",
+      "conditionMethods": [
+        "ifEc2SourceInstanceARN",
+        "ifSsmSourceInstanceARN"
+      ]
+    },
+    {
+      "name": "SendReply",
+      "methodName": "toSendReply",
+      "description": "Grants permission to send replies from clients/instances to upstream service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html",
+      "conditionMethods": [
+        "ifEc2SourceInstanceARN",
+        "ifSsmSourceInstanceARN"
+      ]
+    }
+  ],
+  "resources": [],
+  "conditions": [
+    {
+      "key": "ec2:SourceInstanceARN",
+      "methodName": "ifEc2SourceInstanceARN",
+      "description": "Filters access by the ARN of the instance from which the request originated",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys",
+      "relatedActionMethods": [
+        "toGetMessages",
+        "toSendReply"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ec2:SourceInstanceARN",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "ssm:SourceInstanceARN",
+      "methodName": "ifSsmSourceInstanceARN",
+      "description": "Filters access by verifying the Amazon Resource Name (ARN) of the AWS Systems Manager's managed instance from which the request is made. This key is not present when the request comes from the managed instance authenticated with an IAM role associated with EC2 instance profile",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-policy-keys",
+      "relatedActionMethods": [
+        "toGetMessages",
+        "toSendReply"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ssm:SourceInstanceARN",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

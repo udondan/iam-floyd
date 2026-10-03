@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "filename": "supportauthz",
+  "className": "Supportauthz",
+  "name": "supportauthz",
+  "servicePrefix": "supportauthz",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_supportauthz.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateSupportPermit",
+      "DeleteSupportPermit",
+      "RejectSupportPermitRequest",
+      "TagResource",
+      "UntagResource",
+      "RegisterKey"
+    ],
+    "Read": [
+      "GetAction",
+      "GetSupportPermit",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListActions",
+      "ListSupportPermitRequests",
+      "ListSupportPermits"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateSupportPermit",
+      "methodName": "toCreateSupportPermit",
+      "description": "Grants permission to create a support permit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/supportauthz/latest/APIReference/API_CreateSupportPermit.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteSupportPermit",
+      "methodName": "toDeleteSupportPermit",
+      "description": "Grants permission to delete a support permit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/supportauthz/latest/APIReference/API_DeleteSupportPermit.html"
+    },
+    {
+      "name": "GetAction",
+      "methodName": "toGetAction",
+      "description": "Grants permission to retrieve details about a support action",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/supportauthz/latest/APIReference/API_GetAction.html"
+    },
+    {
+      "name": "GetSupportPermit",
+      "methodName": "toGetSupportPermit",
+      "description": "Grants permission to retrieve a support permit",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/supportauthz/latest/APIReference/API_GetSupportPermit.html"
+    },
+    {
+      "name": "ListActions",
+      "methodName": "toListActions",
+      "description": "Grants permission to list available support actions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/supportauthz/latest/APIReference/API_ListActions.html"
+    },
+    {
+      "name": "ListSupportPermitRequests",
+      "methodName": "toListSupportPermitRequests",
+      "description": "Grants permission to list support permit requests",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/supportauthz/latest/APIReference/API_ListSupportPermitRequests.html"
+    },
+    {
+      "name": "ListSupportPermits",
+      "methodName": "toListSupportPermits",
+      "description": "Grants permission to list support permits",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/supportauthz/latest/APIReference/API_ListSupportPermits.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/supportauthz/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RejectSupportPermitRequest",
+      "methodName": "toRejectSupportPermitRequest",
+      "description": "Grants permission to reject a support permit request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/supportauthz/latest/APIReference/API_RejectSupportPermitRequest.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/supportauthz/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/supportauthz/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "RegisterKey",
+      "methodName": "toRegisterKey",
+      "description": "Grants permission to register a KMS key to use for a support permit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-authorization-getting-started.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "supportpermit",
+      "methodName": "onSupportpermit",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-authorization-permits.html",
+      "arn": "arn:${Partition}:supportauthz:${Region}:${Account}:supportpermit/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "supportpermitrequest",
+      "methodName": "onSupportpermitrequest",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-authorization-permit-requests.html",
+      "arn": "arn:${Partition}:supportauthz:${Region}:${Account}:supportpermitrequest/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key-value pair in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateSupportPermit",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key-value pair assigned to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toDeleteSupportPermit",
+        "toGetSupportPermit",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "supportpermit"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateSupportPermit",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

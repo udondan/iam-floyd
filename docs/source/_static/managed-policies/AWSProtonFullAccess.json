@@ -1,0 +1,85 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ProtonPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "proton:*",
+        "codestar-connections:ListConnections",
+        "kms:ListAliases",
+        "kms:DescribeKey"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateGrantPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "proton.*.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "PassRolePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "proton.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CreateServiceLinkedRolePermissions",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/sync.proton.amazonaws.com/AWSServiceRoleForProtonSync",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "sync.proton.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CodeStarConnectionsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-connections:PassConnection"
+      ],
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "codestar-connections:PassedToService": "proton.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CodeConnectionsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "codeconnections:PassConnection"
+      ],
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "codeconnections:PassedToService": "proton.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "es:ESHttpGet"
+      ],
+      "Resource": [
+        "arn:aws:es:*:*:domain/*/",
+        "arn:aws:es:*:*:domain/*/_cluster/settings",
+        "arn:aws:es:*:*:domain/*/_cat/indices"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "es:ListDomainNames",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "es:DescribeDomain"
+      ],
+      "Resource": [
+        "arn:aws:es:*:*:domain/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "es:ESHttpPost",
+        "es:ESHttpGet"
+      ],
+      "Resource": [
+        "arn:aws:es:*:*:domain/*/_opendistro/_sql",
+        "arn:aws:es:*:*:domain/*/_plugin/_sql"
+      ]
+    }
+  ]
+}

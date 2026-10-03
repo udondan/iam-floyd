@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "MgnAgentInstallation",
+      "Effect": "Allow",
+      "Action": [
+        "mgn:SendClientLogsForMgn",
+        "mgn:RegisterAgentForMgn",
+        "mgn:GetAgentInstallationAssetsForMgn"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "MgnAgentReplication",
+      "Effect": "Allow",
+      "Action": [
+        "mgn:SendAgentMetricsForMgn",
+        "mgn:SendAgentLogsForMgn",
+        "mgn:UpdateAgentSourcePropertiesForMgn",
+        "mgn:UpdateAgentReplicationInfoForMgn",
+        "mgn:UpdateAgentConversionInfoForMgn",
+        "mgn:GetAgentCommandForMgn",
+        "mgn:GetAgentConfirmedResumeInfoForMgn",
+        "mgn:GetAgentRuntimeConfigurationForMgn",
+        "mgn:UpdateAgentBacklogForMgn",
+        "mgn:GetAgentReplicationInfoForMgn"
+      ],
+      "Resource": "arn:aws:mgn:*:*:source-server/*"
+    },
+    {
+      "Sid": "MgnSourceServerTagResource",
+      "Effect": "Allow",
+      "Action": "mgn:TagResource",
+      "Resource": "arn:aws:mgn:*:*:source-server/*",
+      "Condition": {
+        "StringEquals": {
+          "mgn:CreateAction": "RegisterAgentForMgn"
+        }
+      }
+    }
+  ]
+}

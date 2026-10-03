@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogDelivery",
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:DeleteLogDelivery",
+        "logs:DescribeLogGroups",
+        "logs:DescribeLogStreams",
+        "logs:DescribeResourcePolicies",
+        "logs:DescribeDestinations",
+        "logs:DescribeExportTasks",
+        "logs:DescribeMetricFilters",
+        "logs:DescribeQueries",
+        "logs:DescribeQueryDefinitions",
+        "logs:DescribeSubscriptionFilters",
+        "logs:GetLogDelivery",
+        "logs:GetLogEvents",
+        "logs:PutLogEvents",
+        "logs:PutResourcePolicy",
+        "logs:UpdateLogDelivery"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/apigateway/*"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "sid1",
+      "Effect": "Allow",
+      "Action": [
+        "sso-directory:ListMembersInGroup"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "sid2",
+      "Effect": "Allow",
+      "Action": [
+        "sso:ListProfileAssociations",
+        "sso:ListProfiles",
+        "sso:ListDirectoryAssociations",
+        "sso:DescribeRegisteredRegions",
+        "sso:GetProfile",
+        "sso:GetManagedApplicationInstance",
+        "sso:ListApplicationAssignments",
+        "sso:DescribeInstance",
+        "sso:DescribeApplication"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "sid3",
+      "Effect": "Allow",
+      "Action": [
+        "codeguru-security:CreateUploadUrl"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "sid4",
+      "Effect": "Allow",
+      "Action": [
+        "codeguru-security:CreateScan",
+        "codeguru-security:GetScan",
+        "codeguru-security:ListFindings",
+        "codeguru-security:GetFindings"
+      ],
+      "Resource": [
+        "arn:aws:codeguru-security:*:*:scans/CodeWhisperer-*"
+      ]
+    },
+    {
+      "Sid": "sid5",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": [
+            "AWS/CodeWhisperer"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowKmsAccessViaIdentityCenter",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "kms:EncryptionContext:aws:sso:instance-arn": "arn:*:sso:::instance/*"
+        },
+        "StringLike": {
+          "kms:ViaService": "sso.*.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowKmsAccessViaIdentityStore",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "kms:EncryptionContext:aws:identitystore:identitystore-arn": "arn:*:identitystore::*:identitystore/*"
+        },
+        "StringLike": {
+          "kms:ViaService": "identitystore.*.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

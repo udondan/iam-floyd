@@ -1,0 +1,445 @@
+{
+  "schemaVersion": 1,
+  "filename": "migrationhuborchestrator",
+  "className": "MigrationhubOrchestrator",
+  "name": "migrationhub-orchestrator",
+  "servicePrefix": "migrationhub-orchestrator",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_migrationhuborchestrator.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateTemplate",
+      "CreateWorkflow",
+      "CreateWorkflowStep",
+      "CreateWorkflowStepGroup",
+      "DeleteTemplate",
+      "DeleteWorkflow",
+      "DeleteWorkflowStep",
+      "DeleteWorkflowStepGroup",
+      "RegisterPlugin",
+      "RetryWorkflowStep",
+      "SendMessage",
+      "StartWorkflow",
+      "StopWorkflow",
+      "TagResource",
+      "UntagResource",
+      "UpdateTemplate",
+      "UpdateWorkflow",
+      "UpdateWorkflowStep",
+      "UpdateWorkflowStepGroup"
+    ],
+    "Read": [
+      "GetMessage",
+      "GetTemplate",
+      "GetTemplateStep",
+      "GetTemplateStepGroup",
+      "GetWorkflow",
+      "GetWorkflowStep",
+      "GetWorkflowStepGroup",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListPlugins",
+      "ListTemplateStepGroups",
+      "ListTemplateSteps",
+      "ListTemplates",
+      "ListWorkflowStepGroups",
+      "ListWorkflowSteps",
+      "ListWorkflows"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateTemplate",
+      "methodName": "toCreateTemplate",
+      "description": "Grants permission to create a custom template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_CreateTemplate.html"
+    },
+    {
+      "name": "CreateWorkflow",
+      "methodName": "toCreateWorkflow",
+      "description": "Grants permission to create a workflow based on the selected template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_CreateWorkflow.html"
+    },
+    {
+      "name": "CreateWorkflowStep",
+      "methodName": "toCreateWorkflowStep",
+      "description": "Grants permission to create a step under a workflow and a specific step group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_CreateWorkflowStep.html"
+    },
+    {
+      "name": "CreateWorkflowStepGroup",
+      "methodName": "toCreateWorkflowStepGroup",
+      "description": "Grants permission to to create a custom step group for a given workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_CreateWorkflowStepGroup.html"
+    },
+    {
+      "name": "DeleteTemplate",
+      "methodName": "toDeleteTemplate",
+      "description": "Grants permission to delete a custom template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_DeleteTemplate.html"
+    },
+    {
+      "name": "DeleteWorkflow",
+      "methodName": "toDeleteWorkflow",
+      "description": "Grants permission to a workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_DeleteWorkflow.html"
+    },
+    {
+      "name": "DeleteWorkflowStep",
+      "methodName": "toDeleteWorkflowStep",
+      "description": "Grants permission to delete a step from a specific step group under a workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_DeleteWorkflowStep.html"
+    },
+    {
+      "name": "DeleteWorkflowStepGroup",
+      "methodName": "toDeleteWorkflowStepGroup",
+      "description": "Grants permission to delete a step group associated with a workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_DeleteWorkflowStepGroup.html"
+    },
+    {
+      "name": "GetMessage",
+      "methodName": "toGetMessage",
+      "description": "Grants permission to the plugin to receive information from the service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_GetMessage.html"
+    },
+    {
+      "name": "GetTemplate",
+      "methodName": "toGetTemplate",
+      "description": "Grants permission to get retrieve metadata for a Template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_GetTemplate.html"
+    },
+    {
+      "name": "GetTemplateStep",
+      "methodName": "toGetTemplateStep",
+      "description": "Grants permission to retrieve details of a step associated with a template and a step group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_GetTemplateStep.html"
+    },
+    {
+      "name": "GetTemplateStepGroup",
+      "methodName": "toGetTemplateStepGroup",
+      "description": "Grants permission to retrieve metadata of a step group under a template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_GetTemplateStepGroup.html"
+    },
+    {
+      "name": "GetWorkflow",
+      "methodName": "toGetWorkflow",
+      "description": "Grants permission to retrieve metadata asscociated with a workflow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_GetWorkflow.html"
+    },
+    {
+      "name": "GetWorkflowStep",
+      "methodName": "toGetWorkflowStep",
+      "description": "Grants permission to get details of step associated with a workflow and a step group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_GetWorkflowStep.html"
+    },
+    {
+      "name": "GetWorkflowStepGroup",
+      "methodName": "toGetWorkflowStepGroup",
+      "description": "Grants permission to get details of a step group associated with a workflow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_GetWorkflowStepGroup.html"
+    },
+    {
+      "name": "ListPlugins",
+      "methodName": "toListPlugins",
+      "description": "Grants permission to get a list all registered Plugins",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_ListPlugins.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to get a list of all the tags tied to a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTemplateStepGroups",
+      "methodName": "toListTemplateStepGroups",
+      "description": "Grants permission to lists step groups of a template",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_ListTemplateStepGroups.html"
+    },
+    {
+      "name": "ListTemplateSteps",
+      "methodName": "toListTemplateSteps",
+      "description": "Grants permission to get a list of steps in a step group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_ListTemplateSteps.html"
+    },
+    {
+      "name": "ListTemplates",
+      "methodName": "toListTemplates",
+      "description": "Grants permission to get a list of all Templates available to customer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_ListTemplates.html"
+    },
+    {
+      "name": "ListWorkflowStepGroups",
+      "methodName": "toListWorkflowStepGroups",
+      "description": "Grants permission to get list of step groups associated with a workflow",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_ListWorkflowStepGroups.html"
+    },
+    {
+      "name": "ListWorkflowSteps",
+      "methodName": "toListWorkflowSteps",
+      "description": "Grants permission to get a list of steps within step group associated with a workflow",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_ListWorkflowSteps.html"
+    },
+    {
+      "name": "ListWorkflows",
+      "methodName": "toListWorkflows",
+      "description": "Grants permission to list all workflows",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_ListWorkflows.html"
+    },
+    {
+      "name": "RegisterPlugin",
+      "methodName": "toRegisterPlugin",
+      "description": "Grants permission to register the plugin to receive an ID and to start receiving messages from the service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_RegisterPlugin.html"
+    },
+    {
+      "name": "RetryWorkflowStep",
+      "methodName": "toRetryWorkflowStep",
+      "description": "Grants permission to retry a failed step within a workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_RetryWorkflowStep.html"
+    },
+    {
+      "name": "SendMessage",
+      "methodName": "toSendMessage",
+      "description": "Grants permission to the plugin to send information to the service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_SendMessage.html"
+    },
+    {
+      "name": "StartWorkflow",
+      "methodName": "toStartWorkflow",
+      "description": "Grants permission to start a workflow or resume a stopped workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_StartWorkflow.html"
+    },
+    {
+      "name": "StopWorkflow",
+      "methodName": "toStopWorkflow",
+      "description": "Grants permission to stop a workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_StopWorkflow.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateTemplate",
+      "methodName": "toUpdateTemplate",
+      "description": "Grants permission to update a custom template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_UpdateTemplate.html"
+    },
+    {
+      "name": "UpdateWorkflow",
+      "methodName": "toUpdateWorkflow",
+      "description": "Grants permission to update the metadata associated with the workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_UpdateWorkflow.html"
+    },
+    {
+      "name": "UpdateWorkflowStep",
+      "methodName": "toUpdateWorkflowStep",
+      "description": "Grants permission to update metadata and status of a custom step within a workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_UpdateWorkflowStep.html"
+    },
+    {
+      "name": "UpdateWorkflowStepGroup",
+      "methodName": "toUpdateWorkflowStepGroup",
+      "description": "Grants permission to update metadata associated with a step group in a given workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_UpdateWorkflowStepGroup.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "template",
+      "methodName": "onTemplate",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/userguide/templates.html",
+      "arn": "arn:${Partition}:migrationhub-orchestrator:${Region}:${Account}:template/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "workflow",
+      "methodName": "onWorkflow",
+      "url": "https://docs.aws.amazon.com/migrationhub-orchestrator/latest/userguide/workflow.html",
+      "arn": "arn:${Partition}:migrationhub-orchestrator:${Region}:${Account}:workflow/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateWorkflow",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateWorkflow",
+        "toCreateWorkflowStep",
+        "toCreateWorkflowStepGroup",
+        "toDeleteTemplate",
+        "toDeleteWorkflow",
+        "toDeleteWorkflowStep",
+        "toDeleteWorkflowStepGroup",
+        "toGetTemplate",
+        "toGetTemplateStep",
+        "toGetTemplateStepGroup",
+        "toGetWorkflow",
+        "toGetWorkflowStep",
+        "toGetWorkflowStepGroup",
+        "toListTagsForResource",
+        "toListTemplateStepGroups",
+        "toListTemplateSteps",
+        "toListWorkflowStepGroups",
+        "toListWorkflowSteps",
+        "toRetryWorkflowStep",
+        "toStartWorkflow",
+        "toStopWorkflow",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateTemplate",
+        "toUpdateWorkflow",
+        "toUpdateWorkflowStep",
+        "toUpdateWorkflowStepGroup"
+      ],
+      "relatedResourceTypes": [
+        "template",
+        "workflow"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateWorkflow",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "Statement": [
+    {
+      "Sid": "AWSServicesAccess",
+      "Action": [
+        "codebuild:StartBuild",
+        "codebuild:StopBuild",
+        "codebuild:StartBuildBatch",
+        "codebuild:StopBuildBatch",
+        "codebuild:RetryBuild",
+        "codebuild:RetryBuildBatch",
+        "codebuild:BatchGet*",
+        "codebuild:GetResourcePolicy",
+        "codebuild:DescribeTestCases",
+        "codebuild:DescribeCodeCoverages",
+        "codebuild:List*",
+        "codecommit:GetBranch",
+        "codecommit:GetCommit",
+        "codecommit:GetRepository",
+        "codecommit:ListBranches",
+        "cloudwatch:GetMetricStatistics",
+        "events:DescribeRule",
+        "events:ListTargetsByRule",
+        "events:ListRuleNamesByTarget",
+        "logs:GetLogEvents",
+        "s3:GetBucketLocation",
+        "s3:ListAllMyBuckets"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSMParameterWriteAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:PutParameter"
+      ],
+      "Resource": "arn:aws:ssm:*:*:parameter/CodeBuild/*"
+    },
+    {
+      "Sid": "SSMStartSessionAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:StartSession"
+      ],
+      "Resource": "arn:aws:ecs:*:*:task/*/*"
+    },
+    {
+      "Sid": "SSMOpenDataChannelAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ssmmessages:OpenDataChannel"
+      ],
+      "Resource": "arn:aws:ssm:*:*:session/*"
+    },
+    {
+      "Sid": "CodeStarConnectionsUserAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-connections:ListConnections",
+        "codestar-connections:GetConnection"
+      ],
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ]
+    },
+    {
+      "Sid": "CodeStarNotificationsReadWriteAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-notifications:CreateNotificationRule",
+        "codestar-notifications:DescribeNotificationRule",
+        "codestar-notifications:UpdateNotificationRule",
+        "codestar-notifications:Subscribe",
+        "codestar-notifications:Unsubscribe"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "codestar-notifications:NotificationsForResource": "arn:aws:codebuild:*:*:project/*"
+        }
+      }
+    },
+    {
+      "Sid": "CodeStarNotificationsListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-notifications:ListNotificationRules",
+        "codestar-notifications:ListEventTypes",
+        "codestar-notifications:ListTargets",
+        "codestar-notifications:ListTagsforResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SNSTopicListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sns:ListTopics",
+        "sns:GetTopicAttributes"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CodeStarNotificationsChatbotAccess",
+      "Effect": "Allow",
+      "Action": [
+        "chatbot:DescribeSlackChannelConfigurations",
+        "chatbot:ListMicrosoftTeamsChannelConfigurations"
+      ],
+      "Resource": "*"
+    }
+  ],
+  "Version": "2012-10-17"
+}

@@ -1,0 +1,37 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SRTAccessProtectedResources",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:List*",
+        "route53:List*",
+        "elasticloadbalancing:Describe*",
+        "cloudwatch:Describe*",
+        "cloudwatch:Get*",
+        "cloudwatch:List*",
+        "cloudfront:GetDistribution*",
+        "globalaccelerator:ListAccelerators",
+        "globalaccelerator:DescribeAccelerator",
+        "ec2:DescribeRegions",
+        "ec2:DescribeAddresses"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SRTManageProtections",
+      "Effect": "Allow",
+      "Action": [
+        "shield:*",
+        "waf:*",
+        "wafv2:*",
+        "waf-regional:*",
+        "elasticloadbalancing:SetWebACL",
+        "cloudfront:UpdateDistribution",
+        "apigateway:SetWebACL"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

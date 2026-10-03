@@ -1,0 +1,53 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "applicationinsights:*",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeVolumes",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters",
+        "sqs:ListQueues",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeTargetGroups",
+        "elasticloadbalancing:DescribeTargetHealth",
+        "autoscaling:DescribeAutoScalingGroups",
+        "lambda:ListFunctions",
+        "dynamodb:ListTables",
+        "s3:ListAllMyBuckets",
+        "sns:ListTopics",
+        "states:ListStateMachines",
+        "apigateway:GET",
+        "ecs:ListClusters",
+        "ecs:DescribeTaskDefinition",
+        "ecs:ListServices",
+        "ecs:ListTasks",
+        "eks:ListClusters",
+        "eks:ListNodegroups",
+        "fsx:DescribeFileSystems",
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/application-insights.amazonaws.com/AWSServiceRoleForApplicationInsights"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "application-insights.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

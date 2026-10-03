@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "filename": "agentaccess-mcp",
+  "className": "AgentaccessMcp",
+  "name": "agentaccess-mcp",
+  "servicePrefix": "agentaccess-mcp",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_agentaccess-mcp.html",
+  "accessLevelList": {
+    "Write": [
+      "CallForwardedTool",
+      "DoubleClick",
+      "HoldKey",
+      "InvokeMcp",
+      "KeyPress",
+      "LeftClick",
+      "LeftClickDrag",
+      "LeftMouseDown",
+      "LeftMouseUp",
+      "MiddleClick",
+      "MovePointer",
+      "RightClick",
+      "Scroll",
+      "TripleClick",
+      "TypeText"
+    ],
+    "Read": [
+      "CheckConnectionStatus",
+      "GetScreenshot"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CallForwardedTool",
+      "methodName": "toCallForwardedTool",
+      "description": "Grants permission to invoke a forwarded tool on a remote instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "CheckConnectionStatus",
+      "methodName": "toCheckConnectionStatus",
+      "description": "Grants permission to check the connection status of a streaming session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "DoubleClick",
+      "methodName": "toDoubleClick",
+      "description": "Grants permission to perform double click at coordinates",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "GetScreenshot",
+      "methodName": "toGetScreenshot",
+      "description": "Grants permission to capture screen state",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "HoldKey",
+      "methodName": "toHoldKey",
+      "description": "Grants permission to hold key down",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "InvokeMcp",
+      "methodName": "toInvokeMcp",
+      "description": "Grants permission to initialize sessions and discover tools",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "KeyPress",
+      "methodName": "toKeyPress",
+      "description": "Grants permission to press key or key combination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "LeftClick",
+      "methodName": "toLeftClick",
+      "description": "Grants permission to perform left mouse click at coordinates",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "LeftClickDrag",
+      "methodName": "toLeftClickDrag",
+      "description": "Grants permission to click and drag between coordinates",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "LeftMouseDown",
+      "methodName": "toLeftMouseDown",
+      "description": "Grants permission to press and hold left mouse button",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "LeftMouseUp",
+      "methodName": "toLeftMouseUp",
+      "description": "Grants permission to release left mouse button",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "MiddleClick",
+      "methodName": "toMiddleClick",
+      "description": "Grants permission to perform middle mouse click at coordinates",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "MovePointer",
+      "methodName": "toMovePointer",
+      "description": "Grants permission to move cursor to coordinates",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "RightClick",
+      "methodName": "toRightClick",
+      "description": "Grants permission to perform right mouse click at coordinates",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "Scroll",
+      "methodName": "toScroll",
+      "description": "Grants permission to scroll in any direction",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "TripleClick",
+      "methodName": "toTripleClick",
+      "description": "Grants permission to perform triple click at coordinates",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "TypeText",
+      "methodName": "toTypeText",
+      "description": "Grants permission to type text string",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    }
+  ],
+  "resources": [],
+  "conditions": [
+    {
+      "key": "agentaccess-mcp:StackArn",
+      "methodName": "ifStackArn",
+      "description": "Filters access by the ARN of the WorkSpaces Applications stack",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "relatedActionMethods": [
+        "toCallForwardedTool",
+        "toCheckConnectionStatus",
+        "toDoubleClick",
+        "toGetScreenshot",
+        "toHoldKey",
+        "toInvokeMcp",
+        "toKeyPress",
+        "toLeftClick",
+        "toLeftClickDrag",
+        "toLeftMouseDown",
+        "toLeftMouseUp",
+        "toMiddleClick",
+        "toMovePointer",
+        "toRightClick",
+        "toScroll",
+        "toTripleClick",
+        "toTypeText"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "StackArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

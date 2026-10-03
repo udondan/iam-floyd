@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "filename": "verifiedpermissions",
+  "className": "Verifiedpermissions",
+  "name": "verifiedpermissions",
+  "servicePrefix": "verifiedpermissions",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_verifiedpermissions.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateIdentitySource",
+      "CreatePolicy",
+      "CreatePolicyStore",
+      "CreatePolicyStoreAlias",
+      "CreatePolicyTemplate",
+      "DeleteIdentitySource",
+      "DeletePolicy",
+      "DeletePolicyStore",
+      "DeletePolicyStoreAlias",
+      "DeletePolicyTemplate",
+      "PutSchema",
+      "TagResource",
+      "UntagResource",
+      "UpdateIdentitySource",
+      "UpdatePolicy",
+      "UpdatePolicyStore",
+      "UpdatePolicyTemplate"
+    ],
+    "Read": [
+      "GetIdentitySource",
+      "GetPolicy",
+      "GetPolicyStore",
+      "GetPolicyStoreAlias",
+      "GetPolicyTemplate",
+      "GetSchema",
+      "IsAuthorized",
+      "IsAuthorizedWithToken",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListIdentitySources",
+      "ListPolicies",
+      "ListPolicyStoreAliases",
+      "ListPolicyStores",
+      "ListPolicyTemplates"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateIdentitySource",
+      "methodName": "toCreateIdentitySource",
+      "description": "Grants permission to create a reference to an external identity provider (IdP) that is compatible with OpenID Connect (OIDC) authentication protocol, such as Amazon Cognito",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreateIdentitySource.html"
+    },
+    {
+      "name": "CreatePolicy",
+      "methodName": "toCreatePolicy",
+      "description": "Grants permission to create a Cedar policy and save it in the specified policy store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicy.html"
+    },
+    {
+      "name": "CreatePolicyStore",
+      "methodName": "toCreatePolicyStore",
+      "description": "Grants permission to create a Cedar policy and save it in the specified policy store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicyStore.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreatePolicyStoreAlias",
+      "methodName": "toCreatePolicyStoreAlias",
+      "description": "Grants permission to create an alias against a policy store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicyStoreAlias.html"
+    },
+    {
+      "name": "CreatePolicyTemplate",
+      "methodName": "toCreatePolicyTemplate",
+      "description": "Grants permission to create a policy template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicyTemplate.html"
+    },
+    {
+      "name": "DeleteIdentitySource",
+      "methodName": "toDeleteIdentitySource",
+      "description": "Grants permission to delete an identity source that references an identity provider (IdP) such as Amazon Cognito",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_DeleteIdentitySource.html"
+    },
+    {
+      "name": "DeletePolicy",
+      "methodName": "toDeletePolicy",
+      "description": "Grants permission to delete the specified policy from the policy store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_DeletePolicy.html"
+    },
+    {
+      "name": "DeletePolicyStore",
+      "methodName": "toDeletePolicyStore",
+      "description": "Grants permission to delete the specified policy store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_DeletePolicyStore.html"
+    },
+    {
+      "name": "DeletePolicyStoreAlias",
+      "methodName": "toDeletePolicyStoreAlias",
+      "description": "Grants permission to delete an alias for a policy store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_DeletePolicyStoreAlias.html"
+    },
+    {
+      "name": "DeletePolicyTemplate",
+      "methodName": "toDeletePolicyTemplate",
+      "description": "Grants permission to delete the specified policy template from the policy store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_DeletePolicyTemplate.html"
+    },
+    {
+      "name": "GetIdentitySource",
+      "methodName": "toGetIdentitySource",
+      "description": "Grants permission to retrieve the details about the specified identity source",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetIdentitySource.html"
+    },
+    {
+      "name": "GetPolicy",
+      "methodName": "toGetPolicy",
+      "description": "Grants permission to retrieve information about the specified policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetPolicy.html"
+    },
+    {
+      "name": "GetPolicyStore",
+      "methodName": "toGetPolicyStore",
+      "description": "Grants permission to retrieve details about a policy store",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetPolicyStore.html"
+    },
+    {
+      "name": "GetPolicyStoreAlias",
+      "methodName": "toGetPolicyStoreAlias",
+      "description": "Grants permission to retrieve details about an alias for a policy store",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetPolicyStoreAlias.html"
+    },
+    {
+      "name": "GetPolicyTemplate",
+      "methodName": "toGetPolicyTemplate",
+      "description": "Grants permission to retrieve the details for the specified policy template in the specified policy store",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetPolicyTemplate.html"
+    },
+    {
+      "name": "GetSchema",
+      "methodName": "toGetSchema",
+      "description": "Grants permission to retrieve the details for the specified schema in the specified policy store",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetSchema.html"
+    },
+    {
+      "name": "IsAuthorized",
+      "methodName": "toIsAuthorized",
+      "description": "Grants permission to make an authorization decision about a service request described in the parameters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html"
+    },
+    {
+      "name": "IsAuthorizedWithToken",
+      "methodName": "toIsAuthorizedWithToken",
+      "description": "Grants permission to make an authorization decision about a service request described in the parameters. The principal in this request comes from an external identity source",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html"
+    },
+    {
+      "name": "ListIdentitySources",
+      "methodName": "toListIdentitySources",
+      "description": "Grants permission to return a paginated list of all of the identity sources defined in the specified policy store",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListIdentitySources.html"
+    },
+    {
+      "name": "ListPolicies",
+      "methodName": "toListPolicies",
+      "description": "Grants permission to return a paginated list of all policies stored in the specified policy store",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html"
+    },
+    {
+      "name": "ListPolicyStoreAliases",
+      "methodName": "toListPolicyStoreAliases",
+      "description": "Grants permission to return a paginated list of all policy store aliases",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html"
+    },
+    {
+      "name": "ListPolicyStores",
+      "methodName": "toListPolicyStores",
+      "description": "Grants permission to return a paginated list of all policy stores in the calling Amazon Web Services account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStores.html"
+    },
+    {
+      "name": "ListPolicyTemplates",
+      "methodName": "toListPolicyTemplates",
+      "description": "Grants permission to return a paginated list of all policy templates in the specified policy store",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyTemplates.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to view a list of resource tags for the specified policy store",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutSchema",
+      "methodName": "toPutSchema",
+      "description": "Grants permission to create or update the policy schema in the specified policy store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_PutSchema.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to the specified policy store",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from the specified policy store",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateIdentitySource",
+      "methodName": "toUpdateIdentitySource",
+      "description": "Grants permission to update the specified identity source to use a new identity provider (IdP) source, or to change the mapping of identities from the IdP to a different principal entity type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdateIdentitySource.html"
+    },
+    {
+      "name": "UpdatePolicy",
+      "methodName": "toUpdatePolicy",
+      "description": "Grants permission to modify the specified Cedar static policy in the specified policy store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicy.html"
+    },
+    {
+      "name": "UpdatePolicyStore",
+      "methodName": "toUpdatePolicyStore",
+      "description": "Grants permission to modify the validation setting for a policy store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore.html"
+    },
+    {
+      "name": "UpdatePolicyTemplate",
+      "methodName": "toUpdatePolicyTemplate",
+      "description": "Grants permission to update the specified policy template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyTemplate.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "policy-store",
+      "methodName": "onPolicyStore",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/policy-stores.html",
+      "arn": "arn:${Partition}:verifiedpermissions::${Account}:policy-store/${PolicyStoreId}",
+      "placeholders": [
+        {
+          "placeholder": "PolicyStoreId",
+          "name": "policyStoreId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "policy-store-alias",
+      "methodName": "onPolicyStoreAlias",
+      "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/policy-store-aliases.html",
+      "arn": "arn:${Partition}:verifiedpermissions:${Region}:${Account}:policy-store-alias/${AliasName}",
+      "placeholders": [
+        {
+          "placeholder": "AliasName",
+          "name": "aliasName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreatePolicyStore",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateIdentitySource",
+        "toCreatePolicy",
+        "toCreatePolicyStore",
+        "toCreatePolicyStoreAlias",
+        "toCreatePolicyTemplate",
+        "toDeleteIdentitySource",
+        "toDeletePolicy",
+        "toDeletePolicyStore",
+        "toDeletePolicyTemplate",
+        "toGetIdentitySource",
+        "toGetPolicy",
+        "toGetPolicyStore",
+        "toGetPolicyTemplate",
+        "toGetSchema",
+        "toIsAuthorized",
+        "toIsAuthorizedWithToken",
+        "toListIdentitySources",
+        "toListPolicies",
+        "toListPolicyTemplates",
+        "toListTagsForResource",
+        "toPutSchema",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateIdentitySource",
+        "toUpdatePolicy",
+        "toUpdatePolicyStore",
+        "toUpdatePolicyTemplate"
+      ],
+      "relatedResourceTypes": [
+        "policy-store"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreatePolicyStore",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,533 @@
+{
+  "schemaVersion": 1,
+  "filename": "outposts",
+  "className": "Outposts",
+  "name": "outposts",
+  "servicePrefix": "outposts",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_outposts.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelCapacityTask",
+      "CancelOrder",
+      "CreateOrder",
+      "CreateOutpost",
+      "CreatePrivateConnectivityConfig",
+      "CreateQuote",
+      "CreateRenewal",
+      "CreateSite",
+      "DeleteOutpost",
+      "DeleteQuote",
+      "DeleteSite",
+      "StartCapacityTask",
+      "StartConnection",
+      "TagResource",
+      "UntagResource",
+      "UpdateOutpost",
+      "UpdateQuote",
+      "UpdateSite",
+      "UpdateSiteAddress",
+      "UpdateSiteRackPhysicalProperties"
+    ],
+    "Read": [
+      "GetCapacityTask",
+      "GetCatalogItem",
+      "GetConnection",
+      "GetOrder",
+      "GetOutpost",
+      "GetOutpostBillingInformation",
+      "GetOutpostInstanceTypes",
+      "GetOutpostSupportedInstanceTypes",
+      "GetPrivateConnectivityConfig",
+      "GetQuote",
+      "GetRenewalPricing",
+      "GetSite",
+      "GetSiteAddress",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAssetInstances",
+      "ListAssets",
+      "ListBlockingInstancesForCapacityTask",
+      "ListCapacityTasks",
+      "ListCatalogItems",
+      "ListOrderableInstanceTypes",
+      "ListOrders",
+      "ListOutposts",
+      "ListQuotes",
+      "ListSites"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelCapacityTask",
+      "methodName": "toCancelCapacityTask",
+      "description": "Grants permission to cancel a capacity task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_CancelCapacityTask.html"
+    },
+    {
+      "name": "CancelOrder",
+      "methodName": "toCancelOrder",
+      "description": "Grants permission to cancel an order",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_CancelOrder.html"
+    },
+    {
+      "name": "CreateOrder",
+      "methodName": "toCreateOrder",
+      "description": "Grants permission to create an order",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateOrder.html"
+    },
+    {
+      "name": "CreateOutpost",
+      "methodName": "toCreateOutpost",
+      "description": "Grants permission to create an Outpost",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateOutpost.html"
+    },
+    {
+      "name": "CreatePrivateConnectivityConfig",
+      "methodName": "toCreatePrivateConnectivityConfig",
+      "description": "Grants permission to create a private connectivity configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/userguide/how-outposts-works.html#private-connectivity"
+    },
+    {
+      "name": "CreateQuote",
+      "methodName": "toCreateQuote",
+      "description": "Grants permission to create a quote",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateQuote.html"
+    },
+    {
+      "name": "CreateRenewal",
+      "methodName": "toCreateRenewal",
+      "description": "Grants permission to create a renewal for the specified Outpost",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateRenewal.html"
+    },
+    {
+      "name": "CreateSite",
+      "methodName": "toCreateSite",
+      "description": "Grants permission to create a site",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateSite.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteOutpost",
+      "methodName": "toDeleteOutpost",
+      "description": "Grants permission to delete an Outpost",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_DeleteOutpost.html"
+    },
+    {
+      "name": "DeleteQuote",
+      "methodName": "toDeleteQuote",
+      "description": "Grants permission to delete a quote",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_DeleteQuote.html"
+    },
+    {
+      "name": "DeleteSite",
+      "methodName": "toDeleteSite",
+      "description": "Grants permission to delete a site",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_DeleteSite.html"
+    },
+    {
+      "name": "GetCapacityTask",
+      "methodName": "toGetCapacityTask",
+      "description": "Grants permission to get information about the specified capacity task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetCapacityTask.html"
+    },
+    {
+      "name": "GetCatalogItem",
+      "methodName": "toGetCatalogItem",
+      "description": "Grants permission to get a catalog item",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetCatalogItem.html"
+    },
+    {
+      "name": "GetConnection",
+      "methodName": "toGetConnection",
+      "description": "Grants permission to get information about the connection for your Outpost server",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetConnection.html"
+    },
+    {
+      "name": "GetOrder",
+      "methodName": "toGetOrder",
+      "description": "Grants permission to get information about an order",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOrder.html"
+    },
+    {
+      "name": "GetOutpost",
+      "methodName": "toGetOutpost",
+      "description": "Grants permission to get information about the specified Outpost",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpost.html"
+    },
+    {
+      "name": "GetOutpostBillingInformation",
+      "methodName": "toGetOutpostBillingInformation",
+      "description": "Grants permission to get Outpost billing information for the specified Outpost",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpostBillingInformation.html"
+    },
+    {
+      "name": "GetOutpostInstanceTypes",
+      "methodName": "toGetOutpostInstanceTypes",
+      "description": "Grants permission to get the instance types for the specified Outpost",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpostInstanceTypes.html"
+    },
+    {
+      "name": "GetOutpostSupportedInstanceTypes",
+      "methodName": "toGetOutpostSupportedInstanceTypes",
+      "description": "Grants permission to get the supported instance types for the specified Outpost",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpostSupportedInstanceTypes.html"
+    },
+    {
+      "name": "GetPrivateConnectivityConfig",
+      "methodName": "toGetPrivateConnectivityConfig",
+      "description": "Grants permission to get a private connectivity configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/outposts/latest/userguide/how-outposts-works.html#private-connectivity"
+    },
+    {
+      "name": "GetQuote",
+      "methodName": "toGetQuote",
+      "description": "Grants permission to get information about a quote",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetQuote.html"
+    },
+    {
+      "name": "GetRenewalPricing",
+      "methodName": "toGetRenewalPricing",
+      "description": "Grants permission to get renewal pricing for the specified Outpost",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetRenewalPricing.html"
+    },
+    {
+      "name": "GetSite",
+      "methodName": "toGetSite",
+      "description": "Grants permission to get a site",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetSite.html"
+    },
+    {
+      "name": "GetSiteAddress",
+      "methodName": "toGetSiteAddress",
+      "description": "Grants permission to get a site address",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetSiteAddress.html"
+    },
+    {
+      "name": "ListAssetInstances",
+      "methodName": "toListAssetInstances",
+      "description": "Grants permission to list all running instances for the specified Outpost",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListAssetInstances.html"
+    },
+    {
+      "name": "ListAssets",
+      "methodName": "toListAssets",
+      "description": "Grants permission to list the assets for your Outpost",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListAssets.html"
+    },
+    {
+      "name": "ListBlockingInstancesForCapacityTask",
+      "methodName": "toListBlockingInstancesForCapacityTask",
+      "description": "Grants permission to list all running instances that are blocking the capacity task from running for the specified Outpost",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListBlockingInstancesForCapacityTask.html"
+    },
+    {
+      "name": "ListCapacityTasks",
+      "methodName": "toListCapacityTasks",
+      "description": "Grants permission to list the capacity tasks for your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListCapacityTasks.html"
+    },
+    {
+      "name": "ListCatalogItems",
+      "methodName": "toListCatalogItems",
+      "description": "Grants permission to list all catalog items",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListCatalogItems.html"
+    },
+    {
+      "name": "ListOrderableInstanceTypes",
+      "methodName": "toListOrderableInstanceTypes",
+      "description": "Grants permission to list the orderable instance types for your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListOrderableInstanceTypes.html"
+    },
+    {
+      "name": "ListOrders",
+      "methodName": "toListOrders",
+      "description": "Grants permission to list the orders for your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListOrders.html"
+    },
+    {
+      "name": "ListOutposts",
+      "methodName": "toListOutposts",
+      "description": "Grants permission to list the Outposts for your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListOutposts.html"
+    },
+    {
+      "name": "ListQuotes",
+      "methodName": "toListQuotes",
+      "description": "Grants permission to list quotes for your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListQuotes.html"
+    },
+    {
+      "name": "ListSites",
+      "methodName": "toListSites",
+      "description": "Grants permission to list the sites for your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListSites.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "StartCapacityTask",
+      "methodName": "toStartCapacityTask",
+      "description": "Grants permission to create a capacity task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_StartCapacityTask.html"
+    },
+    {
+      "name": "StartConnection",
+      "methodName": "toStartConnection",
+      "description": "Grants permission to start a connection for your Outpost server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_StartConnection.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateOutpost",
+      "methodName": "toUpdateOutpost",
+      "description": "Grants permission to update an Outpost",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_UpdateOutpost.html"
+    },
+    {
+      "name": "UpdateQuote",
+      "methodName": "toUpdateQuote",
+      "description": "Grants permission to update a quote",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_UpdateQuote.html"
+    },
+    {
+      "name": "UpdateSite",
+      "methodName": "toUpdateSite",
+      "description": "Grants permission to update a site",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_UpdateSite.html"
+    },
+    {
+      "name": "UpdateSiteAddress",
+      "methodName": "toUpdateSiteAddress",
+      "description": "Grants permission to update the site address",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_UpdateSiteAddress.html"
+    },
+    {
+      "name": "UpdateSiteRackPhysicalProperties",
+      "methodName": "toUpdateSiteRackPhysicalProperties",
+      "description": "Grants permission to update the physical properties of a rack at a site",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_UpdateSiteRackPhysicalProperties.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "outpost",
+      "methodName": "onOutpost",
+      "url": "https://docs.aws.amazon.com/outposts/latest/userguide/what-is-outposts.html",
+      "arn": "arn:${Partition}:outposts:${Region}:${Account}:outpost/${OutpostId}",
+      "placeholders": [
+        {
+          "placeholder": "OutpostId",
+          "name": "outpostId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "site",
+      "methodName": "onSite",
+      "url": "https://docs.aws.amazon.com/outposts/latest/userguide/what-is-outposts.html",
+      "arn": "arn:${Partition}:outposts:${Region}:${Account}:site/${SiteId}",
+      "placeholders": [
+        {
+          "placeholder": "SiteId",
+          "name": "siteId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html",
+      "relatedActionMethods": [
+        "toCreateOutpost",
+        "toCreateSite",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html",
+      "relatedActionMethods": [
+        "toCancelCapacityTask",
+        "toCreateOrder",
+        "toCreateOutpost",
+        "toCreatePrivateConnectivityConfig",
+        "toCreateRenewal",
+        "toCreateSite",
+        "toDeleteOutpost",
+        "toDeleteSite",
+        "toGetCapacityTask",
+        "toGetOutpost",
+        "toGetOutpostBillingInformation",
+        "toGetOutpostInstanceTypes",
+        "toGetOutpostSupportedInstanceTypes",
+        "toGetPrivateConnectivityConfig",
+        "toGetRenewalPricing",
+        "toGetSite",
+        "toGetSiteAddress",
+        "toListAssetInstances",
+        "toListAssets",
+        "toListBlockingInstancesForCapacityTask",
+        "toStartCapacityTask",
+        "toStartConnection",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateOutpost",
+        "toUpdateSite",
+        "toUpdateSiteAddress",
+        "toUpdateSiteRackPhysicalProperties"
+      ],
+      "relatedResourceTypes": [
+        "outpost",
+        "site"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html",
+      "relatedActionMethods": [
+        "toCreateOutpost",
+        "toCreateSite",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

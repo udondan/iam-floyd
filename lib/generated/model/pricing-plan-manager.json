@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "filename": "pricing-plan-manager",
+  "className": "Pricingplanmanager",
+  "name": "pricingplanmanager",
+  "servicePrefix": "pricingplanmanager",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_pricing-plan-manager.html",
+  "accessLevelList": {
+    "Write": [
+      "ApprovePaidSubscription",
+      "AssociateResourcesToSubscription",
+      "CancelSubscription",
+      "CancelSubscriptionChange",
+      "CreateSubscription",
+      "DisassociateResourcesFromSubscription",
+      "UpdateSubscription"
+    ],
+    "Read": [
+      "GetSubscription",
+      "ListSubscriptions"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ApprovePaidSubscription",
+      "methodName": "toApprovePaidSubscription",
+      "description": "Grants permission to approve paid subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/security-pricing-plan.html"
+    },
+    {
+      "name": "AssociateResourcesToSubscription",
+      "methodName": "toAssociateResourcesToSubscription",
+      "description": "Grants permission to associate resources with a subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/security-pricing-plan.html"
+    },
+    {
+      "name": "CancelSubscription",
+      "methodName": "toCancelSubscription",
+      "description": "Grants permission to cancel a subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/security-pricing-plan.html"
+    },
+    {
+      "name": "CancelSubscriptionChange",
+      "methodName": "toCancelSubscriptionChange",
+      "description": "Grants permission to cancel a scheduled change for a subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/security-pricing-plan.html"
+    },
+    {
+      "name": "CreateSubscription",
+      "methodName": "toCreateSubscription",
+      "description": "Grants permission to create a subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/security-pricing-plan.html"
+    },
+    {
+      "name": "DisassociateResourcesFromSubscription",
+      "methodName": "toDisassociateResourcesFromSubscription",
+      "description": "Grants permission to disassociate resources from a subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/security-pricing-plan.html"
+    },
+    {
+      "name": "GetSubscription",
+      "methodName": "toGetSubscription",
+      "description": "Grants permission to get the details for a subscription",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/security-pricing-plan.html"
+    },
+    {
+      "name": "ListSubscriptions",
+      "methodName": "toListSubscriptions",
+      "description": "Grants permission to list subscriptions in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/security-pricing-plan.html"
+    },
+    {
+      "name": "UpdateSubscription",
+      "methodName": "toUpdateSubscription",
+      "description": "Grants permission to update a subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/security-pricing-plan.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "subscription",
+      "methodName": "onSubscription",
+      "url": "https://docs.aws.amazon.com/pricingplanmanager/userguide/subscription.html",
+      "arn": "arn:${Partition}:pricingplanmanager::${Account}:subscription/${SubscriptionId}",
+      "placeholders": [
+        {
+          "placeholder": "SubscriptionId",
+          "name": "subscriptionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

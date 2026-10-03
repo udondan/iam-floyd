@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "ds:DescribeDirectories",
+        "ds:AuthorizeApplication",
+        "ds:UnauthorizeApplication",
+        "ds:GetAuthorizedApplicationDetails"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

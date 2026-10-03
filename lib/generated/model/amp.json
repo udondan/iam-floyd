@@ -1,0 +1,930 @@
+{
+  "schemaVersion": 1,
+  "filename": "amp",
+  "className": "Aps",
+  "name": "aps",
+  "servicePrefix": "aps",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amp.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateAlertManagerAlerts",
+      "CreateAlertManagerDefinition",
+      "CreateAnomalyDetector",
+      "CreateLoggingConfiguration",
+      "CreateQueryLoggingConfiguration",
+      "CreateRuleGroupsNamespace",
+      "CreateScraper",
+      "CreateWorkspace",
+      "DeleteAlertManagerDefinition",
+      "DeleteAlertManagerSilence",
+      "DeleteAnomalyDetector",
+      "DeleteLoggingConfiguration",
+      "DeleteQueryLoggingConfiguration",
+      "DeleteResourcePolicy",
+      "DeleteRuleGroupsNamespace",
+      "DeleteScraper",
+      "DeleteScraperLoggingConfiguration",
+      "DeleteWorkspace",
+      "PutAlertManagerDefinition",
+      "PutAlertManagerSilences",
+      "PutAnomalyDetector",
+      "PutResourcePolicy",
+      "PutRuleGroupsNamespace",
+      "RemoteWrite",
+      "TagResource",
+      "UntagResource",
+      "UpdateLoggingConfiguration",
+      "UpdateQueryLoggingConfiguration",
+      "UpdateScraper",
+      "UpdateScraperLoggingConfiguration",
+      "UpdateWorkspaceAlias",
+      "UpdateWorkspaceConfiguration"
+    ],
+    "Read": [
+      "DescribeAlertManagerDefinition",
+      "DescribeAnomalyDetector",
+      "DescribeLoggingConfiguration",
+      "DescribeQueryLoggingConfiguration",
+      "DescribeResourcePolicy",
+      "DescribeRuleGroupsNamespace",
+      "DescribeScraper",
+      "DescribeScraperLoggingConfiguration",
+      "DescribeWorkspace",
+      "DescribeWorkspaceConfiguration",
+      "GetAlertManagerSilence",
+      "GetAlertManagerStatus",
+      "GetDefaultScraperConfiguration",
+      "GetLabels",
+      "GetMetricMetadata",
+      "GetSeries",
+      "ListAlertManagerAlertGroups",
+      "ListAlertManagerAlerts",
+      "ListAlertManagerReceivers",
+      "ListAlertManagerSilences",
+      "ListAlerts",
+      "ListRules",
+      "ListTagsForResource",
+      "PreviewAnomalyDetector",
+      "QueryMetrics"
+    ],
+    "List": [
+      "ListAnomalyDetectors",
+      "ListRuleGroupsNamespaces",
+      "ListScrapers",
+      "ListWorkspaces"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateAlertManagerAlerts",
+      "methodName": "toCreateAlertManagerAlerts",
+      "description": "Grants permission to create alerts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-CreateAlertManagerAlerts.html"
+    },
+    {
+      "name": "CreateAlertManagerDefinition",
+      "methodName": "toCreateAlertManagerDefinition",
+      "description": "Grants permission to create an alert manager definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateAlertManagerDefinition.html"
+    },
+    {
+      "name": "CreateAnomalyDetector",
+      "methodName": "toCreateAnomalyDetector",
+      "description": "Grants permission to create an anomaly detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateAnomalyDetector.html"
+    },
+    {
+      "name": "CreateLoggingConfiguration",
+      "methodName": "toCreateLoggingConfiguration",
+      "description": "Grants permission to create a logging configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateLoggingConfiguration.html"
+    },
+    {
+      "name": "CreateQueryLoggingConfiguration",
+      "methodName": "toCreateQueryLoggingConfiguration",
+      "description": "Grants permission to create a query logging configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateQueryLoggingConfiguration.html"
+    },
+    {
+      "name": "CreateRuleGroupsNamespace",
+      "methodName": "toCreateRuleGroupsNamespace",
+      "description": "Grants permission to create a rule groups namespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateRuleGroupsNamespace.html"
+    },
+    {
+      "name": "CreateScraper",
+      "methodName": "toCreateScraper",
+      "description": "Grants permission to create a scraper",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateScraper.html"
+    },
+    {
+      "name": "CreateWorkspace",
+      "methodName": "toCreateWorkspace",
+      "description": "Grants permission to create a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateWorkspace.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteAlertManagerDefinition",
+      "methodName": "toDeleteAlertManagerDefinition",
+      "description": "Grants permission to delete an alert manager definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteAlertManagerDefinition.html"
+    },
+    {
+      "name": "DeleteAlertManagerSilence",
+      "methodName": "toDeleteAlertManagerSilence",
+      "description": "Grants permission to delete a silence",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-DeleteAlertManagerSilence.html"
+    },
+    {
+      "name": "DeleteAnomalyDetector",
+      "methodName": "toDeleteAnomalyDetector",
+      "description": "Grants permission to delete an anomaly detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteAnomalyDetector.html"
+    },
+    {
+      "name": "DeleteLoggingConfiguration",
+      "methodName": "toDeleteLoggingConfiguration",
+      "description": "Grants permission to delete a logging configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteLoggingConfiguration.html"
+    },
+    {
+      "name": "DeleteQueryLoggingConfiguration",
+      "methodName": "toDeleteQueryLoggingConfiguration",
+      "description": "Grants permission to delete a query logging configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteQueryLoggingConfiguration.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete workspace resource policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteRuleGroupsNamespace",
+      "methodName": "toDeleteRuleGroupsNamespace",
+      "description": "Grants permission to delete a rule groups namespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteRuleGroupsNamespace.html"
+    },
+    {
+      "name": "DeleteScraper",
+      "methodName": "toDeleteScraper",
+      "description": "Grants permission to delete a scraper",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteScraper.html"
+    },
+    {
+      "name": "DeleteScraperLoggingConfiguration",
+      "methodName": "toDeleteScraperLoggingConfiguration",
+      "description": "Grants permission to delete a scraper logging configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteScraperLoggingConfiguration.html"
+    },
+    {
+      "name": "DeleteWorkspace",
+      "methodName": "toDeleteWorkspace",
+      "description": "Grants permission to delete a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteWorkspace.html"
+    },
+    {
+      "name": "DescribeAlertManagerDefinition",
+      "methodName": "toDescribeAlertManagerDefinition",
+      "description": "Grants permission to describe an alert manager definition",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeAlertManagerDefinition.html"
+    },
+    {
+      "name": "DescribeAnomalyDetector",
+      "methodName": "toDescribeAnomalyDetector",
+      "description": "Grants permission to describe an anomaly detector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeAnomalyDetector.html"
+    },
+    {
+      "name": "DescribeLoggingConfiguration",
+      "methodName": "toDescribeLoggingConfiguration",
+      "description": "Grants permission to describe a logging configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeLoggingConfiguration.html"
+    },
+    {
+      "name": "DescribeQueryLoggingConfiguration",
+      "methodName": "toDescribeQueryLoggingConfiguration",
+      "description": "Grants permission to describe a query logging configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeQueryLoggingConfiguration.html"
+    },
+    {
+      "name": "DescribeResourcePolicy",
+      "methodName": "toDescribeResourcePolicy",
+      "description": "Grants permission to describe workspace resource policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeResourcePolicy.html"
+    },
+    {
+      "name": "DescribeRuleGroupsNamespace",
+      "methodName": "toDescribeRuleGroupsNamespace",
+      "description": "Grants permission to describe a rule groups namespace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeRuleGroupsNamespace.html"
+    },
+    {
+      "name": "DescribeScraper",
+      "methodName": "toDescribeScraper",
+      "description": "Grants permission to describe a scraper",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeScraper.html"
+    },
+    {
+      "name": "DescribeScraperLoggingConfiguration",
+      "methodName": "toDescribeScraperLoggingConfiguration",
+      "description": "Grants permission to describe a scraper logging configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeScraperLoggingConfiguration.html"
+    },
+    {
+      "name": "DescribeWorkspace",
+      "methodName": "toDescribeWorkspace",
+      "description": "Grants permission to describe a workspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeWorkspace.html"
+    },
+    {
+      "name": "DescribeWorkspaceConfiguration",
+      "methodName": "toDescribeWorkspaceConfiguration",
+      "description": "Grants permission to describe workspace configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeWorkspaceConfiguration.html"
+    },
+    {
+      "name": "GetAlertManagerSilence",
+      "methodName": "toGetAlertManagerSilence",
+      "description": "Grants permission to get a silence",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-GetAlertManagerSilence.html"
+    },
+    {
+      "name": "GetAlertManagerStatus",
+      "methodName": "toGetAlertManagerStatus",
+      "description": "Grants permission to get current status of an alertmanager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-GetAlertManagerStatus.html"
+    },
+    {
+      "name": "GetDefaultScraperConfiguration",
+      "methodName": "toGetDefaultScraperConfiguration",
+      "description": "Grants permission to get default scraper configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_GetDefaultScraperConfiguration.html"
+    },
+    {
+      "name": "GetLabels",
+      "methodName": "toGetLabels",
+      "description": "Grants permission to retrieve AMP workspace labels",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-GetLabels.html"
+    },
+    {
+      "name": "GetMetricMetadata",
+      "methodName": "toGetMetricMetadata",
+      "description": "Grants permission to retrieve the metadata for AMP workspace metrics",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-GetMetricMetadata.html"
+    },
+    {
+      "name": "GetSeries",
+      "methodName": "toGetSeries",
+      "description": "Grants permission to retrieve AMP workspace time series data",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-GetSeries.html"
+    },
+    {
+      "name": "ListAlertManagerAlertGroups",
+      "methodName": "toListAlertManagerAlertGroups",
+      "description": "Grants permission to list groups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListAlertManagerAlertGroups.html"
+    },
+    {
+      "name": "ListAlertManagerAlerts",
+      "methodName": "toListAlertManagerAlerts",
+      "description": "Grants permission to list alerts",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListAlertManagerAlerts.html"
+    },
+    {
+      "name": "ListAlertManagerReceivers",
+      "methodName": "toListAlertManagerReceivers",
+      "description": "Grants permission to list receivers",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListAlertManagerReceivers.html"
+    },
+    {
+      "name": "ListAlertManagerSilences",
+      "methodName": "toListAlertManagerSilences",
+      "description": "Grants permission to list silences",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListAlertManagerSilences.html"
+    },
+    {
+      "name": "ListAlerts",
+      "methodName": "toListAlerts",
+      "description": "Grants permission to list active alerts",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListAlerts.html"
+    },
+    {
+      "name": "ListAnomalyDetectors",
+      "methodName": "toListAnomalyDetectors",
+      "description": "Grants permission to list anomaly detectors",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListAnomalyDetectors.html"
+    },
+    {
+      "name": "ListRuleGroupsNamespaces",
+      "methodName": "toListRuleGroupsNamespaces",
+      "description": "Grants permission to list rule groups namespaces",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListRuleGroupsNamespaces.html"
+    },
+    {
+      "name": "ListRules",
+      "methodName": "toListRules",
+      "description": "Grants permission to list alerting and recording rules",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListRules.html"
+    },
+    {
+      "name": "ListScrapers",
+      "methodName": "toListScrapers",
+      "description": "Grants permission to list scrapers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListScrapers.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags on an AMP resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWorkspaces",
+      "methodName": "toListWorkspaces",
+      "description": "Grants permission to list workspaces",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListWorkspaces.html"
+    },
+    {
+      "name": "PreviewAnomalyDetector",
+      "methodName": "toPreviewAnomalyDetector",
+      "description": "Grants permission to preview anomaly detection on AMP workspace metrics",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-PreviewAnomalyDetector.html"
+    },
+    {
+      "name": "PutAlertManagerDefinition",
+      "methodName": "toPutAlertManagerDefinition",
+      "description": "Grants permission to update an alert manager definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_PutAlertManagerDefinition.html"
+    },
+    {
+      "name": "PutAlertManagerSilences",
+      "methodName": "toPutAlertManagerSilences",
+      "description": "Grants permission to create or update a silence",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-PutAlertManagerSilences.html"
+    },
+    {
+      "name": "PutAnomalyDetector",
+      "methodName": "toPutAnomalyDetector",
+      "description": "Grants permission to update an anomaly detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_PutAnomalyDetector.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to create and update workspace resource policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "PutRuleGroupsNamespace",
+      "methodName": "toPutRuleGroupsNamespace",
+      "description": "Grants permission to update a rule groups namespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_PutRuleGroupsNamespace.html"
+    },
+    {
+      "name": "QueryMetrics",
+      "methodName": "toQueryMetrics",
+      "description": "Grants permission to run a query on AMP workspace metrics",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-QueryMetrics.html"
+    },
+    {
+      "name": "RemoteWrite",
+      "methodName": "toRemoteWrite",
+      "description": "Grants permission to perform a remote write operation to initiate the streaming of metrics to AMP workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-RemoteWrite.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an AMP resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag an AMP resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateLoggingConfiguration",
+      "methodName": "toUpdateLoggingConfiguration",
+      "description": "Grants permission to update a logging configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateLoggingConfiguration.html"
+    },
+    {
+      "name": "UpdateQueryLoggingConfiguration",
+      "methodName": "toUpdateQueryLoggingConfiguration",
+      "description": "Grants permission to update a query logging configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateQueryLoggingConfiguration.html"
+    },
+    {
+      "name": "UpdateScraper",
+      "methodName": "toUpdateScraper",
+      "description": "Grants permission to update a scraper",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateScraper.html"
+    },
+    {
+      "name": "UpdateScraperLoggingConfiguration",
+      "methodName": "toUpdateScraperLoggingConfiguration",
+      "description": "Grants permission to put a scraper logging configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateScraperLoggingConfiguration.html"
+    },
+    {
+      "name": "UpdateWorkspaceAlias",
+      "methodName": "toUpdateWorkspaceAlias",
+      "description": "Grants permission to modify the alias of existing AMP workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateWorkspaceAlias.html"
+    },
+    {
+      "name": "UpdateWorkspaceConfiguration",
+      "methodName": "toUpdateWorkspaceConfiguration",
+      "description": "Grants permission to update workspace configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateWorkspaceConfiguration.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "anomalydetector",
+      "methodName": "onAnomalydetector",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:aps:${Region}:${Account}:anomalydetector/${WorkspaceId}/${AnomalyDetectorId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkspaceId",
+          "name": "workspaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AnomalyDetectorId",
+          "name": "anomalyDetectorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "cluster",
+      "methodName": "onCluster",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/clusters.html",
+      "arn": "arn:${Partition}:eks:${Region}:${Account}:cluster/${ClusterName}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "rulegroupsnamespace",
+      "methodName": "onRulegroupsnamespace",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:aps:${Region}:${Account}:rulegroupsnamespace/${WorkspaceId}/${Namespace}",
+      "placeholders": [
+        {
+          "placeholder": "WorkspaceId",
+          "name": "workspaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Namespace",
+          "name": "namespace",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "scraper",
+      "methodName": "onScraper",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:aps:${Region}:${Account}:scraper/${ScraperId}",
+      "placeholders": [
+        {
+          "placeholder": "ScraperId",
+          "name": "scraperId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "workspace",
+      "methodName": "onWorkspace",
+      "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:aps:${Region}:${Account}:workspace/${WorkspaceId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkspaceId",
+          "name": "workspaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access based on the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAlertManagerAlerts",
+        "toCreateAlertManagerDefinition",
+        "toCreateAnomalyDetector",
+        "toCreateLoggingConfiguration",
+        "toCreateQueryLoggingConfiguration",
+        "toCreateRuleGroupsNamespace",
+        "toCreateScraper",
+        "toCreateWorkspace",
+        "toDeleteAlertManagerDefinition",
+        "toDeleteAlertManagerSilence",
+        "toDeleteAnomalyDetector",
+        "toDeleteLoggingConfiguration",
+        "toDeleteQueryLoggingConfiguration",
+        "toDeleteResourcePolicy",
+        "toDeleteRuleGroupsNamespace",
+        "toDeleteScraper",
+        "toDeleteScraperLoggingConfiguration",
+        "toDeleteWorkspace",
+        "toDescribeAlertManagerDefinition",
+        "toDescribeAnomalyDetector",
+        "toDescribeLoggingConfiguration",
+        "toDescribeQueryLoggingConfiguration",
+        "toDescribeResourcePolicy",
+        "toDescribeRuleGroupsNamespace",
+        "toDescribeScraper",
+        "toDescribeScraperLoggingConfiguration",
+        "toDescribeWorkspace",
+        "toDescribeWorkspaceConfiguration",
+        "toGetAlertManagerSilence",
+        "toGetAlertManagerStatus",
+        "toGetLabels",
+        "toGetMetricMetadata",
+        "toGetSeries",
+        "toListAlertManagerAlertGroups",
+        "toListAlertManagerAlerts",
+        "toListAlertManagerReceivers",
+        "toListAlertManagerSilences",
+        "toListAlerts",
+        "toListAnomalyDetectors",
+        "toListRuleGroupsNamespaces",
+        "toListRules",
+        "toListTagsForResource",
+        "toPreviewAnomalyDetector",
+        "toPutAlertManagerDefinition",
+        "toPutAlertManagerSilences",
+        "toPutAnomalyDetector",
+        "toPutResourcePolicy",
+        "toPutRuleGroupsNamespace",
+        "toQueryMetrics",
+        "toRemoteWrite",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLoggingConfiguration",
+        "toUpdateQueryLoggingConfiguration",
+        "toUpdateScraper",
+        "toUpdateScraperLoggingConfiguration",
+        "toUpdateWorkspaceAlias",
+        "toUpdateWorkspaceConfiguration"
+      ],
+      "relatedResourceTypes": [
+        "anomalydetector",
+        "rulegroupsnamespace",
+        "scraper",
+        "workspace"
+      ],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access based on the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateAlertManagerAlerts",
+        "toCreateAlertManagerDefinition",
+        "toCreateAnomalyDetector",
+        "toCreateLoggingConfiguration",
+        "toCreateQueryLoggingConfiguration",
+        "toCreateRuleGroupsNamespace",
+        "toCreateScraper",
+        "toDeleteAlertManagerDefinition",
+        "toDeleteAlertManagerSilence",
+        "toDeleteAnomalyDetector",
+        "toDeleteLoggingConfiguration",
+        "toDeleteQueryLoggingConfiguration",
+        "toDeleteResourcePolicy",
+        "toDeleteRuleGroupsNamespace",
+        "toDeleteScraper",
+        "toDeleteScraperLoggingConfiguration",
+        "toDeleteWorkspace",
+        "toDescribeAlertManagerDefinition",
+        "toDescribeAnomalyDetector",
+        "toDescribeLoggingConfiguration",
+        "toDescribeQueryLoggingConfiguration",
+        "toDescribeResourcePolicy",
+        "toDescribeRuleGroupsNamespace",
+        "toDescribeScraper",
+        "toDescribeScraperLoggingConfiguration",
+        "toDescribeWorkspace",
+        "toDescribeWorkspaceConfiguration",
+        "toGetAlertManagerSilence",
+        "toGetAlertManagerStatus",
+        "toGetLabels",
+        "toGetMetricMetadata",
+        "toGetSeries",
+        "toListAlertManagerAlertGroups",
+        "toListAlertManagerAlerts",
+        "toListAlertManagerReceivers",
+        "toListAlertManagerSilences",
+        "toListAlerts",
+        "toListAnomalyDetectors",
+        "toListRuleGroupsNamespaces",
+        "toListRules",
+        "toListTagsForResource",
+        "toPreviewAnomalyDetector",
+        "toPutAlertManagerDefinition",
+        "toPutAlertManagerSilences",
+        "toPutAnomalyDetector",
+        "toPutResourcePolicy",
+        "toPutRuleGroupsNamespace",
+        "toQueryMetrics",
+        "toRemoteWrite",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLoggingConfiguration",
+        "toUpdateQueryLoggingConfiguration",
+        "toUpdateScraper",
+        "toUpdateScraperLoggingConfiguration",
+        "toUpdateWorkspaceAlias",
+        "toUpdateWorkspaceConfiguration"
+      ],
+      "relatedResourceTypes": [
+        "anomalydetector",
+        "cluster",
+        "rulegroupsnamespace",
+        "scraper",
+        "workspace"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access based on the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAlertManagerAlerts",
+        "toCreateAlertManagerDefinition",
+        "toCreateAnomalyDetector",
+        "toCreateLoggingConfiguration",
+        "toCreateQueryLoggingConfiguration",
+        "toCreateRuleGroupsNamespace",
+        "toCreateScraper",
+        "toCreateWorkspace",
+        "toDeleteAlertManagerDefinition",
+        "toDeleteAlertManagerSilence",
+        "toDeleteAnomalyDetector",
+        "toDeleteLoggingConfiguration",
+        "toDeleteQueryLoggingConfiguration",
+        "toDeleteResourcePolicy",
+        "toDeleteRuleGroupsNamespace",
+        "toDeleteScraper",
+        "toDeleteScraperLoggingConfiguration",
+        "toDeleteWorkspace",
+        "toDescribeAlertManagerDefinition",
+        "toDescribeAnomalyDetector",
+        "toDescribeLoggingConfiguration",
+        "toDescribeQueryLoggingConfiguration",
+        "toDescribeResourcePolicy",
+        "toDescribeRuleGroupsNamespace",
+        "toDescribeScraper",
+        "toDescribeScraperLoggingConfiguration",
+        "toDescribeWorkspace",
+        "toDescribeWorkspaceConfiguration",
+        "toGetAlertManagerSilence",
+        "toGetAlertManagerStatus",
+        "toGetLabels",
+        "toGetMetricMetadata",
+        "toGetSeries",
+        "toListAlertManagerAlertGroups",
+        "toListAlertManagerAlerts",
+        "toListAlertManagerReceivers",
+        "toListAlertManagerSilences",
+        "toListAlerts",
+        "toListAnomalyDetectors",
+        "toListRuleGroupsNamespaces",
+        "toListRules",
+        "toListTagsForResource",
+        "toPreviewAnomalyDetector",
+        "toPutAlertManagerDefinition",
+        "toPutAlertManagerSilences",
+        "toPutAnomalyDetector",
+        "toPutResourcePolicy",
+        "toPutRuleGroupsNamespace",
+        "toQueryMetrics",
+        "toRemoteWrite",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLoggingConfiguration",
+        "toUpdateQueryLoggingConfiguration",
+        "toUpdateScraper",
+        "toUpdateScraperLoggingConfiguration",
+        "toUpdateWorkspaceAlias",
+        "toUpdateWorkspaceConfiguration"
+      ],
+      "relatedResourceTypes": [
+        "anomalydetector",
+        "rulegroupsnamespace",
+        "scraper",
+        "workspace"
+      ],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

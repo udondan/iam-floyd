@@ -1,0 +1,3310 @@
+{
+  "schemaVersion": 1,
+  "filename": "chime",
+  "className": "Chime",
+  "name": "chime",
+  "servicePrefix": "chime",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_chime.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptDelegate",
+      "ActivateUsers",
+      "AddDomain",
+      "AddOrUpdateGroups",
+      "AssociateChannelFlow",
+      "AssociatePhoneNumberWithUser",
+      "AssociatePhoneNumbersWithVoiceConnector",
+      "AssociatePhoneNumbersWithVoiceConnectorGroup",
+      "AssociateSigninDelegateGroupsWithAccount",
+      "AuthorizeDirectory",
+      "BatchCreateAttendee",
+      "BatchCreateChannelMembership",
+      "BatchCreateRoomMembership",
+      "BatchDeletePhoneNumber",
+      "BatchSuspendUser",
+      "BatchUnsuspendUser",
+      "BatchUpdateAttendeeCapabilitiesExcept",
+      "BatchUpdatePhoneNumber",
+      "BatchUpdateUser",
+      "ChannelFlowCallback",
+      "Connect",
+      "ConnectDirectory",
+      "CreateAccount",
+      "CreateApiKey",
+      "CreateAppInstance",
+      "CreateAppInstanceAdmin",
+      "CreateAppInstanceBot",
+      "CreateAppInstanceUser",
+      "CreateAttendee",
+      "CreateBot",
+      "CreateCDRBucket",
+      "CreateChannel",
+      "CreateChannelBan",
+      "CreateChannelFlow",
+      "CreateChannelMembership",
+      "CreateChannelModerator",
+      "CreateMediaCapturePipeline",
+      "CreateMediaConcatenationPipeline",
+      "CreateMediaInsightsPipeline",
+      "CreateMediaInsightsPipelineConfiguration",
+      "CreateMediaLiveConnectorPipeline",
+      "CreateMediaPipelineKinesisVideoStreamPool",
+      "CreateMediaStreamPipeline",
+      "CreateMeeting",
+      "CreateMeetingDialOut",
+      "CreateMeetingWithAttendees",
+      "CreatePhoneNumberOrder",
+      "CreateProxySession",
+      "CreateRoom",
+      "CreateRoomMembership",
+      "CreateSipMediaApplication",
+      "CreateSipMediaApplicationCall",
+      "CreateSipRule",
+      "CreateUser",
+      "CreateVoiceConnector",
+      "CreateVoiceConnectorGroup",
+      "CreateVoiceProfile",
+      "CreateVoiceProfileDomain",
+      "DeleteAccount",
+      "DeleteAccountOpenIdConfig",
+      "DeleteApiKey",
+      "DeleteAppInstance",
+      "DeleteAppInstanceAdmin",
+      "DeleteAppInstanceBot",
+      "DeleteAppInstanceStreamingConfigurations",
+      "DeleteAppInstanceUser",
+      "DeleteAttendee",
+      "DeleteCDRBucket",
+      "DeleteChannel",
+      "DeleteChannelBan",
+      "DeleteChannelFlow",
+      "DeleteChannelMembership",
+      "DeleteChannelMessage",
+      "DeleteChannelModerator",
+      "DeleteDelegate",
+      "DeleteDomain",
+      "DeleteEventsConfiguration",
+      "DeleteGroups",
+      "DeleteMediaCapturePipeline",
+      "DeleteMediaInsightsPipelineConfiguration",
+      "DeleteMediaPipeline",
+      "DeleteMediaPipelineKinesisVideoStreamPool",
+      "DeleteMeeting",
+      "DeleteMessagingStreamingConfigurations",
+      "DeletePhoneNumber",
+      "DeleteProxySession",
+      "DeleteRoom",
+      "DeleteRoomMembership",
+      "DeleteSipMediaApplication",
+      "DeleteSipRule",
+      "DeleteVoiceConnector",
+      "DeleteVoiceConnectorEmergencyCallingConfiguration",
+      "DeleteVoiceConnectorExternalSystemsConfiguration",
+      "DeleteVoiceConnectorGroup",
+      "DeleteVoiceConnectorOrigination",
+      "DeleteVoiceConnectorProxy",
+      "DeleteVoiceConnectorStreamingConfiguration",
+      "DeleteVoiceConnectorTermination",
+      "DeleteVoiceConnectorTerminationCredentials",
+      "DeleteVoiceProfile",
+      "DeleteVoiceProfileDomain",
+      "DeregisterAppInstanceUserEndpoint",
+      "DisassociateChannelFlow",
+      "DisassociatePhoneNumberFromUser",
+      "DisassociatePhoneNumbersFromVoiceConnector",
+      "DisassociatePhoneNumbersFromVoiceConnectorGroup",
+      "DisassociateSigninDelegateGroupsFromAccount",
+      "DisconnectDirectory",
+      "InviteDelegate",
+      "InviteUsers",
+      "InviteUsersFromProvider",
+      "LogoutUser",
+      "PutAppInstanceRetentionSettings",
+      "PutAppInstanceStreamingConfigurations",
+      "PutAppInstanceUserExpirationSettings",
+      "PutChannelExpirationSettings",
+      "PutChannelMembershipPreferences",
+      "PutEventsConfiguration",
+      "PutMessagingStreamingConfigurations",
+      "PutRetentionSettings",
+      "PutSipMediaApplicationAlexaSkillConfiguration",
+      "PutSipMediaApplicationLoggingConfiguration",
+      "PutVoiceConnectorEmergencyCallingConfiguration",
+      "PutVoiceConnectorExternalSystemsConfiguration",
+      "PutVoiceConnectorLoggingConfiguration",
+      "PutVoiceConnectorOrigination",
+      "PutVoiceConnectorProxy",
+      "PutVoiceConnectorStreamingConfiguration",
+      "PutVoiceConnectorTermination",
+      "PutVoiceConnectorTerminationCredentials",
+      "RedactChannelMessage",
+      "RedactConversationMessage",
+      "RedactRoomMessage",
+      "RegenerateSecurityToken",
+      "RegisterAppInstanceUserEndpoint",
+      "RenameAccount",
+      "RenewDelegate",
+      "ResetAccountResource",
+      "ResetPersonalPIN",
+      "RestorePhoneNumber",
+      "SendChannelMessage",
+      "StartDataExport",
+      "StartMeetingTranscription",
+      "StartSpeakerSearchTask",
+      "StartVoiceToneAnalysisTask",
+      "StopMeetingTranscription",
+      "StopSpeakerSearchTask",
+      "StopVoiceToneAnalysisTask",
+      "SubmitSupportRequest",
+      "SuspendUsers",
+      "TagAttendee",
+      "TagMeeting",
+      "TagResource",
+      "UnauthorizeDirectory",
+      "UntagAttendee",
+      "UntagMeeting",
+      "UntagResource",
+      "UpdateAccount",
+      "UpdateAccountOpenIdConfig",
+      "UpdateAccountResource",
+      "UpdateAccountSettings",
+      "UpdateAppInstance",
+      "UpdateAppInstanceBot",
+      "UpdateAppInstanceUser",
+      "UpdateAppInstanceUserEndpoint",
+      "UpdateAttendeeCapabilities",
+      "UpdateBot",
+      "UpdateCDRSettings",
+      "UpdateChannel",
+      "UpdateChannelFlow",
+      "UpdateChannelMessage",
+      "UpdateChannelReadMarker",
+      "UpdateGlobalSettings",
+      "UpdateMediaInsightsPipelineConfiguration",
+      "UpdateMediaInsightsPipelineStatus",
+      "UpdateMediaPipelineKinesisVideoStreamPool",
+      "UpdatePhoneNumber",
+      "UpdatePhoneNumberSettings",
+      "UpdateProxySession",
+      "UpdateRoom",
+      "UpdateRoomMembership",
+      "UpdateSipMediaApplication",
+      "UpdateSipMediaApplicationCall",
+      "UpdateSipRule",
+      "UpdateSupportedLicenses",
+      "UpdateUser",
+      "UpdateUserLicenses",
+      "UpdateUserSettings",
+      "UpdateVoiceConnector",
+      "UpdateVoiceConnectorGroup",
+      "UpdateVoiceProfile",
+      "UpdateVoiceProfileDomain",
+      "AssociateVoiceConnectorConnect",
+      "CreateConnectAnalyticsConnector",
+      "CreateConnectCallTransferConnector",
+      "DisassociateVoiceConnectorConnect"
+    ],
+    "Read": [
+      "DescribeAppInstance",
+      "DescribeAppInstanceAdmin",
+      "DescribeAppInstanceBot",
+      "DescribeAppInstanceUser",
+      "DescribeAppInstanceUserEndpoint",
+      "DescribeChannel",
+      "DescribeChannelBan",
+      "DescribeChannelFlow",
+      "DescribeChannelMembership",
+      "DescribeChannelMembershipForAppInstanceUser",
+      "DescribeChannelModeratedByAppInstanceUser",
+      "DescribeChannelModerator",
+      "GetAccount",
+      "GetAccountResource",
+      "GetAccountSettings",
+      "GetAccountWithOpenIdConfig",
+      "GetAppInstanceRetentionSettings",
+      "GetAppInstanceStreamingConfigurations",
+      "GetAttendee",
+      "GetBot",
+      "GetCDRBucket",
+      "GetChannelMembershipPreferences",
+      "GetChannelMessage",
+      "GetChannelMessageStatus",
+      "GetDomain",
+      "GetEventsConfiguration",
+      "GetGlobalSettings",
+      "GetMediaCapturePipeline",
+      "GetMediaInsightsPipelineConfiguration",
+      "GetMediaPipeline",
+      "GetMediaPipelineKinesisVideoStreamPool",
+      "GetMeeting",
+      "GetMeetingDetail",
+      "GetMessagingSessionEndpoint",
+      "GetMessagingStreamingConfigurations",
+      "GetPhoneNumber",
+      "GetPhoneNumberOrder",
+      "GetPhoneNumberSettings",
+      "GetProxySession",
+      "GetRetentionSettings",
+      "GetRoom",
+      "GetSipMediaApplication",
+      "GetSipMediaApplicationAlexaSkillConfiguration",
+      "GetSipMediaApplicationLoggingConfiguration",
+      "GetSipRule",
+      "GetSpeakerSearchTask",
+      "GetTelephonyLimits",
+      "GetUser",
+      "GetUserActivityReportData",
+      "GetUserByEmail",
+      "GetUserSettings",
+      "GetVoiceConnector",
+      "GetVoiceConnectorEmergencyCallingConfiguration",
+      "GetVoiceConnectorExternalSystemsConfiguration",
+      "GetVoiceConnectorGroup",
+      "GetVoiceConnectorLoggingConfiguration",
+      "GetVoiceConnectorOrigination",
+      "GetVoiceConnectorProxy",
+      "GetVoiceConnectorStreamingConfiguration",
+      "GetVoiceConnectorTermination",
+      "GetVoiceConnectorTerminationHealth",
+      "GetVoiceProfile",
+      "GetVoiceProfileDomain",
+      "GetVoiceToneAnalysisTask",
+      "ListChannelMessages",
+      "ListTagsForResource",
+      "RetrieveDataExports",
+      "SearchAvailablePhoneNumbers",
+      "ValidateAccountResource",
+      "ValidateE911Address"
+    ],
+    "List": [
+      "ListAccountUsageReportData",
+      "ListAccounts",
+      "ListApiKeys",
+      "ListAppInstanceAdmins",
+      "ListAppInstanceBots",
+      "ListAppInstanceUserEndpoints",
+      "ListAppInstanceUsers",
+      "ListAppInstances",
+      "ListAttendeeTags",
+      "ListAttendees",
+      "ListAvailableVoiceConnectorRegions",
+      "ListBots",
+      "ListCDRBucket",
+      "ListCallingRegions",
+      "ListChannelBans",
+      "ListChannelFlows",
+      "ListChannelMemberships",
+      "ListChannelMembershipsForAppInstanceUser",
+      "ListChannelModerators",
+      "ListChannels",
+      "ListChannelsAssociatedWithChannelFlow",
+      "ListChannelsModeratedByAppInstanceUser",
+      "ListDelegates",
+      "ListDirectories",
+      "ListDomains",
+      "ListGroups",
+      "ListMediaCapturePipelines",
+      "ListMediaInsightsPipelineConfigurations",
+      "ListMediaPipelineKinesisVideoStreamPools",
+      "ListMediaPipelines",
+      "ListMeetingEvents",
+      "ListMeetingTags",
+      "ListMeetings",
+      "ListMeetingsReportData",
+      "ListPhoneNumberOrders",
+      "ListPhoneNumbers",
+      "ListProxySessions",
+      "ListRoomMemberships",
+      "ListRooms",
+      "ListSipMediaApplications",
+      "ListSipRules",
+      "ListSubChannels",
+      "ListSupportedPhoneNumberCountries",
+      "ListUsers",
+      "ListVoiceConnectorGroups",
+      "ListVoiceConnectorTerminationCredentials",
+      "ListVoiceConnectors",
+      "ListVoiceProfileDomains",
+      "ListVoiceProfiles",
+      "SearchChannels"
+    ],
+    "Tagging": [
+      "TagAttendee",
+      "TagMeeting",
+      "TagResource",
+      "UntagAttendee",
+      "UntagMeeting",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptDelegate",
+      "methodName": "toAcceptDelegate",
+      "description": "Grants permission to accept the delegate invitation to share management of an Amazon Chime account with another AWS Account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "ActivateUsers",
+      "methodName": "toActivateUsers",
+      "description": "Grants permission to activate users in an Amazon Chime Enterprise account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/manage-access.html"
+    },
+    {
+      "name": "AddDomain",
+      "methodName": "toAddDomain",
+      "description": "Grants permission to add a domain to your Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/claim-domain.html"
+    },
+    {
+      "name": "AddOrUpdateGroups",
+      "methodName": "toAddOrUpdateGroups",
+      "description": "Grants permission to add new or update existing Active Directory or Okta user groups associated with your Amazon Chime Enterprise account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html"
+    },
+    {
+      "name": "AssociateChannelFlow",
+      "methodName": "toAssociateChannelFlow",
+      "description": "Grants permission to associate a flow with a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_AssociateChannelFlow.html"
+    },
+    {
+      "name": "AssociatePhoneNumberWithUser",
+      "methodName": "toAssociatePhoneNumberWithUser",
+      "description": "Grants permission to associate a phone number with an Amazon Chime user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_AssociatePhoneNumberWithUser.html"
+    },
+    {
+      "name": "AssociatePhoneNumbersWithVoiceConnector",
+      "methodName": "toAssociatePhoneNumbersWithVoiceConnector",
+      "description": "Grants permission to associate multiple phone numbers with an Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_AssociatePhoneNumbersWithVoiceConnector.html"
+    },
+    {
+      "name": "AssociatePhoneNumbersWithVoiceConnectorGroup",
+      "methodName": "toAssociatePhoneNumbersWithVoiceConnectorGroup",
+      "description": "Grants permission to associate multiple phone numbers with an Amazon Chime Voice Connector Group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_AssociatePhoneNumbersWithVoiceConnectorGroup.html"
+    },
+    {
+      "name": "AssociateSigninDelegateGroupsWithAccount",
+      "methodName": "toAssociateSigninDelegateGroupsWithAccount",
+      "description": "Grants permission to associate the specified sign-in delegate groups with the specified Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_AssociateSigninDelegateGroupsWithAccount.html"
+    },
+    {
+      "name": "AuthorizeDirectory",
+      "methodName": "toAuthorizeDirectory",
+      "description": "Grants permission to authorize an Active Directory for your Amazon Chime Enterprise account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "BatchCreateAttendee",
+      "methodName": "toBatchCreateAttendee",
+      "description": "Grants permission to create new attendees for an active Amazon Chime SDK meeting",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchCreateAttendee.html"
+    },
+    {
+      "name": "BatchCreateChannelMembership",
+      "methodName": "toBatchCreateChannelMembership",
+      "description": "Grants permission to add multiple users and bots to a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_BatchCreateChannelMembership.html"
+    },
+    {
+      "name": "BatchCreateRoomMembership",
+      "methodName": "toBatchCreateRoomMembership",
+      "description": "Grants permission to batch add room members",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchCreateRoomMembership.html"
+    },
+    {
+      "name": "BatchDeletePhoneNumber",
+      "methodName": "toBatchDeletePhoneNumber",
+      "description": "Grants permission to move up to 50 phone numbers to the deletion queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchDeletePhoneNumber.html"
+    },
+    {
+      "name": "BatchSuspendUser",
+      "methodName": "toBatchSuspendUser",
+      "description": "Grants permission to suspend up to 50 users from a Team or EnterpriseLWA Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchSuspendUser.html"
+    },
+    {
+      "name": "BatchUnsuspendUser",
+      "methodName": "toBatchUnsuspendUser",
+      "description": "Grants permission to remove the suspension from up to 50 previously suspended users for the specified Amazon Chime EnterpriseLWA account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchUnsuspendUser.html"
+    },
+    {
+      "name": "BatchUpdateAttendeeCapabilitiesExcept",
+      "methodName": "toBatchUpdateAttendeeCapabilitiesExcept",
+      "description": "Grants permission to update AttendeeCapabilities except the capabilities listed in an ExcludedAttendeeIds table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_BatchUpdateAttendeeCapabilitiesExcept.html"
+    },
+    {
+      "name": "BatchUpdatePhoneNumber",
+      "methodName": "toBatchUpdatePhoneNumber",
+      "description": "Grants permission to update phone number details within the UpdatePhoneNumberRequestItem object for up to 50 phone numbers",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchUpdatePhoneNumber.html"
+    },
+    {
+      "name": "BatchUpdateUser",
+      "methodName": "toBatchUpdateUser",
+      "description": "Grants permission to update user details within the UpdateUserRequestItem object for up to 20 users for the specified Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchUpdateUser.html"
+    },
+    {
+      "name": "ChannelFlowCallback",
+      "methodName": "toChannelFlowCallback",
+      "description": "Grants permission to callback for a message on a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ChannelFlowCallback.html"
+    },
+    {
+      "name": "Connect",
+      "methodName": "toConnect",
+      "description": "Grants permission to establish a web socket connection for app instance user to the messaging session endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_Connect.html"
+    },
+    {
+      "name": "ConnectDirectory",
+      "methodName": "toConnectDirectory",
+      "description": "Grants permission to connect an Active Directory to your Amazon Chime Enterprise account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/active_directory.html"
+    },
+    {
+      "name": "CreateAccount",
+      "methodName": "toCreateAccount",
+      "description": "Grants permission to create an Amazon Chime account under the administrator's AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAccount.html"
+    },
+    {
+      "name": "CreateApiKey",
+      "methodName": "toCreateApiKey",
+      "description": "Grants permission to create a new SCIM access key for your Amazon Chime account and Okta configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html"
+    },
+    {
+      "name": "CreateAppInstance",
+      "methodName": "toCreateAppInstance",
+      "description": "Grants permission to create an app instance in the AWS account (tag-based access controls are only supported on identity-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstance.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAppInstanceAdmin",
+      "methodName": "toCreateAppInstanceAdmin",
+      "description": "Grants permission to promote a user or bot to an AppInstanceAdmin",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstanceAdmin.html"
+    },
+    {
+      "name": "CreateAppInstanceBot",
+      "methodName": "toCreateAppInstanceBot",
+      "description": "Grants permission to create a bot within an AppInstance (tag-based access controls are only supported on identity-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstanceBot.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAppInstanceUser",
+      "methodName": "toCreateAppInstanceUser",
+      "description": "Grants permission to create a user within an AppInstance (tag-based access controls are only supported on identity-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstanceUser.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAttendee",
+      "methodName": "toCreateAttendee",
+      "description": "Grants permission to create a new attendee for an active Amazon Chime SDK meeting",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html"
+    },
+    {
+      "name": "CreateBot",
+      "methodName": "toCreateBot",
+      "description": "Grants permission to create a bot for an Amazon Chime Enterprise account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateBot.html"
+    },
+    {
+      "name": "CreateCDRBucket",
+      "methodName": "toCreateCDRBucket",
+      "description": "Grants permission to create a new Call Detail Record S3 bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/manage-access.html"
+    },
+    {
+      "name": "CreateChannel",
+      "methodName": "toCreateChannel",
+      "description": "Grants permission to create a channel for an app instance in the AWS account (tag-based access controls are only supported on messaging-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannel.html"
+    },
+    {
+      "name": "CreateChannelBan",
+      "methodName": "toCreateChannelBan",
+      "description": "Grants permission to ban a user or bot from a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelBan.html"
+    },
+    {
+      "name": "CreateChannelFlow",
+      "methodName": "toCreateChannelFlow",
+      "description": "Grants permission to create a channel flow for an app instance in the AWS account (tag-based access controls are only supported on messaging-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelFlow.html"
+    },
+    {
+      "name": "CreateChannelMembership",
+      "methodName": "toCreateChannelMembership",
+      "description": "Grants permission to add a user or bot to a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelMembership.html"
+    },
+    {
+      "name": "CreateChannelModerator",
+      "methodName": "toCreateChannelModerator",
+      "description": "Grants permission to create a channel moderator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelModerator.html"
+    },
+    {
+      "name": "CreateMediaCapturePipeline",
+      "methodName": "toCreateMediaCapturePipeline",
+      "description": "Grants permission to create a media capture pipeline (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaCapturePipeline.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMediaConcatenationPipeline",
+      "methodName": "toCreateMediaConcatenationPipeline",
+      "description": "Grants permission to create a media concatenation pipeline (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaConcatenationPipeline.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMediaInsightsPipeline",
+      "methodName": "toCreateMediaInsightsPipeline",
+      "description": "Grants permission to create a media insights pipeline (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaInsightsPipeline.html"
+    },
+    {
+      "name": "CreateMediaInsightsPipelineConfiguration",
+      "methodName": "toCreateMediaInsightsPipelineConfiguration",
+      "description": "Grants permission to create a media insights pipeline configuration (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaInsightsPipelineConfiguration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMediaLiveConnectorPipeline",
+      "methodName": "toCreateMediaLiveConnectorPipeline",
+      "description": "Grants permission to create a media live connector pipeline (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaLiveConnectorPipeline.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMediaPipelineKinesisVideoStreamPool",
+      "methodName": "toCreateMediaPipelineKinesisVideoStreamPool",
+      "description": "Grants permission to create kinesis video stream pool (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaPipelineKinesisVideoStreamPool.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMediaStreamPipeline",
+      "methodName": "toCreateMediaStreamPipeline",
+      "description": "Grants permission to create a media stream pipeline (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaStreamPipeline.html"
+    },
+    {
+      "name": "CreateMeeting",
+      "methodName": "toCreateMeeting",
+      "description": "Grants permission to create a new meeting in the specified media Region, with no initial attendees (tag-based access controls are only supported on meetings-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateMeeting.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMeetingDialOut",
+      "methodName": "toCreateMeetingDialOut",
+      "description": "Grants permission to call a phone number to join the specified Amazon Chime SDK meeting",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateMeetingDialOut.html"
+    },
+    {
+      "name": "CreateMeetingWithAttendees",
+      "methodName": "toCreateMeetingWithAttendees",
+      "description": "Grants permission to create a new meeting in the specified media Region, with a set of attendees (tag-based access controls are only supported on meetings-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateMeetingWithAttendees.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreatePhoneNumberOrder",
+      "methodName": "toCreatePhoneNumberOrder",
+      "description": "Grants permission to create a phone number order with the Carriers",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreatePhoneNumberOrder.html"
+    },
+    {
+      "name": "CreateProxySession",
+      "methodName": "toCreateProxySession",
+      "description": "Grants permission to create a proxy session for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateProxySession.html"
+    },
+    {
+      "name": "CreateRoom",
+      "methodName": "toCreateRoom",
+      "description": "Grants permission to create a room",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateRoom.html"
+    },
+    {
+      "name": "CreateRoomMembership",
+      "methodName": "toCreateRoomMembership",
+      "description": "Grants permission to add a room member",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateRoomMembership.html"
+    },
+    {
+      "name": "CreateSipMediaApplication",
+      "methodName": "toCreateSipMediaApplication",
+      "description": "Grants permission to create an Amazon Chime SIP media application in the AWS account (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateSipMediaApplication.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateSipMediaApplicationCall",
+      "methodName": "toCreateSipMediaApplicationCall",
+      "description": "Grants permission to create outbound call for Amazon Chime SIP media application under the administrator's AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateSipMediaApplicationCall.html"
+    },
+    {
+      "name": "CreateSipRule",
+      "methodName": "toCreateSipRule",
+      "description": "Grants permission to create an Amazon Chime SIP rule under the administrator's AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateSipRule.html"
+    },
+    {
+      "name": "CreateUser",
+      "methodName": "toCreateUser",
+      "description": "Grants permission to create a user under the specified Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateUser.html"
+    },
+    {
+      "name": "CreateVoiceConnector",
+      "methodName": "toCreateVoiceConnector",
+      "description": "Grants permission to create a Voice Connector in the AWS account (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateVoiceConnectorGroup",
+      "methodName": "toCreateVoiceConnectorGroup",
+      "description": "Grants permission to create a Amazon Chime Voice Connector Group under the administrator's AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateVoiceConnectorGroup.html"
+    },
+    {
+      "name": "CreateVoiceProfile",
+      "methodName": "toCreateVoiceProfile",
+      "description": "Grants permission to create a voice profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceProfile.html"
+    },
+    {
+      "name": "CreateVoiceProfileDomain",
+      "methodName": "toCreateVoiceProfileDomain",
+      "description": "Grants permission to create a voice profile domain (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceProfileDomain.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteAccount",
+      "methodName": "toDeleteAccount",
+      "description": "Grants permission to delete the specified Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteAccount.html"
+    },
+    {
+      "name": "DeleteAccountOpenIdConfig",
+      "methodName": "toDeleteAccountOpenIdConfig",
+      "description": "Grants permission to delete the OpenIdConfig attributes from your Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html"
+    },
+    {
+      "name": "DeleteApiKey",
+      "methodName": "toDeleteApiKey",
+      "description": "Grants permission to delete the specified SCIM access key associated with your Amazon Chime account and Okta configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html"
+    },
+    {
+      "name": "DeleteAppInstance",
+      "methodName": "toDeleteAppInstance",
+      "description": "Grants permission to delete an AppInstance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstance.html"
+    },
+    {
+      "name": "DeleteAppInstanceAdmin",
+      "methodName": "toDeleteAppInstanceAdmin",
+      "description": "Grants permission to demote an AppInstanceAdmin to a user or bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceAdmin.html"
+    },
+    {
+      "name": "DeleteAppInstanceBot",
+      "methodName": "toDeleteAppInstanceBot",
+      "description": "Grants permission to delete an AppInstanceBot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceBot.html"
+    },
+    {
+      "name": "DeleteAppInstanceStreamingConfigurations",
+      "methodName": "toDeleteAppInstanceStreamingConfigurations",
+      "description": "Grants permission to disable data streaming for the app instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_DeleteAppInstanceStreamingConfigurations.html"
+    },
+    {
+      "name": "DeleteAppInstanceUser",
+      "methodName": "toDeleteAppInstanceUser",
+      "description": "Grants permission to delete an AppInstanceUser",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceUser.html"
+    },
+    {
+      "name": "DeleteAttendee",
+      "methodName": "toDeleteAttendee",
+      "description": "Grants permission to delete the specified attendee from an Amazon Chime SDK meeting",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteAttendee.html"
+    },
+    {
+      "name": "DeleteCDRBucket",
+      "methodName": "toDeleteCDRBucket",
+      "description": "Grants permission to delete a Call Detail Record S3 bucket from your Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "DeleteChannel",
+      "methodName": "toDeleteChannel",
+      "description": "Grants permission to delete a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannel.html"
+    },
+    {
+      "name": "DeleteChannelBan",
+      "methodName": "toDeleteChannelBan",
+      "description": "Grants permission to remove a user or bot from a channel's ban list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelBan.html"
+    },
+    {
+      "name": "DeleteChannelFlow",
+      "methodName": "toDeleteChannelFlow",
+      "description": "Grants permission to delete a channel flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelFlow.html"
+    },
+    {
+      "name": "DeleteChannelMembership",
+      "methodName": "toDeleteChannelMembership",
+      "description": "Grants permission to remove a member from a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelMembership.html"
+    },
+    {
+      "name": "DeleteChannelMessage",
+      "methodName": "toDeleteChannelMessage",
+      "description": "Grants permission to delete a channel message",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelMessage.html"
+    },
+    {
+      "name": "DeleteChannelModerator",
+      "methodName": "toDeleteChannelModerator",
+      "description": "Grants permission to delete a channel moderator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelModerator.html"
+    },
+    {
+      "name": "DeleteDelegate",
+      "methodName": "toDeleteDelegate",
+      "description": "Grants permission to delete delegated AWS account management from your Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "DeleteDomain",
+      "methodName": "toDeleteDomain",
+      "description": "Grants permission to delete a domain from your Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/claim-domain.html"
+    },
+    {
+      "name": "DeleteEventsConfiguration",
+      "methodName": "toDeleteEventsConfiguration",
+      "description": "Grants permission to delete an events configuration for a bot to receive outgoing events",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteEventsConfiguration.html"
+    },
+    {
+      "name": "DeleteGroups",
+      "methodName": "toDeleteGroups",
+      "description": "Grants permission to delete Active Directory or Okta user groups from your Amazon Chime Enterprise account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "DeleteMediaCapturePipeline",
+      "methodName": "toDeleteMediaCapturePipeline",
+      "description": "Grants permission to delete a media capture pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_DeleteMediaCapturePipeline.html"
+    },
+    {
+      "name": "DeleteMediaInsightsPipelineConfiguration",
+      "methodName": "toDeleteMediaInsightsPipelineConfiguration",
+      "description": "Grants permission to delete a media insights pipeline configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_DeleteMediaInsightsPipelineConfiguration.html"
+    },
+    {
+      "name": "DeleteMediaPipeline",
+      "methodName": "toDeleteMediaPipeline",
+      "description": "Grants permission to delete a media pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_DeleteMediaPipeline.html"
+    },
+    {
+      "name": "DeleteMediaPipelineKinesisVideoStreamPool",
+      "methodName": "toDeleteMediaPipelineKinesisVideoStreamPool",
+      "description": "Grants permission to delete kinesis video stream pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_DeleteMediaPipelineKinesisVideoStreamPool.html"
+    },
+    {
+      "name": "DeleteMeeting",
+      "methodName": "toDeleteMeeting",
+      "description": "Grants permission to delete the specified Amazon Chime SDK meeting",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteMeeting.html"
+    },
+    {
+      "name": "DeleteMessagingStreamingConfigurations",
+      "methodName": "toDeleteMessagingStreamingConfigurations",
+      "description": "Grants permission to delete the data streaming configurations of an AppInstance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteMessagingStreamingConfigurations.html"
+    },
+    {
+      "name": "DeletePhoneNumber",
+      "methodName": "toDeletePhoneNumber",
+      "description": "Grants permission to move a phone number to the deletion queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeletePhoneNumber.html"
+    },
+    {
+      "name": "DeleteProxySession",
+      "methodName": "toDeleteProxySession",
+      "description": "Grants permission to delete a proxy session for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteProxySession.html"
+    },
+    {
+      "name": "DeleteRoom",
+      "methodName": "toDeleteRoom",
+      "description": "Grants permission to delete a room",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteRoom.html"
+    },
+    {
+      "name": "DeleteRoomMembership",
+      "methodName": "toDeleteRoomMembership",
+      "description": "Grants permission to remove a room member",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteRoomMembership.html"
+    },
+    {
+      "name": "DeleteSipMediaApplication",
+      "methodName": "toDeleteSipMediaApplication",
+      "description": "Grants permission to delete Amazon Chime SIP media application under the administrator's AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteSipMediaApplication.html"
+    },
+    {
+      "name": "DeleteSipRule",
+      "methodName": "toDeleteSipRule",
+      "description": "Grants permission to delete Amazon Chime SIP rule under the administrator's AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteSipRule.html"
+    },
+    {
+      "name": "DeleteVoiceConnector",
+      "methodName": "toDeleteVoiceConnector",
+      "description": "Grants permission to delete the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnector.html"
+    },
+    {
+      "name": "DeleteVoiceConnectorEmergencyCallingConfiguration",
+      "methodName": "toDeleteVoiceConnectorEmergencyCallingConfiguration",
+      "description": "Grants permission to delete emergency calling configuration for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorEmergencyCallingConfiguration.html"
+    },
+    {
+      "name": "DeleteVoiceConnectorExternalSystemsConfiguration",
+      "methodName": "toDeleteVoiceConnectorExternalSystemsConfiguration",
+      "description": "Grants permission to delete the configuration of the external system that is connected with the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnectorExternalSystemsConfiguration.html"
+    },
+    {
+      "name": "DeleteVoiceConnectorGroup",
+      "methodName": "toDeleteVoiceConnectorGroup",
+      "description": "Grants permission to delete the specified Amazon Chime Voice Connector Group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorGroup.html"
+    },
+    {
+      "name": "DeleteVoiceConnectorOrigination",
+      "methodName": "toDeleteVoiceConnectorOrigination",
+      "description": "Grants permission to delete the origination settings for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorOrigination.html"
+    },
+    {
+      "name": "DeleteVoiceConnectorProxy",
+      "methodName": "toDeleteVoiceConnectorProxy",
+      "description": "Grants permission to delete proxy configuration for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorProxy.html"
+    },
+    {
+      "name": "DeleteVoiceConnectorStreamingConfiguration",
+      "methodName": "toDeleteVoiceConnectorStreamingConfiguration",
+      "description": "Grants permission to delete streaming configuration for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorStreamingConfiguration.html"
+    },
+    {
+      "name": "DeleteVoiceConnectorTermination",
+      "methodName": "toDeleteVoiceConnectorTermination",
+      "description": "Grants permission to delete the termination settings for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorTermination.html"
+    },
+    {
+      "name": "DeleteVoiceConnectorTerminationCredentials",
+      "methodName": "toDeleteVoiceConnectorTerminationCredentials",
+      "description": "Grants permission to delete SIP termination credentials for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorTerminationCredentials.html"
+    },
+    {
+      "name": "DeleteVoiceProfile",
+      "methodName": "toDeleteVoiceProfile",
+      "description": "Grants permission to delete a voice profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceProfile.html"
+    },
+    {
+      "name": "DeleteVoiceProfileDomain",
+      "methodName": "toDeleteVoiceProfileDomain",
+      "description": "Grants permission to delete a voice profile domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceProfileDomain.html"
+    },
+    {
+      "name": "DeregisterAppInstanceUserEndpoint",
+      "methodName": "toDeregisterAppInstanceUserEndpoint",
+      "description": "Grants permission to deregister an endpoint for an app instance user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeregisterAppInstanceUserEndpoint.html"
+    },
+    {
+      "name": "DescribeAppInstance",
+      "methodName": "toDescribeAppInstance",
+      "description": "Grants permission to get the full details of an AppInstance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstance.html"
+    },
+    {
+      "name": "DescribeAppInstanceAdmin",
+      "methodName": "toDescribeAppInstanceAdmin",
+      "description": "Grants permission to get the full details of an AppInstanceAdmin",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstanceAdmin.html"
+    },
+    {
+      "name": "DescribeAppInstanceBot",
+      "methodName": "toDescribeAppInstanceBot",
+      "description": "Grants permission to get the full details of an AppInstanceBot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstanceBot.html"
+    },
+    {
+      "name": "DescribeAppInstanceUser",
+      "methodName": "toDescribeAppInstanceUser",
+      "description": "Grants permission to get the full details of an AppInstanceUser",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstanceUser.html"
+    },
+    {
+      "name": "DescribeAppInstanceUserEndpoint",
+      "methodName": "toDescribeAppInstanceUserEndpoint",
+      "description": "Grants permission to describe an endpoint registered for an app instance user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstanceUserEndpoint.html"
+    },
+    {
+      "name": "DescribeChannel",
+      "methodName": "toDescribeChannel",
+      "description": "Grants permission to get the full details of a channel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannel.html"
+    },
+    {
+      "name": "DescribeChannelBan",
+      "methodName": "toDescribeChannelBan",
+      "description": "Grants permission to get the full details of a channel ban",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelBan.html"
+    },
+    {
+      "name": "DescribeChannelFlow",
+      "methodName": "toDescribeChannelFlow",
+      "description": "Grants permission to get the full details of a channel flow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelFlow.html"
+    },
+    {
+      "name": "DescribeChannelMembership",
+      "methodName": "toDescribeChannelMembership",
+      "description": "Grants permission to get the full details of a channel membership",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelMembership.html"
+    },
+    {
+      "name": "DescribeChannelMembershipForAppInstanceUser",
+      "methodName": "toDescribeChannelMembershipForAppInstanceUser",
+      "description": "Grants permission to get the details of a channel based on the membership of the specified user or bot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelMembershipForAppInstanceUser.html"
+    },
+    {
+      "name": "DescribeChannelModeratedByAppInstanceUser",
+      "methodName": "toDescribeChannelModeratedByAppInstanceUser",
+      "description": "Grants permission to get the full details of a channel moderated by the specified user or bot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelModeratedByAppInstanceUser.html"
+    },
+    {
+      "name": "DescribeChannelModerator",
+      "methodName": "toDescribeChannelModerator",
+      "description": "Grants permission to get the full details of a single ChannelModerator",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelModerator.html"
+    },
+    {
+      "name": "DisassociateChannelFlow",
+      "methodName": "toDisassociateChannelFlow",
+      "description": "Grants permission to disassociate a flow from a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DisassociateChannelFlow.html"
+    },
+    {
+      "name": "DisassociatePhoneNumberFromUser",
+      "methodName": "toDisassociatePhoneNumberFromUser",
+      "description": "Grants permission to disassociate the primary provisioned number from the specified Amazon Chime user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DisassociatePhoneNumberFromUser.html"
+    },
+    {
+      "name": "DisassociatePhoneNumbersFromVoiceConnector",
+      "methodName": "toDisassociatePhoneNumbersFromVoiceConnector",
+      "description": "Grants permission to disassociate multiple phone numbers from the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DisassociatePhoneNumbersFromVoiceConnector.html"
+    },
+    {
+      "name": "DisassociatePhoneNumbersFromVoiceConnectorGroup",
+      "methodName": "toDisassociatePhoneNumbersFromVoiceConnectorGroup",
+      "description": "Grants permission to disassociate multiple phone numbers from the specified Amazon Chime Voice Connector Group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DisassociatePhoneNumbersFromVoiceConnectorGroup.html"
+    },
+    {
+      "name": "DisassociateSigninDelegateGroupsFromAccount",
+      "methodName": "toDisassociateSigninDelegateGroupsFromAccount",
+      "description": "Grants permission to disassociate the specified sign-in delegate groups from the specified Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DisassociateSigninDelegateGroupsFromAccount.html"
+    },
+    {
+      "name": "DisconnectDirectory",
+      "methodName": "toDisconnectDirectory",
+      "description": "Grants permission to disconnect the Active Directory from your Amazon Chime Enterprise account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "GetAccount",
+      "methodName": "toGetAccount",
+      "description": "Grants permission to get details for the specified Amazon Chime account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetAccount.html"
+    },
+    {
+      "name": "GetAccountResource",
+      "methodName": "toGetAccountResource",
+      "description": "Grants permission to get details for the account resource associated with your Amazon Chime account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "GetAccountSettings",
+      "methodName": "toGetAccountSettings",
+      "description": "Grants permission to get account settings for the specified Amazon Chime account ID",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetAccountSettings.html"
+    },
+    {
+      "name": "GetAccountWithOpenIdConfig",
+      "methodName": "toGetAccountWithOpenIdConfig",
+      "description": "Grants permission to get the account details and OpenIdConfig attributes for your Amazon Chime account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html"
+    },
+    {
+      "name": "GetAppInstanceRetentionSettings",
+      "methodName": "toGetAppInstanceRetentionSettings",
+      "description": "Grants permission to get retention settings for an app instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_GetAppInstanceRetentionSettings.html"
+    },
+    {
+      "name": "GetAppInstanceStreamingConfigurations",
+      "methodName": "toGetAppInstanceStreamingConfigurations",
+      "description": "Grants permission to get the streaming configurations for an app instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_GetAppInstanceStreamingConfigurations.html"
+    },
+    {
+      "name": "GetAttendee",
+      "methodName": "toGetAttendee",
+      "description": "Grants permission to get attendee details for a specified meeting ID and attendee ID",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetAttendee.html"
+    },
+    {
+      "name": "GetBot",
+      "methodName": "toGetBot",
+      "description": "Grants permission to retrieve details for the specified bot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetBot.html"
+    },
+    {
+      "name": "GetCDRBucket",
+      "methodName": "toGetCDRBucket",
+      "description": "Grants permission to get details of a Call Detail Record S3 bucket associated with your Amazon Chime account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "GetChannelMembershipPreferences",
+      "methodName": "toGetChannelMembershipPreferences",
+      "description": "Grants permission to get the preferences for a channel membership",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetChannelMembershipPreferences.html"
+    },
+    {
+      "name": "GetChannelMessage",
+      "methodName": "toGetChannelMessage",
+      "description": "Grants permission to get the full details of a channel message",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetChannelMessage.html"
+    },
+    {
+      "name": "GetChannelMessageStatus",
+      "methodName": "toGetChannelMessageStatus",
+      "description": "Grants permission to get the status of a channel message",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetChannelMessageStatus.html"
+    },
+    {
+      "name": "GetDomain",
+      "methodName": "toGetDomain",
+      "description": "Grants permission to get domain details for a domain associated with your Amazon Chime account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/claim-domain.html"
+    },
+    {
+      "name": "GetEventsConfiguration",
+      "methodName": "toGetEventsConfiguration",
+      "description": "Grants permission to retrieve details for an events configuration for a bot to receive outgoing events",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetEventsConfiguration.html"
+    },
+    {
+      "name": "GetGlobalSettings",
+      "methodName": "toGetGlobalSettings",
+      "description": "Grants permission to get global settings related to Amazon Chime for the AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetGlobalSettings.html"
+    },
+    {
+      "name": "GetMediaCapturePipeline",
+      "methodName": "toGetMediaCapturePipeline",
+      "description": "Grants permission to get an existing media capture pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_GetMediaCapturePipeline.html"
+    },
+    {
+      "name": "GetMediaInsightsPipelineConfiguration",
+      "methodName": "toGetMediaInsightsPipelineConfiguration",
+      "description": "Grants permission to get a media insights pipeline configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_GetMediaInsightsPipelineConfiguration.html"
+    },
+    {
+      "name": "GetMediaPipeline",
+      "methodName": "toGetMediaPipeline",
+      "description": "Grants permission to get an existing media pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_GetMediaPipeline.html"
+    },
+    {
+      "name": "GetMediaPipelineKinesisVideoStreamPool",
+      "methodName": "toGetMediaPipelineKinesisVideoStreamPool",
+      "description": "Grants permission to get an existing media pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_GetMediaPipelineKinesisVideoStreamPool.html"
+    },
+    {
+      "name": "GetMeeting",
+      "methodName": "toGetMeeting",
+      "description": "Grants permission to get the meeting record for a specified meeting ID",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetMeeting.html"
+    },
+    {
+      "name": "GetMeetingDetail",
+      "methodName": "toGetMeetingDetail",
+      "description": "Grants permission to get attendee, connection, and other details for a meeting",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "GetMessagingSessionEndpoint",
+      "methodName": "toGetMessagingSessionEndpoint",
+      "description": "Grants permission to get the endpoint for the messaging session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetMessagingSessionEndpoint.html"
+    },
+    {
+      "name": "GetMessagingStreamingConfigurations",
+      "methodName": "toGetMessagingStreamingConfigurations",
+      "description": "Grants permission to get the data streaming configurations of an AppInstance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetMessagingStreamingConfigurations.html"
+    },
+    {
+      "name": "GetPhoneNumber",
+      "methodName": "toGetPhoneNumber",
+      "description": "Grants permission to get details for the specified phone number",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetPhoneNumber.html"
+    },
+    {
+      "name": "GetPhoneNumberOrder",
+      "methodName": "toGetPhoneNumberOrder",
+      "description": "Grants permission to get details for the specified phone number order",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetPhoneNumberOrder.html"
+    },
+    {
+      "name": "GetPhoneNumberSettings",
+      "methodName": "toGetPhoneNumberSettings",
+      "description": "Grants permission to get phone number settings related to Amazon Chime for the AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetPhoneNumberSettings.html"
+    },
+    {
+      "name": "GetProxySession",
+      "methodName": "toGetProxySession",
+      "description": "Grants permission to get details of the specified proxy session for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetProxySession.html"
+    },
+    {
+      "name": "GetRetentionSettings",
+      "methodName": "toGetRetentionSettings",
+      "description": "Grants permission to retrieve the retention settings for the specified Amazon Chime account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetRetentionSettings.html"
+    },
+    {
+      "name": "GetRoom",
+      "methodName": "toGetRoom",
+      "description": "Grants permission to retrieve a room",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetRoom.html"
+    },
+    {
+      "name": "GetSipMediaApplication",
+      "methodName": "toGetSipMediaApplication",
+      "description": "Grants permission to get details of Amazon Chime SIP media application under the administrator's AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetSipMediaApplication.html"
+    },
+    {
+      "name": "GetSipMediaApplicationAlexaSkillConfiguration",
+      "methodName": "toGetSipMediaApplicationAlexaSkillConfiguration",
+      "description": "Grants permission to get Alexa Skill configuration settings for Amazon Chime SIP media application under the administrator's AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetSipMediaApplicationAlexaSkillConfiguration.html"
+    },
+    {
+      "name": "GetSipMediaApplicationLoggingConfiguration",
+      "methodName": "toGetSipMediaApplicationLoggingConfiguration",
+      "description": "Grants permission to get logging configuration settings for Amazon Chime SIP media application under the administrator's AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetSipMediaApplicationLoggingConfiguration.html"
+    },
+    {
+      "name": "GetSipRule",
+      "methodName": "toGetSipRule",
+      "description": "Grants permission to get details of Amazon Chime SIP rule under the administrator's AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetSipRule.html"
+    },
+    {
+      "name": "GetSpeakerSearchTask",
+      "methodName": "toGetSpeakerSearchTask",
+      "description": "Grants permission to get a speaker search task on the specified Amazon Chime resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_GetSpeakerSearchTask.html"
+    },
+    {
+      "name": "GetTelephonyLimits",
+      "methodName": "toGetTelephonyLimits",
+      "description": "Grants permission to get telephony limits for the AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/phone-numbers.html"
+    },
+    {
+      "name": "GetUser",
+      "methodName": "toGetUser",
+      "description": "Grants permission to get details for the specified user ID",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetUser.html"
+    },
+    {
+      "name": "GetUserActivityReportData",
+      "methodName": "toGetUserActivityReportData",
+      "description": "Grants permission to get a summary of user activity on the user details page",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/user-details.html"
+    },
+    {
+      "name": "GetUserByEmail",
+      "methodName": "toGetUserByEmail",
+      "description": "Grants permission to get user details for an Amazon Chime user based on the email address in an Amazon Chime Enterprise or Team account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/user-details.html"
+    },
+    {
+      "name": "GetUserSettings",
+      "methodName": "toGetUserSettings",
+      "description": "Grants permission to get user settings related to the specified Amazon Chime user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetUserSettings.html"
+    },
+    {
+      "name": "GetVoiceConnector",
+      "methodName": "toGetVoiceConnector",
+      "description": "Grants permission to get details for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnector.html"
+    },
+    {
+      "name": "GetVoiceConnectorEmergencyCallingConfiguration",
+      "methodName": "toGetVoiceConnectorEmergencyCallingConfiguration",
+      "description": "Grants permission to get details of the emergency calling configuration for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorEmergencyCallingConfiguration.html"
+    },
+    {
+      "name": "GetVoiceConnectorExternalSystemsConfiguration",
+      "methodName": "toGetVoiceConnectorExternalSystemsConfiguration",
+      "description": "Grants permission to get the configuration of the external system that is connected with the specified Amazon Chime Voice Connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorExternalSystemsConfiguration.html"
+    },
+    {
+      "name": "GetVoiceConnectorGroup",
+      "methodName": "toGetVoiceConnectorGroup",
+      "description": "Grants permission to get details for the specified Amazon Chime Voice Connector Group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorGroup.html"
+    },
+    {
+      "name": "GetVoiceConnectorLoggingConfiguration",
+      "methodName": "toGetVoiceConnectorLoggingConfiguration",
+      "description": "Grants permission to get details of the logging configuration for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorLoggingConfiguration.html"
+    },
+    {
+      "name": "GetVoiceConnectorOrigination",
+      "methodName": "toGetVoiceConnectorOrigination",
+      "description": "Grants permission to get details of the origination settings for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorOrigination.html"
+    },
+    {
+      "name": "GetVoiceConnectorProxy",
+      "methodName": "toGetVoiceConnectorProxy",
+      "description": "Grants permission to get details of the proxy configuration for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorProxy.html"
+    },
+    {
+      "name": "GetVoiceConnectorStreamingConfiguration",
+      "methodName": "toGetVoiceConnectorStreamingConfiguration",
+      "description": "Grants permission to get details of the streaming configuration for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorStreamingConfiguration.html"
+    },
+    {
+      "name": "GetVoiceConnectorTermination",
+      "methodName": "toGetVoiceConnectorTermination",
+      "description": "Grants permission to get details of the termination settings for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorTermination.html"
+    },
+    {
+      "name": "GetVoiceConnectorTerminationHealth",
+      "methodName": "toGetVoiceConnectorTerminationHealth",
+      "description": "Grants permission to get details of the termination health for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorTerminationHealth.html"
+    },
+    {
+      "name": "GetVoiceProfile",
+      "methodName": "toGetVoiceProfile",
+      "description": "Grants permission to get a voice profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceProfile.html"
+    },
+    {
+      "name": "GetVoiceProfileDomain",
+      "methodName": "toGetVoiceProfileDomain",
+      "description": "Grants permission to get a voice profile domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceProfileDomain.html"
+    },
+    {
+      "name": "GetVoiceToneAnalysisTask",
+      "methodName": "toGetVoiceToneAnalysisTask",
+      "description": "Grants permission to get a voice tone analysis task on the specified Amazon Chime resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_GetVoiceToneAnalysisTask.html"
+    },
+    {
+      "name": "InviteDelegate",
+      "methodName": "toInviteDelegate",
+      "description": "Grants permission to send an invitation to accept a request for AWS account delegation for an Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "InviteUsers",
+      "methodName": "toInviteUsers",
+      "description": "Grants permission to invite as many as 50 users to the specified Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_InviteUsers.html"
+    },
+    {
+      "name": "InviteUsersFromProvider",
+      "methodName": "toInviteUsersFromProvider",
+      "description": "Grants permission to invite users from a third party provider to your Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "ListAccountUsageReportData",
+      "methodName": "toListAccountUsageReportData",
+      "description": "Grants permission to list Amazon Chime account usage reporting data",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/view-reports.html"
+    },
+    {
+      "name": "ListAccounts",
+      "methodName": "toListAccounts",
+      "description": "Grants permission to list the Amazon Chime accounts under the administrator's AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListAccounts.html"
+    },
+    {
+      "name": "ListApiKeys",
+      "methodName": "toListApiKeys",
+      "description": "Grants permission to list the SCIM access keys defined for your Amazon Chime account and Okta configuration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html"
+    },
+    {
+      "name": "ListAppInstanceAdmins",
+      "methodName": "toListAppInstanceAdmins",
+      "description": "Grants permission to list administrators in the app instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstanceAdmins.html"
+    },
+    {
+      "name": "ListAppInstanceBots",
+      "methodName": "toListAppInstanceBots",
+      "description": "Grants permission to list all AppInstanceBots created under a single app instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstanceBots.html"
+    },
+    {
+      "name": "ListAppInstanceUserEndpoints",
+      "methodName": "toListAppInstanceUserEndpoints",
+      "description": "Grants permission to list the endpoints registered for an app instance user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstanceUserEndpoints.html"
+    },
+    {
+      "name": "ListAppInstanceUsers",
+      "methodName": "toListAppInstanceUsers",
+      "description": "Grants permission to list all AppInstanceUsers created under a single app instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstanceUsers.html"
+    },
+    {
+      "name": "ListAppInstances",
+      "methodName": "toListAppInstances",
+      "description": "Grants permission to list all Amazon Chime app instances created under a single AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstances.html"
+    },
+    {
+      "name": "ListAttendeeTags",
+      "methodName": "toListAttendeeTags",
+      "description": "Grants permission to list the tags applied to an Amazon Chime SDK attendee resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListAttendeeTags.html"
+    },
+    {
+      "name": "ListAttendees",
+      "methodName": "toListAttendees",
+      "description": "Grants permission to list up to 100 attendees for a specified Amazon Chime SDK meeting",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListAttendees.html"
+    },
+    {
+      "name": "ListAvailableVoiceConnectorRegions",
+      "methodName": "toListAvailableVoiceConnectorRegions",
+      "description": "Grants permission to list the available AWS Regions in which you can create an Amazon Chime SDK Voice Connector",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListBots",
+      "methodName": "toListBots",
+      "description": "Grants permission to list the bots associated with the administrator's Amazon Chime Enterprise account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListBots.html"
+    },
+    {
+      "name": "ListCDRBucket",
+      "methodName": "toListCDRBucket",
+      "description": "Grants permission to list Call Detail Record S3 buckets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "ListCallingRegions",
+      "methodName": "toListCallingRegions",
+      "description": "Grants permission to list the calling regions available for the administrator's AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/phone-numbers.html"
+    },
+    {
+      "name": "ListChannelBans",
+      "methodName": "toListChannelBans",
+      "description": "Grants permission to list all the users and bots banned from a particular channel",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelBans.html"
+    },
+    {
+      "name": "ListChannelFlows",
+      "methodName": "toListChannelFlows",
+      "description": "Grants permission to list all the Channel Flows created under a single Chime AppInstance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelFlows.html"
+    },
+    {
+      "name": "ListChannelMemberships",
+      "methodName": "toListChannelMemberships",
+      "description": "Grants permission to list all channel memberships in a channel",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMemberships.html"
+    },
+    {
+      "name": "ListChannelMembershipsForAppInstanceUser",
+      "methodName": "toListChannelMembershipsForAppInstanceUser",
+      "description": "Grants permission to list all channels that a particular user or bot is a part of",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html"
+    },
+    {
+      "name": "ListChannelMessages",
+      "methodName": "toListChannelMessages",
+      "description": "Grants permission to list all the messages in a channel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMessages.html"
+    },
+    {
+      "name": "ListChannelModerators",
+      "methodName": "toListChannelModerators",
+      "description": "Grants permission to list all the moderators for a channel",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelModerators.html"
+    },
+    {
+      "name": "ListChannels",
+      "methodName": "toListChannels",
+      "description": "Grants permission to list all the Channels created under a single Chime AppInstance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannels.html"
+    },
+    {
+      "name": "ListChannelsAssociatedWithChannelFlow",
+      "methodName": "toListChannelsAssociatedWithChannelFlow",
+      "description": "Grants permission to list all the Channels associated with a single Chime Channel Flow",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelsAssociatedWithChannelFlow.html"
+    },
+    {
+      "name": "ListChannelsModeratedByAppInstanceUser",
+      "methodName": "toListChannelsModeratedByAppInstanceUser",
+      "description": "Grants permission to list all channels moderated by a user or bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelsModeratedByAppInstanceUser.html"
+    },
+    {
+      "name": "ListDelegates",
+      "methodName": "toListDelegates",
+      "description": "Grants permission to list account delegate information associated with your Amazon Chime account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "ListDirectories",
+      "methodName": "toListDirectories",
+      "description": "Grants permission to list active Active Directories hosted in the Directory Service of your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "ListDomains",
+      "methodName": "toListDomains",
+      "description": "Grants permission to list domains associated with your Amazon Chime account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/claim-domain.html"
+    },
+    {
+      "name": "ListGroups",
+      "methodName": "toListGroups",
+      "description": "Grants permission to list Active Directory or Okta user groups associated with your Amazon Chime Enterprise account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "ListMediaCapturePipelines",
+      "methodName": "toListMediaCapturePipelines",
+      "description": "Grants permission to list media capture pipelines",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_ListMediaCapturePipelines.html"
+    },
+    {
+      "name": "ListMediaInsightsPipelineConfigurations",
+      "methodName": "toListMediaInsightsPipelineConfigurations",
+      "description": "Grants permission to list all media insights pipeline configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_ListMediaInsightsPipelineConfigurations.html"
+    },
+    {
+      "name": "ListMediaPipelineKinesisVideoStreamPools",
+      "methodName": "toListMediaPipelineKinesisVideoStreamPools",
+      "description": "Grants permission to list media pipelines",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_ListMediaPipelineKinesisVideoStreamPools.html"
+    },
+    {
+      "name": "ListMediaPipelines",
+      "methodName": "toListMediaPipelines",
+      "description": "Grants permission to list media pipelines",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_ListMediaPipelines.html"
+    },
+    {
+      "name": "ListMeetingEvents",
+      "methodName": "toListMeetingEvents",
+      "description": "Grants permission to list all events that occurred for a specified meeting",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/view-reports.html"
+    },
+    {
+      "name": "ListMeetingTags",
+      "methodName": "toListMeetingTags",
+      "description": "Grants permission to list the tags applied to an Amazon Chime SDK meeting resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListMeetingTags.html"
+    },
+    {
+      "name": "ListMeetings",
+      "methodName": "toListMeetings",
+      "description": "Grants permission to list up to 100 active Amazon Chime SDK meetings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListMeetings.html"
+    },
+    {
+      "name": "ListMeetingsReportData",
+      "methodName": "toListMeetingsReportData",
+      "description": "Grants permission to list meetings ended during the specified date range",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/view-reports.html"
+    },
+    {
+      "name": "ListPhoneNumberOrders",
+      "methodName": "toListPhoneNumberOrders",
+      "description": "Grants permission to list the phone number orders under the administrator's AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListPhoneNumberOrders.html"
+    },
+    {
+      "name": "ListPhoneNumbers",
+      "methodName": "toListPhoneNumbers",
+      "description": "Grants permission to list the phone numbers under the administrator's AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListPhoneNumbers.html"
+    },
+    {
+      "name": "ListProxySessions",
+      "methodName": "toListProxySessions",
+      "description": "Grants permission to list proxy sessions for the specified Amazon Chime Voice Connector",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListProxySessions.html"
+    },
+    {
+      "name": "ListRoomMemberships",
+      "methodName": "toListRoomMemberships",
+      "description": "Grants permission to list all room members",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListRoomMemberships.html"
+    },
+    {
+      "name": "ListRooms",
+      "methodName": "toListRooms",
+      "description": "Grants permission to list rooms",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListRooms.html"
+    },
+    {
+      "name": "ListSipMediaApplications",
+      "methodName": "toListSipMediaApplications",
+      "description": "Grants permission to list all Amazon Chime SIP media applications under the administrator's AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListSipMediaApplications.html"
+    },
+    {
+      "name": "ListSipRules",
+      "methodName": "toListSipRules",
+      "description": "Grants permission to list all Amazon Chime SIP rules under the administrator's AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListSipRules.html"
+    },
+    {
+      "name": "ListSubChannels",
+      "methodName": "toListSubChannels",
+      "description": "Grants permission to list all the SubChannels under a single Channel",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListSubChannels.html"
+    },
+    {
+      "name": "ListSupportedPhoneNumberCountries",
+      "methodName": "toListSupportedPhoneNumberCountries",
+      "description": "Grants permission to list the phone number countries supported by the AWS account",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags applied to an Amazon Chime resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListUsers",
+      "methodName": "toListUsers",
+      "description": "Grants permission to list the users that belong to the specified Amazon Chime account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListUsers.html"
+    },
+    {
+      "name": "ListVoiceConnectorGroups",
+      "methodName": "toListVoiceConnectorGroups",
+      "description": "Grants permission to list the Amazon Chime Voice Connector Groups under the administrator's AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListVoiceConnectorGroups.html"
+    },
+    {
+      "name": "ListVoiceConnectorTerminationCredentials",
+      "methodName": "toListVoiceConnectorTerminationCredentials",
+      "description": "Grants permission to list the SIP termination credentials for the specified Amazon Chime Voice Connector",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListVoiceConnectorTerminationCredentials.html"
+    },
+    {
+      "name": "ListVoiceConnectors",
+      "methodName": "toListVoiceConnectors",
+      "description": "Grants permission to list the Amazon Chime Voice Connectors under the administrator's AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ListVoiceConnectors.html"
+    },
+    {
+      "name": "ListVoiceProfileDomains",
+      "methodName": "toListVoiceProfileDomains",
+      "description": "Grants permission to list voice profile domains",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ListVoiceProfileDomains.html"
+    },
+    {
+      "name": "ListVoiceProfiles",
+      "methodName": "toListVoiceProfiles",
+      "description": "Grants permission to list voice profiles",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ListVoiceProfiles.html"
+    },
+    {
+      "name": "LogoutUser",
+      "methodName": "toLogoutUser",
+      "description": "Grants permission to log out the specified user from all of the devices they are currently logged into",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_LogoutUser.html"
+    },
+    {
+      "name": "PutAppInstanceRetentionSettings",
+      "methodName": "toPutAppInstanceRetentionSettings",
+      "description": "Grants permission to enable data retention for the app instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_PutAppInstanceRetentionSettings.html"
+    },
+    {
+      "name": "PutAppInstanceStreamingConfigurations",
+      "methodName": "toPutAppInstanceStreamingConfigurations",
+      "description": "Grants permission to configure data streaming for the app instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_PutAppInstanceStreamingConfigurations.html"
+    },
+    {
+      "name": "PutAppInstanceUserExpirationSettings",
+      "methodName": "toPutAppInstanceUserExpirationSettings",
+      "description": "Grants permission to put expiration settings for an AppInstanceUser",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_PutAppInstanceUserExpirationSettings.html"
+    },
+    {
+      "name": "PutChannelExpirationSettings",
+      "methodName": "toPutChannelExpirationSettings",
+      "description": "Grants permission to put expiration settings for a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_PutChannelExpirationSettings.html"
+    },
+    {
+      "name": "PutChannelMembershipPreferences",
+      "methodName": "toPutChannelMembershipPreferences",
+      "description": "Grants permission to put the preferences for a channel membership",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_PutChannelMembershipPreferences.html"
+    },
+    {
+      "name": "PutEventsConfiguration",
+      "methodName": "toPutEventsConfiguration",
+      "description": "Grants permission to update details for an events configuration for a bot to receive outgoing events",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_PutEventsConfiguration.html"
+    },
+    {
+      "name": "PutMessagingStreamingConfigurations",
+      "methodName": "toPutMessagingStreamingConfigurations",
+      "description": "Grants permission to put the data streaming configurations of an AppInstance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_PutMessagingStreamingConfigurations.html"
+    },
+    {
+      "name": "PutRetentionSettings",
+      "methodName": "toPutRetentionSettings",
+      "description": "Grants permission to create or update retention settings for the specified Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_PutRetentionSettings.html"
+    },
+    {
+      "name": "PutSipMediaApplicationAlexaSkillConfiguration",
+      "methodName": "toPutSipMediaApplicationAlexaSkillConfiguration",
+      "description": "Grants permission to update Alexa Skill configuration settings for Amazon Chime SIP media application under the administrator's AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutSipMediaApplicationAlexaSkillConfiguration.html"
+    },
+    {
+      "name": "PutSipMediaApplicationLoggingConfiguration",
+      "methodName": "toPutSipMediaApplicationLoggingConfiguration",
+      "description": "Grants permission to update logging configuration settings for Amazon Chime SIP media application under the administrator's AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_PutSipMediaApplicationLoggingConfiguration.html"
+    },
+    {
+      "name": "PutVoiceConnectorEmergencyCallingConfiguration",
+      "methodName": "toPutVoiceConnectorEmergencyCallingConfiguration",
+      "description": "Grants permission to add emergency calling configuration for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorEmergencyCallingConfiguration.html"
+    },
+    {
+      "name": "PutVoiceConnectorExternalSystemsConfiguration",
+      "methodName": "toPutVoiceConnectorExternalSystemsConfiguration",
+      "description": "Grants permission to update the configuration of the external system that is connected with the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutVoiceConnectorExternalSystemsConfiguration.html"
+    },
+    {
+      "name": "PutVoiceConnectorLoggingConfiguration",
+      "methodName": "toPutVoiceConnectorLoggingConfiguration",
+      "description": "Grants permission to add logging configuration for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorLoggingConfiguration.html"
+    },
+    {
+      "name": "PutVoiceConnectorOrigination",
+      "methodName": "toPutVoiceConnectorOrigination",
+      "description": "Grants permission to update the origination settings for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorOrigination.html"
+    },
+    {
+      "name": "PutVoiceConnectorProxy",
+      "methodName": "toPutVoiceConnectorProxy",
+      "description": "Grants permission to add proxy configuration for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorProxy.html"
+    },
+    {
+      "name": "PutVoiceConnectorStreamingConfiguration",
+      "methodName": "toPutVoiceConnectorStreamingConfiguration",
+      "description": "Grants permission to add streaming configuration for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorStreamingConfiguration.html"
+    },
+    {
+      "name": "PutVoiceConnectorTermination",
+      "methodName": "toPutVoiceConnectorTermination",
+      "description": "Grants permission to update the termination settings for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorTermination.html"
+    },
+    {
+      "name": "PutVoiceConnectorTerminationCredentials",
+      "methodName": "toPutVoiceConnectorTerminationCredentials",
+      "description": "Grants permission to add SIP termination credentials for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorTerminationCredentials.html"
+    },
+    {
+      "name": "RedactChannelMessage",
+      "methodName": "toRedactChannelMessage",
+      "description": "Grants permission to redact message content",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_RedactChannelMessage.html"
+    },
+    {
+      "name": "RedactConversationMessage",
+      "methodName": "toRedactConversationMessage",
+      "description": "Grants permission to redact the specified Chime conversation Message",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_RedactConversationMessage.html"
+    },
+    {
+      "name": "RedactRoomMessage",
+      "methodName": "toRedactRoomMessage",
+      "description": "Grants permission to redacts the specified Chime room Message",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_RedactRoomMessage.html"
+    },
+    {
+      "name": "RegenerateSecurityToken",
+      "methodName": "toRegenerateSecurityToken",
+      "description": "Grants permission to regenerate the security token for the specified bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_RegenerateSecurityToken.html"
+    },
+    {
+      "name": "RegisterAppInstanceUserEndpoint",
+      "methodName": "toRegisterAppInstanceUserEndpoint",
+      "description": "Grants permission to register an endpoint for an app instance user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_RegisterAppInstanceUserEndpoint.html"
+    },
+    {
+      "name": "RenameAccount",
+      "methodName": "toRenameAccount",
+      "description": "Grants permission to modify the account name for your Amazon Chime Enterprise or Team account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/rename-account.html"
+    },
+    {
+      "name": "RenewDelegate",
+      "methodName": "toRenewDelegate",
+      "description": "Grants permission to renew the delegation request associated with an Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "ResetAccountResource",
+      "methodName": "toResetAccountResource",
+      "description": "Grants permission to reset the account resource in your Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "ResetPersonalPIN",
+      "methodName": "toResetPersonalPIN",
+      "description": "Grants permission to reset the personal meeting PIN for the specified user on an Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ResetPersonalPIN.html"
+    },
+    {
+      "name": "RestorePhoneNumber",
+      "methodName": "toRestorePhoneNumber",
+      "description": "Grants permission to restore the specified phone number from the deltion queue back to the phone number inventory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_RestorePhoneNumber.html"
+    },
+    {
+      "name": "RetrieveDataExports",
+      "methodName": "toRetrieveDataExports",
+      "description": "Grants permission to download the file containing links to all user attachments returned as part of the \"Request attachments\" action",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/request-attachments.html"
+    },
+    {
+      "name": "SearchAvailablePhoneNumbers",
+      "methodName": "toSearchAvailablePhoneNumbers",
+      "description": "Grants permission to search phone numbers that can be ordered from the carrier",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_SearchAvailablePhoneNumbers.html"
+    },
+    {
+      "name": "SearchChannels",
+      "methodName": "toSearchChannels",
+      "description": "Grants permission to search channels that an AppInstanceUser belongs to, or search channels across the AppInstance for an AppInstaceAdmin",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_SearchChannels.html"
+    },
+    {
+      "name": "SendChannelMessage",
+      "methodName": "toSendChannelMessage",
+      "description": "Grants permission to send a message to a particular channel that the member is a part of",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_SendChannelMessage.html"
+    },
+    {
+      "name": "StartDataExport",
+      "methodName": "toStartDataExport",
+      "description": "Grants permission to submit the \"Request attachments\" request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/request-attachments.html"
+    },
+    {
+      "name": "StartMeetingTranscription",
+      "methodName": "toStartMeetingTranscription",
+      "description": "Grants permission to start transcription for a meeting",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_StartMeetingTranscription.html"
+    },
+    {
+      "name": "StartSpeakerSearchTask",
+      "methodName": "toStartSpeakerSearchTask",
+      "description": "Grants permission to start a speaker search task on the specified Amazon Chime resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_StartSpeakerSearchTask.html"
+    },
+    {
+      "name": "StartVoiceToneAnalysisTask",
+      "methodName": "toStartVoiceToneAnalysisTask",
+      "description": "Grants permission to start a voice tone analysis task on the specified Amazon Chime resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_StartVoiceToneAnalysisTask.html"
+    },
+    {
+      "name": "StopMeetingTranscription",
+      "methodName": "toStopMeetingTranscription",
+      "description": "Grants permission to stop transcription for a meeting",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_StopMeetingTranscription.html"
+    },
+    {
+      "name": "StopSpeakerSearchTask",
+      "methodName": "toStopSpeakerSearchTask",
+      "description": "Grants permission to stop a speaker search task on the specified Amazon Chime resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_StopSpeakerSearchTask.html"
+    },
+    {
+      "name": "StopVoiceToneAnalysisTask",
+      "methodName": "toStopVoiceToneAnalysisTask",
+      "description": "Grants permission to stop a voice tone analysis task on the specified Amazon Chime resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_StopVoiceToneAnalysisTask.html"
+    },
+    {
+      "name": "SubmitSupportRequest",
+      "methodName": "toSubmitSupportRequest",
+      "description": "Grants permission to submit a customer service support request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/chime-getting-admin-support.html"
+    },
+    {
+      "name": "SuspendUsers",
+      "methodName": "toSuspendUsers",
+      "description": "Grants permission to suspend users from an Amazon Chime Enterprise account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/manage-access.html"
+    },
+    {
+      "name": "TagAttendee",
+      "methodName": "toTagAttendee",
+      "description": "Grants permission to apply the specified tags to the specified Amazon Chime SDK attendee",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_TagAttendee.html"
+    },
+    {
+      "name": "TagMeeting",
+      "methodName": "toTagMeeting",
+      "description": "Grants permission to apply the specified tags to the specified Amazon Chime SDK meeting",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_TagMeeting.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to apply the specified tags to the specified resource (tag-based access controls are only supported on *-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UnauthorizeDirectory",
+      "methodName": "toUnauthorizeDirectory",
+      "description": "Grants permission to unauthorize an Active Directory from your Amazon Chime Enterprise account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "UntagAttendee",
+      "methodName": "toUntagAttendee",
+      "description": "Grants permission to untag the specified tags from the specified Amazon Chime SDK attendee",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UntagAttendee.html"
+    },
+    {
+      "name": "UntagMeeting",
+      "methodName": "toUntagMeeting",
+      "description": "Grants permission to untag the specified tags from the specified Amazon Chime SDK meeting",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UntagMeeting.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag the specified tags from the specified resource (tag-based access controls are only supported on *-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAccount",
+      "methodName": "toUpdateAccount",
+      "description": "Grants permission to update account details for the specified Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateAccount.html"
+    },
+    {
+      "name": "UpdateAccountOpenIdConfig",
+      "methodName": "toUpdateAccountOpenIdConfig",
+      "description": "Grants permission to update the OpenIdConfig attributes for your Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html"
+    },
+    {
+      "name": "UpdateAccountResource",
+      "methodName": "toUpdateAccountResource",
+      "description": "Grants permission to update the account resource in your Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "UpdateAccountSettings",
+      "methodName": "toUpdateAccountSettings",
+      "description": "Grants permission to update the settings for the specified Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateAccountSettings.html"
+    },
+    {
+      "name": "UpdateAppInstance",
+      "methodName": "toUpdateAppInstance",
+      "description": "Grants permission to update AppInstance metadata",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_UpdateAppInstance.html"
+    },
+    {
+      "name": "UpdateAppInstanceBot",
+      "methodName": "toUpdateAppInstanceBot",
+      "description": "Grants permission to update the details for an AppInstanceBot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_UpdateAppInstanceBot.html"
+    },
+    {
+      "name": "UpdateAppInstanceUser",
+      "methodName": "toUpdateAppInstanceUser",
+      "description": "Grants permission to update the details for an AppInstanceUser",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_UpdateAppInstanceUser.html"
+    },
+    {
+      "name": "UpdateAppInstanceUserEndpoint",
+      "methodName": "toUpdateAppInstanceUserEndpoint",
+      "description": "Grants permission to update an endpoint registered for an app instance user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_UpdateAppInstanceUserEndpoint.html"
+    },
+    {
+      "name": "UpdateAttendeeCapabilities",
+      "methodName": "toUpdateAttendeeCapabilities",
+      "description": "Grants permission to the capabilties that you want to update",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_UpdateAttendeeCapabilities.html"
+    },
+    {
+      "name": "UpdateBot",
+      "methodName": "toUpdateBot",
+      "description": "Grants permission to update the status of the specified bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateBot.html"
+    },
+    {
+      "name": "UpdateCDRSettings",
+      "methodName": "toUpdateCDRSettings",
+      "description": "Grants permission to update your Call Detail Record S3 bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "UpdateChannel",
+      "methodName": "toUpdateChannel",
+      "description": "Grants permission to update a channel's attributes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannel.html"
+    },
+    {
+      "name": "UpdateChannelFlow",
+      "methodName": "toUpdateChannelFlow",
+      "description": "Grants permission to update a channel flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannelFlow.html"
+    },
+    {
+      "name": "UpdateChannelMessage",
+      "methodName": "toUpdateChannelMessage",
+      "description": "Grants permission to update the content of a message",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannelMessage.html"
+    },
+    {
+      "name": "UpdateChannelReadMarker",
+      "methodName": "toUpdateChannelReadMarker",
+      "description": "Grants permission to set the timestamp to the point when a user last read messages in a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannelReadMarker.html"
+    },
+    {
+      "name": "UpdateGlobalSettings",
+      "methodName": "toUpdateGlobalSettings",
+      "description": "Grants permission to update the global settings related to Amazon Chime for the AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateGlobalSettings.html"
+    },
+    {
+      "name": "UpdateMediaInsightsPipelineConfiguration",
+      "methodName": "toUpdateMediaInsightsPipelineConfiguration",
+      "description": "Grants permission to update the status of a media insights pipeline configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_UpdateMediaInsightsPipelineConfiguration.html"
+    },
+    {
+      "name": "UpdateMediaInsightsPipelineStatus",
+      "methodName": "toUpdateMediaInsightsPipelineStatus",
+      "description": "Grants permission to update the status of a media insights pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_UpdateMediaInsightsPipelineStatus.html"
+    },
+    {
+      "name": "UpdateMediaPipelineKinesisVideoStreamPool",
+      "methodName": "toUpdateMediaPipelineKinesisVideoStreamPool",
+      "description": "Grants permission to update kinesis video stream pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_UpdateMediaPipelineKinesisVideoStreamPool.html"
+    },
+    {
+      "name": "UpdatePhoneNumber",
+      "methodName": "toUpdatePhoneNumber",
+      "description": "Grants permission to update phone number details for the specified phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdatePhoneNumber.html"
+    },
+    {
+      "name": "UpdatePhoneNumberSettings",
+      "methodName": "toUpdatePhoneNumberSettings",
+      "description": "Grants permission to update phone number settings related to Amazon Chime for the AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdatePhoneNumberSettings.html"
+    },
+    {
+      "name": "UpdateProxySession",
+      "methodName": "toUpdateProxySession",
+      "description": "Grants permission to update a proxy session for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateProxySession.html"
+    },
+    {
+      "name": "UpdateRoom",
+      "methodName": "toUpdateRoom",
+      "description": "Grants permission to update a room",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateRoom.html"
+    },
+    {
+      "name": "UpdateRoomMembership",
+      "methodName": "toUpdateRoomMembership",
+      "description": "Grants permission to update room membership role",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateRoomMembership.html"
+    },
+    {
+      "name": "UpdateSipMediaApplication",
+      "methodName": "toUpdateSipMediaApplication",
+      "description": "Grants permission to update properties of Amazon Chime SIP media application under the administrator's AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateSipMediaApplication.html"
+    },
+    {
+      "name": "UpdateSipMediaApplicationCall",
+      "methodName": "toUpdateSipMediaApplicationCall",
+      "description": "Grants permission to update an Amazon Chime SIP media application call under the administrator's AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateSipMediaApplicationCall.html"
+    },
+    {
+      "name": "UpdateSipRule",
+      "methodName": "toUpdateSipRule",
+      "description": "Grants permission to update properties of Amazon Chime SIP rule under the administrator's AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateSipRule.html"
+    },
+    {
+      "name": "UpdateSupportedLicenses",
+      "methodName": "toUpdateSupportedLicenses",
+      "description": "Grants permission to update the supported license tiers available for users in your Amazon Chime account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/manage-access.html"
+    },
+    {
+      "name": "UpdateUser",
+      "methodName": "toUpdateUser",
+      "description": "Grants permission to update user details for a specified user ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateUser.html"
+    },
+    {
+      "name": "UpdateUserLicenses",
+      "methodName": "toUpdateUserLicenses",
+      "description": "Grants permission to update the licenses for your Amazon Chime users",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/manage-access.html"
+    },
+    {
+      "name": "UpdateUserSettings",
+      "methodName": "toUpdateUserSettings",
+      "description": "Grants permission to update user settings related to the specified Amazon Chime user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateUserSettings.html"
+    },
+    {
+      "name": "UpdateVoiceConnector",
+      "methodName": "toUpdateVoiceConnector",
+      "description": "Grants permission to update Amazon Chime Voice Connector details for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateVoiceConnector.html"
+    },
+    {
+      "name": "UpdateVoiceConnectorGroup",
+      "methodName": "toUpdateVoiceConnectorGroup",
+      "description": "Grants permission to update Amazon Chime Voice Connector Group details for the specified Amazon Chime Voice Connector Group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateVoiceConnectorGroup.html"
+    },
+    {
+      "name": "UpdateVoiceProfile",
+      "methodName": "toUpdateVoiceProfile",
+      "description": "Grants permission to update a voice profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_UpdateVoiceProfile.html"
+    },
+    {
+      "name": "UpdateVoiceProfileDomain",
+      "methodName": "toUpdateVoiceProfileDomain",
+      "description": "Grants permission to update a voice profile domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_UpdateVoiceProfileDomain.html"
+    },
+    {
+      "name": "ValidateAccountResource",
+      "methodName": "toValidateAccountResource",
+      "description": "Grants permission to validate the account resource in your Amazon Chime account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html"
+    },
+    {
+      "name": "ValidateE911Address",
+      "methodName": "toValidateE911Address",
+      "description": "Grants permission to validate an address to be used for 911 calls made with Amazon Chime Voice Connectors",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_ValidateE911Address.html"
+    },
+    {
+      "name": "AssociateVoiceConnectorConnect",
+      "methodName": "toAssociateVoiceConnectorConnect",
+      "description": "Grants permission to associate the specified Amazon Connect instance with an Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions"
+    },
+    {
+      "name": "CreateConnectAnalyticsConnector",
+      "methodName": "toCreateConnectAnalyticsConnector",
+      "description": "Grants permission to create an Amazon Connect Analytics Connector in the AWS account (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateConnectCallTransferConnector",
+      "methodName": "toCreateConnectCallTransferConnector",
+      "description": "Grants permission to create an Amazon Connect Call Transfer Connector in the AWS account (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DisassociateVoiceConnectorConnect",
+      "methodName": "toDisassociateVoiceConnectorConnect",
+      "description": "Grants permission to disassociate the Amazon Connect instance from the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions"
+    }
+  ],
+  "resources": [
+    {
+      "name": "app-instance",
+      "methodName": "onAppInstance",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_AppInstance.html",
+      "arn": "arn:${Partition}:chime:${Region}:${AccountId}:app-instance/${AppInstanceId}",
+      "placeholders": [
+        {
+          "placeholder": "AppInstanceId",
+          "name": "appInstanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "app-instance-bot",
+      "methodName": "onAppInstanceBot",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_AppInstanceBot.html",
+      "arn": "arn:${Partition}:chime:${Region}:${AccountId}:app-instance/${AppInstanceId}/bot/${AppInstanceBotId}",
+      "placeholders": [
+        {
+          "placeholder": "AppInstanceId",
+          "name": "appInstanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AppInstanceBotId",
+          "name": "appInstanceBotId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "app-instance-user",
+      "methodName": "onAppInstanceUser",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_AppInstanceUser.html",
+      "arn": "arn:${Partition}:chime:${Region}:${AccountId}:app-instance/${AppInstanceId}/user/${AppInstanceUserId}",
+      "placeholders": [
+        {
+          "placeholder": "AppInstanceId",
+          "name": "appInstanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AppInstanceUserId",
+          "name": "appInstanceUserId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "channel",
+      "methodName": "onChannel",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_Channel.html",
+      "arn": "arn:${Partition}:chime:${Region}:${AccountId}:app-instance/${AppInstanceId}/channel/${ChannelId}",
+      "placeholders": [
+        {
+          "placeholder": "AppInstanceId",
+          "name": "appInstanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ChannelId",
+          "name": "channelId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "channel-flow",
+      "methodName": "onChannelFlow",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ChannelFlow.html",
+      "arn": "arn:${Partition}:chime:${Region}:${AccountId}:app-instance/${AppInstanceId}/channel-flow/${ChannelFlowId}",
+      "placeholders": [
+        {
+          "placeholder": "AppInstanceId",
+          "name": "appInstanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ChannelFlowId",
+          "name": "channelFlowId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "media-insights-pipeline-configuration",
+      "methodName": "onMediaInsightsPipelineConfiguration",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_MediaInsightsPipelineConfiguration.html",
+      "arn": "arn:${Partition}:chime:${Region}:${AccountId}:media-insights-pipeline-configuration/${ConfigurationName}",
+      "placeholders": [
+        {
+          "placeholder": "ConfigurationName",
+          "name": "configurationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "media-pipeline",
+      "methodName": "onMediaPipeline",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_MediaPipeline.html",
+      "arn": "arn:${Partition}:chime:${Region}:${AccountId}:media-pipeline/${MediaPipelineId}",
+      "placeholders": [
+        {
+          "placeholder": "MediaPipelineId",
+          "name": "mediaPipelineId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "media-pipeline-kinesis-video-stream-pool",
+      "methodName": "onMediaPipelineKinesisVideoStreamPool",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_KinesisVideoStreamPoolConfiguration.html",
+      "arn": "arn:${Partition}:chime:${Region}:${AccountId}:media-pipeline-kinesis-video-stream-pool/${PoolName}",
+      "placeholders": [
+        {
+          "placeholder": "PoolName",
+          "name": "poolName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "meeting",
+      "methodName": "onMeeting",
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_Meeting.html",
+      "arn": "arn:${Partition}:chime:${Region}:${AccountId}:meeting/${MeetingId}",
+      "placeholders": [
+        {
+          "placeholder": "MeetingId",
+          "name": "meetingId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "sip-media-application",
+      "methodName": "onSipMediaApplication",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_SipMediaApplication.html",
+      "arn": "arn:${Partition}:chime:${Region}:${AccountId}:sma/${SipMediaApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "SipMediaApplicationId",
+          "name": "sipMediaApplicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "voice-connector",
+      "methodName": "onVoiceConnector",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_VoiceConnector.html",
+      "arn": "arn:${Partition}:chime:${Region}:${AccountId}:vc/${VoiceConnectorId}",
+      "placeholders": [
+        {
+          "placeholder": "VoiceConnectorId",
+          "name": "voiceConnectorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "voice-profile",
+      "methodName": "onVoiceProfile",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceProfile.html",
+      "arn": "arn:${Partition}:chime:${Region}:${AccountId}:voice-profile/${VoiceProfileId}",
+      "placeholders": [
+        {
+          "placeholder": "VoiceProfileId",
+          "name": "voiceProfileId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "voice-profile-domain",
+      "methodName": "onVoiceProfileDomain",
+      "url": "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceProfileDomain.html",
+      "arn": "arn:${Partition}:chime:${Region}:${AccountId}:voice-profile-domain/${VoiceProfileDomainId}",
+      "placeholders": [
+        {
+          "placeholder": "VoiceProfileDomainId",
+          "name": "voiceProfileDomainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag's key and value in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAppInstance",
+        "toCreateAppInstanceBot",
+        "toCreateAppInstanceUser",
+        "toCreateChannel",
+        "toCreateChannelFlow",
+        "toCreateMediaCapturePipeline",
+        "toCreateMediaConcatenationPipeline",
+        "toCreateMediaInsightsPipeline",
+        "toCreateMediaInsightsPipelineConfiguration",
+        "toCreateMediaLiveConnectorPipeline",
+        "toCreateMediaPipelineKinesisVideoStreamPool",
+        "toCreateMediaStreamPipeline",
+        "toCreateMeeting",
+        "toCreateMeetingWithAttendees",
+        "toCreateSipMediaApplication",
+        "toCreateVoiceConnector",
+        "toCreateVoiceProfileDomain",
+        "toTagMeeting",
+        "toTagResource",
+        "toCreateConnectAnalyticsConnector",
+        "toCreateConnectCallTransferConnector"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateChannelFlow",
+        "toAssociatePhoneNumbersWithVoiceConnector",
+        "toBatchCreateAttendee",
+        "toBatchCreateChannelMembership",
+        "toBatchUpdateAttendeeCapabilitiesExcept",
+        "toChannelFlowCallback",
+        "toConnect",
+        "toCreateAppInstanceAdmin",
+        "toCreateAttendee",
+        "toCreateChannel",
+        "toCreateChannelBan",
+        "toCreateChannelFlow",
+        "toCreateChannelMembership",
+        "toCreateChannelModerator",
+        "toCreateMediaInsightsPipeline",
+        "toCreateMediaStreamPipeline",
+        "toCreateMeetingDialOut",
+        "toCreateProxySession",
+        "toCreateSipMediaApplicationCall",
+        "toCreateSipRule",
+        "toCreateVoiceConnectorGroup",
+        "toDeleteAppInstance",
+        "toDeleteAppInstanceAdmin",
+        "toDeleteAppInstanceBot",
+        "toDeleteAppInstanceStreamingConfigurations",
+        "toDeleteAppInstanceUser",
+        "toDeleteAttendee",
+        "toDeleteChannel",
+        "toDeleteChannelBan",
+        "toDeleteChannelFlow",
+        "toDeleteChannelMembership",
+        "toDeleteChannelMessage",
+        "toDeleteChannelModerator",
+        "toDeleteMediaCapturePipeline",
+        "toDeleteMediaInsightsPipelineConfiguration",
+        "toDeleteMediaPipeline",
+        "toDeleteMediaPipelineKinesisVideoStreamPool",
+        "toDeleteMeeting",
+        "toDeleteMessagingStreamingConfigurations",
+        "toDeleteProxySession",
+        "toDeleteSipMediaApplication",
+        "toDeleteVoiceConnector",
+        "toDeleteVoiceConnectorEmergencyCallingConfiguration",
+        "toDeleteVoiceConnectorExternalSystemsConfiguration",
+        "toDeleteVoiceConnectorOrigination",
+        "toDeleteVoiceConnectorProxy",
+        "toDeleteVoiceConnectorStreamingConfiguration",
+        "toDeleteVoiceConnectorTermination",
+        "toDeleteVoiceConnectorTerminationCredentials",
+        "toDeleteVoiceProfileDomain",
+        "toDeregisterAppInstanceUserEndpoint",
+        "toDescribeAppInstance",
+        "toDescribeAppInstanceAdmin",
+        "toDescribeAppInstanceBot",
+        "toDescribeAppInstanceUser",
+        "toDescribeAppInstanceUserEndpoint",
+        "toDescribeChannel",
+        "toDescribeChannelBan",
+        "toDescribeChannelFlow",
+        "toDescribeChannelMembership",
+        "toDescribeChannelMembershipForAppInstanceUser",
+        "toDescribeChannelModeratedByAppInstanceUser",
+        "toDescribeChannelModerator",
+        "toDisassociateChannelFlow",
+        "toDisassociatePhoneNumbersFromVoiceConnector",
+        "toGetAppInstanceRetentionSettings",
+        "toGetAppInstanceStreamingConfigurations",
+        "toGetAttendee",
+        "toGetChannelMembershipPreferences",
+        "toGetChannelMessage",
+        "toGetChannelMessageStatus",
+        "toGetMediaCapturePipeline",
+        "toGetMediaInsightsPipelineConfiguration",
+        "toGetMediaPipeline",
+        "toGetMediaPipelineKinesisVideoStreamPool",
+        "toGetMeeting",
+        "toGetMessagingStreamingConfigurations",
+        "toGetProxySession",
+        "toGetSipMediaApplication",
+        "toGetSipMediaApplicationAlexaSkillConfiguration",
+        "toGetSipMediaApplicationLoggingConfiguration",
+        "toGetSpeakerSearchTask",
+        "toGetVoiceConnector",
+        "toGetVoiceConnectorEmergencyCallingConfiguration",
+        "toGetVoiceConnectorExternalSystemsConfiguration",
+        "toGetVoiceConnectorLoggingConfiguration",
+        "toGetVoiceConnectorOrigination",
+        "toGetVoiceConnectorProxy",
+        "toGetVoiceConnectorStreamingConfiguration",
+        "toGetVoiceConnectorTermination",
+        "toGetVoiceConnectorTerminationHealth",
+        "toGetVoiceProfileDomain",
+        "toGetVoiceToneAnalysisTask",
+        "toListAppInstanceAdmins",
+        "toListAppInstanceBots",
+        "toListAppInstanceUserEndpoints",
+        "toListAppInstanceUsers",
+        "toListAppInstances",
+        "toListAttendeeTags",
+        "toListAttendees",
+        "toListChannelBans",
+        "toListChannelFlows",
+        "toListChannelMemberships",
+        "toListChannelMembershipsForAppInstanceUser",
+        "toListChannelMessages",
+        "toListChannelModerators",
+        "toListChannels",
+        "toListChannelsAssociatedWithChannelFlow",
+        "toListChannelsModeratedByAppInstanceUser",
+        "toListMeetingTags",
+        "toListProxySessions",
+        "toListSipRules",
+        "toListSubChannels",
+        "toListTagsForResource",
+        "toListVoiceConnectorTerminationCredentials",
+        "toListVoiceProfiles",
+        "toPutAppInstanceRetentionSettings",
+        "toPutAppInstanceStreamingConfigurations",
+        "toPutAppInstanceUserExpirationSettings",
+        "toPutChannelExpirationSettings",
+        "toPutChannelMembershipPreferences",
+        "toPutMessagingStreamingConfigurations",
+        "toPutSipMediaApplicationAlexaSkillConfiguration",
+        "toPutSipMediaApplicationLoggingConfiguration",
+        "toPutVoiceConnectorEmergencyCallingConfiguration",
+        "toPutVoiceConnectorExternalSystemsConfiguration",
+        "toPutVoiceConnectorLoggingConfiguration",
+        "toPutVoiceConnectorOrigination",
+        "toPutVoiceConnectorProxy",
+        "toPutVoiceConnectorStreamingConfiguration",
+        "toPutVoiceConnectorTermination",
+        "toPutVoiceConnectorTerminationCredentials",
+        "toRedactChannelMessage",
+        "toRegisterAppInstanceUserEndpoint",
+        "toSearchChannels",
+        "toSendChannelMessage",
+        "toStartSpeakerSearchTask",
+        "toStartVoiceToneAnalysisTask",
+        "toStopSpeakerSearchTask",
+        "toStopVoiceToneAnalysisTask",
+        "toTagAttendee",
+        "toTagMeeting",
+        "toTagResource",
+        "toUntagAttendee",
+        "toUntagMeeting",
+        "toUntagResource",
+        "toUpdateAppInstance",
+        "toUpdateAppInstanceBot",
+        "toUpdateAppInstanceUser",
+        "toUpdateAppInstanceUserEndpoint",
+        "toUpdateAttendeeCapabilities",
+        "toUpdateChannel",
+        "toUpdateChannelFlow",
+        "toUpdateChannelMessage",
+        "toUpdateChannelReadMarker",
+        "toUpdateMediaInsightsPipelineConfiguration",
+        "toUpdateMediaInsightsPipelineStatus",
+        "toUpdateMediaPipelineKinesisVideoStreamPool",
+        "toUpdateProxySession",
+        "toUpdateSipMediaApplication",
+        "toUpdateSipMediaApplicationCall",
+        "toUpdateSipRule",
+        "toUpdateVoiceConnector",
+        "toUpdateVoiceConnectorGroup",
+        "toUpdateVoiceProfileDomain"
+      ],
+      "relatedResourceTypes": [
+        "app-instance",
+        "app-instance-bot",
+        "app-instance-user",
+        "channel",
+        "channel-flow",
+        "media-insights-pipeline-configuration",
+        "media-pipeline",
+        "media-pipeline-kinesis-video-stream-pool",
+        "meeting",
+        "sip-media-application",
+        "voice-connector",
+        "voice-profile-domain"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAppInstance",
+        "toCreateAppInstanceBot",
+        "toCreateAppInstanceUser",
+        "toCreateChannel",
+        "toCreateChannelFlow",
+        "toCreateMediaCapturePipeline",
+        "toCreateMediaConcatenationPipeline",
+        "toCreateMediaInsightsPipeline",
+        "toCreateMediaInsightsPipelineConfiguration",
+        "toCreateMediaLiveConnectorPipeline",
+        "toCreateMediaPipelineKinesisVideoStreamPool",
+        "toCreateMediaStreamPipeline",
+        "toCreateMeeting",
+        "toCreateMeetingWithAttendees",
+        "toCreateSipMediaApplication",
+        "toCreateVoiceConnector",
+        "toCreateVoiceProfileDomain",
+        "toTagMeeting",
+        "toTagResource",
+        "toUntagResource",
+        "toCreateConnectAnalyticsConnector",
+        "toCreateConnectCallTransferConnector"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

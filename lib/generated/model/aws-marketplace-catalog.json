@@ -1,0 +1,715 @@
+{
+  "schemaVersion": 1,
+  "filename": "aws-marketplace-catalog",
+  "className": "AwsMarketplaceCatalog",
+  "name": "aws-marketplace-catalog",
+  "servicePrefix": "aws-marketplace",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_marketplace-catalog.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelChangeSet",
+      "CreateVerificationEvidence",
+      "DeleteResourcePolicy",
+      "PutResourcePolicy",
+      "StartChangeSet",
+      "StartInvoiceSubmissionTask",
+      "StartTaxComplianceProfileChangeTask",
+      "StartVerification",
+      "TagResource",
+      "UntagResource",
+      "UpdateVerificationEvidence"
+    ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "PutResourcePolicy"
+    ],
+    "Read": [
+      "DescribeAssessment",
+      "DescribeChangeSet",
+      "DescribeEntity",
+      "GetInvoiceSubmissionTask",
+      "GetIssuedTaxInvoice",
+      "GetResourcePolicy",
+      "GetTaxComplianceProfile",
+      "GetVerification",
+      "GetVerificationEvidence",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAssessments",
+      "ListChangeSets",
+      "ListEntities",
+      "ListInvoiceSubmissionTasks",
+      "ListIssuedTaxInvoices",
+      "ListPayables",
+      "ListTaxComplianceProfileChangeTasks",
+      "ListTaxComplianceProfiles",
+      "ListVerificationEvidence",
+      "ListVerifications"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelChangeSet",
+      "methodName": "toCancelChangeSet",
+      "description": "Grants permission to cancel a running change set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_CancelChangeSet.html"
+    },
+    {
+      "name": "CreateVerificationEvidence",
+      "methodName": "toCreateVerificationEvidence",
+      "description": "Grants permission to create a new verification evidence resource for BusinessVerification",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete the resource policy of an existing entity",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DescribeAssessment",
+      "methodName": "toDescribeAssessment",
+      "description": "Grants permission to return the details of an existing assessment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DescribeAssessment.html"
+    },
+    {
+      "name": "DescribeChangeSet",
+      "methodName": "toDescribeChangeSet",
+      "description": "Grants permission to return the details of an existing change set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DescribeChangeSet.html"
+    },
+    {
+      "name": "DescribeEntity",
+      "methodName": "toDescribeEntity",
+      "description": "Grants permission to return the details of an existing entity",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DescribeEntity.html"
+    },
+    {
+      "name": "GetInvoiceSubmissionTask",
+      "methodName": "toGetInvoiceSubmissionTask",
+      "description": "Grants permission to retrieve details of an existing invoice submission task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+    },
+    {
+      "name": "GetIssuedTaxInvoice",
+      "methodName": "toGetIssuedTaxInvoice",
+      "description": "Grants permission to retrieve details of a specific tax invoice issued by AWS on behalf of a seller",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to get the resource policy of an existing entity",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "GetTaxComplianceProfile",
+      "methodName": "toGetTaxComplianceProfile",
+      "description": "Grants permission to retrieve details of a tax compliance profile including artifacts with download URLs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+    },
+    {
+      "name": "GetVerification",
+      "methodName": "toGetVerification",
+      "description": "Grants permission to retrieve the detailed status of a specific verification process, including PSP validation results",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html",
+      "conditionMethods": [
+        "ifVerificationType"
+      ]
+    },
+    {
+      "name": "GetVerificationEvidence",
+      "methodName": "toGetVerificationEvidence",
+      "description": "Grants permission to retrieve the complete content of a specific verification evidence resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+    },
+    {
+      "name": "ListAssessments",
+      "methodName": "toListAssessments",
+      "description": "Grants permission to list existing assessments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListAssessments.html"
+    },
+    {
+      "name": "ListChangeSets",
+      "methodName": "toListChangeSets",
+      "description": "Grants permission to list existing change sets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListChangeSets.html"
+    },
+    {
+      "name": "ListEntities",
+      "methodName": "toListEntities",
+      "description": "Grants permission to list existing entities",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListEntities.html"
+    },
+    {
+      "name": "ListInvoiceSubmissionTasks",
+      "methodName": "toListInvoiceSubmissionTasks",
+      "description": "Grants permission to list existing invoice submission tasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+    },
+    {
+      "name": "ListIssuedTaxInvoices",
+      "methodName": "toListIssuedTaxInvoices",
+      "description": "Grants permission to list tax invoices issued by AWS on behalf of a seller",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+    },
+    {
+      "name": "ListPayables",
+      "methodName": "toListPayables",
+      "description": "Grants permission to list payables of the specified payable provenance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags on an existing entity, change set, invoice submission task, issued tax invoice, VerificationEvidence, TaxComplianceProfile, or TaxComplianceProfileChangeTask",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTaxComplianceProfileChangeTasks",
+      "methodName": "toListTaxComplianceProfileChangeTasks",
+      "description": "Grants permission to list tax compliance profile change tasks with optional filters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+    },
+    {
+      "name": "ListTaxComplianceProfiles",
+      "methodName": "toListTaxComplianceProfiles",
+      "description": "Grants permission to list tax compliance profiles with optional filters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+    },
+    {
+      "name": "ListVerificationEvidence",
+      "methodName": "toListVerificationEvidence",
+      "description": "Grants permission to list verification evidence resources with summary metadata",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+    },
+    {
+      "name": "ListVerifications",
+      "methodName": "toListVerifications",
+      "description": "Grants permission to list all verification statuses across jurisdictions and verification types",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html",
+      "conditionMethods": [
+        "ifVerificationType"
+      ]
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to attach a resource policy to an existing entity",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "StartChangeSet",
+      "methodName": "toStartChangeSet",
+      "description": "Grants permission to request a new change set (Note: resource-level permissions for this action and condition context keys for this action are only supported when used with Catalog API and are not supported when used with AWS Marketplace Management Portal)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html"
+    },
+    {
+      "name": "StartInvoiceSubmissionTask",
+      "methodName": "toStartInvoiceSubmissionTask",
+      "description": "Grants permission to initiate tasks that submit invoices for processing in AWS Marketplace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+    },
+    {
+      "name": "StartTaxComplianceProfileChangeTask",
+      "methodName": "toStartTaxComplianceProfileChangeTask",
+      "description": "Grants permission to initiate asynchronous processing of a tax compliance profile create or update with artifact validation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+    },
+    {
+      "name": "StartVerification",
+      "methodName": "toStartVerification",
+      "description": "Grants permission to submit verification evidence to a Payment Service Provider and enable data sharing for a specified jurisdiction",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add new tags to a resource. Supported resources: Entity, ChangeSet, InvoiceSubmissionTask, IssuedTaxInvoice, VerificationEvidence, TaxComplianceProfile, and TaxComplianceProfileChangeTask",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource. Supported resources: Entity, ChangeSet, InvoiceSubmissionTask, IssuedTaxInvoice, VerificationEvidence, TaxComplianceProfile, and TaxComplianceProfileChangeTask",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateVerificationEvidence",
+      "methodName": "toUpdateVerificationEvidence",
+      "description": "Grants permission to update an existing verification evidence resource using full replacement semantics",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Assessment",
+      "methodName": "onAssessment",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DescribeAssessment.html#API_DescribeAssessment_ResponseSyntax",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}::${Catalog}/Assessment/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "ChangeSet",
+      "methodName": "onChangeSet",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_ResponseSyntax",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:${Catalog}/ChangeSet/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifCatalogChangeType"
+      ]
+    },
+    {
+      "name": "Entity",
+      "methodName": "onEntity",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DescribeEntity.html#API_DescribeEntity_ResponseSyntax",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:${Catalog}/${EntityType}/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EntityType",
+          "name": "entityType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifCatalogChangeType"
+      ]
+    },
+    {
+      "name": "InvoiceSubmissionTask",
+      "methodName": "onInvoiceSubmissionTask",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:catalog/${Catalog}/invoice-submission-task/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "IssuedTaxInvoice",
+      "methodName": "onIssuedTaxInvoice",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:catalog/${Catalog}/issued-tax-invoice/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "TaxComplianceProfile",
+      "methodName": "onTaxComplianceProfile",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:tax-compliance-profile/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "TaxComplianceProfileChangeTask",
+      "methodName": "onTaxComplianceProfileChangeTask",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:tax-compliance-profile-change-task/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "VerificationEvidence",
+      "methodName": "onVerificationEvidence",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:verification-type/${VerificationType}/verification-evidence/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "VerificationType",
+          "name": "verificationType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws-marketplace:Intent",
+      "methodName": "ifIntent",
+      "description": "Filters access by the Intent parameter in the StartChangeSet request",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html",
+      "relatedActionMethods": [
+        "toStartChangeSet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Intent",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws-marketplace:VerificationType",
+      "methodName": "ifVerificationType",
+      "description": "Filters access by the verification type for verification process operations (StartVerification, GetVerification, ListVerifications). Valid values: BusinessVerification",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html",
+      "relatedActionMethods": [
+        "toGetVerification",
+        "toListVerifications",
+        "toStartVerification"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "VerificationType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateVerificationEvidence",
+        "toStartChangeSet",
+        "toStartInvoiceSubmissionTask",
+        "toStartTaxComplianceProfileChangeTask",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCancelChangeSet",
+        "toCreateVerificationEvidence",
+        "toDeleteResourcePolicy",
+        "toDescribeChangeSet",
+        "toDescribeEntity",
+        "toGetInvoiceSubmissionTask",
+        "toGetIssuedTaxInvoice",
+        "toGetResourcePolicy",
+        "toGetTaxComplianceProfile",
+        "toGetVerificationEvidence",
+        "toListTagsForResource",
+        "toPutResourcePolicy",
+        "toStartChangeSet",
+        "toStartInvoiceSubmissionTask",
+        "toStartTaxComplianceProfileChangeTask",
+        "toStartVerification",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateVerificationEvidence"
+      ],
+      "relatedResourceTypes": [
+        "ChangeSet",
+        "Entity",
+        "InvoiceSubmissionTask",
+        "IssuedTaxInvoice",
+        "TaxComplianceProfile",
+        "TaxComplianceProfileChangeTask",
+        "VerificationEvidence"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateVerificationEvidence",
+        "toStartChangeSet",
+        "toStartInvoiceSubmissionTask",
+        "toStartTaxComplianceProfileChangeTask",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "catalog:ChangeType",
+      "methodName": "ifCatalogChangeType",
+      "description": "Filters access by the change type in the StartChangeSet request",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html",
+      "relatedActionMethods": [
+        "toCancelChangeSet",
+        "toDeleteResourcePolicy",
+        "toDescribeChangeSet",
+        "toDescribeEntity",
+        "toGetResourcePolicy",
+        "toListTagsForResource",
+        "toPutResourcePolicy",
+        "toStartChangeSet",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "ChangeSet",
+        "Entity"
+      ],
+      "keyLiteral": "catalog:ChangeType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

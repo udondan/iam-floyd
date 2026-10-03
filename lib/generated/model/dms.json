@@ -1,0 +1,2051 @@
+{
+  "schemaVersion": 1,
+  "filename": "dms",
+  "className": "Dms",
+  "name": "dms",
+  "servicePrefix": "dms",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_dms.html",
+  "accessLevelList": {
+    "Tagging": [
+      "AddTagsToResource",
+      "RemoveTagsFromResource"
+    ],
+    "Write": [
+      "AddTagsToResource",
+      "ApplyPendingMaintenanceAction",
+      "AssociateExtensionPack",
+      "BatchStartRecommendations",
+      "CancelMetadataModelConversion",
+      "CancelMetadataModelCreation",
+      "CancelReplicationTaskAssessmentRun",
+      "CreateDataMigration",
+      "CreateDataProvider",
+      "CreateEndpoint",
+      "CreateEventSubscription",
+      "CreateFleetAdvisorCollector",
+      "CreateInstanceProfile",
+      "CreateMigrationProject",
+      "CreateReplicationConfig",
+      "CreateReplicationInstance",
+      "CreateReplicationSubnetGroup",
+      "CreateReplicationTask",
+      "DeleteCertificate",
+      "DeleteConnection",
+      "DeleteDataMigration",
+      "DeleteDataProvider",
+      "DeleteEndpoint",
+      "DeleteEventSubscription",
+      "DeleteFleetAdvisorCollector",
+      "DeleteFleetAdvisorDatabases",
+      "DeleteInstanceProfile",
+      "DeleteMigrationProject",
+      "DeleteReplicationConfig",
+      "DeleteReplicationInstance",
+      "DeleteReplicationSubnetGroup",
+      "DeleteReplicationTask",
+      "DeleteReplicationTaskAssessmentRun",
+      "ExportMetadataModelAssessment",
+      "ImportCertificate",
+      "ModifyDataMigration",
+      "ModifyEndpoint",
+      "ModifyEventSubscription",
+      "ModifyReplicationConfig",
+      "ModifyReplicationInstance",
+      "ModifyReplicationSubnetGroup",
+      "ModifyReplicationTask",
+      "MoveReplicationTask",
+      "RebootReplicationInstance",
+      "RefreshSchemas",
+      "ReloadReplicationTables",
+      "ReloadTables",
+      "RemoveTagsFromResource",
+      "RunFleetAdvisorLsaAnalysis",
+      "StartDataMigration",
+      "StartMetadataModelAssessment",
+      "StartMetadataModelConversion",
+      "StartMetadataModelCreation",
+      "StartMetadataModelExportAsScripts",
+      "StartMetadataModelExportToTarget",
+      "StartMetadataModelImport",
+      "StartRecommendations",
+      "StartReplication",
+      "StartReplicationTask",
+      "StartReplicationTaskAssessment",
+      "StartReplicationTaskAssessmentRun",
+      "StopDataMigration",
+      "StopReplication",
+      "StopReplicationTask",
+      "UpdateConversionConfiguration",
+      "UpdateDataProvider",
+      "UpdateInstanceProfile",
+      "UpdateMigrationProject",
+      "UpdateSubscriptionsToEventBridge",
+      "CreateOutboundIntegration",
+      "ModifyFleetAdvisorCollector",
+      "ModifyFleetAdvisorCollectorStatuses",
+      "ModifyOutboundIntegration",
+      "UploadFileMetadataList"
+    ],
+    "Read": [
+      "DescribeAccountAttributes",
+      "DescribeApplicableIndividualAssessments",
+      "DescribeCertificates",
+      "DescribeConnections",
+      "DescribeConversionConfiguration",
+      "DescribeDataMigrations",
+      "DescribeEndpointSettings",
+      "DescribeEndpointTypes",
+      "DescribeEndpoints",
+      "DescribeEngineVersions",
+      "DescribeEventCategories",
+      "DescribeEventSubscriptions",
+      "DescribeEvents",
+      "DescribeFleetAdvisorCollectors",
+      "DescribeFleetAdvisorDatabases",
+      "DescribeFleetAdvisorLsaAnalysis",
+      "DescribeFleetAdvisorSchemaObjectSummary",
+      "DescribeFleetAdvisorSchemas",
+      "DescribeMetadataModel",
+      "DescribeMetadataModelChildren",
+      "DescribeMetadataModelCreations",
+      "DescribeMetadataModelImports",
+      "DescribeOrderableReplicationInstances",
+      "DescribePendingMaintenanceActions",
+      "DescribeRecommendationLimitations",
+      "DescribeRecommendations",
+      "DescribeRefreshSchemasStatus",
+      "DescribeReplicationConfigs",
+      "DescribeReplicationInstanceTaskLogs",
+      "DescribeReplicationInstances",
+      "DescribeReplicationSubnetGroups",
+      "DescribeReplicationTableStatistics",
+      "DescribeReplicationTaskAssessmentResults",
+      "DescribeReplicationTaskAssessmentRuns",
+      "DescribeReplicationTaskIndividualAssessments",
+      "DescribeReplicationTasks",
+      "DescribeReplications",
+      "DescribeSchemas",
+      "DescribeTableStatistics",
+      "GetTargetSelectionRules",
+      "ListDataProviders",
+      "ListExtensionPacks",
+      "ListInstanceProfiles",
+      "ListMetadataModelAssessments",
+      "ListMetadataModelConversions",
+      "ListMetadataModelExports",
+      "ListMigrationProjects",
+      "ListTagsForResource",
+      "TestConnection",
+      "GetMetadataModel",
+      "ListMetadataModelAssessmentActionItems"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddTagsToResource",
+      "methodName": "toAddTagsToResource",
+      "description": "Grants permission to add metadata tags to DMS resources, including replication instances, endpoints, security groups, and migration tasks",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_AddTagsToResource.html"
+    },
+    {
+      "name": "ApplyPendingMaintenanceAction",
+      "methodName": "toApplyPendingMaintenanceAction",
+      "description": "Grants permission to apply a pending maintenance action to a resource (for example, to a replication instance)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ApplyPendingMaintenanceAction.html"
+    },
+    {
+      "name": "AssociateExtensionPack",
+      "methodName": "toAssociateExtensionPack",
+      "description": "Grants permission to associate a extension pack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartExtensionPackAssociation.html"
+    },
+    {
+      "name": "BatchStartRecommendations",
+      "methodName": "toBatchStartRecommendations",
+      "description": "Grants permission to start the analysis of up to 20 source databases to recommend target engines for each source database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_BatchStartRecommendations.html"
+    },
+    {
+      "name": "CancelMetadataModelConversion",
+      "methodName": "toCancelMetadataModelConversion",
+      "description": "Grants permission to cancel a single metadata model conversion operation that was started with StartMetadataModelConversion",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_CancelMetadataModelConversion.html"
+    },
+    {
+      "name": "CancelMetadataModelCreation",
+      "methodName": "toCancelMetadataModelCreation",
+      "description": "Grants permission to cancel a single metadata model creation operation that was started with StartMetadataModelCreation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_CancelMetadataModelCreation.html"
+    },
+    {
+      "name": "CancelReplicationTaskAssessmentRun",
+      "methodName": "toCancelReplicationTaskAssessmentRun",
+      "description": "Grants permission to cancel a single premigration assessment run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_CancelReplicationTaskAssessmentRun.html"
+    },
+    {
+      "name": "CreateDataMigration",
+      "methodName": "toCreateDataMigration",
+      "description": "Grants permission to create a database migration using the provided settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "CreateDataProvider",
+      "methodName": "toCreateDataProvider",
+      "description": "Grants permission to create a data provider using the provided settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateDataProvider.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifReqTag"
+      ]
+    },
+    {
+      "name": "CreateEndpoint",
+      "methodName": "toCreateEndpoint",
+      "description": "Grants permission to create an endpoint using the provided settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateEndpoint.html"
+    },
+    {
+      "name": "CreateEventSubscription",
+      "methodName": "toCreateEventSubscription",
+      "description": "Grants permission to create an AWS DMS event notification subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateEventSubscription.html"
+    },
+    {
+      "name": "CreateFleetAdvisorCollector",
+      "methodName": "toCreateFleetAdvisorCollector",
+      "description": "Grants permission to create a Fleet Advisor collector using the specified parameters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateFleetAdvisorCollector.html"
+    },
+    {
+      "name": "CreateInstanceProfile",
+      "methodName": "toCreateInstanceProfile",
+      "description": "Grants permission to create an instance profile using the provided settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateInstanceProfile.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifReqTag"
+      ]
+    },
+    {
+      "name": "CreateMigrationProject",
+      "methodName": "toCreateMigrationProject",
+      "description": "Grants permission to create a migration project using the provided settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateMigrationProject.html"
+    },
+    {
+      "name": "CreateReplicationConfig",
+      "methodName": "toCreateReplicationConfig",
+      "description": "Grants permission to create a replication config using the provided settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "CreateReplicationInstance",
+      "methodName": "toCreateReplicationInstance",
+      "description": "Grants permission to create a replication instance using the specified parameters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html"
+    },
+    {
+      "name": "CreateReplicationSubnetGroup",
+      "methodName": "toCreateReplicationSubnetGroup",
+      "description": "Grants permission to create a replication subnet group given a list of the subnet IDs in a VPC",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationSubnetGroup.html"
+    },
+    {
+      "name": "CreateReplicationTask",
+      "methodName": "toCreateReplicationTask",
+      "description": "Grants permission to create a replication task using the specified parameters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html"
+    },
+    {
+      "name": "DeleteCertificate",
+      "methodName": "toDeleteCertificate",
+      "description": "Grants permission to delete the specified certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteCertificate.html"
+    },
+    {
+      "name": "DeleteConnection",
+      "methodName": "toDeleteConnection",
+      "description": "Grants permission to delete the specified connection between a replication instance and an endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteConnection.html"
+    },
+    {
+      "name": "DeleteDataMigration",
+      "methodName": "toDeleteDataMigration",
+      "description": "Grants permission to delete the specified database migration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "DeleteDataProvider",
+      "methodName": "toDeleteDataProvider",
+      "description": "Grants permission to delete the specified data provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteDataProvider.html"
+    },
+    {
+      "name": "DeleteEndpoint",
+      "methodName": "toDeleteEndpoint",
+      "description": "Grants permission to delete the specified endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteEndpoint.html"
+    },
+    {
+      "name": "DeleteEventSubscription",
+      "methodName": "toDeleteEventSubscription",
+      "description": "Grants permission to delete an AWS DMS event subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteEventSubscription.html"
+    },
+    {
+      "name": "DeleteFleetAdvisorCollector",
+      "methodName": "toDeleteFleetAdvisorCollector",
+      "description": "Grants permission to delete the specified Fleet Advisor collector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteFleetAdvisorCollector.html"
+    },
+    {
+      "name": "DeleteFleetAdvisorDatabases",
+      "methodName": "toDeleteFleetAdvisorDatabases",
+      "description": "Grants permission to delete the specified Fleet Advisor databases",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteFleetAdvisorDatabases.html"
+    },
+    {
+      "name": "DeleteInstanceProfile",
+      "methodName": "toDeleteInstanceProfile",
+      "description": "Grants permission to delete the specified instance profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteInstanceProfile.html"
+    },
+    {
+      "name": "DeleteMigrationProject",
+      "methodName": "toDeleteMigrationProject",
+      "description": "Grants permission to delete the specified migration project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteMigrationProject.html"
+    },
+    {
+      "name": "DeleteReplicationConfig",
+      "methodName": "toDeleteReplicationConfig",
+      "description": "Grants permission to delete the specified replication config",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "DeleteReplicationInstance",
+      "methodName": "toDeleteReplicationInstance",
+      "description": "Grants permission to delete the specified replication instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationInstance.html"
+    },
+    {
+      "name": "DeleteReplicationSubnetGroup",
+      "methodName": "toDeleteReplicationSubnetGroup",
+      "description": "Grants permission to delete a subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html"
+    },
+    {
+      "name": "DeleteReplicationTask",
+      "methodName": "toDeleteReplicationTask",
+      "description": "Grants permission to delete the specified replication task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html"
+    },
+    {
+      "name": "DeleteReplicationTaskAssessmentRun",
+      "methodName": "toDeleteReplicationTaskAssessmentRun",
+      "description": "Grants permission to delete the record of a single premigration assessment run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTaskAssessmentRun.html"
+    },
+    {
+      "name": "DescribeAccountAttributes",
+      "methodName": "toDescribeAccountAttributes",
+      "description": "Grants permission to list all of the AWS DMS attributes for a customer account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeAccountAttributes.html"
+    },
+    {
+      "name": "DescribeApplicableIndividualAssessments",
+      "methodName": "toDescribeApplicableIndividualAssessments",
+      "description": "Grants permission to list individual assessments that you can specify for a new premigration assessment run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeApplicableIndividualAssessments.html"
+    },
+    {
+      "name": "DescribeCertificates",
+      "methodName": "toDescribeCertificates",
+      "description": "Grants permission to provide a description of the certificate",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeCertificates.html"
+    },
+    {
+      "name": "DescribeConnections",
+      "methodName": "toDescribeConnections",
+      "description": "Grants permission to describe the status of the connections that have been made between the replication instance and an endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeConnections.html"
+    },
+    {
+      "name": "DescribeConversionConfiguration",
+      "methodName": "toDescribeConversionConfiguration",
+      "description": "Grants permission to return information about DMS Schema Conversion project configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeConversionConfiguration.html"
+    },
+    {
+      "name": "DescribeDataMigrations",
+      "methodName": "toDescribeDataMigrations",
+      "description": "Grants permission to return information about database migrations for your account in the specified region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "DescribeEndpointSettings",
+      "methodName": "toDescribeEndpointSettings",
+      "description": "Grants permission to return the possible endpoint settings available when you create an endpoint for a specific database engine",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEndpointSettings.html"
+    },
+    {
+      "name": "DescribeEndpointTypes",
+      "methodName": "toDescribeEndpointTypes",
+      "description": "Grants permission to return information about the type of endpoints available",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEndpointTypes.html"
+    },
+    {
+      "name": "DescribeEndpoints",
+      "methodName": "toDescribeEndpoints",
+      "description": "Grants permission to return information about the endpoints for your account in the current region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEndpoints.html"
+    },
+    {
+      "name": "DescribeEngineVersions",
+      "methodName": "toDescribeEngineVersions",
+      "description": "Grants permission to return information about the available versions for DMS replication instances",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEngineVersions.html"
+    },
+    {
+      "name": "DescribeEventCategories",
+      "methodName": "toDescribeEventCategories",
+      "description": "Grants permission to list categories for all event source types, or, if specified, for a specified source type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEventCategories.html"
+    },
+    {
+      "name": "DescribeEventSubscriptions",
+      "methodName": "toDescribeEventSubscriptions",
+      "description": "Grants permission to list all the event subscriptions for a customer account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEventSubscriptions.html"
+    },
+    {
+      "name": "DescribeEvents",
+      "methodName": "toDescribeEvents",
+      "description": "Grants permission to list events for a given source identifier and source type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEvents.html"
+    },
+    {
+      "name": "DescribeFleetAdvisorCollectors",
+      "methodName": "toDescribeFleetAdvisorCollectors",
+      "description": "Grants permission to return a paginated list of Fleet Advisor collectors in your account based on filter settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeFleetAdvisorCollectors.html"
+    },
+    {
+      "name": "DescribeFleetAdvisorDatabases",
+      "methodName": "toDescribeFleetAdvisorDatabases",
+      "description": "Grants permission to return a paginated list of Fleet Advisor databases in your account based on filter settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeFleetAdvisorDatabases.html"
+    },
+    {
+      "name": "DescribeFleetAdvisorLsaAnalysis",
+      "methodName": "toDescribeFleetAdvisorLsaAnalysis",
+      "description": "Grants permission to return a paginated list of descriptions of large-scale assessment (LSA) analyses produced by your Fleet Advisor collectors",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeFleetAdvisorLsaAnalysis.html"
+    },
+    {
+      "name": "DescribeFleetAdvisorSchemaObjectSummary",
+      "methodName": "toDescribeFleetAdvisorSchemaObjectSummary",
+      "description": "Grants permission to return a paginated list of descriptions of schemas discovered by your Fleet Advisor collectors based on filter settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeFleetAdvisorSchemaObjectSummary.html"
+    },
+    {
+      "name": "DescribeFleetAdvisorSchemas",
+      "methodName": "toDescribeFleetAdvisorSchemas",
+      "description": "Grants permission to return a paginated list of schemas discovered by your Fleet Advisor collectors based on filter settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeFleetAdvisorSchemas.html"
+    },
+    {
+      "name": "DescribeMetadataModel",
+      "methodName": "toDescribeMetadataModel",
+      "description": "Grants permission to get detailed information about the specified metadata model, including its definition and corresponding converted objects in the target database if applicable",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModel.html"
+    },
+    {
+      "name": "DescribeMetadataModelChildren",
+      "methodName": "toDescribeMetadataModelChildren",
+      "description": "Grants permission to get a list of child metadata models for the specified metadata model in the database hierarchy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelChildren.html"
+    },
+    {
+      "name": "DescribeMetadataModelCreations",
+      "methodName": "toDescribeMetadataModelCreations",
+      "description": "Grants permission to return a paginated list of metadata model creation requests for a migration project",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelCreations.html"
+    },
+    {
+      "name": "DescribeMetadataModelImports",
+      "methodName": "toDescribeMetadataModelImports",
+      "description": "Grants permission to return information about start metadata model import operations for a migration project",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelImports.html"
+    },
+    {
+      "name": "DescribeOrderableReplicationInstances",
+      "methodName": "toDescribeOrderableReplicationInstances",
+      "description": "Grants permission to return information about the replication instance types that can be created in the specified region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeOrderableReplicationInstances.html"
+    },
+    {
+      "name": "DescribePendingMaintenanceActions",
+      "methodName": "toDescribePendingMaintenanceActions",
+      "description": "Grants permission to return information about pending maintenance actions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribePendingMaintenanceActions.html"
+    },
+    {
+      "name": "DescribeRecommendationLimitations",
+      "methodName": "toDescribeRecommendationLimitations",
+      "description": "Grants permission to return a paginated list of descriptions of limitations for recommendations of target AWS engines",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeFleetAdvisorLsaAnalysis.html"
+    },
+    {
+      "name": "DescribeRecommendations",
+      "methodName": "toDescribeRecommendations",
+      "description": "Grants permission to return a paginated list of descriptions of target engine recommendations for your source databases",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeRecommendations.html"
+    },
+    {
+      "name": "DescribeRefreshSchemasStatus",
+      "methodName": "toDescribeRefreshSchemasStatus",
+      "description": "Grants permission to return the status of the RefreshSchemas operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeRefreshSchemasStatus.html"
+    },
+    {
+      "name": "DescribeReplicationConfigs",
+      "methodName": "toDescribeReplicationConfigs",
+      "description": "Grants permission to describe replication configs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "DescribeReplicationInstanceTaskLogs",
+      "methodName": "toDescribeReplicationInstanceTaskLogs",
+      "description": "Grants permission to return information about the task logs for the specified task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationInstanceTaskLogs.html"
+    },
+    {
+      "name": "DescribeReplicationInstances",
+      "methodName": "toDescribeReplicationInstances",
+      "description": "Grants permission to return information about replication instances for your account in the current region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationInstances.html"
+    },
+    {
+      "name": "DescribeReplicationSubnetGroups",
+      "methodName": "toDescribeReplicationSubnetGroups",
+      "description": "Grants permission to return information about the replication subnet groups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationSubnetGroups.html"
+    },
+    {
+      "name": "DescribeReplicationTableStatistics",
+      "methodName": "toDescribeReplicationTableStatistics",
+      "description": "Grants permission to describe replication table statistics",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "DescribeReplicationTaskAssessmentResults",
+      "methodName": "toDescribeReplicationTaskAssessmentResults",
+      "description": "Grants permission to return the latest task assessment results from Amazon S3",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTaskAssessmentResults.html"
+    },
+    {
+      "name": "DescribeReplicationTaskAssessmentRuns",
+      "methodName": "toDescribeReplicationTaskAssessmentRuns",
+      "description": "Grants permission to return a paginated list of premigration assessment runs based on filter settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTaskAssessmentRuns.html"
+    },
+    {
+      "name": "DescribeReplicationTaskIndividualAssessments",
+      "methodName": "toDescribeReplicationTaskIndividualAssessments",
+      "description": "Grants permission to return a paginated list of individual assessments based on filter settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTaskIndividualAssessments.html"
+    },
+    {
+      "name": "DescribeReplicationTasks",
+      "methodName": "toDescribeReplicationTasks",
+      "description": "Grants permission to return information about replication tasks for your account in the current region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTasks.html"
+    },
+    {
+      "name": "DescribeReplications",
+      "methodName": "toDescribeReplications",
+      "description": "Grants permission to describe replications",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "DescribeSchemas",
+      "methodName": "toDescribeSchemas",
+      "description": "Grants permission to return information about the schema for the specified endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeSchemas.html"
+    },
+    {
+      "name": "DescribeTableStatistics",
+      "methodName": "toDescribeTableStatistics",
+      "description": "Grants permission to return table statistics on the database migration task, including table name, rows inserted, rows updated, and rows deleted",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTableStatistics.html"
+    },
+    {
+      "name": "ExportMetadataModelAssessment",
+      "methodName": "toExportMetadataModelAssessment",
+      "description": "Grants permission to export the specified metadata model assessment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ExportMetadataModelAssessment.html"
+    },
+    {
+      "name": "GetTargetSelectionRules",
+      "methodName": "toGetTargetSelectionRules",
+      "description": "Grants permission to convert source selection rules into their target counterparts for schema conversion operations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_GetTargetSelectionRules.html"
+    },
+    {
+      "name": "ImportCertificate",
+      "methodName": "toImportCertificate",
+      "description": "Grants permission to upload the specified certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ImportCertificate.html"
+    },
+    {
+      "name": "ListDataProviders",
+      "methodName": "toListDataProviders",
+      "description": "Grants permission to list the AWS DMS attributes for data providers",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeDataProviders.html"
+    },
+    {
+      "name": "ListExtensionPacks",
+      "methodName": "toListExtensionPacks",
+      "description": "Grants permission to list the AWS DMS attributes for extension packs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeExtensionPackAssociations.html"
+    },
+    {
+      "name": "ListInstanceProfiles",
+      "methodName": "toListInstanceProfiles",
+      "description": "Grants permission to list the AWS DMS attributes for instance profiles",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeInstanceProfiles.html"
+    },
+    {
+      "name": "ListMetadataModelAssessments",
+      "methodName": "toListMetadataModelAssessments",
+      "description": "Grants permission to list the AWS DMS attributes for a metadata model assessments",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelAssessments.html"
+    },
+    {
+      "name": "ListMetadataModelConversions",
+      "methodName": "toListMetadataModelConversions",
+      "description": "Grants permission to list the AWS DMS attributes for a metadata model conversions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelConversions.html"
+    },
+    {
+      "name": "ListMetadataModelExports",
+      "methodName": "toListMetadataModelExports",
+      "description": "Grants permission to list the AWS DMS attributes for a metadata model exports",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "ListMigrationProjects",
+      "methodName": "toListMigrationProjects",
+      "description": "Grants permission to list the AWS DMS attributes for a migration projects",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags for an AWS DMS resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ModifyDataMigration",
+      "methodName": "toModifyDataMigration",
+      "description": "Grants permission to modify the specified database migration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "ModifyEndpoint",
+      "methodName": "toModifyEndpoint",
+      "description": "Grants permission to modify the specified endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyEndpoint.html"
+    },
+    {
+      "name": "ModifyEventSubscription",
+      "methodName": "toModifyEventSubscription",
+      "description": "Grants permission to modify an existing AWS DMS event notification subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyEventSubscription.html"
+    },
+    {
+      "name": "ModifyReplicationConfig",
+      "methodName": "toModifyReplicationConfig",
+      "description": "Grants permission to modify the specified replication config",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "ModifyReplicationInstance",
+      "methodName": "toModifyReplicationInstance",
+      "description": "Grants permission to modify the replication instance to apply new settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationInstance.html"
+    },
+    {
+      "name": "ModifyReplicationSubnetGroup",
+      "methodName": "toModifyReplicationSubnetGroup",
+      "description": "Grants permission to modify the settings for the specified replication subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationSubnetGroup.html"
+    },
+    {
+      "name": "ModifyReplicationTask",
+      "methodName": "toModifyReplicationTask",
+      "description": "Grants permission to modify the specified replication task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html"
+    },
+    {
+      "name": "MoveReplicationTask",
+      "methodName": "toMoveReplicationTask",
+      "description": "Grants permission to move the specified replication task to a different replication instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html"
+    },
+    {
+      "name": "RebootReplicationInstance",
+      "methodName": "toRebootReplicationInstance",
+      "description": "Grants permission to reboot a replication instance. Rebooting results in a momentary outage, until the replication instance becomes available again",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_RebootReplicationInstance.html"
+    },
+    {
+      "name": "RefreshSchemas",
+      "methodName": "toRefreshSchemas",
+      "description": "Grants permission to populate the schema for the specified endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_RefreshSchemas.html"
+    },
+    {
+      "name": "ReloadReplicationTables",
+      "methodName": "toReloadReplicationTables",
+      "description": "Grants permission to reload the target database table with the source for a replication",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "ReloadTables",
+      "methodName": "toReloadTables",
+      "description": "Grants permission to reload the target database table with the source data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ReloadTables.html"
+    },
+    {
+      "name": "RemoveTagsFromResource",
+      "methodName": "toRemoveTagsFromResource",
+      "description": "Grants permission to remove metadata tags from a DMS resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_RemoveTagsFromResource.html"
+    },
+    {
+      "name": "RunFleetAdvisorLsaAnalysis",
+      "methodName": "toRunFleetAdvisorLsaAnalysis",
+      "description": "Grants permission to run a large-scale assessment (LSA) analysis on every Fleet Advisor collector in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_RunFleetAdvisorLsaAnalysis.html"
+    },
+    {
+      "name": "StartDataMigration",
+      "methodName": "toStartDataMigration",
+      "description": "Grants permission to start the database migration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "StartMetadataModelAssessment",
+      "methodName": "toStartMetadataModelAssessment",
+      "description": "Grants permission to start a new assessment of metadata model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelAssessment.html"
+    },
+    {
+      "name": "StartMetadataModelConversion",
+      "methodName": "toStartMetadataModelConversion",
+      "description": "Grants permission to start a new conversion of metadata model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelConversion.html"
+    },
+    {
+      "name": "StartMetadataModelCreation",
+      "methodName": "toStartMetadataModelCreation",
+      "description": "Grants permission to create source metadata model of the given type with the specified properties for schema conversion operations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelCreation.html"
+    },
+    {
+      "name": "StartMetadataModelExportAsScripts",
+      "methodName": "toStartMetadataModelExportAsScripts",
+      "description": "Grants permission to start a new export of metadata model as script",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelExportAsScript.html"
+    },
+    {
+      "name": "StartMetadataModelExportToTarget",
+      "methodName": "toStartMetadataModelExportToTarget",
+      "description": "Grants permission to start a new export of metadata model to target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelExportToTarget.html"
+    },
+    {
+      "name": "StartMetadataModelImport",
+      "methodName": "toStartMetadataModelImport",
+      "description": "Grants permission to start a new import of metadata model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelImport.html"
+    },
+    {
+      "name": "StartRecommendations",
+      "methodName": "toStartRecommendations",
+      "description": "Grants permission to start the analysis of your source database to provide recommendations of target engines",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartRecommendations.html"
+    },
+    {
+      "name": "StartReplication",
+      "methodName": "toStartReplication",
+      "description": "Grants permission to start a replication",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "StartReplicationTask",
+      "methodName": "toStartReplicationTask",
+      "description": "Grants permission to start the replication task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html"
+    },
+    {
+      "name": "StartReplicationTaskAssessment",
+      "methodName": "toStartReplicationTaskAssessment",
+      "description": "Grants permission to start the replication task assessment for unsupported data types in the source database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html"
+    },
+    {
+      "name": "StartReplicationTaskAssessmentRun",
+      "methodName": "toStartReplicationTaskAssessmentRun",
+      "description": "Grants permission to start a new premigration assessment run for one or more individual assessments of a migration task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html"
+    },
+    {
+      "name": "StopDataMigration",
+      "methodName": "toStopDataMigration",
+      "description": "Grants permission to stop the database migration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "StopReplication",
+      "methodName": "toStopReplication",
+      "description": "Grants permission to stop a replication",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "StopReplicationTask",
+      "methodName": "toStopReplicationTask",
+      "description": "Grants permission to stop the replication task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html"
+    },
+    {
+      "name": "TestConnection",
+      "methodName": "toTestConnection",
+      "description": "Grants permission to test the connection between the replication instance and the endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_TestConnection.html"
+    },
+    {
+      "name": "UpdateConversionConfiguration",
+      "methodName": "toUpdateConversionConfiguration",
+      "description": "Grants permission to update a conversion configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyConversionConfiguration.html"
+    },
+    {
+      "name": "UpdateDataProvider",
+      "methodName": "toUpdateDataProvider",
+      "description": "Grants permission to update the specified data provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyDataProvider.html"
+    },
+    {
+      "name": "UpdateInstanceProfile",
+      "methodName": "toUpdateInstanceProfile",
+      "description": "Grants permission to update the specified instance profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyInstanceProfile.html"
+    },
+    {
+      "name": "UpdateMigrationProject",
+      "methodName": "toUpdateMigrationProject",
+      "description": "Grants permission to update the specified migration project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyMigrationProject.html"
+    },
+    {
+      "name": "UpdateSubscriptionsToEventBridge",
+      "methodName": "toUpdateSubscriptionsToEventBridge",
+      "description": "Grants permission to migrate DMS subcriptions to Eventbridge",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_UpdateSubscriptionsToEventBridge.html"
+    },
+    {
+      "name": "CreateOutboundIntegration",
+      "methodName": "toCreateOutboundIntegration",
+      "description": "Grants permission to DMS to create resources for zero-ETL integrations with self managed databases",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifReqTag"
+      ]
+    },
+    {
+      "name": "GetMetadataModel",
+      "methodName": "toGetMetadataModel",
+      "description": "Grants permission to list all of the AWS DMS attributes for a metadata model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "ListMetadataModelAssessmentActionItems",
+      "methodName": "toListMetadataModelAssessmentActionItems",
+      "description": "Grants permission to list the AWS DMS attributes for a metadata model assessment action items",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "ModifyFleetAdvisorCollector",
+      "methodName": "toModifyFleetAdvisorCollector",
+      "description": "Grants permission to modify the name and description of the specified Fleet Advisor collector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "ModifyFleetAdvisorCollectorStatuses",
+      "methodName": "toModifyFleetAdvisorCollectorStatuses",
+      "description": "Grants permission to modify the status of the specified Fleet Advisor collector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "ModifyOutboundIntegration",
+      "methodName": "toModifyOutboundIntegration",
+      "description": "Grants permission to DMS to modify resources for zero-ETL integrations with self managed databases",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "UploadFileMetadataList",
+      "methodName": "toUploadFileMetadataList",
+      "description": "Grants permission to upload files to your Amazon S3 bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Certificate",
+      "methodName": "onCertificate",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_Certificate.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:cert:${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifCertTag"
+      ]
+    },
+    {
+      "name": "DataMigration",
+      "methodName": "onDataMigration",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:data-migration:${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifDataMigrationTag"
+      ]
+    },
+    {
+      "name": "DataProvider",
+      "methodName": "onDataProvider",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:data-provider:${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifDataProviderTag"
+      ]
+    },
+    {
+      "name": "Endpoint",
+      "methodName": "onEndpoint",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_Endpoint.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:endpoint:${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifEndpointTag"
+      ]
+    },
+    {
+      "name": "EventSubscription",
+      "methodName": "onEventSubscription",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_EventSubscription.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:es:${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifEsTag"
+      ]
+    },
+    {
+      "name": "InstanceProfile",
+      "methodName": "onInstanceProfile",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:instance-profile:${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifInstanceProfileTag"
+      ]
+    },
+    {
+      "name": "MigrationProject",
+      "methodName": "onMigrationProject",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:migration-project:${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifMigrationProjectTag"
+      ]
+    },
+    {
+      "name": "ReplicationConfig",
+      "methodName": "onReplicationConfig",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:replication-config:${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifReplicationConfigTag"
+      ]
+    },
+    {
+      "name": "ReplicationInstance",
+      "methodName": "onReplicationInstance",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationInstance.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:rep:${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifRepTag"
+      ]
+    },
+    {
+      "name": "ReplicationSubnetGroup",
+      "methodName": "onReplicationSubnetGroup",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationSubnetGroup.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:subgrp:${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifSubgrpTag"
+      ]
+    },
+    {
+      "name": "ReplicationTask",
+      "methodName": "onReplicationTask",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationTask.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:task:${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifTaskTag"
+      ]
+    },
+    {
+      "name": "ReplicationTaskAssessmentRun",
+      "methodName": "onReplicationTaskAssessmentRun",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationTaskAssessmentRun.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:assessment-run:${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifAssessmentRunTag"
+      ]
+    },
+    {
+      "name": "ReplicationTaskIndividualAssessment",
+      "methodName": "onReplicationTaskIndividualAssessment",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationTaskIndividualAssessment.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:individual-assessment:${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifIndividualAssessmentTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCreateDataMigration",
+        "toCreateDataProvider",
+        "toCreateEndpoint",
+        "toCreateEventSubscription",
+        "toCreateInstanceProfile",
+        "toCreateMigrationProject",
+        "toCreateReplicationConfig",
+        "toCreateReplicationInstance",
+        "toCreateReplicationSubnetGroup",
+        "toCreateReplicationTask",
+        "toImportCertificate",
+        "toRemoveTagsFromResource",
+        "toCreateOutboundIntegration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the presence of tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toApplyPendingMaintenanceAction",
+        "toAssociateExtensionPack",
+        "toCancelMetadataModelConversion",
+        "toCancelMetadataModelCreation",
+        "toCancelReplicationTaskAssessmentRun",
+        "toCreateDataMigration",
+        "toCreateDataProvider",
+        "toCreateEndpoint",
+        "toCreateEventSubscription",
+        "toCreateInstanceProfile",
+        "toCreateMigrationProject",
+        "toCreateReplicationConfig",
+        "toCreateReplicationInstance",
+        "toCreateReplicationSubnetGroup",
+        "toCreateReplicationTask",
+        "toDeleteCertificate",
+        "toDeleteConnection",
+        "toDeleteDataMigration",
+        "toDeleteDataProvider",
+        "toDeleteEndpoint",
+        "toDeleteEventSubscription",
+        "toDeleteInstanceProfile",
+        "toDeleteMigrationProject",
+        "toDeleteReplicationConfig",
+        "toDeleteReplicationInstance",
+        "toDeleteReplicationSubnetGroup",
+        "toDeleteReplicationTask",
+        "toDeleteReplicationTaskAssessmentRun",
+        "toDescribeApplicableIndividualAssessments",
+        "toDescribeConversionConfiguration",
+        "toDescribeMetadataModel",
+        "toDescribeMetadataModelChildren",
+        "toDescribeMetadataModelCreations",
+        "toDescribeMetadataModelImports",
+        "toDescribeRefreshSchemasStatus",
+        "toDescribeReplicationInstanceTaskLogs",
+        "toDescribeReplicationTableStatistics",
+        "toDescribeReplicationTaskAssessmentResults",
+        "toDescribeReplicationTaskAssessmentRuns",
+        "toDescribeReplicationTaskIndividualAssessments",
+        "toDescribeSchemas",
+        "toDescribeTableStatistics",
+        "toExportMetadataModelAssessment",
+        "toGetTargetSelectionRules",
+        "toImportCertificate",
+        "toListExtensionPacks",
+        "toListInstanceProfiles",
+        "toListMetadataModelAssessments",
+        "toListMetadataModelConversions",
+        "toListMetadataModelExports",
+        "toListMigrationProjects",
+        "toListTagsForResource",
+        "toModifyDataMigration",
+        "toModifyEndpoint",
+        "toModifyEventSubscription",
+        "toModifyReplicationConfig",
+        "toModifyReplicationInstance",
+        "toModifyReplicationSubnetGroup",
+        "toModifyReplicationTask",
+        "toMoveReplicationTask",
+        "toRebootReplicationInstance",
+        "toRefreshSchemas",
+        "toReloadReplicationTables",
+        "toReloadTables",
+        "toRemoveTagsFromResource",
+        "toStartDataMigration",
+        "toStartMetadataModelAssessment",
+        "toStartMetadataModelConversion",
+        "toStartMetadataModelCreation",
+        "toStartMetadataModelExportAsScripts",
+        "toStartMetadataModelExportToTarget",
+        "toStartMetadataModelImport",
+        "toStartReplication",
+        "toStartReplicationTask",
+        "toStartReplicationTaskAssessment",
+        "toStartReplicationTaskAssessmentRun",
+        "toStopDataMigration",
+        "toStopReplication",
+        "toStopReplicationTask",
+        "toTestConnection",
+        "toUpdateConversionConfiguration",
+        "toUpdateDataProvider",
+        "toUpdateInstanceProfile",
+        "toUpdateMigrationProject",
+        "toCreateOutboundIntegration",
+        "toGetMetadataModel",
+        "toListMetadataModelAssessmentActionItems"
+      ],
+      "relatedResourceTypes": [
+        "Certificate",
+        "DataMigration",
+        "DataProvider",
+        "Endpoint",
+        "EventSubscription",
+        "InstanceProfile",
+        "MigrationProject",
+        "ReplicationConfig",
+        "ReplicationInstance",
+        "ReplicationSubnetGroup",
+        "ReplicationTask",
+        "ReplicationTaskAssessmentRun",
+        "ReplicationTaskIndividualAssessment"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCreateDataMigration",
+        "toCreateDataProvider",
+        "toCreateEndpoint",
+        "toCreateEventSubscription",
+        "toCreateInstanceProfile",
+        "toCreateMigrationProject",
+        "toCreateReplicationConfig",
+        "toCreateReplicationInstance",
+        "toCreateReplicationSubnetGroup",
+        "toCreateReplicationTask",
+        "toDescribeReplicationInstanceTaskLogs",
+        "toImportCertificate",
+        "toRemoveTagsFromResource",
+        "toCreateOutboundIntegration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dms:assessment-run-tag/${TagKey}",
+      "methodName": "ifAssessmentRunTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request for AssessmentRun",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_assessment-run-tag___TagKey_",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCancelReplicationTaskAssessmentRun",
+        "toDeleteReplicationTaskAssessmentRun",
+        "toDescribeReplicationTaskAssessmentRuns",
+        "toDescribeReplicationTaskIndividualAssessments",
+        "toListTagsForResource",
+        "toRemoveTagsFromResource"
+      ],
+      "relatedResourceTypes": [
+        "ReplicationTaskAssessmentRun"
+      ],
+      "keyLiteral": "assessment-run-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dms:cert-tag/${TagKey}",
+      "methodName": "ifCertTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request for Certificate",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_cert-tag___TagKey_",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCreateEndpoint",
+        "toDeleteCertificate",
+        "toImportCertificate",
+        "toListTagsForResource",
+        "toModifyEndpoint",
+        "toRemoveTagsFromResource"
+      ],
+      "relatedResourceTypes": [
+        "Certificate"
+      ],
+      "keyLiteral": "cert-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dms:data-migration-tag/${TagKey}",
+      "methodName": "ifDataMigrationTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request for DataMigration",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_data-migration-tag___TagKey_",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toDeleteDataMigration",
+        "toListTagsForResource",
+        "toModifyDataMigration",
+        "toRemoveTagsFromResource",
+        "toStartDataMigration",
+        "toStopDataMigration"
+      ],
+      "relatedResourceTypes": [
+        "DataMigration"
+      ],
+      "keyLiteral": "data-migration-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dms:data-provider-tag/${TagKey}",
+      "methodName": "ifDataProviderTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request for DataProvider",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_dp-tag___TagKey_",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCreateMigrationProject",
+        "toDeleteDataProvider",
+        "toListMigrationProjects",
+        "toListTagsForResource",
+        "toRemoveTagsFromResource",
+        "toUpdateDataProvider"
+      ],
+      "relatedResourceTypes": [
+        "DataProvider"
+      ],
+      "keyLiteral": "data-provider-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dms:endpoint-tag/${TagKey}",
+      "methodName": "ifEndpointTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request for Endpoint",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_endpoint-tag___TagKey_",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCreateEndpoint",
+        "toCreateReplicationConfig",
+        "toCreateReplicationTask",
+        "toDeleteConnection",
+        "toDeleteEndpoint",
+        "toDescribeRefreshSchemasStatus",
+        "toDescribeSchemas",
+        "toListTagsForResource",
+        "toModifyEndpoint",
+        "toRefreshSchemas",
+        "toRemoveTagsFromResource",
+        "toTestConnection"
+      ],
+      "relatedResourceTypes": [
+        "Endpoint"
+      ],
+      "keyLiteral": "endpoint-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dms:es-tag/${TagKey}",
+      "methodName": "ifEsTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request for EventSubscription",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_es-tag___TagKey_",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCreateEventSubscription",
+        "toDeleteEventSubscription",
+        "toListTagsForResource",
+        "toModifyEventSubscription",
+        "toRemoveTagsFromResource"
+      ],
+      "relatedResourceTypes": [
+        "EventSubscription"
+      ],
+      "keyLiteral": "es-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dms:individual-assessment-tag/${TagKey}",
+      "methodName": "ifIndividualAssessmentTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request for IndividualAssessment",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_individual-assessment-tag___TagKey_",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toListTagsForResource",
+        "toRemoveTagsFromResource"
+      ],
+      "relatedResourceTypes": [
+        "ReplicationTaskIndividualAssessment"
+      ],
+      "keyLiteral": "individual-assessment-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dms:instance-profile-tag/${TagKey}",
+      "methodName": "ifInstanceProfileTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request for InstanceProfile",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_ip-tag___TagKey_",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCreateMigrationProject",
+        "toDeleteInstanceProfile",
+        "toListInstanceProfiles",
+        "toListMigrationProjects",
+        "toListTagsForResource",
+        "toRemoveTagsFromResource",
+        "toUpdateInstanceProfile"
+      ],
+      "relatedResourceTypes": [
+        "InstanceProfile"
+      ],
+      "keyLiteral": "instance-profile-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dms:migration-project-tag/${TagKey}",
+      "methodName": "ifMigrationProjectTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request for MigrationProject",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_mp-tag___TagKey_",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toAssociateExtensionPack",
+        "toCancelMetadataModelConversion",
+        "toCancelMetadataModelCreation",
+        "toCreateDataMigration",
+        "toDeleteMigrationProject",
+        "toDescribeConversionConfiguration",
+        "toDescribeMetadataModel",
+        "toDescribeMetadataModelChildren",
+        "toDescribeMetadataModelCreations",
+        "toDescribeMetadataModelImports",
+        "toExportMetadataModelAssessment",
+        "toGetTargetSelectionRules",
+        "toListExtensionPacks",
+        "toListMetadataModelAssessments",
+        "toListMetadataModelConversions",
+        "toListMetadataModelExports",
+        "toListMigrationProjects",
+        "toListTagsForResource",
+        "toRemoveTagsFromResource",
+        "toStartMetadataModelAssessment",
+        "toStartMetadataModelConversion",
+        "toStartMetadataModelCreation",
+        "toStartMetadataModelExportAsScripts",
+        "toStartMetadataModelExportToTarget",
+        "toStartMetadataModelImport",
+        "toUpdateConversionConfiguration",
+        "toUpdateMigrationProject",
+        "toGetMetadataModel",
+        "toListMetadataModelAssessmentActionItems"
+      ],
+      "relatedResourceTypes": [
+        "MigrationProject"
+      ],
+      "keyLiteral": "migration-project-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dms:rep-tag/${TagKey}",
+      "methodName": "ifRepTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request for ReplicationInstance",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_rep-tag___TagKey_",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toApplyPendingMaintenanceAction",
+        "toCreateReplicationInstance",
+        "toCreateReplicationTask",
+        "toDeleteConnection",
+        "toDeleteReplicationInstance",
+        "toDescribeApplicableIndividualAssessments",
+        "toDescribeReplicationInstanceTaskLogs",
+        "toDescribeReplicationTaskAssessmentRuns",
+        "toListTagsForResource",
+        "toModifyReplicationInstance",
+        "toMoveReplicationTask",
+        "toRebootReplicationInstance",
+        "toRefreshSchemas",
+        "toRemoveTagsFromResource",
+        "toTestConnection"
+      ],
+      "relatedResourceTypes": [
+        "ReplicationInstance"
+      ],
+      "keyLiteral": "rep-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dms:replication-config-tag/${TagKey}",
+      "methodName": "ifReplicationConfigTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request for ReplicationConfig",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_replication-config-tag___TagKey_",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toDeleteReplicationConfig",
+        "toDescribeReplicationTableStatistics",
+        "toListTagsForResource",
+        "toModifyReplicationConfig",
+        "toReloadReplicationTables",
+        "toRemoveTagsFromResource",
+        "toStartReplication",
+        "toStopReplication"
+      ],
+      "relatedResourceTypes": [
+        "ReplicationConfig"
+      ],
+      "keyLiteral": "replication-config-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dms:req-tag/${TagKey}",
+      "methodName": "ifReqTag",
+      "description": "Filters access by the presence of tag key-value pairs in the given request",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_req-tag___TagKey_",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCreateDataMigration",
+        "toCreateDataProvider",
+        "toCreateEndpoint",
+        "toCreateEventSubscription",
+        "toCreateInstanceProfile",
+        "toCreateMigrationProject",
+        "toCreateReplicationConfig",
+        "toCreateReplicationInstance",
+        "toCreateReplicationSubnetGroup",
+        "toCreateReplicationTask",
+        "toCreateOutboundIntegration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "req-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dms:subgrp-tag/${TagKey}",
+      "methodName": "ifSubgrpTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request for ReplicationSubnetGroup",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_subgrp-tag___TagKey_",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCreateReplicationInstance",
+        "toCreateReplicationSubnetGroup",
+        "toDeleteReplicationSubnetGroup",
+        "toListTagsForResource",
+        "toModifyReplicationSubnetGroup",
+        "toRemoveTagsFromResource"
+      ],
+      "relatedResourceTypes": [
+        "ReplicationSubnetGroup"
+      ],
+      "keyLiteral": "subgrp-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dms:task-tag/${TagKey}",
+      "methodName": "ifTaskTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request for ReplicationTask",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_task-tag___TagKey_",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toDeleteReplicationTask",
+        "toDescribeApplicableIndividualAssessments",
+        "toDescribeReplicationTaskAssessmentResults",
+        "toDescribeReplicationTaskAssessmentRuns",
+        "toDescribeReplicationTaskIndividualAssessments",
+        "toDescribeTableStatistics",
+        "toListTagsForResource",
+        "toModifyReplicationTask",
+        "toMoveReplicationTask",
+        "toReloadTables",
+        "toRemoveTagsFromResource",
+        "toStartReplicationTask",
+        "toStartReplicationTaskAssessment",
+        "toStartReplicationTaskAssessmentRun",
+        "toStopReplicationTask"
+      ],
+      "relatedResourceTypes": [
+        "ReplicationTask"
+      ],
+      "keyLiteral": "task-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

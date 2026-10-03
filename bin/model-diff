@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# Prints the services, actions, resource types and condition keys that differ between a git ref
+# and the working tree. Lines are prefixed with `-` (only in the ref) or `+` (only in the working
+# tree). Changes of descriptions or URLs are ignored.
+#
+# Usage: bin/model-diff [ref, default: HEAD]
+
+set -euo pipefail
+export LC_ALL=C
+
+REF="${1:-HEAD}"
+TMP=$(mktemp -d)
+trap 'rm -rf "${TMP}"' EXIT
+
+if ! git cat-file -e "${REF}:lib/generated/model" 2> /dev/null; then
+  echo "${REF} has no lib/generated/model" >&2
+  exit 1
+fi
+
+git archive "${REF}" lib/generated/model | tar -x -C "${TMP}"
+
+for kind in services actions resources conditions; do
+  bin/model-list "${kind}" "${TMP}/lib/generated/model" > "${TMP}/before"
+  bin/model-list "${kind}" > "${TMP}/after"
+  comm -3 "${TMP}/before" "${TMP}/after" |
+    awk '{ if (sub(/^\t/, "")) print "+" $0; else print "-" $0 }'
+done

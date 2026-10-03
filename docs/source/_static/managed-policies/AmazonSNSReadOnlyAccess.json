@@ -1,0 +1,38 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SNSReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sns:GetTopicAttributes",
+        "sns:List*",
+        "sns:CheckIfPhoneNumberIsOptedOut",
+        "sns:GetEndpointAttributes",
+        "sns:GetDataProtectionPolicy",
+        "sns:GetPlatformApplicationAttributes",
+        "sns:GetSMSAttributes",
+        "sns:GetSMSSandboxAccountStatus",
+        "sns:GetSubscriptionAttributes"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SMSAccessViaSNS",
+      "Effect": "Allow",
+      "Action": [
+        "sms-voice:DescribeVerifiedDestinationNumbers",
+        "sms-voice:DescribeAccountAttributes",
+        "sms-voice:DescribeSpendLimits",
+        "sms-voice:DescribePhoneNumbers",
+        "sms-voice:DescribeOptedOutNumbers"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "sns.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

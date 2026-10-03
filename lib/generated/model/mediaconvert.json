@@ -1,0 +1,571 @@
+{
+  "schemaVersion": 1,
+  "filename": "mediaconvert",
+  "className": "Mediaconvert",
+  "name": "mediaconvert",
+  "servicePrefix": "mediaconvert",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconvert.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateCertificate",
+      "CancelJob",
+      "CreateJob",
+      "CreateJobTemplate",
+      "CreatePreset",
+      "CreateQueue",
+      "CreateResourceShare",
+      "DeleteJobTemplate",
+      "DeletePolicy",
+      "DeletePreset",
+      "DeleteQueue",
+      "DisassociateCertificate",
+      "PutPolicy",
+      "TagResource",
+      "UntagResource",
+      "UpdateJobTemplate",
+      "UpdatePreset",
+      "UpdateQueue"
+    ],
+    "List": [
+      "DescribeEndpoints",
+      "ListJobTemplates",
+      "ListJobs",
+      "ListPresets",
+      "ListQueues",
+      "ListVersions",
+      "SearchJobs"
+    ],
+    "Read": [
+      "GetJob",
+      "GetJobTemplate",
+      "GetPolicy",
+      "GetPreset",
+      "GetQueue",
+      "ListTagsForResource",
+      "Probe"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateCertificate",
+      "methodName": "toAssociateCertificate",
+      "description": "Grants permission to associate an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS Elemental MediaConvert",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/certificates.html"
+    },
+    {
+      "name": "CancelJob",
+      "methodName": "toCancelJob",
+      "description": "Grants permission to cancel an AWS Elemental MediaConvert job that is waiting in queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs-id.html"
+    },
+    {
+      "name": "CreateJob",
+      "methodName": "toCreateJob",
+      "description": "Grants permission to create and submit an AWS Elemental MediaConvert job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html"
+    },
+    {
+      "name": "CreateJobTemplate",
+      "methodName": "toCreateJobTemplate",
+      "description": "Grants permission to create an AWS Elemental MediaConvert custom job template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs-id.html"
+    },
+    {
+      "name": "CreatePreset",
+      "methodName": "toCreatePreset",
+      "description": "Grants permission to create an AWS Elemental MediaConvert custom output preset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateQueue",
+      "methodName": "toCreateQueue",
+      "description": "Grants permission to create an AWS Elemental MediaConvert job queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateResourceShare",
+      "methodName": "toCreateResourceShare",
+      "description": "Grants permission to share an AWS Elemental MediaConvert job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/resourceshares.html"
+    },
+    {
+      "name": "DeleteJobTemplate",
+      "methodName": "toDeleteJobTemplate",
+      "description": "Grants permission to delete an AWS Elemental MediaConvert custom job template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates-name.html"
+    },
+    {
+      "name": "DeletePolicy",
+      "methodName": "toDeletePolicy",
+      "description": "Grants permission to delete an AWS Elemental MediaConvert policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/policy.html"
+    },
+    {
+      "name": "DeletePreset",
+      "methodName": "toDeletePreset",
+      "description": "Grants permission to delete an AWS Elemental MediaConvert custom output preset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets-name.html"
+    },
+    {
+      "name": "DeleteQueue",
+      "methodName": "toDeleteQueue",
+      "description": "Grants permission to delete an AWS Elemental MediaConvert job queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues-name.html"
+    },
+    {
+      "name": "DescribeEndpoints",
+      "methodName": "toDescribeEndpoints",
+      "description": "Grants permission to subscribe to the AWS Elemental MediaConvert service, by sending a request for an account-specific endpoint. All transcoding requests must be sent to the endpoint that the service returns",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/endpoints.html"
+    },
+    {
+      "name": "DisassociateCertificate",
+      "methodName": "toDisassociateCertificate",
+      "description": "Grants permission to remove an association between the Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate and an AWS Elemental MediaConvert resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/certificates-arn.html"
+    },
+    {
+      "name": "GetJob",
+      "methodName": "toGetJob",
+      "description": "Grants permission to get an AWS Elemental MediaConvert job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs-id.html"
+    },
+    {
+      "name": "GetJobTemplate",
+      "methodName": "toGetJobTemplate",
+      "description": "Grants permission to get an AWS Elemental MediaConvert job template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates-name.html"
+    },
+    {
+      "name": "GetPolicy",
+      "methodName": "toGetPolicy",
+      "description": "Grants permission to get an AWS Elemental MediaConvert policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/policy.html"
+    },
+    {
+      "name": "GetPreset",
+      "methodName": "toGetPreset",
+      "description": "Grants permission to get an AWS Elemental MediaConvert output preset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets-name.html"
+    },
+    {
+      "name": "GetQueue",
+      "methodName": "toGetQueue",
+      "description": "Grants permission to get an AWS Elemental MediaConvert job queue",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues-name.html"
+    },
+    {
+      "name": "ListJobTemplates",
+      "methodName": "toListJobTemplates",
+      "description": "Grants permission to list AWS Elemental MediaConvert job templates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates.html"
+    },
+    {
+      "name": "ListJobs",
+      "methodName": "toListJobs",
+      "description": "Grants permission to list AWS Elemental MediaConvert jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html"
+    },
+    {
+      "name": "ListPresets",
+      "methodName": "toListPresets",
+      "description": "Grants permission to list AWS Elemental MediaConvert output presets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets.html"
+    },
+    {
+      "name": "ListQueues",
+      "methodName": "toListQueues",
+      "description": "Grants permission to list AWS Elemental MediaConvert job queues",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to retrieve the tags for a MediaConvert queue, preset, or job template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags-arn.html"
+    },
+    {
+      "name": "ListVersions",
+      "methodName": "toListVersions",
+      "description": "Grants permission to list AWS Elemental MediaConvert job engine versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/versions.html"
+    },
+    {
+      "name": "Probe",
+      "methodName": "toProbe",
+      "description": "Grants permission to probe a file",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/probe.html"
+    },
+    {
+      "name": "PutPolicy",
+      "methodName": "toPutPolicy",
+      "description": "Grants permission to put an AWS Elemental MediaConvert policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/policy.html"
+    },
+    {
+      "name": "SearchJobs",
+      "methodName": "toSearchJobs",
+      "description": "Grants permission to search AWS Elemental MediaConvert jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/search.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a MediaConvert queue, preset, or job template",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a MediaConvert queue, preset, or job template",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags-arn.html"
+    },
+    {
+      "name": "UpdateJobTemplate",
+      "methodName": "toUpdateJobTemplate",
+      "description": "Grants permission to update an AWS Elemental MediaConvert custom job template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates-name.html"
+    },
+    {
+      "name": "UpdatePreset",
+      "methodName": "toUpdatePreset",
+      "description": "Grants permission to update an AWS Elemental MediaConvert custom output preset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets-name.html"
+    },
+    {
+      "name": "UpdateQueue",
+      "methodName": "toUpdateQueue",
+      "description": "Grants permission to update an AWS Elemental MediaConvert job queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues-name.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "CertificateAssociation",
+      "methodName": "onCertificateAssociation",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/certificates.html",
+      "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:certificates/${CertificateArn}",
+      "placeholders": [
+        {
+          "placeholder": "CertificateArn",
+          "name": "certificateArn",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "Job",
+      "methodName": "onJob",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html",
+      "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:jobs/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "JobTemplate",
+      "methodName": "onJobTemplate",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates.html",
+      "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:jobTemplates/${JobTemplateName}",
+      "placeholders": [
+        {
+          "placeholder": "JobTemplateName",
+          "name": "jobTemplateName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Preset",
+      "methodName": "onPreset",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets.html",
+      "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:presets/${PresetName}",
+      "placeholders": [
+        {
+          "placeholder": "PresetName",
+          "name": "presetName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Queue",
+      "methodName": "onQueue",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues.html",
+      "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:queues/${QueueName}",
+      "placeholders": [
+        {
+          "placeholder": "QueueName",
+          "name": "queueName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags.html",
+      "relatedActionMethods": [
+        "toCreateJob",
+        "toCreateJobTemplate",
+        "toCreatePreset",
+        "toCreateQueue",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags.html",
+      "relatedActionMethods": [
+        "toCancelJob",
+        "toCreateJob",
+        "toCreateJobTemplate",
+        "toCreatePreset",
+        "toCreateQueue",
+        "toCreateResourceShare",
+        "toDeleteJobTemplate",
+        "toDeletePreset",
+        "toDeleteQueue",
+        "toGetJob",
+        "toGetJobTemplate",
+        "toGetPreset",
+        "toGetQueue",
+        "toListJobs",
+        "toListTagsForResource",
+        "toSearchJobs",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateJobTemplate",
+        "toUpdatePreset",
+        "toUpdateQueue"
+      ],
+      "relatedResourceTypes": [
+        "Job",
+        "JobTemplate",
+        "Preset",
+        "Queue"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys in the request",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags.html",
+      "relatedActionMethods": [
+        "toCreateJob",
+        "toCreateJobTemplate",
+        "toCreatePreset",
+        "toCreateQueue",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "mediaconvert:HttpInputsAllowed",
+      "methodName": "ifHttpInputsAllowed",
+      "description": "Filters access by an HTTP input policy present in the account",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/input-policies.html",
+      "relatedActionMethods": [
+        "toCreateJob"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "HttpInputsAllowed",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "mediaconvert:HttpsInputsAllowed",
+      "methodName": "ifHttpsInputsAllowed",
+      "description": "Filters access by an HTTPS input policy present in the account",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/input-policies.html",
+      "relatedActionMethods": [
+        "toCreateJob"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "HttpsInputsAllowed",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "mediaconvert:S3InputsAllowed",
+      "methodName": "ifS3InputsAllowed",
+      "description": "Filters access by an S3 input policy present in the account",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/input-policies.html",
+      "relatedActionMethods": [
+        "toCreateJob"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "S3InputsAllowed",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    }
+  ]
+}

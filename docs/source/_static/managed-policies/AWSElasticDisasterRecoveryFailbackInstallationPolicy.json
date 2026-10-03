@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DRSFailbackInstallationPolicy1",
+      "Effect": "Allow",
+      "Action": [
+        "drs:SendClientLogsForDrs",
+        "drs:SendClientMetricsForDrs",
+        "drs:DescribeRecoveryInstances",
+        "drs:DescribeSourceServers"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DRSFailbackInstallationPolicy2",
+      "Effect": "Allow",
+      "Action": [
+        "drs:TagResource",
+        "drs:IssueAgentCertificateForDrs",
+        "drs:AssociateFailbackClientToRecoveryInstanceForDrs",
+        "drs:GetSuggestedFailbackClientDeviceMappingForDrs",
+        "drs:UpdateAgentReplicationInfoForDrs",
+        "drs:UpdateFailbackClientDeviceMappingForDrs"
+      ],
+      "Resource": "arn:aws:drs:*:*:recovery-instance/*"
+    }
+  ]
+}

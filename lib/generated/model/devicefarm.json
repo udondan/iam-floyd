@@ -1,0 +1,1262 @@
+{
+  "schemaVersion": 1,
+  "filename": "devicefarm",
+  "className": "Devicefarm",
+  "name": "devicefarm",
+  "servicePrefix": "devicefarm",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devicefarm.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateDevicePool",
+      "CreateInstanceProfile",
+      "CreateNetworkProfile",
+      "CreateProject",
+      "CreateRemoteAccessSession",
+      "CreateTestGridProject",
+      "CreateTestGridUrl",
+      "CreateUpload",
+      "CreateVPCEConfiguration",
+      "DeleteDevicePool",
+      "DeleteInstanceProfile",
+      "DeleteNetworkProfile",
+      "DeleteProject",
+      "DeleteRemoteAccessSession",
+      "DeleteRun",
+      "DeleteTestGridProject",
+      "DeleteUpload",
+      "DeleteVPCEConfiguration",
+      "InstallToRemoteAccessSession",
+      "PurchaseOffering",
+      "RenewOffering",
+      "ScheduleRun",
+      "StopJob",
+      "StopRemoteAccessSession",
+      "StopRun",
+      "TagResource",
+      "UntagResource",
+      "UpdateDeviceInstance",
+      "UpdateDevicePool",
+      "UpdateInstanceProfile",
+      "UpdateNetworkProfile",
+      "UpdateProject",
+      "UpdateTestGridProject",
+      "UpdateUpload",
+      "UpdateVPCEConfiguration"
+    ],
+    "Read": [
+      "GetAccountSettings",
+      "GetDevice",
+      "GetDeviceInstance",
+      "GetDevicePool",
+      "GetDevicePoolCompatibility",
+      "GetInstanceProfile",
+      "GetJob",
+      "GetNetworkProfile",
+      "GetOfferingStatus",
+      "GetProject",
+      "GetRemoteAccessSession",
+      "GetRun",
+      "GetSuite",
+      "GetTest",
+      "GetTestGridProject",
+      "GetTestGridSession",
+      "GetUpload",
+      "GetVPCEConfiguration"
+    ],
+    "List": [
+      "ListArtifacts",
+      "ListDeviceInstances",
+      "ListDevicePools",
+      "ListDevices",
+      "ListInstanceProfiles",
+      "ListJobs",
+      "ListNetworkProfiles",
+      "ListOfferingPromotions",
+      "ListOfferingTransactions",
+      "ListOfferings",
+      "ListProjects",
+      "ListRemoteAccessSessions",
+      "ListRuns",
+      "ListSamples",
+      "ListSuites",
+      "ListTagsForResource",
+      "ListTestGridProjects",
+      "ListTestGridSessionActions",
+      "ListTestGridSessionArtifacts",
+      "ListTestGridSessions",
+      "ListTests",
+      "ListUniqueProblems",
+      "ListUploads",
+      "ListVPCEConfigurations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateDevicePool",
+      "methodName": "toCreateDevicePool",
+      "description": "Grants permission to create a device pool within a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateDevicePool.html"
+    },
+    {
+      "name": "CreateInstanceProfile",
+      "methodName": "toCreateInstanceProfile",
+      "description": "Grants permission to create a device instance profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateInstanceProfile.html"
+    },
+    {
+      "name": "CreateNetworkProfile",
+      "methodName": "toCreateNetworkProfile",
+      "description": "Grants permission to create a network profile within a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateNetworkProfile.html"
+    },
+    {
+      "name": "CreateProject",
+      "methodName": "toCreateProject",
+      "description": "Grants permission to create a project for mobile testing",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateProject.html"
+    },
+    {
+      "name": "CreateRemoteAccessSession",
+      "methodName": "toCreateRemoteAccessSession",
+      "description": "Grants permission to start a remote access session to a device instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateRemoteAccessSession.html"
+    },
+    {
+      "name": "CreateTestGridProject",
+      "methodName": "toCreateTestGridProject",
+      "description": "Grants permission to create a project for desktop testing",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateTestGridProject.html"
+    },
+    {
+      "name": "CreateTestGridUrl",
+      "methodName": "toCreateTestGridUrl",
+      "description": "Grants permission to generate a new pre-signed url used to access our test grid service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateTestGridUrl.html"
+    },
+    {
+      "name": "CreateUpload",
+      "methodName": "toCreateUpload",
+      "description": "Grants permission to upload a new file or app within a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateUpload.html"
+    },
+    {
+      "name": "CreateVPCEConfiguration",
+      "methodName": "toCreateVPCEConfiguration",
+      "description": "Grants permission to create an Amazon Virtual Private Cloud (VPC) endpoint configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateVPCEConfiguration.html"
+    },
+    {
+      "name": "DeleteDevicePool",
+      "methodName": "toDeleteDevicePool",
+      "description": "Grants permission to delete a user-generated device pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteDevicePool.html"
+    },
+    {
+      "name": "DeleteInstanceProfile",
+      "methodName": "toDeleteInstanceProfile",
+      "description": "Grants permission to delete a user-generated instance profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteInstanceProfile.html"
+    },
+    {
+      "name": "DeleteNetworkProfile",
+      "methodName": "toDeleteNetworkProfile",
+      "description": "Grants permission to delete a user-generated network profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/DeleteNetworkProfile.html"
+    },
+    {
+      "name": "DeleteProject",
+      "methodName": "toDeleteProject",
+      "description": "Grants permission to delete a mobile testing project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteProject.html"
+    },
+    {
+      "name": "DeleteRemoteAccessSession",
+      "methodName": "toDeleteRemoteAccessSession",
+      "description": "Grants permission to delete a completed remote access session and its results",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteRemoteAccessSession.html"
+    },
+    {
+      "name": "DeleteRun",
+      "methodName": "toDeleteRun",
+      "description": "Grants permission to delete a run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteRun.html"
+    },
+    {
+      "name": "DeleteTestGridProject",
+      "methodName": "toDeleteTestGridProject",
+      "description": "Grants permission to delete a desktop testing project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteTestGridProject.html"
+    },
+    {
+      "name": "DeleteUpload",
+      "methodName": "toDeleteUpload",
+      "description": "Grants permission to delete a user-uploaded file",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteUpload.html"
+    },
+    {
+      "name": "DeleteVPCEConfiguration",
+      "methodName": "toDeleteVPCEConfiguration",
+      "description": "Grants permission to delete an Amazon Virtual Private Cloud (VPC) endpoint configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteVPCEConfiguration.html"
+    },
+    {
+      "name": "GetAccountSettings",
+      "methodName": "toGetAccountSettings",
+      "description": "Grants permission to retrieve the number of unmetered iOS and/or unmetered Android devices purchased by the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetAccountSettings.html"
+    },
+    {
+      "name": "GetDevice",
+      "methodName": "toGetDevice",
+      "description": "Grants permission to retrieve the information of a unique device type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevice.html"
+    },
+    {
+      "name": "GetDeviceInstance",
+      "methodName": "toGetDeviceInstance",
+      "description": "Grants permission to retireve the information of a device instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDeviceInstance.html"
+    },
+    {
+      "name": "GetDevicePool",
+      "methodName": "toGetDevicePool",
+      "description": "Grants permission to retireve the information of a device pool",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevicePool.html"
+    },
+    {
+      "name": "GetDevicePoolCompatibility",
+      "methodName": "toGetDevicePoolCompatibility",
+      "description": "Grants permission to retrieve information about the compatibility of a test and/or app with a device pool",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevicePoolCompatibility.html"
+    },
+    {
+      "name": "GetInstanceProfile",
+      "methodName": "toGetInstanceProfile",
+      "description": "Grants permission to retireve the information of an instance profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetInstanceProfile.html"
+    },
+    {
+      "name": "GetJob",
+      "methodName": "toGetJob",
+      "description": "Grants permission to retireve the information of a job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetJob.html"
+    },
+    {
+      "name": "GetNetworkProfile",
+      "methodName": "toGetNetworkProfile",
+      "description": "Grants permission to retireve the information of a network profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetNetworkProfile.html"
+    },
+    {
+      "name": "GetOfferingStatus",
+      "methodName": "toGetOfferingStatus",
+      "description": "Grants permission to retrieve the current status and future status of all offerings purchased by an AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetOfferingStatus.html"
+    },
+    {
+      "name": "GetProject",
+      "methodName": "toGetProject",
+      "description": "Grants permission to retrieve information about a mobile testing project",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetProject.html"
+    },
+    {
+      "name": "GetRemoteAccessSession",
+      "methodName": "toGetRemoteAccessSession",
+      "description": "Grants permission to retireve the link to a currently running remote access session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetRemoteAccessSession.html"
+    },
+    {
+      "name": "GetRun",
+      "methodName": "toGetRun",
+      "description": "Grants permission to retireve the information of a run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetRun.html"
+    },
+    {
+      "name": "GetSuite",
+      "methodName": "toGetSuite",
+      "description": "Grants permission to retireve the information of a testing suite",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetSuite.html"
+    },
+    {
+      "name": "GetTest",
+      "methodName": "toGetTest",
+      "description": "Grants permission to retireve the information of a test case",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetTest.html"
+    },
+    {
+      "name": "GetTestGridProject",
+      "methodName": "toGetTestGridProject",
+      "description": "Grants permission to retrieve information about a desktop testing project",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetTestGridProject.html"
+    },
+    {
+      "name": "GetTestGridSession",
+      "methodName": "toGetTestGridSession",
+      "description": "Grants permission to retireve the information of a test grid session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetTestGridSession.html"
+    },
+    {
+      "name": "GetUpload",
+      "methodName": "toGetUpload",
+      "description": "Grants permission to retireve the information of an uploaded file",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetUpload.html"
+    },
+    {
+      "name": "GetVPCEConfiguration",
+      "methodName": "toGetVPCEConfiguration",
+      "description": "Grants permission to retireve the information of an Amazon Virtual Private Cloud (VPC) endpoint configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetVPCEConfiguration.html"
+    },
+    {
+      "name": "InstallToRemoteAccessSession",
+      "methodName": "toInstallToRemoteAccessSession",
+      "description": "Grants permission to install an application to a device in a remote access session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_InstallToRemoteAccessSession.html"
+    },
+    {
+      "name": "ListArtifacts",
+      "methodName": "toListArtifacts",
+      "description": "Grants permission to list the artifacts in a project",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListArtifacts.html"
+    },
+    {
+      "name": "ListDeviceInstances",
+      "methodName": "toListDeviceInstances",
+      "description": "Grants permission to list the information of device instances",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListDeviceInstances.html"
+    },
+    {
+      "name": "ListDevicePools",
+      "methodName": "toListDevicePools",
+      "description": "Grants permission to list the information of device pools",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListDevicePools.html"
+    },
+    {
+      "name": "ListDevices",
+      "methodName": "toListDevices",
+      "description": "Grants permission to list the information of unique device types",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListDevices.html"
+    },
+    {
+      "name": "ListInstanceProfiles",
+      "methodName": "toListInstanceProfiles",
+      "description": "Grants permission to list the information of device instance profiles",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListInstanceProfiles.html"
+    },
+    {
+      "name": "ListJobs",
+      "methodName": "toListJobs",
+      "description": "Grants permission to list the information of jobs within a run",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListJobs.html"
+    },
+    {
+      "name": "ListNetworkProfiles",
+      "methodName": "toListNetworkProfiles",
+      "description": "Grants permission to list the information of network profiles within a project",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListNetworkProfiles.html"
+    },
+    {
+      "name": "ListOfferingPromotions",
+      "methodName": "toListOfferingPromotions",
+      "description": "Grants permission to list the offering promotions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListOfferingPromotions.html"
+    },
+    {
+      "name": "ListOfferingTransactions",
+      "methodName": "toListOfferingTransactions",
+      "description": "Grants permission to list all of the historical purchases, renewals, and system renewal transactions for an AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListOfferingTransactions.html"
+    },
+    {
+      "name": "ListOfferings",
+      "methodName": "toListOfferings",
+      "description": "Grants permission to list the products or offerings that the user can manage through the API",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListOfferings.html"
+    },
+    {
+      "name": "ListProjects",
+      "methodName": "toListProjects",
+      "description": "Grants permission to list the information of mobile testing projects for an AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListProjects.html"
+    },
+    {
+      "name": "ListRemoteAccessSessions",
+      "methodName": "toListRemoteAccessSessions",
+      "description": "Grants permission to list the information of currently running remote access sessions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListRemoteAccessSessions.html"
+    },
+    {
+      "name": "ListRuns",
+      "methodName": "toListRuns",
+      "description": "Grants permission to list the information of runs within a project",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListRuns.html"
+    },
+    {
+      "name": "ListSamples",
+      "methodName": "toListSamples",
+      "description": "Grants permission to list the information of samples within a project",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListSamples.html"
+    },
+    {
+      "name": "ListSuites",
+      "methodName": "toListSuites",
+      "description": "Grants permission to list the information of testing suites within a job",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListSuites.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags of a resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTestGridProjects",
+      "methodName": "toListTestGridProjects",
+      "description": "Grants permission to list the information of desktop testing projects for an AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTestGridProjects.html"
+    },
+    {
+      "name": "ListTestGridSessionActions",
+      "methodName": "toListTestGridSessionActions",
+      "description": "Grants permission to list the session actions performed during a test grid session",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTestGridSessionActions.html"
+    },
+    {
+      "name": "ListTestGridSessionArtifacts",
+      "methodName": "toListTestGridSessionArtifacts",
+      "description": "Grants permission to list the artifacts generated by a test grid session",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTestGridSessionArtifacts.html"
+    },
+    {
+      "name": "ListTestGridSessions",
+      "methodName": "toListTestGridSessions",
+      "description": "Grants permission to list the sessions within a test grid project",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTestGridSessions.html"
+    },
+    {
+      "name": "ListTests",
+      "methodName": "toListTests",
+      "description": "Grants permission to list the information of tests within a testing suite",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTests.html"
+    },
+    {
+      "name": "ListUniqueProblems",
+      "methodName": "toListUniqueProblems",
+      "description": "Grants permission to list the information of unique problems within a run",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListUniqueProblems.html"
+    },
+    {
+      "name": "ListUploads",
+      "methodName": "toListUploads",
+      "description": "Grants permission to list the information of uploads within a project",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListUploads.html"
+    },
+    {
+      "name": "ListVPCEConfigurations",
+      "methodName": "toListVPCEConfigurations",
+      "description": "Grants permission to list the information of Amazon Virtual Private Cloud (VPC) endpoint configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListVPCEConfigurations.html"
+    },
+    {
+      "name": "PurchaseOffering",
+      "methodName": "toPurchaseOffering",
+      "description": "Grants permission to purchase offerings for an AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_PurchaseOffering.html"
+    },
+    {
+      "name": "RenewOffering",
+      "methodName": "toRenewOffering",
+      "description": "Grants permission to set the quantity of devices to renew for an offering",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_RenewOffering.html"
+    },
+    {
+      "name": "ScheduleRun",
+      "methodName": "toScheduleRun",
+      "description": "Grants permission to schedule a run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ScheduleRun.html"
+    },
+    {
+      "name": "StopJob",
+      "methodName": "toStopJob",
+      "description": "Grants permission to terminate a running job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_StopJob.html"
+    },
+    {
+      "name": "StopRemoteAccessSession",
+      "methodName": "toStopRemoteAccessSession",
+      "description": "Grants permission to terminate a running remote access session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_StopRemoteAccessSession.html"
+    },
+    {
+      "name": "StopRun",
+      "methodName": "toStopRun",
+      "description": "Grants permission to terminate a running test run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_StopRun.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDeviceInstance",
+      "methodName": "toUpdateDeviceInstance",
+      "description": "Grants permission to modify an existing device instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateDeviceInstance.html"
+    },
+    {
+      "name": "UpdateDevicePool",
+      "methodName": "toUpdateDevicePool",
+      "description": "Grants permission to modify an existing device pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateDevicePool.html"
+    },
+    {
+      "name": "UpdateInstanceProfile",
+      "methodName": "toUpdateInstanceProfile",
+      "description": "Grants permission to modify an existing instance profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateInstanceProfile.html"
+    },
+    {
+      "name": "UpdateNetworkProfile",
+      "methodName": "toUpdateNetworkProfile",
+      "description": "Grants permission to modify an existing network profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateNetworkProfile.html"
+    },
+    {
+      "name": "UpdateProject",
+      "methodName": "toUpdateProject",
+      "description": "Grants permission to modify an existing mobile testing project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateProject.html"
+    },
+    {
+      "name": "UpdateTestGridProject",
+      "methodName": "toUpdateTestGridProject",
+      "description": "Grants permission to modify an existing desktop testing project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateTestGridProject.html"
+    },
+    {
+      "name": "UpdateUpload",
+      "methodName": "toUpdateUpload",
+      "description": "Grants permission to modify an existing upload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateUpload.html"
+    },
+    {
+      "name": "UpdateVPCEConfiguration",
+      "methodName": "toUpdateVPCEConfiguration",
+      "description": "Grants permission to modify an existing Amazon Virtual Private Cloud (VPC) endpoint configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateVPCEConfiguration.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "artifact",
+      "methodName": "onArtifact",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Artifact.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:artifact:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "device",
+      "methodName": "onDevice",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Device.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}::device:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "deviceinstance",
+      "methodName": "onDeviceinstance",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeviceInstance.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}::deviceinstance:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "devicepool",
+      "methodName": "onDevicepool",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DevicePool.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:devicepool:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "instanceprofile",
+      "methodName": "onInstanceprofile",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_InstanceProfile.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:instanceprofile:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "job",
+      "methodName": "onJob",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Job.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:job:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "networkprofile",
+      "methodName": "onNetworkprofile",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_NetworkProfile.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:networkprofile:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "project",
+      "methodName": "onProject",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Project.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:project:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "run",
+      "methodName": "onRun",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Run.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:run:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "sample",
+      "methodName": "onSample",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Sample.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:sample:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "session",
+      "methodName": "onSession",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_RemoteAccessSession.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:session:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "suite",
+      "methodName": "onSuite",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Suite.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:suite:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "test",
+      "methodName": "onTest",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Test.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:test:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "testgrid-project",
+      "methodName": "onTestgridProject",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_TestGridProject.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-project:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "testgrid-session",
+      "methodName": "onTestgridSession",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_TestGridSession.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-session:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "upload",
+      "methodName": "onUpload",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Upload.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:upload:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "vpceconfiguration",
+      "methodName": "onVpceconfiguration",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_VPCEConfiguration.html",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:vpceconfiguration:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters actions based on the allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on tag-value assoicated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateDevicePool",
+        "toCreateNetworkProfile",
+        "toCreateRemoteAccessSession",
+        "toCreateTestGridUrl",
+        "toCreateUpload",
+        "toDeleteDevicePool",
+        "toDeleteInstanceProfile",
+        "toDeleteNetworkProfile",
+        "toDeleteProject",
+        "toDeleteRemoteAccessSession",
+        "toDeleteRun",
+        "toDeleteTestGridProject",
+        "toDeleteVPCEConfiguration",
+        "toGetDevice",
+        "toGetDeviceInstance",
+        "toGetDevicePool",
+        "toGetDevicePoolCompatibility",
+        "toGetInstanceProfile",
+        "toGetNetworkProfile",
+        "toGetProject",
+        "toGetRemoteAccessSession",
+        "toGetRun",
+        "toGetTestGridProject",
+        "toGetTestGridSession",
+        "toGetVPCEConfiguration",
+        "toInstallToRemoteAccessSession",
+        "toListArtifacts",
+        "toListDevicePools",
+        "toListJobs",
+        "toListNetworkProfiles",
+        "toListRemoteAccessSessions",
+        "toListRuns",
+        "toListTagsForResource",
+        "toListTestGridSessionActions",
+        "toListTestGridSessionArtifacts",
+        "toListTestGridSessions",
+        "toListUniqueProblems",
+        "toListUploads",
+        "toScheduleRun",
+        "toStopRemoteAccessSession",
+        "toStopRun",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDeviceInstance",
+        "toUpdateDevicePool",
+        "toUpdateInstanceProfile",
+        "toUpdateNetworkProfile",
+        "toUpdateProject",
+        "toUpdateTestGridProject",
+        "toUpdateVPCEConfiguration"
+      ],
+      "relatedResourceTypes": [
+        "device",
+        "deviceinstance",
+        "devicepool",
+        "instanceprofile",
+        "networkprofile",
+        "project",
+        "run",
+        "session",
+        "testgrid-project",
+        "testgrid-session",
+        "vpceconfiguration"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters actions based on the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

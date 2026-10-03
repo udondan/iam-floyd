@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "mediaconnect:DeleteFlow",
+        "mediaconnect:RemoveFlowSource",
+        "mediaconnect:RemoveFlowOutput",
+        "mediaconnect:RevokeFlowEntitlement",
+        "mediaconnect:RemoveFlowMediaStream",
+        "mediaconnect:RemoveFlowVpcInterface"
+      ],
+      "Resource": [
+        "arn:aws:mediaconnect:*:*:flow:*:*",
+        "arn:aws:mediaconnect:*:*:source:*:*",
+        "arn:aws:mediaconnect:*:*:output:*:*",
+        "arn:aws:mediaconnect:*:*:entitlement:*:*",
+        "arn:aws:mediaconnect:*:*:flow:*:*/vpcInterface/*",
+        "arn:aws:mediaconnect:*:*:flow:*:*/mediaStream/*"
+      ]
+    }
+  ]
+}

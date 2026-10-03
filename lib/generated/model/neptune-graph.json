@@ -1,0 +1,566 @@
+{
+  "schemaVersion": 1,
+  "filename": "neptune-graph",
+  "className": "NeptuneGraph",
+  "name": "neptune-graph",
+  "servicePrefix": "neptune-graph",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_neptune-graph.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelExportTask",
+      "CancelImportTask",
+      "CancelQuery",
+      "CreateGraph",
+      "CreateGraphSnapshot",
+      "CreateGraphUsingImportTask",
+      "CreatePrivateGraphEndpoint",
+      "DeleteDataViaQuery",
+      "DeleteGraph",
+      "DeleteGraphSnapshot",
+      "DeletePrivateGraphEndpoint",
+      "ResetGraph",
+      "RestoreGraphFromSnapshot",
+      "StartExportTask",
+      "StartGraph",
+      "StartImportTask",
+      "StopGraph",
+      "TagResource",
+      "UntagResource",
+      "UpdateGraph",
+      "WriteDataViaQuery"
+    ],
+    "Read": [
+      "GetEngineStatus",
+      "GetExportTask",
+      "GetGraph",
+      "GetGraphSnapshot",
+      "GetGraphSummary",
+      "GetImportTask",
+      "GetPrivateGraphEndpoint",
+      "GetQueryStatus",
+      "GetStatisticsStatus",
+      "ListExportTasks",
+      "ListGraphSnapshots",
+      "ListGraphs",
+      "ListImportTasks",
+      "ListPrivateGraphEndpoints",
+      "ListQueries",
+      "ListTagsForResource",
+      "ReadDataViaQuery"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelExportTask",
+      "methodName": "toCancelExportTask",
+      "description": "Grants permission to cancel an ongoing export task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CancelExportTask.html"
+    },
+    {
+      "name": "CancelImportTask",
+      "methodName": "toCancelImportTask",
+      "description": "Grants permission to cancel an ongoing import task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CancelImportTask.html"
+    },
+    {
+      "name": "CancelQuery",
+      "methodName": "toCancelQuery",
+      "description": "Grants permission to cancel a query",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CancelQuery.html"
+    },
+    {
+      "name": "CreateGraph",
+      "methodName": "toCreateGraph",
+      "description": "Grants permission to create a new graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CreateGraph.html"
+    },
+    {
+      "name": "CreateGraphSnapshot",
+      "methodName": "toCreateGraphSnapshot",
+      "description": "Grants permission to create a new snapshot from an existing graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CreateGraphSnapshot.html"
+    },
+    {
+      "name": "CreateGraphUsingImportTask",
+      "methodName": "toCreateGraphUsingImportTask",
+      "description": "Grants permission to create a new graph while importing data into the new graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CreateGraphUsingImportTask.html"
+    },
+    {
+      "name": "CreatePrivateGraphEndpoint",
+      "methodName": "toCreatePrivateGraphEndpoint",
+      "description": "Grants permission to create a new private graph endpoint to access the graph from within a vpc",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CreatePrivateGraphEndpoint.html"
+    },
+    {
+      "name": "DeleteDataViaQuery",
+      "methodName": "toDeleteDataViaQuery",
+      "description": "Grants permission to delete data via query APIs on the graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ExecuteQuery.html"
+    },
+    {
+      "name": "DeleteGraph",
+      "methodName": "toDeleteGraph",
+      "description": "Grants permission to delete a graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_DeleteGraph.html"
+    },
+    {
+      "name": "DeleteGraphSnapshot",
+      "methodName": "toDeleteGraphSnapshot",
+      "description": "Grants permission to delete a snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_DeleteGraphSnapshot.html"
+    },
+    {
+      "name": "DeletePrivateGraphEndpoint",
+      "methodName": "toDeletePrivateGraphEndpoint",
+      "description": "Grants permission to delete a private graph endpoint of a graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_DeletePrivateGraphEndpoint.html"
+    },
+    {
+      "name": "GetEngineStatus",
+      "methodName": "toGetEngineStatus",
+      "description": "Grants permission to get the engine status of the graph",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/#GetEngineStatus"
+    },
+    {
+      "name": "GetExportTask",
+      "methodName": "toGetExportTask",
+      "description": "Grants permission to get details about an export task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_GetExportTask.html"
+    },
+    {
+      "name": "GetGraph",
+      "methodName": "toGetGraph",
+      "description": "Grants permission to get details about a graph",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_GetGraph.html"
+    },
+    {
+      "name": "GetGraphSnapshot",
+      "methodName": "toGetGraphSnapshot",
+      "description": "Grants permission to get details about a snapshot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_GetGraphSnapshot.html"
+    },
+    {
+      "name": "GetGraphSummary",
+      "methodName": "toGetGraphSummary",
+      "description": "Grants permission to get the summary for the data in the graph",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_GetGraphSummary.html"
+    },
+    {
+      "name": "GetImportTask",
+      "methodName": "toGetImportTask",
+      "description": "Grants permission to get details about an import task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_GetImportTask.html"
+    },
+    {
+      "name": "GetPrivateGraphEndpoint",
+      "methodName": "toGetPrivateGraphEndpoint",
+      "description": "Grants permission to get details about a private graph endpoint of a graph",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_GetPrivateGraphEndpoint.html"
+    },
+    {
+      "name": "GetQueryStatus",
+      "methodName": "toGetQueryStatus",
+      "description": "Grants permission to check the status of a given query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_GetQuery.html"
+    },
+    {
+      "name": "GetStatisticsStatus",
+      "methodName": "toGetStatisticsStatus",
+      "description": "Grants permission to get the statistics for the data in the graph",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/#GetStatisticsStatus"
+    },
+    {
+      "name": "ListExportTasks",
+      "methodName": "toListExportTasks",
+      "description": "Grants permission to list the export tasks in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ListExportTasks.html"
+    },
+    {
+      "name": "ListGraphSnapshots",
+      "methodName": "toListGraphSnapshots",
+      "description": "Grants permission to list the snapshots in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ListGraphSnapshots.html"
+    },
+    {
+      "name": "ListGraphs",
+      "methodName": "toListGraphs",
+      "description": "Grants permission to list the graphs in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ListGraphs.html"
+    },
+    {
+      "name": "ListImportTasks",
+      "methodName": "toListImportTasks",
+      "description": "Grants permission to list the import tasks in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ListImportTasks.html"
+    },
+    {
+      "name": "ListPrivateGraphEndpoints",
+      "methodName": "toListPrivateGraphEndpoints",
+      "description": "Grants permission to list the private graph endpoints for a given graph",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ListPrivateGraphEndpoints.html"
+    },
+    {
+      "name": "ListQueries",
+      "methodName": "toListQueries",
+      "description": "Grants permission to check the status of all active queries",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ListQueries.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to lists tag for a Neptune Analytics resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ReadDataViaQuery",
+      "methodName": "toReadDataViaQuery",
+      "description": "Grants permission to read data via query APIs on the graph",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ExecuteQuery.html"
+    },
+    {
+      "name": "ResetGraph",
+      "methodName": "toResetGraph",
+      "description": "Grants permission to reset a graph which deletes all data within the graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ResetGraph.html"
+    },
+    {
+      "name": "RestoreGraphFromSnapshot",
+      "methodName": "toRestoreGraphFromSnapshot",
+      "description": "Grants permission to create a new graph from an existing snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_RestoreGraphFromSnapshot.html"
+    },
+    {
+      "name": "StartExportTask",
+      "methodName": "toStartExportTask",
+      "description": "Grants permission to export data from an existing graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_StartExportTask.html"
+    },
+    {
+      "name": "StartGraph",
+      "methodName": "toStartGraph",
+      "description": "Grants permission to start a graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_StartGraph.html"
+    },
+    {
+      "name": "StartImportTask",
+      "methodName": "toStartImportTask",
+      "description": "Grants permission to import data into an existing graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_StartImportTask.html"
+    },
+    {
+      "name": "StopGraph",
+      "methodName": "toStopGraph",
+      "description": "Grants permission to stop a graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_StopGraph.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a Neptune Analytics resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a Neptune Analytics resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateGraph",
+      "methodName": "toUpdateGraph",
+      "description": "Grants permission to modify a graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_UpdateGraph.html"
+    },
+    {
+      "name": "WriteDataViaQuery",
+      "methodName": "toWriteDataViaQuery",
+      "description": "Grants permission to write data via query APIs on the graph",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ExecuteQuery.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "export-task",
+      "methodName": "onExportTask",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-resources.html#export-task",
+      "arn": "arn:${Partition}:neptune-graph:${Region}:${Account}:export-task/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "graph",
+      "methodName": "onGraph",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-resources.html#graph",
+      "arn": "arn:${Partition}:neptune-graph:${Region}:${Account}:graph/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "graph-snapshot",
+      "methodName": "onGraphSnapshot",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-resources.html#graph-snapshot",
+      "arn": "arn:${Partition}:neptune-graph:${Region}:${Account}:graph-snapshot/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "import-task",
+      "methodName": "onImportTask",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-resources.html#import-task",
+      "arn": "arn:${Partition}:neptune-graph:${Region}:${Account}:import-task/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag's key and value in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateGraph",
+        "toCreateGraphSnapshot",
+        "toCreateGraphUsingImportTask",
+        "toCreatePrivateGraphEndpoint",
+        "toRestoreGraphFromSnapshot",
+        "toStartExportTask",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCancelExportTask",
+        "toCancelQuery",
+        "toCreateGraph",
+        "toCreateGraphSnapshot",
+        "toCreateGraphUsingImportTask",
+        "toCreatePrivateGraphEndpoint",
+        "toDeleteDataViaQuery",
+        "toDeleteGraph",
+        "toDeleteGraphSnapshot",
+        "toDeletePrivateGraphEndpoint",
+        "toGetEngineStatus",
+        "toGetExportTask",
+        "toGetGraph",
+        "toGetGraphSnapshot",
+        "toGetGraphSummary",
+        "toGetPrivateGraphEndpoint",
+        "toGetQueryStatus",
+        "toGetStatisticsStatus",
+        "toListGraphSnapshots",
+        "toListGraphs",
+        "toListPrivateGraphEndpoints",
+        "toListQueries",
+        "toListTagsForResource",
+        "toReadDataViaQuery",
+        "toResetGraph",
+        "toRestoreGraphFromSnapshot",
+        "toStartExportTask",
+        "toStartGraph",
+        "toStartImportTask",
+        "toStopGraph",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateGraph",
+        "toWriteDataViaQuery"
+      ],
+      "relatedResourceTypes": [
+        "graph",
+        "graph-snapshot"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateGraph",
+        "toCreateGraphSnapshot",
+        "toCreateGraphUsingImportTask",
+        "toCreatePrivateGraphEndpoint",
+        "toRestoreGraphFromSnapshot",
+        "toStartExportTask",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "neptune-graph:PublicConnectivity",
+      "methodName": "ifPublicConnectivity",
+      "description": "Filters access by the value of the public connectivity parameter provided in the request or its default value, if unspecified. All access to graphs is IAM authenticated",
+      "url": "https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-condition-keys.html#publicconnectivity",
+      "relatedActionMethods": [
+        "toCreateGraph",
+        "toCreateGraphUsingImportTask",
+        "toRestoreGraphFromSnapshot",
+        "toUpdateGraph"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PublicConnectivity",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    }
+  ]
+}

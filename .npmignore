@@ -1,0 +1,36 @@
+# Exclude typescript source and config
+*.ts
+tsconfig.*
+*.tgz
+
+bin/*
+cdk/*
+CHANGELOG.md
+docs/*
+eslint.log
+examples/*
+helper/*
+lib/generated/model/*
+lib/generator/*
+node_modules
+test/*
+tooter/*
+
+.editorconfig
+.github/*
+.gitignore
+.readthedocs.yaml
+.npmignore
+.release-please-manifest.json
+release-please-config.json
+.vscode/*
+
+Makefile
+*.Makefile
+
+# Include all javascript files and typescript declarations
+!*.js
+!*.d.ts
+
+# jsii-pacmak output
+dist/*

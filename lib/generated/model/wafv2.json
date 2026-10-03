@@ -1,0 +1,1133 @@
+{
+  "schemaVersion": 1,
+  "filename": "wafv2",
+  "className": "Wafv2",
+  "name": "wafv2",
+  "servicePrefix": "wafv2",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_wafv2.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateWebACL",
+      "CreateAPIKey",
+      "CreateIPSet",
+      "CreateRegexPatternSet",
+      "CreateRuleGroup",
+      "CreateWebACL",
+      "DeleteAPIKey",
+      "DeleteFirewallManagerRuleGroups",
+      "DeleteIPSet",
+      "DeleteLoggingConfiguration",
+      "DeletePermissionPolicy",
+      "DeleteRegexPatternSet",
+      "DeleteRuleGroup",
+      "DeleteWebACL",
+      "DisassociateWebACL",
+      "PutLoggingConfiguration",
+      "PutManagedRuleSetVersions",
+      "PutPermissionPolicy",
+      "TagResource",
+      "UntagResource",
+      "UpdateIPSet",
+      "UpdateManagedRuleSetVersionExpiryDate",
+      "UpdateRegexPatternSet",
+      "UpdateRuleGroup",
+      "UpdateWebACL",
+      "DisassociateFirewallManager",
+      "PutFirewallManagerRuleGroups"
+    ],
+    "Read": [
+      "CheckCapacity",
+      "DescribeAllManagedProducts",
+      "DescribeManagedProductsByVendor",
+      "DescribeManagedRuleGroup",
+      "GenerateMobileSdkReleaseUrl",
+      "GetDecryptedAPIKey",
+      "GetIPSet",
+      "GetLoggingConfiguration",
+      "GetManagedRuleSet",
+      "GetMobileSdkRelease",
+      "GetPermissionPolicy",
+      "GetRateBasedStatementManagedKeys",
+      "GetRegexPatternSet",
+      "GetRevenueStatistics",
+      "GetRevenueStatisticsSummary",
+      "GetRevenueStatisticsTimeSeries",
+      "GetRuleGroup",
+      "GetSampledRequests",
+      "GetTopPathStatisticsByTraffic",
+      "GetWebACL",
+      "GetWebACLForResource",
+      "ListTagsForResource",
+      "DescribeTopContributorsByEvent",
+      "ValidateNetworkSecurityManagerRuleConfiguration",
+      "ValidateNetworkSecurityManagerWebACLConfiguration"
+    ],
+    "Permissions management": [
+      "DeletePermissionPolicy",
+      "PutPermissionPolicy"
+    ],
+    "List": [
+      "ListAPIKeys",
+      "ListAvailableManagedRuleGroupVersions",
+      "ListAvailableManagedRuleGroups",
+      "ListIPSets",
+      "ListLoggingConfigurations",
+      "ListManagedRuleSets",
+      "ListMobileSdkReleases",
+      "ListRegexPatternSets",
+      "ListResourcesForWebACL",
+      "ListRuleGroups",
+      "ListSettlementRecords",
+      "ListWebACLs"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateWebACL",
+      "methodName": "toAssociateWebACL",
+      "description": "Grants permission to associate a WebACL with a resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html"
+    },
+    {
+      "name": "CheckCapacity",
+      "methodName": "toCheckCapacity",
+      "description": "Grants permission to calculate web ACL capacity unit (WCU) requirements for a specified scope and set of rules",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_CheckCapacity.html"
+    },
+    {
+      "name": "CreateAPIKey",
+      "methodName": "toCreateAPIKey",
+      "description": "Grants permission to create an API key for use in the integration of the CAPTCHA API in your JavaScript client applications",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateAPIKey.html"
+    },
+    {
+      "name": "CreateIPSet",
+      "methodName": "toCreateIPSet",
+      "description": "Grants permission to create an IPSet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateIPSet.html"
+    },
+    {
+      "name": "CreateRegexPatternSet",
+      "methodName": "toCreateRegexPatternSet",
+      "description": "Grants permission to create a RegexPatternSet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRegexPatternSet.html"
+    },
+    {
+      "name": "CreateRuleGroup",
+      "methodName": "toCreateRuleGroup",
+      "description": "Grants permission to create a RuleGroup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRuleGroup.html"
+    },
+    {
+      "name": "CreateWebACL",
+      "methodName": "toCreateWebACL",
+      "description": "Grants permission to create a WebACL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateWebACL.html"
+    },
+    {
+      "name": "DeleteAPIKey",
+      "methodName": "toDeleteAPIKey",
+      "description": "Grants permission to delete an API key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteAPIKey.html"
+    },
+    {
+      "name": "DeleteFirewallManagerRuleGroups",
+      "methodName": "toDeleteFirewallManagerRuleGroups",
+      "description": "Grants permission to delete FirewallManagedRulesGroups from a WebACL if not managed by Firewall Manager anymore",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteFirewallManagerRuleGroups.html"
+    },
+    {
+      "name": "DeleteIPSet",
+      "methodName": "toDeleteIPSet",
+      "description": "Grants permission to delete an IPSet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteIPSet.html"
+    },
+    {
+      "name": "DeleteLoggingConfiguration",
+      "methodName": "toDeleteLoggingConfiguration",
+      "description": "Grants permission to delete the LoggingConfiguration from a WebACL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteLoggingConfiguration.html"
+    },
+    {
+      "name": "DeletePermissionPolicy",
+      "methodName": "toDeletePermissionPolicy",
+      "description": "Grants permission to delete the PermissionPolicy on a RuleGroup",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DeletePermissionPolicy.html"
+    },
+    {
+      "name": "DeleteRegexPatternSet",
+      "methodName": "toDeleteRegexPatternSet",
+      "description": "Grants permission to delete a RegexPatternSet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteRegexPatternSet.html"
+    },
+    {
+      "name": "DeleteRuleGroup",
+      "methodName": "toDeleteRuleGroup",
+      "description": "Grants permission to delete a RuleGroup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteRuleGroup.html"
+    },
+    {
+      "name": "DeleteWebACL",
+      "methodName": "toDeleteWebACL",
+      "description": "Grants permission to delete a WebACL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteWebACL.html"
+    },
+    {
+      "name": "DescribeAllManagedProducts",
+      "methodName": "toDescribeAllManagedProducts",
+      "description": "Grants permission to retrieve product information for a managed rule group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DescribeAllManagedProducts.html"
+    },
+    {
+      "name": "DescribeManagedProductsByVendor",
+      "methodName": "toDescribeManagedProductsByVendor",
+      "description": "Grants permission to retrieve product information for a managed rule group by a given vendor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DescribeManagedProductsByVendor.html"
+    },
+    {
+      "name": "DescribeManagedRuleGroup",
+      "methodName": "toDescribeManagedRuleGroup",
+      "description": "Grants permission to retrieve high-level information for a managed rule group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DescribeManagedRuleGroup.html"
+    },
+    {
+      "name": "DisassociateWebACL",
+      "methodName": "toDisassociateWebACL",
+      "description": "Grants permission to disassociate a WebACL from an application resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateWebACL.html"
+    },
+    {
+      "name": "GenerateMobileSdkReleaseUrl",
+      "methodName": "toGenerateMobileSdkReleaseUrl",
+      "description": "Grants permission to generate a presigned download URL for the specified release of the mobile SDK",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GenerateMobileSdkReleaseUrl.html"
+    },
+    {
+      "name": "GetDecryptedAPIKey",
+      "methodName": "toGetDecryptedAPIKey",
+      "description": "Grants permission to return your API key in decrypted form. Use this to check the token domains that you have defined for the key",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetDecryptedAPIKey.html"
+    },
+    {
+      "name": "GetIPSet",
+      "methodName": "toGetIPSet",
+      "description": "Grants permission to retrieve details about an IPSet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetIPSet.html"
+    },
+    {
+      "name": "GetLoggingConfiguration",
+      "methodName": "toGetLoggingConfiguration",
+      "description": "Grants permission to retrieve LoggingConfiguration for a WebACL",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetLoggingConfiguration.html"
+    },
+    {
+      "name": "GetManagedRuleSet",
+      "methodName": "toGetManagedRuleSet",
+      "description": "Grants permission to retrieve details about a ManagedRuleSet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetManagedRuleSet.html"
+    },
+    {
+      "name": "GetMobileSdkRelease",
+      "methodName": "toGetMobileSdkRelease",
+      "description": "Grants permission to retrieve information for the specified mobile SDK release, including release notes and tags",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetMobileSdkRelease.html"
+    },
+    {
+      "name": "GetPermissionPolicy",
+      "methodName": "toGetPermissionPolicy",
+      "description": "Grants permission to retrieve a PermissionPolicy for a RuleGroup",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetPermissionPolicy.html"
+    },
+    {
+      "name": "GetRateBasedStatementManagedKeys",
+      "methodName": "toGetRateBasedStatementManagedKeys",
+      "description": "Grants permission to retrieve the keys that are currently blocked by a rate-based rule",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRateBasedStatementManagedKeys.html"
+    },
+    {
+      "name": "GetRegexPatternSet",
+      "methodName": "toGetRegexPatternSet",
+      "description": "Grants permission to retrieve details about a RegexPatternSet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRegexPatternSet.html"
+    },
+    {
+      "name": "GetRevenueStatistics",
+      "methodName": "toGetRevenueStatistics",
+      "description": "Grants permission to retrieve monetization revenue statistics ranked by source or path within a specified time window",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRevenueStatistics.html"
+    },
+    {
+      "name": "GetRevenueStatisticsSummary",
+      "methodName": "toGetRevenueStatisticsSummary",
+      "description": "Grants permission to retrieve a summary of monetization revenue statistics within a specified time window",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRevenueStatisticsSummary.html"
+    },
+    {
+      "name": "GetRevenueStatisticsTimeSeries",
+      "methodName": "toGetRevenueStatisticsTimeSeries",
+      "description": "Grants permission to retrieve monetization revenue statistics as a time series within a specified time window",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRevenueStatisticsTimeSeries.html"
+    },
+    {
+      "name": "GetRuleGroup",
+      "methodName": "toGetRuleGroup",
+      "description": "Grants permission to retrieve details about a RuleGroup",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRuleGroup.html"
+    },
+    {
+      "name": "GetSampledRequests",
+      "methodName": "toGetSampledRequests",
+      "description": "Grants permission to retrieve detailed information about a sampling of web requests",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetSampledRequests.html"
+    },
+    {
+      "name": "GetTopPathStatisticsByTraffic",
+      "methodName": "toGetTopPathStatisticsByTraffic",
+      "description": "Grants permission to retrieve aggregated path statistics with bot traffic analysis for a WebACL within a specified time window",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetTopPathStatisticsByTraffic.html"
+    },
+    {
+      "name": "GetWebACL",
+      "methodName": "toGetWebACL",
+      "description": "Grants permission to retrieve details about a WebACL",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACL.html"
+    },
+    {
+      "name": "GetWebACLForResource",
+      "methodName": "toGetWebACLForResource",
+      "description": "Grants permission to retrieve the WebACL that's associated with a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACLForResource.html"
+    },
+    {
+      "name": "ListAPIKeys",
+      "methodName": "toListAPIKeys",
+      "description": "Grants permission to retrieve a list of the API keys that you've defined for the specified scope",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListAPIKeys.html"
+    },
+    {
+      "name": "ListAvailableManagedRuleGroupVersions",
+      "methodName": "toListAvailableManagedRuleGroupVersions",
+      "description": "Grants permission to retrieve an array of managed rule group versions that are available for you to use",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListAvailableManagedRuleGroupVersions.html"
+    },
+    {
+      "name": "ListAvailableManagedRuleGroups",
+      "methodName": "toListAvailableManagedRuleGroups",
+      "description": "Grants permission to retrieve an array of managed rule groups that are available for you to use",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListAvailableManagedRuleGroups.html"
+    },
+    {
+      "name": "ListIPSets",
+      "methodName": "toListIPSets",
+      "description": "Grants permission to retrieve an array of IPSetSummary objects for the IP sets that you manage",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListIPSets.html"
+    },
+    {
+      "name": "ListLoggingConfigurations",
+      "methodName": "toListLoggingConfigurations",
+      "description": "Grants permission to retrieve an array of your LoggingConfiguration objects",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListLoggingConfigurations.html",
+      "conditionMethods": [
+        "ifLogScope"
+      ]
+    },
+    {
+      "name": "ListManagedRuleSets",
+      "methodName": "toListManagedRuleSets",
+      "description": "Grants permission to retrieve an array of your ManagedRuleSet objects",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListManagedRuleSets.html"
+    },
+    {
+      "name": "ListMobileSdkReleases",
+      "methodName": "toListMobileSdkReleases",
+      "description": "Grants permission to retrieve a list of the available releases for the mobile SDK and the specified device platform",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListMobileSdkReleases.html"
+    },
+    {
+      "name": "ListRegexPatternSets",
+      "methodName": "toListRegexPatternSets",
+      "description": "Grants permission to retrieve an array of RegexPatternSetSummary objects for the regex pattern sets that you manage",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListRegexPatternSets.html"
+    },
+    {
+      "name": "ListResourcesForWebACL",
+      "methodName": "toListResourcesForWebACL",
+      "description": "Grants permission to retrieve an array of the Amazon Resource Names (ARNs) for the resources that are associated with a web ACL",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListResourcesForWebACL.html"
+    },
+    {
+      "name": "ListRuleGroups",
+      "methodName": "toListRuleGroups",
+      "description": "Grants permission to retrieve an array of RuleGroupSummary objects for the rule groups that you manage",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListRuleGroups.html"
+    },
+    {
+      "name": "ListSettlementRecords",
+      "methodName": "toListSettlementRecords",
+      "description": "Grants permission to retrieve a list of monetization settlement records within a specified time window",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListSettlementRecords.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWebACLs",
+      "methodName": "toListWebACLs",
+      "description": "Grants permission to retrieve an array of WebACLSummary objects for the web ACLs that you manage",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListWebACLs.html"
+    },
+    {
+      "name": "PutLoggingConfiguration",
+      "methodName": "toPutLoggingConfiguration",
+      "description": "Grants permission to enable a LoggingConfiguration, to start logging for a web ACL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_PutLoggingConfiguration.html"
+    },
+    {
+      "name": "PutManagedRuleSetVersions",
+      "methodName": "toPutManagedRuleSetVersions",
+      "description": "Grants permission to enable create a new or update an existing version of a ManagedRuleSet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_PutManagedRuleSetVersions.html"
+    },
+    {
+      "name": "PutPermissionPolicy",
+      "methodName": "toPutPermissionPolicy",
+      "description": "Grants permission to attach an IAM policy to a resource, used to share rule groups between accounts",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_PutPermissionPolicy.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to associate tags with a AWS resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to disassociate tags from an AWS resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateIPSet",
+      "methodName": "toUpdateIPSet",
+      "description": "Grants permission to update an IPSet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateIPSet.html"
+    },
+    {
+      "name": "UpdateManagedRuleSetVersionExpiryDate",
+      "methodName": "toUpdateManagedRuleSetVersionExpiryDate",
+      "description": "Grants permission to update the expiry date of a version in ManagedRuleSet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateManagedRuleSetVersionExpiryDate.html"
+    },
+    {
+      "name": "UpdateRegexPatternSet",
+      "methodName": "toUpdateRegexPatternSet",
+      "description": "Grants permission to update a RegexPatternSet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRegexPatternSet.html"
+    },
+    {
+      "name": "UpdateRuleGroup",
+      "methodName": "toUpdateRuleGroup",
+      "description": "Grants permission to update a RuleGroup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRuleGroup.html"
+    },
+    {
+      "name": "UpdateWebACL",
+      "methodName": "toUpdateWebACL",
+      "description": "Grants permission to update a WebACL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateWebACL.html"
+    },
+    {
+      "name": "DescribeTopContributorsByEvent",
+      "methodName": "toDescribeTopContributorsByEvent",
+      "description": "Grants permission to retrieve the top contributors of an event detected by the AWS WAF anti-DDoS managed rule group, used by shield:DescribeAttack",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DescribeTopContributorsByEvent.html"
+    },
+    {
+      "name": "DisassociateFirewallManager",
+      "methodName": "toDisassociateFirewallManager",
+      "description": "Grants permission to disassociate Firewall Manager from a WebACL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateFirewallManager.html"
+    },
+    {
+      "name": "PutFirewallManagerRuleGroups",
+      "methodName": "toPutFirewallManagerRuleGroups",
+      "description": "Grants permission to create FirewallManagedRulesGroups in a WebACL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_PutFirewallManagerRuleGroups.html"
+    },
+    {
+      "name": "ValidateNetworkSecurityManagerRuleConfiguration",
+      "methodName": "toValidateNetworkSecurityManagerRuleConfiguration",
+      "description": "Grants permission to AWS Network Security Manager to validate a Rule configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ValidateNetworkSecurityManagerRuleConfiguration.html"
+    },
+    {
+      "name": "ValidateNetworkSecurityManagerWebACLConfiguration",
+      "methodName": "toValidateNetworkSecurityManagerWebACLConfiguration",
+      "description": "Grants permission to AWS Network Security Manager to validate a WebACL configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ValidateNetworkSecurityManagerWebACLConfiguration.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "agentcore-gateway",
+      "methodName": "onAgentcoreGateway",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:gateway/${GatewayId}",
+      "placeholders": [
+        {
+          "placeholder": "GatewayId",
+          "name": "gatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "amplify-app",
+      "methodName": "onAmplifyApp",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html",
+      "arn": "arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "apigateway",
+      "methodName": "onApigateway",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html",
+      "arn": "arn:${Partition}:apigateway:${Region}:${Account}:/restapis/${ApiId}/stages/${StageName}",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StageName",
+          "name": "stageName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "apprunner",
+      "methodName": "onApprunner",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html",
+      "arn": "arn:${Partition}:apprunner:${Region}:${Account}:service/${ServiceName}/${ServiceId}",
+      "placeholders": [
+        {
+          "placeholder": "ServiceName",
+          "name": "serviceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ServiceId",
+          "name": "serviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "appsync",
+      "methodName": "onAppsync",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}",
+      "placeholders": [
+        {
+          "placeholder": "GraphQLAPIId",
+          "name": "graphQLAPIId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "ipset",
+      "methodName": "onIpset",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_IPSet.html",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/ipset/${Name}/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Scope",
+          "name": "scope",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "loadbalancer/app/",
+      "methodName": "onLoadbalancerApp",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}",
+      "placeholders": [
+        {
+          "placeholder": "LoadBalancerName",
+          "name": "loadBalancerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "LoadBalancerId",
+          "name": "loadBalancerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "managedruleset",
+      "methodName": "onManagedruleset",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ManagedRuleSet.html",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/managedruleset/${Name}/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Scope",
+          "name": "scope",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "regexpatternset",
+      "methodName": "onRegexpatternset",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_RegexPatternSet.html",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/regexpatternset/${Name}/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Scope",
+          "name": "scope",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "rulegroup",
+      "methodName": "onRulegroup",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/rulegroup/${Name}/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Scope",
+          "name": "scope",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "userpool",
+      "methodName": "onUserpool",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html",
+      "arn": "arn:${Partition}:cognito-idp:${Region}:${Account}:userpool/${UserPoolId}",
+      "placeholders": [
+        {
+          "placeholder": "UserPoolId",
+          "name": "userPoolId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "verified-access-instance",
+      "methodName": "onVerifiedAccessInstance",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:verified-access-instance/${VerifiedAccessInstanceId}",
+      "placeholders": [
+        {
+          "placeholder": "VerifiedAccessInstanceId",
+          "name": "verifiedAccessInstanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "webacl",
+      "methodName": "onWebacl",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/webacl/${Name}/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Scope",
+          "name": "scope",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateIPSet",
+        "toCreateRegexPatternSet",
+        "toCreateRuleGroup",
+        "toCreateWebACL",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag-value associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateWebACL",
+        "toCreateIPSet",
+        "toCreateRegexPatternSet",
+        "toCreateRuleGroup",
+        "toCreateWebACL",
+        "toDeleteFirewallManagerRuleGroups",
+        "toDeleteIPSet",
+        "toDeleteLoggingConfiguration",
+        "toDeletePermissionPolicy",
+        "toDeleteRegexPatternSet",
+        "toDeleteRuleGroup",
+        "toDeleteWebACL",
+        "toGetIPSet",
+        "toGetLoggingConfiguration",
+        "toGetPermissionPolicy",
+        "toGetRateBasedStatementManagedKeys",
+        "toGetRegexPatternSet",
+        "toGetRuleGroup",
+        "toGetSampledRequests",
+        "toGetTopPathStatisticsByTraffic",
+        "toGetWebACL",
+        "toGetWebACLForResource",
+        "toListResourcesForWebACL",
+        "toListTagsForResource",
+        "toPutLoggingConfiguration",
+        "toPutManagedRuleSetVersions",
+        "toPutPermissionPolicy",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateIPSet",
+        "toUpdateRegexPatternSet",
+        "toUpdateRuleGroup",
+        "toUpdateWebACL",
+        "toDisassociateFirewallManager",
+        "toPutFirewallManagerRuleGroups"
+      ],
+      "relatedResourceTypes": [
+        "ipset",
+        "regexpatternset",
+        "rulegroup",
+        "webacl"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateIPSet",
+        "toCreateRegexPatternSet",
+        "toCreateRuleGroup",
+        "toCreateWebACL",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "wafv2:LogDestinationResource",
+      "methodName": "ifLogDestinationResource",
+      "description": "Filters access by log destination ARN for PutLoggingConfiguration API",
+      "url": "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toPutLoggingConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "LogDestinationResource",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "wafv2:LogScope",
+      "methodName": "ifLogScope",
+      "description": "Filters access by log scope for Logging Configuration API",
+      "url": "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toDeleteLoggingConfiguration",
+        "toGetLoggingConfiguration",
+        "toListLoggingConfigurations",
+        "toPutLoggingConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "LogScope",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

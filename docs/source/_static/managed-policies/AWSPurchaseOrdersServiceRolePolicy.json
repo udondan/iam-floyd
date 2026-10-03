@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "account:GetAccountInformation",
+        "account:GetContactInformation",
+        "aws-portal:*Billing",
+        "consolidatedbilling:GetAccountBillingRole",
+        "invoicing:GetInvoicePDF",
+        "invoicing:ListInvoiceUnits",
+        "payments:GetPaymentInstrument",
+        "payments:ListPaymentPreferences",
+        "purchase-orders:AddPurchaseOrder",
+        "purchase-orders:DeletePurchaseOrder",
+        "purchase-orders:GetPurchaseOrder",
+        "purchase-orders:ListPurchaseOrderInvoices",
+        "purchase-orders:ListPurchaseOrders",
+        "purchase-orders:ListTagsForResource",
+        "purchase-orders:ModifyPurchaseOrders",
+        "purchase-orders:TagResource",
+        "purchase-orders:UntagResource",
+        "purchase-orders:UpdatePurchaseOrder",
+        "purchase-orders:UpdatePurchaseOrderStatus",
+        "purchase-orders:ViewPurchaseOrders",
+        "tax:ListTaxRegistrations"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

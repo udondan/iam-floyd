@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "appfabric:GetAppAuthorization",
+        "appfabric:GetAppBundle",
+        "appfabric:GetIngestion",
+        "appfabric:GetIngestionDestination",
+        "appfabric:ListAppAuthorizations",
+        "appfabric:ListAppBundles",
+        "appfabric:ListIngestionDestinations",
+        "appfabric:ListIngestions",
+        "appfabric:ListTagsForResource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
