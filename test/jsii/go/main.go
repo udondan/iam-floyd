@@ -57,8 +57,7 @@ func main() {
 
 	scenario("a direct use", func(stack awscdk.Stack) {
 		var s awsiam.PolicyStatement = statement.NewS3(nil).Allow().ToGetObject().OnObject(jsii.String("my-bucket"), jsii.String("*"), nil)
-		// jsii-pacmak's Go type checks reject nil for optional union parameters, like the operator
-		role(stack).AddToPolicy(s.(statement.S3).IfAwsSourceIp(jsii.String("10.0.0.0/8"), jsii.String("IpAddress")))
+		role(stack).AddToPolicy(s.(statement.S3).IfAwsSourceIp(jsii.String("10.0.0.0/8"), nil))
 	})
 
 	scenario("b library uses floyd internally", func(stack awscdk.Stack) {

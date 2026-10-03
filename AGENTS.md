@@ -40,9 +40,11 @@ One codebase produces two npm packages:
 
 ### Other Languages (jsii)
 
-`cdk-iam-floyd` is also packaged for Python, Java, .NET and Go with `jsii-pacmak`. The jsii compiler is not used: `lib/generator/emit/jsii.ts` writes the `.jsii` assembly from the model, and `bin/jsii.ts` adds the `jsii` targets to package.json, writes the assembly and appends the jsii type info to `lib/index.js`. The same `.jsii` is what Construct Hub renders the API docs from.
+`cdk-iam-floyd` is also packaged for Python, Java, .NET and Go with `jsii-pacmak`. The jsii compiler is not used: `lib/generator/emit/jsii.ts` writes the `.jsii` assembly from the model, and `bin/jsii.ts` adds the `jsii` targets to package.json, writes the assembly and appends the jsii type info to `lib/index.js`. The same `.jsii` is what Construct Hub renders the API docs from. jsii-pacmak runs with `--no-runtime-type-checking` and `bin/jsii-pack.ts` as pack command, which embeds an npm tarball without docs and `.d.ts` files in the packages.
 
 `test/jsii/` builds `floyd-consumer`, a jsii library that depends on `cdk-iam-floyd`, and runs the same scenarios in TypeScript (the baseline, without jsii), Python, Java, .NET and Go against `test/jsii/expected.json`.
+
+Publishing: the npm package of `cdk-iam-floyd` includes the `.jsii` (`make package-jsii publish LANGUAGES=typescript`), Python goes to PyPI and .NET to NuGet (both trusted publishing), Java to Maven Central (`bin/publish-maven`, signed bundle via the Central Portal API). Go has no registry: `bin/go-proxy` writes the module zip, which is attached to the GitHub release, and a static Go module proxy for the newest 30 releases, served by GitHub Pages under `udondan.github.io/iam-floyd/go`.
 
 ## Development Commands
 
@@ -50,7 +52,7 @@ One codebase produces two npm packages:
 
 ```bash
 make emit            # emit lib/generated/policy-statements/ and lib/generated/index.ts from the model
-make build           # emit + tsc --build --force tsconfig.main.json
+make build           # emit + tsc --build --force tsconfig.main.json tsconfig.types.json
 make package         # build + npm pack
 make clean           # remove node_modules, *.js, *.d.ts
 make install         # clean + npm i
@@ -233,7 +235,8 @@ new Statement.S3()
 ## TypeScript Compilation
 
 - `tsconfig.json` - Dev/generation (includes all files, uses SWC via `ts-node`)
-- `tsconfig.main.json` - Production build (excludes `bin/`, `lib/generator/`, `test/`, CDK files)
+- `tsconfig.main.json` - Production build of the `.js` files, without comments and source maps (excludes `bin/`, `lib/generator/`, `test/`, CDK files)
+- `tsconfig.types.json` - Production build of the `.d.ts` files, with JSDoc
 - `tsconfig.test-iam-floyd.json` - Compiles `examples/` excluding `.cdk.ts`
 - `tsconfig.test-cdk-iam-floyd.json` - Compiles `examples/**/*.cdk.ts`
 
@@ -256,6 +259,6 @@ Follow conventional commits:
 
 - `generate.yml` - Daily: scrapes AWS docs, bumps patch version, opens PR with `automerge` label
 - `index-managed-policies.yml` - Daily: updates managed policies, opens PR with `automerge` label
-- `test-and-publish.yml` - On PR/push to main: `make install test-typescript` + CDK deploy test + `make package-jsii test-jsii` per language + npm publish
+- `test-and-publish.yml` - On PR/push to main: `make install test-typescript` + CDK deploy test + `make package-jsii test-jsii` per language + publish to npm, PyPI, NuGet, Maven Central and the Go module proxy on GitHub Pages
 - `automerge.yml` - Auto-merges PRs labeled `automerge` after tests pass
 - `test-docs.yml` - Builds Sphinx docs on `docs/**` changes

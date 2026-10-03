@@ -209,16 +209,9 @@ jobs:
           make test-typescript-cdk
           make cdk-test
 
-      - name: Update package version
-        run: |
-          npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
-          grep version package.json
-
-      - name: Dry run npm publish
-        run: make publish
-
   # Python, Java, .NET and Go packages of cdk-iam-floyd, built with jsii-pacmak. One job per
-  # language for speed; TypeScript is the baseline the others are compared to.
+  # language for speed; TypeScript is the baseline the others are compared to. The packages built
+  # here are the ones the publish jobs publish.
   test-cdk-iam-floyd-jsii:
     name: Test cdk-iam-floyd in ${{ matrix.language }}
     needs: finalize
@@ -284,6 +277,24 @@ jobs:
 
       - name: Test packages
         run: make test-jsii LANGUAGES=${{ matrix.language }}
+
+      # The npm package is published by publish-cdk-iam-floyd, with the jsii assembly
+      - name: Dry run npm publish
+        if: matrix.language == 'typescript'
+        run: make publish
+
+      - name: Build Maven Central bundle
+        if: matrix.language == 'java'
+        run: bin/publish-maven
+
+      - name: Store packages
+        if: matrix.language != 'typescript' && github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v7
+        with:
+          name: packages-${{ matrix.language }}
+          path: dist/${{ matrix.language == 'go' && 'go-module' || matrix.language }}
+          if-no-files-found: error
+          retention-days: 1
 
   release:
     name: Release
@@ -421,7 +432,149 @@ jobs:
           cat package.json
 
       - name: Publish to npm
-        run: make build publish
+        run: make package-jsii publish LANGUAGES=typescript
+
+  publish-cdk-iam-floyd-python:
+    name: Publish cdk-iam-floyd to PyPI
+    if: |
+      github.ref == 'refs/heads/main' && (
+        github.event_name == 'push' ||
+        github.event_name == 'workflow_dispatch'
+      )
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch packages
+        uses: actions/download-artifact@v8
+        with:
+          name: packages-python
+          path: dist/python
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # v1.14.2
+        with:
+          packages-dir: dist/python
+
+  publish-cdk-iam-floyd-dotnet:
+    name: Publish cdk-iam-floyd to NuGet
+    if: |
+      github.ref == 'refs/heads/main' && (
+        github.event_name == 'push' ||
+        github.event_name == 'workflow_dispatch'
+      )
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.x
+
+      - name: Fetch packages
+        uses: actions/download-artifact@v8
+        with:
+          name: packages-dotnet
+          path: dist/dotnet
+
+      - name: Log in to NuGet
+        id: nuget
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
+      # The symbols package (.snupkg) next to it is pushed with it
+      - name: Publish to NuGet
+        run: |
+          dotnet nuget push dist/dotnet/*.nupkg \
+            --api-key "${{ steps.nuget.outputs.NUGET_API_KEY }}" \
+            --source https://api.nuget.org/v3/index.json
+
+  publish-cdk-iam-floyd-java:
+    name: Publish cdk-iam-floyd to Maven Central
+    if: |
+      github.ref == 'refs/heads/main' && (
+        github.event_name == 'push' ||
+        github.event_name == 'workflow_dispatch'
+      )
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Fetch packages
+        uses: actions/download-artifact@v8
+        with:
+          name: packages-java
+          path: dist/java
+
+      - name: Publish to Maven Central
+        run: bin/publish-maven
+        env:
+          MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+
+  # The Go module is served by GitHub Pages as a static Go module proxy. The module zip of every
+  # version is a release asset; the proxy serves the newest of them.
+  publish-cdk-iam-floyd-go:
+    name: Publish cdk-iam-floyd for Go
+    if: |
+      github.ref == 'refs/heads/main' && (
+        github.event_name == 'push' ||
+        github.event_name == 'workflow_dispatch'
+      )
+    needs: release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # release assets
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Fetch packages
+        uses: actions/download-artifact@v8
+        with:
+          name: packages-go
+          path: dist/go-module
+
+      - name: Add module zip to release
+        run: gh release upload "v$(cat VERSION)" dist/go-module/*.zip --clobber
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      # Pages sites are limited to 1 GB and a module zip has about 22 MB
+      - name: Fetch module zips of the newest releases
+        run: |
+          mkdir zips
+          for tag in $(gh release list --limit 30 --json tagName --jq '.[].tagName'); do
+            gh release download "${tag}" --pattern 'cdk-iam-floyd-go-module-*.zip' --dir zips || true
+          done
+          ls -l zips
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Build Go module proxy
+        run: bin/go-proxy site site zips/*.zip
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
 
   # The only test check the ruleset requires.
   required:
