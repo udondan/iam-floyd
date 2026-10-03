@@ -1,0 +1,1720 @@
+{
+  "schemaVersion": 1,
+  "filename": "vpc-lattice",
+  "className": "VpcLattice",
+  "name": "vpc-lattice",
+  "servicePrefix": "vpc-lattice",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_vpc-lattice.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateAccessLogSubscription",
+      "CreateListener",
+      "CreateResourceConfiguration",
+      "CreateResourceGateway",
+      "CreateRule",
+      "CreateService",
+      "CreateServiceNetwork",
+      "CreateServiceNetworkResourceAssociation",
+      "CreateServiceNetworkServiceAssociation",
+      "CreateServiceNetworkVpcAssociation",
+      "CreateTargetGroup",
+      "DeleteAccessLogSubscription",
+      "DeleteAuthPolicy",
+      "DeleteDomainVerification",
+      "DeleteListener",
+      "DeleteResourceConfiguration",
+      "DeleteResourceEndpointAssociation",
+      "DeleteResourceGateway",
+      "DeleteResourcePolicy",
+      "DeleteRule",
+      "DeleteService",
+      "DeleteServiceNetwork",
+      "DeleteServiceNetworkResourceAssociation",
+      "DeleteServiceNetworkServiceAssociation",
+      "DeleteServiceNetworkVpcAssociation",
+      "DeleteTargetGroup",
+      "DeregisterTargets",
+      "PutAuthPolicy",
+      "PutResourcePolicy",
+      "RegisterTargets",
+      "StartDomainVerification",
+      "TagResource",
+      "UntagResource",
+      "UpdateAccessLogSubscription",
+      "UpdateListener",
+      "UpdateResourceConfiguration",
+      "UpdateResourceGateway",
+      "UpdateRule",
+      "UpdateService",
+      "UpdateServiceNetwork",
+      "UpdateServiceNetworkVpcAssociation",
+      "UpdateTargetGroup",
+      "AssociateViaAWSService",
+      "AssociateViaAWSServiceEventsAndStates",
+      "CreateServiceNetworkVpcEndpointAssociation"
+    ],
+    "Permissions management": [
+      "DeleteAuthPolicy",
+      "PutAuthPolicy",
+      "AssociateViaAWSService",
+      "AssociateViaAWSServiceEventsAndStates",
+      "CreateServiceNetworkVpcEndpointAssociation"
+    ],
+    "Read": [
+      "GetAccessLogSubscription",
+      "GetAuthPolicy",
+      "GetDomainVerification",
+      "GetListener",
+      "GetResourceConfiguration",
+      "GetResourceGateway",
+      "GetResourcePolicy",
+      "GetRule",
+      "GetService",
+      "GetServiceNetwork",
+      "GetServiceNetworkResourceAssociation",
+      "GetServiceNetworkServiceAssociation",
+      "GetServiceNetworkVpcAssociation",
+      "GetTargetGroup",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAccessLogSubscriptions",
+      "ListDomainVerifications",
+      "ListListeners",
+      "ListResourceConfigurations",
+      "ListResourceEndpointAssociations",
+      "ListResourceGateways",
+      "ListRules",
+      "ListServiceNetworkResourceAssociations",
+      "ListServiceNetworkServiceAssociations",
+      "ListServiceNetworkVpcAssociations",
+      "ListServiceNetworkVpcEndpointAssociations",
+      "ListServiceNetworks",
+      "ListServices",
+      "ListTargetGroups",
+      "ListTargets"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateAccessLogSubscription",
+      "methodName": "toCreateAccessLogSubscription",
+      "description": "Grants permission to create an access log subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateAccessLogSubscription.html"
+    },
+    {
+      "name": "CreateListener",
+      "methodName": "toCreateListener",
+      "description": "Grants permission to create a listener",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateListener.html"
+    },
+    {
+      "name": "CreateResourceConfiguration",
+      "methodName": "toCreateResourceConfiguration",
+      "description": "Grants permission to create a resource configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateResourceConfiguration.html"
+    },
+    {
+      "name": "CreateResourceGateway",
+      "methodName": "toCreateResourceGateway",
+      "description": "Grants permission to create a resource gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateResourceGateway.html"
+    },
+    {
+      "name": "CreateRule",
+      "methodName": "toCreateRule",
+      "description": "Grants permission to create a rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateRule.html"
+    },
+    {
+      "name": "CreateService",
+      "methodName": "toCreateService",
+      "description": "Grants permission to create a service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateService.html"
+    },
+    {
+      "name": "CreateServiceNetwork",
+      "methodName": "toCreateServiceNetwork",
+      "description": "Grants permission to create a service network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateServiceNetwork.html"
+    },
+    {
+      "name": "CreateServiceNetworkResourceAssociation",
+      "methodName": "toCreateServiceNetworkResourceAssociation",
+      "description": "Grants permission to create an association between a service network and a resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateServiceNetworkResourceAssociation.html"
+    },
+    {
+      "name": "CreateServiceNetworkServiceAssociation",
+      "methodName": "toCreateServiceNetworkServiceAssociation",
+      "description": "Grants permission to create a service network and service association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateServiceNetworkServiceAssociation.html"
+    },
+    {
+      "name": "CreateServiceNetworkVpcAssociation",
+      "methodName": "toCreateServiceNetworkVpcAssociation",
+      "description": "Grants permission to create a service network and VPC association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateServiceNetworkVpcAssociation.html"
+    },
+    {
+      "name": "CreateTargetGroup",
+      "methodName": "toCreateTargetGroup",
+      "description": "Grants permission to create a target group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateTargetGroup.html"
+    },
+    {
+      "name": "DeleteAccessLogSubscription",
+      "methodName": "toDeleteAccessLogSubscription",
+      "description": "Grants permission to delete an access log subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteAccessLogSubscription.html"
+    },
+    {
+      "name": "DeleteAuthPolicy",
+      "methodName": "toDeleteAuthPolicy",
+      "description": "Grants permission to delete an auth policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteAuthPolicy.html"
+    },
+    {
+      "name": "DeleteDomainVerification",
+      "methodName": "toDeleteDomainVerification",
+      "description": "Grants permission to delete a domain verification",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteDomainVerification.html"
+    },
+    {
+      "name": "DeleteListener",
+      "methodName": "toDeleteListener",
+      "description": "Grants permission to delete a listener",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteListener.html"
+    },
+    {
+      "name": "DeleteResourceConfiguration",
+      "methodName": "toDeleteResourceConfiguration",
+      "description": "Grants permission to delete a resource configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteResourceConfiguration.html"
+    },
+    {
+      "name": "DeleteResourceEndpointAssociation",
+      "methodName": "toDeleteResourceEndpointAssociation",
+      "description": "Grants permission to delete a resource endpoint association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteResourceEndpointAssociation.html"
+    },
+    {
+      "name": "DeleteResourceGateway",
+      "methodName": "toDeleteResourceGateway",
+      "description": "Grants permission to delete a resource gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteResourceGateway.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete a resource policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteRule",
+      "methodName": "toDeleteRule",
+      "description": "Grants permission to delete a rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteRule.html"
+    },
+    {
+      "name": "DeleteService",
+      "methodName": "toDeleteService",
+      "description": "Grants permission to delete a service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteService.html"
+    },
+    {
+      "name": "DeleteServiceNetwork",
+      "methodName": "toDeleteServiceNetwork",
+      "description": "Grants permission to delete a service network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteServiceNetwork.html"
+    },
+    {
+      "name": "DeleteServiceNetworkResourceAssociation",
+      "methodName": "toDeleteServiceNetworkResourceAssociation",
+      "description": "Grants permission to delete the association between a service network and resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteServiceNetworkResourceAssociation.html"
+    },
+    {
+      "name": "DeleteServiceNetworkServiceAssociation",
+      "methodName": "toDeleteServiceNetworkServiceAssociation",
+      "description": "Grants permission to delete a service network service association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteServiceNetworkServiceAssociation.html"
+    },
+    {
+      "name": "DeleteServiceNetworkVpcAssociation",
+      "methodName": "toDeleteServiceNetworkVpcAssociation",
+      "description": "Grants permission to delete a service network and VPC association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteServiceNetworkVpcAssociation.html"
+    },
+    {
+      "name": "DeleteTargetGroup",
+      "methodName": "toDeleteTargetGroup",
+      "description": "Grants permission to delete a target group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteTargetGroup.html"
+    },
+    {
+      "name": "DeregisterTargets",
+      "methodName": "toDeregisterTargets",
+      "description": "Grants permission to deregister targets from a target group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeregisterTargets.html"
+    },
+    {
+      "name": "GetAccessLogSubscription",
+      "methodName": "toGetAccessLogSubscription",
+      "description": "Grants permission to get information about an access log subscription",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetAccessLogSubscription.html"
+    },
+    {
+      "name": "GetAuthPolicy",
+      "methodName": "toGetAuthPolicy",
+      "description": "Grants permission to get information about an auth policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetAuthPolicy.html"
+    },
+    {
+      "name": "GetDomainVerification",
+      "methodName": "toGetDomainVerification",
+      "description": "Grants permission to get information about a domain verification",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetDomainVerification.html"
+    },
+    {
+      "name": "GetListener",
+      "methodName": "toGetListener",
+      "description": "Grants permission to get information about a listener",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetListener.html"
+    },
+    {
+      "name": "GetResourceConfiguration",
+      "methodName": "toGetResourceConfiguration",
+      "description": "Grants permission to get information about a resource configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetResourceConfiguration.html"
+    },
+    {
+      "name": "GetResourceGateway",
+      "methodName": "toGetResourceGateway",
+      "description": "Grants permission to get information about a resource gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetResourceGateway.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to get information about a resource policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "GetRule",
+      "methodName": "toGetRule",
+      "description": "Grants permission to get information about a rule",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetRule.html"
+    },
+    {
+      "name": "GetService",
+      "methodName": "toGetService",
+      "description": "Grants permission to get information about a service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetService.html"
+    },
+    {
+      "name": "GetServiceNetwork",
+      "methodName": "toGetServiceNetwork",
+      "description": "Grants permission to get information about a service network",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetServiceNetwork.html"
+    },
+    {
+      "name": "GetServiceNetworkResourceAssociation",
+      "methodName": "toGetServiceNetworkResourceAssociation",
+      "description": "Grants permission to get information about an association between a service network and resource configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetServiceNetworkResourceAssociation.html"
+    },
+    {
+      "name": "GetServiceNetworkServiceAssociation",
+      "methodName": "toGetServiceNetworkServiceAssociation",
+      "description": "Grants permission to get information about a service network and service association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetServiceNetworkServiceAssociation.html"
+    },
+    {
+      "name": "GetServiceNetworkVpcAssociation",
+      "methodName": "toGetServiceNetworkVpcAssociation",
+      "description": "Grants permission to get information about a service network and VPC association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetServiceNetworkVpcAssociation.html"
+    },
+    {
+      "name": "GetTargetGroup",
+      "methodName": "toGetTargetGroup",
+      "description": "Grants permission to get information about a target group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetTargetGroup.html"
+    },
+    {
+      "name": "ListAccessLogSubscriptions",
+      "methodName": "toListAccessLogSubscriptions",
+      "description": "Grants permission to list some or all access log subscriptions about a service network or a service",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListAccessLogSubscriptions.html"
+    },
+    {
+      "name": "ListDomainVerifications",
+      "methodName": "toListDomainVerifications",
+      "description": "Grants permission to list some or all domain verifications",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListDomainVerifications.html"
+    },
+    {
+      "name": "ListListeners",
+      "methodName": "toListListeners",
+      "description": "Grants permission to list some or all listeners",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListListeners.html"
+    },
+    {
+      "name": "ListResourceConfigurations",
+      "methodName": "toListResourceConfigurations",
+      "description": "Grants permission to list some or all resource configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListResourceConfigurations.html"
+    },
+    {
+      "name": "ListResourceEndpointAssociations",
+      "methodName": "toListResourceEndpointAssociations",
+      "description": "Grants permission to list some or all associations between a resource configuration and VPC endpoint",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListResourceEndpointAssociations.html",
+      "conditionMethods": [
+        "ifResourceConfigurationArn",
+        "ifVpcEndpointId"
+      ]
+    },
+    {
+      "name": "ListResourceGateways",
+      "methodName": "toListResourceGateways",
+      "description": "Grants permission to list some or all resource gateways",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListResourceGateways.html"
+    },
+    {
+      "name": "ListRules",
+      "methodName": "toListRules",
+      "description": "Grants permission to list some or all rules",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListRules.html"
+    },
+    {
+      "name": "ListServiceNetworkResourceAssociations",
+      "methodName": "toListServiceNetworkResourceAssociations",
+      "description": "Grants permission to list some or all associations between a service network and resource configuration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListServiceNetworkResourceAssociations.html"
+    },
+    {
+      "name": "ListServiceNetworkServiceAssociations",
+      "methodName": "toListServiceNetworkServiceAssociations",
+      "description": "Grants permission to list some or all service network and service associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListServiceNetworkServiceAssociations.html",
+      "conditionMethods": [
+        "ifServiceArn",
+        "ifServiceNetworkArn"
+      ]
+    },
+    {
+      "name": "ListServiceNetworkVpcAssociations",
+      "methodName": "toListServiceNetworkVpcAssociations",
+      "description": "Grants permission to list some or all service network and VPC associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListServiceNetworkVpcAssociations.html",
+      "conditionMethods": [
+        "ifServiceNetworkArn"
+      ]
+    },
+    {
+      "name": "ListServiceNetworkVpcEndpointAssociations",
+      "methodName": "toListServiceNetworkVpcEndpointAssociations",
+      "description": "Grants permission to list some or all associations between a service network and VPC endpoint",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListServiceNetworkVpcEndpointAssociations.html"
+    },
+    {
+      "name": "ListServiceNetworks",
+      "methodName": "toListServiceNetworks",
+      "description": "Grants permission to list the service networks owned by a caller account or shared with the caller account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListServiceNetworks.html"
+    },
+    {
+      "name": "ListServices",
+      "methodName": "toListServices",
+      "description": "Grants permission to list the services owned by a caller account or shared with the caller account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListServices.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a vpc-lattice resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTargetGroups",
+      "methodName": "toListTargetGroups",
+      "description": "Grants permission to list some or all target groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListTargetGroups.html"
+    },
+    {
+      "name": "ListTargets",
+      "methodName": "toListTargets",
+      "description": "Grants permission to list some or all targets in a target group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListTargets.html"
+    },
+    {
+      "name": "PutAuthPolicy",
+      "methodName": "toPutAuthPolicy",
+      "description": "Grants permission to create or update the auth policy for a service network or a service",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_PutAuthPolicy.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to create a resource policy for a resource configuration, service, or service network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "RegisterTargets",
+      "methodName": "toRegisterTargets",
+      "description": "Grants permission to register targets to a target group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_RegisterTargets.html"
+    },
+    {
+      "name": "StartDomainVerification",
+      "methodName": "toStartDomainVerification",
+      "description": "Grants permission to start a domain verification",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_StartDomainVerification.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a vpc-lattice resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a vpc-lattice resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAccessLogSubscription",
+      "methodName": "toUpdateAccessLogSubscription",
+      "description": "Grants permission to update an access log subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UpdateAccessLogSubscription.html"
+    },
+    {
+      "name": "UpdateListener",
+      "methodName": "toUpdateListener",
+      "description": "Grants permission to update a listener",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UpdateListener.html"
+    },
+    {
+      "name": "UpdateResourceConfiguration",
+      "methodName": "toUpdateResourceConfiguration",
+      "description": "Grants permission to update a resource configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UpdateResourceConfiguration.html"
+    },
+    {
+      "name": "UpdateResourceGateway",
+      "methodName": "toUpdateResourceGateway",
+      "description": "Grants permission to update a resource gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UpdateResourceGateway.html"
+    },
+    {
+      "name": "UpdateRule",
+      "methodName": "toUpdateRule",
+      "description": "Grants permission to update a rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UpdateRule.html"
+    },
+    {
+      "name": "UpdateService",
+      "methodName": "toUpdateService",
+      "description": "Grants permission to update a service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UpdateService.html"
+    },
+    {
+      "name": "UpdateServiceNetwork",
+      "methodName": "toUpdateServiceNetwork",
+      "description": "Grants permission to update a service network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UpdateServiceNetwork.html"
+    },
+    {
+      "name": "UpdateServiceNetworkVpcAssociation",
+      "methodName": "toUpdateServiceNetworkVpcAssociation",
+      "description": "Grants permission to update a service network and VPC association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UpdateServiceNetworkVpcAssociation.html"
+    },
+    {
+      "name": "UpdateTargetGroup",
+      "methodName": "toUpdateTargetGroup",
+      "description": "Grants permission to update a target group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UpdateTargetGroup.html"
+    },
+    {
+      "name": "AssociateViaAWSService",
+      "methodName": "toAssociateViaAWSService",
+      "description": "Grants permission to associate a resource configuration through any AWS service managed networks",
+      "accessLevel": "Permissions management, Write",
+      "url": ""
+    },
+    {
+      "name": "AssociateViaAWSServiceEventsAndStates",
+      "methodName": "toAssociateViaAWSServiceEventsAndStates",
+      "description": "Grants permission to associate a resource configuration through Amazon EventBridge and AWS Step Functions service networks",
+      "accessLevel": "Permissions management, Write",
+      "url": ""
+    },
+    {
+      "name": "CreateServiceNetworkVpcEndpointAssociation",
+      "methodName": "toCreateServiceNetworkVpcEndpointAssociation",
+      "description": "Grants permission to create an association between a service network and VPC endpoint",
+      "accessLevel": "Permissions management, Write",
+      "url": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "AccessLogSubscription",
+      "methodName": "onAccessLogSubscription",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/monitoring-access-logs.html",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:accesslogsubscription/${AccessLogSubscriptionId}",
+      "placeholders": [
+        {
+          "placeholder": "AccessLogSubscriptionId",
+          "name": "accessLogSubscriptionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DomainVerification",
+      "methodName": "onDomainVerification",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/domain-verification.html",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:domainverification/${DomainVerificationId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainVerificationId",
+          "name": "domainVerificationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifDomainName"
+      ]
+    },
+    {
+      "name": "Listener",
+      "methodName": "onListener",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:service/${ServiceId}/listener/${ListenerId}",
+      "placeholders": [
+        {
+          "placeholder": "ServiceId",
+          "name": "serviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ListenerId",
+          "name": "listenerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifProtocol",
+        "ifTargetGroupArns"
+      ]
+    },
+    {
+      "name": "ResourceConfiguration",
+      "methodName": "onResourceConfiguration",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/resource-configurations.html",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:resourceconfiguration/${ResourceConfigurationId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceConfigurationId",
+          "name": "resourceConfigurationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "ResourceEndpointAssociation",
+      "methodName": "onResourceEndpointAssociation",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/resource-endpoint-associations.html",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:resourceendpointassociation/${ResourceEndpointAssociationId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceEndpointAssociationId",
+          "name": "resourceEndpointAssociationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifResourceConfigurationArn",
+        "ifVpcEndpointId"
+      ]
+    },
+    {
+      "name": "ResourceGateway",
+      "methodName": "onResourceGateway",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/resource-gateways.html",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:resourcegateway/${ResourceGatewayId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceGatewayId",
+          "name": "resourceGatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifVpcId"
+      ]
+    },
+    {
+      "name": "Rule",
+      "methodName": "onRule",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:service/${ServiceId}/listener/${ListenerId}/rule/${RuleId}",
+      "placeholders": [
+        {
+          "placeholder": "ServiceId",
+          "name": "serviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ListenerId",
+          "name": "listenerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RuleId",
+          "name": "ruleId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifTargetGroupArns"
+      ]
+    },
+    {
+      "name": "Service",
+      "methodName": "onService",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/services.html",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:service/${ServiceId}",
+      "placeholders": [
+        {
+          "placeholder": "ServiceId",
+          "name": "serviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifAuthType"
+      ]
+    },
+    {
+      "name": "ServiceNetwork",
+      "methodName": "onServiceNetwork",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:servicenetwork/${ServiceNetworkId}",
+      "placeholders": [
+        {
+          "placeholder": "ServiceNetworkId",
+          "name": "serviceNetworkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifAuthType"
+      ]
+    },
+    {
+      "name": "ServiceNetworkResourceAssociation",
+      "methodName": "onServiceNetworkResourceAssociation",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-resource-configuration",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:servicenetworkresourceassociation/${ServiceNetworkResourceAssociationId}",
+      "placeholders": [
+        {
+          "placeholder": "ServiceNetworkResourceAssociationId",
+          "name": "serviceNetworkResourceAssociationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifResourceConfigurationArn",
+        "ifServiceNetworkArn"
+      ]
+    },
+    {
+      "name": "ServiceNetworkServiceAssociation",
+      "methodName": "onServiceNetworkServiceAssociation",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:servicenetworkserviceassociation/${ServiceNetworkServiceAssociationId}",
+      "placeholders": [
+        {
+          "placeholder": "ServiceNetworkServiceAssociationId",
+          "name": "serviceNetworkServiceAssociationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifServiceArn",
+        "ifServiceNetworkArn"
+      ]
+    },
+    {
+      "name": "ServiceNetworkVpcAssociation",
+      "methodName": "onServiceNetworkVpcAssociation",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-vpc-associations",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:servicenetworkvpcassociation/${ServiceNetworkVpcAssociationId}",
+      "placeholders": [
+        {
+          "placeholder": "ServiceNetworkVpcAssociationId",
+          "name": "serviceNetworkVpcAssociationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifPrivateDnsPreference",
+        "ifPrivateDnsSpecifiedDomains",
+        "ifSecurityGroupIds",
+        "ifServiceNetworkArn",
+        "ifVpcId"
+      ]
+    },
+    {
+      "name": "TargetGroup",
+      "methodName": "onTargetGroup",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/target-groups.html",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:targetgroup/${TargetGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "TargetGroupId",
+          "name": "targetGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifVpcId"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAccessLogSubscription",
+        "toCreateListener",
+        "toCreateResourceConfiguration",
+        "toCreateResourceGateway",
+        "toCreateRule",
+        "toCreateService",
+        "toCreateServiceNetwork",
+        "toCreateServiceNetworkResourceAssociation",
+        "toCreateServiceNetworkServiceAssociation",
+        "toCreateServiceNetworkVpcAssociation",
+        "toCreateTargetGroup",
+        "toDeleteAccessLogSubscription",
+        "toDeleteAuthPolicy",
+        "toDeleteDomainVerification",
+        "toDeleteListener",
+        "toDeleteResourceConfiguration",
+        "toDeleteResourceEndpointAssociation",
+        "toDeleteResourceGateway",
+        "toDeleteResourcePolicy",
+        "toDeleteRule",
+        "toDeleteService",
+        "toDeleteServiceNetwork",
+        "toDeleteServiceNetworkResourceAssociation",
+        "toDeleteServiceNetworkServiceAssociation",
+        "toDeleteServiceNetworkVpcAssociation",
+        "toDeleteTargetGroup",
+        "toDeregisterTargets",
+        "toGetAccessLogSubscription",
+        "toGetAuthPolicy",
+        "toGetDomainVerification",
+        "toGetListener",
+        "toGetResourceConfiguration",
+        "toGetResourceGateway",
+        "toGetResourcePolicy",
+        "toGetRule",
+        "toGetService",
+        "toGetServiceNetwork",
+        "toGetServiceNetworkResourceAssociation",
+        "toGetServiceNetworkServiceAssociation",
+        "toGetServiceNetworkVpcAssociation",
+        "toGetTargetGroup",
+        "toListTargets",
+        "toPutAuthPolicy",
+        "toPutResourcePolicy",
+        "toRegisterTargets",
+        "toStartDomainVerification",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAccessLogSubscription",
+        "toUpdateListener",
+        "toUpdateResourceConfiguration",
+        "toUpdateResourceGateway",
+        "toUpdateRule",
+        "toUpdateService",
+        "toUpdateServiceNetwork",
+        "toUpdateServiceNetworkVpcAssociation",
+        "toUpdateTargetGroup"
+      ],
+      "relatedResourceTypes": [
+        "AccessLogSubscription",
+        "DomainVerification",
+        "Listener",
+        "ResourceConfiguration",
+        "ResourceEndpointAssociation",
+        "ResourceGateway",
+        "Rule",
+        "Service",
+        "ServiceNetwork",
+        "ServiceNetworkResourceAssociation",
+        "ServiceNetworkServiceAssociation",
+        "ServiceNetworkVpcAssociation",
+        "TargetGroup"
+      ],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateAccessLogSubscription",
+        "toCreateListener",
+        "toCreateResourceConfiguration",
+        "toCreateResourceGateway",
+        "toCreateRule",
+        "toCreateService",
+        "toCreateServiceNetwork",
+        "toCreateServiceNetworkResourceAssociation",
+        "toCreateServiceNetworkServiceAssociation",
+        "toCreateServiceNetworkVpcAssociation",
+        "toCreateTargetGroup",
+        "toDeleteAccessLogSubscription",
+        "toDeleteAuthPolicy",
+        "toDeleteDomainVerification",
+        "toDeleteListener",
+        "toDeleteResourceConfiguration",
+        "toDeleteResourceEndpointAssociation",
+        "toDeleteResourceGateway",
+        "toDeleteResourcePolicy",
+        "toDeleteRule",
+        "toDeleteService",
+        "toDeleteServiceNetwork",
+        "toDeleteServiceNetworkResourceAssociation",
+        "toDeleteServiceNetworkServiceAssociation",
+        "toDeleteServiceNetworkVpcAssociation",
+        "toDeleteTargetGroup",
+        "toDeregisterTargets",
+        "toGetAccessLogSubscription",
+        "toGetAuthPolicy",
+        "toGetDomainVerification",
+        "toGetListener",
+        "toGetResourceConfiguration",
+        "toGetResourceGateway",
+        "toGetResourcePolicy",
+        "toGetRule",
+        "toGetService",
+        "toGetServiceNetwork",
+        "toGetServiceNetworkResourceAssociation",
+        "toGetServiceNetworkServiceAssociation",
+        "toGetServiceNetworkVpcAssociation",
+        "toGetTargetGroup",
+        "toListTargets",
+        "toPutAuthPolicy",
+        "toPutResourcePolicy",
+        "toRegisterTargets",
+        "toStartDomainVerification",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAccessLogSubscription",
+        "toUpdateListener",
+        "toUpdateResourceConfiguration",
+        "toUpdateResourceGateway",
+        "toUpdateRule",
+        "toUpdateService",
+        "toUpdateServiceNetwork",
+        "toUpdateServiceNetworkVpcAssociation",
+        "toUpdateTargetGroup"
+      ],
+      "relatedResourceTypes": [
+        "AccessLogSubscription",
+        "DomainVerification",
+        "Listener",
+        "ResourceConfiguration",
+        "ResourceEndpointAssociation",
+        "ResourceGateway",
+        "Rule",
+        "Service",
+        "ServiceNetwork",
+        "ServiceNetworkResourceAssociation",
+        "ServiceNetworkServiceAssociation",
+        "ServiceNetworkVpcAssociation",
+        "TargetGroup"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAccessLogSubscription",
+        "toCreateListener",
+        "toCreateResourceConfiguration",
+        "toCreateResourceGateway",
+        "toCreateRule",
+        "toCreateService",
+        "toCreateServiceNetwork",
+        "toCreateServiceNetworkResourceAssociation",
+        "toCreateServiceNetworkServiceAssociation",
+        "toCreateServiceNetworkVpcAssociation",
+        "toCreateTargetGroup",
+        "toDeleteAccessLogSubscription",
+        "toDeleteAuthPolicy",
+        "toDeleteDomainVerification",
+        "toDeleteListener",
+        "toDeleteResourceConfiguration",
+        "toDeleteResourceEndpointAssociation",
+        "toDeleteResourceGateway",
+        "toDeleteResourcePolicy",
+        "toDeleteRule",
+        "toDeleteService",
+        "toDeleteServiceNetwork",
+        "toDeleteServiceNetworkResourceAssociation",
+        "toDeleteServiceNetworkServiceAssociation",
+        "toDeleteServiceNetworkVpcAssociation",
+        "toDeleteTargetGroup",
+        "toDeregisterTargets",
+        "toGetAccessLogSubscription",
+        "toGetAuthPolicy",
+        "toGetDomainVerification",
+        "toGetListener",
+        "toGetResourceConfiguration",
+        "toGetResourceGateway",
+        "toGetResourcePolicy",
+        "toGetRule",
+        "toGetService",
+        "toGetServiceNetwork",
+        "toGetServiceNetworkResourceAssociation",
+        "toGetServiceNetworkServiceAssociation",
+        "toGetServiceNetworkVpcAssociation",
+        "toGetTargetGroup",
+        "toListTargets",
+        "toPutAuthPolicy",
+        "toPutResourcePolicy",
+        "toRegisterTargets",
+        "toStartDomainVerification",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAccessLogSubscription",
+        "toUpdateListener",
+        "toUpdateResourceConfiguration",
+        "toUpdateResourceGateway",
+        "toUpdateRule",
+        "toUpdateService",
+        "toUpdateServiceNetwork",
+        "toUpdateServiceNetworkVpcAssociation",
+        "toUpdateTargetGroup"
+      ],
+      "relatedResourceTypes": [
+        "AccessLogSubscription",
+        "DomainVerification",
+        "Listener",
+        "ResourceConfiguration",
+        "ResourceEndpointAssociation",
+        "ResourceGateway",
+        "Rule",
+        "Service",
+        "ServiceNetwork",
+        "ServiceNetworkResourceAssociation",
+        "ServiceNetworkServiceAssociation",
+        "ServiceNetworkVpcAssociation",
+        "TargetGroup"
+      ],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "vpc-lattice:AuthType",
+      "methodName": "ifAuthType",
+      "description": "Filters access by the auth type specified in the request",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/",
+      "relatedActionMethods": [
+        "toCreateAccessLogSubscription",
+        "toCreateService",
+        "toCreateServiceNetwork",
+        "toCreateServiceNetworkResourceAssociation",
+        "toCreateServiceNetworkServiceAssociation",
+        "toCreateServiceNetworkVpcAssociation",
+        "toDeleteAuthPolicy",
+        "toDeleteResourcePolicy",
+        "toDeleteService",
+        "toDeleteServiceNetwork",
+        "toGetAuthPolicy",
+        "toGetResourcePolicy",
+        "toGetService",
+        "toGetServiceNetwork",
+        "toPutAuthPolicy",
+        "toPutResourcePolicy",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateService",
+        "toUpdateServiceNetwork"
+      ],
+      "relatedResourceTypes": [
+        "Service",
+        "ServiceNetwork"
+      ],
+      "keyLiteral": "AuthType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "vpc-lattice:CreateAction",
+      "methodName": "ifCreateAction",
+      "description": "Filters access by the name of a resource-creating API action and only available during tagging resources on creation",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/",
+      "relatedActionMethods": [
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CreateAction",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "vpc-lattice:DomainName",
+      "methodName": "ifDomainName",
+      "description": "Filters access by the domain name",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/",
+      "relatedActionMethods": [
+        "toCreateResourceConfiguration",
+        "toDeleteDomainVerification",
+        "toGetDomainVerification",
+        "toStartDomainVerification",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "DomainVerification"
+      ],
+      "keyLiteral": "DomainName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "vpc-lattice:PrivateDnsPreference",
+      "methodName": "ifPrivateDnsPreference",
+      "description": "Filters access by the private dns preference",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/",
+      "relatedActionMethods": [
+        "toCreateServiceNetworkVpcAssociation",
+        "toDeleteServiceNetworkVpcAssociation",
+        "toGetServiceNetworkVpcAssociation",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateServiceNetworkVpcAssociation"
+      ],
+      "relatedResourceTypes": [
+        "ServiceNetworkVpcAssociation"
+      ],
+      "keyLiteral": "PrivateDnsPreference",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "vpc-lattice:PrivateDnsSpecifiedDomains",
+      "methodName": "ifPrivateDnsSpecifiedDomains",
+      "description": "Filters access by the private dns domains",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/",
+      "relatedActionMethods": [
+        "toCreateServiceNetworkVpcAssociation",
+        "toDeleteServiceNetworkVpcAssociation",
+        "toGetServiceNetworkVpcAssociation",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateServiceNetworkVpcAssociation"
+      ],
+      "relatedResourceTypes": [
+        "ServiceNetworkVpcAssociation"
+      ],
+      "keyLiteral": "PrivateDnsSpecifiedDomains",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "vpc-lattice:Protocol",
+      "methodName": "ifProtocol",
+      "description": "Filters access by the protocol specified in the request",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/",
+      "relatedActionMethods": [
+        "toCreateListener",
+        "toDeleteListener",
+        "toGetListener",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateListener"
+      ],
+      "relatedResourceTypes": [
+        "Listener"
+      ],
+      "keyLiteral": "Protocol",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "vpc-lattice:ResourceConfigurationArn",
+      "methodName": "ifResourceConfigurationArn",
+      "description": "Filters access by the ARN of a resource configuration",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/",
+      "relatedActionMethods": [
+        "toCreateServiceNetworkResourceAssociation",
+        "toDeleteResourceEndpointAssociation",
+        "toDeleteServiceNetworkResourceAssociation",
+        "toGetServiceNetworkResourceAssociation",
+        "toListResourceEndpointAssociations",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "ResourceEndpointAssociation",
+        "ServiceNetworkResourceAssociation"
+      ],
+      "keyLiteral": "ResourceConfigurationArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "vpc-lattice:SecurityGroupIds",
+      "methodName": "ifSecurityGroupIds",
+      "description": "Filters access by the IDs of security groups",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/",
+      "relatedActionMethods": [
+        "toCreateServiceNetworkVpcAssociation",
+        "toDeleteServiceNetworkVpcAssociation",
+        "toGetServiceNetworkVpcAssociation",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateResourceGateway",
+        "toUpdateServiceNetworkVpcAssociation"
+      ],
+      "relatedResourceTypes": [
+        "ServiceNetworkVpcAssociation"
+      ],
+      "keyLiteral": "SecurityGroupIds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "vpc-lattice:ServiceArn",
+      "methodName": "ifServiceArn",
+      "description": "Filters access by the ARN of a service",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/",
+      "relatedActionMethods": [
+        "toCreateServiceNetworkServiceAssociation",
+        "toDeleteServiceNetworkServiceAssociation",
+        "toGetServiceNetworkServiceAssociation",
+        "toListServiceNetworkServiceAssociations",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "ServiceNetworkServiceAssociation"
+      ],
+      "keyLiteral": "ServiceArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "vpc-lattice:ServiceNetworkArn",
+      "methodName": "ifServiceNetworkArn",
+      "description": "Filters access by the ARN of a service network",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/",
+      "relatedActionMethods": [
+        "toCreateServiceNetworkResourceAssociation",
+        "toCreateServiceNetworkServiceAssociation",
+        "toCreateServiceNetworkVpcAssociation",
+        "toDeleteServiceNetworkResourceAssociation",
+        "toDeleteServiceNetworkServiceAssociation",
+        "toDeleteServiceNetworkVpcAssociation",
+        "toGetServiceNetworkResourceAssociation",
+        "toGetServiceNetworkServiceAssociation",
+        "toGetServiceNetworkVpcAssociation",
+        "toListServiceNetworkServiceAssociations",
+        "toListServiceNetworkVpcAssociations",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateServiceNetworkVpcAssociation"
+      ],
+      "relatedResourceTypes": [
+        "ServiceNetworkResourceAssociation",
+        "ServiceNetworkServiceAssociation",
+        "ServiceNetworkVpcAssociation"
+      ],
+      "keyLiteral": "ServiceNetworkArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "vpc-lattice:TargetGroupArns",
+      "methodName": "ifTargetGroupArns",
+      "description": "Filters access by the ARNs of target groups",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/",
+      "relatedActionMethods": [
+        "toCreateListener",
+        "toCreateRule",
+        "toDeleteListener",
+        "toDeleteRule",
+        "toGetListener",
+        "toGetRule",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateListener",
+        "toUpdateRule"
+      ],
+      "relatedResourceTypes": [
+        "Listener",
+        "Rule"
+      ],
+      "keyLiteral": "TargetGroupArns",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "vpc-lattice:VpcEndpointId",
+      "methodName": "ifVpcEndpointId",
+      "description": "Filters access by the ID of a VPC endpoint",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/",
+      "relatedActionMethods": [
+        "toDeleteResourceEndpointAssociation",
+        "toListResourceEndpointAssociations",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "ResourceEndpointAssociation"
+      ],
+      "keyLiteral": "VpcEndpointId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "vpc-lattice:VpcId",
+      "methodName": "ifVpcId",
+      "description": "Filters access by the ID of a virtual private cloud (VPC)",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/",
+      "relatedActionMethods": [
+        "toCreateResourceConfiguration",
+        "toCreateResourceGateway",
+        "toCreateServiceNetworkVpcAssociation",
+        "toCreateTargetGroup",
+        "toDeleteResourceGateway",
+        "toDeleteServiceNetworkVpcAssociation",
+        "toDeleteTargetGroup",
+        "toDeregisterTargets",
+        "toGetResourceGateway",
+        "toGetServiceNetworkVpcAssociation",
+        "toGetTargetGroup",
+        "toListTargets",
+        "toRegisterTargets",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateResourceGateway",
+        "toUpdateServiceNetworkVpcAssociation",
+        "toUpdateTargetGroup"
+      ],
+      "relatedResourceTypes": [
+        "ResourceGateway",
+        "ServiceNetworkVpcAssociation",
+        "TargetGroup"
+      ],
+      "keyLiteral": "VpcId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

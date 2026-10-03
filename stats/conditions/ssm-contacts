@@ -1,3 +1,0 @@
-ssm-contacts:RequestTag/${TagKey}
-ssm-contacts:ResourceTag/${TagKey}
-ssm-contacts:TagKeys

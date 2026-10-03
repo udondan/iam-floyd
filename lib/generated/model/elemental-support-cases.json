@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "filename": "elemental-support-cases",
+  "className": "ElementalSupportCases",
+  "name": "elemental-support-cases",
+  "servicePrefix": "elemental-support-cases",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elemental-support-cases.html",
+  "accessLevelList": {
+    "Write": [
+      "AddCaseComment",
+      "CheckCasePermission",
+      "CompleteMultipartUpload",
+      "CreateCase",
+      "CreateS3CLIUploadCommand",
+      "CreateS3DownloadUrl",
+      "StartMultipartUpload",
+      "TagCase",
+      "UntagCase",
+      "UpdateCase",
+      "UpdateCaseStatus",
+      "UpdateMultipartUpload"
+    ],
+    "Read": [
+      "GetCase",
+      "GetCasePermission",
+      "GetCases",
+      "GetUICache",
+      "ListTagsForCase"
+    ],
+    "Tagging": [
+      "TagCase",
+      "UntagCase"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddCaseComment",
+      "methodName": "toAddCaseComment",
+      "description": "Grants permission to add a comment to a support case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "CheckCasePermission",
+      "methodName": "toCheckCasePermission",
+      "description": "Grants permission to verify whether the caller has the permissions to perform support case operations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "CompleteMultipartUpload",
+      "methodName": "toCompleteMultipartUpload",
+      "description": "Grants permission to complete a multipart file upload to a support case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "CreateCase",
+      "methodName": "toCreateCase",
+      "description": "Grants permission to create a support case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateS3CLIUploadCommand",
+      "methodName": "toCreateS3CLIUploadCommand",
+      "description": "Grants permission to create a cli command to allow a file upload to a support case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "CreateS3DownloadUrl",
+      "methodName": "toCreateS3DownloadUrl",
+      "description": "Grants permission to download a file from a support case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "GetCase",
+      "methodName": "toGetCase",
+      "description": "Grants permission to describe a support case in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "GetCasePermission",
+      "methodName": "toGetCasePermission",
+      "description": "Grants permission to verify whether the caller has the permissions to perform support case operations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "GetCases",
+      "methodName": "toGetCases",
+      "description": "Grants permission to list the support cases in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "GetUICache",
+      "methodName": "toGetUICache",
+      "description": "Grants permission to retrieve cached case user data for use in the Console",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "ListTagsForCase",
+      "methodName": "toListTagsForCase",
+      "description": "Grants permission to list tags on a support case",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "StartMultipartUpload",
+      "methodName": "toStartMultipartUpload",
+      "description": "Grants permission to start a multipart file upload to a support case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "TagCase",
+      "methodName": "toTagCase",
+      "description": "Grants permission to add a tag on a support case",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "UntagCase",
+      "methodName": "toUntagCase",
+      "description": "Grants permission to remove a tag on a support case",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "UpdateCase",
+      "methodName": "toUpdateCase",
+      "description": "Grants permission to update a support case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "UpdateCaseStatus",
+      "methodName": "toUpdateCaseStatus",
+      "description": "Grants permission to update a support case status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "UpdateMultipartUpload",
+      "methodName": "toUpdateMultipartUpload",
+      "description": "Grants permission to update a multipart file upload to a support case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    }
+  ],
+  "resources": [
+    {
+      "name": "case",
+      "methodName": "onCase",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software/",
+      "arn": "arn:${Partition}:elemental-support-cases::${Account}:case/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateCase",
+        "toTagCase"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddCaseComment",
+        "toCompleteMultipartUpload",
+        "toCreateS3CLIUploadCommand",
+        "toCreateS3DownloadUrl",
+        "toGetCase",
+        "toListTagsForCase",
+        "toStartMultipartUpload",
+        "toTagCase",
+        "toUntagCase",
+        "toUpdateCase",
+        "toUpdateCaseStatus",
+        "toUpdateMultipartUpload"
+      ],
+      "relatedResourceTypes": [
+        "case"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateCase",
+        "toTagCase",
+        "toUntagCase"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

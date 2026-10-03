@@ -1,4 +1,0 @@
-synthetics:Names
-synthetics:RequestTag/${TagKey}
-synthetics:ResourceTag/${TagKey}
-synthetics:TagKeys

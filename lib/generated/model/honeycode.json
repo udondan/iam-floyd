@@ -1,0 +1,412 @@
+{
+  "schemaVersion": 1,
+  "filename": "honeycode",
+  "className": "Honeycode",
+  "name": "honeycode",
+  "servicePrefix": "honeycode",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_honeycode.html",
+  "accessLevelList": {
+    "Write": [
+      "BatchCreateTableRows",
+      "BatchDeleteTableRows",
+      "BatchUpdateTableRows",
+      "BatchUpsertTableRows",
+      "InvokeScreenAutomation",
+      "ListTagsForResource",
+      "StartTableDataImportJob",
+      "TagResource",
+      "UntagResource",
+      "ApproveTeamAssociation",
+      "CreateTeam",
+      "CreateTenant",
+      "DeleteDomains",
+      "DeregisterGroups",
+      "RegisterDomainForVerification",
+      "RegisterGroups",
+      "RejectTeamAssociation",
+      "RestartDomainVerification",
+      "UpdateTeam"
+    ],
+    "Read": [
+      "DescribeTableDataImportJob",
+      "GetScreenData",
+      "QueryTableRows",
+      "DescribeTeam"
+    ],
+    "List": [
+      "ListTableColumns",
+      "ListTableRows",
+      "ListTables",
+      "ListDomains",
+      "ListGroups",
+      "ListTeamAssociations",
+      "ListTenants"
+    ],
+    "Tagging": [
+      "ListTagsForResource",
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchCreateTableRows",
+      "methodName": "toBatchCreateTableRows",
+      "description": "Grants permission to create new rows in a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_BatchCreateTableRows.html"
+    },
+    {
+      "name": "BatchDeleteTableRows",
+      "methodName": "toBatchDeleteTableRows",
+      "description": "Grants permission to delete rows from a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_BatchDeleteTableRows.html"
+    },
+    {
+      "name": "BatchUpdateTableRows",
+      "methodName": "toBatchUpdateTableRows",
+      "description": "Grants permission to update rows in a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_BatchUpdateTableRows.html"
+    },
+    {
+      "name": "BatchUpsertTableRows",
+      "methodName": "toBatchUpsertTableRows",
+      "description": "Grants permission to upsert rows in a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_BatchUpsertTableRows.html"
+    },
+    {
+      "name": "DescribeTableDataImportJob",
+      "methodName": "toDescribeTableDataImportJob",
+      "description": "Grants permission to get details about a table data import job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_DescribeTableDataImportJob.html"
+    },
+    {
+      "name": "GetScreenData",
+      "methodName": "toGetScreenData",
+      "description": "Grants permission to load the data from a screen",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_GetScreenData.html"
+    },
+    {
+      "name": "InvokeScreenAutomation",
+      "methodName": "toInvokeScreenAutomation",
+      "description": "Grants permission to invoke a screen automation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_InvokeScreenAutomation.html"
+    },
+    {
+      "name": "ListTableColumns",
+      "methodName": "toListTableColumns",
+      "description": "Grants permission to list the columns in a table",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_ListTableColumns.html"
+    },
+    {
+      "name": "ListTableRows",
+      "methodName": "toListTableRows",
+      "description": "Grants permission to list the rows in a table",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_ListTableRows.html"
+    },
+    {
+      "name": "ListTables",
+      "methodName": "toListTables",
+      "description": "Grants permission to list the tables in a workbook",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_ListTables.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags for a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_ListTagsForResource.html"
+    },
+    {
+      "name": "QueryTableRows",
+      "methodName": "toQueryTableRows",
+      "description": "Grants permission to query the rows of a table using a filter",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_QueryTableRows.html"
+    },
+    {
+      "name": "StartTableDataImportJob",
+      "methodName": "toStartTableDataImportJob",
+      "description": "Grants permission to start a table data import job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_StartTableDataImportJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_UntagResource.html"
+    },
+    {
+      "name": "ApproveTeamAssociation",
+      "methodName": "toApproveTeamAssociation",
+      "description": "Grants permission to approve a team association request for your AWS Account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#approve-team-association"
+    },
+    {
+      "name": "CreateTeam",
+      "methodName": "toCreateTeam",
+      "description": "Grants permission to create a new Amazon Honeycode team for your AWS Account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/team.html#create-team"
+    },
+    {
+      "name": "CreateTenant",
+      "methodName": "toCreateTenant",
+      "description": "Grants permission to create a new tenant within Amazon Honeycode for your AWS Account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/tenant.html#create-tenant"
+    },
+    {
+      "name": "DeleteDomains",
+      "methodName": "toDeleteDomains",
+      "description": "Grants permission to delete Amazon Honeycode domains for your AWS Account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#delete-domains"
+    },
+    {
+      "name": "DeregisterGroups",
+      "methodName": "toDeregisterGroups",
+      "description": "Grants permission to remove groups from an Amazon Honeycode team for your AWS Account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/group.html#deregister-groups"
+    },
+    {
+      "name": "DescribeTeam",
+      "methodName": "toDescribeTeam",
+      "description": "Grants permission to get details about Amazon Honeycode teams for your AWS Account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/team.html#describe-team"
+    },
+    {
+      "name": "ListDomains",
+      "methodName": "toListDomains",
+      "description": "Grants permission to list all Amazon Honeycode domains and their verification status for your AWS Account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#list-domains"
+    },
+    {
+      "name": "ListGroups",
+      "methodName": "toListGroups",
+      "description": "Grants permission to list all groups in an Amazon Honeycode team for your AWS Account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/group.html#list-groups"
+    },
+    {
+      "name": "ListTeamAssociations",
+      "methodName": "toListTeamAssociations",
+      "description": "Grants permission to list all pending and approved team associations with your AWS Account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#list-team-associations"
+    },
+    {
+      "name": "ListTenants",
+      "methodName": "toListTenants",
+      "description": "Grants permission to list all tenants of Amazon Honeycode for your AWS Account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/tenant.html#list-tenants"
+    },
+    {
+      "name": "RegisterDomainForVerification",
+      "methodName": "toRegisterDomainForVerification",
+      "description": "Grants permission to request verification of the Amazon Honeycode domains for your AWS Account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#register-domain-for-verification"
+    },
+    {
+      "name": "RegisterGroups",
+      "methodName": "toRegisterGroups",
+      "description": "Grants permission to add groups to an Amazon Honeycode team for your AWS Account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/group.html#register-groups"
+    },
+    {
+      "name": "RejectTeamAssociation",
+      "methodName": "toRejectTeamAssociation",
+      "description": "Grants permission to reject a team association request for your AWS Account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#reject-team-association"
+    },
+    {
+      "name": "RestartDomainVerification",
+      "methodName": "toRestartDomainVerification",
+      "description": "Grants permission to restart verification of the Amazon Honeycode domains for your AWS Account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#restart-domain-verification"
+    },
+    {
+      "name": "UpdateTeam",
+      "methodName": "toUpdateTeam",
+      "description": "Grants permission to update an Amazon Honeycode team for your AWS Account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/team.html#update-team"
+    }
+  ],
+  "resources": [
+    {
+      "name": "screen",
+      "methodName": "onScreen",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/resource-screen.html",
+      "arn": "arn:${Partition}:honeycode:${Region}:${Account}:screen:workbook/${WorkbookId}/app/${AppId}/screen/${ScreenId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkbookId",
+          "name": "workbookId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ScreenId",
+          "name": "screenId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "screen-automation",
+      "methodName": "onScreenAutomation",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/resource-screen-automation.html",
+      "arn": "arn:${Partition}:honeycode:${Region}:${Account}:screen-automation:workbook/${WorkbookId}/app/${AppId}/screen/${ScreenId}/automation/${AutomationId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkbookId",
+          "name": "workbookId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ScreenId",
+          "name": "screenId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AutomationId",
+          "name": "automationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "table",
+      "methodName": "onTable",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/resource-table.html",
+      "arn": "arn:${Partition}:honeycode:${Region}:${Account}:table:workbook/${WorkbookId}/table/${TableId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkbookId",
+          "name": "workbookId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TableId",
+          "name": "tableId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "workbook",
+      "methodName": "onWorkbook",
+      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/resource-workbook.html",
+      "arn": "arn:${Partition}:honeycode:${Region}:${Account}:workbook:workbook/${WorkbookId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkbookId",
+          "name": "workbookId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

@@ -1,4 +1,0 @@
-qldb:catalog
-qldb:ledger
-qldb:stream
-qldb:table

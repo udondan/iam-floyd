@@ -1,0 +1,1174 @@
+{
+  "schemaVersion": 1,
+  "filename": "network-firewall",
+  "className": "NetworkFirewall",
+  "name": "network-firewall",
+  "servicePrefix": "network-firewall",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_network-firewall.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptNetworkFirewallTransitGatewayAttachment",
+      "AssociateAvailabilityZones",
+      "AssociateFirewallPolicy",
+      "AssociateSubnets",
+      "AttachRuleGroupsToProxyConfiguration",
+      "CreateContainerAssociation",
+      "CreateFirewall",
+      "CreateFirewallPolicy",
+      "CreateProxy",
+      "CreateProxyConfiguration",
+      "CreateProxyRuleGroup",
+      "CreateProxyRules",
+      "CreateRuleGroup",
+      "CreateTLSInspectionConfiguration",
+      "CreateVpcEndpointAssociation",
+      "DeleteContainerAssociation",
+      "DeleteFirewall",
+      "DeleteFirewallPolicy",
+      "DeleteNetworkFirewallTransitGatewayAttachment",
+      "DeleteProxy",
+      "DeleteProxyConfiguration",
+      "DeleteProxyRuleGroup",
+      "DeleteProxyRules",
+      "DeleteResourcePolicy",
+      "DeleteRuleGroup",
+      "DeleteTLSInspectionConfiguration",
+      "DeleteVpcEndpointAssociation",
+      "DetachRuleGroupsFromProxyConfiguration",
+      "DisassociateAvailabilityZones",
+      "DisassociateSubnets",
+      "PutResourcePolicy",
+      "RejectNetworkFirewallTransitGatewayAttachment",
+      "StartAnalysisReport",
+      "StartFlowCapture",
+      "StartFlowFlush",
+      "TagResource",
+      "UntagResource",
+      "UpdateAvailabilityZoneChangeProtection",
+      "UpdateContainerAssociation",
+      "UpdateFirewallAnalysisSettings",
+      "UpdateFirewallDeleteProtection",
+      "UpdateFirewallDescription",
+      "UpdateFirewallEncryptionConfiguration",
+      "UpdateFirewallPolicy",
+      "UpdateFirewallPolicyChangeProtection",
+      "UpdateLoggingConfiguration",
+      "UpdateProxy",
+      "UpdateProxyConfiguration",
+      "UpdateProxyRule",
+      "UpdateProxyRuleGroupPriorities",
+      "UpdateProxyRulePriorities",
+      "UpdateRuleGroup",
+      "UpdateSubnetChangeProtection",
+      "UpdateTLSInspectionConfiguration"
+    ],
+    "Read": [
+      "DescribeContainerAssociation",
+      "DescribeFirewall",
+      "DescribeFirewallMetadata",
+      "DescribeFirewallPolicy",
+      "DescribeFlowOperation",
+      "DescribeLoggingConfiguration",
+      "DescribeProxy",
+      "DescribeProxyConfiguration",
+      "DescribeProxyRule",
+      "DescribeProxyRuleGroup",
+      "DescribeResourcePolicy",
+      "DescribeRuleGroup",
+      "DescribeRuleGroupMetadata",
+      "DescribeRuleGroupSummary",
+      "DescribeTLSInspectionConfiguration",
+      "DescribeVpcEndpointAssociation",
+      "GetAnalysisReportResults",
+      "ListFlowOperationResults"
+    ],
+    "List": [
+      "ListAnalysisReports",
+      "ListContainerAssociations",
+      "ListFirewallPolicies",
+      "ListFirewalls",
+      "ListFlowOperations",
+      "ListProxies",
+      "ListProxyConfigurations",
+      "ListProxyRuleGroups",
+      "ListRuleGroups",
+      "ListTLSInspectionConfigurations",
+      "ListTagsForResource",
+      "ListVpcEndpointAssociations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptNetworkFirewallTransitGatewayAttachment",
+      "methodName": "toAcceptNetworkFirewallTransitGatewayAttachment",
+      "description": "Grants permission to accept pending Network Firewall attachments on a transit gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_AcceptNetworkFirewallTransitGatewayAttachment.html"
+    },
+    {
+      "name": "AssociateAvailabilityZones",
+      "methodName": "toAssociateAvailabilityZones",
+      "description": "Grants permission to associate availability zones to a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_AssociateAvailabilityZones.html"
+    },
+    {
+      "name": "AssociateFirewallPolicy",
+      "methodName": "toAssociateFirewallPolicy",
+      "description": "Grants permission to create an association between a firewall policy and a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_AssociateFirewallPolicy.html"
+    },
+    {
+      "name": "AssociateSubnets",
+      "methodName": "toAssociateSubnets",
+      "description": "Grants permission to associate VPC subnets to a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_AssociateSubnets.html"
+    },
+    {
+      "name": "AttachRuleGroupsToProxyConfiguration",
+      "methodName": "toAttachRuleGroupsToProxyConfiguration",
+      "description": "Grants permission to attach proxy rule groups to a proxy configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_AttachRuleGroupsToProxyConfiguration.html"
+    },
+    {
+      "name": "CreateContainerAssociation",
+      "methodName": "toCreateContainerAssociation",
+      "description": "Grants permission to create an AWS Network Firewall container association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateContainerAssociation.html"
+    },
+    {
+      "name": "CreateFirewall",
+      "methodName": "toCreateFirewall",
+      "description": "Grants permission to create an AWS Network Firewall firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateFirewall.html"
+    },
+    {
+      "name": "CreateFirewallPolicy",
+      "methodName": "toCreateFirewallPolicy",
+      "description": "Grants permission to create an AWS Network Firewall firewall policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateFirewallPolicy.html"
+    },
+    {
+      "name": "CreateProxy",
+      "methodName": "toCreateProxy",
+      "description": "Grants permission to create an AWS Network Firewall proxy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateProxy.html"
+    },
+    {
+      "name": "CreateProxyConfiguration",
+      "methodName": "toCreateProxyConfiguration",
+      "description": "Grants permission to create an AWS Network Firewall proxy configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateProxyConfiguration.html"
+    },
+    {
+      "name": "CreateProxyRuleGroup",
+      "methodName": "toCreateProxyRuleGroup",
+      "description": "Grants permission to create an AWS Network Firewall proxy rule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateProxyRuleGroup.html"
+    },
+    {
+      "name": "CreateProxyRules",
+      "methodName": "toCreateProxyRules",
+      "description": "Grants permission to add proxy rules to a proxy rule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateProxyRules.html"
+    },
+    {
+      "name": "CreateRuleGroup",
+      "methodName": "toCreateRuleGroup",
+      "description": "Grants permission to create an AWS Network Firewall rule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateRuleGroup.html"
+    },
+    {
+      "name": "CreateTLSInspectionConfiguration",
+      "methodName": "toCreateTLSInspectionConfiguration",
+      "description": "Grants permission to create an AWS Network Firewall tls inspection configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateTLSInspectionConfiguration.html"
+    },
+    {
+      "name": "CreateVpcEndpointAssociation",
+      "methodName": "toCreateVpcEndpointAssociation",
+      "description": "Grants permission to create an AWS Network Firewall vpc endpoint association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateVpcEndpointAssociation.html"
+    },
+    {
+      "name": "DeleteContainerAssociation",
+      "methodName": "toDeleteContainerAssociation",
+      "description": "Grants permission to delete an AWS Network Firewall container association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteContainerAssociation.html"
+    },
+    {
+      "name": "DeleteFirewall",
+      "methodName": "toDeleteFirewall",
+      "description": "Grants permission to delete a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteFirewall.html"
+    },
+    {
+      "name": "DeleteFirewallPolicy",
+      "methodName": "toDeleteFirewallPolicy",
+      "description": "Grants permission to delete a firewall policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteFirewallPolicy.html"
+    },
+    {
+      "name": "DeleteNetworkFirewallTransitGatewayAttachment",
+      "methodName": "toDeleteNetworkFirewallTransitGatewayAttachment",
+      "description": "Grants permission to delete Network Firewall attachments on a transit gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteNetworkFirewallTransitGatewayAttachment.html"
+    },
+    {
+      "name": "DeleteProxy",
+      "methodName": "toDeleteProxy",
+      "description": "Grants permission to delete a proxy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteProxy.html"
+    },
+    {
+      "name": "DeleteProxyConfiguration",
+      "methodName": "toDeleteProxyConfiguration",
+      "description": "Grants permission to delete a proxy configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteProxyConfiguration.html"
+    },
+    {
+      "name": "DeleteProxyRuleGroup",
+      "methodName": "toDeleteProxyRuleGroup",
+      "description": "Grants permission to delete a proxy rule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteProxyRuleGroup.html"
+    },
+    {
+      "name": "DeleteProxyRules",
+      "methodName": "toDeleteProxyRules",
+      "description": "Grants permission to remove proxy rules from a proxy rule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteProxyRules.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete a resource policy for a firewall policy or rule group or firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteRuleGroup",
+      "methodName": "toDeleteRuleGroup",
+      "description": "Grants permission to delete a rule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteRuleGroup.html"
+    },
+    {
+      "name": "DeleteTLSInspectionConfiguration",
+      "methodName": "toDeleteTLSInspectionConfiguration",
+      "description": "Grants permission to delete a tls inspection configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteTLSInspectionConfiguration.html"
+    },
+    {
+      "name": "DeleteVpcEndpointAssociation",
+      "methodName": "toDeleteVpcEndpointAssociation",
+      "description": "Grants permission to delete a vpc endpoint association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteVpcEndpointAssociation.html"
+    },
+    {
+      "name": "DescribeContainerAssociation",
+      "methodName": "toDescribeContainerAssociation",
+      "description": "Grants permission to retrieve the data objects that define a container association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeContainerAssociation.html"
+    },
+    {
+      "name": "DescribeFirewall",
+      "methodName": "toDescribeFirewall",
+      "description": "Grants permission to retrieve the data objects that define a firewall",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeFirewall.html"
+    },
+    {
+      "name": "DescribeFirewallMetadata",
+      "methodName": "toDescribeFirewallMetadata",
+      "description": "Grants permission to retrieve the high-level information about a firewall",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeFirewallMetadata.html"
+    },
+    {
+      "name": "DescribeFirewallPolicy",
+      "methodName": "toDescribeFirewallPolicy",
+      "description": "Grants permission to retrieve the data objects that define a firewall policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeFirewallPolicy.html"
+    },
+    {
+      "name": "DescribeFlowOperation",
+      "methodName": "toDescribeFlowOperation",
+      "description": "Grants permission to describe a flow operation performed on a firewall",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeFlowOperation.html"
+    },
+    {
+      "name": "DescribeLoggingConfiguration",
+      "methodName": "toDescribeLoggingConfiguration",
+      "description": "Grants permission to describe the logging configuration of a firewall",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeLoggingConfiguration.html"
+    },
+    {
+      "name": "DescribeProxy",
+      "methodName": "toDescribeProxy",
+      "description": "Grants permission to retrieve the data objects that define a proxy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeProxy.html"
+    },
+    {
+      "name": "DescribeProxyConfiguration",
+      "methodName": "toDescribeProxyConfiguration",
+      "description": "Grants permission to retrieve the data objects that define a proxy configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeProxyConfiguration.html"
+    },
+    {
+      "name": "DescribeProxyRule",
+      "methodName": "toDescribeProxyRule",
+      "description": "Grants permission to retrieve the data objects that define a proxy rule",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeProxyRule.html"
+    },
+    {
+      "name": "DescribeProxyRuleGroup",
+      "methodName": "toDescribeProxyRuleGroup",
+      "description": "Grants permission to retrieve the data objects that define a proxy rule group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeProxyRuleGroup.html"
+    },
+    {
+      "name": "DescribeResourcePolicy",
+      "methodName": "toDescribeResourcePolicy",
+      "description": "Grants permission to describe a resource policy for a firewall policy or rule group or firewall",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeResourcePolicy.html"
+    },
+    {
+      "name": "DescribeRuleGroup",
+      "methodName": "toDescribeRuleGroup",
+      "description": "Grants permission to retrieve the data objects that define a rule group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html"
+    },
+    {
+      "name": "DescribeRuleGroupMetadata",
+      "methodName": "toDescribeRuleGroupMetadata",
+      "description": "Grants permission to retrieve the high-level information about a rule group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroupMetadata.html"
+    },
+    {
+      "name": "DescribeRuleGroupSummary",
+      "methodName": "toDescribeRuleGroupSummary",
+      "description": "Grants permission to retrieve the summary information about a rule group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroupSummary.html"
+    },
+    {
+      "name": "DescribeTLSInspectionConfiguration",
+      "methodName": "toDescribeTLSInspectionConfiguration",
+      "description": "Grants permission to retrieve the data objects that define a tls inspection configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeTLSInspectionConfiguration.html"
+    },
+    {
+      "name": "DescribeVpcEndpointAssociation",
+      "methodName": "toDescribeVpcEndpointAssociation",
+      "description": "Grants permission to retrieve the data objects that define a vpc endpoint association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeVpcEndpointAssociation.html"
+    },
+    {
+      "name": "DetachRuleGroupsFromProxyConfiguration",
+      "methodName": "toDetachRuleGroupsFromProxyConfiguration",
+      "description": "Grants permission to detach proxy rule groups from a proxy configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DetachRuleGroupsFromProxyConfiguration.html"
+    },
+    {
+      "name": "DisassociateAvailabilityZones",
+      "methodName": "toDisassociateAvailabilityZones",
+      "description": "Grants permission to disassociate availability zones to a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DisassociateAvailabilityZones.html"
+    },
+    {
+      "name": "DisassociateSubnets",
+      "methodName": "toDisassociateSubnets",
+      "description": "Grants permission to disassociate VPC subnets from a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DisassociateSubnets.html"
+    },
+    {
+      "name": "GetAnalysisReportResults",
+      "methodName": "toGetAnalysisReportResults",
+      "description": "Grants permission to retrieve analysis report results of a firewall",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_GetAnalysisReportResults.html"
+    },
+    {
+      "name": "ListAnalysisReports",
+      "methodName": "toListAnalysisReports",
+      "description": "Grants permission to list firewall analysis reports",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListAnalysisReports.html"
+    },
+    {
+      "name": "ListContainerAssociations",
+      "methodName": "toListContainerAssociations",
+      "description": "Grants permission to retrieve the metadata for container associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListContainerAssociations.html"
+    },
+    {
+      "name": "ListFirewallPolicies",
+      "methodName": "toListFirewallPolicies",
+      "description": "Grants permission to retrieve the metadata for firewall policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListFirewallPolicies.html"
+    },
+    {
+      "name": "ListFirewalls",
+      "methodName": "toListFirewalls",
+      "description": "Grants permission to retrieve the metadata for firewalls",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListFirewalls.html"
+    },
+    {
+      "name": "ListFlowOperationResults",
+      "methodName": "toListFlowOperationResults",
+      "description": "Grants permission to list results from a flow operation performed on a firewall",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListFlowOperationResults.html"
+    },
+    {
+      "name": "ListFlowOperations",
+      "methodName": "toListFlowOperations",
+      "description": "Grants permission to list flow operations performed on a firewall",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListFlowOperations.html"
+    },
+    {
+      "name": "ListProxies",
+      "methodName": "toListProxies",
+      "description": "Grants permission to retrieve the metadata for proxies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListProxies.html"
+    },
+    {
+      "name": "ListProxyConfigurations",
+      "methodName": "toListProxyConfigurations",
+      "description": "Grants permission to retrieve the metadata for proxy configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListProxyConfigurations.html"
+    },
+    {
+      "name": "ListProxyRuleGroups",
+      "methodName": "toListProxyRuleGroups",
+      "description": "Grants permission to retrieve the metadata for proxy rule groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListProxyRuleGroups.html"
+    },
+    {
+      "name": "ListRuleGroups",
+      "methodName": "toListRuleGroups",
+      "description": "Grants permission to retrieve the metadata for rule groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListRuleGroups.html"
+    },
+    {
+      "name": "ListTLSInspectionConfigurations",
+      "methodName": "toListTLSInspectionConfigurations",
+      "description": "Grants permission to retrieve the metadata for tls inspection configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListTLSInspectionConfigurations.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to retrieve the tags for a resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListVpcEndpointAssociations",
+      "methodName": "toListVpcEndpointAssociations",
+      "description": "Grants permission to retrieve the metadata for vpc endpoint associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListVpcEndpointAssociations.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to put a resource policy for a firewall policy or rule group or firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "RejectNetworkFirewallTransitGatewayAttachment",
+      "methodName": "toRejectNetworkFirewallTransitGatewayAttachment",
+      "description": "Grants permission to reject pending Network Firewall attachments on a transit gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_RejectNetworkFirewallTransitGatewayAttachment.html"
+    },
+    {
+      "name": "StartAnalysisReport",
+      "methodName": "toStartAnalysisReport",
+      "description": "Grants permission to start an analysis report on a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_GetAnalysisReportResults.html"
+    },
+    {
+      "name": "StartFlowCapture",
+      "methodName": "toStartFlowCapture",
+      "description": "Grants permission to start capture operation on a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_StartFlowCapture.html"
+    },
+    {
+      "name": "StartFlowFlush",
+      "methodName": "toStartFlowFlush",
+      "description": "Grants permission to start flush operation on a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_StartFlowFlush.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to attach tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAvailabilityZoneChangeProtection",
+      "methodName": "toUpdateAvailabilityZoneChangeProtection",
+      "description": "Grants permission to add or remove availability zone change protection for a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateAvailabilityZoneChangeProtection.html"
+    },
+    {
+      "name": "UpdateContainerAssociation",
+      "methodName": "toUpdateContainerAssociation",
+      "description": "Grants permission to update an AWS Network Firewall container association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateContainerAssociation.html"
+    },
+    {
+      "name": "UpdateFirewallAnalysisSettings",
+      "methodName": "toUpdateFirewallAnalysisSettings",
+      "description": "Grants permission to modify firewall analysis settings of a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateFirewallAnalysisSettings.html"
+    },
+    {
+      "name": "UpdateFirewallDeleteProtection",
+      "methodName": "toUpdateFirewallDeleteProtection",
+      "description": "Grants permission to add or remove delete protection for a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateFirewallDeleteProtection.html"
+    },
+    {
+      "name": "UpdateFirewallDescription",
+      "methodName": "toUpdateFirewallDescription",
+      "description": "Grants permission to modify the description for a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateFirewallDescription.html"
+    },
+    {
+      "name": "UpdateFirewallEncryptionConfiguration",
+      "methodName": "toUpdateFirewallEncryptionConfiguration",
+      "description": "Grants permission to modify the encryption configuration of a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateFirewallEncryptionConfiguration.html"
+    },
+    {
+      "name": "UpdateFirewallPolicy",
+      "methodName": "toUpdateFirewallPolicy",
+      "description": "Grants permission to modify a firewall policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateFirewallPolicy.html"
+    },
+    {
+      "name": "UpdateFirewallPolicyChangeProtection",
+      "methodName": "toUpdateFirewallPolicyChangeProtection",
+      "description": "Grants permission to add or remove firewall policy change protection for a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateFirewallPolicyChangeProtection.html"
+    },
+    {
+      "name": "UpdateLoggingConfiguration",
+      "methodName": "toUpdateLoggingConfiguration",
+      "description": "Grants permission to modify the logging configuration of a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateLoggingConfiguration.html"
+    },
+    {
+      "name": "UpdateProxy",
+      "methodName": "toUpdateProxy",
+      "description": "Grants permission to modify a proxy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateProxy.html"
+    },
+    {
+      "name": "UpdateProxyConfiguration",
+      "methodName": "toUpdateProxyConfiguration",
+      "description": "Grants permission to modify a proxy configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateProxyConfiguration.html"
+    },
+    {
+      "name": "UpdateProxyRule",
+      "methodName": "toUpdateProxyRule",
+      "description": "Grants permission to update an existing proxy rule on a proxy rule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateProxyRule.html"
+    },
+    {
+      "name": "UpdateProxyRuleGroupPriorities",
+      "methodName": "toUpdateProxyRuleGroupPriorities",
+      "description": "Grants permission to modify rule group priorities on a proxy configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateProxyRuleGroupPriorities.html"
+    },
+    {
+      "name": "UpdateProxyRulePriorities",
+      "methodName": "toUpdateProxyRulePriorities",
+      "description": "Grants permission to update proxy rule priorities within a proxy rule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateProxyRulePriorities.html"
+    },
+    {
+      "name": "UpdateRuleGroup",
+      "methodName": "toUpdateRuleGroup",
+      "description": "Grants permission to modify a rule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateRuleGroup.html"
+    },
+    {
+      "name": "UpdateSubnetChangeProtection",
+      "methodName": "toUpdateSubnetChangeProtection",
+      "description": "Grants permission to add or remove subnet change protection for a firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateSubnetChangeProtection.html"
+    },
+    {
+      "name": "UpdateTLSInspectionConfiguration",
+      "methodName": "toUpdateTLSInspectionConfiguration",
+      "description": "Grants permission to modify a tls inspection configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateTLSInspectionConfiguration.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "ContainerAssociation",
+      "methodName": "onContainerAssociation",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ContainerAssociation.html",
+      "arn": "arn:${Partition}:network-firewall:${Region}:${Account}:container-association/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Firewall",
+      "methodName": "onFirewall",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_Firewall.html",
+      "arn": "arn:${Partition}:network-firewall:${Region}:${Account}:firewall/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "FirewallPolicy",
+      "methodName": "onFirewallPolicy",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_FirewallPolicyResponse.html",
+      "arn": "arn:${Partition}:network-firewall:${Region}:${Account}:firewall-policy/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Proxy",
+      "methodName": "onProxy",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_Proxy.html",
+      "arn": "arn:${Partition}:network-firewall:${Region}:${Account}:proxy/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ProxyConfiguration",
+      "methodName": "onProxyConfiguration",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ProxyConfiguration.html",
+      "arn": "arn:${Partition}:network-firewall:${Region}:${Account}:proxy-configuration/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ProxyRuleGroup",
+      "methodName": "onProxyRuleGroup",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ProxyRuleGroup.html",
+      "arn": "arn:${Partition}:network-firewall:${Region}:${Account}:proxy-rule-group/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "StatefulRuleGroup",
+      "methodName": "onStatefulRuleGroup",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_RuleGroupResponse.html",
+      "arn": "arn:${Partition}:network-firewall:${Region}:${Account}:stateful-rulegroup/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "StatelessRuleGroup",
+      "methodName": "onStatelessRuleGroup",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_RuleGroupResponse.html",
+      "arn": "arn:${Partition}:network-firewall:${Region}:${Account}:stateless-rulegroup/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "TLSInspectionConfiguration",
+      "methodName": "onTLSInspectionConfiguration",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_TLSInspectionConfigurationResponse.html",
+      "arn": "arn:${Partition}:network-firewall:${Region}:${Account}:tls-configuration/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "VpcEndpointAssociation",
+      "methodName": "onVpcEndpointAssociation",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_VpcEndpointAssociation.html",
+      "arn": "arn:${Partition}:network-firewall:${Region}:${Account}:vpc-endpoint-association/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by on the allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAssociateFirewallPolicy",
+        "toCreateContainerAssociation",
+        "toCreateFirewall",
+        "toCreateFirewallPolicy",
+        "toCreateProxy",
+        "toCreateProxyConfiguration",
+        "toCreateProxyRuleGroup",
+        "toCreateRuleGroup",
+        "toCreateTLSInspectionConfiguration",
+        "toCreateVpcEndpointAssociation",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag value associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAcceptNetworkFirewallTransitGatewayAttachment",
+        "toAssociateAvailabilityZones",
+        "toAssociateFirewallPolicy",
+        "toAssociateSubnets",
+        "toAttachRuleGroupsToProxyConfiguration",
+        "toCreateContainerAssociation",
+        "toCreateFirewall",
+        "toCreateFirewallPolicy",
+        "toCreateProxy",
+        "toCreateProxyConfiguration",
+        "toCreateProxyRuleGroup",
+        "toCreateProxyRules",
+        "toCreateRuleGroup",
+        "toCreateTLSInspectionConfiguration",
+        "toCreateVpcEndpointAssociation",
+        "toDeleteContainerAssociation",
+        "toDeleteFirewall",
+        "toDeleteFirewallPolicy",
+        "toDeleteNetworkFirewallTransitGatewayAttachment",
+        "toDeleteProxy",
+        "toDeleteProxyConfiguration",
+        "toDeleteProxyRuleGroup",
+        "toDeleteProxyRules",
+        "toDeleteResourcePolicy",
+        "toDeleteRuleGroup",
+        "toDeleteTLSInspectionConfiguration",
+        "toDeleteVpcEndpointAssociation",
+        "toDescribeContainerAssociation",
+        "toDescribeFirewall",
+        "toDescribeFirewallMetadata",
+        "toDescribeFirewallPolicy",
+        "toDescribeFlowOperation",
+        "toDescribeLoggingConfiguration",
+        "toDescribeProxy",
+        "toDescribeProxyConfiguration",
+        "toDescribeProxyRule",
+        "toDescribeProxyRuleGroup",
+        "toDescribeResourcePolicy",
+        "toDescribeRuleGroup",
+        "toDescribeRuleGroupMetadata",
+        "toDescribeRuleGroupSummary",
+        "toDescribeTLSInspectionConfiguration",
+        "toDescribeVpcEndpointAssociation",
+        "toDetachRuleGroupsFromProxyConfiguration",
+        "toDisassociateAvailabilityZones",
+        "toDisassociateSubnets",
+        "toGetAnalysisReportResults",
+        "toListAnalysisReports",
+        "toListFirewallPolicies",
+        "toListFirewalls",
+        "toListFlowOperationResults",
+        "toListFlowOperations",
+        "toListProxies",
+        "toListProxyConfigurations",
+        "toListProxyRuleGroups",
+        "toListTLSInspectionConfigurations",
+        "toListTagsForResource",
+        "toListVpcEndpointAssociations",
+        "toPutResourcePolicy",
+        "toRejectNetworkFirewallTransitGatewayAttachment",
+        "toStartAnalysisReport",
+        "toStartFlowCapture",
+        "toStartFlowFlush",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAvailabilityZoneChangeProtection",
+        "toUpdateContainerAssociation",
+        "toUpdateFirewallAnalysisSettings",
+        "toUpdateFirewallDeleteProtection",
+        "toUpdateFirewallDescription",
+        "toUpdateFirewallEncryptionConfiguration",
+        "toUpdateFirewallPolicy",
+        "toUpdateFirewallPolicyChangeProtection",
+        "toUpdateLoggingConfiguration",
+        "toUpdateProxy",
+        "toUpdateProxyConfiguration",
+        "toUpdateProxyRule",
+        "toUpdateProxyRuleGroupPriorities",
+        "toUpdateProxyRulePriorities",
+        "toUpdateRuleGroup",
+        "toUpdateSubnetChangeProtection",
+        "toUpdateTLSInspectionConfiguration"
+      ],
+      "relatedResourceTypes": [
+        "ContainerAssociation",
+        "Firewall",
+        "FirewallPolicy",
+        "Proxy",
+        "ProxyConfiguration",
+        "ProxyRuleGroup",
+        "StatefulRuleGroup",
+        "StatelessRuleGroup",
+        "TLSInspectionConfiguration",
+        "VpcEndpointAssociation"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAssociateFirewallPolicy",
+        "toCreateContainerAssociation",
+        "toCreateFirewall",
+        "toCreateFirewallPolicy",
+        "toCreateProxy",
+        "toCreateProxyConfiguration",
+        "toCreateProxyRuleGroup",
+        "toCreateRuleGroup",
+        "toCreateTLSInspectionConfiguration",
+        "toCreateVpcEndpointAssociation",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

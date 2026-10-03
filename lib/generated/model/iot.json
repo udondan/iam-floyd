@@ -1,0 +1,3881 @@
+{
+  "schemaVersion": 1,
+  "filename": "iot",
+  "className": "Iot",
+  "name": "iot",
+  "servicePrefix": "iot",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_iot.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptCertificateTransfer",
+      "AddThingToBillingGroup",
+      "AddThingToThingGroup",
+      "AssociateSbomWithPackageVersion",
+      "AssociateTargetsWithJob",
+      "AttachPolicy",
+      "AttachPrincipalPolicy",
+      "AttachSecurityProfile",
+      "AttachThingPrincipal",
+      "CancelAuditMitigationActionsTask",
+      "CancelAuditTask",
+      "CancelCertificateTransfer",
+      "CancelDetectMitigationActionsTask",
+      "CancelJob",
+      "CancelJobExecution",
+      "ClearDefaultAuthorizer",
+      "CloseTunnel",
+      "ConfirmTopicRuleDestination",
+      "Connect",
+      "CreateAuditSuppression",
+      "CreateAuthorizer",
+      "CreateBillingGroup",
+      "CreateCertificateFromCsr",
+      "CreateCertificateProvider",
+      "CreateCommand",
+      "CreateCustomMetric",
+      "CreateDimension",
+      "CreateDomainConfiguration",
+      "CreateDynamicThingGroup",
+      "CreateFleetMetric",
+      "CreateJob",
+      "CreateJobTemplate",
+      "CreateKeysAndCertificate",
+      "CreateMitigationAction",
+      "CreateOTAUpdate",
+      "CreatePackage",
+      "CreatePackageVersion",
+      "CreatePolicy",
+      "CreatePolicyVersion",
+      "CreateProvisioningClaim",
+      "CreateProvisioningTemplate",
+      "CreateProvisioningTemplateVersion",
+      "CreateRoleAlias",
+      "CreateScheduledAudit",
+      "CreateSecurityProfile",
+      "CreateStream",
+      "CreateThing",
+      "CreateThingGroup",
+      "CreateThingType",
+      "CreateTopicRule",
+      "CreateTopicRuleDestination",
+      "DeleteAccountAuditConfiguration",
+      "DeleteAuditSuppression",
+      "DeleteAuthorizer",
+      "DeleteBillingGroup",
+      "DeleteCACertificate",
+      "DeleteCertificate",
+      "DeleteCertificateProvider",
+      "DeleteCommand",
+      "DeleteCommandExecution",
+      "DeleteConnection",
+      "DeleteCustomMetric",
+      "DeleteDimension",
+      "DeleteDomainConfiguration",
+      "DeleteDynamicThingGroup",
+      "DeleteFleetMetric",
+      "DeleteJob",
+      "DeleteJobExecution",
+      "DeleteJobTemplate",
+      "DeleteMitigationAction",
+      "DeleteOTAUpdate",
+      "DeletePackage",
+      "DeletePackageVersion",
+      "DeletePolicy",
+      "DeletePolicyVersion",
+      "DeleteProvisioningTemplate",
+      "DeleteProvisioningTemplateVersion",
+      "DeleteRegistrationCode",
+      "DeleteRoleAlias",
+      "DeleteScheduledAudit",
+      "DeleteSecurityProfile",
+      "DeleteStream",
+      "DeleteThing",
+      "DeleteThingGroup",
+      "DeleteThingShadow",
+      "DeleteThingType",
+      "DeleteTopicRule",
+      "DeleteTopicRuleDestination",
+      "DeleteV2LoggingLevel",
+      "DeprecateThingType",
+      "DetachPolicy",
+      "DetachPrincipalPolicy",
+      "DetachSecurityProfile",
+      "DetachThingPrincipal",
+      "DisableTopicRule",
+      "DisassociateSbomFromPackageVersion",
+      "EnableTopicRule",
+      "GetConnection",
+      "ListSubscriptions",
+      "OpenTunnel",
+      "Publish",
+      "PutVerificationStateOnViolation",
+      "Receive",
+      "RegisterCACertificate",
+      "RegisterCertificate",
+      "RegisterCertificateWithoutCA",
+      "RegisterThing",
+      "RejectCertificateTransfer",
+      "RemoveThingFromBillingGroup",
+      "RemoveThingFromThingGroup",
+      "ReplaceTopicRule",
+      "RetainPublish",
+      "RotateTunnelAccessToken",
+      "SendDirectMessage",
+      "SetDefaultAuthorizer",
+      "SetDefaultPolicyVersion",
+      "SetLoggingOptions",
+      "SetV2LoggingLevel",
+      "SetV2LoggingOptions",
+      "StartAuditMitigationActionsTask",
+      "StartCommandExecution",
+      "StartDetectMitigationActionsTask",
+      "StartOnDemandAuditTask",
+      "StartThingRegistrationTask",
+      "StopThingRegistrationTask",
+      "Subscribe",
+      "TagResource",
+      "TransferCertificate",
+      "UntagResource",
+      "UpdateAccountAuditConfiguration",
+      "UpdateAuditSuppression",
+      "UpdateAuthorizer",
+      "UpdateBillingGroup",
+      "UpdateCACertificate",
+      "UpdateCertificate",
+      "UpdateCertificateProvider",
+      "UpdateCommand",
+      "UpdateCustomMetric",
+      "UpdateDimension",
+      "UpdateDomainConfiguration",
+      "UpdateDynamicThingGroup",
+      "UpdateEncryptionConfiguration",
+      "UpdateEventConfigurations",
+      "UpdateFleetMetric",
+      "UpdateIndexingConfiguration",
+      "UpdateJob",
+      "UpdateMitigationAction",
+      "UpdatePackage",
+      "UpdatePackageConfiguration",
+      "UpdatePackageVersion",
+      "UpdateProvisioningTemplate",
+      "UpdateRoleAlias",
+      "UpdateScheduledAudit",
+      "UpdateSecurityProfile",
+      "UpdateStream",
+      "UpdateThing",
+      "UpdateThingGroup",
+      "UpdateThingGroupsForThing",
+      "UpdateThingShadow",
+      "UpdateThingType",
+      "UpdateTopicRuleDestination"
+    ],
+    "Permissions management": [
+      "AttachPolicy",
+      "AttachPrincipalPolicy",
+      "CreatePolicy",
+      "CreatePolicyVersion",
+      "DeletePolicy",
+      "DeletePolicyVersion",
+      "DetachPolicy",
+      "DetachPrincipalPolicy",
+      "SetDefaultAuthorizer",
+      "SetDefaultPolicyVersion"
+    ],
+    "Read": [
+      "DescribeAccountAuditConfiguration",
+      "DescribeAuditFinding",
+      "DescribeAuditMitigationActionsTask",
+      "DescribeAuditSuppression",
+      "DescribeAuditTask",
+      "DescribeAuthorizer",
+      "DescribeBillingGroup",
+      "DescribeCACertificate",
+      "DescribeCertificate",
+      "DescribeCertificateProvider",
+      "DescribeCustomMetric",
+      "DescribeDefaultAuthorizer",
+      "DescribeDetectMitigationActionsTask",
+      "DescribeDimension",
+      "DescribeDomainConfiguration",
+      "DescribeEncryptionConfiguration",
+      "DescribeEndpoint",
+      "DescribeEventConfigurations",
+      "DescribeFleetMetric",
+      "DescribeIndex",
+      "DescribeJob",
+      "DescribeJobExecution",
+      "DescribeJobTemplate",
+      "DescribeManagedJobTemplate",
+      "DescribeMitigationAction",
+      "DescribeProvisioningTemplate",
+      "DescribeProvisioningTemplateVersion",
+      "DescribeRoleAlias",
+      "DescribeScheduledAudit",
+      "DescribeSecurityProfile",
+      "DescribeStream",
+      "DescribeThing",
+      "DescribeThingGroup",
+      "DescribeThingRegistrationTask",
+      "DescribeThingType",
+      "DescribeTunnel",
+      "GetBucketsAggregation",
+      "GetCardinality",
+      "GetCommand",
+      "GetCommandExecution",
+      "GetEffectivePolicies",
+      "GetIndexingConfiguration",
+      "GetJobDocument",
+      "GetLoggingOptions",
+      "GetOTAUpdate",
+      "GetPackage",
+      "GetPackageConfiguration",
+      "GetPackageVersion",
+      "GetPercentiles",
+      "GetPolicy",
+      "GetPolicyVersion",
+      "GetRegistrationCode",
+      "GetRetainedMessage",
+      "GetStatistics",
+      "GetThingConnectivityData",
+      "GetThingShadow",
+      "GetTopicRule",
+      "GetTopicRuleDestination",
+      "GetV2LoggingOptions",
+      "ListTagsForResource",
+      "SearchIndex",
+      "TestAuthorization",
+      "TestInvokeAuthorizer",
+      "ValidateSecurityProfileBehaviors"
+    ],
+    "List": [
+      "GetBehaviorModelTrainingSummaries",
+      "ListActiveViolations",
+      "ListAttachedPolicies",
+      "ListAuditFindings",
+      "ListAuditMitigationActionsExecutions",
+      "ListAuditMitigationActionsTasks",
+      "ListAuditSuppressions",
+      "ListAuditTasks",
+      "ListAuthorizers",
+      "ListBillingGroups",
+      "ListCACertificates",
+      "ListCertificateProviders",
+      "ListCertificates",
+      "ListCertificatesByCA",
+      "ListCommandExecutions",
+      "ListCommands",
+      "ListCustomMetrics",
+      "ListDetectMitigationActionsExecutions",
+      "ListDetectMitigationActionsTasks",
+      "ListDimensions",
+      "ListDomainConfigurations",
+      "ListFleetMetrics",
+      "ListIndices",
+      "ListJobExecutionsForJob",
+      "ListJobExecutionsForThing",
+      "ListJobTemplates",
+      "ListJobs",
+      "ListManagedJobTemplates",
+      "ListMetricValues",
+      "ListMitigationActions",
+      "ListNamedShadowsForThing",
+      "ListOTAUpdates",
+      "ListOutgoingCertificates",
+      "ListPackageVersions",
+      "ListPackages",
+      "ListPolicies",
+      "ListPolicyPrincipals",
+      "ListPolicyVersions",
+      "ListPrincipalPolicies",
+      "ListPrincipalThings",
+      "ListPrincipalThingsV2",
+      "ListProvisioningTemplateVersions",
+      "ListProvisioningTemplates",
+      "ListRelatedResourcesForAuditFinding",
+      "ListRetainedMessages",
+      "ListRoleAliases",
+      "ListSbomValidationResults",
+      "ListScheduledAudits",
+      "ListSecurityProfiles",
+      "ListSecurityProfilesForTarget",
+      "ListStreams",
+      "ListTargetsForPolicy",
+      "ListTargetsForSecurityProfile",
+      "ListThingGroups",
+      "ListThingGroupsForThing",
+      "ListThingPrincipals",
+      "ListThingPrincipalsV2",
+      "ListThingRegistrationTaskReports",
+      "ListThingRegistrationTasks",
+      "ListThingTypes",
+      "ListThings",
+      "ListThingsInBillingGroup",
+      "ListThingsInThingGroup",
+      "ListTopicRuleDestinations",
+      "ListTopicRules",
+      "ListTunnels",
+      "ListV2LoggingLevels",
+      "ListViolationEvents"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptCertificateTransfer",
+      "methodName": "toAcceptCertificateTransfer",
+      "description": "Grants permission to accept a pending certificate transfer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_AcceptCertificateTransfer.html"
+    },
+    {
+      "name": "AddThingToBillingGroup",
+      "methodName": "toAddThingToBillingGroup",
+      "description": "Grants permission to add a thing to the specified billing group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_AddThingToBillingGroup.html"
+    },
+    {
+      "name": "AddThingToThingGroup",
+      "methodName": "toAddThingToThingGroup",
+      "description": "Grants permission to add a thing to the specified thing group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_AddThingToThingGroup.html"
+    },
+    {
+      "name": "AssociateSbomWithPackageVersion",
+      "methodName": "toAssociateSbomWithPackageVersion",
+      "description": "Grants permission to associate SBOM files to a package version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_AssociateSbomWithPackageVersion.html"
+    },
+    {
+      "name": "AssociateTargetsWithJob",
+      "methodName": "toAssociateTargetsWithJob",
+      "description": "Grants permission to associate a group with a continuous job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_AssociateTargetsWithJob.html"
+    },
+    {
+      "name": "AttachPolicy",
+      "methodName": "toAttachPolicy",
+      "description": "Grants permission to attach a policy to the specified target",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_AttachPolicy.html"
+    },
+    {
+      "name": "AttachPrincipalPolicy",
+      "methodName": "toAttachPrincipalPolicy",
+      "description": "Grants permission to attach the specified policy to the specified principal (certificate or other credential)",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_AttachPrincipalPolicy.html"
+    },
+    {
+      "name": "AttachSecurityProfile",
+      "methodName": "toAttachSecurityProfile",
+      "description": "Grants permission to associate a Device Defender security profile with a thing group or with this account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_AttachSecurityProfile.html"
+    },
+    {
+      "name": "AttachThingPrincipal",
+      "methodName": "toAttachThingPrincipal",
+      "description": "Grants permission to attach the specified principal to the specified thing",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_AttachThingPrincipal.html"
+    },
+    {
+      "name": "CancelAuditMitigationActionsTask",
+      "methodName": "toCancelAuditMitigationActionsTask",
+      "description": "Grants permission to cancel a mitigation action task that is in progress",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CancelAuditMitigationActionsTask.html"
+    },
+    {
+      "name": "CancelAuditTask",
+      "methodName": "toCancelAuditTask",
+      "description": "Grants permission to cancel an audit that is in progress. The audit can be either scheduled or on-demand",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CancelAuditTask.html"
+    },
+    {
+      "name": "CancelCertificateTransfer",
+      "methodName": "toCancelCertificateTransfer",
+      "description": "Grants permission to cancel a pending transfer for the specified certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CancelCertificateTransfer.html"
+    },
+    {
+      "name": "CancelDetectMitigationActionsTask",
+      "methodName": "toCancelDetectMitigationActionsTask",
+      "description": "Grants permission to cancel a Device Defender ML Detect mitigation action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CancelDetectMitigationActionsTask.html"
+    },
+    {
+      "name": "CancelJob",
+      "methodName": "toCancelJob",
+      "description": "Grants permission to cancel a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CancelJob.html"
+    },
+    {
+      "name": "CancelJobExecution",
+      "methodName": "toCancelJobExecution",
+      "description": "Grants permission to cancel a job execution on a particular device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CancelJobExecution.html"
+    },
+    {
+      "name": "ClearDefaultAuthorizer",
+      "methodName": "toClearDefaultAuthorizer",
+      "description": "Grants permission to clear the default authorizer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ClearDefaultAuthorizer.html"
+    },
+    {
+      "name": "CloseTunnel",
+      "methodName": "toCloseTunnel",
+      "description": "Grants permission to close a tunnel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_iot-secure-tunneling_CloseTunnel.html"
+    },
+    {
+      "name": "ConfirmTopicRuleDestination",
+      "methodName": "toConfirmTopicRuleDestination",
+      "description": "Grants permission to confirm a http url TopicRuleDestinationDestination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ConfirmTopicRuleDestination.html"
+    },
+    {
+      "name": "Connect",
+      "methodName": "toConnect",
+      "description": "Grants permission to connect as the specified client",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+    },
+    {
+      "name": "CreateAuditSuppression",
+      "methodName": "toCreateAuditSuppression",
+      "description": "Grants permission to create a Device Defender audit suppression",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateAuditSuppression.html"
+    },
+    {
+      "name": "CreateAuthorizer",
+      "methodName": "toCreateAuthorizer",
+      "description": "Grants permission to create an authorizer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateAuthorizer.html"
+    },
+    {
+      "name": "CreateBillingGroup",
+      "methodName": "toCreateBillingGroup",
+      "description": "Grants permission to create a billing group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateBillingGroup.html"
+    },
+    {
+      "name": "CreateCertificateFromCsr",
+      "methodName": "toCreateCertificateFromCsr",
+      "description": "Grants permission to create an X.509 certificate using the specified certificate signing request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCertificateFromCsr.html"
+    },
+    {
+      "name": "CreateCertificateProvider",
+      "methodName": "toCreateCertificateProvider",
+      "description": "Grants permission to create a certificate provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCertificateProvider.html"
+    },
+    {
+      "name": "CreateCommand",
+      "methodName": "toCreateCommand",
+      "description": "Grants permission to create a command that can be used to start new executions against a device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCommand.html"
+    },
+    {
+      "name": "CreateCustomMetric",
+      "methodName": "toCreateCustomMetric",
+      "description": "Grants permission to create a custom metric for device side metric reporting and monitoring",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCustomMetric.html"
+    },
+    {
+      "name": "CreateDimension",
+      "methodName": "toCreateDimension",
+      "description": "Grants permission to define a dimension that can be used to to limit the scope of a metric used in a security profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateDimension.html"
+    },
+    {
+      "name": "CreateDomainConfiguration",
+      "methodName": "toCreateDomainConfiguration",
+      "description": "Grants permission to create a domain configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateDomainConfiguration.html"
+    },
+    {
+      "name": "CreateDynamicThingGroup",
+      "methodName": "toCreateDynamicThingGroup",
+      "description": "Grants permission to create a Dynamic Thing Group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateDynamicThingGroup.html"
+    },
+    {
+      "name": "CreateFleetMetric",
+      "methodName": "toCreateFleetMetric",
+      "description": "Grants permission to create a fleet metric",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateFleetMetric.html"
+    },
+    {
+      "name": "CreateJob",
+      "methodName": "toCreateJob",
+      "description": "Grants permission to create a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateJob.html"
+    },
+    {
+      "name": "CreateJobTemplate",
+      "methodName": "toCreateJobTemplate",
+      "description": "Grants permission to create a job template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateJobTemplate.html"
+    },
+    {
+      "name": "CreateKeysAndCertificate",
+      "methodName": "toCreateKeysAndCertificate",
+      "description": "Grants permission to create a 2048 bit RSA key pair and issues an X.509 certificate using the issued public key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateKeysAndCertificate.html"
+    },
+    {
+      "name": "CreateMitigationAction",
+      "methodName": "toCreateMitigationAction",
+      "description": "Grants permission to define an action that can be applied to audit findings by using StartAuditMitigationActionsTask",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateMitigationAction.html"
+    },
+    {
+      "name": "CreateOTAUpdate",
+      "methodName": "toCreateOTAUpdate",
+      "description": "Grants permission to create an OTA update job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateOTAUpdate.html"
+    },
+    {
+      "name": "CreatePackage",
+      "methodName": "toCreatePackage",
+      "description": "Grants permission to create a software package that you can deploy to your devices",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePackage.html"
+    },
+    {
+      "name": "CreatePackageVersion",
+      "methodName": "toCreatePackageVersion",
+      "description": "Grants permission to create a version under the specified package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePackageVersion.html"
+    },
+    {
+      "name": "CreatePolicy",
+      "methodName": "toCreatePolicy",
+      "description": "Grants permission to create an AWS IoT policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePolicy.html"
+    },
+    {
+      "name": "CreatePolicyVersion",
+      "methodName": "toCreatePolicyVersion",
+      "description": "Grants permission to create a new version of the specified AWS IoT policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePolicyVersion.html"
+    },
+    {
+      "name": "CreateProvisioningClaim",
+      "methodName": "toCreateProvisioningClaim",
+      "description": "Grants permission to create a provisioning claim",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningClaim.html"
+    },
+    {
+      "name": "CreateProvisioningTemplate",
+      "methodName": "toCreateProvisioningTemplate",
+      "description": "Grants permission to create a fleet provisioning template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html"
+    },
+    {
+      "name": "CreateProvisioningTemplateVersion",
+      "methodName": "toCreateProvisioningTemplateVersion",
+      "description": "Grants permission to create a new version of a fleet provisioning template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplateVersion.html"
+    },
+    {
+      "name": "CreateRoleAlias",
+      "methodName": "toCreateRoleAlias",
+      "description": "Grants permission to create a role alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateRoleAlias.html"
+    },
+    {
+      "name": "CreateScheduledAudit",
+      "methodName": "toCreateScheduledAudit",
+      "description": "Grants permission to create a scheduled audit that is run at a specified time interval",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateScheduledAudit.html"
+    },
+    {
+      "name": "CreateSecurityProfile",
+      "methodName": "toCreateSecurityProfile",
+      "description": "Grants permission to create a Device Defender security profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateSecurityProfile.html"
+    },
+    {
+      "name": "CreateStream",
+      "methodName": "toCreateStream",
+      "description": "Grants permission to create a new AWS IoT stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateStream.html"
+    },
+    {
+      "name": "CreateThing",
+      "methodName": "toCreateThing",
+      "description": "Grants permission to create a thing in the thing registry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateThing.html"
+    },
+    {
+      "name": "CreateThingGroup",
+      "methodName": "toCreateThingGroup",
+      "description": "Grants permission to create a thing group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateThingGroup.html"
+    },
+    {
+      "name": "CreateThingType",
+      "methodName": "toCreateThingType",
+      "description": "Grants permission to create a new thing type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateThingType.html"
+    },
+    {
+      "name": "CreateTopicRule",
+      "methodName": "toCreateTopicRule",
+      "description": "Grants permission to create a rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateTopicRule.html"
+    },
+    {
+      "name": "CreateTopicRuleDestination",
+      "methodName": "toCreateTopicRuleDestination",
+      "description": "Grants permission to create a TopicRuleDestination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateTopicRuleDestination.html"
+    },
+    {
+      "name": "DeleteAccountAuditConfiguration",
+      "methodName": "toDeleteAccountAuditConfiguration",
+      "description": "Grants permission to delete the audit configuration associated with the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteAccountAuditConfiguration.html"
+    },
+    {
+      "name": "DeleteAuditSuppression",
+      "methodName": "toDeleteAuditSuppression",
+      "description": "Grants permission to delete a Device Defender audit suppression",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteAuditSuppression.html"
+    },
+    {
+      "name": "DeleteAuthorizer",
+      "methodName": "toDeleteAuthorizer",
+      "description": "Grants permission to delete the specified authorizer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteAuthorizer.html"
+    },
+    {
+      "name": "DeleteBillingGroup",
+      "methodName": "toDeleteBillingGroup",
+      "description": "Grants permission to delete the specified billing group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteBillingGroup.html"
+    },
+    {
+      "name": "DeleteCACertificate",
+      "methodName": "toDeleteCACertificate",
+      "description": "Grants permission to delete a registered CA certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCACertificate.html"
+    },
+    {
+      "name": "DeleteCertificate",
+      "methodName": "toDeleteCertificate",
+      "description": "Grants permission to delete the specified certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCertificate.html"
+    },
+    {
+      "name": "DeleteCertificateProvider",
+      "methodName": "toDeleteCertificateProvider",
+      "description": "Grants permission to delete a certificate provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCertificateProvider.html"
+    },
+    {
+      "name": "DeleteCommand",
+      "methodName": "toDeleteCommand",
+      "description": "Grants permission to delete a command",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCommand.html"
+    },
+    {
+      "name": "DeleteCommandExecution",
+      "methodName": "toDeleteCommandExecution",
+      "description": "Grants permission to delete a command execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCommandExecution.html"
+    },
+    {
+      "name": "DeleteConnection",
+      "methodName": "toDeleteConnection",
+      "description": "Grants permission to disconnect the specified connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+    },
+    {
+      "name": "DeleteCustomMetric",
+      "methodName": "toDeleteCustomMetric",
+      "description": "Grants permission to deletes the specified custom metric from your AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCustomMetric.html"
+    },
+    {
+      "name": "DeleteDimension",
+      "methodName": "toDeleteDimension",
+      "description": "Grants permission to remove the specified dimension from your AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteDimension.html"
+    },
+    {
+      "name": "DeleteDomainConfiguration",
+      "methodName": "toDeleteDomainConfiguration",
+      "description": "Grants permission to delete a domain configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteDomainConfiguration.html"
+    },
+    {
+      "name": "DeleteDynamicThingGroup",
+      "methodName": "toDeleteDynamicThingGroup",
+      "description": "Grants permission to delete the specified Dynamic Thing Group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteDynamicThingGroup.html"
+    },
+    {
+      "name": "DeleteFleetMetric",
+      "methodName": "toDeleteFleetMetric",
+      "description": "Grants permission to delete the specified fleet metric",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteFleetMetric.html"
+    },
+    {
+      "name": "DeleteJob",
+      "methodName": "toDeleteJob",
+      "description": "Grants permission to delete a job and its related job executions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteJob.html"
+    },
+    {
+      "name": "DeleteJobExecution",
+      "methodName": "toDeleteJobExecution",
+      "description": "Grants permission to delete a job execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteJobExecution.html"
+    },
+    {
+      "name": "DeleteJobTemplate",
+      "methodName": "toDeleteJobTemplate",
+      "description": "Grants permission to delete a job template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteJobTemplate.html"
+    },
+    {
+      "name": "DeleteMitigationAction",
+      "methodName": "toDeleteMitigationAction",
+      "description": "Grants permission to delete a defined mitigation action from your AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteMitigationAction.html"
+    },
+    {
+      "name": "DeleteOTAUpdate",
+      "methodName": "toDeleteOTAUpdate",
+      "description": "Grants permission to delete an OTA update job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteOTAUpdate.html"
+    },
+    {
+      "name": "DeletePackage",
+      "methodName": "toDeletePackage",
+      "description": "Grants permission to delete a package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeletePackage.html"
+    },
+    {
+      "name": "DeletePackageVersion",
+      "methodName": "toDeletePackageVersion",
+      "description": "Grants permission to delete a version of the specified package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeletePackageVersion.html"
+    },
+    {
+      "name": "DeletePolicy",
+      "methodName": "toDeletePolicy",
+      "description": "Grants permission to delete the specified policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicy.html"
+    },
+    {
+      "name": "DeletePolicyVersion",
+      "methodName": "toDeletePolicyVersion",
+      "description": "Grants permission to Delete the specified version of the specified policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicyVersion.html"
+    },
+    {
+      "name": "DeleteProvisioningTemplate",
+      "methodName": "toDeleteProvisioningTemplate",
+      "description": "Grants permission to delete a fleet provisioning template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteProvisioningTemplate.html"
+    },
+    {
+      "name": "DeleteProvisioningTemplateVersion",
+      "methodName": "toDeleteProvisioningTemplateVersion",
+      "description": "Grants permission to delete a fleet provisioning template version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteProvisioningTemplateVersion.html"
+    },
+    {
+      "name": "DeleteRegistrationCode",
+      "methodName": "toDeleteRegistrationCode",
+      "description": "Grants permission to delete a CA certificate registration code",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteRegistrationCode.html"
+    },
+    {
+      "name": "DeleteRoleAlias",
+      "methodName": "toDeleteRoleAlias",
+      "description": "Grants permission to delete the specified role alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteRoleAlias.html"
+    },
+    {
+      "name": "DeleteScheduledAudit",
+      "methodName": "toDeleteScheduledAudit",
+      "description": "Grants permission to delete a scheduled audit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteScheduledAudit.html"
+    },
+    {
+      "name": "DeleteSecurityProfile",
+      "methodName": "toDeleteSecurityProfile",
+      "description": "Grants permission to delete a Device Defender security profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteSecurityProfile.html"
+    },
+    {
+      "name": "DeleteStream",
+      "methodName": "toDeleteStream",
+      "description": "Grants permission to delete a specified stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteStream.html"
+    },
+    {
+      "name": "DeleteThing",
+      "methodName": "toDeleteThing",
+      "description": "Grants permission to delete the specified thing",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThing.html"
+    },
+    {
+      "name": "DeleteThingGroup",
+      "methodName": "toDeleteThingGroup",
+      "description": "Grants permission to delete the specified thing group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThingGroup.html"
+    },
+    {
+      "name": "DeleteThingShadow",
+      "methodName": "toDeleteThingShadow",
+      "description": "Grants permission to delete the specified thing shadow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+    },
+    {
+      "name": "DeleteThingType",
+      "methodName": "toDeleteThingType",
+      "description": "Grants permission to delete the specified thing type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThingType.html"
+    },
+    {
+      "name": "DeleteTopicRule",
+      "methodName": "toDeleteTopicRule",
+      "description": "Grants permission to delete the specified rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteTopicRule.html"
+    },
+    {
+      "name": "DeleteTopicRuleDestination",
+      "methodName": "toDeleteTopicRuleDestination",
+      "description": "Grants permission to delete a TopicRuleDestination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteTopicRuleDestination.html"
+    },
+    {
+      "name": "DeleteV2LoggingLevel",
+      "methodName": "toDeleteV2LoggingLevel",
+      "description": "Grants permission to delete the specified v2 logging level",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteV2LoggingLevel.html"
+    },
+    {
+      "name": "DeprecateThingType",
+      "methodName": "toDeprecateThingType",
+      "description": "Grants permission to deprecate the specified thing type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeprecateThingType.html"
+    },
+    {
+      "name": "DescribeAccountAuditConfiguration",
+      "methodName": "toDescribeAccountAuditConfiguration",
+      "description": "Grants permission to get information about audit configurations for the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAccountAuditConfiguration.html"
+    },
+    {
+      "name": "DescribeAuditFinding",
+      "methodName": "toDescribeAuditFinding",
+      "description": "Grants permission to get information about a single audit finding. Properties include the reason for noncompliance, the severity of the issue, and when the audit that returned the finding was started",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html"
+    },
+    {
+      "name": "DescribeAuditMitigationActionsTask",
+      "methodName": "toDescribeAuditMitigationActionsTask",
+      "description": "Grants permission to get information about an audit mitigation task that is used to apply mitigation actions to a set of audit findings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditMitigationActionsTask.html"
+    },
+    {
+      "name": "DescribeAuditSuppression",
+      "methodName": "toDescribeAuditSuppression",
+      "description": "Grants permission to get information about a Device Defender audit suppression",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditSuppression.html"
+    },
+    {
+      "name": "DescribeAuditTask",
+      "methodName": "toDescribeAuditTask",
+      "description": "Grants permission to get information about a Device Defender audit",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditTask.html"
+    },
+    {
+      "name": "DescribeAuthorizer",
+      "methodName": "toDescribeAuthorizer",
+      "description": "Grants permission to describe an authorizer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuthorizer.html"
+    },
+    {
+      "name": "DescribeBillingGroup",
+      "methodName": "toDescribeBillingGroup",
+      "description": "Grants permission to get information about the specified billing group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeBillingGroup.html"
+    },
+    {
+      "name": "DescribeCACertificate",
+      "methodName": "toDescribeCACertificate",
+      "description": "Grants permission to describe a registered CA certificate",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeCACertificate.html"
+    },
+    {
+      "name": "DescribeCertificate",
+      "methodName": "toDescribeCertificate",
+      "description": "Grants permission to get information about the specified certificate",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeCertificate.html"
+    },
+    {
+      "name": "DescribeCertificateProvider",
+      "methodName": "toDescribeCertificateProvider",
+      "description": "Grants permission to describe a certificate provider",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeCertificateProvider.html"
+    },
+    {
+      "name": "DescribeCustomMetric",
+      "methodName": "toDescribeCustomMetric",
+      "description": "Grants permission to describe a custom metric that is defined in your AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeCustomMetric.html"
+    },
+    {
+      "name": "DescribeDefaultAuthorizer",
+      "methodName": "toDescribeDefaultAuthorizer",
+      "description": "Grants permission to describe the default authorizer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeDefaultAuthorizer.html"
+    },
+    {
+      "name": "DescribeDetectMitigationActionsTask",
+      "methodName": "toDescribeDetectMitigationActionsTask",
+      "description": "Grants permission to describe a Device Defender ML Detect mitigation action",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeDetectMitigationActionsTask.html"
+    },
+    {
+      "name": "DescribeDimension",
+      "methodName": "toDescribeDimension",
+      "description": "Grants permission to get details about a dimension that is defined in your AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeDimension.html"
+    },
+    {
+      "name": "DescribeDomainConfiguration",
+      "methodName": "toDescribeDomainConfiguration",
+      "description": "Grants permission to get information about the domain configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeDomainConfiguration.html"
+    },
+    {
+      "name": "DescribeEncryptionConfiguration",
+      "methodName": "toDescribeEncryptionConfiguration",
+      "description": "Grants permission to describe the encryption configuration for the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeEncryptionConfiguration.html"
+    },
+    {
+      "name": "DescribeEndpoint",
+      "methodName": "toDescribeEndpoint",
+      "description": "Grants permission to get a unique endpoint specific to the AWS account making the call",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeEndpoint.html"
+    },
+    {
+      "name": "DescribeEventConfigurations",
+      "methodName": "toDescribeEventConfigurations",
+      "description": "Grants permission to get account event configurations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeEventConfigurations.html"
+    },
+    {
+      "name": "DescribeFleetMetric",
+      "methodName": "toDescribeFleetMetric",
+      "description": "Grants permission to get information about the specified fleet metric",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeFleetMetric.html"
+    },
+    {
+      "name": "DescribeIndex",
+      "methodName": "toDescribeIndex",
+      "description": "Grants permission to get information about the specified index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeIndex.html"
+    },
+    {
+      "name": "DescribeJob",
+      "methodName": "toDescribeJob",
+      "description": "Grants permission to describe a job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeJob.html"
+    },
+    {
+      "name": "DescribeJobExecution",
+      "methodName": "toDescribeJobExecution",
+      "description": "Grants permission to describe a job execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeJobExecution.html"
+    },
+    {
+      "name": "DescribeJobTemplate",
+      "methodName": "toDescribeJobTemplate",
+      "description": "Grants permission to describe a job template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeJobTemplate.html"
+    },
+    {
+      "name": "DescribeManagedJobTemplate",
+      "methodName": "toDescribeManagedJobTemplate",
+      "description": "Grants permission to describe a managed job template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeManagedJobTemplate.html"
+    },
+    {
+      "name": "DescribeMitigationAction",
+      "methodName": "toDescribeMitigationAction",
+      "description": "Grants permission to get information about a mitigation action",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeMitigationAction.html"
+    },
+    {
+      "name": "DescribeProvisioningTemplate",
+      "methodName": "toDescribeProvisioningTemplate",
+      "description": "Grants permission to get information about a fleet provisioning template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeProvisioningTemplate.html"
+    },
+    {
+      "name": "DescribeProvisioningTemplateVersion",
+      "methodName": "toDescribeProvisioningTemplateVersion",
+      "description": "Grants permission to get information about a fleet provisioning template version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeProvisioningTemplateVersion.html"
+    },
+    {
+      "name": "DescribeRoleAlias",
+      "methodName": "toDescribeRoleAlias",
+      "description": "Grants permission to describe a role alias",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeRoleAlias.html"
+    },
+    {
+      "name": "DescribeScheduledAudit",
+      "methodName": "toDescribeScheduledAudit",
+      "description": "Grants permission to get information about a scheduled audit",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeScheduledAudit.html"
+    },
+    {
+      "name": "DescribeSecurityProfile",
+      "methodName": "toDescribeSecurityProfile",
+      "description": "Grants permission to get information about a Device Defender security profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeSecurityProfile.html"
+    },
+    {
+      "name": "DescribeStream",
+      "methodName": "toDescribeStream",
+      "description": "Grants permission to get information about the specified stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeStream.html"
+    },
+    {
+      "name": "DescribeThing",
+      "methodName": "toDescribeThing",
+      "description": "Grants permission to get information about the specified thing",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeThing.html"
+    },
+    {
+      "name": "DescribeThingGroup",
+      "methodName": "toDescribeThingGroup",
+      "description": "Grants permission to get information about the specified thing group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeThingGroup.html"
+    },
+    {
+      "name": "DescribeThingRegistrationTask",
+      "methodName": "toDescribeThingRegistrationTask",
+      "description": "Grants permission to get information about the bulk thing registration task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeThingRegistrationTask.html"
+    },
+    {
+      "name": "DescribeThingType",
+      "methodName": "toDescribeThingType",
+      "description": "Grants permission to get information about the specified thing type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeThingType.html"
+    },
+    {
+      "name": "DescribeTunnel",
+      "methodName": "toDescribeTunnel",
+      "description": "Grants permission to describe a tunnel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_iot-secure-tunneling_DescribeTunnel.html"
+    },
+    {
+      "name": "DetachPolicy",
+      "methodName": "toDetachPolicy",
+      "description": "Grants permission to detach a policy from the specified target",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DetachPolicy.html"
+    },
+    {
+      "name": "DetachPrincipalPolicy",
+      "methodName": "toDetachPrincipalPolicy",
+      "description": "Grants permission to remove the specified policy from the specified certificate",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DetachPrincipalPolicy.html"
+    },
+    {
+      "name": "DetachSecurityProfile",
+      "methodName": "toDetachSecurityProfile",
+      "description": "Grants permission to disassociate a Device Defender security profile from a thing group or from this account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DetachSecurityProfile.html"
+    },
+    {
+      "name": "DetachThingPrincipal",
+      "methodName": "toDetachThingPrincipal",
+      "description": "Grants permission to detach the specified principal from the specified thing",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DetachThingPrincipal.html"
+    },
+    {
+      "name": "DisableTopicRule",
+      "methodName": "toDisableTopicRule",
+      "description": "Grants permission to disable the specified rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DisableTopicRule.html"
+    },
+    {
+      "name": "DisassociateSbomFromPackageVersion",
+      "methodName": "toDisassociateSbomFromPackageVersion",
+      "description": "Grants permission to disassociate SBOM files from a package version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DisassociateSbomFromPackageVersion.html"
+    },
+    {
+      "name": "EnableTopicRule",
+      "methodName": "toEnableTopicRule",
+      "description": "Grants permission to enable the specified rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_EnableTopicRule.html"
+    },
+    {
+      "name": "GetBehaviorModelTrainingSummaries",
+      "methodName": "toGetBehaviorModelTrainingSummaries",
+      "description": "Grants permission to fetch a Device Defender's ML Detect Security Profile training model's status",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetBehaviorModelTrainingSummaries.html"
+    },
+    {
+      "name": "GetBucketsAggregation",
+      "methodName": "toGetBucketsAggregation",
+      "description": "Grants permission to get buckets aggregation for IoT fleet index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetBucketsAggregation.html"
+    },
+    {
+      "name": "GetCardinality",
+      "methodName": "toGetCardinality",
+      "description": "Grants permission to get cardinality for IoT fleet index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetCardinality.html"
+    },
+    {
+      "name": "GetCommand",
+      "methodName": "toGetCommand",
+      "description": "Grants permission to get the information about the command",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetCommand.html"
+    },
+    {
+      "name": "GetCommandExecution",
+      "methodName": "toGetCommandExecution",
+      "description": "Grants permission to get the information of a command execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetCommandExecution.html"
+    },
+    {
+      "name": "GetConnection",
+      "methodName": "toGetConnection",
+      "description": "Grants permission to retrieve the specified connection information",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+    },
+    {
+      "name": "GetEffectivePolicies",
+      "methodName": "toGetEffectivePolicies",
+      "description": "Grants permission to get effective policies",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetEffectivePolicies.html"
+    },
+    {
+      "name": "GetIndexingConfiguration",
+      "methodName": "toGetIndexingConfiguration",
+      "description": "Grants permission to get current fleet indexing configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html"
+    },
+    {
+      "name": "GetJobDocument",
+      "methodName": "toGetJobDocument",
+      "description": "Grants permission to get a job document",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetJobDocument.html"
+    },
+    {
+      "name": "GetLoggingOptions",
+      "methodName": "toGetLoggingOptions",
+      "description": "Grants permission to get the logging options",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetLoggingOptions.html"
+    },
+    {
+      "name": "GetOTAUpdate",
+      "methodName": "toGetOTAUpdate",
+      "description": "Grants permission to get the information about the OTA update job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetOTAUpdate.html"
+    },
+    {
+      "name": "GetPackage",
+      "methodName": "toGetPackage",
+      "description": "Grants permission to get the information about the package",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetPackage.html"
+    },
+    {
+      "name": "GetPackageConfiguration",
+      "methodName": "toGetPackageConfiguration",
+      "description": "Grants permission to get the package configuration of the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetPackageConfiguration.html"
+    },
+    {
+      "name": "GetPackageVersion",
+      "methodName": "toGetPackageVersion",
+      "description": "Grants permission to get the version of the package",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetPackageVersion.html"
+    },
+    {
+      "name": "GetPercentiles",
+      "methodName": "toGetPercentiles",
+      "description": "Grants permission to get percentiles for IoT fleet index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetPercentiles.html"
+    },
+    {
+      "name": "GetPolicy",
+      "methodName": "toGetPolicy",
+      "description": "Grants permission to get information about the specified policy with the policy document of the default version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetPolicy.html"
+    },
+    {
+      "name": "GetPolicyVersion",
+      "methodName": "toGetPolicyVersion",
+      "description": "Grants permission to get information about the specified policy version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetPolicyVersion.html"
+    },
+    {
+      "name": "GetRegistrationCode",
+      "methodName": "toGetRegistrationCode",
+      "description": "Grants permission to get a registration code used to register a CA certificate with AWS IoT",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetRegistrationCode.html"
+    },
+    {
+      "name": "GetRetainedMessage",
+      "methodName": "toGetRetainedMessage",
+      "description": "Grants permission to get the retained message on the specified topic",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+    },
+    {
+      "name": "GetStatistics",
+      "methodName": "toGetStatistics",
+      "description": "Grants permission to get statistics for IoT fleet index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetStatistics.html"
+    },
+    {
+      "name": "GetThingConnectivityData",
+      "methodName": "toGetThingConnectivityData",
+      "description": "Grants permission to get the thing's connectivity data",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetThingConnectivityData.html"
+    },
+    {
+      "name": "GetThingShadow",
+      "methodName": "toGetThingShadow",
+      "description": "Grants permission to get the thing shadow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+    },
+    {
+      "name": "GetTopicRule",
+      "methodName": "toGetTopicRule",
+      "description": "Grants permission to get information about the specified rule",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetTopicRule.html"
+    },
+    {
+      "name": "GetTopicRuleDestination",
+      "methodName": "toGetTopicRuleDestination",
+      "description": "Grants permission to get a TopicRuleDestination",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetTopicRuleDestination.html"
+    },
+    {
+      "name": "GetV2LoggingOptions",
+      "methodName": "toGetV2LoggingOptions",
+      "description": "Grants permission to get v2 logging options",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetV2LoggingOptions.html"
+    },
+    {
+      "name": "ListActiveViolations",
+      "methodName": "toListActiveViolations",
+      "description": "Grants permission to list the active violations for a given Device Defender security profile or Thing",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListActiveViolations.html"
+    },
+    {
+      "name": "ListAttachedPolicies",
+      "methodName": "toListAttachedPolicies",
+      "description": "Grants permission to list the policies attached to the specified thing group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListAttachedPolicies.html"
+    },
+    {
+      "name": "ListAuditFindings",
+      "methodName": "toListAuditFindings",
+      "description": "Grants permission to list the findings (results) of a Device Defender audit or of the audits performed during a specified time period",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListAuditFindings.html"
+    },
+    {
+      "name": "ListAuditMitigationActionsExecutions",
+      "methodName": "toListAuditMitigationActionsExecutions",
+      "description": "Grants permission to get the status of audit mitigation action tasks that were executed",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListAuditMitigationActionsExecutions.html"
+    },
+    {
+      "name": "ListAuditMitigationActionsTasks",
+      "methodName": "toListAuditMitigationActionsTasks",
+      "description": "Grants permission to get a list of audit mitigation action tasks that match the specified filters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListAuditMitigationActionsTasks.html"
+    },
+    {
+      "name": "ListAuditSuppressions",
+      "methodName": "toListAuditSuppressions",
+      "description": "Grants permission to list your Device Defender audit suppressions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListAuditSuppressions.html"
+    },
+    {
+      "name": "ListAuditTasks",
+      "methodName": "toListAuditTasks",
+      "description": "Grants permission to list the Device Defender audits that have been performed during a given time period",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListAuditTasks.html"
+    },
+    {
+      "name": "ListAuthorizers",
+      "methodName": "toListAuthorizers",
+      "description": "Grants permission to list the authorizers registered in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListAuthorizers.html"
+    },
+    {
+      "name": "ListBillingGroups",
+      "methodName": "toListBillingGroups",
+      "description": "Grants permission to list all billing groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListBillingGroups.html"
+    },
+    {
+      "name": "ListCACertificates",
+      "methodName": "toListCACertificates",
+      "description": "Grants permission to list the CA certificates registered for your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListCACertificates.html"
+    },
+    {
+      "name": "ListCertificateProviders",
+      "methodName": "toListCertificateProviders",
+      "description": "Grants permission to list certificate providers in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListCertificateProviders.html"
+    },
+    {
+      "name": "ListCertificates",
+      "methodName": "toListCertificates",
+      "description": "Grants permission to list your certificates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListCertificates.html"
+    },
+    {
+      "name": "ListCertificatesByCA",
+      "methodName": "toListCertificatesByCA",
+      "description": "Grants permission to list the device certificates signed by the specified CA certificate",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListCertificatesByCA.html"
+    },
+    {
+      "name": "ListCommandExecutions",
+      "methodName": "toListCommandExecutions",
+      "description": "Grants permission to list commands executions in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListCommandExecutions.html"
+    },
+    {
+      "name": "ListCommands",
+      "methodName": "toListCommands",
+      "description": "Grants permission to list commands in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListCommands.html"
+    },
+    {
+      "name": "ListCustomMetrics",
+      "methodName": "toListCustomMetrics",
+      "description": "Grants permission to list the custom metrics in your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListCustomMetrics.html"
+    },
+    {
+      "name": "ListDetectMitigationActionsExecutions",
+      "methodName": "toListDetectMitigationActionsExecutions",
+      "description": "Grants permission to lists mitigation actions executions for a Device Defender ML Detect Security Profile",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListDetectMitigationActionsExecutions.html"
+    },
+    {
+      "name": "ListDetectMitigationActionsTasks",
+      "methodName": "toListDetectMitigationActionsTasks",
+      "description": "Grants permission to list Device Defender ML Detect mitigation actions tasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListDetectMitigationActionsTasks.html"
+    },
+    {
+      "name": "ListDimensions",
+      "methodName": "toListDimensions",
+      "description": "Grants permission to list the dimensions that are defined for your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListDimensions.html"
+    },
+    {
+      "name": "ListDomainConfigurations",
+      "methodName": "toListDomainConfigurations",
+      "description": "Grants permission to list the domain configuration created by your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListDomainConfigurations.html"
+    },
+    {
+      "name": "ListFleetMetrics",
+      "methodName": "toListFleetMetrics",
+      "description": "Grants permission to list the fleet metrics in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListFleetMetrics.html"
+    },
+    {
+      "name": "ListIndices",
+      "methodName": "toListIndices",
+      "description": "Grants permission to list all indices for fleet index",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListIndices.html"
+    },
+    {
+      "name": "ListJobExecutionsForJob",
+      "methodName": "toListJobExecutionsForJob",
+      "description": "Grants permission to list the job executions for a job",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListJobExecutionsForJob.html"
+    },
+    {
+      "name": "ListJobExecutionsForThing",
+      "methodName": "toListJobExecutionsForThing",
+      "description": "Grants permission to list the job executions for the specified thing",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListJobExecutionsForThing.html"
+    },
+    {
+      "name": "ListJobTemplates",
+      "methodName": "toListJobTemplates",
+      "description": "Grants permission to list job templates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListJobTemplates.html"
+    },
+    {
+      "name": "ListJobs",
+      "methodName": "toListJobs",
+      "description": "Grants permission to list jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListJobs.html"
+    },
+    {
+      "name": "ListManagedJobTemplates",
+      "methodName": "toListManagedJobTemplates",
+      "description": "Grants permission to list managed job templates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListManagedJobTemplates.html"
+    },
+    {
+      "name": "ListMetricValues",
+      "methodName": "toListMetricValues",
+      "description": "Grants permissions to list the metric values for a thing based on the metricName, and dimension if specified",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListMetricValues.html"
+    },
+    {
+      "name": "ListMitigationActions",
+      "methodName": "toListMitigationActions",
+      "description": "Grants permission to get a list of all mitigation actions that match the specified filter criteria",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListMitigationActions.html"
+    },
+    {
+      "name": "ListNamedShadowsForThing",
+      "methodName": "toListNamedShadowsForThing",
+      "description": "Grants permission to list all named shadows for a given thing",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListNamedShadowsForThing.html"
+    },
+    {
+      "name": "ListOTAUpdates",
+      "methodName": "toListOTAUpdates",
+      "description": "Grants permission to list OTA update jobs in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListOTAUpdates.html"
+    },
+    {
+      "name": "ListOutgoingCertificates",
+      "methodName": "toListOutgoingCertificates",
+      "description": "Grants permission to list certificates that are being transfered but not yet accepted",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListOutgoingCertificates.html"
+    },
+    {
+      "name": "ListPackageVersions",
+      "methodName": "toListPackageVersions",
+      "description": "Grants permission to list versions for a package in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListPackageVersions.html"
+    },
+    {
+      "name": "ListPackages",
+      "methodName": "toListPackages",
+      "description": "Grants permission to list packages in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListPackages.html"
+    },
+    {
+      "name": "ListPolicies",
+      "methodName": "toListPolicies",
+      "description": "Grants permission to list your policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListPolicies.html"
+    },
+    {
+      "name": "ListPolicyPrincipals",
+      "methodName": "toListPolicyPrincipals",
+      "description": "Grants permission to list the principals associated with the specified policy",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListPolicyPrincipals.html"
+    },
+    {
+      "name": "ListPolicyVersions",
+      "methodName": "toListPolicyVersions",
+      "description": "Grants permission to list the versions of the specified policy, and identifies the default version",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListPolicyVersions.html"
+    },
+    {
+      "name": "ListPrincipalPolicies",
+      "methodName": "toListPrincipalPolicies",
+      "description": "Grants permission to list the policies attached to the specified principal. If you use an Amazon Cognito identity, the ID needs to be in Amazon Cognito Identity format",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListPrincipalPolicies.html"
+    },
+    {
+      "name": "ListPrincipalThings",
+      "methodName": "toListPrincipalThings",
+      "description": "Grants permission to list the things associated with the specified principal",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListPrincipalThings.html"
+    },
+    {
+      "name": "ListPrincipalThingsV2",
+      "methodName": "toListPrincipalThingsV2",
+      "description": "Grants permission to list the things associated with the specified principal",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListPrincipalThingsV2.html"
+    },
+    {
+      "name": "ListProvisioningTemplateVersions",
+      "methodName": "toListProvisioningTemplateVersions",
+      "description": "Grants permission to get a list of fleet provisioning template versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListProvisioningTemplateVersions.html"
+    },
+    {
+      "name": "ListProvisioningTemplates",
+      "methodName": "toListProvisioningTemplates",
+      "description": "Grants permission to list the fleet provisioning templates in your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListProvisioningTemplates.html"
+    },
+    {
+      "name": "ListRelatedResourcesForAuditFinding",
+      "methodName": "toListRelatedResourcesForAuditFinding",
+      "description": "Grants permission to list related resources for a single audit finding",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListRelatedResourcesForAuditFinding.html"
+    },
+    {
+      "name": "ListRetainedMessages",
+      "methodName": "toListRetainedMessages",
+      "description": "Grants permission to list the retained messages for your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+    },
+    {
+      "name": "ListRoleAliases",
+      "methodName": "toListRoleAliases",
+      "description": "Grants permission to list role aliases",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListRoleAliases.html"
+    },
+    {
+      "name": "ListSbomValidationResults",
+      "methodName": "toListSbomValidationResults",
+      "description": "Grants permission to list SBOM validation results of a package version",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListSbomValidationResults.html"
+    },
+    {
+      "name": "ListScheduledAudits",
+      "methodName": "toListScheduledAudits",
+      "description": "Grants permission to list all of your scheduled audits",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListScheduledAudits.html"
+    },
+    {
+      "name": "ListSecurityProfiles",
+      "methodName": "toListSecurityProfiles",
+      "description": "Grants permission to list the Device Defender security profiles you have created",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfiles.html"
+    },
+    {
+      "name": "ListSecurityProfilesForTarget",
+      "methodName": "toListSecurityProfilesForTarget",
+      "description": "Grants permission to list the Device Defender security profiles attached to a target",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfilesForTarget.html"
+    },
+    {
+      "name": "ListStreams",
+      "methodName": "toListStreams",
+      "description": "Grants permission to list the streams in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListStreams.html"
+    },
+    {
+      "name": "ListSubscriptions",
+      "methodName": "toListSubscriptions",
+      "description": "Grants permission to retrieve the specified connection's subscriptions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags for a given resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTargetsForPolicy",
+      "methodName": "toListTargetsForPolicy",
+      "description": "Grants permission to list targets for the specified policy",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListTargetsForPolicy.html"
+    },
+    {
+      "name": "ListTargetsForSecurityProfile",
+      "methodName": "toListTargetsForSecurityProfile",
+      "description": "Grants permission to list the targets associated with a given Device Defender security profile",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListTargetsForSecurityProfile.html"
+    },
+    {
+      "name": "ListThingGroups",
+      "methodName": "toListThingGroups",
+      "description": "Grants permission to list all thing groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingGroups.html"
+    },
+    {
+      "name": "ListThingGroupsForThing",
+      "methodName": "toListThingGroupsForThing",
+      "description": "Grants permission to list thing groups to which the specified thing belongs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingGroupsForThing.html"
+    },
+    {
+      "name": "ListThingPrincipals",
+      "methodName": "toListThingPrincipals",
+      "description": "Grants permission to list the principals associated with the specified thing",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingPrincipals.html"
+    },
+    {
+      "name": "ListThingPrincipalsV2",
+      "methodName": "toListThingPrincipalsV2",
+      "description": "Grants permission to list the principals associated with the specified thing",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingPrincipalsV2.html"
+    },
+    {
+      "name": "ListThingRegistrationTaskReports",
+      "methodName": "toListThingRegistrationTaskReports",
+      "description": "Grants permission to list information about bulk thing registration tasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingRegistrationTaskReports.html"
+    },
+    {
+      "name": "ListThingRegistrationTasks",
+      "methodName": "toListThingRegistrationTasks",
+      "description": "Grants permission to list bulk thing registration tasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingRegistrationTasks.html"
+    },
+    {
+      "name": "ListThingTypes",
+      "methodName": "toListThingTypes",
+      "description": "Grants permission to list all thing types",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingTypes.html"
+    },
+    {
+      "name": "ListThings",
+      "methodName": "toListThings",
+      "description": "Grants permission to list all things",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListThings.html"
+    },
+    {
+      "name": "ListThingsInBillingGroup",
+      "methodName": "toListThingsInBillingGroup",
+      "description": "Grants permission to list all things in the specified billing group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingsInBillingGroup.html"
+    },
+    {
+      "name": "ListThingsInThingGroup",
+      "methodName": "toListThingsInThingGroup",
+      "description": "Grants permission to list all things in the specified thing group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingsInThingGroup.html"
+    },
+    {
+      "name": "ListTopicRuleDestinations",
+      "methodName": "toListTopicRuleDestinations",
+      "description": "Grants permission to list all TopicRuleDestinations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListTopicRuleDestinations.html"
+    },
+    {
+      "name": "ListTopicRules",
+      "methodName": "toListTopicRules",
+      "description": "Grants permission to list the rules for the specific topic",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListTopicRules.html"
+    },
+    {
+      "name": "ListTunnels",
+      "methodName": "toListTunnels",
+      "description": "Grants permission to list tunnels",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_iot-secure-tunneling_ListTunnels.html"
+    },
+    {
+      "name": "ListV2LoggingLevels",
+      "methodName": "toListV2LoggingLevels",
+      "description": "Grants permission to list the v2 logging levels",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListV2LoggingLevels.html"
+    },
+    {
+      "name": "ListViolationEvents",
+      "methodName": "toListViolationEvents",
+      "description": "Grants permission to list the Device Defender security profile violations discovered during the given time period",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListViolationEvents.html"
+    },
+    {
+      "name": "OpenTunnel",
+      "methodName": "toOpenTunnel",
+      "description": "Grants permission to open a tunnel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_iot-secure-tunneling_OpenTunnel.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifThingGroupArn",
+        "ifTunnelDestinationService"
+      ]
+    },
+    {
+      "name": "Publish",
+      "methodName": "toPublish",
+      "description": "Grants permission to publish to the specified topic",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+    },
+    {
+      "name": "PutVerificationStateOnViolation",
+      "methodName": "toPutVerificationStateOnViolation",
+      "description": "Grants permission to put verification state on a violation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_PutVerificationStateOnViolation.html"
+    },
+    {
+      "name": "Receive",
+      "methodName": "toReceive",
+      "description": "Grants permission to receive from the specified topic",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+    },
+    {
+      "name": "RegisterCACertificate",
+      "methodName": "toRegisterCACertificate",
+      "description": "Grants permission to register a CA certificate with AWS IoT",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCACertificate.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "RegisterCertificate",
+      "methodName": "toRegisterCertificate",
+      "description": "Grants permission to register a device certificate with AWS IoT",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificate.html"
+    },
+    {
+      "name": "RegisterCertificateWithoutCA",
+      "methodName": "toRegisterCertificateWithoutCA",
+      "description": "Grants permission to register a device certificate with AWS IoT without a registered CA (certificate authority)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificateWithoutCA.html"
+    },
+    {
+      "name": "RegisterThing",
+      "methodName": "toRegisterThing",
+      "description": "Grants permission to register your thing",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterThing.html"
+    },
+    {
+      "name": "RejectCertificateTransfer",
+      "methodName": "toRejectCertificateTransfer",
+      "description": "Grants permission to reject a pending certificate transfer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_RejectCertificateTransfer.html"
+    },
+    {
+      "name": "RemoveThingFromBillingGroup",
+      "methodName": "toRemoveThingFromBillingGroup",
+      "description": "Grants permission to remove thing from the specified billing group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_RemoveThingFromBillingGroup.html"
+    },
+    {
+      "name": "RemoveThingFromThingGroup",
+      "methodName": "toRemoveThingFromThingGroup",
+      "description": "Grants permission to remove thing from the specified thing group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_RemoveThingFromThingGroup.html"
+    },
+    {
+      "name": "ReplaceTopicRule",
+      "methodName": "toReplaceTopicRule",
+      "description": "Grants permission to replace the specified rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ReplaceTopicRule.html"
+    },
+    {
+      "name": "RetainPublish",
+      "methodName": "toRetainPublish",
+      "description": "Grants permission to publish a retained message to the specified topic",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+    },
+    {
+      "name": "RotateTunnelAccessToken",
+      "methodName": "toRotateTunnelAccessToken",
+      "description": "Grants permission to rotate the access token of a tunnel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_iot-secure-tunneling_RotateTunnelAccessToken.html"
+    },
+    {
+      "name": "SearchIndex",
+      "methodName": "toSearchIndex",
+      "description": "Grants permission to search IoT fleet index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_SearchIndex.html"
+    },
+    {
+      "name": "SendDirectMessage",
+      "methodName": "toSendDirectMessage",
+      "description": "Grants permission to send a direct message to an IoT client",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+    },
+    {
+      "name": "SetDefaultAuthorizer",
+      "methodName": "toSetDefaultAuthorizer",
+      "description": "Grants permission to set the default authorizer. This will be used if a websocket connection is made without specifying an authorizer",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_SetDefaultAuthorizer.html"
+    },
+    {
+      "name": "SetDefaultPolicyVersion",
+      "methodName": "toSetDefaultPolicyVersion",
+      "description": "Grants permission to set the specified version of the specified policy as the policy's default (operative) version",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_SetDefaultPolicyVersion.html"
+    },
+    {
+      "name": "SetLoggingOptions",
+      "methodName": "toSetLoggingOptions",
+      "description": "Grants permission to set the logging options",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_SetLoggingOptions.html"
+    },
+    {
+      "name": "SetV2LoggingLevel",
+      "methodName": "toSetV2LoggingLevel",
+      "description": "Grants permission to set the v2 logging level",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_SetV2LoggingLevel.html"
+    },
+    {
+      "name": "SetV2LoggingOptions",
+      "methodName": "toSetV2LoggingOptions",
+      "description": "Grants permission to set the v2 logging options",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_SetV2LoggingOptions.html"
+    },
+    {
+      "name": "StartAuditMitigationActionsTask",
+      "methodName": "toStartAuditMitigationActionsTask",
+      "description": "Grants permission to start a task that applies a set of mitigation actions to the specified target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_StartAuditMitigationActionsTask.html"
+    },
+    {
+      "name": "StartCommandExecution",
+      "methodName": "toStartCommandExecution",
+      "description": "Grants permission to start a new command execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_iot-jobs-data_StartCommandExecution.html"
+    },
+    {
+      "name": "StartDetectMitigationActionsTask",
+      "methodName": "toStartDetectMitigationActionsTask",
+      "description": "Grants permission to start a Device Defender ML Detect mitigation actions task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_StartDetectMitigationActionsTask.html"
+    },
+    {
+      "name": "StartOnDemandAuditTask",
+      "methodName": "toStartOnDemandAuditTask",
+      "description": "Grants permission to start an on-demand Device Defender audit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_StartOnDemandAuditTask.html"
+    },
+    {
+      "name": "StartThingRegistrationTask",
+      "methodName": "toStartThingRegistrationTask",
+      "description": "Grants permission to start a bulk thing registration task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_StartThingRegistrationTask.html"
+    },
+    {
+      "name": "StopThingRegistrationTask",
+      "methodName": "toStopThingRegistrationTask",
+      "description": "Grants permission to stop a bulk thing registration task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_StopThingRegistrationTask.html"
+    },
+    {
+      "name": "Subscribe",
+      "methodName": "toSubscribe",
+      "description": "Grants permission to subscribe to the specified TopicFilter",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_TagResource.html"
+    },
+    {
+      "name": "TestAuthorization",
+      "methodName": "toTestAuthorization",
+      "description": "Grants permission to test the policies evaluation for group policies",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_TestAuthorization.html"
+    },
+    {
+      "name": "TestInvokeAuthorizer",
+      "methodName": "toTestInvokeAuthorizer",
+      "description": "Grants permission to test invoke the specified custom authorizer for testing purposes",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_TestInvokeAuthorizer.html"
+    },
+    {
+      "name": "TransferCertificate",
+      "methodName": "toTransferCertificate",
+      "description": "Grants permission to transfer the specified certificate to the specified AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_TransferCertificate.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAccountAuditConfiguration",
+      "methodName": "toUpdateAccountAuditConfiguration",
+      "description": "Grants permission to configure or reconfigure the Device Defender audit settings for this account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateAccountAuditConfiguration.html"
+    },
+    {
+      "name": "UpdateAuditSuppression",
+      "methodName": "toUpdateAuditSuppression",
+      "description": "Grants permission to update a Device Defender audit suppression",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateAuditSuppression.html"
+    },
+    {
+      "name": "UpdateAuthorizer",
+      "methodName": "toUpdateAuthorizer",
+      "description": "Grants permission to update an authorizer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateAuthorizer.html"
+    },
+    {
+      "name": "UpdateBillingGroup",
+      "methodName": "toUpdateBillingGroup",
+      "description": "Grants permission to update information associated with the specified billing group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateBillingGroup.html"
+    },
+    {
+      "name": "UpdateCACertificate",
+      "methodName": "toUpdateCACertificate",
+      "description": "Grants permission to update a registered CA certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateCACertificate.html"
+    },
+    {
+      "name": "UpdateCertificate",
+      "methodName": "toUpdateCertificate",
+      "description": "Grants permission to update the status of the specified certificate. This operation is idempotent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateCertificate.html"
+    },
+    {
+      "name": "UpdateCertificateProvider",
+      "methodName": "toUpdateCertificateProvider",
+      "description": "Grants permission to update a certificate provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateCertificateProvider.html"
+    },
+    {
+      "name": "UpdateCommand",
+      "methodName": "toUpdateCommand",
+      "description": "Grants permission to update a command",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateCommand.html"
+    },
+    {
+      "name": "UpdateCustomMetric",
+      "methodName": "toUpdateCustomMetric",
+      "description": "Grants permission to update the specified custom metric",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateCustomMetric.html"
+    },
+    {
+      "name": "UpdateDimension",
+      "methodName": "toUpdateDimension",
+      "description": "Grants permission to update the definition for a dimension",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateDimension.html"
+    },
+    {
+      "name": "UpdateDomainConfiguration",
+      "methodName": "toUpdateDomainConfiguration",
+      "description": "Grants permission to update a domain configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateDomainConfiguration.html"
+    },
+    {
+      "name": "UpdateDynamicThingGroup",
+      "methodName": "toUpdateDynamicThingGroup",
+      "description": "Grants permission to update a Dynamic Thing Group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateDynamicThingGroup.html"
+    },
+    {
+      "name": "UpdateEncryptionConfiguration",
+      "methodName": "toUpdateEncryptionConfiguration",
+      "description": "Grants permission to update the encryption configuration for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateEncryptionConfiguration.html"
+    },
+    {
+      "name": "UpdateEventConfigurations",
+      "methodName": "toUpdateEventConfigurations",
+      "description": "Grants permission to update event configurations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateEventConfigurations.html"
+    },
+    {
+      "name": "UpdateFleetMetric",
+      "methodName": "toUpdateFleetMetric",
+      "description": "Grants permission to update a fleet metric",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateFleetMetric.html"
+    },
+    {
+      "name": "UpdateIndexingConfiguration",
+      "methodName": "toUpdateIndexingConfiguration",
+      "description": "Grants permission to update fleet indexing configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateIndexingConfiguration.html"
+    },
+    {
+      "name": "UpdateJob",
+      "methodName": "toUpdateJob",
+      "description": "Grants permission to update a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateJob.html"
+    },
+    {
+      "name": "UpdateMitigationAction",
+      "methodName": "toUpdateMitigationAction",
+      "description": "Grants permission to update the definition for the specified mitigation action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateMitigationAction.html"
+    },
+    {
+      "name": "UpdatePackage",
+      "methodName": "toUpdatePackage",
+      "description": "Grants permission to update a package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdatePackage.html"
+    },
+    {
+      "name": "UpdatePackageConfiguration",
+      "methodName": "toUpdatePackageConfiguration",
+      "description": "Grants permission to update the package configuration of the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdatePackageConfiguration.html"
+    },
+    {
+      "name": "UpdatePackageVersion",
+      "methodName": "toUpdatePackageVersion",
+      "description": "Grants permission to update the version of the specified package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdatePackageVersion.html"
+    },
+    {
+      "name": "UpdateProvisioningTemplate",
+      "methodName": "toUpdateProvisioningTemplate",
+      "description": "Grants permission to update a fleet provisioning template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateProvisioningTemplate.html"
+    },
+    {
+      "name": "UpdateRoleAlias",
+      "methodName": "toUpdateRoleAlias",
+      "description": "Grants permission to update the role alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateRoleAlias.html"
+    },
+    {
+      "name": "UpdateScheduledAudit",
+      "methodName": "toUpdateScheduledAudit",
+      "description": "Grants permission to update a scheduled audit, including what checks are performed and how often the audit takes place",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateScheduledAudit.html"
+    },
+    {
+      "name": "UpdateSecurityProfile",
+      "methodName": "toUpdateSecurityProfile",
+      "description": "Grants permission to update a Device Defender security profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateSecurityProfile.html"
+    },
+    {
+      "name": "UpdateStream",
+      "methodName": "toUpdateStream",
+      "description": "Grants permission to update the data for a stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateStream.html"
+    },
+    {
+      "name": "UpdateThing",
+      "methodName": "toUpdateThing",
+      "description": "Grants permission to update information associated with the specified thing",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateThing.html"
+    },
+    {
+      "name": "UpdateThingGroup",
+      "methodName": "toUpdateThingGroup",
+      "description": "Grants permission to update information associated with the specified thing group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateThingGroup.html"
+    },
+    {
+      "name": "UpdateThingGroupsForThing",
+      "methodName": "toUpdateThingGroupsForThing",
+      "description": "Grants permission to update the thing groups to which the thing belongs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateThingGroupsForThing.html"
+    },
+    {
+      "name": "UpdateThingShadow",
+      "methodName": "toUpdateThingShadow",
+      "description": "Grants permission to update the thing shadow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+    },
+    {
+      "name": "UpdateThingType",
+      "methodName": "toUpdateThingType",
+      "description": "Grants permission to update information associated with the specified thing type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateThingType.html"
+    },
+    {
+      "name": "UpdateTopicRuleDestination",
+      "methodName": "toUpdateTopicRuleDestination",
+      "description": "Grants permission to update a TopicRuleDestination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateTopicRuleDestination.html"
+    },
+    {
+      "name": "ValidateSecurityProfileBehaviors",
+      "methodName": "toValidateSecurityProfileBehaviors",
+      "description": "Grants permission to validate a Device Defender security profile behaviors specification",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ValidateSecurityProfileBehaviors.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "authorizer",
+      "methodName": "onAuthorizer",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/custom-authorizer.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:authorizer/${AuthorizerName}",
+      "placeholders": [
+        {
+          "placeholder": "AuthorizerName",
+          "name": "authorizerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "billinggroup",
+      "methodName": "onBillinggroup",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/billing-groups.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:billinggroup/${BillingGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "BillingGroupName",
+          "name": "billingGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cacert",
+      "methodName": "onCacert",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:cacert/${CACertificate}",
+      "placeholders": [
+        {
+          "placeholder": "CACertificate",
+          "name": "cACertificate",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cert",
+      "methodName": "onCert",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:cert/${Certificate}",
+      "placeholders": [
+        {
+          "placeholder": "Certificate",
+          "name": "certificate",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "certificateprovider",
+      "methodName": "onCertificateprovider",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/provisioning-cert-provider.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:certificateprovider/${CertificateProviderName}",
+      "placeholders": [
+        {
+          "placeholder": "CertificateProviderName",
+          "name": "certificateProviderName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "client",
+      "methodName": "onClient",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:client/${ClientId}",
+      "placeholders": [
+        {
+          "placeholder": "ClientId",
+          "name": "clientId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "command",
+      "methodName": "onCommand",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/iot-remote-command.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:command/${CommandId}",
+      "placeholders": [
+        {
+          "placeholder": "CommandId",
+          "name": "commandId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "custommetric",
+      "methodName": "onCustommetric",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:custommetric/${MetricName}",
+      "placeholders": [
+        {
+          "placeholder": "MetricName",
+          "name": "metricName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "destination",
+      "methodName": "onDestination",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/rule-destination.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:ruledestination/${DestinationType}/${Uuid}",
+      "placeholders": [
+        {
+          "placeholder": "DestinationType",
+          "name": "destinationType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Uuid",
+          "name": "uuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "dimension",
+      "methodName": "onDimension",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:dimension/${DimensionName}",
+      "placeholders": [
+        {
+          "placeholder": "DimensionName",
+          "name": "dimensionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "domainconfiguration",
+      "methodName": "onDomainconfiguration",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/domain-configuration.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:domainconfiguration/${DomainConfigurationName}/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "DomainConfigurationName",
+          "name": "domainConfigurationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "dynamicthinggroup",
+      "methodName": "onDynamicthinggroup",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/dynamic-thing-groups.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:thinggroup/${ThingGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "ThingGroupName",
+          "name": "thingGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "fleetmetric",
+      "methodName": "onFleetmetric",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/iot-indexing.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:fleetmetric/${FleetMetricName}",
+      "placeholders": [
+        {
+          "placeholder": "FleetMetricName",
+          "name": "fleetMetricName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "index",
+      "methodName": "onIndex",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/iot-indexing.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:index/${IndexName}",
+      "placeholders": [
+        {
+          "placeholder": "IndexName",
+          "name": "indexName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "job",
+      "methodName": "onJob",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:job/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "jobtemplate",
+      "methodName": "onJobtemplate",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/job-templates.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:jobtemplate/${JobTemplateId}",
+      "placeholders": [
+        {
+          "placeholder": "JobTemplateId",
+          "name": "jobTemplateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "mitigationaction",
+      "methodName": "onMitigationaction",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:mitigationaction/${MitigationActionName}",
+      "placeholders": [
+        {
+          "placeholder": "MitigationActionName",
+          "name": "mitigationActionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "otaupdate",
+      "methodName": "onOtaupdate",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:otaupdate/${OtaUpdateId}",
+      "placeholders": [
+        {
+          "placeholder": "OtaUpdateId",
+          "name": "otaUpdateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "package",
+      "methodName": "onPackage",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/software-package-catalog.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:package/${PackageName}",
+      "placeholders": [
+        {
+          "placeholder": "PackageName",
+          "name": "packageName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "packageversion",
+      "methodName": "onPackageversion",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/software-package-catalog.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:package/${PackageName}/version/${VersionName}",
+      "placeholders": [
+        {
+          "placeholder": "PackageName",
+          "name": "packageName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VersionName",
+          "name": "versionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "policy",
+      "methodName": "onPolicy",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:policy/${PolicyName}",
+      "placeholders": [
+        {
+          "placeholder": "PolicyName",
+          "name": "policyName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "provisioningtemplate",
+      "methodName": "onProvisioningtemplate",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:provisioningtemplate/${ProvisioningTemplate}",
+      "placeholders": [
+        {
+          "placeholder": "ProvisioningTemplate",
+          "name": "provisioningTemplate",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "rolealias",
+      "methodName": "onRolealias",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:rolealias/${RoleAlias}",
+      "placeholders": [
+        {
+          "placeholder": "RoleAlias",
+          "name": "roleAlias",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "rule",
+      "methodName": "onRule",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:rule/${RuleName}",
+      "placeholders": [
+        {
+          "placeholder": "RuleName",
+          "name": "ruleName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "scheduledaudit",
+      "methodName": "onScheduledaudit",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:scheduledaudit/${ScheduleName}",
+      "placeholders": [
+        {
+          "placeholder": "ScheduleName",
+          "name": "scheduleName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "securityprofile",
+      "methodName": "onSecurityprofile",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:securityprofile/${SecurityProfileName}",
+      "placeholders": [
+        {
+          "placeholder": "SecurityProfileName",
+          "name": "securityProfileName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "stream",
+      "methodName": "onStream",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:stream/${StreamId}",
+      "placeholders": [
+        {
+          "placeholder": "StreamId",
+          "name": "streamId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "thing",
+      "methodName": "onThing",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:thing/${ThingName}",
+      "placeholders": [
+        {
+          "placeholder": "ThingName",
+          "name": "thingName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "thinggroup",
+      "methodName": "onThinggroup",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/thing-groups.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:thinggroup/${ThingGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "ThingGroupName",
+          "name": "thingGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "thingtype",
+      "methodName": "onThingtype",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/thing-types.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:thingtype/${ThingTypeName}",
+      "placeholders": [
+        {
+          "placeholder": "ThingTypeName",
+          "name": "thingTypeName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "topic",
+      "methodName": "onTopic",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:topic/${TopicName}",
+      "placeholders": [
+        {
+          "placeholder": "TopicName",
+          "name": "topicName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "topicfilter",
+      "methodName": "onTopicfilter",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/topics.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:topicfilter/${TopicFilter}",
+      "placeholders": [
+        {
+          "placeholder": "TopicFilter",
+          "name": "topicFilter",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "tunnel",
+      "methodName": "onTunnel",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/iot-tunnels.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:tunnel/${TunnelId}",
+      "placeholders": [
+        {
+          "placeholder": "TunnelId",
+          "name": "tunnelId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key that is present in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html",
+      "relatedActionMethods": [
+        "toCreateAuthorizer",
+        "toCreateBillingGroup",
+        "toCreateCertificateProvider",
+        "toCreateCommand",
+        "toCreateCustomMetric",
+        "toCreateDimension",
+        "toCreateDomainConfiguration",
+        "toCreateDynamicThingGroup",
+        "toCreateFleetMetric",
+        "toCreateJob",
+        "toCreateJobTemplate",
+        "toCreateMitigationAction",
+        "toCreateOTAUpdate",
+        "toCreatePackage",
+        "toCreatePackageVersion",
+        "toCreatePolicy",
+        "toCreateProvisioningTemplate",
+        "toCreateRoleAlias",
+        "toCreateScheduledAudit",
+        "toCreateSecurityProfile",
+        "toCreateStream",
+        "toCreateThingGroup",
+        "toCreateThingType",
+        "toCreateTopicRule",
+        "toOpenTunnel",
+        "toRegisterCACertificate",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key component of a tag associated to the IoT resource in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html",
+      "relatedActionMethods": [
+        "toAddThingToBillingGroup",
+        "toAddThingToThingGroup",
+        "toAssociateSbomWithPackageVersion",
+        "toAssociateTargetsWithJob",
+        "toAttachPolicy",
+        "toAttachSecurityProfile",
+        "toCancelJob",
+        "toCancelJobExecution",
+        "toCloseTunnel",
+        "toCreateAuthorizer",
+        "toCreateBillingGroup",
+        "toCreateCertificateProvider",
+        "toCreateCommand",
+        "toCreateCustomMetric",
+        "toCreateDimension",
+        "toCreateDomainConfiguration",
+        "toCreateDynamicThingGroup",
+        "toCreateFleetMetric",
+        "toCreateJob",
+        "toCreateJobTemplate",
+        "toCreateMitigationAction",
+        "toCreateOTAUpdate",
+        "toCreatePackage",
+        "toCreatePackageVersion",
+        "toCreatePolicy",
+        "toCreatePolicyVersion",
+        "toCreateProvisioningClaim",
+        "toCreateProvisioningTemplate",
+        "toCreateProvisioningTemplateVersion",
+        "toCreateRoleAlias",
+        "toCreateScheduledAudit",
+        "toCreateSecurityProfile",
+        "toCreateStream",
+        "toCreateThing",
+        "toCreateThingGroup",
+        "toCreateThingType",
+        "toCreateTopicRule",
+        "toDeleteAuthorizer",
+        "toDeleteBillingGroup",
+        "toDeleteCACertificate",
+        "toDeleteCertificateProvider",
+        "toDeleteCommand",
+        "toDeleteCustomMetric",
+        "toDeleteDimension",
+        "toDeleteDomainConfiguration",
+        "toDeleteDynamicThingGroup",
+        "toDeleteFleetMetric",
+        "toDeleteJob",
+        "toDeleteJobExecution",
+        "toDeleteJobTemplate",
+        "toDeleteMitigationAction",
+        "toDeleteOTAUpdate",
+        "toDeletePackage",
+        "toDeletePackageVersion",
+        "toDeletePolicy",
+        "toDeletePolicyVersion",
+        "toDeleteProvisioningTemplate",
+        "toDeleteProvisioningTemplateVersion",
+        "toDeleteRoleAlias",
+        "toDeleteScheduledAudit",
+        "toDeleteSecurityProfile",
+        "toDeleteStream",
+        "toDeleteThingGroup",
+        "toDeleteThingType",
+        "toDeleteTopicRule",
+        "toDeprecateThingType",
+        "toDescribeAuthorizer",
+        "toDescribeBillingGroup",
+        "toDescribeCACertificate",
+        "toDescribeCertificateProvider",
+        "toDescribeCustomMetric",
+        "toDescribeDimension",
+        "toDescribeDomainConfiguration",
+        "toDescribeFleetMetric",
+        "toDescribeJob",
+        "toDescribeJobExecution",
+        "toDescribeJobTemplate",
+        "toDescribeManagedJobTemplate",
+        "toDescribeMitigationAction",
+        "toDescribeProvisioningTemplate",
+        "toDescribeProvisioningTemplateVersion",
+        "toDescribeRoleAlias",
+        "toDescribeScheduledAudit",
+        "toDescribeSecurityProfile",
+        "toDescribeStream",
+        "toDescribeThingGroup",
+        "toDescribeThingType",
+        "toDescribeTunnel",
+        "toDetachPolicy",
+        "toDetachSecurityProfile",
+        "toDisableTopicRule",
+        "toDisassociateSbomFromPackageVersion",
+        "toEnableTopicRule",
+        "toGetBehaviorModelTrainingSummaries",
+        "toGetCommand",
+        "toGetJobDocument",
+        "toGetOTAUpdate",
+        "toGetPackage",
+        "toGetPackageVersion",
+        "toGetPolicy",
+        "toGetPolicyVersion",
+        "toGetTopicRule",
+        "toListActiveViolations",
+        "toListCommandExecutions",
+        "toListJobExecutionsForJob",
+        "toListPolicyVersions",
+        "toListProvisioningTemplateVersions",
+        "toListSbomValidationResults",
+        "toListSecurityProfiles",
+        "toListSecurityProfilesForTarget",
+        "toListTagsForResource",
+        "toListTargetsForPolicy",
+        "toListTargetsForSecurityProfile",
+        "toListThingsInBillingGroup",
+        "toListThingsInThingGroup",
+        "toListViolationEvents",
+        "toRegisterCACertificate",
+        "toRemoveThingFromBillingGroup",
+        "toRemoveThingFromThingGroup",
+        "toReplaceTopicRule",
+        "toRotateTunnelAccessToken",
+        "toSetDefaultAuthorizer",
+        "toSetDefaultPolicyVersion",
+        "toStartCommandExecution",
+        "toStartDetectMitigationActionsTask",
+        "toTagResource",
+        "toTestInvokeAuthorizer",
+        "toUntagResource",
+        "toUpdateAuthorizer",
+        "toUpdateBillingGroup",
+        "toUpdateCACertificate",
+        "toUpdateCertificateProvider",
+        "toUpdateCommand",
+        "toUpdateCustomMetric",
+        "toUpdateDimension",
+        "toUpdateDomainConfiguration",
+        "toUpdateDynamicThingGroup",
+        "toUpdateFleetMetric",
+        "toUpdateJob",
+        "toUpdateMitigationAction",
+        "toUpdatePackage",
+        "toUpdatePackageVersion",
+        "toUpdateProvisioningTemplate",
+        "toUpdateRoleAlias",
+        "toUpdateScheduledAudit",
+        "toUpdateSecurityProfile",
+        "toUpdateStream",
+        "toUpdateThingGroup",
+        "toUpdateThingGroupsForThing",
+        "toUpdateThingType"
+      ],
+      "relatedResourceTypes": [
+        "authorizer",
+        "billinggroup",
+        "cacert",
+        "certificateprovider",
+        "command",
+        "custommetric",
+        "dimension",
+        "domainconfiguration",
+        "dynamicthinggroup",
+        "fleetmetric",
+        "job",
+        "jobtemplate",
+        "mitigationaction",
+        "otaupdate",
+        "package",
+        "packageversion",
+        "policy",
+        "provisioningtemplate",
+        "rolealias",
+        "rule",
+        "scheduledaudit",
+        "securityprofile",
+        "stream",
+        "thinggroup",
+        "thingtype",
+        "tunnel"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys associated to the IoT resource in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html",
+      "relatedActionMethods": [
+        "toCreateAuthorizer",
+        "toCreateBillingGroup",
+        "toCreateCertificateProvider",
+        "toCreateCommand",
+        "toCreateCustomMetric",
+        "toCreateDimension",
+        "toCreateDomainConfiguration",
+        "toCreateDynamicThingGroup",
+        "toCreateFleetMetric",
+        "toCreateJob",
+        "toCreateJobTemplate",
+        "toCreateMitigationAction",
+        "toCreateOTAUpdate",
+        "toCreatePackage",
+        "toCreatePackageVersion",
+        "toCreatePolicy",
+        "toCreateProvisioningTemplate",
+        "toCreateRoleAlias",
+        "toCreateScheduledAudit",
+        "toCreateSecurityProfile",
+        "toCreateStream",
+        "toCreateThingGroup",
+        "toCreateThingType",
+        "toCreateTopicRule",
+        "toOpenTunnel",
+        "toRegisterCACertificate",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iot:ClientMode",
+      "methodName": "ifClientMode",
+      "description": "Filters access by the mode of the client for IoT Tunnel",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html",
+      "relatedActionMethods": [
+        "toRotateTunnelAccessToken"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ClientMode",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iot:CommandExecutionParameterBoolean/${CommandParameterName}",
+      "methodName": "ifCommandExecutionParameterBoolean",
+      "description": "Filters access by the command parameter name and boolean value",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html",
+      "relatedActionMethods": [
+        "toStartCommandExecution"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CommandExecutionParameterBoolean/",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool",
+      "keyParam": "commandParameterName"
+    },
+    {
+      "key": "iot:CommandExecutionParameterNumber/${CommandParameterName}",
+      "methodName": "ifCommandExecutionParameterNumber",
+      "description": "Filters access by the command parameter name and numeric value",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html",
+      "relatedActionMethods": [
+        "toStartCommandExecution"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CommandExecutionParameterNumber/",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "keyParam": "commandParameterName",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "iot:CommandExecutionParameterString/${CommandParameterName}",
+      "methodName": "ifCommandExecutionParameterString",
+      "description": "Filters access by the command parameter name and string value",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html",
+      "relatedActionMethods": [
+        "toStartCommandExecution"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CommandExecutionParameterString/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "commandParameterName",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iot:Delete",
+      "methodName": "ifDelete",
+      "description": "Filters access by a flag indicating whether or not to also delete an IoT Tunnel immediately when making iot:CloseTunnel request",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html",
+      "relatedActionMethods": [
+        "toCloseTunnel"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Delete",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "iot:DomainName",
+      "methodName": "ifDomainName",
+      "description": "Filters access by based on the domain name of an IoT DomainConfiguration",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html",
+      "relatedActionMethods": [
+        "toCreateDomainConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DomainName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iot:IncludeSocketInformation",
+      "methodName": "ifIncludeSocketInformation",
+      "description": "Filters access by GetConnection and GetThingConnectivityData includeSocketInformation request parameter",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html",
+      "relatedActionMethods": [
+        "toGetConnection",
+        "toGetThingConnectivityData"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "IncludeSocketInformation",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "iot:ThingGroupArn",
+      "methodName": "ifThingGroupArn",
+      "description": "Filters access by a list of IoT Thing Group ARNs that the destination IoT Thing belongs to for an IoT Tunnel",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html",
+      "relatedActionMethods": [
+        "toOpenTunnel",
+        "toRotateTunnelAccessToken"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ThingGroupArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "iot:Topic",
+      "methodName": "ifTopic",
+      "description": "Filters access by based on the topic",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html",
+      "relatedActionMethods": [
+        "toSendDirectMessage"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Topic",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iot:TunnelDestinationService",
+      "methodName": "ifTunnelDestinationService",
+      "description": "Filters access by a list of destination services for an IoT Tunnel",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html",
+      "relatedActionMethods": [
+        "toOpenTunnel",
+        "toRotateTunnelAccessToken"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TunnelDestinationService",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iot:thingArn",
+      "methodName": "ifThingArn",
+      "description": "Filters access by the ARN of an IoT Thing",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html",
+      "relatedActionMethods": [
+        "toAttachThingPrincipal",
+        "toDetachThingPrincipal"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "thingArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

@@ -1,5 +1,0 @@
-geo-routes:CalculateIsolines;Read
-geo-routes:CalculateRouteMatrix;Read
-geo-routes:CalculateRoutes;Read
-geo-routes:OptimizeWaypoints;Read
-geo-routes:SnapToRoads;Read

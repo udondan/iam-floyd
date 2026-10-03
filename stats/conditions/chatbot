@@ -1,3 +1,0 @@
-chatbot:RequestTag/${TagKey}
-chatbot:ResourceTag/${TagKey}
-chatbot:TagKeys

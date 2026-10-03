@@ -2,10 +2,11 @@ docs/build
 skills/*-workspace
 eslint.log
 examples/*/*.*.result
-lib/generated/policy-statements/.cache
+lib/generated/index.ts
+lib/generated/model/.cache
+lib/generated/policy-statements
 node_modules
 package-lock.json
-stats/*/.cache
 test/cdk.out
 test/package-lock.json
 *.tgz

@@ -1,0 +1,1339 @@
+{
+  "schemaVersion": 1,
+  "filename": "qbusiness",
+  "className": "Qbusiness",
+  "name": "qbusiness",
+  "servicePrefix": "qbusiness",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_qbusiness.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociatePermission",
+      "BatchDeleteDocument",
+      "BatchPutDocument",
+      "CancelSubscription",
+      "CreateAnonymousWebExperienceUrl",
+      "CreateApplication",
+      "CreateChatResponseConfiguration",
+      "CreateDataAccessor",
+      "CreateDataSource",
+      "CreateIndex",
+      "CreateIntegration",
+      "CreatePlugin",
+      "CreateRetriever",
+      "CreateSubscription",
+      "CreateUser",
+      "CreateWebExperience",
+      "DeleteApplication",
+      "DeleteAttachment",
+      "DeleteChatControlsConfiguration",
+      "DeleteChatResponseConfiguration",
+      "DeleteConversation",
+      "DeleteDataAccessor",
+      "DeleteDataSource",
+      "DeleteGroup",
+      "DeleteIndex",
+      "DeleteIntegration",
+      "DeletePlugin",
+      "DeleteRetriever",
+      "DeleteUser",
+      "DeleteWebExperience",
+      "DisassociatePermission",
+      "PutFeedback",
+      "PutGroup",
+      "StartDataSourceSyncJob",
+      "StartDeployment",
+      "StopDataSourceSyncJob",
+      "TagResource",
+      "UntagResource",
+      "UpdateApplication",
+      "UpdateChatControlsConfiguration",
+      "UpdateChatResponseConfiguration",
+      "UpdateDataAccessor",
+      "UpdateDataSource",
+      "UpdateIndex",
+      "UpdateIntegration",
+      "UpdatePlugin",
+      "UpdateRetriever",
+      "UpdateSubscription",
+      "UpdateUser",
+      "UpdateWebExperience",
+      "AllowVendedLogDeliveryForResource",
+      "CreateDataAccessorWithTti",
+      "DisableAclOnDataSource",
+      "PutResourcePolicy"
+    ],
+    "Read": [
+      "Chat",
+      "ChatSync",
+      "CheckDocumentAccess",
+      "GetApplication",
+      "GetChatResponseConfiguration",
+      "GetDataAccessor",
+      "GetDataSource",
+      "GetDocumentContent",
+      "GetGroup",
+      "GetIndex",
+      "GetIntegration",
+      "GetMedia",
+      "GetPlugin",
+      "GetPolicy",
+      "GetRetriever",
+      "GetUser",
+      "GetWebExperience",
+      "ListPluginActions",
+      "ListPluginTypeActions",
+      "ListPluginTypeMetadata",
+      "ListTagsForResource",
+      "SearchRelevantContent"
+    ],
+    "List": [
+      "GetChatControlsConfiguration",
+      "ListApplications",
+      "ListAttachments",
+      "ListChatResponseConfigurations",
+      "ListConversations",
+      "ListDataAccessors",
+      "ListDataSourceSyncJobs",
+      "ListDataSources",
+      "ListDocuments",
+      "ListGroups",
+      "ListIndices",
+      "ListIntegrations",
+      "ListMessages",
+      "ListPlugins",
+      "ListRetrievers",
+      "ListSubscriptions",
+      "ListWebExperiences"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "AllowVendedLogDeliveryForResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociatePermission",
+      "methodName": "toAssociatePermission",
+      "description": "Grants permission to associate resource based policy statement to the application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_AssociatePermission.html"
+    },
+    {
+      "name": "BatchDeleteDocument",
+      "methodName": "toBatchDeleteDocument",
+      "description": "Grants permission to batch delete document",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_BatchDeleteDocument.html"
+    },
+    {
+      "name": "BatchPutDocument",
+      "methodName": "toBatchPutDocument",
+      "description": "Grants permission to batch put document",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_BatchPutDocument.html"
+    },
+    {
+      "name": "CancelSubscription",
+      "methodName": "toCancelSubscription",
+      "description": "Grants permission to cancel a subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CancelSubscription.html"
+    },
+    {
+      "name": "Chat",
+      "methodName": "toChat",
+      "description": "Grants permission to chat using an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_Chat.html"
+    },
+    {
+      "name": "ChatSync",
+      "methodName": "toChatSync",
+      "description": "Grants permission to chat synchronously using an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ChatSync.html"
+    },
+    {
+      "name": "CheckDocumentAccess",
+      "methodName": "toCheckDocumentAccess",
+      "description": "Grants permission to check if a user has access to a document",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CheckDocumentAccess.html"
+    },
+    {
+      "name": "CreateAnonymousWebExperienceUrl",
+      "methodName": "toCreateAnonymousWebExperienceUrl",
+      "description": "Grants permission to create a unique URL for anonymous Amazon Q Business web experience",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateAnonymousWebExperienceUrl.html"
+    },
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to create an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateApplication.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateChatResponseConfiguration",
+      "methodName": "toCreateChatResponseConfiguration",
+      "description": "Grants permission to create a chat response configuration to the application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateChatResponseConfiguration.html"
+    },
+    {
+      "name": "CreateDataAccessor",
+      "methodName": "toCreateDataAccessor",
+      "description": "Grants permission to create DataAccessor to the application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataAccessor.html"
+    },
+    {
+      "name": "CreateDataSource",
+      "methodName": "toCreateDataSource",
+      "description": "Grants permission to create a data source for a given application and index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataSource.html"
+    },
+    {
+      "name": "CreateIndex",
+      "methodName": "toCreateIndex",
+      "description": "Grants permission to create an index for a given application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateIndex.html"
+    },
+    {
+      "name": "CreateIntegration",
+      "methodName": "toCreateIntegration",
+      "description": "Grants permission to create a new integration for a Q Business application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateIntegration.html"
+    },
+    {
+      "name": "CreatePlugin",
+      "methodName": "toCreatePlugin",
+      "description": "Grants permission to create a plugin for a given application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreatePlugin.html"
+    },
+    {
+      "name": "CreateRetriever",
+      "methodName": "toCreateRetriever",
+      "description": "Grants permission to create a retriever for a given application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateRetriever.html"
+    },
+    {
+      "name": "CreateSubscription",
+      "methodName": "toCreateSubscription",
+      "description": "Grants permission to create a subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateSubscription.html"
+    },
+    {
+      "name": "CreateUser",
+      "methodName": "toCreateUser",
+      "description": "Grants permission to create a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateUser.html"
+    },
+    {
+      "name": "CreateWebExperience",
+      "methodName": "toCreateWebExperience",
+      "description": "Grants permission to create a web experience for a given application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateWebExperience.html"
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteApplication.html"
+    },
+    {
+      "name": "DeleteAttachment",
+      "methodName": "toDeleteAttachment",
+      "description": "Grants permission to delete an attachment in the current chat context",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteAttachment.html"
+    },
+    {
+      "name": "DeleteChatControlsConfiguration",
+      "methodName": "toDeleteChatControlsConfiguration",
+      "description": "Grants permission to delete chat controls configuration for an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteChatControlsConfiguration.html"
+    },
+    {
+      "name": "DeleteChatResponseConfiguration",
+      "methodName": "toDeleteChatResponseConfiguration",
+      "description": "Grants permission to delete a chat response configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteChatResponseConfiguration.html"
+    },
+    {
+      "name": "DeleteConversation",
+      "methodName": "toDeleteConversation",
+      "description": "Grants permission to delete a conversation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteConversation.html"
+    },
+    {
+      "name": "DeleteDataAccessor",
+      "methodName": "toDeleteDataAccessor",
+      "description": "Grants permission to delete DataAccessor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteDataAccessor.html"
+    },
+    {
+      "name": "DeleteDataSource",
+      "methodName": "toDeleteDataSource",
+      "description": "Grants permission to delete a DataSource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteDataSource.html"
+    },
+    {
+      "name": "DeleteGroup",
+      "methodName": "toDeleteGroup",
+      "description": "Grants permission to delete a group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteGroup.html"
+    },
+    {
+      "name": "DeleteIndex",
+      "methodName": "toDeleteIndex",
+      "description": "Grants permission to delete an index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteIndex.html"
+    },
+    {
+      "name": "DeleteIntegration",
+      "methodName": "toDeleteIntegration",
+      "description": "Grants permission to delete an integration for a Q Business application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteIntegration.html"
+    },
+    {
+      "name": "DeletePlugin",
+      "methodName": "toDeletePlugin",
+      "description": "Grants permission to delete a plugin",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeletePlugin.html"
+    },
+    {
+      "name": "DeleteRetriever",
+      "methodName": "toDeleteRetriever",
+      "description": "Grants permission to delete a retriever",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteRetriever.html"
+    },
+    {
+      "name": "DeleteUser",
+      "methodName": "toDeleteUser",
+      "description": "Grants permission to delete a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteUser.html"
+    },
+    {
+      "name": "DeleteWebExperience",
+      "methodName": "toDeleteWebExperience",
+      "description": "Grants permission to delete a web-experience",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteWebExperience.html"
+    },
+    {
+      "name": "DisassociatePermission",
+      "methodName": "toDisassociatePermission",
+      "description": "Grants permission to disassociate resource based policy statement to the application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DisassociatePermission.html"
+    },
+    {
+      "name": "GetApplication",
+      "methodName": "toGetApplication",
+      "description": "Grants permission to get an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetApplication.html"
+    },
+    {
+      "name": "GetChatControlsConfiguration",
+      "methodName": "toGetChatControlsConfiguration",
+      "description": "Grants permission to get chat controls configuration for an application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetChatControlsConfiguration.html"
+    },
+    {
+      "name": "GetChatResponseConfiguration",
+      "methodName": "toGetChatResponseConfiguration",
+      "description": "Grants permission to get a chat response configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetChatResponseConfiguration.html"
+    },
+    {
+      "name": "GetDataAccessor",
+      "methodName": "toGetDataAccessor",
+      "description": "Grants permission to get DataAccessor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetDataAccessor.html"
+    },
+    {
+      "name": "GetDataSource",
+      "methodName": "toGetDataSource",
+      "description": "Grants permission to get a data source",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetDataSource.html"
+    },
+    {
+      "name": "GetDocumentContent",
+      "methodName": "toGetDocumentContent",
+      "description": "Grants permission to get a document content",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetDocumentContent.html"
+    },
+    {
+      "name": "GetGroup",
+      "methodName": "toGetGroup",
+      "description": "Grants permission to get a group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetGroup.html"
+    },
+    {
+      "name": "GetIndex",
+      "methodName": "toGetIndex",
+      "description": "Grants permission to get an index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetIndex.html"
+    },
+    {
+      "name": "GetIntegration",
+      "methodName": "toGetIntegration",
+      "description": "Grants permission to get an integration for a Q Business application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetIntegration.html"
+    },
+    {
+      "name": "GetMedia",
+      "methodName": "toGetMedia",
+      "description": "Grants permission to get the media associated to a system message",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetMedia.html"
+    },
+    {
+      "name": "GetPlugin",
+      "methodName": "toGetPlugin",
+      "description": "Grants permission to get a plugin",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetPlugin.html"
+    },
+    {
+      "name": "GetPolicy",
+      "methodName": "toGetPolicy",
+      "description": "Grants permission to get resource based policy of the application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetPolicy.html"
+    },
+    {
+      "name": "GetRetriever",
+      "methodName": "toGetRetriever",
+      "description": "Grants permission to get a retriever",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetRetriever.html"
+    },
+    {
+      "name": "GetUser",
+      "methodName": "toGetUser",
+      "description": "Grants permission to get a user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetUser.html"
+    },
+    {
+      "name": "GetWebExperience",
+      "methodName": "toGetWebExperience",
+      "description": "Grants permission to get a web-experience",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetWebExperience.html"
+    },
+    {
+      "name": "ListApplications",
+      "methodName": "toListApplications",
+      "description": "Grants permission to list the applications",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListApplications.html"
+    },
+    {
+      "name": "ListAttachments",
+      "methodName": "toListAttachments",
+      "description": "Grants permission to list attachments in the current chat context",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListAttachments.html"
+    },
+    {
+      "name": "ListChatResponseConfigurations",
+      "methodName": "toListChatResponseConfigurations",
+      "description": "Grants permission to list chat response configurations for an application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListChatResponseConfigurations.html"
+    },
+    {
+      "name": "ListConversations",
+      "methodName": "toListConversations",
+      "description": "Grants permission to list all conversations for an application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListConversations.html"
+    },
+    {
+      "name": "ListDataAccessors",
+      "methodName": "toListDataAccessors",
+      "description": "Grants permission to list DataAccessors for the application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListDataAccessors.html"
+    },
+    {
+      "name": "ListDataSourceSyncJobs",
+      "methodName": "toListDataSourceSyncJobs",
+      "description": "Grants permission to get Data Source sync job history",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListDataSourceSyncJobs.html"
+    },
+    {
+      "name": "ListDataSources",
+      "methodName": "toListDataSources",
+      "description": "Grants permission to list the data sources of an application and an index",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListDataSources.html"
+    },
+    {
+      "name": "ListDocuments",
+      "methodName": "toListDocuments",
+      "description": "Grants permission to list all documents",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListDocuments.html"
+    },
+    {
+      "name": "ListGroups",
+      "methodName": "toListGroups",
+      "description": "Grants permission to list groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListGroups.html"
+    },
+    {
+      "name": "ListIndices",
+      "methodName": "toListIndices",
+      "description": "Grants permission to list the indices of an application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListIndices.html"
+    },
+    {
+      "name": "ListIntegrations",
+      "methodName": "toListIntegrations",
+      "description": "Grants permission to list all integrations for a Q Business application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListIntegrations.html"
+    },
+    {
+      "name": "ListMessages",
+      "methodName": "toListMessages",
+      "description": "Grants permission to list all messages",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListMessages.html"
+    },
+    {
+      "name": "ListPluginActions",
+      "methodName": "toListPluginActions",
+      "description": "Grants permission to list the plugins actions of a plugin within application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListPluginActions.html"
+    },
+    {
+      "name": "ListPluginTypeActions",
+      "methodName": "toListPluginTypeActions",
+      "description": "Grants permission to list all the actions for a plugin type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListPluginTypeActions.html"
+    },
+    {
+      "name": "ListPluginTypeMetadata",
+      "methodName": "toListPluginTypeMetadata",
+      "description": "Grants permission to list all the plugin type metadata",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListPluginTypeMetadata.html"
+    },
+    {
+      "name": "ListPlugins",
+      "methodName": "toListPlugins",
+      "description": "Grants permission to list the plugins of an application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListPlugins.html"
+    },
+    {
+      "name": "ListRetrievers",
+      "methodName": "toListRetrievers",
+      "description": "Grants permission to list the retrievers of an application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListRetrievers.html"
+    },
+    {
+      "name": "ListSubscriptions",
+      "methodName": "toListSubscriptions",
+      "description": "Grants permission to list subscriptions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListSubscriptions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWebExperiences",
+      "methodName": "toListWebExperiences",
+      "description": "Grants permission to list the web experiences of an application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListWebExperiences.html"
+    },
+    {
+      "name": "PutFeedback",
+      "methodName": "toPutFeedback",
+      "description": "Grants permission to put feedback about a conversation message",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_PutFeedback.html"
+    },
+    {
+      "name": "PutGroup",
+      "methodName": "toPutGroup",
+      "description": "Grants permission to put a group of users",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_PutGroup.html"
+    },
+    {
+      "name": "SearchRelevantContent",
+      "methodName": "toSearchRelevantContent",
+      "description": "Grants permission to search relevant content from the Amazon Q Business Application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_SearchRelevantContent.html"
+    },
+    {
+      "name": "StartDataSourceSyncJob",
+      "methodName": "toStartDataSourceSyncJob",
+      "description": "Grants permission to start Data Source sync job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_StartDataSourceSyncJob.html"
+    },
+    {
+      "name": "StartDeployment",
+      "methodName": "toStartDeployment",
+      "description": "Grants permission to start deployment for an integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_StartDeployment.html"
+    },
+    {
+      "name": "StopDataSourceSyncJob",
+      "methodName": "toStopDataSourceSyncJob",
+      "description": "Grants permission to stop Data Source sync job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_StopDataSourceSyncJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource with given key value pairs",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the tag with the given key from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateApplication",
+      "methodName": "toUpdateApplication",
+      "description": "Grants permission to update an Application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateApplication.html"
+    },
+    {
+      "name": "UpdateChatControlsConfiguration",
+      "methodName": "toUpdateChatControlsConfiguration",
+      "description": "Grants permission to update chat controls configuration for an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateChatControlsConfiguration.html"
+    },
+    {
+      "name": "UpdateChatResponseConfiguration",
+      "methodName": "toUpdateChatResponseConfiguration",
+      "description": "Grants permission to update a chat response configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateChatResponseConfiguration.html"
+    },
+    {
+      "name": "UpdateDataAccessor",
+      "methodName": "toUpdateDataAccessor",
+      "description": "Grants permission to update DataAccessor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateDataAccessor.html"
+    },
+    {
+      "name": "UpdateDataSource",
+      "methodName": "toUpdateDataSource",
+      "description": "Grants permission to update a DataSource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateDataSource.html"
+    },
+    {
+      "name": "UpdateIndex",
+      "methodName": "toUpdateIndex",
+      "description": "Grants permission to update an index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateIndex.html"
+    },
+    {
+      "name": "UpdateIntegration",
+      "methodName": "toUpdateIntegration",
+      "description": "Grants permission to update an integration for a Q Business application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateIntegration.html"
+    },
+    {
+      "name": "UpdatePlugin",
+      "methodName": "toUpdatePlugin",
+      "description": "Grants permission to update a plugin",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdatePlugin.html"
+    },
+    {
+      "name": "UpdateRetriever",
+      "methodName": "toUpdateRetriever",
+      "description": "Grants permission to update a Retriever",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateRetriever.html"
+    },
+    {
+      "name": "UpdateSubscription",
+      "methodName": "toUpdateSubscription",
+      "description": "Grants permission to update a subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateSubscription.html"
+    },
+    {
+      "name": "UpdateUser",
+      "methodName": "toUpdateUser",
+      "description": "Grants permission to update a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateUser.html"
+    },
+    {
+      "name": "UpdateWebExperience",
+      "methodName": "toUpdateWebExperience",
+      "description": "Grants permission to update a WebExperience",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateWebExperience.html"
+    },
+    {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to configure vended log delivery for Amazon Q Business application resource",
+      "accessLevel": "Permissions management, Write",
+      "url": ""
+    },
+    {
+      "name": "CreateDataAccessorWithTti",
+      "methodName": "toCreateDataAccessorWithTti",
+      "description": "Grants permission to create AWS IAM Identity center Trusted Token Issuer based DataAccessor to the application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataAccessor.html"
+    },
+    {
+      "name": "DisableAclOnDataSource",
+      "methodName": "toDisableAclOnDataSource",
+      "description": "Grants permission to disable the ACL crawl while creating the Amazon Q Business data source resource",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to put resource based policy statement to the application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_AssociatePermission.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/business-use-dg/create-application.html",
+      "arn": "arn:${Partition}:qbusiness:${Region}:${Account}:application/${ApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "chat-response-configuration",
+      "methodName": "onChatResponseConfiguration",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/business-use-dg/response-customization.html",
+      "arn": "arn:${Partition}:qbusiness:${Region}:${Account}:application/${ApplicationId}/chat-response-configuration/${ChatResponseConfigurationId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ChatResponseConfigurationId",
+          "name": "chatResponseConfigurationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "data-accessor",
+      "methodName": "onDataAccessor",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/business-use-dg/data-accessors.html",
+      "arn": "arn:${Partition}:qbusiness:${Region}:${Account}:application/${ApplicationId}/data-accessor/${DataAccessorId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DataAccessorId",
+          "name": "dataAccessorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "data-source",
+      "methodName": "onDataSource",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connect-data.html",
+      "arn": "arn:${Partition}:qbusiness:${Region}:${Account}:application/${ApplicationId}/index/${IndexId}/data-source/${DataSourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IndexId",
+          "name": "indexId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DataSourceId",
+          "name": "dataSourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "index",
+      "methodName": "onIndex",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/business-use-dg/select-retriever.html",
+      "arn": "arn:${Partition}:qbusiness:${Region}:${Account}:application/${ApplicationId}/index/${IndexId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IndexId",
+          "name": "indexId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "integration",
+      "methodName": "onIntegration",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/business-use-dg/create-integration.html",
+      "arn": "arn:${Partition}:qbusiness:${Region}:${Account}:application/${ApplicationId}/integration/${IntegrationId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IntegrationId",
+          "name": "integrationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "plugin",
+      "methodName": "onPlugin",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/business-use-dg/plugins.html",
+      "arn": "arn:${Partition}:qbusiness:${Region}:${Account}:application/${ApplicationId}/plugin/${PluginId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PluginId",
+          "name": "pluginId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "retriever",
+      "methodName": "onRetriever",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/business-use-dg/select-retriever.html",
+      "arn": "arn:${Partition}:qbusiness:${Region}:${Account}:application/${ApplicationId}/retriever/${RetrieverId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RetrieverId",
+          "name": "retrieverId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "subscription",
+      "methodName": "onSubscription",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/business-use-dg/subscriptions.html",
+      "arn": "arn:${Partition}:qbusiness:${Region}:${Account}:application/${ApplicationId}/subscription/${SubscriptionId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SubscriptionId",
+          "name": "subscriptionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "web-experience",
+      "methodName": "onWebExperience",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html",
+      "arn": "arn:${Partition}:qbusiness:${Region}:${Account}:application/${ApplicationId}/web-experience/${WebExperienceId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "WebExperienceId",
+          "name": "webExperienceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateChatResponseConfiguration",
+        "toCreateDataAccessor",
+        "toCreateDataSource",
+        "toCreateIndex",
+        "toCreateIntegration",
+        "toCreatePlugin",
+        "toCreateRetriever",
+        "toCreateWebExperience",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociatePermission",
+        "toBatchDeleteDocument",
+        "toBatchPutDocument",
+        "toCancelSubscription",
+        "toChat",
+        "toChatSync",
+        "toCheckDocumentAccess",
+        "toCreateAnonymousWebExperienceUrl",
+        "toCreateChatResponseConfiguration",
+        "toCreateDataAccessor",
+        "toCreateDataSource",
+        "toCreateIndex",
+        "toCreateIntegration",
+        "toCreatePlugin",
+        "toCreateRetriever",
+        "toCreateSubscription",
+        "toCreateUser",
+        "toCreateWebExperience",
+        "toDeleteApplication",
+        "toDeleteAttachment",
+        "toDeleteChatControlsConfiguration",
+        "toDeleteChatResponseConfiguration",
+        "toDeleteConversation",
+        "toDeleteDataAccessor",
+        "toDeleteDataSource",
+        "toDeleteGroup",
+        "toDeleteIndex",
+        "toDeleteIntegration",
+        "toDeletePlugin",
+        "toDeleteRetriever",
+        "toDeleteUser",
+        "toDeleteWebExperience",
+        "toDisassociatePermission",
+        "toGetApplication",
+        "toGetChatControlsConfiguration",
+        "toGetChatResponseConfiguration",
+        "toGetDataAccessor",
+        "toGetDataSource",
+        "toGetDocumentContent",
+        "toGetGroup",
+        "toGetIndex",
+        "toGetIntegration",
+        "toGetMedia",
+        "toGetPlugin",
+        "toGetPolicy",
+        "toGetRetriever",
+        "toGetUser",
+        "toGetWebExperience",
+        "toListAttachments",
+        "toListChatResponseConfigurations",
+        "toListConversations",
+        "toListDataAccessors",
+        "toListDataSourceSyncJobs",
+        "toListDataSources",
+        "toListDocuments",
+        "toListGroups",
+        "toListIndices",
+        "toListIntegrations",
+        "toListMessages",
+        "toListPluginActions",
+        "toListPlugins",
+        "toListRetrievers",
+        "toListSubscriptions",
+        "toListTagsForResource",
+        "toListWebExperiences",
+        "toPutFeedback",
+        "toPutGroup",
+        "toSearchRelevantContent",
+        "toStartDataSourceSyncJob",
+        "toStartDeployment",
+        "toStopDataSourceSyncJob",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateApplication",
+        "toUpdateChatControlsConfiguration",
+        "toUpdateChatResponseConfiguration",
+        "toUpdateDataAccessor",
+        "toUpdateDataSource",
+        "toUpdateIndex",
+        "toUpdateIntegration",
+        "toUpdatePlugin",
+        "toUpdateRetriever",
+        "toUpdateSubscription",
+        "toUpdateUser",
+        "toUpdateWebExperience",
+        "toAllowVendedLogDeliveryForResource",
+        "toCreateDataAccessorWithTti",
+        "toDisableAclOnDataSource",
+        "toPutResourcePolicy"
+      ],
+      "relatedResourceTypes": [
+        "application",
+        "chat-response-configuration",
+        "data-accessor",
+        "data-source",
+        "index",
+        "integration",
+        "plugin",
+        "retriever",
+        "web-experience"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateChatResponseConfiguration",
+        "toCreateDataAccessor",
+        "toCreateDataSource",
+        "toCreateIndex",
+        "toCreateIntegration",
+        "toCreatePlugin",
+        "toCreateRetriever",
+        "toCreateWebExperience",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "identitystore:GroupId",
+      "methodName": "ifIdentitystoreGroupId",
+      "description": "Filters access by IAM Identity Center Group ID",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateSubscription"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "identitystore:GroupId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "identitystore:UserId",
+      "methodName": "ifIdentitystoreUserId",
+      "description": "Filters access by IAM Identity Center User ID",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateSubscription"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "identitystore:UserId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,5 +1,0 @@
-q:GroupId
-q:RequestTag/${TagKey}
-q:ResourceTag/${TagKey}
-q:TagKeys
-q:UserId

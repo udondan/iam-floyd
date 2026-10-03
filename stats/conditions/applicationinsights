@@ -1,3 +1,0 @@
-applicationinsights:RequestTag/${TagKey}
-applicationinsights:ResourceTag/${TagKey}
-applicationinsights:TagKeys

@@ -1,4 +1,0 @@
-interconnect:RemoteAccount
-interconnect:RequestTag/${TagKey}
-interconnect:ResourceTag/${TagKey}
-interconnect:TagKeys

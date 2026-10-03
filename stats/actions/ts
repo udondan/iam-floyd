@@ -1,9 +1,0 @@
-ts:GetExecution;Read
-ts:GetExecutionOutput;Read
-ts:GetTool;Read
-ts:ListExecutions;List
-ts:ListTagsForResource;Read
-ts:ListTools;List
-ts:StartExecution;Write
-ts:TagResource;Tagging, Write
-ts:UntagResource;Tagging, Write

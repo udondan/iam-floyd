@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "filename": "billingconductor",
+  "className": "Billingconductor",
+  "name": "billingconductor",
+  "servicePrefix": "billingconductor",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_billingconductor.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateAccounts",
+      "AssociatePricingRules",
+      "BatchAssociateResourcesToCustomLineItem",
+      "BatchDisassociateResourcesFromCustomLineItem",
+      "CreateBillingGroup",
+      "CreateCustomLineItem",
+      "CreatePricingPlan",
+      "CreatePricingRule",
+      "DeleteBillingGroup",
+      "DeleteCustomLineItem",
+      "DeletePricingPlan",
+      "DeletePricingRule",
+      "DisassociateAccounts",
+      "DisassociatePricingRules",
+      "TagResource",
+      "UntagResource",
+      "UpdateBillingGroup",
+      "UpdateBillingTransferPreference",
+      "UpdateCustomLineItem",
+      "UpdatePricingPlan",
+      "UpdatePricingRule"
+    ],
+    "Read": [
+      "GetBillingGroupCostReport",
+      "GetBillingTransferPreference",
+      "ListBillingGroupCostReports",
+      "ListBillingGroups",
+      "ListCustomLineItemVersions",
+      "ListCustomLineItems",
+      "ListPricingPlans",
+      "ListPricingRules",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAccountAssociations",
+      "ListPricingPlansAssociatedWithPricingRule",
+      "ListPricingRulesAssociatedToPricingPlan",
+      "ListResourcesAssociatedToCustomLineItem"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateAccounts",
+      "methodName": "toAssociateAccounts",
+      "description": "Grants permission to associate between one and 30 accounts to a billing group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_AssociateAccounts.html"
+    },
+    {
+      "name": "AssociatePricingRules",
+      "methodName": "toAssociatePricingRules",
+      "description": "Grants permission to associate pricing rules",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_AssociatePricingRules.html"
+    },
+    {
+      "name": "BatchAssociateResourcesToCustomLineItem",
+      "methodName": "toBatchAssociateResourcesToCustomLineItem",
+      "description": "Grants permission to batch associate resources to a percentage custom line item",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_BatchAssociateResourcesToCustomLineItem.html"
+    },
+    {
+      "name": "BatchDisassociateResourcesFromCustomLineItem",
+      "methodName": "toBatchDisassociateResourcesFromCustomLineItem",
+      "description": "Grants permission to batch disassociate resources from a percentage custom line item",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_BatchDisassociateResourcesFromCustomLineItem.html"
+    },
+    {
+      "name": "CreateBillingGroup",
+      "methodName": "toCreateBillingGroup",
+      "description": "Grants permission to create a billing group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_CreateBillingGroup.html"
+    },
+    {
+      "name": "CreateCustomLineItem",
+      "methodName": "toCreateCustomLineItem",
+      "description": "Grants permission to create a custom line item",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_CreateCustomLineItem.html"
+    },
+    {
+      "name": "CreatePricingPlan",
+      "methodName": "toCreatePricingPlan",
+      "description": "Grants permission to create a pricing plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_CreatePricingPlan.html"
+    },
+    {
+      "name": "CreatePricingRule",
+      "methodName": "toCreatePricingRule",
+      "description": "Grants permission to create a pricing rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_CreatePricingRule.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteBillingGroup",
+      "methodName": "toDeleteBillingGroup",
+      "description": "Grants permission to delete a billing group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_DeleteBillingGroup.html"
+    },
+    {
+      "name": "DeleteCustomLineItem",
+      "methodName": "toDeleteCustomLineItem",
+      "description": "Grants permission to delete a custom line item",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_DeleteCustomLineItem.html"
+    },
+    {
+      "name": "DeletePricingPlan",
+      "methodName": "toDeletePricingPlan",
+      "description": "Grants permission to delete a pricing plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_DeletePricingPlan.html"
+    },
+    {
+      "name": "DeletePricingRule",
+      "methodName": "toDeletePricingRule",
+      "description": "Grants permission to delete a pricing rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_DeletePricingRule.html"
+    },
+    {
+      "name": "DisassociateAccounts",
+      "methodName": "toDisassociateAccounts",
+      "description": "Grants permission to detach between one and 30 accounts from a billing group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_DisassociateAccounts.html"
+    },
+    {
+      "name": "DisassociatePricingRules",
+      "methodName": "toDisassociatePricingRules",
+      "description": "Grants permission to disassociate pricing rules",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_DisassociatePricingRules.html"
+    },
+    {
+      "name": "GetBillingGroupCostReport",
+      "methodName": "toGetBillingGroupCostReport",
+      "description": "Grants permission to view the billing group cost report for the specified billing group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_GetBillingGroupCostReport.html"
+    },
+    {
+      "name": "GetBillingTransferPreference",
+      "methodName": "toGetBillingTransferPreference",
+      "description": "Grants permission to get the billing transfer preference",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_GetBillingTransferPreference.html"
+    },
+    {
+      "name": "ListAccountAssociations",
+      "methodName": "toListAccountAssociations",
+      "description": "Grants permission to list the linked accounts of the payer account for the given billing period while also providing the billing group the linked accounts belong to",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListAccountAssociations.html"
+    },
+    {
+      "name": "ListBillingGroupCostReports",
+      "methodName": "toListBillingGroupCostReports",
+      "description": "Grants permission to view the billing group cost report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListBillingGroupCostReports.html"
+    },
+    {
+      "name": "ListBillingGroups",
+      "methodName": "toListBillingGroups",
+      "description": "Grants permission to view the details of billing groups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListBillingGroups.html"
+    },
+    {
+      "name": "ListCustomLineItemVersions",
+      "methodName": "toListCustomLineItemVersions",
+      "description": "Grants permission to view custom line item versions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListCustomLineItemVersions.html"
+    },
+    {
+      "name": "ListCustomLineItems",
+      "methodName": "toListCustomLineItems",
+      "description": "Grants permission to view custom line item details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListCustomLineItems.html"
+    },
+    {
+      "name": "ListPricingPlans",
+      "methodName": "toListPricingPlans",
+      "description": "Grants permission to view the pricing plans details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListPricingPlans.html"
+    },
+    {
+      "name": "ListPricingPlansAssociatedWithPricingRule",
+      "methodName": "toListPricingPlansAssociatedWithPricingRule",
+      "description": "Grants permission to list pricing plans associated with a pricing rule",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListPricingPlansAssociatedWithPricingRule.html"
+    },
+    {
+      "name": "ListPricingRules",
+      "methodName": "toListPricingRules",
+      "description": "Grants permission to view pricing rules details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListPricingRules.html"
+    },
+    {
+      "name": "ListPricingRulesAssociatedToPricingPlan",
+      "methodName": "toListPricingRulesAssociatedToPricingPlan",
+      "description": "Grants permission to list pricing rules associated to a pricing plan",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListPricingRulesAssociatedToPricingPlan.html"
+    },
+    {
+      "name": "ListResourcesAssociatedToCustomLineItem",
+      "methodName": "toListResourcesAssociatedToCustomLineItem",
+      "description": "Grants permission to list resources associated to a percentage custom line item",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListResourcesAssociatedToCustomLineItem.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags of a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateBillingGroup",
+      "methodName": "toUpdateBillingGroup",
+      "description": "Grants permission to update a billing group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_UpdateBillingGroup.html"
+    },
+    {
+      "name": "UpdateBillingTransferPreference",
+      "methodName": "toUpdateBillingTransferPreference",
+      "description": "Grants permission to update the billing transfer preference",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_UpdateBillingTransferPreference.html",
+      "conditionMethods": [
+        "ifPricingPlanArn"
+      ]
+    },
+    {
+      "name": "UpdateCustomLineItem",
+      "methodName": "toUpdateCustomLineItem",
+      "description": "Grants permission to update a custom line item",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_UpdateCustomLineItem.html"
+    },
+    {
+      "name": "UpdatePricingPlan",
+      "methodName": "toUpdatePricingPlan",
+      "description": "Grants permission to update a pricing plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_UpdatePricingPlan.html"
+    },
+    {
+      "name": "UpdatePricingRule",
+      "methodName": "toUpdatePricingRule",
+      "description": "Grants permission to update a pricing rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/APIReference/API_UpdatePricingRule.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "billinggroup",
+      "methodName": "onBillinggroup",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-abc.html",
+      "arn": "arn:${Partition}:billingconductor::${Account}:billinggroup/${BillingGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "BillingGroupId",
+          "name": "billingGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "customlineitem",
+      "methodName": "onCustomlineitem",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-abc.html",
+      "arn": "arn:${Partition}:billingconductor::${Account}:customlineitem/${CustomLineItemId}",
+      "placeholders": [
+        {
+          "placeholder": "CustomLineItemId",
+          "name": "customLineItemId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "pricingplan",
+      "methodName": "onPricingplan",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-abc.html",
+      "arn": "arn:${Partition}:billingconductor::${Account}:pricingplan/${PricingPlanId}",
+      "placeholders": [
+        {
+          "placeholder": "PricingPlanId",
+          "name": "pricingPlanId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "pricingrule",
+      "methodName": "onPricingrule",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-abc.html",
+      "arn": "arn:${Partition}:billingconductor::${Account}:pricingrule/${PricingRuleId}",
+      "placeholders": [
+        {
+          "placeholder": "PricingRuleId",
+          "name": "pricingRuleId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateBillingGroup",
+        "toCreateCustomLineItem",
+        "toCreatePricingPlan",
+        "toCreatePricingRule",
+        "toListTagsForResource",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateAccounts",
+        "toAssociatePricingRules",
+        "toBatchAssociateResourcesToCustomLineItem",
+        "toBatchDisassociateResourcesFromCustomLineItem",
+        "toCreateBillingGroup",
+        "toCreateCustomLineItem",
+        "toCreatePricingPlan",
+        "toDeleteBillingGroup",
+        "toDeleteCustomLineItem",
+        "toDeletePricingPlan",
+        "toDeletePricingRule",
+        "toDisassociateAccounts",
+        "toDisassociatePricingRules",
+        "toGetBillingGroupCostReport",
+        "toListCustomLineItemVersions",
+        "toListPricingPlansAssociatedWithPricingRule",
+        "toListPricingRulesAssociatedToPricingPlan",
+        "toListResourcesAssociatedToCustomLineItem",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateBillingGroup",
+        "toUpdateCustomLineItem",
+        "toUpdatePricingPlan",
+        "toUpdatePricingRule"
+      ],
+      "relatedResourceTypes": [
+        "billinggroup",
+        "customlineitem",
+        "pricingplan",
+        "pricingrule"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateBillingGroup",
+        "toCreateCustomLineItem",
+        "toCreatePricingPlan",
+        "toCreatePricingRule",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "billingconductor:PricingPlanArn",
+      "methodName": "ifPricingPlanArn",
+      "description": "Filters access by the pricing plan ARN specified in the request",
+      "url": "https://docs.aws.amazon.com/billingconductor/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toUpdateBillingTransferPreference"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PricingPlanArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

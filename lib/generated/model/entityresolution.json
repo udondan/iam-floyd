@@ -1,0 +1,620 @@
+{
+  "schemaVersion": 1,
+  "filename": "entityresolution",
+  "className": "Entityresolution",
+  "name": "entityresolution",
+  "servicePrefix": "entityresolution",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_entityresolution.html",
+  "accessLevelList": {
+    "Permissions management": [
+      "AddPolicyStatement",
+      "DeletePolicyStatement",
+      "PutPolicy",
+      "UseIdNamespace",
+      "UseWorkflow"
+    ],
+    "Write": [
+      "AddPolicyStatement",
+      "BatchDeleteUniqueId",
+      "CreateIdMappingWorkflow",
+      "CreateIdNamespace",
+      "CreateMatchingWorkflow",
+      "CreateSchemaMapping",
+      "DeleteIdMappingWorkflow",
+      "DeleteIdNamespace",
+      "DeleteMatchingWorkflow",
+      "DeletePolicyStatement",
+      "DeleteSchemaMapping",
+      "GenerateMatchId",
+      "PutPolicy",
+      "StartIdMappingJob",
+      "StartMatchingJob",
+      "TagResource",
+      "UntagResource",
+      "UpdateIdMappingWorkflow",
+      "UpdateIdNamespace",
+      "UpdateMatchingWorkflow",
+      "UpdateSchemaMapping",
+      "UseIdNamespace",
+      "UseWorkflow"
+    ],
+    "Read": [
+      "GetIdMappingJob",
+      "GetIdMappingWorkflow",
+      "GetIdNamespace",
+      "GetMatchId",
+      "GetMatchingJob",
+      "GetMatchingWorkflow",
+      "GetPolicy",
+      "GetProviderService",
+      "GetSchemaMapping",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListIdMappingJobs",
+      "ListIdMappingWorkflows",
+      "ListIdNamespaces",
+      "ListMatchingJobs",
+      "ListMatchingWorkflows",
+      "ListProviderServices",
+      "ListSchemaMappings"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddPolicyStatement",
+      "methodName": "toAddPolicyStatement",
+      "description": "Grants permission to give an AWS service or another account permission to use an AWS Entity Resolution resources",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_AddPolicyStatement.html"
+    },
+    {
+      "name": "BatchDeleteUniqueId",
+      "methodName": "toBatchDeleteUniqueId",
+      "description": "Grants permission to batch delete unique Id",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_BatchDeleteUniqueId.html"
+    },
+    {
+      "name": "CreateIdMappingWorkflow",
+      "methodName": "toCreateIdMappingWorkflow",
+      "description": "Grants permission to create a idmapping workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_CreateIdMappingWorkflow.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateIdNamespace",
+      "methodName": "toCreateIdNamespace",
+      "description": "Grants permission to create a IdNamespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_CreateIdNamespace.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMatchingWorkflow",
+      "methodName": "toCreateMatchingWorkflow",
+      "description": "Grants permission to create a matching workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_CreateMatchingWorkflow.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateSchemaMapping",
+      "methodName": "toCreateSchemaMapping",
+      "description": "Grants permission to create a schema mapping",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_CreateSchemaMapping.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteIdMappingWorkflow",
+      "methodName": "toDeleteIdMappingWorkflow",
+      "description": "Grants permission to delete a idmapping workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_DeleteIdMappingWorkflow.html"
+    },
+    {
+      "name": "DeleteIdNamespace",
+      "methodName": "toDeleteIdNamespace",
+      "description": "Grants permission to delete a IdNamespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_DeleteIdNamespace.html"
+    },
+    {
+      "name": "DeleteMatchingWorkflow",
+      "methodName": "toDeleteMatchingWorkflow",
+      "description": "Grants permission to delete a matching workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_DeleteMatchingWorkflow.html"
+    },
+    {
+      "name": "DeletePolicyStatement",
+      "methodName": "toDeletePolicyStatement",
+      "description": "Grants permission to delete permission given to an AWS service or another account permission to use an AWS Entity Resolution resources",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_DeletePolicyStatement.html"
+    },
+    {
+      "name": "DeleteSchemaMapping",
+      "methodName": "toDeleteSchemaMapping",
+      "description": "Grants permission to delete a schema mapping",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_DeleteSchemaMapping.html"
+    },
+    {
+      "name": "GenerateMatchId",
+      "methodName": "toGenerateMatchId",
+      "description": "Grants permission to generate match Id",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GenerateMatchId.html"
+    },
+    {
+      "name": "GetIdMappingJob",
+      "methodName": "toGetIdMappingJob",
+      "description": "Grants permission to get a idmapping job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetIdMappingJob.html"
+    },
+    {
+      "name": "GetIdMappingWorkflow",
+      "methodName": "toGetIdMappingWorkflow",
+      "description": "Grants permission to get a idmapping workflow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetIdMappingWorkflow.html"
+    },
+    {
+      "name": "GetIdNamespace",
+      "methodName": "toGetIdNamespace",
+      "description": "Grants permission to get a IdNamespace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetIdNamespace.html"
+    },
+    {
+      "name": "GetMatchId",
+      "methodName": "toGetMatchId",
+      "description": "Grants permission to get match Id",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetMatchId.html"
+    },
+    {
+      "name": "GetMatchingJob",
+      "methodName": "toGetMatchingJob",
+      "description": "Grants permission to get a matching job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetMatchingJob.html"
+    },
+    {
+      "name": "GetMatchingWorkflow",
+      "methodName": "toGetMatchingWorkflow",
+      "description": "Grants permission to get a matching workflow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetMatchingWorkflow.html"
+    },
+    {
+      "name": "GetPolicy",
+      "methodName": "toGetPolicy",
+      "description": "Grants permission to get a resource policy for an AWS Entity Resolution resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetPolicy.html"
+    },
+    {
+      "name": "GetProviderService",
+      "methodName": "toGetProviderService",
+      "description": "Grants permission to get provider service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetProviderService.html"
+    },
+    {
+      "name": "GetSchemaMapping",
+      "methodName": "toGetSchemaMapping",
+      "description": "Grants permission to get a schema mapping",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetSchemaMapping.html"
+    },
+    {
+      "name": "ListIdMappingJobs",
+      "methodName": "toListIdMappingJobs",
+      "description": "Grants permission to list idmapping jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListIdMappingJobs.html"
+    },
+    {
+      "name": "ListIdMappingWorkflows",
+      "methodName": "toListIdMappingWorkflows",
+      "description": "Grants permission to list idmapping workflows",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListIdMappingWorkflows.html"
+    },
+    {
+      "name": "ListIdNamespaces",
+      "methodName": "toListIdNamespaces",
+      "description": "Grants permission to list IdNamespaces",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListIdNamespaces.html"
+    },
+    {
+      "name": "ListMatchingJobs",
+      "methodName": "toListMatchingJobs",
+      "description": "Grants permission to list matching jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListMatchingJobs.html"
+    },
+    {
+      "name": "ListMatchingWorkflows",
+      "methodName": "toListMatchingWorkflows",
+      "description": "Grants permission to list matching workflows",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListMatchingWorkflows.html"
+    },
+    {
+      "name": "ListProviderServices",
+      "methodName": "toListProviderServices",
+      "description": "Grants permission to list provider service",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListProviderServices.html"
+    },
+    {
+      "name": "ListSchemaMappings",
+      "methodName": "toListSchemaMappings",
+      "description": "Grants permission to list schema mappings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListSchemaMappings.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to List tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutPolicy",
+      "methodName": "toPutPolicy",
+      "description": "Grants permission to put a resource policy for an AWS Entity Resolution resources",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_PutPolicy.html"
+    },
+    {
+      "name": "StartIdMappingJob",
+      "methodName": "toStartIdMappingJob",
+      "description": "Grants permission to start a idmapping job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_StartIdMappingJob.html"
+    },
+    {
+      "name": "StartMatchingJob",
+      "methodName": "toStartMatchingJob",
+      "description": "Grants permission to start a matching job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_StartMatchingJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to adds tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateIdMappingWorkflow",
+      "methodName": "toUpdateIdMappingWorkflow",
+      "description": "Grants permission to update a idmapping workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UpdateIdMappingWorkflow.html"
+    },
+    {
+      "name": "UpdateIdNamespace",
+      "methodName": "toUpdateIdNamespace",
+      "description": "Grants permission to update a IdNamespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UpdateIdNamespace.html"
+    },
+    {
+      "name": "UpdateMatchingWorkflow",
+      "methodName": "toUpdateMatchingWorkflow",
+      "description": "Grants permission to update a matching workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UpdateMatchingWorkflow.html"
+    },
+    {
+      "name": "UpdateSchemaMapping",
+      "methodName": "toUpdateSchemaMapping",
+      "description": "Grants permission to update a schema mapping",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UpdateSchemaMapping.html"
+    },
+    {
+      "name": "UseIdNamespace",
+      "methodName": "toUseIdNamespace",
+      "description": "Grants permission to give an AWS service or another account permission to use IdNamespace within a workflow",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UseIdNamespace.html"
+    },
+    {
+      "name": "UseWorkflow",
+      "methodName": "toUseWorkflow",
+      "description": "Grants permission to give an AWS service or another account permission to use workflow within a IdNamespace",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UseWorkflow.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "IdMappingWorkflow",
+      "methodName": "onIdMappingWorkflow",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/userguide/",
+      "arn": "arn:${Partition}:entityresolution:${Region}:${Account}:idmappingworkflow/${WorkflowName}",
+      "placeholders": [
+        {
+          "placeholder": "WorkflowName",
+          "name": "workflowName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "IdNamespace",
+      "methodName": "onIdNamespace",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/userguide/",
+      "arn": "arn:${Partition}:entityresolution:${Region}:${Account}:idnamespace/${IdNamespaceName}",
+      "placeholders": [
+        {
+          "placeholder": "IdNamespaceName",
+          "name": "idNamespaceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "MatchingWorkflow",
+      "methodName": "onMatchingWorkflow",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/userguide/",
+      "arn": "arn:${Partition}:entityresolution:${Region}:${Account}:matchingworkflow/${WorkflowName}",
+      "placeholders": [
+        {
+          "placeholder": "WorkflowName",
+          "name": "workflowName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ProviderService",
+      "methodName": "onProviderService",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/userguide/",
+      "arn": "arn:${Partition}:entityresolution:${Region}:${Account}:providerservice/${ProviderName}/${ProviderServiceName}",
+      "placeholders": [
+        {
+          "placeholder": "ProviderName",
+          "name": "providerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProviderServiceName",
+          "name": "providerServiceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "SchemaMapping",
+      "methodName": "onSchemaMapping",
+      "url": "https://docs.aws.amazon.com/entityresolution/latest/userguide/",
+      "arn": "arn:${Partition}:entityresolution:${Region}:${Account}:schemamapping/${SchemaName}",
+      "placeholders": [
+        {
+          "placeholder": "SchemaName",
+          "name": "schemaName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a key that is present in the request the user makes to the entity resolution service",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys",
+      "relatedActionMethods": [
+        "toCreateIdMappingWorkflow",
+        "toCreateIdNamespace",
+        "toCreateMatchingWorkflow",
+        "toCreateSchemaMapping",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys",
+      "relatedActionMethods": [
+        "toBatchDeleteUniqueId",
+        "toDeleteIdMappingWorkflow",
+        "toDeleteIdNamespace",
+        "toDeleteMatchingWorkflow",
+        "toDeleteSchemaMapping",
+        "toGenerateMatchId",
+        "toGetIdMappingJob",
+        "toGetIdMappingWorkflow",
+        "toGetIdNamespace",
+        "toGetMatchId",
+        "toGetMatchingJob",
+        "toGetMatchingWorkflow",
+        "toGetProviderService",
+        "toGetSchemaMapping",
+        "toListIdMappingJobs",
+        "toListMatchingJobs",
+        "toStartIdMappingJob",
+        "toStartMatchingJob",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateIdMappingWorkflow",
+        "toUpdateIdNamespace",
+        "toUpdateMatchingWorkflow",
+        "toUpdateSchemaMapping"
+      ],
+      "relatedResourceTypes": [
+        "IdMappingWorkflow",
+        "IdNamespace",
+        "MatchingWorkflow",
+        "ProviderService",
+        "SchemaMapping"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the list of all the tag key names present in the request the user makes to the entity resolution service",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys",
+      "relatedActionMethods": [
+        "toCreateIdMappingWorkflow",
+        "toCreateIdNamespace",
+        "toCreateMatchingWorkflow",
+        "toCreateSchemaMapping",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

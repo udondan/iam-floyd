@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "filename": "oam",
+  "className": "Oam",
+  "name": "oam",
+  "servicePrefix": "oam",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_oam.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateLink",
+      "CreateSink",
+      "DeleteLink",
+      "DeleteSink",
+      "PutSinkPolicy",
+      "TagResource",
+      "UntagResource",
+      "UpdateLink"
+    ],
+    "Read": [
+      "GetLink",
+      "GetSink",
+      "GetSinkPolicy",
+      "ListAttachedLinks",
+      "ListLinks",
+      "ListSinks",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateLink",
+      "methodName": "toCreateLink",
+      "description": "Grants permission to create a link between a monitoring account and a source account for cross-account monitoring",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/OAM/latest/APIReference/API_CreateLink.html"
+    },
+    {
+      "name": "CreateSink",
+      "methodName": "toCreateSink",
+      "description": "Grants permission to create a sink in an account so that it can be used as a monitoring account for cross-account monitoring",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/OAM/latest/APIReference/API_CreateSink.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteLink",
+      "methodName": "toDeleteLink",
+      "description": "Grants permission to delete a link between a monitoring account and a source account for cross-account monitoring",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/OAM/latest/APIReference/API_DeleteLink.html"
+    },
+    {
+      "name": "DeleteSink",
+      "methodName": "toDeleteSink",
+      "description": "Grants permission to delete a cross-account monitoring sink in a monitoring account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/OAM/latest/APIReference/API_DeleteSink.html"
+    },
+    {
+      "name": "GetLink",
+      "methodName": "toGetLink",
+      "description": "Grants permission to retrieve complete information about one cross-account monitoring link",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/OAM/latest/APIReference/API_GetLink.html"
+    },
+    {
+      "name": "GetSink",
+      "methodName": "toGetSink",
+      "description": "Grants permission to retrieve complete information about one cross-account monitoring sink",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/OAM/latest/APIReference/API_GetSink.html"
+    },
+    {
+      "name": "GetSinkPolicy",
+      "methodName": "toGetSinkPolicy",
+      "description": "Grants permission to retrieve information for the IAM policy for a cross-account monitoring sink",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/OAM/latest/APIReference/API_GetSinkPolicy.html"
+    },
+    {
+      "name": "ListAttachedLinks",
+      "methodName": "toListAttachedLinks",
+      "description": "Grants permission to retrieve a list of links that are linked for a cross-account monitoring sink",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/OAM/latest/APIReference/API_ListAttachedLinks.html"
+    },
+    {
+      "name": "ListLinks",
+      "methodName": "toListLinks",
+      "description": "Grants permission to retrieve the ARNs of cross-account monitoring links in this account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/OAM/latest/APIReference/API_ListLinks.html"
+    },
+    {
+      "name": "ListSinks",
+      "methodName": "toListSinks",
+      "description": "Grants permission to retrieve the ARNs of cross-account monitoring sinks in this account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/OAM/latest/APIReference/API_ListSinks.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/OAM/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutSinkPolicy",
+      "methodName": "toPutSinkPolicy",
+      "description": "Grants permission to create or update the IAM policy for a cross-account monitoring sink",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/OAM/latest/APIReference/API_PutSinkPolicy.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/OAM/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/OAM/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateLink",
+      "methodName": "toUpdateLink",
+      "description": "Grants permission to update an existing link between a monitoring account and a source account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/OAM/latest/APIReference/API_UpdateLink.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Link",
+      "methodName": "onLink",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html",
+      "arn": "arn:${Partition}:oam:${Region}:${Account}:link/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Sink",
+      "methodName": "onSink",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html",
+      "arn": "arn:${Partition}:oam:${Region}:${Account}:sink/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateLink",
+        "toCreateSink",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateLink",
+        "toDeleteLink",
+        "toDeleteSink",
+        "toGetLink",
+        "toGetSink",
+        "toGetSinkPolicy",
+        "toListAttachedLinks",
+        "toListTagsForResource",
+        "toPutSinkPolicy",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLink"
+      ],
+      "relatedResourceTypes": [
+        "Link",
+        "Sink"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateLink",
+        "toCreateSink",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "oam:ResourceTypes",
+      "methodName": "ifResourceTypes",
+      "description": "Filters access by the presence of resource types in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchobservabilityaccessmanager.html",
+      "relatedActionMethods": [
+        "toCreateLink",
+        "toUpdateLink"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceTypes",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,1273 @@
+{
+  "schemaVersion": 1,
+  "filename": "dynamodb",
+  "className": "Dynamodb",
+  "name": "dynamodb",
+  "servicePrefix": "dynamodb",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_dynamodb.html",
+  "accessLevelList": {
+    "Read": [
+      "BatchGetItem",
+      "ConditionCheckItem",
+      "DescribeBackup",
+      "DescribeContinuousBackups",
+      "DescribeContributorInsights",
+      "DescribeEndpoints",
+      "DescribeExport",
+      "DescribeGlobalTable",
+      "DescribeGlobalTableSettings",
+      "DescribeImport",
+      "DescribeKinesisStreamingDestination",
+      "DescribeLimits",
+      "DescribeStream",
+      "DescribeTable",
+      "DescribeTableReplicaAutoScaling",
+      "DescribeTimeToLive",
+      "GetItem",
+      "GetRecords",
+      "GetResourcePolicy",
+      "GetShardIterator",
+      "ListStreams",
+      "ListTagsOfResource",
+      "PartiQLSelect",
+      "Query",
+      "Scan",
+      "SearchVectors",
+      "DescribeReservedCapacity",
+      "DescribeReservedCapacityOfferings",
+      "GetAbacStatus",
+      "ReadDataForReplication"
+    ],
+    "Write": [
+      "BatchWriteItem",
+      "CreateBackup",
+      "CreateGlobalTable",
+      "CreateTable",
+      "DeleteBackup",
+      "DeleteItem",
+      "DeleteResourcePolicy",
+      "DeleteTable",
+      "DisableKinesisStreamingDestination",
+      "EnableKinesisStreamingDestination",
+      "ExportTableToPointInTime",
+      "ImportTable",
+      "PartiQLDelete",
+      "PartiQLInsert",
+      "PartiQLUpdate",
+      "PutItem",
+      "PutResourcePolicy",
+      "RestoreTableFromBackup",
+      "RestoreTableToPointInTime",
+      "TagResource",
+      "UntagResource",
+      "UpdateContinuousBackups",
+      "UpdateContributorInsights",
+      "UpdateGlobalTable",
+      "UpdateGlobalTableSettings",
+      "UpdateItem",
+      "UpdateKinesisStreamingDestination",
+      "UpdateTable",
+      "UpdateTableReplicaAutoScaling",
+      "UpdateTimeToLive",
+      "AssociateTableReplica",
+      "CreateGlobalTableWitness",
+      "CreateTableReplica",
+      "DeleteGlobalTableWitness",
+      "DeleteTableReplica",
+      "InjectError",
+      "PurchaseReservedCapacityOfferings",
+      "ReplicateSettings",
+      "RestoreTableFromAwsBackup",
+      "StartAwsBackupJob",
+      "UpdateAbacStatus",
+      "UpdateGlobalTableVersion",
+      "WriteDataForReplication"
+    ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "PutResourcePolicy",
+      "UpdateAbacStatus"
+    ],
+    "List": [
+      "ListBackups",
+      "ListContributorInsights",
+      "ListExports",
+      "ListGlobalTables",
+      "ListImports",
+      "ListTables"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchGetItem",
+      "methodName": "toBatchGetItem",
+      "description": "Grants permission to return the attributes of one or more items from one or more tables",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html"
+    },
+    {
+      "name": "BatchWriteItem",
+      "methodName": "toBatchWriteItem",
+      "description": "Grants permission to put or delete multiple items in one or more tables",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html"
+    },
+    {
+      "name": "ConditionCheckItem",
+      "methodName": "toConditionCheckItem",
+      "description": "Grants permission to the ConditionCheckItem operation checks the existence of a set of attributes for the item with the given primary key",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ConditionCheck.html"
+    },
+    {
+      "name": "CreateBackup",
+      "methodName": "toCreateBackup",
+      "description": "Grants permission to create a backup for an existing table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateBackup.html"
+    },
+    {
+      "name": "CreateGlobalTable",
+      "methodName": "toCreateGlobalTable",
+      "description": "Grants permission to create a global table from an existing table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateGlobalTable.html"
+    },
+    {
+      "name": "CreateTable",
+      "methodName": "toCreateTable",
+      "description": "Grants permission to the CreateTable operation adds a new table to your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html"
+    },
+    {
+      "name": "DeleteBackup",
+      "methodName": "toDeleteBackup",
+      "description": "Grants permission to delete an existing backup of a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteBackup.html"
+    },
+    {
+      "name": "DeleteItem",
+      "methodName": "toDeleteItem",
+      "description": "Grants permission to deletes a single item in a table by primary key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete the resource-based policy attached to the resource",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteTable",
+      "methodName": "toDeleteTable",
+      "description": "Grants permission to the DeleteTable operation which deletes a table and all of its items",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteTable.html"
+    },
+    {
+      "name": "DescribeBackup",
+      "methodName": "toDescribeBackup",
+      "description": "Grants permission to describe an existing backup of a table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeBackup.html"
+    },
+    {
+      "name": "DescribeContinuousBackups",
+      "methodName": "toDescribeContinuousBackups",
+      "description": "Grants permission to check the status of the backup restore settings on the specified table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeContinuousBackups.html"
+    },
+    {
+      "name": "DescribeContributorInsights",
+      "methodName": "toDescribeContributorInsights",
+      "description": "Grants permission to describe the contributor insights status and related details for a given table or global secondary index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeContributorInsights.html"
+    },
+    {
+      "name": "DescribeEndpoints",
+      "methodName": "toDescribeEndpoints",
+      "description": "Grants permission to return the regional endpoint information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeEndpoints.html"
+    },
+    {
+      "name": "DescribeExport",
+      "methodName": "toDescribeExport",
+      "description": "Grants permission to describe an existing Export of a table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeExport.html"
+    },
+    {
+      "name": "DescribeGlobalTable",
+      "methodName": "toDescribeGlobalTable",
+      "description": "Grants permission to return information about the specified global table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeGlobalTable.html"
+    },
+    {
+      "name": "DescribeGlobalTableSettings",
+      "methodName": "toDescribeGlobalTableSettings",
+      "description": "Grants permission to return settings information about the specified global table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeGlobalTableSettings.html"
+    },
+    {
+      "name": "DescribeImport",
+      "methodName": "toDescribeImport",
+      "description": "Grants permission to describe an existing import",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeImport.html"
+    },
+    {
+      "name": "DescribeKinesisStreamingDestination",
+      "methodName": "toDescribeKinesisStreamingDestination",
+      "description": "Grants permission to grant permission to describe the status of Kinesis streaming and related details for a given table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeKinesisStreamingDestination.html"
+    },
+    {
+      "name": "DescribeLimits",
+      "methodName": "toDescribeLimits",
+      "description": "Grants permission to return the current provisioned-capacity limits for your AWS account in a region, both for the region as a whole and for any one DynamoDB table that you create there",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeLimits.html"
+    },
+    {
+      "name": "DescribeStream",
+      "methodName": "toDescribeStream",
+      "description": "Grants permission to return information about a stream, including the current status of the stream, its Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_DescribeStream.html"
+    },
+    {
+      "name": "DescribeTable",
+      "methodName": "toDescribeTable",
+      "description": "Grants permission to return information about the table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html"
+    },
+    {
+      "name": "DescribeTableReplicaAutoScaling",
+      "methodName": "toDescribeTableReplicaAutoScaling",
+      "description": "Grants permission to describe the auto scaling settings across all replicas of the global table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTableReplicaAutoScaling.html"
+    },
+    {
+      "name": "DescribeTimeToLive",
+      "methodName": "toDescribeTimeToLive",
+      "description": "Grants permission to give a description of the Time to Live (TTL) status on the specified table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTimeToLive.html"
+    },
+    {
+      "name": "DisableKinesisStreamingDestination",
+      "methodName": "toDisableKinesisStreamingDestination",
+      "description": "Grants permission to grant permission to stop replication from the DynamoDB table to the Kinesis data stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DisableKinesisStreamingDestination.html"
+    },
+    {
+      "name": "EnableKinesisStreamingDestination",
+      "methodName": "toEnableKinesisStreamingDestination",
+      "description": "Grants permission to grant permission to start table data replication to the specified Kinesis data stream at a timestamp chosen during the enable workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_EnableKinesisStreamingDestination.html"
+    },
+    {
+      "name": "ExportTableToPointInTime",
+      "methodName": "toExportTableToPointInTime",
+      "description": "Grants permission to initiate an Export of a DynamoDB table to S3",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExportTableToPointInTime.html"
+    },
+    {
+      "name": "GetItem",
+      "methodName": "toGetItem",
+      "description": "Grants permission to the GetItem operation that returns a set of attributes for the item with the given primary key",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html"
+    },
+    {
+      "name": "GetRecords",
+      "methodName": "toGetRecords",
+      "description": "Grants permission to retrieve the stream records from a given shard",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetRecords.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to view a resource-based policy for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "GetShardIterator",
+      "methodName": "toGetShardIterator",
+      "description": "Grants permission to return a shard iterator",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html"
+    },
+    {
+      "name": "ImportTable",
+      "methodName": "toImportTable",
+      "description": "Grants permission to initiate an import from S3 to a DynamoDB table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ImportTable.html"
+    },
+    {
+      "name": "ListBackups",
+      "methodName": "toListBackups",
+      "description": "Grants permission to list backups associated with the account and endpoint",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListBackups.html"
+    },
+    {
+      "name": "ListContributorInsights",
+      "methodName": "toListContributorInsights",
+      "description": "Grants permission to list the ContributorInsightsSummary for all tables and global secondary indexes associated with the current account and endpoint",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListContributorInsights.html"
+    },
+    {
+      "name": "ListExports",
+      "methodName": "toListExports",
+      "description": "Grants permission to list exports associated with the account and endpoint",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListExports.html"
+    },
+    {
+      "name": "ListGlobalTables",
+      "methodName": "toListGlobalTables",
+      "description": "Grants permission to list all global tables that have a replica in the specified region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListGlobalTables.html"
+    },
+    {
+      "name": "ListImports",
+      "methodName": "toListImports",
+      "description": "Grants permission to list imports associated with the account and endpoint",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListImports.html"
+    },
+    {
+      "name": "ListStreams",
+      "methodName": "toListStreams",
+      "description": "Grants permission to return an array of stream ARNs associated with the current account and endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_ListStreams.html"
+    },
+    {
+      "name": "ListTables",
+      "methodName": "toListTables",
+      "description": "Grants permission to return an array of table names associated with the current account and endpoint",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListTables.html"
+    },
+    {
+      "name": "ListTagsOfResource",
+      "methodName": "toListTagsOfResource",
+      "description": "Grants permission to list all tags on an Amazon DynamoDB resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListTagsOfResource.html"
+    },
+    {
+      "name": "PartiQLDelete",
+      "methodName": "toPartiQLDelete",
+      "description": "Grants permission to delete a single item in a table by primary key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html"
+    },
+    {
+      "name": "PartiQLInsert",
+      "methodName": "toPartiQLInsert",
+      "description": "Grants permission to create a new item, if an item with same primary key does not exist in the table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html"
+    },
+    {
+      "name": "PartiQLSelect",
+      "methodName": "toPartiQLSelect",
+      "description": "Grants permission to read a set of attributes for items from a table or index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html"
+    },
+    {
+      "name": "PartiQLUpdate",
+      "methodName": "toPartiQLUpdate",
+      "description": "Grants permission to edit an existing item's attributes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html"
+    },
+    {
+      "name": "PutItem",
+      "methodName": "toPutItem",
+      "description": "Grants permission to create a new item, or replace an old item with a new item",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to attach a resource-based policy to the resource",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "Query",
+      "methodName": "toQuery",
+      "description": "Grants permission to use the primary key of a table or a secondary index to directly access items from that table or index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html"
+    },
+    {
+      "name": "RestoreTableFromBackup",
+      "methodName": "toRestoreTableFromBackup",
+      "description": "Grants permission to create a new table from an existing backup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableFromBackup.html"
+    },
+    {
+      "name": "RestoreTableToPointInTime",
+      "methodName": "toRestoreTableToPointInTime",
+      "description": "Grants permission to restore a table to a point in time",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableToPointInTime.html"
+    },
+    {
+      "name": "Scan",
+      "methodName": "toScan",
+      "description": "Grants permission to return one or more items and item attributes by accessing every item in a table or a secondary index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Scan.html"
+    },
+    {
+      "name": "SearchVectors",
+      "methodName": "toSearchVectors",
+      "description": "Grants permission to perform a vector similarity search on a vector index associated with an Amazon DynamoDB table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_SearchVectors.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to associate a set of tags with an Amazon DynamoDB resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the association of tags from an Amazon DynamoDB resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateContinuousBackups",
+      "methodName": "toUpdateContinuousBackups",
+      "description": "Grants permission to enable or disable continuous backups",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateContinuousBackups.html"
+    },
+    {
+      "name": "UpdateContributorInsights",
+      "methodName": "toUpdateContributorInsights",
+      "description": "Grants permission to update the status for contributor insights for a specific table or global secondary index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateContributorInsights.html"
+    },
+    {
+      "name": "UpdateGlobalTable",
+      "methodName": "toUpdateGlobalTable",
+      "description": "Grants permission to add or remove replicas in the specified global table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateGlobalTable.html"
+    },
+    {
+      "name": "UpdateGlobalTableSettings",
+      "methodName": "toUpdateGlobalTableSettings",
+      "description": "Grants permission to update settings of the specified global table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateGlobalTableSettings.html"
+    },
+    {
+      "name": "UpdateItem",
+      "methodName": "toUpdateItem",
+      "description": "Grants permission to edit an existing item's attributes, or adds a new item to the table if it does not already exist",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html"
+    },
+    {
+      "name": "UpdateKinesisStreamingDestination",
+      "methodName": "toUpdateKinesisStreamingDestination",
+      "description": "Grants permission to update data replication configurations for the specified Kinesis data stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateKinesisStreamingDestination.html"
+    },
+    {
+      "name": "UpdateTable",
+      "methodName": "toUpdateTable",
+      "description": "Grants permission to modify the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html"
+    },
+    {
+      "name": "UpdateTableReplicaAutoScaling",
+      "methodName": "toUpdateTableReplicaAutoScaling",
+      "description": "Grants permission to update auto scaling settings on your replica table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTableReplicaAutoScaling.html"
+    },
+    {
+      "name": "UpdateTimeToLive",
+      "methodName": "toUpdateTimeToLive",
+      "description": "Grants permission to enable or disable TTL for the specified table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTimeToLive.html"
+    },
+    {
+      "name": "AssociateTableReplica",
+      "methodName": "toAssociateTableReplica",
+      "description": "Grants permission to create multi account global table replica",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html"
+    },
+    {
+      "name": "CreateGlobalTableWitness",
+      "methodName": "toCreateGlobalTableWitness",
+      "description": "Grants permission to add a Witness to a Global Table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html"
+    },
+    {
+      "name": "CreateTableReplica",
+      "methodName": "toCreateTableReplica",
+      "description": "Grants permission to add a new replica table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html"
+    },
+    {
+      "name": "DeleteGlobalTableWitness",
+      "methodName": "toDeleteGlobalTableWitness",
+      "description": "Grants permission to remove a Witness from a Global Table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html"
+    },
+    {
+      "name": "DeleteTableReplica",
+      "methodName": "toDeleteTableReplica",
+      "description": "Grants permission to delete a replica table and all of its items",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html"
+    },
+    {
+      "name": "DescribeReservedCapacity",
+      "methodName": "toDescribeReservedCapacity",
+      "description": "Grants permission to describe one or more of the Reserved Capacity purchased",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/iam-policy-prevent-purchase-reserved-capacity.html"
+    },
+    {
+      "name": "DescribeReservedCapacityOfferings",
+      "methodName": "toDescribeReservedCapacityOfferings",
+      "description": "Grants permission to describe Reserved Capacity offerings that are available for purchase",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/iam-policy-prevent-purchase-reserved-capacity.html"
+    },
+    {
+      "name": "GetAbacStatus",
+      "methodName": "toGetAbacStatus",
+      "description": "Grants permission to view the status of Attribute Based Access Control for the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/abac-enable-ddb.html"
+    },
+    {
+      "name": "InjectError",
+      "methodName": "toInjectError",
+      "description": "Grants permission to start experiments on a Global Table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html",
+      "conditionMethods": [
+        "ifFisActionId",
+        "ifFisTargetArns"
+      ]
+    },
+    {
+      "name": "PurchaseReservedCapacityOfferings",
+      "methodName": "toPurchaseReservedCapacityOfferings",
+      "description": "Grants permission to purchases reserved capacity for use with your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/iam-policy-prevent-purchase-reserved-capacity.html"
+    },
+    {
+      "name": "ReadDataForReplication",
+      "methodName": "toReadDataForReplication",
+      "description": "Grants permission to read data from a multi account global table replica",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html"
+    },
+    {
+      "name": "ReplicateSettings",
+      "methodName": "toReplicateSettings",
+      "description": "Grants permission to configure settings for a multi account global table replica",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html"
+    },
+    {
+      "name": "RestoreTableFromAwsBackup",
+      "methodName": "toRestoreTableFromAwsBackup",
+      "description": "Grants permission to create a new table from recovery point on AWS Backup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsageNotesAWS.html"
+    },
+    {
+      "name": "StartAwsBackupJob",
+      "methodName": "toStartAwsBackupJob",
+      "description": "Grants permission to create a backup on AWS Backup with advanced features enabled",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsageNotesAWS.html"
+    },
+    {
+      "name": "UpdateAbacStatus",
+      "methodName": "toUpdateAbacStatus",
+      "description": "Grants permission to update the status of Attribute Based Access Control for the account",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/abac-enable-ddb.html"
+    },
+    {
+      "name": "UpdateGlobalTableVersion",
+      "methodName": "toUpdateGlobalTableVersion",
+      "description": "Grants permission to update version of the specified global table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html"
+    },
+    {
+      "name": "WriteDataForReplication",
+      "methodName": "toWriteDataForReplication",
+      "description": "Grants permission to write data to a multi account global table replica",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "backup",
+      "methodName": "onBackup",
+      "url": "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/backuprestore_HowItWorks.html",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/backup/${BackupName}",
+      "placeholders": [
+        {
+          "placeholder": "TableName",
+          "name": "tableName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "BackupName",
+          "name": "backupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "export",
+      "methodName": "onExport",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/S3DataExport.HowItWorks.html",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/export/${ExportName}",
+      "placeholders": [
+        {
+          "placeholder": "TableName",
+          "name": "tableName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExportName",
+          "name": "exportName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "global-table",
+      "methodName": "onGlobalTable",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_HowItWorks.html",
+      "arn": "arn:${Partition}:dynamodb::${Account}:global-table/${GlobalTableName}",
+      "placeholders": [
+        {
+          "placeholder": "GlobalTableName",
+          "name": "globalTableName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "import",
+      "methodName": "onImport",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/S3DataImport.HowItWorks.html",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/import/${ImportName}",
+      "placeholders": [
+        {
+          "placeholder": "TableName",
+          "name": "tableName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ImportName",
+          "name": "importName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "index",
+      "methodName": "onIndex",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/index/${IndexName}",
+      "placeholders": [
+        {
+          "placeholder": "TableName",
+          "name": "tableName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IndexName",
+          "name": "indexName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "stream",
+      "methodName": "onStream",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.Streams",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/stream/${StreamLabel}",
+      "placeholders": [
+        {
+          "placeholder": "TableName",
+          "name": "tableName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StreamLabel",
+          "name": "streamLabel",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "table",
+      "methodName": "onTable",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.TablesItemsAttributes",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}",
+      "placeholders": [
+        {
+          "placeholder": "TableName",
+          "name": "tableName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateTable",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchGetItem",
+        "toBatchWriteItem",
+        "toConditionCheckItem",
+        "toCreateBackup",
+        "toCreateGlobalTable",
+        "toCreateTable",
+        "toDeleteItem",
+        "toDeleteResourcePolicy",
+        "toDeleteTable",
+        "toDescribeContinuousBackups",
+        "toDescribeContributorInsights",
+        "toDescribeKinesisStreamingDestination",
+        "toDescribeStream",
+        "toDescribeTable",
+        "toDescribeTableReplicaAutoScaling",
+        "toDescribeTimeToLive",
+        "toDisableKinesisStreamingDestination",
+        "toEnableKinesisStreamingDestination",
+        "toExportTableToPointInTime",
+        "toGetItem",
+        "toGetRecords",
+        "toGetResourcePolicy",
+        "toGetShardIterator",
+        "toImportTable",
+        "toListExports",
+        "toListImports",
+        "toListTagsOfResource",
+        "toPartiQLDelete",
+        "toPartiQLInsert",
+        "toPartiQLSelect",
+        "toPartiQLUpdate",
+        "toPutItem",
+        "toPutResourcePolicy",
+        "toQuery",
+        "toRestoreTableFromBackup",
+        "toRestoreTableToPointInTime",
+        "toScan",
+        "toSearchVectors",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateContinuousBackups",
+        "toUpdateContributorInsights",
+        "toUpdateGlobalTable",
+        "toUpdateGlobalTableSettings",
+        "toUpdateItem",
+        "toUpdateKinesisStreamingDestination",
+        "toUpdateTable",
+        "toUpdateTableReplicaAutoScaling",
+        "toUpdateTimeToLive",
+        "toAssociateTableReplica",
+        "toCreateGlobalTableWitness",
+        "toCreateTableReplica",
+        "toDeleteGlobalTableWitness",
+        "toDeleteTableReplica",
+        "toReadDataForReplication",
+        "toReplicateSettings",
+        "toRestoreTableFromAwsBackup",
+        "toStartAwsBackupJob",
+        "toUpdateGlobalTableVersion",
+        "toWriteDataForReplication"
+      ],
+      "relatedResourceTypes": [
+        "index",
+        "stream",
+        "table"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateTable",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dynamodb:Attributes",
+      "methodName": "ifAttributes",
+      "description": "Filters access by attribute (field or column) names of the table",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys",
+      "relatedActionMethods": [
+        "toBatchGetItem",
+        "toBatchWriteItem",
+        "toConditionCheckItem",
+        "toDeleteItem",
+        "toGetItem",
+        "toPartiQLDelete",
+        "toPartiQLInsert",
+        "toPartiQLSelect",
+        "toPartiQLUpdate",
+        "toPutItem",
+        "toQuery",
+        "toScan",
+        "toUpdateItem"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Attributes",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dynamodb:EnclosingOperation",
+      "methodName": "ifEnclosingOperation",
+      "description": "Filters access by blocking Transactions APIs calls and allow the non-Transaction APIs calls and vice-versa",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys",
+      "relatedActionMethods": [
+        "toDeleteItem",
+        "toGetItem",
+        "toPartiQLDelete",
+        "toPartiQLInsert",
+        "toPartiQLSelect",
+        "toPartiQLUpdate",
+        "toPutItem",
+        "toUpdateItem"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EnclosingOperation",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dynamodb:FirstPartitionKeyValues",
+      "methodName": "ifFirstPartitionKeyValues",
+      "description": "Filters access by the first partition key of the table",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FirstPartitionKeyValues",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dynamodb:FisActionId",
+      "methodName": "ifFisActionId",
+      "description": "Filters access by the ID of an AWS FIS action",
+      "url": "",
+      "relatedActionMethods": [
+        "toInjectError"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FisActionId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dynamodb:FisTargetArns",
+      "methodName": "ifFisTargetArns",
+      "description": "Filters access by the ARN of an AWS FIS target",
+      "url": "",
+      "relatedActionMethods": [
+        "toInjectError"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FisTargetArns",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "dynamodb:FourthPartitionKeyValues",
+      "methodName": "ifFourthPartitionKeyValues",
+      "description": "Filters access by the forth partition key of the table",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FourthPartitionKeyValues",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dynamodb:FullTableScan",
+      "methodName": "ifFullTableScan",
+      "description": "Filters access by blocking full table scan",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-iam.html",
+      "relatedActionMethods": [
+        "toPartiQLSelect"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FullTableScan",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "dynamodb:LeadingKeys",
+      "methodName": "ifLeadingKeys",
+      "description": "Filters access by the first partition key of the table",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys",
+      "relatedActionMethods": [
+        "toBatchGetItem",
+        "toBatchWriteItem",
+        "toConditionCheckItem",
+        "toDeleteItem",
+        "toGetItem",
+        "toPartiQLDelete",
+        "toPartiQLInsert",
+        "toPartiQLSelect",
+        "toPartiQLUpdate",
+        "toPutItem",
+        "toQuery",
+        "toUpdateItem"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "LeadingKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dynamodb:ReturnConsumedCapacity",
+      "methodName": "ifReturnConsumedCapacity",
+      "description": "Filters access by the ReturnConsumedCapacity parameter of a request. Contains either \"TOTAL\" or \"NONE\"",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys",
+      "relatedActionMethods": [
+        "toBatchGetItem",
+        "toBatchWriteItem",
+        "toConditionCheckItem",
+        "toDeleteItem",
+        "toGetItem",
+        "toPutItem",
+        "toQuery",
+        "toScan",
+        "toUpdateItem"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ReturnConsumedCapacity",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dynamodb:ReturnValues",
+      "methodName": "ifReturnValues",
+      "description": "Filters access by the ReturnValues parameter of request. Contains one of the following: \"ALL_OLD\", \"UPDATED_OLD\",\"ALL_NEW\",\"UPDATED_NEW\", or \"NONE\"",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys",
+      "relatedActionMethods": [
+        "toConditionCheckItem",
+        "toDeleteItem",
+        "toPartiQLDelete",
+        "toPartiQLUpdate",
+        "toPutItem",
+        "toQuery",
+        "toScan",
+        "toUpdateItem"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ReturnValues",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dynamodb:SecondPartitionKeyValues",
+      "methodName": "ifSecondPartitionKeyValues",
+      "description": "Filters access by the second partition key of the table",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SecondPartitionKeyValues",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dynamodb:Select",
+      "methodName": "ifSelect",
+      "description": "Filters access by the Select parameter of a Query or Scan request",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys",
+      "relatedActionMethods": [
+        "toBatchGetItem",
+        "toGetItem",
+        "toPartiQLSelect",
+        "toQuery",
+        "toScan"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Select",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dynamodb:ThirdPartitionKeyValues",
+      "methodName": "ifThirdPartitionKeyValues",
+      "description": "Filters access by the third partition key of the table",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ThirdPartitionKeyValues",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

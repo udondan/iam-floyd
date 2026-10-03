@@ -1,3 +1,0 @@
-bugbust:RequestTag/${TagKey}
-bugbust:ResourceTag/${TagKey}
-bugbust:TagKeys

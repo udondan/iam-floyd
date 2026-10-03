@@ -1,3 +1,0 @@
-execute-api:InvalidateCache;Write
-execute-api:Invoke;Write
-execute-api:ManageConnections;Write

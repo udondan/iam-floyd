@@ -1,6 +1,0 @@
-datapipeline:PipelineCreator
-datapipeline:RequestTag/${TagKey}
-datapipeline:ResourceTag/${TagKey}
-datapipeline:Tag/${TagKey}
-datapipeline:TagKeys
-datapipeline:workerGroup

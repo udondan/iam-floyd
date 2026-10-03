@@ -17,8 +17,8 @@ Support for:
 
 - 455 Services
 - 22036 Actions
-- 2330 Resource Types
-- 2485 Condition keys
+- 2329 Resource Types
+- 2484 Condition keys
 <!-- /stats -->
 
 ![EXPERIMENTAL](https://img.shields.io/badge/stability-experimantal-orange?style=for-the-badge)**<br>This is an early version of the package. The API will change while I implement new features. Therefore make sure you use an exact version in your `package.json` before it reaches 1.0.0.**
@@ -58,7 +58,7 @@ There are two different package variants available:
 
 ## Legal
 
-The code contained in the [lib/generated](https://github.com/udondan/iam-floyd/tree/main/lib/generated) folder is generated from the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html). The class- and function-names and their description therefore are property of AWS.
+The service models in the [lib/generated/model](https://github.com/udondan/iam-floyd/tree/main/lib/generated/model) folder, and the code generated from them, are derived from the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html). The class- and function-names and their description therefore are property of AWS.
 
 AWS and their services are trademarks, registered trademarks or trade dress of AWS in the U.S. and/or other countries.
 

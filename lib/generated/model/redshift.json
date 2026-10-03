@@ -1,0 +1,2407 @@
+{
+  "schemaVersion": 1,
+  "filename": "redshift",
+  "className": "Redshift",
+  "name": "redshift",
+  "servicePrefix": "redshift",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_redshift.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptReservedNodeExchange",
+      "AddPartner",
+      "AssociateDataShareConsumer",
+      "AuthorizeClusterSecurityGroupIngress",
+      "AuthorizeDataShare",
+      "AuthorizeEndpointAccess",
+      "AuthorizeSnapshotAccess",
+      "BatchDeleteClusterSnapshots",
+      "BatchModifyClusterSnapshots",
+      "CancelResize",
+      "CopyClusterSnapshot",
+      "CreateAuthenticationProfile",
+      "CreateCluster",
+      "CreateClusterParameterGroup",
+      "CreateClusterSecurityGroup",
+      "CreateClusterSnapshot",
+      "CreateClusterSubnetGroup",
+      "CreateClusterUser",
+      "CreateCustomDomainAssociation",
+      "CreateEndpointAccess",
+      "CreateEventSubscription",
+      "CreateHsmClientCertificate",
+      "CreateHsmConfiguration",
+      "CreateIntegration",
+      "CreateRedshiftIdcApplication",
+      "CreateScheduledAction",
+      "CreateSnapshotCopyGrant",
+      "CreateSnapshotSchedule",
+      "CreateTags",
+      "CreateUsageLimit",
+      "DeauthorizeDataShare",
+      "DeleteAuthenticationProfile",
+      "DeleteCluster",
+      "DeleteClusterParameterGroup",
+      "DeleteClusterSecurityGroup",
+      "DeleteClusterSnapshot",
+      "DeleteClusterSubnetGroup",
+      "DeleteCustomDomainAssociation",
+      "DeleteEndpointAccess",
+      "DeleteEventSubscription",
+      "DeleteHsmClientCertificate",
+      "DeleteHsmConfiguration",
+      "DeleteIntegration",
+      "DeletePartner",
+      "DeleteRedshiftIdcApplication",
+      "DeleteResourcePolicy",
+      "DeleteScheduledAction",
+      "DeleteSnapshotCopyGrant",
+      "DeleteSnapshotSchedule",
+      "DeleteTags",
+      "DeleteUsageLimit",
+      "DeregisterNamespace",
+      "DisableLogging",
+      "DisableSnapshotCopy",
+      "DisassociateDataShareConsumer",
+      "EnableLogging",
+      "EnableSnapshotCopy",
+      "FailoverPrimaryCompute",
+      "GetClusterCredentials",
+      "GetClusterCredentialsWithIAM",
+      "JoinGroup",
+      "ModifyAquaConfiguration",
+      "ModifyAuthenticationProfile",
+      "ModifyCluster",
+      "ModifyClusterDbRevision",
+      "ModifyClusterIamRoles",
+      "ModifyClusterMaintenance",
+      "ModifyClusterParameterGroup",
+      "ModifyClusterSnapshot",
+      "ModifyClusterSnapshotSchedule",
+      "ModifyClusterSubnetGroup",
+      "ModifyCustomDomainAssociation",
+      "ModifyEndpointAccess",
+      "ModifyEventSubscription",
+      "ModifyIntegration",
+      "ModifyRedshiftIdcApplication",
+      "ModifyScheduledAction",
+      "ModifySnapshotCopyRetentionPeriod",
+      "ModifySnapshotSchedule",
+      "ModifyUsageLimit",
+      "PauseCluster",
+      "PurchaseReservedNodeOffering",
+      "PutResourcePolicy",
+      "RebootCluster",
+      "RegisterNamespace",
+      "RejectDataShare",
+      "ResetClusterParameterGroup",
+      "ResizeCluster",
+      "RestoreFromClusterSnapshot",
+      "RestoreTableFromClusterSnapshot",
+      "ResumeCluster",
+      "RevokeClusterSecurityGroupIngress",
+      "RevokeEndpointAccess",
+      "RevokeSnapshotAccess",
+      "RotateEncryptionKey",
+      "UpdatePartnerStatus",
+      "AuthorizeInboundIntegration",
+      "CancelQuery",
+      "CancelQuerySession",
+      "CreateInboundIntegration",
+      "CreateQev2IdcApplication",
+      "CreateSavedQuery",
+      "DeleteQev2IdcApplication",
+      "DeleteSavedQueries",
+      "ExecuteQuery",
+      "ModifyAutonomicsDenylist",
+      "ModifyQev2IdcApplication",
+      "ModifySavedQuery"
+    ],
+    "Permissions management": [
+      "AuthorizeDataShare",
+      "AuthorizeEndpointAccess",
+      "AuthorizeSnapshotAccess",
+      "CreateClusterUser",
+      "CreateSnapshotCopyGrant",
+      "DeauthorizeDataShare",
+      "DeleteResourcePolicy",
+      "JoinGroup",
+      "ModifyClusterIamRoles",
+      "PutResourcePolicy",
+      "RejectDataShare",
+      "RevokeEndpointAccess",
+      "RevokeSnapshotAccess"
+    ],
+    "Tagging": [
+      "CreateTags",
+      "DeleteTags"
+    ],
+    "Read": [
+      "DescribeAccountAttributes",
+      "DescribeAuthenticationProfiles",
+      "DescribeClusterParameterGroups",
+      "DescribeClusterParameters",
+      "DescribeClusterSecurityGroups",
+      "DescribeClusterSnapshots",
+      "DescribeClusterSubnetGroups",
+      "DescribeClusterVersions",
+      "DescribeDataShares",
+      "DescribeDataSharesForConsumer",
+      "DescribeDataSharesForProducer",
+      "DescribeDefaultClusterParameters",
+      "DescribeEndpointAccess",
+      "DescribeEventCategories",
+      "DescribeEventSubscriptions",
+      "DescribeHsmClientCertificates",
+      "DescribeHsmConfigurations",
+      "DescribeLoggingStatus",
+      "DescribeOrderableClusterOptions",
+      "DescribePartners",
+      "DescribeReservedNodeExchangeStatus",
+      "DescribeReservedNodeOfferings",
+      "DescribeReservedNodes",
+      "DescribeResize",
+      "DescribeScheduledActions",
+      "DescribeSnapshotCopyGrants",
+      "DescribeSnapshotSchedules",
+      "DescribeStorage",
+      "DescribeTableRestoreStatus",
+      "DescribeTags",
+      "DescribeUsageLimits",
+      "GetIdentityCenterAuthToken",
+      "GetReservedNodeExchangeConfigurationOptions",
+      "GetReservedNodeExchangeOfferings",
+      "GetResourcePolicy",
+      "DescribeAutonomicsDenylist",
+      "DescribeQuery",
+      "DescribeSavedQueries",
+      "DescribeTable",
+      "FetchResults"
+    ],
+    "List": [
+      "DescribeClusterDbRevisions",
+      "DescribeClusterTracks",
+      "DescribeClusters",
+      "DescribeCustomDomainAssociations",
+      "DescribeEndpointAuthorization",
+      "DescribeEvents",
+      "DescribeInboundIntegrations",
+      "DescribeIntegrations",
+      "DescribeNodeConfigurationOptions",
+      "DescribeRedshiftIdcApplications",
+      "ListRecommendations",
+      "DescribeQev2IdcApplications",
+      "ListDatabases",
+      "ListSavedQueries",
+      "ListSchemas",
+      "ListTables",
+      "ViewQueriesFromConsole",
+      "ViewQueriesInConsole"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptReservedNodeExchange",
+      "methodName": "toAcceptReservedNodeExchange",
+      "description": "Grants permission to exchange a DC1 reserved node for a DC2 reserved node with no changes to the configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_AcceptReservedNodeExchange.html"
+    },
+    {
+      "name": "AddPartner",
+      "methodName": "toAddPartner",
+      "description": "Grants permission to add a partner integration to a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_AddPartner.html"
+    },
+    {
+      "name": "AssociateDataShareConsumer",
+      "methodName": "toAssociateDataShareConsumer",
+      "description": "Grants permission to associate a consumer to a datashare",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_AssociateDataShareConsumer.html"
+    },
+    {
+      "name": "AuthorizeClusterSecurityGroupIngress",
+      "methodName": "toAuthorizeClusterSecurityGroupIngress",
+      "description": "Grants permission to add an inbound (ingress) rule to an Amazon Redshift security group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_AuthorizeClusterSecurityGroupIngress.html"
+    },
+    {
+      "name": "AuthorizeDataShare",
+      "methodName": "toAuthorizeDataShare",
+      "description": "Grants permission to authorize the specified datashare consumer to consume a datashare",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_AuthorizeDataShare.html"
+    },
+    {
+      "name": "AuthorizeEndpointAccess",
+      "methodName": "toAuthorizeEndpointAccess",
+      "description": "Grants permission to authorize endpoint related activities for redshift-managed vpc endpoint",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_AuthorizeEndpointAccess.html"
+    },
+    {
+      "name": "AuthorizeSnapshotAccess",
+      "methodName": "toAuthorizeSnapshotAccess",
+      "description": "Grants permission to the specified AWS account to restore a snapshot",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_AuthorizeSnapshotAccess.html"
+    },
+    {
+      "name": "BatchDeleteClusterSnapshots",
+      "methodName": "toBatchDeleteClusterSnapshots",
+      "description": "Grants permission to delete snapshots in a batch of size upto 100",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_BatchDeleteClusterSnapshots.html"
+    },
+    {
+      "name": "BatchModifyClusterSnapshots",
+      "methodName": "toBatchModifyClusterSnapshots",
+      "description": "Grants permission to modify settings for a list of snapshots",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_BatchModifyClusterSnapshots.html"
+    },
+    {
+      "name": "CancelResize",
+      "methodName": "toCancelResize",
+      "description": "Grants permission to cancel a resize operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CancelResize.html"
+    },
+    {
+      "name": "CopyClusterSnapshot",
+      "methodName": "toCopyClusterSnapshot",
+      "description": "Grants permission to copy a cluster snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CopyClusterSnapshot.html"
+    },
+    {
+      "name": "CreateAuthenticationProfile",
+      "methodName": "toCreateAuthenticationProfile",
+      "description": "Grants permission to create an Amazon Redshift authentication profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateAuthenticationProfile.html"
+    },
+    {
+      "name": "CreateCluster",
+      "methodName": "toCreateCluster",
+      "description": "Grants permission to create a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateCluster.html"
+    },
+    {
+      "name": "CreateClusterParameterGroup",
+      "methodName": "toCreateClusterParameterGroup",
+      "description": "Grants permission to create an Amazon Redshift parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterParameterGroup.html"
+    },
+    {
+      "name": "CreateClusterSecurityGroup",
+      "methodName": "toCreateClusterSecurityGroup",
+      "description": "Grants permission to create an Amazon Redshift security group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSecurityGroup.html"
+    },
+    {
+      "name": "CreateClusterSnapshot",
+      "methodName": "toCreateClusterSnapshot",
+      "description": "Grants permission to create a manual snapshot of the specified cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSnapshot.html"
+    },
+    {
+      "name": "CreateClusterSubnetGroup",
+      "methodName": "toCreateClusterSubnetGroup",
+      "description": "Grants permission to create an Amazon Redshift subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSubnetGroup.html"
+    },
+    {
+      "name": "CreateClusterUser",
+      "methodName": "toCreateClusterUser",
+      "description": "Grants permission to automatically create the specified Amazon Redshift user if it does not exist",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/generating-iam-credentials-role-permissions.html"
+    },
+    {
+      "name": "CreateCustomDomainAssociation",
+      "methodName": "toCreateCustomDomainAssociation",
+      "description": "Grants permission to create a custom domain name for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateCustomDomainAssociation.html"
+    },
+    {
+      "name": "CreateEndpointAccess",
+      "methodName": "toCreateEndpointAccess",
+      "description": "Grants permission to create a redshift-managed vpc endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateEndpointAccess.html"
+    },
+    {
+      "name": "CreateEventSubscription",
+      "methodName": "toCreateEventSubscription",
+      "description": "Grants permission to create an Amazon Redshift event notification subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateEventSubscription.html"
+    },
+    {
+      "name": "CreateHsmClientCertificate",
+      "methodName": "toCreateHsmClientCertificate",
+      "description": "Grants permission to create an HSM client certificate that a cluster uses to connect to an HSM",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateHsmClientCertificate.html"
+    },
+    {
+      "name": "CreateHsmConfiguration",
+      "methodName": "toCreateHsmConfiguration",
+      "description": "Grants permission to create an HSM configuration that contains information required by a cluster to store and use database encryption keys in a hardware security module (HSM)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateHsmConfiguration.html"
+    },
+    {
+      "name": "CreateIntegration",
+      "methodName": "toCreateIntegration",
+      "description": "Grants permission to create an Amazon Redshift zero-ETL integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateIntegration.html"
+    },
+    {
+      "name": "CreateRedshiftIdcApplication",
+      "methodName": "toCreateRedshiftIdcApplication",
+      "description": "Grants permission to create a redshift idc application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateRedshiftIdcApplication.html"
+    },
+    {
+      "name": "CreateScheduledAction",
+      "methodName": "toCreateScheduledAction",
+      "description": "Grants permission to create an Amazon Redshift scheduled action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateScheduledAction.html"
+    },
+    {
+      "name": "CreateSnapshotCopyGrant",
+      "methodName": "toCreateSnapshotCopyGrant",
+      "description": "Grants permission to create a snapshot copy grant and encrypt copied snapshots in a destination AWS Region",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateSnapshotCopyGrant.html"
+    },
+    {
+      "name": "CreateSnapshotSchedule",
+      "methodName": "toCreateSnapshotSchedule",
+      "description": "Grants permission to create a snapshot schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateSnapshotSchedule.html"
+    },
+    {
+      "name": "CreateTags",
+      "methodName": "toCreateTags",
+      "description": "Grants permission to add one or more tags to a specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateTags.html"
+    },
+    {
+      "name": "CreateUsageLimit",
+      "methodName": "toCreateUsageLimit",
+      "description": "Grants permission to create a usage limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateUsageLimit.html"
+    },
+    {
+      "name": "DeauthorizeDataShare",
+      "methodName": "toDeauthorizeDataShare",
+      "description": "Grants permission to remove permission from the specified datashare consumer to consume a datashare",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeauthorizeDataShare.html"
+    },
+    {
+      "name": "DeleteAuthenticationProfile",
+      "methodName": "toDeleteAuthenticationProfile",
+      "description": "Grants permission to delete an Amazon Redshift authentication profile",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteCluster",
+      "methodName": "toDeleteCluster",
+      "description": "Grants permission to delete a previously provisioned cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteCluster.html"
+    },
+    {
+      "name": "DeleteClusterParameterGroup",
+      "methodName": "toDeleteClusterParameterGroup",
+      "description": "Grants permission to delete an Amazon Redshift parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteClusterParameterGroup.html"
+    },
+    {
+      "name": "DeleteClusterSecurityGroup",
+      "methodName": "toDeleteClusterSecurityGroup",
+      "description": "Grants permission to delete an Amazon Redshift security group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteClusterSecurityGroup.html"
+    },
+    {
+      "name": "DeleteClusterSnapshot",
+      "methodName": "toDeleteClusterSnapshot",
+      "description": "Grants permission to delete a manual snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteClusterSnapshot.html"
+    },
+    {
+      "name": "DeleteClusterSubnetGroup",
+      "methodName": "toDeleteClusterSubnetGroup",
+      "description": "Grants permission to delete a cluster subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteClusterSubnetGroup.html"
+    },
+    {
+      "name": "DeleteCustomDomainAssociation",
+      "methodName": "toDeleteCustomDomainAssociation",
+      "description": "Grants permission to delete a custom domain name for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteCustomDomainAssociation.html"
+    },
+    {
+      "name": "DeleteEndpointAccess",
+      "methodName": "toDeleteEndpointAccess",
+      "description": "Grants permission to delete a redshift-managed vpc endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteEndpointAccess.html"
+    },
+    {
+      "name": "DeleteEventSubscription",
+      "methodName": "toDeleteEventSubscription",
+      "description": "Grants permission to delete an Amazon Redshift event notification subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteEventSubscription.html"
+    },
+    {
+      "name": "DeleteHsmClientCertificate",
+      "methodName": "toDeleteHsmClientCertificate",
+      "description": "Grants permission to delete an HSM client certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteHsmClientCertificate.html"
+    },
+    {
+      "name": "DeleteHsmConfiguration",
+      "methodName": "toDeleteHsmConfiguration",
+      "description": "Grants permission to delete an Amazon Redshift HSM configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteHsmConfiguration.html"
+    },
+    {
+      "name": "DeleteIntegration",
+      "methodName": "toDeleteIntegration",
+      "description": "Grants permission to delete an Amazon Redshift zero-ETL integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteIntegration.html"
+    },
+    {
+      "name": "DeletePartner",
+      "methodName": "toDeletePartner",
+      "description": "Grants permission to delete a partner integration from a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeletePartner.html"
+    },
+    {
+      "name": "DeleteRedshiftIdcApplication",
+      "methodName": "toDeleteRedshiftIdcApplication",
+      "description": "Grants permission to delete a redshift idc application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteRedshiftIdcApplication.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete the resource policy for a specified resource",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteScheduledAction",
+      "methodName": "toDeleteScheduledAction",
+      "description": "Grants permission to delete an Amazon Redshift scheduled action",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteSnapshotCopyGrant",
+      "methodName": "toDeleteSnapshotCopyGrant",
+      "description": "Grants permission to delete a snapshot copy grant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteSnapshotCopyGrant.html"
+    },
+    {
+      "name": "DeleteSnapshotSchedule",
+      "methodName": "toDeleteSnapshotSchedule",
+      "description": "Grants permission to delete a snapshot schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteSnapshotSchedule.html"
+    },
+    {
+      "name": "DeleteTags",
+      "methodName": "toDeleteTags",
+      "description": "Grants permission to delete a tag or tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteTags.html"
+    },
+    {
+      "name": "DeleteUsageLimit",
+      "methodName": "toDeleteUsageLimit",
+      "description": "Grants permission to delete a usage limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteUsageLimit.html"
+    },
+    {
+      "name": "DeregisterNamespace",
+      "methodName": "toDeregisterNamespace",
+      "description": "Grants permission to deregister the specified namespace from a consumer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeregisterNamespace.html"
+    },
+    {
+      "name": "DescribeAccountAttributes",
+      "methodName": "toDescribeAccountAttributes",
+      "description": "Grants permission to describe attributes attached to the specified AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeAccountAttributes.html"
+    },
+    {
+      "name": "DescribeAuthenticationProfiles",
+      "methodName": "toDescribeAuthenticationProfiles",
+      "description": "Grants permission to describe created Amazon Redshift authentication profiles",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "DescribeClusterDbRevisions",
+      "methodName": "toDescribeClusterDbRevisions",
+      "description": "Grants permission to describe database revisions for a cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterDbRevisions.html"
+    },
+    {
+      "name": "DescribeClusterParameterGroups",
+      "methodName": "toDescribeClusterParameterGroups",
+      "description": "Grants permission to describe Amazon Redshift parameter groups, including parameter groups you created and the default parameter group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterParameterGroups.html"
+    },
+    {
+      "name": "DescribeClusterParameters",
+      "methodName": "toDescribeClusterParameters",
+      "description": "Grants permission to describe parameters contained within an Amazon Redshift parameter group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterParameters.html"
+    },
+    {
+      "name": "DescribeClusterSecurityGroups",
+      "methodName": "toDescribeClusterSecurityGroups",
+      "description": "Grants permission to describe Amazon Redshift security groups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterSecurityGroups.html"
+    },
+    {
+      "name": "DescribeClusterSnapshots",
+      "methodName": "toDescribeClusterSnapshots",
+      "description": "Grants permission to describe one or more snapshot objects, which contain metadata about your cluster snapshots",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterSnapshots.html"
+    },
+    {
+      "name": "DescribeClusterSubnetGroups",
+      "methodName": "toDescribeClusterSubnetGroups",
+      "description": "Grants permission to describe one or more cluster subnet group objects, which contain metadata about your cluster subnet groups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterSubnetGroups.html"
+    },
+    {
+      "name": "DescribeClusterTracks",
+      "methodName": "toDescribeClusterTracks",
+      "description": "Grants permission to describe available maintenance tracks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterTracks.html"
+    },
+    {
+      "name": "DescribeClusterVersions",
+      "methodName": "toDescribeClusterVersions",
+      "description": "Grants permission to describe available Amazon Redshift cluster versions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterVersions.html"
+    },
+    {
+      "name": "DescribeClusters",
+      "methodName": "toDescribeClusters",
+      "description": "Grants permission to describe properties of provisioned clusters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusters.html"
+    },
+    {
+      "name": "DescribeCustomDomainAssociations",
+      "methodName": "toDescribeCustomDomainAssociations",
+      "description": "Grants permission to describe custom domain names for a cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeCustomDomainAssociations.html"
+    },
+    {
+      "name": "DescribeDataShares",
+      "methodName": "toDescribeDataShares",
+      "description": "Grants permission to describe datashares created and consumed by your clusters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeDataShares.html"
+    },
+    {
+      "name": "DescribeDataSharesForConsumer",
+      "methodName": "toDescribeDataSharesForConsumer",
+      "description": "Grants permission to describe only datashares consumed by your clusters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeDataSharesForConsumer.html"
+    },
+    {
+      "name": "DescribeDataSharesForProducer",
+      "methodName": "toDescribeDataSharesForProducer",
+      "description": "Grants permission to describe only datashares created by your clusters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeDataSharesForProducer.html"
+    },
+    {
+      "name": "DescribeDefaultClusterParameters",
+      "methodName": "toDescribeDefaultClusterParameters",
+      "description": "Grants permission to describe parameter settings for a parameter group family",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeDefaultClusterParameters.html"
+    },
+    {
+      "name": "DescribeEndpointAccess",
+      "methodName": "toDescribeEndpointAccess",
+      "description": "Grants permission to describe redshift-managed vpc endpoints",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeEndpointAccess.html"
+    },
+    {
+      "name": "DescribeEndpointAuthorization",
+      "methodName": "toDescribeEndpointAuthorization",
+      "description": "Grants permission to authorize describe activity for redshift-managed vpc endpoint",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeEndpointAuthorization.html"
+    },
+    {
+      "name": "DescribeEventCategories",
+      "methodName": "toDescribeEventCategories",
+      "description": "Grants permission to describe event categories for all event source types, or for a specified source type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeEventCategories.html"
+    },
+    {
+      "name": "DescribeEventSubscriptions",
+      "methodName": "toDescribeEventSubscriptions",
+      "description": "Grants permission to describe Amazon Redshift event notification subscriptions for the specified AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeEventSubscriptions.html"
+    },
+    {
+      "name": "DescribeEvents",
+      "methodName": "toDescribeEvents",
+      "description": "Grants permission to describe events related to clusters, security groups, snapshots, and parameter groups for the past 14 days",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeEvents.html"
+    },
+    {
+      "name": "DescribeHsmClientCertificates",
+      "methodName": "toDescribeHsmClientCertificates",
+      "description": "Grants permission to describe HSM client certificates",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeHsmClientCertificates.html"
+    },
+    {
+      "name": "DescribeHsmConfigurations",
+      "methodName": "toDescribeHsmConfigurations",
+      "description": "Grants permission to describe Amazon Redshift HSM configurations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeHsmConfigurations.html"
+    },
+    {
+      "name": "DescribeInboundIntegrations",
+      "methodName": "toDescribeInboundIntegrations",
+      "description": "Grants permission to list the inbound integrations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeInboundIntegrations.html",
+      "conditionMethods": [
+        "ifInboundIntegrationArn"
+      ]
+    },
+    {
+      "name": "DescribeIntegrations",
+      "methodName": "toDescribeIntegrations",
+      "description": "Grants permission to describe an Amazon Redshift zero-ETL integration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeIntegrations.html"
+    },
+    {
+      "name": "DescribeLoggingStatus",
+      "methodName": "toDescribeLoggingStatus",
+      "description": "Grants permission to describe whether information, such as queries and connection attempts, is being logged for a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeLoggingStatus.html"
+    },
+    {
+      "name": "DescribeNodeConfigurationOptions",
+      "methodName": "toDescribeNodeConfigurationOptions",
+      "description": "Grants permission to describe properties of possible node configurations such as node type, number of nodes, and disk usage for the specified action type",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeNodeConfigurationOptions.html"
+    },
+    {
+      "name": "DescribeOrderableClusterOptions",
+      "methodName": "toDescribeOrderableClusterOptions",
+      "description": "Grants permission to describe orderable cluster options",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeOrderableClusterOptions.html"
+    },
+    {
+      "name": "DescribePartners",
+      "methodName": "toDescribePartners",
+      "description": "Grants permission to retrieve information about the partner integrations defined for a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribePartners.html"
+    },
+    {
+      "name": "DescribeRedshiftIdcApplications",
+      "methodName": "toDescribeRedshiftIdcApplications",
+      "description": "Grants permission to describe redshift idc applications",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeRedshiftIdcApplications.html"
+    },
+    {
+      "name": "DescribeReservedNodeExchangeStatus",
+      "methodName": "toDescribeReservedNodeExchangeStatus",
+      "description": "Grants permission to describe exchange status details and associated metadata for a reserved-node exchange. Statuses include such values as in progress and requested",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeReservedNodeExchangeStatus.html"
+    },
+    {
+      "name": "DescribeReservedNodeOfferings",
+      "methodName": "toDescribeReservedNodeOfferings",
+      "description": "Grants permission to describe available reserved node offerings by Amazon Redshift",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeReservedNodeOfferings.html"
+    },
+    {
+      "name": "DescribeReservedNodes",
+      "methodName": "toDescribeReservedNodes",
+      "description": "Grants permission to describe the reserved nodes",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeReservedNodes.html"
+    },
+    {
+      "name": "DescribeResize",
+      "methodName": "toDescribeResize",
+      "description": "Grants permission to describe the last resize operation for a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeResize.html"
+    },
+    {
+      "name": "DescribeScheduledActions",
+      "methodName": "toDescribeScheduledActions",
+      "description": "Grants permission to describe created Amazon Redshift scheduled actions",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "DescribeSnapshotCopyGrants",
+      "methodName": "toDescribeSnapshotCopyGrants",
+      "description": "Grants permission to describe snapshot copy grants owned by the specified AWS account in the destination AWS Region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeSnapshotCopyGrants.html"
+    },
+    {
+      "name": "DescribeSnapshotSchedules",
+      "methodName": "toDescribeSnapshotSchedules",
+      "description": "Grants permission to describe snapshot schedules",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeSnapshotSchedules.html"
+    },
+    {
+      "name": "DescribeStorage",
+      "methodName": "toDescribeStorage",
+      "description": "Grants permission to describe account level backups storage size and provisional storage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeStorage.html"
+    },
+    {
+      "name": "DescribeTableRestoreStatus",
+      "methodName": "toDescribeTableRestoreStatus",
+      "description": "Grants permission to describe status of one or more table restore requests made using the RestoreTableFromClusterSnapshot API action",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeTableRestoreStatus.html"
+    },
+    {
+      "name": "DescribeTags",
+      "methodName": "toDescribeTags",
+      "description": "Grants permission to describe tags",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeTags.html"
+    },
+    {
+      "name": "DescribeUsageLimits",
+      "methodName": "toDescribeUsageLimits",
+      "description": "Grants permission to describe usage limits",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeUsageLimits.html"
+    },
+    {
+      "name": "DisableLogging",
+      "methodName": "toDisableLogging",
+      "description": "Grants permission to disable logging information, such as queries and connection attempts, for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DisableLogging.html"
+    },
+    {
+      "name": "DisableSnapshotCopy",
+      "methodName": "toDisableSnapshotCopy",
+      "description": "Grants permission to disable the automatic copy of snapshots for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DisableSnapshotCopy.html"
+    },
+    {
+      "name": "DisassociateDataShareConsumer",
+      "methodName": "toDisassociateDataShareConsumer",
+      "description": "Grants permission to disassociate a consumer from a datashare",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DisassociateDataShareConsumer.html"
+    },
+    {
+      "name": "EnableLogging",
+      "methodName": "toEnableLogging",
+      "description": "Grants permission to enable logging information, such as queries and connection attempts, for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_EnableLogging.html"
+    },
+    {
+      "name": "EnableSnapshotCopy",
+      "methodName": "toEnableSnapshotCopy",
+      "description": "Grants permission to enable the automatic copy of snapshots for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_EnableSnapshotCopy.html"
+    },
+    {
+      "name": "FailoverPrimaryCompute",
+      "methodName": "toFailoverPrimaryCompute",
+      "description": "Grants permission to failover the primary compute of an Multi-AZ cluster to another AZ",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_FailoverPrimaryCompute.html"
+    },
+    {
+      "name": "GetClusterCredentials",
+      "methodName": "toGetClusterCredentials",
+      "description": "Grants permission to get temporary credentials to access an Amazon Redshift database by the specified AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html"
+    },
+    {
+      "name": "GetClusterCredentialsWithIAM",
+      "methodName": "toGetClusterCredentialsWithIAM",
+      "description": "Grants permission to get enhanced temporary credentials to access an Amazon Redshift database by the specified AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentialsWithIAM.html"
+    },
+    {
+      "name": "GetIdentityCenterAuthToken",
+      "methodName": "toGetIdentityCenterAuthToken",
+      "description": "Grants permission to get an authorized token for Identity Center users to access Redshift clusters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/identity-center-authentication.html"
+    },
+    {
+      "name": "GetReservedNodeExchangeConfigurationOptions",
+      "methodName": "toGetReservedNodeExchangeConfigurationOptions",
+      "description": "Grants permission to get the configuration options for the reserved-node exchange",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetReservedNodeExchangeConfigurationOptions.html"
+    },
+    {
+      "name": "GetReservedNodeExchangeOfferings",
+      "methodName": "toGetReservedNodeExchangeOfferings",
+      "description": "Grants permission to get an array of DC2 ReservedNodeOfferings that matches the payment type, term, and usage price of the given DC1 reserved node",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetReservedNodeExchangeOfferings.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to get the resource policy for a specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "JoinGroup",
+      "methodName": "toJoinGroup",
+      "description": "Grants permission to join the specified Amazon Redshift group",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html"
+    },
+    {
+      "name": "ListRecommendations",
+      "methodName": "toListRecommendations",
+      "description": "Grants permission to list Advisor recommendations",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ModifyAquaConfiguration",
+      "methodName": "toModifyAquaConfiguration",
+      "description": "Grants permission to modify the AQUA configuration of a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyAquaConfiguration.html"
+    },
+    {
+      "name": "ModifyAuthenticationProfile",
+      "methodName": "toModifyAuthenticationProfile",
+      "description": "Grants permission to modify an existing Amazon Redshift authentication profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyAuthenticationProfile.html"
+    },
+    {
+      "name": "ModifyCluster",
+      "methodName": "toModifyCluster",
+      "description": "Grants permission to modify the settings of a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyCluster.html"
+    },
+    {
+      "name": "ModifyClusterDbRevision",
+      "methodName": "toModifyClusterDbRevision",
+      "description": "Grants permission to modify the database revision of a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyClusterDbRevision.html"
+    },
+    {
+      "name": "ModifyClusterIamRoles",
+      "methodName": "toModifyClusterIamRoles",
+      "description": "Grants permission to modify the list of AWS Identity and Access Management (IAM) roles that can be used by a cluster to access other AWS services",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyClusterIamRoles.html"
+    },
+    {
+      "name": "ModifyClusterMaintenance",
+      "methodName": "toModifyClusterMaintenance",
+      "description": "Grants permission to modify the maintenance settings of a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyClusterMaintenance.html"
+    },
+    {
+      "name": "ModifyClusterParameterGroup",
+      "methodName": "toModifyClusterParameterGroup",
+      "description": "Grants permission to modify the parameters of a parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyClusterParameterGroup.html"
+    },
+    {
+      "name": "ModifyClusterSnapshot",
+      "methodName": "toModifyClusterSnapshot",
+      "description": "Grants permission to modify the settings of a snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyClusterSnapshot.html"
+    },
+    {
+      "name": "ModifyClusterSnapshotSchedule",
+      "methodName": "toModifyClusterSnapshotSchedule",
+      "description": "Grants permission to modify a snapshot schedule for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyClusterSnapshotSchedule.html"
+    },
+    {
+      "name": "ModifyClusterSubnetGroup",
+      "methodName": "toModifyClusterSubnetGroup",
+      "description": "Grants permission to modify a cluster subnet group to include the specified list of VPC subnets",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyClusterSubnetGroup.html"
+    },
+    {
+      "name": "ModifyCustomDomainAssociation",
+      "methodName": "toModifyCustomDomainAssociation",
+      "description": "Grants permission to modify a custom domain name for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyCustomDomainAssociation.html"
+    },
+    {
+      "name": "ModifyEndpointAccess",
+      "methodName": "toModifyEndpointAccess",
+      "description": "Grants permission to modify a redshift-managed vpc endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyEndpointAccess.html"
+    },
+    {
+      "name": "ModifyEventSubscription",
+      "methodName": "toModifyEventSubscription",
+      "description": "Grants permission to modify an existing Amazon Redshift event notification subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyEventSubscription.html"
+    },
+    {
+      "name": "ModifyIntegration",
+      "methodName": "toModifyIntegration",
+      "description": "Grants permission to modify an Amazon Redshift zero-ETL integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyIntegration.html"
+    },
+    {
+      "name": "ModifyRedshiftIdcApplication",
+      "methodName": "toModifyRedshiftIdcApplication",
+      "description": "Grants permission to modify a redshift idc application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyRedshiftIdcApplication.html"
+    },
+    {
+      "name": "ModifyScheduledAction",
+      "methodName": "toModifyScheduledAction",
+      "description": "Grants permission to modify an existing Amazon Redshift scheduled action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyScheduledAction.html"
+    },
+    {
+      "name": "ModifySnapshotCopyRetentionPeriod",
+      "methodName": "toModifySnapshotCopyRetentionPeriod",
+      "description": "Grants permission to modify the number of days to retain snapshots in the destination AWS Region after they are copied from the source AWS Region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifySnapshotCopyRetentionPeriod.html"
+    },
+    {
+      "name": "ModifySnapshotSchedule",
+      "methodName": "toModifySnapshotSchedule",
+      "description": "Grants permission to modify a snapshot schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifySnapshotSchedule.html"
+    },
+    {
+      "name": "ModifyUsageLimit",
+      "methodName": "toModifyUsageLimit",
+      "description": "Grants permission to modify a usage limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyUsageLimit.html"
+    },
+    {
+      "name": "PauseCluster",
+      "methodName": "toPauseCluster",
+      "description": "Grants permission to pause a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_PauseCluster.html"
+    },
+    {
+      "name": "PurchaseReservedNodeOffering",
+      "methodName": "toPurchaseReservedNodeOffering",
+      "description": "Grants permission to purchase a reserved node",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_PurchaseReservedNodeOffering.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to update the resource policy for a specified resource",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "RebootCluster",
+      "methodName": "toRebootCluster",
+      "description": "Grants permission to reboot a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_RebootCluster.html"
+    },
+    {
+      "name": "RegisterNamespace",
+      "methodName": "toRegisterNamespace",
+      "description": "Grants permission to register the specified namespace to a consumer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_RegisterNamespace.html"
+    },
+    {
+      "name": "RejectDataShare",
+      "methodName": "toRejectDataShare",
+      "description": "Grants permission to decline a datashare shared from another account",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_RejectDataShare.html"
+    },
+    {
+      "name": "ResetClusterParameterGroup",
+      "methodName": "toResetClusterParameterGroup",
+      "description": "Grants permission to set one or more parameters of a parameter group to their default values and set the source values of the parameters to \"engine-default\"",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ResetClusterParameterGroup.html"
+    },
+    {
+      "name": "ResizeCluster",
+      "methodName": "toResizeCluster",
+      "description": "Grants permission to change the size of a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ResizeCluster.html"
+    },
+    {
+      "name": "RestoreFromClusterSnapshot",
+      "methodName": "toRestoreFromClusterSnapshot",
+      "description": "Grants permission to create a cluster from a snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_RestoreFromClusterSnapshot.html"
+    },
+    {
+      "name": "RestoreTableFromClusterSnapshot",
+      "methodName": "toRestoreTableFromClusterSnapshot",
+      "description": "Grants permission to create a table from a table in an Amazon Redshift cluster snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_RestoreTableFromClusterSnapshot.html"
+    },
+    {
+      "name": "ResumeCluster",
+      "methodName": "toResumeCluster",
+      "description": "Grants permission to resume a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ResumeCluster.html"
+    },
+    {
+      "name": "RevokeClusterSecurityGroupIngress",
+      "methodName": "toRevokeClusterSecurityGroupIngress",
+      "description": "Grants permission to revoke an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2 security group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_RevokeClusterSecurityGroupIngress.html"
+    },
+    {
+      "name": "RevokeEndpointAccess",
+      "methodName": "toRevokeEndpointAccess",
+      "description": "Grants permission to revoke access for endpoint related activities for redshift-managed vpc endpoint",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_RevokeEndpointAccess.html"
+    },
+    {
+      "name": "RevokeSnapshotAccess",
+      "methodName": "toRevokeSnapshotAccess",
+      "description": "Grants permission to revoke access from the specified AWS account to restore a snapshot",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_RevokeSnapshotAccess.html"
+    },
+    {
+      "name": "RotateEncryptionKey",
+      "methodName": "toRotateEncryptionKey",
+      "description": "Grants permission to rotate an encryption key for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_RotateEncryptionKey.html"
+    },
+    {
+      "name": "UpdatePartnerStatus",
+      "methodName": "toUpdatePartnerStatus",
+      "description": "Grants permission to update the status of a partner integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_UpdatePartnerStatus.html"
+    },
+    {
+      "name": "AuthorizeInboundIntegration",
+      "methodName": "toAuthorizeInboundIntegration",
+      "description": "Grants permission to Amazon Redshift to continuously validate that the target namespace can receive data replicated from the source ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/zero-etl-using.setting-up.html"
+    },
+    {
+      "name": "CancelQuery",
+      "methodName": "toCancelQuery",
+      "description": "Grants permission to cancel a query through the Amazon Redshift console",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    },
+    {
+      "name": "CancelQuerySession",
+      "methodName": "toCancelQuerySession",
+      "description": "Grants permission to see queries in the Amazon Redshift console",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    },
+    {
+      "name": "CreateInboundIntegration",
+      "methodName": "toCreateInboundIntegration",
+      "description": "Grants permission to the source principal to create an integration into the namespace of target data warehouse",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/zero-etl-using.setting-up.html"
+    },
+    {
+      "name": "CreateQev2IdcApplication",
+      "methodName": "toCreateQev2IdcApplication",
+      "description": "Grants permission to create a qev2 idc application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html"
+    },
+    {
+      "name": "CreateSavedQuery",
+      "methodName": "toCreateSavedQuery",
+      "description": "Grants permission to create saved SQL queries through the Amazon Redshift console",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    },
+    {
+      "name": "DeleteQev2IdcApplication",
+      "methodName": "toDeleteQev2IdcApplication",
+      "description": "Grants permission to delete a qev2 idc application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html"
+    },
+    {
+      "name": "DeleteSavedQueries",
+      "methodName": "toDeleteSavedQueries",
+      "description": "Grants permission to delete saved SQL queries through the Amazon Redshift console",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    },
+    {
+      "name": "DescribeAutonomicsDenylist",
+      "methodName": "toDescribeAutonomicsDenylist",
+      "description": "Grants permission to describe the list of resources that are denylisted from global autonomics decisions for a specified cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html"
+    },
+    {
+      "name": "DescribeQev2IdcApplications",
+      "methodName": "toDescribeQev2IdcApplications",
+      "description": "Grants permission to describe qev2 idc applications",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html"
+    },
+    {
+      "name": "DescribeQuery",
+      "methodName": "toDescribeQuery",
+      "description": "Grants permission to describe a query through the Amazon Redshift console",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    },
+    {
+      "name": "DescribeSavedQueries",
+      "methodName": "toDescribeSavedQueries",
+      "description": "Grants permission to describe saved queries through the Amazon Redshift console",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    },
+    {
+      "name": "DescribeTable",
+      "methodName": "toDescribeTable",
+      "description": "Grants permission to describe a table through the Amazon Redshift console",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    },
+    {
+      "name": "ExecuteQuery",
+      "methodName": "toExecuteQuery",
+      "description": "Grants permission to execute a query through the Amazon Redshift console",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    },
+    {
+      "name": "FetchResults",
+      "methodName": "toFetchResults",
+      "description": "Grants permission to fetch query results through the Amazon Redshift console",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    },
+    {
+      "name": "ListDatabases",
+      "methodName": "toListDatabases",
+      "description": "Grants permission to list databases through the Amazon Redshift console",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    },
+    {
+      "name": "ListSavedQueries",
+      "methodName": "toListSavedQueries",
+      "description": "Grants permission to list saved queries through the Amazon Redshift console",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    },
+    {
+      "name": "ListSchemas",
+      "methodName": "toListSchemas",
+      "description": "Grants permission to list schemas through the Amazon Redshift console",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    },
+    {
+      "name": "ListTables",
+      "methodName": "toListTables",
+      "description": "Grants permission to list tables through the Amazon Redshift console",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    },
+    {
+      "name": "ModifyAutonomicsDenylist",
+      "methodName": "toModifyAutonomicsDenylist",
+      "description": "Grants permission to add or remove resources from the global autonomics denylist for a specified cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html"
+    },
+    {
+      "name": "ModifyQev2IdcApplication",
+      "methodName": "toModifyQev2IdcApplication",
+      "description": "Grants permission to modify a qev2 idc application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html"
+    },
+    {
+      "name": "ModifySavedQuery",
+      "methodName": "toModifySavedQuery",
+      "description": "Grants permission to modify an existing saved query through the Amazon Redshift console",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    },
+    {
+      "name": "ViewQueriesFromConsole",
+      "methodName": "toViewQueriesFromConsole",
+      "description": "Grants permission to view query results through the Amazon Redshift console",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    },
+    {
+      "name": "ViewQueriesInConsole",
+      "methodName": "toViewQueriesInConsole",
+      "description": "Grants permission to terminate running queries and loads through the Amazon Redshift console",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "cluster",
+      "methodName": "onCluster",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:cluster:${ClusterName}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "datashare",
+      "methodName": "onDatashare",
+      "url": "https://docs.aws.amazon.com/redshift/latest/dg/datashare-overview.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:datashare:${ProducerClusterNamespace}/${DataShareName}",
+      "placeholders": [
+        {
+          "placeholder": "ProducerClusterNamespace",
+          "name": "producerClusterNamespace",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DataShareName",
+          "name": "dataShareName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "dbgroup",
+      "methodName": "onDbgroup",
+      "url": "https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_GROUP.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:dbgroup:${ClusterName}/${DbGroup}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DbGroup",
+          "name": "dbGroup",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "dbname",
+      "methodName": "onDbname",
+      "url": "https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:dbname:${ClusterName}/${DbName}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DbName",
+          "name": "dbName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "dbuser",
+      "methodName": "onDbuser",
+      "url": "https://docs.aws.amazon.com/redshift/latest/dg/r_Users.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:dbuser:${ClusterName}/${DbUser}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DbUser",
+          "name": "dbUser",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "eventsubscription",
+      "methodName": "onEventsubscription",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-events.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:eventsubscription:${EventSubscriptionName}",
+      "placeholders": [
+        {
+          "placeholder": "EventSubscriptionName",
+          "name": "eventSubscriptionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "hsmclientcertificate",
+      "methodName": "onHsmclientcertificate",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:hsmclientcertificate:${HSMClientCertificateId}",
+      "placeholders": [
+        {
+          "placeholder": "HSMClientCertificateId",
+          "name": "hSMClientCertificateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "hsmconfiguration",
+      "methodName": "onHsmconfiguration",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:hsmconfiguration:${HSMConfigurationId}",
+      "placeholders": [
+        {
+          "placeholder": "HSMConfigurationId",
+          "name": "hSMConfigurationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "integration",
+      "methodName": "onIntegration",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/zero-etl-using.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:integration:${IntegrationIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "IntegrationIdentifier",
+          "name": "integrationIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "namespace",
+      "methodName": "onNamespace",
+      "url": "https://docs.aws.amazon.com/redshift/latest/dg/concepts.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:namespace:${ClusterNamespace}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterNamespace",
+          "name": "clusterNamespace",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "parametergroup",
+      "methodName": "onParametergroup",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:parametergroup:${ParameterGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "ParameterGroupName",
+          "name": "parameterGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "qev2idcapplication",
+      "methodName": "onQev2idcapplication",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:qev2idcapplication:${Qev2IdcApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "Qev2IdcApplicationId",
+          "name": "qev2IdcApplicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "redshiftidcapplication",
+      "methodName": "onRedshiftidcapplication",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:redshiftidcapplication:${RedshiftIdcApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "RedshiftIdcApplicationId",
+          "name": "redshiftIdcApplicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "securitygroup",
+      "methodName": "onSecuritygroup",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:securitygroup:${SecurityGroupName}/ec2securitygroup/${Owner}/${Ec2SecurityGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "SecurityGroupName",
+          "name": "securityGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Owner",
+          "name": "owner",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Ec2SecurityGroupId",
+          "name": "ec2SecurityGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "securitygroupingress-cidr",
+      "methodName": "onSecuritygroupingressCidr",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:securitygroupingress:${SecurityGroupName}/cidrip/${IpRange}",
+      "placeholders": [
+        {
+          "placeholder": "SecurityGroupName",
+          "name": "securityGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IpRange",
+          "name": "ipRange",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "securitygroupingress-ec2securitygroup",
+      "methodName": "onSecuritygroupingressEc2securitygroup",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:securitygroupingress:${SecurityGroupName}/ec2securitygroup/${Owner}/${Ece2SecuritygroupId}",
+      "placeholders": [
+        {
+          "placeholder": "SecurityGroupName",
+          "name": "securityGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Owner",
+          "name": "owner",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Ece2SecuritygroupId",
+          "name": "ece2SecuritygroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "snapshot",
+      "methodName": "onSnapshot",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:snapshot:${ClusterName}/${SnapshotName}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SnapshotName",
+          "name": "snapshotName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "snapshotcopygrant",
+      "methodName": "onSnapshotcopygrant",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#configure-snapshot-copy-grant",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:snapshotcopygrant:${SnapshotCopyGrantName}",
+      "placeholders": [
+        {
+          "placeholder": "SnapshotCopyGrantName",
+          "name": "snapshotCopyGrantName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "snapshotschedule",
+      "methodName": "onSnapshotschedule",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:snapshotschedule:${ScheduleIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "ScheduleIdentifier",
+          "name": "scheduleIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "subnetgroup",
+      "methodName": "onSubnetgroup",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:subnetgroup:${SubnetGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "SubnetGroupName",
+          "name": "subnetGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "usagelimit",
+      "methodName": "onUsagelimit",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/managing-cluster-usage-limits.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:usagelimit:${UsageLimitId}",
+      "placeholders": [
+        {
+          "placeholder": "UsageLimitId",
+          "name": "usageLimitId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by actions based on the allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toCopyClusterSnapshot",
+        "toCreateCluster",
+        "toCreateClusterParameterGroup",
+        "toCreateClusterSecurityGroup",
+        "toCreateClusterSnapshot",
+        "toCreateClusterSubnetGroup",
+        "toCreateEventSubscription",
+        "toCreateHsmClientCertificate",
+        "toCreateHsmConfiguration",
+        "toCreateIntegration",
+        "toCreateSnapshotCopyGrant",
+        "toCreateSnapshotSchedule",
+        "toCreateTags",
+        "toCreateUsageLimit"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by actions based on tag-value associated with the resource",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toAssociateDataShareConsumer",
+        "toAuthorizeClusterSecurityGroupIngress",
+        "toAuthorizeDataShare",
+        "toAuthorizeEndpointAccess",
+        "toAuthorizeSnapshotAccess",
+        "toBatchDeleteClusterSnapshots",
+        "toBatchModifyClusterSnapshots",
+        "toCancelResize",
+        "toCopyClusterSnapshot",
+        "toCreateCluster",
+        "toCreateClusterParameterGroup",
+        "toCreateClusterSecurityGroup",
+        "toCreateClusterSnapshot",
+        "toCreateClusterSubnetGroup",
+        "toCreateCustomDomainAssociation",
+        "toCreateEndpointAccess",
+        "toCreateEventSubscription",
+        "toCreateHsmClientCertificate",
+        "toCreateHsmConfiguration",
+        "toCreateIntegration",
+        "toCreateSnapshotCopyGrant",
+        "toCreateSnapshotSchedule",
+        "toCreateTags",
+        "toCreateUsageLimit",
+        "toDeauthorizeDataShare",
+        "toDeleteCluster",
+        "toDeleteClusterParameterGroup",
+        "toDeleteClusterSecurityGroup",
+        "toDeleteClusterSnapshot",
+        "toDeleteClusterSubnetGroup",
+        "toDeleteCustomDomainAssociation",
+        "toDeleteEventSubscription",
+        "toDeleteHsmClientCertificate",
+        "toDeleteHsmConfiguration",
+        "toDeleteIntegration",
+        "toDeletePartner",
+        "toDeleteSnapshotCopyGrant",
+        "toDeleteSnapshotSchedule",
+        "toDeleteTags",
+        "toDeleteUsageLimit",
+        "toDescribeClusterParameters",
+        "toDescribeClusterSnapshots",
+        "toDescribeClusters",
+        "toDescribeEndpointAccess",
+        "toDescribeEndpointAuthorization",
+        "toDescribeIntegrations",
+        "toDescribeLoggingStatus",
+        "toDescribeNodeConfigurationOptions",
+        "toDescribePartners",
+        "toDescribeResize",
+        "toDescribeSnapshotSchedules",
+        "toDescribeTableRestoreStatus",
+        "toDescribeTags",
+        "toDescribeUsageLimits",
+        "toDisableLogging",
+        "toDisableSnapshotCopy",
+        "toDisassociateDataShareConsumer",
+        "toEnableLogging",
+        "toEnableSnapshotCopy",
+        "toFailoverPrimaryCompute",
+        "toGetIdentityCenterAuthToken",
+        "toGetReservedNodeExchangeConfigurationOptions",
+        "toListRecommendations",
+        "toModifyAquaConfiguration",
+        "toModifyCluster",
+        "toModifyClusterDbRevision",
+        "toModifyClusterIamRoles",
+        "toModifyClusterMaintenance",
+        "toModifyClusterParameterGroup",
+        "toModifyClusterSnapshot",
+        "toModifyClusterSnapshotSchedule",
+        "toModifyClusterSubnetGroup",
+        "toModifyCustomDomainAssociation",
+        "toModifyEventSubscription",
+        "toModifyIntegration",
+        "toModifySnapshotCopyRetentionPeriod",
+        "toModifySnapshotSchedule",
+        "toModifyUsageLimit",
+        "toPauseCluster",
+        "toRebootCluster",
+        "toRejectDataShare",
+        "toResetClusterParameterGroup",
+        "toResizeCluster",
+        "toRestoreFromClusterSnapshot",
+        "toRestoreTableFromClusterSnapshot",
+        "toResumeCluster",
+        "toRevokeClusterSecurityGroupIngress",
+        "toRevokeEndpointAccess",
+        "toRevokeSnapshotAccess",
+        "toRotateEncryptionKey",
+        "toUpdatePartnerStatus",
+        "toCancelQuerySession",
+        "toDescribeAutonomicsDenylist",
+        "toModifyAutonomicsDenylist",
+        "toViewQueriesInConsole"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "datashare",
+        "eventsubscription",
+        "hsmclientcertificate",
+        "hsmconfiguration",
+        "integration",
+        "parametergroup",
+        "securitygroup",
+        "securitygroupingress-cidr",
+        "securitygroupingress-ec2securitygroup",
+        "snapshot",
+        "snapshotcopygrant",
+        "snapshotschedule",
+        "subnetgroup",
+        "usagelimit"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by actions based on the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toCopyClusterSnapshot",
+        "toCreateCluster",
+        "toCreateClusterParameterGroup",
+        "toCreateClusterSecurityGroup",
+        "toCreateClusterSnapshot",
+        "toCreateClusterSubnetGroup",
+        "toCreateEventSubscription",
+        "toCreateHsmClientCertificate",
+        "toCreateHsmConfiguration",
+        "toCreateIntegration",
+        "toCreateSnapshotCopyGrant",
+        "toCreateSnapshotSchedule",
+        "toCreateTags",
+        "toCreateUsageLimit",
+        "toDeleteTags",
+        "toRestoreFromClusterSnapshot"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "redshift:AllowWrites",
+      "methodName": "ifAllowWrites",
+      "description": "Filters access by the allowWrites input parameter",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toAssociateDataShareConsumer",
+        "toAuthorizeDataShare"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AllowWrites",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "redshift:ConsumerArn",
+      "methodName": "ifConsumerArn",
+      "description": "Filters access by the datashare consumer arn",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toAssociateDataShareConsumer",
+        "toDisassociateDataShareConsumer"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ConsumerArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "redshift:ConsumerIdentifier",
+      "methodName": "ifConsumerIdentifier",
+      "description": "Filters access by the datashare consumer",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toAuthorizeDataShare",
+        "toDeauthorizeDataShare"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ConsumerIdentifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "redshift:DbName",
+      "methodName": "ifDbName",
+      "description": "Filters access by the database name",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toGetClusterCredentials",
+        "toGetClusterCredentialsWithIAM"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DbName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "redshift:DbUser",
+      "methodName": "ifDbUser",
+      "description": "Filters access by the database user name",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toCreateClusterUser",
+        "toGetClusterCredentials"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DbUser",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "redshift:DurationSeconds",
+      "methodName": "ifDurationSeconds",
+      "description": "Filters access by the number of seconds until a temporary credential set expires",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toGetClusterCredentials",
+        "toGetClusterCredentialsWithIAM"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DurationSeconds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "redshift:InboundIntegrationArn",
+      "methodName": "ifInboundIntegrationArn",
+      "description": "Filters access by the ARN of an inbound zero-ETL Integration resource",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toDescribeInboundIntegrations"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InboundIntegrationArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "redshift:IntegrationSourceArn",
+      "methodName": "ifIntegrationSourceArn",
+      "description": "Filters access by the ARN of a zero-ETL Integration source",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toCreateIntegration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "IntegrationSourceArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "redshift:IntegrationTargetArn",
+      "methodName": "ifIntegrationTargetArn",
+      "description": "Filters access by the ARN of a zero-ETL Integration target",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toCreateIntegration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "IntegrationTargetArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

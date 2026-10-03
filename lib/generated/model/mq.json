@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 1,
+  "filename": "mq",
+  "className": "Mq",
+  "name": "mq",
+  "servicePrefix": "mq",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mq.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateBroker",
+      "CreateConfiguration",
+      "CreateTags",
+      "CreateUser",
+      "DeleteBroker",
+      "DeleteConfiguration",
+      "DeleteTags",
+      "DeleteUser",
+      "Promote",
+      "RebootBroker",
+      "UpdateBroker",
+      "UpdateConfiguration",
+      "UpdateUser",
+      "CreateReplicaBroker",
+      "UpdateBrokerAccessConfiguration"
+    ],
+    "Tagging": [
+      "CreateTags",
+      "DeleteTags"
+    ],
+    "Read": [
+      "DescribeBroker",
+      "DescribeBrokerEngineTypes",
+      "DescribeBrokerInstanceOptions",
+      "DescribeConfiguration",
+      "DescribeConfigurationRevision",
+      "DescribeSharedResources",
+      "DescribeUser"
+    ],
+    "List": [
+      "ListBrokers",
+      "ListConfigurationRevisions",
+      "ListConfigurations",
+      "ListTags",
+      "ListUsers"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateBroker",
+      "methodName": "toCreateBroker",
+      "description": "Grants permission to create a broker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateConfiguration",
+      "methodName": "toCreateConfiguration",
+      "description": "Grants permission to create a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and engine version)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-post",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateTags",
+      "methodName": "toCreateTags",
+      "description": "Grants permission to create tags",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-post"
+    },
+    {
+      "name": "CreateUser",
+      "methodName": "toCreateUser",
+      "description": "Grants permission to create an ActiveMQ user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-post"
+    },
+    {
+      "name": "DeleteBroker",
+      "methodName": "toDeleteBroker",
+      "description": "Grants permission to delete a broker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-delete"
+    },
+    {
+      "name": "DeleteConfiguration",
+      "methodName": "toDeleteConfiguration",
+      "description": "Grants permission to delete a configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-delete"
+    },
+    {
+      "name": "DeleteTags",
+      "methodName": "toDeleteTags",
+      "description": "Grants permission to delete tags",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-delete"
+    },
+    {
+      "name": "DeleteUser",
+      "methodName": "toDeleteUser",
+      "description": "Grants permission to delete an ActiveMQ user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-delete"
+    },
+    {
+      "name": "DescribeBroker",
+      "methodName": "toDescribeBroker",
+      "description": "Grants permission to return information about the specified broker",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get"
+    },
+    {
+      "name": "DescribeBrokerEngineTypes",
+      "methodName": "toDescribeBrokerEngineTypes",
+      "description": "Grants permission to return information about broker engines",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/broker-engine-types.html#broker-engine-types-http-methods"
+    },
+    {
+      "name": "DescribeBrokerInstanceOptions",
+      "methodName": "toDescribeBrokerInstanceOptions",
+      "description": "Grants permission to return information about the broker instance options",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/broker-instance-options.html#broker-engine-types-http-methods"
+    },
+    {
+      "name": "DescribeConfiguration",
+      "methodName": "toDescribeConfiguration",
+      "description": "Grants permission to return information about the specified configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-get"
+    },
+    {
+      "name": "DescribeConfigurationRevision",
+      "methodName": "toDescribeConfigurationRevision",
+      "description": "Grants permission to return the specified configuration revision for the specified configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configuration-revision.html#rest-api-configuration-revision-methods-get"
+    },
+    {
+      "name": "DescribeSharedResources",
+      "methodName": "toDescribeSharedResources",
+      "description": "Grants permission to return the resources shared to a broker",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/brokers-broker-id-shared-resources.html"
+    },
+    {
+      "name": "DescribeUser",
+      "methodName": "toDescribeUser",
+      "description": "Grants permission to return information about an ActiveMQ user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-get"
+    },
+    {
+      "name": "ListBrokers",
+      "methodName": "toListBrokers",
+      "description": "Grants permission to return a list of all brokers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-get"
+    },
+    {
+      "name": "ListConfigurationRevisions",
+      "methodName": "toListConfigurationRevisions",
+      "description": "Grants permission to return a list of all existing revisions for the specified configuration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-revisions.html#rest-api-revisions-methods-get"
+    },
+    {
+      "name": "ListConfigurations",
+      "methodName": "toListConfigurations",
+      "description": "Grants permission to return a list of all configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-get"
+    },
+    {
+      "name": "ListTags",
+      "methodName": "toListTags",
+      "description": "Grants permission to return a list of tags",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-get"
+    },
+    {
+      "name": "ListUsers",
+      "methodName": "toListUsers",
+      "description": "Grants permission to return a list of all ActiveMQ users",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-users.html#rest-api-users-methods-get"
+    },
+    {
+      "name": "Promote",
+      "methodName": "toPromote",
+      "description": "Grants permission to promote a broker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-promote.html#rest-api-promote-methods-post"
+    },
+    {
+      "name": "RebootBroker",
+      "methodName": "toRebootBroker",
+      "description": "Grants permission to reboot a broker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-restart.html#rest-api-reboot-methods-post"
+    },
+    {
+      "name": "UpdateBroker",
+      "methodName": "toUpdateBroker",
+      "description": "Grants permission to add a pending configuration change to a broker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get"
+    },
+    {
+      "name": "UpdateConfiguration",
+      "methodName": "toUpdateConfiguration",
+      "description": "Grants permission to update the specified configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-put"
+    },
+    {
+      "name": "UpdateUser",
+      "methodName": "toUpdateUser",
+      "description": "Grants permission to update the information for an ActiveMQ user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-put"
+    },
+    {
+      "name": "CreateReplicaBroker",
+      "methodName": "toCreateReplicaBroker",
+      "description": "Grants permission to create a replica broker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post"
+    },
+    {
+      "name": "UpdateBrokerAccessConfiguration",
+      "methodName": "toUpdateBrokerAccessConfiguration",
+      "description": "Grants permission to update RabbitMQ broker authentication and authorization configuration",
+      "accessLevel": "Write",
+      "url": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "brokers",
+      "methodName": "onBrokers",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-how-it-works.html",
+      "arn": "arn:${Partition}:mq:${Region}:${Account}:broker:${BrokerName}:${BrokerId}",
+      "placeholders": [
+        {
+          "placeholder": "BrokerName",
+          "name": "brokerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "BrokerId",
+          "name": "brokerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "configurations",
+      "methodName": "onConfigurations",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-how-it-works.html",
+      "arn": "arn:${Partition}:mq:${Region}:${Account}:configuration:${ConfigurationId}",
+      "placeholders": [
+        {
+          "placeholder": "ConfigurationId",
+          "name": "configurationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toCreateBroker",
+        "toCreateConfiguration",
+        "toCreateTags"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toCreateTags",
+        "toCreateUser",
+        "toDeleteBroker",
+        "toDeleteConfiguration",
+        "toDeleteTags",
+        "toDeleteUser",
+        "toDescribeBroker",
+        "toDescribeConfiguration",
+        "toDescribeConfigurationRevision",
+        "toDescribeSharedResources",
+        "toDescribeUser",
+        "toListConfigurationRevisions",
+        "toListTags",
+        "toListUsers",
+        "toPromote",
+        "toRebootBroker",
+        "toUpdateBroker",
+        "toUpdateConfiguration",
+        "toUpdateUser",
+        "toCreateReplicaBroker",
+        "toUpdateBrokerAccessConfiguration"
+      ],
+      "relatedResourceTypes": [
+        "brokers",
+        "configurations"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toCreateBroker",
+        "toCreateConfiguration",
+        "toCreateTags",
+        "toDeleteTags"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

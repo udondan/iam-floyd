@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "filename": "elemental-activations",
+  "className": "ElementalActivations",
+  "name": "elemental-activations",
+  "servicePrefix": "elemental-activations",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elemental-activations.html",
+  "accessLevelList": {
+    "Write": [
+      "CompleteAccountRegistration",
+      "CompleteFileUpload",
+      "ConfirmAccount",
+      "GenerateLicense",
+      "GenerateLicenses",
+      "StartFileUpload"
+    ],
+    "Read": [
+      "DownloadKickstart",
+      "DownloadSoftware",
+      "GetArtifactGroupSoftwareVersions",
+      "GetAsset",
+      "GetAssets",
+      "GetProductAdvisories",
+      "GetSoftwareVersions"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CompleteAccountRegistration",
+      "methodName": "toCompleteAccountRegistration",
+      "description": "Grants permission to complete the process of registering customer account for AWS Elemental Appliances and Software Purchases",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software/"
+    },
+    {
+      "name": "CompleteFileUpload",
+      "methodName": "toCompleteFileUpload",
+      "description": "Grants permission to complete the process of uploading a Software file for AWS Elemental Appliances and Software Purchases",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software/"
+    },
+    {
+      "name": "ConfirmAccount",
+      "methodName": "toConfirmAccount",
+      "description": "Grants permission to confirm asset ownership",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software/"
+    },
+    {
+      "name": "DownloadKickstart",
+      "methodName": "toDownloadKickstart",
+      "description": "Grants permission to download the kickstart files for AWS Elemental Appliances and Software purchases",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software/"
+    },
+    {
+      "name": "DownloadSoftware",
+      "methodName": "toDownloadSoftware",
+      "description": "Grants permission to download the Software files for AWS Elemental Appliances and Software Purchases",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software/"
+    },
+    {
+      "name": "GenerateLicense",
+      "methodName": "toGenerateLicense",
+      "description": "Grants permission to generate a software license for an AWS Elemental Appliances and Software purchase",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software/"
+    },
+    {
+      "name": "GenerateLicenses",
+      "methodName": "toGenerateLicenses",
+      "description": "Grants permission to generate Software Licenses for AWS Elemental Appliances and Software Purchases",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software/"
+    },
+    {
+      "name": "GetArtifactGroupSoftwareVersions",
+      "methodName": "toGetArtifactGroupSoftwareVersions",
+      "description": "Grants permission to describe the software version of an artifact group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software/"
+    },
+    {
+      "name": "GetAsset",
+      "methodName": "toGetAsset",
+      "description": "Grants permission to describe an asset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software/"
+    },
+    {
+      "name": "GetAssets",
+      "methodName": "toGetAssets",
+      "description": "Grants permission to describe assets associated to the requesting account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software/"
+    },
+    {
+      "name": "GetProductAdvisories",
+      "methodName": "toGetProductAdvisories",
+      "description": "Grants permission to get all product advisories",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software/"
+    },
+    {
+      "name": "GetSoftwareVersions",
+      "methodName": "toGetSoftwareVersions",
+      "description": "Grants permission to describe available software versions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software/"
+    },
+    {
+      "name": "StartFileUpload",
+      "methodName": "toStartFileUpload",
+      "description": "Grants permission to start the process of uploading a Software file for AWS Elemental Appliances and Software Purchases",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software/"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

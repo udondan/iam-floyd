@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "filename": "eks-mcp",
+  "className": "EksMcp",
+  "name": "eks-mcp",
+  "servicePrefix": "eks-mcp",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_eks-mcp.html",
+  "accessLevelList": {
+    "Write": [
+      "CallPrivilegedTool"
+    ],
+    "Read": [
+      "CallReadOnlyTool",
+      "InvokeMcp"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CallPrivilegedTool",
+      "methodName": "toCallPrivilegedTool",
+      "description": "Grants permission to call privileged tools in MCP service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/eks-mcp-tool-configurations.html"
+    },
+    {
+      "name": "CallReadOnlyTool",
+      "methodName": "toCallReadOnlyTool",
+      "description": "Grants permission to call read-only tools in MCP service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/eks-mcp-tool-configurations.html"
+    },
+    {
+      "name": "InvokeMcp",
+      "methodName": "toInvokeMcp",
+      "description": "Grants permission to use MCP service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/eks-mcp-tool-configurations.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

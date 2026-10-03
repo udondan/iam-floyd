@@ -1,0 +1,501 @@
+{
+  "schemaVersion": 1,
+  "filename": "panorama",
+  "className": "Panorama",
+  "name": "panorama",
+  "servicePrefix": "panorama",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_panorama.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateApplicationInstance",
+      "CreateJobForDevices",
+      "CreateNodeFromTemplateJob",
+      "CreatePackage",
+      "CreatePackageImportJob",
+      "DeleteDevice",
+      "DeletePackage",
+      "DeregisterPackageVersion",
+      "ProvisionDevice",
+      "RegisterPackageVersion",
+      "RemoveApplicationInstance",
+      "SignalApplicationInstanceNodeInstances",
+      "TagResource",
+      "UntagResource",
+      "UpdateDeviceMetadata"
+    ],
+    "Read": [
+      "DescribeApplicationInstance",
+      "DescribeApplicationInstanceDetails",
+      "DescribeDevice",
+      "DescribeDeviceJob",
+      "DescribeNode",
+      "DescribeNodeFromTemplateJob",
+      "DescribePackage",
+      "DescribePackageImportJob",
+      "DescribePackageVersion",
+      "ListTagsForResource",
+      "DescribeSoftware",
+      "GetWebSocketURL"
+    ],
+    "List": [
+      "ListApplicationInstanceDependencies",
+      "ListApplicationInstanceNodeInstances",
+      "ListApplicationInstances",
+      "ListDevices",
+      "ListDevicesJobs",
+      "ListNodeFromTemplateJobs",
+      "ListNodes",
+      "ListPackageImportJobs",
+      "ListPackages"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateApplicationInstance",
+      "methodName": "toCreateApplicationInstance",
+      "description": "Grants permission to create an AWS Panorama Application Instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_CreateApplicationInstance.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateJobForDevices",
+      "methodName": "toCreateJobForDevices",
+      "description": "Grants permission to create a job for an AWS Panorama Appliance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_CreateJobForDevices.html"
+    },
+    {
+      "name": "CreateNodeFromTemplateJob",
+      "methodName": "toCreateNodeFromTemplateJob",
+      "description": "Grants permission to create an AWS Panorama Node",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_CreateNodeFromTemplateJob.html"
+    },
+    {
+      "name": "CreatePackage",
+      "methodName": "toCreatePackage",
+      "description": "Grants permission to create an AWS Panorama Package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_CreatePackage.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreatePackageImportJob",
+      "methodName": "toCreatePackageImportJob",
+      "description": "Grants permission to create an AWS Panorama Package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_CreatePackageImportJob.html"
+    },
+    {
+      "name": "DeleteDevice",
+      "methodName": "toDeleteDevice",
+      "description": "Grants permission to deregister an AWS Panorama Appliance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_DeleteDevice.html"
+    },
+    {
+      "name": "DeletePackage",
+      "methodName": "toDeletePackage",
+      "description": "Grants permission to delete an AWS Panorama Package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_DeletePackage.html"
+    },
+    {
+      "name": "DeregisterPackageVersion",
+      "methodName": "toDeregisterPackageVersion",
+      "description": "Grants permission to deregister an AWS Panorama package version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_DeregisterPackageVersion.html"
+    },
+    {
+      "name": "DescribeApplicationInstance",
+      "methodName": "toDescribeApplicationInstance",
+      "description": "Grants permission to view details about an AWS Panorama application instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_DescribeApplicationInstance.html"
+    },
+    {
+      "name": "DescribeApplicationInstanceDetails",
+      "methodName": "toDescribeApplicationInstanceDetails",
+      "description": "Grants permission to view details about an AWS Panorama application instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_DescribeApplicationInstanceDetails.html"
+    },
+    {
+      "name": "DescribeDevice",
+      "methodName": "toDescribeDevice",
+      "description": "Grants permission to view details about an AWS Panorama Appliance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_DescribeDevice.html"
+    },
+    {
+      "name": "DescribeDeviceJob",
+      "methodName": "toDescribeDeviceJob",
+      "description": "Grants permission to view job details for an AWS Panorama Appliance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_DescribeDeviceJob.html"
+    },
+    {
+      "name": "DescribeNode",
+      "methodName": "toDescribeNode",
+      "description": "Grants permission to view details about an AWS Panorama application node",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_DescribeNode.html"
+    },
+    {
+      "name": "DescribeNodeFromTemplateJob",
+      "methodName": "toDescribeNodeFromTemplateJob",
+      "description": "Grants permission to view details about AWS Panorama application node",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_DescribeNodeFromTemplateJob.html"
+    },
+    {
+      "name": "DescribePackage",
+      "methodName": "toDescribePackage",
+      "description": "Grants permission to view details about an AWS Panorama package",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_DescribePackage.html"
+    },
+    {
+      "name": "DescribePackageImportJob",
+      "methodName": "toDescribePackageImportJob",
+      "description": "Grants permission to view details about an AWS Panorama package",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_DescribePackageImportJob.html"
+    },
+    {
+      "name": "DescribePackageVersion",
+      "methodName": "toDescribePackageVersion",
+      "description": "Grants permission to view details about an AWS Panorama package version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_DescribePackageVersion.html"
+    },
+    {
+      "name": "ListApplicationInstanceDependencies",
+      "methodName": "toListApplicationInstanceDependencies",
+      "description": "Grants permission to retrieve a list of application instance dependencies in AWS Panorama",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_ListApplicationInstanceDependencies.html"
+    },
+    {
+      "name": "ListApplicationInstanceNodeInstances",
+      "methodName": "toListApplicationInstanceNodeInstances",
+      "description": "Grants permission to retrieve a list of node instances of application instances in AWS Panorama",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_ListApplicationInstanceNodeInstances.html"
+    },
+    {
+      "name": "ListApplicationInstances",
+      "methodName": "toListApplicationInstances",
+      "description": "Grants permission to retrieve a list of application instances in AWS Panorama",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_ListApplicationInstances.html"
+    },
+    {
+      "name": "ListDevices",
+      "methodName": "toListDevices",
+      "description": "Grants permission to retrieve a list of appliances in AWS Panorama",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_ListDevices.html"
+    },
+    {
+      "name": "ListDevicesJobs",
+      "methodName": "toListDevicesJobs",
+      "description": "Grants permission to retrieve a list of jobs for an AWS Panorama Appliance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_ListDevicesJobs.html"
+    },
+    {
+      "name": "ListNodeFromTemplateJobs",
+      "methodName": "toListNodeFromTemplateJobs",
+      "description": "Grants permission to retrieve a list of Nodes for an AWS Panorama Appliance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_ListNodeFromTemplateJobs.html"
+    },
+    {
+      "name": "ListNodes",
+      "methodName": "toListNodes",
+      "description": "Grants permission to retrieve a list of nodes in AWS Panorama",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_ListNodes.html"
+    },
+    {
+      "name": "ListPackageImportJobs",
+      "methodName": "toListPackageImportJobs",
+      "description": "Grants permission to retrieve a list of packages in AWS Panorama",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_ListPackageImportJobs.html"
+    },
+    {
+      "name": "ListPackages",
+      "methodName": "toListPackages",
+      "description": "Grants permission to retrieve a list of packages in AWS Panorama",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_ListPackages.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to retrieve a list of tags for a resource in AWS Panorama",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ProvisionDevice",
+      "methodName": "toProvisionDevice",
+      "description": "Grants permission to register an AWS Panorama Appliance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_ProvisionDevice.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "RegisterPackageVersion",
+      "methodName": "toRegisterPackageVersion",
+      "description": "Grants permission to register an AWS Panorama package version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_RegisterPackageVersion.html"
+    },
+    {
+      "name": "RemoveApplicationInstance",
+      "methodName": "toRemoveApplicationInstance",
+      "description": "Grants permission to remove an AWS Panorama application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_RemoveApplicationInstance.html"
+    },
+    {
+      "name": "SignalApplicationInstanceNodeInstances",
+      "methodName": "toSignalApplicationInstanceNodeInstances",
+      "description": "Grants permission to signal camera nodes in an application instance to pause or resume",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_SignalApplicationInstanceNodeInstances.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource in AWS Panorama",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource in AWS Panorama",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDeviceMetadata",
+      "methodName": "toUpdateDeviceMetadata",
+      "description": "Grants permission to modify basic settings for an AWS Panorama Appliance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/panorama/latest/api/API_UpdateDeviceMetadata.html"
+    },
+    {
+      "name": "DescribeSoftware",
+      "methodName": "toDescribeSoftware",
+      "description": "Grants permission to view details about a software version for the AWS Panorama Appliance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspanorama.html"
+    },
+    {
+      "name": "GetWebSocketURL",
+      "methodName": "toGetWebSocketURL",
+      "description": "Grants permission to generate a WebSocket endpoint for communication with AWS Panorama",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspanorama.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "applicationInstance",
+      "methodName": "onApplicationInstance",
+      "url": "https://docs.aws.amazon.com/panorama/latest/dev/gettingstarted-concepts.html#gettingstarted-concepts-application",
+      "arn": "arn:${Partition}:panorama:${Region}:${Account}:applicationInstance/${ApplicationInstanceId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationInstanceId",
+          "name": "applicationInstanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "device",
+      "methodName": "onDevice",
+      "url": "https://docs.aws.amazon.com/panorama/latest/dev/gettingstarted-concepts.html#gettingstarted-concepts-appliance",
+      "arn": "arn:${Partition}:panorama:${Region}:${Account}:device/${DeviceId}",
+      "placeholders": [
+        {
+          "placeholder": "DeviceId",
+          "name": "deviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "package",
+      "methodName": "onPackage",
+      "url": "https://docs.aws.amazon.com/panorama/latest/dev/gettingstarted-concepts.html#gettingstarted-concepts-node",
+      "arn": "arn:${Partition}:panorama:${Region}:${Account}:package/${PackageId}",
+      "placeholders": [
+        {
+          "placeholder": "PackageId",
+          "name": "packageId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateApplicationInstance",
+        "toCreatePackage",
+        "toProvisionDevice",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toDeleteDevice",
+        "toDeletePackage",
+        "toDeregisterPackageVersion",
+        "toDescribeApplicationInstance",
+        "toDescribeApplicationInstanceDetails",
+        "toDescribeDevice",
+        "toDescribePackage",
+        "toDescribePackageVersion",
+        "toListApplicationInstanceDependencies",
+        "toListApplicationInstanceNodeInstances",
+        "toListApplicationInstances",
+        "toListDevicesJobs",
+        "toListTagsForResource",
+        "toRegisterPackageVersion",
+        "toRemoveApplicationInstance",
+        "toSignalApplicationInstanceNodeInstances",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDeviceMetadata"
+      ],
+      "relatedResourceTypes": [
+        "applicationInstance",
+        "device",
+        "package"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateApplicationInstance",
+        "toCreatePackage",
+        "toProvisionDevice",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

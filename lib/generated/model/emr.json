@@ -1,0 +1,1173 @@
+{
+  "schemaVersion": 1,
+  "filename": "emr",
+  "className": "Elasticmapreduce",
+  "name": "elasticmapreduce",
+  "servicePrefix": "elasticmapreduce",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_emr.html",
+  "accessLevelList": {
+    "Write": [
+      "AccessAllEventLogs",
+      "AddInstanceFleet",
+      "AddInstanceGroups",
+      "AddJobFlowSteps",
+      "AddTags",
+      "CancelSteps",
+      "CreatePersistentAppUI",
+      "CreateSecurityConfiguration",
+      "CreateStudio",
+      "CreateStudioPresignedUrl",
+      "CreateStudioSessionMapping",
+      "DeleteSecurityConfiguration",
+      "DeleteStudio",
+      "DeleteStudioSessionMapping",
+      "GetClusterSessionCredentials",
+      "GetOnClusterAppUIPresignedURL",
+      "GetPersistentAppUIPresignedURL",
+      "GetSessionEndpoint",
+      "ModifyCluster",
+      "ModifyInstanceFleet",
+      "ModifyInstanceGroups",
+      "PutAutoScalingPolicy",
+      "PutAutoTerminationPolicy",
+      "PutBlockPublicAccessConfiguration",
+      "PutManagedScalingPolicy",
+      "RemoveAutoScalingPolicy",
+      "RemoveAutoTerminationPolicy",
+      "RemoveManagedScalingPolicy",
+      "RemoveTags",
+      "RunJobFlow",
+      "SetKeepJobFlowAliveWhenNoSteps",
+      "SetTerminationProtection",
+      "SetUnhealthyNodeReplacement",
+      "SetVisibleToAllUsers",
+      "StartNotebookExecution",
+      "StartSession",
+      "StopNotebookExecution",
+      "TerminateJobFlows",
+      "TerminateSession",
+      "UpdateStudio",
+      "UpdateStudioSessionMapping",
+      "AttachEditor",
+      "CreateEditor",
+      "CreateRepository",
+      "DeleteEditor",
+      "DeleteRepository",
+      "DeleteWorkspaceAccess",
+      "DetachEditor",
+      "LinkRepository",
+      "OpenEditorInConsole",
+      "PutWorkspaceAccess",
+      "StartEditor",
+      "StopEditor",
+      "UnlinkRepository",
+      "UpdateEditor",
+      "UpdateRepository"
+    ],
+    "Tagging": [
+      "AddTags",
+      "RemoveTags"
+    ],
+    "Read": [
+      "DescribeCluster",
+      "DescribeJobFlows",
+      "DescribeNotebookExecution",
+      "DescribePersistentAppUI",
+      "DescribeReleaseLabel",
+      "DescribeSecurityConfiguration",
+      "DescribeStep",
+      "DescribeStudio",
+      "GetAutoTerminationPolicy",
+      "GetBlockPublicAccessConfiguration",
+      "GetManagedScalingPolicy",
+      "GetSession",
+      "GetStudioSessionMapping",
+      "ListBootstrapActions",
+      "ListInstanceFleets",
+      "ListInstanceGroups",
+      "ListInstances",
+      "ListSteps",
+      "DescribeEditor",
+      "DescribeRepository"
+    ],
+    "List": [
+      "ListClusters",
+      "ListNotebookExecutions",
+      "ListReleaseLabels",
+      "ListSecurityConfigurations",
+      "ListSessions",
+      "ListStudioSessionMappings",
+      "ListStudios",
+      "ListSupportedInstanceTypes",
+      "ListEditors",
+      "ListRepositories",
+      "ListWorkspaceAccessIdentities",
+      "ViewEventsFromAllClustersInConsole"
+    ],
+    "Permissions management": [
+      "PutBlockPublicAccessConfiguration",
+      "DeleteWorkspaceAccess",
+      "PutWorkspaceAccess"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AccessAllEventLogs",
+      "methodName": "toAccessAllEventLogs",
+      "description": "Grants permission to view all event logs in a persistent application history server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-debug.html"
+    },
+    {
+      "name": "AddInstanceFleet",
+      "methodName": "toAddInstanceFleet",
+      "description": "Grants permission to add an instance fleet to a running cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_AddInstanceFleet.html"
+    },
+    {
+      "name": "AddInstanceGroups",
+      "methodName": "toAddInstanceGroups",
+      "description": "Grants permission to add instance groups to a running cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_AddInstanceGroups.html"
+    },
+    {
+      "name": "AddJobFlowSteps",
+      "methodName": "toAddJobFlowSteps",
+      "description": "Grants permission to add new steps to a running cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_AddJobFlowSteps.html"
+    },
+    {
+      "name": "AddTags",
+      "methodName": "toAddTags",
+      "description": "Grants permission to add tags to an Amazon EMR resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_AddTags.html"
+    },
+    {
+      "name": "CancelSteps",
+      "methodName": "toCancelSteps",
+      "description": "Grants permission to cancel a pending step or steps in a running cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_CancelSteps.html"
+    },
+    {
+      "name": "CreatePersistentAppUI",
+      "methodName": "toCreatePersistentAppUI",
+      "description": "Grants permission to create a persistent application history server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-debug.html"
+    },
+    {
+      "name": "CreateSecurityConfiguration",
+      "methodName": "toCreateSecurityConfiguration",
+      "description": "Grants permission to create a security configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_CreateSecurityConfiguration.html"
+    },
+    {
+      "name": "CreateStudio",
+      "methodName": "toCreateStudio",
+      "description": "Grants permission to create an EMR Studio",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifRequestTag"
+      ]
+    },
+    {
+      "name": "CreateStudioPresignedUrl",
+      "methodName": "toCreateStudioPresignedUrl",
+      "description": "Grants permission to launch an EMR Studio using IAM authentication mode",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html"
+    },
+    {
+      "name": "CreateStudioSessionMapping",
+      "methodName": "toCreateStudioSessionMapping",
+      "description": "Grants permission to create an EMR Studio session mapping",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html"
+    },
+    {
+      "name": "DeleteSecurityConfiguration",
+      "methodName": "toDeleteSecurityConfiguration",
+      "description": "Grants permission to delete a security configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DeleteSecurityConfiguration.html"
+    },
+    {
+      "name": "DeleteStudio",
+      "methodName": "toDeleteStudio",
+      "description": "Grants permission to delete an EMR Studio",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html"
+    },
+    {
+      "name": "DeleteStudioSessionMapping",
+      "methodName": "toDeleteStudioSessionMapping",
+      "description": "Grants permission to delete an EMR Studio session mapping",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html"
+    },
+    {
+      "name": "DescribeCluster",
+      "methodName": "toDescribeCluster",
+      "description": "Grants permission to get details about a cluster, including status, hardware and software configuration, VPC settings, and so on",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeCluster.html"
+    },
+    {
+      "name": "DescribeJobFlows",
+      "methodName": "toDescribeJobFlows",
+      "description": "Grants permission to describe details of clusters (job flows). This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeJobFlows.html"
+    },
+    {
+      "name": "DescribeNotebookExecution",
+      "methodName": "toDescribeNotebookExecution",
+      "description": "Grants permission to view information about a notebook execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-headless.html"
+    },
+    {
+      "name": "DescribePersistentAppUI",
+      "methodName": "toDescribePersistentAppUI",
+      "description": "Grants permission to describe a persistent application history server",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-debug.html"
+    },
+    {
+      "name": "DescribeReleaseLabel",
+      "methodName": "toDescribeReleaseLabel",
+      "description": "Grants permission to view information about an EMR release, such as which applications are supported",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeReleaseLabel.html"
+    },
+    {
+      "name": "DescribeSecurityConfiguration",
+      "methodName": "toDescribeSecurityConfiguration",
+      "description": "Grants permission to get details of a security configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeSecurityConfiguration.html"
+    },
+    {
+      "name": "DescribeStep",
+      "methodName": "toDescribeStep",
+      "description": "Grants permission to get details about a cluster step",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeStep.html"
+    },
+    {
+      "name": "DescribeStudio",
+      "methodName": "toDescribeStudio",
+      "description": "Grants permission to view information about an EMR Studio",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html"
+    },
+    {
+      "name": "GetAutoTerminationPolicy",
+      "methodName": "toGetAutoTerminationPolicy",
+      "description": "Grants permission to retrieve the auto-termination policy associated with a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_GetAutoTerminationPolicy.html"
+    },
+    {
+      "name": "GetBlockPublicAccessConfiguration",
+      "methodName": "toGetBlockPublicAccessConfiguration",
+      "description": "Grants permission to retrieve the EMR block public access configuration for the AWS account in the Region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_GetBlockPublicAccessConfiguration.html"
+    },
+    {
+      "name": "GetClusterSessionCredentials",
+      "methodName": "toGetClusterSessionCredentials",
+      "description": "Grants permission to retrieve HTTP basic credentials associated with a given execution IAM Role for a fine-grained access control enabled EMR Cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-steps-runtime-roles.html"
+    },
+    {
+      "name": "GetManagedScalingPolicy",
+      "methodName": "toGetManagedScalingPolicy",
+      "description": "Grants permission to retrieve the managed scaling policy associated with a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_GetManagedScalingPolicy.html"
+    },
+    {
+      "name": "GetOnClusterAppUIPresignedURL",
+      "methodName": "toGetOnClusterAppUIPresignedURL",
+      "description": "Grants permission to get a presigned URL for an application history server running on the cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-debug.html"
+    },
+    {
+      "name": "GetPersistentAppUIPresignedURL",
+      "methodName": "toGetPersistentAppUIPresignedURL",
+      "description": "Grants permission to get a presigned URL for a persistent application history server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-debug.html"
+    },
+    {
+      "name": "GetSession",
+      "methodName": "toGetSession",
+      "description": "Grants permission to get details of a Spark Connect session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_GetSession.html"
+    },
+    {
+      "name": "GetSessionEndpoint",
+      "methodName": "toGetSessionEndpoint",
+      "description": "Grants permission to get the endpoint and credentials for a Spark Connect session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_GetSessionEndpoint.html"
+    },
+    {
+      "name": "GetStudioSessionMapping",
+      "methodName": "toGetStudioSessionMapping",
+      "description": "Grants permission to view information about an EMR Studio session mapping",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html"
+    },
+    {
+      "name": "ListBootstrapActions",
+      "methodName": "toListBootstrapActions",
+      "description": "Grants permission to get details about the bootstrap actions associated with a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListBootstrapActions.html"
+    },
+    {
+      "name": "ListClusters",
+      "methodName": "toListClusters",
+      "description": "Grants permission to get the status of accessible clusters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListClusters.html"
+    },
+    {
+      "name": "ListInstanceFleets",
+      "methodName": "toListInstanceFleets",
+      "description": "Grants permission to get details of instance fleets in a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListInstanceFleets.html"
+    },
+    {
+      "name": "ListInstanceGroups",
+      "methodName": "toListInstanceGroups",
+      "description": "Grants permission to get details of instance groups in a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListInstanceGroups.html"
+    },
+    {
+      "name": "ListInstances",
+      "methodName": "toListInstances",
+      "description": "Grants permission to get details about the Amazon EC2 instances in a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListInstances.html"
+    },
+    {
+      "name": "ListNotebookExecutions",
+      "methodName": "toListNotebookExecutions",
+      "description": "Grants permission to list summary information for notebook executions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-headless.html"
+    },
+    {
+      "name": "ListReleaseLabels",
+      "methodName": "toListReleaseLabels",
+      "description": "Grants permission to list and filter the available EMR releases in the current region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListReleaseLabels.html"
+    },
+    {
+      "name": "ListSecurityConfigurations",
+      "methodName": "toListSecurityConfigurations",
+      "description": "Grants permission to list available security configurations in this account by name, along with creation dates and times",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListSecurityConfigurations.html"
+    },
+    {
+      "name": "ListSessions",
+      "methodName": "toListSessions",
+      "description": "Grants permission to list Spark Connect sessions on an Amazon EMR cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListSessions.html"
+    },
+    {
+      "name": "ListSteps",
+      "methodName": "toListSteps",
+      "description": "Grants permission to list steps associated with a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListSteps.html"
+    },
+    {
+      "name": "ListStudioSessionMappings",
+      "methodName": "toListStudioSessionMappings",
+      "description": "Grants permission to list summary information about EMR Studio session mappings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html"
+    },
+    {
+      "name": "ListStudios",
+      "methodName": "toListStudios",
+      "description": "Grants permission to list summary information about EMR Studios",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html"
+    },
+    {
+      "name": "ListSupportedInstanceTypes",
+      "methodName": "toListSupportedInstanceTypes",
+      "description": "Grants permission to list the Amazon EC2 instance types that an Amazon EMR release supports",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListSupportedInstanceTypes.html"
+    },
+    {
+      "name": "ModifyCluster",
+      "methodName": "toModifyCluster",
+      "description": "Grants permission to change cluster settings such as number of steps that can be executed concurrently for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ModifyCluster.html"
+    },
+    {
+      "name": "ModifyInstanceFleet",
+      "methodName": "toModifyInstanceFleet",
+      "description": "Grants permission to change the target On-Demand and target Spot capacities for a instance fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ModifyInstanceFleet.html"
+    },
+    {
+      "name": "ModifyInstanceGroups",
+      "methodName": "toModifyInstanceGroups",
+      "description": "Grants permission to change the number and configuration of EC2 instances for an instance group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ModifyInstanceGroups.html"
+    },
+    {
+      "name": "PutAutoScalingPolicy",
+      "methodName": "toPutAutoScalingPolicy",
+      "description": "Grants permission to create or update an automatic scaling policy for a core instance group or task instance group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_PutAutoScalingPolicy.html"
+    },
+    {
+      "name": "PutAutoTerminationPolicy",
+      "methodName": "toPutAutoTerminationPolicy",
+      "description": "Grants permission to create or update the auto-termination policy associated with a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_PutAutoTerminationPolicy.html"
+    },
+    {
+      "name": "PutBlockPublicAccessConfiguration",
+      "methodName": "toPutBlockPublicAccessConfiguration",
+      "description": "Grants permission to create or update the EMR block public access configuration for the AWS account in the Region",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_PutBlockPublicAccessConfiguration.html"
+    },
+    {
+      "name": "PutManagedScalingPolicy",
+      "methodName": "toPutManagedScalingPolicy",
+      "description": "Grants permission to create or update the managed scaling policy associated with a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_PutManagedScalingPolicy.html"
+    },
+    {
+      "name": "RemoveAutoScalingPolicy",
+      "methodName": "toRemoveAutoScalingPolicy",
+      "description": "Grants permission to remove an automatic scaling policy from an instance group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveAutoScalingPolicy.html"
+    },
+    {
+      "name": "RemoveAutoTerminationPolicy",
+      "methodName": "toRemoveAutoTerminationPolicy",
+      "description": "Grants permission to remove the auto-termination policy associated with a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveAutoTerminationPolicy.html"
+    },
+    {
+      "name": "RemoveManagedScalingPolicy",
+      "methodName": "toRemoveManagedScalingPolicy",
+      "description": "Grants permission to remove the managed scaling policy associated with a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveManagedScalingPolicy.html"
+    },
+    {
+      "name": "RemoveTags",
+      "methodName": "toRemoveTags",
+      "description": "Grants permission to remove tags from an Amazon EMR resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveTags.html"
+    },
+    {
+      "name": "RunJobFlow",
+      "methodName": "toRunJobFlow",
+      "description": "Grants permission to create and launch a cluster (job flow)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_RunJobFlow.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifRequestTag"
+      ]
+    },
+    {
+      "name": "SetKeepJobFlowAliveWhenNoSteps",
+      "methodName": "toSetKeepJobFlowAliveWhenNoSteps",
+      "description": "Grants permission to add and remove auto terminate after step execution for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_SetKeepJobFlowAliveWhenNoSteps.html"
+    },
+    {
+      "name": "SetTerminationProtection",
+      "methodName": "toSetTerminationProtection",
+      "description": "Grants permission to add and remove termination protection for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_SetTerminationProtection.html"
+    },
+    {
+      "name": "SetUnhealthyNodeReplacement",
+      "methodName": "toSetUnhealthyNodeReplacement",
+      "description": "Grants permission to enable or disable unhealthy node replacement for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_SetUnhealthyNodeReplacement.html"
+    },
+    {
+      "name": "SetVisibleToAllUsers",
+      "methodName": "toSetVisibleToAllUsers",
+      "description": "Grants permission to set whether all AWS Identity and Access Management (IAM) users in the AWS account can view a cluster. This API is deprecated and your cluster may be visible to all users in your account. To restrict cluster access using an IAM policy, see AWS Identity and Access Management for Amazon EMR (https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_SetVisibleToAllUsers.html"
+    },
+    {
+      "name": "StartNotebookExecution",
+      "methodName": "toStartNotebookExecution",
+      "description": "Grants permission to start an EMR notebook execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-headless.html"
+    },
+    {
+      "name": "StartSession",
+      "methodName": "toStartSession",
+      "description": "Grants permission to start a Spark Connect session on an Amazon EMR cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_StartSession.html"
+    },
+    {
+      "name": "StopNotebookExecution",
+      "methodName": "toStopNotebookExecution",
+      "description": "Grants permission to stop notebook execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-headless.html"
+    },
+    {
+      "name": "TerminateJobFlows",
+      "methodName": "toTerminateJobFlows",
+      "description": "Grants permission to terminate a cluster (job flow)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_TerminateJobFlows.html"
+    },
+    {
+      "name": "TerminateSession",
+      "methodName": "toTerminateSession",
+      "description": "Grants permission to terminate a Spark Connect session on an Amazon EMR cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_TerminateSession.html"
+    },
+    {
+      "name": "UpdateStudio",
+      "methodName": "toUpdateStudio",
+      "description": "Grants permission to update information about an EMR Studio",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html"
+    },
+    {
+      "name": "UpdateStudioSessionMapping",
+      "methodName": "toUpdateStudioSessionMapping",
+      "description": "Grants permission to update an EMR Studio session mapping",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html"
+    },
+    {
+      "name": "AttachEditor",
+      "methodName": "toAttachEditor",
+      "description": "Grants permission to attach an EMR notebook to a compute engine",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html"
+    },
+    {
+      "name": "CreateEditor",
+      "methodName": "toCreateEditor",
+      "description": "Grants permission to create an EMR notebook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-create.html"
+    },
+    {
+      "name": "CreateRepository",
+      "methodName": "toCreateRepository",
+      "description": "Grants permission to create an EMR notebook repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor"
+    },
+    {
+      "name": "DeleteEditor",
+      "methodName": "toDeleteEditor",
+      "description": "Grants permission to delete an EMR notebook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-deleting"
+    },
+    {
+      "name": "DeleteRepository",
+      "methodName": "toDeleteRepository",
+      "description": "Grants permission to delete an EMR notebook repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor"
+    },
+    {
+      "name": "DeleteWorkspaceAccess",
+      "methodName": "toDeleteWorkspaceAccess",
+      "description": "Grants permission to block an identity from opening a collaborative workspace",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html"
+    },
+    {
+      "name": "DescribeEditor",
+      "methodName": "toDescribeEditor",
+      "description": "Grants permission to view information about a notebook, including status, user, role, tags, location, and more",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html"
+    },
+    {
+      "name": "DescribeRepository",
+      "methodName": "toDescribeRepository",
+      "description": "Grants permission to describe an EMR notebook repository",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor"
+    },
+    {
+      "name": "DetachEditor",
+      "methodName": "toDetachEditor",
+      "description": "Grants permission to detach an EMR notebook from a compute engine",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html"
+    },
+    {
+      "name": "LinkRepository",
+      "methodName": "toLinkRepository",
+      "description": "Grants permission to link an EMR notebook repository to EMR notebooks",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor"
+    },
+    {
+      "name": "ListEditors",
+      "methodName": "toListEditors",
+      "description": "Grants permission to list summary information for accessible EMR notebooks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html"
+    },
+    {
+      "name": "ListRepositories",
+      "methodName": "toListRepositories",
+      "description": "Grants permission to list existing EMR notebook repositories",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor"
+    },
+    {
+      "name": "ListWorkspaceAccessIdentities",
+      "methodName": "toListWorkspaceAccessIdentities",
+      "description": "Grants permission to list identities that are granted access to a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html"
+    },
+    {
+      "name": "OpenEditorInConsole",
+      "methodName": "toOpenEditorInConsole",
+      "description": "Grants permission to launch the Jupyter notebook editor for an EMR notebook from within the console",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor"
+    },
+    {
+      "name": "PutWorkspaceAccess",
+      "methodName": "toPutWorkspaceAccess",
+      "description": "Grants permission to allow an identity to open a collaborative workspace",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html"
+    },
+    {
+      "name": "StartEditor",
+      "methodName": "toStartEditor",
+      "description": "Grants permission to start an EMR notebook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html"
+    },
+    {
+      "name": "StopEditor",
+      "methodName": "toStopEditor",
+      "description": "Grants permission to shut down an EMR notebook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html"
+    },
+    {
+      "name": "UnlinkRepository",
+      "methodName": "toUnlinkRepository",
+      "description": "Grants permission to unlink an EMR notebook repository from EMR notebooks",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor"
+    },
+    {
+      "name": "UpdateEditor",
+      "methodName": "toUpdateEditor",
+      "description": "Grants permission to update an EMR notebook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html"
+    },
+    {
+      "name": "UpdateRepository",
+      "methodName": "toUpdateRepository",
+      "description": "Grants permission to update an EMR notebook repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor"
+    },
+    {
+      "name": "ViewEventsFromAllClustersInConsole",
+      "methodName": "toViewEventsFromAllClustersInConsole",
+      "description": "Grants permission to use the EMR console to view events from all clusters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticmapreduce.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "cluster",
+      "methodName": "onCluster",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-overview.html",
+      "arn": "arn:${Partition}:elasticmapreduce:${Region}:${Account}:cluster/${ClusterId}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterId",
+          "name": "clusterId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ]
+    },
+    {
+      "name": "editor",
+      "methodName": "onEditor",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html",
+      "arn": "arn:${Partition}:elasticmapreduce:${Region}:${Account}:editor/${EditorId}",
+      "placeholders": [
+        {
+          "placeholder": "EditorId",
+          "name": "editorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ]
+    },
+    {
+      "name": "notebook-execution",
+      "methodName": "onNotebookExecution",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-headless.html",
+      "arn": "arn:${Partition}:elasticmapreduce:${Region}:${Account}:notebook-execution/${NotebookExecutionId}",
+      "placeholders": [
+        {
+          "placeholder": "NotebookExecutionId",
+          "name": "notebookExecutionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ]
+    },
+    {
+      "name": "session",
+      "methodName": "onSession",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-overview.html",
+      "arn": "arn:${Partition}:elasticmapreduce:${Region}:${Account}:cluster/${ClusterId}/session/${SessionId}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterId",
+          "name": "clusterId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SessionId",
+          "name": "sessionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ]
+    },
+    {
+      "name": "studio",
+      "methodName": "onStudio",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html",
+      "arn": "arn:${Partition}:elasticmapreduce:${Region}:${Account}:studio/${StudioId}",
+      "placeholders": [
+        {
+          "placeholder": "StudioId",
+          "name": "studioId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by whether the tag and value pair is provided with the action",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access",
+      "relatedActionMethods": [
+        "toAddTags",
+        "toCreateStudio",
+        "toRunJobFlow",
+        "toStartNotebookExecution",
+        "toStartSession",
+        "toCreateEditor"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag and value pair associated with an Amazon EMR resource",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access",
+      "relatedActionMethods": [
+        "toAccessAllEventLogs",
+        "toAddInstanceFleet",
+        "toAddInstanceGroups",
+        "toAddJobFlowSteps",
+        "toAddTags",
+        "toCancelSteps",
+        "toCreatePersistentAppUI",
+        "toCreateStudioPresignedUrl",
+        "toCreateStudioSessionMapping",
+        "toDeleteStudio",
+        "toDeleteStudioSessionMapping",
+        "toDescribeCluster",
+        "toDescribeJobFlows",
+        "toDescribeNotebookExecution",
+        "toDescribePersistentAppUI",
+        "toDescribeStep",
+        "toDescribeStudio",
+        "toGetAutoTerminationPolicy",
+        "toGetClusterSessionCredentials",
+        "toGetManagedScalingPolicy",
+        "toGetOnClusterAppUIPresignedURL",
+        "toGetPersistentAppUIPresignedURL",
+        "toGetSession",
+        "toGetSessionEndpoint",
+        "toGetStudioSessionMapping",
+        "toListBootstrapActions",
+        "toListInstanceFleets",
+        "toListInstanceGroups",
+        "toListInstances",
+        "toListSessions",
+        "toListSteps",
+        "toModifyCluster",
+        "toModifyInstanceFleet",
+        "toModifyInstanceGroups",
+        "toPutAutoScalingPolicy",
+        "toPutAutoTerminationPolicy",
+        "toPutManagedScalingPolicy",
+        "toRemoveAutoScalingPolicy",
+        "toRemoveAutoTerminationPolicy",
+        "toRemoveManagedScalingPolicy",
+        "toRemoveTags",
+        "toSetKeepJobFlowAliveWhenNoSteps",
+        "toSetTerminationProtection",
+        "toSetUnhealthyNodeReplacement",
+        "toSetVisibleToAllUsers",
+        "toStartNotebookExecution",
+        "toStartSession",
+        "toStopNotebookExecution",
+        "toTerminateJobFlows",
+        "toTerminateSession",
+        "toUpdateStudio",
+        "toUpdateStudioSessionMapping",
+        "toAttachEditor",
+        "toCreateEditor",
+        "toDeleteEditor",
+        "toDeleteWorkspaceAccess",
+        "toDescribeEditor",
+        "toDetachEditor",
+        "toListWorkspaceAccessIdentities",
+        "toOpenEditorInConsole",
+        "toPutWorkspaceAccess",
+        "toStartEditor",
+        "toStopEditor",
+        "toUpdateEditor"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "editor",
+        "notebook-execution",
+        "session",
+        "studio"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by whether the tag keys are provided with the action regardless of tag value",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access",
+      "relatedActionMethods": [
+        "toAddTags",
+        "toCreateStudio",
+        "toRemoveTags",
+        "toRunJobFlow",
+        "toStartNotebookExecution",
+        "toStartSession",
+        "toCreateEditor"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticmapreduce:ExecutionRoleArn",
+      "methodName": "ifExecutionRoleArn",
+      "description": "Filters access by whether the execution role ARN is provided with the action",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-security",
+      "relatedActionMethods": [
+        "toAddJobFlowSteps",
+        "toGetClusterSessionCredentials",
+        "toGetPersistentAppUIPresignedURL",
+        "toStartSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ExecutionRoleArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "elasticmapreduce:RequestTag/${TagKey}",
+      "methodName": "ifRequestTag",
+      "description": "Filters access by whether the tag and value pair is provided with the action",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access",
+      "relatedActionMethods": [
+        "toAddTags",
+        "toCreateStudio",
+        "toRunJobFlow",
+        "toStartNotebookExecution",
+        "toStartSession",
+        "toCreateEditor"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticmapreduce:ResourceTag/${TagKey}",
+      "methodName": "ifResourceTag",
+      "description": "Filters access by the tag and value pair associated with an Amazon EMR resource",
+      "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access",
+      "relatedActionMethods": [
+        "toAccessAllEventLogs",
+        "toAddInstanceFleet",
+        "toAddInstanceGroups",
+        "toAddJobFlowSteps",
+        "toAddTags",
+        "toCancelSteps",
+        "toCreatePersistentAppUI",
+        "toCreateStudioPresignedUrl",
+        "toCreateStudioSessionMapping",
+        "toDeleteStudio",
+        "toDeleteStudioSessionMapping",
+        "toDescribeCluster",
+        "toDescribeJobFlows",
+        "toDescribeNotebookExecution",
+        "toDescribePersistentAppUI",
+        "toDescribeStep",
+        "toDescribeStudio",
+        "toGetAutoTerminationPolicy",
+        "toGetClusterSessionCredentials",
+        "toGetManagedScalingPolicy",
+        "toGetOnClusterAppUIPresignedURL",
+        "toGetPersistentAppUIPresignedURL",
+        "toGetSession",
+        "toGetSessionEndpoint",
+        "toGetStudioSessionMapping",
+        "toListBootstrapActions",
+        "toListInstanceFleets",
+        "toListInstanceGroups",
+        "toListInstances",
+        "toListSessions",
+        "toListSteps",
+        "toModifyCluster",
+        "toModifyInstanceFleet",
+        "toModifyInstanceGroups",
+        "toPutAutoScalingPolicy",
+        "toPutAutoTerminationPolicy",
+        "toPutManagedScalingPolicy",
+        "toRemoveAutoScalingPolicy",
+        "toRemoveAutoTerminationPolicy",
+        "toRemoveManagedScalingPolicy",
+        "toRemoveTags",
+        "toSetKeepJobFlowAliveWhenNoSteps",
+        "toSetTerminationProtection",
+        "toSetUnhealthyNodeReplacement",
+        "toSetVisibleToAllUsers",
+        "toStartNotebookExecution",
+        "toStartSession",
+        "toStopNotebookExecution",
+        "toTerminateJobFlows",
+        "toTerminateSession",
+        "toUpdateStudio",
+        "toUpdateStudioSessionMapping",
+        "toAttachEditor",
+        "toCreateEditor",
+        "toDeleteEditor",
+        "toDeleteWorkspaceAccess",
+        "toDescribeEditor",
+        "toDetachEditor",
+        "toListWorkspaceAccessIdentities",
+        "toOpenEditorInConsole",
+        "toPutWorkspaceAccess",
+        "toStartEditor",
+        "toStopEditor",
+        "toUpdateEditor"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "editor",
+        "notebook-execution",
+        "session",
+        "studio"
+      ],
+      "keyLiteral": "ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

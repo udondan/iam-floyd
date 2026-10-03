@@ -1,8 +1,0 @@
-groundstation:Agent
-groundstation:Config
-groundstation:Contact
-groundstation:DataflowEndpointGroup
-groundstation:EphemerisItem
-groundstation:GroundStationResource
-groundstation:MissionProfile
-groundstation:Satellite

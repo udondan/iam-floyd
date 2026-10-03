@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "filename": "elemental-appliances-software",
+  "className": "ElementalAppliancesSoftware",
+  "name": "elemental-appliances-software",
+  "servicePrefix": "elemental-appliances-software",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elemental-appliances-software.html",
+  "accessLevelList": {
+    "Write": [
+      "CompleteUpload",
+      "CreateOrderV1",
+      "CreateQuote",
+      "StartUpload",
+      "SubmitOrderV1",
+      "UpdateQuote"
+    ],
+    "Read": [
+      "GetAvsCorrectAddress",
+      "GetBillingAddresses",
+      "GetDeliveryAddressesV2",
+      "GetOrder",
+      "GetOrdersV2",
+      "GetQuote",
+      "GetTaxes"
+    ],
+    "List": [
+      "ListQuotes"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CompleteUpload",
+      "methodName": "toCompleteUpload",
+      "description": "Grants permission to complete an upload of an attachment for a quote or order",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "CreateOrderV1",
+      "methodName": "toCreateOrderV1",
+      "description": "Grants permission to create an order",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "CreateQuote",
+      "methodName": "toCreateQuote",
+      "description": "Grants permission to create a quote",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "GetAvsCorrectAddress",
+      "methodName": "toGetAvsCorrectAddress",
+      "description": "Grants permission to validate an address",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "GetBillingAddresses",
+      "methodName": "toGetBillingAddresses",
+      "description": "Grants permission to list the billing addresses in the AWS Account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "GetDeliveryAddressesV2",
+      "methodName": "toGetDeliveryAddressesV2",
+      "description": "Grants permission to list the delivery addresses in the AWS Account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "GetOrder",
+      "methodName": "toGetOrder",
+      "description": "Grants permission to describe an order",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "GetOrdersV2",
+      "methodName": "toGetOrdersV2",
+      "description": "Grants permission to list the orders in the AWS Account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "GetQuote",
+      "methodName": "toGetQuote",
+      "description": "Grants permission to describe a quote",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "GetTaxes",
+      "methodName": "toGetTaxes",
+      "description": "Grants permission to calculate taxes for an order",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "ListQuotes",
+      "methodName": "toListQuotes",
+      "description": "Grants permission to list the quotes in the AWS Account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "StartUpload",
+      "methodName": "toStartUpload",
+      "description": "Grants permission to start an upload of an attachment for a quote or order",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "SubmitOrderV1",
+      "methodName": "toSubmitOrderV1",
+      "description": "Grants permission to submit an order",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    },
+    {
+      "name": "UpdateQuote",
+      "methodName": "toUpdateQuote",
+      "description": "Grants permission to modify a quote",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software"
+    }
+  ],
+  "resources": [
+    {
+      "name": "quote",
+      "methodName": "onQuote",
+      "url": "https://docs.aws.amazon.com/elemental-appliances-software",
+      "arn": "arn:${Partition}:elemental-appliances-software:${Region}:${Account}:quote/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

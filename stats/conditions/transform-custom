@@ -1,3 +1,0 @@
-transform-custom:RequestTag/${TagKey}
-transform-custom:ResourceTag/${TagKey}
-transform-custom:TagKeys

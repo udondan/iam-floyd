@@ -1,0 +1,439 @@
+{
+  "schemaVersion": 1,
+  "filename": "apptest",
+  "className": "Apptest",
+  "name": "apptest",
+  "servicePrefix": "apptest",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_apptest.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateTestCase",
+      "CreateTestConfiguration",
+      "CreateTestSuite",
+      "DeleteTestCase",
+      "DeleteTestConfiguration",
+      "DeleteTestRun",
+      "DeleteTestSuite",
+      "StartTestRun",
+      "TagResource",
+      "UntagResource",
+      "UpdateTestCase",
+      "UpdateTestConfiguration",
+      "UpdateTestSuite"
+    ],
+    "Read": [
+      "GetTestCase",
+      "GetTestConfiguration",
+      "GetTestRunStep",
+      "GetTestSuite",
+      "ListTagsForResource",
+      "ListTestRunSteps",
+      "ListTestRunTestCases"
+    ],
+    "List": [
+      "ListTestCases",
+      "ListTestConfigurations",
+      "ListTestRuns",
+      "ListTestSuites"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateTestCase",
+      "methodName": "toCreateTestCase",
+      "description": "Grants permission to create a test case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_CreateTestCase.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateTestConfiguration",
+      "methodName": "toCreateTestConfiguration",
+      "description": "Grants permission to create a test configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_CreateTestConfiguration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateTestSuite",
+      "methodName": "toCreateTestSuite",
+      "description": "Grants permission to create a test suite",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_CreateTestSuite.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteTestCase",
+      "methodName": "toDeleteTestCase",
+      "description": "Grants permission to delete a test case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_DeleteTestCase.html"
+    },
+    {
+      "name": "DeleteTestConfiguration",
+      "methodName": "toDeleteTestConfiguration",
+      "description": "Grants permission to delete a test configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_DeleteTestConfiguration.html"
+    },
+    {
+      "name": "DeleteTestRun",
+      "methodName": "toDeleteTestRun",
+      "description": "Grants permission to delete a test run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_DeleteTestRun.html"
+    },
+    {
+      "name": "DeleteTestSuite",
+      "methodName": "toDeleteTestSuite",
+      "description": "Grants permission to delete a test suite",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_DeleteTestSuite.html"
+    },
+    {
+      "name": "GetTestCase",
+      "methodName": "toGetTestCase",
+      "description": "Grants permission to get a test case",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_GetTestCase.html"
+    },
+    {
+      "name": "GetTestConfiguration",
+      "methodName": "toGetTestConfiguration",
+      "description": "Grants permission to get a test configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_GetTestConfiguration.html"
+    },
+    {
+      "name": "GetTestRunStep",
+      "methodName": "toGetTestRunStep",
+      "description": "Grants permission to get test run step",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_GetTestRunStep.html"
+    },
+    {
+      "name": "GetTestSuite",
+      "methodName": "toGetTestSuite",
+      "description": "Grants permission to get a test suite",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_GetTestSuite.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTestCases",
+      "methodName": "toListTestCases",
+      "description": "Grants permission to list test cases",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_ListTestCases.html"
+    },
+    {
+      "name": "ListTestConfigurations",
+      "methodName": "toListTestConfigurations",
+      "description": "Grants permission to list test configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_ListTestConfigurations.html"
+    },
+    {
+      "name": "ListTestRunSteps",
+      "methodName": "toListTestRunSteps",
+      "description": "Grants permission to list steps for a test run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_ListTestRunSteps.html"
+    },
+    {
+      "name": "ListTestRunTestCases",
+      "methodName": "toListTestRunTestCases",
+      "description": "Grants permission to list test cases for a test run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_ListTestRunTestCases.html"
+    },
+    {
+      "name": "ListTestRuns",
+      "methodName": "toListTestRuns",
+      "description": "Grants permission to list test runs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_ListTestRuns.html"
+    },
+    {
+      "name": "ListTestSuites",
+      "methodName": "toListTestSuites",
+      "description": "Grants permission to list test suites",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_ListTestSuites.html"
+    },
+    {
+      "name": "StartTestRun",
+      "methodName": "toStartTestRun",
+      "description": "Grants permission to start a test run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_StartTestRun.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateTestCase",
+      "methodName": "toUpdateTestCase",
+      "description": "Grants permission to update a test case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_UpdateTestCase.html"
+    },
+    {
+      "name": "UpdateTestConfiguration",
+      "methodName": "toUpdateTestConfiguration",
+      "description": "Grants permission to update a test configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_UpdateTestConfiguration.html"
+    },
+    {
+      "name": "UpdateTestSuite",
+      "methodName": "toUpdateTestSuite",
+      "description": "Grants permission to update a test suite",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apptest/latest/APIReference/API_UpdateTestSuite.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "TestCase",
+      "methodName": "onTestCase",
+      "url": "https://docs.aws.amazon.com/m2/latest/userguide/concepts-apptest.html#TestCase-concept",
+      "arn": "arn:${Partition}:apptest:${Region}:${Account}:testcase/${TestCaseId}",
+      "placeholders": [
+        {
+          "placeholder": "TestCaseId",
+          "name": "testCaseId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "TestConfiguration",
+      "methodName": "onTestConfiguration",
+      "url": "https://docs.aws.amazon.com/m2/latest/userguide/concepts-apptest.html#TestConfiguration-concept",
+      "arn": "arn:${Partition}:apptest:${Region}:${Account}:testconfiguration/${TestConfigurationId}",
+      "placeholders": [
+        {
+          "placeholder": "TestConfigurationId",
+          "name": "testConfigurationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "TestRun",
+      "methodName": "onTestRun",
+      "url": "https://docs.aws.amazon.com/m2/latest/userguide/concepts-apptest.html#TestRun-concept",
+      "arn": "arn:${Partition}:apptest:${Region}:${Account}:testrun/${TestRunId}",
+      "placeholders": [
+        {
+          "placeholder": "TestRunId",
+          "name": "testRunId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "TestSuite",
+      "methodName": "onTestSuite",
+      "url": "https://docs.aws.amazon.com/m2/latest/userguide/concepts-apptest.html#TestSuite-concept",
+      "arn": "arn:${Partition}:apptest:${Region}:${Account}:testsuite/${TestSuiteId}",
+      "placeholders": [
+        {
+          "placeholder": "TestSuiteId",
+          "name": "testSuiteId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateTestCase",
+        "toCreateTestConfiguration",
+        "toCreateTestSuite",
+        "toStartTestRun",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toDeleteTestCase",
+        "toDeleteTestConfiguration",
+        "toDeleteTestRun",
+        "toDeleteTestSuite",
+        "toGetTestCase",
+        "toGetTestConfiguration",
+        "toGetTestRunStep",
+        "toGetTestSuite",
+        "toListTestRunSteps",
+        "toListTestRunTestCases",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateTestCase",
+        "toUpdateTestConfiguration",
+        "toUpdateTestSuite"
+      ],
+      "relatedResourceTypes": [
+        "TestCase",
+        "TestConfiguration",
+        "TestRun",
+        "TestSuite"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateTestCase",
+        "toCreateTestConfiguration",
+        "toCreateTestSuite",
+        "toStartTestRun",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

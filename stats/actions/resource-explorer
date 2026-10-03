@@ -1,3 +1,0 @@
-resource-explorer:ListResourceTypes;List
-resource-explorer:ListResources;List
-resource-explorer:ListTags;Read

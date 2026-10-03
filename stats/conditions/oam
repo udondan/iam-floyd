@@ -1,4 +1,0 @@
-oam:RequestTag/${TagKey}
-oam:ResourceTag/${TagKey}
-oam:ResourceTypes
-oam:TagKeys

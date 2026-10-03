@@ -1,3 +1,0 @@
-kafkaconnect:RequestTag/${TagKey}
-kafkaconnect:ResourceTag/${TagKey}
-kafkaconnect:TagKeys

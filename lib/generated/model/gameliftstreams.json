@@ -1,0 +1,438 @@
+{
+  "schemaVersion": 1,
+  "filename": "gameliftstreams",
+  "className": "Gameliftstreams",
+  "name": "gameliftstreams",
+  "servicePrefix": "gameliftstreams",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_gameliftstreams.html",
+  "accessLevelList": {
+    "Write": [
+      "AddStreamGroupLocations",
+      "AssociateApplications",
+      "CreateApplication",
+      "CreateStreamGroup",
+      "CreateStreamSessionAdminShell",
+      "CreateStreamSessionConnection",
+      "CreateStreamUrl",
+      "DeleteApplication",
+      "DeleteStreamGroup",
+      "DisassociateApplications",
+      "ExportStreamSessionFiles",
+      "RemoveStreamGroupLocations",
+      "RevokeStreamUrl",
+      "StartStreamSession",
+      "TagResource",
+      "TerminateStreamSession",
+      "UntagResource",
+      "UpdateApplication",
+      "UpdateStreamGroup"
+    ],
+    "Read": [
+      "GetApplication",
+      "GetStreamGroup",
+      "GetStreamSession",
+      "GetStreamUrl",
+      "ListStreamSessions",
+      "ListStreamSessionsByAccount",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListApplicationShaderCaches",
+      "ListApplications",
+      "ListStreamGroups",
+      "ListStreamUrls"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddStreamGroupLocations",
+      "methodName": "toAddStreamGroupLocations",
+      "description": "Grants permission to attach a StreamGroup remote location",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AddStreamGroupLocations.html"
+    },
+    {
+      "name": "AssociateApplications",
+      "methodName": "toAssociateApplications",
+      "description": "Grants permission to associate Applications to a StreamGroup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AssociateApplications.html"
+    },
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to create application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_CreateApplication.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateStreamGroup",
+      "methodName": "toCreateStreamGroup",
+      "description": "Grants permission to create a StreamGroup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_CreateStreamGroup.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateStreamSessionAdminShell",
+      "methodName": "toCreateStreamSessionAdminShell",
+      "description": "Grants permission to establish an administrative terminal connection to a stream session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_CreateStreamSessionAdminShell.html"
+    },
+    {
+      "name": "CreateStreamSessionConnection",
+      "methodName": "toCreateStreamSessionConnection",
+      "description": "Grants permission to create a stream session connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_CreateStreamSessionConnection.html"
+    },
+    {
+      "name": "CreateStreamUrl",
+      "methodName": "toCreateStreamUrl",
+      "description": "Grants permission to create a stream URL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_CreateStreamUrl.html"
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_DeleteApplication.html"
+    },
+    {
+      "name": "DeleteStreamGroup",
+      "methodName": "toDeleteStreamGroup",
+      "description": "Grants permission to delete a StreamGroup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_DeleteStreamGroup.html"
+    },
+    {
+      "name": "DisassociateApplications",
+      "methodName": "toDisassociateApplications",
+      "description": "Grants permission to disassociate Applications from a StreamGroup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_DisassociateApplications.html"
+    },
+    {
+      "name": "ExportStreamSessionFiles",
+      "methodName": "toExportStreamSessionFiles",
+      "description": "Grants permission to export stream session files that your application generates",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ExportStreamSessionFiles.html"
+    },
+    {
+      "name": "GetApplication",
+      "methodName": "toGetApplication",
+      "description": "Grants permission to get an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetApplication.html"
+    },
+    {
+      "name": "GetStreamGroup",
+      "methodName": "toGetStreamGroup",
+      "description": "Grants `permission` to get a StreamGroup",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamGroup.html"
+    },
+    {
+      "name": "GetStreamSession",
+      "methodName": "toGetStreamSession",
+      "description": "Grants permission to get a stream session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html"
+    },
+    {
+      "name": "GetStreamUrl",
+      "methodName": "toGetStreamUrl",
+      "description": "Grants permission to get a stream URL",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamUrl.html"
+    },
+    {
+      "name": "ListApplicationShaderCaches",
+      "methodName": "toListApplicationShaderCaches",
+      "description": "Grants permission to list application shader caches",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListApplicationShaderCaches.html"
+    },
+    {
+      "name": "ListApplications",
+      "methodName": "toListApplications",
+      "description": "Grants permission to list applications",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListApplications.html"
+    },
+    {
+      "name": "ListStreamGroups",
+      "methodName": "toListStreamGroups",
+      "description": "Grants permission to list StreamGroups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListStreamGroups.html"
+    },
+    {
+      "name": "ListStreamSessions",
+      "methodName": "toListStreamSessions",
+      "description": "Grants permission to list stream sessions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListStreamSessions.html"
+    },
+    {
+      "name": "ListStreamSessionsByAccount",
+      "methodName": "toListStreamSessionsByAccount",
+      "description": "Grants permission to list stream sessions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListStreamSessionsByAccount.html"
+    },
+    {
+      "name": "ListStreamUrls",
+      "methodName": "toListStreamUrls",
+      "description": "Grants permission to list stream URLs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListStreamUrls.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RemoveStreamGroupLocations",
+      "methodName": "toRemoveStreamGroupLocations",
+      "description": "Grants permission to detach a StreamGroup remote location",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_RemoveStreamGroupLocations.html"
+    },
+    {
+      "name": "RevokeStreamUrl",
+      "methodName": "toRevokeStreamUrl",
+      "description": "Grants permission to revoke a stream URL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_RevokeStreamUrl.html"
+    },
+    {
+      "name": "StartStreamSession",
+      "methodName": "toStartStreamSession",
+      "description": "Grants permission to create a stream session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_StartStreamSession.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html"
+    },
+    {
+      "name": "TerminateStreamSession",
+      "methodName": "toTerminateStreamSession",
+      "description": "Grants permission to terminate a stream session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TerminateStreamSession.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateApplication",
+      "methodName": "toUpdateApplication",
+      "description": "Grants permission to update an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateApplication.html"
+    },
+    {
+      "name": "UpdateStreamGroup",
+      "methodName": "toUpdateStreamGroup",
+      "description": "Grants permission to update a StreamGroup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/applications.html",
+      "arn": "arn:${Partition}:gameliftstreams:${Region}:${Account}:application/${ApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "stream group",
+      "methodName": "onStreamGroup",
+      "url": "https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/stream-groups.html",
+      "arn": "arn:${Partition}:gameliftstreams:${Region}:${Account}:streamgroup/${StreamGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "StreamGroupId",
+          "name": "streamGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateStreamGroup",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddStreamGroupLocations",
+        "toAssociateApplications",
+        "toCreateStreamSessionAdminShell",
+        "toCreateStreamSessionConnection",
+        "toCreateStreamUrl",
+        "toDeleteApplication",
+        "toDeleteStreamGroup",
+        "toDisassociateApplications",
+        "toExportStreamSessionFiles",
+        "toGetApplication",
+        "toGetStreamGroup",
+        "toGetStreamSession",
+        "toGetStreamUrl",
+        "toListApplicationShaderCaches",
+        "toListStreamSessions",
+        "toListTagsForResource",
+        "toRemoveStreamGroupLocations",
+        "toRevokeStreamUrl",
+        "toStartStreamSession",
+        "toTagResource",
+        "toTerminateStreamSession",
+        "toUntagResource",
+        "toUpdateApplication",
+        "toUpdateStreamGroup"
+      ],
+      "relatedResourceTypes": [
+        "application",
+        "stream group"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateStreamGroup",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "gameliftstreams:RoleArn",
+      "methodName": "ifRoleArn",
+      "description": "Filters access by the ARN of the IAM role passed to Amazon GameLift Streams to assume for the stream session",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_gameliftstreams.html#list_gameliftstreams-policy-keys",
+      "relatedActionMethods": [
+        "toCreateStreamUrl",
+        "toStartStreamSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RoleArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

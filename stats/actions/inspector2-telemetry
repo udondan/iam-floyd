@@ -1,5 +1,0 @@
-inspector2-telemetry:NotifyHeartbeat;Write
-inspector2-telemetry:SendTelemetry;Write
-inspector2-telemetry:SendTelemetryEvent;Write
-inspector2-telemetry:StartSession;Write
-inspector2-telemetry:StopSession;Write

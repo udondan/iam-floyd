@@ -1,4 +1,0 @@
-timestream-influxdb:db-backup
-timestream-influxdb:db-cluster
-timestream-influxdb:db-instance
-timestream-influxdb:db-parameter-group

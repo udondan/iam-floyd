@@ -2,6 +2,8 @@
   "scripts": {
     "pregenerate": "find lib bin -name \"*.js\" -type f -exec rm -vf {} \\;",
     "generate": "npx ts-node bin/generate.ts",
+    "preemit": "find lib/generator bin -name \"*.js\" -type f -exec rm -vf {} \\;",
+    "emit": "npx ts-node bin/emit.ts",
     "index-managed-policies": "npx ts-node bin/index-managed-policies.ts",
     "build": "npx tsc --build --force --verbose tsconfig.main.json"
   },

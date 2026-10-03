@@ -1,6 +1,0 @@
-identitystore:GroupExternalIdIssuers
-identitystore:IdentityStoreArn
-identitystore:PrimaryRegion
-identitystore:ReservedUserId
-identitystore:UserExternalIdIssuers
-identitystore:UserId

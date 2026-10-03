@@ -1,0 +1,1150 @@
+{
+  "schemaVersion": 1,
+  "filename": "transfer",
+  "className": "Transfer",
+  "name": "transfer",
+  "servicePrefix": "transfer",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_transfer.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateAccess",
+      "CreateAgreement",
+      "CreateConnector",
+      "CreateProfile",
+      "CreateServer",
+      "CreateUser",
+      "CreateWebApp",
+      "CreateWorkflow",
+      "DeleteAccess",
+      "DeleteAgreement",
+      "DeleteCertificate",
+      "DeleteConnector",
+      "DeleteHostKey",
+      "DeleteProfile",
+      "DeleteServer",
+      "DeleteSshPublicKey",
+      "DeleteUser",
+      "DeleteWebApp",
+      "DeleteWebAppCustomization",
+      "DeleteWorkflow",
+      "ImportCertificate",
+      "ImportHostKey",
+      "ImportSshPublicKey",
+      "SendWorkflowStepState",
+      "StartDirectoryListing",
+      "StartFileTransfer",
+      "StartRemoteDelete",
+      "StartRemoteMove",
+      "StartServer",
+      "StopServer",
+      "TagResource",
+      "TestConnection",
+      "UntagResource",
+      "UpdateAccess",
+      "UpdateAgreement",
+      "UpdateCertificate",
+      "UpdateConnector",
+      "UpdateHostKey",
+      "UpdateProfile",
+      "UpdateServer",
+      "UpdateUser",
+      "UpdateWebApp",
+      "UpdateWebAppCustomization"
+    ],
+    "Read": [
+      "DescribeAccess",
+      "DescribeAgreement",
+      "DescribeCertificate",
+      "DescribeConnector",
+      "DescribeExecution",
+      "DescribeHostKey",
+      "DescribeProfile",
+      "DescribeSecurityPolicy",
+      "DescribeServer",
+      "DescribeUser",
+      "DescribeWebApp",
+      "DescribeWebAppCustomization",
+      "DescribeWorkflow",
+      "ListAccesses",
+      "ListAgreements",
+      "ListCertificates",
+      "ListConnectors",
+      "ListExecutions",
+      "ListFileTransferResults",
+      "ListHostKeys",
+      "ListProfiles",
+      "ListTagsForResource",
+      "TestIdentityProvider"
+    ],
+    "List": [
+      "ListSecurityPolicies",
+      "ListServers",
+      "ListUsers",
+      "ListWebApps",
+      "ListWorkflows"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateAccess",
+      "methodName": "toCreateAccess",
+      "description": "Grants permission to add an access associated with a server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateAccess.html"
+    },
+    {
+      "name": "CreateAgreement",
+      "methodName": "toCreateAgreement",
+      "description": "Grants permission to add an agreement associated with a server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateAgreement.html"
+    },
+    {
+      "name": "CreateConnector",
+      "methodName": "toCreateConnector",
+      "description": "Grants permission to create a connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateConnector.html"
+    },
+    {
+      "name": "CreateProfile",
+      "methodName": "toCreateProfile",
+      "description": "Grants permission to create a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateProfile.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateServer",
+      "methodName": "toCreateServer",
+      "description": "Grants permission to create a server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateServer.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifRequestSecurityPolicyName",
+        "ifRequestServerDomain",
+        "ifRequestServerEndpointType",
+        "ifRequestServerProtocols"
+      ]
+    },
+    {
+      "name": "CreateUser",
+      "methodName": "toCreateUser",
+      "description": "Grants permission to add a user associated with a server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateUser.html"
+    },
+    {
+      "name": "CreateWebApp",
+      "methodName": "toCreateWebApp",
+      "description": "Grants permission to create a webapp",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateWebApp.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateWorkflow",
+      "methodName": "toCreateWorkflow",
+      "description": "Grants permission to create a workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateWorkflow.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteAccess",
+      "methodName": "toDeleteAccess",
+      "description": "Grants permission to delete access",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteAccess.html"
+    },
+    {
+      "name": "DeleteAgreement",
+      "methodName": "toDeleteAgreement",
+      "description": "Grants permission to delete agreement",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteAgreement.html"
+    },
+    {
+      "name": "DeleteCertificate",
+      "methodName": "toDeleteCertificate",
+      "description": "Grants permission to delete certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteCertificate.html"
+    },
+    {
+      "name": "DeleteConnector",
+      "methodName": "toDeleteConnector",
+      "description": "Grants permission to delete connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteConnector.html"
+    },
+    {
+      "name": "DeleteHostKey",
+      "methodName": "toDeleteHostKey",
+      "description": "Grants permission to delete a host key associated with a server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteHostKey.html"
+    },
+    {
+      "name": "DeleteProfile",
+      "methodName": "toDeleteProfile",
+      "description": "Grants permission to delete profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteProfile.html"
+    },
+    {
+      "name": "DeleteServer",
+      "methodName": "toDeleteServer",
+      "description": "Grants permission to delete a server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteServer.html"
+    },
+    {
+      "name": "DeleteSshPublicKey",
+      "methodName": "toDeleteSshPublicKey",
+      "description": "Grants permission to delete an SSH public key from a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteSshPublicKey.html"
+    },
+    {
+      "name": "DeleteUser",
+      "methodName": "toDeleteUser",
+      "description": "Grants permission to delete a user associated with a server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteUser.html"
+    },
+    {
+      "name": "DeleteWebApp",
+      "methodName": "toDeleteWebApp",
+      "description": "Grants permission to delete webapp",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteWebApp.html"
+    },
+    {
+      "name": "DeleteWebAppCustomization",
+      "methodName": "toDeleteWebAppCustomization",
+      "description": "Grants permission to delete webapp customization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteWebAppCustomization.html"
+    },
+    {
+      "name": "DeleteWorkflow",
+      "methodName": "toDeleteWorkflow",
+      "description": "Grants permission to delete a workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteWorkflow.html"
+    },
+    {
+      "name": "DescribeAccess",
+      "methodName": "toDescribeAccess",
+      "description": "Grants permission to describe an access assigned to a server",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeAccess.html"
+    },
+    {
+      "name": "DescribeAgreement",
+      "methodName": "toDescribeAgreement",
+      "description": "Grants permission to describe an agreement assigned to a server",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeAgreement.html"
+    },
+    {
+      "name": "DescribeCertificate",
+      "methodName": "toDescribeCertificate",
+      "description": "Grants permission to describe a certificate",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeCertificate.html"
+    },
+    {
+      "name": "DescribeConnector",
+      "methodName": "toDescribeConnector",
+      "description": "Grants permission to describe a connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeConnector.html"
+    },
+    {
+      "name": "DescribeExecution",
+      "methodName": "toDescribeExecution",
+      "description": "Grants permission to describe an execution associated with a workflow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeExecution.html"
+    },
+    {
+      "name": "DescribeHostKey",
+      "methodName": "toDescribeHostKey",
+      "description": "Grants permission to describe a host key associated with a server",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeHostKey.html"
+    },
+    {
+      "name": "DescribeProfile",
+      "methodName": "toDescribeProfile",
+      "description": "Grants permission to describe a profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeProfile.html"
+    },
+    {
+      "name": "DescribeSecurityPolicy",
+      "methodName": "toDescribeSecurityPolicy",
+      "description": "Grants permission to describe a security policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeSecurityPolicy.html"
+    },
+    {
+      "name": "DescribeServer",
+      "methodName": "toDescribeServer",
+      "description": "Grants permission to describe a server",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeServer.html"
+    },
+    {
+      "name": "DescribeUser",
+      "methodName": "toDescribeUser",
+      "description": "Grants permission to describe a user associated with a server",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeUser.html"
+    },
+    {
+      "name": "DescribeWebApp",
+      "methodName": "toDescribeWebApp",
+      "description": "Grants permission to describe a webapp",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeWebApp.html"
+    },
+    {
+      "name": "DescribeWebAppCustomization",
+      "methodName": "toDescribeWebAppCustomization",
+      "description": "Grants permission to describe a webapp customization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeWebAppCustomization.html"
+    },
+    {
+      "name": "DescribeWorkflow",
+      "methodName": "toDescribeWorkflow",
+      "description": "Grants permission to describe a workflow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeWorkflow.html"
+    },
+    {
+      "name": "ImportCertificate",
+      "methodName": "toImportCertificate",
+      "description": "Grants permission to add a certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ImportCertificate.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "ImportHostKey",
+      "methodName": "toImportHostKey",
+      "description": "Grants permission to add a host key to a server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ImportHostKey.html"
+    },
+    {
+      "name": "ImportSshPublicKey",
+      "methodName": "toImportSshPublicKey",
+      "description": "Grants permission to add an SSH public key to a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ImportSshPublicKey.html"
+    },
+    {
+      "name": "ListAccesses",
+      "methodName": "toListAccesses",
+      "description": "Grants permission to list accesses",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListAccesses.html"
+    },
+    {
+      "name": "ListAgreements",
+      "methodName": "toListAgreements",
+      "description": "Grants permission to list agreements",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListAgreements.html"
+    },
+    {
+      "name": "ListCertificates",
+      "methodName": "toListCertificates",
+      "description": "Grants permission to list certificates",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListCertificates.html"
+    },
+    {
+      "name": "ListConnectors",
+      "methodName": "toListConnectors",
+      "description": "Grants permission to list connectors",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListConnectors.html"
+    },
+    {
+      "name": "ListExecutions",
+      "methodName": "toListExecutions",
+      "description": "Grants permission to list executions associated with a workflow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListExecutions.html"
+    },
+    {
+      "name": "ListFileTransferResults",
+      "methodName": "toListFileTransferResults",
+      "description": "Grants permission to list file transfer statuses for connectors",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListFileTransferResults.html"
+    },
+    {
+      "name": "ListHostKeys",
+      "methodName": "toListHostKeys",
+      "description": "Grants permission to list host keys associated with a server",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListHostKeys.html"
+    },
+    {
+      "name": "ListProfiles",
+      "methodName": "toListProfiles",
+      "description": "Grants permission to list profiles",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListProfiles.html"
+    },
+    {
+      "name": "ListSecurityPolicies",
+      "methodName": "toListSecurityPolicies",
+      "description": "Grants permission to list security policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListSecurityPolicies.html"
+    },
+    {
+      "name": "ListServers",
+      "methodName": "toListServers",
+      "description": "Grants permission to list servers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListServers.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for an AWS Transfer Family resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListUsers",
+      "methodName": "toListUsers",
+      "description": "Grants permission to list users associated with a server",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListUsers.html"
+    },
+    {
+      "name": "ListWebApps",
+      "methodName": "toListWebApps",
+      "description": "Grants permission to list webapps",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListWebApps.html"
+    },
+    {
+      "name": "ListWorkflows",
+      "methodName": "toListWorkflows",
+      "description": "Grants permission to list workflows",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListWorkflows.html"
+    },
+    {
+      "name": "SendWorkflowStepState",
+      "methodName": "toSendWorkflowStepState",
+      "description": "Grants permission to send a callback for asynchronous custom steps",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_SendWorkflowStepState.html"
+    },
+    {
+      "name": "StartDirectoryListing",
+      "methodName": "toStartDirectoryListing",
+      "description": "Grants permission to initiate a list operation on a remote server using a connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_StartDirectoryListing.html"
+    },
+    {
+      "name": "StartFileTransfer",
+      "methodName": "toStartFileTransfer",
+      "description": "Grants permission to initiate a connector file transfer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_StartFileTransfer.html"
+    },
+    {
+      "name": "StartRemoteDelete",
+      "methodName": "toStartRemoteDelete",
+      "description": "Grants permission to initiate a connector delete operation on remote server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_StartRemoteDelete.html"
+    },
+    {
+      "name": "StartRemoteMove",
+      "methodName": "toStartRemoteMove",
+      "description": "Grants permission to initiate a connector move operation on remote server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_StartRemoteMove.html"
+    },
+    {
+      "name": "StartServer",
+      "methodName": "toStartServer",
+      "description": "Grants permission to start a server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_StartServer.html"
+    },
+    {
+      "name": "StopServer",
+      "methodName": "toStopServer",
+      "description": "Grants permission to stop a server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_StopServer.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an AWS Transfer Family resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_TagResource.html"
+    },
+    {
+      "name": "TestConnection",
+      "methodName": "toTestConnection",
+      "description": "Grants permission to test a connector's connection to remote server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_TestConnection.html"
+    },
+    {
+      "name": "TestIdentityProvider",
+      "methodName": "toTestIdentityProvider",
+      "description": "Grants permission to test a server's custom identity provider",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_TestIdentityProvider.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag an AWS Transfer Family resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAccess",
+      "methodName": "toUpdateAccess",
+      "description": "Grants permission to update access",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateAccess.html"
+    },
+    {
+      "name": "UpdateAgreement",
+      "methodName": "toUpdateAgreement",
+      "description": "Grants permission to update an agreement",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateAgreement.html"
+    },
+    {
+      "name": "UpdateCertificate",
+      "methodName": "toUpdateCertificate",
+      "description": "Grants permission to update a certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateCertificate.html"
+    },
+    {
+      "name": "UpdateConnector",
+      "methodName": "toUpdateConnector",
+      "description": "Grants permission to update a connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateConnector.html"
+    },
+    {
+      "name": "UpdateHostKey",
+      "methodName": "toUpdateHostKey",
+      "description": "Grants permission to update a host key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateHostKey.html"
+    },
+    {
+      "name": "UpdateProfile",
+      "methodName": "toUpdateProfile",
+      "description": "Grants permission to update a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateProfile.html"
+    },
+    {
+      "name": "UpdateServer",
+      "methodName": "toUpdateServer",
+      "description": "Grants permission to update the configuration of a server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html"
+    },
+    {
+      "name": "UpdateUser",
+      "methodName": "toUpdateUser",
+      "description": "Grants permission to update the configuration of a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateUser.html"
+    },
+    {
+      "name": "UpdateWebApp",
+      "methodName": "toUpdateWebApp",
+      "description": "Grants permission to update the configuration of a webapp",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateWebApp.html"
+    },
+    {
+      "name": "UpdateWebAppCustomization",
+      "methodName": "toUpdateWebAppCustomization",
+      "description": "Grants permission to update the configuration of a webapp cutomization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateWebAppCustomization.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "agreement",
+      "methodName": "onAgreement",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:agreement/${ServerId}/${AgreementId}",
+      "placeholders": [
+        {
+          "placeholder": "ServerId",
+          "name": "serverId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AgreementId",
+          "name": "agreementId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "certificate",
+      "methodName": "onCertificate",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:certificate/${CertificateId}",
+      "placeholders": [
+        {
+          "placeholder": "CertificateId",
+          "name": "certificateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "connector",
+      "methodName": "onConnector",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:connector/${ConnectorId}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectorId",
+          "name": "connectorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "host-key",
+      "methodName": "onHostKey",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:host-key/${ServerId}/${HostKeyId}",
+      "placeholders": [
+        {
+          "placeholder": "ServerId",
+          "name": "serverId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "HostKeyId",
+          "name": "hostKeyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "profile",
+      "methodName": "onProfile",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:profile/${ProfileId}",
+      "placeholders": [
+        {
+          "placeholder": "ProfileId",
+          "name": "profileId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "server",
+      "methodName": "onServer",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:server/${ServerId}",
+      "placeholders": [
+        {
+          "placeholder": "ServerId",
+          "name": "serverId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "user",
+      "methodName": "onUser",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/create-user.html",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:user/${ServerId}/${UserName}",
+      "placeholders": [
+        {
+          "placeholder": "ServerId",
+          "name": "serverId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "UserName",
+          "name": "userName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "webapp",
+      "methodName": "onWebapp",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/web-app.html",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:webapp/${WebAppId}",
+      "placeholders": [
+        {
+          "placeholder": "WebAppId",
+          "name": "webAppId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "workflow",
+      "methodName": "onWorkflow",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/transfer-workflows.html",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:workflow/${WorkflowId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkflowId",
+          "name": "workflowId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAgreement",
+        "toCreateConnector",
+        "toCreateProfile",
+        "toCreateServer",
+        "toCreateUser",
+        "toCreateWebApp",
+        "toCreateWorkflow",
+        "toImportCertificate",
+        "toImportHostKey",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateAccess",
+        "toCreateAgreement",
+        "toCreateConnector",
+        "toCreateProfile",
+        "toCreateServer",
+        "toCreateUser",
+        "toCreateWebApp",
+        "toCreateWorkflow",
+        "toDeleteAccess",
+        "toDeleteAgreement",
+        "toDeleteCertificate",
+        "toDeleteConnector",
+        "toDeleteHostKey",
+        "toDeleteProfile",
+        "toDeleteServer",
+        "toDeleteSshPublicKey",
+        "toDeleteUser",
+        "toDeleteWebApp",
+        "toDeleteWebAppCustomization",
+        "toDeleteWorkflow",
+        "toDescribeAccess",
+        "toDescribeAgreement",
+        "toDescribeCertificate",
+        "toDescribeConnector",
+        "toDescribeExecution",
+        "toDescribeHostKey",
+        "toDescribeProfile",
+        "toDescribeServer",
+        "toDescribeUser",
+        "toDescribeWebApp",
+        "toDescribeWebAppCustomization",
+        "toDescribeWorkflow",
+        "toImportCertificate",
+        "toImportHostKey",
+        "toImportSshPublicKey",
+        "toListAccesses",
+        "toListAgreements",
+        "toListExecutions",
+        "toListFileTransferResults",
+        "toListHostKeys",
+        "toListTagsForResource",
+        "toListUsers",
+        "toSendWorkflowStepState",
+        "toStartDirectoryListing",
+        "toStartFileTransfer",
+        "toStartRemoteDelete",
+        "toStartRemoteMove",
+        "toStartServer",
+        "toStopServer",
+        "toTagResource",
+        "toTestConnection",
+        "toTestIdentityProvider",
+        "toUntagResource",
+        "toUpdateAgreement",
+        "toUpdateCertificate",
+        "toUpdateConnector",
+        "toUpdateHostKey",
+        "toUpdateProfile",
+        "toUpdateServer",
+        "toUpdateUser",
+        "toUpdateWebApp",
+        "toUpdateWebAppCustomization"
+      ],
+      "relatedResourceTypes": [
+        "agreement",
+        "certificate",
+        "connector",
+        "host-key",
+        "profile",
+        "server",
+        "user",
+        "webapp",
+        "workflow"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAgreement",
+        "toCreateConnector",
+        "toCreateProfile",
+        "toCreateServer",
+        "toCreateUser",
+        "toCreateWebApp",
+        "toCreateWorkflow",
+        "toImportCertificate",
+        "toImportHostKey",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "transfer:RequestConnectorProtocol",
+      "methodName": "ifRequestConnectorProtocol",
+      "description": "Filters access by the connector protocol that is passed in the request",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/transfer-condition-keys.html",
+      "relatedActionMethods": [
+        "toCreateConnector"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestConnectorProtocol",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "transfer:RequestSecurityPolicyName",
+      "methodName": "ifRequestSecurityPolicyName",
+      "description": "Filters access by the security policy name that is passed in the request",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/transfer-condition-keys.html",
+      "relatedActionMethods": [
+        "toCreateConnector",
+        "toCreateServer",
+        "toUpdateConnector",
+        "toUpdateServer"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestSecurityPolicyName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "transfer:RequestServerDomain",
+      "methodName": "ifRequestServerDomain",
+      "description": "Filters access by the storage domain that is passed in the request",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/transfer-condition-keys.html",
+      "relatedActionMethods": [
+        "toCreateServer"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestServerDomain",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "transfer:RequestServerEndpointType",
+      "methodName": "ifRequestServerEndpointType",
+      "description": "Filters access by the endpoint type that is passed in the request",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/transfer-condition-keys.html",
+      "relatedActionMethods": [
+        "toCreateServer",
+        "toUpdateServer"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestServerEndpointType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "transfer:RequestServerProtocols",
+      "methodName": "ifRequestServerProtocols",
+      "description": "Filters access by the server protocols that are passed in the request",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/transfer-condition-keys.html",
+      "relatedActionMethods": [
+        "toCreateServer",
+        "toUpdateServer"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestServerProtocols",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,3 +1,0 @@
-ssm-quicksetup:RequestTag/${TagKey}
-ssm-quicksetup:ResourceTag/${TagKey}
-ssm-quicksetup:TagKeys

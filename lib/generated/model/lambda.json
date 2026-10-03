@@ -1,0 +1,2029 @@
+{
+  "schemaVersion": 1,
+  "filename": "lambda",
+  "className": "Lambda",
+  "name": "lambda",
+  "servicePrefix": "lambda",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lambda.html",
+  "accessLevelList": {
+    "Permissions management": [
+      "AddLayerVersionPermission",
+      "AddPermission",
+      "DeleteResourcePolicy",
+      "PutResourcePolicy",
+      "RemoveLayerVersionPermission",
+      "RemovePermission",
+      "DisableReplication",
+      "EnableReplication"
+    ],
+    "Write": [
+      "AddLayerVersionPermission",
+      "AddPermission",
+      "CheckpointDurableExecution",
+      "CreateAlias",
+      "CreateCapacityProvider",
+      "CreateCodeSigningConfig",
+      "CreateEventSourceMapping",
+      "CreateFunction",
+      "CreateFunctionUrlConfig",
+      "CreateMicrovmAuthToken",
+      "CreateMicrovmImage",
+      "CreateMicrovmShellAuthToken",
+      "CreateNetworkConnector",
+      "CreateWebFunction",
+      "CreateWebFunctionEndpoint",
+      "CreateWebFunctionRevision",
+      "DeleteAlias",
+      "DeleteCapacityProvider",
+      "DeleteCodeSigningConfig",
+      "DeleteEventSourceMapping",
+      "DeleteFunction",
+      "DeleteFunctionCodeSigningConfig",
+      "DeleteFunctionConcurrency",
+      "DeleteFunctionEventInvokeConfig",
+      "DeleteFunctionUrlConfig",
+      "DeleteLayerVersion",
+      "DeleteMicrovmImage",
+      "DeleteMicrovmImageVersion",
+      "DeleteNetworkConnector",
+      "DeleteProvisionedConcurrencyConfig",
+      "DeleteResourcePolicy",
+      "DeleteWebFunction",
+      "DeleteWebFunctionEndpoint",
+      "DeleteWebFunctionRevision",
+      "InvokeAsync",
+      "InvokeFunction",
+      "PublishLayerVersion",
+      "PublishVersion",
+      "PutFunctionCodeSigningConfig",
+      "PutFunctionConcurrency",
+      "PutFunctionEventInvokeConfig",
+      "PutFunctionRecursionConfig",
+      "PutFunctionScalingConfig",
+      "PutProvisionedConcurrencyConfig",
+      "PutResourcePolicy",
+      "PutRuntimeManagementConfig",
+      "RemoveLayerVersionPermission",
+      "RemovePermission",
+      "ResumeMicrovm",
+      "RunMicrovm",
+      "SendDurableExecutionCallbackFailure",
+      "SendDurableExecutionCallbackHeartbeat",
+      "SendDurableExecutionCallbackSuccess",
+      "StopDurableExecution",
+      "SuspendMicrovm",
+      "TagResource",
+      "TerminateMicrovm",
+      "UntagResource",
+      "UpdateAlias",
+      "UpdateCapacityProvider",
+      "UpdateCodeSigningConfig",
+      "UpdateEventSourceMapping",
+      "UpdateFunctionCode",
+      "UpdateFunctionCodeSigningConfig",
+      "UpdateFunctionConfiguration",
+      "UpdateFunctionEventInvokeConfig",
+      "UpdateFunctionUrlConfig",
+      "UpdateMicrovmImage",
+      "UpdateMicrovmImageVersion",
+      "UpdateNetworkConnector",
+      "UpdateWebFunctionEndpoint",
+      "ConnectMicrovm",
+      "DisableReplication",
+      "EnableReplication",
+      "InvokeFunctionUrl",
+      "InvokeWebFunctionEndpoint",
+      "PassCapacityProvider",
+      "PassNetworkConnector"
+    ],
+    "Read": [
+      "GetAccountSettings",
+      "GetAlias",
+      "GetCapacityProvider",
+      "GetCodeSigningConfig",
+      "GetDurableExecution",
+      "GetDurableExecutionHistory",
+      "GetDurableExecutionState",
+      "GetEventSourceMapping",
+      "GetFunction",
+      "GetFunctionCodeSigningConfig",
+      "GetFunctionConcurrency",
+      "GetFunctionConfiguration",
+      "GetFunctionEventInvokeConfig",
+      "GetFunctionRecursionConfig",
+      "GetFunctionScalingConfig",
+      "GetFunctionUrlConfig",
+      "GetLayerVersion",
+      "GetLayerVersionPolicy",
+      "GetMicrovm",
+      "GetMicrovmImage",
+      "GetMicrovmImageBuild",
+      "GetMicrovmImageVersion",
+      "GetNetworkConnector",
+      "GetPolicy",
+      "GetProvisionedConcurrencyConfig",
+      "GetResourcePolicy",
+      "GetRuntimeManagementConfig",
+      "GetWebAccountSettings",
+      "GetWebFunction",
+      "GetWebFunctionEndpoint",
+      "GetWebFunctionRevision",
+      "ListTags"
+    ],
+    "List": [
+      "ListAliases",
+      "ListCapacityProviders",
+      "ListCodeSigningConfigs",
+      "ListDurableExecutionsByFunction",
+      "ListEventSourceMappings",
+      "ListFunctionEventInvokeConfigs",
+      "ListFunctionUrlConfigs",
+      "ListFunctionVersionsByCapacityProvider",
+      "ListFunctions",
+      "ListFunctionsByCodeSigningConfig",
+      "ListLayerVersions",
+      "ListLayers",
+      "ListManagedMicrovmImageVersions",
+      "ListManagedMicrovmImages",
+      "ListMicrovmImageBuilds",
+      "ListMicrovmImageVersions",
+      "ListMicrovmImages",
+      "ListMicrovms",
+      "ListNetworkConnectors",
+      "ListProvisionedConcurrencyConfigs",
+      "ListVersionsByFunction",
+      "ListWebFunctionEndpoints",
+      "ListWebFunctionRevisions",
+      "ListWebFunctions"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddLayerVersionPermission",
+      "methodName": "toAddLayerVersionPermission",
+      "description": "Grants permission to add permissions to the resource-based policy of a version of an AWS Lambda layer",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_AddLayerVersionPermission.html"
+    },
+    {
+      "name": "AddPermission",
+      "methodName": "toAddPermission",
+      "description": "Grants permission to give an AWS service or another account permission to use an AWS Lambda function",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"
+    },
+    {
+      "name": "CheckpointDurableExecution",
+      "methodName": "toCheckpointDurableExecution",
+      "description": "Grants permission to save the progress of an AWS Lambda durable execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_CheckpointDurableExecution.html"
+    },
+    {
+      "name": "CreateAlias",
+      "methodName": "toCreateAlias",
+      "description": "Grants permission to create an alias for a Lambda function version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateAlias.html"
+    },
+    {
+      "name": "CreateCapacityProvider",
+      "methodName": "toCreateCapacityProvider",
+      "description": "Grants permission to create an AWS Lambda capacity provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateCapacityProvider.html"
+    },
+    {
+      "name": "CreateCodeSigningConfig",
+      "methodName": "toCreateCodeSigningConfig",
+      "description": "Grants permission to create an AWS Lambda code signing config",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateCodeSigningConfig.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateEventSourceMapping",
+      "methodName": "toCreateEventSourceMapping",
+      "description": "Grants permission to create a mapping between an event source and an AWS Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateEventSourceMapping.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifFunctionArn"
+      ]
+    },
+    {
+      "name": "CreateFunction",
+      "methodName": "toCreateFunction",
+      "description": "Grants permission to create an AWS Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html"
+    },
+    {
+      "name": "CreateFunctionUrlConfig",
+      "methodName": "toCreateFunctionUrlConfig",
+      "description": "Grants permission to create a function url configuration for a Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunctionUrlConfig.html"
+    },
+    {
+      "name": "CreateMicrovmAuthToken",
+      "methodName": "toCreateMicrovmAuthToken",
+      "description": "Grants permission to create an auth token for an AWS Lambda MicroVM",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_CreateMicrovmAuthToken.html"
+    },
+    {
+      "name": "CreateMicrovmImage",
+      "methodName": "toCreateMicrovmImage",
+      "description": "Grants permission to create an AWS Lambda MicroVM image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_CreateMicrovmImage.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMicrovmShellAuthToken",
+      "methodName": "toCreateMicrovmShellAuthToken",
+      "description": "Grants permission to create a shell auth token for an AWS Lambda MicroVM",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_CreateMicrovmShellAuthToken.html"
+    },
+    {
+      "name": "CreateNetworkConnector",
+      "methodName": "toCreateNetworkConnector",
+      "description": "Grants permission to create an AWS Lambda network connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateNetworkConnector.html"
+    },
+    {
+      "name": "CreateWebFunction",
+      "methodName": "toCreateWebFunction",
+      "description": "Grants permission to create a Lambda web function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_CreateWebFunction.html"
+    },
+    {
+      "name": "CreateWebFunctionEndpoint",
+      "methodName": "toCreateWebFunctionEndpoint",
+      "description": "Grants permission to create an endpoint for a Lambda web function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_CreateWebFunctionEndpoint.html"
+    },
+    {
+      "name": "CreateWebFunctionRevision",
+      "methodName": "toCreateWebFunctionRevision",
+      "description": "Grants permission to create a revision for a Lambda web function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_CreateWebFunctionRevision.html"
+    },
+    {
+      "name": "DeleteAlias",
+      "methodName": "toDeleteAlias",
+      "description": "Grants permission to delete an AWS Lambda function alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteAlias.html"
+    },
+    {
+      "name": "DeleteCapacityProvider",
+      "methodName": "toDeleteCapacityProvider",
+      "description": "Grants permission to delete an AWS Lambda capacity provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteCapacityProvider.html"
+    },
+    {
+      "name": "DeleteCodeSigningConfig",
+      "methodName": "toDeleteCodeSigningConfig",
+      "description": "Grants permission to delete an AWS Lambda code signing config",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteCodeSigningConfig.html"
+    },
+    {
+      "name": "DeleteEventSourceMapping",
+      "methodName": "toDeleteEventSourceMapping",
+      "description": "Grants permission to delete an AWS Lambda event source mapping",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteEventSourceMapping.html"
+    },
+    {
+      "name": "DeleteFunction",
+      "methodName": "toDeleteFunction",
+      "description": "Grants permission to delete an AWS Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunction.html"
+    },
+    {
+      "name": "DeleteFunctionCodeSigningConfig",
+      "methodName": "toDeleteFunctionCodeSigningConfig",
+      "description": "Grants permission to detach a code signing config from an AWS Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionCodeSigningConfig.html"
+    },
+    {
+      "name": "DeleteFunctionConcurrency",
+      "methodName": "toDeleteFunctionConcurrency",
+      "description": "Grants permission to remove a concurrent execution limit from an AWS Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionConcurrency.html"
+    },
+    {
+      "name": "DeleteFunctionEventInvokeConfig",
+      "methodName": "toDeleteFunctionEventInvokeConfig",
+      "description": "Grants permission to delete the configuration for asynchronous invocation for an AWS Lambda function, version, or alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionEventInvokeConfig.html"
+    },
+    {
+      "name": "DeleteFunctionUrlConfig",
+      "methodName": "toDeleteFunctionUrlConfig",
+      "description": "Grants permission to delete function url configuration for a Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionUrlConfig.html"
+    },
+    {
+      "name": "DeleteLayerVersion",
+      "methodName": "toDeleteLayerVersion",
+      "description": "Grants permission to delete a version of an AWS Lambda layer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteLayerVersion.html"
+    },
+    {
+      "name": "DeleteMicrovmImage",
+      "methodName": "toDeleteMicrovmImage",
+      "description": "Grants permission to delete an AWS Lambda MicroVM image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_DeleteMicrovmImage.html"
+    },
+    {
+      "name": "DeleteMicrovmImageVersion",
+      "methodName": "toDeleteMicrovmImageVersion",
+      "description": "Grants permission to delete a version of an AWS Lambda MicroVM image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_DeleteMicrovmImageVersion.html"
+    },
+    {
+      "name": "DeleteNetworkConnector",
+      "methodName": "toDeleteNetworkConnector",
+      "description": "Grants permission to delete an AWS Lambda network connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteNetworkConnector.html"
+    },
+    {
+      "name": "DeleteProvisionedConcurrencyConfig",
+      "methodName": "toDeleteProvisionedConcurrencyConfig",
+      "description": "Grants permission to delete the provisioned concurrency configuration for an AWS Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteProvisionedConcurrencyConfig.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to detach a policy from an AWS Lambda resource, additionally requiring lambda:RemovePermission only for a function resource",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteWebFunction",
+      "methodName": "toDeleteWebFunction",
+      "description": "Grants permission to delete a Lambda web function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_DeleteWebFunction.html"
+    },
+    {
+      "name": "DeleteWebFunctionEndpoint",
+      "methodName": "toDeleteWebFunctionEndpoint",
+      "description": "Grants permission to delete an endpoint for a Lambda web function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_DeleteWebFunctionEndpoint.html"
+    },
+    {
+      "name": "DeleteWebFunctionRevision",
+      "methodName": "toDeleteWebFunctionRevision",
+      "description": "Grants permission to delete a revision for a Lambda web function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_DeleteWebFunctionRevision.html"
+    },
+    {
+      "name": "GetAccountSettings",
+      "methodName": "toGetAccountSettings",
+      "description": "Grants permission to view details about an account's limits and usage in an AWS Region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetAccountSettings.html"
+    },
+    {
+      "name": "GetAlias",
+      "methodName": "toGetAlias",
+      "description": "Grants permission to view details about an AWS Lambda function alias",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetAlias.html"
+    },
+    {
+      "name": "GetCapacityProvider",
+      "methodName": "toGetCapacityProvider",
+      "description": "Grants permission to view details about an AWS Lambda capacity provider",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetCapacityProvider.html"
+    },
+    {
+      "name": "GetCodeSigningConfig",
+      "methodName": "toGetCodeSigningConfig",
+      "description": "Grants permission to view details about an AWS Lambda code signing config",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetCodeSigningConfig.html"
+    },
+    {
+      "name": "GetDurableExecution",
+      "methodName": "toGetDurableExecution",
+      "description": "Grants permission to view details of an AWS Lambda durable execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetDurableExecution.html"
+    },
+    {
+      "name": "GetDurableExecutionHistory",
+      "methodName": "toGetDurableExecutionHistory",
+      "description": "Grants permission to view execution history of an AWS Lambda durable execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetDurableExecutionHistory.html"
+    },
+    {
+      "name": "GetDurableExecutionState",
+      "methodName": "toGetDurableExecutionState",
+      "description": "Grants permission to view current state of an AWS Lambda durable execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetDurableExecutionState.html"
+    },
+    {
+      "name": "GetEventSourceMapping",
+      "methodName": "toGetEventSourceMapping",
+      "description": "Grants permission to view details about an AWS Lambda event source mapping",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetEventSourceMapping.html"
+    },
+    {
+      "name": "GetFunction",
+      "methodName": "toGetFunction",
+      "description": "Grants permission to view details about an AWS Lambda function",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunction.html"
+    },
+    {
+      "name": "GetFunctionCodeSigningConfig",
+      "methodName": "toGetFunctionCodeSigningConfig",
+      "description": "Grants permission to view the code signing config arn attached to an AWS Lambda function",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionCodeSigningConfig.html"
+    },
+    {
+      "name": "GetFunctionConcurrency",
+      "methodName": "toGetFunctionConcurrency",
+      "description": "Grants permission to view details about the reserved concurrency configuration for a function",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConcurrency.html"
+    },
+    {
+      "name": "GetFunctionConfiguration",
+      "methodName": "toGetFunctionConfiguration",
+      "description": "Grants permission to view details about the version-specific settings of an AWS Lambda function or version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html"
+    },
+    {
+      "name": "GetFunctionEventInvokeConfig",
+      "methodName": "toGetFunctionEventInvokeConfig",
+      "description": "Grants permission to view the configuration for asynchronous invocation for a function, version, or alias",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionEventInvokeConfig.html"
+    },
+    {
+      "name": "GetFunctionRecursionConfig",
+      "methodName": "toGetFunctionRecursionConfig",
+      "description": "Grants permission to view the recursion configuration of an AWS Lambda function",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionRecursionConfig.html"
+    },
+    {
+      "name": "GetFunctionScalingConfig",
+      "methodName": "toGetFunctionScalingConfig",
+      "description": "Grants permission to view the scaling configuration of an AWS Lambda function running on a capacity provider",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionScalingConfig.html"
+    },
+    {
+      "name": "GetFunctionUrlConfig",
+      "methodName": "toGetFunctionUrlConfig",
+      "description": "Grants permission to read function url configuration for a Lambda function",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionUrlConfig.html"
+    },
+    {
+      "name": "GetLayerVersion",
+      "methodName": "toGetLayerVersion",
+      "description": "Grants permission to view details about a version of an AWS Lambda layer. Note this action also supports GetLayerVersionByArn API",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetLayerVersion.html"
+    },
+    {
+      "name": "GetLayerVersionPolicy",
+      "methodName": "toGetLayerVersionPolicy",
+      "description": "Grants permission to view the resource-based policy for a version of an AWS Lambda layer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetLayerVersionPolicy.html"
+    },
+    {
+      "name": "GetMicrovm",
+      "methodName": "toGetMicrovm",
+      "description": "Grants permission to view information about an AWS Lambda MicroVM",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_GetMicrovm.html"
+    },
+    {
+      "name": "GetMicrovmImage",
+      "methodName": "toGetMicrovmImage",
+      "description": "Grants permission to view information about an AWS Lambda MicroVM image",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_GetMicrovmImage.html"
+    },
+    {
+      "name": "GetMicrovmImageBuild",
+      "methodName": "toGetMicrovmImageBuild",
+      "description": "Grants permission to view information about a build of an AWS Lambda MicroVM image version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_GetMicrovmImageBuild.html"
+    },
+    {
+      "name": "GetMicrovmImageVersion",
+      "methodName": "toGetMicrovmImageVersion",
+      "description": "Grants permission to view information about a version of an AWS Lambda MicroVM image",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_GetMicrovmImageVersion.html"
+    },
+    {
+      "name": "GetNetworkConnector",
+      "methodName": "toGetNetworkConnector",
+      "description": "Grants permission to view details about an AWS Lambda network connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetNetworkConnector.html"
+    },
+    {
+      "name": "GetPolicy",
+      "methodName": "toGetPolicy",
+      "description": "Grants permission to view the resource-based policy for an AWS Lambda function, version, or alias",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetPolicy.html"
+    },
+    {
+      "name": "GetProvisionedConcurrencyConfig",
+      "methodName": "toGetProvisionedConcurrencyConfig",
+      "description": "Grants permission to view the provisioned concurrency configuration for an AWS Lambda function's alias or version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetProvisionedConcurrencyConfig.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to view a policy for an AWS Lambda resource, additionally requiring lambda:GetPolicy only for a function resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "GetRuntimeManagementConfig",
+      "methodName": "toGetRuntimeManagementConfig",
+      "description": "Grants permission to view the runtime management configuration of an AWS Lambda function",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetRuntimeManagementConfig.html"
+    },
+    {
+      "name": "GetWebAccountSettings",
+      "methodName": "toGetWebAccountSettings",
+      "description": "Grants permission to view the account settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_GetWebAccountSettings.html"
+    },
+    {
+      "name": "GetWebFunction",
+      "methodName": "toGetWebFunction",
+      "description": "Grants permission to view details about a Lambda web function",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_GetWebFunction.html"
+    },
+    {
+      "name": "GetWebFunctionEndpoint",
+      "methodName": "toGetWebFunctionEndpoint",
+      "description": "Grants permission to view details about an endpoint for a Lambda web function",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_GetWebFunctionEndpoint.html"
+    },
+    {
+      "name": "GetWebFunctionRevision",
+      "methodName": "toGetWebFunctionRevision",
+      "description": "Grants permission to view details about a revision for a Lambda web function",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_GetWebFunctionRevision.html"
+    },
+    {
+      "name": "InvokeAsync",
+      "methodName": "toInvokeAsync",
+      "description": "Grants permission to invoke a function asynchronously (Deprecated)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_InvokeAsync.html"
+    },
+    {
+      "name": "InvokeFunction",
+      "methodName": "toInvokeFunction",
+      "description": "Grants permission to invoke an AWS Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html"
+    },
+    {
+      "name": "ListAliases",
+      "methodName": "toListAliases",
+      "description": "Grants permission to retrieve a list of aliases for an AWS Lambda function",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListAliases.html"
+    },
+    {
+      "name": "ListCapacityProviders",
+      "methodName": "toListCapacityProviders",
+      "description": "Grants permission to retrieve a list of AWS Lambda capacity providers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListCapacityProviders.html"
+    },
+    {
+      "name": "ListCodeSigningConfigs",
+      "methodName": "toListCodeSigningConfigs",
+      "description": "Grants permission to retrieve a list of AWS Lambda code signing configs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListCodeSigningConfigs.html"
+    },
+    {
+      "name": "ListDurableExecutionsByFunction",
+      "methodName": "toListDurableExecutionsByFunction",
+      "description": "Grants permission to retrieve a list of AWS Lambda durable executions of an AWS Lambda function",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListDurableExecutionsByFunction.html"
+    },
+    {
+      "name": "ListEventSourceMappings",
+      "methodName": "toListEventSourceMappings",
+      "description": "Grants permission to retrieve a list of AWS Lambda event source mappings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListEventSourceMappings.html"
+    },
+    {
+      "name": "ListFunctionEventInvokeConfigs",
+      "methodName": "toListFunctionEventInvokeConfigs",
+      "description": "Grants permission to retrieve a list of configurations for asynchronous invocation for a function",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctionEventInvokeConfigs.html"
+    },
+    {
+      "name": "ListFunctionUrlConfigs",
+      "methodName": "toListFunctionUrlConfigs",
+      "description": "Grants permission to read function url configurations for a function",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctionUrlConfigs.html"
+    },
+    {
+      "name": "ListFunctionVersionsByCapacityProvider",
+      "methodName": "toListFunctionVersionsByCapacityProvider",
+      "description": "Grants permission to retrieve a list of AWS Lambda function versions by the capacity provider assigned",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctionVersionsByCapacityProvider.html"
+    },
+    {
+      "name": "ListFunctions",
+      "methodName": "toListFunctions",
+      "description": "Grants permission to retrieve a list of AWS Lambda functions, with the version-specific configuration of each function",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctions.html"
+    },
+    {
+      "name": "ListFunctionsByCodeSigningConfig",
+      "methodName": "toListFunctionsByCodeSigningConfig",
+      "description": "Grants permission to retrieve a list of AWS Lambda functions by the code signing config assigned",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctionsByCodeSigningConfig.html"
+    },
+    {
+      "name": "ListLayerVersions",
+      "methodName": "toListLayerVersions",
+      "description": "Grants permission to retrieve a list of versions of an AWS Lambda layer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListLayerVersions.html"
+    },
+    {
+      "name": "ListLayers",
+      "methodName": "toListLayers",
+      "description": "Grants permission to retrieve a list of AWS Lambda layers, with details about the latest version of each layer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListLayers.html"
+    },
+    {
+      "name": "ListManagedMicrovmImageVersions",
+      "methodName": "toListManagedMicrovmImageVersions",
+      "description": "Grants permission to retrieve a list of versions for a managed AWS Lambda MicroVM image",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListManagedMicrovmImageVersions.html"
+    },
+    {
+      "name": "ListManagedMicrovmImages",
+      "methodName": "toListManagedMicrovmImages",
+      "description": "Grants permission to retrieve a list of managed AWS Lambda MicroVM images",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListManagedMicrovmImages.html"
+    },
+    {
+      "name": "ListMicrovmImageBuilds",
+      "methodName": "toListMicrovmImageBuilds",
+      "description": "Grants permission to retrieve a list of builds for an AWS Lambda MicroVM image version",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListMicrovmImageBuilds.html"
+    },
+    {
+      "name": "ListMicrovmImageVersions",
+      "methodName": "toListMicrovmImageVersions",
+      "description": "Grants permission to retrieve a list of versions for an AWS Lambda MicroVM image",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListMicrovmImageVersions.html"
+    },
+    {
+      "name": "ListMicrovmImages",
+      "methodName": "toListMicrovmImages",
+      "description": "Grants permission to retrieve a list of AWS Lambda MicroVM images",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListMicrovmImages.html"
+    },
+    {
+      "name": "ListMicrovms",
+      "methodName": "toListMicrovms",
+      "description": "Grants permission to retrieve a list of AWS Lambda MicroVMs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListMicrovms.html"
+    },
+    {
+      "name": "ListNetworkConnectors",
+      "methodName": "toListNetworkConnectors",
+      "description": "Grants permission to retrieve a list of AWS Lambda network connectors",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListNetworkConnectors.html"
+    },
+    {
+      "name": "ListProvisionedConcurrencyConfigs",
+      "methodName": "toListProvisionedConcurrencyConfigs",
+      "description": "Grants permission to retrieve a list of provisioned concurrency configurations for an AWS Lambda function",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListProvisionedConcurrencyConfigs.html"
+    },
+    {
+      "name": "ListTags",
+      "methodName": "toListTags",
+      "description": "Grants permission to retrieve a list of tags for an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector, MicroVM image resource, or a web function resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListTags.html"
+    },
+    {
+      "name": "ListVersionsByFunction",
+      "methodName": "toListVersionsByFunction",
+      "description": "Grants permission to retrieve a list of versions for an AWS Lambda function",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListVersionsByFunction.html"
+    },
+    {
+      "name": "ListWebFunctionEndpoints",
+      "methodName": "toListWebFunctionEndpoints",
+      "description": "Grants permission to retrieve a list of endpoints for a Lambda web function",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_ListWebFunctionEndpoints.html"
+    },
+    {
+      "name": "ListWebFunctionRevisions",
+      "methodName": "toListWebFunctionRevisions",
+      "description": "Grants permission to retrieve a list of revisions for a Lambda web function",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_ListWebFunctionRevisions.html"
+    },
+    {
+      "name": "ListWebFunctions",
+      "methodName": "toListWebFunctions",
+      "description": "Grants permission to retrieve a list of Lambda web functions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_ListWebFunctions.html"
+    },
+    {
+      "name": "PublishLayerVersion",
+      "methodName": "toPublishLayerVersion",
+      "description": "Grants permission to create an AWS Lambda layer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html"
+    },
+    {
+      "name": "PublishVersion",
+      "methodName": "toPublishVersion",
+      "description": "Grants permission to create an AWS Lambda function version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PublishVersion.html"
+    },
+    {
+      "name": "PutFunctionCodeSigningConfig",
+      "methodName": "toPutFunctionCodeSigningConfig",
+      "description": "Grants permission to attach a code signing config to an AWS Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionCodeSigningConfig.html"
+    },
+    {
+      "name": "PutFunctionConcurrency",
+      "methodName": "toPutFunctionConcurrency",
+      "description": "Grants permission to configure reserved concurrency for an AWS Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionConcurrency.html"
+    },
+    {
+      "name": "PutFunctionEventInvokeConfig",
+      "methodName": "toPutFunctionEventInvokeConfig",
+      "description": "Grants permission to configures options for asynchronous invocation on an AWS Lambda function, version, or alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionEventInvokeConfig.html"
+    },
+    {
+      "name": "PutFunctionRecursionConfig",
+      "methodName": "toPutFunctionRecursionConfig",
+      "description": "Grants permission to update the recursion configuration of an AWS Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionRecursionConfig.html"
+    },
+    {
+      "name": "PutFunctionScalingConfig",
+      "methodName": "toPutFunctionScalingConfig",
+      "description": "Grants permission to update the scaling configuration of an AWS Lambda function running on a capacity provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionScalingConfig.html"
+    },
+    {
+      "name": "PutProvisionedConcurrencyConfig",
+      "methodName": "toPutProvisionedConcurrencyConfig",
+      "description": "Grants permission to configure provisioned concurrency for an AWS Lambda function's alias or version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutProvisionedConcurrencyConfig.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to attach a policy to an AWS Lambda resource, additionally requiring lambda:AddPermission and lambda:RemovePermission only for a function resource",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "PutRuntimeManagementConfig",
+      "methodName": "toPutRuntimeManagementConfig",
+      "description": "Grants permission to update the runtime management configuration of an AWS Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutRuntimeManagementConfig.html"
+    },
+    {
+      "name": "RemoveLayerVersionPermission",
+      "methodName": "toRemoveLayerVersionPermission",
+      "description": "Grants permission to remove a statement from the permissions policy for a version of an AWS Lambda layer",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_RemoveLayerVersionPermission.html"
+    },
+    {
+      "name": "RemovePermission",
+      "methodName": "toRemovePermission",
+      "description": "Grants permission to revoke function-use permission from an AWS service or another account",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_RemovePermission.html"
+    },
+    {
+      "name": "ResumeMicrovm",
+      "methodName": "toResumeMicrovm",
+      "description": "Grants permission to resume a suspended AWS Lambda MicroVM",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ResumeMicrovm.html"
+    },
+    {
+      "name": "RunMicrovm",
+      "methodName": "toRunMicrovm",
+      "description": "Grants permission to run an AWS Lambda MicroVM from a MicroVM image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_RunMicrovm.html"
+    },
+    {
+      "name": "SendDurableExecutionCallbackFailure",
+      "methodName": "toSendDurableExecutionCallbackFailure",
+      "description": "Grants permission to send a failure response for a callback operation in an AWS Lambda durable execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_SendDurableExecutionCallbackFailure.html"
+    },
+    {
+      "name": "SendDurableExecutionCallbackHeartbeat",
+      "methodName": "toSendDurableExecutionCallbackHeartbeat",
+      "description": "Grants permission to send a heartbeat for a callback operation in an AWS Lambda durable execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_SendDurableExecutionCallbackHeartbeat.html"
+    },
+    {
+      "name": "SendDurableExecutionCallbackSuccess",
+      "methodName": "toSendDurableExecutionCallbackSuccess",
+      "description": "Grants permission to send a successful response for a callback operation in an AWS Lambda durable execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_SendDurableExecutionCallbackSuccess.html"
+    },
+    {
+      "name": "StopDurableExecution",
+      "methodName": "toStopDurableExecution",
+      "description": "Grants permission to stop an AWS Lambda durable execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_StopDurableExecution.html"
+    },
+    {
+      "name": "SuspendMicrovm",
+      "methodName": "toSuspendMicrovm",
+      "description": "Grants permission to suspend an AWS Lambda MicroVM",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_SuspendMicrovm.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector, MicroVM image resource, or a web function resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_TagResources.html"
+    },
+    {
+      "name": "TerminateMicrovm",
+      "methodName": "toTerminateMicrovm",
+      "description": "Grants permission to terminate an AWS Lambda MicroVM",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_TerminateMicrovm.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector, MicroVM image resource, or a web function resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAlias",
+      "methodName": "toUpdateAlias",
+      "description": "Grants permission to update the configuration of an AWS Lambda function's alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateAlias.html"
+    },
+    {
+      "name": "UpdateCapacityProvider",
+      "methodName": "toUpdateCapacityProvider",
+      "description": "Grants permission to update an AWS Lambda capacity provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateCapacityProvider.html"
+    },
+    {
+      "name": "UpdateCodeSigningConfig",
+      "methodName": "toUpdateCodeSigningConfig",
+      "description": "Grants permission to update an AWS Lambda code signing config",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateCodeSigningConfig.html"
+    },
+    {
+      "name": "UpdateEventSourceMapping",
+      "methodName": "toUpdateEventSourceMapping",
+      "description": "Grants permission to update the configuration of an AWS Lambda event source mapping",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateEventSourceMapping.html"
+    },
+    {
+      "name": "UpdateFunctionCode",
+      "methodName": "toUpdateFunctionCode",
+      "description": "Grants permission to update the code of an AWS Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionCode.html"
+    },
+    {
+      "name": "UpdateFunctionCodeSigningConfig",
+      "methodName": "toUpdateFunctionCodeSigningConfig",
+      "description": "Grants permission to update the code signing config of an AWS Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionCodeSigningConfig.html"
+    },
+    {
+      "name": "UpdateFunctionConfiguration",
+      "methodName": "toUpdateFunctionConfiguration",
+      "description": "Grants permission to modify the version-specific settings of an AWS Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionConfiguration.html"
+    },
+    {
+      "name": "UpdateFunctionEventInvokeConfig",
+      "methodName": "toUpdateFunctionEventInvokeConfig",
+      "description": "Grants permission to modify the configuration for asynchronous invocation for an AWS Lambda function, version, or alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionEventInvokeConfig.html"
+    },
+    {
+      "name": "UpdateFunctionUrlConfig",
+      "methodName": "toUpdateFunctionUrlConfig",
+      "description": "Grants permission to update a function url configuration for a Lambda function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionUrlConfig.html"
+    },
+    {
+      "name": "UpdateMicrovmImage",
+      "methodName": "toUpdateMicrovmImage",
+      "description": "Grants permission to update an AWS Lambda MicroVM image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_UpdateMicrovmImage.html"
+    },
+    {
+      "name": "UpdateMicrovmImageVersion",
+      "methodName": "toUpdateMicrovmImageVersion",
+      "description": "Grants permission to update a version of an AWS Lambda MicroVM image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_UpdateMicrovmImageVersion.html"
+    },
+    {
+      "name": "UpdateNetworkConnector",
+      "methodName": "toUpdateNetworkConnector",
+      "description": "Grants permission to update an AWS Lambda network connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateNetworkConnector.html"
+    },
+    {
+      "name": "UpdateWebFunctionEndpoint",
+      "methodName": "toUpdateWebFunctionEndpoint",
+      "description": "Grants permission to update an endpoint for a Lambda web function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_UpdateWebFunctionEndpoint.html"
+    },
+    {
+      "name": "ConnectMicrovm",
+      "methodName": "toConnectMicrovm",
+      "description": "Grants permission to connect to a Lambda MicroVM via HTTP (VPC Endpoint only)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html"
+    },
+    {
+      "name": "DisableReplication",
+      "methodName": "toDisableReplication",
+      "description": "Grants permission to disable replication for a Lambda@Edge function",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html"
+    },
+    {
+      "name": "EnableReplication",
+      "methodName": "toEnableReplication",
+      "description": "Grants permission to enable replication for a Lambda@Edge function",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html"
+    },
+    {
+      "name": "InvokeFunctionUrl",
+      "methodName": "toInvokeFunctionUrl",
+      "description": "Grants permission to invoke an AWS Lambda function through url",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_InvokeFunctionUrl.html"
+    },
+    {
+      "name": "InvokeWebFunctionEndpoint",
+      "methodName": "toInvokeWebFunctionEndpoint",
+      "description": "Grants permission to invoke a Lambda web function endpoint via HTTP",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_InvokeWebFunctionEndpoint.html"
+    },
+    {
+      "name": "PassCapacityProvider",
+      "methodName": "toPassCapacityProvider",
+      "description": "Grants permission to pass an AWS Lambda capacity provider to a service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html"
+    },
+    {
+      "name": "PassNetworkConnector",
+      "methodName": "toPassNetworkConnector",
+      "description": "Grants permission to pass an AWS Lambda network connector to a service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "capacityProvider",
+      "methodName": "onCapacityProvider",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:capacity-provider:${CapacityProviderName}",
+      "placeholders": [
+        {
+          "placeholder": "CapacityProviderName",
+          "name": "capacityProviderName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "code signing config",
+      "methodName": "onCodeSigningConfig",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:code-signing-config:${CodeSigningConfigId}",
+      "placeholders": [
+        {
+          "placeholder": "CodeSigningConfigId",
+          "name": "codeSigningConfigId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "durable execution",
+      "methodName": "onDurableExecution",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Version}/durable-execution/${ExecutionName}/${ExecutionId}",
+      "placeholders": [
+        {
+          "placeholder": "FunctionName",
+          "name": "functionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Version",
+          "name": "version",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExecutionName",
+          "name": "executionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExecutionId",
+          "name": "executionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "eventSourceMapping",
+      "methodName": "onEventSourceMapping",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:event-source-mapping:${UUID}",
+      "placeholders": [
+        {
+          "placeholder": "UUID",
+          "name": "uUID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "function",
+      "methodName": "onFunction",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}",
+      "placeholders": [
+        {
+          "placeholder": "FunctionName",
+          "name": "functionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "function alias",
+      "methodName": "onFunctionAlias",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Alias}",
+      "placeholders": [
+        {
+          "placeholder": "FunctionName",
+          "name": "functionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Alias",
+          "name": "alias",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "function version",
+      "methodName": "onFunctionVersion",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Version}",
+      "placeholders": [
+        {
+          "placeholder": "FunctionName",
+          "name": "functionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Version",
+          "name": "version",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "layer",
+      "methodName": "onLayer",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}",
+      "placeholders": [
+        {
+          "placeholder": "LayerName",
+          "name": "layerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "layerVersion",
+      "methodName": "onLayerVersion",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}:${LayerVersion}",
+      "placeholders": [
+        {
+          "placeholder": "LayerName",
+          "name": "layerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "LayerVersion",
+          "name": "layerVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "microvmImage",
+      "methodName": "onMicrovmImage",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:microvm-image:${MicrovmImageName}",
+      "placeholders": [
+        {
+          "placeholder": "MicrovmImageName",
+          "name": "microvmImageName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "networkConnector",
+      "methodName": "onNetworkConnector",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:network-connector:${NetworkConnectorId}",
+      "placeholders": [
+        {
+          "placeholder": "NetworkConnectorId",
+          "name": "networkConnectorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "webFunction",
+      "methodName": "onWebFunction",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:web-function/${FunctionName}",
+      "placeholders": [
+        {
+          "placeholder": "FunctionName",
+          "name": "functionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "webFunctionEndpoint",
+      "methodName": "onWebFunctionEndpoint",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:web-function/${FunctionName}/endpoint/${EndpointName}",
+      "placeholders": [
+        {
+          "placeholder": "FunctionName",
+          "name": "functionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EndpointName",
+          "name": "endpointName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "webFunctionRevision",
+      "methodName": "onWebFunctionRevision",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:web-function/${FunctionName}/revision/${RevisionId}",
+      "placeholders": [
+        {
+          "placeholder": "FunctionName",
+          "name": "functionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RevisionId",
+          "name": "revisionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateCapacityProvider",
+        "toCreateCodeSigningConfig",
+        "toCreateEventSourceMapping",
+        "toCreateFunction",
+        "toCreateMicrovmImage",
+        "toCreateNetworkConnector",
+        "toCreateWebFunction",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddPermission",
+        "toCheckpointDurableExecution",
+        "toCreateAlias",
+        "toCreateCapacityProvider",
+        "toCreateFunction",
+        "toCreateFunctionUrlConfig",
+        "toCreateMicrovmAuthToken",
+        "toCreateMicrovmShellAuthToken",
+        "toCreateNetworkConnector",
+        "toCreateWebFunction",
+        "toCreateWebFunctionEndpoint",
+        "toCreateWebFunctionRevision",
+        "toDeleteAlias",
+        "toDeleteCapacityProvider",
+        "toDeleteCodeSigningConfig",
+        "toDeleteEventSourceMapping",
+        "toDeleteFunction",
+        "toDeleteFunctionCodeSigningConfig",
+        "toDeleteFunctionConcurrency",
+        "toDeleteFunctionEventInvokeConfig",
+        "toDeleteFunctionUrlConfig",
+        "toDeleteMicrovmImage",
+        "toDeleteMicrovmImageVersion",
+        "toDeleteNetworkConnector",
+        "toDeleteProvisionedConcurrencyConfig",
+        "toDeleteResourcePolicy",
+        "toDeleteWebFunction",
+        "toDeleteWebFunctionEndpoint",
+        "toDeleteWebFunctionRevision",
+        "toGetAlias",
+        "toGetCapacityProvider",
+        "toGetCodeSigningConfig",
+        "toGetDurableExecution",
+        "toGetDurableExecutionHistory",
+        "toGetDurableExecutionState",
+        "toGetEventSourceMapping",
+        "toGetFunction",
+        "toGetFunctionCodeSigningConfig",
+        "toGetFunctionConcurrency",
+        "toGetFunctionConfiguration",
+        "toGetFunctionEventInvokeConfig",
+        "toGetFunctionRecursionConfig",
+        "toGetFunctionScalingConfig",
+        "toGetFunctionUrlConfig",
+        "toGetMicrovm",
+        "toGetMicrovmImage",
+        "toGetMicrovmImageBuild",
+        "toGetMicrovmImageVersion",
+        "toGetNetworkConnector",
+        "toGetPolicy",
+        "toGetProvisionedConcurrencyConfig",
+        "toGetResourcePolicy",
+        "toGetRuntimeManagementConfig",
+        "toGetWebFunction",
+        "toGetWebFunctionEndpoint",
+        "toGetWebFunctionRevision",
+        "toInvokeAsync",
+        "toInvokeFunction",
+        "toListAliases",
+        "toListDurableExecutionsByFunction",
+        "toListFunctionEventInvokeConfigs",
+        "toListFunctionUrlConfigs",
+        "toListFunctionVersionsByCapacityProvider",
+        "toListFunctionsByCodeSigningConfig",
+        "toListManagedMicrovmImageVersions",
+        "toListMicrovmImageBuilds",
+        "toListMicrovmImageVersions",
+        "toListProvisionedConcurrencyConfigs",
+        "toListTags",
+        "toListVersionsByFunction",
+        "toListWebFunctionEndpoints",
+        "toListWebFunctionRevisions",
+        "toPublishVersion",
+        "toPutFunctionCodeSigningConfig",
+        "toPutFunctionConcurrency",
+        "toPutFunctionEventInvokeConfig",
+        "toPutFunctionRecursionConfig",
+        "toPutFunctionScalingConfig",
+        "toPutProvisionedConcurrencyConfig",
+        "toPutResourcePolicy",
+        "toPutRuntimeManagementConfig",
+        "toRemovePermission",
+        "toResumeMicrovm",
+        "toRunMicrovm",
+        "toSendDurableExecutionCallbackFailure",
+        "toSendDurableExecutionCallbackHeartbeat",
+        "toSendDurableExecutionCallbackSuccess",
+        "toStopDurableExecution",
+        "toSuspendMicrovm",
+        "toTagResource",
+        "toTerminateMicrovm",
+        "toUntagResource",
+        "toUpdateAlias",
+        "toUpdateCapacityProvider",
+        "toUpdateCodeSigningConfig",
+        "toUpdateEventSourceMapping",
+        "toUpdateFunctionCode",
+        "toUpdateFunctionCodeSigningConfig",
+        "toUpdateFunctionConfiguration",
+        "toUpdateFunctionEventInvokeConfig",
+        "toUpdateFunctionUrlConfig",
+        "toUpdateMicrovmImage",
+        "toUpdateMicrovmImageVersion",
+        "toUpdateNetworkConnector",
+        "toUpdateWebFunctionEndpoint",
+        "toDisableReplication",
+        "toEnableReplication",
+        "toInvokeFunctionUrl",
+        "toInvokeWebFunctionEndpoint",
+        "toPassCapacityProvider"
+      ],
+      "relatedResourceTypes": [
+        "capacityProvider",
+        "code signing config",
+        "durable execution",
+        "eventSourceMapping",
+        "function",
+        "function alias",
+        "function version",
+        "microvmImage",
+        "networkConnector",
+        "webFunction",
+        "webFunctionEndpoint",
+        "webFunctionRevision"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateCapacityProvider",
+        "toCreateCodeSigningConfig",
+        "toCreateEventSourceMapping",
+        "toCreateFunction",
+        "toCreateMicrovmImage",
+        "toCreateNetworkConnector",
+        "toCreateWebFunction",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "lambda:CodeSigningConfigArn",
+      "methodName": "ifCodeSigningConfigArn",
+      "description": "Filters access by the ARN of an AWS Lambda code signing config",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "relatedActionMethods": [
+        "toCreateFunction",
+        "toPutFunctionCodeSigningConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CodeSigningConfigArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "lambda:EventSourceToken",
+      "methodName": "ifEventSourceToken",
+      "description": "Filters access by the ID from a non-AWS event source configured for the AWS Lambda function",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "relatedActionMethods": [
+        "toInvokeFunction",
+        "toInvokeFunctionUrl"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EventSourceToken",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "lambda:FunctionArn",
+      "methodName": "ifFunctionArn",
+      "description": "Filters access by the ARN of an AWS Lambda function",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "relatedActionMethods": [
+        "toCreateEventSourceMapping",
+        "toCreateFunctionUrlConfig",
+        "toDeleteEventSourceMapping",
+        "toDeleteFunctionUrlConfig",
+        "toGetEventSourceMapping",
+        "toGetFunctionUrlConfig",
+        "toUpdateEventSourceMapping",
+        "toUpdateFunctionUrlConfig",
+        "toInvokeFunctionUrl"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FunctionArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "lambda:FunctionUrlAuthType",
+      "methodName": "ifFunctionUrlAuthType",
+      "description": "Filters access by authorization type specified in request. Available during CreateFunctionUrlConfig, UpdateFunctionUrlConfig, DeleteFunctionUrlConfig, GetFunctionUrlConfig, ListFunctionUrlConfig, AddPermission and RemovePermission operations",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "relatedActionMethods": [
+        "toAddPermission",
+        "toCreateFunctionUrlConfig",
+        "toDeleteFunctionUrlConfig",
+        "toGetFunctionUrlConfig",
+        "toListFunctionUrlConfigs",
+        "toRemovePermission",
+        "toUpdateFunctionUrlConfig",
+        "toInvokeFunctionUrl"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FunctionUrlAuthType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "lambda:InvokedViaFunctionUrl",
+      "methodName": "ifInvokedViaFunctionUrl",
+      "description": "Limits the scope of lambda:InvokeFunction action to Function URLs only. Available during AddPermission operation",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "relatedActionMethods": [
+        "toInvokeFunction"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InvokedViaFunctionUrl",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "lambda:Layer",
+      "methodName": "ifLayer",
+      "description": "Filters access by the ARN of a version of an AWS Lambda layer",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "relatedActionMethods": [
+        "toCreateFunction",
+        "toUpdateFunctionConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Layer",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "lambda:Principal",
+      "methodName": "ifPrincipal",
+      "description": "Filters access by restricting the AWS service or account that can invoke a function",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "relatedActionMethods": [
+        "toAddPermission",
+        "toDeleteResourcePolicy",
+        "toPutResourcePolicy",
+        "toRemovePermission"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Principal",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "lambda:Request/WebFunctionAuthType",
+      "methodName": "ifRequestWebFunctionAuthType",
+      "description": "Filters access by the auth type specified in the request. Available during CreateWebFunction, CreateWebFunctionEndpoint, and UpdateWebFunctionEndpoint operations",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/permissions.html",
+      "relatedActionMethods": [
+        "toCreateWebFunction",
+        "toCreateWebFunctionEndpoint",
+        "toUpdateWebFunctionEndpoint"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/WebFunctionAuthType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "lambda:Resource/WebFunctionAuthType",
+      "methodName": "ifResourceWebFunctionAuthType",
+      "description": "Filters access by the auth type configured on the web function endpoint resource. Available during InvokeWebFunctionEndpoint, UpdateWebFunctionEndpoint, DeleteWebFunctionEndpoint, and GetWebFunctionEndpoint operations",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/permissions.html",
+      "relatedActionMethods": [
+        "toDeleteWebFunctionEndpoint",
+        "toGetWebFunctionEndpoint",
+        "toUpdateWebFunctionEndpoint",
+        "toInvokeWebFunctionEndpoint"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Resource/WebFunctionAuthType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "lambda:SecurityGroupIds",
+      "methodName": "ifSecurityGroupIds",
+      "description": "Filters access by the ID of security groups configured for the AWS Lambda function",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "relatedActionMethods": [
+        "toCreateCapacityProvider",
+        "toCreateFunction",
+        "toCreateNetworkConnector",
+        "toUpdateFunctionConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SecurityGroupIds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "lambda:SourceFunctionArn",
+      "methodName": "ifSourceFunctionArn",
+      "description": "Filters access by the ARN of the AWS Lambda function from which the request originated",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SourceFunctionArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "lambda:SubnetIds",
+      "methodName": "ifSubnetIds",
+      "description": "Filters access by the ID of subnets configured for the AWS Lambda function",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "relatedActionMethods": [
+        "toCreateCapacityProvider",
+        "toCreateFunction",
+        "toCreateNetworkConnector",
+        "toUpdateFunctionConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SubnetIds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "lambda:VpcIds",
+      "methodName": "ifVpcIds",
+      "description": "Filters access by the ID of the VPC configured for the AWS Lambda function",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "relatedActionMethods": [
+        "toCreateFunction",
+        "toUpdateFunctionConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "VpcIds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

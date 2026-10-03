@@ -1,5 +1,0 @@
-aidevops:RequestTag/${TagKey}
-aidevops:ResourceTag/${TagKey}
-aidevops:SourceAgentSpaceArn
-aidevops:TagKeys
-aidevops:TargetAgentSpaceArn

@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "filename": "partnercentral-account-management",
+  "className": "PartnercentralAccountManagement",
+  "name": "partnercentral-account-management",
+  "servicePrefix": "partnercentral-account-management",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partnercentral-account-management.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociatePartnerUser",
+      "DisassociatePartnerUser",
+      "AccessLegacyPartnerCentral",
+      "AccessMarketingCentral",
+      "AccessProServeTools",
+      "AssociatePartnerAccount"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociatePartnerUser",
+      "methodName": "toAssociatePartnerUser",
+      "description": "Grants permission to associate Partner user to IAM role",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html"
+    },
+    {
+      "name": "DisassociatePartnerUser",
+      "methodName": "toDisassociatePartnerUser",
+      "description": "Grants permission to disassociate Partner user to IAM role",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html"
+    },
+    {
+      "name": "AccessLegacyPartnerCentral",
+      "methodName": "toAccessLegacyPartnerCentral",
+      "description": "Grants permission to Single Sign-On from AWS Partner Central into Legacy Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html",
+      "conditionMethods": [
+        "ifLegacyPartnerCentralRole"
+      ]
+    },
+    {
+      "name": "AccessMarketingCentral",
+      "methodName": "toAccessMarketingCentral",
+      "description": "Grants permission to Single Sign-On from AWS Partner Central into Marketing Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html",
+      "conditionMethods": [
+        "ifMarketingCentralRole"
+      ]
+    },
+    {
+      "name": "AccessProServeTools",
+      "methodName": "toAccessProServeTools",
+      "description": "Grants permission to Single Sign-On from AWS Partner Central into ProServe Tools",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html",
+      "conditionMethods": [
+        "ifProServeRole"
+      ]
+    },
+    {
+      "name": "AssociatePartnerAccount",
+      "methodName": "toAssociatePartnerAccount",
+      "description": "Grants permission to associate Partner account to AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html"
+    }
+  ],
+  "resources": [],
+  "conditions": [
+    {
+      "key": "partnercentral-account-management:LegacyPartnerCentralRole",
+      "methodName": "ifLegacyPartnerCentralRole",
+      "description": "Filters access by the Legacy Partner Central role",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html",
+      "relatedActionMethods": [
+        "toAccessLegacyPartnerCentral"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "LegacyPartnerCentralRole",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "partnercentral-account-management:MarketingCentralRole",
+      "methodName": "ifMarketingCentralRole",
+      "description": "Filters access by Marketing Central role",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html",
+      "relatedActionMethods": [
+        "toAccessMarketingCentral"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MarketingCentralRole",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "partnercentral-account-management:ProServeRole",
+      "methodName": "ifProServeRole",
+      "description": "Filters access by ProServe Tools role",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html",
+      "relatedActionMethods": [
+        "toAccessProServeTools"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ProServeRole",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

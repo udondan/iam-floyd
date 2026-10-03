@@ -1,0 +1,624 @@
+{
+  "schemaVersion": 1,
+  "filename": "mediapackagev2",
+  "className": "Mediapackagev2",
+  "name": "mediapackagev2",
+  "servicePrefix": "mediapackagev2",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediapackagev2.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelHarvestJob",
+      "CreateChannel",
+      "CreateChannelGroup",
+      "CreateHarvestJob",
+      "CreateOriginEndpoint",
+      "DeleteChannel",
+      "DeleteChannelGroup",
+      "DeleteChannelPolicy",
+      "DeleteOriginEndpoint",
+      "DeleteOriginEndpointPolicy",
+      "PutChannelPolicy",
+      "PutObject",
+      "PutOriginEndpointPolicy",
+      "ResetChannelState",
+      "ResetOriginEndpointState",
+      "TagResource",
+      "UntagResource",
+      "UpdateChannel",
+      "UpdateChannelGroup",
+      "UpdateOriginEndpoint"
+    ],
+    "Read": [
+      "GetChannel",
+      "GetChannelGroup",
+      "GetChannelPolicy",
+      "GetHarvestJob",
+      "GetHeadObject",
+      "GetObject",
+      "GetOriginEndpoint",
+      "GetOriginEndpointPolicy",
+      "HarvestObject",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListChannelGroups",
+      "ListChannels",
+      "ListHarvestJobs",
+      "ListOriginEndpoints"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelHarvestJob",
+      "methodName": "toCancelHarvestJob",
+      "description": "Grants permission to cancel a harvest job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_CancelHarvestJob.html"
+    },
+    {
+      "name": "CreateChannel",
+      "methodName": "toCreateChannel",
+      "description": "Grants permission to create a channel in a channel group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_CreateChannel.html"
+    },
+    {
+      "name": "CreateChannelGroup",
+      "methodName": "toCreateChannelGroup",
+      "description": "Grants permission to create a channel group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_CreateChannelGroup.html"
+    },
+    {
+      "name": "CreateHarvestJob",
+      "methodName": "toCreateHarvestJob",
+      "description": "Grants permission to create a harvest job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_CreateHarvestJob.html"
+    },
+    {
+      "name": "CreateOriginEndpoint",
+      "methodName": "toCreateOriginEndpoint",
+      "description": "Grants permission to create an origin endpoint for a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_CreateOriginEndpoint.html"
+    },
+    {
+      "name": "DeleteChannel",
+      "methodName": "toDeleteChannel",
+      "description": "Grants permission to delete a channel in a channel group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_DeleteChannel.html"
+    },
+    {
+      "name": "DeleteChannelGroup",
+      "methodName": "toDeleteChannelGroup",
+      "description": "Grants permission to delete a channel group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_DeleteChannelGroup.html"
+    },
+    {
+      "name": "DeleteChannelPolicy",
+      "methodName": "toDeleteChannelPolicy",
+      "description": "Grants permission to delete a resource policy from a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_DeleteChannelPolicy.html"
+    },
+    {
+      "name": "DeleteOriginEndpoint",
+      "methodName": "toDeleteOriginEndpoint",
+      "description": "Grants permission to delete an origin endpoint of a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_DeleteOriginEndpoint.html"
+    },
+    {
+      "name": "DeleteOriginEndpointPolicy",
+      "methodName": "toDeleteOriginEndpointPolicy",
+      "description": "Grants permission to delete a resource policy from an origin endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_DeleteOriginEndpointPolicy.html"
+    },
+    {
+      "name": "GetChannel",
+      "methodName": "toGetChannel",
+      "description": "Grants permission to retrieve details of a channel in a channel group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_GetChannel.html"
+    },
+    {
+      "name": "GetChannelGroup",
+      "methodName": "toGetChannelGroup",
+      "description": "Grants permission to retrieve details of a channel group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_GetChannelGroup.html"
+    },
+    {
+      "name": "GetChannelPolicy",
+      "methodName": "toGetChannelPolicy",
+      "description": "Grants permission to retrieve a resource policy for a channel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_GetChannelPolicy.html"
+    },
+    {
+      "name": "GetHarvestJob",
+      "methodName": "toGetHarvestJob",
+      "description": "Grants permission to retrieve details of an harvest job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_GetHarvestJob.html"
+    },
+    {
+      "name": "GetHeadObject",
+      "methodName": "toGetHeadObject",
+      "description": "Grants permission to make GetHeadObject requests to MediaPackage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/userguide/dataplane-apis.html"
+    },
+    {
+      "name": "GetObject",
+      "methodName": "toGetObject",
+      "description": "Grants permission to make GetObject requests to MediaPackage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/userguide/dataplane-apis.html"
+    },
+    {
+      "name": "GetOriginEndpoint",
+      "methodName": "toGetOriginEndpoint",
+      "description": "Grants permission to retrieve details of an origin endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_GetOriginEndpoint.html"
+    },
+    {
+      "name": "GetOriginEndpointPolicy",
+      "methodName": "toGetOriginEndpointPolicy",
+      "description": "Grants permission to retrieve details of a resource policy for an origin endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_GetOriginEndpointPolicy.html"
+    },
+    {
+      "name": "HarvestObject",
+      "methodName": "toHarvestObject",
+      "description": "Grants permission to make HarvestObject requests to MediaPackage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/userguide/dataplane-apis.html"
+    },
+    {
+      "name": "ListChannelGroups",
+      "methodName": "toListChannelGroups",
+      "description": "Grants permission to list all channel groups for an aws account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_ListChannelGroups.html"
+    },
+    {
+      "name": "ListChannels",
+      "methodName": "toListChannels",
+      "description": "Grants permission to list all channels in a channel group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_ListChannels.html"
+    },
+    {
+      "name": "ListHarvestJobs",
+      "methodName": "toListHarvestJobs",
+      "description": "Grants permission to list all harvest jobs in a channel group, channel, origin endpoint",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_ListHarvestJobs.html"
+    },
+    {
+      "name": "ListOriginEndpoints",
+      "methodName": "toListOriginEndpoints",
+      "description": "Grants permission to list all origin endpoints of a channel",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_ListOriginEndpoints.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for the specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutChannelPolicy",
+      "methodName": "toPutChannelPolicy",
+      "description": "Grants permission to attach a resource policy for a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_PutChannelPolicy.html"
+    },
+    {
+      "name": "PutObject",
+      "methodName": "toPutObject",
+      "description": "Grants permission to make PutObject requests to MediaPackage",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/userguide/dataplane-apis.html"
+    },
+    {
+      "name": "PutOriginEndpointPolicy",
+      "methodName": "toPutOriginEndpointPolicy",
+      "description": "Grants permission to attach a resource policy to an origin endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_PutOriginEndpointPolicy.html"
+    },
+    {
+      "name": "ResetChannelState",
+      "methodName": "toResetChannelState",
+      "description": "Grants permission to reset a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_ResetChannelState.html"
+    },
+    {
+      "name": "ResetOriginEndpointState",
+      "methodName": "toResetOriginEndpointState",
+      "description": "Grants permission to reset an origin endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_ResetOriginEndpointState.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add specified tags to the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the specified tags from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateChannel",
+      "methodName": "toUpdateChannel",
+      "description": "Grants permission to update a channel in a channel group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_UpdateChannel.html"
+    },
+    {
+      "name": "UpdateChannelGroup",
+      "methodName": "toUpdateChannelGroup",
+      "description": "Grants permission to update a channel group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_UpdateChannelGroup.html"
+    },
+    {
+      "name": "UpdateOriginEndpoint",
+      "methodName": "toUpdateOriginEndpoint",
+      "description": "Grants permission to update an origin endpoint of a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_UpdateOriginEndpoint.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Channel",
+      "methodName": "onChannel",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/userguide/channels.html",
+      "arn": "arn:${Partition}:mediapackagev2:${Region}:${Account}:channelGroup/${ChannelGroupName}/channel/${ChannelName}",
+      "placeholders": [
+        {
+          "placeholder": "ChannelGroupName",
+          "name": "channelGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ChannelName",
+          "name": "channelName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ChannelGroup",
+      "methodName": "onChannelGroup",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/userguide/channel-groups.html",
+      "arn": "arn:${Partition}:mediapackagev2:${Region}:${Account}:channelGroup/${ChannelGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "ChannelGroupName",
+          "name": "channelGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ChannelPolicy",
+      "methodName": "onChannelPolicy",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/userguide/API_GetChannelPolicy.html",
+      "arn": "arn:${Partition}:mediapackagev2:${Region}:${Account}:channelGroup/${ChannelGroupName}/channel/${ChannelName}",
+      "placeholders": [
+        {
+          "placeholder": "ChannelGroupName",
+          "name": "channelGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ChannelName",
+          "name": "channelName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "HarvestJob",
+      "methodName": "onHarvestJob",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/userguide/API_HarvestJobListConfiguration.html",
+      "arn": "arn:${Partition}:mediapackagev2:${Region}:${Account}:channelGroup/${ChannelGroupName}/channel/${ChannelName}/originEndpoint/${OriginEndpointName}/harvestJob/${HarvestJobName}",
+      "placeholders": [
+        {
+          "placeholder": "ChannelGroupName",
+          "name": "channelGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ChannelName",
+          "name": "channelName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "OriginEndpointName",
+          "name": "originEndpointName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "HarvestJobName",
+          "name": "harvestJobName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "OriginEndpoint",
+      "methodName": "onOriginEndpoint",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/userguide/endpoints.html",
+      "arn": "arn:${Partition}:mediapackagev2:${Region}:${Account}:channelGroup/${ChannelGroupName}/channel/${ChannelName}/originEndpoint/${OriginEndpointName}",
+      "placeholders": [
+        {
+          "placeholder": "ChannelGroupName",
+          "name": "channelGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ChannelName",
+          "name": "channelName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "OriginEndpointName",
+          "name": "originEndpointName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "OriginEndpointPolicy",
+      "methodName": "onOriginEndpointPolicy",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/userguide/API_GetOriginEndpointPolicy.html",
+      "arn": "arn:${Partition}:mediapackagev2:${Region}:${Account}:channelGroup/${ChannelGroupName}/channel/${ChannelName}/originEndpoint/${OriginEndpointName}",
+      "placeholders": [
+        {
+          "placeholder": "ChannelGroupName",
+          "name": "channelGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ChannelName",
+          "name": "channelName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "OriginEndpointName",
+          "name": "originEndpointName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateChannel",
+        "toCreateChannelGroup",
+        "toCreateHarvestJob",
+        "toCreateOriginEndpoint",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCancelHarvestJob",
+        "toCreateChannel",
+        "toCreateChannelGroup",
+        "toCreateHarvestJob",
+        "toCreateOriginEndpoint",
+        "toDeleteChannel",
+        "toDeleteChannelGroup",
+        "toDeleteChannelPolicy",
+        "toDeleteOriginEndpoint",
+        "toDeleteOriginEndpointPolicy",
+        "toGetChannel",
+        "toGetChannelGroup",
+        "toGetChannelPolicy",
+        "toGetHarvestJob",
+        "toGetHeadObject",
+        "toGetObject",
+        "toGetOriginEndpoint",
+        "toGetOriginEndpointPolicy",
+        "toHarvestObject",
+        "toListChannels",
+        "toListHarvestJobs",
+        "toListOriginEndpoints",
+        "toListTagsForResource",
+        "toPutChannelPolicy",
+        "toPutObject",
+        "toPutOriginEndpointPolicy",
+        "toResetChannelState",
+        "toResetOriginEndpointState",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateChannel",
+        "toUpdateChannelGroup",
+        "toUpdateOriginEndpoint"
+      ],
+      "relatedResourceTypes": [
+        "Channel",
+        "ChannelGroup",
+        "HarvestJob",
+        "OriginEndpoint"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateChannel",
+        "toCreateChannelGroup",
+        "toCreateHarvestJob",
+        "toCreateOriginEndpoint",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

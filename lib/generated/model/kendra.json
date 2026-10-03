@@ -1,0 +1,973 @@
+{
+  "schemaVersion": 1,
+  "filename": "kendra",
+  "className": "Kendra",
+  "name": "kendra",
+  "servicePrefix": "kendra",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kendra.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateEntitiesToExperience",
+      "AssociatePersonasToEntities",
+      "BatchDeleteDocument",
+      "BatchDeleteFeaturedResultsSet",
+      "BatchPutDocument",
+      "ClearQuerySuggestions",
+      "CreateAccessControlConfiguration",
+      "CreateDataSource",
+      "CreateExperience",
+      "CreateFaq",
+      "CreateFeaturedResultsSet",
+      "CreateIndex",
+      "CreateQuerySuggestionsBlockList",
+      "CreateThesaurus",
+      "DeleteAccessControlConfiguration",
+      "DeleteDataSource",
+      "DeleteExperience",
+      "DeleteFaq",
+      "DeleteIndex",
+      "DeletePrincipalMapping",
+      "DeleteQuerySuggestionsBlockList",
+      "DeleteThesaurus",
+      "DisassociateEntitiesFromExperience",
+      "DisassociatePersonasFromEntities",
+      "PutPrincipalMapping",
+      "StartDataSourceSyncJob",
+      "StopDataSourceSyncJob",
+      "SubmitFeedback",
+      "TagResource",
+      "UntagResource",
+      "UpdateAccessControlConfiguration",
+      "UpdateDataSource",
+      "UpdateExperience",
+      "UpdateFeaturedResultsSet",
+      "UpdateIndex",
+      "UpdateQuerySuggestionsBlockList",
+      "UpdateQuerySuggestionsConfig",
+      "UpdateThesaurus"
+    ],
+    "Read": [
+      "BatchGetDocumentStatus",
+      "DescribeAccessControlConfiguration",
+      "DescribeDataSource",
+      "DescribeExperience",
+      "DescribeFaq",
+      "DescribeFeaturedResultsSet",
+      "DescribeIndex",
+      "DescribePrincipalMapping",
+      "DescribeQuerySuggestionsBlockList",
+      "DescribeQuerySuggestionsConfig",
+      "DescribeThesaurus",
+      "GetQuerySuggestions",
+      "GetSnapshots",
+      "ListTagsForResource",
+      "Query",
+      "Retrieve"
+    ],
+    "List": [
+      "ListAccessControlConfigurations",
+      "ListDataSourceSyncJobs",
+      "ListDataSources",
+      "ListEntityPersonas",
+      "ListExperienceEntities",
+      "ListExperiences",
+      "ListFaqs",
+      "ListFeaturedResultsSets",
+      "ListGroupsOlderThanOrderingId",
+      "ListIndices",
+      "ListQuerySuggestionsBlockLists",
+      "ListThesauri"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateEntitiesToExperience",
+      "methodName": "toAssociateEntitiesToExperience",
+      "description": "Grants permission to put principal mapping in index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html"
+    },
+    {
+      "name": "AssociatePersonasToEntities",
+      "methodName": "toAssociatePersonasToEntities",
+      "description": "Defines the specific permissions of users or groups in your AWS SSO identity source with access to your Amazon Kendra experience",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_AssociatePersonasToEntities.html"
+    },
+    {
+      "name": "BatchDeleteDocument",
+      "methodName": "toBatchDeleteDocument",
+      "description": "Grants permission to batch delete document",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html"
+    },
+    {
+      "name": "BatchDeleteFeaturedResultsSet",
+      "methodName": "toBatchDeleteFeaturedResultsSet",
+      "description": "Grants permission to delete a featured results set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteFeaturedResults.html"
+    },
+    {
+      "name": "BatchGetDocumentStatus",
+      "methodName": "toBatchGetDocumentStatus",
+      "description": "Grants permission to do batch get document status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_BatchGetDocumentStatus.html"
+    },
+    {
+      "name": "BatchPutDocument",
+      "methodName": "toBatchPutDocument",
+      "description": "Grants permission to batch put document",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html"
+    },
+    {
+      "name": "ClearQuerySuggestions",
+      "methodName": "toClearQuerySuggestions",
+      "description": "Grants permission to clear out the suggestions for a given index, generated so far",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_ClearQuerySuggestions.html"
+    },
+    {
+      "name": "CreateAccessControlConfiguration",
+      "methodName": "toCreateAccessControlConfiguration",
+      "description": "Grants permission to create an access control configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_CreateAccessControlConfiguration.html"
+    },
+    {
+      "name": "CreateDataSource",
+      "methodName": "toCreateDataSource",
+      "description": "Grants permission to create a data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_CreateDataSource.html"
+    },
+    {
+      "name": "CreateExperience",
+      "methodName": "toCreateExperience",
+      "description": "Creates an Amazon Kendra experience such as a search application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_CreateExperience.html"
+    },
+    {
+      "name": "CreateFaq",
+      "methodName": "toCreateFaq",
+      "description": "Grants permission to create an Faq",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_CreateFaq.html"
+    },
+    {
+      "name": "CreateFeaturedResultsSet",
+      "methodName": "toCreateFeaturedResultsSet",
+      "description": "Grants permission to create a featured results set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_CreateFeaturedResults.html"
+    },
+    {
+      "name": "CreateIndex",
+      "methodName": "toCreateIndex",
+      "description": "Grants permission to create an Index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateQuerySuggestionsBlockList",
+      "methodName": "toCreateQuerySuggestionsBlockList",
+      "description": "Grants permission to create a QuerySuggestions BlockList",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_CreateQuerySuggestionsBlockList.html"
+    },
+    {
+      "name": "CreateThesaurus",
+      "methodName": "toCreateThesaurus",
+      "description": "Grants permission to create a Thesaurus",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_CreateThesaurus.html"
+    },
+    {
+      "name": "DeleteAccessControlConfiguration",
+      "methodName": "toDeleteAccessControlConfiguration",
+      "description": "Grants permission to delete an access control configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteAccessControlConfiguration.html"
+    },
+    {
+      "name": "DeleteDataSource",
+      "methodName": "toDeleteDataSource",
+      "description": "Grants permission to delete a data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteDataSource.html"
+    },
+    {
+      "name": "DeleteExperience",
+      "methodName": "toDeleteExperience",
+      "description": "Deletes your Amazon Kendra experience such as a search application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteExperience.html"
+    },
+    {
+      "name": "DeleteFaq",
+      "methodName": "toDeleteFaq",
+      "description": "Grants permission to delete an Faq",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteFaq.html"
+    },
+    {
+      "name": "DeleteIndex",
+      "methodName": "toDeleteIndex",
+      "description": "Grants permission to delete an Index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteIndex.html"
+    },
+    {
+      "name": "DeletePrincipalMapping",
+      "methodName": "toDeletePrincipalMapping",
+      "description": "Grants permission to delete principal mapping from index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DeletePrincipalMapping.html"
+    },
+    {
+      "name": "DeleteQuerySuggestionsBlockList",
+      "methodName": "toDeleteQuerySuggestionsBlockList",
+      "description": "Grants permission to delete a QuerySuggestions BlockList",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteQuerySuggestionsBlockList.html"
+    },
+    {
+      "name": "DeleteThesaurus",
+      "methodName": "toDeleteThesaurus",
+      "description": "Grants permission to delete a Thesaurus",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteThesaurus.html"
+    },
+    {
+      "name": "DescribeAccessControlConfiguration",
+      "methodName": "toDescribeAccessControlConfiguration",
+      "description": "Grants permission to describe an access control configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeAccessControlConfiguration.html"
+    },
+    {
+      "name": "DescribeDataSource",
+      "methodName": "toDescribeDataSource",
+      "description": "Grants permission to describe a data source",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeDataSource.html"
+    },
+    {
+      "name": "DescribeExperience",
+      "methodName": "toDescribeExperience",
+      "description": "Gets information about your Amazon Kendra experience such as a search application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeExperience.html"
+    },
+    {
+      "name": "DescribeFaq",
+      "methodName": "toDescribeFaq",
+      "description": "Grants permission to describe an Faq",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeFaq.html"
+    },
+    {
+      "name": "DescribeFeaturedResultsSet",
+      "methodName": "toDescribeFeaturedResultsSet",
+      "description": "Grants permission to describe a featured results set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeThesaurus.html"
+    },
+    {
+      "name": "DescribeIndex",
+      "methodName": "toDescribeIndex",
+      "description": "Grants permission to describe an Index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeIndex.html"
+    },
+    {
+      "name": "DescribePrincipalMapping",
+      "methodName": "toDescribePrincipalMapping",
+      "description": "Grants permission to describe principal mapping from index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DescribePrincipalMapping.html"
+    },
+    {
+      "name": "DescribeQuerySuggestionsBlockList",
+      "methodName": "toDescribeQuerySuggestionsBlockList",
+      "description": "Grants permission to describe a QuerySuggestions BlockList",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeQuerySuggestionsBlockList.html"
+    },
+    {
+      "name": "DescribeQuerySuggestionsConfig",
+      "methodName": "toDescribeQuerySuggestionsConfig",
+      "description": "Grants permission to describe the query suggestions configuration for an index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeQuerySuggestionsConfig.html"
+    },
+    {
+      "name": "DescribeThesaurus",
+      "methodName": "toDescribeThesaurus",
+      "description": "Grants permission to describe a Thesaurus",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeThesaurus.html"
+    },
+    {
+      "name": "DisassociateEntitiesFromExperience",
+      "methodName": "toDisassociateEntitiesFromExperience",
+      "description": "Prevents users or groups in your AWS SSO identity source from accessing your Amazon Kendra experience",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DisassociateEntitiesFromExperience.html"
+    },
+    {
+      "name": "DisassociatePersonasFromEntities",
+      "methodName": "toDisassociatePersonasFromEntities",
+      "description": "Removes the specific permissions of users or groups in your AWS SSO identity source with access to your Amazon Kendra experience",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_DisassociatePersonasFromEntities.html"
+    },
+    {
+      "name": "GetQuerySuggestions",
+      "methodName": "toGetQuerySuggestions",
+      "description": "Grants permission to get suggestions for a query prefix",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html"
+    },
+    {
+      "name": "GetSnapshots",
+      "methodName": "toGetSnapshots",
+      "description": "Retrieves search metrics data",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_GetSnapshots.html"
+    },
+    {
+      "name": "ListAccessControlConfigurations",
+      "methodName": "toListAccessControlConfigurations",
+      "description": "Grants permission to list the access control configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_ListAccessControlConfigurations.html"
+    },
+    {
+      "name": "ListDataSourceSyncJobs",
+      "methodName": "toListDataSourceSyncJobs",
+      "description": "Grants permission to get Data Source sync job history",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_ListDataSourceSyncJobs.html"
+    },
+    {
+      "name": "ListDataSources",
+      "methodName": "toListDataSources",
+      "description": "Grants permission to list the data sources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_ListDataSources.html"
+    },
+    {
+      "name": "ListEntityPersonas",
+      "methodName": "toListEntityPersonas",
+      "description": "Lists specific permissions of users and groups with access to your Amazon Kendra experience",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_ListEntityPersonas.html"
+    },
+    {
+      "name": "ListExperienceEntities",
+      "methodName": "toListExperienceEntities",
+      "description": "Lists users or groups in your AWS SSO identity source that are granted access to your Amazon Kendra experience",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_ListExperienceEntities.html"
+    },
+    {
+      "name": "ListExperiences",
+      "methodName": "toListExperiences",
+      "description": "Lists one or more Amazon Kendra experiences. You can create an Amazon Kendra experience such as a search application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_ListExperiences.html"
+    },
+    {
+      "name": "ListFaqs",
+      "methodName": "toListFaqs",
+      "description": "Grants permission to list the Faqs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_ListFaqs.html"
+    },
+    {
+      "name": "ListFeaturedResultsSets",
+      "methodName": "toListFeaturedResultsSets",
+      "description": "Grants permission to list the featured results sets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_ListFeaturedResults.html"
+    },
+    {
+      "name": "ListGroupsOlderThanOrderingId",
+      "methodName": "toListGroupsOlderThanOrderingId",
+      "description": "Grants permission to list groups that are older than an ordering id",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_ListGroupsOlderThanOrderingId.html"
+    },
+    {
+      "name": "ListIndices",
+      "methodName": "toListIndices",
+      "description": "Grants permission to list the indexes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_ListIndices.html"
+    },
+    {
+      "name": "ListQuerySuggestionsBlockLists",
+      "methodName": "toListQuerySuggestionsBlockLists",
+      "description": "Grants permission to list the QuerySuggestions BlockLists",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_ListQuerySuggestionsBlockLists.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListThesauri",
+      "methodName": "toListThesauri",
+      "description": "Grants permission to list the Thesauri",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_ListThesauri.html"
+    },
+    {
+      "name": "PutPrincipalMapping",
+      "methodName": "toPutPrincipalMapping",
+      "description": "Grants permission to put principal mapping in index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html"
+    },
+    {
+      "name": "Query",
+      "methodName": "toQuery",
+      "description": "Grants permission to query documents and faqs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html"
+    },
+    {
+      "name": "Retrieve",
+      "methodName": "toRetrieve",
+      "description": "Grants permission to retrieve relevant content from an index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_Retrieve.html"
+    },
+    {
+      "name": "StartDataSourceSyncJob",
+      "methodName": "toStartDataSourceSyncJob",
+      "description": "Grants permission to start Data Source sync job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_StartDataSourceSyncJob.html"
+    },
+    {
+      "name": "StopDataSourceSyncJob",
+      "methodName": "toStopDataSourceSyncJob",
+      "description": "Grants permission to stop Data Source sync job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_StopDataSourceSyncJob.html"
+    },
+    {
+      "name": "SubmitFeedback",
+      "methodName": "toSubmitFeedback",
+      "description": "Grants permission to send feedback about a query results",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_SubmitFeedback.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource with given key value pairs",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the tag with the given key from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAccessControlConfiguration",
+      "methodName": "toUpdateAccessControlConfiguration",
+      "description": "Grants permission to update an access control configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateAccessControlConfiguration.html"
+    },
+    {
+      "name": "UpdateDataSource",
+      "methodName": "toUpdateDataSource",
+      "description": "Grants permission to update a data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateDataSource.html"
+    },
+    {
+      "name": "UpdateExperience",
+      "methodName": "toUpdateExperience",
+      "description": "Updates your Amazon Kendra experience such as a search application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateExperience.html"
+    },
+    {
+      "name": "UpdateFeaturedResultsSet",
+      "methodName": "toUpdateFeaturedResultsSet",
+      "description": "Grants permission to update a featured results set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResults.html"
+    },
+    {
+      "name": "UpdateIndex",
+      "methodName": "toUpdateIndex",
+      "description": "Grants permission to update an Index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateIndex.html"
+    },
+    {
+      "name": "UpdateQuerySuggestionsBlockList",
+      "methodName": "toUpdateQuerySuggestionsBlockList",
+      "description": "Grants permission to update a QuerySuggestions BlockList",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsBlockList.html"
+    },
+    {
+      "name": "UpdateQuerySuggestionsConfig",
+      "methodName": "toUpdateQuerySuggestionsConfig",
+      "description": "Grants permission to update the query suggestions configuration for an index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html"
+    },
+    {
+      "name": "UpdateThesaurus",
+      "methodName": "toUpdateThesaurus",
+      "description": "Grants permission to update a thesaurus",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateThesaurus.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "access-control-configuration",
+      "methodName": "onAccessControlConfiguration",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_CreateAccessControlConfiguration.html",
+      "arn": "arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/access-control-configuration/${AccessControlConfigurationId}",
+      "placeholders": [
+        {
+          "placeholder": "IndexId",
+          "name": "indexId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccessControlConfigurationId",
+          "name": "accessControlConfigurationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "data-source",
+      "methodName": "onDataSource",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/data-source.html",
+      "arn": "arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/data-source/${DataSourceId}",
+      "placeholders": [
+        {
+          "placeholder": "IndexId",
+          "name": "indexId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DataSourceId",
+          "name": "dataSourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "experience",
+      "methodName": "onExperience",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html",
+      "arn": "arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/experience/${ExperienceId}",
+      "placeholders": [
+        {
+          "placeholder": "IndexId",
+          "name": "indexId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExperienceId",
+          "name": "experienceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "faq",
+      "methodName": "onFaq",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/faq.html",
+      "arn": "arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/faq/${FaqId}",
+      "placeholders": [
+        {
+          "placeholder": "IndexId",
+          "name": "indexId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FaqId",
+          "name": "faqId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "featured-results-set",
+      "methodName": "onFeaturedResultsSet",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/featured-results.html",
+      "arn": "arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/featured-results-set/${FeaturedResultsSetId}",
+      "placeholders": [
+        {
+          "placeholder": "IndexId",
+          "name": "indexId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FeaturedResultsSetId",
+          "name": "featuredResultsSetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "index",
+      "methodName": "onIndex",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/index.html",
+      "arn": "arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}",
+      "placeholders": [
+        {
+          "placeholder": "IndexId",
+          "name": "indexId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "query-suggestions-block-list",
+      "methodName": "onQuerySuggestionsBlockList",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions-block-list.html",
+      "arn": "arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/query-suggestions-block-list/${QuerySuggestionsBlockListId}",
+      "placeholders": [
+        {
+          "placeholder": "IndexId",
+          "name": "indexId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "QuerySuggestionsBlockListId",
+          "name": "querySuggestionsBlockListId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "thesaurus",
+      "methodName": "onThesaurus",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/thesaurus.html",
+      "arn": "arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/thesaurus/${ThesaurusId}",
+      "placeholders": [
+        {
+          "placeholder": "IndexId",
+          "name": "indexId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ThesaurusId",
+          "name": "thesaurusId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDataSource",
+        "toCreateFaq",
+        "toCreateFeaturedResultsSet",
+        "toCreateIndex",
+        "toCreateQuerySuggestionsBlockList",
+        "toCreateThesaurus",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateEntitiesToExperience",
+        "toAssociatePersonasToEntities",
+        "toBatchDeleteDocument",
+        "toBatchDeleteFeaturedResultsSet",
+        "toBatchGetDocumentStatus",
+        "toBatchPutDocument",
+        "toClearQuerySuggestions",
+        "toCreateAccessControlConfiguration",
+        "toCreateDataSource",
+        "toCreateExperience",
+        "toCreateFaq",
+        "toCreateFeaturedResultsSet",
+        "toCreateQuerySuggestionsBlockList",
+        "toCreateThesaurus",
+        "toDeleteAccessControlConfiguration",
+        "toDeleteDataSource",
+        "toDeleteExperience",
+        "toDeleteFaq",
+        "toDeleteIndex",
+        "toDeletePrincipalMapping",
+        "toDeleteQuerySuggestionsBlockList",
+        "toDeleteThesaurus",
+        "toDescribeAccessControlConfiguration",
+        "toDescribeDataSource",
+        "toDescribeExperience",
+        "toDescribeFaq",
+        "toDescribeFeaturedResultsSet",
+        "toDescribeIndex",
+        "toDescribePrincipalMapping",
+        "toDescribeQuerySuggestionsBlockList",
+        "toDescribeQuerySuggestionsConfig",
+        "toDescribeThesaurus",
+        "toDisassociateEntitiesFromExperience",
+        "toDisassociatePersonasFromEntities",
+        "toGetQuerySuggestions",
+        "toGetSnapshots",
+        "toListAccessControlConfigurations",
+        "toListDataSourceSyncJobs",
+        "toListDataSources",
+        "toListEntityPersonas",
+        "toListExperienceEntities",
+        "toListExperiences",
+        "toListFaqs",
+        "toListFeaturedResultsSets",
+        "toListGroupsOlderThanOrderingId",
+        "toListQuerySuggestionsBlockLists",
+        "toListTagsForResource",
+        "toListThesauri",
+        "toPutPrincipalMapping",
+        "toQuery",
+        "toRetrieve",
+        "toStartDataSourceSyncJob",
+        "toStopDataSourceSyncJob",
+        "toSubmitFeedback",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAccessControlConfiguration",
+        "toUpdateDataSource",
+        "toUpdateExperience",
+        "toUpdateFeaturedResultsSet",
+        "toUpdateIndex",
+        "toUpdateQuerySuggestionsBlockList",
+        "toUpdateQuerySuggestionsConfig",
+        "toUpdateThesaurus"
+      ],
+      "relatedResourceTypes": [
+        "data-source",
+        "faq",
+        "featured-results-set",
+        "index",
+        "query-suggestions-block-list",
+        "thesaurus"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDataSource",
+        "toCreateFaq",
+        "toCreateFeaturedResultsSet",
+        "toCreateIndex",
+        "toCreateQuerySuggestionsBlockList",
+        "toCreateThesaurus",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

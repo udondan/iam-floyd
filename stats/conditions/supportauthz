@@ -1,3 +1,0 @@
-supportauthz:RequestTag/${TagKey}
-supportauthz:ResourceTag/${TagKey}
-supportauthz:TagKeys

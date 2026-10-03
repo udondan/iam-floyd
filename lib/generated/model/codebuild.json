@@ -1,0 +1,2936 @@
+{
+  "schemaVersion": 1,
+  "filename": "codebuild",
+  "className": "Codebuild",
+  "name": "codebuild",
+  "servicePrefix": "codebuild",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_codebuild.html",
+  "accessLevelList": {
+    "Write": [
+      "BatchDeleteBuilds",
+      "CreateFleet",
+      "CreateProject",
+      "CreateReportGroup",
+      "CreateWebhook",
+      "DeleteBuildBatch",
+      "DeleteFleet",
+      "DeleteProject",
+      "DeleteReport",
+      "DeleteReportGroup",
+      "DeleteResourcePolicy",
+      "DeleteSourceCredentials",
+      "DeleteWebhook",
+      "ImportSourceCredentials",
+      "InvalidateProjectCache",
+      "PutResourcePolicy",
+      "RetryBuild",
+      "RetryBuildBatch",
+      "StartBuild",
+      "StartBuildBatch",
+      "StartCommandExecution",
+      "StartSandbox",
+      "StartSandboxConnection",
+      "StopBuild",
+      "StopBuildBatch",
+      "StopSandbox",
+      "UpdateFleet",
+      "UpdateProject",
+      "UpdateProjectVisibility",
+      "UpdateReportGroup",
+      "UpdateWebhook",
+      "BatchPutCodeCoverages",
+      "BatchPutTestCases",
+      "CreateReport",
+      "DeleteOAuthToken",
+      "PersistOAuthToken",
+      "UpdateReport"
+    ],
+    "Read": [
+      "BatchGetBuildBatches",
+      "BatchGetBuilds",
+      "BatchGetCommandExecutions",
+      "BatchGetFleets",
+      "BatchGetProjects",
+      "BatchGetReportGroups",
+      "BatchGetReports",
+      "BatchGetSandboxes",
+      "DescribeCodeCoverages",
+      "DescribeTestCases",
+      "GetReportGroupTrend",
+      "GetResourcePolicy"
+    ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "PutResourcePolicy"
+    ],
+    "List": [
+      "ListBuildBatches",
+      "ListBuildBatchesForProject",
+      "ListBuilds",
+      "ListBuildsForProject",
+      "ListCommandExecutionsForSandbox",
+      "ListCuratedEnvironmentImages",
+      "ListFleets",
+      "ListProjects",
+      "ListReportGroups",
+      "ListReports",
+      "ListReportsForReportGroup",
+      "ListSandboxes",
+      "ListSandboxesForProject",
+      "ListSharedProjects",
+      "ListSharedReportGroups",
+      "ListSourceCredentials",
+      "ListConnectedOAuthAccounts",
+      "ListRepositories"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchDeleteBuilds",
+      "methodName": "toBatchDeleteBuilds",
+      "description": "Grants permission to delete one or more builds",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchDeleteBuilds.html"
+    },
+    {
+      "name": "BatchGetBuildBatches",
+      "methodName": "toBatchGetBuildBatches",
+      "description": "Grants permission to get information about one or more build batches",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetBuildBatches.html"
+    },
+    {
+      "name": "BatchGetBuilds",
+      "methodName": "toBatchGetBuilds",
+      "description": "Grants permission to get information about one or more builds",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetBuilds.html"
+    },
+    {
+      "name": "BatchGetCommandExecutions",
+      "methodName": "toBatchGetCommandExecutions",
+      "description": "Grants permission to get information about one or more command executions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetCommandExecutions.html"
+    },
+    {
+      "name": "BatchGetFleets",
+      "methodName": "toBatchGetFleets",
+      "description": "Grants permission to return an array of the Fleet objects specified by the input parameter",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetFleets.html"
+    },
+    {
+      "name": "BatchGetProjects",
+      "methodName": "toBatchGetProjects",
+      "description": "Grants permission to get information about one or more build projects",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetProjects.html"
+    },
+    {
+      "name": "BatchGetReportGroups",
+      "methodName": "toBatchGetReportGroups",
+      "description": "Grants permission to return an array of ReportGroup objects that are specified by the input reportGroupArns parameter",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetReportGroups.html"
+    },
+    {
+      "name": "BatchGetReports",
+      "methodName": "toBatchGetReports",
+      "description": "Grants permission to return an array of the Report objects specified by the input reportArns parameter",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetReports.html"
+    },
+    {
+      "name": "BatchGetSandboxes",
+      "methodName": "toBatchGetSandboxes",
+      "description": "Grants permission to get information about one or more sandboxes",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetSandboxes.html"
+    },
+    {
+      "name": "CreateFleet",
+      "methodName": "toCreateFleet",
+      "description": "Grants permission to create a compute fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateFleet.html"
+    },
+    {
+      "name": "CreateProject",
+      "methodName": "toCreateProject",
+      "description": "Grants permission to create a build project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateProject.html"
+    },
+    {
+      "name": "CreateReportGroup",
+      "methodName": "toCreateReportGroup",
+      "description": "Grants permission to create a report group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateReportGroup.html"
+    },
+    {
+      "name": "CreateWebhook",
+      "methodName": "toCreateWebhook",
+      "description": "Grants permission to create webhook. For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed to the repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateWebhook.html"
+    },
+    {
+      "name": "DeleteBuildBatch",
+      "methodName": "toDeleteBuildBatch",
+      "description": "Grants permission to delete a build batch",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteBuildBatch.html"
+    },
+    {
+      "name": "DeleteFleet",
+      "methodName": "toDeleteFleet",
+      "description": "Grants permission to delete a compute fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteFleet.html"
+    },
+    {
+      "name": "DeleteProject",
+      "methodName": "toDeleteProject",
+      "description": "Grants permission to delete a build project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteProject.html"
+    },
+    {
+      "name": "DeleteReport",
+      "methodName": "toDeleteReport",
+      "description": "Grants permission to delete a report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html"
+    },
+    {
+      "name": "DeleteReportGroup",
+      "methodName": "toDeleteReportGroup",
+      "description": "Grants permission to delete a report group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReportGroup.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete a resource policy for the associated project or report group",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteSourceCredentials",
+      "methodName": "toDeleteSourceCredentials",
+      "description": "Grants permission to delete a set of GitHub, GitHub Enterprise, or Bitbucket source credentials",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteSourceCredentials.html"
+    },
+    {
+      "name": "DeleteWebhook",
+      "methodName": "toDeleteWebhook",
+      "description": "Grants permission to delete webhook. For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to the repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteWebhook.html"
+    },
+    {
+      "name": "DescribeCodeCoverages",
+      "methodName": "toDescribeCodeCoverages",
+      "description": "Grants permission to return an array of CodeCoverage objects",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DescribeCodeCoverages.html"
+    },
+    {
+      "name": "DescribeTestCases",
+      "methodName": "toDescribeTestCases",
+      "description": "Grants permission to return an array of TestCase objects",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DescribeTestCases.html"
+    },
+    {
+      "name": "GetReportGroupTrend",
+      "methodName": "toGetReportGroupTrend",
+      "description": "Grants permission to analyze and accumulate test report values for the test reports in the specified report group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_GetReportGroupTrend.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to return a resource policy for the specified project or report group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "ImportSourceCredentials",
+      "methodName": "toImportSourceCredentials",
+      "description": "Grants permission to import the source repository credentials for an AWS CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ImportSourceCredentials.html",
+      "conditionMethods": [
+        "ifAuthType",
+        "ifServerType",
+        "ifShouldOverwrite",
+        "ifToken",
+        "ifUsername"
+      ]
+    },
+    {
+      "name": "InvalidateProjectCache",
+      "methodName": "toInvalidateProjectCache",
+      "description": "Grants permission to reset the cache for a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_InvalidateProjectCache.html"
+    },
+    {
+      "name": "ListBuildBatches",
+      "methodName": "toListBuildBatches",
+      "description": "Grants permission to get a list of build batch IDs, with each build batch ID representing a single build batch",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildBatches.html"
+    },
+    {
+      "name": "ListBuildBatchesForProject",
+      "methodName": "toListBuildBatchesForProject",
+      "description": "Grants permission to get a list of build batch IDs for the specified build project, with each build batch ID representing a single build batch",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildBatchesForProject.html"
+    },
+    {
+      "name": "ListBuilds",
+      "methodName": "toListBuilds",
+      "description": "Grants permission to get a list of build IDs, with each build ID representing a single build",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuilds.html"
+    },
+    {
+      "name": "ListBuildsForProject",
+      "methodName": "toListBuildsForProject",
+      "description": "Grants permission to get a list of build IDs for the specified build project, with each build ID representing a single build",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildsForProject.html"
+    },
+    {
+      "name": "ListCommandExecutionsForSandbox",
+      "methodName": "toListCommandExecutionsForSandbox",
+      "description": "Grants permission to get a list of command execution IDs for the specified sandbox, with each command execution ID representing a single command execution",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListCommandExecutionsForSandbox.html"
+    },
+    {
+      "name": "ListCuratedEnvironmentImages",
+      "methodName": "toListCuratedEnvironmentImages",
+      "description": "Grants permission to get information about Docker images that are managed by AWS CodeBuild",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListCuratedEnvironmentImages.html"
+    },
+    {
+      "name": "ListFleets",
+      "methodName": "toListFleets",
+      "description": "Grants permission to get a list of compute fleet ARNs, with each compute fleet ARN representing a single fleet",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListFleets.html"
+    },
+    {
+      "name": "ListProjects",
+      "methodName": "toListProjects",
+      "description": "Grants permission to get a list of build project names, with each build project name representing a single build project",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListProjects.html"
+    },
+    {
+      "name": "ListReportGroups",
+      "methodName": "toListReportGroups",
+      "description": "Grants permission to return a list of report group ARNs. Each report group ARN represents one report group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportGroups.html"
+    },
+    {
+      "name": "ListReports",
+      "methodName": "toListReports",
+      "description": "Grants permission to return a list of report ARNs. Each report ARN representing one report",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReports.html"
+    },
+    {
+      "name": "ListReportsForReportGroup",
+      "methodName": "toListReportsForReportGroup",
+      "description": "Grants permission to return a list of report ARNs that belong to the specified report group. Each report ARN represents one report",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html"
+    },
+    {
+      "name": "ListSandboxes",
+      "methodName": "toListSandboxes",
+      "description": "Grants permission to get a list of sandbox IDs, with each sandbox ID representing a single sandbox",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListSandboxes.html"
+    },
+    {
+      "name": "ListSandboxesForProject",
+      "methodName": "toListSandboxesForProject",
+      "description": "Grants permission to get a list of sandbox IDs for the specified sandbox project, with each sandbox ID representing a single sandbox",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListSandboxesForProject.html"
+    },
+    {
+      "name": "ListSharedProjects",
+      "methodName": "toListSharedProjects",
+      "description": "Grants permission to return a list of project ARNs that have been shared with the requester. Each project ARN represents one project",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListSharedProjects.html"
+    },
+    {
+      "name": "ListSharedReportGroups",
+      "methodName": "toListSharedReportGroups",
+      "description": "Grants permission to return a list of report group ARNs that have been shared with the requester. Each report group ARN represents one report group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListSharedReportGroups.html"
+    },
+    {
+      "name": "ListSourceCredentials",
+      "methodName": "toListSourceCredentials",
+      "description": "Grants permission to return a list of SourceCredentialsInfo objects",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListSourceCredentials.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to create a resource policy for the associated project or report group",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "RetryBuild",
+      "methodName": "toRetryBuild",
+      "description": "Grants permission to retry a build",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_RetryBuild.html"
+    },
+    {
+      "name": "RetryBuildBatch",
+      "methodName": "toRetryBuildBatch",
+      "description": "Grants permission to retry a build batch",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_RetryBuildBatch.html"
+    },
+    {
+      "name": "StartBuild",
+      "methodName": "toStartBuild",
+      "description": "Grants permission to start running a build",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuild.html"
+    },
+    {
+      "name": "StartBuildBatch",
+      "methodName": "toStartBuildBatch",
+      "description": "Grants permission to start running a build batch",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuildBatch.html"
+    },
+    {
+      "name": "StartCommandExecution",
+      "methodName": "toStartCommandExecution",
+      "description": "Grants permission to start running a command execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartCommandExecution.html"
+    },
+    {
+      "name": "StartSandbox",
+      "methodName": "toStartSandbox",
+      "description": "Grants permission to start running a sandbox",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartSandbox.html"
+    },
+    {
+      "name": "StartSandboxConnection",
+      "methodName": "toStartSandboxConnection",
+      "description": "Grants permission to establish a connection to the sandbox",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartSandboxConnection.html"
+    },
+    {
+      "name": "StopBuild",
+      "methodName": "toStopBuild",
+      "description": "Grants permission to attempt to stop running a build",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StopBuild.html"
+    },
+    {
+      "name": "StopBuildBatch",
+      "methodName": "toStopBuildBatch",
+      "description": "Grants permission to attempt to stop running a build batch",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StopBuildBatch.html"
+    },
+    {
+      "name": "StopSandbox",
+      "methodName": "toStopSandbox",
+      "description": "Grants permission to attempt to stop running a sandbox",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StopSandbox.html"
+    },
+    {
+      "name": "UpdateFleet",
+      "methodName": "toUpdateFleet",
+      "description": "Grants permission to change the settings of an existing compute fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateFleet.html"
+    },
+    {
+      "name": "UpdateProject",
+      "methodName": "toUpdateProject",
+      "description": "Grants permission to change the settings of an existing build project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateProject.html"
+    },
+    {
+      "name": "UpdateProjectVisibility",
+      "methodName": "toUpdateProjectVisibility",
+      "description": "Grants permission to change the public visibility of a project and its builds",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateProjectVisibility.html"
+    },
+    {
+      "name": "UpdateReportGroup",
+      "methodName": "toUpdateReportGroup",
+      "description": "Grants permission to change the settings of an existing report group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateReportGroup.html"
+    },
+    {
+      "name": "UpdateWebhook",
+      "methodName": "toUpdateWebhook",
+      "description": "Grants permission to update the webhook associated with an AWS CodeBuild build project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateWebhook.html"
+    },
+    {
+      "name": "BatchPutCodeCoverages",
+      "methodName": "toBatchPutCodeCoverages",
+      "description": "Grants permission to add or update information about a report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies"
+    },
+    {
+      "name": "BatchPutTestCases",
+      "methodName": "toBatchPutTestCases",
+      "description": "Grants permission to add or update information about a report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies"
+    },
+    {
+      "name": "CreateReport",
+      "methodName": "toCreateReport",
+      "description": "Grants permission to create a report. A report is created when tests specified in the buildspec file for a report groups run during the build of a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies"
+    },
+    {
+      "name": "DeleteOAuthToken",
+      "methodName": "toDeleteOAuthToken",
+      "description": "Grants permission to delete an OAuth token from a connected third-party OAuth provider. Only used in the AWS CodeBuild console",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies"
+    },
+    {
+      "name": "ListConnectedOAuthAccounts",
+      "methodName": "toListConnectedOAuthAccounts",
+      "description": "Grants permission to list connected third-party OAuth providers. Only used in the AWS CodeBuild console",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies"
+    },
+    {
+      "name": "ListRepositories",
+      "methodName": "toListRepositories",
+      "description": "Grants permission to list source code repositories from a connected third-party OAuth provider. Only used in the AWS CodeBuild console",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies"
+    },
+    {
+      "name": "PersistOAuthToken",
+      "methodName": "toPersistOAuthToken",
+      "description": "Grants permission to save an OAuth token from a connected third-party OAuth provider. Only used in the AWS CodeBuild console",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies"
+    },
+    {
+      "name": "UpdateReport",
+      "methodName": "toUpdateReport",
+      "description": "Grants permission to update information about a report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies"
+    }
+  ],
+  "resources": [
+    {
+      "name": "build",
+      "methodName": "onBuild",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:build/${BuildId}",
+      "placeholders": [
+        {
+          "placeholder": "BuildId",
+          "name": "buildId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "build-batch",
+      "methodName": "onBuildBatch",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:build-batch/${BuildBatchId}",
+      "placeholders": [
+        {
+          "placeholder": "BuildBatchId",
+          "name": "buildBatchId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "fleet",
+      "methodName": "onFleet",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:fleet/${FleetName}:${FleetId}",
+      "placeholders": [
+        {
+          "placeholder": "FleetName",
+          "name": "fleetName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FleetId",
+          "name": "fleetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "project",
+      "methodName": "onProject",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:project/${ProjectName}",
+      "placeholders": [
+        {
+          "placeholder": "ProjectName",
+          "name": "projectName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "report",
+      "methodName": "onReport",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:report/${ReportGroupName}:${ReportId}",
+      "placeholders": [
+        {
+          "placeholder": "ReportGroupName",
+          "name": "reportGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ReportId",
+          "name": "reportId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "report-group",
+      "methodName": "onReportGroup",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:report-group/${ReportGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "ReportGroupName",
+          "name": "reportGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "sandbox",
+      "methodName": "onSandbox",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:sandbox/${SandboxId}",
+      "placeholders": [
+        {
+          "placeholder": "SandboxId",
+          "name": "sandboxId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by actions based on the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toCreateProject",
+        "toCreateReportGroup",
+        "toUpdateFleet",
+        "toUpdateProject",
+        "toUpdateProjectVisibility",
+        "toUpdateReportGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by actions based on tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchDeleteBuilds",
+        "toBatchGetBuildBatches",
+        "toBatchGetBuilds",
+        "toBatchGetProjects",
+        "toBatchGetReportGroups",
+        "toBatchGetReports",
+        "toBatchGetSandboxes",
+        "toCreateProject",
+        "toCreateReportGroup",
+        "toCreateWebhook",
+        "toDeleteBuildBatch",
+        "toDeleteProject",
+        "toDeleteReport",
+        "toDeleteReportGroup",
+        "toDeleteResourcePolicy",
+        "toDeleteWebhook",
+        "toDescribeCodeCoverages",
+        "toDescribeTestCases",
+        "toGetReportGroupTrend",
+        "toGetResourcePolicy",
+        "toInvalidateProjectCache",
+        "toListBuildBatchesForProject",
+        "toListBuildsForProject",
+        "toListReportsForReportGroup",
+        "toListSandboxesForProject",
+        "toPutResourcePolicy",
+        "toRetryBuild",
+        "toRetryBuildBatch",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toStartSandbox",
+        "toStopBuild",
+        "toStopBuildBatch",
+        "toStopSandbox",
+        "toUpdateProject",
+        "toUpdateProjectVisibility",
+        "toUpdateReportGroup",
+        "toUpdateWebhook",
+        "toBatchPutCodeCoverages",
+        "toBatchPutTestCases",
+        "toCreateReport",
+        "toUpdateReport"
+      ],
+      "relatedResourceTypes": [
+        "project",
+        "report-group"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by actions based on the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toCreateProject",
+        "toCreateReportGroup",
+        "toUpdateFleet",
+        "toUpdateProject",
+        "toUpdateProjectVisibility",
+        "toUpdateReportGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:artifacts",
+      "methodName": "ifArtifacts",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "artifacts",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:artifacts.bucketOwnerAccess",
+      "methodName": "ifArtifactsBucketOwnerAccess",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "artifacts.bucketOwnerAccess",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:artifacts.encryptionDisabled",
+      "methodName": "ifArtifactsEncryptionDisabled",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "artifacts.encryptionDisabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:artifacts.location",
+      "methodName": "ifArtifactsLocation",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "artifacts.location",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:authType",
+      "methodName": "ifAuthType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toImportSourceCredentials"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "authType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:autoRetryLimit",
+      "methodName": "ifAutoRetryLimit",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "autoRetryLimit",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "codebuild:buildArn",
+      "methodName": "ifBuildArn",
+      "description": "Filters access by the ARN of the AWS CodeBuild build from which the request originated",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-permissions-reference.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "buildArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "codebuild:buildBatchConfig",
+      "methodName": "ifBuildBatchConfig",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "buildBatchConfig",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:buildBatchConfig.restrictions.computeTypesAllowed",
+      "methodName": "ifBuildBatchConfigRestrictionsComputeTypesAllowed",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "buildBatchConfig.restrictions.computeTypesAllowed",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:buildBatchConfig.restrictions.fleetsAllowed",
+      "methodName": "ifBuildBatchConfigRestrictionsFleetsAllowed",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "buildBatchConfig.restrictions.fleetsAllowed",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:buildBatchConfig.serviceRole",
+      "methodName": "ifBuildBatchConfigServiceRole",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "buildBatchConfig.serviceRole",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:buildType",
+      "methodName": "ifBuildType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateWebhook",
+        "toUpdateWebhook"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "buildType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:cache",
+      "methodName": "ifCache",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "cache",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:cache.location",
+      "methodName": "ifCacheLocation",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "cache.location",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:cache.modes",
+      "methodName": "ifCacheModes",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "cache.modes",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:cache.type",
+      "methodName": "ifCacheType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "cache.type",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:computeConfiguration",
+      "methodName": "ifComputeConfiguration",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toUpdateFleet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "computeConfiguration",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:computeConfiguration.disk",
+      "methodName": "ifComputeConfigurationDisk",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toUpdateFleet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "computeConfiguration.disk",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "codebuild:computeConfiguration.instanceType",
+      "methodName": "ifComputeConfigurationInstanceType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toUpdateFleet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "computeConfiguration.instanceType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:computeConfiguration.machineType",
+      "methodName": "ifComputeConfigurationMachineType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toUpdateFleet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "computeConfiguration.machineType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:computeConfiguration.memory",
+      "methodName": "ifComputeConfigurationMemory",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toUpdateFleet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "computeConfiguration.memory",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "codebuild:computeConfiguration.vCpu",
+      "methodName": "ifComputeConfigurationVCpu",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toUpdateFleet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "computeConfiguration.vCpu",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "codebuild:computeType",
+      "methodName": "ifComputeType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toUpdateFleet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "computeType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:concurrentBuildLimit",
+      "methodName": "ifConcurrentBuildLimit",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "concurrentBuildLimit",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "codebuild:encryptionKey",
+      "methodName": "ifEncryptionKey",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "encryptionKey",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:environment",
+      "methodName": "ifEnvironment",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:environment.certificate",
+      "methodName": "ifEnvironmentCertificate",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.certificate",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:environment.computeConfiguration",
+      "methodName": "ifEnvironmentComputeConfiguration",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.computeConfiguration",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:environment.computeConfiguration.disk",
+      "methodName": "ifEnvironmentComputeConfigurationDisk",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.computeConfiguration.disk",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "codebuild:environment.computeConfiguration.instanceType",
+      "methodName": "ifEnvironmentComputeConfigurationInstanceType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.computeConfiguration.instanceType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:environment.computeConfiguration.machineType",
+      "methodName": "ifEnvironmentComputeConfigurationMachineType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.computeConfiguration.machineType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:environment.computeConfiguration.memory",
+      "methodName": "ifEnvironmentComputeConfigurationMemory",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.computeConfiguration.memory",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "codebuild:environment.computeConfiguration.vCpu",
+      "methodName": "ifEnvironmentComputeConfigurationVCpu",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.computeConfiguration.vCpu",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "codebuild:environment.computeType",
+      "methodName": "ifEnvironmentComputeType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.computeType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:environment.environmentVariables",
+      "methodName": "ifEnvironmentEnvironmentVariables",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.environmentVariables",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:environment.environmentVariables.name",
+      "methodName": "ifEnvironmentEnvironmentVariablesName",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.environmentVariables.name",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:environment.environmentVariables.value",
+      "methodName": "ifEnvironmentEnvironmentVariablesValue",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.environmentVariables.value",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:environment.environmentVariables/${name}.value",
+      "methodName": "ifEnvironmentEnvironmentVariablesNamevalue",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.environmentVariables/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "namevalue",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:environment.fleet.fleetArn",
+      "methodName": "ifEnvironmentFleetFleetArn",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.fleet.fleetArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "codebuild:environment.image",
+      "methodName": "ifEnvironmentImage",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.image",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:environment.imagePullCredentialsType",
+      "methodName": "ifEnvironmentImagePullCredentialsType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.imagePullCredentialsType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:environment.privilegedMode",
+      "methodName": "ifEnvironmentPrivilegedMode",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.privilegedMode",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:environment.registryCredential",
+      "methodName": "ifEnvironmentRegistryCredential",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.registryCredential",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:environment.registryCredential.credential",
+      "methodName": "ifEnvironmentRegistryCredentialCredential",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.registryCredential.credential",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:environment.registryCredential.credentialProvider",
+      "methodName": "ifEnvironmentRegistryCredentialCredentialProvider",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.registryCredential.credentialProvider",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:environment.type",
+      "methodName": "ifEnvironmentType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environment.type",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:environmentType",
+      "methodName": "ifFleetEnvironmentType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toUpdateFleet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "environmentType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:exportConfig.s3Destination.bucket",
+      "methodName": "ifExportConfigS3DestinationBucket",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateReportGroup",
+        "toUpdateReportGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "exportConfig.s3Destination.bucket",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:exportConfig.s3Destination.bucketOwner",
+      "methodName": "ifExportConfigS3DestinationBucketOwner",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateReportGroup",
+        "toUpdateReportGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "exportConfig.s3Destination.bucketOwner",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:exportConfig.s3Destination.encryptionDisabled",
+      "methodName": "ifExportConfigS3DestinationEncryptionDisabled",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateReportGroup",
+        "toUpdateReportGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "exportConfig.s3Destination.encryptionDisabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:exportConfig.s3Destination.encryptionKey",
+      "methodName": "ifExportConfigS3DestinationEncryptionKey",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateReportGroup",
+        "toUpdateReportGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "exportConfig.s3Destination.encryptionKey",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:exportConfig.s3Destination.path",
+      "methodName": "ifExportConfigS3DestinationPath",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateReportGroup",
+        "toUpdateReportGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "exportConfig.s3Destination.path",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:fileSystemLocations.identifier",
+      "methodName": "ifFileSystemLocationsIdentifier",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "fileSystemLocations.identifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:fileSystemLocations.location",
+      "methodName": "ifFileSystemLocationsLocation",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "fileSystemLocations.location",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:fileSystemLocations.type",
+      "methodName": "ifFileSystemLocationsType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "fileSystemLocations.type",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:fileSystemLocations/${identifier}.location",
+      "methodName": "ifFileSystemLocationsIdentifierlocation",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "fileSystemLocations/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "identifierlocation",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:fileSystemLocations/${identifier}.type",
+      "methodName": "ifFileSystemLocationsIdentifiertype",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "fileSystemLocations/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "identifiertype",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:fleetServiceRole",
+      "methodName": "ifFleetServiceRole",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toUpdateFleet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "fleetServiceRole",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:imageId",
+      "methodName": "ifImageId",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toUpdateFleet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "imageId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:logsConfig",
+      "methodName": "ifLogsConfig",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "logsConfig",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:logsConfig.s3Logs",
+      "methodName": "ifLogsConfigS3Logs",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "logsConfig.s3Logs",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:logsConfig.s3Logs.bucketOwnerAccess",
+      "methodName": "ifLogsConfigS3LogsBucketOwnerAccess",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "logsConfig.s3Logs.bucketOwnerAccess",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:logsConfig.s3Logs.encryptionDisabled",
+      "methodName": "ifLogsConfigS3LogsEncryptionDisabled",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "logsConfig.s3Logs.encryptionDisabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:logsConfig.s3Logs.location",
+      "methodName": "ifLogsConfigS3LogsLocation",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "logsConfig.s3Logs.location",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:logsConfig.s3Logs.status",
+      "methodName": "ifLogsConfigS3LogsStatus",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "logsConfig.s3Logs.status",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:manualCreation",
+      "methodName": "ifManualCreation",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateWebhook",
+        "toUpdateWebhook"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "manualCreation",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:projectArn",
+      "methodName": "ifProjectArn",
+      "description": "Filters access by the ARN of the AWS CodeBuild project from which the request originated",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-permissions-reference.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "projectArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "codebuild:projectVisibility",
+      "methodName": "ifProjectVisibility",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toUpdateProjectVisibility"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "projectVisibility",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:scopeConfiguration.domain",
+      "methodName": "ifScopeConfigurationDomain",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateWebhook",
+        "toUpdateWebhook"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "scopeConfiguration.domain",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:scopeConfiguration.name",
+      "methodName": "ifScopeConfigurationName",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateWebhook",
+        "toUpdateWebhook"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "scopeConfiguration.name",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:scopeConfiguration.scope",
+      "methodName": "ifScopeConfigurationScope",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateWebhook",
+        "toUpdateWebhook"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "scopeConfiguration.scope",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondaryArtifacts",
+      "methodName": "ifSecondaryArtifacts",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondaryArtifacts",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:secondaryArtifacts.artifactIdentifier",
+      "methodName": "ifSecondaryArtifactsArtifactIdentifier",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondaryArtifacts.artifactIdentifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondaryArtifacts.bucketOwnerAccess",
+      "methodName": "ifSecondaryArtifactsBucketOwnerAccess",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondaryArtifacts.bucketOwnerAccess",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondaryArtifacts.encryptionDisabled",
+      "methodName": "ifSecondaryArtifactsEncryptionDisabled",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondaryArtifacts.encryptionDisabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:secondaryArtifacts.location",
+      "methodName": "ifSecondaryArtifactsLocation",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondaryArtifacts.location",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondaryArtifacts/${artifactIdentifier}.bucketOwnerAccess",
+      "methodName": "ifSecondaryArtifactsArtifactIdentifierbucketOwnerAccess",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondaryArtifacts/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "artifactIdentifierbucketOwnerAccess",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondaryArtifacts/${artifactIdentifier}.encryptionDisabled",
+      "methodName": "ifSecondaryArtifactsArtifactIdentifierencryptionDisabled",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondaryArtifacts/",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool",
+      "keyParam": "artifactIdentifierencryptionDisabled"
+    },
+    {
+      "key": "codebuild:secondaryArtifacts/${artifactIdentifier}.location",
+      "methodName": "ifSecondaryArtifactsArtifactIdentifierlocation",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondaryArtifacts/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "artifactIdentifierlocation",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondarySources",
+      "methodName": "ifSecondarySources",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:secondarySources.auth.resource",
+      "methodName": "ifSecondarySourcesAuthResource",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources.auth.resource",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondarySources.auth.type",
+      "methodName": "ifSecondarySourcesAuthType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources.auth.type",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondarySources.buildStatusConfig.context",
+      "methodName": "ifSecondarySourcesBuildStatusConfigContext",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources.buildStatusConfig.context",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondarySources.buildStatusConfig.targetUrl",
+      "methodName": "ifSecondarySourcesBuildStatusConfigTargetUrl",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources.buildStatusConfig.targetUrl",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondarySources.buildspec",
+      "methodName": "ifSecondarySourcesBuildspec",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources.buildspec",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:secondarySources.insecureSsl",
+      "methodName": "ifSecondarySourcesInsecureSsl",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources.insecureSsl",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:secondarySources.location",
+      "methodName": "ifSecondarySourcesLocation",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources.location",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondarySources.sourceIdentifier",
+      "methodName": "ifSecondarySourcesSourceIdentifier",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources.sourceIdentifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondarySources/${sourceIdentifier}.auth.resource",
+      "methodName": "ifSecondarySourcesSourceIdentifierauthresource",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "sourceIdentifierauthresource",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondarySources/${sourceIdentifier}.auth.type",
+      "methodName": "ifSecondarySourcesSourceIdentifierauthtype",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "sourceIdentifierauthtype",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondarySources/${sourceIdentifier}.buildStatusConfig.context",
+      "methodName": "ifSecondarySourcesSourceIdentifierbuildStatusConfigcontext",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "sourceIdentifierbuildStatusConfigcontext",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondarySources/${sourceIdentifier}.buildStatusConfig.targetUrl",
+      "methodName": "ifSecondarySourcesSourceIdentifierbuildStatusConfigtargetUrl",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "sourceIdentifierbuildStatusConfigtargetUrl",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:secondarySources/${sourceIdentifier}.buildspec",
+      "methodName": "ifSecondarySourcesSourceIdentifierbuildspec",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources/",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool",
+      "keyParam": "sourceIdentifierbuildspec"
+    },
+    {
+      "key": "codebuild:secondarySources/${sourceIdentifier}.insecureSsl",
+      "methodName": "ifSecondarySourcesSourceIdentifierinsecureSsl",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources/",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool",
+      "keyParam": "sourceIdentifierinsecureSsl"
+    },
+    {
+      "key": "codebuild:secondarySources/${sourceIdentifier}.location",
+      "methodName": "ifSecondarySourcesSourceIdentifierlocation",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "secondarySources/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "sourceIdentifierlocation",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:serverType",
+      "methodName": "ifServerType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toImportSourceCredentials"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "serverType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:serviceRole",
+      "methodName": "ifServiceRole",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "serviceRole",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:shouldOverwrite",
+      "methodName": "ifShouldOverwrite",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toImportSourceCredentials"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "shouldOverwrite",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:source",
+      "methodName": "ifSource",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "source",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:source.auth.resource",
+      "methodName": "ifSourceAuthResource",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "source.auth.resource",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:source.auth.type",
+      "methodName": "ifSourceAuthType",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "source.auth.type",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:source.buildStatusConfig.context",
+      "methodName": "ifSourceBuildStatusConfigContext",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "source.buildStatusConfig.context",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:source.buildStatusConfig.targetUrl",
+      "methodName": "ifSourceBuildStatusConfigTargetUrl",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "source.buildStatusConfig.targetUrl",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:source.buildspec",
+      "methodName": "ifSourceBuildspec",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "source.buildspec",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:source.insecureSsl",
+      "methodName": "ifSourceInsecureSsl",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "source.insecureSsl",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:source.location",
+      "methodName": "ifSourceLocation",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toStartBuild",
+        "toStartBuildBatch",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "source.location",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:token",
+      "methodName": "ifToken",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toImportSourceCredentials"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:username",
+      "methodName": "ifUsername",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toImportSourceCredentials"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "username",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:vpcConfig",
+      "methodName": "ifVpcConfig",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toCreateProject",
+        "toUpdateFleet",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "vpcConfig",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "codebuild:vpcConfig.securityGroupIds",
+      "methodName": "ifVpcConfigSecurityGroupIds",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toCreateProject",
+        "toUpdateFleet",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "vpcConfig.securityGroupIds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:vpcConfig.subnets",
+      "methodName": "ifVpcConfigSubnets",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toCreateProject",
+        "toUpdateFleet",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "vpcConfig.subnets",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codebuild:vpcConfig.vpcId",
+      "methodName": "ifVpcConfigVpcId",
+      "description": "Filters access by the API corresponding argument value",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html",
+      "relatedActionMethods": [
+        "toCreateFleet",
+        "toCreateProject",
+        "toUpdateFleet",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "vpcConfig.vpcId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

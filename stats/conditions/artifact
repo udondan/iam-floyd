@@ -1,5 +1,0 @@
-artifact:ReportCategory
-artifact:ReportSeries
-artifact:RequestTag/${TagKey}
-artifact:ResourceTag/${TagKey}
-artifact:TagKeys

@@ -1,3 +1,0 @@
-greengrass:RequestTag/${TagKey}
-greengrass:ResourceTag/${TagKey}
-greengrass:TagKeys

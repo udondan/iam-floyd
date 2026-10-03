@@ -1,0 +1,516 @@
+{
+  "schemaVersion": 1,
+  "filename": "cloud9",
+  "className": "Cloud9",
+  "name": "cloud9",
+  "servicePrefix": "cloud9",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloud9.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateEnvironmentEC2",
+      "CreateEnvironmentMembership",
+      "DeleteEnvironment",
+      "DeleteEnvironmentMembership",
+      "TagResource",
+      "UntagResource",
+      "UpdateEnvironment",
+      "UpdateEnvironmentMembership",
+      "ActivateEC2Remote",
+      "CreateEnvironmentSSH",
+      "ModifyTemporaryCredentialsOnEnvironmentEC2",
+      "UpdateEnvironmentSettings",
+      "UpdateMembershipSettings",
+      "UpdateSSHRemote",
+      "UpdateUserSettings"
+    ],
+    "Read": [
+      "DescribeEnvironmentMemberships",
+      "DescribeEnvironmentStatus",
+      "DescribeEnvironments",
+      "ListEnvironments",
+      "ListTagsForResource",
+      "CreateEnvironmentToken",
+      "DescribeEC2Remote",
+      "DescribeSSHRemote",
+      "GetEnvironmentConfig",
+      "GetEnvironmentSettings",
+      "GetMembershipSettings",
+      "GetMigrationExperiences",
+      "GetUserPublicKey",
+      "GetUserSettings"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateEnvironmentEC2",
+      "methodName": "toCreateEnvironmentEC2",
+      "description": "Grants permission to create an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then hosts the environment on the instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_CreateEnvironmentEC2.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifEnvironmentName",
+        "ifInstanceType",
+        "ifOwnerArn",
+        "ifSubnetId",
+        "ifUserArn"
+      ]
+    },
+    {
+      "name": "CreateEnvironmentMembership",
+      "methodName": "toCreateEnvironmentMembership",
+      "description": "Grants permission to add an environment member to an AWS Cloud9 development environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_CreateEnvironmentMembership.html"
+    },
+    {
+      "name": "DeleteEnvironment",
+      "methodName": "toDeleteEnvironment",
+      "description": "Grants permission to delete an AWS Cloud9 development environment. If the environment is hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance, also terminates the instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DeleteEnvironment.html"
+    },
+    {
+      "name": "DeleteEnvironmentMembership",
+      "methodName": "toDeleteEnvironmentMembership",
+      "description": "Grants permission to delete an environment member from an AWS Cloud9 development environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DeleteEnvironmentMembership.html"
+    },
+    {
+      "name": "DescribeEnvironmentMemberships",
+      "methodName": "toDescribeEnvironmentMemberships",
+      "description": "Grants permission to get information about environment members for an AWS Cloud9 development environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironmentMemberships.html"
+    },
+    {
+      "name": "DescribeEnvironmentStatus",
+      "methodName": "toDescribeEnvironmentStatus",
+      "description": "Grants permission to get status information for an AWS Cloud9 development environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironmentStatus.html"
+    },
+    {
+      "name": "DescribeEnvironments",
+      "methodName": "toDescribeEnvironments",
+      "description": "Grants permission to get information about AWS Cloud9 development environments",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironments.html"
+    },
+    {
+      "name": "ListEnvironments",
+      "methodName": "toListEnvironments",
+      "description": "Grants permission to get a list of AWS Cloud9 development environment identifiers",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_ListEnvironments.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a cloud9 environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a cloud9 environment",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a cloud9 environment",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateEnvironment",
+      "methodName": "toUpdateEnvironment",
+      "description": "Grants permission to change the settings of an existing AWS Cloud9 development environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UpdateEnvironment.html"
+    },
+    {
+      "name": "UpdateEnvironmentMembership",
+      "methodName": "toUpdateEnvironmentMembership",
+      "description": "Grants permission to change the settings of an existing environment member for an AWS Cloud9 development environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UpdateEnvironmentMembership.html"
+    },
+    {
+      "name": "ActivateEC2Remote",
+      "methodName": "toActivateEC2Remote",
+      "description": "Grants permission to start the Amazon EC2 instance that your AWS Cloud9 IDE connects to",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
+    },
+    {
+      "name": "CreateEnvironmentSSH",
+      "methodName": "toCreateEnvironmentSSH",
+      "description": "Grants permission to create an AWS Cloud9 SSH development environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifEnvironmentName",
+        "ifOwnerArn"
+      ]
+    },
+    {
+      "name": "CreateEnvironmentToken",
+      "methodName": "toCreateEnvironmentToken",
+      "description": "Grants permission to create an authentication token that allows a connection between the AWS Cloud9 IDE and the user's environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
+    },
+    {
+      "name": "DescribeEC2Remote",
+      "methodName": "toDescribeEC2Remote",
+      "description": "Grants permission to get details about the connection to the EC2 development environment, including host, user, and port",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
+    },
+    {
+      "name": "DescribeSSHRemote",
+      "methodName": "toDescribeSSHRemote",
+      "description": "Grants permission to get details about the connection to the SSH development environment, including host, user, and port",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
+    },
+    {
+      "name": "GetEnvironmentConfig",
+      "methodName": "toGetEnvironmentConfig",
+      "description": "Grants permission to get configuration information that's used to initialize the AWS Cloud9 IDE",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
+    },
+    {
+      "name": "GetEnvironmentSettings",
+      "methodName": "toGetEnvironmentSettings",
+      "description": "Grants permission to get the AWS Cloud9 IDE settings for a specified development environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
+    },
+    {
+      "name": "GetMembershipSettings",
+      "methodName": "toGetMembershipSettings",
+      "description": "Grants permission to get the AWS Cloud9 IDE settings for a specified environment member",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
+    },
+    {
+      "name": "GetMigrationExperiences",
+      "methodName": "toGetMigrationExperiences",
+      "description": "Grants permission to get the migration experience for a cloud9 user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
+    },
+    {
+      "name": "GetUserPublicKey",
+      "methodName": "toGetUserPublicKey",
+      "description": "Grants permission to get the user's public SSH key, which is used by AWS Cloud9 to connect to SSH development environments",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix",
+      "conditionMethods": [
+        "ifUserArn"
+      ]
+    },
+    {
+      "name": "GetUserSettings",
+      "methodName": "toGetUserSettings",
+      "description": "Grants permission to get the AWS Cloud9 IDE settings for a specified user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
+    },
+    {
+      "name": "ModifyTemporaryCredentialsOnEnvironmentEC2",
+      "methodName": "toModifyTemporaryCredentialsOnEnvironmentEC2",
+      "description": "Grants permission to set AWS managed temporary credentials on the Amazon EC2 instance that's used by the AWS Cloud9 integrated development environment (IDE)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
+    },
+    {
+      "name": "UpdateEnvironmentSettings",
+      "methodName": "toUpdateEnvironmentSettings",
+      "description": "Grants permission to update the AWS Cloud9 IDE settings for a specified development environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
+    },
+    {
+      "name": "UpdateMembershipSettings",
+      "methodName": "toUpdateMembershipSettings",
+      "description": "Grants permission to update the AWS Cloud9 IDE settings for a specified environment member",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
+    },
+    {
+      "name": "UpdateSSHRemote",
+      "methodName": "toUpdateSSHRemote",
+      "description": "Grants permission to update details about the connection to the SSH development environment, including host, user, and port",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
+    },
+    {
+      "name": "UpdateUserSettings",
+      "methodName": "toUpdateUserSettings",
+      "description": "Grants permission to update IDE-specific settings of an AWS Cloud9 user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
+    }
+  ],
+  "resources": [
+    {
+      "name": "environment",
+      "methodName": "onEnvironment",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html##awscloud9-environment",
+      "arn": "arn:${Partition}:cloud9:${Region}:${Account}:environment:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateEnvironmentEC2",
+        "toTagResource",
+        "toCreateEnvironmentSSH"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateEnvironmentMembership",
+        "toDeleteEnvironment",
+        "toDeleteEnvironmentMembership",
+        "toDescribeEnvironmentMemberships",
+        "toDescribeEnvironmentStatus",
+        "toDescribeEnvironments",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateEnvironment",
+        "toUpdateEnvironmentMembership",
+        "toActivateEC2Remote",
+        "toCreateEnvironmentToken",
+        "toDescribeEC2Remote",
+        "toDescribeSSHRemote",
+        "toGetEnvironmentConfig",
+        "toGetEnvironmentSettings",
+        "toGetMembershipSettings",
+        "toModifyTemporaryCredentialsOnEnvironmentEC2",
+        "toUpdateEnvironmentSettings",
+        "toUpdateMembershipSettings",
+        "toUpdateSSHRemote"
+      ],
+      "relatedResourceTypes": [
+        "environment"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateEnvironmentEC2",
+        "toTagResource",
+        "toUntagResource",
+        "toCreateEnvironmentSSH"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloud9:EnvironmentId",
+      "methodName": "ifEnvironmentId",
+      "description": "Filters access by the AWS Cloud9 environment ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html##awscloud9-cloud9_EnvironmentId",
+      "relatedActionMethods": [
+        "toCreateEnvironmentMembership",
+        "toDeleteEnvironmentMembership",
+        "toDescribeEnvironmentMemberships",
+        "toUpdateEnvironmentMembership"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EnvironmentId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloud9:EnvironmentName",
+      "methodName": "ifEnvironmentName",
+      "description": "Filters access by the AWS Cloud9 environment name",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html##awscloud9-cloud9_EnvironmentName",
+      "relatedActionMethods": [
+        "toCreateEnvironmentEC2",
+        "toCreateEnvironmentSSH"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EnvironmentName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloud9:InstanceType",
+      "methodName": "ifInstanceType",
+      "description": "Filters access by the instance type of the AWS Cloud9 environment's Amazon EC2 instance",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html##awscloud9-cloud9_InstanceType",
+      "relatedActionMethods": [
+        "toCreateEnvironmentEC2"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InstanceType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloud9:OwnerArn",
+      "methodName": "ifOwnerArn",
+      "description": "Filters access by the owner ARN specified",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html##awscloud9-cloud9_OwnerArn",
+      "relatedActionMethods": [
+        "toCreateEnvironmentEC2",
+        "toCreateEnvironmentSSH"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "OwnerArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "cloud9:Permissions",
+      "methodName": "ifPermissions",
+      "description": "Filters access by the type of AWS Cloud9 permissions",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html##awscloud9-cloud9_Permissions",
+      "relatedActionMethods": [
+        "toCreateEnvironmentMembership",
+        "toUpdateEnvironmentMembership"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Permissions",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloud9:SubnetId",
+      "methodName": "ifSubnetId",
+      "description": "Filters access by the subnet ID that the AWS Cloud9 environment will be created in",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html##awscloud9-cloud9_SubnetId",
+      "relatedActionMethods": [
+        "toCreateEnvironmentEC2"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SubnetId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloud9:UserArn",
+      "methodName": "ifUserArn",
+      "description": "Filters access by the user ARN specified",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html##awscloud9-cloud9_UserArn",
+      "relatedActionMethods": [
+        "toCreateEnvironmentEC2",
+        "toCreateEnvironmentMembership",
+        "toDeleteEnvironmentMembership",
+        "toDescribeEnvironmentMemberships",
+        "toUpdateEnvironmentMembership",
+        "toGetUserPublicKey"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "UserArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

@@ -1,0 +1,769 @@
+{
+  "schemaVersion": 1,
+  "filename": "codeconnections",
+  "className": "Codeconnections",
+  "name": "codeconnections",
+  "servicePrefix": "codeconnections",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_codeconnections.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateConnection",
+      "CreateHost",
+      "CreateRepositoryLink",
+      "CreateSyncConfiguration",
+      "DeleteConnection",
+      "DeleteHost",
+      "DeleteRepositoryLink",
+      "DeleteSyncConfiguration",
+      "TagResource",
+      "UntagResource",
+      "UpdateConnectionInstallation",
+      "UpdateHost",
+      "UpdateRepositoryLink",
+      "UpdateSyncBlocker",
+      "UpdateSyncConfiguration"
+    ],
+    "Read": [
+      "GetConnection",
+      "GetHost",
+      "GetRepositoryLink",
+      "GetRepositorySyncStatus",
+      "GetResourceSyncStatus",
+      "GetSyncBlockerSummary",
+      "GetSyncConfiguration",
+      "GetConnectionToken",
+      "GetIndividualAccessToken",
+      "GetInstallationUrl",
+      "PassConnection",
+      "PassRepository",
+      "RegisterAppCode",
+      "StartAppRegistrationHandshake",
+      "StartOAuthHandshake",
+      "UseConnection"
+    ],
+    "List": [
+      "ListConnections",
+      "ListHosts",
+      "ListRepositoryLinks",
+      "ListRepositorySyncDefinitions",
+      "ListSyncConfigurations",
+      "ListTagsForResource",
+      "ListInstallationTargets"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateConnection",
+      "methodName": "toCreateConnection",
+      "description": "Grants permission to create a Connection resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_CreateConnection.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifProviderType"
+      ]
+    },
+    {
+      "name": "CreateHost",
+      "methodName": "toCreateHost",
+      "description": "Grants permission to create a host resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_CreateHost.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifProviderType",
+        "ifVpcId"
+      ]
+    },
+    {
+      "name": "CreateRepositoryLink",
+      "methodName": "toCreateRepositoryLink",
+      "description": "Grants permission to create a repository link",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_CreateRepositoryLink.html"
+    },
+    {
+      "name": "CreateSyncConfiguration",
+      "methodName": "toCreateSyncConfiguration",
+      "description": "Grants permission to create a template sync config",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_CreateSyncConfiguration.html"
+    },
+    {
+      "name": "DeleteConnection",
+      "methodName": "toDeleteConnection",
+      "description": "Grants permission to delete a Connection resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_DeleteConnection.html"
+    },
+    {
+      "name": "DeleteHost",
+      "methodName": "toDeleteHost",
+      "description": "Grants permission to delete a host resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_DeleteHost.html"
+    },
+    {
+      "name": "DeleteRepositoryLink",
+      "methodName": "toDeleteRepositoryLink",
+      "description": "Grants permission to delete a repository link",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_DeleteRepositoryLink.html"
+    },
+    {
+      "name": "DeleteSyncConfiguration",
+      "methodName": "toDeleteSyncConfiguration",
+      "description": "Grants permission to delete a sync configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_DeleteSyncConfiguration.html"
+    },
+    {
+      "name": "GetConnection",
+      "methodName": "toGetConnection",
+      "description": "Grants permission to get details about a Connection resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_GetConnection.html"
+    },
+    {
+      "name": "GetHost",
+      "methodName": "toGetHost",
+      "description": "Grants permission to get details about a host resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_GetHost.html"
+    },
+    {
+      "name": "GetRepositoryLink",
+      "methodName": "toGetRepositoryLink",
+      "description": "Grants permission to describe a repository link",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_GetRepositoryLink.html"
+    },
+    {
+      "name": "GetRepositorySyncStatus",
+      "methodName": "toGetRepositorySyncStatus",
+      "description": "Grants permission to get the latest sync status for a repository",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_GetRepositorySyncStatus.html"
+    },
+    {
+      "name": "GetResourceSyncStatus",
+      "methodName": "toGetResourceSyncStatus",
+      "description": "Grants permission to get the latest sync status for a resource (cfn stack or other resources)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_GetResourceSyncStatus.html"
+    },
+    {
+      "name": "GetSyncBlockerSummary",
+      "methodName": "toGetSyncBlockerSummary",
+      "description": "Grants permission to describe service sync blockers on a resource (cfn stack or other resources)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_GetSyncBlockerSummary.html"
+    },
+    {
+      "name": "GetSyncConfiguration",
+      "methodName": "toGetSyncConfiguration",
+      "description": "Grants permission to describe a sync configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_GetSyncConfiguration.html"
+    },
+    {
+      "name": "ListConnections",
+      "methodName": "toListConnections",
+      "description": "Grants permission to list Connection resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_ListConnections.html"
+    },
+    {
+      "name": "ListHosts",
+      "methodName": "toListHosts",
+      "description": "Grants permission to list host resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_ListHosts.html",
+      "conditionMethods": [
+        "ifProviderTypeFilter"
+      ]
+    },
+    {
+      "name": "ListRepositoryLinks",
+      "methodName": "toListRepositoryLinks",
+      "description": "Grants permission to list repository links",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_ListRepositoryLinks.html"
+    },
+    {
+      "name": "ListRepositorySyncDefinitions",
+      "methodName": "toListRepositorySyncDefinitions",
+      "description": "Grants permission to list repository sync definitions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_ListRepositorySyncDefinitions.html"
+    },
+    {
+      "name": "ListSyncConfigurations",
+      "methodName": "toListSyncConfigurations",
+      "description": "Grants permission to list sync configurations for a repository link",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_ListSyncConfigurations.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to the set of key-value pairs that are used to manage the resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or modify the tags of the given resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from an AWS resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateConnectionInstallation",
+      "methodName": "toUpdateConnectionInstallation",
+      "description": "Grants permission to update a Connection resource with an installation of the CodeStar Connections App",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake"
+    },
+    {
+      "name": "UpdateHost",
+      "methodName": "toUpdateHost",
+      "description": "Grants permission to update a host resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_UpdateHost.html"
+    },
+    {
+      "name": "UpdateRepositoryLink",
+      "methodName": "toUpdateRepositoryLink",
+      "description": "Grants permission to update a repository link",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_UpdateRepositoryLink.html"
+    },
+    {
+      "name": "UpdateSyncBlocker",
+      "methodName": "toUpdateSyncBlocker",
+      "description": "Grants permission to update a sync blocker for a resource (cfn stack or other resources)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_UpdateSyncBlocker.html"
+    },
+    {
+      "name": "UpdateSyncConfiguration",
+      "methodName": "toUpdateSyncConfiguration",
+      "description": "Grants permission to update a sync configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_UpdateSyncConfiguration.html",
+      "conditionMethods": [
+        "ifBranch"
+      ]
+    },
+    {
+      "name": "GetConnectionToken",
+      "methodName": "toGetConnectionToken",
+      "description": "Grants permission to get a Connection token to call provider actions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-getconnectiontoken"
+    },
+    {
+      "name": "GetIndividualAccessToken",
+      "methodName": "toGetIndividualAccessToken",
+      "description": "Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake",
+      "conditionMethods": [
+        "ifProviderType"
+      ]
+    },
+    {
+      "name": "GetInstallationUrl",
+      "methodName": "toGetInstallationUrl",
+      "description": "Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake",
+      "conditionMethods": [
+        "ifProviderType"
+      ]
+    },
+    {
+      "name": "ListInstallationTargets",
+      "methodName": "toListInstallationTargets",
+      "description": "Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake"
+    },
+    {
+      "name": "PassConnection",
+      "methodName": "toPassConnection",
+      "description": "Grants permission to pass a Connection resource to an AWS service that accepts a Connection ARN as input, such as codepipeline:CreatePipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-passconnection"
+    },
+    {
+      "name": "PassRepository",
+      "methodName": "toPassRepository",
+      "description": "Grants permission to pass a repository link resource to an AWS service that accepts a RepositoryLinkId as input, such as codeconnections:CreateSyncConfiguration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-passrepository"
+    },
+    {
+      "name": "RegisterAppCode",
+      "methodName": "toRegisterAppCode",
+      "description": "Grants permission to associate a third party server, such as a GitHub Enterprise Server instance, with a Host",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#connections-permissions-actions-host-registration",
+      "conditionMethods": [
+        "ifHostArn"
+      ]
+    },
+    {
+      "name": "StartAppRegistrationHandshake",
+      "methodName": "toStartAppRegistrationHandshake",
+      "description": "Grants permission to associate a third party server, such as a GitHub Enterprise Server instance, with a Host",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#connections-permissions-actions-host-registration",
+      "conditionMethods": [
+        "ifHostArn"
+      ]
+    },
+    {
+      "name": "StartOAuthHandshake",
+      "methodName": "toStartOAuthHandshake",
+      "description": "Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake",
+      "conditionMethods": [
+        "ifProviderType"
+      ]
+    },
+    {
+      "name": "UseConnection",
+      "methodName": "toUseConnection",
+      "description": "Grants permission to use a Connection resource to call provider actions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Connection",
+      "methodName": "onConnection",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/connections.html",
+      "arn": "arn:${Partition}:codeconnections:${Region}:${Account}:connection/${ConnectionId}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectionId",
+          "name": "connectionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Host",
+      "methodName": "onHost",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/connections-hosts.html",
+      "arn": "arn:${Partition}:codeconnections:${Region}:${Account}:host/${HostId}",
+      "placeholders": [
+        {
+          "placeholder": "HostId",
+          "name": "hostId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "RepositoryLink",
+      "methodName": "onRepositoryLink",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/repositorylinks.html",
+      "arn": "arn:${Partition}:codeconnections:${Region}:${Account}:repository-link/${RepositoryLinkId}",
+      "placeholders": [
+        {
+          "placeholder": "RepositoryLinkId",
+          "name": "repositoryLinkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateConnection",
+        "toCreateHost",
+        "toCreateRepositoryLink",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateRepositoryLink",
+        "toCreateSyncConfiguration",
+        "toDeleteConnection",
+        "toDeleteHost",
+        "toDeleteRepositoryLink",
+        "toGetConnection",
+        "toGetHost",
+        "toGetRepositoryLink",
+        "toGetRepositorySyncStatus",
+        "toListConnections",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateConnectionInstallation",
+        "toUpdateHost",
+        "toUpdateRepositoryLink",
+        "toGetConnectionToken",
+        "toPassConnection",
+        "toPassRepository",
+        "toUseConnection"
+      ],
+      "relatedResourceTypes": [
+        "Connection",
+        "Host",
+        "RepositoryLink"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateConnection",
+        "toCreateHost",
+        "toCreateRepositoryLink",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codeconnections:Branch",
+      "methodName": "ifBranch",
+      "description": "Filters access by the branch name that is passed in the request",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake",
+      "relatedActionMethods": [
+        "toCreateSyncConfiguration",
+        "toGetRepositorySyncStatus",
+        "toUpdateSyncConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Branch",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codeconnections:BranchName",
+      "methodName": "ifBranchName",
+      "description": "Filters access by the branch name that is passed in the request. Applies only to UseConnection requests for access to a specific repository branch",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use",
+      "relatedActionMethods": [
+        "toUseConnection"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "BranchName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codeconnections:FullRepositoryId",
+      "methodName": "ifFullRepositoryId",
+      "description": "Filters access by the repository that is passed in the request. Applies only to UseConnection requests for access to a specific repository",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use",
+      "relatedActionMethods": [
+        "toUseConnection"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FullRepositoryId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codeconnections:HostArn",
+      "methodName": "ifHostArn",
+      "description": "Filters access by the host resource associated with the connection used in the request",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-hosts",
+      "relatedActionMethods": [
+        "toRegisterAppCode",
+        "toStartAppRegistrationHandshake"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "HostArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "codeconnections:InstallationId",
+      "methodName": "ifInstallationId",
+      "description": "Filters access by the third-party ID (such as the Bitbucket App installation ID for CodeConnections) that is used to update a Connection. Allows you to restrict which third-party App installations can be used to make a Connection",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake",
+      "relatedActionMethods": [
+        "toUpdateConnectionInstallation"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InstallationId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codeconnections:OwnerId",
+      "methodName": "ifOwnerId",
+      "description": "Filters access by the owner of the third-party repository. Applies only to UseConnection requests for access to repositories owned by a specific user",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use",
+      "relatedActionMethods": [
+        "toUseConnection"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "OwnerId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codeconnections:PassedToService",
+      "methodName": "ifPassedToService",
+      "description": "Filters access by the service to which the principal is allowed to pass a Connection or RepositoryLink",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-passconnection",
+      "relatedActionMethods": [
+        "toPassConnection",
+        "toPassRepository"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PassedToService",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codeconnections:ProviderAction",
+      "methodName": "ifProviderAction",
+      "description": "Filters access by the provider action in a UseConnection request such as ListRepositories. See documentation for all valid values",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-access",
+      "relatedActionMethods": [
+        "toUseConnection"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ProviderAction",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codeconnections:ProviderPermissionsRequired",
+      "methodName": "ifProviderPermissionsRequired",
+      "description": "Filters access by the write permissions of a provider action in a UseConnection request. Valid types include read_only and read_write",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use",
+      "relatedActionMethods": [
+        "toUseConnection"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ProviderPermissionsRequired",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codeconnections:ProviderType",
+      "methodName": "ifProviderType",
+      "description": "Filters access by the type of third-party provider passed in the request",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-managing",
+      "relatedActionMethods": [
+        "toCreateConnection",
+        "toCreateHost",
+        "toGetIndividualAccessToken",
+        "toGetInstallationUrl",
+        "toStartOAuthHandshake"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ProviderType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codeconnections:ProviderTypeFilter",
+      "methodName": "ifProviderTypeFilter",
+      "description": "Filters access by the type of third-party provider used to filter results",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-managing",
+      "relatedActionMethods": [
+        "toListConnections",
+        "toListHosts"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ProviderTypeFilter",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codeconnections:RepositoryName",
+      "methodName": "ifRepositoryName",
+      "description": "Filters access by the repository name that is passed in the request. Applies only to UseConnection requests for access to repositories owned by a specific user",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use",
+      "relatedActionMethods": [
+        "toUseConnection"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RepositoryName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codeconnections:VpcId",
+      "methodName": "ifVpcId",
+      "description": "Filters access by the VpcId passed in the request",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-hosts",
+      "relatedActionMethods": [
+        "toCreateHost",
+        "toUpdateHost"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "VpcId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

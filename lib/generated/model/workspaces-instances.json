@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "filename": "workspaces-instances",
+  "className": "WorkspacesInstances",
+  "name": "workspaces-instances",
+  "servicePrefix": "workspaces-instances",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_workspaces-instances.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateVolume",
+      "CreateVolume",
+      "CreateWorkspaceInstance",
+      "DeleteVolume",
+      "DeleteWorkspaceInstance",
+      "DisassociateVolume",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Read": [
+      "GetWorkspaceInstance"
+    ],
+    "List": [
+      "ListInstanceTypes",
+      "ListRegions",
+      "ListTagsForResource",
+      "ListWorkspaceInstances"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateVolume",
+      "methodName": "toAssociateVolume",
+      "description": "Grants permission to associate a workspace managed volume to a workspace managed instance in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_AssociateVolume.html"
+    },
+    {
+      "name": "CreateVolume",
+      "methodName": "toCreateVolume",
+      "description": "Grants permission to create a workspace managed volume in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateVolume.html"
+    },
+    {
+      "name": "CreateWorkspaceInstance",
+      "methodName": "toCreateWorkspaceInstance",
+      "description": "Grants permission to create a workspace managed instance in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspaceInstance.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteVolume",
+      "methodName": "toDeleteVolume",
+      "description": "Grants permission to delete a workspace managed volume in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteVolume.html"
+    },
+    {
+      "name": "DeleteWorkspaceInstance",
+      "methodName": "toDeleteWorkspaceInstance",
+      "description": "Grants permission to delete a workspace managed instance in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteWorkspaceInstance.html"
+    },
+    {
+      "name": "DisassociateVolume",
+      "methodName": "toDisassociateVolume",
+      "description": "Grants permission to disassociate a workspace managed volume from a workspace managed instance in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DisassociateVolume.html"
+    },
+    {
+      "name": "GetWorkspaceInstance",
+      "methodName": "toGetWorkspaceInstance",
+      "description": "Grants permission to get details for a specific workspace managed instance in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_GetWorkspaceInstance.html"
+    },
+    {
+      "name": "ListInstanceTypes",
+      "methodName": "toListInstanceTypes",
+      "description": "Grants permission to list all supported instance types",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ListInstanceTypes.html"
+    },
+    {
+      "name": "ListRegions",
+      "methodName": "toListRegions",
+      "description": "Grants permission to list all supported AWS regions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ListRegions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list user tags for resources in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWorkspaceInstances",
+      "methodName": "toListWorkspaceInstances",
+      "description": "Grants permission to list workspace managed instances in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ListWorkspaceInstances.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add user tags to resources in your account",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove user tags from resources in your account",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "VolumeId",
+      "methodName": "onVolumeId",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/managed-workspaces-volumes.html",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:volume/${VolumeId}",
+      "placeholders": [
+        {
+          "placeholder": "VolumeId",
+          "name": "volumeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "WorkspaceInstanceId",
+      "methodName": "onWorkspaceInstanceId",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/managed-workspaces-instances.html",
+      "arn": "arn:${Partition}:workspaces-instances:${Region}:${Account}:workspaceinstance/${WorkspaceInstanceId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkspaceInstanceId",
+          "name": "workspaceInstanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access based on the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateWorkspaceInstance",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access based on the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateVolume",
+        "toDeleteVolume",
+        "toDeleteWorkspaceInstance",
+        "toDisassociateVolume",
+        "toGetWorkspaceInstance",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "VolumeId",
+        "WorkspaceInstanceId"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access based on the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateWorkspaceInstance",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

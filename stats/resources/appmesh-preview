@@ -1,7 +1,0 @@
-appmesh-preview:gatewayRoute
-appmesh-preview:mesh
-appmesh-preview:route
-appmesh-preview:virtualGateway
-appmesh-preview:virtualNode
-appmesh-preview:virtualRouter
-appmesh-preview:virtualService

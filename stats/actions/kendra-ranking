@@ -1,9 +1,0 @@
-kendra-ranking:CreateRescoreExecutionPlan;Write
-kendra-ranking:DeleteRescoreExecutionPlan;Write
-kendra-ranking:DescribeRescoreExecutionPlan;Read
-kendra-ranking:ListRescoreExecutionPlans;List
-kendra-ranking:ListTagsForResource;Read
-kendra-ranking:Rescore;Read
-kendra-ranking:TagResource;Tagging, Write
-kendra-ranking:UntagResource;Tagging, Write
-kendra-ranking:UpdateRescoreExecutionPlan;Write

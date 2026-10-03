@@ -1,0 +1,524 @@
+{
+  "schemaVersion": 1,
+  "filename": "resource-explorer-2",
+  "className": "ResourceExplorer2",
+  "name": "resource-explorer-2",
+  "servicePrefix": "resource-explorer-2",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resource-explorer-2.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateDefaultView",
+      "CreateIndex",
+      "CreateResourceExplorerSetup",
+      "CreateView",
+      "DeleteIndex",
+      "DeleteResourceExplorerSetup",
+      "DeleteView",
+      "DisassociateDefaultView",
+      "TagResource",
+      "UntagResource",
+      "UpdateIndexType",
+      "UpdateView",
+      "CreateManagedView",
+      "CreateStreamingAccessForService",
+      "DeleteResourcePolicy",
+      "DeleteStreamingAccessForService",
+      "PutResourcePolicy"
+    ],
+    "Read": [
+      "BatchGetView",
+      "GetAccountLevelServiceConfiguration",
+      "GetDefaultView",
+      "GetIndex",
+      "GetManagedView",
+      "GetResourceExplorerSetup",
+      "GetServiceIndex",
+      "GetServiceView",
+      "GetView",
+      "ListTagsForResource",
+      "Search",
+      "GetResourcePolicy"
+    ],
+    "List": [
+      "ListIndexes",
+      "ListIndexesForMembers",
+      "ListManagedViews",
+      "ListServiceIndexes",
+      "ListServiceViews",
+      "ListStreamingAccessForServices",
+      "ListSupportedResourceTypes",
+      "ListViews"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "PutResourcePolicy"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateDefaultView",
+      "methodName": "toAssociateDefaultView",
+      "description": "Grants permission to set the specified view as the default for this AWS Region in this AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_AssociateDefaultView.html"
+    },
+    {
+      "name": "BatchGetView",
+      "methodName": "toBatchGetView",
+      "description": "Grants permission to retrieve details about views that you specify by a list of ARNs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_BatchGetView.html"
+    },
+    {
+      "name": "CreateIndex",
+      "methodName": "toCreateIndex",
+      "description": "Grants permission to turn on Resource Explorer in the AWS Region in which you called this operation by creating an index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_CreateIndex.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateResourceExplorerSetup",
+      "methodName": "toCreateResourceExplorerSetup",
+      "description": "Grants permission to create resource explorer setup",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateView",
+      "methodName": "toCreateView",
+      "description": "Grants permission to create a view that users can query",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_CreateView.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteIndex",
+      "methodName": "toDeleteIndex",
+      "description": "Grants permission to turn off Resource Explorer in the specified AWS Region by deleting the index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_DeleteIndex.html"
+    },
+    {
+      "name": "DeleteResourceExplorerSetup",
+      "methodName": "toDeleteResourceExplorerSetup",
+      "description": "Grants permission to delete resource explorer setup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_DeleteResourceExplorerSetup.html"
+    },
+    {
+      "name": "DeleteView",
+      "methodName": "toDeleteView",
+      "description": "Grants permission to delete a view",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_DeleteView.html"
+    },
+    {
+      "name": "DisassociateDefaultView",
+      "methodName": "toDisassociateDefaultView",
+      "description": "Grants permission to remove the default view for the AWS Region in which you call this operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_DisassociateDefaultView.html"
+    },
+    {
+      "name": "GetAccountLevelServiceConfiguration",
+      "methodName": "toGetAccountLevelServiceConfiguration",
+      "description": "Grants permission to Resource Explorer to access account level data within your AWS Organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetAccountLevelServiceConfiguration.html"
+    },
+    {
+      "name": "GetDefaultView",
+      "methodName": "toGetDefaultView",
+      "description": "Grants permission to retrieve the Amazon resource name (ARN) of the view that is the default for the AWS Region in which you call this operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetDefaultView.html"
+    },
+    {
+      "name": "GetIndex",
+      "methodName": "toGetIndex",
+      "description": "Grants permission to retrieve information about the index in the AWS Region in which you call this operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetIndex.html"
+    },
+    {
+      "name": "GetManagedView",
+      "methodName": "toGetManagedView",
+      "description": "Grants permission to get managed view",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetManagedView.html"
+    },
+    {
+      "name": "GetResourceExplorerSetup",
+      "methodName": "toGetResourceExplorerSetup",
+      "description": "Grants permission to get resource explorer setup",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetResourceExplorerSetup.html"
+    },
+    {
+      "name": "GetServiceIndex",
+      "methodName": "toGetServiceIndex",
+      "description": "Grants permission to get service index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetServiceIndex.html"
+    },
+    {
+      "name": "GetServiceView",
+      "methodName": "toGetServiceView",
+      "description": "Grants permission to get service view",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetServiceView.html"
+    },
+    {
+      "name": "GetView",
+      "methodName": "toGetView",
+      "description": "Grants permission to retrieve information about the specified view",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetView.html"
+    },
+    {
+      "name": "ListIndexes",
+      "methodName": "toListIndexes",
+      "description": "Grants permission to list the indexes in all AWS Regions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListIndexes.html"
+    },
+    {
+      "name": "ListIndexesForMembers",
+      "methodName": "toListIndexesForMembers",
+      "description": "Grants permission to list the organization member account's indexes in all AWS Regions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListIndexesForMembers.html"
+    },
+    {
+      "name": "ListManagedViews",
+      "methodName": "toListManagedViews",
+      "description": "Grants permission to list managed views",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListManagedViews.html"
+    },
+    {
+      "name": "ListServiceIndexes",
+      "methodName": "toListServiceIndexes",
+      "description": "Grants permission to list service indexes in all AWS Regions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListServiceIndexes.html"
+    },
+    {
+      "name": "ListServiceViews",
+      "methodName": "toListServiceViews",
+      "description": "Grants permission to list service views in all AWS Regions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListServiceViews.html"
+    },
+    {
+      "name": "ListStreamingAccessForServices",
+      "methodName": "toListStreamingAccessForServices",
+      "description": "Grants permission to list streaming access for services",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListStreamingAccessForServices.html"
+    },
+    {
+      "name": "ListSupportedResourceTypes",
+      "methodName": "toListSupportedResourceTypes",
+      "description": "Grants permission to retrieve a list of all resource types currently supported by Resource Explorer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListSupportedResourceTypes.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags that are attached to the specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListViews",
+      "methodName": "toListViews",
+      "description": "Grants permission to list the Amazon resource names (ARNs) of all of the views available in the AWS Region in which you call this operation",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListViews.html"
+    },
+    {
+      "name": "Search",
+      "methodName": "toSearch",
+      "description": "Grants permission to search for resources and display details about all resources that match the specified criteria",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_Search.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add one or more tag key and value pairs to the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove one or more tag key and value pairs from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateIndexType",
+      "methodName": "toUpdateIndexType",
+      "description": "Grants permission to change the type of the index from LOCAL to AGGREGATOR or back",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_UpdateIndexType.html"
+    },
+    {
+      "name": "UpdateView",
+      "methodName": "toUpdateView",
+      "description": "Grants permission to modify some of the details of a view",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_UpdateView.html"
+    },
+    {
+      "name": "CreateManagedView",
+      "methodName": "toCreateManagedView",
+      "description": "Grants permission to create managed view",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/userguide/API_ManagedView.html"
+    },
+    {
+      "name": "CreateStreamingAccessForService",
+      "methodName": "toCreateStreamingAccessForService",
+      "description": "Grants permission to create resource explorer streaming access",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete the specified view's resource policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-share.html"
+    },
+    {
+      "name": "DeleteStreamingAccessForService",
+      "methodName": "toDeleteStreamingAccessForService",
+      "description": "Grants permission to delete resource explorer streaming access",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to retrieve information about the specified view's resource policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-share.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to update the specified view's resource policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-share.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "index",
+      "methodName": "onIndex",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_Index.html",
+      "arn": "arn:${Partition}:resource-explorer-2:${Region}:${Account}:index/${IndexUuid}",
+      "placeholders": [
+        {
+          "placeholder": "IndexUuid",
+          "name": "indexUuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "managed-view",
+      "methodName": "onManagedView",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/userguide/API_ManagedView.html",
+      "arn": "arn:${Partition}:resource-explorer-2:${Region}:${Account}:managed-view/${ManagedViewName}/${ManagedViewUuid}",
+      "placeholders": [
+        {
+          "placeholder": "ManagedViewName",
+          "name": "managedViewName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ManagedViewUuid",
+          "name": "managedViewUuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "view",
+      "methodName": "onView",
+      "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_View.html",
+      "arn": "arn:${Partition}:resource-explorer-2:${Region}:${Account}:view/${ViewName}/${ViewUuid}",
+      "placeholders": [
+        {
+          "placeholder": "ViewName",
+          "name": "viewName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ViewUuid",
+          "name": "viewUuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateIndex",
+        "toCreateView",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag keyss attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toDeleteIndex",
+        "toDeleteView",
+        "toGetView",
+        "toListTagsForResource",
+        "toSearch",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateIndexType",
+        "toUpdateView",
+        "toDeleteResourcePolicy",
+        "toGetResourcePolicy",
+        "toPutResourcePolicy"
+      ],
+      "relatedResourceTypes": [
+        "index",
+        "view"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateIndex",
+        "toCreateView",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "resource-explorer-2:Operation",
+      "methodName": "ifOperation",
+      "description": "Filters access by the actual operation that is being invoked, available values: Search, ListResources",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceexplorer.html",
+      "relatedActionMethods": [
+        "toSearch"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Operation",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

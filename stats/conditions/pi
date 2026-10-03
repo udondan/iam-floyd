@@ -1,4 +1,0 @@
-pi:Dimensions
-pi:RequestTag/${TagKey}
-pi:ResourceTag/${TagKey}
-pi:TagKeys

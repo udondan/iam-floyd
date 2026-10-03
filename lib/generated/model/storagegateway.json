@@ -1,0 +1,1283 @@
+{
+  "schemaVersion": 1,
+  "filename": "storagegateway",
+  "className": "Storagegateway",
+  "name": "storagegateway",
+  "servicePrefix": "storagegateway",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_storagegateway.html",
+  "accessLevelList": {
+    "Write": [
+      "ActivateGateway",
+      "AddCache",
+      "AddTagsToResource",
+      "AddUploadBuffer",
+      "AddWorkingStorage",
+      "AssignTapePool",
+      "AssociateFileSystem",
+      "AttachVolume",
+      "BypassGovernanceRetention",
+      "CancelArchival",
+      "CancelCacheReport",
+      "CancelRetrieval",
+      "CreateCachediSCSIVolume",
+      "CreateNFSFileShare",
+      "CreateSMBFileShare",
+      "CreateSnapshot",
+      "CreateSnapshotFromVolumeRecoveryPoint",
+      "CreateStorediSCSIVolume",
+      "CreateTapePool",
+      "CreateTapeWithBarcode",
+      "CreateTapes",
+      "DeleteAutomaticTapeCreationPolicy",
+      "DeleteBandwidthRateLimit",
+      "DeleteCacheReport",
+      "DeleteChapCredentials",
+      "DeleteFileShare",
+      "DeleteGateway",
+      "DeleteSnapshotSchedule",
+      "DeleteTape",
+      "DeleteTapeArchive",
+      "DeleteTapePool",
+      "DeleteVolume",
+      "DetachVolume",
+      "DisableGateway",
+      "DisassociateFileSystem",
+      "EvictFilesFailingUpload",
+      "JoinDomain",
+      "NotifyWhenUploaded",
+      "RefreshCache",
+      "RemoveTagsFromResource",
+      "ResetCache",
+      "RetrieveTapeArchive",
+      "RetrieveTapeRecoveryPoint",
+      "SetLocalConsolePassword",
+      "SetSMBGuestPassword",
+      "ShutdownGateway",
+      "StartAvailabilityMonitorTest",
+      "StartCacheReport",
+      "StartGateway",
+      "UpdateAutomaticTapeCreationPolicy",
+      "UpdateBandwidthRateLimit",
+      "UpdateBandwidthRateLimitSchedule",
+      "UpdateChapCredentials",
+      "UpdateFileSystemAssociation",
+      "UpdateGatewayInformation",
+      "UpdateGatewaySoftwareNow",
+      "UpdateMaintenanceStartTime",
+      "UpdateNFSFileShare",
+      "UpdateSMBFileShare",
+      "UpdateSMBFileShareVisibility",
+      "UpdateSMBLocalGroups",
+      "UpdateSMBSecurityStrategy",
+      "UpdateSnapshotSchedule",
+      "UpdateVTLDeviceType"
+    ],
+    "Tagging": [
+      "AddTagsToResource",
+      "RemoveTagsFromResource"
+    ],
+    "Read": [
+      "DescribeAvailabilityMonitorTest",
+      "DescribeBandwidthRateLimit",
+      "DescribeBandwidthRateLimitSchedule",
+      "DescribeCache",
+      "DescribeCacheReport",
+      "DescribeCachediSCSIVolumes",
+      "DescribeChapCredentials",
+      "DescribeFileSystemAssociations",
+      "DescribeGatewayInformation",
+      "DescribeMaintenanceStartTime",
+      "DescribeNFSFileShares",
+      "DescribeSMBFileShares",
+      "DescribeSMBSettings",
+      "DescribeSnapshotSchedule",
+      "DescribeStorediSCSIVolumes",
+      "DescribeTapeArchives",
+      "DescribeTapeRecoveryPoints",
+      "DescribeTapes",
+      "DescribeUploadBuffer",
+      "DescribeVTLDevices",
+      "DescribeWorkingStorage"
+    ],
+    "List": [
+      "ListAutomaticTapeCreationPolicies",
+      "ListCacheReports",
+      "ListFileShares",
+      "ListFileSystemAssociations",
+      "ListGateways",
+      "ListLocalDisks",
+      "ListTagsForResource",
+      "ListTapePools",
+      "ListTapes",
+      "ListVolumeInitiators",
+      "ListVolumeRecoveryPoints",
+      "ListVolumes"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ActivateGateway",
+      "methodName": "toActivateGateway",
+      "description": "Grants permission to activate the gateway you previously deployed on your host",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ActivateGateway.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "AddCache",
+      "methodName": "toAddCache",
+      "description": "Grants permission to configure one or more gateway local disks as cache for a cached-volume gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddCache.html"
+    },
+    {
+      "name": "AddTagsToResource",
+      "methodName": "toAddTagsToResource",
+      "description": "Grants permission to add one or more tags to the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddTagsToResource.html"
+    },
+    {
+      "name": "AddUploadBuffer",
+      "methodName": "toAddUploadBuffer",
+      "description": "Grants permission to configure one or more gateway local disks as upload buffer for a specified gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddUploadBuffer.html"
+    },
+    {
+      "name": "AddWorkingStorage",
+      "methodName": "toAddWorkingStorage",
+      "description": "Grants permission to configure one or more gateway local disks as working storage for a gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddWorkingStorage.html"
+    },
+    {
+      "name": "AssignTapePool",
+      "methodName": "toAssignTapePool",
+      "description": "Grants permission to move a tape to the target pool specified",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AssignTapePool.html"
+    },
+    {
+      "name": "AssociateFileSystem",
+      "methodName": "toAssociateFileSystem",
+      "description": "Grants permission to associate an Amazon FSx file system with the Amazon FSx file gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AssociateFileSystem.html"
+    },
+    {
+      "name": "AttachVolume",
+      "methodName": "toAttachVolume",
+      "description": "Grants permission to connect a volume to an iSCSI connection and then attaches the volume to the specified gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AttachVolume.html"
+    },
+    {
+      "name": "BypassGovernanceRetention",
+      "methodName": "toBypassGovernanceRetention",
+      "description": "Grants permission to allow the governance retention lock on a pool to be bypassed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/CreatingCustomTapePool.html#TapeRetentionLock"
+    },
+    {
+      "name": "CancelArchival",
+      "methodName": "toCancelArchival",
+      "description": "Grants permission to cancel archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving process is initiated",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CancelArchival.html"
+    },
+    {
+      "name": "CancelCacheReport",
+      "methodName": "toCancelCacheReport",
+      "description": "Grants permission to cancel a cache report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CancelCacheReport.html"
+    },
+    {
+      "name": "CancelRetrieval",
+      "methodName": "toCancelRetrieval",
+      "description": "Grants permission to cancel retrieval of a virtual tape from the virtual tape shelf (VTS) to a gateway after the retrieval process is initiated",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CancelRetrieval.html"
+    },
+    {
+      "name": "CreateCachediSCSIVolume",
+      "methodName": "toCreateCachediSCSIVolume",
+      "description": "Grants permission to create a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached volume architecture",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateCachediSCSIVolume.html"
+    },
+    {
+      "name": "CreateNFSFileShare",
+      "methodName": "toCreateNFSFileShare",
+      "description": "Grants permission to create a NFS file share on an existing file gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateNFSFileShare.html"
+    },
+    {
+      "name": "CreateSMBFileShare",
+      "methodName": "toCreateSMBFileShare",
+      "description": "Grants permission to create a SMB file share on an existing file gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSMBFileShare.html"
+    },
+    {
+      "name": "CreateSnapshot",
+      "methodName": "toCreateSnapshot",
+      "description": "Grants permission to initiate a snapshot of a volume",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSnapshot.html"
+    },
+    {
+      "name": "CreateSnapshotFromVolumeRecoveryPoint",
+      "methodName": "toCreateSnapshotFromVolumeRecoveryPoint",
+      "description": "Grants permission to initiate a snapshot of a gateway from a volume recovery point",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSnapshotFromVolumeRecoveryPoint.html"
+    },
+    {
+      "name": "CreateStorediSCSIVolume",
+      "methodName": "toCreateStorediSCSIVolume",
+      "description": "Grants permission to create a volume on a specified gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateStorediSCSIVolume.html"
+    },
+    {
+      "name": "CreateTapePool",
+      "methodName": "toCreateTapePool",
+      "description": "Grants permission to create a tape pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateTapePool.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateTapeWithBarcode",
+      "methodName": "toCreateTapeWithBarcode",
+      "description": "Grants permission to create a virtual tape by using your own barcode",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateTapeWithBarcode.html"
+    },
+    {
+      "name": "CreateTapes",
+      "methodName": "toCreateTapes",
+      "description": "Grants permission to create one or more virtual tapes. You write data to the virtual tapes and then archive the tapes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateTapes.html"
+    },
+    {
+      "name": "DeleteAutomaticTapeCreationPolicy",
+      "methodName": "toDeleteAutomaticTapeCreationPolicy",
+      "description": "Grants permission to delete the automatic tape creation policy configured on a gateway-VTL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteAutomaticTapeCreationPolicy.html"
+    },
+    {
+      "name": "DeleteBandwidthRateLimit",
+      "methodName": "toDeleteBandwidthRateLimit",
+      "description": "Grants permission to delete the bandwidth rate limits of a gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteBandwidthRateLimit.html"
+    },
+    {
+      "name": "DeleteCacheReport",
+      "methodName": "toDeleteCacheReport",
+      "description": "Grants permission to delete the metadata associated with a cache report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteCacheReport.html"
+    },
+    {
+      "name": "DeleteChapCredentials",
+      "methodName": "toDeleteChapCredentials",
+      "description": "Grants permission to delete Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target and initiator pair",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteChapCredentials.html"
+    },
+    {
+      "name": "DeleteFileShare",
+      "methodName": "toDeleteFileShare",
+      "description": "Grants permission to delete a file share from a file gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteFileShare.html"
+    },
+    {
+      "name": "DeleteGateway",
+      "methodName": "toDeleteGateway",
+      "description": "Grants permission to delete a gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteGateway.html"
+    },
+    {
+      "name": "DeleteSnapshotSchedule",
+      "methodName": "toDeleteSnapshotSchedule",
+      "description": "Grants permission to delete a snapshot of a volume",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteSnapshotSchedule.html"
+    },
+    {
+      "name": "DeleteTape",
+      "methodName": "toDeleteTape",
+      "description": "Grants permission to delete the specified virtual tape",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteTape.html"
+    },
+    {
+      "name": "DeleteTapeArchive",
+      "methodName": "toDeleteTapeArchive",
+      "description": "Grants permission to delete the specified virtual tape from the virtual tape shelf (VTS)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteTapeArchive.html"
+    },
+    {
+      "name": "DeleteTapePool",
+      "methodName": "toDeleteTapePool",
+      "description": "Grants permission to delete the specified tape pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteTapePool.html"
+    },
+    {
+      "name": "DeleteVolume",
+      "methodName": "toDeleteVolume",
+      "description": "Grants permission to delete the specified gateway volume that you previously created using the CreateCachediSCSIVolume or CreateStorediSCSIVolume API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteVolume.html"
+    },
+    {
+      "name": "DescribeAvailabilityMonitorTest",
+      "methodName": "toDescribeAvailabilityMonitorTest",
+      "description": "Grants permission to get the information about the most recent high availability monitoring test that was performed on the gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeAvailabilityMonitorTest.html"
+    },
+    {
+      "name": "DescribeBandwidthRateLimit",
+      "methodName": "toDescribeBandwidthRateLimit",
+      "description": "Grants permission to get the bandwidth rate limits of a gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeBandwidthRateLimit.html"
+    },
+    {
+      "name": "DescribeBandwidthRateLimitSchedule",
+      "methodName": "toDescribeBandwidthRateLimitSchedule",
+      "description": "Grants permission to get the bandwidth rate limit schedule of a gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeBandwidthRateLimitSchedule.html"
+    },
+    {
+      "name": "DescribeCache",
+      "methodName": "toDescribeCache",
+      "description": "Grants permission to get information about the cache of a gateway. This operation is supported only for the gateway-cached volume architecture",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeCache.html"
+    },
+    {
+      "name": "DescribeCacheReport",
+      "methodName": "toDescribeCacheReport",
+      "description": "Grants permission to get a description of a cache report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeCacheReport.html"
+    },
+    {
+      "name": "DescribeCachediSCSIVolumes",
+      "methodName": "toDescribeCachediSCSIVolumes",
+      "description": "Grants permission to get a description of the gateway volumes specified in the request. This operation is supported only for the gateway-cached volume architecture",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeCachediSCSIVolumes.html"
+    },
+    {
+      "name": "DescribeChapCredentials",
+      "methodName": "toDescribeChapCredentials",
+      "description": "Grants permission to get an array of Challenge-Handshake Authentication Protocol (CHAP) credentials information for a specified iSCSI target, one for each target-initiator pair",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeChapCredentials.html"
+    },
+    {
+      "name": "DescribeFileSystemAssociations",
+      "methodName": "toDescribeFileSystemAssociations",
+      "description": "Grants permission to get a description for one or more file system associations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeFileSystemAssociations.html"
+    },
+    {
+      "name": "DescribeGatewayInformation",
+      "methodName": "toDescribeGatewayInformation",
+      "description": "Grants permission to get metadata about a gateway such as its name, network interfaces, configured time zone, and the state (whether the gateway is running or not)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeGatewayInformation.html"
+    },
+    {
+      "name": "DescribeMaintenanceStartTime",
+      "methodName": "toDescribeMaintenanceStartTime",
+      "description": "Grants permission to get your gateway's weekly maintenance start time including the day and time of the week",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeMaintenanceStartTime.html"
+    },
+    {
+      "name": "DescribeNFSFileShares",
+      "methodName": "toDescribeNFSFileShares",
+      "description": "Grants permission to get a description for one or more file shares from a file gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeNFSFileShares.html"
+    },
+    {
+      "name": "DescribeSMBFileShares",
+      "methodName": "toDescribeSMBFileShares",
+      "description": "Grants permission to get a description for one or more file shares from a file gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeSMBFileShares.html"
+    },
+    {
+      "name": "DescribeSMBSettings",
+      "methodName": "toDescribeSMBSettings",
+      "description": "Grants permission to get a description of a Server Message Block (SMB) file share settings from a file gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeSMBSettings.html"
+    },
+    {
+      "name": "DescribeSnapshotSchedule",
+      "methodName": "toDescribeSnapshotSchedule",
+      "description": "Grants permission to describe the snapshot schedule for the specified gateway volume",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeSnapshotSchedule.html"
+    },
+    {
+      "name": "DescribeStorediSCSIVolumes",
+      "methodName": "toDescribeStorediSCSIVolumes",
+      "description": "Grants permission to get the description of the gateway volumes specified in the request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeStorediSCSIVolumes.html"
+    },
+    {
+      "name": "DescribeTapeArchives",
+      "methodName": "toDescribeTapeArchives",
+      "description": "Grants permission to get a description of specified virtual tapes in the virtual tape shelf (VTS)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeTapeArchives.html"
+    },
+    {
+      "name": "DescribeTapeRecoveryPoints",
+      "methodName": "toDescribeTapeRecoveryPoints",
+      "description": "Grants permission to get a list of virtual tape recovery points that are available for the specified gateway-VTL",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeTapeRecoveryPoints.html"
+    },
+    {
+      "name": "DescribeTapes",
+      "methodName": "toDescribeTapes",
+      "description": "Grants permission to get a description of the specified Amazon Resource Name (ARN) of virtual tapes",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeTapes.html"
+    },
+    {
+      "name": "DescribeUploadBuffer",
+      "methodName": "toDescribeUploadBuffer",
+      "description": "Grants permission to get information about the upload buffer of a gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeUploadBuffer.html"
+    },
+    {
+      "name": "DescribeVTLDevices",
+      "methodName": "toDescribeVTLDevices",
+      "description": "Grants permission to get a description of virtual tape library (VTL) devices for the specified gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeVTLDevices.html"
+    },
+    {
+      "name": "DescribeWorkingStorage",
+      "methodName": "toDescribeWorkingStorage",
+      "description": "Grants permission to get information about the working storage of a gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeWorkingStorage.html"
+    },
+    {
+      "name": "DetachVolume",
+      "methodName": "toDetachVolume",
+      "description": "Grants permission to disconnect a volume from an iSCSI connection and then detaches the volume from the specified gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DetachVolume.html"
+    },
+    {
+      "name": "DisableGateway",
+      "methodName": "toDisableGateway",
+      "description": "Grants permission to disable a gateway when the gateway is no longer functioning",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DisableGateway.html"
+    },
+    {
+      "name": "DisassociateFileSystem",
+      "methodName": "toDisassociateFileSystem",
+      "description": "Grants permission to disassociate an Amazon FSx file system from an Amazon FSx file gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DisassociateFileSystem.html"
+    },
+    {
+      "name": "EvictFilesFailingUpload",
+      "methodName": "toEvictFilesFailingUpload",
+      "description": "Grants permission to clean a share's cache of file entries that are failing upload to Amazon S3",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_EvictFilesFailingUpload.html"
+    },
+    {
+      "name": "JoinDomain",
+      "methodName": "toJoinDomain",
+      "description": "Grants permission to enable you to join an Active Directory Domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_JoinDomain.html"
+    },
+    {
+      "name": "ListAutomaticTapeCreationPolicies",
+      "methodName": "toListAutomaticTapeCreationPolicies",
+      "description": "Grants permission to list the automatic tape creation policies configured on the specified gateway-VTL or all gateway-VTLs owned by your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListAutomaticTapeCreationPolicies.html"
+    },
+    {
+      "name": "ListCacheReports",
+      "methodName": "toListCacheReports",
+      "description": "Grants permission to get a list of the cache reports owned by your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListCacheReports.html"
+    },
+    {
+      "name": "ListFileShares",
+      "methodName": "toListFileShares",
+      "description": "Grants permission to get a list of the file shares for a specific file gateway, or the list of file shares owned by your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListFileShares.html"
+    },
+    {
+      "name": "ListFileSystemAssociations",
+      "methodName": "toListFileSystemAssociations",
+      "description": "Grants permission to get a list of the file system associations for the specified gateway",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListFileSystemAssociations.html"
+    },
+    {
+      "name": "ListGateways",
+      "methodName": "toListGateways",
+      "description": "Grants permission to list gateways owned by an AWS account in a region specified in the request. The returned list is ordered by gateway Amazon Resource Name (ARN)",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListGateways.html"
+    },
+    {
+      "name": "ListLocalDisks",
+      "methodName": "toListLocalDisks",
+      "description": "Grants permission to get a list of the gateway's local disks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListLocalDisks.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to get the tags that have been added to the specified resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTapePools",
+      "methodName": "toListTapePools",
+      "description": "Grants permission to list tape pools owned by your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListTapePools.html"
+    },
+    {
+      "name": "ListTapes",
+      "methodName": "toListTapes",
+      "description": "Grants permission to list virtual tapes in your virtual tape library (VTL) and your virtual tape shelf (VTS)",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListTapes.html"
+    },
+    {
+      "name": "ListVolumeInitiators",
+      "methodName": "toListVolumeInitiators",
+      "description": "Grants permission to list iSCSI initiators that are connected to a volume",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListVolumeInitiators.html"
+    },
+    {
+      "name": "ListVolumeRecoveryPoints",
+      "methodName": "toListVolumeRecoveryPoints",
+      "description": "Grants permission to list the recovery points for a specified gateway",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListVolumeRecoveryPoints.html"
+    },
+    {
+      "name": "ListVolumes",
+      "methodName": "toListVolumes",
+      "description": "Grants permission to list the iSCSI stored volumes of a gateway",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListVolumes.html"
+    },
+    {
+      "name": "NotifyWhenUploaded",
+      "methodName": "toNotifyWhenUploaded",
+      "description": "Grants permission to send you a notification through CloudWatch Events when all files written to your NFS file share have been uploaded to Amazon S3",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_NotifyWhenUploaded.html"
+    },
+    {
+      "name": "RefreshCache",
+      "methodName": "toRefreshCache",
+      "description": "Grants permission to refresh the cache for the specified file share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_RefreshCache.html"
+    },
+    {
+      "name": "RemoveTagsFromResource",
+      "methodName": "toRemoveTagsFromResource",
+      "description": "Grants permission to remove one or more tags from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_RemoveTagsFromResource.html"
+    },
+    {
+      "name": "ResetCache",
+      "methodName": "toResetCache",
+      "description": "Grants permission to reset all cache disks that have encountered a error and makes the disks available for reconfiguration as cache storage",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ResetCache.html"
+    },
+    {
+      "name": "RetrieveTapeArchive",
+      "methodName": "toRetrieveTapeArchive",
+      "description": "Grants permission to retrieve an archived virtual tape from the virtual tape shelf (VTS) to a gateway-VTL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_RetrieveTapeArchive.html"
+    },
+    {
+      "name": "RetrieveTapeRecoveryPoint",
+      "methodName": "toRetrieveTapeRecoveryPoint",
+      "description": "Grants permission to retrieve the recovery point for the specified virtual tape",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_RetrieveTapeRecoveryPoint.html"
+    },
+    {
+      "name": "SetLocalConsolePassword",
+      "methodName": "toSetLocalConsolePassword",
+      "description": "Grants permission to set the password for your VM local console",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_SetLocalConsolePassword.html"
+    },
+    {
+      "name": "SetSMBGuestPassword",
+      "methodName": "toSetSMBGuestPassword",
+      "description": "Grants permission to set the password for SMB Guest user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_SetSMBGuestPassword.html"
+    },
+    {
+      "name": "ShutdownGateway",
+      "methodName": "toShutdownGateway",
+      "description": "Grants permission to shut down a gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ShutdownGateway.html"
+    },
+    {
+      "name": "StartAvailabilityMonitorTest",
+      "methodName": "toStartAvailabilityMonitorTest",
+      "description": "Grants permission to start a test that verifies that the specified gateway is configured for High Availability monitoring in your host environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_StartAvailabilityMonitorTest.html"
+    },
+    {
+      "name": "StartCacheReport",
+      "methodName": "toStartCacheReport",
+      "description": "Grants permission to start a cache report for an existing file share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_StartCacheReport.html"
+    },
+    {
+      "name": "StartGateway",
+      "methodName": "toStartGateway",
+      "description": "Grants permission to start a gateway that you previously shut down",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_StartGateway.html"
+    },
+    {
+      "name": "UpdateAutomaticTapeCreationPolicy",
+      "methodName": "toUpdateAutomaticTapeCreationPolicy",
+      "description": "Grants permission to update the automatic tape creation policy configured on a gateway-VTL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateAutomaticTapeCreationPolicy.html"
+    },
+    {
+      "name": "UpdateBandwidthRateLimit",
+      "methodName": "toUpdateBandwidthRateLimit",
+      "description": "Grants permission to update the bandwidth rate limits of a gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateBandwidthRateLimit.html"
+    },
+    {
+      "name": "UpdateBandwidthRateLimitSchedule",
+      "methodName": "toUpdateBandwidthRateLimitSchedule",
+      "description": "Grants permission to update the bandwidth rate limit schedule of a gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateBandwidthRateLimitSchedule.html"
+    },
+    {
+      "name": "UpdateChapCredentials",
+      "methodName": "toUpdateChapCredentials",
+      "description": "Grants permission to update the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateChapCredentials.html"
+    },
+    {
+      "name": "UpdateFileSystemAssociation",
+      "methodName": "toUpdateFileSystemAssociation",
+      "description": "Grants permission to update a file system association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateFileSystemAssociation.html"
+    },
+    {
+      "name": "UpdateGatewayInformation",
+      "methodName": "toUpdateGatewayInformation",
+      "description": "Grants permission to update a gateway's metadata, which includes the gateway's name and time zone",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateGatewayInformation.html"
+    },
+    {
+      "name": "UpdateGatewaySoftwareNow",
+      "methodName": "toUpdateGatewaySoftwareNow",
+      "description": "Grants permission to update the gateway virtual machine (VM) software",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateGatewaySoftwareNow.html"
+    },
+    {
+      "name": "UpdateMaintenanceStartTime",
+      "methodName": "toUpdateMaintenanceStartTime",
+      "description": "Grants permission to update a gateway's weekly maintenance start time information, including day and time of the week. The maintenance time is the time in your gateway's time zone",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateMaintenanceStartTime.html"
+    },
+    {
+      "name": "UpdateNFSFileShare",
+      "methodName": "toUpdateNFSFileShare",
+      "description": "Grants permission to update a NFS file share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateNFSFileShare.html"
+    },
+    {
+      "name": "UpdateSMBFileShare",
+      "methodName": "toUpdateSMBFileShare",
+      "description": "Grants permission to update a SMB file share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateSMBFileShare.html"
+    },
+    {
+      "name": "UpdateSMBFileShareVisibility",
+      "methodName": "toUpdateSMBFileShareVisibility",
+      "description": "Grants permission to update whether the shares on a gateway are visible in a net view or browse list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateSMBFileShareVisibility.html"
+    },
+    {
+      "name": "UpdateSMBLocalGroups",
+      "methodName": "toUpdateSMBLocalGroups",
+      "description": "Grants permission to update the list of Active Directory users and groups that have special permissions for SMB file shares on the gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateSMBLocalGroups.html"
+    },
+    {
+      "name": "UpdateSMBSecurityStrategy",
+      "methodName": "toUpdateSMBSecurityStrategy",
+      "description": "Grants permission to update the SMB security strategy on a file gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateSMBSecurityStrategy.html"
+    },
+    {
+      "name": "UpdateSnapshotSchedule",
+      "methodName": "toUpdateSnapshotSchedule",
+      "description": "Grants permission to update a snapshot schedule configured for a gateway volume",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateSnapshotSchedule.html"
+    },
+    {
+      "name": "UpdateVTLDeviceType",
+      "methodName": "toUpdateVTLDeviceType",
+      "description": "Grants permission to update the type of medium changer in a gateway-VTL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateVTLDeviceType.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "cache-report",
+      "methodName": "onCacheReport",
+      "url": "https://docs.aws.amazon.com/filegateway/latest/files3/cache-report.html",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:share/${ShareId}/cache-report/${CacheReportId}",
+      "placeholders": [
+        {
+          "placeholder": "ShareId",
+          "name": "shareId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CacheReportId",
+          "name": "cacheReportId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "device",
+      "methodName": "onDevice",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/resource_vtl-devices.html",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/device/${Vtldevice}",
+      "placeholders": [
+        {
+          "placeholder": "GatewayId",
+          "name": "gatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Vtldevice",
+          "name": "vtldevice",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "fs-association",
+      "methodName": "onFsAssociation",
+      "url": "https://docs.aws.amazon.com/filegateway/latest/filefsxw/attach-fsxw-filesystem.html",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:fs-association/${FsaId}",
+      "placeholders": [
+        {
+          "placeholder": "FsaId",
+          "name": "fsaId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "gateway",
+      "methodName": "onGateway",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}",
+      "placeholders": [
+        {
+          "placeholder": "GatewayId",
+          "name": "gatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "share",
+      "methodName": "onShare",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateFileShare.html",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:share/${ShareId}",
+      "placeholders": [
+        {
+          "placeholder": "ShareId",
+          "name": "shareId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "tape",
+      "methodName": "onTape",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#storage-gateway-vtl-concepts",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:tape/${TapeBarcode}",
+      "placeholders": [
+        {
+          "placeholder": "TapeBarcode",
+          "name": "tapeBarcode",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "tapepool",
+      "methodName": "onTapepool",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/CreatingCustomTapePool.html",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:tapepool/${PoolId}",
+      "placeholders": [
+        {
+          "placeholder": "PoolId",
+          "name": "poolId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "target",
+      "methodName": "onTarget",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateVolumes.html",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/target/${IscsiTarget}",
+      "placeholders": [
+        {
+          "placeholder": "GatewayId",
+          "name": "gatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IscsiTarget",
+          "name": "iscsiTarget",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "volume",
+      "methodName": "onVolume",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#volume-gateway-concepts",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/volume/${VolumeId}",
+      "placeholders": [
+        {
+          "placeholder": "GatewayId",
+          "name": "gatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VolumeId",
+          "name": "volumeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toActivateGateway",
+        "toAddTagsToResource",
+        "toAssociateFileSystem",
+        "toCreateCachediSCSIVolume",
+        "toCreateNFSFileShare",
+        "toCreateSMBFileShare",
+        "toCreateSnapshot",
+        "toCreateSnapshotFromVolumeRecoveryPoint",
+        "toCreateStorediSCSIVolume",
+        "toCreateTapePool",
+        "toCreateTapeWithBarcode",
+        "toCreateTapes",
+        "toStartCacheReport",
+        "toUpdateSnapshotSchedule"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag-value associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddCache",
+        "toAddTagsToResource",
+        "toAddUploadBuffer",
+        "toAddWorkingStorage",
+        "toAssignTapePool",
+        "toAssociateFileSystem",
+        "toAttachVolume",
+        "toBypassGovernanceRetention",
+        "toCancelArchival",
+        "toCancelCacheReport",
+        "toCancelRetrieval",
+        "toCreateCachediSCSIVolume",
+        "toCreateNFSFileShare",
+        "toCreateSMBFileShare",
+        "toCreateSnapshot",
+        "toCreateSnapshotFromVolumeRecoveryPoint",
+        "toCreateStorediSCSIVolume",
+        "toCreateTapeWithBarcode",
+        "toCreateTapes",
+        "toDeleteAutomaticTapeCreationPolicy",
+        "toDeleteBandwidthRateLimit",
+        "toDeleteCacheReport",
+        "toDeleteChapCredentials",
+        "toDeleteFileShare",
+        "toDeleteGateway",
+        "toDeleteSnapshotSchedule",
+        "toDeleteTape",
+        "toDeleteTapePool",
+        "toDeleteVolume",
+        "toDescribeAvailabilityMonitorTest",
+        "toDescribeBandwidthRateLimit",
+        "toDescribeBandwidthRateLimitSchedule",
+        "toDescribeCache",
+        "toDescribeCacheReport",
+        "toDescribeCachediSCSIVolumes",
+        "toDescribeChapCredentials",
+        "toDescribeFileSystemAssociations",
+        "toDescribeGatewayInformation",
+        "toDescribeMaintenanceStartTime",
+        "toDescribeNFSFileShares",
+        "toDescribeSMBFileShares",
+        "toDescribeSMBSettings",
+        "toDescribeSnapshotSchedule",
+        "toDescribeStorediSCSIVolumes",
+        "toDescribeTapeRecoveryPoints",
+        "toDescribeTapes",
+        "toDescribeUploadBuffer",
+        "toDescribeVTLDevices",
+        "toDescribeWorkingStorage",
+        "toDetachVolume",
+        "toDisableGateway",
+        "toDisassociateFileSystem",
+        "toEvictFilesFailingUpload",
+        "toJoinDomain",
+        "toListLocalDisks",
+        "toListTagsForResource",
+        "toListVolumeInitiators",
+        "toListVolumeRecoveryPoints",
+        "toNotifyWhenUploaded",
+        "toRefreshCache",
+        "toRemoveTagsFromResource",
+        "toResetCache",
+        "toRetrieveTapeArchive",
+        "toRetrieveTapeRecoveryPoint",
+        "toSetLocalConsolePassword",
+        "toSetSMBGuestPassword",
+        "toShutdownGateway",
+        "toStartAvailabilityMonitorTest",
+        "toStartCacheReport",
+        "toStartGateway",
+        "toUpdateAutomaticTapeCreationPolicy",
+        "toUpdateBandwidthRateLimit",
+        "toUpdateBandwidthRateLimitSchedule",
+        "toUpdateChapCredentials",
+        "toUpdateFileSystemAssociation",
+        "toUpdateGatewayInformation",
+        "toUpdateGatewaySoftwareNow",
+        "toUpdateMaintenanceStartTime",
+        "toUpdateNFSFileShare",
+        "toUpdateSMBFileShare",
+        "toUpdateSMBFileShareVisibility",
+        "toUpdateSMBLocalGroups",
+        "toUpdateSMBSecurityStrategy",
+        "toUpdateSnapshotSchedule",
+        "toUpdateVTLDeviceType"
+      ],
+      "relatedResourceTypes": [
+        "cache-report",
+        "device",
+        "fs-association",
+        "gateway",
+        "share",
+        "tape",
+        "tapepool",
+        "target",
+        "volume"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toActivateGateway",
+        "toAddTagsToResource",
+        "toAssociateFileSystem",
+        "toCreateCachediSCSIVolume",
+        "toCreateNFSFileShare",
+        "toCreateSMBFileShare",
+        "toCreateSnapshot",
+        "toCreateSnapshotFromVolumeRecoveryPoint",
+        "toCreateStorediSCSIVolume",
+        "toCreateTapePool",
+        "toCreateTapeWithBarcode",
+        "toCreateTapes",
+        "toRemoveTagsFromResource",
+        "toStartCacheReport",
+        "toUpdateSnapshotSchedule"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

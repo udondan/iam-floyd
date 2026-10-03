@@ -1,0 +1,536 @@
+{
+  "schemaVersion": 1,
+  "filename": "lakeformation",
+  "className": "Lakeformation",
+  "name": "lakeformation",
+  "servicePrefix": "lakeformation",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html",
+  "accessLevelList": {
+    "Tagging": [
+      "AddLFTagsToResource",
+      "RemoveLFTagsFromResource"
+    ],
+    "Write": [
+      "AddLFTagsToResource",
+      "BatchGrantPermissions",
+      "BatchRevokePermissions",
+      "CancelTransaction",
+      "CommitTransaction",
+      "CreateDataCellsFilter",
+      "CreateLFTag",
+      "CreateLFTagExpression",
+      "CreateLakeFormationIdentityCenterConfiguration",
+      "CreateLakeFormationOptIn",
+      "DeleteDataCellsFilter",
+      "DeleteLFTag",
+      "DeleteLFTagExpression",
+      "DeleteLakeFormationIdentityCenterConfiguration",
+      "DeleteLakeFormationOptIn",
+      "DeleteObjectsOnCancel",
+      "DeregisterResource",
+      "ExtendTransaction",
+      "GetDataAccess",
+      "GrantPermissions",
+      "PutDataLakeSettings",
+      "RegisterResource",
+      "RegisterResourceWithPrivilegedAccess",
+      "RemoveLFTagsFromResource",
+      "RevokePermissions",
+      "StartQueryPlanning",
+      "StartTransaction",
+      "UpdateDataCellsFilter",
+      "UpdateLFTag",
+      "UpdateLFTagExpression",
+      "UpdateLakeFormationIdentityCenterConfiguration",
+      "UpdateResource",
+      "UpdateTableObjects",
+      "UpdateTableStorageOptimizer"
+    ],
+    "Permissions management": [
+      "BatchGrantPermissions",
+      "BatchRevokePermissions",
+      "GrantPermissions",
+      "PutDataLakeSettings",
+      "RevokePermissions"
+    ],
+    "Read": [
+      "DescribeLakeFormationIdentityCenterConfiguration",
+      "DescribeResource",
+      "DescribeTransaction",
+      "GetDataCellsFilter",
+      "GetDataLakePrincipal",
+      "GetDataLakeSettings",
+      "GetEffectivePermissionsForPath",
+      "GetLFTag",
+      "GetLFTagExpression",
+      "GetQueryState",
+      "GetQueryStatistics",
+      "GetResourceLFTags",
+      "GetTableObjects",
+      "GetTemporaryGluePartitionCredentials",
+      "GetTemporaryGlueTableCredentials",
+      "GetWorkUnitResults",
+      "GetWorkUnits",
+      "ListLFTagExpressions",
+      "ListLFTags",
+      "SearchDatabasesByLFTags",
+      "SearchTablesByLFTags"
+    ],
+    "List": [
+      "ListDataCellsFilter",
+      "ListLakeFormationOptIns",
+      "ListPermissions",
+      "ListResources",
+      "ListTableStorageOptimizers",
+      "ListTransactions"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddLFTagsToResource",
+      "methodName": "toAddLFTagsToResource",
+      "description": "Grants permission to attach Lake Formation tags to catalog resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_AddLFTagsToResource.html"
+    },
+    {
+      "name": "BatchGrantPermissions",
+      "methodName": "toBatchGrantPermissions",
+      "description": "Grants permission to data lake permissions to one or more principals in a batch",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_BatchGrantPermissions.html"
+    },
+    {
+      "name": "BatchRevokePermissions",
+      "methodName": "toBatchRevokePermissions",
+      "description": "Grants permission to revoke data lake permissions from one or more principals in a batch",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_BatchRevokePermissions.html"
+    },
+    {
+      "name": "CancelTransaction",
+      "methodName": "toCancelTransaction",
+      "description": "Grants permission to cancel the given transaction",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CancelTransaction.html"
+    },
+    {
+      "name": "CommitTransaction",
+      "methodName": "toCommitTransaction",
+      "description": "Grants permission to commit the given transaction",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CommitTransaction.html"
+    },
+    {
+      "name": "CreateDataCellsFilter",
+      "methodName": "toCreateDataCellsFilter",
+      "description": "Grants permission to create a Lake Formation data cell filter",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CreateDataCellsFilter.html"
+    },
+    {
+      "name": "CreateLFTag",
+      "methodName": "toCreateLFTag",
+      "description": "Grants permission to create a Lake Formation tag",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CreateLFTag.html"
+    },
+    {
+      "name": "CreateLFTagExpression",
+      "methodName": "toCreateLFTagExpression",
+      "description": "Grants permission to create a Lake Formation tag expression",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CreateLFTagExpression.html"
+    },
+    {
+      "name": "CreateLakeFormationIdentityCenterConfiguration",
+      "methodName": "toCreateLakeFormationIdentityCenterConfiguration",
+      "description": "Grants permission to create an IAM Identity Center connection with Lake Formation to allow IAM Identity Center users and groups to access Data Catalog resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CreateLakeFormationIdentityCenterConfiguration.html"
+    },
+    {
+      "name": "CreateLakeFormationOptIn",
+      "methodName": "toCreateLakeFormationOptIn",
+      "description": "Grants permission to enforce Lake Formation permissions for the given databases, tables, and principals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CreateLakeFormationOptIn.html"
+    },
+    {
+      "name": "DeleteDataCellsFilter",
+      "methodName": "toDeleteDataCellsFilter",
+      "description": "Grants permission to delete a Lake Formation data cell filter",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeleteDataCellsFilter.html"
+    },
+    {
+      "name": "DeleteLFTag",
+      "methodName": "toDeleteLFTag",
+      "description": "Grants permission to delete a Lake Formation tag",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeleteLFTag.html"
+    },
+    {
+      "name": "DeleteLFTagExpression",
+      "methodName": "toDeleteLFTagExpression",
+      "description": "Grants permission to delete a Lake Formation expression",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeleteLFTagExpression.html"
+    },
+    {
+      "name": "DeleteLakeFormationIdentityCenterConfiguration",
+      "methodName": "toDeleteLakeFormationIdentityCenterConfiguration",
+      "description": "Grants permission to delete an IAM Identity Center connection with Lake Formation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeleteLakeFormationIdentityCenterConfiguration.html"
+    },
+    {
+      "name": "DeleteLakeFormationOptIn",
+      "methodName": "toDeleteLakeFormationOptIn",
+      "description": "Grants permission to remove the Lake Formation permissions enforcement of the given databases, tables, and principals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeleteLakeFormationOptIn.html"
+    },
+    {
+      "name": "DeleteObjectsOnCancel",
+      "methodName": "toDeleteObjectsOnCancel",
+      "description": "Grants permission to delete the specified objects if the transaction is canceled",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeleteObjectsOnCancel.html"
+    },
+    {
+      "name": "DeregisterResource",
+      "methodName": "toDeregisterResource",
+      "description": "Grants permission to deregister a registered location",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeregisterResource.html"
+    },
+    {
+      "name": "DescribeLakeFormationIdentityCenterConfiguration",
+      "methodName": "toDescribeLakeFormationIdentityCenterConfiguration",
+      "description": "Grants permission to describe the IAM Identity Center connection with Lake Formation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DescribeLakeFormationIdentityCenterConfiguration.html"
+    },
+    {
+      "name": "DescribeResource",
+      "methodName": "toDescribeResource",
+      "description": "Grants permission to describe a registered location",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DescribeResource.html"
+    },
+    {
+      "name": "DescribeTransaction",
+      "methodName": "toDescribeTransaction",
+      "description": "Grants permission to get status of the given transaction",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DescribeTransaction.html"
+    },
+    {
+      "name": "ExtendTransaction",
+      "methodName": "toExtendTransaction",
+      "description": "Grants permission to extend the timeout of the given transaction",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ExtendTransaction.html"
+    },
+    {
+      "name": "GetDataAccess",
+      "methodName": "toGetDataAccess",
+      "description": "Grants permission to virtual data lake access",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/access-control-underlying-data.html",
+      "conditionMethods": [
+        "ifEnabledOnlyForMetaDataAccess"
+      ]
+    },
+    {
+      "name": "GetDataCellsFilter",
+      "methodName": "toGetDataCellsFilter",
+      "description": "Grants permission to retrieve a Lake Formation data cell filter",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetDataCellsFilter.html"
+    },
+    {
+      "name": "GetDataLakePrincipal",
+      "methodName": "toGetDataLakePrincipal",
+      "description": "Grants permission to retrieve the identity of the invoking principal",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetDataLakePrincipal.html"
+    },
+    {
+      "name": "GetDataLakeSettings",
+      "methodName": "toGetDataLakeSettings",
+      "description": "Grants permission to retrieve data lake settings such as the list of data lake administrators and database and table default permissions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetDataLakeSettings.html"
+    },
+    {
+      "name": "GetEffectivePermissionsForPath",
+      "methodName": "toGetEffectivePermissionsForPath",
+      "description": "Grants permission to retrieve permissions attached to resources in the given path",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetEffectivePermissionsForPath.html"
+    },
+    {
+      "name": "GetLFTag",
+      "methodName": "toGetLFTag",
+      "description": "Grants permission to retrieve a Lake Formation tag",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetLFTag.html"
+    },
+    {
+      "name": "GetLFTagExpression",
+      "methodName": "toGetLFTagExpression",
+      "description": "Grants permission to retrieve a Lake Formation tag expression",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetLFTagExpression.html"
+    },
+    {
+      "name": "GetQueryState",
+      "methodName": "toGetQueryState",
+      "description": "Grants permission to retrieve the state of the given query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetQueryState.html"
+    },
+    {
+      "name": "GetQueryStatistics",
+      "methodName": "toGetQueryStatistics",
+      "description": "Grants permission to retrieve the statistics for the given query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetQueryStatistics.html"
+    },
+    {
+      "name": "GetResourceLFTags",
+      "methodName": "toGetResourceLFTags",
+      "description": "Grants permission to retrieve lakeformation tags on a catalog resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetResourceLFTags.html"
+    },
+    {
+      "name": "GetTableObjects",
+      "methodName": "toGetTableObjects",
+      "description": "Grants permission to retrieve objects from a table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetTableObjects.html"
+    },
+    {
+      "name": "GetTemporaryGluePartitionCredentials",
+      "methodName": "toGetTemporaryGluePartitionCredentials",
+      "description": "Grants permission to get temporary credentials to access Glue partition data through Lake Formation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetTemporaryGluePartitionCredentials.html"
+    },
+    {
+      "name": "GetTemporaryGlueTableCredentials",
+      "methodName": "toGetTemporaryGlueTableCredentials",
+      "description": "Grants permission to get temporary credentials to access Glue table data through Lake Formation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetTemporaryGlueTableCredentials.html"
+    },
+    {
+      "name": "GetWorkUnitResults",
+      "methodName": "toGetWorkUnitResults",
+      "description": "Grants permission to retrieve the results for the given work units",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetWorkUnitResults.html"
+    },
+    {
+      "name": "GetWorkUnits",
+      "methodName": "toGetWorkUnits",
+      "description": "Grants permission to retrieve the work units for the given query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetWorkUnits.html"
+    },
+    {
+      "name": "GrantPermissions",
+      "methodName": "toGrantPermissions",
+      "description": "Grants permission to data lake permissions to a principal",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GrantPermissions.html"
+    },
+    {
+      "name": "ListDataCellsFilter",
+      "methodName": "toListDataCellsFilter",
+      "description": "Grants permission to list cell filters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListDataCellsFilter.html"
+    },
+    {
+      "name": "ListLFTagExpressions",
+      "methodName": "toListLFTagExpressions",
+      "description": "Grants permission to list Lake Foramtion tag expressions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListLFTagExpressions.html"
+    },
+    {
+      "name": "ListLFTags",
+      "methodName": "toListLFTags",
+      "description": "Grants permission to list Lake Formation tags",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListLFTags.html"
+    },
+    {
+      "name": "ListLakeFormationOptIns",
+      "methodName": "toListLakeFormationOptIns",
+      "description": "Grants permission to retrieve the current list of resources and principals that are opt in to enforce Lake Formation permissions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListLakeFormationOptIns.html"
+    },
+    {
+      "name": "ListPermissions",
+      "methodName": "toListPermissions",
+      "description": "Grants permission to list permissions filtered by principal or resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListPermissions.html"
+    },
+    {
+      "name": "ListResources",
+      "methodName": "toListResources",
+      "description": "Grants permission to List registered locations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListResources.html"
+    },
+    {
+      "name": "ListTableStorageOptimizers",
+      "methodName": "toListTableStorageOptimizers",
+      "description": "Grants permission to list all the storage optimizers for the Governed table",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListTableStorageOptimizers.html"
+    },
+    {
+      "name": "ListTransactions",
+      "methodName": "toListTransactions",
+      "description": "Grants permission to list all transactions in the system",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListTransactions.html"
+    },
+    {
+      "name": "PutDataLakeSettings",
+      "methodName": "toPutDataLakeSettings",
+      "description": "Grants permission to overwrite data lake settings such as the list of data lake administrators and database and table default permissions",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_PutDataLakeSettings.html"
+    },
+    {
+      "name": "RegisterResource",
+      "methodName": "toRegisterResource",
+      "description": "Grants permission to register a new location to be managed by Lake Formation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_RegisterResource.html"
+    },
+    {
+      "name": "RegisterResourceWithPrivilegedAccess",
+      "methodName": "toRegisterResourceWithPrivilegedAccess",
+      "description": "Grants permission to register a new location to be managed by Lake Formation, with privileged access",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_RegisterResource.html"
+    },
+    {
+      "name": "RemoveLFTagsFromResource",
+      "methodName": "toRemoveLFTagsFromResource",
+      "description": "Grants permission to remove lakeformation tags from catalog resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_RemoveLFTagsFromResource.html"
+    },
+    {
+      "name": "RevokePermissions",
+      "methodName": "toRevokePermissions",
+      "description": "Grants permission to revoke data lake permissions from a principal",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_RevokePermissions.html"
+    },
+    {
+      "name": "SearchDatabasesByLFTags",
+      "methodName": "toSearchDatabasesByLFTags",
+      "description": "Grants permission to list catalog databases with Lake Formation tags",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_SearchTablesByLFTags.html"
+    },
+    {
+      "name": "SearchTablesByLFTags",
+      "methodName": "toSearchTablesByLFTags",
+      "description": "Grants permission to list catalog tables with Lake Formation tags",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_SearchTablesByLFTags.html"
+    },
+    {
+      "name": "StartQueryPlanning",
+      "methodName": "toStartQueryPlanning",
+      "description": "Grants permission to initiate the planning of the given query",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_StartQueryPlanning.html"
+    },
+    {
+      "name": "StartTransaction",
+      "methodName": "toStartTransaction",
+      "description": "Grants permission to start a new transaction",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_StartTransaction.html"
+    },
+    {
+      "name": "UpdateDataCellsFilter",
+      "methodName": "toUpdateDataCellsFilter",
+      "description": "Grants permission to update a Lake Formation data cell filter",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateDataCellsFilter.html"
+    },
+    {
+      "name": "UpdateLFTag",
+      "methodName": "toUpdateLFTag",
+      "description": "Grants permission to update a Lake Formation tag",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateLFTag.html"
+    },
+    {
+      "name": "UpdateLFTagExpression",
+      "methodName": "toUpdateLFTagExpression",
+      "description": "Grants permission to update a Lake Formation expression",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateLFTagExpression.html"
+    },
+    {
+      "name": "UpdateLakeFormationIdentityCenterConfiguration",
+      "methodName": "toUpdateLakeFormationIdentityCenterConfiguration",
+      "description": "Grants permission to update the IAM Identity Center connection parameters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateLakeFormationIdentityCenterConfiguration.html"
+    },
+    {
+      "name": "UpdateResource",
+      "methodName": "toUpdateResource",
+      "description": "Grants permission to update a registered location",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateResource.html"
+    },
+    {
+      "name": "UpdateTableObjects",
+      "methodName": "toUpdateTableObjects",
+      "description": "Grants permission to add or delete the specified objects to or from a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateTableObjects.html"
+    },
+    {
+      "name": "UpdateTableStorageOptimizer",
+      "methodName": "toUpdateTableStorageOptimizer",
+      "description": "Grants permission to update the configuration of the storage optimizer for the Governed table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateTableStorageOptimizer.html"
+    }
+  ],
+  "resources": [],
+  "conditions": [
+    {
+      "key": "lakeformation:EnabledOnlyForMetaDataAccess",
+      "methodName": "ifEnabledOnlyForMetaDataAccess",
+      "description": "Filters access by the presence of the key configured for role's identity-based policy",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslakeformation.html#awslakeformation-policy-keys",
+      "relatedActionMethods": [
+        "toGetDataAccess"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EnabledOnlyForMetaDataAccess",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    }
+  ]
+}

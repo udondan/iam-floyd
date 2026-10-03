@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "filename": "freertos",
+  "className": "Freertos",
+  "name": "freertos",
+  "servicePrefix": "freertos",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_freertos.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateSoftwareConfiguration",
+      "CreateSubscription",
+      "DeleteSoftwareConfiguration",
+      "UpdateEmailRecipients",
+      "UpdateSoftwareConfiguration",
+      "VerifyEmail"
+    ],
+    "Read": [
+      "DescribeHardwarePlatform",
+      "DescribeSoftwareConfiguration",
+      "DescribeSubscription",
+      "GetEmpPatchUrl",
+      "GetSoftwareURL",
+      "GetSoftwareURLForConfiguration",
+      "GetSubscriptionBillingAmount"
+    ],
+    "List": [
+      "ListFreeRTOSVersions",
+      "ListHardwarePlatforms",
+      "ListHardwareVendors",
+      "ListSoftwareConfigurations",
+      "ListSoftwarePatches",
+      "ListSubscriptionEmails",
+      "ListSubscriptions"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateSoftwareConfiguration",
+      "methodName": "toCreateSoftwareConfiguration",
+      "description": "Grants permission to create a software configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html"
+    },
+    {
+      "name": "CreateSubscription",
+      "methodName": "toCreateSubscription",
+      "description": "Grants permission to create a subscription for FreeRTOS extended maintenance plan (EMP)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteSoftwareConfiguration",
+      "methodName": "toDeleteSoftwareConfiguration",
+      "description": "Grants permission to delete the software configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html"
+    },
+    {
+      "name": "DescribeHardwarePlatform",
+      "methodName": "toDescribeHardwarePlatform",
+      "description": "Grants permission to describe the hardware platform",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html"
+    },
+    {
+      "name": "DescribeSoftwareConfiguration",
+      "methodName": "toDescribeSoftwareConfiguration",
+      "description": "Grants permission to describe the software configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html"
+    },
+    {
+      "name": "DescribeSubscription",
+      "methodName": "toDescribeSubscription",
+      "description": "Grants permission to describes the subscription for FreeRTOS extended maintenance plan (EMP)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html"
+    },
+    {
+      "name": "GetEmpPatchUrl",
+      "methodName": "toGetEmpPatchUrl",
+      "description": "Grants permission to get URL for sotware patch-release, patch-diff and release notes under FreeRTOS extended maintenance plan (EMP)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html"
+    },
+    {
+      "name": "GetSoftwareURL",
+      "methodName": "toGetSoftwareURL",
+      "description": "Grants permission to get the URL for Amazon FreeRTOS software download",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html"
+    },
+    {
+      "name": "GetSoftwareURLForConfiguration",
+      "methodName": "toGetSoftwareURLForConfiguration",
+      "description": "Grants permission to get the URL for Amazon FreeRTOS software download based on the configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html"
+    },
+    {
+      "name": "GetSubscriptionBillingAmount",
+      "methodName": "toGetSubscriptionBillingAmount",
+      "description": "Grants permission to fetch the subscription billing amount for FreeRTOS extended maintenance plan (EMP)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html"
+    },
+    {
+      "name": "ListFreeRTOSVersions",
+      "methodName": "toListFreeRTOSVersions",
+      "description": "Grants permission to lists versions of AmazonFreeRTOS",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html"
+    },
+    {
+      "name": "ListHardwarePlatforms",
+      "methodName": "toListHardwarePlatforms",
+      "description": "Grants permission to list the hardware platforms",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html"
+    },
+    {
+      "name": "ListHardwareVendors",
+      "methodName": "toListHardwareVendors",
+      "description": "Grants permission to list the hardware vendors",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html"
+    },
+    {
+      "name": "ListSoftwareConfigurations",
+      "methodName": "toListSoftwareConfigurations",
+      "description": "Grants permission to lists the software configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html"
+    },
+    {
+      "name": "ListSoftwarePatches",
+      "methodName": "toListSoftwarePatches",
+      "description": "Grants permission to list software patches of subscription for FreeRTOS extended maintenance plan (EMP)",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html"
+    },
+    {
+      "name": "ListSubscriptionEmails",
+      "methodName": "toListSubscriptionEmails",
+      "description": "Grants permission to list the subscription emails for FreeRTOS extended maintenance plan (EMP)",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html"
+    },
+    {
+      "name": "ListSubscriptions",
+      "methodName": "toListSubscriptions",
+      "description": "Grants permission to list the subscriptions for FreeRTOS extended maintenance plan (EMP)",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html"
+    },
+    {
+      "name": "UpdateEmailRecipients",
+      "methodName": "toUpdateEmailRecipients",
+      "description": "Grants permission to update list of subscription email address for FreeRTOS extended maintenance plan (EMP)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html"
+    },
+    {
+      "name": "UpdateSoftwareConfiguration",
+      "methodName": "toUpdateSoftwareConfiguration",
+      "description": "Grants permission to update the software configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html"
+    },
+    {
+      "name": "VerifyEmail",
+      "methodName": "toVerifyEmail",
+      "description": "Grants permission to verify the email for FreeRTOS extended maintenance plan (EMP)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "configuration",
+      "methodName": "onConfiguration",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
+      "arn": "arn:${Partition}:freertos:${Region}:${Account}:configuration/${ConfigurationName}",
+      "placeholders": [
+        {
+          "placeholder": "ConfigurationName",
+          "name": "configurationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "subscription",
+      "methodName": "onSubscription",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started-emp.html",
+      "arn": "arn:${Partition}:freertos:${Region}:${Account}:subscription/${SubscriptionID}",
+      "placeholders": [
+        {
+          "placeholder": "SubscriptionID",
+          "name": "subscriptionID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tag key present in the request that the user makes to Amazon FreeRTOS",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateSoftwareConfiguration",
+        "toCreateSubscription"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key component attached to an Amazon FreeRTOS resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateSoftwareConfiguration",
+        "toDeleteSoftwareConfiguration",
+        "toDescribeSoftwareConfiguration",
+        "toDescribeSubscription",
+        "toUpdateSoftwareConfiguration"
+      ],
+      "relatedResourceTypes": [
+        "configuration",
+        "subscription"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the list of all the tag key names associated with the resource in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateSoftwareConfiguration",
+        "toCreateSubscription"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "filename": "aws-marketplace-deployment-service",
+  "className": "AwsMarketplaceDeploymentService",
+  "name": "aws-marketplace-deployment-service",
+  "servicePrefix": "aws-marketplace",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_marketplace-deployment.html",
+  "accessLevelList": {
+    "Read": [
+      "ListTagsForResource"
+    ],
+    "Write": [
+      "PutDeploymentParameter",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a deployment parameter resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace-deployment/latest/api-reference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutDeploymentParameter",
+      "methodName": "toPutDeploymentParameter",
+      "description": "Grants permission to create or update a deployment parameter resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace-deployment/latest/api-reference/API_PutDeploymentParameter.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a deployment parameter resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/marketplace-deployment/latest/api-reference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a deployment parameter resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/marketplace-deployment/latest/api-reference/API_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "DeploymentParameter",
+      "methodName": "onDeploymentParameter",
+      "url": "https://docs.aws.amazon.com/marketplace-deployment/latest/api-reference/API_DeploymentParameterInput.html",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:DeploymentParameter:catalogs/${CatalogName}/products/${ProductId}/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "CatalogName",
+          "name": "catalogName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProductId",
+          "name": "productId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toListTagsForResource",
+        "toPutDeploymentParameter",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "DeploymentParameter"
+      ],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toListTagsForResource",
+        "toPutDeploymentParameter",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "DeploymentParameter"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toListTagsForResource",
+        "toPutDeploymentParameter",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "DeploymentParameter"
+      ],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

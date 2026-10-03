@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "filename": "codestar-notifications",
+  "className": "CodestarNotifications",
+  "name": "codestar-notifications",
+  "servicePrefix": "codestar-notifications",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_codestar-notifications.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateNotificationRule",
+      "DeleteNotificationRule",
+      "DeleteTarget",
+      "Subscribe",
+      "TagResource",
+      "Unsubscribe",
+      "UntagResource",
+      "UpdateNotificationRule"
+    ],
+    "Read": [
+      "DescribeNotificationRule"
+    ],
+    "List": [
+      "ListEventTypes",
+      "ListNotificationRules",
+      "ListTagsForResource",
+      "ListTargets"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateNotificationRule",
+      "methodName": "toCreateNotificationRule",
+      "description": "Grants permission to create a notification rule for a resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_CreateNotificationRule.html"
+    },
+    {
+      "name": "DeleteNotificationRule",
+      "methodName": "toDeleteNotificationRule",
+      "description": "Grants permission to delete a notification rule for a resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DeleteNotificationRule.html"
+    },
+    {
+      "name": "DeleteTarget",
+      "methodName": "toDeleteTarget",
+      "description": "Grants permission to delete a target for a notification rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DeleteTarget.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DescribeNotificationRule",
+      "methodName": "toDescribeNotificationRule",
+      "description": "Grants permission to get information about a notification rule",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DescribeNotificationRule.html"
+    },
+    {
+      "name": "ListEventTypes",
+      "methodName": "toListEventTypes",
+      "description": "Grants permission to list notifications event types",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListEventTypes.html"
+    },
+    {
+      "name": "ListNotificationRules",
+      "methodName": "toListNotificationRules",
+      "description": "Grants permission to list notification rules in an AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListNotificationRules.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags attached to a notification rule resource ARN",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTargets",
+      "methodName": "toListTargets",
+      "description": "Grants permission to list the notification rule targets for an AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListTargets.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "Subscribe",
+      "methodName": "toSubscribe",
+      "description": "Grants permission to create an association between a notification rule and an Amazon SNS topic",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_Subscribe.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to attach resource tags to a notification rule resource ARN",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "Unsubscribe",
+      "methodName": "toUnsubscribe",
+      "description": "Grants permission to remove an association between a notification rule and an Amazon SNS topic",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_Unsubscribe.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to disassociate resource tags from a notification rule resource ARN",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateNotificationRule",
+      "methodName": "toUpdateNotificationRule",
+      "description": "Grants permission to change a notification rule for a resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_UpdateNotificationRule.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "notificationrule",
+      "methodName": "onNotificationrule",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:codestar-notifications:${Region}:${Account}:notificationrule/${NotificationRuleId}",
+      "placeholders": [
+        {
+          "placeholder": "NotificationRuleId",
+          "name": "notificationRuleId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters actions based on the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateNotificationRule",
+        "toDeleteNotificationRule",
+        "toDeleteTarget",
+        "toDescribeNotificationRule",
+        "toListTagsForResource",
+        "toListTargets",
+        "toSubscribe",
+        "toTagResource",
+        "toUnsubscribe",
+        "toUpdateNotificationRule"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateNotificationRule",
+        "toDeleteNotificationRule",
+        "toDescribeNotificationRule",
+        "toListTagsForResource",
+        "toSubscribe",
+        "toTagResource",
+        "toUnsubscribe",
+        "toUntagResource",
+        "toUpdateNotificationRule"
+      ],
+      "relatedResourceTypes": [
+        "notificationrule"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters actions based on the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateNotificationRule",
+        "toDeleteNotificationRule",
+        "toDeleteTarget",
+        "toDescribeNotificationRule",
+        "toListTagsForResource",
+        "toListTargets",
+        "toSubscribe",
+        "toTagResource",
+        "toUnsubscribe",
+        "toUntagResource",
+        "toUpdateNotificationRule"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "codestar-notifications:NotificationsForResource",
+      "methodName": "ifNotificationsForResource",
+      "description": "Filters access based on the ARN of the resource for which notifications are configured",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security_iam_id-based-policy-examples.html",
+      "relatedActionMethods": [
+        "toCreateNotificationRule",
+        "toDeleteNotificationRule",
+        "toDescribeNotificationRule",
+        "toSubscribe",
+        "toUnsubscribe",
+        "toUpdateNotificationRule"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "NotificationsForResource",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

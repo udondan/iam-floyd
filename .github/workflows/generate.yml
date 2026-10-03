@@ -52,8 +52,9 @@ jobs:
         id: changes
         run: |
           set -xuo pipefail # we intentionally do not use -e here, as rc=1 means we have changes
-          git diff
-          echo "CHANGED=$(git diff --unified=0 -- stats | grep '^[+-]' | grep -v +++ | grep -v -- --- | wc -l | xargs)" >> $GITHUB_OUTPUT
+          git diff --stat
+          bin/model-diff
+          echo "CHANGED=$(bin/model-diff | wc -l | xargs)" >> $GITHUB_OUTPUT
 
       # fail if the index file does not exist.
       # this could happen if we cannot reach the AWS documentation, or the

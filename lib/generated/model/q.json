@@ -1,0 +1,642 @@
+{
+  "schemaVersion": 1,
+  "filename": "q",
+  "className": "Q",
+  "name": "q",
+  "servicePrefix": "q",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_q.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateConnectorResource",
+      "AssociateLoginDomain",
+      "CreateArtifact",
+      "CreateAssignment",
+      "CreateAuthGrant",
+      "CreateOAuthAppConnection",
+      "CreatePlugin",
+      "CreateScimAccessToken",
+      "DeleteAssignment",
+      "DeleteConversation",
+      "DeleteOAuthAppConnection",
+      "DeletePlugin",
+      "DeleteScimAccessToken",
+      "DisassociateLoginDomain",
+      "PassRequest",
+      "PerformArtifactAction",
+      "RejectConnector",
+      "SendEvent",
+      "SendMessage",
+      "StartConversation",
+      "StartTroubleshootingAnalysis",
+      "StartTroubleshootingResolutionExplanation",
+      "TagResource",
+      "UntagResource",
+      "UpdateAssignment",
+      "UpdateAuthGrant",
+      "UpdateConversation",
+      "UpdateOAuthAppConnection",
+      "UpdatePlugin",
+      "UpdateTroubleshootingCommandResult",
+      "UsePlugin",
+      "VerifyOAuthAppConnection"
+    ],
+    "Read": [
+      "BatchDescribeGroups",
+      "BatchDescribeUsers",
+      "BatchGetGroups",
+      "BatchGetUsers",
+      "GenerateCodeFromCommands",
+      "GenerateCodeRecommendations",
+      "GetArtifact",
+      "GetArtifactActionResult",
+      "GetConnector",
+      "GetConversation",
+      "GetIdentityMetadata",
+      "GetPlugin",
+      "GetTroubleshootingResults",
+      "ListConversations"
+    ],
+    "List": [
+      "ListDashboardMetrics",
+      "ListGroups",
+      "ListLoginDomains",
+      "ListPluginProviders",
+      "ListPlugins",
+      "ListScimAccessTokens",
+      "ListTagsForResource",
+      "ListUsers"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateConnectorResource",
+      "methodName": "toAssociateConnectorResource",
+      "description": "Grants permission to associate an AWS resource with an Amazon Q connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "AssociateLoginDomain",
+      "methodName": "toAssociateLoginDomain",
+      "description": "Grants permission to associate a login domain with an Amazon Q Developer Profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "BatchDescribeGroups",
+      "methodName": "toBatchDescribeGroups",
+      "description": "Grants permission to describe multiple groups for an Amazon Q Developer Profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "BatchDescribeUsers",
+      "methodName": "toBatchDescribeUsers",
+      "description": "Grants permission to describe multiple users for an Amazon Q Developer Profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "BatchGetGroups",
+      "methodName": "toBatchGetGroups",
+      "description": "Grants permission to get multiple groups for an Amazon Q Developer Profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "BatchGetUsers",
+      "methodName": "toBatchGetUsers",
+      "description": "Grants permission to get multiple users for an Amazon Q Developer Profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "CreateArtifact",
+      "methodName": "toCreateArtifact",
+      "description": "Grants permission to create an artifact with Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "CreateAssignment",
+      "methodName": "toCreateAssignment",
+      "description": "Grants permission to create a user or group assignment for an Amazon Q Developer Profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "CreateAuthGrant",
+      "methodName": "toCreateAuthGrant",
+      "description": "Grants permission to create OAuth user in Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "CreateOAuthAppConnection",
+      "methodName": "toCreateOAuthAppConnection",
+      "description": "Grants permission to register an OAuth application in Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "CreatePlugin",
+      "methodName": "toCreatePlugin",
+      "description": "Grants permission to create and configure a third party plugin in Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "CreateScimAccessToken",
+      "methodName": "toCreateScimAccessToken",
+      "description": "Grants permission to create a SCIM access token for an Amazon Q Developer Profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "DeleteAssignment",
+      "methodName": "toDeleteAssignment",
+      "description": "Grants permission to delete a user or group assignment for an Amazon Q Developer Profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "DeleteConversation",
+      "methodName": "toDeleteConversation",
+      "description": "Grants permission to delete a conversation with Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "DeleteOAuthAppConnection",
+      "methodName": "toDeleteOAuthAppConnection",
+      "description": "Grants permission to delete an OAuth application in Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "DeletePlugin",
+      "methodName": "toDeletePlugin",
+      "description": "Grants permission to delete a configured plugin in Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "DeleteScimAccessToken",
+      "methodName": "toDeleteScimAccessToken",
+      "description": "Grants permission to delete a SCIM access token for an Amazon Q Developer Profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "DisassociateLoginDomain",
+      "methodName": "toDisassociateLoginDomain",
+      "description": "Grants permission to disassociate a login domain from an Amazon Q Developer Profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "GenerateCodeFromCommands",
+      "methodName": "toGenerateCodeFromCommands",
+      "description": "Grants permission to generate code from CLI commands in Amazon Q",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "GenerateCodeRecommendations",
+      "methodName": "toGenerateCodeRecommendations",
+      "description": "Grants permission to generate code recommendations in Amazon Q",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "GetArtifact",
+      "methodName": "toGetArtifact",
+      "description": "Grants permission to view an Amazon Q artifact",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "GetArtifactActionResult",
+      "methodName": "toGetArtifactActionResult",
+      "description": "Grants permission to view results of an action in an Amazon Q artifact",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "GetConnector",
+      "methodName": "toGetConnector",
+      "description": "Grants permission to view information about a specific Amazon Q connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "GetConversation",
+      "methodName": "toGetConversation",
+      "description": "Grants permission to get individual messages associated with a specific conversation with Amazon Q",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "GetIdentityMetadata",
+      "methodName": "toGetIdentityMetadata",
+      "description": "Grants permission to Amazon Q to get the identity metadata",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "GetPlugin",
+      "methodName": "toGetPlugin",
+      "description": "Grants permission to view information about a specific configured Amazon Q plugin",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "GetTroubleshootingResults",
+      "methodName": "toGetTroubleshootingResults",
+      "description": "Grants permission to get troubleshooting results with Amazon Q",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "ListConversations",
+      "methodName": "toListConversations",
+      "description": "Grants permission to list individual conversations associated with a specific Amazon Q user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "ListDashboardMetrics",
+      "methodName": "toListDashboardMetrics",
+      "description": "Grants permission to read metrics to populate Amazon Q dashboard",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "ListGroups",
+      "methodName": "toListGroups",
+      "description": "Grants permission to list groups for an Amazon Q Developer Profile",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "ListLoginDomains",
+      "methodName": "toListLoginDomains",
+      "description": "Grants permission to list login domains for an Amazon Q Developer Profile",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "ListPluginProviders",
+      "methodName": "toListPluginProviders",
+      "description": "Grants permission to list available plugins in Amazon Q",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "ListPlugins",
+      "methodName": "toListPlugins",
+      "description": "Grants permission to list configured plugins in Amazon Q",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "ListScimAccessTokens",
+      "methodName": "toListScimAccessTokens",
+      "description": "Grants permission to list SCIM access tokens for an Amazon Q Developer Profile",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags associated with an Amazon Q resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "ListUsers",
+      "methodName": "toListUsers",
+      "description": "Grants permission to list users for an Amazon Q Developer Profile",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "PassRequest",
+      "methodName": "toPassRequest",
+      "description": "Grants permission to allow Amazon Q to perform actions on your behalf",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "PerformArtifactAction",
+      "methodName": "toPerformArtifactAction",
+      "description": "Grants permission to perform an action in an Amazon Q artifact",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "RejectConnector",
+      "methodName": "toRejectConnector",
+      "description": "Grants permission to reject a connection request for an Amazon Q connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "SendEvent",
+      "methodName": "toSendEvent",
+      "description": "Grants permission to trigger asynchronous Amazon Q actions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "SendMessage",
+      "methodName": "toSendMessage",
+      "description": "Grants permission to send a message to Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "StartConversation",
+      "methodName": "toStartConversation",
+      "description": "Grants permission to start a conversation with Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "StartTroubleshootingAnalysis",
+      "methodName": "toStartTroubleshootingAnalysis",
+      "description": "Grants permission to start a troubleshooting analysis with Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "StartTroubleshootingResolutionExplanation",
+      "methodName": "toStartTroubleshootingResolutionExplanation",
+      "description": "Grants permission to start a troubleshooting resolution explanation with Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to associate tags with an Amazon Q resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags associated with an Amazon Q resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "UpdateAssignment",
+      "methodName": "toUpdateAssignment",
+      "description": "Grants permission to update a user or group assignment for an Amazon Q Developer Profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "UpdateAuthGrant",
+      "methodName": "toUpdateAuthGrant",
+      "description": "Grants permission to update OAuth user in Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "UpdateConversation",
+      "methodName": "toUpdateConversation",
+      "description": "Grants permission to update a conversation with Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "UpdateOAuthAppConnection",
+      "methodName": "toUpdateOAuthAppConnection",
+      "description": "Grants permission to update an OAuth application in Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "UpdatePlugin",
+      "methodName": "toUpdatePlugin",
+      "description": "Grants permission to update a third party plugin in Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "UpdateTroubleshootingCommandResult",
+      "methodName": "toUpdateTroubleshootingCommandResult",
+      "description": "Grants permission to update a troubleshooting command result with Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "UsePlugin",
+      "methodName": "toUsePlugin",
+      "description": "Grants permission to use Amazon Q plugins",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "VerifyOAuthAppConnection",
+      "methodName": "toVerifyOAuthAppConnection",
+      "description": "Grants permission to verify an OAuth application in Amazon Q",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "plugin",
+      "methodName": "onPlugin",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/plugins.html",
+      "arn": "arn:${Partition}:qdeveloper:${Region}:${Account}:plugin/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "profile",
+      "methodName": "onProfile",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/as-whisper-admin.html#about-profiles",
+      "arn": "arn:${Partition}:codewhisperer:${Region}:${Account}:profile/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreatePlugin",
+        "toTagResource",
+        "toUpdatePlugin"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the Amazon Q resource",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toAssociateLoginDomain",
+        "toBatchDescribeGroups",
+        "toBatchDescribeUsers",
+        "toBatchGetGroups",
+        "toBatchGetUsers",
+        "toCreateAssignment",
+        "toCreatePlugin",
+        "toCreateScimAccessToken",
+        "toDeleteAssignment",
+        "toDeletePlugin",
+        "toDeleteScimAccessToken",
+        "toDisassociateLoginDomain",
+        "toGetPlugin",
+        "toListGroups",
+        "toListLoginDomains",
+        "toListPlugins",
+        "toListScimAccessTokens",
+        "toListTagsForResource",
+        "toListUsers",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAssignment",
+        "toUpdatePlugin",
+        "toUsePlugin"
+      ],
+      "relatedResourceTypes": [
+        "plugin",
+        "profile"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreatePlugin",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdatePlugin"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "identitystore:GroupId",
+      "methodName": "ifIdentitystoreGroupId",
+      "description": "Filters access by IAM Identity Center Group ID",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateAssignment",
+        "toDeleteAssignment",
+        "toUpdateAssignment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "identitystore:GroupId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "identitystore:UserId",
+      "methodName": "ifIdentitystoreUserId",
+      "description": "Filters access by IAM Identity Center User ID",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateAssignment",
+        "toDeleteAssignment",
+        "toUpdateAssignment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "identitystore:UserId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

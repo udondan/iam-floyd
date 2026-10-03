@@ -1,3 +1,0 @@
-notifications:RequestTag/${TagKey}
-notifications:ResourceTag/${TagKey}
-notifications:TagKeys

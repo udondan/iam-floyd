@@ -1,6 +1,0 @@
-redshift-serverless:endpointAccess
-redshift-serverless:managed-workgroup
-redshift-serverless:namespace
-redshift-serverless:recoveryPoint
-redshift-serverless:snapshot
-redshift-serverless:workgroup

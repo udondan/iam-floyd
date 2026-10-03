@@ -1,0 +1,1349 @@
+{
+  "schemaVersion": 1,
+  "filename": "personalize",
+  "className": "Personalize",
+  "name": "personalize",
+  "servicePrefix": "personalize",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_personalize.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateBatchInferenceJob",
+      "CreateBatchSegmentJob",
+      "CreateCampaign",
+      "CreateDataDeletionJob",
+      "CreateDataInsightsJob",
+      "CreateDataset",
+      "CreateDatasetExportJob",
+      "CreateDatasetGroup",
+      "CreateDatasetImportJob",
+      "CreateEventTracker",
+      "CreateFilter",
+      "CreateMetricAttribution",
+      "CreateRecommender",
+      "CreateSchema",
+      "CreateSolution",
+      "CreateSolutionVersion",
+      "DeleteCampaign",
+      "DeleteDataset",
+      "DeleteDatasetGroup",
+      "DeleteEventTracker",
+      "DeleteFilter",
+      "DeleteMetricAttribution",
+      "DeleteRecommender",
+      "DeleteSchema",
+      "DeleteSolution",
+      "PutActionInteractions",
+      "PutActions",
+      "PutEvents",
+      "PutItems",
+      "PutUsers",
+      "StartRecommender",
+      "StopRecommender",
+      "StopSolutionVersionCreation",
+      "TagResource",
+      "UntagResource",
+      "UpdateCampaign",
+      "UpdateDataset",
+      "UpdateMetricAttribution",
+      "UpdateRecommender",
+      "UpdateSolution"
+    ],
+    "Read": [
+      "DescribeAlgorithm",
+      "DescribeBatchInferenceJob",
+      "DescribeBatchSegmentJob",
+      "DescribeCampaign",
+      "DescribeDataDeletionJob",
+      "DescribeDataInsightsJob",
+      "DescribeDataset",
+      "DescribeDatasetExportJob",
+      "DescribeDatasetGroup",
+      "DescribeDatasetImportJob",
+      "DescribeEventTracker",
+      "DescribeFeatureTransformation",
+      "DescribeFilter",
+      "DescribeMetricAttribution",
+      "DescribeRecipe",
+      "DescribeRecommender",
+      "DescribeSchema",
+      "DescribeSolution",
+      "DescribeSolutionVersion",
+      "GetActionRecommendations",
+      "GetDataInsights",
+      "GetPersonalizedRanking",
+      "GetRecommendations",
+      "GetSolutionMetrics"
+    ],
+    "List": [
+      "ListBatchInferenceJobs",
+      "ListBatchSegmentJobs",
+      "ListCampaigns",
+      "ListDataDeletionJobs",
+      "ListDataInsightsJobs",
+      "ListDatasetExportJobs",
+      "ListDatasetGroups",
+      "ListDatasetImportJobs",
+      "ListDatasets",
+      "ListEventTrackers",
+      "ListFilters",
+      "ListMetricAttributionMetrics",
+      "ListMetricAttributions",
+      "ListRecipes",
+      "ListRecommenders",
+      "ListSchemas",
+      "ListSolutionVersions",
+      "ListSolutions",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateBatchInferenceJob",
+      "methodName": "toCreateBatchInferenceJob",
+      "description": "Grants permission to create a batch inference job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateBatchInferenceJob.html"
+    },
+    {
+      "name": "CreateBatchSegmentJob",
+      "methodName": "toCreateBatchSegmentJob",
+      "description": "Grants permission to create a batch segment job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateBatchSegmentJob.html"
+    },
+    {
+      "name": "CreateCampaign",
+      "methodName": "toCreateCampaign",
+      "description": "Grants permission to create a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html"
+    },
+    {
+      "name": "CreateDataDeletionJob",
+      "methodName": "toCreateDataDeletionJob",
+      "description": "Grants permission to create a data deletion job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataDeletionJob.html"
+    },
+    {
+      "name": "CreateDataInsightsJob",
+      "methodName": "toCreateDataInsightsJob",
+      "description": "Grants permission to create a data insights job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/analyzing-data.html"
+    },
+    {
+      "name": "CreateDataset",
+      "methodName": "toCreateDataset",
+      "description": "Grants permission to create a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html"
+    },
+    {
+      "name": "CreateDatasetExportJob",
+      "methodName": "toCreateDatasetExportJob",
+      "description": "Grants permission to create a dataset export job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html"
+    },
+    {
+      "name": "CreateDatasetGroup",
+      "methodName": "toCreateDatasetGroup",
+      "description": "Grants permission to create a dataset group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html"
+    },
+    {
+      "name": "CreateDatasetImportJob",
+      "methodName": "toCreateDatasetImportJob",
+      "description": "Grants permission to create a dataset import job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html"
+    },
+    {
+      "name": "CreateEventTracker",
+      "methodName": "toCreateEventTracker",
+      "description": "Grants permission to create an event tracker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html"
+    },
+    {
+      "name": "CreateFilter",
+      "methodName": "toCreateFilter",
+      "description": "Grants permission to create a filter",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateFilter.html"
+    },
+    {
+      "name": "CreateMetricAttribution",
+      "methodName": "toCreateMetricAttribution",
+      "description": "Grants permission to create a metric attribution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateMetricAttribution.html"
+    },
+    {
+      "name": "CreateRecommender",
+      "methodName": "toCreateRecommender",
+      "description": "Grants permission to create a recommender",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html"
+    },
+    {
+      "name": "CreateSchema",
+      "methodName": "toCreateSchema",
+      "description": "Grants permission to create a schema",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html"
+    },
+    {
+      "name": "CreateSolution",
+      "methodName": "toCreateSolution",
+      "description": "Grants permission to create a solution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html"
+    },
+    {
+      "name": "CreateSolutionVersion",
+      "methodName": "toCreateSolutionVersion",
+      "description": "Grants permission to create a solution version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html"
+    },
+    {
+      "name": "DeleteCampaign",
+      "methodName": "toDeleteCampaign",
+      "description": "Grants permission to delete a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteCampaign.html"
+    },
+    {
+      "name": "DeleteDataset",
+      "methodName": "toDeleteDataset",
+      "description": "Grants permission to delete a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteDataset.html"
+    },
+    {
+      "name": "DeleteDatasetGroup",
+      "methodName": "toDeleteDatasetGroup",
+      "description": "Grants permission to delete a dataset group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteDatasetGroup.html"
+    },
+    {
+      "name": "DeleteEventTracker",
+      "methodName": "toDeleteEventTracker",
+      "description": "Grants permission to delete an event tracker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteEventTracker.html"
+    },
+    {
+      "name": "DeleteFilter",
+      "methodName": "toDeleteFilter",
+      "description": "Grants permission to delete a filter",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteFilter.html"
+    },
+    {
+      "name": "DeleteMetricAttribution",
+      "methodName": "toDeleteMetricAttribution",
+      "description": "Grants permission to delete a metric attribution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteMetricAttribution.html"
+    },
+    {
+      "name": "DeleteRecommender",
+      "methodName": "toDeleteRecommender",
+      "description": "Grants permission to delete a recommender",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteRecommender.html"
+    },
+    {
+      "name": "DeleteSchema",
+      "methodName": "toDeleteSchema",
+      "description": "Grants permission to delete a schema",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSchema.html"
+    },
+    {
+      "name": "DeleteSolution",
+      "methodName": "toDeleteSolution",
+      "description": "Grants permission to delete a solution including all versions of the solution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSolution.html"
+    },
+    {
+      "name": "DescribeAlgorithm",
+      "methodName": "toDescribeAlgorithm",
+      "description": "Grants permission to describe an algorithm",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeAlgorithm.html"
+    },
+    {
+      "name": "DescribeBatchInferenceJob",
+      "methodName": "toDescribeBatchInferenceJob",
+      "description": "Grants permission to describe a batch inference job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeBatchInferenceJob.html"
+    },
+    {
+      "name": "DescribeBatchSegmentJob",
+      "methodName": "toDescribeBatchSegmentJob",
+      "description": "Grants permission to describe a batch segment job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeBatchSegmentJob.html"
+    },
+    {
+      "name": "DescribeCampaign",
+      "methodName": "toDescribeCampaign",
+      "description": "Grants permission to describe a campaign",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html"
+    },
+    {
+      "name": "DescribeDataDeletionJob",
+      "methodName": "toDescribeDataDeletionJob",
+      "description": "Grants permission to describe a data deletion job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataDeletionJob.html"
+    },
+    {
+      "name": "DescribeDataInsightsJob",
+      "methodName": "toDescribeDataInsightsJob",
+      "description": "Grants permission to describe a data insights job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/analyzing-data.html"
+    },
+    {
+      "name": "DescribeDataset",
+      "methodName": "toDescribeDataset",
+      "description": "Grants permission to describe a dataset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html"
+    },
+    {
+      "name": "DescribeDatasetExportJob",
+      "methodName": "toDescribeDatasetExportJob",
+      "description": "Grants permission to describe a dataset export job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html"
+    },
+    {
+      "name": "DescribeDatasetGroup",
+      "methodName": "toDescribeDatasetGroup",
+      "description": "Grants permission to describe a dataset group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html"
+    },
+    {
+      "name": "DescribeDatasetImportJob",
+      "methodName": "toDescribeDatasetImportJob",
+      "description": "Grants permission to describe a dataset import job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html"
+    },
+    {
+      "name": "DescribeEventTracker",
+      "methodName": "toDescribeEventTracker",
+      "description": "Grants permission to describe an event tracker",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html"
+    },
+    {
+      "name": "DescribeFeatureTransformation",
+      "methodName": "toDescribeFeatureTransformation",
+      "description": "Grants permission to describe a feature transformation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeFeatureTransformation.html"
+    },
+    {
+      "name": "DescribeFilter",
+      "methodName": "toDescribeFilter",
+      "description": "Grants permission to describe a filter",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeFilter.html"
+    },
+    {
+      "name": "DescribeMetricAttribution",
+      "methodName": "toDescribeMetricAttribution",
+      "description": "Grants permission to describe a metric attribution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeMetricAttribution.html"
+    },
+    {
+      "name": "DescribeRecipe",
+      "methodName": "toDescribeRecipe",
+      "description": "Grants permission to describe a recipe",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecipe.html"
+    },
+    {
+      "name": "DescribeRecommender",
+      "methodName": "toDescribeRecommender",
+      "description": "Grants permission to describe a recommender",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html"
+    },
+    {
+      "name": "DescribeSchema",
+      "methodName": "toDescribeSchema",
+      "description": "Grants permission to describe a schema",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSchema.html"
+    },
+    {
+      "name": "DescribeSolution",
+      "methodName": "toDescribeSolution",
+      "description": "Grants permission to describe a solution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html"
+    },
+    {
+      "name": "DescribeSolutionVersion",
+      "methodName": "toDescribeSolutionVersion",
+      "description": "Grants permission to describe a version of a solution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html"
+    },
+    {
+      "name": "GetActionRecommendations",
+      "methodName": "toGetActionRecommendations",
+      "description": "Grants permission to get a list of recommended actions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetActionRecommendations.html"
+    },
+    {
+      "name": "GetDataInsights",
+      "methodName": "toGetDataInsights",
+      "description": "Grants permission to get data insights from a data insights job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/analyzing-data.html"
+    },
+    {
+      "name": "GetPersonalizedRanking",
+      "methodName": "toGetPersonalizedRanking",
+      "description": "Grants permission to get a re-ranked list of recommendations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html"
+    },
+    {
+      "name": "GetRecommendations",
+      "methodName": "toGetRecommendations",
+      "description": "Grants permission to get a list of recommendations from a campaign",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html"
+    },
+    {
+      "name": "GetSolutionMetrics",
+      "methodName": "toGetSolutionMetrics",
+      "description": "Grants permission to get metrics for a solution version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_GetSolutionMetrics.html"
+    },
+    {
+      "name": "ListBatchInferenceJobs",
+      "methodName": "toListBatchInferenceJobs",
+      "description": "Grants permission to list batch inference jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchInferenceJobs.html"
+    },
+    {
+      "name": "ListBatchSegmentJobs",
+      "methodName": "toListBatchSegmentJobs",
+      "description": "Grants permission to list batch segment jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchSegmentJobs.html"
+    },
+    {
+      "name": "ListCampaigns",
+      "methodName": "toListCampaigns",
+      "description": "Grants permission to list campaigns",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html"
+    },
+    {
+      "name": "ListDataDeletionJobs",
+      "methodName": "toListDataDeletionJobs",
+      "description": "Grants permission to list data deletion jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListDataDeletionJobs.html"
+    },
+    {
+      "name": "ListDataInsightsJobs",
+      "methodName": "toListDataInsightsJobs",
+      "description": "Grants permission to list data insights jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/analyzing-data.html"
+    },
+    {
+      "name": "ListDatasetExportJobs",
+      "methodName": "toListDatasetExportJobs",
+      "description": "Grants permission to list dataset export jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasetExportJobs.html"
+    },
+    {
+      "name": "ListDatasetGroups",
+      "methodName": "toListDatasetGroups",
+      "description": "Grants permission to list dataset groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasetGroups.html"
+    },
+    {
+      "name": "ListDatasetImportJobs",
+      "methodName": "toListDatasetImportJobs",
+      "description": "Grants permission to list dataset import jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasetImportJobs.html"
+    },
+    {
+      "name": "ListDatasets",
+      "methodName": "toListDatasets",
+      "description": "Grants permission to list datasets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasets.html"
+    },
+    {
+      "name": "ListEventTrackers",
+      "methodName": "toListEventTrackers",
+      "description": "Grants permission to list event trackers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListEventTrackers.html"
+    },
+    {
+      "name": "ListFilters",
+      "methodName": "toListFilters",
+      "description": "Grants permission to list filters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListFilters.html"
+    },
+    {
+      "name": "ListMetricAttributionMetrics",
+      "methodName": "toListMetricAttributionMetrics",
+      "description": "Grants permission to list metric attribution metrics",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListMetricAttributionMetrics.html"
+    },
+    {
+      "name": "ListMetricAttributions",
+      "methodName": "toListMetricAttributions",
+      "description": "Grants permission to list metric attributions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListMetricAttributions.html"
+    },
+    {
+      "name": "ListRecipes",
+      "methodName": "toListRecipes",
+      "description": "Grants permission to list recipes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListRecipes.html"
+    },
+    {
+      "name": "ListRecommenders",
+      "methodName": "toListRecommenders",
+      "description": "Grants permission to list recommenders",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListRecommenders.html"
+    },
+    {
+      "name": "ListSchemas",
+      "methodName": "toListSchemas",
+      "description": "Grants permission to list schemas",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListSchemas.html"
+    },
+    {
+      "name": "ListSolutionVersions",
+      "methodName": "toListSolutionVersions",
+      "description": "Grants permission to list versions of a solution",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html"
+    },
+    {
+      "name": "ListSolutions",
+      "methodName": "toListSolutions",
+      "description": "Grants permission to list solutions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutActionInteractions",
+      "methodName": "toPutActionInteractions",
+      "description": "Grants permission to put real time action interaction data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutActionInteractions.html"
+    },
+    {
+      "name": "PutActions",
+      "methodName": "toPutActions",
+      "description": "Grants permission to ingest Actions data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutActions.html"
+    },
+    {
+      "name": "PutEvents",
+      "methodName": "toPutEvents",
+      "description": "Grants permission to put real time event data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html"
+    },
+    {
+      "name": "PutItems",
+      "methodName": "toPutItems",
+      "description": "Grants permission to ingest Items data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutItems.html"
+    },
+    {
+      "name": "PutUsers",
+      "methodName": "toPutUsers",
+      "description": "Grants permission to ingest Users data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutUsers.html"
+    },
+    {
+      "name": "StartRecommender",
+      "methodName": "toStartRecommender",
+      "description": "Grants permission to start a recommender",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_StartRecommender.html"
+    },
+    {
+      "name": "StopRecommender",
+      "methodName": "toStopRecommender",
+      "description": "Grants permission to stop a recommender",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_StopRecommender.html"
+    },
+    {
+      "name": "StopSolutionVersionCreation",
+      "methodName": "toStopSolutionVersionCreation",
+      "description": "Grants permission to stop a solution version creation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_StopSolutionVersionCreation.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateCampaign",
+      "methodName": "toUpdateCampaign",
+      "description": "Grants permission to update a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateCampaign.html"
+    },
+    {
+      "name": "UpdateDataset",
+      "methodName": "toUpdateDataset",
+      "description": "Grants permission to update a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateDataset.html"
+    },
+    {
+      "name": "UpdateMetricAttribution",
+      "methodName": "toUpdateMetricAttribution",
+      "description": "Grants permission to update a metric attribution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateMetricAttribution.html"
+    },
+    {
+      "name": "UpdateRecommender",
+      "methodName": "toUpdateRecommender",
+      "description": "Grants permission to update a recommender",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateRecommender.html"
+    },
+    {
+      "name": "UpdateSolution",
+      "methodName": "toUpdateSolution",
+      "description": "Grants permission to update a solution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateSolution.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "algorithm",
+      "methodName": "onAlgorithm",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Algorithm.html",
+      "arn": "arn:${Partition}:personalize:::algorithm/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "batchInferenceJob",
+      "methodName": "onBatchInferenceJob",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_BatchInferenceJob.html",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:batch-inference-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "batchSegmentJob",
+      "methodName": "onBatchSegmentJob",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_BatchSegmentJob.html",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:batch-segment-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "campaign",
+      "methodName": "onCampaign",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Campaign.html",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:campaign/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "dataDeletionJob",
+      "methodName": "onDataDeletionJob",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DataDeletionJob.html",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:data-deletion-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "dataInsightsJob",
+      "methodName": "onDataInsightsJob",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/analyzing-data.html",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:data-insights-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "dataset",
+      "methodName": "onDataset",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Dataset.html",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:dataset/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "datasetExportJob",
+      "methodName": "onDatasetExportJob",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DatasetExportJob.html",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:dataset-export-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "datasetGroup",
+      "methodName": "onDatasetGroup",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DatasetGroup.html",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:dataset-group/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "datasetImportJob",
+      "methodName": "onDatasetImportJob",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_DatasetImportJob.html",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:dataset-import-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "eventTracker",
+      "methodName": "onEventTracker",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_EventTracker.html",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:event-tracker/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "featureTransformation",
+      "methodName": "onFeatureTransformation",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_FeatureTransformation.html",
+      "arn": "arn:${Partition}:personalize:::feature-transformation/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "filter",
+      "methodName": "onFilter",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Filter.html",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:filter/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "metricAttribution",
+      "methodName": "onMetricAttribution",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_MetricAttribution.html",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:metric-attribution/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "recipe",
+      "methodName": "onRecipe",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Recipe.html",
+      "arn": "arn:${Partition}:personalize:::recipe/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "recommender",
+      "methodName": "onRecommender",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Recommender.html",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:recommender/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "schema",
+      "methodName": "onSchema",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html#schema-examples",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:schema/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "solution",
+      "methodName": "onSolution",
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Solution.html",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:solution/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateBatchInferenceJob",
+        "toCreateBatchSegmentJob",
+        "toCreateCampaign",
+        "toCreateDataDeletionJob",
+        "toCreateDataset",
+        "toCreateDatasetExportJob",
+        "toCreateDatasetGroup",
+        "toCreateDatasetImportJob",
+        "toCreateEventTracker",
+        "toCreateFilter",
+        "toCreateRecommender",
+        "toCreateSolution",
+        "toCreateSolutionVersion",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateBatchInferenceJob",
+        "toCreateBatchSegmentJob",
+        "toCreateCampaign",
+        "toCreateDataDeletionJob",
+        "toCreateDataset",
+        "toCreateDatasetExportJob",
+        "toCreateDatasetGroup",
+        "toCreateDatasetImportJob",
+        "toCreateEventTracker",
+        "toCreateFilter",
+        "toCreateMetricAttribution",
+        "toCreateRecommender",
+        "toCreateSolution",
+        "toCreateSolutionVersion",
+        "toDeleteCampaign",
+        "toDeleteDataset",
+        "toDeleteDatasetGroup",
+        "toDeleteEventTracker",
+        "toDeleteFilter",
+        "toDeleteRecommender",
+        "toDeleteSolution",
+        "toDescribeBatchInferenceJob",
+        "toDescribeBatchSegmentJob",
+        "toDescribeCampaign",
+        "toDescribeDataDeletionJob",
+        "toDescribeDataset",
+        "toDescribeDatasetExportJob",
+        "toDescribeDatasetGroup",
+        "toDescribeDatasetImportJob",
+        "toDescribeEventTracker",
+        "toDescribeFilter",
+        "toDescribeRecommender",
+        "toDescribeSolution",
+        "toDescribeSolutionVersion",
+        "toGetActionRecommendations",
+        "toGetPersonalizedRanking",
+        "toGetRecommendations",
+        "toGetSolutionMetrics",
+        "toListTagsForResource",
+        "toPutActions",
+        "toPutItems",
+        "toPutUsers",
+        "toStartRecommender",
+        "toStopRecommender",
+        "toStopSolutionVersionCreation",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateCampaign",
+        "toUpdateDataset",
+        "toUpdateRecommender",
+        "toUpdateSolution"
+      ],
+      "relatedResourceTypes": [
+        "batchInferenceJob",
+        "batchSegmentJob",
+        "campaign",
+        "dataDeletionJob",
+        "dataset",
+        "datasetExportJob",
+        "datasetGroup",
+        "datasetImportJob",
+        "eventTracker",
+        "filter",
+        "recommender",
+        "solution"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateBatchInferenceJob",
+        "toCreateBatchSegmentJob",
+        "toCreateCampaign",
+        "toCreateDataDeletionJob",
+        "toCreateDataset",
+        "toCreateDatasetExportJob",
+        "toCreateDatasetGroup",
+        "toCreateDatasetImportJob",
+        "toCreateEventTracker",
+        "toCreateFilter",
+        "toCreateRecommender",
+        "toCreateSolution",
+        "toCreateSolutionVersion",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

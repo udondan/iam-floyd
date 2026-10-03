@@ -1,8 +1,0 @@
-servicediscovery:NamespaceArn
-servicediscovery:NamespaceName
-servicediscovery:RequestTag/${TagKey}
-servicediscovery:ResourceTag/${TagKey}
-servicediscovery:ServiceArn
-servicediscovery:ServiceCreatedByAccount
-servicediscovery:ServiceName
-servicediscovery:TagKeys

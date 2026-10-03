@@ -1,3 +1,0 @@
-eks-mcp:CallPrivilegedTool;Write
-eks-mcp:CallReadOnlyTool;Read
-eks-mcp:InvokeMcp;Read

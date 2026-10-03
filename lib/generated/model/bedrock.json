@@ -1,0 +1,3928 @@
+{
+  "schemaVersion": 1,
+  "filename": "bedrock",
+  "className": "Bedrock",
+  "name": "bedrock",
+  "servicePrefix": "bedrock",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_bedrock.html",
+  "accessLevelList": {
+    "Read": [
+      "AgenticRetrieveStream",
+      "ApplyGuardrail",
+      "CallWithBearerToken",
+      "CheckIngestedDocumentAcl",
+      "CountTokens",
+      "DetectGeneratedContent",
+      "ExportAutomatedReasoningPolicyVersion",
+      "GenerateQuery",
+      "GetAccountDataRetention",
+      "GetAdvancedPromptOptimizationJob",
+      "GetAgent",
+      "GetAgentActionGroup",
+      "GetAgentAlias",
+      "GetAgentCollaborator",
+      "GetAgentKnowledgeBase",
+      "GetAgentMemory",
+      "GetAgentVersion",
+      "GetAsyncInvoke",
+      "GetAutomatedReasoningPolicy",
+      "GetAutomatedReasoningPolicyAnnotations",
+      "GetAutomatedReasoningPolicyBuildWorkflow",
+      "GetAutomatedReasoningPolicyBuildWorkflowResultAssets",
+      "GetAutomatedReasoningPolicyNextScenario",
+      "GetAutomatedReasoningPolicyTestCase",
+      "GetAutomatedReasoningPolicyTestResult",
+      "GetBlueprint",
+      "GetBlueprintOptimizationStatus",
+      "GetCustomModel",
+      "GetCustomModelDeployment",
+      "GetDataAutomationLibrary",
+      "GetDataAutomationLibraryEntity",
+      "GetDataAutomationLibraryIngestionJob",
+      "GetDataAutomationProject",
+      "GetDataAutomationStatus",
+      "GetDataSource",
+      "GetDataSourceAuthorizationUrl",
+      "GetDocumentContent",
+      "GetEvaluationJob",
+      "GetExecutionFlowSnapshot",
+      "GetFlow",
+      "GetFlowAlias",
+      "GetFlowExecution",
+      "GetFlowVersion",
+      "GetFoundationModel",
+      "GetFoundationModelAvailability",
+      "GetGuardrail",
+      "GetImportedModel",
+      "GetInferenceProfile",
+      "GetIngestedDocumentAcl",
+      "GetIngestionJob",
+      "GetInvocationStep",
+      "GetInvoke",
+      "GetKnowledgeBase",
+      "GetKnowledgeBaseDocuments",
+      "GetMarketplaceModelEndpoint",
+      "GetModelCopyJob",
+      "GetModelCustomizationJob",
+      "GetModelEvaluationJob",
+      "GetModelImportJob",
+      "GetModelInvocationJob",
+      "GetModelInvocationLoggingConfiguration",
+      "GetPrompt",
+      "GetPromptRouter",
+      "GetProvisionedModelThroughput",
+      "GetSession",
+      "GetUseCaseForModelAccess",
+      "InvokeAgent",
+      "InvokeFlow",
+      "InvokeGuardrailChecks",
+      "InvokeInlineAgent",
+      "InvokeModel",
+      "InvokeModelWithResponseStream",
+      "InvokeTool",
+      "ListMarketplaceModelEndpoints",
+      "ListTagsForResource",
+      "OptimizePrompt",
+      "Retrieve",
+      "ValidateFlowDefinition",
+      "GetBlueprintRecommendation",
+      "GetResourcePolicy",
+      "InvokeAutomatedReasoningPolicy",
+      "RenderPrompt"
+    ],
+    "Write": [
+      "AssociateAgentCollaborator",
+      "AssociateAgentKnowledgeBase",
+      "BatchDeleteAdvancedPromptOptimizationJob",
+      "BatchDeleteEvaluationJob",
+      "CancelAutomatedReasoningPolicyBuildWorkflow",
+      "CancelInvoke",
+      "CopyBlueprintStage",
+      "CreateAdvancedPromptOptimizationJob",
+      "CreateAgent",
+      "CreateAgentActionGroup",
+      "CreateAgentAlias",
+      "CreateAutomatedReasoningPolicy",
+      "CreateAutomatedReasoningPolicyTestCase",
+      "CreateAutomatedReasoningPolicyVersion",
+      "CreateBlueprint",
+      "CreateBlueprintVersion",
+      "CreateCustomModel",
+      "CreateCustomModelDeployment",
+      "CreateDataAutomationLibrary",
+      "CreateDataAutomationProject",
+      "CreateDataSource",
+      "CreateDataSourceToken",
+      "CreateEvaluationJob",
+      "CreateFlow",
+      "CreateFlowAlias",
+      "CreateFlowVersion",
+      "CreateFoundationModelAgreement",
+      "CreateGuardrail",
+      "CreateGuardrailVersion",
+      "CreateInferenceProfile",
+      "CreateInvocation",
+      "CreateKnowledgeBase",
+      "CreateMarketplaceModelEndpoint",
+      "CreateModelCopyJob",
+      "CreateModelCustomizationJob",
+      "CreateModelEvaluationJob",
+      "CreateModelImportJob",
+      "CreateModelInvocationJob",
+      "CreatePrompt",
+      "CreatePromptRouter",
+      "CreatePromptVersion",
+      "CreateProvisionedModelThroughput",
+      "CreateSession",
+      "DeleteAgent",
+      "DeleteAgentActionGroup",
+      "DeleteAgentAlias",
+      "DeleteAgentMemory",
+      "DeleteAgentVersion",
+      "DeleteAutomatedReasoningPolicy",
+      "DeleteAutomatedReasoningPolicyBuildWorkflow",
+      "DeleteAutomatedReasoningPolicyTestCase",
+      "DeleteBlueprint",
+      "DeleteCustomModel",
+      "DeleteCustomModelDeployment",
+      "DeleteDataAutomationLibrary",
+      "DeleteDataAutomationProject",
+      "DeleteDataSource",
+      "DeleteEnforcedGuardrailConfiguration",
+      "DeleteFlow",
+      "DeleteFlowAlias",
+      "DeleteFlowVersion",
+      "DeleteFoundationModelAgreement",
+      "DeleteGuardrail",
+      "DeleteImportedModel",
+      "DeleteInferenceProfile",
+      "DeleteInvoke",
+      "DeleteKnowledgeBase",
+      "DeleteKnowledgeBaseDocuments",
+      "DeleteMarketplaceModelAgreement",
+      "DeleteMarketplaceModelEndpoint",
+      "DeleteModelInvocationLoggingConfiguration",
+      "DeletePrompt",
+      "DeletePromptRouter",
+      "DeleteProvisionedModelThroughput",
+      "DeleteSession",
+      "DeregisterMarketplaceModelEndpoint",
+      "DisassociateAgentCollaborator",
+      "DisassociateAgentKnowledgeBase",
+      "EndSession",
+      "IngestKnowledgeBaseDocuments",
+      "InvokeBlueprintOptimizationAsync",
+      "InvokeDataAutomation",
+      "InvokeDataAutomationAsync",
+      "InvokeDataAutomationLibraryIngestionJob",
+      "PrepareAgent",
+      "PrepareFlow",
+      "PutAccountDataRetention",
+      "PutEnforcedGuardrailConfiguration",
+      "PutFoundationModelEntitlement",
+      "PutInvocationStep",
+      "PutModelInvocationLoggingConfiguration",
+      "PutUseCaseForModelAccess",
+      "RegisterMarketplaceModelEndpoint",
+      "Rerank",
+      "RetrieveAndGenerate",
+      "StartAutomatedReasoningPolicyBuildWorkflow",
+      "StartAutomatedReasoningPolicyTestWorkflow",
+      "StartFlowExecution",
+      "StartIngestionJob",
+      "StopAdvancedPromptOptimizationJob",
+      "StopEvaluationJob",
+      "StopFlowExecution",
+      "StopIngestionJob",
+      "StopModelCustomizationJob",
+      "StopModelInvocationJob",
+      "TagResource",
+      "UntagResource",
+      "UpdateAgent",
+      "UpdateAgentActionGroup",
+      "UpdateAgentAlias",
+      "UpdateAgentCollaborator",
+      "UpdateAgentKnowledgeBase",
+      "UpdateAutomatedReasoningPolicy",
+      "UpdateAutomatedReasoningPolicyAnnotations",
+      "UpdateAutomatedReasoningPolicyTestCase",
+      "UpdateBlueprint",
+      "UpdateCustomModelDeployment",
+      "UpdateDataAutomationLibrary",
+      "UpdateDataAutomationProject",
+      "UpdateDataSource",
+      "UpdateFlow",
+      "UpdateFlowAlias",
+      "UpdateGuardrail",
+      "UpdateKnowledgeBase",
+      "UpdateMarketplaceModelEndpoint",
+      "UpdatePrompt",
+      "UpdateProvisionedModelThroughput",
+      "UpdateSession",
+      "AllowVendedLogDeliveryForResource",
+      "AssociateThirdPartyKnowledgeBase",
+      "DeleteResourcePolicy",
+      "InvokeBlueprintRecommendationAsync",
+      "InvokeBuilder",
+      "PutResourcePolicy"
+    ],
+    "List": [
+      "ListAdvancedPromptOptimizationJobs",
+      "ListAgentActionGroups",
+      "ListAgentAliases",
+      "ListAgentCollaborators",
+      "ListAgentKnowledgeBases",
+      "ListAgentVersions",
+      "ListAgents",
+      "ListAsyncInvokes",
+      "ListAutomatedReasoningPolicies",
+      "ListAutomatedReasoningPolicyBuildWorkflows",
+      "ListAutomatedReasoningPolicyTestCases",
+      "ListAutomatedReasoningPolicyTestResults",
+      "ListBlueprints",
+      "ListCustomModelDeployments",
+      "ListCustomModels",
+      "ListDataAutomationLibraries",
+      "ListDataAutomationLibraryEntities",
+      "ListDataAutomationLibraryIngestionJobs",
+      "ListDataAutomationProjects",
+      "ListDataSources",
+      "ListEnforcedGuardrailsConfiguration",
+      "ListEvaluationJobs",
+      "ListFlowAliases",
+      "ListFlowExecutionEvents",
+      "ListFlowExecutions",
+      "ListFlowVersions",
+      "ListFlows",
+      "ListFoundationModelAgreementOffers",
+      "ListFoundationModels",
+      "ListGuardrails",
+      "ListImportedModels",
+      "ListInferenceProfiles",
+      "ListIngestionJobs",
+      "ListInvocationSteps",
+      "ListInvocations",
+      "ListKnowledgeBaseDocuments",
+      "ListKnowledgeBases",
+      "ListModelCopyJobs",
+      "ListModelCustomizationJobs",
+      "ListModelEvaluationJobs",
+      "ListModelImportJobs",
+      "ListModelInvocationJobs",
+      "ListPromptRouters",
+      "ListPrompts",
+      "ListProvisionedModelThroughputs",
+      "ListSessions"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "AllowVendedLogDeliveryForResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AgenticRetrieveStream",
+      "methodName": "toAgenticRetrieveStream",
+      "description": "Grants permission to perform agentic retrieve with streaming from retrievers",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "ApplyGuardrail",
+      "methodName": "toApplyGuardrail",
+      "description": "Grants permission to apply a guardrail",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "AssociateAgentCollaborator",
+      "methodName": "toAssociateAgentCollaborator",
+      "description": "Grants permission to associate another existing agent as a collaborator to an existing agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_AssociateAgentCollaborator.html"
+    },
+    {
+      "name": "AssociateAgentKnowledgeBase",
+      "methodName": "toAssociateAgentKnowledgeBase",
+      "description": "Grants permission to associate a knowledge base with an agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_AssociateAgentKnowledgeBase.html"
+    },
+    {
+      "name": "BatchDeleteAdvancedPromptOptimizationJob",
+      "methodName": "toBatchDeleteAdvancedPromptOptimizationJob",
+      "description": "Grants permission to delete one or more advanced prompt optimization jobs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_BatchDeleteAdvancedPromptOptimizationJob.html"
+    },
+    {
+      "name": "BatchDeleteEvaluationJob",
+      "methodName": "toBatchDeleteEvaluationJob",
+      "description": "Grants permission to batch delete list of bedrock evaluation jobs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_BatchDeleteEvaluationJob.html"
+    },
+    {
+      "name": "CallWithBearerToken",
+      "methodName": "toCallWithBearerToken",
+      "description": "Grants permission to use bearer token",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "conditionMethods": [
+        "ifBearerTokenType"
+      ]
+    },
+    {
+      "name": "CancelAutomatedReasoningPolicyBuildWorkflow",
+      "methodName": "toCancelAutomatedReasoningPolicyBuildWorkflow",
+      "description": "Grants permission to cancel a build workflow for an automated reasoning policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "CancelInvoke",
+      "methodName": "toCancelInvoke",
+      "description": "Grants permission to cancel an in-progress stateful invocation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "CheckIngestedDocumentAcl",
+      "methodName": "toCheckIngestedDocumentAcl",
+      "description": "Grants permission to check whether a user has access to a specific document based on access control list ingested in a knowledge base",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_CheckIngestedDocumentAcl.html"
+    },
+    {
+      "name": "CopyBlueprintStage",
+      "methodName": "toCopyBlueprintStage",
+      "description": "Grants permission to copy a blueprint from one stage to another",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Data_Automation_for_Amazon_Bedrock.html"
+    },
+    {
+      "name": "CountTokens",
+      "methodName": "toCountTokens",
+      "description": "Grants permission to count the number of tokens in an input prompt",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_CountTokens.html"
+    },
+    {
+      "name": "CreateAdvancedPromptOptimizationJob",
+      "methodName": "toCreateAdvancedPromptOptimizationJob",
+      "description": "Grants permission to create an advanced prompt optimization job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateAdvancedPromptOptimizationJob.html"
+    },
+    {
+      "name": "CreateAgent",
+      "methodName": "toCreateAgent",
+      "description": "Grants permission to create a new agent and a test agent alias pointing to the DRAFT agent version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateAgent.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAgentActionGroup",
+      "methodName": "toCreateAgentActionGroup",
+      "description": "Grants permission to create a new action group in an existing agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateAgentActionGroup.html"
+    },
+    {
+      "name": "CreateAgentAlias",
+      "methodName": "toCreateAgentAlias",
+      "description": "Grants permission to create a new alias for an agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateAgentAlias.html"
+    },
+    {
+      "name": "CreateAutomatedReasoningPolicy",
+      "methodName": "toCreateAutomatedReasoningPolicy",
+      "description": "Grants permission to create a new automated reasoning policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAutomatedReasoningPolicyTestCase",
+      "methodName": "toCreateAutomatedReasoningPolicyTestCase",
+      "description": "Grants permission to create a test case for an automated reasoning policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "CreateAutomatedReasoningPolicyVersion",
+      "methodName": "toCreateAutomatedReasoningPolicyVersion",
+      "description": "Grants permission to create a new automated reasoning policy version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "CreateBlueprint",
+      "methodName": "toCreateBlueprint",
+      "description": "Grants permission to create a blueprint for custom output from data automation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateBlueprint.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateBlueprintVersion",
+      "methodName": "toCreateBlueprintVersion",
+      "description": "Grants permission to create a new version for an existing blueprint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateBlueprintVersion.html"
+    },
+    {
+      "name": "CreateCustomModel",
+      "methodName": "toCreateCustomModel",
+      "description": "Grants permission to create a custom model into Bedrock",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModel.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateCustomModelDeployment",
+      "methodName": "toCreateCustomModelDeployment",
+      "description": "Grants permission to create a custom model deployment for custom model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModelDeployment.html"
+    },
+    {
+      "name": "CreateDataAutomationLibrary",
+      "methodName": "toCreateDataAutomationLibrary",
+      "description": "Grants permission to create a Data Automation Library",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateDataAutomationLibrary.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateDataAutomationProject",
+      "methodName": "toCreateDataAutomationProject",
+      "description": "Grants permission to create a data automation project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateDataAutomationProject.html"
+    },
+    {
+      "name": "CreateDataSource",
+      "methodName": "toCreateDataSource",
+      "description": "Grants permission to create a data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateDataSource.html"
+    },
+    {
+      "name": "CreateDataSourceToken",
+      "methodName": "toCreateDataSourceToken",
+      "description": "Grants permission to create an authorization token for MANAGED_OAUTH2 data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-3lo-setup.html"
+    },
+    {
+      "name": "CreateEvaluationJob",
+      "methodName": "toCreateEvaluationJob",
+      "description": "Grants permission to create a job for evaluation foundation models or custom models",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateEvaluationJob.html"
+    },
+    {
+      "name": "CreateFlow",
+      "methodName": "toCreateFlow",
+      "description": "Grants permission to create a prompt flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateFlow.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateFlowAlias",
+      "methodName": "toCreateFlowAlias",
+      "description": "Grants permission to create an alias of a prompt flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateFlowAlias.html"
+    },
+    {
+      "name": "CreateFlowVersion",
+      "methodName": "toCreateFlowVersion",
+      "description": "Grants permission to create an immutable version of a prompt flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateFlowVersion.html"
+    },
+    {
+      "name": "CreateFoundationModelAgreement",
+      "methodName": "toCreateFoundationModelAgreement",
+      "description": "Grants permission to create a new foundation model agreement",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html"
+    },
+    {
+      "name": "CreateGuardrail",
+      "methodName": "toCreateGuardrail",
+      "description": "Grants permission to create a new guardrail",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "CreateGuardrailVersion",
+      "methodName": "toCreateGuardrailVersion",
+      "description": "Grants permission to create a new guardrail version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "CreateInferenceProfile",
+      "methodName": "toCreateInferenceProfile",
+      "description": "Grants permission to create inference profiles",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateInferenceProfile.html"
+    },
+    {
+      "name": "CreateInvocation",
+      "methodName": "toCreateInvocation",
+      "description": "Grants permission to create a new invocation in an existing session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_CreateInvocation.html"
+    },
+    {
+      "name": "CreateKnowledgeBase",
+      "methodName": "toCreateKnowledgeBase",
+      "description": "Grants permission to create a knowledge base",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMarketplaceModelEndpoint",
+      "methodName": "toCreateMarketplaceModelEndpoint",
+      "description": "Grants permission to create a marketplace model endpoint",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateModelCopyJob",
+      "methodName": "toCreateModelCopyJob",
+      "description": "Grants permission to create a job for copying a custom model across region or across account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelCopyJob.html"
+    },
+    {
+      "name": "CreateModelCustomizationJob",
+      "methodName": "toCreateModelCustomizationJob",
+      "description": "Grants permission to create a job for customizing the model with your custom training data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelCustomizationJob.html"
+    },
+    {
+      "name": "CreateModelEvaluationJob",
+      "methodName": "toCreateModelEvaluationJob",
+      "description": "Grants permission to create a job for evaluation foundation models or custom models",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelEvaluationJob.html"
+    },
+    {
+      "name": "CreateModelImportJob",
+      "methodName": "toCreateModelImportJob",
+      "description": "Grants permission to create a job for importing model into Bedrock",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateModelInvocationJob",
+      "methodName": "toCreateModelInvocationJob",
+      "description": "Grants permission to create a new model invocation job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelInvocationJob.html"
+    },
+    {
+      "name": "CreatePrompt",
+      "methodName": "toCreatePrompt",
+      "description": "Grants permission to create a prompt",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreatePrompt.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreatePromptRouter",
+      "methodName": "toCreatePromptRouter",
+      "description": "Grants permission to create a custom prompt router",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreatePromptRouter.html"
+    },
+    {
+      "name": "CreatePromptVersion",
+      "methodName": "toCreatePromptVersion",
+      "description": "Grants permission to create a version of a prompt",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreatePromptVersion.html"
+    },
+    {
+      "name": "CreateProvisionedModelThroughput",
+      "methodName": "toCreateProvisionedModelThroughput",
+      "description": "Grants permission to create a new provisioned model throughput",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateProvisionedModelThroughput.html"
+    },
+    {
+      "name": "CreateSession",
+      "methodName": "toCreateSession",
+      "description": "Grants permission to create a new session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_CreateSession.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteAgent",
+      "methodName": "toDeleteAgent",
+      "description": "Grants permission to delete an Agent that you created earlier",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteAgent.html"
+    },
+    {
+      "name": "DeleteAgentActionGroup",
+      "methodName": "toDeleteAgentActionGroup",
+      "description": "Grants permission to delete an actionGroup that you created earlier",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteAgentActionGroup.html"
+    },
+    {
+      "name": "DeleteAgentAlias",
+      "methodName": "toDeleteAgentAlias",
+      "description": "Grants permission to delete an AgentAlias that you created earlier",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteAgentAlias.html"
+    },
+    {
+      "name": "DeleteAgentMemory",
+      "methodName": "toDeleteAgentMemory",
+      "description": "Grants permission to delete existing memory for an alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_DeleteAgentMemory.html"
+    },
+    {
+      "name": "DeleteAgentVersion",
+      "methodName": "toDeleteAgentVersion",
+      "description": "Grants permission to delete an Agent Version that you created earlier",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteAgentVersion.html"
+    },
+    {
+      "name": "DeleteAutomatedReasoningPolicy",
+      "methodName": "toDeleteAutomatedReasoningPolicy",
+      "description": "Grants permission to delete an automated reasoning policy or its version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "DeleteAutomatedReasoningPolicyBuildWorkflow",
+      "methodName": "toDeleteAutomatedReasoningPolicyBuildWorkflow",
+      "description": "Grants permission to delete a build workflow for an automated reasoning policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "DeleteAutomatedReasoningPolicyTestCase",
+      "methodName": "toDeleteAutomatedReasoningPolicyTestCase",
+      "description": "Grants permission to delete a test case for an automated reasoning policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "DeleteBlueprint",
+      "methodName": "toDeleteBlueprint",
+      "description": "Grants permission to delete a blueprint for data automation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_DeleteBlueprint.html"
+    },
+    {
+      "name": "DeleteCustomModel",
+      "methodName": "toDeleteCustomModel",
+      "description": "Grants permission to delete a custom model that you created earlier",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteCustomModel.html"
+    },
+    {
+      "name": "DeleteCustomModelDeployment",
+      "methodName": "toDeleteCustomModelDeployment",
+      "description": "Grants permission to delete a custom model deployment that you created earlier",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteCustomModelDeployment.html"
+    },
+    {
+      "name": "DeleteDataAutomationLibrary",
+      "methodName": "toDeleteDataAutomationLibrary",
+      "description": "Grants permission to delete a Data Automation Library",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_DeleteDataAutomationLibrary.html"
+    },
+    {
+      "name": "DeleteDataAutomationProject",
+      "methodName": "toDeleteDataAutomationProject",
+      "description": "Grants permission to delete a data automation project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_DeleteDataAutomationProject.html"
+    },
+    {
+      "name": "DeleteDataSource",
+      "methodName": "toDeleteDataSource",
+      "description": "Grants permission to delete a data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteDataSource.html"
+    },
+    {
+      "name": "DeleteEnforcedGuardrailConfiguration",
+      "methodName": "toDeleteEnforcedGuardrailConfiguration",
+      "description": "Grants permission to delete account-level enforced guardrail configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteEnforcedGuardrailConfiguration.html"
+    },
+    {
+      "name": "DeleteFlow",
+      "methodName": "toDeleteFlow",
+      "description": "Grants permission to delete a prompt flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteFlow.html"
+    },
+    {
+      "name": "DeleteFlowAlias",
+      "methodName": "toDeleteFlowAlias",
+      "description": "Grants permission to delete an alias of a prompt flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteFlowAlias.html"
+    },
+    {
+      "name": "DeleteFlowVersion",
+      "methodName": "toDeleteFlowVersion",
+      "description": "Grants permission to delete a version of a prompt flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteFlowVersion.html"
+    },
+    {
+      "name": "DeleteFoundationModelAgreement",
+      "methodName": "toDeleteFoundationModelAgreement",
+      "description": "Grants permission to delete a foundation model agreement that you created earlier",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html"
+    },
+    {
+      "name": "DeleteGuardrail",
+      "methodName": "toDeleteGuardrail",
+      "description": "Grants permission to delete a guardrail or its version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "DeleteImportedModel",
+      "methodName": "toDeleteImportedModel",
+      "description": "Grants permission to delete previously created Bedrock imported model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteImportedModel.html"
+    },
+    {
+      "name": "DeleteInferenceProfile",
+      "methodName": "toDeleteInferenceProfile",
+      "description": "Grants permission to delete inference profiles",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteInferenceProfile.html"
+    },
+    {
+      "name": "DeleteInvoke",
+      "methodName": "toDeleteInvoke",
+      "description": "Grants permission to delete a stored response of a stateful invocation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "DeleteKnowledgeBase",
+      "methodName": "toDeleteKnowledgeBase",
+      "description": "Grants permission to delete a knowledge base",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteKnowledgeBase.html"
+    },
+    {
+      "name": "DeleteKnowledgeBaseDocuments",
+      "methodName": "toDeleteKnowledgeBaseDocuments",
+      "description": "Grants permission to delete documents from a knowledge base",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteKnowledgeBaseDocuments.html"
+    },
+    {
+      "name": "DeleteMarketplaceModelAgreement",
+      "methodName": "toDeleteMarketplaceModelAgreement",
+      "description": "Grants permission to unsubscribe from a bedrock marketplace enabled AWS marketplace model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html"
+    },
+    {
+      "name": "DeleteMarketplaceModelEndpoint",
+      "methodName": "toDeleteMarketplaceModelEndpoint",
+      "description": "Grants permission to delete a marketplace model endpoint",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteModelInvocationLoggingConfiguration",
+      "methodName": "toDeleteModelInvocationLoggingConfiguration",
+      "description": "Grants permission to delete an existing Invocation logging configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteModelInvocationLoggingConfiguration.html"
+    },
+    {
+      "name": "DeletePrompt",
+      "methodName": "toDeletePrompt",
+      "description": "Grants permission to delete a prompt or its version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeletePrompt.html"
+    },
+    {
+      "name": "DeletePromptRouter",
+      "methodName": "toDeletePromptRouter",
+      "description": "Grants permission to delete a custom prompt router",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeletePromptRouter.html"
+    },
+    {
+      "name": "DeleteProvisionedModelThroughput",
+      "methodName": "toDeleteProvisionedModelThroughput",
+      "description": "Grants permission to delete a provisioned model throughput that you created earlier",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteProvisionedModelThroughput.html"
+    },
+    {
+      "name": "DeleteSession",
+      "methodName": "toDeleteSession",
+      "description": "Grants permission to delete a Session that you created earlier",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_DeleteSession.html"
+    },
+    {
+      "name": "DeregisterMarketplaceModelEndpoint",
+      "methodName": "toDeregisterMarketplaceModelEndpoint",
+      "description": "Grants permission to deregister a marketplace model endpoint to make it unusable in Bedrock Marketplace",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DetectGeneratedContent",
+      "methodName": "toDetectGeneratedContent",
+      "description": "Grants permission to detect if the provided content is generated using Amazon Bedrock",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "DisassociateAgentCollaborator",
+      "methodName": "toDisassociateAgentCollaborator",
+      "description": "Grants permission to diassociate a collaborator that you associated earlier",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DisassociateAgentCollaborator.html"
+    },
+    {
+      "name": "DisassociateAgentKnowledgeBase",
+      "methodName": "toDisassociateAgentKnowledgeBase",
+      "description": "Grants permission to disassociate a knowledge base from the agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DisassociateAgentKnowledgeBase.html"
+    },
+    {
+      "name": "EndSession",
+      "methodName": "toEndSession",
+      "description": "Grants permission to end a Session that you created earlier",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_EndSession.html"
+    },
+    {
+      "name": "ExportAutomatedReasoningPolicyVersion",
+      "methodName": "toExportAutomatedReasoningPolicyVersion",
+      "description": "Grants permission to retrieve an automated reasoning policy version artifact",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "GenerateQuery",
+      "methodName": "toGenerateQuery",
+      "description": "Grants permission to generate queries associated with user input",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "GetAccountDataRetention",
+      "methodName": "toGetAccountDataRetention",
+      "description": "Returns the account-wide data retention mode for Amazon Bedrock",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetAccountDataRetention.html"
+    },
+    {
+      "name": "GetAdvancedPromptOptimizationJob",
+      "methodName": "toGetAdvancedPromptOptimizationJob",
+      "description": "Grants permission to get information about an advanced prompt optimization job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetAdvancedPromptOptimizationJob.html"
+    },
+    {
+      "name": "GetAgent",
+      "methodName": "toGetAgent",
+      "description": "Grants permission to retrieve an existing agent",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetAgent.html"
+    },
+    {
+      "name": "GetAgentActionGroup",
+      "methodName": "toGetAgentActionGroup",
+      "description": "Grants permission to retrieve an existing action group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetAgentActionGroup.html"
+    },
+    {
+      "name": "GetAgentAlias",
+      "methodName": "toGetAgentAlias",
+      "description": "Grants permission to retrieve an existing alias",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetAgentAlias.html"
+    },
+    {
+      "name": "GetAgentCollaborator",
+      "methodName": "toGetAgentCollaborator",
+      "description": "Grants permission to retrieve an existing collaborator",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetAgentCollaborator.html"
+    },
+    {
+      "name": "GetAgentKnowledgeBase",
+      "methodName": "toGetAgentKnowledgeBase",
+      "description": "Grants permission to describe a knowledge base associated with an agent",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetAgentKnowledgeBase.html"
+    },
+    {
+      "name": "GetAgentMemory",
+      "methodName": "toGetAgentMemory",
+      "description": "Grants permission to retrieve existing memory for an alias",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetAgentMemory.html"
+    },
+    {
+      "name": "GetAgentVersion",
+      "methodName": "toGetAgentVersion",
+      "description": "Grants permission to retrieve an existing version of an agent",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetAgentVersion.html"
+    },
+    {
+      "name": "GetAsyncInvoke",
+      "methodName": "toGetAsyncInvoke",
+      "description": "Grants permission to get the properties associated with an asynchronous invocation that you have submitted",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetAsyncInvoke.html"
+    },
+    {
+      "name": "GetAutomatedReasoningPolicy",
+      "methodName": "toGetAutomatedReasoningPolicy",
+      "description": "Grants permission to retrieve an automated reasoning policy or its version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "GetAutomatedReasoningPolicyAnnotations",
+      "methodName": "toGetAutomatedReasoningPolicyAnnotations",
+      "description": "Grants permission to retrieve annotations for a build workflow for an automated reasoning policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "GetAutomatedReasoningPolicyBuildWorkflow",
+      "methodName": "toGetAutomatedReasoningPolicyBuildWorkflow",
+      "description": "Grants permission to retrieve a build workflow for an automated reasoning policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "GetAutomatedReasoningPolicyBuildWorkflowResultAssets",
+      "methodName": "toGetAutomatedReasoningPolicyBuildWorkflowResultAssets",
+      "description": "Grants permission to retrieve assets for a build workflow for an automated reasoning policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "GetAutomatedReasoningPolicyNextScenario",
+      "methodName": "toGetAutomatedReasoningPolicyNextScenario",
+      "description": "Grants permission to retrieve the next unreviewed generated scenario for a build workflow for an automated reasoning policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "GetAutomatedReasoningPolicyTestCase",
+      "methodName": "toGetAutomatedReasoningPolicyTestCase",
+      "description": "Grants permission to retrieve a test case for an automated reasoning policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "GetAutomatedReasoningPolicyTestResult",
+      "methodName": "toGetAutomatedReasoningPolicyTestResult",
+      "description": "Grants permission to retrieve result for a test case for an automated reasoning policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "GetBlueprint",
+      "methodName": "toGetBlueprint",
+      "description": "Grants permission to retrieve an existing blueprint for data automation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_GetBlueprint.html"
+    },
+    {
+      "name": "GetBlueprintOptimizationStatus",
+      "methodName": "toGetBlueprintOptimizationStatus",
+      "description": "Grants permission to get the status of a blueprint optimization job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Data_Automation_for_Amazon_Bedrock.html"
+    },
+    {
+      "name": "GetCustomModel",
+      "methodName": "toGetCustomModel",
+      "description": "Grants permission to get the properties associated with a Bedrock custom model that you have created",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetCustomModel.html"
+    },
+    {
+      "name": "GetCustomModelDeployment",
+      "methodName": "toGetCustomModelDeployment",
+      "description": "Grants permission to get the properties associated with a custom model deployment. Use this operation to get the status of a custom model deployment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetCustomModelDeployment.html"
+    },
+    {
+      "name": "GetDataAutomationLibrary",
+      "methodName": "toGetDataAutomationLibrary",
+      "description": "Grants permission to retrieve an existing Data Automation Library",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_GetDataAutomationLibrary.html"
+    },
+    {
+      "name": "GetDataAutomationLibraryEntity",
+      "methodName": "toGetDataAutomationLibraryEntity",
+      "description": "Grants permission to get a Data Automation Library entity",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_GetDataAutomationLibraryEntity.html"
+    },
+    {
+      "name": "GetDataAutomationLibraryIngestionJob",
+      "methodName": "toGetDataAutomationLibraryIngestionJob",
+      "description": "Grants permission to get details about a Data Automation Library ingestion job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_GetDataAutomationLibraryIngestionJob.html"
+    },
+    {
+      "name": "GetDataAutomationProject",
+      "methodName": "toGetDataAutomationProject",
+      "description": "Grants permission to retrieve an existing data automation project",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_GetDataAutomationProject.html"
+    },
+    {
+      "name": "GetDataAutomationStatus",
+      "methodName": "toGetDataAutomationStatus",
+      "description": "Grants permission to retrieve the status of a data automation invocation job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation-runtime_GetDataAutomationStatus.html"
+    },
+    {
+      "name": "GetDataSource",
+      "methodName": "toGetDataSource",
+      "description": "Grants permission to retrieve an existing data source",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetDataSource.html"
+    },
+    {
+      "name": "GetDataSourceAuthorizationUrl",
+      "methodName": "toGetDataSourceAuthorizationUrl",
+      "description": "Grants permission to get the authorization URL for a MANAGED_OAUTH2 data source",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-3lo-setup.html"
+    },
+    {
+      "name": "GetDocumentContent",
+      "methodName": "toGetDocumentContent",
+      "description": "Grants permission to retrieve a document",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "GetEvaluationJob",
+      "methodName": "toGetEvaluationJob",
+      "description": "Grants permission to get the properties associated with a evaluation job. Use this operation to get the status of a evaluation job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetEvaluationJob.html"
+    },
+    {
+      "name": "GetExecutionFlowSnapshot",
+      "methodName": "toGetExecutionFlowSnapshot",
+      "description": "Grants permission to retrieve the flow definition for a flow execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetExecutionFlowSnapshot.html"
+    },
+    {
+      "name": "GetFlow",
+      "methodName": "toGetFlow",
+      "description": "Grants permission to retrieve an existing prompt flow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetFlow.html"
+    },
+    {
+      "name": "GetFlowAlias",
+      "methodName": "toGetFlowAlias",
+      "description": "Grants permission to retrieve an existing alias of a prompt flow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetFlowAlias.html"
+    },
+    {
+      "name": "GetFlowExecution",
+      "methodName": "toGetFlowExecution",
+      "description": "Grants permission to retrieve an existing execution of a flow alias",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetFlowExecution.html"
+    },
+    {
+      "name": "GetFlowVersion",
+      "methodName": "toGetFlowVersion",
+      "description": "Grants permission to retrieve an existing version of a prompt flow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetFlowVersion.html"
+    },
+    {
+      "name": "GetFoundationModel",
+      "methodName": "toGetFoundationModel",
+      "description": "Grants permission to get the properties associated with a Bedrock foundation model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html"
+    },
+    {
+      "name": "GetFoundationModelAvailability",
+      "methodName": "toGetFoundationModelAvailability",
+      "description": "Grants permission to get the availability of a foundation model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html"
+    },
+    {
+      "name": "GetGuardrail",
+      "methodName": "toGetGuardrail",
+      "description": "Grants permission to retrieve a guardrail or its version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "GetImportedModel",
+      "methodName": "toGetImportedModel",
+      "description": "Grants permission to get the properties associated with Bedrock imported model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetImportedModel.html"
+    },
+    {
+      "name": "GetInferenceProfile",
+      "methodName": "toGetInferenceProfile",
+      "description": "Grants permission to get the properties associated with an inference profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetInferenceProfile.html"
+    },
+    {
+      "name": "GetIngestedDocumentAcl",
+      "methodName": "toGetIngestedDocumentAcl",
+      "description": "Grants permission to fetch the access control list for a specific document ingested in a knowledge base",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetIngestedDocumentAcl.html"
+    },
+    {
+      "name": "GetIngestionJob",
+      "methodName": "toGetIngestionJob",
+      "description": "Grants permission to retrieve an existing ingestion job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetIngestionJob.html"
+    },
+    {
+      "name": "GetInvocationStep",
+      "methodName": "toGetInvocationStep",
+      "description": "Grants permission to get an invocation step from a session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetInvocationStep.html"
+    },
+    {
+      "name": "GetInvoke",
+      "methodName": "toGetInvoke",
+      "description": "Grants permission to retrieve a stored response of a stateful invocation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "GetKnowledgeBase",
+      "methodName": "toGetKnowledgeBase",
+      "description": "Grants permission to retrieve an existing knowledge base",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetKnowledgeBase.html"
+    },
+    {
+      "name": "GetKnowledgeBaseDocuments",
+      "methodName": "toGetKnowledgeBaseDocuments",
+      "description": "Grants permission to get details for documents in a knowledge base",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetKnowledgeBaseDocuments.html"
+    },
+    {
+      "name": "GetMarketplaceModelEndpoint",
+      "methodName": "toGetMarketplaceModelEndpoint",
+      "description": "Grants permission to get the properties of a marketplace model endpoint",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetModelCopyJob",
+      "methodName": "toGetModelCopyJob",
+      "description": "Grants permission to get the properties associated with a model-copy job. Use this operation to get the status of a model-copy job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetModelCopyJob.html"
+    },
+    {
+      "name": "GetModelCustomizationJob",
+      "methodName": "toGetModelCustomizationJob",
+      "description": "Grants permission to get the properties associated with a model-customization job. Use this operation to get the status of a model-customization job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetModelCustomizationJob.html"
+    },
+    {
+      "name": "GetModelEvaluationJob",
+      "methodName": "toGetModelEvaluationJob",
+      "description": "Grants permission to get the properties associated with a model-evaluation job. Use this operation to get the status of a model-evaluation job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetModelEvaluationJob.html"
+    },
+    {
+      "name": "GetModelImportJob",
+      "methodName": "toGetModelImportJob",
+      "description": "Grants permission to get the properties associated with a model import job and is used to get the status of a model import job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetModelImportJob.html"
+    },
+    {
+      "name": "GetModelInvocationJob",
+      "methodName": "toGetModelInvocationJob",
+      "description": "Grants permission to retrieve a model invocation job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetModelInvocationJob.html"
+    },
+    {
+      "name": "GetModelInvocationLoggingConfiguration",
+      "methodName": "toGetModelInvocationLoggingConfiguration",
+      "description": "Grants permission to retrieve an existing Invocation logging configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetModelInvocationLoggingConfiguration.html"
+    },
+    {
+      "name": "GetPrompt",
+      "methodName": "toGetPrompt",
+      "description": "Grants permission to retrieve an existing prompt or its version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetPrompt.html"
+    },
+    {
+      "name": "GetPromptRouter",
+      "methodName": "toGetPromptRouter",
+      "description": "Grants permission to get the properties associated with a prompt router",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetPromptRouter.html"
+    },
+    {
+      "name": "GetProvisionedModelThroughput",
+      "methodName": "toGetProvisionedModelThroughput",
+      "description": "Grants permission to retrieve a provisioned model throughput",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetProvisionedModelThroughput.html"
+    },
+    {
+      "name": "GetSession",
+      "methodName": "toGetSession",
+      "description": "Grants permission to retrieve an existing session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetSession.html"
+    },
+    {
+      "name": "GetUseCaseForModelAccess",
+      "methodName": "toGetUseCaseForModelAccess",
+      "description": "Grants permission to retrieve a use case for model access",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html"
+    },
+    {
+      "name": "IngestKnowledgeBaseDocuments",
+      "methodName": "toIngestKnowledgeBaseDocuments",
+      "description": "Grants permission to directly ingest documents into a knowledge base",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_IngestKnowledgeBaseDocuments.html"
+    },
+    {
+      "name": "InvokeAgent",
+      "methodName": "toInvokeAgent",
+      "description": "Grants permission to send user input (text-only) to the alias of an agent for Bedrock",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html"
+    },
+    {
+      "name": "InvokeBlueprintOptimizationAsync",
+      "methodName": "toInvokeBlueprintOptimizationAsync",
+      "description": "Grants permission to invoke an async job to perform blueprint optimization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Data_Automation_for_Amazon_Bedrock.html"
+    },
+    {
+      "name": "InvokeDataAutomation",
+      "methodName": "toInvokeDataAutomation",
+      "description": "Grants permission to invoke a call to Sync API of Bedrock data automation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation-runtime_InvokeDataAutomation.html"
+    },
+    {
+      "name": "InvokeDataAutomationAsync",
+      "methodName": "toInvokeDataAutomationAsync",
+      "description": "Grants permission to invoke a Bedrock data automation job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation-runtime_InvokeDataAutomationAsync.html"
+    },
+    {
+      "name": "InvokeDataAutomationLibraryIngestionJob",
+      "methodName": "toInvokeDataAutomationLibraryIngestionJob",
+      "description": "Grants permission to invoke a Data Automation Library ingestion job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_InvokeDataAutomationLibraryIngestionJob.html"
+    },
+    {
+      "name": "InvokeFlow",
+      "methodName": "toInvokeFlow",
+      "description": "Grants permission to invoke a prompt flow with user input",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeFlow.html"
+    },
+    {
+      "name": "InvokeGuardrailChecks",
+      "methodName": "toInvokeGuardrailChecks",
+      "description": "Grants permission to invoke guardrail checks",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "InvokeInlineAgent",
+      "methodName": "toInvokeInlineAgent",
+      "description": "Grants permission to send user input (text-only) to the inline agent for Bedrock",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeInlineAgent.html",
+      "conditionMethods": [
+        "ifInlineAgentName"
+      ]
+    },
+    {
+      "name": "InvokeModel",
+      "methodName": "toInvokeModel",
+      "description": "Grants permission to invoke the specified Bedrock model to run inference using the input provided in the request body",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html"
+    },
+    {
+      "name": "InvokeModelWithResponseStream",
+      "methodName": "toInvokeModelWithResponseStream",
+      "description": "Grants permission to invoke the specified Bedrock model to run inference using the input provided in the request body with streaming response",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html"
+    },
+    {
+      "name": "InvokeTool",
+      "methodName": "toInvokeTool",
+      "description": "Grants permission to invoke the specified Bedrock tool to run inference",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeTool.html"
+    },
+    {
+      "name": "ListAdvancedPromptOptimizationJobs",
+      "methodName": "toListAdvancedPromptOptimizationJobs",
+      "description": "Grants permission to list the advanced prompt optimization jobs in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListAdvancedPromptOptimizationJobs.html"
+    },
+    {
+      "name": "ListAgentActionGroups",
+      "methodName": "toListAgentActionGroups",
+      "description": "Grants permission to list action groups in an agent",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListAgentActionGroups.html"
+    },
+    {
+      "name": "ListAgentAliases",
+      "methodName": "toListAgentAliases",
+      "description": "Grants permission to list aliases for an agent",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListAgentAliases.html"
+    },
+    {
+      "name": "ListAgentCollaborators",
+      "methodName": "toListAgentCollaborators",
+      "description": "Grants permission to list collaborators for an agent",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListAgentCollaborators.html"
+    },
+    {
+      "name": "ListAgentKnowledgeBases",
+      "methodName": "toListAgentKnowledgeBases",
+      "description": "Grants permission to list knowledge bases associated with an agent",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListAgentKnowledgeBases.html"
+    },
+    {
+      "name": "ListAgentVersions",
+      "methodName": "toListAgentVersions",
+      "description": "Grants permission to list existing versions of an agent",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListAgentVersions.html"
+    },
+    {
+      "name": "ListAgents",
+      "methodName": "toListAgents",
+      "description": "Grants permission to list existing agents",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListAgents.html"
+    },
+    {
+      "name": "ListAsyncInvokes",
+      "methodName": "toListAsyncInvokes",
+      "description": "Grants permission to get a list of asynchronous invocations that you have submitted",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListAsyncInvokes.html"
+    },
+    {
+      "name": "ListAutomatedReasoningPolicies",
+      "methodName": "toListAutomatedReasoningPolicies",
+      "description": "Grants permission to list automated reasoning policies or its versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "ListAutomatedReasoningPolicyBuildWorkflows",
+      "methodName": "toListAutomatedReasoningPolicyBuildWorkflows",
+      "description": "Grants permission to list build workflows for an automated reasoning policy",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "ListAutomatedReasoningPolicyTestCases",
+      "methodName": "toListAutomatedReasoningPolicyTestCases",
+      "description": "Grants permission to list test cases for an automated reasoning policy",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "ListAutomatedReasoningPolicyTestResults",
+      "methodName": "toListAutomatedReasoningPolicyTestResults",
+      "description": "Grants permission to list test result for an automated reasoning policy",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "ListBlueprints",
+      "methodName": "toListBlueprints",
+      "description": "Grants permission to list existing blueprints for data automation",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListBlueprints.html"
+    },
+    {
+      "name": "ListCustomModelDeployments",
+      "methodName": "toListCustomModelDeployments",
+      "description": "Grants permission to get the list of custom model deployments that you have submitted",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListCustomModelDeployments.html"
+    },
+    {
+      "name": "ListCustomModels",
+      "methodName": "toListCustomModels",
+      "description": "Grants permission to get a list of Bedrock custom models that you have created",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListCustomModels.html"
+    },
+    {
+      "name": "ListDataAutomationLibraries",
+      "methodName": "toListDataAutomationLibraries",
+      "description": "Grants permission to list Data Automation Libraries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListDataAutomationLibraries.html"
+    },
+    {
+      "name": "ListDataAutomationLibraryEntities",
+      "methodName": "toListDataAutomationLibraryEntities",
+      "description": "Grants permission to list Data Automation Library entities",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListDataAutomationLibraryEntities.html"
+    },
+    {
+      "name": "ListDataAutomationLibraryIngestionJobs",
+      "methodName": "toListDataAutomationLibraryIngestionJobs",
+      "description": "Grants permission to list Data Automation Library ingestion jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListDataAutomationLibraryIngestionJobs.html"
+    },
+    {
+      "name": "ListDataAutomationProjects",
+      "methodName": "toListDataAutomationProjects",
+      "description": "Grants permission to list existing data automation projects",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListDataAutomationProjects.html"
+    },
+    {
+      "name": "ListDataSources",
+      "methodName": "toListDataSources",
+      "description": "Grants permission to list existing data sources in an knowledge base",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListDataSources.html"
+    },
+    {
+      "name": "ListEnforcedGuardrailsConfiguration",
+      "methodName": "toListEnforcedGuardrailsConfiguration",
+      "description": "Grants permission to list account-level enforced guardrail configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListEnforcedGuardrailsConfiguration.html"
+    },
+    {
+      "name": "ListEvaluationJobs",
+      "methodName": "toListEvaluationJobs",
+      "description": "Grants permission to get the list of evaluation jobs that you have submitted",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListEvaluationJobs.html"
+    },
+    {
+      "name": "ListFlowAliases",
+      "methodName": "toListFlowAliases",
+      "description": "Grants permission to list existing aliases of a prompt flow",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListFlowAliases.html"
+    },
+    {
+      "name": "ListFlowExecutionEvents",
+      "methodName": "toListFlowExecutionEvents",
+      "description": "Grants permission to retrieve events for a flow execution",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListFlowExecutionEvents.html"
+    },
+    {
+      "name": "ListFlowExecutions",
+      "methodName": "toListFlowExecutions",
+      "description": "Grants permission to list executions of a flow or a flow alias",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListFlowExecutions.html"
+    },
+    {
+      "name": "ListFlowVersions",
+      "methodName": "toListFlowVersions",
+      "description": "Grants permission to list existing versions of a prompt flow",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListFlowVersions.html"
+    },
+    {
+      "name": "ListFlows",
+      "methodName": "toListFlows",
+      "description": "Grants permission to list existing prompt flows",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListFlows.html"
+    },
+    {
+      "name": "ListFoundationModelAgreementOffers",
+      "methodName": "toListFoundationModelAgreementOffers",
+      "description": "Grants permission to get a list of foundation model agreement offers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html"
+    },
+    {
+      "name": "ListFoundationModels",
+      "methodName": "toListFoundationModels",
+      "description": "Grants permission to list Bedrock foundation models that you can use",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListFoundationModels.html"
+    },
+    {
+      "name": "ListGuardrails",
+      "methodName": "toListGuardrails",
+      "description": "Grants permission to list guardrails or its versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "ListImportedModels",
+      "methodName": "toListImportedModels",
+      "description": "Grants permission to get list of Bedrock imported models",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListImportedModels.html"
+    },
+    {
+      "name": "ListInferenceProfiles",
+      "methodName": "toListInferenceProfiles",
+      "description": "Grants permission to list inference profiles that you can use",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListInferenceProfiles.html"
+    },
+    {
+      "name": "ListIngestionJobs",
+      "methodName": "toListIngestionJobs",
+      "description": "Grants permission to list ingestion jobs in a data source",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListIngestionJobs.html"
+    },
+    {
+      "name": "ListInvocationSteps",
+      "methodName": "toListInvocationSteps",
+      "description": "Grants permission to get list of invocation step from a session",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocationSteps.html"
+    },
+    {
+      "name": "ListInvocations",
+      "methodName": "toListInvocations",
+      "description": "Grants permission to list invocations in a session",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocations.html"
+    },
+    {
+      "name": "ListKnowledgeBaseDocuments",
+      "methodName": "toListKnowledgeBaseDocuments",
+      "description": "Grants permission to list documents in a knowledge base",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListKnowledgeBaseDocuments.html"
+    },
+    {
+      "name": "ListKnowledgeBases",
+      "methodName": "toListKnowledgeBases",
+      "description": "Grants permission to list existing knowledge bases",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListKnowledgeBases.html"
+    },
+    {
+      "name": "ListMarketplaceModelEndpoints",
+      "methodName": "toListMarketplaceModelEndpoints",
+      "description": "Grants permission to list marketplace model endpoints that you can use",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "ListModelCopyJobs",
+      "methodName": "toListModelCopyJobs",
+      "description": "Grants permission to get the list of model copy jobs that you have submitted",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListModelCopyJobs.html"
+    },
+    {
+      "name": "ListModelCustomizationJobs",
+      "methodName": "toListModelCustomizationJobs",
+      "description": "Grants permission to get the list of model customization jobs that you have submitted",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListModelCustomizationJobs.html"
+    },
+    {
+      "name": "ListModelEvaluationJobs",
+      "methodName": "toListModelEvaluationJobs",
+      "description": "Grants permission to get the list of model evaluation jobs that you have submitted",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListModelEvaluationJobs.html"
+    },
+    {
+      "name": "ListModelImportJobs",
+      "methodName": "toListModelImportJobs",
+      "description": "Grants permission to get list of model import jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListModelImportJobs.html"
+    },
+    {
+      "name": "ListModelInvocationJobs",
+      "methodName": "toListModelInvocationJobs",
+      "description": "Grants permission to list model invocation jobs that you created earlier",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListModelInvocationJobs.html"
+    },
+    {
+      "name": "ListPromptRouters",
+      "methodName": "toListPromptRouters",
+      "description": "Grants permission to list prompt routers that you can use",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListPromptRouters.html"
+    },
+    {
+      "name": "ListPrompts",
+      "methodName": "toListPrompts",
+      "description": "Grants permission to list existing prompts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListPrompts.html"
+    },
+    {
+      "name": "ListProvisionedModelThroughputs",
+      "methodName": "toListProvisionedModelThroughputs",
+      "description": "Grants permission to list provisioned model throughputs that you created earlier",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListProvisionedModelThroughputs.html"
+    },
+    {
+      "name": "ListSessions",
+      "methodName": "toListSessions",
+      "description": "Grants permission to list existing sessions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListSessions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a Bedrock resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "OptimizePrompt",
+      "methodName": "toOptimizePrompt",
+      "description": "Grants permission to optimize a prompt with user input",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_OptimizePrompt.html"
+    },
+    {
+      "name": "PrepareAgent",
+      "methodName": "toPrepareAgent",
+      "description": "Grants permission to prepare an existing agent to receive runtime requests",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PrepareAgent.html"
+    },
+    {
+      "name": "PrepareFlow",
+      "methodName": "toPrepareFlow",
+      "description": "Grants permission to apply the latest changes made to a prompt flow, so that they are reflected at runtime",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PrepareFlow.html"
+    },
+    {
+      "name": "PutAccountDataRetention",
+      "methodName": "toPutAccountDataRetention",
+      "description": "Sets the account-wide data retention mode for Amazon Bedrock",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_PutAccountDataRetention.html",
+      "conditionMethods": [
+        "ifDataRetentionMode"
+      ]
+    },
+    {
+      "name": "PutEnforcedGuardrailConfiguration",
+      "methodName": "toPutEnforcedGuardrailConfiguration",
+      "description": "Grants permission to set account-level enforced guardrail configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_PutEnforcedGuardrailConfiguration.html"
+    },
+    {
+      "name": "PutFoundationModelEntitlement",
+      "methodName": "toPutFoundationModelEntitlement",
+      "description": "Grants permission to put entitlement to access a serverless foundation model. Do not use to restrict model access",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html"
+    },
+    {
+      "name": "PutInvocationStep",
+      "methodName": "toPutInvocationStep",
+      "description": "Grants permission to put an invocation step into an invocation in session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_PutInvocationStep.html"
+    },
+    {
+      "name": "PutModelInvocationLoggingConfiguration",
+      "methodName": "toPutModelInvocationLoggingConfiguration",
+      "description": "Grants permission to create an existing Invocation logging configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_PutModelInvocationLoggingConfiguration.html"
+    },
+    {
+      "name": "PutUseCaseForModelAccess",
+      "methodName": "toPutUseCaseForModelAccess",
+      "description": "Grants permission to put a use case for model access",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html"
+    },
+    {
+      "name": "RegisterMarketplaceModelEndpoint",
+      "methodName": "toRegisterMarketplaceModelEndpoint",
+      "description": "Grants permission to register a sagemaker endpoint as a marketplace model endpoint",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "Rerank",
+      "methodName": "toRerank",
+      "description": "Grants permission to rank documents based on user input",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "Retrieve",
+      "methodName": "toRetrieve",
+      "description": "Grants permission to retrieve ingested data from a knowledge base",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "RetrieveAndGenerate",
+      "methodName": "toRetrieveAndGenerate",
+      "description": "Grants permission to send user input to perform retrieval and generation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "StartAutomatedReasoningPolicyBuildWorkflow",
+      "methodName": "toStartAutomatedReasoningPolicyBuildWorkflow",
+      "description": "Grants permission to start a build workflow for an automated reasoning policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "StartAutomatedReasoningPolicyTestWorkflow",
+      "methodName": "toStartAutomatedReasoningPolicyTestWorkflow",
+      "description": "Grants permission to start a test workflow for an automated reasoning policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "StartFlowExecution",
+      "methodName": "toStartFlowExecution",
+      "description": "Grants permission to start an execution of a flow alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_StartFlowExecution.html"
+    },
+    {
+      "name": "StartIngestionJob",
+      "methodName": "toStartIngestionJob",
+      "description": "Grants permission to start an ingestion job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_StartIngestionJob.html"
+    },
+    {
+      "name": "StopAdvancedPromptOptimizationJob",
+      "methodName": "toStopAdvancedPromptOptimizationJob",
+      "description": "Grants permission to stop an advanced prompt optimization job while in progress",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_StopAdvancedPromptOptimizationJob.html"
+    },
+    {
+      "name": "StopEvaluationJob",
+      "methodName": "toStopEvaluationJob",
+      "description": "Grants permission to stop a evaluation job while in progress",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_StopEvaluationJob.html"
+    },
+    {
+      "name": "StopFlowExecution",
+      "methodName": "toStopFlowExecution",
+      "description": "Grants permission to stop an execution of a flow alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_StopFlowExecution.html"
+    },
+    {
+      "name": "StopIngestionJob",
+      "methodName": "toStopIngestionJob",
+      "description": "Grants permission to stop an ingestion job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_StopIngestionJob.html"
+    },
+    {
+      "name": "StopModelCustomizationJob",
+      "methodName": "toStopModelCustomizationJob",
+      "description": "Grants permission to stop a Bedrock model customization job while in progress",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_StopModelCustomizationJob.html"
+    },
+    {
+      "name": "StopModelInvocationJob",
+      "methodName": "toStopModelInvocationJob",
+      "description": "Grants permission to stop a model invocation job that you started earlier",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_StopModelInvocationJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to Tag a Bedrock resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to Untag a Bedrock resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAgent",
+      "methodName": "toUpdateAgent",
+      "description": "Grants permission to update an existing agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdateAgent.html"
+    },
+    {
+      "name": "UpdateAgentActionGroup",
+      "methodName": "toUpdateAgentActionGroup",
+      "description": "Grants permission to update an existing action group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdateAgentActionGroup.html"
+    },
+    {
+      "name": "UpdateAgentAlias",
+      "methodName": "toUpdateAgentAlias",
+      "description": "Grants permission to update an existing alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdateAgentAlias.html"
+    },
+    {
+      "name": "UpdateAgentCollaborator",
+      "methodName": "toUpdateAgentCollaborator",
+      "description": "Grants permission to update an existing collaborator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdateAgentCollaborator.html"
+    },
+    {
+      "name": "UpdateAgentKnowledgeBase",
+      "methodName": "toUpdateAgentKnowledgeBase",
+      "description": "Grants permission to update a knowledge base associated with an agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdateAgentKnowledgeBase.html"
+    },
+    {
+      "name": "UpdateAutomatedReasoningPolicy",
+      "methodName": "toUpdateAutomatedReasoningPolicy",
+      "description": "Grants permission to update an automated reasoning policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "UpdateAutomatedReasoningPolicyAnnotations",
+      "methodName": "toUpdateAutomatedReasoningPolicyAnnotations",
+      "description": "Grants permission to update annotations for a build workflow for an automated reasoning policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "UpdateAutomatedReasoningPolicyTestCase",
+      "methodName": "toUpdateAutomatedReasoningPolicyTestCase",
+      "description": "Grants permission to update a test case for automated reasoning policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "UpdateBlueprint",
+      "methodName": "toUpdateBlueprint",
+      "description": "Grants permission to update a blueprint for data automation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_UpdateBlueprint.html"
+    },
+    {
+      "name": "UpdateCustomModelDeployment",
+      "methodName": "toUpdateCustomModelDeployment",
+      "description": "Grants permission to update an existing custom model deployment with a new custom model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_UpdateCustomModelDeployment.html"
+    },
+    {
+      "name": "UpdateDataAutomationLibrary",
+      "methodName": "toUpdateDataAutomationLibrary",
+      "description": "Grants permission to update a Data Automation Library",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_UpdateDataAutomationLibrary.html"
+    },
+    {
+      "name": "UpdateDataAutomationProject",
+      "methodName": "toUpdateDataAutomationProject",
+      "description": "Grants permission to update a data automation project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_UpdateDataAutomationProject.html"
+    },
+    {
+      "name": "UpdateDataSource",
+      "methodName": "toUpdateDataSource",
+      "description": "Grants permission to update a data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdateDataSource.html"
+    },
+    {
+      "name": "UpdateFlow",
+      "methodName": "toUpdateFlow",
+      "description": "Grants permission to update a prompt flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdateFlow.html"
+    },
+    {
+      "name": "UpdateFlowAlias",
+      "methodName": "toUpdateFlowAlias",
+      "description": "Grants permission to update the configuration of an alias of a prompt flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdateFlowAlias.html"
+    },
+    {
+      "name": "UpdateGuardrail",
+      "methodName": "toUpdateGuardrail",
+      "description": "Grants permission to update a guardrail",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "UpdateKnowledgeBase",
+      "methodName": "toUpdateKnowledgeBase",
+      "description": "Grants permission to update a knowledge base",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdateKnowledgeBase.html"
+    },
+    {
+      "name": "UpdateMarketplaceModelEndpoint",
+      "methodName": "toUpdateMarketplaceModelEndpoint",
+      "description": "Grants permission to update a marketplace model endpoint",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdatePrompt",
+      "methodName": "toUpdatePrompt",
+      "description": "Grants permission to update a prompt",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdatePrompt.html"
+    },
+    {
+      "name": "UpdateProvisionedModelThroughput",
+      "methodName": "toUpdateProvisionedModelThroughput",
+      "description": "Grants permission to update a provisioned model throughput that you created earlier",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_UpdateProvisionedModelThroughput.html"
+    },
+    {
+      "name": "UpdateSession",
+      "methodName": "toUpdateSession",
+      "description": "Grants permission to update an existing session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_UpdateSession.html"
+    },
+    {
+      "name": "ValidateFlowDefinition",
+      "methodName": "toValidateFlowDefinition",
+      "description": "Grants permission to validate prompt flow definitions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ValidateFlowDefinition.html"
+    },
+    {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to configure vended log delivery for a knowledge base",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "AssociateThirdPartyKnowledgeBase",
+      "methodName": "toAssociateThirdPartyKnowledgeBase",
+      "description": "Grants permission to use 3rd party platform to store knowledge data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "conditionMethods": [
+        "ifThirdPartyKnowledgeBaseCredentialsSecretArn"
+      ]
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Deletes a previously created Bedrock resource policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "GetBlueprintRecommendation",
+      "methodName": "toGetBlueprintRecommendation",
+      "description": "Grants permission to retrieve blueprint recommendation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Gets the resource policy document for a Bedrock resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetResourePolicy.html"
+    },
+    {
+      "name": "InvokeAutomatedReasoningPolicy",
+      "methodName": "toInvokeAutomatedReasoningPolicy",
+      "description": "Grants permission to invoke an Automated Reasoning policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "InvokeBlueprintRecommendationAsync",
+      "methodName": "toInvokeBlueprintRecommendationAsync",
+      "description": "Grants permission to invoke blueprint recommendations asynchronously",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "InvokeBuilder",
+      "methodName": "toInvokeBuilder",
+      "description": "Grants permission to use the conversational builder which aids in building supported bedrock resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-create-cb.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Adds a resource policy for a Bedrock resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "RenderPrompt",
+      "methodName": "toRenderPrompt",
+      "description": "Grants permission to render an existing prompt or its version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "advanced-prompt-optimization-job",
+      "methodName": "onAdvancedPromptOptimizationJob",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:advanced-prompt-optimization-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "agent",
+      "methodName": "onAgent",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:agent/${AgentId}",
+      "placeholders": [
+        {
+          "placeholder": "AgentId",
+          "name": "agentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "agent-alias",
+      "methodName": "onAgentAlias",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:agent-alias/${AgentId}/${AgentAliasId}",
+      "placeholders": [
+        {
+          "placeholder": "AgentId",
+          "name": "agentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AgentAliasId",
+          "name": "agentAliasId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "application-inference-profile",
+      "methodName": "onApplicationInferenceProfile",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:application-inference-profile/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "async-invoke",
+      "methodName": "onAsyncInvoke",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:async-invoke/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "automated-reasoning-policy",
+      "methodName": "onAutomatedReasoningPolicy",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:automated-reasoning-policy/${AutomatedReasoningPolicyId}",
+      "placeholders": [
+        {
+          "placeholder": "AutomatedReasoningPolicyId",
+          "name": "automatedReasoningPolicyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "automated-reasoning-policy-version",
+      "methodName": "onAutomatedReasoningPolicyVersion",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:automated-reasoning-policy/${AutomatedReasoningPolicyId}:${AutomatedReasoningPolicyVersion}",
+      "placeholders": [
+        {
+          "placeholder": "AutomatedReasoningPolicyId",
+          "name": "automatedReasoningPolicyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AutomatedReasoningPolicyVersion",
+          "name": "automatedReasoningPolicyVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "bedrock-marketplace-model-endpoint",
+      "methodName": "onBedrockMarketplaceModelEndpoint",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:marketplace/model-endpoint/all-access",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "blueprint",
+      "methodName": "onBlueprint",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:blueprint/${BlueprintId}",
+      "placeholders": [
+        {
+          "placeholder": "BlueprintId",
+          "name": "blueprintId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "blueprint-optimization-invocation",
+      "methodName": "onBlueprintOptimizationInvocation",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Data_Automation_for_Amazon_Bedrock.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:blueprint-optimization-invocation/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "custom-model",
+      "methodName": "onCustomModel",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:custom-model/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "custom-model-deployment",
+      "methodName": "onCustomModelDeployment",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:custom-model-deployment/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "data-automation-invocation-job",
+      "methodName": "onDataAutomationInvocationJob",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:data-automation-invocation/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "data-automation-library",
+      "methodName": "onDataAutomationLibrary",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:data-automation-library/${DataAutomationLibraryId}",
+      "placeholders": [
+        {
+          "placeholder": "DataAutomationLibraryId",
+          "name": "dataAutomationLibraryId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "data-automation-library-ingestion-job",
+      "methodName": "onDataAutomationLibraryIngestionJob",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:data-automation-library-ingestion-job/${IngestionJobId}",
+      "placeholders": [
+        {
+          "placeholder": "IngestionJobId",
+          "name": "ingestionJobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "data-automation-profile",
+      "methodName": "onDataAutomationProfile",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:data-automation-profile/${ProfileId}",
+      "placeholders": [
+        {
+          "placeholder": "ProfileId",
+          "name": "profileId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "data-automation-project",
+      "methodName": "onDataAutomationProject",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:data-automation-project/${ProjectId}",
+      "placeholders": [
+        {
+          "placeholder": "ProjectId",
+          "name": "projectId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "default-prompt-router",
+      "methodName": "onDefaultPromptRouter",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:default-prompt-router/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "evaluation-job",
+      "methodName": "onEvaluationJob",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:evaluation-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "flow",
+      "methodName": "onFlow",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_FlowSummary.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:flow/${FlowId}",
+      "placeholders": [
+        {
+          "placeholder": "FlowId",
+          "name": "flowId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "flow-alias",
+      "methodName": "onFlowAlias",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_FlowAliasSummary.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:flow/${FlowId}/alias/${FlowAliasId}",
+      "placeholders": [
+        {
+          "placeholder": "FlowId",
+          "name": "flowId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FlowAliasId",
+          "name": "flowAliasId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "flow-execution",
+      "methodName": "onFlowExecution",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_FlowExecutionSummary.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:flow/${FlowId}/alias/${FlowAliasId}/execution/${FlowExecutionId}",
+      "placeholders": [
+        {
+          "placeholder": "FlowId",
+          "name": "flowId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FlowAliasId",
+          "name": "flowAliasId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FlowExecutionId",
+          "name": "flowExecutionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "foundation-model",
+      "methodName": "onFoundationModel",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}::foundation-model/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "guardrail",
+      "methodName": "onGuardrail",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:guardrail/${GuardrailId}",
+      "placeholders": [
+        {
+          "placeholder": "GuardrailId",
+          "name": "guardrailId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "guardrail-profile",
+      "methodName": "onGuardrailProfile",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrail-profiles-permissions.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:guardrail-profile/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "imported-model",
+      "methodName": "onImportedModel",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:imported-model/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "inference-profile",
+      "methodName": "onInferenceProfile",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:inference-profile/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "knowledge-base",
+      "methodName": "onKnowledgeBase",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:knowledge-base/${KnowledgeBaseId}",
+      "placeholders": [
+        {
+          "placeholder": "KnowledgeBaseId",
+          "name": "knowledgeBaseId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "model-copy-job",
+      "methodName": "onModelCopyJob",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:model-copy-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "model-customization-job",
+      "methodName": "onModelCustomizationJob",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:model-customization-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "model-evaluation-job",
+      "methodName": "onModelEvaluationJob",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:model-evaluation-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "model-import-job",
+      "methodName": "onModelImportJob",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:model-import-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "model-invocation-job",
+      "methodName": "onModelInvocationJob",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:model-invocation-job/${JobIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "JobIdentifier",
+          "name": "jobIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "project",
+      "methodName": "onProject",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:project/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "prompt",
+      "methodName": "onPrompt",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptSummary.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:prompt/${PromptId}",
+      "placeholders": [
+        {
+          "placeholder": "PromptId",
+          "name": "promptId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "prompt-router",
+      "methodName": "onPromptRouter",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:prompt-router/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "prompt-version",
+      "methodName": "onPromptVersion",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptSummary.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:prompt/${PromptId}:${PromptVersion}",
+      "placeholders": [
+        {
+          "placeholder": "PromptId",
+          "name": "promptId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PromptVersion",
+          "name": "promptVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "provisioned-model",
+      "methodName": "onProvisionedModel",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:provisioned-model/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "session",
+      "methodName": "onSession",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:session/${SessionId}",
+      "placeholders": [
+        {
+          "placeholder": "SessionId",
+          "name": "sessionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "system-tool",
+      "methodName": "onSystemTool",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock::${Account}:system-tool/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by creating requests based on the allowed set of values for each of the mandatory tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
+      "relatedActionMethods": [
+        "toCreateAdvancedPromptOptimizationJob",
+        "toCreateAgent",
+        "toCreateAgentActionGroup",
+        "toCreateAgentAlias",
+        "toCreateAutomatedReasoningPolicy",
+        "toCreateAutomatedReasoningPolicyVersion",
+        "toCreateBlueprint",
+        "toCreateCustomModel",
+        "toCreateCustomModelDeployment",
+        "toCreateDataAutomationLibrary",
+        "toCreateDataAutomationProject",
+        "toCreateEvaluationJob",
+        "toCreateFlow",
+        "toCreateFlowAlias",
+        "toCreateGuardrail",
+        "toCreateInferenceProfile",
+        "toCreateKnowledgeBase",
+        "toCreateModelCopyJob",
+        "toCreateModelCustomizationJob",
+        "toCreateModelEvaluationJob",
+        "toCreateModelImportJob",
+        "toCreateModelInvocationJob",
+        "toCreatePrompt",
+        "toCreatePromptRouter",
+        "toCreatePromptVersion",
+        "toCreateProvisionedModelThroughput",
+        "toCreateSession",
+        "toInvokeBlueprintOptimizationAsync",
+        "toInvokeDataAutomationAsync",
+        "toInvokeDataAutomationLibraryIngestionJob",
+        "toInvokeModel",
+        "toTagResource",
+        "toPutResourcePolicy"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by having actions based on the tag value associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
+      "relatedActionMethods": [
+        "toApplyGuardrail",
+        "toAssociateAgentCollaborator",
+        "toAssociateAgentKnowledgeBase",
+        "toBatchDeleteAdvancedPromptOptimizationJob",
+        "toBatchDeleteEvaluationJob",
+        "toCancelAutomatedReasoningPolicyBuildWorkflow",
+        "toCancelInvoke",
+        "toCopyBlueprintStage",
+        "toCreateAdvancedPromptOptimizationJob",
+        "toCreateAgentActionGroup",
+        "toCreateAgentAlias",
+        "toCreateAutomatedReasoningPolicyTestCase",
+        "toCreateAutomatedReasoningPolicyVersion",
+        "toCreateBlueprintVersion",
+        "toCreateCustomModelDeployment",
+        "toCreateDataAutomationProject",
+        "toCreateDataSource",
+        "toCreateEvaluationJob",
+        "toCreateFlowAlias",
+        "toCreateFlowVersion",
+        "toCreateGuardrail",
+        "toCreateGuardrailVersion",
+        "toCreateInferenceProfile",
+        "toCreateInvocation",
+        "toCreateModelCopyJob",
+        "toCreateModelCustomizationJob",
+        "toCreateModelEvaluationJob",
+        "toCreateModelInvocationJob",
+        "toCreatePromptRouter",
+        "toCreatePromptVersion",
+        "toCreateProvisionedModelThroughput",
+        "toDeleteAgent",
+        "toDeleteAgentActionGroup",
+        "toDeleteAgentAlias",
+        "toDeleteAgentMemory",
+        "toDeleteAgentVersion",
+        "toDeleteAutomatedReasoningPolicy",
+        "toDeleteAutomatedReasoningPolicyBuildWorkflow",
+        "toDeleteAutomatedReasoningPolicyTestCase",
+        "toDeleteBlueprint",
+        "toDeleteCustomModel",
+        "toDeleteCustomModelDeployment",
+        "toDeleteDataAutomationLibrary",
+        "toDeleteDataAutomationProject",
+        "toDeleteDataSource",
+        "toDeleteFlow",
+        "toDeleteFlowAlias",
+        "toDeleteFlowVersion",
+        "toDeleteGuardrail",
+        "toDeleteImportedModel",
+        "toDeleteInferenceProfile",
+        "toDeleteInvoke",
+        "toDeleteKnowledgeBase",
+        "toDeleteKnowledgeBaseDocuments",
+        "toDeletePrompt",
+        "toDeletePromptRouter",
+        "toDeleteProvisionedModelThroughput",
+        "toDeleteSession",
+        "toDisassociateAgentCollaborator",
+        "toDisassociateAgentKnowledgeBase",
+        "toEndSession",
+        "toExportAutomatedReasoningPolicyVersion",
+        "toGetAdvancedPromptOptimizationJob",
+        "toGetAgent",
+        "toGetAgentActionGroup",
+        "toGetAgentAlias",
+        "toGetAgentCollaborator",
+        "toGetAgentKnowledgeBase",
+        "toGetAgentMemory",
+        "toGetAgentVersion",
+        "toGetAsyncInvoke",
+        "toGetAutomatedReasoningPolicy",
+        "toGetAutomatedReasoningPolicyAnnotations",
+        "toGetAutomatedReasoningPolicyBuildWorkflow",
+        "toGetAutomatedReasoningPolicyBuildWorkflowResultAssets",
+        "toGetAutomatedReasoningPolicyNextScenario",
+        "toGetAutomatedReasoningPolicyTestCase",
+        "toGetAutomatedReasoningPolicyTestResult",
+        "toGetBlueprint",
+        "toGetBlueprintOptimizationStatus",
+        "toGetCustomModel",
+        "toGetCustomModelDeployment",
+        "toGetDataAutomationLibrary",
+        "toGetDataAutomationLibraryEntity",
+        "toGetDataAutomationLibraryIngestionJob",
+        "toGetDataAutomationProject",
+        "toGetDataAutomationStatus",
+        "toGetDataSource",
+        "toGetEvaluationJob",
+        "toGetExecutionFlowSnapshot",
+        "toGetFlow",
+        "toGetFlowAlias",
+        "toGetFlowExecution",
+        "toGetFlowVersion",
+        "toGetGuardrail",
+        "toGetImportedModel",
+        "toGetInferenceProfile",
+        "toGetIngestionJob",
+        "toGetInvocationStep",
+        "toGetInvoke",
+        "toGetKnowledgeBase",
+        "toGetKnowledgeBaseDocuments",
+        "toGetModelCopyJob",
+        "toGetModelCustomizationJob",
+        "toGetModelEvaluationJob",
+        "toGetModelImportJob",
+        "toGetModelInvocationJob",
+        "toGetPrompt",
+        "toGetPromptRouter",
+        "toGetProvisionedModelThroughput",
+        "toGetSession",
+        "toIngestKnowledgeBaseDocuments",
+        "toInvokeAgent",
+        "toInvokeBlueprintOptimizationAsync",
+        "toInvokeDataAutomation",
+        "toInvokeDataAutomationAsync",
+        "toInvokeDataAutomationLibraryIngestionJob",
+        "toInvokeFlow",
+        "toInvokeModel",
+        "toInvokeModelWithResponseStream",
+        "toListAgentActionGroups",
+        "toListAgentAliases",
+        "toListAgentCollaborators",
+        "toListAgentKnowledgeBases",
+        "toListAgentVersions",
+        "toListAutomatedReasoningPolicies",
+        "toListAutomatedReasoningPolicyBuildWorkflows",
+        "toListAutomatedReasoningPolicyTestCases",
+        "toListAutomatedReasoningPolicyTestResults",
+        "toListBlueprints",
+        "toListDataAutomationLibraries",
+        "toListDataAutomationLibraryEntities",
+        "toListDataAutomationLibraryIngestionJobs",
+        "toListDataAutomationProjects",
+        "toListDataSources",
+        "toListFlowAliases",
+        "toListFlowExecutionEvents",
+        "toListFlowExecutions",
+        "toListFlowVersions",
+        "toListGuardrails",
+        "toListIngestionJobs",
+        "toListInvocationSteps",
+        "toListInvocations",
+        "toListKnowledgeBaseDocuments",
+        "toListPrompts",
+        "toListTagsForResource",
+        "toPrepareAgent",
+        "toPrepareFlow",
+        "toPutInvocationStep",
+        "toRetrieve",
+        "toStartAutomatedReasoningPolicyBuildWorkflow",
+        "toStartAutomatedReasoningPolicyTestWorkflow",
+        "toStartFlowExecution",
+        "toStartIngestionJob",
+        "toStopAdvancedPromptOptimizationJob",
+        "toStopEvaluationJob",
+        "toStopFlowExecution",
+        "toStopIngestionJob",
+        "toStopModelCustomizationJob",
+        "toStopModelInvocationJob",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAgent",
+        "toUpdateAgentActionGroup",
+        "toUpdateAgentAlias",
+        "toUpdateAgentCollaborator",
+        "toUpdateAgentKnowledgeBase",
+        "toUpdateAutomatedReasoningPolicy",
+        "toUpdateAutomatedReasoningPolicyAnnotations",
+        "toUpdateAutomatedReasoningPolicyTestCase",
+        "toUpdateBlueprint",
+        "toUpdateCustomModelDeployment",
+        "toUpdateDataAutomationLibrary",
+        "toUpdateDataAutomationProject",
+        "toUpdateDataSource",
+        "toUpdateFlow",
+        "toUpdateFlowAlias",
+        "toUpdateGuardrail",
+        "toUpdateKnowledgeBase",
+        "toUpdatePrompt",
+        "toUpdateProvisionedModelThroughput",
+        "toUpdateSession",
+        "toAllowVendedLogDeliveryForResource",
+        "toDeleteResourcePolicy",
+        "toGetResourcePolicy",
+        "toInvokeAutomatedReasoningPolicy",
+        "toPutResourcePolicy",
+        "toRenderPrompt"
+      ],
+      "relatedResourceTypes": [
+        "advanced-prompt-optimization-job",
+        "agent",
+        "agent-alias",
+        "application-inference-profile",
+        "async-invoke",
+        "automated-reasoning-policy",
+        "automated-reasoning-policy-version",
+        "blueprint",
+        "blueprint-optimization-invocation",
+        "custom-model",
+        "custom-model-deployment",
+        "data-automation-invocation-job",
+        "data-automation-library",
+        "data-automation-library-ingestion-job",
+        "data-automation-project",
+        "evaluation-job",
+        "flow",
+        "flow-alias",
+        "guardrail",
+        "imported-model",
+        "knowledge-base",
+        "model-copy-job",
+        "model-customization-job",
+        "model-evaluation-job",
+        "model-import-job",
+        "model-invocation-job",
+        "project",
+        "prompt",
+        "prompt-router",
+        "prompt-version",
+        "provisioned-model",
+        "session"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by creating requests based on the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
+      "relatedActionMethods": [
+        "toCreateAdvancedPromptOptimizationJob",
+        "toCreateAgent",
+        "toCreateAgentActionGroup",
+        "toCreateAgentAlias",
+        "toCreateAutomatedReasoningPolicy",
+        "toCreateAutomatedReasoningPolicyVersion",
+        "toCreateBlueprint",
+        "toCreateCustomModel",
+        "toCreateCustomModelDeployment",
+        "toCreateDataAutomationLibrary",
+        "toCreateDataAutomationProject",
+        "toCreateEvaluationJob",
+        "toCreateFlow",
+        "toCreateFlowAlias",
+        "toCreateGuardrail",
+        "toCreateInferenceProfile",
+        "toCreateKnowledgeBase",
+        "toCreateModelCopyJob",
+        "toCreateModelCustomizationJob",
+        "toCreateModelEvaluationJob",
+        "toCreateModelImportJob",
+        "toCreateModelInvocationJob",
+        "toCreatePrompt",
+        "toCreatePromptRouter",
+        "toCreatePromptVersion",
+        "toCreateProvisionedModelThroughput",
+        "toCreateSession",
+        "toInvokeBlueprintOptimizationAsync",
+        "toInvokeDataAutomationAsync",
+        "toInvokeDataAutomationLibraryIngestionJob",
+        "toInvokeModel",
+        "toTagResource",
+        "toUntagResource",
+        "toPutResourcePolicy"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock:BearerTokenType",
+      "methodName": "ifBearerTokenType",
+      "description": "Filters access by the Short-term or Long-term bearer tokens",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys",
+      "relatedActionMethods": [
+        "toCallWithBearerToken"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "BearerTokenType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock:DataRetentionMode",
+      "methodName": "ifDataRetentionMode",
+      "description": "Filters access by the specified Data Retention Mode",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys",
+      "relatedActionMethods": [
+        "toPutAccountDataRetention"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DataRetentionMode",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock:GuardrailIdentifier",
+      "methodName": "ifGuardrailIdentifier",
+      "description": "Filters access by the GuardrailIdentifier containing the GuardrailArn or the GuardrailArn:NumericVersion",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys",
+      "relatedActionMethods": [
+        "toInvokeModel",
+        "toInvokeModelWithResponseStream"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "GuardrailIdentifier",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "bedrock:InferenceProfileArn",
+      "methodName": "ifInferenceProfileArn",
+      "description": "Filters access by the specified inference profile",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
+      "relatedActionMethods": [
+        "toInvokeModel",
+        "toInvokeModelWithResponseStream"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InferenceProfileArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "bedrock:InlineAgentName",
+      "methodName": "ifInlineAgentName",
+      "description": "Filters access by the Inline Agent Names, this will be used in InvokeInlineAgent API names",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys",
+      "relatedActionMethods": [
+        "toInvokeInlineAgent"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InlineAgentName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock:ModelArn",
+      "methodName": "ifModelArn",
+      "description": "Filters access by the model that a stateful invocation runs, on the authorization whose resource is the project",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys",
+      "relatedActionMethods": [
+        "toInvokeModel"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ModelArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "bedrock:ProjectArn",
+      "methodName": "ifProjectArn",
+      "description": "Filters access by the project that a stateful invocation belongs to, on authorizations whose resource is the inference target it runs",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys",
+      "relatedActionMethods": [
+        "toInvokeModel"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ProjectArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "bedrock:PromptRouterArn",
+      "methodName": "ifPromptRouterArn",
+      "description": "Filters access by the specified prompt router",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
+      "relatedActionMethods": [
+        "toInvokeModel",
+        "toInvokeModelWithResponseStream"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PromptRouterArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "bedrock:ServiceTier",
+      "methodName": "ifServiceTier",
+      "description": "Filters access by the specified ServiceTier",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys",
+      "relatedActionMethods": [
+        "toInvokeModel",
+        "toInvokeModelWithResponseStream"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ServiceTier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock:ThirdPartyKnowledgeBaseCredentialsSecretArn",
+      "methodName": "ifThirdPartyKnowledgeBaseCredentialsSecretArn",
+      "description": "Filters access by the secretArn containing the credentials of the third party platform",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
+      "relatedActionMethods": [
+        "toAssociateThirdPartyKnowledgeBase"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ThirdPartyKnowledgeBaseCredentialsSecretArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

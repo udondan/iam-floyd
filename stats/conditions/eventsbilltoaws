@@ -1,3 +1,0 @@
-eventsbilltoaws:RequestTag/${TagKey}
-eventsbilltoaws:ResourceTag/${TagKey}
-eventsbilltoaws:TagKeys

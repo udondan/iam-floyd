@@ -1,3 +1,0 @@
-route53-recovery-control-config:RequestTag/${TagKey}
-route53-recovery-control-config:ResourceTag/${TagKey}
-route53-recovery-control-config:TagKeys

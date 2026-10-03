@@ -1,0 +1,3543 @@
+{
+  "schemaVersion": 1,
+  "filename": "rds",
+  "className": "Rds",
+  "name": "rds",
+  "servicePrefix": "rds",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_rds.html",
+  "accessLevelList": {
+    "Write": [
+      "AddRoleToDBCluster",
+      "AddRoleToDBInstance",
+      "AddSourceIdentifierToSubscription",
+      "AddTagsToResource",
+      "ApplyPendingMaintenanceAction",
+      "AuthorizeDBSecurityGroupIngress",
+      "BacktrackDBCluster",
+      "CancelExportTask",
+      "CopyDBClusterParameterGroup",
+      "CopyDBClusterSnapshot",
+      "CopyDBParameterGroup",
+      "CopyDBSnapshot",
+      "CopyOptionGroup",
+      "CreateBlueGreenDeployment",
+      "CreateCustomDBEngineVersion",
+      "CreateDBCluster",
+      "CreateDBClusterEndpoint",
+      "CreateDBClusterParameterGroup",
+      "CreateDBClusterSnapshot",
+      "CreateDBInstance",
+      "CreateDBInstanceReadReplica",
+      "CreateDBParameterGroup",
+      "CreateDBProxy",
+      "CreateDBProxyEndpoint",
+      "CreateDBSecurityGroup",
+      "CreateDBShardGroup",
+      "CreateDBSnapshot",
+      "CreateDBSubnetGroup",
+      "CreateEventSubscription",
+      "CreateGlobalCluster",
+      "CreateIntegration",
+      "CreateOptionGroup",
+      "CreateTenantDatabase",
+      "DeleteBlueGreenDeployment",
+      "DeleteCustomDBEngineVersion",
+      "DeleteDBCluster",
+      "DeleteDBClusterAutomatedBackup",
+      "DeleteDBClusterEndpoint",
+      "DeleteDBClusterParameterGroup",
+      "DeleteDBClusterSnapshot",
+      "DeleteDBInstance",
+      "DeleteDBInstanceAutomatedBackup",
+      "DeleteDBParameterGroup",
+      "DeleteDBProxy",
+      "DeleteDBProxyEndpoint",
+      "DeleteDBSecurityGroup",
+      "DeleteDBShardGroup",
+      "DeleteDBSnapshot",
+      "DeleteDBSubnetGroup",
+      "DeleteEventSubscription",
+      "DeleteGlobalCluster",
+      "DeleteIntegration",
+      "DeleteOptionGroup",
+      "DeleteTenantDatabase",
+      "DeregisterDBProxyTargets",
+      "DisableHttpEndpoint",
+      "EnableHttpEndpoint",
+      "FailoverDBCluster",
+      "FailoverGlobalCluster",
+      "ModifyActivityStream",
+      "ModifyCertificates",
+      "ModifyCurrentDBClusterCapacity",
+      "ModifyCustomDBEngineVersion",
+      "ModifyDBCluster",
+      "ModifyDBClusterEndpoint",
+      "ModifyDBClusterParameterGroup",
+      "ModifyDBClusterSnapshotAttribute",
+      "ModifyDBInstance",
+      "ModifyDBParameterGroup",
+      "ModifyDBProxy",
+      "ModifyDBProxyEndpoint",
+      "ModifyDBProxyTargetGroup",
+      "ModifyDBRecommendation",
+      "ModifyDBShardGroup",
+      "ModifyDBSnapshot",
+      "ModifyDBSnapshotAttribute",
+      "ModifyDBSubnetGroup",
+      "ModifyEventSubscription",
+      "ModifyGlobalCluster",
+      "ModifyIntegration",
+      "ModifyOptionGroup",
+      "ModifyTenantDatabase",
+      "PromoteReadReplica",
+      "PromoteReadReplicaDBCluster",
+      "PurchaseReservedDBInstancesOffering",
+      "RebootDBCluster",
+      "RebootDBInstance",
+      "RebootDBShardGroup",
+      "RegisterDBProxyTargets",
+      "RemoveFromGlobalCluster",
+      "RemoveRoleFromDBCluster",
+      "RemoveRoleFromDBInstance",
+      "RemoveSourceIdentifierFromSubscription",
+      "RemoveTagsFromResource",
+      "ResetDBClusterParameterGroup",
+      "ResetDBParameterGroup",
+      "RestoreDBClusterFromS3",
+      "RestoreDBClusterFromSnapshot",
+      "RestoreDBClusterToPointInTime",
+      "RestoreDBInstanceFromDBSnapshot",
+      "RestoreDBInstanceFromS3",
+      "RestoreDBInstanceToPointInTime",
+      "RevokeDBSecurityGroupIngress",
+      "StartActivityStream",
+      "StartDBCluster",
+      "StartDBInstance",
+      "StartDBInstanceAutomatedBackupsReplication",
+      "StartExportTask",
+      "StopActivityStream",
+      "StopDBCluster",
+      "StopDBInstance",
+      "StopDBInstanceAutomatedBackupsReplication",
+      "SwitchoverBlueGreenDeployment",
+      "SwitchoverGlobalCluster",
+      "SwitchoverReadReplica",
+      "CopyCustomDBEngineVersion",
+      "CrossRegionCommunication",
+      "ModifyRecommendation"
+    ],
+    "Tagging": [
+      "AddTagsToResource",
+      "RemoveTagsFromResource"
+    ],
+    "Permissions management": [
+      "AuthorizeDBSecurityGroupIngress"
+    ],
+    "List": [
+      "DescribeAccountAttributes",
+      "DescribeBlueGreenDeployments",
+      "DescribeCertificates",
+      "DescribeDBClusterAutomatedBackups",
+      "DescribeDBClusterBacktracks",
+      "DescribeDBClusterEndpoints",
+      "DescribeDBClusterParameterGroups",
+      "DescribeDBClusterParameters",
+      "DescribeDBClusterSnapshotAttributes",
+      "DescribeDBClusterSnapshots",
+      "DescribeDBClusters",
+      "DescribeDBEngineVersions",
+      "DescribeDBInstanceAutomatedBackups",
+      "DescribeDBInstances",
+      "DescribeDBLogFiles",
+      "DescribeDBMajorEngineVersions",
+      "DescribeDBParameterGroups",
+      "DescribeDBParameters",
+      "DescribeDBProxies",
+      "DescribeDBProxyEndpoints",
+      "DescribeDBProxyTargetGroups",
+      "DescribeDBProxyTargets",
+      "DescribeDBRecommendations",
+      "DescribeDBSecurityGroups",
+      "DescribeDBShardGroups",
+      "DescribeDBSnapshotAttributes",
+      "DescribeDBSnapshotTenantDatabases",
+      "DescribeDBSnapshots",
+      "DescribeDBSubnetGroups",
+      "DescribeEngineDefaultClusterParameters",
+      "DescribeEngineDefaultParameters",
+      "DescribeEventCategories",
+      "DescribeEventSubscriptions",
+      "DescribeEvents",
+      "DescribeExportTasks",
+      "DescribeGlobalClusters",
+      "DescribeIntegrations",
+      "DescribeOptionGroupOptions",
+      "DescribeOptionGroups",
+      "DescribeOrderableDBInstanceOptions",
+      "DescribePendingMaintenanceActions",
+      "DescribeReservedDBInstances",
+      "DescribeReservedDBInstancesOfferings",
+      "DescribeSourceRegions",
+      "DescribeTenantDatabases",
+      "DescribeValidDBInstanceModifications"
+    ],
+    "Read": [
+      "DownloadCompleteDBLogFile",
+      "DownloadDBLogFilePortion",
+      "ListTagsForResource",
+      "DescribeRecommendationGroups",
+      "DescribeRecommendations"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddRoleToDBCluster",
+      "methodName": "toAddRoleToDBCluster",
+      "description": "Grants permission to associate an Identity and Access Management (IAM) role from an Aurora DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBCluster.html"
+    },
+    {
+      "name": "AddRoleToDBInstance",
+      "methodName": "toAddRoleToDBInstance",
+      "description": "Grants permission to associate an AWS Identity and Access Management (IAM) role with a DB instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBInstance.html"
+    },
+    {
+      "name": "AddSourceIdentifierToSubscription",
+      "methodName": "toAddSourceIdentifierToSubscription",
+      "description": "Grants permission to add a source identifier to an existing RDS event notification subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddSourceIdentifierToSubscription.html"
+    },
+    {
+      "name": "AddTagsToResource",
+      "methodName": "toAddTagsToResource",
+      "description": "Grants permission to add metadata tags to an Amazon RDS resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddTagsToResource.html"
+    },
+    {
+      "name": "ApplyPendingMaintenanceAction",
+      "methodName": "toApplyPendingMaintenanceAction",
+      "description": "Grants permission to apply a pending maintenance action to a resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ApplyPendingMaintenanceAction.html"
+    },
+    {
+      "name": "AuthorizeDBSecurityGroupIngress",
+      "methodName": "toAuthorizeDBSecurityGroupIngress",
+      "description": "Grants permission to enable ingress to a DBSecurityGroup using one of two forms of authorization",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AuthorizeDBSecurityGroupIngress.html"
+    },
+    {
+      "name": "BacktrackDBCluster",
+      "methodName": "toBacktrackDBCluster",
+      "description": "Grants permission to backtrack a DB cluster to a specific time, without creating a new DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BacktrackDBCluster.html"
+    },
+    {
+      "name": "CancelExportTask",
+      "methodName": "toCancelExportTask",
+      "description": "Grants permission to cancel an export task in progress",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CancelExportTask.html"
+    },
+    {
+      "name": "CopyDBClusterParameterGroup",
+      "methodName": "toCopyDBClusterParameterGroup",
+      "description": "Grants permission to copy the specified DB cluster parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterParameterGroup.html"
+    },
+    {
+      "name": "CopyDBClusterSnapshot",
+      "methodName": "toCopyDBClusterSnapshot",
+      "description": "Grants permission to create a snapshot of a DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterSnapshot.html"
+    },
+    {
+      "name": "CopyDBParameterGroup",
+      "methodName": "toCopyDBParameterGroup",
+      "description": "Grants permission to copy the specified DB parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBParameterGroup.html"
+    },
+    {
+      "name": "CopyDBSnapshot",
+      "methodName": "toCopyDBSnapshot",
+      "description": "Grants permission to copy the specified DB snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBSnapshot.html"
+    },
+    {
+      "name": "CopyOptionGroup",
+      "methodName": "toCopyOptionGroup",
+      "description": "Grants permission to copy the specified option group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyOptionGroup.html"
+    },
+    {
+      "name": "CreateBlueGreenDeployment",
+      "methodName": "toCreateBlueGreenDeployment",
+      "description": "Grants permission to create a blue-green deployment for a given source cluster or instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateBlueGreenDeployment.html"
+    },
+    {
+      "name": "CreateCustomDBEngineVersion",
+      "methodName": "toCreateCustomDBEngineVersion",
+      "description": "Grants permission to create a custom engine version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateCustomDBEngineVersion.html"
+    },
+    {
+      "name": "CreateDBCluster",
+      "methodName": "toCreateDBCluster",
+      "description": "Grants permission to create a new DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"
+    },
+    {
+      "name": "CreateDBClusterEndpoint",
+      "methodName": "toCreateDBClusterEndpoint",
+      "description": "Grants permission to create a new custom endpoint and associates it with an Amazon Aurora DB cluster or Amazon DocumentDB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterEndpoint.html"
+    },
+    {
+      "name": "CreateDBClusterParameterGroup",
+      "methodName": "toCreateDBClusterParameterGroup",
+      "description": "Grants permission to create a new DB cluster parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterParameterGroup.html"
+    },
+    {
+      "name": "CreateDBClusterSnapshot",
+      "methodName": "toCreateDBClusterSnapshot",
+      "description": "Grants permission to create a snapshot of a DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterSnapshot.html"
+    },
+    {
+      "name": "CreateDBInstance",
+      "methodName": "toCreateDBInstance",
+      "description": "Grants permission to create a new DB instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html"
+    },
+    {
+      "name": "CreateDBInstanceReadReplica",
+      "methodName": "toCreateDBInstanceReadReplica",
+      "description": "Grants permission to create a DB instance that acts as a Read Replica of a source DB instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstanceReadReplica.html"
+    },
+    {
+      "name": "CreateDBParameterGroup",
+      "methodName": "toCreateDBParameterGroup",
+      "description": "Grants permission to create a new DB parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBParameterGroup.html"
+    },
+    {
+      "name": "CreateDBProxy",
+      "methodName": "toCreateDBProxy",
+      "description": "Grants permission to create a database proxy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBProxy.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateDBProxyEndpoint",
+      "methodName": "toCreateDBProxyEndpoint",
+      "description": "Grants permission to create a database proxy endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBProxyEndpoint.html"
+    },
+    {
+      "name": "CreateDBSecurityGroup",
+      "methodName": "toCreateDBSecurityGroup",
+      "description": "Grants permission to create a new DB security group. DB security groups control access to a DB instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSecurityGroup.html"
+    },
+    {
+      "name": "CreateDBShardGroup",
+      "methodName": "toCreateDBShardGroup",
+      "description": "Grants permission to create a new Aurora Limitless Database DB shard group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBShardGroup.html"
+    },
+    {
+      "name": "CreateDBSnapshot",
+      "methodName": "toCreateDBSnapshot",
+      "description": "Grants permission to create a DBSnapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSnapshot.html"
+    },
+    {
+      "name": "CreateDBSubnetGroup",
+      "methodName": "toCreateDBSubnetGroup",
+      "description": "Grants permission to create a new DB subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSubnetGroup.html"
+    },
+    {
+      "name": "CreateEventSubscription",
+      "methodName": "toCreateEventSubscription",
+      "description": "Grants permission to create an RDS event notification subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateEventSubscription.html"
+    },
+    {
+      "name": "CreateGlobalCluster",
+      "methodName": "toCreateGlobalCluster",
+      "description": "Grants permission to create an Aurora global database or DocumentDB global database spread across multiple regions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateGlobalCluster.html"
+    },
+    {
+      "name": "CreateIntegration",
+      "methodName": "toCreateIntegration",
+      "description": "Grants permission to create an Aurora zero-ETL integration with Redshift",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateIntegration.html"
+    },
+    {
+      "name": "CreateOptionGroup",
+      "methodName": "toCreateOptionGroup",
+      "description": "Grants permission to create a new option group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateOptionGroup.html"
+    },
+    {
+      "name": "CreateTenantDatabase",
+      "methodName": "toCreateTenantDatabase",
+      "description": "Grants permission to create a new tenant database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateTenantDatabase.html"
+    },
+    {
+      "name": "DeleteBlueGreenDeployment",
+      "methodName": "toDeleteBlueGreenDeployment",
+      "description": "Grants permission to delete blue green deployments",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteBlueGreenDeployment.html"
+    },
+    {
+      "name": "DeleteCustomDBEngineVersion",
+      "methodName": "toDeleteCustomDBEngineVersion",
+      "description": "Grants permission to delete an existing custom engine version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteCustomDBEngineVersion.html"
+    },
+    {
+      "name": "DeleteDBCluster",
+      "methodName": "toDeleteDBCluster",
+      "description": "Grants permission to delete a previously provisioned DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBCluster.html"
+    },
+    {
+      "name": "DeleteDBClusterAutomatedBackup",
+      "methodName": "toDeleteDBClusterAutomatedBackup",
+      "description": "Grants permission to delete cluster automated backups based on the source cluster's DbClusterResourceId value or the restorable cluster's resource ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterAutomatedBackup.html"
+    },
+    {
+      "name": "DeleteDBClusterEndpoint",
+      "methodName": "toDeleteDBClusterEndpoint",
+      "description": "Grants permission to delete a custom endpoint and removes it from an Amazon Aurora DB cluster or Amazon DocumentDB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterEndpoint.html"
+    },
+    {
+      "name": "DeleteDBClusterParameterGroup",
+      "methodName": "toDeleteDBClusterParameterGroup",
+      "description": "Grants permission to delete a specified DB cluster parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterParameterGroup.html"
+    },
+    {
+      "name": "DeleteDBClusterSnapshot",
+      "methodName": "toDeleteDBClusterSnapshot",
+      "description": "Grants permission to delete a DB cluster snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterSnapshot.html"
+    },
+    {
+      "name": "DeleteDBInstance",
+      "methodName": "toDeleteDBInstance",
+      "description": "Grants permission to delete a previously provisioned DB instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBInstance.html"
+    },
+    {
+      "name": "DeleteDBInstanceAutomatedBackup",
+      "methodName": "toDeleteDBInstanceAutomatedBackup",
+      "description": "Grants permission to delete automated backups based on the source instance's DbiResourceId value or the restorable instance's resource ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBInstanceAutomatedBackup.html"
+    },
+    {
+      "name": "DeleteDBParameterGroup",
+      "methodName": "toDeleteDBParameterGroup",
+      "description": "Grants permission to delete a specified DBParameterGroup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBParameterGroup.html"
+    },
+    {
+      "name": "DeleteDBProxy",
+      "methodName": "toDeleteDBProxy",
+      "description": "Grants permission to delete a database proxy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBProxy.html"
+    },
+    {
+      "name": "DeleteDBProxyEndpoint",
+      "methodName": "toDeleteDBProxyEndpoint",
+      "description": "Grants permission to delete a database proxy endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBProxyEndpoint.html"
+    },
+    {
+      "name": "DeleteDBSecurityGroup",
+      "methodName": "toDeleteDBSecurityGroup",
+      "description": "Grants permission to delete a DB security group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSecurityGroup.html"
+    },
+    {
+      "name": "DeleteDBShardGroup",
+      "methodName": "toDeleteDBShardGroup",
+      "description": "Grants permission to delete an Aurora Limitless Database DB shard group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBShardGroup.html"
+    },
+    {
+      "name": "DeleteDBSnapshot",
+      "methodName": "toDeleteDBSnapshot",
+      "description": "Grants permission to delete a DBSnapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSnapshot.html"
+    },
+    {
+      "name": "DeleteDBSubnetGroup",
+      "methodName": "toDeleteDBSubnetGroup",
+      "description": "Grants permission to delete a DB subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSubnetGroup.html"
+    },
+    {
+      "name": "DeleteEventSubscription",
+      "methodName": "toDeleteEventSubscription",
+      "description": "Grants permission to delete an RDS event notification subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteEventSubscription.html"
+    },
+    {
+      "name": "DeleteGlobalCluster",
+      "methodName": "toDeleteGlobalCluster",
+      "description": "Grants permission to delete a global database cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteGlobalCluster.html"
+    },
+    {
+      "name": "DeleteIntegration",
+      "methodName": "toDeleteIntegration",
+      "description": "Grants permission to delete an Aurora zero-ETL integration with Redshift",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteIntegration.html"
+    },
+    {
+      "name": "DeleteOptionGroup",
+      "methodName": "toDeleteOptionGroup",
+      "description": "Grants permission to delete an existing option group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteOptionGroup.html"
+    },
+    {
+      "name": "DeleteTenantDatabase",
+      "methodName": "toDeleteTenantDatabase",
+      "description": "Grants permission to delete a tenant database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteTenantDatabase.html"
+    },
+    {
+      "name": "DeregisterDBProxyTargets",
+      "methodName": "toDeregisterDBProxyTargets",
+      "description": "Grants permission to remove targets from a database proxy target group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeregisterDBProxyTargets.html"
+    },
+    {
+      "name": "DescribeAccountAttributes",
+      "methodName": "toDescribeAccountAttributes",
+      "description": "Grants permission to list all of the attributes for a customer account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeAccountAttributes.html"
+    },
+    {
+      "name": "DescribeBlueGreenDeployments",
+      "methodName": "toDescribeBlueGreenDeployments",
+      "description": "Grants permission to describe blue green deployments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeBlueGreenDeployments.html"
+    },
+    {
+      "name": "DescribeCertificates",
+      "methodName": "toDescribeCertificates",
+      "description": "Grants permission to list the set of CA certificates provided by Amazon RDS for this AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeCertificates.html"
+    },
+    {
+      "name": "DescribeDBClusterAutomatedBackups",
+      "methodName": "toDescribeDBClusterAutomatedBackups",
+      "description": "Grants permission to return a list of cluster automated backups for both current and deleted clusters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterAutomatedBackups.html"
+    },
+    {
+      "name": "DescribeDBClusterBacktracks",
+      "methodName": "toDescribeDBClusterBacktracks",
+      "description": "Grants permission to return information about backtracks for a DB cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterBacktracks.html"
+    },
+    {
+      "name": "DescribeDBClusterEndpoints",
+      "methodName": "toDescribeDBClusterEndpoints",
+      "description": "Grants permission to return information about endpoints for an Amazon Aurora DB cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterEndpoints.html"
+    },
+    {
+      "name": "DescribeDBClusterParameterGroups",
+      "methodName": "toDescribeDBClusterParameterGroups",
+      "description": "Grants permission to return a list of DBClusterParameterGroup descriptions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterParameterGroups.html"
+    },
+    {
+      "name": "DescribeDBClusterParameters",
+      "methodName": "toDescribeDBClusterParameters",
+      "description": "Grants permission to return the detailed parameter list for a particular DB cluster parameter group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterParameters.html"
+    },
+    {
+      "name": "DescribeDBClusterSnapshotAttributes",
+      "methodName": "toDescribeDBClusterSnapshotAttributes",
+      "description": "Grants permission to return a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterSnapshotAttributes.html"
+    },
+    {
+      "name": "DescribeDBClusterSnapshots",
+      "methodName": "toDescribeDBClusterSnapshots",
+      "description": "Grants permission to return information about DB cluster snapshots",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterSnapshots.html"
+    },
+    {
+      "name": "DescribeDBClusters",
+      "methodName": "toDescribeDBClusters",
+      "description": "Grants permission to return information about provisioned Aurora DB clusters or DocumentDB clusters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html"
+    },
+    {
+      "name": "DescribeDBEngineVersions",
+      "methodName": "toDescribeDBEngineVersions",
+      "description": "Grants permission to return a list of the available DB engines",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html"
+    },
+    {
+      "name": "DescribeDBInstanceAutomatedBackups",
+      "methodName": "toDescribeDBInstanceAutomatedBackups",
+      "description": "Grants permission to return a list of automated backups for both current and deleted instances",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstanceAutomatedBackups.html"
+    },
+    {
+      "name": "DescribeDBInstances",
+      "methodName": "toDescribeDBInstances",
+      "description": "Grants permission to return information about provisioned RDS instances",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+    },
+    {
+      "name": "DescribeDBLogFiles",
+      "methodName": "toDescribeDBLogFiles",
+      "description": "Grants permission to return a list of DB log files for the DB instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBLogFiles.html"
+    },
+    {
+      "name": "DescribeDBMajorEngineVersions",
+      "methodName": "toDescribeDBMajorEngineVersions",
+      "description": "Grants permission to return information specific for each DB major engine versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBMajorEngineVersions.html"
+    },
+    {
+      "name": "DescribeDBParameterGroups",
+      "methodName": "toDescribeDBParameterGroups",
+      "description": "Grants permission to return a list of DBParameterGroup descriptions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBParameterGroups.html"
+    },
+    {
+      "name": "DescribeDBParameters",
+      "methodName": "toDescribeDBParameters",
+      "description": "Grants permission to return the detailed parameter list for a particular DB parameter group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBParameters.html"
+    },
+    {
+      "name": "DescribeDBProxies",
+      "methodName": "toDescribeDBProxies",
+      "description": "Grants permission to view proxies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBProxies.html"
+    },
+    {
+      "name": "DescribeDBProxyEndpoints",
+      "methodName": "toDescribeDBProxyEndpoints",
+      "description": "Grants permission to view proxy endpoints",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBProxyEndpoints.html"
+    },
+    {
+      "name": "DescribeDBProxyTargetGroups",
+      "methodName": "toDescribeDBProxyTargetGroups",
+      "description": "Grants permission to view database proxy target group details",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBProxyTargetGroups.html"
+    },
+    {
+      "name": "DescribeDBProxyTargets",
+      "methodName": "toDescribeDBProxyTargets",
+      "description": "Grants permission to view database proxy target details",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBProxyTargets.html"
+    },
+    {
+      "name": "DescribeDBRecommendations",
+      "methodName": "toDescribeDBRecommendations",
+      "description": "Grants permission to list recommendation details",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBRecommendations.html"
+    },
+    {
+      "name": "DescribeDBSecurityGroups",
+      "methodName": "toDescribeDBSecurityGroups",
+      "description": "Grants permission to return a list of DBSecurityGroup descriptions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSecurityGroups.html"
+    },
+    {
+      "name": "DescribeDBShardGroups",
+      "methodName": "toDescribeDBShardGroups",
+      "description": "Grants permission to return information about all Aurora Limitless Database DB shard groups for this account. You can filter by shard group(s)",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBShardGroups.html"
+    },
+    {
+      "name": "DescribeDBSnapshotAttributes",
+      "methodName": "toDescribeDBSnapshotAttributes",
+      "description": "Grants permission to return a list of DB snapshot attribute names and values for a manual DB snapshot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshotAttributes.html"
+    },
+    {
+      "name": "DescribeDBSnapshotTenantDatabases",
+      "methodName": "toDescribeDBSnapshotTenantDatabases",
+      "description": "Grants permission to return information about tenant databases in DB snapshots. You can filter by Region or snapshot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshotTenantDatabases.html"
+    },
+    {
+      "name": "DescribeDBSnapshots",
+      "methodName": "toDescribeDBSnapshots",
+      "description": "Grants permission to return information about DB snapshots",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshots.html"
+    },
+    {
+      "name": "DescribeDBSubnetGroups",
+      "methodName": "toDescribeDBSubnetGroups",
+      "description": "Grants permission to return a list of DBSubnetGroup descriptions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSubnetGroups.html"
+    },
+    {
+      "name": "DescribeEngineDefaultClusterParameters",
+      "methodName": "toDescribeEngineDefaultClusterParameters",
+      "description": "Grants permission to return the default engine and system parameter information for the cluster database engine",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEngineDefaultClusterParameters.html"
+    },
+    {
+      "name": "DescribeEngineDefaultParameters",
+      "methodName": "toDescribeEngineDefaultParameters",
+      "description": "Grants permission to return the default engine and system parameter information for the specified database engine",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEngineDefaultParameters.html"
+    },
+    {
+      "name": "DescribeEventCategories",
+      "methodName": "toDescribeEventCategories",
+      "description": "Grants permission to display a list of categories for all event source types, or, if specified, for a specified source type",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEventCategories.html"
+    },
+    {
+      "name": "DescribeEventSubscriptions",
+      "methodName": "toDescribeEventSubscriptions",
+      "description": "Grants permission to list all the subscription descriptions for a customer account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEventSubscriptions.html"
+    },
+    {
+      "name": "DescribeEvents",
+      "methodName": "toDescribeEvents",
+      "description": "Grants permission to return events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEvents.html"
+    },
+    {
+      "name": "DescribeExportTasks",
+      "methodName": "toDescribeExportTasks",
+      "description": "Grants permission to return information about the export tasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeExportTasks.html"
+    },
+    {
+      "name": "DescribeGlobalClusters",
+      "methodName": "toDescribeGlobalClusters",
+      "description": "Grants permission to return information about Aurora global database clusters or DocumentDB global database clusters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeGlobalClusters.html"
+    },
+    {
+      "name": "DescribeIntegrations",
+      "methodName": "toDescribeIntegrations",
+      "description": "Grants permission to describe an Aurora zero-ETL integration with Redshift",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeIntegrations.html"
+    },
+    {
+      "name": "DescribeOptionGroupOptions",
+      "methodName": "toDescribeOptionGroupOptions",
+      "description": "Grants permission to describe all available options",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOptionGroupOptions.html"
+    },
+    {
+      "name": "DescribeOptionGroups",
+      "methodName": "toDescribeOptionGroups",
+      "description": "Grants permission to describe the available option groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOptionGroups.html"
+    },
+    {
+      "name": "DescribeOrderableDBInstanceOptions",
+      "methodName": "toDescribeOrderableDBInstanceOptions",
+      "description": "Grants permission to return a list of orderable DB instance options for the specified engine",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOrderableDBInstanceOptions.html"
+    },
+    {
+      "name": "DescribePendingMaintenanceActions",
+      "methodName": "toDescribePendingMaintenanceActions",
+      "description": "Grants permission to return a list of resources (for example, DB instances) that have at least one pending maintenance action",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribePendingMaintenanceActions.html"
+    },
+    {
+      "name": "DescribeReservedDBInstances",
+      "methodName": "toDescribeReservedDBInstances",
+      "description": "Grants permission to return information about reserved DB instances for this account, or about a specified reserved DB instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeReservedDBInstances.html"
+    },
+    {
+      "name": "DescribeReservedDBInstancesOfferings",
+      "methodName": "toDescribeReservedDBInstancesOfferings",
+      "description": "Grants permission to list available reserved DB instance offerings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeReservedDBInstancesOfferings.html"
+    },
+    {
+      "name": "DescribeSourceRegions",
+      "methodName": "toDescribeSourceRegions",
+      "description": "Grants permission to return a list of the source AWS Regions where the current AWS Region can create a Read Replica or copy a DB snapshot from",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeSourceRegions.html"
+    },
+    {
+      "name": "DescribeTenantDatabases",
+      "methodName": "toDescribeTenantDatabases",
+      "description": "Grants permission to return information about provisioned tenant databases. You can filter by Region or snapshot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeTenantDatabases.html"
+    },
+    {
+      "name": "DescribeValidDBInstanceModifications",
+      "methodName": "toDescribeValidDBInstanceModifications",
+      "description": "Grants permission to list available modifications you can make to your DB instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeValidDBInstanceModifications.html"
+    },
+    {
+      "name": "DisableHttpEndpoint",
+      "methodName": "toDisableHttpEndpoint",
+      "description": "Grants permission to disable http endpoint for a DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DisableHttpEndpoint.html"
+    },
+    {
+      "name": "DownloadCompleteDBLogFile",
+      "methodName": "toDownloadCompleteDBLogFile",
+      "description": "Grants permission to download specified log file",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/USER_LogAccess.html"
+    },
+    {
+      "name": "DownloadDBLogFilePortion",
+      "methodName": "toDownloadDBLogFilePortion",
+      "description": "Grants permission to download all or a portion of the specified log file, up to 1 MB in size",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DownloadDBLogFilePortion.html"
+    },
+    {
+      "name": "EnableHttpEndpoint",
+      "methodName": "toEnableHttpEndpoint",
+      "description": "Grants permission to enable http endpoint for a DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_EnableHttpEndpoint.html"
+    },
+    {
+      "name": "FailoverDBCluster",
+      "methodName": "toFailoverDBCluster",
+      "description": "Grants permission to force a failover for a DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_FailoverDBCluster.html"
+    },
+    {
+      "name": "FailoverGlobalCluster",
+      "methodName": "toFailoverGlobalCluster",
+      "description": "Grants permission to failover a global cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_FailoverGlobalCluster.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags on an Amazon RDS resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ModifyActivityStream",
+      "methodName": "toModifyActivityStream",
+      "description": "Grants permission to modify a database activity stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyActivityStream.html"
+    },
+    {
+      "name": "ModifyCertificates",
+      "methodName": "toModifyCertificates",
+      "description": "Grants permission to modify the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificate for Amazon RDS for new DB instances",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyCertificates.html"
+    },
+    {
+      "name": "ModifyCurrentDBClusterCapacity",
+      "methodName": "toModifyCurrentDBClusterCapacity",
+      "description": "Grants permission to modify current cluster capacity for an Amazon Aurora Serverless DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyCurrentDBClusterCapacity.html"
+    },
+    {
+      "name": "ModifyCustomDBEngineVersion",
+      "methodName": "toModifyCustomDBEngineVersion",
+      "description": "Grants permission to modify an existing custom engine version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyCustomDBEngineVersion.html"
+    },
+    {
+      "name": "ModifyDBCluster",
+      "methodName": "toModifyDBCluster",
+      "description": "Grants permission to modify a setting for an Amazon Aurora DB cluster or Amazon DocumentDB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCluster.html"
+    },
+    {
+      "name": "ModifyDBClusterEndpoint",
+      "methodName": "toModifyDBClusterEndpoint",
+      "description": "Grants permission to modify the properties of an endpoint in an Amazon Aurora DB cluster or Amazon DocumentDB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterEndpoint.html"
+    },
+    {
+      "name": "ModifyDBClusterParameterGroup",
+      "methodName": "toModifyDBClusterParameterGroup",
+      "description": "Grants permission to modify the parameters of a DB cluster parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterParameterGroup.html"
+    },
+    {
+      "name": "ModifyDBClusterSnapshotAttribute",
+      "methodName": "toModifyDBClusterSnapshotAttribute",
+      "description": "Grants permission to add an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterSnapshotAttribute.html"
+    },
+    {
+      "name": "ModifyDBInstance",
+      "methodName": "toModifyDBInstance",
+      "description": "Grants permission to modify settings for a DB instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBInstance.html"
+    },
+    {
+      "name": "ModifyDBParameterGroup",
+      "methodName": "toModifyDBParameterGroup",
+      "description": "Grants permission to modify the parameters of a DB parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBParameterGroup.html"
+    },
+    {
+      "name": "ModifyDBProxy",
+      "methodName": "toModifyDBProxy",
+      "description": "Grants permission to modify database proxy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBProxy.html"
+    },
+    {
+      "name": "ModifyDBProxyEndpoint",
+      "methodName": "toModifyDBProxyEndpoint",
+      "description": "Grants permission to modify database proxy endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBProxyEndpoint.html"
+    },
+    {
+      "name": "ModifyDBProxyTargetGroup",
+      "methodName": "toModifyDBProxyTargetGroup",
+      "description": "Grants permission to modify target group for a database proxy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBProxyTargetGroup.html"
+    },
+    {
+      "name": "ModifyDBRecommendation",
+      "methodName": "toModifyDBRecommendation",
+      "description": "Grants permission to modify recommendation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBRecommendation.html"
+    },
+    {
+      "name": "ModifyDBShardGroup",
+      "methodName": "toModifyDBShardGroup",
+      "description": "Grants permission to modify properties of an Aurora Limitless Database DB shard group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBShardGroup.html"
+    },
+    {
+      "name": "ModifyDBSnapshot",
+      "methodName": "toModifyDBSnapshot",
+      "description": "Grants permission to update a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshot.html"
+    },
+    {
+      "name": "ModifyDBSnapshotAttribute",
+      "methodName": "toModifyDBSnapshotAttribute",
+      "description": "Grants permission to add an attribute and values to, or removes an attribute and values from, a manual DB snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshotAttribute.html"
+    },
+    {
+      "name": "ModifyDBSubnetGroup",
+      "methodName": "toModifyDBSubnetGroup",
+      "description": "Grants permission to modify an existing DB subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSubnetGroup.html"
+    },
+    {
+      "name": "ModifyEventSubscription",
+      "methodName": "toModifyEventSubscription",
+      "description": "Grants permission to modify an existing RDS event notification subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyEventSubscription.html"
+    },
+    {
+      "name": "ModifyGlobalCluster",
+      "methodName": "toModifyGlobalCluster",
+      "description": "Grants permission to modify a setting for an Amazon Aurora global cluster or Amazon DocumentDB global cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyGlobalCluster.html"
+    },
+    {
+      "name": "ModifyIntegration",
+      "methodName": "toModifyIntegration",
+      "description": "Grants permission to modify an Aurora zero-ETL integration with Redshift",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyIntegration.html"
+    },
+    {
+      "name": "ModifyOptionGroup",
+      "methodName": "toModifyOptionGroup",
+      "description": "Grants permission to modify an existing option group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyOptionGroup.html"
+    },
+    {
+      "name": "ModifyTenantDatabase",
+      "methodName": "toModifyTenantDatabase",
+      "description": "Grants permission to modify a tenant database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyTenantDatabase.html"
+    },
+    {
+      "name": "PromoteReadReplica",
+      "methodName": "toPromoteReadReplica",
+      "description": "Grants permission to promote a Read Replica DB instance to a standalone DB instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PromoteReadReplica.html"
+    },
+    {
+      "name": "PromoteReadReplicaDBCluster",
+      "methodName": "toPromoteReadReplicaDBCluster",
+      "description": "Grants permission to promote a Read Replica DB cluster to a standalone DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PromoteReadReplicaDBCluster.html"
+    },
+    {
+      "name": "PurchaseReservedDBInstancesOffering",
+      "methodName": "toPurchaseReservedDBInstancesOffering",
+      "description": "Grants permission to purchase a reserved DB instance offering",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PurchaseReservedDBInstancesOffering.html"
+    },
+    {
+      "name": "RebootDBCluster",
+      "methodName": "toRebootDBCluster",
+      "description": "Grants permission to reboot a previously provisioned DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RebootDBCluster.html"
+    },
+    {
+      "name": "RebootDBInstance",
+      "methodName": "toRebootDBInstance",
+      "description": "Grants permission to restart the database engine service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RebootDBInstance.html"
+    },
+    {
+      "name": "RebootDBShardGroup",
+      "methodName": "toRebootDBShardGroup",
+      "description": "Grants permission to reboot an Aurora Limitless Database DB shard group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RebootDBShardGroup.html"
+    },
+    {
+      "name": "RegisterDBProxyTargets",
+      "methodName": "toRegisterDBProxyTargets",
+      "description": "Grants permission to add targets to a database proxy target group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RegisterDBProxyTargets.html"
+    },
+    {
+      "name": "RemoveFromGlobalCluster",
+      "methodName": "toRemoveFromGlobalCluster",
+      "description": "Grants permission to detach an Aurora secondary cluster from an Aurora global database cluster or DocumentDB global cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveFromGlobalCluster.html"
+    },
+    {
+      "name": "RemoveRoleFromDBCluster",
+      "methodName": "toRemoveRoleFromDBCluster",
+      "description": "Grants permission to disassociate an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBCluster.html"
+    },
+    {
+      "name": "RemoveRoleFromDBInstance",
+      "methodName": "toRemoveRoleFromDBInstance",
+      "description": "Grants permission to disassociate an AWS Identity and Access Management (IAM) role from a DB instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBInstance.html"
+    },
+    {
+      "name": "RemoveSourceIdentifierFromSubscription",
+      "methodName": "toRemoveSourceIdentifierFromSubscription",
+      "description": "Grants permission to remove a source identifier from an existing RDS event notification subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveSourceIdentifierFromSubscription.html"
+    },
+    {
+      "name": "RemoveTagsFromResource",
+      "methodName": "toRemoveTagsFromResource",
+      "description": "Grants permission to remove metadata tags from an Amazon RDS resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveTagsFromResource.html"
+    },
+    {
+      "name": "ResetDBClusterParameterGroup",
+      "methodName": "toResetDBClusterParameterGroup",
+      "description": "Grants permission to modify the parameters of a DB cluster parameter group to the default value",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ResetDBClusterParameterGroup.html"
+    },
+    {
+      "name": "ResetDBParameterGroup",
+      "methodName": "toResetDBParameterGroup",
+      "description": "Grants permission to modify the parameters of a DB parameter group to the engine/system default value",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ResetDBParameterGroup.html"
+    },
+    {
+      "name": "RestoreDBClusterFromS3",
+      "methodName": "toRestoreDBClusterFromS3",
+      "description": "Grants permission to create an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromS3.html"
+    },
+    {
+      "name": "RestoreDBClusterFromSnapshot",
+      "methodName": "toRestoreDBClusterFromSnapshot",
+      "description": "Grants permission to create a new DB cluster from a DB cluster snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromSnapshot.html"
+    },
+    {
+      "name": "RestoreDBClusterToPointInTime",
+      "methodName": "toRestoreDBClusterToPointInTime",
+      "description": "Grants permission to restore a DB cluster to an arbitrary point in time",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterToPointInTime.html"
+    },
+    {
+      "name": "RestoreDBInstanceFromDBSnapshot",
+      "methodName": "toRestoreDBInstanceFromDBSnapshot",
+      "description": "Grants permission to create a new DB instance from a DB snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromDBSnapshot.html"
+    },
+    {
+      "name": "RestoreDBInstanceFromS3",
+      "methodName": "toRestoreDBInstanceFromS3",
+      "description": "Grants permission to create a new DB instance from an Amazon S3 bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromS3.html"
+    },
+    {
+      "name": "RestoreDBInstanceToPointInTime",
+      "methodName": "toRestoreDBInstanceToPointInTime",
+      "description": "Grants permission to restore a DB instance to an arbitrary point in time",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceToPointInTime.html"
+    },
+    {
+      "name": "RevokeDBSecurityGroupIngress",
+      "methodName": "toRevokeDBSecurityGroupIngress",
+      "description": "Grants permission to revoke ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RevokeDBSecurityGroupIngress.html"
+    },
+    {
+      "name": "StartActivityStream",
+      "methodName": "toStartActivityStream",
+      "description": "Grants permission to start Activity Stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartActivityStream.html"
+    },
+    {
+      "name": "StartDBCluster",
+      "methodName": "toStartDBCluster",
+      "description": "Grants permission to start the DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartDBCluster.html"
+    },
+    {
+      "name": "StartDBInstance",
+      "methodName": "toStartDBInstance",
+      "description": "Grants permission to start the DB instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartDBInstance.html"
+    },
+    {
+      "name": "StartDBInstanceAutomatedBackupsReplication",
+      "methodName": "toStartDBInstanceAutomatedBackupsReplication",
+      "description": "Grants permission to start replication of automated backups to a different AWS Region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartDBInstanceAutomatedBackupsReplication.html"
+    },
+    {
+      "name": "StartExportTask",
+      "methodName": "toStartExportTask",
+      "description": "Grants permission to start a new Export task for a DB snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartExportTask.html"
+    },
+    {
+      "name": "StopActivityStream",
+      "methodName": "toStopActivityStream",
+      "description": "Grants permission to stop Activity Stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopActivityStream.html"
+    },
+    {
+      "name": "StopDBCluster",
+      "methodName": "toStopDBCluster",
+      "description": "Grants permission to stop the DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopDBCluster.html"
+    },
+    {
+      "name": "StopDBInstance",
+      "methodName": "toStopDBInstance",
+      "description": "Grants permission to stop the DB instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopDBInstance.html"
+    },
+    {
+      "name": "StopDBInstanceAutomatedBackupsReplication",
+      "methodName": "toStopDBInstanceAutomatedBackupsReplication",
+      "description": "Grants permission to stop automated backup replication for a DB instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopDBInstanceAutomatedBackupsReplication.html"
+    },
+    {
+      "name": "SwitchoverBlueGreenDeployment",
+      "methodName": "toSwitchoverBlueGreenDeployment",
+      "description": "Grants permission to switch a blue-green deployment from source instance or cluster to target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_SwitchoverBlueGreenDeployment.html"
+    },
+    {
+      "name": "SwitchoverGlobalCluster",
+      "methodName": "toSwitchoverGlobalCluster",
+      "description": "Grants permission to switchover a global cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_SwitchoverGlobalCluster.html"
+    },
+    {
+      "name": "SwitchoverReadReplica",
+      "methodName": "toSwitchoverReadReplica",
+      "description": "Grants permission to switch over a read replica, making it the new primary database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_SwitchoverReadReplica.html"
+    },
+    {
+      "name": "CopyCustomDBEngineVersion",
+      "methodName": "toCopyCustomDBEngineVersion",
+      "description": "Grants permission to copy a custom engine version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html"
+    },
+    {
+      "name": "CrossRegionCommunication",
+      "methodName": "toCrossRegionCommunication",
+      "description": "Grants permission to access a resource in the remote Region when executing cross-Region operations, such as cross-Region snapshot copy or cross-Region read replica creation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions"
+    },
+    {
+      "name": "DescribeRecommendationGroups",
+      "methodName": "toDescribeRecommendationGroups",
+      "description": "Grants permission to return information about recommendation groups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/USER_Recommendations.html"
+    },
+    {
+      "name": "DescribeRecommendations",
+      "methodName": "toDescribeRecommendations",
+      "description": "Grants permission to return information about recommendations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/USER_Recommendations.html"
+    },
+    {
+      "name": "ModifyRecommendation",
+      "methodName": "toModifyRecommendation",
+      "description": "Grants permission to modify recommendation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/USER_Recommendations.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "auto-backup",
+      "methodName": "onAutoBackup",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:auto-backup:${DbInstanceAutomatedBackupId}",
+      "placeholders": [
+        {
+          "placeholder": "DbInstanceAutomatedBackupId",
+          "name": "dbInstanceAutomatedBackupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cev",
+      "methodName": "onCev",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:cev:${Engine}/${EngineVersion}/${CustomDbEngineVersionId}",
+      "placeholders": [
+        {
+          "placeholder": "Engine",
+          "name": "engine",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EngineVersion",
+          "name": "engineVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CustomDbEngineVersionId",
+          "name": "customDbEngineVersionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cluster",
+      "methodName": "onCluster",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Aurora.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:cluster:${DbClusterInstanceName}",
+      "placeholders": [
+        {
+          "placeholder": "DbClusterInstanceName",
+          "name": "dbClusterInstanceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifClusterTag"
+      ]
+    },
+    {
+      "name": "cluster-auto-backup",
+      "methodName": "onClusterAutoBackup",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:cluster-auto-backup:${DbClusterAutomatedBackupId}",
+      "placeholders": [
+        {
+          "placeholder": "DbClusterAutomatedBackupId",
+          "name": "dbClusterAutomatedBackupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cluster-endpoint",
+      "methodName": "onClusterEndpoint",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:cluster-endpoint:${DbClusterEndpoint}",
+      "placeholders": [
+        {
+          "placeholder": "DbClusterEndpoint",
+          "name": "dbClusterEndpoint",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cluster-pg",
+      "methodName": "onClusterPg",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_WorkingWithParamGroups.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:cluster-pg:${ClusterParameterGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterParameterGroupName",
+          "name": "clusterParameterGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifClusterPgTag"
+      ]
+    },
+    {
+      "name": "cluster-snapshot",
+      "methodName": "onClusterSnapshot",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:cluster-snapshot:${ClusterSnapshotName}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterSnapshotName",
+          "name": "clusterSnapshotName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifClusterSnapshotTag"
+      ]
+    },
+    {
+      "name": "db",
+      "methodName": "onDb",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:db:${DbInstanceName}",
+      "placeholders": [
+        {
+          "placeholder": "DbInstanceName",
+          "name": "dbInstanceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifDatabaseClass",
+        "ifDatabaseEngine",
+        "ifDatabaseName",
+        "ifMultiAz",
+        "ifPiops",
+        "ifStorageEncrypted",
+        "ifStorageSize",
+        "ifVpc",
+        "ifDbTag"
+      ]
+    },
+    {
+      "name": "deployment",
+      "methodName": "onDeployment",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:deployment:${BlueGreenDeploymentIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "BlueGreenDeploymentIdentifier",
+          "name": "blueGreenDeploymentIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "es",
+      "methodName": "onEs",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:es:${SubscriptionName}",
+      "placeholders": [
+        {
+          "placeholder": "SubscriptionName",
+          "name": "subscriptionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifEsTag"
+      ]
+    },
+    {
+      "name": "global-cluster",
+      "methodName": "onGlobalCluster",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html",
+      "arn": "arn:${Partition}:rds::${Account}:global-cluster:${GlobalCluster}",
+      "placeholders": [
+        {
+          "placeholder": "GlobalCluster",
+          "name": "globalCluster",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "integration",
+      "methodName": "onIntegration",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:integration:${IntegrationIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "IntegrationIdentifier",
+          "name": "integrationIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "og",
+      "methodName": "onOg",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithOptionGroups.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:og:${OptionGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "OptionGroupName",
+          "name": "optionGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifOgTag"
+      ]
+    },
+    {
+      "name": "pg",
+      "methodName": "onPg",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:pg:${ParameterGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "ParameterGroupName",
+          "name": "parameterGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifPgTag"
+      ]
+    },
+    {
+      "name": "proxy",
+      "methodName": "onProxy",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:db-proxy:${DbProxyId}",
+      "placeholders": [
+        {
+          "placeholder": "DbProxyId",
+          "name": "dbProxyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "proxy-endpoint",
+      "methodName": "onProxyEndpoint",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:db-proxy-endpoint:${DbProxyEndpointId}",
+      "placeholders": [
+        {
+          "placeholder": "DbProxyEndpointId",
+          "name": "dbProxyEndpointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ri",
+      "methodName": "onRi",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithReservedDBInstances.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:ri:${ReservedDbInstanceName}",
+      "placeholders": [
+        {
+          "placeholder": "ReservedDbInstanceName",
+          "name": "reservedDbInstanceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifRiTag"
+      ]
+    },
+    {
+      "name": "secgrp",
+      "methodName": "onSecgrp",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.RDSSecurityGroups.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:secgrp:${SecurityGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "SecurityGroupName",
+          "name": "securityGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifSecgrpTag"
+      ]
+    },
+    {
+      "name": "shardgrp",
+      "methodName": "onShardgrp",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/limitless-architecture.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:shard-group:${DbShardGroupResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "DbShardGroupResourceId",
+          "name": "dbShardGroupResourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "snapshot",
+      "methodName": "onSnapshot",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:snapshot:${SnapshotName}",
+      "placeholders": [
+        {
+          "placeholder": "SnapshotName",
+          "name": "snapshotName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifSnapshotTag"
+      ]
+    },
+    {
+      "name": "snapshot-tenant-database",
+      "methodName": "onSnapshotTenantDatabase",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Oracle.Concepts.single-tenant.snapshots.html#br-cdb.db-snapshots",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:snapshot-tenant-database:${SnapshotName}:${TenantResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "SnapshotName",
+          "name": "snapshotName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TenantResourceId",
+          "name": "tenantResourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "subgrp",
+      "methodName": "onSubgrp",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Scenarios.html#USER_VPC.Scenario1",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:subgrp:${SubnetGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "SubnetGroupName",
+          "name": "subnetGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifSubgrpTag"
+      ]
+    },
+    {
+      "name": "target-group",
+      "methodName": "onTargetGroup",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:target-group:${TargetGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "TargetGroupId",
+          "name": "targetGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "tenant-database",
+      "methodName": "onTenantDatabase",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Oracle.Concepts.CDBs.html#multi-tenant-configuration",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:tenant-database:${TenantResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "TenantResourceId",
+          "name": "tenantResourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the set of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCopyDBClusterParameterGroup",
+        "toCopyDBClusterSnapshot",
+        "toCopyDBParameterGroup",
+        "toCopyDBSnapshot",
+        "toCopyOptionGroup",
+        "toCreateBlueGreenDeployment",
+        "toCreateCustomDBEngineVersion",
+        "toCreateDBCluster",
+        "toCreateDBClusterEndpoint",
+        "toCreateDBClusterParameterGroup",
+        "toCreateDBClusterSnapshot",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBParameterGroup",
+        "toCreateDBProxy",
+        "toCreateDBProxyEndpoint",
+        "toCreateDBSecurityGroup",
+        "toCreateDBShardGroup",
+        "toCreateDBSnapshot",
+        "toCreateDBSubnetGroup",
+        "toCreateEventSubscription",
+        "toCreateGlobalCluster",
+        "toCreateIntegration",
+        "toCreateOptionGroup",
+        "toCreateTenantDatabase",
+        "toPurchaseReservedDBInstancesOffering",
+        "toRemoveTagsFromResource",
+        "toRestoreDBClusterFromS3",
+        "toRestoreDBClusterFromSnapshot",
+        "toRestoreDBClusterToPointInTime",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime",
+        "toStartDBInstanceAutomatedBackupsReplication"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the set of tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddRoleToDBCluster",
+        "toAddRoleToDBInstance",
+        "toAddSourceIdentifierToSubscription",
+        "toAddTagsToResource",
+        "toApplyPendingMaintenanceAction",
+        "toAuthorizeDBSecurityGroupIngress",
+        "toBacktrackDBCluster",
+        "toCopyDBClusterParameterGroup",
+        "toCopyDBClusterSnapshot",
+        "toCopyDBParameterGroup",
+        "toCopyDBSnapshot",
+        "toCopyOptionGroup",
+        "toCreateBlueGreenDeployment",
+        "toCreateCustomDBEngineVersion",
+        "toCreateDBCluster",
+        "toCreateDBClusterEndpoint",
+        "toCreateDBClusterParameterGroup",
+        "toCreateDBClusterSnapshot",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBParameterGroup",
+        "toCreateDBProxyEndpoint",
+        "toCreateDBSecurityGroup",
+        "toCreateDBShardGroup",
+        "toCreateDBSnapshot",
+        "toCreateDBSubnetGroup",
+        "toCreateEventSubscription",
+        "toCreateGlobalCluster",
+        "toCreateIntegration",
+        "toCreateOptionGroup",
+        "toCreateTenantDatabase",
+        "toDeleteBlueGreenDeployment",
+        "toDeleteCustomDBEngineVersion",
+        "toDeleteDBCluster",
+        "toDeleteDBClusterAutomatedBackup",
+        "toDeleteDBClusterEndpoint",
+        "toDeleteDBClusterParameterGroup",
+        "toDeleteDBClusterSnapshot",
+        "toDeleteDBInstance",
+        "toDeleteDBInstanceAutomatedBackup",
+        "toDeleteDBParameterGroup",
+        "toDeleteDBProxy",
+        "toDeleteDBProxyEndpoint",
+        "toDeleteDBSecurityGroup",
+        "toDeleteDBShardGroup",
+        "toDeleteDBSnapshot",
+        "toDeleteDBSubnetGroup",
+        "toDeleteEventSubscription",
+        "toDeleteGlobalCluster",
+        "toDeleteIntegration",
+        "toDeleteOptionGroup",
+        "toDeleteTenantDatabase",
+        "toDeregisterDBProxyTargets",
+        "toDescribeBlueGreenDeployments",
+        "toDescribeDBClusterAutomatedBackups",
+        "toDescribeDBClusterBacktracks",
+        "toDescribeDBClusterEndpoints",
+        "toDescribeDBClusterParameterGroups",
+        "toDescribeDBClusterParameters",
+        "toDescribeDBClusterSnapshotAttributes",
+        "toDescribeDBClusterSnapshots",
+        "toDescribeDBClusters",
+        "toDescribeDBInstanceAutomatedBackups",
+        "toDescribeDBInstances",
+        "toDescribeDBLogFiles",
+        "toDescribeDBParameterGroups",
+        "toDescribeDBParameters",
+        "toDescribeDBProxies",
+        "toDescribeDBProxyEndpoints",
+        "toDescribeDBProxyTargetGroups",
+        "toDescribeDBProxyTargets",
+        "toDescribeDBSecurityGroups",
+        "toDescribeDBShardGroups",
+        "toDescribeDBSnapshotAttributes",
+        "toDescribeDBSnapshotTenantDatabases",
+        "toDescribeDBSnapshots",
+        "toDescribeDBSubnetGroups",
+        "toDescribeEventSubscriptions",
+        "toDescribeExportTasks",
+        "toDescribeGlobalClusters",
+        "toDescribeIntegrations",
+        "toDescribeOptionGroups",
+        "toDescribePendingMaintenanceActions",
+        "toDescribeReservedDBInstances",
+        "toDescribeTenantDatabases",
+        "toDescribeValidDBInstanceModifications",
+        "toDisableHttpEndpoint",
+        "toDownloadCompleteDBLogFile",
+        "toDownloadDBLogFilePortion",
+        "toEnableHttpEndpoint",
+        "toFailoverDBCluster",
+        "toFailoverGlobalCluster",
+        "toListTagsForResource",
+        "toModifyActivityStream",
+        "toModifyCurrentDBClusterCapacity",
+        "toModifyCustomDBEngineVersion",
+        "toModifyDBCluster",
+        "toModifyDBClusterEndpoint",
+        "toModifyDBClusterParameterGroup",
+        "toModifyDBClusterSnapshotAttribute",
+        "toModifyDBInstance",
+        "toModifyDBParameterGroup",
+        "toModifyDBProxy",
+        "toModifyDBProxyEndpoint",
+        "toModifyDBProxyTargetGroup",
+        "toModifyDBShardGroup",
+        "toModifyDBSnapshot",
+        "toModifyDBSnapshotAttribute",
+        "toModifyDBSubnetGroup",
+        "toModifyEventSubscription",
+        "toModifyGlobalCluster",
+        "toModifyIntegration",
+        "toModifyOptionGroup",
+        "toModifyTenantDatabase",
+        "toPromoteReadReplica",
+        "toPromoteReadReplicaDBCluster",
+        "toPurchaseReservedDBInstancesOffering",
+        "toRebootDBCluster",
+        "toRebootDBInstance",
+        "toRebootDBShardGroup",
+        "toRegisterDBProxyTargets",
+        "toRemoveFromGlobalCluster",
+        "toRemoveRoleFromDBCluster",
+        "toRemoveRoleFromDBInstance",
+        "toRemoveSourceIdentifierFromSubscription",
+        "toRemoveTagsFromResource",
+        "toResetDBClusterParameterGroup",
+        "toResetDBParameterGroup",
+        "toRestoreDBClusterFromS3",
+        "toRestoreDBClusterFromSnapshot",
+        "toRestoreDBClusterToPointInTime",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime",
+        "toRevokeDBSecurityGroupIngress",
+        "toStartActivityStream",
+        "toStartDBCluster",
+        "toStartDBInstance",
+        "toStartDBInstanceAutomatedBackupsReplication",
+        "toStartExportTask",
+        "toStopActivityStream",
+        "toStopDBCluster",
+        "toStopDBInstance",
+        "toStopDBInstanceAutomatedBackupsReplication",
+        "toSwitchoverBlueGreenDeployment",
+        "toSwitchoverGlobalCluster",
+        "toSwitchoverReadReplica",
+        "toCopyCustomDBEngineVersion",
+        "toCrossRegionCommunication"
+      ],
+      "relatedResourceTypes": [
+        "auto-backup",
+        "cev",
+        "cluster",
+        "cluster-auto-backup",
+        "cluster-endpoint",
+        "cluster-pg",
+        "cluster-snapshot",
+        "db",
+        "deployment",
+        "es",
+        "global-cluster",
+        "integration",
+        "og",
+        "pg",
+        "proxy",
+        "proxy-endpoint",
+        "ri",
+        "secgrp",
+        "shardgrp",
+        "snapshot",
+        "snapshot-tenant-database",
+        "subgrp",
+        "target-group",
+        "tenant-database"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the set of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCopyDBClusterParameterGroup",
+        "toCopyDBClusterSnapshot",
+        "toCopyDBParameterGroup",
+        "toCopyDBSnapshot",
+        "toCopyOptionGroup",
+        "toCreateBlueGreenDeployment",
+        "toCreateCustomDBEngineVersion",
+        "toCreateDBCluster",
+        "toCreateDBClusterEndpoint",
+        "toCreateDBClusterParameterGroup",
+        "toCreateDBClusterSnapshot",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBParameterGroup",
+        "toCreateDBProxy",
+        "toCreateDBProxyEndpoint",
+        "toCreateDBSecurityGroup",
+        "toCreateDBShardGroup",
+        "toCreateDBSnapshot",
+        "toCreateDBSubnetGroup",
+        "toCreateEventSubscription",
+        "toCreateGlobalCluster",
+        "toCreateIntegration",
+        "toCreateOptionGroup",
+        "toCreateTenantDatabase",
+        "toPurchaseReservedDBInstancesOffering",
+        "toRemoveTagsFromResource",
+        "toRestoreDBClusterFromS3",
+        "toRestoreDBClusterFromSnapshot",
+        "toRestoreDBClusterToPointInTime",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime",
+        "toStartDBInstanceAutomatedBackupsReplication"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:BackupTarget",
+      "methodName": "ifBackupTarget",
+      "description": "Filters access by the type of backup target. One of: region, outposts",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toCreateDBInstance",
+        "toCreateDBSnapshot",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceToPointInTime"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "BackupTarget",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:CopyOptionGroup",
+      "methodName": "ifCopyOptionGroup",
+      "description": "Filters access by the value that specifies whether the CopyDBSnapshot action requires copying the DB option group",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toCopyDBSnapshot"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CopyOptionGroup",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "rds:DatabaseClass",
+      "methodName": "ifDatabaseClass",
+      "description": "Filters access by the type of DB instance class",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddRoleToDBInstance",
+        "toAddTagsToResource",
+        "toApplyPendingMaintenanceAction",
+        "toCreateBlueGreenDeployment",
+        "toCreateDBCluster",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBSnapshot",
+        "toCreateIntegration",
+        "toCreateTenantDatabase",
+        "toDeleteDBInstance",
+        "toDeleteTenantDatabase",
+        "toDeregisterDBProxyTargets",
+        "toDescribeDBInstanceAutomatedBackups",
+        "toDescribeDBInstances",
+        "toDescribeDBLogFiles",
+        "toDescribeDBSnapshotTenantDatabases",
+        "toDescribeDBSnapshots",
+        "toDescribePendingMaintenanceActions",
+        "toDescribeTenantDatabases",
+        "toDescribeValidDBInstanceModifications",
+        "toDownloadCompleteDBLogFile",
+        "toDownloadDBLogFilePortion",
+        "toFailoverDBCluster",
+        "toListTagsForResource",
+        "toModifyActivityStream",
+        "toModifyDBCluster",
+        "toModifyDBInstance",
+        "toModifyTenantDatabase",
+        "toPromoteReadReplica",
+        "toRebootDBInstance",
+        "toRegisterDBProxyTargets",
+        "toRemoveRoleFromDBInstance",
+        "toRemoveTagsFromResource",
+        "toRestoreDBClusterFromSnapshot",
+        "toRestoreDBClusterToPointInTime",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime",
+        "toStartActivityStream",
+        "toStartDBInstance",
+        "toStartDBInstanceAutomatedBackupsReplication",
+        "toStopActivityStream",
+        "toStopDBInstance",
+        "toStopDBInstanceAutomatedBackupsReplication",
+        "toSwitchoverReadReplica",
+        "toCrossRegionCommunication"
+      ],
+      "relatedResourceTypes": [
+        "db"
+      ],
+      "keyLiteral": "DatabaseClass",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:DatabaseEngine",
+      "methodName": "ifDatabaseEngine",
+      "description": "Filters access by the database engine. For possible values refer to the engine parameter in CreateDBInstance API",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddRoleToDBInstance",
+        "toAddTagsToResource",
+        "toApplyPendingMaintenanceAction",
+        "toCreateBlueGreenDeployment",
+        "toCreateDBCluster",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBSnapshot",
+        "toCreateIntegration",
+        "toCreateTenantDatabase",
+        "toDeleteDBInstance",
+        "toDeleteTenantDatabase",
+        "toDeregisterDBProxyTargets",
+        "toDescribeDBInstanceAutomatedBackups",
+        "toDescribeDBInstances",
+        "toDescribeDBLogFiles",
+        "toDescribeDBSnapshotTenantDatabases",
+        "toDescribeDBSnapshots",
+        "toDescribePendingMaintenanceActions",
+        "toDescribeTenantDatabases",
+        "toDescribeValidDBInstanceModifications",
+        "toDownloadCompleteDBLogFile",
+        "toDownloadDBLogFilePortion",
+        "toFailoverDBCluster",
+        "toListTagsForResource",
+        "toModifyActivityStream",
+        "toModifyDBInstance",
+        "toModifyTenantDatabase",
+        "toPromoteReadReplica",
+        "toRebootDBInstance",
+        "toRegisterDBProxyTargets",
+        "toRemoveRoleFromDBInstance",
+        "toRemoveTagsFromResource",
+        "toRestoreDBClusterFromS3",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime",
+        "toStartActivityStream",
+        "toStartDBInstance",
+        "toStartDBInstanceAutomatedBackupsReplication",
+        "toStopActivityStream",
+        "toStopDBInstance",
+        "toStopDBInstanceAutomatedBackupsReplication",
+        "toSwitchoverReadReplica",
+        "toCrossRegionCommunication"
+      ],
+      "relatedResourceTypes": [
+        "db"
+      ],
+      "keyLiteral": "DatabaseEngine",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:DatabaseName",
+      "methodName": "ifDatabaseName",
+      "description": "Filters access by the user-defined name of the database on the DB instance",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddRoleToDBInstance",
+        "toAddTagsToResource",
+        "toApplyPendingMaintenanceAction",
+        "toCreateBlueGreenDeployment",
+        "toCreateDBCluster",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBSnapshot",
+        "toCreateIntegration",
+        "toCreateTenantDatabase",
+        "toDeleteDBInstance",
+        "toDeleteTenantDatabase",
+        "toDeregisterDBProxyTargets",
+        "toDescribeDBInstanceAutomatedBackups",
+        "toDescribeDBInstances",
+        "toDescribeDBLogFiles",
+        "toDescribeDBSnapshotTenantDatabases",
+        "toDescribeDBSnapshots",
+        "toDescribePendingMaintenanceActions",
+        "toDescribeTenantDatabases",
+        "toDescribeValidDBInstanceModifications",
+        "toDownloadCompleteDBLogFile",
+        "toDownloadDBLogFilePortion",
+        "toFailoverDBCluster",
+        "toListTagsForResource",
+        "toModifyActivityStream",
+        "toModifyDBInstance",
+        "toModifyTenantDatabase",
+        "toPromoteReadReplica",
+        "toRebootDBInstance",
+        "toRegisterDBProxyTargets",
+        "toRemoveRoleFromDBInstance",
+        "toRemoveTagsFromResource",
+        "toRestoreDBClusterFromS3",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime",
+        "toStartActivityStream",
+        "toStartDBInstance",
+        "toStartDBInstanceAutomatedBackupsReplication",
+        "toStopActivityStream",
+        "toStopDBInstance",
+        "toStopDBInstanceAutomatedBackupsReplication",
+        "toSwitchoverReadReplica",
+        "toCrossRegionCommunication"
+      ],
+      "relatedResourceTypes": [
+        "db"
+      ],
+      "keyLiteral": "DatabaseName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:EndpointType",
+      "methodName": "ifEndpointType",
+      "description": "Filters access by the type of the endpoint. One of: READER, WRITER, CUSTOM",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toCreateDBClusterEndpoint"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EndpointType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:ManageMasterUserPassword",
+      "methodName": "ifManageMasterUserPassword",
+      "description": "Filters access by the value that specifies whether RDS manages master user password in AWS Secrets Manager for the DB instance or cluster",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toCreateDBCluster",
+        "toCreateDBInstance",
+        "toCreateTenantDatabase",
+        "toModifyDBCluster",
+        "toModifyDBInstance",
+        "toModifyTenantDatabase",
+        "toRestoreDBClusterFromS3",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ManageMasterUserPassword",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "rds:MultiAz",
+      "methodName": "ifMultiAz",
+      "description": "Filters access by the value that specifies whether the DB instance runs in multiple Availability Zones. To indicate that the DB instance is using Multi-AZ, specify true",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddRoleToDBInstance",
+        "toAddTagsToResource",
+        "toApplyPendingMaintenanceAction",
+        "toCreateBlueGreenDeployment",
+        "toCreateDBCluster",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBSnapshot",
+        "toCreateIntegration",
+        "toCreateTenantDatabase",
+        "toDeleteDBInstance",
+        "toDeleteTenantDatabase",
+        "toDeregisterDBProxyTargets",
+        "toDescribeDBInstanceAutomatedBackups",
+        "toDescribeDBInstances",
+        "toDescribeDBLogFiles",
+        "toDescribeDBSnapshotTenantDatabases",
+        "toDescribeDBSnapshots",
+        "toDescribePendingMaintenanceActions",
+        "toDescribeTenantDatabases",
+        "toDescribeValidDBInstanceModifications",
+        "toDownloadCompleteDBLogFile",
+        "toDownloadDBLogFilePortion",
+        "toFailoverDBCluster",
+        "toListTagsForResource",
+        "toModifyActivityStream",
+        "toModifyDBInstance",
+        "toModifyTenantDatabase",
+        "toPromoteReadReplica",
+        "toRebootDBInstance",
+        "toRegisterDBProxyTargets",
+        "toRemoveRoleFromDBInstance",
+        "toRemoveTagsFromResource",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime",
+        "toStartActivityStream",
+        "toStartDBInstance",
+        "toStartDBInstanceAutomatedBackupsReplication",
+        "toStopActivityStream",
+        "toStopDBInstance",
+        "toStopDBInstanceAutomatedBackupsReplication",
+        "toSwitchoverReadReplica",
+        "toCrossRegionCommunication"
+      ],
+      "relatedResourceTypes": [
+        "db"
+      ],
+      "keyLiteral": "MultiAz",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "rds:Piops",
+      "methodName": "ifPiops",
+      "description": "Filters access by the value that contains the number of Provisioned IOPS (PIOPS) that the instance supports. To indicate a DB instance that does not have PIOPS enabled, specify 0",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddRoleToDBInstance",
+        "toAddTagsToResource",
+        "toApplyPendingMaintenanceAction",
+        "toCreateBlueGreenDeployment",
+        "toCreateDBCluster",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBSnapshot",
+        "toCreateIntegration",
+        "toCreateTenantDatabase",
+        "toDeleteDBInstance",
+        "toDeleteTenantDatabase",
+        "toDeregisterDBProxyTargets",
+        "toDescribeDBInstanceAutomatedBackups",
+        "toDescribeDBInstances",
+        "toDescribeDBLogFiles",
+        "toDescribeDBSnapshotTenantDatabases",
+        "toDescribeDBSnapshots",
+        "toDescribePendingMaintenanceActions",
+        "toDescribeTenantDatabases",
+        "toDescribeValidDBInstanceModifications",
+        "toDownloadCompleteDBLogFile",
+        "toDownloadDBLogFilePortion",
+        "toFailoverDBCluster",
+        "toListTagsForResource",
+        "toModifyActivityStream",
+        "toModifyDBCluster",
+        "toModifyDBInstance",
+        "toModifyTenantDatabase",
+        "toPromoteReadReplica",
+        "toRebootDBInstance",
+        "toRegisterDBProxyTargets",
+        "toRemoveRoleFromDBInstance",
+        "toRemoveTagsFromResource",
+        "toRestoreDBClusterFromSnapshot",
+        "toRestoreDBClusterToPointInTime",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime",
+        "toStartActivityStream",
+        "toStartDBInstance",
+        "toStartDBInstanceAutomatedBackupsReplication",
+        "toStopActivityStream",
+        "toStopDBInstance",
+        "toStopDBInstanceAutomatedBackupsReplication",
+        "toSwitchoverReadReplica",
+        "toCrossRegionCommunication"
+      ],
+      "relatedResourceTypes": [
+        "db"
+      ],
+      "keyLiteral": "Piops",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "rds:PubliclyAccessible",
+      "methodName": "ifPubliclyAccessible",
+      "description": "Filters access by the value that specifies whether the DB Instance or DB ShardGroup is publicly accessible",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBShardGroup",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PubliclyAccessible",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "rds:StorageEncrypted",
+      "methodName": "ifStorageEncrypted",
+      "description": "Filters access by the value that specifies whether the DB instance storage should be encrypted. To enforce storage encryption, specify true",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddRoleToDBInstance",
+        "toAddTagsToResource",
+        "toApplyPendingMaintenanceAction",
+        "toCreateBlueGreenDeployment",
+        "toCreateDBCluster",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBSnapshot",
+        "toCreateIntegration",
+        "toCreateTenantDatabase",
+        "toDeleteDBInstance",
+        "toDeleteTenantDatabase",
+        "toDeregisterDBProxyTargets",
+        "toDescribeDBInstanceAutomatedBackups",
+        "toDescribeDBInstances",
+        "toDescribeDBLogFiles",
+        "toDescribeDBSnapshotTenantDatabases",
+        "toDescribeDBSnapshots",
+        "toDescribePendingMaintenanceActions",
+        "toDescribeTenantDatabases",
+        "toDescribeValidDBInstanceModifications",
+        "toDownloadCompleteDBLogFile",
+        "toDownloadDBLogFilePortion",
+        "toFailoverDBCluster",
+        "toListTagsForResource",
+        "toModifyActivityStream",
+        "toModifyDBInstance",
+        "toModifyTenantDatabase",
+        "toPromoteReadReplica",
+        "toRebootDBInstance",
+        "toRegisterDBProxyTargets",
+        "toRemoveRoleFromDBInstance",
+        "toRemoveTagsFromResource",
+        "toRestoreDBClusterFromS3",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime",
+        "toStartActivityStream",
+        "toStartDBInstance",
+        "toStartDBInstanceAutomatedBackupsReplication",
+        "toStopActivityStream",
+        "toStopDBInstance",
+        "toStopDBInstanceAutomatedBackupsReplication",
+        "toSwitchoverReadReplica",
+        "toCrossRegionCommunication"
+      ],
+      "relatedResourceTypes": [
+        "db"
+      ],
+      "keyLiteral": "StorageEncrypted",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "rds:StorageSize",
+      "methodName": "ifStorageSize",
+      "description": "Filters access by the storage volume size (in GB)",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddRoleToDBInstance",
+        "toAddTagsToResource",
+        "toApplyPendingMaintenanceAction",
+        "toCreateBlueGreenDeployment",
+        "toCreateDBCluster",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBSnapshot",
+        "toCreateIntegration",
+        "toCreateTenantDatabase",
+        "toDeleteDBInstance",
+        "toDeleteTenantDatabase",
+        "toDeregisterDBProxyTargets",
+        "toDescribeDBInstanceAutomatedBackups",
+        "toDescribeDBInstances",
+        "toDescribeDBLogFiles",
+        "toDescribeDBSnapshotTenantDatabases",
+        "toDescribeDBSnapshots",
+        "toDescribePendingMaintenanceActions",
+        "toDescribeTenantDatabases",
+        "toDescribeValidDBInstanceModifications",
+        "toDownloadCompleteDBLogFile",
+        "toDownloadDBLogFilePortion",
+        "toFailoverDBCluster",
+        "toListTagsForResource",
+        "toModifyActivityStream",
+        "toModifyDBCluster",
+        "toModifyDBInstance",
+        "toModifyTenantDatabase",
+        "toPromoteReadReplica",
+        "toRebootDBInstance",
+        "toRegisterDBProxyTargets",
+        "toRemoveRoleFromDBInstance",
+        "toRemoveTagsFromResource",
+        "toRestoreDBClusterFromSnapshot",
+        "toRestoreDBClusterToPointInTime",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime",
+        "toStartActivityStream",
+        "toStartDBInstance",
+        "toStartDBInstanceAutomatedBackupsReplication",
+        "toStopActivityStream",
+        "toStopDBInstance",
+        "toStopDBInstanceAutomatedBackupsReplication",
+        "toSwitchoverReadReplica",
+        "toCrossRegionCommunication"
+      ],
+      "relatedResourceTypes": [
+        "db"
+      ],
+      "keyLiteral": "StorageSize",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "rds:TagsFromRequest",
+      "methodName": "ifTagsFromRequest",
+      "description": "Filters access for rds:AddTagsToResource based on whether tags are explicitly specified in the Tags or TagSpecification request parameters. Evaluates to true when tags are provided in these parameters. Evaluates as false when tags are implicitly inherited from source resources",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TagsFromRequest",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "rds:TenantDatabaseName",
+      "methodName": "ifTenantDatabaseName",
+      "description": "Filters access by the tenant database name in CreateTenantDatabase and by the new tenant database name in ModifyTenantDatabase",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toCreateTenantDatabase",
+        "toModifyTenantDatabase"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TenantDatabaseName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:Vpc",
+      "methodName": "ifVpc",
+      "description": "Filters access by the value that specifies whether the DB instance runs in an Amazon Virtual Private Cloud (Amazon VPC). To indicate that the DB instance runs in an Amazon VPC, specify true",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddRoleToDBInstance",
+        "toAddTagsToResource",
+        "toApplyPendingMaintenanceAction",
+        "toCreateBlueGreenDeployment",
+        "toCreateDBCluster",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBSnapshot",
+        "toCreateIntegration",
+        "toCreateTenantDatabase",
+        "toDeleteDBInstance",
+        "toDeleteTenantDatabase",
+        "toDeregisterDBProxyTargets",
+        "toDescribeDBInstanceAutomatedBackups",
+        "toDescribeDBInstances",
+        "toDescribeDBLogFiles",
+        "toDescribeDBSnapshotTenantDatabases",
+        "toDescribeDBSnapshots",
+        "toDescribePendingMaintenanceActions",
+        "toDescribeTenantDatabases",
+        "toDescribeValidDBInstanceModifications",
+        "toDownloadCompleteDBLogFile",
+        "toDownloadDBLogFilePortion",
+        "toFailoverDBCluster",
+        "toListTagsForResource",
+        "toModifyActivityStream",
+        "toModifyDBInstance",
+        "toModifyTenantDatabase",
+        "toPromoteReadReplica",
+        "toRebootDBInstance",
+        "toRegisterDBProxyTargets",
+        "toRemoveRoleFromDBInstance",
+        "toRemoveTagsFromResource",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime",
+        "toStartActivityStream",
+        "toStartDBInstance",
+        "toStartDBInstanceAutomatedBackupsReplication",
+        "toStopActivityStream",
+        "toStopDBInstance",
+        "toStopDBInstanceAutomatedBackupsReplication",
+        "toSwitchoverReadReplica",
+        "toCrossRegionCommunication"
+      ],
+      "relatedResourceTypes": [
+        "db"
+      ],
+      "keyLiteral": "Vpc",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "rds:cluster-pg-tag/${TagKey}",
+      "methodName": "ifClusterPgTag",
+      "description": "Filters access by the tag attached to a DB cluster parameter group",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCopyDBClusterParameterGroup",
+        "toCreateBlueGreenDeployment",
+        "toCreateDBCluster",
+        "toCreateDBClusterParameterGroup",
+        "toDeleteDBClusterParameterGroup",
+        "toDescribeDBClusterParameterGroups",
+        "toDescribeDBClusterParameters",
+        "toListTagsForResource",
+        "toModifyDBCluster",
+        "toModifyDBClusterParameterGroup",
+        "toRemoveTagsFromResource",
+        "toResetDBClusterParameterGroup",
+        "toRestoreDBClusterFromS3",
+        "toRestoreDBClusterFromSnapshot",
+        "toRestoreDBClusterToPointInTime"
+      ],
+      "relatedResourceTypes": [
+        "cluster-pg"
+      ],
+      "keyLiteral": "cluster-pg-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:cluster-snapshot-tag/${TagKey}",
+      "methodName": "ifClusterSnapshotTag",
+      "description": "Filters access by the tag attached to a DB cluster snapshot",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCopyDBClusterSnapshot",
+        "toCreateDBClusterSnapshot",
+        "toDeleteDBCluster",
+        "toDeleteDBClusterSnapshot",
+        "toDescribeDBClusterSnapshotAttributes",
+        "toDescribeDBClusterSnapshots",
+        "toDescribeExportTasks",
+        "toListTagsForResource",
+        "toModifyDBClusterSnapshotAttribute",
+        "toRemoveTagsFromResource",
+        "toRestoreDBClusterFromSnapshot",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toStartExportTask",
+        "toCrossRegionCommunication"
+      ],
+      "relatedResourceTypes": [
+        "cluster-snapshot"
+      ],
+      "keyLiteral": "cluster-snapshot-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:cluster-tag/${TagKey}",
+      "methodName": "ifClusterTag",
+      "description": "Filters access by the tag attached to a DB cluster",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddRoleToDBCluster",
+        "toAddTagsToResource",
+        "toApplyPendingMaintenanceAction",
+        "toBacktrackDBCluster",
+        "toCreateBlueGreenDeployment",
+        "toCreateDBCluster",
+        "toCreateDBClusterEndpoint",
+        "toCreateDBClusterSnapshot",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBShardGroup",
+        "toCreateGlobalCluster",
+        "toCreateIntegration",
+        "toDeleteDBCluster",
+        "toDeregisterDBProxyTargets",
+        "toDescribeDBClusterAutomatedBackups",
+        "toDescribeDBClusterBacktracks",
+        "toDescribeDBClusterEndpoints",
+        "toDescribeDBClusterSnapshots",
+        "toDescribeDBClusters",
+        "toDescribeExportTasks",
+        "toDescribePendingMaintenanceActions",
+        "toDisableHttpEndpoint",
+        "toEnableHttpEndpoint",
+        "toFailoverDBCluster",
+        "toFailoverGlobalCluster",
+        "toListTagsForResource",
+        "toModifyCurrentDBClusterCapacity",
+        "toModifyDBCluster",
+        "toPromoteReadReplicaDBCluster",
+        "toRebootDBCluster",
+        "toRemoveFromGlobalCluster",
+        "toRemoveRoleFromDBCluster",
+        "toRemoveTagsFromResource",
+        "toRestoreDBClusterFromS3",
+        "toRestoreDBClusterFromSnapshot",
+        "toRestoreDBClusterToPointInTime",
+        "toStartActivityStream",
+        "toStartDBCluster",
+        "toStartExportTask",
+        "toStopActivityStream",
+        "toStopDBCluster",
+        "toSwitchoverGlobalCluster"
+      ],
+      "relatedResourceTypes": [
+        "cluster"
+      ],
+      "keyLiteral": "cluster-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:db-tag/${TagKey}",
+      "methodName": "ifDbTag",
+      "description": "Filters access by the tag attached to a DB instance",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddRoleToDBInstance",
+        "toAddTagsToResource",
+        "toApplyPendingMaintenanceAction",
+        "toCreateBlueGreenDeployment",
+        "toCreateDBCluster",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBSnapshot",
+        "toCreateIntegration",
+        "toCreateTenantDatabase",
+        "toDeleteDBInstance",
+        "toDeleteTenantDatabase",
+        "toDeregisterDBProxyTargets",
+        "toDescribeDBInstanceAutomatedBackups",
+        "toDescribeDBInstances",
+        "toDescribeDBLogFiles",
+        "toDescribeDBSnapshotTenantDatabases",
+        "toDescribeDBSnapshots",
+        "toDescribePendingMaintenanceActions",
+        "toDescribeTenantDatabases",
+        "toDescribeValidDBInstanceModifications",
+        "toDownloadCompleteDBLogFile",
+        "toDownloadDBLogFilePortion",
+        "toFailoverDBCluster",
+        "toListTagsForResource",
+        "toModifyActivityStream",
+        "toModifyDBInstance",
+        "toModifyTenantDatabase",
+        "toPromoteReadReplica",
+        "toRebootDBInstance",
+        "toRegisterDBProxyTargets",
+        "toRemoveRoleFromDBInstance",
+        "toRemoveTagsFromResource",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime",
+        "toStartActivityStream",
+        "toStartDBInstance",
+        "toStartDBInstanceAutomatedBackupsReplication",
+        "toStopActivityStream",
+        "toStopDBInstance",
+        "toStopDBInstanceAutomatedBackupsReplication",
+        "toSwitchoverReadReplica",
+        "toCrossRegionCommunication"
+      ],
+      "relatedResourceTypes": [
+        "db"
+      ],
+      "keyLiteral": "db-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:es-tag/${TagKey}",
+      "methodName": "ifEsTag",
+      "description": "Filters access by the tag attached to an event subscription",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddSourceIdentifierToSubscription",
+        "toAddTagsToResource",
+        "toCreateEventSubscription",
+        "toDeleteEventSubscription",
+        "toDescribeEventSubscriptions",
+        "toListTagsForResource",
+        "toModifyEventSubscription",
+        "toRemoveSourceIdentifierFromSubscription",
+        "toRemoveTagsFromResource"
+      ],
+      "relatedResourceTypes": [
+        "es"
+      ],
+      "keyLiteral": "es-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:og-tag/${TagKey}",
+      "methodName": "ifOgTag",
+      "description": "Filters access by the tag attached to a DB option group",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCopyOptionGroup",
+        "toCreateDBCluster",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateOptionGroup",
+        "toDeleteOptionGroup",
+        "toDescribeOptionGroups",
+        "toListTagsForResource",
+        "toModifyDBCluster",
+        "toModifyDBInstance",
+        "toModifyDBSnapshot",
+        "toModifyOptionGroup",
+        "toRemoveTagsFromResource",
+        "toRestoreDBClusterFromS3",
+        "toRestoreDBClusterFromSnapshot",
+        "toRestoreDBClusterToPointInTime",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime"
+      ],
+      "relatedResourceTypes": [
+        "og"
+      ],
+      "keyLiteral": "og-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:pg-tag/${TagKey}",
+      "methodName": "ifPgTag",
+      "description": "Filters access by the tag attached to a DB parameter group",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCopyDBParameterGroup",
+        "toCreateBlueGreenDeployment",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBParameterGroup",
+        "toDeleteDBParameterGroup",
+        "toDescribeDBParameterGroups",
+        "toDescribeDBParameters",
+        "toListTagsForResource",
+        "toModifyDBCluster",
+        "toModifyDBInstance",
+        "toModifyDBParameterGroup",
+        "toRemoveTagsFromResource",
+        "toResetDBParameterGroup",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime"
+      ],
+      "relatedResourceTypes": [
+        "pg"
+      ],
+      "keyLiteral": "pg-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:req-tag/${TagKey}",
+      "methodName": "ifReqTag",
+      "description": "Filters access by the set of tag keys and values that can be used to tag a resource",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCopyDBClusterParameterGroup",
+        "toCopyDBClusterSnapshot",
+        "toCopyDBParameterGroup",
+        "toCopyDBSnapshot",
+        "toCopyOptionGroup",
+        "toCreateBlueGreenDeployment",
+        "toCreateCustomDBEngineVersion",
+        "toCreateDBCluster",
+        "toCreateDBClusterEndpoint",
+        "toCreateDBClusterParameterGroup",
+        "toCreateDBClusterSnapshot",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBParameterGroup",
+        "toCreateDBSecurityGroup",
+        "toCreateDBShardGroup",
+        "toCreateDBSnapshot",
+        "toCreateDBSubnetGroup",
+        "toCreateEventSubscription",
+        "toCreateGlobalCluster",
+        "toCreateIntegration",
+        "toCreateOptionGroup",
+        "toCreateTenantDatabase",
+        "toPurchaseReservedDBInstancesOffering",
+        "toRemoveTagsFromResource",
+        "toRestoreDBClusterFromS3",
+        "toRestoreDBClusterFromSnapshot",
+        "toRestoreDBClusterToPointInTime",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime",
+        "toStartDBInstanceAutomatedBackupsReplication"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "req-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:ri-tag/${TagKey}",
+      "methodName": "ifRiTag",
+      "description": "Filters access by the tag attached to a reserved DB instance",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toDescribeReservedDBInstances",
+        "toListTagsForResource",
+        "toPurchaseReservedDBInstancesOffering",
+        "toRemoveTagsFromResource"
+      ],
+      "relatedResourceTypes": [
+        "ri"
+      ],
+      "keyLiteral": "ri-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:secgrp-tag/${TagKey}",
+      "methodName": "ifSecgrpTag",
+      "description": "Filters access by the tag attached to a DB security group",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toAuthorizeDBSecurityGroupIngress",
+        "toCreateDBInstance",
+        "toCreateDBSecurityGroup",
+        "toDeleteDBSecurityGroup",
+        "toDescribeDBSecurityGroups",
+        "toListTagsForResource",
+        "toModifyDBInstance",
+        "toRemoveTagsFromResource",
+        "toRestoreDBInstanceFromS3",
+        "toRevokeDBSecurityGroupIngress"
+      ],
+      "relatedResourceTypes": [
+        "secgrp"
+      ],
+      "keyLiteral": "secgrp-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:snapshot-tag/${TagKey}",
+      "methodName": "ifSnapshotTag",
+      "description": "Filters access by the tag attached to a DB snapshot",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCopyDBSnapshot",
+        "toCreateDBSnapshot",
+        "toDeleteDBSnapshot",
+        "toDescribeDBSnapshotAttributes",
+        "toDescribeDBSnapshotTenantDatabases",
+        "toDescribeDBSnapshots",
+        "toDescribeExportTasks",
+        "toListTagsForResource",
+        "toModifyDBSnapshot",
+        "toModifyDBSnapshotAttribute",
+        "toRemoveTagsFromResource",
+        "toRestoreDBClusterFromSnapshot",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toStartExportTask",
+        "toStopDBInstance",
+        "toCrossRegionCommunication"
+      ],
+      "relatedResourceTypes": [
+        "snapshot"
+      ],
+      "keyLiteral": "snapshot-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rds:subgrp-tag/${TagKey}",
+      "methodName": "ifSubgrpTag",
+      "description": "Filters access by the tag attached to a DB subnet group",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toCreateDBCluster",
+        "toCreateDBInstance",
+        "toCreateDBInstanceReadReplica",
+        "toCreateDBSubnetGroup",
+        "toDeleteDBSubnetGroup",
+        "toDescribeDBSubnetGroups",
+        "toListTagsForResource",
+        "toModifyDBInstance",
+        "toModifyDBSubnetGroup",
+        "toRemoveTagsFromResource",
+        "toRestoreDBClusterFromS3",
+        "toRestoreDBClusterFromSnapshot",
+        "toRestoreDBClusterToPointInTime",
+        "toRestoreDBInstanceFromDBSnapshot",
+        "toRestoreDBInstanceFromS3",
+        "toRestoreDBInstanceToPointInTime"
+      ],
+      "relatedResourceTypes": [
+        "subgrp"
+      ],
+      "keyLiteral": "subgrp-tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

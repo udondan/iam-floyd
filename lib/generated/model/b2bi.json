@@ -1,0 +1,488 @@
+{
+  "schemaVersion": 1,
+  "filename": "b2bi",
+  "className": "B2bi",
+  "name": "b2bi",
+  "servicePrefix": "b2bi",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_b2bi.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateCapability",
+      "CreatePartnership",
+      "CreateProfile",
+      "CreateStarterMappingTemplate",
+      "CreateTransformer",
+      "DeleteCapability",
+      "DeletePartnership",
+      "DeleteProfile",
+      "DeleteTransformer",
+      "GenerateMapping",
+      "StartTransformerJob",
+      "TagResource",
+      "TestConversion",
+      "TestMapping",
+      "TestParsing",
+      "UntagResource",
+      "UpdateCapability",
+      "UpdatePartnership",
+      "UpdateProfile",
+      "UpdateTransformer"
+    ],
+    "Read": [
+      "GetCapability",
+      "GetPartnership",
+      "GetProfile",
+      "GetTransformer",
+      "GetTransformerJob",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListCapabilities",
+      "ListPartnerships",
+      "ListProfiles",
+      "ListTransformers"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateCapability",
+      "methodName": "toCreateCapability",
+      "description": "Grants permission to create a capability",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_CreateCapability.html"
+    },
+    {
+      "name": "CreatePartnership",
+      "methodName": "toCreatePartnership",
+      "description": "Grants permission to create a partnership",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_CreatePartnership.html"
+    },
+    {
+      "name": "CreateProfile",
+      "methodName": "toCreateProfile",
+      "description": "Grants permission to create a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_CreateProfile.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateStarterMappingTemplate",
+      "methodName": "toCreateStarterMappingTemplate",
+      "description": "Grants permission to generate a starter JSONATA/XSLT template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_CreateStarterMappingTemplate.html"
+    },
+    {
+      "name": "CreateTransformer",
+      "methodName": "toCreateTransformer",
+      "description": "Grants permission to create a transformer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_CreateTransformer.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteCapability",
+      "methodName": "toDeleteCapability",
+      "description": "Grants permission to delete a capability",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_DeleteCapability.html"
+    },
+    {
+      "name": "DeletePartnership",
+      "methodName": "toDeletePartnership",
+      "description": "Grants permission to delete an partnership",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_DeletePartnership.html"
+    },
+    {
+      "name": "DeleteProfile",
+      "methodName": "toDeleteProfile",
+      "description": "Grants permission to delete a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_DeleteProfile.html"
+    },
+    {
+      "name": "DeleteTransformer",
+      "methodName": "toDeleteTransformer",
+      "description": "Grants permission to delete a transformer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_DeleteTransformer.html"
+    },
+    {
+      "name": "GenerateMapping",
+      "methodName": "toGenerateMapping",
+      "description": "Grants permission to generate a starter JSONATA/XSLT mapping template from Amazon Bedrock",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_GenerateMapping.html"
+    },
+    {
+      "name": "GetCapability",
+      "methodName": "toGetCapability",
+      "description": "Grants permission to get a capability",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_GetCapability.html"
+    },
+    {
+      "name": "GetPartnership",
+      "methodName": "toGetPartnership",
+      "description": "Grants permission to get a partnership",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_GetPartnership.html"
+    },
+    {
+      "name": "GetProfile",
+      "methodName": "toGetProfile",
+      "description": "Grants permission to get a profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_GetProfile.html"
+    },
+    {
+      "name": "GetTransformer",
+      "methodName": "toGetTransformer",
+      "description": "Grants permission to get a transformer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_GetTransformer.html"
+    },
+    {
+      "name": "GetTransformerJob",
+      "methodName": "toGetTransformerJob",
+      "description": "Grants permission to get a transformer job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_GetTransformerJob.html"
+    },
+    {
+      "name": "ListCapabilities",
+      "methodName": "toListCapabilities",
+      "description": "Grants permission to list all capabilities",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_ListCapabilities.html"
+    },
+    {
+      "name": "ListPartnerships",
+      "methodName": "toListPartnerships",
+      "description": "Grants permission to list all partnerships",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_ListPartnerships.html"
+    },
+    {
+      "name": "ListProfiles",
+      "methodName": "toListProfiles",
+      "description": "Grants permission to list all profiles",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_ListProfiles.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a B2Bi resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTransformers",
+      "methodName": "toListTransformers",
+      "description": "Grants permission to list all transformers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_ListTransformers.html"
+    },
+    {
+      "name": "StartTransformerJob",
+      "methodName": "toStartTransformerJob",
+      "description": "Grants permission to transformer a document",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_StartTransformerJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a B2Bi resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "TestConversion",
+      "methodName": "toTestConversion",
+      "description": "Grants permission to convert a JSON/XML to an edi document",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_TestConversion.html"
+    },
+    {
+      "name": "TestMapping",
+      "methodName": "toTestMapping",
+      "description": "Grants permission to map a sample file",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_TestMapping.html"
+    },
+    {
+      "name": "TestParsing",
+      "methodName": "toTestParsing",
+      "description": "Grants permission to parse an edi document",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_TestParsing.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a B2Bi resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateCapability",
+      "methodName": "toUpdateCapability",
+      "description": "Grants permission to update a capability",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_UpdateCapability.html"
+    },
+    {
+      "name": "UpdatePartnership",
+      "methodName": "toUpdatePartnership",
+      "description": "Grants permission to update a partnership",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_UpdatePartnership.html"
+    },
+    {
+      "name": "UpdateProfile",
+      "methodName": "toUpdateProfile",
+      "description": "Grants permission to update a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_UpdateProfile.html"
+    },
+    {
+      "name": "UpdateTransformer",
+      "methodName": "toUpdateTransformer",
+      "description": "Grants permission to update a transformer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/APIReference/API_UpdateTransformer.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "capability",
+      "methodName": "onCapability",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/userguide/",
+      "arn": "arn:${Partition}:b2bi:${Region}:${Account}:capability/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "partnership",
+      "methodName": "onPartnership",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/userguide/",
+      "arn": "arn:${Partition}:b2bi:${Region}:${Account}:partnership/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "profile",
+      "methodName": "onProfile",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/userguide/",
+      "arn": "arn:${Partition}:b2bi:${Region}:${Account}:profile/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "transformer",
+      "methodName": "onTransformer",
+      "url": "https://docs.aws.amazon.com/b2bi/latest/userguide/",
+      "arn": "arn:${Partition}:b2bi:${Region}:${Account}:transformer/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateCapability",
+        "toCreatePartnership",
+        "toCreateProfile",
+        "toCreateTransformer",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateCapability",
+        "toCreatePartnership",
+        "toCreateStarterMappingTemplate",
+        "toDeleteCapability",
+        "toDeletePartnership",
+        "toDeleteProfile",
+        "toDeleteTransformer",
+        "toGenerateMapping",
+        "toGetCapability",
+        "toGetPartnership",
+        "toGetProfile",
+        "toGetTransformer",
+        "toGetTransformerJob",
+        "toListTagsForResource",
+        "toStartTransformerJob",
+        "toTagResource",
+        "toTestConversion",
+        "toTestMapping",
+        "toTestParsing",
+        "toUntagResource",
+        "toUpdateCapability",
+        "toUpdatePartnership",
+        "toUpdateProfile",
+        "toUpdateTransformer"
+      ],
+      "relatedResourceTypes": [
+        "capability",
+        "partnership",
+        "profile",
+        "transformer"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateCapability",
+        "toCreatePartnership",
+        "toCreateProfile",
+        "toCreateTransformer",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

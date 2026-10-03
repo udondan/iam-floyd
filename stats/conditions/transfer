@@ -1,8 +1,0 @@
-transfer:RequestConnectorProtocol
-transfer:RequestSecurityPolicyName
-transfer:RequestServerDomain
-transfer:RequestServerEndpointType
-transfer:RequestServerProtocols
-transfer:RequestTag/${TagKey}
-transfer:ResourceTag/${TagKey}
-transfer:TagKeys

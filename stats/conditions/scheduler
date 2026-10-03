@@ -1,3 +1,0 @@
-scheduler:RequestTag/${TagKey}
-scheduler:ResourceTag/${TagKey}
-scheduler:TagKeys

@@ -1,0 +1,1576 @@
+{
+  "schemaVersion": 1,
+  "filename": "eventbridge",
+  "className": "Events",
+  "name": "events",
+  "servicePrefix": "events",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_eventbridge.html",
+  "accessLevelList": {
+    "Write": [
+      "ActivateEventSource",
+      "CancelReplay",
+      "CreateApiDestination",
+      "CreateArchive",
+      "CreateConnection",
+      "CreateEndpoint",
+      "CreateEventBus",
+      "CreateEventSource",
+      "CreatePartnerEventSource",
+      "CreateSubscriber",
+      "DeactivateEventSource",
+      "DeauthorizeConnection",
+      "DeleteApiDestination",
+      "DeleteArchive",
+      "DeleteConnection",
+      "DeleteEndpoint",
+      "DeleteEventBus",
+      "DeleteEventSource",
+      "DeletePartnerEventSource",
+      "DeleteResourcePolicy",
+      "DeleteRule",
+      "DeleteSubscriber",
+      "DisableRule",
+      "EnableRule",
+      "PutEvents",
+      "PutPartnerEvents",
+      "PutPermission",
+      "PutRawEvents",
+      "PutResourcePolicy",
+      "PutRule",
+      "PutTargets",
+      "RemovePermission",
+      "RemoveTargets",
+      "RevokeResource",
+      "StartReplay",
+      "TagResource",
+      "UntagResource",
+      "UpdateApiDestination",
+      "UpdateArchive",
+      "UpdateConnection",
+      "UpdateEndpoint",
+      "UpdateEventBus",
+      "UpdateEventSource",
+      "UpdateSubscriber",
+      "AllowVendedLogDeliveryForResource",
+      "InvokeApiDestination",
+      "RetrieveConnectionCredentials"
+    ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "PutPermission",
+      "PutResourcePolicy",
+      "RemovePermission"
+    ],
+    "Read": [
+      "DescribeApiDestination",
+      "DescribeArchive",
+      "DescribeConnection",
+      "DescribeEndpoint",
+      "DescribeEventBus",
+      "DescribeEventSource",
+      "DescribePartnerEventSource",
+      "DescribeReplay",
+      "DescribeRule",
+      "DescribeSubscriber",
+      "GetResourcePolicy",
+      "TestEventPattern"
+    ],
+    "List": [
+      "ListApiDestinations",
+      "ListArchives",
+      "ListConnections",
+      "ListEndpoints",
+      "ListEventBuses",
+      "ListEventSources",
+      "ListPartnerEventSourceAccounts",
+      "ListPartnerEventSources",
+      "ListReplays",
+      "ListResourcePolicies",
+      "ListRuleNamesByTarget",
+      "ListRules",
+      "ListSubscribers",
+      "ListTagsForResource",
+      "ListTargetsByRule"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ActivateEventSource",
+      "methodName": "toActivateEventSource",
+      "description": "Grants permission to activate partner event sources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ActivateEventSource.html"
+    },
+    {
+      "name": "CancelReplay",
+      "methodName": "toCancelReplay",
+      "description": "Grants permission to cancel a replay",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CancelReplay.html"
+    },
+    {
+      "name": "CreateApiDestination",
+      "methodName": "toCreateApiDestination",
+      "description": "Grants permission to create a new api destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateApiDestination.html"
+    },
+    {
+      "name": "CreateArchive",
+      "methodName": "toCreateArchive",
+      "description": "Grants permission to create a new archive",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateArchive.html"
+    },
+    {
+      "name": "CreateConnection",
+      "methodName": "toCreateConnection",
+      "description": "Grants permission to create a new connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateConnection.html"
+    },
+    {
+      "name": "CreateEndpoint",
+      "methodName": "toCreateEndpoint",
+      "description": "Grants permission to create an endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEndpoint.html"
+    },
+    {
+      "name": "CreateEventBus",
+      "methodName": "toCreateEventBus",
+      "description": "Grants permission to create event buses",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEventBus.html"
+    },
+    {
+      "name": "CreateEventSource",
+      "methodName": "toCreateEventSource",
+      "description": "Grants permission to create an event source that forwards events to an event bus",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEventSource.html"
+    },
+    {
+      "name": "CreatePartnerEventSource",
+      "methodName": "toCreatePartnerEventSource",
+      "description": "Grants permission to create partner event sources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreatePartnerEventSource.html"
+    },
+    {
+      "name": "CreateSubscriber",
+      "methodName": "toCreateSubscriber",
+      "description": "Grants permission to create a subscriber",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateSubscriber.html"
+    },
+    {
+      "name": "DeactivateEventSource",
+      "methodName": "toDeactivateEventSource",
+      "description": "Grants permission to deactivate event sources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeactivateEventSource.html"
+    },
+    {
+      "name": "DeauthorizeConnection",
+      "methodName": "toDeauthorizeConnection",
+      "description": "Grants permission to deauthorize a connection, deleting its stored authorization secrets",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeauthorizeConnection.html"
+    },
+    {
+      "name": "DeleteApiDestination",
+      "methodName": "toDeleteApiDestination",
+      "description": "Grants permission to delete an api destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteApiDestination.html"
+    },
+    {
+      "name": "DeleteArchive",
+      "methodName": "toDeleteArchive",
+      "description": "Grants permission to delete an archive",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteArchive.html"
+    },
+    {
+      "name": "DeleteConnection",
+      "methodName": "toDeleteConnection",
+      "description": "Grants permission to delete a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteConnection.html"
+    },
+    {
+      "name": "DeleteEndpoint",
+      "methodName": "toDeleteEndpoint",
+      "description": "Grants permission to delete an endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteEndpoint.html"
+    },
+    {
+      "name": "DeleteEventBus",
+      "methodName": "toDeleteEventBus",
+      "description": "Grants permission to delete event buses",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteEventBus.html"
+    },
+    {
+      "name": "DeleteEventSource",
+      "methodName": "toDeleteEventSource",
+      "description": "Grants permission to delete an event source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteEventSource.html"
+    },
+    {
+      "name": "DeletePartnerEventSource",
+      "methodName": "toDeletePartnerEventSource",
+      "description": "Grants permission to delete partner event sources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeletePartnerEventSource.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete a resource policy attached to an event bus",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteRule",
+      "methodName": "toDeleteRule",
+      "description": "Grants permission to delete rules",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteRule.html"
+    },
+    {
+      "name": "DeleteSubscriber",
+      "methodName": "toDeleteSubscriber",
+      "description": "Grants permission to delete a subscriber",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteSubscriber.html"
+    },
+    {
+      "name": "DescribeApiDestination",
+      "methodName": "toDescribeApiDestination",
+      "description": "Grants permission to retrieve details about an api destination",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeApiDestination.html"
+    },
+    {
+      "name": "DescribeArchive",
+      "methodName": "toDescribeArchive",
+      "description": "Grants permission to retrieve details about an archive",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeArchive.html"
+    },
+    {
+      "name": "DescribeConnection",
+      "methodName": "toDescribeConnection",
+      "description": "Grants permission to retrieve details about a conection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeConnection.html"
+    },
+    {
+      "name": "DescribeEndpoint",
+      "methodName": "toDescribeEndpoint",
+      "description": "Grants permission to retrieve details about an endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEndpoint.html"
+    },
+    {
+      "name": "DescribeEventBus",
+      "methodName": "toDescribeEventBus",
+      "description": "Grants permission to retrieve details about event buses",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventBus.html"
+    },
+    {
+      "name": "DescribeEventSource",
+      "methodName": "toDescribeEventSource",
+      "description": "Grants permission to retrieve details about event sources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventSource.html"
+    },
+    {
+      "name": "DescribePartnerEventSource",
+      "methodName": "toDescribePartnerEventSource",
+      "description": "Grants permission to retrieve details about partner event sources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribePartnerEventSource.html"
+    },
+    {
+      "name": "DescribeReplay",
+      "methodName": "toDescribeReplay",
+      "description": "Grants permission to retrieve the details of a replay",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeReplay.html"
+    },
+    {
+      "name": "DescribeRule",
+      "methodName": "toDescribeRule",
+      "description": "Grants permission to retrieve details about rules",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeRule.html"
+    },
+    {
+      "name": "DescribeSubscriber",
+      "methodName": "toDescribeSubscriber",
+      "description": "Grants permission to retrieve details about a subscriber",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeSubscriber.html"
+    },
+    {
+      "name": "DisableRule",
+      "methodName": "toDisableRule",
+      "description": "Grants permission to disable rules",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DisableRule.html"
+    },
+    {
+      "name": "EnableRule",
+      "methodName": "toEnableRule",
+      "description": "Grants permission to enable rules",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_EnableRule.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to retrieve the resource policy attached to an event bus",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "ListApiDestinations",
+      "methodName": "toListApiDestinations",
+      "description": "Grants permission to retrieve a list of api destinations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListApiDestinations.html"
+    },
+    {
+      "name": "ListArchives",
+      "methodName": "toListArchives",
+      "description": "Grants permission to retrieve a list of archives",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListArchives.html"
+    },
+    {
+      "name": "ListConnections",
+      "methodName": "toListConnections",
+      "description": "Grants permission to retrieve a list of connections",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListConnections.html"
+    },
+    {
+      "name": "ListEndpoints",
+      "methodName": "toListEndpoints",
+      "description": "Grants permission to retrieve a list of endpoints",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListEndpoints.html"
+    },
+    {
+      "name": "ListEventBuses",
+      "methodName": "toListEventBuses",
+      "description": "Grants permission to retrieve a list of the event buses in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListEventBuses.html"
+    },
+    {
+      "name": "ListEventSources",
+      "methodName": "toListEventSources",
+      "description": "Grants permission to to retrieve a list of event sources shared with this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListEventSources.html"
+    },
+    {
+      "name": "ListPartnerEventSourceAccounts",
+      "methodName": "toListPartnerEventSourceAccounts",
+      "description": "Grants permission to retrieve a list of AWS account IDs associated with an event source",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListPartnerEventSourceAccounts.html"
+    },
+    {
+      "name": "ListPartnerEventSources",
+      "methodName": "toListPartnerEventSources",
+      "description": "Grants permission to retrieve a list partner event sources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListPartnerEventSources.html"
+    },
+    {
+      "name": "ListReplays",
+      "methodName": "toListReplays",
+      "description": "Grants permission to retrieve a list of replays",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListReplays.html"
+    },
+    {
+      "name": "ListResourcePolicies",
+      "methodName": "toListResourcePolicies",
+      "description": "Grants permission to list the resource policies attached to an event bus",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListResourcePolicies.html"
+    },
+    {
+      "name": "ListRuleNamesByTarget",
+      "methodName": "toListRuleNamesByTarget",
+      "description": "Grants permission to retrieve a list of the names of the rules associated with a target",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListRuleNamesByTarget.html"
+    },
+    {
+      "name": "ListRules",
+      "methodName": "toListRules",
+      "description": "Grants permission to retrieve a list of the Amazon EventBridge rules in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListRules.html"
+    },
+    {
+      "name": "ListSubscribers",
+      "methodName": "toListSubscribers",
+      "description": "Grants permission to retrieve a list of subscribers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListSubscribers.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to retrieve a list of tags associated with an Amazon EventBridge resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTargetsByRule",
+      "methodName": "toListTargetsByRule",
+      "description": "Grants permission to retrieve a list of targets defined for a rule",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTargetsByRule.html"
+    },
+    {
+      "name": "PutEvents",
+      "methodName": "toPutEvents",
+      "description": "Grants permission to send custom events to Amazon EventBridge",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html"
+    },
+    {
+      "name": "PutPartnerEvents",
+      "methodName": "toPutPartnerEvents",
+      "description": "Grants permission to sends custom events to Amazon EventBridge",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutPartnerEvents.html"
+    },
+    {
+      "name": "PutPermission",
+      "methodName": "toPutPermission",
+      "description": "Grants permission to use the PutPermission action to grants permission to another AWS account to put events to your default event bus",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutPermission.html"
+    },
+    {
+      "name": "PutRawEvents",
+      "methodName": "toPutRawEvents",
+      "description": "Grants permission to publish raw-format events with custom content types, metadata, binary payloads, and FIFO ordering to Amazon EventBridge",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutRawEvents.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to attach a resource policy to an event bus",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "PutRule",
+      "methodName": "toPutRule",
+      "description": "Grants permission to create or updates rules",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutRule.html"
+    },
+    {
+      "name": "PutTargets",
+      "methodName": "toPutTargets",
+      "description": "Grants permission to add targets to a rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html"
+    },
+    {
+      "name": "RemovePermission",
+      "methodName": "toRemovePermission",
+      "description": "Grants permission to revoke the permission of another AWS account to put events to your default event bus",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html"
+    },
+    {
+      "name": "RemoveTargets",
+      "methodName": "toRemoveTargets",
+      "description": "Grants permission to removes targets from a rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemoveTargets.html"
+    },
+    {
+      "name": "RevokeResource",
+      "methodName": "toRevokeResource",
+      "description": "Grants permission to revoke a subscriber or an event source on an event bus",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RevokeResource.html"
+    },
+    {
+      "name": "StartReplay",
+      "methodName": "toStartReplay",
+      "description": "Grants permission to start a replay of an archive",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_StartReplay.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add a tag to an Amazon EventBridge resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "TestEventPattern",
+      "methodName": "toTestEventPattern",
+      "description": "Grants permission to test whether an event pattern matches the provided event",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TestEventPattern.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag from an Amazon EventBridge resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateApiDestination",
+      "methodName": "toUpdateApiDestination",
+      "description": "Grants permission to update an api destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateApiDestination.html"
+    },
+    {
+      "name": "UpdateArchive",
+      "methodName": "toUpdateArchive",
+      "description": "Grants permission to update an archive",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateArchive.html"
+    },
+    {
+      "name": "UpdateConnection",
+      "methodName": "toUpdateConnection",
+      "description": "Grants permission to update a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateConnection.html"
+    },
+    {
+      "name": "UpdateEndpoint",
+      "methodName": "toUpdateEndpoint",
+      "description": "Grants permission to update an endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateEndpoint.html"
+    },
+    {
+      "name": "UpdateEventBus",
+      "methodName": "toUpdateEventBus",
+      "description": "Grants permission to update event buses",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateEventBus.html"
+    },
+    {
+      "name": "UpdateEventSource",
+      "methodName": "toUpdateEventSource",
+      "description": "Grants permission to update an event source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateEventSource.html"
+    },
+    {
+      "name": "UpdateSubscriber",
+      "methodName": "toUpdateSubscriber",
+      "description": "Grants permission to update a subscriber",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateSubscriber.html"
+    },
+    {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to configure vended log delivery for EventBridge",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html"
+    },
+    {
+      "name": "InvokeApiDestination",
+      "methodName": "toInvokeApiDestination",
+      "description": "Grants permission to invoke an api destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html"
+    },
+    {
+      "name": "RetrieveConnectionCredentials",
+      "methodName": "toRetrieveConnectionCredentials",
+      "description": "Grants permission to retrieve credentials from a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "alias",
+      "methodName": "onAlias",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html",
+      "arn": "arn:${Partition}:kms:${Region}:${Account}:alias/${Alias}",
+      "placeholders": [
+        {
+          "placeholder": "Alias",
+          "name": "alias",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "api-destination",
+      "methodName": "onApiDestination",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:api-destination/${ApiDestinationName}",
+      "placeholders": [
+        {
+          "placeholder": "ApiDestinationName",
+          "name": "apiDestinationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "archive",
+      "methodName": "onArchive",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:archive/${ArchiveName}",
+      "placeholders": [
+        {
+          "placeholder": "ArchiveName",
+          "name": "archiveName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "connection",
+      "methodName": "onConnection",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:connection/${ConnectionName}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectionName",
+          "name": "connectionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "create-snapshot",
+      "methodName": "onCreateSnapshot",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:target/create-snapshot",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "endpoint",
+      "methodName": "onEndpoint",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:endpoint/${EndpointName}",
+      "placeholders": [
+        {
+          "placeholder": "EndpointName",
+          "name": "endpointName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "event-bus",
+      "methodName": "onEventBus",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:event-bus/${EventBusName}",
+      "placeholders": [
+        {
+          "placeholder": "EventBusName",
+          "name": "eventBusName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "event-busv2",
+      "methodName": "onEventBusv2",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:event-busv2/${EventBusName}/${OpaqueId}",
+      "placeholders": [
+        {
+          "placeholder": "EventBusName",
+          "name": "eventBusName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "OpaqueId",
+          "name": "opaqueId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "event-source",
+      "methodName": "onEventSource",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}::event-source/${EventSourceName}",
+      "placeholders": [
+        {
+          "placeholder": "EventSourceName",
+          "name": "eventSourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "event-sourcev2",
+      "methodName": "onEventSourcev2",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:event-sourcev2/${SourceType}/${EventSourceName}/${OpaqueId}",
+      "placeholders": [
+        {
+          "placeholder": "SourceType",
+          "name": "sourceType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EventSourceName",
+          "name": "eventSourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "OpaqueId",
+          "name": "opaqueId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "key",
+      "methodName": "onKey",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html",
+      "arn": "arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}",
+      "placeholders": [
+        {
+          "placeholder": "KeyId",
+          "name": "keyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "reboot-instance",
+      "methodName": "onRebootInstance",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:target/reboot-instance",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "replay",
+      "methodName": "onReplay",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:replay/${ReplayName}",
+      "placeholders": [
+        {
+          "placeholder": "ReplayName",
+          "name": "replayName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "rule-on-custom-event-bus",
+      "methodName": "onRuleOnCustomEventBus",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:rule/${EventBusName}/${RuleName}",
+      "placeholders": [
+        {
+          "placeholder": "EventBusName",
+          "name": "eventBusName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RuleName",
+          "name": "ruleName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "rule-on-default-event-bus",
+      "methodName": "onRuleOnDefaultEventBus",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:rule/${RuleName}",
+      "placeholders": [
+        {
+          "placeholder": "RuleName",
+          "name": "ruleName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "stop-instance",
+      "methodName": "onStopInstance",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:target/stop-instance",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "subscriber",
+      "methodName": "onSubscriber",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:subscriber/${SubscriberName}/${OpaqueId}",
+      "placeholders": [
+        {
+          "placeholder": "SubscriberName",
+          "name": "subscriberName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "OpaqueId",
+          "name": "opaqueId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "terminate-instance",
+      "methodName": "onTerminateInstance",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:target/terminate-instance",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the allowed set of values for each of the tags to event bus and rule actions",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateEventBus",
+        "toCreateEventSource",
+        "toCreateSubscriber",
+        "toPutRule",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag-value associated with the resource to event bus and rule actions",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateArchive",
+        "toCreateEventBus",
+        "toCreateEventSource",
+        "toCreateSubscriber",
+        "toDeleteEventBus",
+        "toDeleteEventSource",
+        "toDeleteResourcePolicy",
+        "toDeleteRule",
+        "toDeleteSubscriber",
+        "toDescribeEventBus",
+        "toDescribeEventSource",
+        "toDescribeRule",
+        "toDescribeSubscriber",
+        "toDisableRule",
+        "toEnableRule",
+        "toGetResourcePolicy",
+        "toListResourcePolicies",
+        "toListTagsForResource",
+        "toListTargetsByRule",
+        "toPutEvents",
+        "toPutRawEvents",
+        "toPutResourcePolicy",
+        "toPutRule",
+        "toPutTargets",
+        "toRemoveTargets",
+        "toRevokeResource",
+        "toStartReplay",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateEventBus",
+        "toUpdateEventSource",
+        "toUpdateSubscriber",
+        "toAllowVendedLogDeliveryForResource"
+      ],
+      "relatedResourceTypes": [
+        "event-bus",
+        "event-busv2",
+        "event-sourcev2",
+        "rule-on-custom-event-bus",
+        "rule-on-default-event-bus",
+        "subscriber"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tags in the request to event bus and rule actions",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateEventBus",
+        "toCreateEventSource",
+        "toCreateSubscriber",
+        "toPutRule",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "events:ContentFilterPresent",
+      "methodName": "ifContentFilterPresent",
+      "description": "Filters access by whether a subscriber declares a payload-scope content filter to CreateSubscriber and UpdateSubscriber actions",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html",
+      "relatedActionMethods": [
+        "toCreateSubscriber",
+        "toUpdateSubscriber"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ContentFilterPresent",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "events:EventBusArn",
+      "methodName": "ifEventBusArn",
+      "description": "Filters access by the ARN of the event buses that can be associated with an endpoint to CreateEndpoint and UpdateEndpoint actions",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limiting-access-to-event-buses",
+      "relatedActionMethods": [
+        "toCreateEndpoint",
+        "toUpdateEndpoint"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EventBusArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "events:ManagedBy",
+      "methodName": "ifManagedBy",
+      "description": "Filters access by AWS services. If a rule is created by an AWS service on your behalf, the value is the principal name of the service that created the rule",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html",
+      "relatedActionMethods": [
+        "toDeleteRule",
+        "toDisableRule",
+        "toEnableRule",
+        "toPutRule",
+        "toPutTargets",
+        "toRemoveTargets"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ManagedBy",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "events:Metadata/${MetadataKey}",
+      "methodName": "ifMetadataMetadataKey",
+      "description": "Filters access by a metadata key-value pair on the published event to PutRawEvents actions, or by the exact-match values declared for that key in a subscriber's metadata filter to CreateSubscriber and UpdateSubscriber actions",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html",
+      "relatedActionMethods": [
+        "toCreateSubscriber",
+        "toPutRawEvents",
+        "toUpdateSubscriber"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Metadata/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "metadataKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "events:Metadata/${MetadataKey}/Matcher",
+      "methodName": "ifMetadataMetadataKeyMatcher",
+      "description": "Filters access by the match type declared for a metadata key in a subscriber's filter to CreateSubscriber and UpdateSubscriber actions",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html",
+      "relatedActionMethods": [
+        "toCreateSubscriber",
+        "toUpdateSubscriber"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Metadata/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "metadataKeyMatcher",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "events:PolicyName",
+      "methodName": "ifPolicyName",
+      "description": "Filters access by the name of the resource policy specified in the request to resource policy actions",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html",
+      "relatedActionMethods": [
+        "toDeleteResourcePolicy",
+        "toGetResourcePolicy",
+        "toPutResourcePolicy"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PolicyName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "events:SystemMetadata/AwsDetailType",
+      "methodName": "ifSystemMetadataAwsDetailType",
+      "description": "Filters access by the detail type recorded in the system metadata of an event forwarded onto an event bus to PutEvents and PutRawEvents actions",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html",
+      "relatedActionMethods": [
+        "toPutEvents",
+        "toPutRawEvents"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SystemMetadata/AwsDetailType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "events:SystemMetadata/AwsSource",
+      "methodName": "ifSystemMetadataAwsSource",
+      "description": "Filters access by the source recorded in the system metadata of an event forwarded onto an event bus to PutEvents and PutRawEvents actions",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html",
+      "relatedActionMethods": [
+        "toPutEvents",
+        "toPutRawEvents"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SystemMetadata/AwsSource",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "events:SystemMetadata/ContentType",
+      "methodName": "ifSystemMetadataContentType",
+      "description": "Filters access by the content type declared on an event for PutRawEvents and for forwarded events authorized as PutEvents",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html",
+      "relatedActionMethods": [
+        "toPutEvents",
+        "toPutRawEvents"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SystemMetadata/ContentType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "events:TargetArn",
+      "methodName": "ifTargetArn",
+      "description": "Filters access by the ARN of a target that can be put to a rule to PutTargets actions. TargetARN doesn't include DeadLetterConfigArn",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limiting-access-to-targets",
+      "relatedActionMethods": [
+        "toPutTargets"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TargetArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "events:creatorAccount",
+      "methodName": "ifCreatorAccount",
+      "description": "Filters access by the account the rule was created in to rule actions",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-creator-account",
+      "relatedActionMethods": [
+        "toDeleteRule",
+        "toDescribeRule",
+        "toDisableRule",
+        "toEnableRule",
+        "toListTagsForResource",
+        "toListTargetsByRule",
+        "toPutRule",
+        "toPutTargets",
+        "toRemoveTargets",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "creatorAccount",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "events:detail-type",
+      "methodName": "ifDetailType",
+      "description": "Filters access by the literal string of the detail-type of the event to PutEvents and PutRule actions",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-pattern-detail-type",
+      "relatedActionMethods": [
+        "toPutEvents",
+        "toPutRule"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "detail-type",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "events:detail.eventTypeCode",
+      "methodName": "ifDetailEventTypeCode",
+      "description": "Filters access by the literal string for the detail.eventTypeCode field of the event to PutRule actions",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limit-rule-by-type-code",
+      "relatedActionMethods": [
+        "toPutRule"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "detail.eventTypeCode",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "events:detail.service",
+      "methodName": "ifDetailService",
+      "description": "Filters access by the literal string for the detail.service field of the event to PutRule actions",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limit-rule-by-service",
+      "relatedActionMethods": [
+        "toPutRule"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "detail.service",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "events:detail.userIdentity.principalId",
+      "methodName": "ifDetailUserIdentityPrincipalId",
+      "description": "Filters access by the literal string for the detail.useridentity.principalid field of the event to PutRule actions",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#consume-specific-events",
+      "relatedActionMethods": [
+        "toPutRule"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "detail.userIdentity.principalId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "events:eventBusInvocation",
+      "methodName": "ifEventBusInvocation",
+      "description": "Filters access to PutEvents and PutRawEvents by whether an event was forwarded from an event bus rather than published through a direct API call",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-bus-invocation",
+      "relatedActionMethods": [
+        "toPutEvents",
+        "toPutRawEvents"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "eventBusInvocation",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "events:source",
+      "methodName": "ifSource",
+      "description": "Filters access by the AWS service or AWS partner event source that generated the event to PutEvents and PutRule actions, or by the configured source of an event source to the CreateEventSource and UpdateEventSource actions. Matches the literal string of the source field of the event",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-limit-access-control",
+      "relatedActionMethods": [
+        "toCreateEventSource",
+        "toPutEvents",
+        "toPutRule",
+        "toUpdateEventSource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "source",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

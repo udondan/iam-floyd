@@ -1,3 +1,0 @@
-ssm-sap:RequestTag/${TagKey}
-ssm-sap:ResourceTag/${TagKey}
-ssm-sap:TagKeys

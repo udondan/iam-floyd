@@ -1,3 +1,0 @@
-airflow-serverless:RequestTag/${TagKey}
-airflow-serverless:ResourceTag/${TagKey}
-airflow-serverless:TagKeys

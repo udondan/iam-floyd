@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "filename": "controlcatalog",
+  "className": "Controlcatalog",
+  "name": "controlcatalog",
+  "servicePrefix": "controlcatalog",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_controlcatalog.html",
+  "accessLevelList": {
+    "Read": [
+      "GetControl"
+    ],
+    "List": [
+      "ListCommonControls",
+      "ListControlMappings",
+      "ListControls",
+      "ListDomains",
+      "ListObjectives"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetControl",
+      "methodName": "toGetControl",
+      "description": "Grants permission to return details about a specific control",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_GetControl.html"
+    },
+    {
+      "name": "ListCommonControls",
+      "methodName": "toListCommonControls",
+      "description": "Grants permission to return a paginated list of common controls from the AWS Control Catalog",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListCommonControls.html"
+    },
+    {
+      "name": "ListControlMappings",
+      "methodName": "toListControlMappings",
+      "description": "Grants permission to return a paginated list of control mappings from the AWS Control Catalog",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListControlMappings.html"
+    },
+    {
+      "name": "ListControls",
+      "methodName": "toListControls",
+      "description": "Grants permission to return a paginated list of all available controls in the AWS Control Catalog library",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListControls.html"
+    },
+    {
+      "name": "ListDomains",
+      "methodName": "toListDomains",
+      "description": "Grants permission to return a paginated list of domains from the AWS Control Catalog",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html"
+    },
+    {
+      "name": "ListObjectives",
+      "methodName": "toListObjectives",
+      "description": "Grants permission to return a paginated list of objectives from the AWS Control Catalog",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListObjectives.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "common-control",
+      "methodName": "onCommonControl",
+      "url": "https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_CommonControlSummary.html",
+      "arn": "arn:${Partition}:controlcatalog:::common-control/${CommonControlId}",
+      "placeholders": [
+        {
+          "placeholder": "CommonControlId",
+          "name": "commonControlId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "control",
+      "methodName": "onControl",
+      "url": "https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ControlSummary.html",
+      "arn": "arn:${Partition}:controlcatalog:::control/${ControlId}",
+      "placeholders": [
+        {
+          "placeholder": "ControlId",
+          "name": "controlId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "domain",
+      "methodName": "onDomain",
+      "url": "https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_DomainSummary.html",
+      "arn": "arn:${Partition}:controlcatalog:::domain/${DomainId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "objective",
+      "methodName": "onObjective",
+      "url": "https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ObjectiveSummary.html",
+      "arn": "arn:${Partition}:controlcatalog:::objective/${ObjectiveId}",
+      "placeholders": [
+        {
+          "placeholder": "ObjectiveId",
+          "name": "objectiveId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

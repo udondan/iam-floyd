@@ -1,6 +1,0 @@
-wisdom:MessageTemplate/RoutingProfileArn
-wisdom:RequestTag/${TagKey}
-wisdom:ResourceTag/${TagKey}
-wisdom:SearchFilter/Qualifier
-wisdom:SearchFilter/RoutingProfileArn
-wisdom:TagKeys

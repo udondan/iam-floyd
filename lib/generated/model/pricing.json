@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "filename": "pricing",
+  "className": "Pricing",
+  "name": "pricing",
+  "servicePrefix": "pricing",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_pricing.html",
+  "accessLevelList": {
+    "Read": [
+      "DescribeServices",
+      "GetAttributeValues",
+      "GetPriceListFileUrl",
+      "GetProducts",
+      "ListPriceLists"
+    ]
+  },
+  "actions": [
+    {
+      "name": "DescribeServices",
+      "methodName": "toDescribeServices",
+      "description": "Grants permission to retrieve service details for all (paginated) services (if serviceCode is not set) or service detail for a particular service (if given serviceCode)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html"
+    },
+    {
+      "name": "GetAttributeValues",
+      "methodName": "toGetAttributeValues",
+      "description": "Grants permission to retrieve all (paginated) possible values for a given attribute",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html"
+    },
+    {
+      "name": "GetPriceListFileUrl",
+      "methodName": "toGetPriceListFileUrl",
+      "description": "Grants permission to retrieve the price list file URL for the given parameters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetPriceListFileUrl.html"
+    },
+    {
+      "name": "GetProducts",
+      "methodName": "toGetProducts",
+      "description": "Grants permission to retrieve all matching products with given search criteria",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetProducts.html"
+    },
+    {
+      "name": "ListPriceLists",
+      "methodName": "toListPriceLists",
+      "description": "Grants permission to list all (paginated) eligible price lists for the given parameters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

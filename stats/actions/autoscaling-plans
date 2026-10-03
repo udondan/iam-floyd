@@ -1,6 +1,0 @@
-autoscaling-plans:CreateScalingPlan;Write
-autoscaling-plans:DeleteScalingPlan;Write
-autoscaling-plans:DescribeScalingPlanResources;Read
-autoscaling-plans:DescribeScalingPlans;Read
-autoscaling-plans:GetScalingPlanResourceForecastData;Read
-autoscaling-plans:UpdateScalingPlan;Write

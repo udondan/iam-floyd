@@ -1,20 +1,11 @@
 import 'colors';
 
-import { get } from 'lodash';
 import * as cheerio from 'cheerio';
 import * as fs from 'fs';
 import * as glob from 'glob';
 import * as request from 'request';
-import {
-  OptionalKind,
-  ParameterDeclarationStructure,
-  Project,
-  QuoteKind,
-  Scope,
-} from 'ts-morph';
 
-import { Operator, ResourceTypes } from '../shared';
-import { AccessLevelList } from '../shared/access-level';
+import { ResourceTypes } from '../shared';
 import { Conditions } from './condition';
 import {
   arnFixer,
@@ -23,16 +14,12 @@ import {
   fixes,
   serviceFixer,
 } from './fixes';
-import { formatCode } from './format';
+import { buildServiceModel, ServiceModel } from './model';
 
+export { emitTypeScriptFromModels } from './emit/typescript';
 export { indexManagedPolicies } from './managed-policies';
+export { camelCase, getArnPlaceholders, lowerFirst } from './naming';
 
-const project = new Project();
-project.manipulationSettings.set({
-  quoteKind: QuoteKind.Single,
-});
-
-const modules: Module[] = [];
 const timeThreshold = new Date();
 
 let threshold = 25;
@@ -42,53 +29,6 @@ if (thresholdOverride?.length) {
 }
 
 timeThreshold.setHours(timeThreshold.getHours() - threshold);
-
-interface Stats {
-  actions: string[];
-  conditions: string[];
-  resources: string[];
-}
-const serviceStats: string[] = [];
-
-const conditionTypeDefaults: Record<
-  string,
-  {
-    url: string;
-    default: Operator | string;
-    type: string[];
-  }
-> = {
-  string: {
-    url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String',
-    default: Operator.stringLike,
-    type: ['string'],
-  },
-  arn: {
-    url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN',
-    default: Operator.arnLike,
-    type: ['string'],
-  },
-  numeric: {
-    url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric',
-    default: Operator.numericEquals,
-    type: ['number'],
-  },
-  date: {
-    url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date',
-    default: Operator.dateEquals,
-    type: ['Date', 'string'],
-  },
-  ipaddress: {
-    url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_IPAddress',
-    default: Operator.ipAddress,
-    type: ['string'],
-  },
-  binary: {
-    url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_BinaryEquals',
-    default: Operator.binaryEquals,
-    type: ['string'],
-  },
-};
 
 export interface Module {
   name?: string;
@@ -182,8 +122,8 @@ export function getContent(service: string): Promise<Module> {
 
       const url = urlPattern.replace('%s', service);
 
-      const cachedFile = `lib/generated/policy-statements/.cache/${module.filename}.ts`;
-      if (fs.existsSync(cachedFile)) {
+      const cachedModel = `${modelDir}/.cache/${module.filename}.json`;
+      if (fs.existsSync(cachedModel)) {
         const lastModified = await getLastModified(url);
         if (lastModified < timeThreshold) {
           console.log(`Skipping, last modified on ${lastModified}`.green);
@@ -230,78 +170,23 @@ export function createModules(services: string[]): Promise<void> {
     for (const service of services) {
       await getContent(service).then(createModule).catch(reject);
     }
-    writeServiceStats();
     resolve();
   });
 }
 
-function writeStatsFile(file: string, data: string[]) {
-  if (fs.existsSync(file)) {
-    const contents = fs
-      .readFileSync(file, 'utf8')
-      .split('\n')
-      .filter((n) => n);
-    data.push(...contents);
-  }
-  const uniqueValues = data
-    .filter(function (elem, pos) {
-      return data.indexOf(elem) == pos;
-    })
-    .sort();
-  const content = `${uniqueValues.join('\n')}\n`;
-  fs.writeFileSync(file, content);
-}
+export const modelDir = 'lib/generated/model';
 
-function writeStats(module: string, stats: Stats) {
-  process.stdout.write('Stats '.grey);
-  (Object.keys(stats) as (keyof Stats)[]).forEach(function (key) {
-    const filePath = `./stats/${key}/${module}`;
-    writeStatsFile(filePath, stats[key]);
-  });
-}
-
-function writeServiceStats() {
-  const servicesFile = './stats/services';
-  if (fs.existsSync(servicesFile)) {
-    fs.unlinkSync(servicesFile);
-  }
-  writeStatsFile(servicesFile, serviceStats);
+function writeServiceModel(model: ServiceModel) {
+  fs.writeFileSync(
+    `${modelDir}/${model.filename}.json`,
+    `${JSON.stringify(model, null, 2)}\n`,
+  );
 }
 
 export function createModule(module: Module): Promise<void> {
-  const stats: Stats = {
-    actions: [],
-    conditions: [],
-    resources: [],
-  };
   if (typeof module.name === 'undefined') {
     //it was skipped, restore from cache
-    const moduleFilePath = `lib/generated/policy-statements/${module.filename}.ts`;
-    restoreFileFromCache(moduleFilePath);
-
-    const moduleProject = new Project();
-    moduleProject.manipulationSettings.set({
-      quoteKind: QuoteKind.Single,
-    });
-
-    const moduleFile = moduleProject.addSourceFileAtPath(moduleFilePath);
-
-    module.servicePrefix = moduleFile
-      .getClasses()[0]
-      .getProperty('servicePrefix')!
-      .getInitializer()!
-      .getText()
-      .split("'")
-      .join('');
-  }
-
-  serviceStats.push(module.servicePrefix!);
-
-  if (typeof module.name === 'undefined') {
-    restoreFileFromCache(`stats/actions/${module.servicePrefix}`);
-    restoreFileFromCache(`stats/conditions/${module.servicePrefix}`);
-    restoreFileFromCache(`stats/resources/${module.servicePrefix}`);
-    modules.push(module);
+    restoreFileFromCache(`${modelDir}/${module.filename}.json`);
     return Promise.resolve();
   }
 
@@ -316,428 +201,9 @@ export function createModule(module: Module): Promise<void> {
     module.name += '-v2';
   }
 
-  modules.push(module);
-
-  const sourceFile = project.createSourceFile(
-    `./lib/generated/policy-statements/${module.filename}.ts`,
-  );
-
-  const description = `\nStatement provider for service [${module.name}](${module.url}).\n\n@param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement`;
-
-  sourceFile.addImportDeclaration({
-    namedImports: ['AccessLevelList'],
-    moduleSpecifier: '../../shared/access-level',
-  });
-
-  const classDeclaration = sourceFile.addClass({
-    name: camelCase(module.name!),
-    extends: 'PolicyStatement',
-    isExported: true,
-  });
-
-  classDeclaration.addJsDoc({
-    description: description,
-  });
-
-  classDeclaration.addProperty({
-    name: 'servicePrefix',
-    scope: Scope.Public,
-    initializer: `'${module.servicePrefix}'`,
-  });
-
-  const constructor = classDeclaration.addConstructor({});
-  constructor.addParameter({
-    name: 'sid',
-    type: 'string',
-    hasQuestionToken: true,
-  });
-  constructor.setBodyText('super(sid);');
-  constructor.addJsDoc({
-    description: description,
-  });
-
-  /**
-   * We collect the access levels and their actions in this object
-   */
-  const accessLevelList: AccessLevelList = {};
-
-  for (const [name, action] of Object.entries(module.actionList!)) {
-    // the docs sometimes report multiple access levels for a single action (e.g. "Tagging, Write")
-    for (const accessLevel of action.accessLevel
-      .split(',')
-      .map((level) => level.trim())) {
-      if (!(accessLevel in accessLevelList)) {
-        accessLevelList[accessLevel] = [];
-      }
-      accessLevelList[accessLevel].push(name);
-    }
-
-    stats.actions.push(`${module.servicePrefix}:${name};${action.accessLevel}`);
-
-    const method = classDeclaration.addMethod({
-      name: `to${upperFirst(name)}`,
-      scope: Scope.Public,
-    });
-
-    method.setBodyText(`return this.to('${name}');`);
-
-    let desc = `\n${action.description}\n\nAccess Level: ${action.accessLevel}`;
-
-    if ('conditions' in action) {
-      desc += '\n\nPossible conditions:';
-      action.conditions?.forEach((condition) => {
-        desc += `\n- .${createConditionName(
-          module.conditions![condition].key,
-          module.servicePrefix!,
-        )}()`;
-      });
-    }
-    if ('dependentActions' in action) {
-      desc += '\n\nDependent actions:';
-      action.dependentActions?.forEach((dependentAction) => {
-        desc += `\n- ${dependentAction}`;
-      });
-    }
-    if (action.url.length && action.url != 'https://docs.aws.amazon.com/') {
-      desc += `\n\n${action.url}`;
-    }
-    method.addJsDoc({
-      description: desc,
-    });
-  }
-
-  classDeclaration.addProperty({
-    name: 'accessLevelList',
-    scope: Scope.Protected,
-    type: 'AccessLevelList',
-    initializer: JSON.stringify(accessLevelList, null, 2)
-      .split('"') // ensure we use single quotes
-      .join("'")
-      .replace(/^ {2}'([^' ]+)'/gm, '$1'), // remove quotes from single word keys
-  });
-
-  for (const [name, resourceType] of Object.entries(module.resourceTypes)) {
-    const method = classDeclaration.addMethod({
-      name: `on${camelCase(name)}`,
-      scope: Scope.Public,
-    });
-
-    stats.resources.push(`${module.servicePrefix}:${name}`);
-
-    const params = getArnPlaceholders(resourceType.arn);
-    const optionalMethodParameters: OptionalKind<ParameterDeclarationStructure>[] =
-      [];
-    params.forEach((param) => {
-      if (/^(Partition|Region|Account(Id)?)$/.test(param)) {
-        optionalMethodParameters.push({
-          name: lowerFirst(camelCase(param)),
-          type: 'string',
-          hasQuestionToken: true,
-        });
-      } else {
-        method.addParameter({
-          name: lowerFirst(camelCase(param)),
-          type: 'string',
-          hasQuestionToken: false,
-        });
-      }
-    });
-    if (optionalMethodParameters.length) {
-      method.addParameters(optionalMethodParameters);
-    }
-
-    let arn = resourceType.arn;
-    const methodBody: string[] = [];
-    let paramDocs = '';
-    params.forEach((param) => {
-      const paramName = lowerFirst(camelCase(param));
-      let orDefault = '';
-      if (param == 'Partition') {
-        orDefault = ` ?? this.defaultPartition`;
-        paramDocs += `\n@param ${paramName} - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to \`aws\`, unless using the CDK, where the default is the current Stack's partition.`;
-      } else if (param == 'Region') {
-        orDefault = ` ?? this.defaultRegion`;
-        paramDocs += `\n@param ${paramName} - Region of the resource; defaults to \`*\`, unless using the CDK, where the default is the current Stack's region.`;
-      } else if (param.match(/^Account(Id)?$/)) {
-        orDefault = ` ?? this.defaultAccount`;
-        paramDocs += `\n@param ${paramName} - Account of the resource; defaults to \`*\`, unless using the CDK, where the default is the current Stack's account.`;
-      } else {
-        paramDocs += `\n@param ${paramName} - Identifier for the ${paramName}.`;
-      }
-      if (orDefault) {
-        arn = arn.replace(`\$\{${param}\}`, `\$\{${paramName}${orDefault}\}`);
-      } else {
-        arn = arn.replace(`\$\{${param}\}`, `\$\{${paramName}\}`);
-      }
-    });
-
-    let desc = `\nAdds a resource of type ${resourceType.name} to the statement`;
-    if (
-      resourceType.url.length &&
-      resourceType.url != 'https://docs.aws.amazon.com/'
-    ) {
-      desc += `\n\n${resourceType.url}`;
-    }
-    desc += `\n${paramDocs}`;
-    if (resourceType.conditionKeys.length) {
-      desc += '\n\nPossible conditions:';
-      resourceType.conditionKeys.forEach((key) => {
-        desc += `\n- .${createConditionName(
-          module.conditions![key].key,
-          module.servicePrefix!,
-        )}()`;
-      });
-    }
-    method.addJsDoc({
-      description: desc,
-    });
-
-    methodBody.push(`return this.on(\`${arn}\`);`);
-    method.setBodyText(methodBody.join('\n'));
-  }
-
-  let hasConditions = false;
-
-  // Build a map of base condition names to detect conflicts
-  const conditionBaseNames = new Map<string, string[]>();
-  for (let [key, condition] of Object.entries(module.conditions!)) {
-    const conditionKey = condition.key;
-    const baseName = createConditionName(conditionKey, module.servicePrefix!);
-    if (!conditionBaseNames.has(baseName)) {
-      conditionBaseNames.set(baseName, []);
-    }
-    conditionBaseNames.get(baseName)!.push(conditionKey);
-  }
-
-  for (let [key, condition] of Object.entries(module.conditions!)) {
-    key = condition.key;
-
-    const parts = key.split(':');
-    const name = parts[1].split(/\/(?=\$\{|<|\$|$)/);
-
-    stats.conditions.push(`${module.servicePrefix}:${parts[1]}`);
-
-    // boolean conditions don't take operators
-    if (condition.type != 'boolean') {
-      hasConditions = true;
-    }
-
-    var desc = '';
-
-    if (condition.description.length) {
-      desc += `\n${condition.description}\n`;
-    }
-
-    if (condition.url.length) {
-      desc += `\n${condition.url}\n`;
-    }
-    if ('relatedActions' in condition && condition.relatedActions?.length) {
-      desc += '\nApplies to actions:\n';
-      condition.relatedActions
-        .filter((elem, pos) => {
-          return condition.relatedActions?.indexOf(elem) == pos;
-        })
-        .forEach((relatedAction) => {
-          desc += `- .to${camelCase(relatedAction)}()\n`;
-        });
-    }
-
-    if (
-      'relatedResourceTypes' in condition &&
-      condition.relatedResourceTypes?.length
-    ) {
-      desc += '\nApplies to resource types:\n';
-      condition.relatedResourceTypes
-        .filter((elem, pos) => {
-          return condition.relatedResourceTypes?.indexOf(elem) == pos;
-        })
-        .forEach((resourceType) => {
-          desc += `- ${resourceType}\n`;
-        });
-    }
-
-    const type = condition.type.toLowerCase();
-
-    const methodBody: string[] = [];
-
-    let methodName = createConditionName(key, module.servicePrefix!);
-
-    // Check for custom method name in fixes
-    const keySplit = key.split(':');
-    const keyWithoutPrefix = keySplit[keySplit.length - 1];
-    const customMethodName = get(
-      fixes,
-      `${module.filename}.conditions.${keyWithoutPrefix}.methodName`,
-    );
-    if (typeof customMethodName !== 'undefined') {
-      methodName = customMethodName;
-    } else {
-      if (name.length > 1 && !name[1].length) {
-        // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
-        methodName += 'Exists';
-      } else if (name.length == 1 && name[0] == 'Attribute') {
-        // special case for ec2:Attribute
-        methodName += 'Exists';
-      }
-    }
-
-    // Handle parameterized conditions that conflict with non-parameterized ones
-    const conflictingKeys = conditionBaseNames.get(methodName) || [];
-    if (conflictingKeys.length > 1 && name.length > 1 && name[1].length) {
-      // This is a parameterized condition that conflicts with others
-      const paramPart = name[1]
-        .replace(/^\$\{([^}]+)\}(.*)/, '$1$2')
-        .replace(/[^a-zA-Z0-9]/g, '');
-      if (paramPart.length) {
-        methodName += upperFirst(camelCase(paramPart));
-      }
-    }
-    const method = classDeclaration.addMethod({
-      name: methodName,
-      scope: Scope.Public,
-    });
-
-    let propsKey = '';
-
-    if (parts[0] != module.servicePrefix) {
-      propsKey += `${escapeTemplateLiteral(parts[0])}:`;
-    }
-
-    propsKey += escapeTemplateLiteral(name[0]);
-
-    if (name.length > 1) {
-      // it is a parameterized condition
-      propsKey += '/';
-      if (name[1].length) {
-        const paramName = name[1].replace(/[^a-zA-Z0-9]/g, '');
-        desc += `\n@param ${lowerFirst(paramName)} The tag key to check`;
-        method.addParameter({
-          name: lowerFirst(paramName),
-          type: 'string',
-        });
-        propsKey += `\${${lowerFirst(paramName)}}`;
-      }
-    }
-
-    if (type in conditionTypeDefaults) {
-      let types = [...conditionTypeDefaults[type].type];
-      if ('typeOverride' in condition) {
-        types = condition.typeOverride!;
-      }
-      if (types.length > 1) {
-        types.push(`(${types.join('|')})[]`);
-      } else {
-        types.push(`${types}[]`);
-      }
-
-      desc += `\n@param value The value(s) to check`;
-      method.addParameter({
-        name: 'value',
-        type: types.join(' | '),
-      });
-
-      desc += `\n@param operator Works with [${type} operators](${
-        conditionTypeDefaults[type].url
-      }). **Default:** \`${conditionTypeDefaults[type].default.toString()}\``;
-      method.addParameter({
-        name: 'operator',
-        type: 'Operator | string',
-        hasQuestionToken: true,
-      });
-
-      if (type == 'date') {
-        methodBody.push(
-          'if (typeof (value as Date).getMonth === "function") {',
-          '  value = (value as Date).toISOString();',
-          '} else if (Array.isArray(value)) {',
-          '  value = value.map((item) => {',
-          '    if (typeof (item as Date).getMonth === "function") {',
-          '      item = (item as Date).toISOString();',
-          '    }',
-          '    return item;',
-          '  });',
-          '}',
-        );
-      }
-
-      methodBody.push(
-        `return this.if(\`${propsKey}\`, value, operator ?? '${conditionTypeDefaults[
-          type
-        ].default.toString()}')`,
-      );
-    } else if (type == 'boolean') {
-      desc += '\n@param value `true` or `false`. **Default:** `true`';
-
-      method.addParameter({
-        name: 'value',
-        type: type,
-        hasQuestionToken: true,
-      });
-
-      methodBody.push(
-        `return this.if(\`${propsKey}\`, (typeof value !== 'undefined' ? value : true), 'Bool');`,
-      );
-    } else {
-      throw new Error(`Unexpected condition type: ${type} for ${name}`);
-    }
-
-    method.addJsDoc({
-      description: desc,
-    });
-
-    method.setBodyText(methodBody.join('\n'));
-  }
-
-  const sharedClasses = ['PolicyStatement'];
-  if (hasConditions) {
-    sharedClasses.push('Operator');
-  }
-  sourceFile.addImportDeclaration({
-    namedImports: sharedClasses,
-    moduleSpecifier: '../../shared',
-  });
-
-  formatCode(sourceFile);
-  const done = sourceFile.save();
-  writeStats(module.servicePrefix!, stats);
+  writeServiceModel(buildServiceModel(module));
   console.log('Done'.green);
-  return done;
-}
-
-export function createIndex() {
-  const filePath = './lib/generated/index.ts';
-  process.stdout.write('index: '.white);
-  process.stdout.write('Generating '.cyan);
-
-  if (fs.existsSync(filePath)) {
-    fs.unlinkSync(filePath);
-  }
-  const sourceFile = project.createSourceFile(filePath, '', {
-    overwrite: true,
-  });
-
-  modules.sort().forEach((module) => {
-    const source = project.addSourceFileAtPath(
-      `./lib/generated/policy-statements/${module.filename}.ts`,
-    );
-    const exports: string[] = [];
-
-    source.getClasses().forEach((item) => {
-      if (item.isExported()) {
-        exports.push(item.getName()!);
-      }
-    });
-
-    sourceFile.addExportDeclaration({
-      namedExports: exports,
-      moduleSpecifier: `./policy-statements/${module.filename}`,
-    });
-  });
-
-  formatCode(sourceFile);
-  const done = sourceFile.save();
-  console.log('Done'.green);
-  return done;
+  return Promise.resolve();
 }
 
 function cleanDescription(description: string): string {
@@ -748,63 +214,9 @@ function cleanDescription(description: string): string {
     .trim();
 }
 
-export function getArnPlaceholders(arn: string): RegExpMatchArray {
-  const matches = arn.match(/(?<=\$\{)[a-z0-9_-]+(?=\})/gi);
-
-  const toTheEnd: string[] = [];
-  while (matches?.length) {
-    if (/^(Partition|Region|Account(Id)?)$/.test(matches[0])) {
-      toTheEnd.push(matches.shift()!);
-    } else {
-      break;
-    }
-  }
-
-  matches?.push(...toTheEnd.reverse());
-  return matches!;
-}
-
-function upperFirst(str: string): string {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-// AWS sometimes documents condition keys with a literal `${Placeholder}` baked into the
-// key text itself (e.g. `agent.${Domain}.buildkite.dev:build_branch`), as opposed to a
-// placeholder we turn into a real method parameter. Since we embed the raw key text into a
-// backtick template literal in the generated source, an un-escaped `$` would be parsed as a
-// live interpolation referencing an undefined identifier. Escape it so it stays literal text.
-function escapeTemplateLiteral(str: string): string {
-  return str.replace(/\$/g, () => '\\$');
-}
-
-export function lowerFirst(str: string): string {
-  return str.charAt(0).toLowerCase() + str.slice(1);
-}
-
-export function camelCase(str: string) {
-  return str
-    .split(/[_\-\s\./${}]/)
-    .map((str) => {
-      return upperFirst(str);
-    })
-    .join('');
-}
-
 function createCache() {
-  createLibCache();
-  createStatsCache();
-}
-
-function createLibCache() {
-  const dir = 'lib/generated/policy-statements';
-  mkDirCache(dir, '*.ts');
-}
-
-function createStatsCache() {
-  ['actions', 'conditions', 'resources'].forEach((dirName) => {
-    const dir = `stats/${dirName}`;
-    mkDirCache(dir, '*');
-  });
+  fs.mkdirSync(modelDir, { recursive: true });
+  mkDirCache(modelDir, '*.json');
 }
 
 function mkDirCache(dir: string, pattern: string) {
@@ -1029,46 +441,6 @@ function addConditions($: cheerio.Root, module: Module): Module {
   });
   module.conditions = conditions;
   return module;
-}
-
-function createConditionName(key: string, servicePrefix: string): string {
-  let methodName = 'if';
-  const split = key.split(/:|\/(?=\$\{|<|\$|$)/);
-
-  // these are exceptions for the Security Token Service to:
-  // - make it clear to which provider the condition is for
-  // - avoid duplicate method names
-  if (split[0] == 'accounts.google.com') {
-    methodName += 'Google';
-  } else if (split[0] == 'cognito-identity.amazonaws.com') {
-    methodName += 'Cognito';
-  } else if (split[0] == 'www.amazon.com') {
-    methodName += 'Amazon';
-  } else if (split[0] == 'graph.facebook.com') {
-    methodName += 'Facebook';
-  } else if (split[0] != servicePrefix) {
-    // for global conditions and conditions related to other services
-    methodName += upperFirst(camelCase(split[0]));
-  }
-
-  // A trailing placeholder segment (e.g. `${TagKey}` at the very end of the key, as in
-  // `aws:RequestTag/${TagKey}`) is omitted from the name - it becomes a real method parameter
-  // instead, and including it would change hundreds of already-stable method names. A
-  // placeholder that is NOT last (e.g. `${EnterpriseName}` in
-  // `github.com/enterprises/${EnterpriseName}:actor`) isn't turned into a parameter anywhere,
-  // so it must stay part of the name - otherwise multiple distinct keys that only differ by
-  // what follows the placeholder (`:actor` vs `:actor_id`, or by comparison with a sibling key
-  // that omits the placeholder segment entirely) collapse onto the same method name.
-  const rest = split.slice(1);
-  rest.forEach((part, i) => {
-    const isLast = i === rest.length - 1;
-    if (isLast && /^[$<]/.test(part)) {
-      return;
-    }
-    methodName += upperFirst(camelCase(part));
-  });
-
-  return methodName;
 }
 
 function validateUrl(url: string) {
