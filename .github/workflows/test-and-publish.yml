@@ -308,6 +308,8 @@ jobs:
       - test-cdk-iam-floyd
       - test-cdk-iam-floyd-jsii
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.get_version.outputs.VERSION }}
     steps:
       - name: Fetch latest SHA
         uses: actions/download-artifact@v8
@@ -338,9 +340,11 @@ jobs:
           git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags
           touch CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
 
+      # A draft, so the publish jobs can attach assets. Published releases are immutable
       - name: Create release
         run: |
           gh release create "v${{ steps.get_version.outputs.VERSION }}" \
+            --draft \
             --title "v${{ steps.get_version.outputs.VERSION }}" \
             --notes-file "CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md"
         env:
@@ -549,11 +553,11 @@ jobs:
           path: dist/go-module
 
       - name: Add module zip to release
-        run: gh release upload "v$(cat VERSION)" dist/go-module/*.zip --clobber
+        run: gh release upload "v${{ needs.release.outputs.version }}" dist/go-module/*.zip --clobber
         env:
           GH_TOKEN: ${{ github.token }}
 
-      # Pages sites are limited to 1 GB and a module zip has about 22 MB
+      # Pages sites are limited to 1 GB and a module zip has about 9 MB
       - name: Fetch module zips of the newest releases
         run: |
           mkdir zips
@@ -575,6 +579,29 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deploy
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+
+  # The release stays a draft until everything is published and all assets are attached
+  publish-release:
+    name: Publish release
+    if: |
+      github.ref == 'refs/heads/main' && (
+        github.event_name == 'push' ||
+        github.event_name == 'workflow_dispatch'
+      )
+    needs:
+      - release
+      - publish-iam-floyd
+      - publish-cdk-iam-floyd
+      - publish-cdk-iam-floyd-python
+      - publish-cdk-iam-floyd-dotnet
+      - publish-cdk-iam-floyd-java
+      - publish-cdk-iam-floyd-go
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish release
+        run: gh release edit "v${{ needs.release.outputs.version }}" --repo "${{ github.repository }}" --draft=false
+        env:
+          GH_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
 
   # The only test check the ruleset requires.
   required:
