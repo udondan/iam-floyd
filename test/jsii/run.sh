@@ -2,7 +2,8 @@
 
 # Tests the cdk-iam-floyd packages for Python, Java, .NET and Go, written by `make package-jsii`.
 #
-# The API docs are rendered from the jsii assembly with jsii-docgen, as Construct Hub does.
+# With TypeScript, the API docs are rendered from the jsii assembly with jsii-docgen, as Construct Hub
+# does.
 # floyd-consumer, a jsii construct library that depends on cdk-iam-floyd, is compiled with jsii and
 # packaged with jsii-pacmak against the local cdk-iam-floyd packages. Then the same scenarios run in
 # each language, using cdk-iam-floyd directly and through floyd-consumer, and their policies are
@@ -23,10 +24,14 @@ else
   LANGUAGES=(typescript python java dotnet go)
 fi
 VERSION=$(node -p "require('./package.json').version")
+TARGETS=()
+for language in "${LANGUAGES[@]}"; do
+  [[ "${language}" == typescript ]] || TARGETS+=("${language}")
+done
 
 export JSII_SILENCE_WARNING_UNTESTED_NODE_VERSION=1
 
-if [[ ! -f "${ROOT}/.jsii" || ! -d "${ROOT}/dist" ]]; then
+if [[ ! -f "${ROOT}/.jsii" || (${#TARGETS[@]} -gt 0 && ! -d "${ROOT}/dist") ]]; then
   echo "Run \`make package-jsii\` first" >&2
   exit 1
 fi
@@ -38,9 +43,11 @@ log() {
 rm -rf "${OUT}"
 mkdir -p "${OUT}"
 
-log "Rendering the API docs, like Construct Hub"
-mkdir -p "${OUT}/docs"
-npx jsii-docgen -l typescript -l python -l java -l csharp -l go -o "${OUT}/docs/API.md"
+if [[ " ${LANGUAGES[*]} " == *" typescript "* ]]; then
+  log "Rendering the API docs, like Construct Hub"
+  mkdir -p "${OUT}/docs"
+  npx jsii-docgen -l typescript -l python -l java -l csharp -l go -o "${OUT}/docs/API.md"
+fi
 
 log "Packing cdk-iam-floyd@${VERSION}"
 npm pack --silent --pack-destination "${OUT}" > /dev/null
@@ -51,14 +58,10 @@ cd "${OUT}/consumer"
 npm pkg set "peerDependencies.cdk-iam-floyd=^${VERSION}" \
   "devDependencies.cdk-iam-floyd=file:../cdk-iam-floyd-${VERSION}.tgz"
 npm install --no-audit --no-fund --silent
-# jsii-pacmak builds against the outputs of dependencies in `<package>/dist/<language>`
-cp -R "${ROOT}/dist" node_modules/cdk-iam-floyd/dist
 npx jsii
-TARGETS=()
-for language in "${LANGUAGES[@]}"; do
-  [[ "${language}" == typescript ]] || TARGETS+=("${language}")
-done
 if [[ ${#TARGETS[@]} -gt 0 ]]; then
+  # jsii-pacmak builds against the outputs of dependencies in `<package>/dist/<language>`
+  cp -R "${ROOT}/dist" node_modules/cdk-iam-floyd/dist
   npx jsii-pacmak --targets "$(IFS=,; echo "${TARGETS[*]}")"
 fi
 CONSUMER="${OUT}/consumer/dist"

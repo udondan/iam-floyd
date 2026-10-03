@@ -3,6 +3,12 @@ VERSION := $(shell cat VERSION)
 
 NO_COLOR=\x1b[0m
 TARGET_COLOR=\x1b[96m
+# Languages of package-jsii and test-jsii. TypeScript needs no package, it is the baseline of test-jsii
+LANGUAGES ?= typescript python java dotnet go
+JSII_TARGETS := $(filter-out typescript,$(LANGUAGES))
+EMPTY :=
+SPACE := $(EMPTY) $(EMPTY)
+COMMA := ,
 
 .PHONY: build emit generate package package-jsii test test-jsii tag untag release re-release changelog cdk docs stats
 
@@ -34,12 +40,13 @@ package: build
 	@echo -e "$(TARGET_COLOR)Running package$(NO_COLOR)"
 	@npm pack
 
-# Python, Java, .NET and Go packages of cdk-iam-floyd in dist/, run after `make cdk`
+# Python, Java, .NET and Go packages of cdk-iam-floyd in dist/, run after `make cdk`.
+# Set LANGUAGES to build only some of them, e.g. `make package-jsii LANGUAGES=python`
 package-jsii: build
 	@echo -e "$(TARGET_COLOR)Running package-jsii$(NO_COLOR)"
 	@npx ts-node bin/jsii.ts
 	@rm -rf dist
-	@npx jsii-pacmak --targets python,java,dotnet,go
+	$(if $(JSII_TARGETS),@npx jsii-pacmak --targets $(subst $(SPACE),$(COMMA),$(JSII_TARGETS)))
 
 cdk:
 	@echo -e "$(TARGET_COLOR)Running cdk$(NO_COLOR)"
@@ -65,7 +72,7 @@ cdk-all: cdk install build cdk-test
 
 test-jsii:
 	@echo -e "$(TARGET_COLOR)Running jsii test$(NO_COLOR)"
-	@test/jsii/run.sh
+	@test/jsii/run.sh $(LANGUAGES)
 
 changelog:
 	@echo -e "$(TARGET_COLOR)Running changelog$(NO_COLOR)"
