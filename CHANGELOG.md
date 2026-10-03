@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.847.0](https://github.com/udondan/iam-floyd/compare/v0.846.0...v0.847.0) (2026-10-03)
+
+
+### Features
+
+* build cdk-iam-floyd for Python, Java, .NET and Go ([#2289](https://github.com/udondan/iam-floyd/issues/2289)) ([61ee572](https://github.com/udondan/iam-floyd/commit/61ee5727e0c3c1b20f8aef1de1e859cc15837282))
+* publish cdk-iam-floyd for Python, Java, .NET and Go ([#2291](https://github.com/udondan/iam-floyd/issues/2291)) ([2c7ebd4](https://github.com/udondan/iam-floyd/commit/2c7ebd4b435d42dd6698bee4cae7f63a4407baab))
+* update AWS managed policies ([#2287](https://github.com/udondan/iam-floyd/issues/2287)) ([a9974ef](https://github.com/udondan/iam-floyd/commit/a9974ef6c76042eb91eb804de220f9b9cbe36294))
+
 ## [0.846.0](https://github.com/udondan/iam-floyd/compare/v0.845.0...v0.846.0) (2026-10-02)
 
 **New actions:**
