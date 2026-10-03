@@ -17,7 +17,9 @@
         "aws-external-anthropic:GetAccountStatus",
         "aws-external-anthropic:CallWithBearerToken",
         "aws-external-anthropic:ListKeys",
-        "aws-external-anthropic:GetKey"
+        "aws-external-anthropic:GetKey",
+        "aws-external-anthropic:GetUserProfile",
+        "aws-external-anthropic:ListUserProfiles"
       ],
       "Resource": "*"
     },

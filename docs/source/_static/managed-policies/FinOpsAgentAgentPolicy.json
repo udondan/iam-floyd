@@ -69,6 +69,7 @@
         "organizations:DescribeAccount",
         "rds:DescribeDBInstances",
         "rds:DescribeDBClusters",
+        "rds:DescribeDBMajorEngineVersions",
         "pricing:DescribeServices",
         "pricing:GetAttributeValues",
         "pricing:GetProducts",
@@ -132,7 +133,10 @@
         "savingsplans:DescribeSavingsPlansOfferingRates",
         "savingsplans:ListTagsForResource",
         "cost-optimization-hub:ListEfficiencyMetrics",
-        "billing:GetBillingPreferences"
+        "cost-optimization-hub:ListEnrollmentStatuses",
+        "cost-optimization-hub:GetPreferences",
+        "billing:GetBillingPreferences",
+        "billing:ListBillingViewSegments"
       ],
       "Resource": "*"
     },
