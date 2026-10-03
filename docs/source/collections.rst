@@ -13,21 +13,39 @@ First import the ``Collection`` provider:
 
 .. tabs::
 
-   .. code-tab:: ts
+   .. group-tab:: TypeScript
 
-      // for use without AWS CDK use the iam-floyd package
-      import { Collection } from 'iam-floyd';
+      .. code-block:: ts
 
-      // for use with CDK use the cdk-iam-floyd package
-      import { Collection } from 'cdk-iam-floyd';
+         // for use without AWS CDK use the iam-floyd package
+         import { Collection } from 'iam-floyd';
 
-   .. code-tab:: js
+         // for use with CDK use the cdk-iam-floyd package
+         import { Collection } from 'cdk-iam-floyd';
 
-      // for use without AWS CDK use the iam-floyd package
-      const { Collection } = require('iam-floyd');
+   .. group-tab:: Python
 
-      // for use with CDK use the cdk-iam-floyd package
-      const { Collection } = require('cdk-iam-floyd');
+      .. code-block:: python
+
+         from cdk_iam_floyd import Collection
+
+   .. group-tab:: Java
+
+      .. code-block:: java
+
+         import com.udondan.iamFloyd.cdk.Collection;
+
+   .. group-tab:: C#
+
+      .. code-block:: csharp
+
+         using CDK.IAM.Floyd;
+
+   .. group-tab:: Go
+
+      .. code-block:: go
+
+         import "udondan.github.io/iam-floyd/go/cdkiamfloyd"
 
 Collections then can be called via:
 

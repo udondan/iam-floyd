@@ -70,7 +70,7 @@ It has been observed that IAM actions have been `deleted <https://github.com/udo
 How can I set a statement SID?
 ------------------------------
 
-The SID can be passed as parameter to the constructor:
+The SID can be passed as parameter to the constructor. With ``cdk-iam-floyd``, the constructor takes the props of `iam.PolicyStatement`_ instead:
 
 .. example:: sid
 

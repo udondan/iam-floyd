@@ -1,8 +1,6 @@
 ..
    Package links and badges
 
-.. _libraries.io: https://libraries.io/search?q=iam-floyd
-
 .. _iam-floyd-npm: https://www.npmjs.com/package/iam-floyd
 .. |iam-floyd-npm| image:: https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet
 
@@ -11,6 +9,15 @@
 
 .. _cdk-iam-floyd-npm-v1: https://www.npmjs.com/package/cdk-iam-floyd/v/0.286.0
 .. |cdk-iam-floyd-npm-v1| image:: https://img.shields.io/badge/npm-0.286.0-yellow
+
+.. _cdk-iam-floyd-pypi: https://pypi.org/project/cdk-iam-floyd/
+.. |cdk-iam-floyd-pypi| image:: https://img.shields.io/pypi/v/cdk-iam-floyd?label=PyPI
+
+.. _cdk-iam-floyd-maven: https://central.sonatype.com/artifact/com.udondan/cdk-iam-floyd
+.. |cdk-iam-floyd-maven| image:: https://img.shields.io/maven-central/v/com.udondan/cdk-iam-floyd?label=Maven%20Central
+
+.. _cdk-iam-floyd-nuget: https://www.nuget.org/packages/CDK.IAM.Floyd
+.. |cdk-iam-floyd-nuget| image:: https://img.shields.io/nuget/v/CDK.IAM.Floyd?label=NuGet
 
 ..
    External documentation links

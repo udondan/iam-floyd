@@ -30,6 +30,8 @@ for language in "${LANGUAGES[@]}"; do
 done
 
 export JSII_SILENCE_WARNING_UNTESTED_NODE_VERSION=1
+# a separate NuGet cache, so no cdk-iam-floyd of an earlier run with the same version is used
+export NUGET_PACKAGES="${OUT}/nuget"
 
 if [[ ! -f "${ROOT}/.jsii" || (${#TARGETS[@]} -gt 0 && ! -d "${ROOT}/dist") ]]; then
   echo "Run \`make package-jsii\` first" >&2
@@ -127,7 +129,44 @@ run_go() {
   go run .
 }
 
+# The examples of the docs, examples/*/*.{py,java,cs,go}, run after the scenarios and reuse their setup
+
+examples_python() {
+  "${OUT}/venv/bin/python" "${TEST}/examples/python/examples.py" "${ROOT}/examples"
+}
+
+examples_java() {
+  cp -R "${TEST}/examples/java" "${OUT}/examples-java"
+  cp "${ROOT}"/examples/*/*.java "${OUT}/examples-java/src/main/java/"
+  cd "${OUT}/examples-java"
+  mvn --quiet --batch-mode compile exec:java \
+    "-Dmaven.repo.local=${OUT}/m2" \
+    "-Dfloyd.repo=${ROOT}/dist/java" \
+    "-Dfloyd.version=${VERSION}" \
+    "-Dexec.args=${ROOT}/examples"
+}
+
+examples_dotnet() {
+  cp -R "${TEST}/examples/dotnet" "${OUT}/examples-dotnet"
+  cp "${OUT}/dotnet/nuget.config" "${OUT}/examples-dotnet/"
+  cd "${OUT}/examples-dotnet"
+  dotnet run --verbosity quiet "-p:FloydVersion=${VERSION}" "-p:Examples=${ROOT}/examples" -- "${ROOT}/examples"
+}
+
+examples_go() {
+  cp -R "${TEST}/examples/go" "${OUT}/examples-go"
+  cp "${ROOT}"/examples/*/*.go "${OUT}/examples-go/"
+  # the proxy written by run_go
+  export GOPROXY="file://${OUT}/go-proxy/go,https://proxy.golang.org" GONOSUMDB=udondan.github.io GODEBUG=goindex=0
+  cd "${OUT}/examples-go"
+  go mod init examples
+  go mod edit -require "udondan.github.io/iam-floyd/go/cdkiamfloyd@v${VERSION}"
+  go mod tidy
+  go run .
+}
+
 RESULTS=()
+EXAMPLES=()
 for language in "${LANGUAGES[@]}"; do
   log "Running scenarios in ${language}"
   RESULTS+=("${OUT}/${language}.txt")
@@ -136,7 +175,20 @@ for language in "${LANGUAGES[@]}"; do
     "run_${language}"
   ) > "${OUT}/${language}.txt"
   cd "${ROOT}"
+  if [[ "${language}" != typescript ]]; then
+    log "Running examples in ${language}"
+    EXAMPLES+=("${OUT}/examples-${language}.txt")
+    (
+      set -euo pipefail
+      "examples_${language}"
+    ) > "${OUT}/examples-${language}.txt"
+    cd "${ROOT}"
+  fi
 done
 
 log "Comparing results"
 python3 "${TEST}/compare.py" "${TEST}/expected.json" "${RESULTS[@]}"
+if [[ ${#EXAMPLES[@]} -gt 0 ]]; then
+  log "Comparing the results of the examples"
+  python3 "${TEST}/examples/compare.py" "${ROOT}/examples" "${EXAMPLES[@]}"
+fi

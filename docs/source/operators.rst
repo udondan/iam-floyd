@@ -8,23 +8,41 @@ Operators
 
 .. tabs::
 
-   .. code-tab:: ts
+   .. group-tab:: TypeScript
 
-      // for use without AWS CDK use the iam-floyd package
-      import { Operator, Statement } from 'iam-floyd';
+      .. code-block:: ts
 
-      // for use with CDK use the cdk-iam-floyd package
-      import { Operator, Statement } from 'cdk-iam-floyd';
+         // for use without AWS CDK use the iam-floyd package
+         import { Operator, Statement } from 'iam-floyd';
 
-   .. code-tab:: js
+         // for use with CDK use the cdk-iam-floyd package
+         import { Operator, Statement } from 'cdk-iam-floyd';
 
-      // for use without AWS CDK use the iam-floyd package
-      const { Operator, Statement } = require('iam-floyd');
+   .. group-tab:: Python
 
-      // for use with CDK use the cdk-iam-floyd package
-      const { Operator, Statement } = require('cdk-iam-floyd');
+      .. code-block:: python
 
-Operators can be simple strings such as ``StringEquals`` or get complex with modifiers such as ``ForAnyValue`` or ``IfExists``. For simple operators you can use the static properties of the ``Operator`` class:
+         from cdk_iam_floyd import Operator, Statement
+
+   .. group-tab:: Java
+
+      .. code-block:: java
+
+         import com.udondan.iamFloyd.cdk.Operator;
+
+   .. group-tab:: C#
+
+      .. code-block:: csharp
+
+         using CDK.IAM.Floyd;
+
+   .. group-tab:: Go
+
+      .. code-block:: go
+
+         import "udondan.github.io/iam-floyd/go/cdkiamfloyd"
+
+Operators can be simple strings such as ``StringEquals`` or get complex with modifiers such as ``ForAnyValue`` or ``IfExists``. For simple operators you can use the static properties of the ``Operator`` class in TypeScript. The other languages have no such static properties, there you call the method of the same name on a new ``Operator``:
 
 .. example:: conditions-operator-simple
 
