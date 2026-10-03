@@ -34,6 +34,9 @@ release = '0.846.0'
 sys.path.append(os.path.abspath('extensions'))
 extensions = ['sphinx_rtd_theme', 'sphinx_tabs.tabs', 'example']
 
+# Clicking the active tab keeps it open instead of hiding its content
+sphinx_tabs_disable_tab_closing = True
+
 html_theme = "sphinx_rtd_theme"
 
 # Add any paths that contain templates here, relative to this directory.
