@@ -26,6 +26,26 @@
       ],
       "Resource": "*",
       "Sid": "CloudWatch"
+    },
+    {
+      "Sid": "ServiceQuotasRead",
+      "Effect": "Allow",
+      "Action": [
+        "servicequotas:GetServiceQuota",
+        "servicequotas:GetRequestedServiceQuotaChange"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ServiceQuotasWrite",
+      "Effect": "Allow",
+      "Action": "servicequotas:RequestServiceQuotaIncrease",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }

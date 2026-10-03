@@ -308,7 +308,8 @@
         "social-messaging:SendWhatsAppMessage",
         "social-messaging:PostWhatsAppMessageMedia",
         "social-messaging:GetWhatsAppMessageMedia",
-        "social-messaging:GetLinkedWhatsAppBusinessAccountPhoneNumber"
+        "social-messaging:GetLinkedWhatsAppBusinessAccountPhoneNumber",
+        "social-messaging:SendWhatsAppCallEvent"
       ],
       "Resource": "arn:aws:social-messaging:*:*:phone-number-id/*",
       "Condition": {
