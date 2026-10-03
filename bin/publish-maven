@@ -31,7 +31,9 @@ if [[ -n "${MAVEN_GPG_PRIVATE_KEY:-}" ]]; then
     gpg --batch --quiet --yes --pinentry-mode loopback \
       --passphrase "${MAVEN_GPG_PRIVATE_KEY_PASSPHRASE}" \
       --armor --detach-sign "${file}"
+    gpg --batch --quiet --verify "${file}.asc" "${file}" 2> /dev/null
   done < <(find "${REPO}" -type f \( -name '*.jar' -o -name '*.pom' \) -print0)
+  echo "Signed with key $(gpg --list-secret-keys --with-colons | awk -F: '$1 == "ssb" { print $5 }')"
 elif [[ -n "${MAVEN_CENTRAL_USERNAME:-}" ]]; then
   echo "MAVEN_GPG_PRIVATE_KEY is not set" >&2
   exit 1

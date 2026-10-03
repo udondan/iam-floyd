@@ -283,9 +283,13 @@ jobs:
         if: matrix.language == 'typescript'
         run: make publish
 
+      # Signs, but does not upload without the Maven Central credentials
       - name: Build Maven Central bundle
         if: matrix.language == 'java'
         run: bin/publish-maven
+        env:
+          MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
 
       - name: Store packages
         if: matrix.language != 'typescript' && github.event_name != 'pull_request'
