@@ -3,10 +3,11 @@ name: Generate Code from AWS documentation
 
 on:
   schedule:
+    # Weekly on Sunday, the release PR is merged on Monday (automerge-schedule.yml).
     # Why 1:57 not and 2:00? Because most hourly jobs probably run at the hour.
     # Keeping concurrent jobs low reduces hardware requirements, being nice to
     # GitHub and the environment.
-    - cron: 57 1 * * *
+    - cron: 57 1 * * 0
   workflow_dispatch:
     inputs:
       command:
@@ -48,7 +49,8 @@ jobs:
         run: make ${{ github.event.inputs.command }}
         if: ${{ github.event_name == 'workflow_dispatch' }}
 
-      - name: Check for changes # we expect at least 3 changes or we won't trigger a new release
+      # Changes of descriptions or URLs alone are not worth a release
+      - name: Check for changes
         id: changes
         run: |
           set -xuo pipefail # we intentionally do not use -e here, as rc=1 means we have changes
@@ -62,50 +64,41 @@ jobs:
       # code.
       - name: Failsafe
         run: test -e lib/index.ts || exit 1
-        if: steps.changes.outputs.CHANGED >= 3
-
-      - name: Configure git
-        run: |
-          set -xeuo pipefail
-          git config --local user.email "${{ secrets.RELEASE_MAIL }}"
-          git config --local user.name "udondan"
-        if: steps.changes.outputs.CHANGED >= 3
-
-      - name: Update version refs
-        run: |
-          set -xeuo pipefail
-          perl -pi -e 's/^(\d+\.)(\d+)(\.\d+)$/($1).($2+1).".0"/e' VERSION
-          make update-version-refs
-        if: steps.changes.outputs.CHANGED >= 3
+        if: steps.changes.outputs.CHANGED >= 1
 
       - name: Update stats in documentation
         run: make stats
-        if: steps.changes.outputs.CHANGED >= 3
+        if: steps.changes.outputs.CHANGED >= 1
 
-      - name: Generate changelog for next release
+      # The release notes are written by release-please.yml, this is for the review of the PR.
+      # PR bodies are limited to 65536 characters
+      - name: Describe changes
         run: |
-          set -xeuo pipefail
-          make changelog
-          git add CHANGELOG/*
-        if: steps.changes.outputs.CHANGED >= 3
+          set -euo pipefail
+          bin/mkchangelog HEAD > "${RUNNER_TEMP}/changes.md"
+          head -c 60000 "${RUNNER_TEMP}/changes.md" > "${RUNNER_TEMP}/body.md"
+          if [[ $(wc -c < "${RUNNER_TEMP}/changes.md") -gt 60000 ]]; then
+            printf "\n\n…\n" >> "${RUNNER_TEMP}/body.md"
+          fi
+        if: steps.changes.outputs.CHANGED >= 1
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
-        if: steps.changes.outputs.CHANGED >= 3
+        if: steps.changes.outputs.CHANGED >= 1
         with:
           role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Regenerate code example results
         run: make regenerate-code-example-results
-        if: steps.changes.outputs.CHANGED >= 3
+        if: steps.changes.outputs.CHANGED >= 1
 
       - name: Add all changes
         run: |
           set -xeuo pipefail
           rm -rf package-lock.json node_modules *.tsbuildinfo &&
           git add *
-        if: steps.changes.outputs.CHANGED >= 3
+        if: steps.changes.outputs.CHANGED >= 1
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
@@ -113,10 +106,10 @@ jobs:
           token: ${{ secrets.OVERRIDE_TOKEN }}
           commit-message: "feat: add latest IAM updates from AWS"
           title: "feat: add latest IAM updates from AWS"
-          body: Adds latest IAM updates from AWS
+          body-path: ${{ runner.temp }}/body.md
           branch: iam-updates
           delete-branch: true
           committer: udondan <${{ secrets.RELEASE_MAIL }}>
           author: udondan <${{ secrets.RELEASE_MAIL }}>
           labels: automerge
-        if: steps.changes.outputs.CHANGED >= 3
+        if: steps.changes.outputs.CHANGED >= 1

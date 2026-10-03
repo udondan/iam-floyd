@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-VERSION := $(shell cat VERSION)
+VERSION := $(shell node -p "require('./package.json').version")
 
 NO_COLOR=\x1b[0m
 TARGET_COLOR=\x1b[96m
@@ -10,7 +10,7 @@ EMPTY :=
 SPACE := $(EMPTY) $(EMPTY)
 COMMA := ,
 
-.PHONY: build emit generate package package-jsii test test-jsii tag untag release re-release changelog cdk docs stats
+.PHONY: build emit generate package package-jsii test test-jsii changelog cdk docs stats
 
 build: emit
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
@@ -94,22 +94,6 @@ clean:
 install: clean
 	@echo -e "$(TARGET_COLOR)Running install$(NO_COLOR)"
 	@npm i
-
-tag:
-	@git tag -a "v$(VERSION)" -m 'Creates tag "v$(VERSION)"'
-	@git push --tags
-
-untag:
-	@git push --delete origin "v$(VERSION)"
-	@git tag --delete "v$(VERSION)"
-
-release: tag
-
-re-release: untag tag
-
-update-version-refs:
-	@perl -pi -e "s/(iam-floyd\@)[0-9.]+/\$${1}$(VERSION)/g" "README.md"
-	@perl -pi -e "s/^(release = ')[0-9.]+/\$${1}${VERSION}/g" "docs/source/conf.py"
 
 docs:
 	@cd docs && $(MAKE) clean html
