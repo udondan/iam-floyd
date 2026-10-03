@@ -150,8 +150,8 @@ publish:
 		exit 1; \
 	fi
 	@rm publish_output.txt
-	@if [ -z "$${NODE_AUTH_TOKEN}" ]; then \
-		echo "⚠️ NODE_AUTH_TOKEN is not set. Skipping publish"; \
+	@if [ "$${NPM_PUBLISH}" != "true" ]; then \
+		echo "⚠️ NPM_PUBLISH is not true. Skipping publish"; \
 	else \
 		npm publish; \
 	fi

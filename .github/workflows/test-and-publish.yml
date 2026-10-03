@@ -392,8 +392,11 @@ jobs:
           npm version "$(cat VERSION)" --allow-same-version --no-git-tag-version
           grep version package.json
 
+      # npm authenticates with OIDC, there is no token
       - name: Publish to npm
         run: make install build publish
+        env:
+          NPM_PUBLISH: "true"
 
   publish-cdk-iam-floyd:
     name: Publish cdk-iam-floyd
@@ -439,8 +442,11 @@ jobs:
           make cdk
           cat package.json
 
+      # npm authenticates with OIDC, there is no token
       - name: Publish to npm
         run: make package-jsii publish LANGUAGES=typescript
+        env:
+          NPM_PUBLISH: "true"
 
   publish-cdk-iam-floyd-python:
     name: Publish cdk-iam-floyd to PyPI
