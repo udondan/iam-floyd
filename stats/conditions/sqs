@@ -1,3 +1,0 @@
-sqs:RequestTag/${TagKey}
-sqs:ResourceTag/${TagKey}
-sqs:TagKeys

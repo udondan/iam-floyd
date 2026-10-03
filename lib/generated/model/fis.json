@@ -1,0 +1,541 @@
+{
+  "schemaVersion": 1,
+  "filename": "fis",
+  "className": "Fis",
+  "name": "fis",
+  "servicePrefix": "fis",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_fis.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateExperimentTemplate",
+      "CreateTargetAccountConfiguration",
+      "DeleteExperimentTemplate",
+      "DeleteTargetAccountConfiguration",
+      "StartExperiment",
+      "StopExperiment",
+      "TagResource",
+      "UntagResource",
+      "UpdateExperimentTemplate",
+      "UpdateSafetyLeverState",
+      "UpdateTargetAccountConfiguration",
+      "InjectApiInternalError",
+      "InjectApiThrottleError",
+      "InjectApiUnavailableError"
+    ],
+    "Read": [
+      "GetAction",
+      "GetExperiment",
+      "GetExperimentTargetAccountConfiguration",
+      "GetExperimentTemplate",
+      "GetSafetyLever",
+      "GetTargetAccountConfiguration",
+      "GetTargetResourceType",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListActions",
+      "ListExperimentResolvedTargets",
+      "ListExperimentTargetAccountConfigurations",
+      "ListExperimentTemplates",
+      "ListExperiments",
+      "ListTargetAccountConfigurations",
+      "ListTargetResourceTypes"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateExperimentTemplate",
+      "methodName": "toCreateExperimentTemplate",
+      "description": "Grants permission to create an AWS FIS experiment template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_CreateExperimentTemplate.html"
+    },
+    {
+      "name": "CreateTargetAccountConfiguration",
+      "methodName": "toCreateTargetAccountConfiguration",
+      "description": "Grants permission to create an AWS FIS target account configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_CreateTargetAccountConfiguration.html"
+    },
+    {
+      "name": "DeleteExperimentTemplate",
+      "methodName": "toDeleteExperimentTemplate",
+      "description": "Grants permission to delete the AWS FIS experiment template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_DeleteExperimentTemplate.html"
+    },
+    {
+      "name": "DeleteTargetAccountConfiguration",
+      "methodName": "toDeleteTargetAccountConfiguration",
+      "description": "Grants permission to delete an AWS FIS target account configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_DeleteTargetAccountConfiguration.html"
+    },
+    {
+      "name": "GetAction",
+      "methodName": "toGetAction",
+      "description": "Grants permission to retrieve an AWS FIS action",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_GetAction.html"
+    },
+    {
+      "name": "GetExperiment",
+      "methodName": "toGetExperiment",
+      "description": "Grants permission to retrieve an AWS FIS experiment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_GetExperiment.html"
+    },
+    {
+      "name": "GetExperimentTargetAccountConfiguration",
+      "methodName": "toGetExperimentTargetAccountConfiguration",
+      "description": "Grants permission to retrieve an AWS FIS target account configuration for an AWS FIS experiment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_GetExperimentTargetAccountConfiguration.html"
+    },
+    {
+      "name": "GetExperimentTemplate",
+      "methodName": "toGetExperimentTemplate",
+      "description": "Grants permission to retrieve an AWS FIS Experiment Template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_GetExperimentTemplate.html"
+    },
+    {
+      "name": "GetSafetyLever",
+      "methodName": "toGetSafetyLever",
+      "description": "Grants permission to get information about the safety lever",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_GetSafetyLever.html"
+    },
+    {
+      "name": "GetTargetAccountConfiguration",
+      "methodName": "toGetTargetAccountConfiguration",
+      "description": "Grants permission to retrieve an AWS FIS target account configuration for an AWS FIS experiment template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_GetTargetAccountConfiguration.html"
+    },
+    {
+      "name": "GetTargetResourceType",
+      "methodName": "toGetTargetResourceType",
+      "description": "Grants permission to get information about the specified resource type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_GetTargetResourceType.html"
+    },
+    {
+      "name": "ListActions",
+      "methodName": "toListActions",
+      "description": "Grants permission to list all available AWS FIS actions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_ListActions.html"
+    },
+    {
+      "name": "ListExperimentResolvedTargets",
+      "methodName": "toListExperimentResolvedTargets",
+      "description": "Grants permission to list resolved targets for AWS FIS experiments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_ListExperimentResolvedTargets.html"
+    },
+    {
+      "name": "ListExperimentTargetAccountConfigurations",
+      "methodName": "toListExperimentTargetAccountConfigurations",
+      "description": "Grants permission to list target account configurations for AWS FIS experiments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_ListExperimentTargetAccountConfigurations.html"
+    },
+    {
+      "name": "ListExperimentTemplates",
+      "methodName": "toListExperimentTemplates",
+      "description": "Grants permission to list all available AWS FIS experiment templates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_ListExperimentTemplates.html"
+    },
+    {
+      "name": "ListExperiments",
+      "methodName": "toListExperiments",
+      "description": "Grants permission to list all available AWS FIS experiments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_ListExperiments.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for an AWS FIS resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTargetAccountConfigurations",
+      "methodName": "toListTargetAccountConfigurations",
+      "description": "Grants permission to list target account configurations for AWS FIS experiment templates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_ListTargetAccountConfigurations.html"
+    },
+    {
+      "name": "ListTargetResourceTypes",
+      "methodName": "toListTargetResourceTypes",
+      "description": "Grants permission to list the resource types",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_ListTargetResourceTypes.html"
+    },
+    {
+      "name": "StartExperiment",
+      "methodName": "toStartExperiment",
+      "description": "Grants permission to run an AWS FIS experiment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_StartExperiment.html"
+    },
+    {
+      "name": "StopExperiment",
+      "methodName": "toStopExperiment",
+      "description": "Grants permission to stop an AWS FIS experiment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_StopExperiment.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag AWS FIS resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag AWS FIS resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateExperimentTemplate",
+      "methodName": "toUpdateExperimentTemplate",
+      "description": "Grants permission to update the specified AWS FIS experiment template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_UpdateExperimentTemplate.html"
+    },
+    {
+      "name": "UpdateSafetyLeverState",
+      "methodName": "toUpdateSafetyLeverState",
+      "description": "Grants permission to update the state of the safety lever",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_UpdateSafetyLeverState.html"
+    },
+    {
+      "name": "UpdateTargetAccountConfiguration",
+      "methodName": "toUpdateTargetAccountConfiguration",
+      "description": "Grants permission to update an AWS FIS target account configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/APIReference/API_UpdateTargetAccountConfiguration.html"
+    },
+    {
+      "name": "InjectApiInternalError",
+      "methodName": "toInjectApiInternalError",
+      "description": "Grants permission to inject an API internal error on the provided AWS service from an FIS Experiment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#fis-actions-reference-fis"
+    },
+    {
+      "name": "InjectApiThrottleError",
+      "methodName": "toInjectApiThrottleError",
+      "description": "Grants permission to inject an API throttle error on the provided AWS service from an FIS Experiment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#fis-actions-reference-fis"
+    },
+    {
+      "name": "InjectApiUnavailableError",
+      "methodName": "toInjectApiUnavailableError",
+      "description": "Grants permission to inject an API unavailable error on the provided AWS service from an FIS Experiment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#fis-actions-reference-fis"
+    }
+  ],
+  "resources": [
+    {
+      "name": "action",
+      "methodName": "onAction",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/actions.html",
+      "arn": "arn:${Partition}:fis:${Region}:${Account}:action/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "experiment",
+      "methodName": "onExperiment",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/experiments.html",
+      "arn": "arn:${Partition}:fis:${Region}:${Account}:experiment/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "experiment-template",
+      "methodName": "onExperimentTemplate",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/working-with-templates.html",
+      "arn": "arn:${Partition}:fis:${Region}:${Account}:experiment-template/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "safety-lever",
+      "methodName": "onSafetyLever",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/safety-lever.html",
+      "arn": "arn:${Partition}:fis:${Region}:${Account}:safety-lever/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateExperimentTemplate",
+        "toStartExperiment",
+        "toTagResource",
+        "toUpdateExperimentTemplate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateExperimentTemplate",
+        "toCreateTargetAccountConfiguration",
+        "toDeleteExperimentTemplate",
+        "toDeleteTargetAccountConfiguration",
+        "toGetAction",
+        "toGetExperiment",
+        "toGetExperimentTargetAccountConfiguration",
+        "toGetExperimentTemplate",
+        "toGetTargetAccountConfiguration",
+        "toListExperimentResolvedTargets",
+        "toListExperimentTargetAccountConfigurations",
+        "toListTagsForResource",
+        "toListTargetAccountConfigurations",
+        "toStartExperiment",
+        "toStopExperiment",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateExperimentTemplate",
+        "toUpdateTargetAccountConfiguration",
+        "toInjectApiInternalError",
+        "toInjectApiThrottleError",
+        "toInjectApiUnavailableError"
+      ],
+      "relatedResourceTypes": [
+        "action",
+        "experiment",
+        "experiment-template"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateExperimentTemplate",
+        "toStartExperiment",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateExperimentTemplate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "fis:Operations",
+      "methodName": "ifOperations",
+      "description": "Filters access by the list of operations on the AWS service that is being affected by the AWS FIS action",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toInjectApiInternalError",
+        "toInjectApiThrottleError",
+        "toInjectApiUnavailableError"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Operations",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "fis:Percentage",
+      "methodName": "ifPercentage",
+      "description": "Filters access by the percentage of calls being affected by the AWS FIS action",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toInjectApiInternalError",
+        "toInjectApiThrottleError",
+        "toInjectApiUnavailableError"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Percentage",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "fis:Service",
+      "methodName": "ifService",
+      "description": "Filters access by the AWS service that is being affected by the AWS FIS action",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toInjectApiInternalError",
+        "toInjectApiThrottleError",
+        "toInjectApiUnavailableError"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Service",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "fis:Targets",
+      "methodName": "ifTargets",
+      "description": "Filters access by the list of resource ARNs being targeted by the AWS FIS action",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toInjectApiInternalError",
+        "toInjectApiThrottleError",
+        "toInjectApiUnavailableError"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Targets",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

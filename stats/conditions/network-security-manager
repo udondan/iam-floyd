@@ -1,3 +1,0 @@
-network-security-manager:RequestTag/${TagKey}
-network-security-manager:ResourceTag/${TagKey}
-network-security-manager:TagKeys

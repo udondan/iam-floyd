@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "filename": "kafkaconnect",
+  "className": "Kafkaconnect",
+  "name": "kafkaconnect",
+  "servicePrefix": "kafkaconnect",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kafkaconnect.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateConnector",
+      "CreateCustomPlugin",
+      "CreateWorkerConfiguration",
+      "DeleteConnector",
+      "DeleteCustomPlugin",
+      "DeleteWorkerConfiguration",
+      "TagResource",
+      "UntagResource",
+      "UpdateConnector"
+    ],
+    "Read": [
+      "DescribeConnector",
+      "DescribeConnectorOperation",
+      "DescribeCustomPlugin",
+      "DescribeWorkerConfiguration",
+      "ListConnectorOperations",
+      "ListConnectors",
+      "ListCustomPlugins",
+      "ListTagsForResource",
+      "ListWorkerConfigurations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateConnector",
+      "methodName": "toCreateConnector",
+      "description": "Grants permission to create an MSK Connect connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_CreateConnector.html"
+    },
+    {
+      "name": "CreateCustomPlugin",
+      "methodName": "toCreateCustomPlugin",
+      "description": "Grants permission to create an MSK Connect custom plugin",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_CreateCustomPlugin.html"
+    },
+    {
+      "name": "CreateWorkerConfiguration",
+      "methodName": "toCreateWorkerConfiguration",
+      "description": "Grants permission to create an MSK Connect worker configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_CreateWorkerConfiguration.html"
+    },
+    {
+      "name": "DeleteConnector",
+      "methodName": "toDeleteConnector",
+      "description": "Grants permission to delete an MSK Connect connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_DeleteConnector.html"
+    },
+    {
+      "name": "DeleteCustomPlugin",
+      "methodName": "toDeleteCustomPlugin",
+      "description": "Grants permission to delete an MSK Connect custom plugin",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_DeleteCustomPlugin.html"
+    },
+    {
+      "name": "DeleteWorkerConfiguration",
+      "methodName": "toDeleteWorkerConfiguration",
+      "description": "Grants permission to delete an MSK Connect worker configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_DeleteWorkerConfiguration.html"
+    },
+    {
+      "name": "DescribeConnector",
+      "methodName": "toDescribeConnector",
+      "description": "Grants permission to describe an MSK Connect connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_DescribeConnector.html"
+    },
+    {
+      "name": "DescribeConnectorOperation",
+      "methodName": "toDescribeConnectorOperation",
+      "description": "Grants permission to describe a MSK Connect connector operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_DescribeConnectorOperation.html"
+    },
+    {
+      "name": "DescribeCustomPlugin",
+      "methodName": "toDescribeCustomPlugin",
+      "description": "Grants permission to describe an MSK Connect custom plugin",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_DescribeCustomPlugin.html"
+    },
+    {
+      "name": "DescribeWorkerConfiguration",
+      "methodName": "toDescribeWorkerConfiguration",
+      "description": "Grants permission to describe an MSK Connect worker configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_DescribeWorkerConfiguration.html"
+    },
+    {
+      "name": "ListConnectorOperations",
+      "methodName": "toListConnectorOperations",
+      "description": "Grants permission to list all operations of a given MSK Connect connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_ListConnectorOperations.html"
+    },
+    {
+      "name": "ListConnectors",
+      "methodName": "toListConnectors",
+      "description": "Grants permission to list all MSK Connect connectors in this account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_ListConnectors.html"
+    },
+    {
+      "name": "ListCustomPlugins",
+      "methodName": "toListCustomPlugins",
+      "description": "Grants permission to list all MSK Connect custom plugins in this account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_ListCustomPlugins.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags of an MSK Connect resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWorkerConfigurations",
+      "methodName": "toListWorkerConfigurations",
+      "description": "Grants permission to list all MSK Connect worker configurations in this account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_ListWorkerConfigurations.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an MSK Connect resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from an MSK Connect resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateConnector",
+      "methodName": "toUpdateConnector",
+      "description": "Grants permission to update an MSK Connect connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_UpdateConnector.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "connector",
+      "methodName": "onConnector",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_ConnectorSummary.html",
+      "arn": "arn:${Partition}:kafkaconnect:${Region}:${Account}:connector/${ConnectorName}/${UUID}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectorName",
+          "name": "connectorName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "UUID",
+          "name": "uUID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "connector operation",
+      "methodName": "onConnectorOperation",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_ConnectorOperation.html",
+      "arn": "arn:${Partition}:kafkaconnect:${Region}:${Account}:connector-operation/${ConnectorName}/${ConnectorUUID}/${UUID}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectorName",
+          "name": "connectorName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ConnectorUUID",
+          "name": "connectorUUID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "UUID",
+          "name": "uUID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "custom plugin",
+      "methodName": "onCustomPlugin",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_CustomPlugin.html",
+      "arn": "arn:${Partition}:kafkaconnect:${Region}:${Account}:custom-plugin/${CustomPluginName}/${UUID}",
+      "placeholders": [
+        {
+          "placeholder": "CustomPluginName",
+          "name": "customPluginName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "UUID",
+          "name": "uUID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "worker configuration",
+      "methodName": "onWorkerConfiguration",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_WorkerConfiguration.html",
+      "arn": "arn:${Partition}:kafkaconnect:${Region}:${Account}:worker-configuration/${WorkerConfigurationName}/${UUID}",
+      "placeholders": [
+        {
+          "placeholder": "WorkerConfigurationName",
+          "name": "workerConfigurationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "UUID",
+          "name": "uUID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toDeleteConnector",
+        "toDeleteCustomPlugin",
+        "toDeleteWorkerConfiguration",
+        "toDescribeConnector",
+        "toDescribeConnectorOperation",
+        "toDescribeCustomPlugin",
+        "toDescribeWorkerConfiguration",
+        "toListConnectorOperations",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateConnector"
+      ],
+      "relatedResourceTypes": [
+        "connector",
+        "connector operation",
+        "custom plugin",
+        "worker configuration"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

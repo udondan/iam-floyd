@@ -1,3 +1,0 @@
-access-analyzer:RequestTag/${TagKey}
-access-analyzer:ResourceTag/${TagKey}
-access-analyzer:TagKeys

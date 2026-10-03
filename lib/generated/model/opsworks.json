@@ -1,0 +1,650 @@
+{
+  "schemaVersion": 1,
+  "filename": "opsworks",
+  "className": "Opsworks",
+  "name": "opsworks",
+  "servicePrefix": "opsworks",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opsworks.html",
+  "accessLevelList": {
+    "Write": [
+      "AssignInstance",
+      "AssignVolume",
+      "AssociateElasticIp",
+      "AttachElasticLoadBalancer",
+      "CloneStack",
+      "CreateApp",
+      "CreateDeployment",
+      "CreateInstance",
+      "CreateLayer",
+      "CreateStack",
+      "CreateUserProfile",
+      "DeleteApp",
+      "DeleteInstance",
+      "DeleteLayer",
+      "DeleteStack",
+      "DeleteUserProfile",
+      "DeregisterEcsCluster",
+      "DeregisterElasticIp",
+      "DeregisterInstance",
+      "DeregisterRdsDbInstance",
+      "DeregisterVolume",
+      "DetachElasticLoadBalancer",
+      "DisassociateElasticIp",
+      "GrantAccess",
+      "RebootInstance",
+      "RegisterEcsCluster",
+      "RegisterElasticIp",
+      "RegisterInstance",
+      "RegisterRdsDbInstance",
+      "RegisterVolume",
+      "SetLoadBasedAutoScaling",
+      "SetPermission",
+      "SetTimeBasedAutoScaling",
+      "StartInstance",
+      "StartStack",
+      "StopInstance",
+      "StopStack",
+      "TagResource",
+      "UnassignInstance",
+      "UnassignVolume",
+      "UntagResource",
+      "UpdateApp",
+      "UpdateElasticIp",
+      "UpdateInstance",
+      "UpdateLayer",
+      "UpdateMyUserProfile",
+      "UpdateRdsDbInstance",
+      "UpdateStack",
+      "UpdateUserProfile",
+      "UpdateVolume"
+    ],
+    "List": [
+      "DescribeAgentVersions",
+      "DescribeApps",
+      "DescribeCommands",
+      "DescribeDeployments",
+      "DescribeEcsClusters",
+      "DescribeElasticIps",
+      "DescribeElasticLoadBalancers",
+      "DescribeInstances",
+      "DescribeLayers",
+      "DescribeLoadBasedAutoScaling",
+      "DescribeMyUserProfile",
+      "DescribeOperatingSystems",
+      "DescribePermissions",
+      "DescribeRaidArrays",
+      "DescribeRdsDbInstances",
+      "DescribeServiceErrors",
+      "DescribeStackProvisioningParameters",
+      "DescribeStackSummary",
+      "DescribeStacks",
+      "DescribeTimeBasedAutoScaling",
+      "DescribeUserProfiles",
+      "DescribeVolumes",
+      "ListTags"
+    ],
+    "Read": [
+      "GetHostnameSuggestion"
+    ],
+    "Permissions management": [
+      "SetPermission",
+      "UpdateUserProfile"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssignInstance",
+      "methodName": "toAssignInstance",
+      "description": "Grants permission to assign a registered instance to a layer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_AssignInstance.html"
+    },
+    {
+      "name": "AssignVolume",
+      "methodName": "toAssignVolume",
+      "description": "Grants permission to assign one of the stack's registered Amazon EBS volumes to a specified instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_AssignVolume.html"
+    },
+    {
+      "name": "AssociateElasticIp",
+      "methodName": "toAssociateElasticIp",
+      "description": "Grants permission to associate one of the stack's registered Elastic IP addresses with a specified instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_AssociateElasticIp.html"
+    },
+    {
+      "name": "AttachElasticLoadBalancer",
+      "methodName": "toAttachElasticLoadBalancer",
+      "description": "Grants permission to attach an Elastic Load Balancing load balancer to a specified layer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_AttachElasticLoadBalancer.html"
+    },
+    {
+      "name": "CloneStack",
+      "methodName": "toCloneStack",
+      "description": "Grants permission to create a clone of a specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_CloneStack.html"
+    },
+    {
+      "name": "CreateApp",
+      "methodName": "toCreateApp",
+      "description": "Grants permission to create an app for a specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_CreateApp.html"
+    },
+    {
+      "name": "CreateDeployment",
+      "methodName": "toCreateDeployment",
+      "description": "Grants permission to run deployment or stack commands",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_CreateDeployment.html"
+    },
+    {
+      "name": "CreateInstance",
+      "methodName": "toCreateInstance",
+      "description": "Grants permission to create an instance in a specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_CreateInstance.html"
+    },
+    {
+      "name": "CreateLayer",
+      "methodName": "toCreateLayer",
+      "description": "Grants permission to create a layer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_CreateLayer.html"
+    },
+    {
+      "name": "CreateStack",
+      "methodName": "toCreateStack",
+      "description": "Grants permission to create a new stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_CreateStack.html"
+    },
+    {
+      "name": "CreateUserProfile",
+      "methodName": "toCreateUserProfile",
+      "description": "Grants permission to create a new user profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_CreateUserProfile.html"
+    },
+    {
+      "name": "DeleteApp",
+      "methodName": "toDeleteApp",
+      "description": "Grants permission to delete a specified app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeleteApp.html"
+    },
+    {
+      "name": "DeleteInstance",
+      "methodName": "toDeleteInstance",
+      "description": "Grants permission to delete a specified instance, which terminates the associated Amazon EC2 instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeleteInstance.html"
+    },
+    {
+      "name": "DeleteLayer",
+      "methodName": "toDeleteLayer",
+      "description": "Grants permission to delete a specified layer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeleteLayer.html"
+    },
+    {
+      "name": "DeleteStack",
+      "methodName": "toDeleteStack",
+      "description": "Grants permission to delete a specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeleteStack.html"
+    },
+    {
+      "name": "DeleteUserProfile",
+      "methodName": "toDeleteUserProfile",
+      "description": "Grants permission to delete a user profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeleteUserProfile.html"
+    },
+    {
+      "name": "DeregisterEcsCluster",
+      "methodName": "toDeregisterEcsCluster",
+      "description": "Grants permission to delete a user profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeregisterEcsCluster.html"
+    },
+    {
+      "name": "DeregisterElasticIp",
+      "methodName": "toDeregisterElasticIp",
+      "description": "Grants permission to deregister a specified Elastic IP address",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeregisterElasticIp.html"
+    },
+    {
+      "name": "DeregisterInstance",
+      "methodName": "toDeregisterInstance",
+      "description": "Grants permission to deregister a registered Amazon EC2 or on-premises instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeregisterInstance.html"
+    },
+    {
+      "name": "DeregisterRdsDbInstance",
+      "methodName": "toDeregisterRdsDbInstance",
+      "description": "Grants permission to deregister an Amazon RDS instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeregisterRdsDbInstance.html"
+    },
+    {
+      "name": "DeregisterVolume",
+      "methodName": "toDeregisterVolume",
+      "description": "Grants permission to deregister an Amazon EBS volume",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeregisterVolume.html"
+    },
+    {
+      "name": "DescribeAgentVersions",
+      "methodName": "toDescribeAgentVersions",
+      "description": "Grants permission to describe the available AWS OpsWorks agent versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeAgentVersions.html"
+    },
+    {
+      "name": "DescribeApps",
+      "methodName": "toDescribeApps",
+      "description": "Grants permission to request a description of a specified set of apps",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeApps.html"
+    },
+    {
+      "name": "DescribeCommands",
+      "methodName": "toDescribeCommands",
+      "description": "Grants permission to describe the results of specified commands",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeCommands.html"
+    },
+    {
+      "name": "DescribeDeployments",
+      "methodName": "toDescribeDeployments",
+      "description": "Grants permission to request a description of a specified set of deployments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeDeployments.html"
+    },
+    {
+      "name": "DescribeEcsClusters",
+      "methodName": "toDescribeEcsClusters",
+      "description": "Grants permission to describe Amazon ECS clusters that are registered with a stack",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeEcsClusters.html"
+    },
+    {
+      "name": "DescribeElasticIps",
+      "methodName": "toDescribeElasticIps",
+      "description": "Grants permission to describe Elastic IP addresses",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeElasticIps.html"
+    },
+    {
+      "name": "DescribeElasticLoadBalancers",
+      "methodName": "toDescribeElasticLoadBalancers",
+      "description": "Grants permission to describe a stack's Elastic Load Balancing instances",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeElasticLoadBalancers.html"
+    },
+    {
+      "name": "DescribeInstances",
+      "methodName": "toDescribeInstances",
+      "description": "Grants permission to request a description of a set of instances",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeInstances.html"
+    },
+    {
+      "name": "DescribeLayers",
+      "methodName": "toDescribeLayers",
+      "description": "Grants permission to request a description of one or more layers in a specified stack",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeLayers.html"
+    },
+    {
+      "name": "DescribeLoadBasedAutoScaling",
+      "methodName": "toDescribeLoadBasedAutoScaling",
+      "description": "Grants permission to describe load-based auto scaling configurations for specified layers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeLoadBasedAutoScaling.html"
+    },
+    {
+      "name": "DescribeMyUserProfile",
+      "methodName": "toDescribeMyUserProfile",
+      "description": "Grants permission to describe a user's SSH information",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeMyUserProfile.html"
+    },
+    {
+      "name": "DescribeOperatingSystems",
+      "methodName": "toDescribeOperatingSystems",
+      "description": "Grants permission to describe the operating systems that are supported by AWS OpsWorks Stacks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeOperatingSystems.html"
+    },
+    {
+      "name": "DescribePermissions",
+      "methodName": "toDescribePermissions",
+      "description": "Grants permission to describe the permissions for a specified stack",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribePermissions.html"
+    },
+    {
+      "name": "DescribeRaidArrays",
+      "methodName": "toDescribeRaidArrays",
+      "description": "Grants permission to describe an instance's RAID arrays",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeRaidArrays.html"
+    },
+    {
+      "name": "DescribeRdsDbInstances",
+      "methodName": "toDescribeRdsDbInstances",
+      "description": "Grants permission to describe Amazon RDS instances",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeRdsDbInstances.html"
+    },
+    {
+      "name": "DescribeServiceErrors",
+      "methodName": "toDescribeServiceErrors",
+      "description": "Grants permission to describe AWS OpsWorks service errors",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeServiceErrors.html"
+    },
+    {
+      "name": "DescribeStackProvisioningParameters",
+      "methodName": "toDescribeStackProvisioningParameters",
+      "description": "Grants permission to request a description of a stack's provisioning parameters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeStackProvisioningParameters.html"
+    },
+    {
+      "name": "DescribeStackSummary",
+      "methodName": "toDescribeStackSummary",
+      "description": "Grants permission to describe the number of layers and apps in a specified stack, and the number of instances in each state, such as running_setup or online",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeStackSummary.html"
+    },
+    {
+      "name": "DescribeStacks",
+      "methodName": "toDescribeStacks",
+      "description": "Grants permission to request a description of one or more stacks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeStacks.html"
+    },
+    {
+      "name": "DescribeTimeBasedAutoScaling",
+      "methodName": "toDescribeTimeBasedAutoScaling",
+      "description": "Grants permission to describe time-based auto scaling configurations for specified instances",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeTimeBasedAutoScaling.html"
+    },
+    {
+      "name": "DescribeUserProfiles",
+      "methodName": "toDescribeUserProfiles",
+      "description": "Grants permission to describe specified users",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeUserProfiles.html"
+    },
+    {
+      "name": "DescribeVolumes",
+      "methodName": "toDescribeVolumes",
+      "description": "Grants permission to describe an instance's Amazon EBS volumes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeVolumes.html"
+    },
+    {
+      "name": "DetachElasticLoadBalancer",
+      "methodName": "toDetachElasticLoadBalancer",
+      "description": "Grants permission to detache a specified Elastic Load Balancing instance from its layer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DetachElasticLoadBalancer.html"
+    },
+    {
+      "name": "DisassociateElasticIp",
+      "methodName": "toDisassociateElasticIp",
+      "description": "Grants permission to disassociate an Elastic IP address from its instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DisassociateElasticIp.html"
+    },
+    {
+      "name": "GetHostnameSuggestion",
+      "methodName": "toGetHostnameSuggestion",
+      "description": "Grants permission to get a generated host name for the specified layer, based on the current host name theme",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_GetHostnameSuggestion.html"
+    },
+    {
+      "name": "GrantAccess",
+      "methodName": "toGrantAccess",
+      "description": "Grants permission to grant RDP access to a Windows instance for a specified time period",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_RebootInstance.html"
+    },
+    {
+      "name": "ListTags",
+      "methodName": "toListTags",
+      "description": "Grants permission to return a list of tags that are applied to the specified stack or layer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_ListTags.html"
+    },
+    {
+      "name": "RebootInstance",
+      "methodName": "toRebootInstance",
+      "description": "Grants permission to reboot a specified instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_RebootInstance.html"
+    },
+    {
+      "name": "RegisterEcsCluster",
+      "methodName": "toRegisterEcsCluster",
+      "description": "Grants permission to register a specified Amazon ECS cluster with a stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_RegisterEcsCluster.html"
+    },
+    {
+      "name": "RegisterElasticIp",
+      "methodName": "toRegisterElasticIp",
+      "description": "Grants permission to register an Elastic IP address with a specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_RegisterElasticIp.html"
+    },
+    {
+      "name": "RegisterInstance",
+      "methodName": "toRegisterInstance",
+      "description": "Grants permission to register instances with a specified stack that were created outside of AWS OpsWorks",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_RegisterInstance.html"
+    },
+    {
+      "name": "RegisterRdsDbInstance",
+      "methodName": "toRegisterRdsDbInstance",
+      "description": "Grants permission to register an Amazon RDS instance with a stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_RegisterRdsDbInstance.html"
+    },
+    {
+      "name": "RegisterVolume",
+      "methodName": "toRegisterVolume",
+      "description": "Grants permission to register an Amazon EBS volume with a specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_RegisterVolume.html"
+    },
+    {
+      "name": "SetLoadBasedAutoScaling",
+      "methodName": "toSetLoadBasedAutoScaling",
+      "description": "Grants permission to specify the load-based auto scaling configuration for a specified layer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_SetLoadBasedAutoScaling.html"
+    },
+    {
+      "name": "SetPermission",
+      "methodName": "toSetPermission",
+      "description": "Grants permission to specify a user's permissions",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_SetPermission.html"
+    },
+    {
+      "name": "SetTimeBasedAutoScaling",
+      "methodName": "toSetTimeBasedAutoScaling",
+      "description": "Grants permission to specify the time-based auto scaling configuration for a specified instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_SetTimeBasedAutoScaling.html"
+    },
+    {
+      "name": "StartInstance",
+      "methodName": "toStartInstance",
+      "description": "Grants permission to start a specified instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_StartInstance.html"
+    },
+    {
+      "name": "StartStack",
+      "methodName": "toStartStack",
+      "description": "Grants permission to start a stack's instances",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_StartStack.html"
+    },
+    {
+      "name": "StopInstance",
+      "methodName": "toStopInstance",
+      "description": "Grants permission to stop a specified instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_StopInstance.html"
+    },
+    {
+      "name": "StopStack",
+      "methodName": "toStopStack",
+      "description": "Grants permission to stop a specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_StopStack.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to apply tags to a specified stack or layer",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UnassignInstance",
+      "methodName": "toUnassignInstance",
+      "description": "Grants permission to unassign a registered instance from all of it's layers",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_UnassignInstance.html"
+    },
+    {
+      "name": "UnassignVolume",
+      "methodName": "toUnassignVolume",
+      "description": "Grants permission to unassign an assigned Amazon EBS volume",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_UnassignVolume.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a specified stack or layer",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateApp",
+      "methodName": "toUpdateApp",
+      "description": "Grants permission to update a specified app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_UpdateApp.html"
+    },
+    {
+      "name": "UpdateElasticIp",
+      "methodName": "toUpdateElasticIp",
+      "description": "Grants permission to update a registered Elastic IP address's name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_UpdateElasticIp.html"
+    },
+    {
+      "name": "UpdateInstance",
+      "methodName": "toUpdateInstance",
+      "description": "Grants permission to update a specified instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_UpdateInstance.html"
+    },
+    {
+      "name": "UpdateLayer",
+      "methodName": "toUpdateLayer",
+      "description": "Grants permission to update a specified layer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_UpdateLayer.html"
+    },
+    {
+      "name": "UpdateMyUserProfile",
+      "methodName": "toUpdateMyUserProfile",
+      "description": "Grants permission to update a user's SSH public key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_UpdateMyUserProfile.html"
+    },
+    {
+      "name": "UpdateRdsDbInstance",
+      "methodName": "toUpdateRdsDbInstance",
+      "description": "Grants permission to update an Amazon RDS instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_UpdateRdsDbInstance.html"
+    },
+    {
+      "name": "UpdateStack",
+      "methodName": "toUpdateStack",
+      "description": "Grants permission to update a specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_UpdateStack.html"
+    },
+    {
+      "name": "UpdateUserProfile",
+      "methodName": "toUpdateUserProfile",
+      "description": "Grants permission to update a specified user profile",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_UpdateUserProfile.html"
+    },
+    {
+      "name": "UpdateVolume",
+      "methodName": "toUpdateVolume",
+      "description": "Grants permission to update an Amazon EBS volume's name or mount point",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_UpdateVolume.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "stack",
+      "methodName": "onStack",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks.html",
+      "arn": "arn:${Partition}:opsworks:${Region}:${Account}:stack/${StackId}/",
+      "placeholders": [
+        {
+          "placeholder": "StackId",
+          "name": "stackId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

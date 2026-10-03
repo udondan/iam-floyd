@@ -1,4 +1,0 @@
-iotjobsdata:DescribeJobExecution;Read
-iotjobsdata:GetPendingJobExecutions;Read
-iotjobsdata:StartNextPendingJobExecution;Write
-iotjobsdata:UpdateJobExecution;Write

@@ -1,4 +1,0 @@
-route53-recovery-control-config:cluster
-route53-recovery-control-config:controlpanel
-route53-recovery-control-config:routingcontrol
-route53-recovery-control-config:safetyrule

@@ -1,6 +1,0 @@
-rds-data:BatchExecuteStatement;Write
-rds-data:BeginTransaction;Write
-rds-data:CommitTransaction;Write
-rds-data:ExecuteSql;Write
-rds-data:ExecuteStatement;Write
-rds-data:RollbackTransaction;Write

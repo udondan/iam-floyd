@@ -1,0 +1,1935 @@
+{
+  "schemaVersion": 1,
+  "filename": "deadline",
+  "className": "Deadline",
+  "name": "deadline",
+  "servicePrefix": "deadline",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_deadline.html",
+  "accessLevelList": {
+    "Permissions management": [
+      "AssociateMemberToFarm",
+      "AssociateMemberToFleet",
+      "AssociateMemberToJob",
+      "AssociateMemberToQueue",
+      "DisassociateMemberFromFarm",
+      "DisassociateMemberFromFleet",
+      "DisassociateMemberFromJob",
+      "DisassociateMemberFromQueue"
+    ],
+    "Write": [
+      "AssociateMemberToFarm",
+      "AssociateMemberToFleet",
+      "AssociateMemberToJob",
+      "AssociateMemberToQueue",
+      "AssumeFleetRoleForRead",
+      "AssumeFleetRoleForWorker",
+      "AssumeQueueRoleForRead",
+      "AssumeQueueRoleForUser",
+      "AssumeQueueRoleForWorker",
+      "CopyJobTemplate",
+      "CreateBudget",
+      "CreateFarm",
+      "CreateFleet",
+      "CreateJob",
+      "CreateLicenseEndpoint",
+      "CreateLimit",
+      "CreateMonitor",
+      "CreateQueue",
+      "CreateQueueEnvironment",
+      "CreateQueueFleetAssociation",
+      "CreateQueueLimitAssociation",
+      "CreateStorageProfile",
+      "CreateWorker",
+      "DeleteBudget",
+      "DeleteFarm",
+      "DeleteFleet",
+      "DeleteLicenseEndpoint",
+      "DeleteLimit",
+      "DeleteMeteredProduct",
+      "DeleteMonitor",
+      "DeleteQueue",
+      "DeleteQueueEnvironment",
+      "DeleteQueueFleetAssociation",
+      "DeleteQueueLimitAssociation",
+      "DeleteStorageProfile",
+      "DeleteVolume",
+      "DeleteWorker",
+      "DisassociateMemberFromFarm",
+      "DisassociateMemberFromFleet",
+      "DisassociateMemberFromJob",
+      "DisassociateMemberFromQueue",
+      "PutMeteredProduct",
+      "TagResource",
+      "UntagResource",
+      "UpdateBudget",
+      "UpdateFarm",
+      "UpdateFleet",
+      "UpdateJob",
+      "UpdateLimit",
+      "UpdateMonitor",
+      "UpdateMonitorSettings",
+      "UpdateQueue",
+      "UpdateQueueEnvironment",
+      "UpdateQueueFleetAssociation",
+      "UpdateQueueLimitAssociation",
+      "UpdateSession",
+      "UpdateStep",
+      "UpdateStorageProfile",
+      "UpdateTask",
+      "UpdateWorker",
+      "UpdateWorkerSchedule"
+    ],
+    "Read": [
+      "BatchGetJobEntity",
+      "GetBudget",
+      "GetFarm",
+      "GetFleet",
+      "GetJob",
+      "GetLicenseEndpoint",
+      "GetLimit",
+      "GetMonitor",
+      "GetMonitorSettings",
+      "GetQueue",
+      "GetQueueEnvironment",
+      "GetQueueFleetAssociation",
+      "GetQueueLimitAssociation",
+      "GetSession",
+      "GetSessionAction",
+      "GetSessionsStatisticsAggregation",
+      "GetStep",
+      "GetStorageProfile",
+      "GetStorageProfileForQueue",
+      "GetTask",
+      "GetVolume",
+      "GetWorker",
+      "ListTagsForResource",
+      "SearchJobs",
+      "SearchSteps",
+      "SearchTasks",
+      "SearchWorkers",
+      "StartSessionsStatisticsAggregation",
+      "GetApplicationVersion",
+      "GetJobTemplate"
+    ],
+    "List": [
+      "ListAvailableMeteredProducts",
+      "ListBudgets",
+      "ListFarmMembers",
+      "ListFarms",
+      "ListFleetMembers",
+      "ListFleets",
+      "ListJobMembers",
+      "ListJobParameterDefinitions",
+      "ListJobs",
+      "ListLicenseEndpoints",
+      "ListLimits",
+      "ListMeteredProducts",
+      "ListMonitors",
+      "ListQueueEnvironments",
+      "ListQueueFleetAssociations",
+      "ListQueueLimitAssociations",
+      "ListQueueMembers",
+      "ListQueues",
+      "ListSessionActions",
+      "ListSessions",
+      "ListSessionsForWorker",
+      "ListStepConsumers",
+      "ListStepDependencies",
+      "ListSteps",
+      "ListStorageProfiles",
+      "ListStorageProfilesForQueue",
+      "ListTasks",
+      "ListVolumes",
+      "ListWorkers"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateMemberToFarm",
+      "methodName": "toAssociateMemberToFarm",
+      "description": "Grants permission to associate a member to a farm",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_AssociateMemberToFarm.html"
+    },
+    {
+      "name": "AssociateMemberToFleet",
+      "methodName": "toAssociateMemberToFleet",
+      "description": "Grants permission to associate a member to a fleet",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_AssociateMemberToFleet.html"
+    },
+    {
+      "name": "AssociateMemberToJob",
+      "methodName": "toAssociateMemberToJob",
+      "description": "Grants permission to associate a member to a job",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_AssociateMemberToJob.html"
+    },
+    {
+      "name": "AssociateMemberToQueue",
+      "methodName": "toAssociateMemberToQueue",
+      "description": "Grants permission to associate a member to a queue",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_AssociateMemberToQueue.html"
+    },
+    {
+      "name": "AssumeFleetRoleForRead",
+      "methodName": "toAssumeFleetRoleForRead",
+      "description": "Grants permission to assume a fleet role for read-only access",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_AssumeFleetRoleForRead.html"
+    },
+    {
+      "name": "AssumeFleetRoleForWorker",
+      "methodName": "toAssumeFleetRoleForWorker",
+      "description": "Grants permission to assume a fleet role for a worker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_AssumeFleetRoleForWorker.html"
+    },
+    {
+      "name": "AssumeQueueRoleForRead",
+      "methodName": "toAssumeQueueRoleForRead",
+      "description": "Grants permission to assume a queue role for read-only access",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_AssumeQueueRoleForRead.html"
+    },
+    {
+      "name": "AssumeQueueRoleForUser",
+      "methodName": "toAssumeQueueRoleForUser",
+      "description": "Grants permission to assume a queue role for a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_AssumeQueueRoleForUser.html"
+    },
+    {
+      "name": "AssumeQueueRoleForWorker",
+      "methodName": "toAssumeQueueRoleForWorker",
+      "description": "Grants permission to assume a queue role for a worker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_AssumeQueueRoleForWorker.html"
+    },
+    {
+      "name": "BatchGetJobEntity",
+      "methodName": "toBatchGetJobEntity",
+      "description": "Grants permission to get a job entity for a worker",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_BatchGetJobEntity.html"
+    },
+    {
+      "name": "CopyJobTemplate",
+      "methodName": "toCopyJobTemplate",
+      "description": "Grants permission to copy a job template to an Amazon S3 bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CopyJobTemplate.html"
+    },
+    {
+      "name": "CreateBudget",
+      "methodName": "toCreateBudget",
+      "description": "Grants permission to create a budget",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateBudget.html"
+    },
+    {
+      "name": "CreateFarm",
+      "methodName": "toCreateFarm",
+      "description": "Grants permission to create a farm",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateFarm.html"
+    },
+    {
+      "name": "CreateFleet",
+      "methodName": "toCreateFleet",
+      "description": "Grants permission to create a fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateFleet.html"
+    },
+    {
+      "name": "CreateJob",
+      "methodName": "toCreateJob",
+      "description": "Grants permission to create a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateJob.html"
+    },
+    {
+      "name": "CreateLicenseEndpoint",
+      "methodName": "toCreateLicenseEndpoint",
+      "description": "Grants permission to create a license endpoint for licensed software or products",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateLicenseEndpoint.html"
+    },
+    {
+      "name": "CreateLimit",
+      "methodName": "toCreateLimit",
+      "description": "Grants permission to create a limit for a farm",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateLimit.html"
+    },
+    {
+      "name": "CreateMonitor",
+      "methodName": "toCreateMonitor",
+      "description": "Grants permission to create a monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateMonitor.html"
+    },
+    {
+      "name": "CreateQueue",
+      "methodName": "toCreateQueue",
+      "description": "Grants permission to create a queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateQueue.html"
+    },
+    {
+      "name": "CreateQueueEnvironment",
+      "methodName": "toCreateQueueEnvironment",
+      "description": "Grants permission to create a queue environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateQueueEnvironment.html"
+    },
+    {
+      "name": "CreateQueueFleetAssociation",
+      "methodName": "toCreateQueueFleetAssociation",
+      "description": "Grants permission to create a queue-fleet association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateQueueFleetAssociation.html"
+    },
+    {
+      "name": "CreateQueueLimitAssociation",
+      "methodName": "toCreateQueueLimitAssociation",
+      "description": "Grants permission to create a queue-limit association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateQueueLimitAssociation.html"
+    },
+    {
+      "name": "CreateStorageProfile",
+      "methodName": "toCreateStorageProfile",
+      "description": "Grants permission to create a storage profile for a farm",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateStorageProfile.html"
+    },
+    {
+      "name": "CreateWorker",
+      "methodName": "toCreateWorker",
+      "description": "Grants permission to create a worker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateWorker.html"
+    },
+    {
+      "name": "DeleteBudget",
+      "methodName": "toDeleteBudget",
+      "description": "Grants permission to delete a budget",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteBudget.html"
+    },
+    {
+      "name": "DeleteFarm",
+      "methodName": "toDeleteFarm",
+      "description": "Grants permission to delete a farm",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteFarm.html"
+    },
+    {
+      "name": "DeleteFleet",
+      "methodName": "toDeleteFleet",
+      "description": "Grants permission to delete a fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteFleet.html"
+    },
+    {
+      "name": "DeleteLicenseEndpoint",
+      "methodName": "toDeleteLicenseEndpoint",
+      "description": "Grants permission to delete a license endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteLicenseEndpoint.html"
+    },
+    {
+      "name": "DeleteLimit",
+      "methodName": "toDeleteLimit",
+      "description": "Grants permission to delete a limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteLimit.html"
+    },
+    {
+      "name": "DeleteMeteredProduct",
+      "methodName": "toDeleteMeteredProduct",
+      "description": "Grants permission to delete a metered product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteMeteredProduct.html"
+    },
+    {
+      "name": "DeleteMonitor",
+      "methodName": "toDeleteMonitor",
+      "description": "Grants permission to delete a monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteMonitor.html"
+    },
+    {
+      "name": "DeleteQueue",
+      "methodName": "toDeleteQueue",
+      "description": "Grants permission to delete a queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteQueue.html"
+    },
+    {
+      "name": "DeleteQueueEnvironment",
+      "methodName": "toDeleteQueueEnvironment",
+      "description": "Grants permission to delete a queue environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteQueueEnvironment.html"
+    },
+    {
+      "name": "DeleteQueueFleetAssociation",
+      "methodName": "toDeleteQueueFleetAssociation",
+      "description": "Grants permission to delete a queue-fleet association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteQueueFleetAssociation.html"
+    },
+    {
+      "name": "DeleteQueueLimitAssociation",
+      "methodName": "toDeleteQueueLimitAssociation",
+      "description": "Grants permission to delete a queue-limit association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteQueueLimitAssociation.html"
+    },
+    {
+      "name": "DeleteStorageProfile",
+      "methodName": "toDeleteStorageProfile",
+      "description": "Grants permission to delete a storage profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteStorageProfile.html"
+    },
+    {
+      "name": "DeleteVolume",
+      "methodName": "toDeleteVolume",
+      "description": "Grants permission to delete a volume",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteVolume.html"
+    },
+    {
+      "name": "DeleteWorker",
+      "methodName": "toDeleteWorker",
+      "description": "Grants permission to delete a worker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteWorker.html"
+    },
+    {
+      "name": "DisassociateMemberFromFarm",
+      "methodName": "toDisassociateMemberFromFarm",
+      "description": "Grants permission to disassociate a member from a farm",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DisassociateMemberFromFarm.html"
+    },
+    {
+      "name": "DisassociateMemberFromFleet",
+      "methodName": "toDisassociateMemberFromFleet",
+      "description": "Grants permission to disassociate a member from a fleet",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DisassociateMemberFromFleet.html"
+    },
+    {
+      "name": "DisassociateMemberFromJob",
+      "methodName": "toDisassociateMemberFromJob",
+      "description": "Grants permission to disassociate a member from a job",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DisassociateMemberFromJob.html"
+    },
+    {
+      "name": "DisassociateMemberFromQueue",
+      "methodName": "toDisassociateMemberFromQueue",
+      "description": "Grants permission to disassociate a member from a queue",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DisassociateMemberFromQueue.html"
+    },
+    {
+      "name": "GetBudget",
+      "methodName": "toGetBudget",
+      "description": "Grants permission to get a budget",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetBudget.html"
+    },
+    {
+      "name": "GetFarm",
+      "methodName": "toGetFarm",
+      "description": "Grants permission to get a farm",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetFarm.html"
+    },
+    {
+      "name": "GetFleet",
+      "methodName": "toGetFleet",
+      "description": "Grants permission to get a fleet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetFleet.html"
+    },
+    {
+      "name": "GetJob",
+      "methodName": "toGetJob",
+      "description": "Grants permission to get a job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetJob.html"
+    },
+    {
+      "name": "GetLicenseEndpoint",
+      "methodName": "toGetLicenseEndpoint",
+      "description": "Grants permission to get a license endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetLicenseEndpoint.html"
+    },
+    {
+      "name": "GetLimit",
+      "methodName": "toGetLimit",
+      "description": "Grants permission to get a limit",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetLimit.html"
+    },
+    {
+      "name": "GetMonitor",
+      "methodName": "toGetMonitor",
+      "description": "Grants permission to get a monitor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetMonitor.html"
+    },
+    {
+      "name": "GetMonitorSettings",
+      "methodName": "toGetMonitorSettings",
+      "description": "Grants permission to get settings for a monitor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetMonitorSettings.html"
+    },
+    {
+      "name": "GetQueue",
+      "methodName": "toGetQueue",
+      "description": "Grants permission to get a queue",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetQueue.html"
+    },
+    {
+      "name": "GetQueueEnvironment",
+      "methodName": "toGetQueueEnvironment",
+      "description": "Grants permission to get a queue environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetQueueEnvironment.html"
+    },
+    {
+      "name": "GetQueueFleetAssociation",
+      "methodName": "toGetQueueFleetAssociation",
+      "description": "Grants permission to get a queue-fleet association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetQueueFleetAssociation.html"
+    },
+    {
+      "name": "GetQueueLimitAssociation",
+      "methodName": "toGetQueueLimitAssociation",
+      "description": "Grants permission to get a queue-limit association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetQueueLimitAssociation.html"
+    },
+    {
+      "name": "GetSession",
+      "methodName": "toGetSession",
+      "description": "Grants permission to get a session for a job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetSession.html"
+    },
+    {
+      "name": "GetSessionAction",
+      "methodName": "toGetSessionAction",
+      "description": "Grants permission to get a session action for a job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetSessionAction.html"
+    },
+    {
+      "name": "GetSessionsStatisticsAggregation",
+      "methodName": "toGetSessionsStatisticsAggregation",
+      "description": "Grants permission to get all collected statistics for sessions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetSessionsStatisticsAggregation.html"
+    },
+    {
+      "name": "GetStep",
+      "methodName": "toGetStep",
+      "description": "Grants permission to get a step in a job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetStep.html"
+    },
+    {
+      "name": "GetStorageProfile",
+      "methodName": "toGetStorageProfile",
+      "description": "Grants permission to get a storage profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetStorageProfile.html"
+    },
+    {
+      "name": "GetStorageProfileForQueue",
+      "methodName": "toGetStorageProfileForQueue",
+      "description": "Grants permission to get a storage profile for a queue",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetStorageProfileForQueue.html"
+    },
+    {
+      "name": "GetTask",
+      "methodName": "toGetTask",
+      "description": "Grants permission to get a job task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetTask.html"
+    },
+    {
+      "name": "GetVolume",
+      "methodName": "toGetVolume",
+      "description": "Grants permission to get a volume",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetVolume.html"
+    },
+    {
+      "name": "GetWorker",
+      "methodName": "toGetWorker",
+      "description": "Grants permission to get a worker",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetWorker.html"
+    },
+    {
+      "name": "ListAvailableMeteredProducts",
+      "methodName": "toListAvailableMeteredProducts",
+      "description": "Grants permission to list all available metered products within a license endpoint",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListAvailableMeteredProducts.html"
+    },
+    {
+      "name": "ListBudgets",
+      "methodName": "toListBudgets",
+      "description": "Grants permission to list all budgets for a farm",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListBudgets.html"
+    },
+    {
+      "name": "ListFarmMembers",
+      "methodName": "toListFarmMembers",
+      "description": "Grants permission to list all members of a farm",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListFarmMembers.html"
+    },
+    {
+      "name": "ListFarms",
+      "methodName": "toListFarms",
+      "description": "Grants permission to list all farms",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListFarms.html"
+    },
+    {
+      "name": "ListFleetMembers",
+      "methodName": "toListFleetMembers",
+      "description": "Grants permission to list all members of a fleet",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListFleetMembers.html"
+    },
+    {
+      "name": "ListFleets",
+      "methodName": "toListFleets",
+      "description": "Grants permission to list all fleets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListFleets.html"
+    },
+    {
+      "name": "ListJobMembers",
+      "methodName": "toListJobMembers",
+      "description": "Grants permission to list all members of a job",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListJobMembers.html"
+    },
+    {
+      "name": "ListJobParameterDefinitions",
+      "methodName": "toListJobParameterDefinitions",
+      "description": "Grants permission to get a job's parameter definitions in the job template",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListJobParameterDefinitions.html"
+    },
+    {
+      "name": "ListJobs",
+      "methodName": "toListJobs",
+      "description": "Grants permission to list all jobs in a queue",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListJobs.html"
+    },
+    {
+      "name": "ListLicenseEndpoints",
+      "methodName": "toListLicenseEndpoints",
+      "description": "Grants permission to list all license endpoints",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListLicenseEndpoints.html"
+    },
+    {
+      "name": "ListLimits",
+      "methodName": "toListLimits",
+      "description": "Grants permission to list all limits in a farm",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListLimits.html"
+    },
+    {
+      "name": "ListMeteredProducts",
+      "methodName": "toListMeteredProducts",
+      "description": "Grants permission to list all metered products in a license endpoint",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListMeteredProducts.html"
+    },
+    {
+      "name": "ListMonitors",
+      "methodName": "toListMonitors",
+      "description": "Grants permission to list all monitors",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListMonitors.html"
+    },
+    {
+      "name": "ListQueueEnvironments",
+      "methodName": "toListQueueEnvironments",
+      "description": "Grants permission to list all queue environments to which a queue is associated",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListQueueEnvironments.html"
+    },
+    {
+      "name": "ListQueueFleetAssociations",
+      "methodName": "toListQueueFleetAssociations",
+      "description": "Grants permission to list all queue-fleet associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListQueueFleetAssociations.html"
+    },
+    {
+      "name": "ListQueueLimitAssociations",
+      "methodName": "toListQueueLimitAssociations",
+      "description": "Grants permission to list all queue-limit associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListQueueLimitAssociations.html"
+    },
+    {
+      "name": "ListQueueMembers",
+      "methodName": "toListQueueMembers",
+      "description": "Grants permission to list all members in a queue",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListQueueMembers.html"
+    },
+    {
+      "name": "ListQueues",
+      "methodName": "toListQueues",
+      "description": "Grants permission to list all queues on a farm",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListQueues.html"
+    },
+    {
+      "name": "ListSessionActions",
+      "methodName": "toListSessionActions",
+      "description": "Grants permission to list all session actions for a job",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListSessionActions.html"
+    },
+    {
+      "name": "ListSessions",
+      "methodName": "toListSessions",
+      "description": "Grants permission to list all sessions for a job",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListSessions.html"
+    },
+    {
+      "name": "ListSessionsForWorker",
+      "methodName": "toListSessionsForWorker",
+      "description": "Grants permission to list all sessions for a worker",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListSessionsForWorker.html"
+    },
+    {
+      "name": "ListStepConsumers",
+      "methodName": "toListStepConsumers",
+      "description": "Grants permission to list the step consumers for a job step",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListStepConsumers.html"
+    },
+    {
+      "name": "ListStepDependencies",
+      "methodName": "toListStepDependencies",
+      "description": "Grants permission to list dependencies for a job step",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListStepDependencies.html"
+    },
+    {
+      "name": "ListSteps",
+      "methodName": "toListSteps",
+      "description": "Grants permission to list all steps for a job",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListSteps.html"
+    },
+    {
+      "name": "ListStorageProfiles",
+      "methodName": "toListStorageProfiles",
+      "description": "Grants permission to list all storage profiles in a farm",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListStorageProfiles.html"
+    },
+    {
+      "name": "ListStorageProfilesForQueue",
+      "methodName": "toListStorageProfilesForQueue",
+      "description": "Grants permission to list all storage profiles in a queue",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListStorageProfilesForQueue.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags on specified Deadline Cloud resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTasks",
+      "methodName": "toListTasks",
+      "description": "Grants permission to list all tasks for a job",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListTasks.html"
+    },
+    {
+      "name": "ListVolumes",
+      "methodName": "toListVolumes",
+      "description": "Grants permission to list volumes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListVolumes.html"
+    },
+    {
+      "name": "ListWorkers",
+      "methodName": "toListWorkers",
+      "description": "Grants permission to list all workers in a fleet",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListWorkers.html"
+    },
+    {
+      "name": "PutMeteredProduct",
+      "methodName": "toPutMeteredProduct",
+      "description": "Grants permission to add a metered product to a license endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_PutMeteredProduct.html"
+    },
+    {
+      "name": "SearchJobs",
+      "methodName": "toSearchJobs",
+      "description": "Grants permission to search for jobs in multiple queues",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_SearchJobs.html"
+    },
+    {
+      "name": "SearchSteps",
+      "methodName": "toSearchSteps",
+      "description": "Grants permission to search the steps within a single job or to search the steps for multiple queues",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_SearchSteps.html"
+    },
+    {
+      "name": "SearchTasks",
+      "methodName": "toSearchTasks",
+      "description": "Grants permission to search the tasks within a single job or to search the tasks for multiple queues",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_SearchTasks.html"
+    },
+    {
+      "name": "SearchWorkers",
+      "methodName": "toSearchWorkers",
+      "description": "Grants permission to search for workers in multiple fleets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_SearchWorkers.html"
+    },
+    {
+      "name": "StartSessionsStatisticsAggregation",
+      "methodName": "toStartSessionsStatisticsAggregation",
+      "description": "Grants permission to get all collected statistics for sessions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_StartSessionsStatisticsAggregation.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or overwrite one or more tags for the specified Deadline Cloud resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to disassociate one or more tags from the specified Deadline Cloud resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateBudget",
+      "methodName": "toUpdateBudget",
+      "description": "Grants permission to update a budget",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateBudget.html"
+    },
+    {
+      "name": "UpdateFarm",
+      "methodName": "toUpdateFarm",
+      "description": "Grants permission to update a farm",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateFarm.html"
+    },
+    {
+      "name": "UpdateFleet",
+      "methodName": "toUpdateFleet",
+      "description": "Grants permission to update a fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateFleet.html"
+    },
+    {
+      "name": "UpdateJob",
+      "methodName": "toUpdateJob",
+      "description": "Grants permission to update a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateJob.html"
+    },
+    {
+      "name": "UpdateLimit",
+      "methodName": "toUpdateLimit",
+      "description": "Grants permission to update a limit for a farm",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateLimit.html"
+    },
+    {
+      "name": "UpdateMonitor",
+      "methodName": "toUpdateMonitor",
+      "description": "Grants permission to update a monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateMonitor.html"
+    },
+    {
+      "name": "UpdateMonitorSettings",
+      "methodName": "toUpdateMonitorSettings",
+      "description": "Grants permission to update settings for a monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateMonitorSettings.html"
+    },
+    {
+      "name": "UpdateQueue",
+      "methodName": "toUpdateQueue",
+      "description": "Grants permission to update a queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateQueue.html"
+    },
+    {
+      "name": "UpdateQueueEnvironment",
+      "methodName": "toUpdateQueueEnvironment",
+      "description": "Grants permission to update a queue environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateQueueEnvironment.html"
+    },
+    {
+      "name": "UpdateQueueFleetAssociation",
+      "methodName": "toUpdateQueueFleetAssociation",
+      "description": "Grants permission to update a queue-fleet association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateQueueFleetAssociation.html"
+    },
+    {
+      "name": "UpdateQueueLimitAssociation",
+      "methodName": "toUpdateQueueLimitAssociation",
+      "description": "Grants permission to update a queue-limit association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateQueueLimitAssociation.html"
+    },
+    {
+      "name": "UpdateSession",
+      "methodName": "toUpdateSession",
+      "description": "Grants permission to update a session for a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateSession.html"
+    },
+    {
+      "name": "UpdateStep",
+      "methodName": "toUpdateStep",
+      "description": "Grants permission to update a step for a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateStep.html"
+    },
+    {
+      "name": "UpdateStorageProfile",
+      "methodName": "toUpdateStorageProfile",
+      "description": "Grants permission to update a storage profile for a farm",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateStorageProfile.html"
+    },
+    {
+      "name": "UpdateTask",
+      "methodName": "toUpdateTask",
+      "description": "Grants permission to update a task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateTask.html"
+    },
+    {
+      "name": "UpdateWorker",
+      "methodName": "toUpdateWorker",
+      "description": "Grants permission to update a worker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateWorker.html"
+    },
+    {
+      "name": "UpdateWorkerSchedule",
+      "methodName": "toUpdateWorkerSchedule",
+      "description": "Grants permission to update the schedule for a worker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateWorkerSchedule.html"
+    },
+    {
+      "name": "GetApplicationVersion",
+      "methodName": "toGetApplicationVersion",
+      "description": "Grants permission to get the latest version of an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html"
+    },
+    {
+      "name": "GetJobTemplate",
+      "methodName": "toGetJobTemplate",
+      "description": "Grants permission to read job template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/working-with-deadline-monitor.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "budget",
+      "methodName": "onBudget",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/manage-costs.html",
+      "arn": "arn:${Partition}:deadline:${Region}:${Account}:farm/${FarmId}/budget/${BudgetId}",
+      "placeholders": [
+        {
+          "placeholder": "FarmId",
+          "name": "farmId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "BudgetId",
+          "name": "budgetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifFarmMembershipLevels"
+      ]
+    },
+    {
+      "name": "farm",
+      "methodName": "onFarm",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/farms.html",
+      "arn": "arn:${Partition}:deadline:${Region}:${Account}:farm/${FarmId}",
+      "placeholders": [
+        {
+          "placeholder": "FarmId",
+          "name": "farmId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifFarmMembershipLevels"
+      ]
+    },
+    {
+      "name": "fleet",
+      "methodName": "onFleet",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/manage-fleets.html",
+      "arn": "arn:${Partition}:deadline:${Region}:${Account}:farm/${FarmId}/fleet/${FleetId}",
+      "placeholders": [
+        {
+          "placeholder": "FarmId",
+          "name": "farmId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FleetId",
+          "name": "fleetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifFarmMembershipLevels",
+        "ifFleetMembershipLevels"
+      ]
+    },
+    {
+      "name": "job",
+      "methodName": "onJob",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html",
+      "arn": "arn:${Partition}:deadline:${Region}:${Account}:farm/${FarmId}/queue/${QueueId}/job/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "FarmId",
+          "name": "farmId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "QueueId",
+          "name": "queueId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifFarmMembershipLevels",
+        "ifJobMembershipLevels",
+        "ifQueueMembershipLevels"
+      ]
+    },
+    {
+      "name": "license-endpoint",
+      "methodName": "onLicenseEndpoint",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/cmf-ubl.html",
+      "arn": "arn:${Partition}:deadline:${Region}:${Account}:license-endpoint/${LicenseEndpointId}",
+      "placeholders": [
+        {
+          "placeholder": "LicenseEndpointId",
+          "name": "licenseEndpointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "monitor",
+      "methodName": "onMonitor",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/working-with-deadline-monitor.html",
+      "arn": "arn:${Partition}:deadline:${Region}:${Account}:monitor/${MonitorId}",
+      "placeholders": [
+        {
+          "placeholder": "MonitorId",
+          "name": "monitorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "queue",
+      "methodName": "onQueue",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/queues.html",
+      "arn": "arn:${Partition}:deadline:${Region}:${Account}:farm/${FarmId}/queue/${QueueId}",
+      "placeholders": [
+        {
+          "placeholder": "FarmId",
+          "name": "farmId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "QueueId",
+          "name": "queueId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifFarmMembershipLevels",
+        "ifQueueMembershipLevels"
+      ]
+    },
+    {
+      "name": "volume",
+      "methodName": "onVolume",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/volumes.html",
+      "arn": "arn:${Partition}:deadline:${Region}:${Account}:farm/${FarmId}/fleet/${FleetId}/volume/${VolumeId}",
+      "placeholders": [
+        {
+          "placeholder": "FarmId",
+          "name": "farmId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FleetId",
+          "name": "fleetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VolumeId",
+          "name": "volumeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifFarmMembershipLevels",
+        "ifFleetMembershipLevels"
+      ]
+    },
+    {
+      "name": "worker",
+      "methodName": "onWorker",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:deadline:${Region}:${Account}:farm/${FarmId}/fleet/${FleetId}/worker/${WorkerId}",
+      "placeholders": [
+        {
+          "placeholder": "FarmId",
+          "name": "farmId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FleetId",
+          "name": "fleetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "WorkerId",
+          "name": "workerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifFarmMembershipLevels",
+        "ifFleetMembershipLevels"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateBudget",
+        "toCreateFarm",
+        "toCreateFleet",
+        "toCreateJob",
+        "toCreateLicenseEndpoint",
+        "toCreateMonitor",
+        "toCreateQueue",
+        "toCreateWorker",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateMemberToFarm",
+        "toAssociateMemberToFleet",
+        "toAssociateMemberToJob",
+        "toAssociateMemberToQueue",
+        "toAssumeFleetRoleForRead",
+        "toAssumeFleetRoleForWorker",
+        "toAssumeQueueRoleForRead",
+        "toAssumeQueueRoleForUser",
+        "toAssumeQueueRoleForWorker",
+        "toBatchGetJobEntity",
+        "toCopyJobTemplate",
+        "toCreateBudget",
+        "toCreateFarm",
+        "toCreateFleet",
+        "toCreateJob",
+        "toCreateLicenseEndpoint",
+        "toCreateLimit",
+        "toCreateMonitor",
+        "toCreateQueue",
+        "toCreateQueueEnvironment",
+        "toCreateQueueFleetAssociation",
+        "toCreateQueueLimitAssociation",
+        "toCreateStorageProfile",
+        "toCreateWorker",
+        "toDeleteBudget",
+        "toDeleteFarm",
+        "toDeleteFleet",
+        "toDeleteLicenseEndpoint",
+        "toDeleteLimit",
+        "toDeleteMeteredProduct",
+        "toDeleteMonitor",
+        "toDeleteQueue",
+        "toDeleteQueueEnvironment",
+        "toDeleteQueueFleetAssociation",
+        "toDeleteQueueLimitAssociation",
+        "toDeleteStorageProfile",
+        "toDeleteVolume",
+        "toDeleteWorker",
+        "toDisassociateMemberFromFarm",
+        "toDisassociateMemberFromFleet",
+        "toDisassociateMemberFromJob",
+        "toDisassociateMemberFromQueue",
+        "toGetBudget",
+        "toGetFarm",
+        "toGetFleet",
+        "toGetJob",
+        "toGetLicenseEndpoint",
+        "toGetLimit",
+        "toGetMonitor",
+        "toGetMonitorSettings",
+        "toGetQueue",
+        "toGetQueueEnvironment",
+        "toGetQueueFleetAssociation",
+        "toGetQueueLimitAssociation",
+        "toGetSession",
+        "toGetSessionAction",
+        "toGetSessionsStatisticsAggregation",
+        "toGetStep",
+        "toGetStorageProfile",
+        "toGetStorageProfileForQueue",
+        "toGetTask",
+        "toGetVolume",
+        "toGetWorker",
+        "toListBudgets",
+        "toListFarmMembers",
+        "toListFarms",
+        "toListFleetMembers",
+        "toListFleets",
+        "toListJobMembers",
+        "toListJobParameterDefinitions",
+        "toListJobs",
+        "toListLicenseEndpoints",
+        "toListLimits",
+        "toListMeteredProducts",
+        "toListMonitors",
+        "toListQueueEnvironments",
+        "toListQueueFleetAssociations",
+        "toListQueueLimitAssociations",
+        "toListQueueMembers",
+        "toListQueues",
+        "toListSessionActions",
+        "toListSessions",
+        "toListSessionsForWorker",
+        "toListStepConsumers",
+        "toListStepDependencies",
+        "toListSteps",
+        "toListStorageProfiles",
+        "toListStorageProfilesForQueue",
+        "toListTagsForResource",
+        "toListTasks",
+        "toListVolumes",
+        "toListWorkers",
+        "toPutMeteredProduct",
+        "toSearchJobs",
+        "toSearchSteps",
+        "toSearchTasks",
+        "toStartSessionsStatisticsAggregation",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateBudget",
+        "toUpdateFarm",
+        "toUpdateFleet",
+        "toUpdateJob",
+        "toUpdateLimit",
+        "toUpdateMonitor",
+        "toUpdateMonitorSettings",
+        "toUpdateQueue",
+        "toUpdateQueueEnvironment",
+        "toUpdateQueueFleetAssociation",
+        "toUpdateQueueLimitAssociation",
+        "toUpdateSession",
+        "toUpdateStep",
+        "toUpdateStorageProfile",
+        "toUpdateTask",
+        "toUpdateWorker",
+        "toUpdateWorkerSchedule",
+        "toGetApplicationVersion",
+        "toGetJobTemplate"
+      ],
+      "relatedResourceTypes": [
+        "budget",
+        "farm",
+        "fleet",
+        "job",
+        "license-endpoint",
+        "monitor",
+        "queue",
+        "volume",
+        "worker"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateBudget",
+        "toCreateFarm",
+        "toCreateFleet",
+        "toCreateJob",
+        "toCreateLicenseEndpoint",
+        "toCreateMonitor",
+        "toCreateQueue",
+        "toCreateWorker",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "deadline:AssociatedMembershipLevel",
+      "methodName": "ifAssociatedMembershipLevel",
+      "description": "Filters access by the associated membership level of the principal provided in the request",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toAssociateMemberToFarm",
+        "toAssociateMemberToFleet",
+        "toAssociateMemberToJob",
+        "toAssociateMemberToQueue",
+        "toDisassociateMemberFromFarm",
+        "toDisassociateMemberFromFleet",
+        "toDisassociateMemberFromJob",
+        "toDisassociateMemberFromQueue"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AssociatedMembershipLevel",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "deadline:CalledAction",
+      "methodName": "ifCalledAction",
+      "description": "Filters access by the allowed action in the request",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toListTagsForResource",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CalledAction",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "deadline:FarmMembershipLevels",
+      "methodName": "ifFarmMembershipLevels",
+      "description": "Filters access by membership levels on the farm",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toAssociateMemberToFarm",
+        "toAssociateMemberToFleet",
+        "toAssociateMemberToJob",
+        "toAssociateMemberToQueue",
+        "toAssumeFleetRoleForRead",
+        "toAssumeFleetRoleForWorker",
+        "toAssumeQueueRoleForRead",
+        "toAssumeQueueRoleForUser",
+        "toAssumeQueueRoleForWorker",
+        "toBatchGetJobEntity",
+        "toCopyJobTemplate",
+        "toCreateBudget",
+        "toCreateFarm",
+        "toCreateFleet",
+        "toCreateJob",
+        "toCreateLimit",
+        "toCreateQueue",
+        "toCreateQueueEnvironment",
+        "toCreateQueueFleetAssociation",
+        "toCreateQueueLimitAssociation",
+        "toCreateStorageProfile",
+        "toCreateWorker",
+        "toDeleteBudget",
+        "toDeleteFarm",
+        "toDeleteFleet",
+        "toDeleteLimit",
+        "toDeleteQueue",
+        "toDeleteQueueEnvironment",
+        "toDeleteQueueFleetAssociation",
+        "toDeleteQueueLimitAssociation",
+        "toDeleteStorageProfile",
+        "toDeleteVolume",
+        "toDeleteWorker",
+        "toDisassociateMemberFromFarm",
+        "toDisassociateMemberFromFleet",
+        "toDisassociateMemberFromJob",
+        "toDisassociateMemberFromQueue",
+        "toGetBudget",
+        "toGetFarm",
+        "toGetFleet",
+        "toGetJob",
+        "toGetLimit",
+        "toGetQueue",
+        "toGetQueueEnvironment",
+        "toGetQueueFleetAssociation",
+        "toGetQueueLimitAssociation",
+        "toGetSession",
+        "toGetSessionAction",
+        "toGetSessionsStatisticsAggregation",
+        "toGetStep",
+        "toGetStorageProfile",
+        "toGetStorageProfileForQueue",
+        "toGetTask",
+        "toGetVolume",
+        "toGetWorker",
+        "toListBudgets",
+        "toListFarmMembers",
+        "toListFarms",
+        "toListFleetMembers",
+        "toListFleets",
+        "toListJobMembers",
+        "toListJobParameterDefinitions",
+        "toListJobs",
+        "toListLimits",
+        "toListQueueEnvironments",
+        "toListQueueFleetAssociations",
+        "toListQueueLimitAssociations",
+        "toListQueueMembers",
+        "toListQueues",
+        "toListSessionActions",
+        "toListSessions",
+        "toListSessionsForWorker",
+        "toListStepConsumers",
+        "toListStepDependencies",
+        "toListSteps",
+        "toListStorageProfiles",
+        "toListStorageProfilesForQueue",
+        "toListTagsForResource",
+        "toListTasks",
+        "toListVolumes",
+        "toListWorkers",
+        "toSearchJobs",
+        "toSearchSteps",
+        "toSearchTasks",
+        "toStartSessionsStatisticsAggregation",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateBudget",
+        "toUpdateFarm",
+        "toUpdateFleet",
+        "toUpdateJob",
+        "toUpdateLimit",
+        "toUpdateQueue",
+        "toUpdateQueueEnvironment",
+        "toUpdateQueueFleetAssociation",
+        "toUpdateQueueLimitAssociation",
+        "toUpdateSession",
+        "toUpdateStep",
+        "toUpdateStorageProfile",
+        "toUpdateTask",
+        "toUpdateWorker",
+        "toUpdateWorkerSchedule",
+        "toGetJobTemplate"
+      ],
+      "relatedResourceTypes": [
+        "budget",
+        "farm",
+        "fleet",
+        "job",
+        "queue",
+        "volume",
+        "worker"
+      ],
+      "keyLiteral": "FarmMembershipLevels",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "deadline:FleetMembershipLevels",
+      "methodName": "ifFleetMembershipLevels",
+      "description": "Filters access by membership levels on the fleet",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toAssociateMemberToFleet",
+        "toAssumeFleetRoleForRead",
+        "toAssumeFleetRoleForWorker",
+        "toAssumeQueueRoleForWorker",
+        "toBatchGetJobEntity",
+        "toCreateFleet",
+        "toCreateQueueFleetAssociation",
+        "toCreateWorker",
+        "toDeleteFleet",
+        "toDeleteQueueFleetAssociation",
+        "toDeleteVolume",
+        "toDeleteWorker",
+        "toDisassociateMemberFromFleet",
+        "toGetFleet",
+        "toGetQueueFleetAssociation",
+        "toGetSessionsStatisticsAggregation",
+        "toGetVolume",
+        "toGetWorker",
+        "toListFleetMembers",
+        "toListFleets",
+        "toListQueueFleetAssociations",
+        "toListSessionsForWorker",
+        "toListTagsForResource",
+        "toListVolumes",
+        "toListWorkers",
+        "toStartSessionsStatisticsAggregation",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateFleet",
+        "toUpdateQueueFleetAssociation",
+        "toUpdateWorker",
+        "toUpdateWorkerSchedule"
+      ],
+      "relatedResourceTypes": [
+        "fleet",
+        "volume",
+        "worker"
+      ],
+      "keyLiteral": "FleetMembershipLevels",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "deadline:JobMembershipLevels",
+      "methodName": "ifJobMembershipLevels",
+      "description": "Filters access by membership levels on the job",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toAssociateMemberToJob",
+        "toCopyJobTemplate",
+        "toCreateJob",
+        "toDisassociateMemberFromJob",
+        "toGetJob",
+        "toGetSession",
+        "toGetSessionAction",
+        "toGetStep",
+        "toGetTask",
+        "toListJobMembers",
+        "toListJobParameterDefinitions",
+        "toListJobs",
+        "toListSessionActions",
+        "toListSessions",
+        "toListStepConsumers",
+        "toListStepDependencies",
+        "toListSteps",
+        "toListTagsForResource",
+        "toListTasks",
+        "toSearchSteps",
+        "toSearchTasks",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateJob",
+        "toUpdateSession",
+        "toUpdateStep",
+        "toUpdateTask",
+        "toGetJobTemplate"
+      ],
+      "relatedResourceTypes": [
+        "job"
+      ],
+      "keyLiteral": "JobMembershipLevels",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "deadline:MembershipLevel",
+      "methodName": "ifMembershipLevel",
+      "description": "Filters access by the membership level passed in the request",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toAssociateMemberToFarm",
+        "toAssociateMemberToFleet",
+        "toAssociateMemberToJob",
+        "toAssociateMemberToQueue"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MembershipLevel",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "deadline:PrincipalId",
+      "methodName": "ifPrincipalId",
+      "description": "Filters access by the principle ID provided in the request",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toListFarms",
+        "toListFleets",
+        "toListJobs",
+        "toListQueues"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PrincipalId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "deadline:QueueMembershipLevels",
+      "methodName": "ifQueueMembershipLevels",
+      "description": "Filters access by membership levels on the queue",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toAssociateMemberToJob",
+        "toAssociateMemberToQueue",
+        "toAssumeQueueRoleForRead",
+        "toAssumeQueueRoleForUser",
+        "toAssumeQueueRoleForWorker",
+        "toCopyJobTemplate",
+        "toCreateJob",
+        "toCreateQueue",
+        "toCreateQueueEnvironment",
+        "toCreateQueueFleetAssociation",
+        "toCreateQueueLimitAssociation",
+        "toDeleteQueue",
+        "toDeleteQueueEnvironment",
+        "toDeleteQueueFleetAssociation",
+        "toDeleteQueueLimitAssociation",
+        "toDisassociateMemberFromJob",
+        "toDisassociateMemberFromQueue",
+        "toGetJob",
+        "toGetQueue",
+        "toGetQueueEnvironment",
+        "toGetQueueFleetAssociation",
+        "toGetQueueLimitAssociation",
+        "toGetSession",
+        "toGetSessionAction",
+        "toGetSessionsStatisticsAggregation",
+        "toGetStep",
+        "toGetStorageProfileForQueue",
+        "toGetTask",
+        "toListJobMembers",
+        "toListJobParameterDefinitions",
+        "toListJobs",
+        "toListQueueEnvironments",
+        "toListQueueFleetAssociations",
+        "toListQueueLimitAssociations",
+        "toListQueueMembers",
+        "toListQueues",
+        "toListSessionActions",
+        "toListSessions",
+        "toListStepConsumers",
+        "toListStepDependencies",
+        "toListSteps",
+        "toListStorageProfilesForQueue",
+        "toListTagsForResource",
+        "toListTasks",
+        "toSearchJobs",
+        "toSearchSteps",
+        "toSearchTasks",
+        "toStartSessionsStatisticsAggregation",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateJob",
+        "toUpdateQueue",
+        "toUpdateQueueEnvironment",
+        "toUpdateQueueFleetAssociation",
+        "toUpdateQueueLimitAssociation",
+        "toUpdateSession",
+        "toUpdateStep",
+        "toUpdateTask",
+        "toGetJobTemplate"
+      ],
+      "relatedResourceTypes": [
+        "job",
+        "queue"
+      ],
+      "keyLiteral": "QueueMembershipLevels",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "deadline:RequesterPrincipalId",
+      "methodName": "ifRequesterPrincipalId",
+      "description": "Filters access by the user calling the Deadline Cloud API",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toListFarms",
+        "toListFleets",
+        "toListJobs",
+        "toListQueues"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequesterPrincipalId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

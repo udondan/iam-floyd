@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "filename": "taxsettings",
+  "className": "Tax",
+  "name": "tax",
+  "servicePrefix": "tax",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_taxsettings.html",
+  "accessLevelList": {
+    "Write": [
+      "BatchDeleteTaxRegistration",
+      "BatchPutTaxRegistration",
+      "CancelDocument",
+      "CreateDocument",
+      "DeleteSupplementalTaxRegistration",
+      "DeleteTaxRegistration",
+      "PutSupplementalTaxRegistration",
+      "PutTaxInheritance",
+      "PutTaxRegistration",
+      "UpdateExemptions",
+      "PutTaxInterview"
+    ],
+    "Read": [
+      "GetDocument",
+      "GetDocumentUploadUrl",
+      "GetExemptions",
+      "GetTaxInheritance",
+      "GetTaxRegistration",
+      "GetTaxRegistrationDocument",
+      "ListDocuments",
+      "ListSupplementalTaxRegistrations",
+      "ListTaxRegistrations",
+      "ListWithholdingEligibleInvoices",
+      "GetTaxInfoReportingDocument",
+      "GetTaxInterview"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchDeleteTaxRegistration",
+      "methodName": "toBatchDeleteTaxRegistration",
+      "description": "Grants permission to batch delete tax registration data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "BatchPutTaxRegistration",
+      "methodName": "toBatchPutTaxRegistration",
+      "description": "Grants permission to batch update tax registrations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "CancelDocument",
+      "methodName": "toCancelDocument",
+      "description": "Grants permission to cancel documents such as withholding slips",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "CreateDocument",
+      "methodName": "toCreateDocument",
+      "description": "Grants permission to upload new documents such as withholding slips",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "DeleteSupplementalTaxRegistration",
+      "methodName": "toDeleteSupplementalTaxRegistration",
+      "description": "Grants permission to delete supplemental tax registration data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html"
+    },
+    {
+      "name": "DeleteTaxRegistration",
+      "methodName": "toDeleteTaxRegistration",
+      "description": "Grants permission to delete tax registration data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "GetDocument",
+      "methodName": "toGetDocument",
+      "description": "Grants permission to retrieve documents such as withholding slips",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "GetDocumentUploadUrl",
+      "methodName": "toGetDocumentUploadUrl",
+      "description": "Grants permission to retrieve a generated URL to upload documents",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "GetExemptions",
+      "methodName": "toGetExemptions",
+      "description": "Grants permission to view tax exemptions data",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "GetTaxInheritance",
+      "methodName": "toGetTaxInheritance",
+      "description": "Grants permission to view tax inheritance status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "GetTaxRegistration",
+      "methodName": "toGetTaxRegistration",
+      "description": "Grants permission to view tax registrations data",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html"
+    },
+    {
+      "name": "GetTaxRegistrationDocument",
+      "methodName": "toGetTaxRegistrationDocument",
+      "description": "Grants permission to download tax registration documents",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "ListDocuments",
+      "methodName": "toListDocuments",
+      "description": "Grants permission to view documents such as withholding slips",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "ListSupplementalTaxRegistrations",
+      "methodName": "toListSupplementalTaxRegistrations",
+      "description": "Grants permission to view supplemental tax registrations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html"
+    },
+    {
+      "name": "ListTaxRegistrations",
+      "methodName": "toListTaxRegistrations",
+      "description": "Grants permission to view tax registrations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "ListWithholdingEligibleInvoices",
+      "methodName": "toListWithholdingEligibleInvoices",
+      "description": "Grants permission to view eligible withholding invoices",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "PutSupplementalTaxRegistration",
+      "methodName": "toPutSupplementalTaxRegistration",
+      "description": "Grants permission to update supplemental tax registrations data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html"
+    },
+    {
+      "name": "PutTaxInheritance",
+      "methodName": "toPutTaxInheritance",
+      "description": "Grants permission to set tax inheritance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "PutTaxRegistration",
+      "methodName": "toPutTaxRegistration",
+      "description": "Grants permission to update tax registrations data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html"
+    },
+    {
+      "name": "UpdateExemptions",
+      "methodName": "toUpdateExemptions",
+      "description": "Grants permission to update tax exemptions data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "GetTaxInfoReportingDocument",
+      "methodName": "toGetTaxInfoReportingDocument",
+      "description": "Grants permission to view/download tax documents/forms",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "GetTaxInterview",
+      "methodName": "toGetTaxInterview",
+      "description": "Grants permission to retrieve tax interview data",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html"
+    },
+    {
+      "name": "PutTaxInterview",
+      "methodName": "toPutTaxInterview",
+      "description": "Grants permission to update tax interview data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

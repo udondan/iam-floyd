@@ -1,0 +1,458 @@
+{
+  "schemaVersion": 1,
+  "filename": "ssm-incidents",
+  "className": "SsmIncidents",
+  "name": "ssm-incidents",
+  "servicePrefix": "ssm-incidents",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ssm-incidents.html",
+  "accessLevelList": {
+    "Read": [
+      "BatchGetIncidentFindings",
+      "GetIncidentRecord",
+      "GetReplicationSet",
+      "GetResourcePolicies",
+      "GetResponsePlan",
+      "GetTimelineEvent",
+      "ListTagsForResource"
+    ],
+    "Write": [
+      "CreateReplicationSet",
+      "CreateResponsePlan",
+      "CreateTimelineEvent",
+      "DeleteIncidentRecord",
+      "DeleteReplicationSet",
+      "DeleteResourcePolicy",
+      "DeleteResponsePlan",
+      "DeleteTimelineEvent",
+      "PutResourcePolicy",
+      "StartIncident",
+      "TagResource",
+      "UntagResource",
+      "UpdateDeletionProtection",
+      "UpdateIncidentRecord",
+      "UpdateRelatedItems",
+      "UpdateReplicationSet",
+      "UpdateResponsePlan",
+      "UpdateTimelineEvent"
+    ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "PutResourcePolicy"
+    ],
+    "List": [
+      "ListIncidentFindings",
+      "ListIncidentRecords",
+      "ListRelatedItems",
+      "ListReplicationSets",
+      "ListResponsePlans",
+      "ListTimelineEvents"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchGetIncidentFindings",
+      "methodName": "toBatchGetIncidentFindings",
+      "description": "Grants permission to retrieve details about specified findings for an incident record",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_BatchGetIncidentFindings.html"
+    },
+    {
+      "name": "CreateReplicationSet",
+      "methodName": "toCreateReplicationSet",
+      "description": "Grants permission to create a replication set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_CreateReplicationSet.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateResponsePlan",
+      "methodName": "toCreateResponsePlan",
+      "description": "Grants permission to create a response plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_CreateResponsePlan.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateTimelineEvent",
+      "methodName": "toCreateTimelineEvent",
+      "description": "Grants permission to create a timeline event for an incident record",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_CreateTimelineEvent.html"
+    },
+    {
+      "name": "DeleteIncidentRecord",
+      "methodName": "toDeleteIncidentRecord",
+      "description": "Grants permission to delete an incident record",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_DeleteIncidentRecord.html"
+    },
+    {
+      "name": "DeleteReplicationSet",
+      "methodName": "toDeleteReplicationSet",
+      "description": "Grants permission to delete a replication set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_DeleteReplicationSet.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete resource policy from a response plan",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteResponsePlan",
+      "methodName": "toDeleteResponsePlan",
+      "description": "Grants permission to delete a response plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_DeleteResponsePlan.html"
+    },
+    {
+      "name": "DeleteTimelineEvent",
+      "methodName": "toDeleteTimelineEvent",
+      "description": "Grants permission to delete a timeline event",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_DeleteTimelineEvent.html"
+    },
+    {
+      "name": "GetIncidentRecord",
+      "methodName": "toGetIncidentRecord",
+      "description": "Grants permission to view the contents of an incident record",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_GetIncidentRecord.html"
+    },
+    {
+      "name": "GetReplicationSet",
+      "methodName": "toGetReplicationSet",
+      "description": "Grants permission to view the replication set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_GetReplicationSet.html"
+    },
+    {
+      "name": "GetResourcePolicies",
+      "methodName": "toGetResourcePolicies",
+      "description": "Grants permission to view resource policies of a response plan",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_GetResourcePolicies.html"
+    },
+    {
+      "name": "GetResponsePlan",
+      "methodName": "toGetResponsePlan",
+      "description": "Grants permission to view the contents of a specified response plan",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_GetResponsePlan.html"
+    },
+    {
+      "name": "GetTimelineEvent",
+      "methodName": "toGetTimelineEvent",
+      "description": "Grants permission to view a timeline event",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_GetTimelineEvent.html"
+    },
+    {
+      "name": "ListIncidentFindings",
+      "methodName": "toListIncidentFindings",
+      "description": "Grants permission to list findings for an incident record",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListIncidentFindings.html"
+    },
+    {
+      "name": "ListIncidentRecords",
+      "methodName": "toListIncidentRecords",
+      "description": "Grants permission to list the contents of all incident records",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListIncidentRecords.html"
+    },
+    {
+      "name": "ListRelatedItems",
+      "methodName": "toListRelatedItems",
+      "description": "Grants permission to list related items of an incident record",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListRelatedItems.html"
+    },
+    {
+      "name": "ListReplicationSets",
+      "methodName": "toListReplicationSets",
+      "description": "Grants permission to list all replication sets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListReplicationSets.html"
+    },
+    {
+      "name": "ListResponsePlans",
+      "methodName": "toListResponsePlans",
+      "description": "Grants permission to list all response plans",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListResponsePlans.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to view a list of resource tags for a specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTimelineEvents",
+      "methodName": "toListTimelineEvents",
+      "description": "Grants permission to list all timeline events for an incident record",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListTimelineEvents.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to put resource policy on a response plan",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "StartIncident",
+      "methodName": "toStartIncident",
+      "description": "Grants permission to start a new incident using a response plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_StartIncident.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a response plan",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a response plan",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDeletionProtection",
+      "methodName": "toUpdateDeletionProtection",
+      "description": "Grants permission to update replication set deletion protection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_UpdateDeletionProtection.html"
+    },
+    {
+      "name": "UpdateIncidentRecord",
+      "methodName": "toUpdateIncidentRecord",
+      "description": "Grants permission to update the contents of an incident record",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_UpdateIncidentRecord.html"
+    },
+    {
+      "name": "UpdateRelatedItems",
+      "methodName": "toUpdateRelatedItems",
+      "description": "Grants permission to update related items of an incident record",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_UpdateRelatedItems.html"
+    },
+    {
+      "name": "UpdateReplicationSet",
+      "methodName": "toUpdateReplicationSet",
+      "description": "Grants permission to update a replication set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_UpdateReplicationSet.html"
+    },
+    {
+      "name": "UpdateResponsePlan",
+      "methodName": "toUpdateResponsePlan",
+      "description": "Grants permission to update the contents of a response plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_UpdateResponsePlan.html"
+    },
+    {
+      "name": "UpdateTimelineEvent",
+      "methodName": "toUpdateTimelineEvent",
+      "description": "Grants permission to update a timeline event",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_UpdateTimelineEvent.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "incident-record",
+      "methodName": "onIncidentRecord",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/tracking-details.html",
+      "arn": "arn:${Partition}:ssm-incidents::${Account}:incident-record/${ResponsePlan}/${IncidentRecord}",
+      "placeholders": [
+        {
+          "placeholder": "ResponsePlan",
+          "name": "responsePlan",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IncidentRecord",
+          "name": "incidentRecord",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "replication-set",
+      "methodName": "onReplicationSet",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/disaster-recovery-resiliency.html#replication",
+      "arn": "arn:${Partition}:ssm-incidents::${Account}:replication-set/${ReplicationSet}",
+      "placeholders": [
+        {
+          "placeholder": "ReplicationSet",
+          "name": "replicationSet",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "response-plan",
+      "methodName": "onResponsePlan",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/response-plans.html",
+      "arn": "arn:${Partition}:ssm-incidents::${Account}:response-plan/${ResponsePlan}",
+      "placeholders": [
+        {
+          "placeholder": "ResponsePlan",
+          "name": "responsePlan",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateReplicationSet",
+        "toCreateResponsePlan",
+        "toTagResource",
+        "toUpdateResponsePlan"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchGetIncidentFindings",
+        "toCreateTimelineEvent",
+        "toDeleteIncidentRecord",
+        "toDeleteReplicationSet",
+        "toDeleteResourcePolicy",
+        "toDeleteResponsePlan",
+        "toDeleteTimelineEvent",
+        "toGetIncidentRecord",
+        "toGetReplicationSet",
+        "toGetResourcePolicies",
+        "toGetResponsePlan",
+        "toGetTimelineEvent",
+        "toListIncidentFindings",
+        "toListRelatedItems",
+        "toListTagsForResource",
+        "toListTimelineEvents",
+        "toPutResourcePolicy",
+        "toStartIncident",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDeletionProtection",
+        "toUpdateIncidentRecord",
+        "toUpdateRelatedItems",
+        "toUpdateReplicationSet",
+        "toUpdateResponsePlan",
+        "toUpdateTimelineEvent"
+      ],
+      "relatedResourceTypes": [
+        "incident-record",
+        "replication-set",
+        "response-plan"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateReplicationSet",
+        "toCreateResponsePlan",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateResponsePlan"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

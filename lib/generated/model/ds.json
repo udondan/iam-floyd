@@ -1,0 +1,956 @@
+{
+  "schemaVersion": 1,
+  "filename": "ds",
+  "className": "Ds",
+  "name": "ds",
+  "servicePrefix": "ds",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ds.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptSharedDirectory",
+      "AddIpRoutes",
+      "AddRegion",
+      "AddTagsToResource",
+      "CancelSchemaExtension",
+      "ConnectDirectory",
+      "CreateAlias",
+      "CreateComputer",
+      "CreateConditionalForwarder",
+      "CreateDirectory",
+      "CreateHybridAD",
+      "CreateLogSubscription",
+      "CreateMicrosoftAD",
+      "CreateSnapshot",
+      "CreateTrust",
+      "DeleteADAssessment",
+      "DeleteConditionalForwarder",
+      "DeleteDirectory",
+      "DeleteLogSubscription",
+      "DeleteSnapshot",
+      "DeleteTrust",
+      "DeregisterCertificate",
+      "DeregisterEventTopic",
+      "DisableCAEnrollmentPolicy",
+      "DisableClientAuthentication",
+      "DisableDirectoryDataAccess",
+      "DisableLDAPS",
+      "DisableRadius",
+      "DisableSso",
+      "EnableCAEnrollmentPolicy",
+      "EnableClientAuthentication",
+      "EnableDirectoryDataAccess",
+      "EnableLDAPS",
+      "EnableRadius",
+      "EnableSso",
+      "RegisterCertificate",
+      "RegisterEventTopic",
+      "RejectSharedDirectory",
+      "RemoveIpRoutes",
+      "RemoveRegion",
+      "RemoveTagsFromResource",
+      "ResetUserPassword",
+      "RestoreFromSnapshot",
+      "ShareDirectory",
+      "StartADAssessment",
+      "StartSchemaExtension",
+      "UnshareDirectory",
+      "UpdateConditionalForwarder",
+      "UpdateDirectorySetup",
+      "UpdateHybridAD",
+      "UpdateNumberOfDomainControllers",
+      "UpdateRadius",
+      "UpdateSettings",
+      "UpdateTrust",
+      "AccessDSData",
+      "AuthorizeApplication",
+      "CreateIdentityPoolDirectory",
+      "DisableRoleAccess",
+      "EnableRoleAccess",
+      "UnauthorizeApplication",
+      "UpdateAuthorizedApplication",
+      "UpdateDirectory"
+    ],
+    "Tagging": [
+      "AddTagsToResource",
+      "RemoveTagsFromResource"
+    ],
+    "Read": [
+      "DescribeADAssessment",
+      "DescribeCAEnrollmentPolicy",
+      "DescribeCertificate",
+      "DescribeClientAuthenticationSettings",
+      "DescribeConditionalForwarders",
+      "DescribeDirectoryDataAccess",
+      "DescribeDomainControllers",
+      "DescribeEventTopics",
+      "DescribeHybridADUpdate",
+      "DescribeLDAPSSettings",
+      "DescribeRegions",
+      "DescribeSettings",
+      "DescribeSharedDirectories",
+      "DescribeSnapshots",
+      "DescribeTrusts",
+      "DescribeUpdateDirectory",
+      "GetDirectoryLimits",
+      "GetSnapshotLimits",
+      "ListIpRoutes",
+      "ListLogSubscriptions",
+      "ListTagsForResource",
+      "VerifyTrust",
+      "CheckAlias",
+      "GetAuthorizedApplicationDetails",
+      "ListAuthorizedApplications"
+    ],
+    "List": [
+      "DescribeDirectories",
+      "ListADAssessments",
+      "ListCertificates",
+      "ListSchemaExtensions"
+    ],
+    "Permissions management": [
+      "AccessDSData"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptSharedDirectory",
+      "methodName": "toAcceptSharedDirectory",
+      "description": "Grants permission to accept a directory sharing request that was sent from the directory owner account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AcceptSharedDirectory.html"
+    },
+    {
+      "name": "AddIpRoutes",
+      "methodName": "toAddIpRoutes",
+      "description": "Grants permission to add a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web Services",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddIpRoutes.html"
+    },
+    {
+      "name": "AddRegion",
+      "methodName": "toAddRegion",
+      "description": "Grants permission to add two domain controllers in the specified Region for the specified directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddRegion.html"
+    },
+    {
+      "name": "AddTagsToResource",
+      "methodName": "toAddTagsToResource",
+      "description": "Grants permission to add or overwrite one or more tags for the specified Amazon Directory Services directory",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddTagsToResource.html"
+    },
+    {
+      "name": "CancelSchemaExtension",
+      "methodName": "toCancelSchemaExtension",
+      "description": "Grants permission to cancel an in-progress schema extension to a Microsoft AD directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CancelSchemaExtension.html"
+    },
+    {
+      "name": "ConnectDirectory",
+      "methodName": "toConnectDirectory",
+      "description": "Grants permission to create an AD Connector to connect to an on-premises directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ConnectDirectory.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAlias",
+      "methodName": "toCreateAlias",
+      "description": "Grants permission to create an alias for a directory and assigns the alias to the directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateAlias.html"
+    },
+    {
+      "name": "CreateComputer",
+      "methodName": "toCreateComputer",
+      "description": "Grants permission to create a computer account in the specified directory, and joins the computer to the directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateComputer.html"
+    },
+    {
+      "name": "CreateConditionalForwarder",
+      "methodName": "toCreateConditionalForwarder",
+      "description": "Grants permission to create a conditional forwarder associated with your AWS directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateConditionalForwarder.html"
+    },
+    {
+      "name": "CreateDirectory",
+      "methodName": "toCreateDirectory",
+      "description": "Grants permission to create a Simple AD directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateDirectory.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateHybridAD",
+      "methodName": "toCreateHybridAD",
+      "description": "Grants permission to create a Hybrid Managed AD directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateHybridAD.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateLogSubscription",
+      "methodName": "toCreateLogSubscription",
+      "description": "Grants permission to create a subscription to forward real time Directory Service domain controller security logs to the specified CloudWatch log group in your AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateLogSubscription.html"
+    },
+    {
+      "name": "CreateMicrosoftAD",
+      "methodName": "toCreateMicrosoftAD",
+      "description": "Grants permission to create a Microsoft AD in the AWS cloud",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateMicrosoftAD.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateSnapshot",
+      "methodName": "toCreateSnapshot",
+      "description": "Grants permission to create a snapshot of a Simple AD or Microsoft AD directory in the AWS cloud",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateSnapshot.html"
+    },
+    {
+      "name": "CreateTrust",
+      "methodName": "toCreateTrust",
+      "description": "Grants permission to initiate the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS cloud and an external domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateTrust.html"
+    },
+    {
+      "name": "DeleteADAssessment",
+      "methodName": "toDeleteADAssessment",
+      "description": "Grants permission to delete a directory assessment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteADAssessment.html"
+    },
+    {
+      "name": "DeleteConditionalForwarder",
+      "methodName": "toDeleteConditionalForwarder",
+      "description": "Grants permission to delete a conditional forwarder that has been set up for your AWS directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteConditionalForwarder.html"
+    },
+    {
+      "name": "DeleteDirectory",
+      "methodName": "toDeleteDirectory",
+      "description": "Grants permission to delete an AWS Directory Service directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteDirectory.html"
+    },
+    {
+      "name": "DeleteLogSubscription",
+      "methodName": "toDeleteLogSubscription",
+      "description": "Grants permission to delete the specified log subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteLogSubscription.html"
+    },
+    {
+      "name": "DeleteSnapshot",
+      "methodName": "toDeleteSnapshot",
+      "description": "Grants permission to delete a directory snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteSnapshot.html"
+    },
+    {
+      "name": "DeleteTrust",
+      "methodName": "toDeleteTrust",
+      "description": "Grants permission to delete an existing trust relationship between your Microsoft AD in the AWS cloud and an external domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteTrust.html"
+    },
+    {
+      "name": "DeregisterCertificate",
+      "methodName": "toDeregisterCertificate",
+      "description": "Grants permission to delete from the system the certificate that was registered for a secured LDAP connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeregisterCertificate.html"
+    },
+    {
+      "name": "DeregisterEventTopic",
+      "methodName": "toDeregisterEventTopic",
+      "description": "Grants permission to remove the specified directory as a publisher to the specified SNS topic",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeregisterEventTopic.html"
+    },
+    {
+      "name": "DescribeADAssessment",
+      "methodName": "toDescribeADAssessment",
+      "description": "Grants permission to describe a directory assessment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeADAssessment.html"
+    },
+    {
+      "name": "DescribeCAEnrollmentPolicy",
+      "methodName": "toDescribeCAEnrollmentPolicy",
+      "description": "Grants permission to describe the ca enrollment status of a specified directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeCAEnrollmentPolicy.html"
+    },
+    {
+      "name": "DescribeCertificate",
+      "methodName": "toDescribeCertificate",
+      "description": "Grants permission to display information about the certificate registered for a secured LDAP connection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeCertificate.html"
+    },
+    {
+      "name": "DescribeClientAuthenticationSettings",
+      "methodName": "toDescribeClientAuthenticationSettings",
+      "description": "Grants permission to retrieve information about the type of client authentication for the specified directory, if the type is specified. If no type is specified, information about all client authentication types that are supported for the specified directory is retrieved. Currently, only SmartCard is supported",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeClientAuthenticationSettings.html"
+    },
+    {
+      "name": "DescribeConditionalForwarders",
+      "methodName": "toDescribeConditionalForwarders",
+      "description": "Grants permission to obtain information about the conditional forwarders for this account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeConditionalForwarders.html"
+    },
+    {
+      "name": "DescribeDirectories",
+      "methodName": "toDescribeDirectories",
+      "description": "Grants permission to obtain information about the directories that belong to this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDirectories.html"
+    },
+    {
+      "name": "DescribeDirectoryDataAccess",
+      "methodName": "toDescribeDirectoryDataAccess",
+      "description": "Grants permission to describe the Directory Service Data API status for the specified directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDirectoryDataAccess.html"
+    },
+    {
+      "name": "DescribeDomainControllers",
+      "methodName": "toDescribeDomainControllers",
+      "description": "Grants permission to provide information about any domain controllers in your directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDomainControllers.html"
+    },
+    {
+      "name": "DescribeEventTopics",
+      "methodName": "toDescribeEventTopics",
+      "description": "Grants permission to obtain information about which SNS topics receive status messages from the specified directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeEventTopics.html"
+    },
+    {
+      "name": "DescribeHybridADUpdate",
+      "methodName": "toDescribeHybridADUpdate",
+      "description": "Grants permission to describe the updates of a specified hybrid directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeHybridADUpdate.html"
+    },
+    {
+      "name": "DescribeLDAPSSettings",
+      "methodName": "toDescribeLDAPSSettings",
+      "description": "Grants permission to describe the status of LDAP security for the specified directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeLDAPSSettings.html"
+    },
+    {
+      "name": "DescribeRegions",
+      "methodName": "toDescribeRegions",
+      "description": "Grants permission to provide information about the Regions that are configured for multi-Region replication",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeRegions.html"
+    },
+    {
+      "name": "DescribeSettings",
+      "methodName": "toDescribeSettings",
+      "description": "Grants permission to retrieve information about the configurable settings for the specified directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeSettings.html"
+    },
+    {
+      "name": "DescribeSharedDirectories",
+      "methodName": "toDescribeSharedDirectories",
+      "description": "Grants permission to return the shared directories in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeSharedDirectories.html"
+    },
+    {
+      "name": "DescribeSnapshots",
+      "methodName": "toDescribeSnapshots",
+      "description": "Grants permission to obtain information about the directory snapshots that belong to this account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeSnapshots.html"
+    },
+    {
+      "name": "DescribeTrusts",
+      "methodName": "toDescribeTrusts",
+      "description": "Grants permission to obtain information about the trust relationships for this account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeTrusts.html"
+    },
+    {
+      "name": "DescribeUpdateDirectory",
+      "methodName": "toDescribeUpdateDirectory",
+      "description": "Grants permission to describe the updates of a directory for a particular update type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeUpdateDirectory.html"
+    },
+    {
+      "name": "DisableCAEnrollmentPolicy",
+      "methodName": "toDisableCAEnrollmentPolicy",
+      "description": "Grants permission to disable the ca enrollment of a specified directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableCAEnrollmentPolicy.html"
+    },
+    {
+      "name": "DisableClientAuthentication",
+      "methodName": "toDisableClientAuthentication",
+      "description": "Grants permission to disable alternative client authentication methods for the specified directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableClientAuthentication.html"
+    },
+    {
+      "name": "DisableDirectoryDataAccess",
+      "methodName": "toDisableDirectoryDataAccess",
+      "description": "Grants permission to disable the Directory Service Data API for the specified directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableDirectoryDataAccess.html"
+    },
+    {
+      "name": "DisableLDAPS",
+      "methodName": "toDisableLDAPS",
+      "description": "Grants permission to deactivate LDAP secure calls for the specified directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableLDAPS.html"
+    },
+    {
+      "name": "DisableRadius",
+      "methodName": "toDisableRadius",
+      "description": "Grants permission to disable multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableRadius.html"
+    },
+    {
+      "name": "DisableSso",
+      "methodName": "toDisableSso",
+      "description": "Grants permission to disable single-sign on for a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableSso.html"
+    },
+    {
+      "name": "EnableCAEnrollmentPolicy",
+      "methodName": "toEnableCAEnrollmentPolicy",
+      "description": "Grants permission to enable the ca enrollment of a specified directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableCAEnrollmentPolicy.html"
+    },
+    {
+      "name": "EnableClientAuthentication",
+      "methodName": "toEnableClientAuthentication",
+      "description": "Grants permission to enable alternative client authentication methods for the specified directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableClientAuthentication.html"
+    },
+    {
+      "name": "EnableDirectoryDataAccess",
+      "methodName": "toEnableDirectoryDataAccess",
+      "description": "Grants permission to enable the Directory Service Data API for the specified directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableDirectoryDataAccess.html"
+    },
+    {
+      "name": "EnableLDAPS",
+      "methodName": "toEnableLDAPS",
+      "description": "Grants permission to activate the switch for the specific directory to always use LDAP secure calls",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableLDAPS.html"
+    },
+    {
+      "name": "EnableRadius",
+      "methodName": "toEnableRadius",
+      "description": "Grants permission to enable multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableRadius.html"
+    },
+    {
+      "name": "EnableSso",
+      "methodName": "toEnableSso",
+      "description": "Grants permission to enable single-sign on for a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableSso.html"
+    },
+    {
+      "name": "GetDirectoryLimits",
+      "methodName": "toGetDirectoryLimits",
+      "description": "Grants permission to obtain directory limit information for the current region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_GetDirectoryLimits.html"
+    },
+    {
+      "name": "GetSnapshotLimits",
+      "methodName": "toGetSnapshotLimits",
+      "description": "Grants permission to obtain the manual snapshot limits for a directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_GetSnapshotLimits.html"
+    },
+    {
+      "name": "ListADAssessments",
+      "methodName": "toListADAssessments",
+      "description": "Grants permission to list directory assessments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListADAssessments.html"
+    },
+    {
+      "name": "ListCertificates",
+      "methodName": "toListCertificates",
+      "description": "Grants permission to list all the certificates registered for a secured LDAP connection, for the specified directory",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListCertificates.html"
+    },
+    {
+      "name": "ListIpRoutes",
+      "methodName": "toListIpRoutes",
+      "description": "Grants permission to list the address blocks that you have added to a directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListIpRoutes.html"
+    },
+    {
+      "name": "ListLogSubscriptions",
+      "methodName": "toListLogSubscriptions",
+      "description": "Grants permission to list the active log subscriptions for the AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListLogSubscriptions.html"
+    },
+    {
+      "name": "ListSchemaExtensions",
+      "methodName": "toListSchemaExtensions",
+      "description": "Grants permission to list all schema extensions applied to a Microsoft AD Directory",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListSchemaExtensions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags on an Amazon Directory Services directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RegisterCertificate",
+      "methodName": "toRegisterCertificate",
+      "description": "Grants permission to register a certificate for secured LDAP connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RegisterCertificate.html"
+    },
+    {
+      "name": "RegisterEventTopic",
+      "methodName": "toRegisterEventTopic",
+      "description": "Grants permission to associate a directory with an SNS topic",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RegisterEventTopic.html"
+    },
+    {
+      "name": "RejectSharedDirectory",
+      "methodName": "toRejectSharedDirectory",
+      "description": "Grants permission to reject a directory sharing request that was sent from the directory owner account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RejectSharedDirectory.html"
+    },
+    {
+      "name": "RemoveIpRoutes",
+      "methodName": "toRemoveIpRoutes",
+      "description": "Grants permission to remove IP address blocks from a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveIpRoutes.html"
+    },
+    {
+      "name": "RemoveRegion",
+      "methodName": "toRemoveRegion",
+      "description": "Grants permission to stop all replication and removes the domain controllers from the specified Region. You cannot remove the primary Region with this operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveRegion.html"
+    },
+    {
+      "name": "RemoveTagsFromResource",
+      "methodName": "toRemoveTagsFromResource",
+      "description": "Grants permission to remove tags from an Amazon Directory Services directory",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveTagsFromResource.html"
+    },
+    {
+      "name": "ResetUserPassword",
+      "methodName": "toResetUserPassword",
+      "description": "Grants permission to reset the password for any user in your AWS Managed Microsoft AD or Simple AD directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ResetUserPassword.html"
+    },
+    {
+      "name": "RestoreFromSnapshot",
+      "methodName": "toRestoreFromSnapshot",
+      "description": "Grants permission to restore a directory using an existing directory snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RestoreFromSnapshot.html"
+    },
+    {
+      "name": "ShareDirectory",
+      "methodName": "toShareDirectory",
+      "description": "Grants permission to share a specified directory in your AWS account (directory owner) with another AWS account (directory consumer). With this operation you can use your directory from any AWS account and from any Amazon VPC within an AWS Region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ShareDirectory.html"
+    },
+    {
+      "name": "StartADAssessment",
+      "methodName": "toStartADAssessment",
+      "description": "Grants permission to start a directory assessment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_StartADAssessment.html"
+    },
+    {
+      "name": "StartSchemaExtension",
+      "methodName": "toStartSchemaExtension",
+      "description": "Grants permission to apply a schema extension to a Microsoft AD directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_StartSchemaExtension.html"
+    },
+    {
+      "name": "UnshareDirectory",
+      "methodName": "toUnshareDirectory",
+      "description": "Grants permission to stop the directory sharing between the directory owner and consumer accounts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UnshareDirectory.html"
+    },
+    {
+      "name": "UpdateConditionalForwarder",
+      "methodName": "toUpdateConditionalForwarder",
+      "description": "Grants permission to update a conditional forwarder that has been set up for your AWS directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateConditionalForwarder.html"
+    },
+    {
+      "name": "UpdateDirectorySetup",
+      "methodName": "toUpdateDirectorySetup",
+      "description": "Grants permission to update the directory for a particular update type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateDirectorySetup.html"
+    },
+    {
+      "name": "UpdateHybridAD",
+      "methodName": "toUpdateHybridAD",
+      "description": "Grants permission to update configurations for a specified hybrid directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateHybridAD.html"
+    },
+    {
+      "name": "UpdateNumberOfDomainControllers",
+      "methodName": "toUpdateNumberOfDomainControllers",
+      "description": "Grants permission to add or remove domain controllers to or from the directory. Based on the difference between current value and new value (provided through this API call), domain controllers will be added or removed. It may take up to 45 minutes for any new domain controllers to become fully active once the requested number of domain controllers is updated. During this time, you cannot make another update request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateNumberOfDomainControllers.html"
+    },
+    {
+      "name": "UpdateRadius",
+      "methodName": "toUpdateRadius",
+      "description": "Grants permission to update the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateRadius.html"
+    },
+    {
+      "name": "UpdateSettings",
+      "methodName": "toUpdateSettings",
+      "description": "Grants permission to update the configurable settings for the specified directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateSettings.html"
+    },
+    {
+      "name": "UpdateTrust",
+      "methodName": "toUpdateTrust",
+      "description": "Grants permission to update the trust that has been set up between your AWS Managed Microsoft AD directory and an on-premises Active Directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateTrust.html"
+    },
+    {
+      "name": "VerifyTrust",
+      "methodName": "toVerifyTrust",
+      "description": "Grants permission to verify a trust relationship between your Microsoft AD in the AWS cloud and an external domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_VerifyTrust.html"
+    },
+    {
+      "name": "AccessDSData",
+      "methodName": "toAccessDSData",
+      "description": "Grants permission to access directory data using the Directory Service Data API",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+    },
+    {
+      "name": "AuthorizeApplication",
+      "methodName": "toAuthorizeApplication",
+      "description": "Grants permission to authorize an application for your AWS Directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+    },
+    {
+      "name": "CheckAlias",
+      "methodName": "toCheckAlias",
+      "description": "Grants permission to verify that the alias is available for use",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+    },
+    {
+      "name": "CreateIdentityPoolDirectory",
+      "methodName": "toCreateIdentityPoolDirectory",
+      "description": "Grants permission to create an IdentityPool Directory in the AWS cloud",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DisableRoleAccess",
+      "methodName": "toDisableRoleAccess",
+      "description": "Grants permission to disable AWS Management Console access for identity in your AWS Directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+    },
+    {
+      "name": "EnableRoleAccess",
+      "methodName": "toEnableRoleAccess",
+      "description": "Grants permission to enable AWS Management Console access for identity in your AWS Directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+    },
+    {
+      "name": "GetAuthorizedApplicationDetails",
+      "methodName": "toGetAuthorizedApplicationDetails",
+      "description": "Grants permission to retrieve the details of the authorized applications on a directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+    },
+    {
+      "name": "ListAuthorizedApplications",
+      "methodName": "toListAuthorizedApplications",
+      "description": "Grants permission to obtain the AWS applications authorized for a directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+    },
+    {
+      "name": "UnauthorizeApplication",
+      "methodName": "toUnauthorizeApplication",
+      "description": "Grants permission to unauthorize an application from your AWS Directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+    },
+    {
+      "name": "UpdateAuthorizedApplication",
+      "methodName": "toUpdateAuthorizedApplication",
+      "description": "Grants permission to update an authorized application for your AWS Directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+    },
+    {
+      "name": "UpdateDirectory",
+      "methodName": "toUpdateDirectory",
+      "description": "Grants permission to update the configurations like service account credentials or DNS server IP addresses for the specified directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "directory",
+      "methodName": "onDirectory",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/welcome.html",
+      "arn": "arn:${Partition}:ds:${Region}:${Account}:directory/${DirectoryId}",
+      "placeholders": [
+        {
+          "placeholder": "DirectoryId",
+          "name": "directoryId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the value of the request to AWS DS",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_Tag.html",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toConnectDirectory",
+        "toCreateDirectory",
+        "toCreateHybridAD",
+        "toCreateMicrosoftAD",
+        "toRemoveTagsFromResource",
+        "toCreateIdentityPoolDirectory"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the AWS DS Resource being acted upon",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_Tag.html",
+      "relatedActionMethods": [
+        "toAcceptSharedDirectory",
+        "toAddIpRoutes",
+        "toAddRegion",
+        "toAddTagsToResource",
+        "toCancelSchemaExtension",
+        "toConnectDirectory",
+        "toCreateAlias",
+        "toCreateComputer",
+        "toCreateConditionalForwarder",
+        "toCreateDirectory",
+        "toCreateLogSubscription",
+        "toCreateMicrosoftAD",
+        "toCreateSnapshot",
+        "toCreateTrust",
+        "toDeleteConditionalForwarder",
+        "toDeleteDirectory",
+        "toDeleteLogSubscription",
+        "toDeleteSnapshot",
+        "toDeleteTrust",
+        "toDeregisterCertificate",
+        "toDeregisterEventTopic",
+        "toDescribeCAEnrollmentPolicy",
+        "toDescribeCertificate",
+        "toDescribeClientAuthenticationSettings",
+        "toDescribeConditionalForwarders",
+        "toDescribeDirectoryDataAccess",
+        "toDescribeDomainControllers",
+        "toDescribeEventTopics",
+        "toDescribeHybridADUpdate",
+        "toDescribeLDAPSSettings",
+        "toDescribeRegions",
+        "toDescribeSettings",
+        "toDescribeSharedDirectories",
+        "toDescribeUpdateDirectory",
+        "toDisableCAEnrollmentPolicy",
+        "toDisableClientAuthentication",
+        "toDisableDirectoryDataAccess",
+        "toDisableLDAPS",
+        "toDisableRadius",
+        "toDisableSso",
+        "toEnableCAEnrollmentPolicy",
+        "toEnableClientAuthentication",
+        "toEnableDirectoryDataAccess",
+        "toEnableLDAPS",
+        "toEnableRadius",
+        "toEnableSso",
+        "toGetSnapshotLimits",
+        "toListCertificates",
+        "toListIpRoutes",
+        "toListSchemaExtensions",
+        "toListTagsForResource",
+        "toRegisterCertificate",
+        "toRegisterEventTopic",
+        "toRejectSharedDirectory",
+        "toRemoveIpRoutes",
+        "toRemoveRegion",
+        "toRemoveTagsFromResource",
+        "toResetUserPassword",
+        "toRestoreFromSnapshot",
+        "toShareDirectory",
+        "toStartSchemaExtension",
+        "toUnshareDirectory",
+        "toUpdateConditionalForwarder",
+        "toUpdateDirectorySetup",
+        "toUpdateHybridAD",
+        "toUpdateNumberOfDomainControllers",
+        "toUpdateRadius",
+        "toUpdateSettings",
+        "toUpdateTrust",
+        "toVerifyTrust",
+        "toAccessDSData",
+        "toAuthorizeApplication",
+        "toDisableRoleAccess",
+        "toEnableRoleAccess",
+        "toGetAuthorizedApplicationDetails",
+        "toListAuthorizedApplications",
+        "toUnauthorizeApplication",
+        "toUpdateAuthorizedApplication",
+        "toUpdateDirectory"
+      ],
+      "relatedResourceTypes": [
+        "directory"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_Tag.html",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toConnectDirectory",
+        "toCreateDirectory",
+        "toCreateHybridAD",
+        "toCreateMicrosoftAD",
+        "toRemoveTagsFromResource",
+        "toCreateIdentityPoolDirectory"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

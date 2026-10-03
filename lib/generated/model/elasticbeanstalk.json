@@ -1,0 +1,901 @@
+{
+  "schemaVersion": 1,
+  "filename": "elasticbeanstalk",
+  "className": "Elasticbeanstalk",
+  "name": "elasticbeanstalk",
+  "servicePrefix": "elasticbeanstalk",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elasticbeanstalk.html",
+  "accessLevelList": {
+    "Write": [
+      "AbortEnvironmentUpdate",
+      "AddTags",
+      "ApplyEnvironmentManagedAction",
+      "AssociateEnvironmentOperationsRole",
+      "ComposeEnvironments",
+      "CreateApplication",
+      "CreateApplicationVersion",
+      "CreateConfigurationTemplate",
+      "CreateEnvironment",
+      "CreatePlatformVersion",
+      "CreateStorageLocation",
+      "DeleteApplication",
+      "DeleteApplicationVersion",
+      "DeleteConfigurationTemplate",
+      "DeleteEnvironmentConfiguration",
+      "DeletePlatformVersion",
+      "DisassociateEnvironmentOperationsRole",
+      "PutInstanceStatistics",
+      "RebuildEnvironment",
+      "RemoveTags",
+      "RestartAppServer",
+      "SwapEnvironmentCNAMEs",
+      "TerminateEnvironment",
+      "UpdateApplication",
+      "UpdateApplicationResourceLifecycle",
+      "UpdateApplicationVersion",
+      "UpdateConfigurationTemplate",
+      "UpdateEnvironment",
+      "UpdateTagsForResource"
+    ],
+    "Tagging": [
+      "AddTags",
+      "RemoveTags",
+      "UpdateTagsForResource"
+    ],
+    "Read": [
+      "CheckDNSAvailability",
+      "DescribeAccountAttributes",
+      "DescribeConfigurationOptions",
+      "DescribeConfigurationSettings",
+      "DescribeEnvironmentHealth",
+      "DescribeEnvironmentManagedActionHistory",
+      "DescribeEnvironmentManagedActions",
+      "DescribeEnvironmentResources",
+      "DescribeEvents",
+      "DescribeInstancesHealth",
+      "DescribePlatformVersion",
+      "ListTagsForResource",
+      "RequestEnvironmentInfo",
+      "RetrieveEnvironmentInfo",
+      "ValidateConfigurationSettings"
+    ],
+    "List": [
+      "DescribeApplicationVersions",
+      "DescribeApplications",
+      "DescribeEnvironments",
+      "ListAvailableSolutionStacks",
+      "ListPlatformBranches",
+      "ListPlatformVersions"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AbortEnvironmentUpdate",
+      "methodName": "toAbortEnvironmentUpdate",
+      "description": "Grants permission to cancel in-progress environment configuration update or application version deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_AbortEnvironmentUpdate.html"
+    },
+    {
+      "name": "AddTags",
+      "methodName": "toAddTags",
+      "description": "Grants permission to add tags to an Elastic Beanstalk resource and to update tag values",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html"
+    },
+    {
+      "name": "ApplyEnvironmentManagedAction",
+      "methodName": "toApplyEnvironmentManagedAction",
+      "description": "Grants permission to apply a scheduled managed action immediately",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ApplyEnvironmentManagedAction.html"
+    },
+    {
+      "name": "AssociateEnvironmentOperationsRole",
+      "methodName": "toAssociateEnvironmentOperationsRole",
+      "description": "Grants permission to associate an operations role with an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_AssociateEnvironmentOperationsRole.html"
+    },
+    {
+      "name": "CheckDNSAvailability",
+      "methodName": "toCheckDNSAvailability",
+      "description": "Grants permission to check CNAME availability",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CheckDNSAvailability.html"
+    },
+    {
+      "name": "ComposeEnvironments",
+      "methodName": "toComposeEnvironments",
+      "description": "Grants permission to create or update a group of environments, each running a separate component of a single application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ComposeEnvironments.html"
+    },
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to create a new application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateApplication.html"
+    },
+    {
+      "name": "CreateApplicationVersion",
+      "methodName": "toCreateApplicationVersion",
+      "description": "Grants permission to create an application version for an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateApplicationVersion.html"
+    },
+    {
+      "name": "CreateConfigurationTemplate",
+      "methodName": "toCreateConfigurationTemplate",
+      "description": "Grants permission to create a configuration template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateConfigurationTemplate.html"
+    },
+    {
+      "name": "CreateEnvironment",
+      "methodName": "toCreateEnvironment",
+      "description": "Grants permission to launch an environment for an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateEnvironment.html"
+    },
+    {
+      "name": "CreatePlatformVersion",
+      "methodName": "toCreatePlatformVersion",
+      "description": "Grants permission to create a new version of a custom platform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreatePlatformVersion.html"
+    },
+    {
+      "name": "CreateStorageLocation",
+      "methodName": "toCreateStorageLocation",
+      "description": "Grants permission to create the Amazon S3 storage location for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateStorageLocation.html"
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete an application along with all associated versions and configurations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeleteApplication.html"
+    },
+    {
+      "name": "DeleteApplicationVersion",
+      "methodName": "toDeleteApplicationVersion",
+      "description": "Grants permission to delete an application version from an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeleteApplicationVersion.html"
+    },
+    {
+      "name": "DeleteConfigurationTemplate",
+      "methodName": "toDeleteConfigurationTemplate",
+      "description": "Grants permission to delete a configuration template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeleteConfigurationTemplate.html"
+    },
+    {
+      "name": "DeleteEnvironmentConfiguration",
+      "methodName": "toDeleteEnvironmentConfiguration",
+      "description": "Grants permission to delete the draft configuration associated with the running environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeleteEnvironmentConfiguration.html"
+    },
+    {
+      "name": "DeletePlatformVersion",
+      "methodName": "toDeletePlatformVersion",
+      "description": "Grants permission to delete a version of a custom platform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeletePlatformVersion.html"
+    },
+    {
+      "name": "DescribeAccountAttributes",
+      "methodName": "toDescribeAccountAttributes",
+      "description": "Grants permission to retrieve a list of account attributes, including resource quotas",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeAccountAttributes.html"
+    },
+    {
+      "name": "DescribeApplicationVersions",
+      "methodName": "toDescribeApplicationVersions",
+      "description": "Grants permission to retrieve a list of application versions stored in an AWS Elastic Beanstalk storage bucket",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeApplicationVersions.html"
+    },
+    {
+      "name": "DescribeApplications",
+      "methodName": "toDescribeApplications",
+      "description": "Grants permission to retrieve the descriptions of existing applications",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeApplications.html"
+    },
+    {
+      "name": "DescribeConfigurationOptions",
+      "methodName": "toDescribeConfigurationOptions",
+      "description": "Grants permission to retrieve descriptions of environment configuration options",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeConfigurationOptions.html"
+    },
+    {
+      "name": "DescribeConfigurationSettings",
+      "methodName": "toDescribeConfigurationSettings",
+      "description": "Grants permission to retrieve a description of the settings for a configuration set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeConfigurationSettings.html"
+    },
+    {
+      "name": "DescribeEnvironmentHealth",
+      "methodName": "toDescribeEnvironmentHealth",
+      "description": "Grants permission to retrieve information about the overall health of an environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironmentHealth.html"
+    },
+    {
+      "name": "DescribeEnvironmentManagedActionHistory",
+      "methodName": "toDescribeEnvironmentManagedActionHistory",
+      "description": "Grants permission to retrieve a list of an environment's completed and failed managed actions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironmentManagedActionHistory.html"
+    },
+    {
+      "name": "DescribeEnvironmentManagedActions",
+      "methodName": "toDescribeEnvironmentManagedActions",
+      "description": "Grants permission to retrieve a list of an environment's upcoming and in-progress managed actions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironmentManagedActions.html"
+    },
+    {
+      "name": "DescribeEnvironmentResources",
+      "methodName": "toDescribeEnvironmentResources",
+      "description": "Grants permission to retrieve a list of AWS resources for an environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironmentResources.html"
+    },
+    {
+      "name": "DescribeEnvironments",
+      "methodName": "toDescribeEnvironments",
+      "description": "Grants permission to retrieve descriptions for existing environments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
+    },
+    {
+      "name": "DescribeEvents",
+      "methodName": "toDescribeEvents",
+      "description": "Grants permission to retrieve a list of event descriptions matching a set of criteria",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEvents.html"
+    },
+    {
+      "name": "DescribeInstancesHealth",
+      "methodName": "toDescribeInstancesHealth",
+      "description": "Grants permission to retrieve more detailed information about the health of environment instances",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeInstancesHealth.html"
+    },
+    {
+      "name": "DescribePlatformVersion",
+      "methodName": "toDescribePlatformVersion",
+      "description": "Grants permission to retrieve a description of a managed platform version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribePlatformVersion.html"
+    },
+    {
+      "name": "DisassociateEnvironmentOperationsRole",
+      "methodName": "toDisassociateEnvironmentOperationsRole",
+      "description": "Grants permission to disassociate an operations role with an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DisassociateEnvironmentOperationsRole.html"
+    },
+    {
+      "name": "ListAvailableSolutionStacks",
+      "methodName": "toListAvailableSolutionStacks",
+      "description": "Grants permission to retrieve a list of the available solution stack names",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html"
+    },
+    {
+      "name": "ListPlatformBranches",
+      "methodName": "toListPlatformBranches",
+      "description": "Grants permission to retrieve a list of the available platform branches",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListPlatformBranches.html"
+    },
+    {
+      "name": "ListPlatformVersions",
+      "methodName": "toListPlatformVersions",
+      "description": "Grants permission to retrieve a list of the available platforms",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListPlatformVersions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to retrieve a list of tags of an Elastic Beanstalk resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutInstanceStatistics",
+      "methodName": "toPutInstanceStatistics",
+      "description": "Grants permission to submit instance statistics for enhanced health",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html#health-enhanced-authz"
+    },
+    {
+      "name": "RebuildEnvironment",
+      "methodName": "toRebuildEnvironment",
+      "description": "Grants permission to delete and recreate all of the AWS resources for an environment and to force a restart",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html"
+    },
+    {
+      "name": "RemoveTags",
+      "methodName": "toRemoveTags",
+      "description": "Grants permission to remove tags from an Elastic Beanstalk resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html"
+    },
+    {
+      "name": "RequestEnvironmentInfo",
+      "methodName": "toRequestEnvironmentInfo",
+      "description": "Grants permission to initiate a request to compile information of the deployed environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RequestEnvironmentInfo.html"
+    },
+    {
+      "name": "RestartAppServer",
+      "methodName": "toRestartAppServer",
+      "description": "Grants permission to request an environment to restart the application container server running on each Amazon EC2 instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RestartAppServer.html"
+    },
+    {
+      "name": "RetrieveEnvironmentInfo",
+      "methodName": "toRetrieveEnvironmentInfo",
+      "description": "Grants permission to retrieve the compiled information from a RequestEnvironmentInfo request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RetrieveEnvironmentInfo.html"
+    },
+    {
+      "name": "SwapEnvironmentCNAMEs",
+      "methodName": "toSwapEnvironmentCNAMEs",
+      "description": "Grants permission to swap the CNAMEs of two environments",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_SwapEnvironmentCNAMEs.html"
+    },
+    {
+      "name": "TerminateEnvironment",
+      "methodName": "toTerminateEnvironment",
+      "description": "Grants permission to terminate an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_TerminateEnvironment.html"
+    },
+    {
+      "name": "UpdateApplication",
+      "methodName": "toUpdateApplication",
+      "description": "Grants permission to update an application with specified properties",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateApplication.html"
+    },
+    {
+      "name": "UpdateApplicationResourceLifecycle",
+      "methodName": "toUpdateApplicationResourceLifecycle",
+      "description": "Grants permission to update the application version lifecycle policy associated with the application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateApplicationResourceLifecycle.html"
+    },
+    {
+      "name": "UpdateApplicationVersion",
+      "methodName": "toUpdateApplicationVersion",
+      "description": "Grants permission to update an application version with specified properties",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateApplicationVersion.html"
+    },
+    {
+      "name": "UpdateConfigurationTemplate",
+      "methodName": "toUpdateConfigurationTemplate",
+      "description": "Grants permission to update a configuration template with specified properties or configuration option values",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateConfigurationTemplate.html"
+    },
+    {
+      "name": "UpdateEnvironment",
+      "methodName": "toUpdateEnvironment",
+      "description": "Grants permission to update an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateEnvironment.html"
+    },
+    {
+      "name": "UpdateTagsForResource",
+      "methodName": "toUpdateTagsForResource",
+      "description": "Doesn't grant permission to update tags. To grant permission to add tags to an Elastic Beanstalk resource, remove tags, and to update tag values, specify elasticbeanstalk:AddTags and elasticbeanstalk:RemoveTags",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html"
+    },
+    {
+      "name": "ValidateConfigurationSettings",
+      "methodName": "toValidateConfigurationSettings",
+      "description": "Grants permission to check the validity of a set of configuration settings for a configuration template or an environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ValidateConfigurationSettings.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:application/${ApplicationName}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationName",
+          "name": "applicationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "applicationversion",
+      "methodName": "onApplicationversion",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:applicationversion/${ApplicationName}/${VersionLabel}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationName",
+          "name": "applicationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VersionLabel",
+          "name": "versionLabel",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifInApplication"
+      ]
+    },
+    {
+      "name": "configurationtemplate",
+      "methodName": "onConfigurationtemplate",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:configurationtemplate/${ApplicationName}/${TemplateName}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationName",
+          "name": "applicationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TemplateName",
+          "name": "templateName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifInApplication"
+      ]
+    },
+    {
+      "name": "environment",
+      "methodName": "onEnvironment",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:environment/${ApplicationName}/${EnvironmentName}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationName",
+          "name": "applicationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EnvironmentName",
+          "name": "environmentName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifInApplication"
+      ]
+    },
+    {
+      "name": "platform",
+      "methodName": "onPlatform",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}::platform/${PlatformNameWithVersion}",
+      "placeholders": [
+        {
+          "placeholder": "PlatformNameWithVersion",
+          "name": "platformNameWithVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "solutionstack",
+      "methodName": "onSolutionstack",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}::solutionstack/${SolutionStackName}",
+      "placeholders": [
+        {
+          "placeholder": "SolutionStackName",
+          "name": "solutionStackName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters actions based on the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions",
+      "relatedActionMethods": [
+        "toAddTags",
+        "toCreateApplication",
+        "toCreateApplicationVersion",
+        "toCreateConfigurationTemplate",
+        "toCreateEnvironment",
+        "toCreatePlatformVersion",
+        "toUpdateTagsForResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions",
+      "relatedActionMethods": [
+        "toAbortEnvironmentUpdate",
+        "toAddTags",
+        "toApplyEnvironmentManagedAction",
+        "toAssociateEnvironmentOperationsRole",
+        "toComposeEnvironments",
+        "toCreateApplication",
+        "toCreateApplicationVersion",
+        "toCreateConfigurationTemplate",
+        "toCreateEnvironment",
+        "toDeleteApplication",
+        "toDeleteApplicationVersion",
+        "toDeleteConfigurationTemplate",
+        "toDeleteEnvironmentConfiguration",
+        "toDescribeApplicationVersions",
+        "toDescribeApplications",
+        "toDescribeConfigurationOptions",
+        "toDescribeConfigurationSettings",
+        "toDescribeEnvironmentHealth",
+        "toDescribeEnvironmentManagedActionHistory",
+        "toDescribeEnvironmentManagedActions",
+        "toDescribeEnvironmentResources",
+        "toDescribeEnvironments",
+        "toDescribeEvents",
+        "toDescribeInstancesHealth",
+        "toDisassociateEnvironmentOperationsRole",
+        "toListTagsForResource",
+        "toPutInstanceStatistics",
+        "toRebuildEnvironment",
+        "toRemoveTags",
+        "toRequestEnvironmentInfo",
+        "toRestartAppServer",
+        "toRetrieveEnvironmentInfo",
+        "toSwapEnvironmentCNAMEs",
+        "toTerminateEnvironment",
+        "toUpdateApplication",
+        "toUpdateApplicationResourceLifecycle",
+        "toUpdateApplicationVersion",
+        "toUpdateConfigurationTemplate",
+        "toUpdateEnvironment",
+        "toUpdateTagsForResource",
+        "toValidateConfigurationSettings"
+      ],
+      "relatedResourceTypes": [
+        "application",
+        "applicationversion",
+        "configurationtemplate",
+        "environment"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters actions based on the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions",
+      "relatedActionMethods": [
+        "toAddTags",
+        "toCreateApplication",
+        "toCreateApplicationVersion",
+        "toCreateConfigurationTemplate",
+        "toCreateEnvironment",
+        "toCreatePlatformVersion",
+        "toRemoveTags",
+        "toUpdateTagsForResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticbeanstalk:FromApplication",
+      "methodName": "ifFromApplication",
+      "description": "Filters access by an application as a dependency or a constraint on an input parameter",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions",
+      "relatedActionMethods": [
+        "toCreateConfigurationTemplate",
+        "toUpdateConfigurationTemplate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FromApplication",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "elasticbeanstalk:FromApplicationVersion",
+      "methodName": "ifFromApplicationVersion",
+      "description": "Filters access by an application version as a dependency or a constraint on an input parameter",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions",
+      "relatedActionMethods": [
+        "toCreateConfigurationTemplate",
+        "toCreateEnvironment",
+        "toUpdateConfigurationTemplate",
+        "toUpdateEnvironment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FromApplicationVersion",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "elasticbeanstalk:FromConfigurationTemplate",
+      "methodName": "ifFromConfigurationTemplate",
+      "description": "Filters access by a configuration template as a dependency or a constraint on an input parameter",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions",
+      "relatedActionMethods": [
+        "toCreateConfigurationTemplate",
+        "toCreateEnvironment",
+        "toUpdateConfigurationTemplate",
+        "toUpdateEnvironment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FromConfigurationTemplate",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "elasticbeanstalk:FromEnvironment",
+      "methodName": "ifFromEnvironment",
+      "description": "Filters access by an environment as a dependency or a constraint on an input parameter",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions",
+      "relatedActionMethods": [
+        "toCreateConfigurationTemplate",
+        "toSwapEnvironmentCNAMEs",
+        "toUpdateConfigurationTemplate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FromEnvironment",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "elasticbeanstalk:FromPlatform",
+      "methodName": "ifFromPlatform",
+      "description": "Filters access by a platform as a dependency or a constraint on an input parameter",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions",
+      "relatedActionMethods": [
+        "toCreateConfigurationTemplate",
+        "toCreateEnvironment",
+        "toUpdateConfigurationTemplate",
+        "toUpdateEnvironment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FromPlatform",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "elasticbeanstalk:FromSolutionStack",
+      "methodName": "ifFromSolutionStack",
+      "description": "Filters access by a solution stack as a dependency or a constraint on an input parameter",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions",
+      "relatedActionMethods": [
+        "toCreateConfigurationTemplate",
+        "toCreateEnvironment",
+        "toUpdateConfigurationTemplate",
+        "toUpdateEnvironment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FromSolutionStack",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "elasticbeanstalk:InApplication",
+      "methodName": "ifInApplication",
+      "description": "Filters access by the application that contains the resource that the action operates on",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions",
+      "relatedActionMethods": [
+        "toAbortEnvironmentUpdate",
+        "toAddTags",
+        "toApplyEnvironmentManagedAction",
+        "toAssociateEnvironmentOperationsRole",
+        "toComposeEnvironments",
+        "toCreateApplicationVersion",
+        "toCreateConfigurationTemplate",
+        "toCreateEnvironment",
+        "toDeleteApplicationVersion",
+        "toDeleteConfigurationTemplate",
+        "toDeleteEnvironmentConfiguration",
+        "toDescribeApplicationVersions",
+        "toDescribeConfigurationOptions",
+        "toDescribeConfigurationSettings",
+        "toDescribeEnvironmentHealth",
+        "toDescribeEnvironmentManagedActionHistory",
+        "toDescribeEnvironmentManagedActions",
+        "toDescribeEnvironmentResources",
+        "toDescribeEnvironments",
+        "toDescribeEvents",
+        "toDescribeInstancesHealth",
+        "toDisassociateEnvironmentOperationsRole",
+        "toListTagsForResource",
+        "toPutInstanceStatistics",
+        "toRebuildEnvironment",
+        "toRemoveTags",
+        "toRequestEnvironmentInfo",
+        "toRestartAppServer",
+        "toRetrieveEnvironmentInfo",
+        "toSwapEnvironmentCNAMEs",
+        "toTerminateEnvironment",
+        "toUpdateApplicationVersion",
+        "toUpdateConfigurationTemplate",
+        "toUpdateEnvironment",
+        "toUpdateTagsForResource",
+        "toValidateConfigurationSettings"
+      ],
+      "relatedResourceTypes": [
+        "applicationversion",
+        "configurationtemplate",
+        "environment"
+      ],
+      "keyLiteral": "InApplication",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

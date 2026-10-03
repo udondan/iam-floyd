@@ -1,3 +1,0 @@
-health-agent:RequestTag/${TagKey}
-health-agent:ResourceTag/${TagKey}
-health-agent:TagKeys

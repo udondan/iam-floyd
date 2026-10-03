@@ -10,9 +10,9 @@ docs/*
 eslint.log
 examples/*
 helper/*
+lib/generated/model/*
 lib/generator/*
 node_modules
-stats/*
 test/*
 tooter/*
 VERSION

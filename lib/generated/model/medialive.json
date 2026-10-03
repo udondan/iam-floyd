@@ -1,0 +1,1756 @@
+{
+  "schemaVersion": 1,
+  "filename": "medialive",
+  "className": "Medialive",
+  "name": "medialive",
+  "servicePrefix": "medialive",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_medialive.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptInputDeviceTransfer",
+      "BatchDelete",
+      "BatchStart",
+      "BatchStop",
+      "BatchUpdateSchedule",
+      "CancelInputDeviceTransfer",
+      "ClaimDevice",
+      "CreateChannel",
+      "CreateChannelPlacementGroup",
+      "CreateCloudWatchAlarmTemplate",
+      "CreateCloudWatchAlarmTemplateGroup",
+      "CreateCluster",
+      "CreateEventBridgeRuleTemplate",
+      "CreateEventBridgeRuleTemplateGroup",
+      "CreateInput",
+      "CreateInputSecurityGroup",
+      "CreateMultiplex",
+      "CreateMultiplexProgram",
+      "CreateNetwork",
+      "CreateNode",
+      "CreateNodeRegistrationScript",
+      "CreatePartnerInput",
+      "CreateSdiSource",
+      "CreateSignalMap",
+      "CreateTags",
+      "DeleteChannel",
+      "DeleteChannelPlacementGroup",
+      "DeleteCloudWatchAlarmTemplate",
+      "DeleteCloudWatchAlarmTemplateGroup",
+      "DeleteCluster",
+      "DeleteEventBridgeRuleTemplate",
+      "DeleteEventBridgeRuleTemplateGroup",
+      "DeleteInput",
+      "DeleteInputSecurityGroup",
+      "DeleteMultiplex",
+      "DeleteMultiplexProgram",
+      "DeleteNetwork",
+      "DeleteNode",
+      "DeleteReservation",
+      "DeleteSchedule",
+      "DeleteSdiSource",
+      "DeleteSignalMap",
+      "DeleteTags",
+      "PollAnywhere",
+      "PurchaseOffering",
+      "RebootInputDevice",
+      "RejectInputDeviceTransfer",
+      "RestartChannelPipelines",
+      "StartChannel",
+      "StartDeleteMonitorDeployment",
+      "StartInputDevice",
+      "StartInputDeviceMaintenanceWindow",
+      "StartMonitorDeployment",
+      "StartMultiplex",
+      "StartUpdateSignalMap",
+      "StopChannel",
+      "StopInputDevice",
+      "StopMultiplex",
+      "SubmitAnywhereStateChange",
+      "TransferInputDevice",
+      "UpdateAccountConfiguration",
+      "UpdateChannel",
+      "UpdateChannelClass",
+      "UpdateChannelPlacementGroup",
+      "UpdateCloudWatchAlarmTemplate",
+      "UpdateCloudWatchAlarmTemplateGroup",
+      "UpdateCluster",
+      "UpdateEventBridgeRuleTemplate",
+      "UpdateEventBridgeRuleTemplateGroup",
+      "UpdateInput",
+      "UpdateInputDevice",
+      "UpdateInputSecurityGroup",
+      "UpdateMultiplex",
+      "UpdateMultiplexProgram",
+      "UpdateNetwork",
+      "UpdateNode",
+      "UpdateNodeState",
+      "UpdateReservation",
+      "UpdateSdiSource"
+    ],
+    "Tagging": [
+      "CreateTags",
+      "DeleteTags"
+    ],
+    "Read": [
+      "DescribeAccountConfiguration",
+      "DescribeChannel",
+      "DescribeChannelPlacementGroup",
+      "DescribeCluster",
+      "DescribeInput",
+      "DescribeInputDevice",
+      "DescribeInputDeviceThumbnail",
+      "DescribeInputSecurityGroup",
+      "DescribeMultiplex",
+      "DescribeMultiplexProgram",
+      "DescribeNetwork",
+      "DescribeNode",
+      "DescribeOffering",
+      "DescribeReservation",
+      "DescribeSchedule",
+      "DescribeSdiSource",
+      "DescribeThumbnails",
+      "GetCloudWatchAlarmTemplate",
+      "GetCloudWatchAlarmTemplateGroup",
+      "GetEventBridgeRuleTemplate",
+      "GetEventBridgeRuleTemplateGroup",
+      "GetSignalMap"
+    ],
+    "List": [
+      "ListAlerts",
+      "ListChannelPlacementGroups",
+      "ListChannels",
+      "ListCloudWatchAlarmTemplateGroups",
+      "ListCloudWatchAlarmTemplates",
+      "ListClusterAlerts",
+      "ListClusters",
+      "ListEventBridgeRuleTemplateGroups",
+      "ListEventBridgeRuleTemplates",
+      "ListInputDeviceTransfers",
+      "ListInputDevices",
+      "ListInputSecurityGroups",
+      "ListInputs",
+      "ListMultiplexAlerts",
+      "ListMultiplexPrograms",
+      "ListMultiplexes",
+      "ListNetworks",
+      "ListNodes",
+      "ListOfferings",
+      "ListReservations",
+      "ListSdiSources",
+      "ListSignalMaps",
+      "ListTagsForResource",
+      "ListVersions"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptInputDeviceTransfer",
+      "methodName": "toAcceptInputDeviceTransfer",
+      "description": "Grants permission to accept an input device transfer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html"
+    },
+    {
+      "name": "BatchDelete",
+      "methodName": "toBatchDelete",
+      "description": "Grants permission to delete channels, inputs, input security groups, and multiplexes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/editing-deleting-channel.html"
+    },
+    {
+      "name": "BatchStart",
+      "methodName": "toBatchStart",
+      "description": "Grants permission to start channels and multiplexes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html"
+    },
+    {
+      "name": "BatchStop",
+      "methodName": "toBatchStop",
+      "description": "Grants permission to stop channels and multiplexes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html"
+    },
+    {
+      "name": "BatchUpdateSchedule",
+      "methodName": "toBatchUpdateSchedule",
+      "description": "Grants permission to add and remove actions from a channel's schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/submitting-batch-command.html"
+    },
+    {
+      "name": "CancelInputDeviceTransfer",
+      "methodName": "toCancelInputDeviceTransfer",
+      "description": "Grants permission to cancel an input device transfer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html"
+    },
+    {
+      "name": "ClaimDevice",
+      "methodName": "toClaimDevice",
+      "description": "Grants permission to claim an input device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html"
+    },
+    {
+      "name": "CreateChannel",
+      "methodName": "toCreateChannel",
+      "description": "Grants permission to create a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/creating-channel-scratch.html"
+    },
+    {
+      "name": "CreateChannelPlacementGroup",
+      "methodName": "toCreateChannelPlacementGroup",
+      "description": "Grants permission to create a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "CreateCloudWatchAlarmTemplate",
+      "methodName": "toCreateCloudWatchAlarmTemplate",
+      "description": "Grants permission to create a cloudwatch alarm template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html"
+    },
+    {
+      "name": "CreateCloudWatchAlarmTemplateGroup",
+      "methodName": "toCreateCloudWatchAlarmTemplateGroup",
+      "description": "Grants permission to create a cloudwatch alarm template group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html"
+    },
+    {
+      "name": "CreateCluster",
+      "methodName": "toCreateCluster",
+      "description": "Grants permission to create a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "CreateEventBridgeRuleTemplate",
+      "methodName": "toCreateEventBridgeRuleTemplate",
+      "description": "Grants permission to create a eventbridge rule template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html"
+    },
+    {
+      "name": "CreateEventBridgeRuleTemplateGroup",
+      "methodName": "toCreateEventBridgeRuleTemplateGroup",
+      "description": "Grants permission to create a eventbridge rule template group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html"
+    },
+    {
+      "name": "CreateInput",
+      "methodName": "toCreateInput",
+      "description": "Grants permission to create an input",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/creating-input.html"
+    },
+    {
+      "name": "CreateInputSecurityGroup",
+      "methodName": "toCreateInputSecurityGroup",
+      "description": "Grants permission to create an input security group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/working-with-input-security-groups.html"
+    },
+    {
+      "name": "CreateMultiplex",
+      "methodName": "toCreateMultiplex",
+      "description": "Grants permission to create a multiplex",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/multiplex-create.html"
+    },
+    {
+      "name": "CreateMultiplexProgram",
+      "methodName": "toCreateMultiplexProgram",
+      "description": "Grants permission to create a multiplex program",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/multiplex-create.html"
+    },
+    {
+      "name": "CreateNetwork",
+      "methodName": "toCreateNetwork",
+      "description": "Grants permission to create a network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "CreateNode",
+      "methodName": "toCreateNode",
+      "description": "Grants permission to create a node",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "CreateNodeRegistrationScript",
+      "methodName": "toCreateNodeRegistrationScript",
+      "description": "Grants permission to create a node registration script",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "CreatePartnerInput",
+      "methodName": "toCreatePartnerInput",
+      "description": "Grants permission to create a partner input",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/input-create-cdi-partners.html"
+    },
+    {
+      "name": "CreateSdiSource",
+      "methodName": "toCreateSdiSource",
+      "description": "Grants permission to create a SDI source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "CreateSignalMap",
+      "methodName": "toCreateSignalMap",
+      "description": "Grants permission to create a signal map",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-create.html"
+    },
+    {
+      "name": "CreateTags",
+      "methodName": "toCreateTags",
+      "description": "Grants permission to create tags for channels, inputs, input security groups, multiplexes, reservations, nodes, networks, clusters, channel placement groups, signal maps, SDI sources, template groups, and templates",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/tagging.html"
+    },
+    {
+      "name": "DeleteChannel",
+      "methodName": "toDeleteChannel",
+      "description": "Grants permission to delete a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/editing-deleting-channel.html"
+    },
+    {
+      "name": "DeleteChannelPlacementGroup",
+      "methodName": "toDeleteChannelPlacementGroup",
+      "description": "Grants permission to delete a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "DeleteCloudWatchAlarmTemplate",
+      "methodName": "toDeleteCloudWatchAlarmTemplate",
+      "description": "Grants permission to delete a cloudwatch alarm template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html"
+    },
+    {
+      "name": "DeleteCloudWatchAlarmTemplateGroup",
+      "methodName": "toDeleteCloudWatchAlarmTemplateGroup",
+      "description": "Grants permission to delete a cloudwatch alarm template group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html"
+    },
+    {
+      "name": "DeleteCluster",
+      "methodName": "toDeleteCluster",
+      "description": "Grants permission to delete a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "DeleteEventBridgeRuleTemplate",
+      "methodName": "toDeleteEventBridgeRuleTemplate",
+      "description": "Grants permission to delete a eventbridge rule template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html"
+    },
+    {
+      "name": "DeleteEventBridgeRuleTemplateGroup",
+      "methodName": "toDeleteEventBridgeRuleTemplateGroup",
+      "description": "Grants permission to delete a eventbridge rule template group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html"
+    },
+    {
+      "name": "DeleteInput",
+      "methodName": "toDeleteInput",
+      "description": "Grants permission to delete an input",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/delete-input.html"
+    },
+    {
+      "name": "DeleteInputSecurityGroup",
+      "methodName": "toDeleteInputSecurityGroup",
+      "description": "Grants permission to delete an input security group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/delete-input-security-group.html"
+    },
+    {
+      "name": "DeleteMultiplex",
+      "methodName": "toDeleteMultiplex",
+      "description": "Grants permission to delete a multiplex",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/delete-multiplex-program.html"
+    },
+    {
+      "name": "DeleteMultiplexProgram",
+      "methodName": "toDeleteMultiplexProgram",
+      "description": "Grants permission to delete a multiplex program",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/delete-multiplex-program.html"
+    },
+    {
+      "name": "DeleteNetwork",
+      "methodName": "toDeleteNetwork",
+      "description": "Grants permission to delete a network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "DeleteNode",
+      "methodName": "toDeleteNode",
+      "description": "Grants permission to delete a node",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "DeleteReservation",
+      "methodName": "toDeleteReservation",
+      "description": "Grants permission to delete an expired reservation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/deleting-reservations.html"
+    },
+    {
+      "name": "DeleteSchedule",
+      "methodName": "toDeleteSchedule",
+      "description": "Grants permission to delete all schedule actions for a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/schedule-using-console-delete.html"
+    },
+    {
+      "name": "DeleteSdiSource",
+      "methodName": "toDeleteSdiSource",
+      "description": "Grants permission to delete a SDI source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "DeleteSignalMap",
+      "methodName": "toDeleteSignalMap",
+      "description": "Grants permission to delete a signal map",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-delete.html"
+    },
+    {
+      "name": "DeleteTags",
+      "methodName": "toDeleteTags",
+      "description": "Grants permission to delete tags from channels, inputs, input security groups, multiplexes, reservations, nodes, clusters, networks, channel placement groups, SDI source, signal maps, template groups, and templates",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/tagging.html"
+    },
+    {
+      "name": "DescribeAccountConfiguration",
+      "methodName": "toDescribeAccountConfiguration",
+      "description": "Grants permission to view the account configuration of the customer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html"
+    },
+    {
+      "name": "DescribeChannel",
+      "methodName": "toDescribeChannel",
+      "description": "Grants permission to get details about a channel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/viewing-channel-configuration.html"
+    },
+    {
+      "name": "DescribeChannelPlacementGroup",
+      "methodName": "toDescribeChannelPlacementGroup",
+      "description": "Grants permission to describe a channel placement group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-create.html"
+    },
+    {
+      "name": "DescribeCluster",
+      "methodName": "toDescribeCluster",
+      "description": "Grants permission to describe a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-create.html"
+    },
+    {
+      "name": "DescribeInput",
+      "methodName": "toDescribeInput",
+      "description": "Grants permission to describe an input",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/edit-input.html"
+    },
+    {
+      "name": "DescribeInputDevice",
+      "methodName": "toDescribeInputDevice",
+      "description": "Grants permission to describe an input device",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/device-edit.html"
+    },
+    {
+      "name": "DescribeInputDeviceThumbnail",
+      "methodName": "toDescribeInputDeviceThumbnail",
+      "description": "Grants permission to describe an input device thumbnail",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/device-edit.html"
+    },
+    {
+      "name": "DescribeInputSecurityGroup",
+      "methodName": "toDescribeInputSecurityGroup",
+      "description": "Grants permission to describe an input security group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/edit-input-security-group.html"
+    },
+    {
+      "name": "DescribeMultiplex",
+      "methodName": "toDescribeMultiplex",
+      "description": "Grants permission to describe a multiplex",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/edit-multiplex-program-channel.html"
+    },
+    {
+      "name": "DescribeMultiplexProgram",
+      "methodName": "toDescribeMultiplexProgram",
+      "description": "Grants permission to describe a multiplex program",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitoring-multiplex-console.html"
+    },
+    {
+      "name": "DescribeNetwork",
+      "methodName": "toDescribeNetwork",
+      "description": "Grants permission to describe a network",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-networks.html"
+    },
+    {
+      "name": "DescribeNode",
+      "methodName": "toDescribeNode",
+      "description": "Grants permission to describe a node",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-nodes-create.html"
+    },
+    {
+      "name": "DescribeOffering",
+      "methodName": "toDescribeOffering",
+      "description": "Grants permission to get details about a reservation offering",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/purchasing-reservations.html"
+    },
+    {
+      "name": "DescribeReservation",
+      "methodName": "toDescribeReservation",
+      "description": "Grants permission to get details about a reservation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/view-reservations.html"
+    },
+    {
+      "name": "DescribeSchedule",
+      "methodName": "toDescribeSchedule",
+      "description": "Grants permission to view a list of actions scheduled on a channel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/schedule-using-console-view.html"
+    },
+    {
+      "name": "DescribeSdiSource",
+      "methodName": "toDescribeSdiSource",
+      "description": "Grants permission to describe a SDI source",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-create.html"
+    },
+    {
+      "name": "DescribeThumbnails",
+      "methodName": "toDescribeThumbnails",
+      "description": "Grants permission to view the thumbnails for a channel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html"
+    },
+    {
+      "name": "GetCloudWatchAlarmTemplate",
+      "methodName": "toGetCloudWatchAlarmTemplate",
+      "description": "Grants permission to get a cloudwatch alarm template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html"
+    },
+    {
+      "name": "GetCloudWatchAlarmTemplateGroup",
+      "methodName": "toGetCloudWatchAlarmTemplateGroup",
+      "description": "Grants permission to get a cloudwatch alarm template group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html"
+    },
+    {
+      "name": "GetEventBridgeRuleTemplate",
+      "methodName": "toGetEventBridgeRuleTemplate",
+      "description": "Grants permission to get a eventbridge rule template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html"
+    },
+    {
+      "name": "GetEventBridgeRuleTemplateGroup",
+      "methodName": "toGetEventBridgeRuleTemplateGroup",
+      "description": "Grants permission to get a eventbridge rule template group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html"
+    },
+    {
+      "name": "GetSignalMap",
+      "methodName": "toGetSignalMap",
+      "description": "Grants permission to get a signal map",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-view.html"
+    },
+    {
+      "name": "ListAlerts",
+      "methodName": "toListAlerts",
+      "description": "Grants permission to list channel alerts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-activity-types-alerts-channels.html"
+    },
+    {
+      "name": "ListChannelPlacementGroups",
+      "methodName": "toListChannelPlacementGroups",
+      "description": "Grants permission to list channel placement groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "ListChannels",
+      "methodName": "toListChannels",
+      "description": "Grants permission to list channels",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/viewing-channel-configuration.html"
+    },
+    {
+      "name": "ListCloudWatchAlarmTemplateGroups",
+      "methodName": "toListCloudWatchAlarmTemplateGroups",
+      "description": "Grants permission to list cloudwatch alarm template groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html"
+    },
+    {
+      "name": "ListCloudWatchAlarmTemplates",
+      "methodName": "toListCloudWatchAlarmTemplates",
+      "description": "Grants permission to list cloudwatch alarm templates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html"
+    },
+    {
+      "name": "ListClusterAlerts",
+      "methodName": "toListClusterAlerts",
+      "description": "Grants permission to list cluster alerts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-activity-types-alerts-cluster.html"
+    },
+    {
+      "name": "ListClusters",
+      "methodName": "toListClusters",
+      "description": "Grants permission to list clusters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "ListEventBridgeRuleTemplateGroups",
+      "methodName": "toListEventBridgeRuleTemplateGroups",
+      "description": "Grants permission to list eventbridge rule template groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html"
+    },
+    {
+      "name": "ListEventBridgeRuleTemplates",
+      "methodName": "toListEventBridgeRuleTemplates",
+      "description": "Grants permission to list eventbridge rule templates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html"
+    },
+    {
+      "name": "ListInputDeviceTransfers",
+      "methodName": "toListInputDeviceTransfers",
+      "description": "Grants permission to list input device transfers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html"
+    },
+    {
+      "name": "ListInputDevices",
+      "methodName": "toListInputDevices",
+      "description": "Grants permission to list input devices",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/device-edit.html"
+    },
+    {
+      "name": "ListInputSecurityGroups",
+      "methodName": "toListInputSecurityGroups",
+      "description": "Grants permission to list input security groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/edit-input-security-group.html"
+    },
+    {
+      "name": "ListInputs",
+      "methodName": "toListInputs",
+      "description": "Grants permission to list inputs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/edit-input.html"
+    },
+    {
+      "name": "ListMultiplexAlerts",
+      "methodName": "toListMultiplexAlerts",
+      "description": "Grants permission to list multiplex alerts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-activity-types-alerts-channels.html"
+    },
+    {
+      "name": "ListMultiplexPrograms",
+      "methodName": "toListMultiplexPrograms",
+      "description": "Grants permission to list multiplex programs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitoring-multiplex-console.html"
+    },
+    {
+      "name": "ListMultiplexes",
+      "methodName": "toListMultiplexes",
+      "description": "Grants permission to list multiplexes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/edit-multiplex-program-channel.html"
+    },
+    {
+      "name": "ListNetworks",
+      "methodName": "toListNetworks",
+      "description": "Grants permission to list networks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "ListNodes",
+      "methodName": "toListNodes",
+      "description": "Grants permission to list nodes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "ListOfferings",
+      "methodName": "toListOfferings",
+      "description": "Grants permission to list reservation offerings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/purchasing-reservations.html"
+    },
+    {
+      "name": "ListReservations",
+      "methodName": "toListReservations",
+      "description": "Grants permission to list reservations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/view-reservations.html"
+    },
+    {
+      "name": "ListSdiSources",
+      "methodName": "toListSdiSources",
+      "description": "Grants permission to list SDI sources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "ListSignalMaps",
+      "methodName": "toListSignalMaps",
+      "description": "Grants permission to list signal maps",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-view.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for channels, inputs, input security groups, multiplexes, reservations, nodes, clusters, networks, channel placement groups, SDI sources, signal maps, template groups, and templates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/tagging.html"
+    },
+    {
+      "name": "ListVersions",
+      "methodName": "toListVersions",
+      "description": "Grants permission to list available versions of MediaLive",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/medialive-versions.html"
+    },
+    {
+      "name": "PollAnywhere",
+      "methodName": "toPollAnywhere",
+      "description": "Grants permission to the node to poll the cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/about-emla.html"
+    },
+    {
+      "name": "PurchaseOffering",
+      "methodName": "toPurchaseOffering",
+      "description": "Grants permission to purchase a reservation offering",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/purchasing-reservations.html"
+    },
+    {
+      "name": "RebootInputDevice",
+      "methodName": "toRebootInputDevice",
+      "description": "Grants permission to reboot an input device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html"
+    },
+    {
+      "name": "RejectInputDeviceTransfer",
+      "methodName": "toRejectInputDeviceTransfer",
+      "description": "Grants permission to reject an input device transfer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html"
+    },
+    {
+      "name": "RestartChannelPipelines",
+      "methodName": "toRestartChannelPipelines",
+      "description": "Grants permission to restart pipelines on a running channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/maintenance-user-initiated.html"
+    },
+    {
+      "name": "StartChannel",
+      "methodName": "toStartChannel",
+      "description": "Grants permission to start a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html"
+    },
+    {
+      "name": "StartDeleteMonitorDeployment",
+      "methodName": "toStartDeleteMonitorDeployment",
+      "description": "Grants permission to start deletion of a signal map's monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-delete.html"
+    },
+    {
+      "name": "StartInputDevice",
+      "methodName": "toStartInputDevice",
+      "description": "Grants permission to start an input device attached to a MediaConnect flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html"
+    },
+    {
+      "name": "StartInputDeviceMaintenanceWindow",
+      "methodName": "toStartInputDeviceMaintenanceWindow",
+      "description": "Grants permission to start a maintenance window for an input device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html"
+    },
+    {
+      "name": "StartMonitorDeployment",
+      "methodName": "toStartMonitorDeployment",
+      "description": "Grants permission to start a signal map monitor deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-deploy.html"
+    },
+    {
+      "name": "StartMultiplex",
+      "methodName": "toStartMultiplex",
+      "description": "Grants permission to start a multiplex",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/start-multiplex.html"
+    },
+    {
+      "name": "StartUpdateSignalMap",
+      "methodName": "toStartUpdateSignalMap",
+      "description": "Grants permission to start a signal map update",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-update.html"
+    },
+    {
+      "name": "StopChannel",
+      "methodName": "toStopChannel",
+      "description": "Grants permission to stop a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html"
+    },
+    {
+      "name": "StopInputDevice",
+      "methodName": "toStopInputDevice",
+      "description": "Grants permission to stop an input device attached to a MediaConnect flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html"
+    },
+    {
+      "name": "StopMultiplex",
+      "methodName": "toStopMultiplex",
+      "description": "Grants permission to stop a multiplex",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/stop-multiplex.title.html"
+    },
+    {
+      "name": "SubmitAnywhereStateChange",
+      "methodName": "toSubmitAnywhereStateChange",
+      "description": "Grants permission to the node to submit state changes to the cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/about-emla.html"
+    },
+    {
+      "name": "TransferInputDevice",
+      "methodName": "toTransferInputDevice",
+      "description": "Grants permission to transfer an input device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html"
+    },
+    {
+      "name": "UpdateAccountConfiguration",
+      "methodName": "toUpdateAccountConfiguration",
+      "description": "Grants permission to update a customer's account configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html"
+    },
+    {
+      "name": "UpdateChannel",
+      "methodName": "toUpdateChannel",
+      "description": "Grants permission to update a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/editing-deleting-channel.html"
+    },
+    {
+      "name": "UpdateChannelClass",
+      "methodName": "toUpdateChannelClass",
+      "description": "Grants permission to update the class of a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/editing-deleting-channel.html"
+    },
+    {
+      "name": "UpdateChannelPlacementGroup",
+      "methodName": "toUpdateChannelPlacementGroup",
+      "description": "Grants permission to update a node",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "UpdateCloudWatchAlarmTemplate",
+      "methodName": "toUpdateCloudWatchAlarmTemplate",
+      "description": "Grants permission to update a cloudwatch alarm template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html"
+    },
+    {
+      "name": "UpdateCloudWatchAlarmTemplateGroup",
+      "methodName": "toUpdateCloudWatchAlarmTemplateGroup",
+      "description": "Grants permission to update a cloudwatch alarm template group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html"
+    },
+    {
+      "name": "UpdateCluster",
+      "methodName": "toUpdateCluster",
+      "description": "Grants permission to update a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-create.html"
+    },
+    {
+      "name": "UpdateEventBridgeRuleTemplate",
+      "methodName": "toUpdateEventBridgeRuleTemplate",
+      "description": "Grants permission to update a eventbridge rule template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html"
+    },
+    {
+      "name": "UpdateEventBridgeRuleTemplateGroup",
+      "methodName": "toUpdateEventBridgeRuleTemplateGroup",
+      "description": "Grants permission to update a eventbridge rule template group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html"
+    },
+    {
+      "name": "UpdateInput",
+      "methodName": "toUpdateInput",
+      "description": "Grants permission to update an input",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/edit-input.html"
+    },
+    {
+      "name": "UpdateInputDevice",
+      "methodName": "toUpdateInputDevice",
+      "description": "Grants permission to update an input device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/device-edit.html"
+    },
+    {
+      "name": "UpdateInputSecurityGroup",
+      "methodName": "toUpdateInputSecurityGroup",
+      "description": "Grants permission to update an input security group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/edit-input-security-group.html"
+    },
+    {
+      "name": "UpdateMultiplex",
+      "methodName": "toUpdateMultiplex",
+      "description": "Grants permission to update a multiplex",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/edit-multiplex-program-channel.html"
+    },
+    {
+      "name": "UpdateMultiplexProgram",
+      "methodName": "toUpdateMultiplexProgram",
+      "description": "Grants permission to update a multiplex program",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/edit-multiplex-program-channel.html"
+    },
+    {
+      "name": "UpdateNetwork",
+      "methodName": "toUpdateNetwork",
+      "description": "Grants permission to update the state of a node",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/emla-deploy-identify-network-requirements.html"
+    },
+    {
+      "name": "UpdateNode",
+      "methodName": "toUpdateNode",
+      "description": "Grants permission to update a node",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-nodes-create.html"
+    },
+    {
+      "name": "UpdateNodeState",
+      "methodName": "toUpdateNodeState",
+      "description": "Grants permission to update the state of a node",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    },
+    {
+      "name": "UpdateReservation",
+      "methodName": "toUpdateReservation",
+      "description": "Grants permission to update a reservation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/reservations.html"
+    },
+    {
+      "name": "UpdateSdiSource",
+      "methodName": "toUpdateSdiSource",
+      "description": "Grants permission to update the state of a sdi source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "channel",
+      "methodName": "onChannel",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/container-channel.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:channel:${ChannelId}",
+      "placeholders": [
+        {
+          "placeholder": "ChannelId",
+          "name": "channelId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "channel-placement-group",
+      "methodName": "onChannelPlacementGroup",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:channelPlacementGroup:${ClusterId}/${ChannelPlacementGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterId",
+          "name": "clusterId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ChannelPlacementGroupId",
+          "name": "channelPlacementGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cloudwatch-alarm-template",
+      "methodName": "onCloudwatchAlarmTemplate",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:cloudwatch-alarm-template:${CloudWatchAlarmTemplateId}",
+      "placeholders": [
+        {
+          "placeholder": "CloudWatchAlarmTemplateId",
+          "name": "cloudWatchAlarmTemplateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cloudwatch-alarm-template-group",
+      "methodName": "onCloudwatchAlarmTemplateGroup",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:cloudwatch-alarm-template-group:${CloudWatchAlarmTemplateGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "CloudWatchAlarmTemplateGroupId",
+          "name": "cloudWatchAlarmTemplateGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cluster",
+      "methodName": "onCluster",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:cluster:${ClusterId}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterId",
+          "name": "clusterId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "eventbridge-rule-template",
+      "methodName": "onEventbridgeRuleTemplate",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:eventbridge-rule-template:${EventBridgeRuleTemplateId}",
+      "placeholders": [
+        {
+          "placeholder": "EventBridgeRuleTemplateId",
+          "name": "eventBridgeRuleTemplateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "eventbridge-rule-template-group",
+      "methodName": "onEventbridgeRuleTemplateGroup",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:eventbridge-rule-template-group:${EventBridgeRuleTemplateGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "EventBridgeRuleTemplateGroupId",
+          "name": "eventBridgeRuleTemplateGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "input",
+      "methodName": "onInput",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/creating-input.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:input:${InputId}",
+      "placeholders": [
+        {
+          "placeholder": "InputId",
+          "name": "inputId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "input-device",
+      "methodName": "onInputDevice",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:inputDevice:${DeviceId}",
+      "placeholders": [
+        {
+          "placeholder": "DeviceId",
+          "name": "deviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "input-security-group",
+      "methodName": "onInputSecurityGroup",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/working-with-input-security-groups.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:inputSecurityGroup:${InputSecurityGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "InputSecurityGroupId",
+          "name": "inputSecurityGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "multiplex",
+      "methodName": "onMultiplex",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/eml-multiplex.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:multiplex:${MultiplexId}",
+      "placeholders": [
+        {
+          "placeholder": "MultiplexId",
+          "name": "multiplexId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "network",
+      "methodName": "onNetwork",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:network:${NetworkId}",
+      "placeholders": [
+        {
+          "placeholder": "NetworkId",
+          "name": "networkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "node",
+      "methodName": "onNode",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:node:${ClusterId}/${NodeId}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterId",
+          "name": "clusterId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "NodeId",
+          "name": "nodeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "offering",
+      "methodName": "onOffering",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/input-output-reservations.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:offering:${OfferingId}",
+      "placeholders": [
+        {
+          "placeholder": "OfferingId",
+          "name": "offeringId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "reservation",
+      "methodName": "onReservation",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/reservations.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:reservation:${ReservationId}",
+      "placeholders": [
+        {
+          "placeholder": "ReservationId",
+          "name": "reservationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "sdi-source",
+      "methodName": "onSdiSource",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:sdiSource:${SdiSourceId}",
+      "placeholders": [
+        {
+          "placeholder": "SdiSourceId",
+          "name": "sdiSourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "signal-map",
+      "methodName": "onSignalMap",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-create.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:signal-map:${SignalMapId}",
+      "placeholders": [
+        {
+          "placeholder": "SignalMapId",
+          "name": "signalMapId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ugtagging.html",
+      "relatedActionMethods": [
+        "toCreateChannel",
+        "toCreateChannelPlacementGroup",
+        "toCreateCloudWatchAlarmTemplate",
+        "toCreateCloudWatchAlarmTemplateGroup",
+        "toCreateCluster",
+        "toCreateEventBridgeRuleTemplate",
+        "toCreateEventBridgeRuleTemplateGroup",
+        "toCreateInput",
+        "toCreateInputSecurityGroup",
+        "toCreateMultiplex",
+        "toCreateNetwork",
+        "toCreateNode",
+        "toCreatePartnerInput",
+        "toCreateSdiSource",
+        "toCreateSignalMap",
+        "toCreateTags",
+        "toPurchaseOffering",
+        "toUpdateChannelPlacementGroup",
+        "toUpdateCluster",
+        "toUpdateInputSecurityGroup",
+        "toUpdateNetwork",
+        "toUpdateNode",
+        "toUpdateNodeState",
+        "toUpdateSdiSource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ugtagging.html",
+      "relatedActionMethods": [
+        "toBatchUpdateSchedule",
+        "toCreateChannel",
+        "toCreateChannelPlacementGroup",
+        "toCreateCloudWatchAlarmTemplate",
+        "toCreateCloudWatchAlarmTemplateGroup",
+        "toCreateCluster",
+        "toCreateEventBridgeRuleTemplate",
+        "toCreateEventBridgeRuleTemplateGroup",
+        "toCreateInput",
+        "toCreateInputSecurityGroup",
+        "toCreateMultiplex",
+        "toCreateMultiplexProgram",
+        "toCreateNetwork",
+        "toCreateNode",
+        "toCreateNodeRegistrationScript",
+        "toCreatePartnerInput",
+        "toCreateSdiSource",
+        "toCreateSignalMap",
+        "toCreateTags",
+        "toDeleteChannel",
+        "toDeleteChannelPlacementGroup",
+        "toDeleteCloudWatchAlarmTemplate",
+        "toDeleteCloudWatchAlarmTemplateGroup",
+        "toDeleteCluster",
+        "toDeleteEventBridgeRuleTemplate",
+        "toDeleteEventBridgeRuleTemplateGroup",
+        "toDeleteInput",
+        "toDeleteInputSecurityGroup",
+        "toDeleteMultiplex",
+        "toDeleteMultiplexProgram",
+        "toDeleteNetwork",
+        "toDeleteNode",
+        "toDeleteReservation",
+        "toDeleteSchedule",
+        "toDeleteSdiSource",
+        "toDeleteSignalMap",
+        "toDeleteTags",
+        "toDescribeChannel",
+        "toDescribeChannelPlacementGroup",
+        "toDescribeCluster",
+        "toDescribeInput",
+        "toDescribeInputSecurityGroup",
+        "toDescribeMultiplex",
+        "toDescribeMultiplexProgram",
+        "toDescribeNetwork",
+        "toDescribeNode",
+        "toDescribeReservation",
+        "toDescribeSchedule",
+        "toDescribeSdiSource",
+        "toDescribeThumbnails",
+        "toGetCloudWatchAlarmTemplate",
+        "toGetCloudWatchAlarmTemplateGroup",
+        "toGetEventBridgeRuleTemplate",
+        "toGetEventBridgeRuleTemplateGroup",
+        "toGetSignalMap",
+        "toListTagsForResource",
+        "toPurchaseOffering",
+        "toRestartChannelPipelines",
+        "toStartChannel",
+        "toStartDeleteMonitorDeployment",
+        "toStartMonitorDeployment",
+        "toStartMultiplex",
+        "toStartUpdateSignalMap",
+        "toStopChannel",
+        "toStopMultiplex",
+        "toUpdateChannel",
+        "toUpdateChannelClass",
+        "toUpdateChannelPlacementGroup",
+        "toUpdateCloudWatchAlarmTemplate",
+        "toUpdateCloudWatchAlarmTemplateGroup",
+        "toUpdateCluster",
+        "toUpdateEventBridgeRuleTemplate",
+        "toUpdateEventBridgeRuleTemplateGroup",
+        "toUpdateInput",
+        "toUpdateInputSecurityGroup",
+        "toUpdateMultiplex",
+        "toUpdateMultiplexProgram",
+        "toUpdateNetwork",
+        "toUpdateNode",
+        "toUpdateNodeState",
+        "toUpdateReservation",
+        "toUpdateSdiSource"
+      ],
+      "relatedResourceTypes": [
+        "channel",
+        "channel-placement-group",
+        "cloudwatch-alarm-template",
+        "cloudwatch-alarm-template-group",
+        "cluster",
+        "eventbridge-rule-template",
+        "eventbridge-rule-template-group",
+        "input",
+        "input-security-group",
+        "multiplex",
+        "network",
+        "node",
+        "reservation",
+        "sdi-source",
+        "signal-map"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ugtagging.html",
+      "relatedActionMethods": [
+        "toCreateChannel",
+        "toCreateChannelPlacementGroup",
+        "toCreateCloudWatchAlarmTemplate",
+        "toCreateCloudWatchAlarmTemplateGroup",
+        "toCreateCluster",
+        "toCreateEventBridgeRuleTemplate",
+        "toCreateEventBridgeRuleTemplateGroup",
+        "toCreateInput",
+        "toCreateInputSecurityGroup",
+        "toCreateMultiplex",
+        "toCreateNetwork",
+        "toCreateNode",
+        "toCreatePartnerInput",
+        "toCreateSdiSource",
+        "toCreateSignalMap",
+        "toCreateTags",
+        "toDeleteTags",
+        "toPurchaseOffering",
+        "toUpdateChannelPlacementGroup",
+        "toUpdateCluster",
+        "toUpdateInputSecurityGroup",
+        "toUpdateNetwork",
+        "toUpdateNode",
+        "toUpdateNodeState",
+        "toUpdateSdiSource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

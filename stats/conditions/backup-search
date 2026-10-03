@@ -1,3 +1,0 @@
-backup-search:RequestTag/${TagKey}
-backup-search:ResourceTag/${TagKey}
-backup-search:TagKeys

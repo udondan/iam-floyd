@@ -1,3 +1,0 @@
-purchase-orders:RequestTag/${TagKey}
-purchase-orders:ResourceTag/${TagKey}
-purchase-orders:TagKeys

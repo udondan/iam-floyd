@@ -1,0 +1,716 @@
+{
+  "schemaVersion": 1,
+  "filename": "ecr",
+  "className": "Ecr",
+  "name": "ecr",
+  "servicePrefix": "ecr",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecr.html",
+  "accessLevelList": {
+    "Read": [
+      "BatchCheckLayerAvailability",
+      "BatchGetImage",
+      "BatchGetRepositoryScanningConfiguration",
+      "DescribeImageReplicationStatus",
+      "DescribeImageScanFindings",
+      "DescribeImageSigningStatus",
+      "DescribeRegistry",
+      "DescribeRepositories",
+      "DescribeRepositoryCreationTemplates",
+      "GetAccountSetting",
+      "GetAuthorizationToken",
+      "GetDownloadUrlForLayer",
+      "GetLifecyclePolicy",
+      "GetLifecyclePolicyPreview",
+      "GetRegistryPolicy",
+      "GetRegistryScanningConfiguration",
+      "GetRepositoryPolicy",
+      "GetSigningConfiguration",
+      "ListTagsForResource",
+      "ValidatePullThroughCacheRule",
+      "GetImageCopyStatus"
+    ],
+    "Write": [
+      "BatchDeleteImage",
+      "CompleteLayerUpload",
+      "CreatePullThroughCacheRule",
+      "CreateRepository",
+      "CreateRepositoryCreationTemplate",
+      "DeleteLifecyclePolicy",
+      "DeletePullThroughCacheRule",
+      "DeleteRegistryPolicy",
+      "DeleteRepository",
+      "DeleteRepositoryCreationTemplate",
+      "DeleteRepositoryPolicy",
+      "DeleteSigningConfiguration",
+      "DeregisterPullTimeUpdateExclusion",
+      "InitiateLayerUpload",
+      "PutAccountSetting",
+      "PutImage",
+      "PutImageScanningConfiguration",
+      "PutImageTagMutability",
+      "PutLifecyclePolicy",
+      "PutRegistryPolicy",
+      "PutRegistryScanningConfiguration",
+      "PutReplicationConfiguration",
+      "PutSigningConfiguration",
+      "RegisterPullTimeUpdateExclusion",
+      "SetRepositoryPolicy",
+      "StartImageScan",
+      "StartLifecyclePolicyPreview",
+      "TagResource",
+      "UntagResource",
+      "UpdateImageStorageClass",
+      "UpdatePullThroughCacheRule",
+      "UpdateRepositoryCreationTemplate",
+      "UploadLayerPart",
+      "BatchImportUpstreamImage",
+      "ReplicateImage"
+    ],
+    "Permissions management": [
+      "DeleteRegistryPolicy",
+      "DeleteRepositoryPolicy",
+      "PutRegistryPolicy",
+      "SetRepositoryPolicy"
+    ],
+    "List": [
+      "DescribeImages",
+      "DescribePullThroughCacheRules",
+      "ListImages",
+      "ListPullTimeUpdateExclusions"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchCheckLayerAvailability",
+      "methodName": "toBatchCheckLayerAvailability",
+      "description": "Grants permission to check the availability of multiple image layers in a specified registry and repository",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchCheckLayerAvailability.html"
+    },
+    {
+      "name": "BatchDeleteImage",
+      "methodName": "toBatchDeleteImage",
+      "description": "Grants permission to delete a list of specified images within a specified repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchDeleteImage.html"
+    },
+    {
+      "name": "BatchGetImage",
+      "methodName": "toBatchGetImage",
+      "description": "Grants permission to get detailed information for specified images within a specified repository",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchGetImage.html"
+    },
+    {
+      "name": "BatchGetRepositoryScanningConfiguration",
+      "methodName": "toBatchGetRepositoryScanningConfiguration",
+      "description": "Grants permission to retrieve repository scanning configuration for a list of repositories",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchGetRepositoryScanningConfiguration.html"
+    },
+    {
+      "name": "CompleteLayerUpload",
+      "methodName": "toCompleteLayerUpload",
+      "description": "Grants permission to inform Amazon ECR that the image layer upload for a specified registry, repository name, and upload ID, has completed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CompleteLayerUpload.html"
+    },
+    {
+      "name": "CreatePullThroughCacheRule",
+      "methodName": "toCreatePullThroughCacheRule",
+      "description": "Grants permission to create new pull-through cache rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CreatePullThroughCacheRule.html"
+    },
+    {
+      "name": "CreateRepository",
+      "methodName": "toCreateRepository",
+      "description": "Grants permission to create an image repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CreateRepository.html"
+    },
+    {
+      "name": "CreateRepositoryCreationTemplate",
+      "methodName": "toCreateRepositoryCreationTemplate",
+      "description": "Grants permission to create the repository creation template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CreateRepositoryCreationTemplate.html"
+    },
+    {
+      "name": "DeleteLifecyclePolicy",
+      "methodName": "toDeleteLifecyclePolicy",
+      "description": "Grants permission to delete the specified lifecycle policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteLifecyclePolicy.html"
+    },
+    {
+      "name": "DeletePullThroughCacheRule",
+      "methodName": "toDeletePullThroughCacheRule",
+      "description": "Grants permission to delete the pull-through cache rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeletePullThroughCacheRule.html"
+    },
+    {
+      "name": "DeleteRegistryPolicy",
+      "methodName": "toDeleteRegistryPolicy",
+      "description": "Grants permission to delete the registry policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRegistryPolicy.html"
+    },
+    {
+      "name": "DeleteRepository",
+      "methodName": "toDeleteRepository",
+      "description": "Grants permission to delete an existing image repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepository.html"
+    },
+    {
+      "name": "DeleteRepositoryCreationTemplate",
+      "methodName": "toDeleteRepositoryCreationTemplate",
+      "description": "Grants permission to delete the repository creation template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepositoryCreationTemplate.html"
+    },
+    {
+      "name": "DeleteRepositoryPolicy",
+      "methodName": "toDeleteRepositoryPolicy",
+      "description": "Grants permission to delete the repository policy from a specified repository",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepositoryPolicy.html"
+    },
+    {
+      "name": "DeleteSigningConfiguration",
+      "methodName": "toDeleteSigningConfiguration",
+      "description": "Grants permission to delete the signing configuration for the registry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteSigningConfiguration"
+    },
+    {
+      "name": "DeregisterPullTimeUpdateExclusion",
+      "methodName": "toDeregisterPullTimeUpdateExclusion",
+      "description": "Grants permission to deregister a pull time update exclusion",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeregisterPullTimeUpdateExclusion"
+    },
+    {
+      "name": "DescribeImageReplicationStatus",
+      "methodName": "toDescribeImageReplicationStatus",
+      "description": "Grants permission to retrieve replication status about an image in a registry, including failure reason if replication fails",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImageReplicationStatus.html"
+    },
+    {
+      "name": "DescribeImageScanFindings",
+      "methodName": "toDescribeImageScanFindings",
+      "description": "Grants permission to describe the image scan findings for the specified image",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImageScanFindings.html"
+    },
+    {
+      "name": "DescribeImageSigningStatus",
+      "methodName": "toDescribeImageSigningStatus",
+      "description": "Grants permission to retrieve signing status about an image in a specified registry",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImageSigningStatus"
+    },
+    {
+      "name": "DescribeImages",
+      "methodName": "toDescribeImages",
+      "description": "Grants permission to get metadata about the images in a repository, including image size, image tags, and creation date",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImages.html"
+    },
+    {
+      "name": "DescribePullThroughCacheRules",
+      "methodName": "toDescribePullThroughCacheRules",
+      "description": "Grants permission to describe the pull-through cache rules",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribePullThroughCacheRules.html"
+    },
+    {
+      "name": "DescribeRegistry",
+      "methodName": "toDescribeRegistry",
+      "description": "Grants permission to describe the registry settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeRegistry.html"
+    },
+    {
+      "name": "DescribeRepositories",
+      "methodName": "toDescribeRepositories",
+      "description": "Grants permission to describe image repositories in a registry",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeRepositories.html"
+    },
+    {
+      "name": "DescribeRepositoryCreationTemplates",
+      "methodName": "toDescribeRepositoryCreationTemplates",
+      "description": "Grants permission to describe the repository creation template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeRepositoryCreationTemplates.html"
+    },
+    {
+      "name": "GetAccountSetting",
+      "methodName": "toGetAccountSetting",
+      "description": "Grants permission to retrieve account settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetAccountSetting.html",
+      "conditionMethods": [
+        "ifAccountSetting"
+      ]
+    },
+    {
+      "name": "GetAuthorizationToken",
+      "methodName": "toGetAuthorizationToken",
+      "description": "Grants permission to retrieve a token that is valid for a specified registry for 12 hours",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetAuthorizationToken.html"
+    },
+    {
+      "name": "GetDownloadUrlForLayer",
+      "methodName": "toGetDownloadUrlForLayer",
+      "description": "Grants permission to retrieve the download URL corresponding to an image layer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetDownloadUrlForLayer.html"
+    },
+    {
+      "name": "GetLifecyclePolicy",
+      "methodName": "toGetLifecyclePolicy",
+      "description": "Grants permission to retrieve the specified lifecycle policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetLifecyclePolicy.html"
+    },
+    {
+      "name": "GetLifecyclePolicyPreview",
+      "methodName": "toGetLifecyclePolicyPreview",
+      "description": "Grants permission to retrieve the results of the specified lifecycle policy preview request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetLifecyclePolicyPreview.html"
+    },
+    {
+      "name": "GetRegistryPolicy",
+      "methodName": "toGetRegistryPolicy",
+      "description": "Grants permission to retrieve the registry policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetRegistryPolicy.html"
+    },
+    {
+      "name": "GetRegistryScanningConfiguration",
+      "methodName": "toGetRegistryScanningConfiguration",
+      "description": "Grants permission to retrieve registry scanning configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetRegistryScanningConfiguration.html"
+    },
+    {
+      "name": "GetRepositoryPolicy",
+      "methodName": "toGetRepositoryPolicy",
+      "description": "Grants permission to retrieve the repository policy for a specified repository",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetRepositoryPolicy.html"
+    },
+    {
+      "name": "GetSigningConfiguration",
+      "methodName": "toGetSigningConfiguration",
+      "description": "Grants permission to retrieve the signing configuration for the registry",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetSigningConfiguration"
+    },
+    {
+      "name": "InitiateLayerUpload",
+      "methodName": "toInitiateLayerUpload",
+      "description": "Grants permission to notify Amazon ECR that you intend to upload an image layer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_InitiateLayerUpload.html"
+    },
+    {
+      "name": "ListImages",
+      "methodName": "toListImages",
+      "description": "Grants permission to list all the image IDs for a given repository",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListImages.html"
+    },
+    {
+      "name": "ListPullTimeUpdateExclusions",
+      "methodName": "toListPullTimeUpdateExclusions",
+      "description": "Grants permission to list pull time update exclusions for the registry",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListPullTimeUpdateExclusions"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for an Amazon ECR resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutAccountSetting",
+      "methodName": "toPutAccountSetting",
+      "description": "Grants permission to update account settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutAccountSetting.html",
+      "conditionMethods": [
+        "ifAccountSetting"
+      ]
+    },
+    {
+      "name": "PutImage",
+      "methodName": "toPutImage",
+      "description": "Grants permission to create or update the image manifest associated with an image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImage.html"
+    },
+    {
+      "name": "PutImageScanningConfiguration",
+      "methodName": "toPutImageScanningConfiguration",
+      "description": "Grants permission to update the image scanning configuration for a repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImageScanningConfiguration.html"
+    },
+    {
+      "name": "PutImageTagMutability",
+      "methodName": "toPutImageTagMutability",
+      "description": "Grants permission to update the image tag mutability settings for a repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImageTagMutability.html"
+    },
+    {
+      "name": "PutLifecyclePolicy",
+      "methodName": "toPutLifecyclePolicy",
+      "description": "Grants permission to create or update a lifecycle policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html"
+    },
+    {
+      "name": "PutRegistryPolicy",
+      "methodName": "toPutRegistryPolicy",
+      "description": "Grants permission to update the registry policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutRegistryPolicy.html"
+    },
+    {
+      "name": "PutRegistryScanningConfiguration",
+      "methodName": "toPutRegistryScanningConfiguration",
+      "description": "Grants permission to update registry scanning configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutRegistryScanningConfiguration.html"
+    },
+    {
+      "name": "PutReplicationConfiguration",
+      "methodName": "toPutReplicationConfiguration",
+      "description": "Grants permission to update the replication configuration for the registry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutReplicationConfiguration.html"
+    },
+    {
+      "name": "PutSigningConfiguration",
+      "methodName": "toPutSigningConfiguration",
+      "description": "Grants permission to update the signing configuration for the registry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutSigningConfiguration"
+    },
+    {
+      "name": "RegisterPullTimeUpdateExclusion",
+      "methodName": "toRegisterPullTimeUpdateExclusion",
+      "description": "Grants permission to register a pull time update exclusion",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_RegisterPullTimeUpdateExclusion"
+    },
+    {
+      "name": "SetRepositoryPolicy",
+      "methodName": "toSetRepositoryPolicy",
+      "description": "Grants permission to apply a repository policy on a specified repository to control access permissions",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_SetRepositoryPolicy.html"
+    },
+    {
+      "name": "StartImageScan",
+      "methodName": "toStartImageScan",
+      "description": "Grants permission to start an image scan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html"
+    },
+    {
+      "name": "StartLifecyclePolicyPreview",
+      "methodName": "toStartLifecyclePolicyPreview",
+      "description": "Grants permission to start a preview of the specified lifecycle policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartLifecyclePolicyPreview.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an Amazon ECR resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag an Amazon ECR resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateImageStorageClass",
+      "methodName": "toUpdateImageStorageClass",
+      "description": "Grants permission to get update the storage class of a specified image within a specified repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UpdateImageStorageClass"
+    },
+    {
+      "name": "UpdatePullThroughCacheRule",
+      "methodName": "toUpdatePullThroughCacheRule",
+      "description": "Grants permission to update the pull-through cache rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UpdatePullThroughCacheRule.html"
+    },
+    {
+      "name": "UpdateRepositoryCreationTemplate",
+      "methodName": "toUpdateRepositoryCreationTemplate",
+      "description": "Grants permission to update the repository creation template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UpdateRepositoryCreationTemplate.html"
+    },
+    {
+      "name": "UploadLayerPart",
+      "methodName": "toUploadLayerPart",
+      "description": "Grants permission to upload an image layer part to Amazon ECR",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UploadLayerPart.html"
+    },
+    {
+      "name": "ValidatePullThroughCacheRule",
+      "methodName": "toValidatePullThroughCacheRule",
+      "description": "Grants permission to validate the pull-through cache rule",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ValidatePullThroughCacheRule.html"
+    },
+    {
+      "name": "BatchImportUpstreamImage",
+      "methodName": "toBatchImportUpstreamImage",
+      "description": "Grants permission to retrieve the image from the upstream registry and import it to your private registry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html"
+    },
+    {
+      "name": "GetImageCopyStatus",
+      "methodName": "toGetImageCopyStatus",
+      "description": "Grants permission to retrieve the status about an image copy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html"
+    },
+    {
+      "name": "ReplicateImage",
+      "methodName": "toReplicateImage",
+      "description": "Grants permission to replicate images to the destination registry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "repository",
+      "methodName": "onRepository",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html",
+      "arn": "arn:${Partition}:ecr:${Region}:${Account}:repository/${RepositoryName}",
+      "placeholders": [
+        {
+          "placeholder": "RepositoryName",
+          "name": "repositoryName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateRepository",
+        "toListTagsForResource",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag-value associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchCheckLayerAvailability",
+        "toBatchDeleteImage",
+        "toBatchGetImage",
+        "toBatchGetRepositoryScanningConfiguration",
+        "toCompleteLayerUpload",
+        "toCreateRepository",
+        "toDeleteLifecyclePolicy",
+        "toDeleteRepository",
+        "toDeleteRepositoryPolicy",
+        "toDescribeImageReplicationStatus",
+        "toDescribeImageScanFindings",
+        "toDescribeImageSigningStatus",
+        "toDescribeImages",
+        "toDescribeRepositories",
+        "toGetDownloadUrlForLayer",
+        "toGetLifecyclePolicy",
+        "toGetLifecyclePolicyPreview",
+        "toGetRepositoryPolicy",
+        "toInitiateLayerUpload",
+        "toListImages",
+        "toListTagsForResource",
+        "toPutImage",
+        "toPutImageScanningConfiguration",
+        "toPutImageTagMutability",
+        "toPutLifecyclePolicy",
+        "toSetRepositoryPolicy",
+        "toStartImageScan",
+        "toStartLifecyclePolicyPreview",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateImageStorageClass",
+        "toUploadLayerPart",
+        "toBatchImportUpstreamImage",
+        "toGetImageCopyStatus",
+        "toReplicateImage"
+      ],
+      "relatedResourceTypes": [
+        "repository"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateRepository",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ecr:AccountSetting",
+      "methodName": "ifAccountSetting",
+      "description": "Filters access by the ECR account setting name",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toGetAccountSetting",
+        "toPutAccountSetting"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AccountSetting",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ecr:ResourceTag/${TagKey}",
+      "methodName": "ifResourceTag",
+      "description": "Filters access by tag-value associated with the resource",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toBatchCheckLayerAvailability",
+        "toBatchDeleteImage",
+        "toBatchGetImage",
+        "toBatchGetRepositoryScanningConfiguration",
+        "toCompleteLayerUpload",
+        "toCreateRepository",
+        "toDeleteLifecyclePolicy",
+        "toDeleteRepository",
+        "toDeleteRepositoryPolicy",
+        "toDescribeImageReplicationStatus",
+        "toDescribeImageScanFindings",
+        "toDescribeImageSigningStatus",
+        "toDescribeImages",
+        "toDescribeRepositories",
+        "toGetDownloadUrlForLayer",
+        "toGetLifecyclePolicy",
+        "toGetLifecyclePolicyPreview",
+        "toGetRepositoryPolicy",
+        "toInitiateLayerUpload",
+        "toListImages",
+        "toListTagsForResource",
+        "toPutImage",
+        "toPutImageScanningConfiguration",
+        "toPutImageTagMutability",
+        "toPutLifecyclePolicy",
+        "toSetRepositoryPolicy",
+        "toStartImageScan",
+        "toStartLifecyclePolicyPreview",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateImageStorageClass",
+        "toUploadLayerPart",
+        "toBatchImportUpstreamImage",
+        "toGetImageCopyStatus",
+        "toReplicateImage"
+      ],
+      "relatedResourceTypes": [
+        "repository"
+      ],
+      "keyLiteral": "ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

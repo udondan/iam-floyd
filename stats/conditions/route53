@@ -1,4 +1,0 @@
-route53:ChangeResourceRecordSetsActions
-route53:ChangeResourceRecordSetsNormalizedRecordNames
-route53:ChangeResourceRecordSetsRecordTypes
-route53:VPCs

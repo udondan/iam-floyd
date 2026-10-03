@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { Project } from 'ts-morph';
 
+import { emitTypeScriptFromModels } from '../lib/generator/emit/typescript';
 import { formatCode } from '../lib/generator/format';
 
 const lib = path.join(__dirname, '../lib');
@@ -29,23 +30,15 @@ async function run() {
   if (doFixManagedPolicy) fixManagedPolicy(project);
 
   if (doFixModule) {
-    const files = fs.readdirSync(`${lib}/generated/policy-statements`);
-    files.forEach((file) => {
-      if (file == '.cache') return;
-      if (file == 'index.ts') return;
-      if (!file.endsWith('.ts')) return;
-      if (file.endsWith('.d.ts')) return;
-
-      file = `${lib}/generated/policy-statements/${file}`;
-      console.log(`Processing ${file}`);
-
-      fixModule(project, file);
-    });
-
     fixModule(project, `${lib}/shared/all.ts`);
   }
 
   await project.save();
+
+  if (doFixModule) {
+    console.log('Emitting CDK variant of the statement providers');
+    await emitTypeScriptFromModels({ cdk: true });
+  }
   console.log('done');
 }
 

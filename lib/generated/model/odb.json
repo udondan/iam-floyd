@@ -1,0 +1,1220 @@
+{
+  "schemaVersion": 1,
+  "filename": "odb",
+  "className": "Odb",
+  "name": "odb",
+  "servicePrefix": "odb",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptMarketplaceRegistration",
+      "AssociateIamRoleToResource",
+      "AssociateVirtualMachinesToExadbVmCluster",
+      "CreateAutonomousDatabase",
+      "CreateAutonomousDatabaseBackup",
+      "CreateAutonomousDatabaseWallet",
+      "CreateCloudAutonomousVmCluster",
+      "CreateCloudExadataInfrastructure",
+      "CreateCloudVmCluster",
+      "CreateExadbVmCluster",
+      "CreateExascaleDbStorageVault",
+      "CreateOdbNetwork",
+      "CreateOdbPeeringConnection",
+      "DeleteAutonomousDatabase",
+      "DeleteAutonomousDatabaseBackup",
+      "DeleteCloudAutonomousVmCluster",
+      "DeleteCloudExadataInfrastructure",
+      "DeleteCloudVmCluster",
+      "DeleteExadbVmCluster",
+      "DeleteExascaleDbStorageVault",
+      "DeleteOdbNetwork",
+      "DeleteOdbPeeringConnection",
+      "DisassociateIamRoleFromResource",
+      "DisassociateVirtualMachinesFromExadbVmCluster",
+      "FailoverAutonomousDatabase",
+      "InitializeService",
+      "RebootAutonomousDatabase",
+      "RebootDbNode",
+      "RestoreAutonomousDatabase",
+      "ShrinkAutonomousDatabase",
+      "StartAutonomousDatabase",
+      "StartDbNode",
+      "StopAutonomousDatabase",
+      "StopDbNode",
+      "SwitchoverAutonomousDatabase",
+      "TagResource",
+      "UntagResource",
+      "UpdateAutonomousDatabase",
+      "UpdateAutonomousDatabaseBackup",
+      "UpdateCloudExadataInfrastructure",
+      "UpdateExadbVmCluster",
+      "UpdateExascaleDbStorageVault",
+      "UpdateOdbNetwork",
+      "UpdateOdbPeeringConnection",
+      "CreateDbNode",
+      "CreateGrantShare",
+      "CreateOutboundIntegration",
+      "DeleteDbNode",
+      "DeleteGrantShare",
+      "DeleteResourcePolicy",
+      "PutResourcePolicy",
+      "UpdateGrantShare",
+      "UpdateOutboundIntegration"
+    ],
+    "Read": [
+      "GetAutonomousDatabase",
+      "GetAutonomousDatabaseBackup",
+      "GetAutonomousDatabaseWalletDetails",
+      "GetCloudAutonomousVmCluster",
+      "GetCloudExadataInfrastructure",
+      "GetCloudExadataInfrastructureUnallocatedResources",
+      "GetCloudVmCluster",
+      "GetDbNode",
+      "GetDbServer",
+      "GetExadbVmCluster",
+      "GetExascaleDbStorageVault",
+      "GetOciOnboardingStatus",
+      "GetOdbNetwork",
+      "GetOdbPeeringConnection",
+      "ListTagsForResource",
+      "GetResourcePolicy"
+    ],
+    "List": [
+      "ListAutonomousDatabaseBackups",
+      "ListAutonomousDatabaseCharacterSets",
+      "ListAutonomousDatabaseClones",
+      "ListAutonomousDatabasePeers",
+      "ListAutonomousDatabaseVersions",
+      "ListAutonomousDatabases",
+      "ListAutonomousVirtualMachines",
+      "ListCloudAutonomousVmClusters",
+      "ListCloudExadataInfrastructures",
+      "ListCloudVmClusters",
+      "ListDbNodes",
+      "ListDbServers",
+      "ListDbSystemShapes",
+      "ListExadbVmClusters",
+      "ListExascaleDbStorageVaults",
+      "ListFlexComponents",
+      "ListGiMinorVersions",
+      "ListGiVersions",
+      "ListOdbNetworks",
+      "ListOdbPeeringConnections",
+      "ListSystemVersions"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptMarketplaceRegistration",
+      "methodName": "toAcceptMarketplaceRegistration",
+      "description": "Grants permission to register the Amazon Web Services Marketplace token for your Amazon Web Services account to activate your Oracle Database@Amazon Web Services subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_AcceptMarketplaceRegistration.html"
+    },
+    {
+      "name": "AssociateIamRoleToResource",
+      "methodName": "toAssociateIamRoleToResource",
+      "description": "Grants permission to associate an AWS Identity and Access Management (IAM) service role with a specified resource to enable AWS service integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_AssociateIamRoleToResource.html"
+    },
+    {
+      "name": "AssociateVirtualMachinesToExadbVmCluster",
+      "methodName": "toAssociateVirtualMachinesToExadbVmCluster",
+      "description": "Grants permission to associate virtual machines to a specified Exadb VM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_AssociateVirtualMachinesToExadbVmCluster.html"
+    },
+    {
+      "name": "CreateAutonomousDatabase",
+      "methodName": "toCreateAutonomousDatabase",
+      "description": "Grants permission to create an Autonomous Database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateAutonomousDatabase.html"
+    },
+    {
+      "name": "CreateAutonomousDatabaseBackup",
+      "methodName": "toCreateAutonomousDatabaseBackup",
+      "description": "Grants permission to create a backup of the specified Autonomous Database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateAutonomousDatabaseBackup.html"
+    },
+    {
+      "name": "CreateAutonomousDatabaseWallet",
+      "methodName": "toCreateAutonomousDatabaseWallet",
+      "description": "Grants permission to create a wallet for the specified Autonomous Database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateAutonomousDatabaseWallet.html"
+    },
+    {
+      "name": "CreateCloudAutonomousVmCluster",
+      "methodName": "toCreateCloudAutonomousVmCluster",
+      "description": "Grants permission to create an Autonomous VM cluster in the specified Exadata infrastructure",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateCloudAutonomousVmCluster.html"
+    },
+    {
+      "name": "CreateCloudExadataInfrastructure",
+      "methodName": "toCreateCloudExadataInfrastructure",
+      "description": "Grants permission to create an Exadata infrastructure",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateCloudExadataInfrastructure.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateCloudVmCluster",
+      "methodName": "toCreateCloudVmCluster",
+      "description": "Grants permission to create a VM cluster on the specified Exadata infrastructure",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateCloudVmCluster.html"
+    },
+    {
+      "name": "CreateExadbVmCluster",
+      "methodName": "toCreateExadbVmCluster",
+      "description": "Grants permission to create an Exadb VM cluster in the specified Exascale DB storage vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateExadbVmCluster.html"
+    },
+    {
+      "name": "CreateExascaleDbStorageVault",
+      "methodName": "toCreateExascaleDbStorageVault",
+      "description": "Grants permission to create an Exascale DB storage vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateExascaleDbStorageVault.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateOdbNetwork",
+      "methodName": "toCreateOdbNetwork",
+      "description": "Grants permission to create an ODB network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateOdbNetwork.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateOdbPeeringConnection",
+      "methodName": "toCreateOdbPeeringConnection",
+      "description": "Grants permission to create an ODB Peering Connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateOdbPeeringConnection.html"
+    },
+    {
+      "name": "DeleteAutonomousDatabase",
+      "methodName": "toDeleteAutonomousDatabase",
+      "description": "Grants permission to delete the specified Autonomous Database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteAutonomousDatabase.html"
+    },
+    {
+      "name": "DeleteAutonomousDatabaseBackup",
+      "methodName": "toDeleteAutonomousDatabaseBackup",
+      "description": "Grants permission to delete the specified Autonomous Database backup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteAutonomousDatabaseBackup.html"
+    },
+    {
+      "name": "DeleteCloudAutonomousVmCluster",
+      "methodName": "toDeleteCloudAutonomousVmCluster",
+      "description": "Grants permission to Deletes an Autonomous VM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteCloudAutonomousVmCluster.html"
+    },
+    {
+      "name": "DeleteCloudExadataInfrastructure",
+      "methodName": "toDeleteCloudExadataInfrastructure",
+      "description": "Grants permission to delete a specified Exadata infrastructure. Before you use this operation, make sure to delete all of the VM clusters that are hosted on this Exadata infrastructure",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteCloudExadataInfrastructure.html"
+    },
+    {
+      "name": "DeleteCloudVmCluster",
+      "methodName": "toDeleteCloudVmCluster",
+      "description": "Grants permission to delete a specified VM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteCloudVmCluster.html"
+    },
+    {
+      "name": "DeleteExadbVmCluster",
+      "methodName": "toDeleteExadbVmCluster",
+      "description": "Grants permission to delete a specified Exadb VM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteExadbVmCluster.html"
+    },
+    {
+      "name": "DeleteExascaleDbStorageVault",
+      "methodName": "toDeleteExascaleDbStorageVault",
+      "description": "Grants permission to delete a specified Exascale DB storage vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteExascaleDbStorageVault.html"
+    },
+    {
+      "name": "DeleteOdbNetwork",
+      "methodName": "toDeleteOdbNetwork",
+      "description": "Grants permission to delete the specified ODB network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteOdbNetwork.html"
+    },
+    {
+      "name": "DeleteOdbPeeringConnection",
+      "methodName": "toDeleteOdbPeeringConnection",
+      "description": "Grants permission to delete the specified ODB Peering Connection. When you delete an ODB peering connection, the underlying VPC peering connection is also deleted",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteOdbPeeringConnection.html"
+    },
+    {
+      "name": "DisassociateIamRoleFromResource",
+      "methodName": "toDisassociateIamRoleFromResource",
+      "description": "Grants permission to disassociate an AWS Identity and Access Management (IAM) service role from a specified resource to disable AWS service integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DisassociateIamRoleFromResource.html"
+    },
+    {
+      "name": "DisassociateVirtualMachinesFromExadbVmCluster",
+      "methodName": "toDisassociateVirtualMachinesFromExadbVmCluster",
+      "description": "Grants permission to disassociate virtual machines from a specified Exadb VM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DisassociateVirtualMachinesFromExadbVmCluster.html"
+    },
+    {
+      "name": "FailoverAutonomousDatabase",
+      "methodName": "toFailoverAutonomousDatabase",
+      "description": "Grants permission to fail over the specified Autonomous Database to a standby peer database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_FailoverAutonomousDatabase.html"
+    },
+    {
+      "name": "GetAutonomousDatabase",
+      "methodName": "toGetAutonomousDatabase",
+      "description": "Grants permission to get information about a specific Autonomous Database",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetAutonomousDatabase.html"
+    },
+    {
+      "name": "GetAutonomousDatabaseBackup",
+      "methodName": "toGetAutonomousDatabaseBackup",
+      "description": "Grants permission to get information about a specific Autonomous Database backup",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetAutonomousDatabaseBackup.html"
+    },
+    {
+      "name": "GetAutonomousDatabaseWalletDetails",
+      "methodName": "toGetAutonomousDatabaseWalletDetails",
+      "description": "Grants permission to get the wallet details for the specified Autonomous Database",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetAutonomousDatabaseWalletDetails.html"
+    },
+    {
+      "name": "GetCloudAutonomousVmCluster",
+      "methodName": "toGetCloudAutonomousVmCluster",
+      "description": "Grants permission to get information about a specific Autonomous VM cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudAutonomousVmCluster.html"
+    },
+    {
+      "name": "GetCloudExadataInfrastructure",
+      "methodName": "toGetCloudExadataInfrastructure",
+      "description": "Grants permission to get information about the specified Exadata infrastructure",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudExadataInfrastructure.html"
+    },
+    {
+      "name": "GetCloudExadataInfrastructureUnallocatedResources",
+      "methodName": "toGetCloudExadataInfrastructureUnallocatedResources",
+      "description": "Grants permission to retrieve information about unallocated resources in a specified Cloud Exadata Infrastructure",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudExadataInfrastructureUnallocatedResources.html"
+    },
+    {
+      "name": "GetCloudVmCluster",
+      "methodName": "toGetCloudVmCluster",
+      "description": "Grants permission to get information about the specified VM cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudVmCluster.html"
+    },
+    {
+      "name": "GetDbNode",
+      "methodName": "toGetDbNode",
+      "description": "Grants permission to get information about the specified DB node",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetDbNode.html"
+    },
+    {
+      "name": "GetDbServer",
+      "methodName": "toGetDbServer",
+      "description": "Grants permission to get information about the specified database server",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetDbServer.html"
+    },
+    {
+      "name": "GetExadbVmCluster",
+      "methodName": "toGetExadbVmCluster",
+      "description": "Grants permission to get information about a specified Exadb VM cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetExadbVmCluster.html"
+    },
+    {
+      "name": "GetExascaleDbStorageVault",
+      "methodName": "toGetExascaleDbStorageVault",
+      "description": "Grants permission to get information about a specified Exascale DB storage vault",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetExascaleDbStorageVault.html"
+    },
+    {
+      "name": "GetOciOnboardingStatus",
+      "methodName": "toGetOciOnboardingStatus",
+      "description": "Grants permission to get the tenancy activation link and onboarding status for your Amazon Web Services account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetOciOnboardingStatus.html"
+    },
+    {
+      "name": "GetOdbNetwork",
+      "methodName": "toGetOdbNetwork",
+      "description": "Grants permission to get information about the specified ODB network",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetOdbNetwork.html"
+    },
+    {
+      "name": "GetOdbPeeringConnection",
+      "methodName": "toGetOdbPeeringConnection",
+      "description": "Grants permission to get information about the specified ODB Peering connection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetOdbPeeringConnection.html"
+    },
+    {
+      "name": "InitializeService",
+      "methodName": "toInitializeService",
+      "description": "Grants permission to initialize the ODB service for the first time in an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_InitializeService.html"
+    },
+    {
+      "name": "ListAutonomousDatabaseBackups",
+      "methodName": "toListAutonomousDatabaseBackups",
+      "description": "Grants permission to list information about the backups of the specified Autonomous Database",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabaseBackups.html"
+    },
+    {
+      "name": "ListAutonomousDatabaseCharacterSets",
+      "methodName": "toListAutonomousDatabaseCharacterSets",
+      "description": "Grants permission to list information about the character sets that are available for Autonomous Databases",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabaseCharacterSets.html"
+    },
+    {
+      "name": "ListAutonomousDatabaseClones",
+      "methodName": "toListAutonomousDatabaseClones",
+      "description": "Grants permission to list all clones of the specified Autonomous Database",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabaseClones.html"
+    },
+    {
+      "name": "ListAutonomousDatabasePeers",
+      "methodName": "toListAutonomousDatabasePeers",
+      "description": "Grants permission to list all peer databases of the specified Autonomous Database",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabasePeers.html"
+    },
+    {
+      "name": "ListAutonomousDatabaseVersions",
+      "methodName": "toListAutonomousDatabaseVersions",
+      "description": "Grants permission to list information about the Oracle Database software versions that are available for Autonomous Databases",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabaseVersions.html"
+    },
+    {
+      "name": "ListAutonomousDatabases",
+      "methodName": "toListAutonomousDatabases",
+      "description": "Grants permission to list information about the Autonomous Databases owned by your Amazon Web Services account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabases.html"
+    },
+    {
+      "name": "ListAutonomousVirtualMachines",
+      "methodName": "toListAutonomousVirtualMachines",
+      "description": "Grants permission to list all Autonomous VMs in an Autonomous VM cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousVirtualMachines.html"
+    },
+    {
+      "name": "ListCloudAutonomousVmClusters",
+      "methodName": "toListCloudAutonomousVmClusters",
+      "description": "Grants permission to list all Autonomous VM clusters in a specified Cloud Exadata infrastructure",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListCloudAutonomousVmClusters.html"
+    },
+    {
+      "name": "ListCloudExadataInfrastructures",
+      "methodName": "toListCloudExadataInfrastructures",
+      "description": "Grants permission to list information about the Exadata infrastructures owned by your Amazon Web Services account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListCloudExadataInfrastructures.html"
+    },
+    {
+      "name": "ListCloudVmClusters",
+      "methodName": "toListCloudVmClusters",
+      "description": "Grants permission to list information about the VM clusters owned by your Amazon Web Services account or only the ones on the specified Exadata infrastructure",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListCloudVmClusters.html"
+    },
+    {
+      "name": "ListDbNodes",
+      "methodName": "toListDbNodes",
+      "description": "Grants permission to list information about the DB nodes for the specified VM cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListDbNodes.html"
+    },
+    {
+      "name": "ListDbServers",
+      "methodName": "toListDbServers",
+      "description": "Grants permission to list information about the database servers that belong to the specified Exadata infrastructure",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListDbServers.html"
+    },
+    {
+      "name": "ListDbSystemShapes",
+      "methodName": "toListDbSystemShapes",
+      "description": "Grants permission to list information about the shapes that are available for an Exadata infrastructure",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListDbSystemShapes.html"
+    },
+    {
+      "name": "ListExadbVmClusters",
+      "methodName": "toListExadbVmClusters",
+      "description": "Grants permission to list information about the Exadb VM clusters owned by your Amazon Web Services account or only the ones in the specified Exascale DB storage vault",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListExadbVmClusters.html"
+    },
+    {
+      "name": "ListExascaleDbStorageVaults",
+      "methodName": "toListExascaleDbStorageVaults",
+      "description": "Grants permission to list information about the Exascale DB storage vaults owned by your Amazon Web Services account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListExascaleDbStorageVaults.html"
+    },
+    {
+      "name": "ListFlexComponents",
+      "methodName": "toListFlexComponents",
+      "description": "Grants permission to list information about the flex components that are available for a DB system shape",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListFlexComponents.html"
+    },
+    {
+      "name": "ListGiMinorVersions",
+      "methodName": "toListGiMinorVersions",
+      "description": "Grants permission to list information about the minor versions of Oracle Grid Infrastructure (GI) software that are available for a VM cluster for the specified GI version and shape",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListGiMinorVersions.html"
+    },
+    {
+      "name": "ListGiVersions",
+      "methodName": "toListGiVersions",
+      "description": "Grants permission to list information about Oracle Grid Infrastructure (GI) software versions that are available for a VM cluster for the specified shape",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListGiVersions.html"
+    },
+    {
+      "name": "ListOdbNetworks",
+      "methodName": "toListOdbNetworks",
+      "description": "Grants permission to list information about the ODB networks owned by your Amazon Web Services account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListOdbNetworks.html"
+    },
+    {
+      "name": "ListOdbPeeringConnections",
+      "methodName": "toListOdbPeeringConnections",
+      "description": "Grants permission to list all ODB peering connections or those associated with a specific ODB network",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListOdbPeeringConnections.html"
+    },
+    {
+      "name": "ListSystemVersions",
+      "methodName": "toListSystemVersions",
+      "description": "Grants permission to list information about the system versions that are available for a VM cluster for the specified giVersion and shape",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListSystemVersions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list information about the tags applied to this resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RebootAutonomousDatabase",
+      "methodName": "toRebootAutonomousDatabase",
+      "description": "Grants permission to reboot the specified Autonomous Database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_RebootAutonomousDatabase.html"
+    },
+    {
+      "name": "RebootDbNode",
+      "methodName": "toRebootDbNode",
+      "description": "Grants permission to reboot the specified DB node in a VM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_RebootDbNode.html"
+    },
+    {
+      "name": "RestoreAutonomousDatabase",
+      "methodName": "toRestoreAutonomousDatabase",
+      "description": "Grants permission to restore the specified Autonomous Database to a point in time",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_RestoreAutonomousDatabase.html"
+    },
+    {
+      "name": "ShrinkAutonomousDatabase",
+      "methodName": "toShrinkAutonomousDatabase",
+      "description": "Grants permission to shrink the storage of the specified Autonomous Database to reclaim unused space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ShrinkAutonomousDatabase.html"
+    },
+    {
+      "name": "StartAutonomousDatabase",
+      "methodName": "toStartAutonomousDatabase",
+      "description": "Grants permission to start the specified Autonomous Database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_StartAutonomousDatabase.html"
+    },
+    {
+      "name": "StartDbNode",
+      "methodName": "toStartDbNode",
+      "description": "Grants permission to start the specified DB node in a VM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_StartDbNode.html"
+    },
+    {
+      "name": "StopAutonomousDatabase",
+      "methodName": "toStopAutonomousDatabase",
+      "description": "Grants permission to stop the specified Autonomous Database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_StopAutonomousDatabase.html"
+    },
+    {
+      "name": "StopDbNode",
+      "methodName": "toStopDbNode",
+      "description": "Grants permission to stop the specified DB node in a VM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_StopDbNode.html"
+    },
+    {
+      "name": "SwitchoverAutonomousDatabase",
+      "methodName": "toSwitchoverAutonomousDatabase",
+      "description": "Grants permission to switch over the specified Autonomous Database to a standby peer database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_SwitchoverAutonomousDatabase.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to apply tags to the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAutonomousDatabase",
+      "methodName": "toUpdateAutonomousDatabase",
+      "description": "Grants permission to update the properties of an Autonomous Database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateAutonomousDatabase.html"
+    },
+    {
+      "name": "UpdateAutonomousDatabaseBackup",
+      "methodName": "toUpdateAutonomousDatabaseBackup",
+      "description": "Grants permission to update the properties of an Autonomous Database backup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateAutonomousDatabaseBackup.html"
+    },
+    {
+      "name": "UpdateCloudExadataInfrastructure",
+      "methodName": "toUpdateCloudExadataInfrastructure",
+      "description": "Grants permission to update the properties of an Exadata infrastructure resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateCloudExadataInfrastructure.html"
+    },
+    {
+      "name": "UpdateExadbVmCluster",
+      "methodName": "toUpdateExadbVmCluster",
+      "description": "Grants permission to update properties of a specified Exadb VM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateExadbVmCluster.html"
+    },
+    {
+      "name": "UpdateExascaleDbStorageVault",
+      "methodName": "toUpdateExascaleDbStorageVault",
+      "description": "Grants permission to update properties of a specified Exascale DB storage vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateExascaleDbStorageVault.html"
+    },
+    {
+      "name": "UpdateOdbNetwork",
+      "methodName": "toUpdateOdbNetwork",
+      "description": "Grants permission to update properties of a specified ODB network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateOdbNetwork.html"
+    },
+    {
+      "name": "UpdateOdbPeeringConnection",
+      "methodName": "toUpdateOdbPeeringConnection",
+      "description": "Grants permission to update properties of a specified ODB Peering Connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateOdbPeeringConnection.html"
+    },
+    {
+      "name": "CreateDbNode",
+      "methodName": "toCreateDbNode",
+      "description": "Grants permission to create a DB Node",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateGrantShare",
+      "methodName": "toCreateGrantShare",
+      "description": "Grants permission to create an ODB Grant Share",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateOutboundIntegration",
+      "methodName": "toCreateOutboundIntegration",
+      "description": "Grants permission to create an Outbound Integration",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteDbNode",
+      "methodName": "toDeleteDbNode",
+      "description": "Grants permission to delete a DB Node",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteGrantShare",
+      "methodName": "toDeleteGrantShare",
+      "description": "Grants permission to delete an ODB Grant Share",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete a resource policy",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to get a resource policy",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to update a resource policy",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateGrantShare",
+      "methodName": "toUpdateGrantShare",
+      "description": "Grants permission to update an ODB Grant Share",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateOutboundIntegration",
+      "methodName": "toUpdateOutboundIntegration",
+      "description": "Grants permission to update an Outbound Integration",
+      "accessLevel": "Write",
+      "url": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "autonomous-database",
+      "methodName": "onAutonomousDatabase",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_AutonomousDatabase.html",
+      "arn": "arn:${Partition}:odb:${Region}:${Account}:autonomous-database/${AutonomousDatabaseId}",
+      "placeholders": [
+        {
+          "placeholder": "AutonomousDatabaseId",
+          "name": "autonomousDatabaseId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "autonomous-database-backup",
+      "methodName": "onAutonomousDatabaseBackup",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_AutonomousDatabaseBackup.html",
+      "arn": "arn:${Partition}:odb:${Region}:${Account}:autonomous-database-backup/${AutonomousDatabaseBackupId}",
+      "placeholders": [
+        {
+          "placeholder": "AutonomousDatabaseBackupId",
+          "name": "autonomousDatabaseBackupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cloud-autonomous-vm-cluster",
+      "methodName": "onCloudAutonomousVmCluster",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CloudAutonomousVmCluster.html",
+      "arn": "arn:${Partition}:odb:${Region}:${Account}:cloud-autonomous-vm-cluster/${CloudAutonomousVmClusterId}",
+      "placeholders": [
+        {
+          "placeholder": "CloudAutonomousVmClusterId",
+          "name": "cloudAutonomousVmClusterId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cloud-exadata-infrastructure",
+      "methodName": "onCloudExadataInfrastructure",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CloudExadataInfrastructure.html",
+      "arn": "arn:${Partition}:odb:${Region}:${Account}:cloud-exadata-infrastructure/${CloudExadataInfrastructureId}",
+      "placeholders": [
+        {
+          "placeholder": "CloudExadataInfrastructureId",
+          "name": "cloudExadataInfrastructureId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cloud-vm-cluster",
+      "methodName": "onCloudVmCluster",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CloudVmCluster.html",
+      "arn": "arn:${Partition}:odb:${Region}:${Account}:cloud-vm-cluster/${CloudVmClusterId}",
+      "placeholders": [
+        {
+          "placeholder": "CloudVmClusterId",
+          "name": "cloudVmClusterId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "db-node",
+      "methodName": "onDbNode",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DbNode.html",
+      "arn": "arn:${Partition}:odb:${Region}:${Account}:db-node/${DbNodeId}",
+      "placeholders": [
+        {
+          "placeholder": "DbNodeId",
+          "name": "dbNodeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "exadb-vm-cluster",
+      "methodName": "onExadbVmCluster",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ExadbVmCluster.html",
+      "arn": "arn:${Partition}:odb:${Region}:${Account}:exadb-vm-cluster/${ExadbVmClusterId}",
+      "placeholders": [
+        {
+          "placeholder": "ExadbVmClusterId",
+          "name": "exadbVmClusterId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "exascale-db-storage-vault",
+      "methodName": "onExascaleDbStorageVault",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ExascaleDbStorageVault.html",
+      "arn": "arn:${Partition}:odb:${Region}:${Account}:exascale-db-storage-vault/${ExascaleDbStorageVaultId}",
+      "placeholders": [
+        {
+          "placeholder": "ExascaleDbStorageVaultId",
+          "name": "exascaleDbStorageVaultId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "odb-network",
+      "methodName": "onOdbNetwork",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_OdbNetwork.html",
+      "arn": "arn:${Partition}:odb:${Region}:${Account}:odb-network/${OdbNetworkId}",
+      "placeholders": [
+        {
+          "placeholder": "OdbNetworkId",
+          "name": "odbNetworkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "odb-peering-connection",
+      "methodName": "onOdbPeeringConnection",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_OdbPeeringConnection.html",
+      "arn": "arn:${Partition}:odb:${Region}:${Account}:odb-peering-connection/${OdbPeeringConnectionId}",
+      "placeholders": [
+        {
+          "placeholder": "OdbPeeringConnectionId",
+          "name": "odbPeeringConnectionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAutonomousDatabase",
+        "toCreateAutonomousDatabaseBackup",
+        "toCreateCloudAutonomousVmCluster",
+        "toCreateCloudExadataInfrastructure",
+        "toCreateCloudVmCluster",
+        "toCreateExadbVmCluster",
+        "toCreateExascaleDbStorageVault",
+        "toCreateOdbNetwork",
+        "toCreateOdbPeeringConnection",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateIamRoleToResource",
+        "toAssociateVirtualMachinesToExadbVmCluster",
+        "toCreateAutonomousDatabase",
+        "toCreateAutonomousDatabaseBackup",
+        "toCreateAutonomousDatabaseWallet",
+        "toCreateCloudAutonomousVmCluster",
+        "toCreateCloudVmCluster",
+        "toCreateExadbVmCluster",
+        "toCreateOdbPeeringConnection",
+        "toDeleteAutonomousDatabase",
+        "toDeleteAutonomousDatabaseBackup",
+        "toDeleteCloudAutonomousVmCluster",
+        "toDeleteCloudExadataInfrastructure",
+        "toDeleteCloudVmCluster",
+        "toDeleteExadbVmCluster",
+        "toDeleteExascaleDbStorageVault",
+        "toDeleteOdbNetwork",
+        "toDeleteOdbPeeringConnection",
+        "toDisassociateIamRoleFromResource",
+        "toDisassociateVirtualMachinesFromExadbVmCluster",
+        "toFailoverAutonomousDatabase",
+        "toGetAutonomousDatabase",
+        "toGetAutonomousDatabaseBackup",
+        "toGetAutonomousDatabaseWalletDetails",
+        "toGetCloudAutonomousVmCluster",
+        "toGetCloudExadataInfrastructure",
+        "toGetCloudExadataInfrastructureUnallocatedResources",
+        "toGetCloudVmCluster",
+        "toGetDbNode",
+        "toGetDbServer",
+        "toGetExadbVmCluster",
+        "toGetExascaleDbStorageVault",
+        "toGetOdbNetwork",
+        "toGetOdbPeeringConnection",
+        "toListAutonomousDatabaseBackups",
+        "toListAutonomousDatabaseClones",
+        "toListAutonomousDatabasePeers",
+        "toListAutonomousVirtualMachines",
+        "toListCloudAutonomousVmClusters",
+        "toListCloudVmClusters",
+        "toListDbNodes",
+        "toListDbServers",
+        "toListExadbVmClusters",
+        "toListOdbPeeringConnections",
+        "toListTagsForResource",
+        "toRebootAutonomousDatabase",
+        "toRebootDbNode",
+        "toRestoreAutonomousDatabase",
+        "toShrinkAutonomousDatabase",
+        "toStartAutonomousDatabase",
+        "toStartDbNode",
+        "toStopAutonomousDatabase",
+        "toStopDbNode",
+        "toSwitchoverAutonomousDatabase",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAutonomousDatabase",
+        "toUpdateAutonomousDatabaseBackup",
+        "toUpdateCloudExadataInfrastructure",
+        "toUpdateExadbVmCluster",
+        "toUpdateExascaleDbStorageVault",
+        "toUpdateOdbNetwork",
+        "toUpdateOdbPeeringConnection",
+        "toCreateDbNode",
+        "toCreateOutboundIntegration",
+        "toDeleteDbNode",
+        "toDeleteResourcePolicy",
+        "toGetResourcePolicy",
+        "toPutResourcePolicy",
+        "toUpdateOutboundIntegration"
+      ],
+      "relatedResourceTypes": [
+        "autonomous-database",
+        "autonomous-database-backup",
+        "cloud-autonomous-vm-cluster",
+        "cloud-exadata-infrastructure",
+        "cloud-vm-cluster",
+        "db-node",
+        "exadb-vm-cluster",
+        "exascale-db-storage-vault",
+        "odb-network",
+        "odb-peering-connection"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAutonomousDatabase",
+        "toCreateAutonomousDatabaseBackup",
+        "toCreateCloudAutonomousVmCluster",
+        "toCreateCloudExadataInfrastructure",
+        "toCreateCloudVmCluster",
+        "toCreateExadbVmCluster",
+        "toCreateExascaleDbStorageVault",
+        "toCreateOdbNetwork",
+        "toCreateOdbPeeringConnection",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

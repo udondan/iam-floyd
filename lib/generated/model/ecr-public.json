@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "filename": "ecr-public",
+  "className": "EcrPublic",
+  "name": "ecr-public",
+  "servicePrefix": "ecr-public",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecr-public.html",
+  "accessLevelList": {
+    "Read": [
+      "BatchCheckLayerAvailability",
+      "DescribeImages",
+      "GetAuthorizationToken",
+      "GetRegistryCatalogData",
+      "GetRepositoryCatalogData",
+      "GetRepositoryPolicy",
+      "ListTagsForResource"
+    ],
+    "Write": [
+      "BatchDeleteImage",
+      "CompleteLayerUpload",
+      "CreateRepository",
+      "DeleteRepository",
+      "DeleteRepositoryPolicy",
+      "InitiateLayerUpload",
+      "PutImage",
+      "PutRegistryCatalogData",
+      "PutRepositoryCatalogData",
+      "SetRepositoryPolicy",
+      "TagResource",
+      "UntagResource",
+      "UploadLayerPart"
+    ],
+    "List": [
+      "DescribeImageTags",
+      "DescribeRegistries",
+      "DescribeRepositories"
+    ],
+    "Permissions management": [
+      "SetRepositoryPolicy"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchCheckLayerAvailability",
+      "methodName": "toBatchCheckLayerAvailability",
+      "description": "Grants permission to check the availability of multiple image layers in a specified registry and repository",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_BatchCheckLayerAvailability.html"
+    },
+    {
+      "name": "BatchDeleteImage",
+      "methodName": "toBatchDeleteImage",
+      "description": "Grants permission to delete a list of specified images within a specified repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_BatchDeleteImage.html"
+    },
+    {
+      "name": "CompleteLayerUpload",
+      "methodName": "toCompleteLayerUpload",
+      "description": "Grants permission to inform Amazon ECR that the image layer upload for a specified registry, repository name, and upload ID, has completed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_CompleteLayerUpload.html"
+    },
+    {
+      "name": "CreateRepository",
+      "methodName": "toCreateRepository",
+      "description": "Grants permission to create an image repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_CreateRepository.html"
+    },
+    {
+      "name": "DeleteRepository",
+      "methodName": "toDeleteRepository",
+      "description": "Grants permission to delete an existing image repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_DeleteRepository.html"
+    },
+    {
+      "name": "DeleteRepositoryPolicy",
+      "methodName": "toDeleteRepositoryPolicy",
+      "description": "Grants permission to delete the repository policy from a specified repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_DeleteRepositoryPolicy.html"
+    },
+    {
+      "name": "DescribeImageTags",
+      "methodName": "toDescribeImageTags",
+      "description": "Grants permission to describe all the image tags for a given repository",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_DescribeImageTags.html"
+    },
+    {
+      "name": "DescribeImages",
+      "methodName": "toDescribeImages",
+      "description": "Grants permission to get metadata about the images in a repository, including image size, image tags, and creation date",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_DescribeImages.html"
+    },
+    {
+      "name": "DescribeRegistries",
+      "methodName": "toDescribeRegistries",
+      "description": "Grants permission to retrieve the catalog data associated with a registry",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_DescribeRegistries.html"
+    },
+    {
+      "name": "DescribeRepositories",
+      "methodName": "toDescribeRepositories",
+      "description": "Grants permission to describe image repositories in a registry",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_DescribeRepositories.html"
+    },
+    {
+      "name": "GetAuthorizationToken",
+      "methodName": "toGetAuthorizationToken",
+      "description": "Grants permission to retrieve a token that is valid for a specified registry for 12 hours",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_GetAuthorizationToken.html"
+    },
+    {
+      "name": "GetRegistryCatalogData",
+      "methodName": "toGetRegistryCatalogData",
+      "description": "Grants permission to retrieve the catalog data associated with a registry",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_GetRegistryCatalogData.html"
+    },
+    {
+      "name": "GetRepositoryCatalogData",
+      "methodName": "toGetRepositoryCatalogData",
+      "description": "Grants permission to retrieve the catalog data associated with a repository",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_GetRepositoryCatalogData.html"
+    },
+    {
+      "name": "GetRepositoryPolicy",
+      "methodName": "toGetRepositoryPolicy",
+      "description": "Grants permission to retrieve the repository policy for a specified repository",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_GetRepositoryPolicy.html"
+    },
+    {
+      "name": "InitiateLayerUpload",
+      "methodName": "toInitiateLayerUpload",
+      "description": "Grants permission to notify Amazon ECR that you intend to upload an image layer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_InitiateLayerUpload.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for an Amazon ECR resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutImage",
+      "methodName": "toPutImage",
+      "description": "Grants permission to create or update the image manifest associated with an image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_PutImage.html"
+    },
+    {
+      "name": "PutRegistryCatalogData",
+      "methodName": "toPutRegistryCatalogData",
+      "description": "Grants permission to create and update the catalog data associated with a registry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_PutRegistryCatalogData.html"
+    },
+    {
+      "name": "PutRepositoryCatalogData",
+      "methodName": "toPutRepositoryCatalogData",
+      "description": "Grants permission to update the catalog data associated with a repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_PutRepositoryCatalogData.html"
+    },
+    {
+      "name": "SetRepositoryPolicy",
+      "methodName": "toSetRepositoryPolicy",
+      "description": "Grants permission to apply a repository policy on a specified repository to control access permissions",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_SetRepositoryPolicy.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an Amazon ECR resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag an Amazon ECR resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UploadLayerPart",
+      "methodName": "toUploadLayerPart",
+      "description": "Grants permission to upload an image layer part to Amazon ECR Public",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_UploadLayerPart.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "registry",
+      "methodName": "onRegistry",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/iam-policy-structure.html#ECR-Public_ARN_Format",
+      "arn": "arn:${Partition}:ecr-public::${Account}:registry/${RegistryId}",
+      "placeholders": [
+        {
+          "placeholder": "RegistryId",
+          "name": "registryId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "repository",
+      "methodName": "onRepository",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/iam-policy-structure.html#ECR-Public_ARN_Format",
+      "arn": "arn:${Partition}:ecr-public::${Account}:repository/${RepositoryName}",
+      "placeholders": [
+        {
+          "placeholder": "RepositoryName",
+          "name": "repositoryName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters create requests based on the allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateRepository",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on tag-value associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchCheckLayerAvailability",
+        "toBatchDeleteImage",
+        "toCompleteLayerUpload",
+        "toCreateRepository",
+        "toDeleteRepository",
+        "toDeleteRepositoryPolicy",
+        "toDescribeImageTags",
+        "toDescribeImages",
+        "toDescribeRepositories",
+        "toGetRepositoryCatalogData",
+        "toGetRepositoryPolicy",
+        "toInitiateLayerUpload",
+        "toListTagsForResource",
+        "toPutImage",
+        "toPutRepositoryCatalogData",
+        "toSetRepositoryPolicy",
+        "toTagResource",
+        "toUntagResource",
+        "toUploadLayerPart"
+      ],
+      "relatedResourceTypes": [
+        "repository"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters create requests based on the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateRepository",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ecr-public:ResourceTag/${TagKey}",
+      "methodName": "ifResourceTag",
+      "description": "Filters actions based on tag-value associated with the resource",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toBatchCheckLayerAvailability",
+        "toBatchDeleteImage",
+        "toCompleteLayerUpload",
+        "toCreateRepository",
+        "toDeleteRepository",
+        "toDeleteRepositoryPolicy",
+        "toDescribeImageTags",
+        "toDescribeImages",
+        "toDescribeRepositories",
+        "toGetRepositoryCatalogData",
+        "toGetRepositoryPolicy",
+        "toInitiateLayerUpload",
+        "toListTagsForResource",
+        "toPutImage",
+        "toPutRepositoryCatalogData",
+        "toSetRepositoryPolicy",
+        "toTagResource",
+        "toUntagResource",
+        "toUploadLayerPart"
+      ],
+      "relatedResourceTypes": [
+        "repository"
+      ],
+      "keyLiteral": "ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

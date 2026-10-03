@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "filename": "backupsearch",
+  "className": "BackupSearch",
+  "name": "backup-search",
+  "servicePrefix": "backup-search",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_backupsearch.html",
+  "accessLevelList": {
+    "Read": [
+      "GetSearchJob",
+      "GetSearchResultExportJob",
+      "ListSearchJobBackups",
+      "ListSearchJobResults",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListSearchJobs",
+      "ListSearchResultExportJobs"
+    ],
+    "Write": [
+      "StartSearchJob",
+      "StartSearchResultExportJob",
+      "StopSearchJob",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetSearchJob",
+      "methodName": "toGetSearchJob",
+      "description": "Grants permission to get details of a search job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_GetSearchJob.html"
+    },
+    {
+      "name": "GetSearchResultExportJob",
+      "methodName": "toGetSearchResultExportJob",
+      "description": "Grants permission to get details of a search result export job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_GetSearchResultExportJob.html"
+    },
+    {
+      "name": "ListSearchJobBackups",
+      "methodName": "toListSearchJobBackups",
+      "description": "Grants permission to list backups in scope of a search job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_ListSearchJobBackups.html"
+    },
+    {
+      "name": "ListSearchJobResults",
+      "methodName": "toListSearchJobResults",
+      "description": "Grants permission to list results of a search job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_ListSearchJobResults.html"
+    },
+    {
+      "name": "ListSearchJobs",
+      "methodName": "toListSearchJobs",
+      "description": "Grants permission to list search jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_ListSearchJobs.html"
+    },
+    {
+      "name": "ListSearchResultExportJobs",
+      "methodName": "toListSearchResultExportJobs",
+      "description": "Grants permission to list search result export jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_ListSearchResultExportJobs.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_ListTagsForResource.html"
+    },
+    {
+      "name": "StartSearchJob",
+      "methodName": "toStartSearchJob",
+      "description": "Grants permission to create a search job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_StartSearchJob.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "StartSearchResultExportJob",
+      "methodName": "toStartSearchResultExportJob",
+      "description": "Grants permission to start an export job for an existing search job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_StartSearchResultExportJob.html"
+    },
+    {
+      "name": "StopSearchJob",
+      "methodName": "toStopSearchJob",
+      "description": "Grants permission to stop an in-progress search job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_StopSearchJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "searchExportJob",
+      "methodName": "onSearchExportJob",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-search.html",
+      "arn": "arn:${Partition}:backup-search:${Region}:${Account}:search-export-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "searchJob",
+      "methodName": "onSearchJob",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-search.html",
+      "arn": "arn:${Partition}:backup-search:${Region}:${Account}:search-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toStartSearchJob",
+        "toStartSearchResultExportJob",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toGetSearchJob",
+        "toGetSearchResultExportJob",
+        "toListSearchJobBackups",
+        "toListSearchJobResults",
+        "toListTagsForResource",
+        "toStartSearchJob",
+        "toStartSearchResultExportJob",
+        "toStopSearchJob",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "searchExportJob",
+        "searchJob"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toStartSearchJob",
+        "toStartSearchResultExportJob",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

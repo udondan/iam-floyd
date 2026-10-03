@@ -1,6 +1,0 @@
-notifications:EventRule
-notifications:ManagedNotificationChildEvent
-notifications:ManagedNotificationConfiguration
-notifications:ManagedNotificationEvent
-notifications:NotificationConfiguration
-notifications:NotificationEvent

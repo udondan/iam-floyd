@@ -1,5 +1,0 @@
-application-autoscaling:RequestTag/${TagKey}
-application-autoscaling:ResourceTag/${TagKey}
-application-autoscaling:TagKeys
-application-autoscaling:scalable-dimension
-application-autoscaling:service-namespace

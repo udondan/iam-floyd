@@ -1,0 +1,578 @@
+{
+  "schemaVersion": 1,
+  "filename": "xray",
+  "className": "Xray",
+  "name": "xray",
+  "servicePrefix": "xray",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_xray.html",
+  "accessLevelList": {
+    "List": [
+      "BatchGetTraces",
+      "ListResourcePolicies",
+      "ListRetrievedTraces",
+      "ListTagsForResource"
+    ],
+    "Read": [
+      "CancelTraceRetrieval",
+      "GetEncryptionConfig",
+      "GetGroup",
+      "GetGroups",
+      "GetIndexingRules",
+      "GetInsight",
+      "GetInsightEvents",
+      "GetInsightImpactGraph",
+      "GetInsightSummaries",
+      "GetRetrievedTracesGraph",
+      "GetSamplingRules",
+      "GetSamplingStatisticSummaries",
+      "GetSamplingTargets",
+      "GetServiceGraph",
+      "GetTimeSeriesServiceStatistics",
+      "GetTraceGraph",
+      "GetTraceSegmentDestination",
+      "GetTraceSummaries",
+      "StartTraceRetrieval",
+      "BatchGetTraceSummaryById",
+      "GetDistinctTraceGraphs"
+    ],
+    "Write": [
+      "CreateGroup",
+      "CreateSamplingRule",
+      "DeleteGroup",
+      "DeleteResourcePolicy",
+      "DeleteSamplingRule",
+      "PutEncryptionConfig",
+      "PutResourcePolicy",
+      "PutSpans",
+      "PutTelemetryRecords",
+      "PutTraceSegments",
+      "TagResource",
+      "UntagResource",
+      "UpdateGroup",
+      "UpdateIndexingRule",
+      "UpdateSamplingRule",
+      "UpdateTraceSegmentDestination",
+      "Link",
+      "PutSpansForIndexing"
+    ],
+    "Permissions management": [
+      "PutEncryptionConfig"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchGetTraces",
+      "methodName": "toBatchGetTraces",
+      "description": "Grants permission to retrieve a list of traces specified by ID. Each trace is a collection of segment documents that originates from a single request. Use GetTraceSummaries to get a list of trace IDs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html"
+    },
+    {
+      "name": "CancelTraceRetrieval",
+      "methodName": "toCancelTraceRetrieval",
+      "description": "Grants permission to cancel an ongoing trace retrieval job initiated by StartTraceRetrieval using the provided RetrievalToken. A successful cancellation will return an HTTP 200 response",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "CreateGroup",
+      "methodName": "toCreateGroup",
+      "description": "Grants permission to create a group resource with a name and a filter expression",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_CreateGroup.html"
+    },
+    {
+      "name": "CreateSamplingRule",
+      "methodName": "toCreateSamplingRule",
+      "description": "Grants permission to create a rule to control sampling behavior for instrumented applications",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_CreateSamplingRule.html"
+    },
+    {
+      "name": "DeleteGroup",
+      "methodName": "toDeleteGroup",
+      "description": "Grants permission to delete a group resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_DeleteGroup.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete resource policies",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_DeleteResourcePolicy.html",
+      "conditionMethods": [
+        "ifResourcePolicyName"
+      ]
+    },
+    {
+      "name": "DeleteSamplingRule",
+      "methodName": "toDeleteSamplingRule",
+      "description": "Grants permission to delete a sampling rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_DeleteSamplingRule.html"
+    },
+    {
+      "name": "GetEncryptionConfig",
+      "methodName": "toGetEncryptionConfig",
+      "description": "Grants permission to retrieve the current encryption configuration for X-Ray data",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetEncryptionConfig.html"
+    },
+    {
+      "name": "GetGroup",
+      "methodName": "toGetGroup",
+      "description": "Grants permission to retrieve group resource details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetGroup.html"
+    },
+    {
+      "name": "GetGroups",
+      "methodName": "toGetGroups",
+      "description": "Grants permission to retrieve all active group details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetGroups.html"
+    },
+    {
+      "name": "GetIndexingRules",
+      "methodName": "toGetIndexingRules",
+      "description": "Grants permission to retrieve all indexing rules. Indexing rules are used to determine the server-side sampling rate for spans ingested through the CloudWatchLogs destination and indexed by X-Ray",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetIndexingRules.html"
+    },
+    {
+      "name": "GetInsight",
+      "methodName": "toGetInsight",
+      "description": "Grants permission to retrieve the details of a specific insight",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetInsight.html"
+    },
+    {
+      "name": "GetInsightEvents",
+      "methodName": "toGetInsightEvents",
+      "description": "Grants permission to retrieve the events of a specific insight",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetInsightEvents.html"
+    },
+    {
+      "name": "GetInsightImpactGraph",
+      "methodName": "toGetInsightImpactGraph",
+      "description": "Grants permission to retrieve the part of the service graph which is impacted for a specific insight",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetInsightImpactGraph.html"
+    },
+    {
+      "name": "GetInsightSummaries",
+      "methodName": "toGetInsightSummaries",
+      "description": "Grants permission to retrieve the summary of all insights for a group and time range with optional filters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetInsightSummaries.html"
+    },
+    {
+      "name": "GetRetrievedTracesGraph",
+      "methodName": "toGetRetrievedTracesGraph",
+      "description": "Grants permission to retrieve a service graph for traces based on the specified RetrievalToken from the Transaction Search CloudWatch log group",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetSamplingRules",
+      "methodName": "toGetSamplingRules",
+      "description": "Grants permission to retrieve all sampling rules",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html"
+    },
+    {
+      "name": "GetSamplingStatisticSummaries",
+      "methodName": "toGetSamplingStatisticSummaries",
+      "description": "Grants permission to retrieve information about recent sampling results for all sampling rules",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingStatisticSummaries.html"
+    },
+    {
+      "name": "GetSamplingTargets",
+      "methodName": "toGetSamplingTargets",
+      "description": "Grants permission to request a sampling quota for rules that the service is using to sample requests",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html"
+    },
+    {
+      "name": "GetServiceGraph",
+      "methodName": "toGetServiceGraph",
+      "description": "Grants permission to retrieve a document that describes services that process incoming requests, and downstream services that they call as a result",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetServiceGraph.html"
+    },
+    {
+      "name": "GetTimeSeriesServiceStatistics",
+      "methodName": "toGetTimeSeriesServiceStatistics",
+      "description": "Grants permission to retrieve an aggregation of service statistics defined by a specific time range bucketed into time intervals",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetTimeSeriesServiceStatistics.html"
+    },
+    {
+      "name": "GetTraceGraph",
+      "methodName": "toGetTraceGraph",
+      "description": "Grants permission to retrieve a service graph for one or more specific trace IDs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetTraceGraph.html"
+    },
+    {
+      "name": "GetTraceSegmentDestination",
+      "methodName": "toGetTraceSegmentDestination",
+      "description": "Grants permission to retrieve the current destination of data sent to PutTraceSegments and OpenTelemetry API",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetTraceSegmentDestination.html"
+    },
+    {
+      "name": "GetTraceSummaries",
+      "methodName": "toGetTraceSummaries",
+      "description": "Grants permission to retrieve IDs and metadata for traces available for a specified time frame using an optional filter. To get the full traces, pass the trace IDs to BatchGetTraces",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_GetTraceSummaries.html"
+    },
+    {
+      "name": "ListResourcePolicies",
+      "methodName": "toListResourcePolicies",
+      "description": "Grants permission to list resource policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_ListResourcePolicies.html"
+    },
+    {
+      "name": "ListRetrievedTraces",
+      "methodName": "toListRetrievedTraces",
+      "description": "Grants permission to retrieve a list of traces for a given RetrievalToken from the Transaction Search CloudWatch log group",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for an X-Ray resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutEncryptionConfig",
+      "methodName": "toPutEncryptionConfig",
+      "description": "Grants permission to update the encryption configuration for X-Ray data",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_PutEncryptionConfig.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to create or update resource policies",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_PutResourcePolicy.html",
+      "conditionMethods": [
+        "ifResourcePolicyName"
+      ]
+    },
+    {
+      "name": "PutSpans",
+      "methodName": "toPutSpans",
+      "description": "Grants permission to upload OpenTelemetry spans to AWS X-Ray",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-OTLPEndpoint.html",
+      "conditionMethods": [
+        "ifLogsLogGeneratingResourceArns"
+      ]
+    },
+    {
+      "name": "PutTelemetryRecords",
+      "methodName": "toPutTelemetryRecords",
+      "description": "Grants permission to send AWS X-Ray daemon telemetry to the service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_PutTelemetryRecords.html"
+    },
+    {
+      "name": "PutTraceSegments",
+      "methodName": "toPutTraceSegments",
+      "description": "Grants permission to upload segment documents to AWS X-Ray. The X-Ray SDK generates segment documents and sends them to the X-Ray daemon, which uploads them in batches",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html",
+      "conditionMethods": [
+        "ifLogsLogGeneratingResourceArns"
+      ]
+    },
+    {
+      "name": "StartTraceRetrieval",
+      "methodName": "toStartTraceRetrieval",
+      "description": "Grants permission to initiate a trace retrieval process using the specified time range and for the given trace IDs on the Transaction Search CloudWatch log group",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to an X-Ray resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from an X-Ray resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateGroup",
+      "methodName": "toUpdateGroup",
+      "description": "Grants permission to update a group resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_UpdateGroup.html"
+    },
+    {
+      "name": "UpdateIndexingRule",
+      "methodName": "toUpdateIndexingRule",
+      "description": "Grants permission to modify an indexing rule's configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_UpdateIndexingRule.html"
+    },
+    {
+      "name": "UpdateSamplingRule",
+      "methodName": "toUpdateSamplingRule",
+      "description": "Grants permission to modify a sampling rule's configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_UpdateSamplingRule.html"
+    },
+    {
+      "name": "UpdateTraceSegmentDestination",
+      "methodName": "toUpdateTraceSegmentDestination",
+      "description": "Grants permission to modify the destination of data sent to PutTraceSegments and OpenTelemetry API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/api/API_UpdateTraceSegmentDestination.html",
+      "conditionMethods": [
+        "ifTraceSegmentDestination"
+      ]
+    },
+    {
+      "name": "BatchGetTraceSummaryById",
+      "methodName": "toBatchGetTraceSummaryById",
+      "description": "Grants permission to retrieve metadata for a list of traces specified by ID",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/devguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-console"
+    },
+    {
+      "name": "GetDistinctTraceGraphs",
+      "methodName": "toGetDistinctTraceGraphs",
+      "description": "Grants permission to retrieve distinct service graphs for one or more specific trace IDs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/xray/latest/devguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-console"
+    },
+    {
+      "name": "Link",
+      "methodName": "toLink",
+      "description": "Grants permission to share X-Ray resources with a monitoring account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions"
+    },
+    {
+      "name": "PutSpansForIndexing",
+      "methodName": "toPutSpansForIndexing",
+      "description": "Grants permission to upload spans to AWS X-Ray to be indexed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/devguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-console"
+    }
+  ],
+  "resources": [
+    {
+      "name": "group",
+      "methodName": "onGroup",
+      "url": "https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-groups",
+      "arn": "arn:${Partition}:xray:${Region}:${Account}:group/${GroupName}/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "GroupName",
+          "name": "groupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "sampling-rule",
+      "methodName": "onSamplingRule",
+      "url": "https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-sampling",
+      "arn": "arn:${Partition}:xray:${Region}:${Account}:sampling-rule/${SamplingRuleName}",
+      "placeholders": [
+        {
+          "placeholder": "SamplingRuleName",
+          "name": "samplingRuleName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateGroup",
+        "toCreateSamplingRule",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateGroup",
+        "toCreateSamplingRule",
+        "toDeleteGroup",
+        "toDeleteSamplingRule",
+        "toGetGroup",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateGroup",
+        "toUpdateSamplingRule"
+      ],
+      "relatedResourceTypes": [
+        "group",
+        "sampling-rule"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateGroup",
+        "toCreateSamplingRule",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "logs:LogGeneratingResourceArns",
+      "methodName": "ifLogsLogGeneratingResourceArns",
+      "description": "Filters access by LogGeneratingResourceArn in the request",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsx-ray.html#awsx-ray-actions-as-permissions",
+      "relatedActionMethods": [
+        "toPutSpans",
+        "toPutTraceSegments"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "logs:LogGeneratingResourceArns",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "xray:ResourcePolicyName",
+      "methodName": "ifResourcePolicyName",
+      "description": "Filters access by PolicyName in the request",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsx-ray.html#awsx-ray-actions-as-permissions",
+      "relatedActionMethods": [
+        "toDeleteResourcePolicy",
+        "toPutResourcePolicy"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourcePolicyName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "xray:TraceSegmentDestination",
+      "methodName": "ifTraceSegmentDestination",
+      "description": "Filters access by TraceSegmentDestination type in the request",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsx-ray.html#awsx-ray-actions-as-permissions",
+      "relatedActionMethods": [
+        "toUpdateTraceSegmentDestination"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TraceSegmentDestination",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

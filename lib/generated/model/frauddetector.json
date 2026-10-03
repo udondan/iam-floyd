@@ -1,0 +1,1239 @@
+{
+  "schemaVersion": 1,
+  "filename": "frauddetector",
+  "className": "Frauddetector",
+  "name": "frauddetector",
+  "servicePrefix": "frauddetector",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_frauddetector.html",
+  "accessLevelList": {
+    "Write": [
+      "BatchCreateVariable",
+      "CancelBatchImportJob",
+      "CancelBatchPredictionJob",
+      "CreateBatchImportJob",
+      "CreateBatchPredictionJob",
+      "CreateDetectorVersion",
+      "CreateList",
+      "CreateModel",
+      "CreateModelVersion",
+      "CreateRule",
+      "CreateVariable",
+      "DeleteBatchImportJob",
+      "DeleteBatchPredictionJob",
+      "DeleteDetector",
+      "DeleteDetectorVersion",
+      "DeleteEntityType",
+      "DeleteEvent",
+      "DeleteEventType",
+      "DeleteEventsByEventType",
+      "DeleteExternalModel",
+      "DeleteLabel",
+      "DeleteList",
+      "DeleteModel",
+      "DeleteModelVersion",
+      "DeleteOutcome",
+      "DeleteRule",
+      "DeleteVariable",
+      "PutDetector",
+      "PutEntityType",
+      "PutEventType",
+      "PutExternalModel",
+      "PutKMSEncryptionKey",
+      "PutLabel",
+      "PutOutcome",
+      "SendEvent",
+      "TagResource",
+      "UntagResource",
+      "UpdateDetectorVersion",
+      "UpdateDetectorVersionMetadata",
+      "UpdateDetectorVersionStatus",
+      "UpdateEventLabel",
+      "UpdateList",
+      "UpdateModel",
+      "UpdateModelVersion",
+      "UpdateModelVersionStatus",
+      "UpdateRuleMetadata",
+      "UpdateRuleVersion",
+      "UpdateVariable"
+    ],
+    "List": [
+      "BatchGetVariable",
+      "GetBatchImportJobs",
+      "GetBatchPredictionJobs",
+      "GetDetectors",
+      "GetEntityTypes",
+      "GetEventTypes",
+      "GetExternalModels",
+      "GetLabels",
+      "GetListsMetadata",
+      "GetModels",
+      "GetOutcomes",
+      "GetRules",
+      "GetVariables",
+      "ListEventPredictions"
+    ],
+    "Read": [
+      "DescribeDetector",
+      "DescribeModelVersions",
+      "GetDeleteEventsByEventTypeStatus",
+      "GetDetectorVersion",
+      "GetEvent",
+      "GetEventPrediction",
+      "GetEventPredictionMetadata",
+      "GetKMSEncryptionKey",
+      "GetListElements",
+      "GetModelVersion",
+      "ListTagsForResource",
+      "GetBatchImportJobValidationReport"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchCreateVariable",
+      "methodName": "toBatchCreateVariable",
+      "description": "Grants permission to create a batch of variables",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_BatchCreateVariable.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "BatchGetVariable",
+      "methodName": "toBatchGetVariable",
+      "description": "Grants permission to get a batch of variables",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_BatchGetVariable.html"
+    },
+    {
+      "name": "CancelBatchImportJob",
+      "methodName": "toCancelBatchImportJob",
+      "description": "Grants permission to cancel the specified batch import job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_CancelBatchImportJob.html"
+    },
+    {
+      "name": "CancelBatchPredictionJob",
+      "methodName": "toCancelBatchPredictionJob",
+      "description": "Grants permission to cancel the specified batch prediction job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_CancelBatchPredictionJob.html"
+    },
+    {
+      "name": "CreateBatchImportJob",
+      "methodName": "toCreateBatchImportJob",
+      "description": "Grants permission to create a batch import job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateBatchImportJob.html"
+    },
+    {
+      "name": "CreateBatchPredictionJob",
+      "methodName": "toCreateBatchPredictionJob",
+      "description": "Grants permission to create a batch prediction job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateBatchPredictionJob.html"
+    },
+    {
+      "name": "CreateDetectorVersion",
+      "methodName": "toCreateDetectorVersion",
+      "description": "Grants permission to create a detector version. The detector version starts in a DRAFT status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateDetectorVersion.html"
+    },
+    {
+      "name": "CreateList",
+      "methodName": "toCreateList",
+      "description": "Grants permission to create a list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateList.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateModel",
+      "methodName": "toCreateModel",
+      "description": "Grants permission to create a model using the specified model type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateModel.html"
+    },
+    {
+      "name": "CreateModelVersion",
+      "methodName": "toCreateModelVersion",
+      "description": "Grants permission to create a version of the model using the specified model type and model id",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateModelVersion.html"
+    },
+    {
+      "name": "CreateRule",
+      "methodName": "toCreateRule",
+      "description": "Grants permission to create a rule for use with the specified detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateRule.html"
+    },
+    {
+      "name": "CreateVariable",
+      "methodName": "toCreateVariable",
+      "description": "Grants permission to create a variable",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateVariable.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteBatchImportJob",
+      "methodName": "toDeleteBatchImportJob",
+      "description": "Grants permission to delete a batch import job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteBatchImportJob.html"
+    },
+    {
+      "name": "DeleteBatchPredictionJob",
+      "methodName": "toDeleteBatchPredictionJob",
+      "description": "Grants permission to delete a batch prediction job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteBatchPredictionJob.html"
+    },
+    {
+      "name": "DeleteDetector",
+      "methodName": "toDeleteDetector",
+      "description": "Grants permission to delete the detector. Before deleting a detector, you must first delete all detector versions and rule versions associated with the detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteDetector.html"
+    },
+    {
+      "name": "DeleteDetectorVersion",
+      "methodName": "toDeleteDetectorVersion",
+      "description": "Grants permission to delete the detector version. You cannot delete detector versions that are in ACTIVE status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteDetectorVersion.html"
+    },
+    {
+      "name": "DeleteEntityType",
+      "methodName": "toDeleteEntityType",
+      "description": "Grants permission to delete an entity type. You cannot delete an entity type that is included in an event type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteEntityType.html"
+    },
+    {
+      "name": "DeleteEvent",
+      "methodName": "toDeleteEvent",
+      "description": "Grants permission to deletes the specified event",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteEvent.html"
+    },
+    {
+      "name": "DeleteEventType",
+      "methodName": "toDeleteEventType",
+      "description": "Grants permission to delete an event type. You cannot delete an event type that is used in a detector or a model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteEventType.html"
+    },
+    {
+      "name": "DeleteEventsByEventType",
+      "methodName": "toDeleteEventsByEventType",
+      "description": "Grants permission to delete events for the specified event type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteEventsByEventType.html"
+    },
+    {
+      "name": "DeleteExternalModel",
+      "methodName": "toDeleteExternalModel",
+      "description": "Grants permission to remove a SageMaker model from Amazon Fraud Detector. You can remove an Amazon SageMaker model if it is not associated with a detector version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteExternalModel.html"
+    },
+    {
+      "name": "DeleteLabel",
+      "methodName": "toDeleteLabel",
+      "description": "Grants permission to delete a label. You cannot delete labels that are included in an event type in Amazon Fraud Detector. You cannot delete a label assigned to an event ID. You must first delete the relevant event ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteLabel.html"
+    },
+    {
+      "name": "DeleteList",
+      "methodName": "toDeleteList",
+      "description": "Grants permission to delete a list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteList.html"
+    },
+    {
+      "name": "DeleteModel",
+      "methodName": "toDeleteModel",
+      "description": "Grants permission to delete a model. You can delete models and model versions in Amazon Fraud Detector, provided that they are not associated with a detector version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteModel.html"
+    },
+    {
+      "name": "DeleteModelVersion",
+      "methodName": "toDeleteModelVersion",
+      "description": "Grants permission to delete a model version. You can delete models and model versions in Amazon Fraud Detector, provided that they are not associated with a detector version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteModelVersion.html"
+    },
+    {
+      "name": "DeleteOutcome",
+      "methodName": "toDeleteOutcome",
+      "description": "Grants permission to delete an outcome. You cannot delete an outcome that is used in a rule version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteOutcome.html"
+    },
+    {
+      "name": "DeleteRule",
+      "methodName": "toDeleteRule",
+      "description": "Grants permission to delete the rule. You cannot delete a rule if it is used by an ACTIVE or INACTIVE detector version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteRule.html"
+    },
+    {
+      "name": "DeleteVariable",
+      "methodName": "toDeleteVariable",
+      "description": "Grants permission to delete a variable. You cannot delete variables that are included in an event type in Amazon Fraud Detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteVariable.html"
+    },
+    {
+      "name": "DescribeDetector",
+      "methodName": "toDescribeDetector",
+      "description": "Grants permission to get all versions for a specified detector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DescribeDetector.html"
+    },
+    {
+      "name": "DescribeModelVersions",
+      "methodName": "toDescribeModelVersions",
+      "description": "Grants permission to get all of the model versions for the specified model type or for the specified model type and model ID. You can also get details for a single, specified model version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_DescribeModelVersions.html"
+    },
+    {
+      "name": "GetBatchImportJobs",
+      "methodName": "toGetBatchImportJobs",
+      "description": "Grants permission to get all batch import jobs or a specific job if you specify a job ID",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetBatchImportJobs.html"
+    },
+    {
+      "name": "GetBatchPredictionJobs",
+      "methodName": "toGetBatchPredictionJobs",
+      "description": "Grants permission to get all batch prediction jobs or a specific job if you specify a job ID. This is a paginated API. If you provide a null maxResults, this action retrieves a maximum of 50 records per page. If you provide a maxResults, the value must be between 1 and 50. To get the next page results, provide the pagination token from the GetBatchPredictionJobsResponse as part of your request. A null pagination token fetches the records from the beginning",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetBatchPredictionJobs.html"
+    },
+    {
+      "name": "GetDeleteEventsByEventTypeStatus",
+      "methodName": "toGetDeleteEventsByEventTypeStatus",
+      "description": "Grants permission to get a specific event type DeleteEventsByEventType API execution status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetDeleteEventsByEventTypeStatus.html"
+    },
+    {
+      "name": "GetDetectorVersion",
+      "methodName": "toGetDetectorVersion",
+      "description": "Grants permission to get a particular detector version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetDetectorVersion.html"
+    },
+    {
+      "name": "GetDetectors",
+      "methodName": "toGetDetectors",
+      "description": "Grants permission to get all detectors or a single detector if a detectorId is specified. This is a paginated API. If you provide a null maxResults, this action retrieves a maximum of 10 records per page. If you provide a maxResults, the value must be between 5 and 10. To get the next page results, provide the pagination token from the GetDetectorsResponse as part of your request. A null pagination token fetches the records from the beginning",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetDetectors.html"
+    },
+    {
+      "name": "GetEntityTypes",
+      "methodName": "toGetEntityTypes",
+      "description": "Grants permission to get all entity types or a specific entity type if a name is specified. This is a paginated API. If you provide a null maxResults, this action retrieves a maximum of 10 records per page. If you provide a maxResults, the value must be between 5 and 10. To get the next page results, provide the pagination token from the GetEntityTypesResponse as part of your request. A null pagination token fetches the records from the beginning",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetEntityTypes.html"
+    },
+    {
+      "name": "GetEvent",
+      "methodName": "toGetEvent",
+      "description": "Grants permission to get the details of the specified event",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetEvent.html"
+    },
+    {
+      "name": "GetEventPrediction",
+      "methodName": "toGetEventPrediction",
+      "description": "Grants permission to evaluate an event against a detector version. If a version ID is not provided, the detector's (ACTIVE) version is used",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetEventPrediction.html"
+    },
+    {
+      "name": "GetEventPredictionMetadata",
+      "methodName": "toGetEventPredictionMetadata",
+      "description": "Grants permission to get more details of a particular prediction",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetEventPredictionMetadata.html"
+    },
+    {
+      "name": "GetEventTypes",
+      "methodName": "toGetEventTypes",
+      "description": "Grants permission to get all event types or a specific event type if name is provided. This is a paginated API. If you provide a null maxResults, this action retrieves a maximum of 10 records per page. If you provide a maxResults, the value must be between 5 and 10. To get the next page results, provide the pagination token from the GetEventTypesResponse as part of your request. A null pagination token fetches the records from the beginning",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetEventTypes.html"
+    },
+    {
+      "name": "GetExternalModels",
+      "methodName": "toGetExternalModels",
+      "description": "Grants permission to get the details for one or more Amazon SageMaker models that have been imported into the service. This is a paginated API. If you provide a null maxResults, this actions retrieves a maximum of 10 records per page. If you provide a maxResults, the value must be between 5 and 10. To get the next page results, provide the pagination token from the GetExternalModelsResult as part of your request. A null pagination token fetches the records from the beginning",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetExternalModels.html"
+    },
+    {
+      "name": "GetKMSEncryptionKey",
+      "methodName": "toGetKMSEncryptionKey",
+      "description": "Grants permission to get the encryption key if a Key Management Service (KMS) customer master key (CMK) has been specified to be used to encrypt content in Amazon Fraud Detector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetKMSEncryptionKey.html"
+    },
+    {
+      "name": "GetLabels",
+      "methodName": "toGetLabels",
+      "description": "Grants permission to get all labels or a specific label if name is provided. This is a paginated API. If you provide a null maxResults, this action retrieves a maximum of 50 records per page. If you provide a maxResults, the value must be between 10 and 50. To get the next page results, provide the pagination token from the GetGetLabelsResponse as part of your request. A null pagination token fetches the records from the beginning",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetLabels.html"
+    },
+    {
+      "name": "GetListElements",
+      "methodName": "toGetListElements",
+      "description": "Grants permission to get elements of a list",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetListElements.html"
+    },
+    {
+      "name": "GetListsMetadata",
+      "methodName": "toGetListsMetadata",
+      "description": "Grants permission to get metadata about lists",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetListsMetadata.html"
+    },
+    {
+      "name": "GetModelVersion",
+      "methodName": "toGetModelVersion",
+      "description": "Grants permission to get the details of the specified model version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetModelVersion.html"
+    },
+    {
+      "name": "GetModels",
+      "methodName": "toGetModels",
+      "description": "Grants permission to get one or more models. Gets all models for the AWS account if no model type and no model id provided. Gets all models for the AWS account and model type, if the model type is specified but model id is not provided. Gets a specific model if (model type, model id) tuple is specified",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetModels.html"
+    },
+    {
+      "name": "GetOutcomes",
+      "methodName": "toGetOutcomes",
+      "description": "Grants permission to get one or more outcomes. This is a paginated API. If you provide a null maxResults, this actions retrieves a maximum of 100 records per page. If you provide a maxResults, the value must be between 50 and 100. To get the next page results, provide the pagination token from the GetOutcomesResult as part of your request. A null pagination token fetches the records from the beginning",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetOutcomes.html"
+    },
+    {
+      "name": "GetRules",
+      "methodName": "toGetRules",
+      "description": "Grants permission to get all rules for a detector (paginated) if ruleId and ruleVersion are not specified. Gets all rules for the detector and the ruleId if present (paginated). Gets a specific rule if both the ruleId and the ruleVersion are specified",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetRules.html"
+    },
+    {
+      "name": "GetVariables",
+      "methodName": "toGetVariables",
+      "description": "Grants permission to get all of the variables or the specific variable. This is a paginated API. Providing null maxSizePerPage results in retrieving maximum of 100 records per page. If you provide maxSizePerPage the value must be between 50 and 100. To get the next page result, a provide a pagination token from GetVariablesResult as part of your request. Null pagination token fetches the records from the beginning",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetVariables.html"
+    },
+    {
+      "name": "ListEventPredictions",
+      "methodName": "toListEventPredictions",
+      "description": "Grants permission to get a list of past predictions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags associated with the resource. This is a paginated API. To get the next page results, provide the pagination token from the response as part of your request. A null pagination token fetches the records from the beginning",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutDetector",
+      "methodName": "toPutDetector",
+      "description": "Grants permission to create or update a detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_PutDetector.html"
+    },
+    {
+      "name": "PutEntityType",
+      "methodName": "toPutEntityType",
+      "description": "Grants permission to create or update an entity type. An entity represents who is performing the event. As part of a fraud prediction, you pass the entity ID to indicate the specific entity who performed the event. An entity type classifies the entity. Example classifications include customer, merchant, or account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_PutEntityType.html"
+    },
+    {
+      "name": "PutEventType",
+      "methodName": "toPutEventType",
+      "description": "Grants permission to create or update an event type. An event is a business activity that is evaluated for fraud risk. With Amazon Fraud Detector, you generate fraud predictions for events. An event type defines the structure for an event sent to Amazon Fraud Detector. This includes the variables sent as part of the event, the entity performing the event (such as a customer), and the labels that classify the event. Example event types include online payment transactions, account registrations, and authentications",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_PutEventType.html"
+    },
+    {
+      "name": "PutExternalModel",
+      "methodName": "toPutExternalModel",
+      "description": "Grants permission to create or update an Amazon SageMaker model endpoint. You can also use this action to update the configuration of the model endpoint, including the IAM role and/or the mapped variables",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_PutExternalModel.html"
+    },
+    {
+      "name": "PutKMSEncryptionKey",
+      "methodName": "toPutKMSEncryptionKey",
+      "description": "Grants permission to specify the Key Management Service (KMS) customer master key (CMK) to be used to encrypt content in Amazon Fraud Detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_PutKMSEncryptionKey.html"
+    },
+    {
+      "name": "PutLabel",
+      "methodName": "toPutLabel",
+      "description": "Grants permission to create or update label. A label classifies an event as fraudulent or legitimate. Labels are associated with event types and used to train supervised machine learning models in Amazon Fraud Detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_PutLabel.html"
+    },
+    {
+      "name": "PutOutcome",
+      "methodName": "toPutOutcome",
+      "description": "Grants permission to create or update an outcome",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_PutOutcome.html"
+    },
+    {
+      "name": "SendEvent",
+      "methodName": "toSendEvent",
+      "description": "Grants permission to send event",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_SendEvent.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to assign tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDetectorVersion",
+      "methodName": "toUpdateDetectorVersion",
+      "description": "Grants permission to update a detector version. The detector version attributes that you can update include models, external model endpoints, rules, rule execution mode, and description. You can only update a DRAFT detector version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateDetectorVersion.html"
+    },
+    {
+      "name": "UpdateDetectorVersionMetadata",
+      "methodName": "toUpdateDetectorVersionMetadata",
+      "description": "Grants permission to update the detector version's description. You can update the metadata for any detector version (DRAFT, ACTIVE, or INACTIVE)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateDetectorVersionMetadata.html"
+    },
+    {
+      "name": "UpdateDetectorVersionStatus",
+      "methodName": "toUpdateDetectorVersionStatus",
+      "description": "Grants permission to update the detector version's status. You can perform the following promotions or demotions using UpdateDetectorVersionStatus: DRAFT to ACTIVE, ACTIVE to INACTIVE, and INACTIVE to ACTIVE",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateDetectorVersionStatus.html"
+    },
+    {
+      "name": "UpdateEventLabel",
+      "methodName": "toUpdateEventLabel",
+      "description": "Grants permission to update an existing event record's label value",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateEventLabel.html"
+    },
+    {
+      "name": "UpdateList",
+      "methodName": "toUpdateList",
+      "description": "Grants permission to update a list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateList.html"
+    },
+    {
+      "name": "UpdateModel",
+      "methodName": "toUpdateModel",
+      "description": "Grants permission to update a model. You can update the description attribute using this action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateModel.html"
+    },
+    {
+      "name": "UpdateModelVersion",
+      "methodName": "toUpdateModelVersion",
+      "description": "Grants permission to update a model version. Updating a model version retrains an existing model version using updated training data and produces a new minor version of the model. You can update the training data set location and data access role attributes using this action. This action creates and trains a new minor version of the model, for example version 1.01, 1.02, 1.03",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateModelVersion.html"
+    },
+    {
+      "name": "UpdateModelVersionStatus",
+      "methodName": "toUpdateModelVersionStatus",
+      "description": "Grants permission to update the status of a model version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateModelVersionStatus.html"
+    },
+    {
+      "name": "UpdateRuleMetadata",
+      "methodName": "toUpdateRuleMetadata",
+      "description": "Grants permission to update a rule's metadata. The description attribute can be updated",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateRuleMetadata.html"
+    },
+    {
+      "name": "UpdateRuleVersion",
+      "methodName": "toUpdateRuleVersion",
+      "description": "Grants permission to update a rule version resulting in a new rule version. Updates a rule version resulting in a new rule version (version 1, 2, 3 ...)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateRuleVersion.html"
+    },
+    {
+      "name": "UpdateVariable",
+      "methodName": "toUpdateVariable",
+      "description": "Grants permission to update a variable",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateVariable.html"
+    },
+    {
+      "name": "GetBatchImportJobValidationReport",
+      "methodName": "toGetBatchImportJobValidationReport",
+      "description": "Grants permission to get the data validation report of a specific batch import job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/frauddetector/latest/ug/prepare-storage-event-data.html#smart-data-validation"
+    }
+  ],
+  "resources": [
+    {
+      "name": "batch-import",
+      "methodName": "onBatchImport",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:batch-import/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "batch-prediction",
+      "methodName": "onBatchPrediction",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:batch-prediction/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "detector",
+      "methodName": "onDetector",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:detector/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "detector-version",
+      "methodName": "onDetectorVersion",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:detector-version/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "entity-type",
+      "methodName": "onEntityType",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:entity-type/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "event-type",
+      "methodName": "onEventType",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:event-type/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "external-model",
+      "methodName": "onExternalModel",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:external-model/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "label",
+      "methodName": "onLabel",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:label/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "list",
+      "methodName": "onList",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:list/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "model",
+      "methodName": "onModel",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:model/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "model-version",
+      "methodName": "onModelVersion",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:model-version/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "outcome",
+      "methodName": "onOutcome",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:outcome/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "rule",
+      "methodName": "onRule",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:rule/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "variable",
+      "methodName": "onVariable",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:variable/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters actions based on the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toBatchCreateVariable",
+        "toCreateBatchImportJob",
+        "toCreateBatchPredictionJob",
+        "toCreateDetectorVersion",
+        "toCreateList",
+        "toCreateModel",
+        "toCreateModelVersion",
+        "toCreateRule",
+        "toCreateVariable",
+        "toPutDetector",
+        "toPutEntityType",
+        "toPutEventType",
+        "toPutExternalModel",
+        "toPutLabel",
+        "toPutOutcome",
+        "toSendEvent",
+        "toTagResource",
+        "toUpdateEventLabel",
+        "toUpdateModelVersion",
+        "toUpdateRuleVersion"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchGetVariable",
+        "toCancelBatchImportJob",
+        "toCancelBatchPredictionJob",
+        "toCreateBatchImportJob",
+        "toCreateBatchPredictionJob",
+        "toCreateDetectorVersion",
+        "toCreateModel",
+        "toCreateModelVersion",
+        "toCreateRule",
+        "toDeleteBatchImportJob",
+        "toDeleteBatchPredictionJob",
+        "toDeleteDetector",
+        "toDeleteDetectorVersion",
+        "toDeleteEntityType",
+        "toDeleteEvent",
+        "toDeleteEventType",
+        "toDeleteEventsByEventType",
+        "toDeleteExternalModel",
+        "toDeleteLabel",
+        "toDeleteList",
+        "toDeleteModel",
+        "toDeleteModelVersion",
+        "toDeleteOutcome",
+        "toDeleteRule",
+        "toDeleteVariable",
+        "toDescribeDetector",
+        "toDescribeModelVersions",
+        "toGetBatchImportJobs",
+        "toGetBatchPredictionJobs",
+        "toGetDeleteEventsByEventTypeStatus",
+        "toGetDetectorVersion",
+        "toGetDetectors",
+        "toGetEntityTypes",
+        "toGetEvent",
+        "toGetEventPrediction",
+        "toGetEventPredictionMetadata",
+        "toGetEventTypes",
+        "toGetExternalModels",
+        "toGetLabels",
+        "toGetListElements",
+        "toGetListsMetadata",
+        "toGetModelVersion",
+        "toGetModels",
+        "toGetOutcomes",
+        "toGetRules",
+        "toGetVariables",
+        "toListEventPredictions",
+        "toListTagsForResource",
+        "toPutDetector",
+        "toPutEntityType",
+        "toPutEventType",
+        "toPutExternalModel",
+        "toPutLabel",
+        "toPutOutcome",
+        "toSendEvent",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDetectorVersion",
+        "toUpdateDetectorVersionMetadata",
+        "toUpdateDetectorVersionStatus",
+        "toUpdateEventLabel",
+        "toUpdateList",
+        "toUpdateModel",
+        "toUpdateModelVersion",
+        "toUpdateModelVersionStatus",
+        "toUpdateRuleMetadata",
+        "toUpdateRuleVersion",
+        "toUpdateVariable",
+        "toGetBatchImportJobValidationReport"
+      ],
+      "relatedResourceTypes": [
+        "batch-import",
+        "batch-prediction",
+        "detector",
+        "detector-version",
+        "entity-type",
+        "event-type",
+        "external-model",
+        "label",
+        "list",
+        "model",
+        "model-version",
+        "outcome",
+        "rule",
+        "variable"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters actions based on the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toBatchCreateVariable",
+        "toCreateBatchImportJob",
+        "toCreateBatchPredictionJob",
+        "toCreateDetectorVersion",
+        "toCreateList",
+        "toCreateModel",
+        "toCreateModelVersion",
+        "toCreateRule",
+        "toCreateVariable",
+        "toPutDetector",
+        "toPutEntityType",
+        "toPutEventType",
+        "toPutExternalModel",
+        "toPutLabel",
+        "toPutOutcome",
+        "toSendEvent",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateEventLabel",
+        "toUpdateModelVersion",
+        "toUpdateRuleVersion"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

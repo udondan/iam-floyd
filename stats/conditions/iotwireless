@@ -1,6 +1,0 @@
-iotwireless:DestinationName
-iotwireless:DeviceProfileId
-iotwireless:RequestTag/${TagKey}
-iotwireless:ResourceTag/${TagKey}
-iotwireless:ServiceProfileId
-iotwireless:TagKeys

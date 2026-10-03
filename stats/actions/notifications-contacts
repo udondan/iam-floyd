@@ -1,9 +1,0 @@
-notifications-contacts:ActivateEmailContact;Write
-notifications-contacts:CreateEmailContact;Write
-notifications-contacts:DeleteEmailContact;Write
-notifications-contacts:GetEmailContact;Read
-notifications-contacts:ListEmailContacts;List
-notifications-contacts:ListTagsForResource;Read
-notifications-contacts:SendActivationCode;Write
-notifications-contacts:TagResource;Tagging, Write
-notifications-contacts:UntagResource;Tagging, Write

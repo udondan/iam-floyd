@@ -1,0 +1,818 @@
+{
+  "schemaVersion": 1,
+  "filename": "stepfunctions",
+  "className": "States",
+  "name": "states",
+  "servicePrefix": "states",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_stepfunctions.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateActivity",
+      "CreateStateMachine",
+      "CreateStateMachineAlias",
+      "DeleteActivity",
+      "DeleteStateMachine",
+      "DeleteStateMachineAlias",
+      "DeleteStateMachineVersion",
+      "GetActivityTask",
+      "PublishStateMachineVersion",
+      "RedriveExecution",
+      "SendTaskFailure",
+      "SendTaskHeartbeat",
+      "SendTaskSuccess",
+      "StartExecution",
+      "StartSyncExecution",
+      "StopExecution",
+      "TagResource",
+      "TestState",
+      "UntagResource",
+      "UpdateMapRun",
+      "UpdateStateMachine",
+      "UpdateStateMachineAlias",
+      "InvokeHTTPEndpoint"
+    ],
+    "Read": [
+      "DescribeActivity",
+      "DescribeExecution",
+      "DescribeMapRun",
+      "DescribeStateMachine",
+      "DescribeStateMachineAlias",
+      "DescribeStateMachineForExecution",
+      "GetExecutionHistory",
+      "ValidateStateMachineDefinition",
+      "RevealSecrets"
+    ],
+    "List": [
+      "ListActivities",
+      "ListExecutions",
+      "ListMapRuns",
+      "ListStateMachineAliases",
+      "ListStateMachineVersions",
+      "ListStateMachines",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateActivity",
+      "methodName": "toCreateActivity",
+      "description": "Grants permission to create an activity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateActivity.html"
+    },
+    {
+      "name": "CreateStateMachine",
+      "methodName": "toCreateStateMachine",
+      "description": "Grants permission to create a state machine",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateStateMachine.html"
+    },
+    {
+      "name": "CreateStateMachineAlias",
+      "methodName": "toCreateStateMachineAlias",
+      "description": "Grants permission to create a state machine alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateStateMachineAlias.html"
+    },
+    {
+      "name": "DeleteActivity",
+      "methodName": "toDeleteActivity",
+      "description": "Grants permission to delete an activity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DeleteActivity.html"
+    },
+    {
+      "name": "DeleteStateMachine",
+      "methodName": "toDeleteStateMachine",
+      "description": "Grants permission to delete a state machine",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DeleteStateMachine.html"
+    },
+    {
+      "name": "DeleteStateMachineAlias",
+      "methodName": "toDeleteStateMachineAlias",
+      "description": "Grants permission to delete a state machine alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DeleteStateMachineAlias.html"
+    },
+    {
+      "name": "DeleteStateMachineVersion",
+      "methodName": "toDeleteStateMachineVersion",
+      "description": "Grants permission to delete a state machine version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DeleteStateMachineVersion.html"
+    },
+    {
+      "name": "DescribeActivity",
+      "methodName": "toDescribeActivity",
+      "description": "Grants permission to describe an activity",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeActivity.html"
+    },
+    {
+      "name": "DescribeExecution",
+      "methodName": "toDescribeExecution",
+      "description": "Grants permission to describe an execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeExecution.html"
+    },
+    {
+      "name": "DescribeMapRun",
+      "methodName": "toDescribeMapRun",
+      "description": "Grants permission to describe a map run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeMapRun.html"
+    },
+    {
+      "name": "DescribeStateMachine",
+      "methodName": "toDescribeStateMachine",
+      "description": "Grants permission to describe a state machine",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeStateMachine.html"
+    },
+    {
+      "name": "DescribeStateMachineAlias",
+      "methodName": "toDescribeStateMachineAlias",
+      "description": "Grants permission to describe a state machine alias",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeStateMachineAlias.html"
+    },
+    {
+      "name": "DescribeStateMachineForExecution",
+      "methodName": "toDescribeStateMachineForExecution",
+      "description": "Grants permission to describe the state machine for an execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeStateMachineForExecution.html"
+    },
+    {
+      "name": "GetActivityTask",
+      "methodName": "toGetActivityTask",
+      "description": "Grants permission to be used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for execution by a running state machine",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_GetActivityTask.html"
+    },
+    {
+      "name": "GetExecutionHistory",
+      "methodName": "toGetExecutionHistory",
+      "description": "Grants permission to return the history of the specified execution as a list of events",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_GetExecutionHistory.html"
+    },
+    {
+      "name": "ListActivities",
+      "methodName": "toListActivities",
+      "description": "Grants permission to list the existing activities",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListActivities.html"
+    },
+    {
+      "name": "ListExecutions",
+      "methodName": "toListExecutions",
+      "description": "Grants permission to list the executions of a state machine",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListExecutions.html"
+    },
+    {
+      "name": "ListMapRuns",
+      "methodName": "toListMapRuns",
+      "description": "Grants permission to list the map runs of an execution",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListMapRuns.html"
+    },
+    {
+      "name": "ListStateMachineAliases",
+      "methodName": "toListStateMachineAliases",
+      "description": "Grants permission to list the aliases of a state machine",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListStateMachineAliases.html"
+    },
+    {
+      "name": "ListStateMachineVersions",
+      "methodName": "toListStateMachineVersions",
+      "description": "Grants permission to list the versions of a state machine",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListStateMachineVersions.html"
+    },
+    {
+      "name": "ListStateMachines",
+      "methodName": "toListStateMachines",
+      "description": "Grants permission to lists the existing state machines",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListStateMachines.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for an AWS Step Functions resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PublishStateMachineVersion",
+      "methodName": "toPublishStateMachineVersion",
+      "description": "Grants permission to publish a state machine version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_PublishStateMachineVersion.html"
+    },
+    {
+      "name": "RedriveExecution",
+      "methodName": "toRedriveExecution",
+      "description": "Grants permission to redrive an execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_RedriveExecution.html"
+    },
+    {
+      "name": "SendTaskFailure",
+      "methodName": "toSendTaskFailure",
+      "description": "Grants permission to report that the task identified by the taskToken failed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskFailure.html"
+    },
+    {
+      "name": "SendTaskHeartbeat",
+      "methodName": "toSendTaskHeartbeat",
+      "description": "Grants permission to report to the service that the task represented by the specified taskToken is still making progress",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskHeartbeat.html"
+    },
+    {
+      "name": "SendTaskSuccess",
+      "methodName": "toSendTaskSuccess",
+      "description": "Grants permission to report that the task identified by the taskToken completed successfully",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskSuccess.html"
+    },
+    {
+      "name": "StartExecution",
+      "methodName": "toStartExecution",
+      "description": "Grants permission to start a state machine execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartExecution.html"
+    },
+    {
+      "name": "StartSyncExecution",
+      "methodName": "toStartSyncExecution",
+      "description": "Grants permission to start a Synchronous Express state machine execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartSyncExecution.html"
+    },
+    {
+      "name": "StopExecution",
+      "methodName": "toStopExecution",
+      "description": "Grants permission to stop an execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_StopExecution.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an AWS Step Functions resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_TagResource.html"
+    },
+    {
+      "name": "TestState",
+      "methodName": "toTestState",
+      "description": "Grants permission to test a state machine definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_TestState.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag from an AWS Step Functions resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateMapRun",
+      "methodName": "toUpdateMapRun",
+      "description": "Grants permission to update a map run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_UpdateMapRun.html"
+    },
+    {
+      "name": "UpdateStateMachine",
+      "methodName": "toUpdateStateMachine",
+      "description": "Grants permission to update a state machine",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_UpdateStateMachine.html"
+    },
+    {
+      "name": "UpdateStateMachineAlias",
+      "methodName": "toUpdateStateMachineAlias",
+      "description": "Grants permission to update a state machine alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_UpdateStateMachineAlias.html"
+    },
+    {
+      "name": "ValidateStateMachineDefinition",
+      "methodName": "toValidateStateMachineDefinition",
+      "description": "Grants permission to validate a state machine definition",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_ValidateStateMachineDefinition.html"
+    },
+    {
+      "name": "InvokeHTTPEndpoint",
+      "methodName": "toInvokeHTTPEndpoint",
+      "description": "Grants permission to invoke the HTTP Task state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/connect-third-party-apis.html"
+    },
+    {
+      "name": "RevealSecrets",
+      "methodName": "toRevealSecrets",
+      "description": "Grants permission to reveal sensitive data from an execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "activity",
+      "methodName": "onActivity",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html",
+      "arn": "arn:${Partition}:states:${Region}:${Account}:activity:${ActivityName}",
+      "placeholders": [
+        {
+          "placeholder": "ActivityName",
+          "name": "activityName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "execution",
+      "methodName": "onExecution",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-executions.html",
+      "arn": "arn:${Partition}:states:${Region}:${Account}:execution:${StateMachineName}:${ExecutionId}",
+      "placeholders": [
+        {
+          "placeholder": "StateMachineName",
+          "name": "stateMachineName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExecutionId",
+          "name": "executionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "express",
+      "methodName": "onExpress",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-executions.html",
+      "arn": "arn:${Partition}:states:${Region}:${Account}:express:${StateMachineName}:${ExecutionId}:${ExpressId}",
+      "placeholders": [
+        {
+          "placeholder": "StateMachineName",
+          "name": "stateMachineName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExecutionId",
+          "name": "executionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExpressId",
+          "name": "expressId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "labelled execution",
+      "methodName": "onLabelledExecution",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html",
+      "arn": "arn:${Partition}:states:${Region}:${Account}:execution:${StateMachineName}/${MapRunLabel}:${ExecutionId}",
+      "placeholders": [
+        {
+          "placeholder": "StateMachineName",
+          "name": "stateMachineName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "MapRunLabel",
+          "name": "mapRunLabel",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExecutionId",
+          "name": "executionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "labelled express",
+      "methodName": "onLabelledExpress",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html",
+      "arn": "arn:${Partition}:states:${Region}:${Account}:express:${StateMachineName}/${MapRunLabel}:${ExecutionId}:${ExpressId}",
+      "placeholders": [
+        {
+          "placeholder": "StateMachineName",
+          "name": "stateMachineName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "MapRunLabel",
+          "name": "mapRunLabel",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExecutionId",
+          "name": "executionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExpressId",
+          "name": "expressId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "maprun",
+      "methodName": "onMaprun",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html",
+      "arn": "arn:${Partition}:states:${Region}:${Account}:mapRun:${StateMachineName}/${MapRunLabel}:${MapRunId}",
+      "placeholders": [
+        {
+          "placeholder": "StateMachineName",
+          "name": "stateMachineName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "MapRunLabel",
+          "name": "mapRunLabel",
+          "kind": "required"
+        },
+        {
+          "placeholder": "MapRunId",
+          "name": "mapRunId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "statemachine",
+      "methodName": "onStatemachine",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html",
+      "arn": "arn:${Partition}:states:${Region}:${Account}:stateMachine:${StateMachineName}",
+      "placeholders": [
+        {
+          "placeholder": "StateMachineName",
+          "name": "stateMachineName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "statemachinealias",
+      "methodName": "onStatemachinealias",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-cd-aliasing-versioning.html",
+      "arn": "arn:${Partition}:states:${Region}:${Account}:stateMachine:${StateMachineName}:${StateMachineAliasName}",
+      "placeholders": [
+        {
+          "placeholder": "StateMachineName",
+          "name": "stateMachineName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StateMachineAliasName",
+          "name": "stateMachineAliasName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "statemachineversion",
+      "methodName": "onStatemachineversion",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-cd-aliasing-versioning.html",
+      "arn": "arn:${Partition}:states:${Region}:${Account}:stateMachine:${StateMachineName}:${StateMachineVersionId}",
+      "placeholders": [
+        {
+          "placeholder": "StateMachineName",
+          "name": "stateMachineName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StateMachineVersionId",
+          "name": "stateMachineVersionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateActivity",
+        "toCreateStateMachine",
+        "toTagResource",
+        "toUpdateStateMachine"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateActivity",
+        "toCreateStateMachine",
+        "toCreateStateMachineAlias",
+        "toDeleteActivity",
+        "toDeleteStateMachine",
+        "toDeleteStateMachineAlias",
+        "toDeleteStateMachineVersion",
+        "toDescribeActivity",
+        "toDescribeExecution",
+        "toDescribeStateMachine",
+        "toDescribeStateMachineAlias",
+        "toDescribeStateMachineForExecution",
+        "toGetActivityTask",
+        "toGetExecutionHistory",
+        "toListExecutions",
+        "toListMapRuns",
+        "toListStateMachineAliases",
+        "toListStateMachineVersions",
+        "toListTagsForResource",
+        "toPublishStateMachineVersion",
+        "toRedriveExecution",
+        "toStartExecution",
+        "toStartSyncExecution",
+        "toStopExecution",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateStateMachine",
+        "toUpdateStateMachineAlias"
+      ],
+      "relatedResourceTypes": [
+        "activity",
+        "execution",
+        "statemachine",
+        "statemachinealias",
+        "statemachineversion"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateActivity",
+        "toCreateStateMachine",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateStateMachine"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "states:HTTPEndpoint",
+      "methodName": "ifHTTPEndpoint",
+      "description": "Filters access by the endpoint that the HTTP Task state allows in the request",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/connect-third-party-apis.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "HTTPEndpoint",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "states:HTTPMethod",
+      "methodName": "ifHTTPMethod",
+      "description": "Filters access by the method that the HTTP Task state allows in the request",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/connect-third-party-apis.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "HTTPMethod",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "states:StateMachineQualifier",
+      "methodName": "ifStateMachineQualifier",
+      "description": "Filters access by the qualifier of a state machine ARN",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/auth-version-alias.html",
+      "relatedActionMethods": [
+        "toCreateStateMachineAlias",
+        "toDeleteStateMachineAlias",
+        "toDeleteStateMachineVersion",
+        "toDescribeStateMachine",
+        "toDescribeStateMachineAlias",
+        "toListExecutions",
+        "toListStateMachineAliases",
+        "toStartExecution",
+        "toStartSyncExecution",
+        "toUpdateStateMachineAlias"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "StateMachineQualifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

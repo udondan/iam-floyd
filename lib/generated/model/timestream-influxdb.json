@@ -1,0 +1,450 @@
+{
+  "schemaVersion": 1,
+  "filename": "timestream-influxdb",
+  "className": "TimestreamInfluxdb",
+  "name": "timestream-influxdb",
+  "servicePrefix": "timestream-influxdb",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_timestream-influxdb.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateDbBackup",
+      "CreateDbCluster",
+      "CreateDbInstance",
+      "CreateDbParameterGroup",
+      "DeleteDbBackup",
+      "DeleteDbCluster",
+      "DeleteDbInstance",
+      "RebootDbCluster",
+      "RebootDbInstance",
+      "RestoreFromDbBackup",
+      "TagResource",
+      "UntagResource",
+      "UpdateDbCluster",
+      "UpdateDbInstance"
+    ],
+    "Read": [
+      "GetDbBackup",
+      "GetDbCluster",
+      "GetDbInstance",
+      "GetDbParameterGroup",
+      "ListDbInstancesForCluster",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListDbBackups",
+      "ListDbClusters",
+      "ListDbInstances",
+      "ListDbParameterGroups"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateDbBackup",
+      "methodName": "toCreateDbBackup",
+      "description": "Grants permission to create a Timestream InfluxDB Backup for a DbInstance or DbCluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_CreateDbBackup.html"
+    },
+    {
+      "name": "CreateDbCluster",
+      "methodName": "toCreateDbCluster",
+      "description": "Grants permission to create a new Timestream InfluxDB Cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_CreateDbCluster.html"
+    },
+    {
+      "name": "CreateDbInstance",
+      "methodName": "toCreateDbInstance",
+      "description": "Grants permission to create a new Timestream InfluxDB instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_CreateDbInstance.html"
+    },
+    {
+      "name": "CreateDbParameterGroup",
+      "methodName": "toCreateDbParameterGroup",
+      "description": "Grants permission to create a new Timestream InfluxDB parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_CreateDbParameterGroup.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteDbBackup",
+      "methodName": "toDeleteDbBackup",
+      "description": "Grants permission to delete a Timestream InfluxDB backup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_DeleteDbBackup.html"
+    },
+    {
+      "name": "DeleteDbCluster",
+      "methodName": "toDeleteDbCluster",
+      "description": "Grants permission to delete a Timestream InfluxDB Cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_DeleteDbCluster.html"
+    },
+    {
+      "name": "DeleteDbInstance",
+      "methodName": "toDeleteDbInstance",
+      "description": "Grants permission to delete a Timestream InfluxDB instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_DeleteDbInstance.html"
+    },
+    {
+      "name": "GetDbBackup",
+      "methodName": "toGetDbBackup",
+      "description": "Grants permission to get information about a Timestream InfluxDB Backup",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_GetDbBackup.html"
+    },
+    {
+      "name": "GetDbCluster",
+      "methodName": "toGetDbCluster",
+      "description": "Grants permission to get information about a Timestream InfluxDB Cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_GetDbCluster.html"
+    },
+    {
+      "name": "GetDbInstance",
+      "methodName": "toGetDbInstance",
+      "description": "Grants permission to get information about a Timestream InfluxDB instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_GetDbInstance.html"
+    },
+    {
+      "name": "GetDbParameterGroup",
+      "methodName": "toGetDbParameterGroup",
+      "description": "Grants permission to get information about a Timestream InfluxDB parameter group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_GetDbParameterGroup.html"
+    },
+    {
+      "name": "ListDbBackups",
+      "methodName": "toListDbBackups",
+      "description": "Grants permission to list information about all Timestream InfluxDB backups in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_ListDbBackups.html"
+    },
+    {
+      "name": "ListDbClusters",
+      "methodName": "toListDbClusters",
+      "description": "Grants permission to list information about all Timestream InfluxDB clusters in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_ListDbClusters.html"
+    },
+    {
+      "name": "ListDbInstances",
+      "methodName": "toListDbInstances",
+      "description": "Grants permission to list information about all Timestream InfluxDB instances in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_ListDbInstances.html"
+    },
+    {
+      "name": "ListDbInstancesForCluster",
+      "methodName": "toListDbInstancesForCluster",
+      "description": "Grants permission to list information about all Timestream InfluxDB Instances belonging to a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_ListDbInstancesForCluster.html"
+    },
+    {
+      "name": "ListDbParameterGroups",
+      "methodName": "toListDbParameterGroups",
+      "description": "Grants permission to list information about all Timestream InfluxDB parameter groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_ListDbParameterGroups.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a Timestream InfluxDB resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RebootDbCluster",
+      "methodName": "toRebootDbCluster",
+      "description": "Grants permission to reboot a Timestream InfluxDB Cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_RebootDbCluster.html"
+    },
+    {
+      "name": "RebootDbInstance",
+      "methodName": "toRebootDbInstance",
+      "description": "Grants permission to reboot a Timestream InfluxDB instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_RebootDbInstance.html"
+    },
+    {
+      "name": "RestoreFromDbBackup",
+      "methodName": "toRestoreFromDbBackup",
+      "description": "Grants permission to restore from a Timestream InfluxDB backup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_RestoreFromDbBackup.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a Timestream InfluxDB resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a Timestream InfluxDB resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDbCluster",
+      "methodName": "toUpdateDbCluster",
+      "description": "Grants permission to update a Timestream InfluxDB Cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_UpdateDbCluster.html"
+    },
+    {
+      "name": "UpdateDbInstance",
+      "methodName": "toUpdateDbInstance",
+      "description": "Grants permission to update a Timestream InfluxDB instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_UpdateDbInstance.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "db-backup",
+      "methodName": "onDbBackup",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_DbBackupSummary.html",
+      "arn": "arn:${Partition}:timestream-influxdb:${Region}:${Account}:db-backup/${DbBackupId}",
+      "placeholders": [
+        {
+          "placeholder": "DbBackupId",
+          "name": "dbBackupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "db-cluster",
+      "methodName": "onDbCluster",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_DbClusterSummary.html",
+      "arn": "arn:${Partition}:timestream-influxdb:${Region}:${Account}:db-cluster/${DbClusterId}",
+      "placeholders": [
+        {
+          "placeholder": "DbClusterId",
+          "name": "dbClusterId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "db-instance",
+      "methodName": "onDbInstance",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_DbInstanceSummary.html",
+      "arn": "arn:${Partition}:timestream-influxdb:${Region}:${Account}:db-instance/${DbInstanceIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "DbInstanceIdentifier",
+          "name": "dbInstanceIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "db-parameter-group",
+      "methodName": "onDbParameterGroup",
+      "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_DbParameterGroupSummary.html",
+      "arn": "arn:${Partition}:timestream-influxdb:${Region}:${Account}:db-parameter-group/${DbParameterGroupIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "DbParameterGroupIdentifier",
+          "name": "dbParameterGroupIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDbBackup",
+        "toCreateDbCluster",
+        "toCreateDbInstance",
+        "toCreateDbParameterGroup",
+        "toRestoreFromDbBackup",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateDbBackup",
+        "toCreateDbCluster",
+        "toCreateDbInstance",
+        "toDeleteDbBackup",
+        "toDeleteDbCluster",
+        "toDeleteDbInstance",
+        "toGetDbBackup",
+        "toGetDbCluster",
+        "toGetDbInstance",
+        "toGetDbParameterGroup",
+        "toListDbInstancesForCluster",
+        "toListTagsForResource",
+        "toRebootDbCluster",
+        "toRebootDbInstance",
+        "toRestoreFromDbBackup",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDbCluster",
+        "toUpdateDbInstance"
+      ],
+      "relatedResourceTypes": [
+        "db-backup",
+        "db-cluster",
+        "db-instance",
+        "db-parameter-group"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDbBackup",
+        "toCreateDbCluster",
+        "toCreateDbInstance",
+        "toCreateDbParameterGroup",
+        "toRestoreFromDbBackup",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "timestream-influxdb:RestoreMode",
+      "methodName": "ifRestoreMode",
+      "description": "Filters access by the restore mode specified in the request",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/security-iam.html",
+      "relatedActionMethods": [
+        "toRestoreFromDbBackup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RestoreMode",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

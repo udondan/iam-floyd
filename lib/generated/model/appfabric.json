@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "filename": "appfabric",
+  "className": "Appfabric",
+  "name": "appfabric",
+  "servicePrefix": "appfabric",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appfabric.html",
+  "accessLevelList": {
+    "Write": [
+      "BatchGetUserAccessTasks",
+      "ConnectAppAuthorization",
+      "CreateAppAuthorization",
+      "CreateAppBundle",
+      "CreateIngestion",
+      "CreateIngestionDestination",
+      "DeleteAppAuthorization",
+      "DeleteAppBundle",
+      "DeleteIngestion",
+      "DeleteIngestionDestination",
+      "StartIngestion",
+      "StartUserAccessTasks",
+      "StopIngestion",
+      "TagResource",
+      "UntagResource",
+      "UpdateAppAuthorization",
+      "UpdateIngestionDestination"
+    ],
+    "Read": [
+      "GetAppAuthorization",
+      "GetAppBundle",
+      "GetIngestion",
+      "GetIngestionDestination",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAppAuthorizations",
+      "ListAppBundles",
+      "ListIngestionDestinations",
+      "ListIngestions"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchGetUserAccessTasks",
+      "methodName": "toBatchGetUserAccessTasks",
+      "description": "Grants permission to start user access tasks for multiple users",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_BatchGetUserAccessTasks.html"
+    },
+    {
+      "name": "ConnectAppAuthorization",
+      "methodName": "toConnectAppAuthorization",
+      "description": "Grants permission to connect app authorizations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_ConnectAppAuthorization.html"
+    },
+    {
+      "name": "CreateAppAuthorization",
+      "methodName": "toCreateAppAuthorization",
+      "description": "Grants permission to create app authorizations for app bundles",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_CreateAppAuthorization.html"
+    },
+    {
+      "name": "CreateAppBundle",
+      "methodName": "toCreateAppBundle",
+      "description": "Grants permission to create app bundles in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_CreateAppBundle.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateIngestion",
+      "methodName": "toCreateIngestion",
+      "description": "Grants permission to create ingestions for app bundles",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_CreateIngestion.html"
+    },
+    {
+      "name": "CreateIngestionDestination",
+      "methodName": "toCreateIngestionDestination",
+      "description": "Grants permission to create ingestion destinations for app bundles",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_CreateIngestionDestination.html"
+    },
+    {
+      "name": "DeleteAppAuthorization",
+      "methodName": "toDeleteAppAuthorization",
+      "description": "Grants permission to delete app authorizations within an app bundle",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_DeleteAppAuthorization.html"
+    },
+    {
+      "name": "DeleteAppBundle",
+      "methodName": "toDeleteAppBundle",
+      "description": "Grants permission to delete app bundles in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_DeleteAppBundle.html"
+    },
+    {
+      "name": "DeleteIngestion",
+      "methodName": "toDeleteIngestion",
+      "description": "Grants permission to delete ingestions within an app bundle",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_DeleteIngestion.html"
+    },
+    {
+      "name": "DeleteIngestionDestination",
+      "methodName": "toDeleteIngestionDestination",
+      "description": "Grants permission to delete destinations within an ingestion",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_DeleteIngestionDestination.html"
+    },
+    {
+      "name": "GetAppAuthorization",
+      "methodName": "toGetAppAuthorization",
+      "description": "Grants permission to view details about app authorizations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_GetAppAuthorization.html"
+    },
+    {
+      "name": "GetAppBundle",
+      "methodName": "toGetAppBundle",
+      "description": "Grants permission to view details about app bundles",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_GetAppBundle.html"
+    },
+    {
+      "name": "GetIngestion",
+      "methodName": "toGetIngestion",
+      "description": "Grants permission to view details about ingestions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_GetIngestion.html"
+    },
+    {
+      "name": "GetIngestionDestination",
+      "methodName": "toGetIngestionDestination",
+      "description": "Grants permission to view details about ingestion destinations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_GetIngestionDestination.html"
+    },
+    {
+      "name": "ListAppAuthorizations",
+      "methodName": "toListAppAuthorizations",
+      "description": "Grants permission to retrieve a list of app authorizations within an app bundle",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_ListAppAuthorizations.html"
+    },
+    {
+      "name": "ListAppBundles",
+      "methodName": "toListAppBundles",
+      "description": "Grants permission to retrieve a list of app bundles in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_ListAppBundles.html"
+    },
+    {
+      "name": "ListIngestionDestinations",
+      "methodName": "toListIngestionDestinations",
+      "description": "Grants permission to retrieve a list of destinations within an ingestion",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_ListIngestionDestinations.html"
+    },
+    {
+      "name": "ListIngestions",
+      "methodName": "toListIngestions",
+      "description": "Grants permission to retrieve a list of ingestions within an app bundle",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_ListIngestions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for AppFabric resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "StartIngestion",
+      "methodName": "toStartIngestion",
+      "description": "Grants permission to start ingestions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_StartIngestion.html"
+    },
+    {
+      "name": "StartUserAccessTasks",
+      "methodName": "toStartUserAccessTasks",
+      "description": "Grants permission to start user access tasks",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_StartUserAccessTasks.html"
+    },
+    {
+      "name": "StopIngestion",
+      "methodName": "toStopIngestion",
+      "description": "Grants permission to stop ingestions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_StopIngestion.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag AppFabric resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag AppFabric resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAppAuthorization",
+      "methodName": "toUpdateAppAuthorization",
+      "description": "Grants permission to update app authorizations within app bundles",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_UpdateAppAuthorization.html"
+    },
+    {
+      "name": "UpdateIngestionDestination",
+      "methodName": "toUpdateIngestionDestination",
+      "description": "Grants permission to update destinations within ingestions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_UpdateIngestionDestination.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "appauthorization",
+      "methodName": "onAppauthorization",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_AppAuthorization.html",
+      "arn": "arn:${Partition}:appfabric:${Region}:${Account}:appbundle/${AppbundleId}/appauthorization/${AppAuthorizationIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "AppbundleId",
+          "name": "appbundleId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AppAuthorizationIdentifier",
+          "name": "appAuthorizationIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "appbundle",
+      "methodName": "onAppbundle",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_AppBundle.html",
+      "arn": "arn:${Partition}:appfabric:${Region}:${Account}:appbundle/${AppBundleIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "AppBundleIdentifier",
+          "name": "appBundleIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ingestion",
+      "methodName": "onIngestion",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_Ingestion.html",
+      "arn": "arn:${Partition}:appfabric:${Region}:${Account}:appbundle/${AppbundleId}/ingestion/${IngestionIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "AppbundleId",
+          "name": "appbundleId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IngestionIdentifier",
+          "name": "ingestionIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ingestiondestination",
+      "methodName": "onIngestiondestination",
+      "url": "https://docs.aws.amazon.com/appfabric/latest/api/API_IngestionDestination.html",
+      "arn": "arn:${Partition}:appfabric:${Region}:${Account}:appbundle/${AppbundleId}/ingestion/${IngestionIdentifier}/ingestiondestination/${IngestionDestinationIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "AppbundleId",
+          "name": "appbundleId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IngestionIdentifier",
+          "name": "ingestionIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IngestionDestinationIdentifier",
+          "name": "ingestionDestinationIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAppAuthorization",
+        "toCreateAppBundle",
+        "toCreateIngestion",
+        "toCreateIngestionDestination",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchGetUserAccessTasks",
+        "toConnectAppAuthorization",
+        "toCreateAppAuthorization",
+        "toCreateIngestion",
+        "toCreateIngestionDestination",
+        "toDeleteAppAuthorization",
+        "toDeleteAppBundle",
+        "toDeleteIngestion",
+        "toDeleteIngestionDestination",
+        "toGetAppAuthorization",
+        "toGetAppBundle",
+        "toGetIngestion",
+        "toGetIngestionDestination",
+        "toListAppAuthorizations",
+        "toListIngestionDestinations",
+        "toListIngestions",
+        "toListTagsForResource",
+        "toStartIngestion",
+        "toStartUserAccessTasks",
+        "toStopIngestion",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAppAuthorization",
+        "toUpdateIngestionDestination"
+      ],
+      "relatedResourceTypes": [
+        "appauthorization",
+        "appbundle",
+        "ingestion",
+        "ingestiondestination"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAppAuthorization",
+        "toCreateAppBundle",
+        "toCreateIngestion",
+        "toCreateIngestionDestination",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

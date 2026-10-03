@@ -1,0 +1,630 @@
+{
+  "schemaVersion": 1,
+  "filename": "migration-hub-refactor-spaces",
+  "className": "RefactorSpaces",
+  "name": "refactor-spaces",
+  "servicePrefix": "refactor-spaces",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_migration-hub-refactor-spaces.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateApplication",
+      "CreateEnvironment",
+      "CreateRoute",
+      "CreateService",
+      "DeleteApplication",
+      "DeleteEnvironment",
+      "DeleteResourcePolicy",
+      "DeleteRoute",
+      "DeleteService",
+      "PutResourcePolicy",
+      "TagResource",
+      "UntagResource",
+      "UpdateRoute"
+    ],
+    "Read": [
+      "GetApplication",
+      "GetEnvironment",
+      "GetResourcePolicy",
+      "GetRoute",
+      "GetService",
+      "ListApplications",
+      "ListEnvironmentVpcs",
+      "ListEnvironments",
+      "ListRoutes",
+      "ListServices",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to create an application within an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateApplication.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifApplicationCreatedByAccount",
+        "ifCreatedByAccountIds"
+      ]
+    },
+    {
+      "name": "CreateEnvironment",
+      "methodName": "toCreateEnvironment",
+      "description": "Grants permission to create an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateRoute",
+      "methodName": "toCreateRoute",
+      "description": "Grants permission to create a route within an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateRoute.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifApplicationCreatedByAccount",
+        "ifCreatedByAccountIds",
+        "ifRouteCreatedByAccount",
+        "ifServiceCreatedByAccount",
+        "ifSourcePath"
+      ]
+    },
+    {
+      "name": "CreateService",
+      "methodName": "toCreateService",
+      "description": "Grants permission to create a service within an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateService.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifApplicationCreatedByAccount",
+        "ifCreatedByAccountIds",
+        "ifServiceCreatedByAccount"
+      ]
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete an application from an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_DeleteApplication.html"
+    },
+    {
+      "name": "DeleteEnvironment",
+      "methodName": "toDeleteEnvironment",
+      "description": "Grants permission to delete an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_DeleteEnvironment.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete a resource policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteRoute",
+      "methodName": "toDeleteRoute",
+      "description": "Grants permission to delete a route from an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_DeleteRoute.html"
+    },
+    {
+      "name": "DeleteService",
+      "methodName": "toDeleteService",
+      "description": "Grants permission to delete a service from an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_DeleteService.html"
+    },
+    {
+      "name": "GetApplication",
+      "methodName": "toGetApplication",
+      "description": "Grants permission to get more information about an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_GetApplication.html"
+    },
+    {
+      "name": "GetEnvironment",
+      "methodName": "toGetEnvironment",
+      "description": "Grants permission to get more information for an environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_GetEnvironment.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to get the details about a resource policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "GetRoute",
+      "methodName": "toGetRoute",
+      "description": "Grants permission to get more information about a route",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_GetRoute.html"
+    },
+    {
+      "name": "GetService",
+      "methodName": "toGetService",
+      "description": "Grants permission to get more information about a service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_GetService.html"
+    },
+    {
+      "name": "ListApplications",
+      "methodName": "toListApplications",
+      "description": "Grants permission to list all the applications in an environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_ListApplications.html"
+    },
+    {
+      "name": "ListEnvironmentVpcs",
+      "methodName": "toListEnvironmentVpcs",
+      "description": "Grants permission to list all the VPCs for the environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_ListEnvironmentVpcs.html"
+    },
+    {
+      "name": "ListEnvironments",
+      "methodName": "toListEnvironments",
+      "description": "Grants permission to list all environments",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_ListEnvironments.html"
+    },
+    {
+      "name": "ListRoutes",
+      "methodName": "toListRoutes",
+      "description": "Grants permission to list all the routes in an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_ListRoutes.html"
+    },
+    {
+      "name": "ListServices",
+      "methodName": "toListServices",
+      "description": "Grants permission to list all the services in an environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_ListServices.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all the tags for a given resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to add a resource policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateRoute",
+      "methodName": "toUpdateRoute",
+      "description": "Grants permission to update a route from an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_UpdateRoute.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources",
+      "arn": "arn:${Partition}:refactor-spaces:${Region}:${Account}:environment/${EnvironmentId}/application/${ApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifApplicationCreatedByAccount",
+        "ifCreatedByAccountIds"
+      ]
+    },
+    {
+      "name": "environment",
+      "methodName": "onEnvironment",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources",
+      "arn": "arn:${Partition}:refactor-spaces:${Region}:${Account}:environment/${EnvironmentId}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "route",
+      "methodName": "onRoute",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources",
+      "arn": "arn:${Partition}:refactor-spaces:${Region}:${Account}:environment/${EnvironmentId}/application/${ApplicationId}/route/${RouteId}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RouteId",
+          "name": "routeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifApplicationCreatedByAccount",
+        "ifCreatedByAccountIds",
+        "ifRouteCreatedByAccount",
+        "ifServiceCreatedByAccount",
+        "ifSourcePath"
+      ]
+    },
+    {
+      "name": "service",
+      "methodName": "onService",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources",
+      "arn": "arn:${Partition}:refactor-spaces:${Region}:${Account}:environment/${EnvironmentId}/application/${ApplicationId}/service/${ServiceId}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ServiceId",
+          "name": "serviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifApplicationCreatedByAccount",
+        "ifCreatedByAccountIds",
+        "ifServiceCreatedByAccount"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateEnvironment",
+        "toCreateRoute",
+        "toCreateService",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toDeleteApplication",
+        "toDeleteEnvironment",
+        "toDeleteRoute",
+        "toDeleteService",
+        "toGetApplication",
+        "toGetEnvironment",
+        "toGetRoute",
+        "toGetService",
+        "toListApplications",
+        "toListEnvironmentVpcs",
+        "toListRoutes",
+        "toListServices",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateRoute"
+      ],
+      "relatedResourceTypes": [
+        "application",
+        "environment",
+        "route",
+        "service"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateEnvironment",
+        "toCreateRoute",
+        "toCreateService",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "refactor-spaces:ApplicationCreatedByAccount",
+      "methodName": "ifApplicationCreatedByAccount",
+      "description": "Filters access by restricting the action to only those accounts that created the application within an environment",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateRoute",
+        "toCreateService",
+        "toDeleteApplication",
+        "toDeleteRoute",
+        "toDeleteService",
+        "toGetApplication",
+        "toGetRoute",
+        "toGetService",
+        "toListApplications",
+        "toListRoutes",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateRoute"
+      ],
+      "relatedResourceTypes": [
+        "application",
+        "route",
+        "service"
+      ],
+      "keyLiteral": "ApplicationCreatedByAccount",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "refactor-spaces:CreatedByAccountIds",
+      "methodName": "ifCreatedByAccountIds",
+      "description": "Filters access by the accounts that created the resource",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateRoute",
+        "toCreateService",
+        "toDeleteApplication",
+        "toDeleteRoute",
+        "toDeleteService",
+        "toGetApplication",
+        "toGetRoute",
+        "toGetService",
+        "toListApplications",
+        "toListRoutes",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateRoute"
+      ],
+      "relatedResourceTypes": [
+        "application",
+        "route",
+        "service"
+      ],
+      "keyLiteral": "CreatedByAccountIds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "refactor-spaces:RouteCreatedByAccount",
+      "methodName": "ifRouteCreatedByAccount",
+      "description": "Filters access by restricting the action to only those accounts that created the route within an application",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toCreateRoute",
+        "toDeleteRoute",
+        "toGetRoute",
+        "toListRoutes",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateRoute"
+      ],
+      "relatedResourceTypes": [
+        "route"
+      ],
+      "keyLiteral": "RouteCreatedByAccount",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "refactor-spaces:ServiceCreatedByAccount",
+      "methodName": "ifServiceCreatedByAccount",
+      "description": "Filters access by restricting the action to only those accounts that created the service within an application",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toCreateRoute",
+        "toCreateService",
+        "toDeleteRoute",
+        "toDeleteService",
+        "toGetRoute",
+        "toGetService",
+        "toListRoutes",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateRoute"
+      ],
+      "relatedResourceTypes": [
+        "route",
+        "service"
+      ],
+      "keyLiteral": "ServiceCreatedByAccount",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "refactor-spaces:SourcePath",
+      "methodName": "ifSourcePath",
+      "description": "Filters access by the path of the route",
+      "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toCreateRoute",
+        "toDeleteRoute",
+        "toGetRoute",
+        "toListRoutes",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateRoute"
+      ],
+      "relatedResourceTypes": [
+        "route"
+      ],
+      "keyLiteral": "SourcePath",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

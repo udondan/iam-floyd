@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "filename": "marketplace-management-portal",
+  "className": "MarketplaceManagementPortal",
+  "name": "marketplace-management-portal",
+  "servicePrefix": "aws-marketplace-management",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-marketplace-management.html",
+  "accessLevelList": {
+    "Read": [
+      "GetAdditionalSellerNotificationRecipients",
+      "GetBankAccountVerificationDetails",
+      "GetSecondaryUserVerificationDetails",
+      "GetSellerVerificationDetails"
+    ],
+    "Write": [
+      "PutAdditionalSellerNotificationRecipients",
+      "PutBankAccountVerificationDetails",
+      "PutSecondaryUserVerificationDetails",
+      "PutSellerVerificationDetails",
+      "uploadFiles"
+    ],
+    "List": [
+      "viewMarketing",
+      "viewReports",
+      "viewSettings",
+      "viewSupport"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetAdditionalSellerNotificationRecipients",
+      "methodName": "toGetAdditionalSellerNotificationRecipients",
+      "description": "Grants permission to view additional seller notification recipients",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions"
+    },
+    {
+      "name": "GetBankAccountVerificationDetails",
+      "methodName": "toGetBankAccountVerificationDetails",
+      "description": "Grants permission to view bank account verification status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions"
+    },
+    {
+      "name": "GetSecondaryUserVerificationDetails",
+      "methodName": "toGetSecondaryUserVerificationDetails",
+      "description": "Grants permission to view secondary user account verification status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions"
+    },
+    {
+      "name": "GetSellerVerificationDetails",
+      "methodName": "toGetSellerVerificationDetails",
+      "description": "Grants permission to view account verification status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions"
+    },
+    {
+      "name": "PutAdditionalSellerNotificationRecipients",
+      "methodName": "toPutAdditionalSellerNotificationRecipients",
+      "description": "Grants permission to update additional seller notification recipients",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions"
+    },
+    {
+      "name": "PutBankAccountVerificationDetails",
+      "methodName": "toPutBankAccountVerificationDetails",
+      "description": "Grants permission to update bank account verification status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions"
+    },
+    {
+      "name": "PutSecondaryUserVerificationDetails",
+      "methodName": "toPutSecondaryUserVerificationDetails",
+      "description": "Grants permission to update secondary user account verification status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions"
+    },
+    {
+      "name": "PutSellerVerificationDetails",
+      "methodName": "toPutSellerVerificationDetails",
+      "description": "Grants permission to update account verification status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions"
+    },
+    {
+      "name": "uploadFiles",
+      "methodName": "toUploadFiles",
+      "description": "Allows access to the File Upload page inside the AWS Marketplace Management Portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions"
+    },
+    {
+      "name": "viewMarketing",
+      "methodName": "toViewMarketing",
+      "description": "Allows access to the Marketing page inside the AWS Marketplace Management Portal",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions"
+    },
+    {
+      "name": "viewReports",
+      "methodName": "toViewReports",
+      "description": "Allows access to the Reports page inside the AWS Marketplace Management Portal",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions"
+    },
+    {
+      "name": "viewSettings",
+      "methodName": "toViewSettings",
+      "description": "Allows access to the Settings page inside the AWS Marketplace Management Portal",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions"
+    },
+    {
+      "name": "viewSupport",
+      "methodName": "toViewSupport",
+      "description": "Allows access to the Customer Support Eligibility page inside the AWS Marketplace Management Portal",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "filename": "resource-groups",
+  "className": "ResourceGroups",
+  "name": "resource-groups",
+  "servicePrefix": "resource-groups",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resource-groups.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelTagSyncTask",
+      "CreateGroup",
+      "DeleteGroup",
+      "GroupResources",
+      "PutGroupConfiguration",
+      "StartTagSyncTask",
+      "Tag",
+      "UngroupResources",
+      "Untag",
+      "UpdateAccountSettings",
+      "UpdateGroup",
+      "UpdateGroupQuery",
+      "AssociateResource",
+      "DeleteGroupPolicy",
+      "DisassociateResource",
+      "PutGroupPolicy"
+    ],
+    "Read": [
+      "GetAccountSettings",
+      "GetGroup",
+      "GetGroupConfiguration",
+      "GetGroupQuery",
+      "GetTagSyncTask",
+      "GetTags",
+      "GetGroupPolicy"
+    ],
+    "List": [
+      "ListGroupResources",
+      "ListGroupingStatuses",
+      "ListGroups",
+      "ListTagSyncTasks",
+      "SearchResources",
+      "ListResourceTypes"
+    ],
+    "Tagging": [
+      "Tag",
+      "Untag"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelTagSyncTask",
+      "methodName": "toCancelTagSyncTask",
+      "description": "Grants permission to cancel a tag-sync task for an application group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_CancelTagSyncTask.html"
+    },
+    {
+      "name": "CreateGroup",
+      "methodName": "toCreateGroup",
+      "description": "Grants permission to create a resource group with a specified name, description, and resource query",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteGroup",
+      "methodName": "toDeleteGroup",
+      "description": "Grants permission to delete a specified resource group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_DeleteGroup.html"
+    },
+    {
+      "name": "GetAccountSettings",
+      "methodName": "toGetAccountSettings",
+      "description": "Grants permission to get the current status of optional features in Resource Groups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetAccountSettings.html"
+    },
+    {
+      "name": "GetGroup",
+      "methodName": "toGetGroup",
+      "description": "Grants permission to get information of a specified resource group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroup.html"
+    },
+    {
+      "name": "GetGroupConfiguration",
+      "methodName": "toGetGroupConfiguration",
+      "description": "Grants permission to get the service configuration associated with the specified resource group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroupConfiguration.html"
+    },
+    {
+      "name": "GetGroupQuery",
+      "methodName": "toGetGroupQuery",
+      "description": "Grants permission to get the query associated with a specified resource group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroupQuery.html"
+    },
+    {
+      "name": "GetTagSyncTask",
+      "methodName": "toGetTagSyncTask",
+      "description": "Grants permission to get information of a specified tag-sync task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetTagSyncTask.html"
+    },
+    {
+      "name": "GetTags",
+      "methodName": "toGetTags",
+      "description": "Grants permission to get the tags associated with a specified resource group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetTags.html"
+    },
+    {
+      "name": "GroupResources",
+      "methodName": "toGroupResources",
+      "description": "Grants permission to add the specified resources to the specified group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_GroupResources.html"
+    },
+    {
+      "name": "ListGroupResources",
+      "methodName": "toListGroupResources",
+      "description": "Grants permission to list the resources that are members of a specified resource group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroupResources.html"
+    },
+    {
+      "name": "ListGroupingStatuses",
+      "methodName": "toListGroupingStatuses",
+      "description": "Grants permission to list grouping statuses for a specified application group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroupingStatuses.html"
+    },
+    {
+      "name": "ListGroups",
+      "methodName": "toListGroups",
+      "description": "Grants permission to list all resource groups in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroups.html"
+    },
+    {
+      "name": "ListTagSyncTasks",
+      "methodName": "toListTagSyncTasks",
+      "description": "Grants permission to list all tag-sync tasks in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListTagSyncTasks.html"
+    },
+    {
+      "name": "PutGroupConfiguration",
+      "methodName": "toPutGroupConfiguration",
+      "description": "Grants permission to put the service configuration associated with the specified resource group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_PutGroupConfiguration.html"
+    },
+    {
+      "name": "SearchResources",
+      "methodName": "toSearchResources",
+      "description": "Grants permission to search for AWS resources matching the given query",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_SearchResources.html"
+    },
+    {
+      "name": "StartTagSyncTask",
+      "methodName": "toStartTagSyncTask",
+      "description": "Grants permission to create a tag-sync task for an application group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_StartTagSyncTask.html"
+    },
+    {
+      "name": "Tag",
+      "methodName": "toTag",
+      "description": "Grants permission to tag a specified resource group",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_Tag.html"
+    },
+    {
+      "name": "UngroupResources",
+      "methodName": "toUngroupResources",
+      "description": "Grants permission to remove the specified resources from the specified group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_UngroupResources.html"
+    },
+    {
+      "name": "Untag",
+      "methodName": "toUntag",
+      "description": "Grants permission to remove tags associated with a specified resource group",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_Untag.html"
+    },
+    {
+      "name": "UpdateAccountSettings",
+      "methodName": "toUpdateAccountSettings",
+      "description": "Grants permission to update optional features in Resource Groups",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateAccountSettings.html"
+    },
+    {
+      "name": "UpdateGroup",
+      "methodName": "toUpdateGroup",
+      "description": "Grants permission to update a specified resource group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroup.html"
+    },
+    {
+      "name": "UpdateGroupQuery",
+      "methodName": "toUpdateGroupQuery",
+      "description": "Grants permission to update the query associated with a specified resource group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroupQuery.html"
+    },
+    {
+      "name": "AssociateResource",
+      "methodName": "toAssociateResource",
+      "description": "Grants permission to associate a resource to an Application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/servicecatalog/latest/arguide/associate-resources.html"
+    },
+    {
+      "name": "DeleteGroupPolicy",
+      "methodName": "toDeleteGroupPolicy",
+      "description": "Grants permission to delete a resource-based policy for the specified group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/management-role.html#service-linked-role-permissions-management-role"
+    },
+    {
+      "name": "DisassociateResource",
+      "methodName": "toDisassociateResource",
+      "description": "Grants permission to disassociate a resource from an Application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/servicecatalog/latest/arguide/associate-resources.html"
+    },
+    {
+      "name": "GetGroupPolicy",
+      "methodName": "toGetGroupPolicy",
+      "description": "Grants permission to get a resource-based policy for the specified group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/management-role.html#service-linked-role-permissions-management-role"
+    },
+    {
+      "name": "ListResourceTypes",
+      "methodName": "toListResourceTypes",
+      "description": "Grants permission to list supported resource types",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html"
+    },
+    {
+      "name": "PutGroupPolicy",
+      "methodName": "toPutGroupPolicy",
+      "description": "Grants permission to add a resource-based policy for the specified group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/management-role.html#service-linked-role-permissions-management-role"
+    }
+  ],
+  "resources": [
+    {
+      "name": "group",
+      "methodName": "onGroup",
+      "url": "https://docs.aws.amazon.com/ARG/latest/userguide/resource-groups.html",
+      "arn": "arn:${Partition}:resource-groups:${Region}:${Account}:group/${GroupName}",
+      "placeholders": [
+        {
+          "placeholder": "GroupName",
+          "name": "groupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "tagSyncTask",
+      "methodName": "onTagSyncTask",
+      "url": "https://docs.aws.amazon.com/servicecatalog/latest/arguide/app-tag-sync.html",
+      "arn": "arn:${Partition}:resource-groups:${Region}:${Account}:group/${GroupName}/tag-sync-task/${TaskId}",
+      "placeholders": [
+        {
+          "placeholder": "GroupName",
+          "name": "groupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TaskId",
+          "name": "taskId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateGroup",
+        "toTag"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCancelTagSyncTask",
+        "toDeleteGroup",
+        "toGetGroup",
+        "toGetGroupConfiguration",
+        "toGetGroupQuery",
+        "toGetTagSyncTask",
+        "toGetTags",
+        "toGroupResources",
+        "toListGroupResources",
+        "toListGroupingStatuses",
+        "toListTagSyncTasks",
+        "toPutGroupConfiguration",
+        "toStartTagSyncTask",
+        "toTag",
+        "toUngroupResources",
+        "toUntag",
+        "toUpdateGroup",
+        "toUpdateGroupQuery",
+        "toAssociateResource",
+        "toDeleteGroupPolicy",
+        "toDisassociateResource",
+        "toGetGroupPolicy",
+        "toPutGroupPolicy"
+      ],
+      "relatedResourceTypes": [
+        "group",
+        "tagSyncTask"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateGroup",
+        "toTag",
+        "toUntag"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,1170 @@
+{
+  "schemaVersion": 1,
+  "filename": "wellarchitected",
+  "className": "Wellarchitected",
+  "name": "wellarchitected",
+  "servicePrefix": "wellarchitected",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_wellarchitected.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateLenses",
+      "AssociateProfiles",
+      "CreateAgentContext",
+      "CreateAgentGoal",
+      "CreateAgentProfile",
+      "CreateLensShare",
+      "CreateLensVersion",
+      "CreateMilestone",
+      "CreateProfile",
+      "CreateProfileShare",
+      "CreateReviewTemplate",
+      "CreateTemplateShare",
+      "CreateWorkload",
+      "CreateWorkloadShare",
+      "DeleteAgentContext",
+      "DeleteAgentGoal",
+      "DeleteAgentProfile",
+      "DeleteLens",
+      "DeleteLensShare",
+      "DeleteProfile",
+      "DeleteProfileShare",
+      "DeleteReviewTemplate",
+      "DeleteTemplateShare",
+      "DeleteWorkload",
+      "DeleteWorkloadShare",
+      "DisassociateLenses",
+      "DisassociateProfiles",
+      "ImportLens",
+      "PutAgentRecommendationFeedback",
+      "StartAgentRecommendationGeneration",
+      "TagResource",
+      "UntagResource",
+      "UpdateAgentContext",
+      "UpdateAgentGoal",
+      "UpdateAgentProfile",
+      "UpdateAgentRecommendationStatus",
+      "UpdateAnswer",
+      "UpdateGlobalSettings",
+      "UpdateIntegration",
+      "UpdateLensReview",
+      "UpdateProfile",
+      "UpdateReviewTemplate",
+      "UpdateReviewTemplateAnswer",
+      "UpdateReviewTemplateLensReview",
+      "UpdateShareInvitation",
+      "UpdateWorkload",
+      "UpdateWorkloadShare",
+      "UpgradeLensReview",
+      "UpgradeProfileVersion",
+      "UpgradeReviewTemplateLensReview",
+      "ConfigureIntegration"
+    ],
+    "Read": [
+      "ExportLens",
+      "GetAgentContext",
+      "GetAgentGoal",
+      "GetAgentProfile",
+      "GetAgentRecommendation",
+      "GetAgentRecommendationGeneration",
+      "GetAnswer",
+      "GetConsolidatedReport",
+      "GetGlobalSettings",
+      "GetLens",
+      "GetLensReview",
+      "GetLensReviewReport",
+      "GetLensVersionDifference",
+      "GetMilestone",
+      "GetProfile",
+      "GetProfileTemplate",
+      "GetReviewTemplate",
+      "GetReviewTemplateAnswer",
+      "GetReviewTemplateLensReview",
+      "GetWorkload",
+      "ListAgentContexts",
+      "ListAgentGoals",
+      "ListAgentProfiles",
+      "ListAgentRecommendationGenerations",
+      "ListAgentRecommendationItems",
+      "ListAgentRecommendations",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAnswers",
+      "ListCheckDetails",
+      "ListCheckSummaries",
+      "ListLensReviewImprovements",
+      "ListLensReviews",
+      "ListLensShares",
+      "ListLenses",
+      "ListMilestones",
+      "ListNotifications",
+      "ListProfileNotifications",
+      "ListProfileShares",
+      "ListProfiles",
+      "ListReviewTemplateAnswers",
+      "ListReviewTemplates",
+      "ListShareInvitations",
+      "ListTemplateShares",
+      "ListWorkloadShares",
+      "ListWorkloads"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateLenses",
+      "methodName": "toAssociateLenses",
+      "description": "Grants permission to associate a lens to the specified workload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_AssociateLenses.html"
+    },
+    {
+      "name": "AssociateProfiles",
+      "methodName": "toAssociateProfiles",
+      "description": "Grants permission to associate a profile to the specified workload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_AssociateProfiles.html"
+    },
+    {
+      "name": "CreateAgentContext",
+      "methodName": "toCreateAgentContext",
+      "description": "Grants permission to create a context associated with a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateAgentContext.html"
+    },
+    {
+      "name": "CreateAgentGoal",
+      "methodName": "toCreateAgentGoal",
+      "description": "Grants permission to create a goal associated with a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateAgentGoal.html"
+    },
+    {
+      "name": "CreateAgentProfile",
+      "methodName": "toCreateAgentProfile",
+      "description": "Grants permission to create an agent profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateAgentProfile.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateLensShare",
+      "methodName": "toCreateLensShare",
+      "description": "Grants permission to an owner of a lens to share with other AWS accounts and IAM users",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateLensShare.html"
+    },
+    {
+      "name": "CreateLensVersion",
+      "methodName": "toCreateLensVersion",
+      "description": "Grants permission to create a new lens version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateLensVersion.html"
+    },
+    {
+      "name": "CreateMilestone",
+      "methodName": "toCreateMilestone",
+      "description": "Grants permission to create a new milestone for the specified workload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateMilestone.html"
+    },
+    {
+      "name": "CreateProfile",
+      "methodName": "toCreateProfile",
+      "description": "Grants permission to create a new profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateProfile.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateProfileShare",
+      "methodName": "toCreateProfileShare",
+      "description": "Grants permission to an owner of a profile to share with other AWS accounts and IAM users",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateProfileShare.html"
+    },
+    {
+      "name": "CreateReviewTemplate",
+      "methodName": "toCreateReviewTemplate",
+      "description": "Grants permission to create a new review template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateReviewTemplate.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateTemplateShare",
+      "methodName": "toCreateTemplateShare",
+      "description": "Grants permission to an owner of a review template to share with other AWS accounts and IAM users",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateTemplateShare.html"
+    },
+    {
+      "name": "CreateWorkload",
+      "methodName": "toCreateWorkload",
+      "description": "Grants permission to create a new workload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateWorkload.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifJiraProjectKey"
+      ]
+    },
+    {
+      "name": "CreateWorkloadShare",
+      "methodName": "toCreateWorkloadShare",
+      "description": "Grants permission to share a workload with another account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateWorkloadShare.html"
+    },
+    {
+      "name": "DeleteAgentContext",
+      "methodName": "toDeleteAgentContext",
+      "description": "Grants permission to delete a context associated with a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteAgentContext.html"
+    },
+    {
+      "name": "DeleteAgentGoal",
+      "methodName": "toDeleteAgentGoal",
+      "description": "Grants permission to delete a goal associated with a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteAgentGoal.html"
+    },
+    {
+      "name": "DeleteAgentProfile",
+      "methodName": "toDeleteAgentProfile",
+      "description": "Grants permission to delete an agent profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteAgentProfile.html"
+    },
+    {
+      "name": "DeleteLens",
+      "methodName": "toDeleteLens",
+      "description": "Grants permission to delete a lens",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteLens.html"
+    },
+    {
+      "name": "DeleteLensShare",
+      "methodName": "toDeleteLensShare",
+      "description": "Grants permission to delete an existing lens share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteLensShare.html"
+    },
+    {
+      "name": "DeleteProfile",
+      "methodName": "toDeleteProfile",
+      "description": "Grants permission to delete a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteProfile.html"
+    },
+    {
+      "name": "DeleteProfileShare",
+      "methodName": "toDeleteProfileShare",
+      "description": "Grants permission to delete an existing profile share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteProfileShare.html"
+    },
+    {
+      "name": "DeleteReviewTemplate",
+      "methodName": "toDeleteReviewTemplate",
+      "description": "Grants permission to delete an existing review template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteReviewTemplate.html"
+    },
+    {
+      "name": "DeleteTemplateShare",
+      "methodName": "toDeleteTemplateShare",
+      "description": "Grants permission to delete an existing review template share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteTemplateShare.html"
+    },
+    {
+      "name": "DeleteWorkload",
+      "methodName": "toDeleteWorkload",
+      "description": "Grants permission to delete an existing workload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteWorkload.html"
+    },
+    {
+      "name": "DeleteWorkloadShare",
+      "methodName": "toDeleteWorkloadShare",
+      "description": "Grants permission to delete an existing workload share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteWorkloadShare.html"
+    },
+    {
+      "name": "DisassociateLenses",
+      "methodName": "toDisassociateLenses",
+      "description": "Grants permission to disassociate a lens from the specified workload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DisassociateLenses.html"
+    },
+    {
+      "name": "DisassociateProfiles",
+      "methodName": "toDisassociateProfiles",
+      "description": "Grants permission to disassociate a profile from the specified workload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DisassociateProfiles.html"
+    },
+    {
+      "name": "ExportLens",
+      "methodName": "toExportLens",
+      "description": "Grants permission to export an existing lens",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ExportLens.html"
+    },
+    {
+      "name": "GetAgentContext",
+      "methodName": "toGetAgentContext",
+      "description": "Grants permission to get context associated with a profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAgentContext.html"
+    },
+    {
+      "name": "GetAgentGoal",
+      "methodName": "toGetAgentGoal",
+      "description": "Grants permission to get goal associated with a profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAgentGoal.html"
+    },
+    {
+      "name": "GetAgentProfile",
+      "methodName": "toGetAgentProfile",
+      "description": "Grants permission to get agent profile by profile arn",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAgentProfile.html"
+    },
+    {
+      "name": "GetAgentRecommendation",
+      "methodName": "toGetAgentRecommendation",
+      "description": "Grants permission to get a recommendation by recommendation ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAgentRecommendation.html"
+    },
+    {
+      "name": "GetAgentRecommendationGeneration",
+      "methodName": "toGetAgentRecommendationGeneration",
+      "description": "Grants permission to get a recommendation generation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAgentRecommendationGeneration.html"
+    },
+    {
+      "name": "GetAnswer",
+      "methodName": "toGetAnswer",
+      "description": "Grants permission to retrieve the specified answer from the specified lens review",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAnswer.html"
+    },
+    {
+      "name": "GetConsolidatedReport",
+      "methodName": "toGetConsolidatedReport",
+      "description": "Grants permission to get consolidated report metrics or to generate the consolidated report PDF in this account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetConsolidatedReport.html"
+    },
+    {
+      "name": "GetGlobalSettings",
+      "methodName": "toGetGlobalSettings",
+      "description": "Grants permission to get all settings for the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetGlobalSettings.html"
+    },
+    {
+      "name": "GetLens",
+      "methodName": "toGetLens",
+      "description": "Grants permission to get an existing lens",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteLensShare.html"
+    },
+    {
+      "name": "GetLensReview",
+      "methodName": "toGetLensReview",
+      "description": "Grants permission to retrieve the specified lens review of the specified workload",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetLensReview.html"
+    },
+    {
+      "name": "GetLensReviewReport",
+      "methodName": "toGetLensReviewReport",
+      "description": "Grants permission to retrieve the report for the specified lens review",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetLensReviewReport.html"
+    },
+    {
+      "name": "GetLensVersionDifference",
+      "methodName": "toGetLensVersionDifference",
+      "description": "Grants permission to get the difference between the specified lens version and latest available lens version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetLensVersionDifference.html"
+    },
+    {
+      "name": "GetMilestone",
+      "methodName": "toGetMilestone",
+      "description": "Grants permission to retrieve the specified milestone of the specified workload",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetMilestone.html"
+    },
+    {
+      "name": "GetProfile",
+      "methodName": "toGetProfile",
+      "description": "Grants permission to retrieve the specified profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetProfile.html"
+    },
+    {
+      "name": "GetProfileTemplate",
+      "methodName": "toGetProfileTemplate",
+      "description": "Grants permission to retrieve the specified profile template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetProfileTemplate.html"
+    },
+    {
+      "name": "GetReviewTemplate",
+      "methodName": "toGetReviewTemplate",
+      "description": "Grants permission to retrieve the specified review template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetReviewTemplate.html"
+    },
+    {
+      "name": "GetReviewTemplateAnswer",
+      "methodName": "toGetReviewTemplateAnswer",
+      "description": "Grants permission to retrieve the specified answer from the specified review template lens review",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetReviewTemplateAnswer.html"
+    },
+    {
+      "name": "GetReviewTemplateLensReview",
+      "methodName": "toGetReviewTemplateLensReview",
+      "description": "Grants permission to retrieve the specified lens review of the specified review template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetReviewTemplateLensReview.html"
+    },
+    {
+      "name": "GetWorkload",
+      "methodName": "toGetWorkload",
+      "description": "Grants permission to retrieve the specified workload",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetWorkload.html"
+    },
+    {
+      "name": "ImportLens",
+      "methodName": "toImportLens",
+      "description": "Grants permission to import a new lens",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ImportLens.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "ListAgentContexts",
+      "methodName": "toListAgentContexts",
+      "description": "Grants permission to list contexts associated with a profile by filters on the fields",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAgentContexts.html"
+    },
+    {
+      "name": "ListAgentGoals",
+      "methodName": "toListAgentGoals",
+      "description": "Grants permission to list goals associated with a profile by filters on the fields",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAgentGoals.html"
+    },
+    {
+      "name": "ListAgentProfiles",
+      "methodName": "toListAgentProfiles",
+      "description": "Grants permission to list agent profiles",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAgentProfiles.html"
+    },
+    {
+      "name": "ListAgentRecommendationGenerations",
+      "methodName": "toListAgentRecommendationGenerations",
+      "description": "Grants permission to list recommendation generations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAgentRecommendationGenerations.html"
+    },
+    {
+      "name": "ListAgentRecommendationItems",
+      "methodName": "toListAgentRecommendationItems",
+      "description": "Grants permission to list recommendation items associated with a recommendation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAgentRecommendationItems.html"
+    },
+    {
+      "name": "ListAgentRecommendations",
+      "methodName": "toListAgentRecommendations",
+      "description": "Grants permission to list recommendations by profile ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAgentRecommendations.html"
+    },
+    {
+      "name": "ListAnswers",
+      "methodName": "toListAnswers",
+      "description": "Grants permission to list the answers from the specified lens review",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAnswers.html"
+    },
+    {
+      "name": "ListCheckDetails",
+      "methodName": "toListCheckDetails",
+      "description": "Grants permission to list the check-details for the workload",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListCheckDetails.html"
+    },
+    {
+      "name": "ListCheckSummaries",
+      "methodName": "toListCheckSummaries",
+      "description": "Grants permission to list the check-summaries for the workload",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListCheckSummaries.html"
+    },
+    {
+      "name": "ListLensReviewImprovements",
+      "methodName": "toListLensReviewImprovements",
+      "description": "Grants permission to list the improvements of the specified lens review",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListLensReviewImprovements.html"
+    },
+    {
+      "name": "ListLensReviews",
+      "methodName": "toListLensReviews",
+      "description": "Grants permission to list the lens reviews of the specified workload",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListLensReviews.html"
+    },
+    {
+      "name": "ListLensShares",
+      "methodName": "toListLensShares",
+      "description": "Grants permission to list all shares created for a lens",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListLensShares.html"
+    },
+    {
+      "name": "ListLenses",
+      "methodName": "toListLenses",
+      "description": "Grants permission to list the lenses available to this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListLenses.html"
+    },
+    {
+      "name": "ListMilestones",
+      "methodName": "toListMilestones",
+      "description": "Grants permission to list the milestones of the specified workload",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListMilestones.html"
+    },
+    {
+      "name": "ListNotifications",
+      "methodName": "toListNotifications",
+      "description": "Grants permission to list notifications related to the account or specified resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListNotifications.html"
+    },
+    {
+      "name": "ListProfileNotifications",
+      "methodName": "toListProfileNotifications",
+      "description": "Grants permission to list profile notifications related to specified resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListProfileNotifications.html"
+    },
+    {
+      "name": "ListProfileShares",
+      "methodName": "toListProfileShares",
+      "description": "Grants permission to list all shares created for a profile",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListProfileShares.html"
+    },
+    {
+      "name": "ListProfiles",
+      "methodName": "toListProfiles",
+      "description": "Grants permission to list the profiles available to this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListProfiles.html"
+    },
+    {
+      "name": "ListReviewTemplateAnswers",
+      "methodName": "toListReviewTemplateAnswers",
+      "description": "Grants permission to list the answers from the specified review template lens review",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListReviewTemplateAnswers.html"
+    },
+    {
+      "name": "ListReviewTemplates",
+      "methodName": "toListReviewTemplates",
+      "description": "Grants permission to list the review templates available to this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListReviewTemplates.html"
+    },
+    {
+      "name": "ListShareInvitations",
+      "methodName": "toListShareInvitations",
+      "description": "Grants permission to list the workload share invitations of the specified account or user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListShareInvitations.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a Well-Architected resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTemplateShares",
+      "methodName": "toListTemplateShares",
+      "description": "Grants permission to list all shares created for a review template",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListTemplateShares.html"
+    },
+    {
+      "name": "ListWorkloadShares",
+      "methodName": "toListWorkloadShares",
+      "description": "Grants permission to list the workload shares of the specified workload",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListWorkloadShares.html"
+    },
+    {
+      "name": "ListWorkloads",
+      "methodName": "toListWorkloads",
+      "description": "Grants permission to list the workloads in this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListWorkloads.html"
+    },
+    {
+      "name": "PutAgentRecommendationFeedback",
+      "methodName": "toPutAgentRecommendationFeedback",
+      "description": "Grants permission to put feedback on a recommendation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_PutAgentRecommendationFeedback.html"
+    },
+    {
+      "name": "StartAgentRecommendationGeneration",
+      "methodName": "toStartAgentRecommendationGeneration",
+      "description": "Grants permission to start a recommendation generation process",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_StartAgentRecommendationGeneration.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a Well-Architected resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a Well-Architected resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAgentContext",
+      "methodName": "toUpdateAgentContext",
+      "description": "Grants permission to update a context associated with a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateAgentContext.html"
+    },
+    {
+      "name": "UpdateAgentGoal",
+      "methodName": "toUpdateAgentGoal",
+      "description": "Grants permission to update a goal associated with a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateAgentGoal.html"
+    },
+    {
+      "name": "UpdateAgentProfile",
+      "methodName": "toUpdateAgentProfile",
+      "description": "Grants permission to update an agent profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateAgentProfile.html"
+    },
+    {
+      "name": "UpdateAgentRecommendationStatus",
+      "methodName": "toUpdateAgentRecommendationStatus",
+      "description": "Grants permission to update the status of a recommendation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateAgentRecommendationStatus.html"
+    },
+    {
+      "name": "UpdateAnswer",
+      "methodName": "toUpdateAnswer",
+      "description": "Grants permission to update properties of the specified answer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateAnswer.html"
+    },
+    {
+      "name": "UpdateGlobalSettings",
+      "methodName": "toUpdateGlobalSettings",
+      "description": "Grants permission to manage all settings for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateGlobalSettings.html",
+      "conditionMethods": [
+        "ifJiraProjectKey"
+      ]
+    },
+    {
+      "name": "UpdateIntegration",
+      "methodName": "toUpdateIntegration",
+      "description": "Grants permission to update properties of the integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateIntegration.html"
+    },
+    {
+      "name": "UpdateLensReview",
+      "methodName": "toUpdateLensReview",
+      "description": "Grants permission to update properties of the specified lens review",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateLensReview.html"
+    },
+    {
+      "name": "UpdateProfile",
+      "methodName": "toUpdateProfile",
+      "description": "Grants permission to update properties of the specified profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateProfile.html"
+    },
+    {
+      "name": "UpdateReviewTemplate",
+      "methodName": "toUpdateReviewTemplate",
+      "description": "Grants permission to update properties of the specified review template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateReviewTemplate.html"
+    },
+    {
+      "name": "UpdateReviewTemplateAnswer",
+      "methodName": "toUpdateReviewTemplateAnswer",
+      "description": "Grants permission to update properties of the specified review template answer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateReviewTemplateAnswer.html"
+    },
+    {
+      "name": "UpdateReviewTemplateLensReview",
+      "methodName": "toUpdateReviewTemplateLensReview",
+      "description": "Grants permission to update properties of the specified review template lens review",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateReviewTemplateLensReview.html"
+    },
+    {
+      "name": "UpdateShareInvitation",
+      "methodName": "toUpdateShareInvitation",
+      "description": "Grants permission to update status of the specified workload share invitation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateShareInvitation.html"
+    },
+    {
+      "name": "UpdateWorkload",
+      "methodName": "toUpdateWorkload",
+      "description": "Grants permission to update properties of the specified workload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateWorkload.html"
+    },
+    {
+      "name": "UpdateWorkloadShare",
+      "methodName": "toUpdateWorkloadShare",
+      "description": "Grants permission to update properties of the specified workload share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateWorkloadShare.html"
+    },
+    {
+      "name": "UpgradeLensReview",
+      "methodName": "toUpgradeLensReview",
+      "description": "Grants permission to upgrade the specified lens review to use the latest version of the associated lens",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpgradeLensReview.html"
+    },
+    {
+      "name": "UpgradeProfileVersion",
+      "methodName": "toUpgradeProfileVersion",
+      "description": "Grants permission to upgrade the specified workload to use the latest version of the associated profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpgradeProfileVersion.html"
+    },
+    {
+      "name": "UpgradeReviewTemplateLensReview",
+      "methodName": "toUpgradeReviewTemplateLensReview",
+      "description": "Grants permission to upgrade the specified lens review of the specified review template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpgradeReviewTemplateLensReview.html"
+    },
+    {
+      "name": "ConfigureIntegration",
+      "methodName": "toConfigureIntegration",
+      "description": "Grants permission to configure the integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/userguide/setting-up-jira.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "agent-profile",
+      "methodName": "onAgentProfile",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_AgentProfileSummary.html",
+      "arn": "arn:${Partition}:wellarchitected:${Region}:${Account}:agent-profile/${ProfileName}",
+      "placeholders": [
+        {
+          "placeholder": "ProfileName",
+          "name": "profileName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "agent-recommendation",
+      "methodName": "onAgentRecommendation",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_AgentRecommendationSummary.html",
+      "arn": "arn:${Partition}:wellarchitected:${Region}:${Account}:agent-recommendation/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "lens",
+      "methodName": "onLens",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_Lens.html",
+      "arn": "arn:${Partition}:wellarchitected:${Region}:${Account}:lens/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "profile",
+      "methodName": "onProfile",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_Profile.html",
+      "arn": "arn:${Partition}:wellarchitected:${Region}:${Account}:profile/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "review-template",
+      "methodName": "onReviewTemplate",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ReviewTemplate.html",
+      "arn": "arn:${Partition}:wellarchitected:${Region}:${Account}:review-template/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "workload",
+      "methodName": "onWorkload",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_Workload.html",
+      "arn": "arn:${Partition}:wellarchitected:${Region}:${Account}:workload/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAgentProfile",
+        "toCreateProfile",
+        "toCreateReviewTemplate",
+        "toCreateWorkload",
+        "toImportLens",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateLenses",
+        "toAssociateProfiles",
+        "toCreateAgentContext",
+        "toCreateAgentGoal",
+        "toCreateLensShare",
+        "toCreateLensVersion",
+        "toCreateMilestone",
+        "toCreateProfileShare",
+        "toCreateTemplateShare",
+        "toCreateWorkloadShare",
+        "toDeleteAgentContext",
+        "toDeleteAgentGoal",
+        "toDeleteAgentProfile",
+        "toDeleteLens",
+        "toDeleteLensShare",
+        "toDeleteProfile",
+        "toDeleteProfileShare",
+        "toDeleteReviewTemplate",
+        "toDeleteTemplateShare",
+        "toDeleteWorkload",
+        "toDeleteWorkloadShare",
+        "toDisassociateLenses",
+        "toDisassociateProfiles",
+        "toExportLens",
+        "toGetAgentContext",
+        "toGetAgentGoal",
+        "toGetAgentProfile",
+        "toGetAgentRecommendation",
+        "toGetAgentRecommendationGeneration",
+        "toGetAnswer",
+        "toGetLens",
+        "toGetLensReview",
+        "toGetLensReviewReport",
+        "toGetLensVersionDifference",
+        "toGetMilestone",
+        "toGetProfile",
+        "toGetReviewTemplate",
+        "toGetReviewTemplateAnswer",
+        "toGetReviewTemplateLensReview",
+        "toGetWorkload",
+        "toListAgentContexts",
+        "toListAgentGoals",
+        "toListAgentRecommendationGenerations",
+        "toListAgentRecommendationItems",
+        "toListAgentRecommendations",
+        "toListAnswers",
+        "toListCheckDetails",
+        "toListCheckSummaries",
+        "toListLensReviewImprovements",
+        "toListLensReviews",
+        "toListLensShares",
+        "toListMilestones",
+        "toListProfileShares",
+        "toListReviewTemplateAnswers",
+        "toListTagsForResource",
+        "toListTemplateShares",
+        "toListWorkloadShares",
+        "toPutAgentRecommendationFeedback",
+        "toStartAgentRecommendationGeneration",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAgentContext",
+        "toUpdateAgentGoal",
+        "toUpdateAgentProfile",
+        "toUpdateAgentRecommendationStatus",
+        "toUpdateAnswer",
+        "toUpdateIntegration",
+        "toUpdateLensReview",
+        "toUpdateProfile",
+        "toUpdateReviewTemplate",
+        "toUpdateReviewTemplateAnswer",
+        "toUpdateReviewTemplateLensReview",
+        "toUpdateWorkload",
+        "toUpdateWorkloadShare",
+        "toUpgradeLensReview",
+        "toUpgradeProfileVersion",
+        "toUpgradeReviewTemplateLensReview"
+      ],
+      "relatedResourceTypes": [
+        "agent-profile",
+        "agent-recommendation",
+        "lens",
+        "profile",
+        "review-template",
+        "workload"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAgentProfile",
+        "toCreateProfile",
+        "toCreateReviewTemplate",
+        "toCreateWorkload",
+        "toImportLens",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "wellarchitected:JiraProjectKey",
+      "methodName": "ifJiraProjectKey",
+      "description": "Filters access by project key",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/userguide/security_iam_id-based-policy-examples.html",
+      "relatedActionMethods": [
+        "toCreateWorkload",
+        "toUpdateGlobalSettings",
+        "toUpdateWorkload"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "JiraProjectKey",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

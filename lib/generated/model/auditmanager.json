@@ -1,0 +1,757 @@
+{
+  "schemaVersion": 1,
+  "filename": "auditmanager",
+  "className": "Auditmanager",
+  "name": "auditmanager",
+  "servicePrefix": "auditmanager",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_auditmanager.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateAssessmentReportEvidenceFolder",
+      "BatchAssociateAssessmentReportEvidence",
+      "BatchCreateDelegationByAssessment",
+      "BatchDeleteDelegationByAssessment",
+      "BatchDisassociateAssessmentReportEvidence",
+      "BatchImportEvidenceToAssessmentControl",
+      "CreateAssessment",
+      "CreateAssessmentFramework",
+      "CreateAssessmentReport",
+      "CreateControl",
+      "DeleteAssessment",
+      "DeleteAssessmentFramework",
+      "DeleteAssessmentFrameworkShare",
+      "DeleteAssessmentReport",
+      "DeleteControl",
+      "DeregisterAccount",
+      "DeregisterOrganizationAdminAccount",
+      "DisassociateAssessmentReportEvidenceFolder",
+      "RegisterAccount",
+      "RegisterOrganizationAdminAccount",
+      "StartAssessmentFrameworkShare",
+      "TagResource",
+      "UntagResource",
+      "UpdateAssessment",
+      "UpdateAssessmentControl",
+      "UpdateAssessmentControlSetStatus",
+      "UpdateAssessmentFramework",
+      "UpdateAssessmentFrameworkShare",
+      "UpdateAssessmentStatus",
+      "UpdateControl",
+      "UpdateSettings"
+    ],
+    "Read": [
+      "GetAccountStatus",
+      "GetAssessment",
+      "GetAssessmentFramework",
+      "GetAssessmentReportUrl",
+      "GetChangeLogs",
+      "GetControl",
+      "GetEvidence",
+      "GetEvidenceByEvidenceFolder",
+      "GetEvidenceFileUploadUrl",
+      "GetEvidenceFolder",
+      "GetEvidenceFoldersByAssessment",
+      "GetEvidenceFoldersByAssessmentControl",
+      "GetInsights",
+      "GetInsightsByAssessment",
+      "GetOrganizationAdminAccount",
+      "GetServicesInScope",
+      "GetSettings",
+      "ListTagsForResource",
+      "ValidateAssessmentReportIntegrity"
+    ],
+    "List": [
+      "GetDelegations",
+      "ListAssessmentControlInsightsByControlDomain",
+      "ListAssessmentFrameworkShareRequests",
+      "ListAssessmentFrameworks",
+      "ListAssessmentReports",
+      "ListAssessments",
+      "ListControlDomainInsights",
+      "ListControlDomainInsightsByAssessment",
+      "ListControlInsightsByControlDomain",
+      "ListControls",
+      "ListKeywordsForDataSource",
+      "ListNotifications"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateAssessmentReportEvidenceFolder",
+      "methodName": "toAssociateAssessmentReportEvidenceFolder",
+      "description": "Grants permission to associate an evidence folder with an assessment report in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_AssociateAssessmentReportEvidenceFolder.html"
+    },
+    {
+      "name": "BatchAssociateAssessmentReportEvidence",
+      "methodName": "toBatchAssociateAssessmentReportEvidence",
+      "description": "Grants permission to associate a list of evidence to an assessment report in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html"
+    },
+    {
+      "name": "BatchCreateDelegationByAssessment",
+      "methodName": "toBatchCreateDelegationByAssessment",
+      "description": "Grants permission to create delegations for an assessment in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchCreateDelegationByAssessment.html"
+    },
+    {
+      "name": "BatchDeleteDelegationByAssessment",
+      "methodName": "toBatchDeleteDelegationByAssessment",
+      "description": "Grants permission to delete delegations for an assessment in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchDeleteDelegationByAssessment.html"
+    },
+    {
+      "name": "BatchDisassociateAssessmentReportEvidence",
+      "methodName": "toBatchDisassociateAssessmentReportEvidence",
+      "description": "Grants permission to disassociate a list of evidence from an assessment report in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchDisassociateAssessmentReportEvidence.html"
+    },
+    {
+      "name": "BatchImportEvidenceToAssessmentControl",
+      "methodName": "toBatchImportEvidenceToAssessmentControl",
+      "description": "Grants permission to import a list of evidence to an assessment control in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchImportEvidenceToAssessmentControl.html"
+    },
+    {
+      "name": "CreateAssessment",
+      "methodName": "toCreateAssessment",
+      "description": "Grants permission to create an assessment to be used with AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAssessmentFramework",
+      "methodName": "toCreateAssessmentFramework",
+      "description": "Grants permission to create a framework for use in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessmentFramework.html"
+    },
+    {
+      "name": "CreateAssessmentReport",
+      "methodName": "toCreateAssessmentReport",
+      "description": "Grants permission to create an assessment report in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessmentReport.html"
+    },
+    {
+      "name": "CreateControl",
+      "methodName": "toCreateControl",
+      "description": "Grants permission to create a control to be used in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateControl.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteAssessment",
+      "methodName": "toDeleteAssessment",
+      "description": "Grants permission to delete an assessment in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessment.html"
+    },
+    {
+      "name": "DeleteAssessmentFramework",
+      "methodName": "toDeleteAssessmentFramework",
+      "description": "Grants permission to delete an assessment framework in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFramework.html"
+    },
+    {
+      "name": "DeleteAssessmentFrameworkShare",
+      "methodName": "toDeleteAssessmentFrameworkShare",
+      "description": "Grants permission to delete a share request for a custom framework in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFrameworkShare.html"
+    },
+    {
+      "name": "DeleteAssessmentReport",
+      "methodName": "toDeleteAssessmentReport",
+      "description": "Grants permission to delete an assessment report in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentReport.html"
+    },
+    {
+      "name": "DeleteControl",
+      "methodName": "toDeleteControl",
+      "description": "Grants permission to delete a control in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteControl.html"
+    },
+    {
+      "name": "DeregisterAccount",
+      "methodName": "toDeregisterAccount",
+      "description": "Grants permission to deregister an account in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html"
+    },
+    {
+      "name": "DeregisterOrganizationAdminAccount",
+      "methodName": "toDeregisterOrganizationAdminAccount",
+      "description": "Grants permission to deregister the delegated administrator account for AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterOrganizationAdminAccount.html"
+    },
+    {
+      "name": "DisassociateAssessmentReportEvidenceFolder",
+      "methodName": "toDisassociateAssessmentReportEvidenceFolder",
+      "description": "Grants permission to disassociate an evidence folder from an assessment report in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DisassociateAssessmentReportEvidenceFolder.html"
+    },
+    {
+      "name": "GetAccountStatus",
+      "methodName": "toGetAccountStatus",
+      "description": "Grants permission to get the status of an account in AWS Audit Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetAccountStatus.html"
+    },
+    {
+      "name": "GetAssessment",
+      "methodName": "toGetAssessment",
+      "description": "Grants permission to get an assessment created in AWS Audit Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetAssessment.html"
+    },
+    {
+      "name": "GetAssessmentFramework",
+      "methodName": "toGetAssessmentFramework",
+      "description": "Grants permission to get an assessment framework in AWS Audit Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetAssessmentFramework.html"
+    },
+    {
+      "name": "GetAssessmentReportUrl",
+      "methodName": "toGetAssessmentReportUrl",
+      "description": "Grants permission to get the URL for an assessment report in AWS Audit Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetAssessmentReportUrl.html"
+    },
+    {
+      "name": "GetChangeLogs",
+      "methodName": "toGetChangeLogs",
+      "description": "Grants permission to get changelogs for an assessment in AWS Audit Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetChangeLogs.html"
+    },
+    {
+      "name": "GetControl",
+      "methodName": "toGetControl",
+      "description": "Grants permission to get a control in AWS Audit Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetControl.html"
+    },
+    {
+      "name": "GetDelegations",
+      "methodName": "toGetDelegations",
+      "description": "Grants permission to get all delegations in AWS Audit Manager",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetDelegations.html"
+    },
+    {
+      "name": "GetEvidence",
+      "methodName": "toGetEvidence",
+      "description": "Grants permission to get evidence from AWS Audit Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidence.html"
+    },
+    {
+      "name": "GetEvidenceByEvidenceFolder",
+      "methodName": "toGetEvidenceByEvidenceFolder",
+      "description": "Grants permission to get all the evidence from an evidence folder in AWS Audit Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceByEvidenceFolder.html"
+    },
+    {
+      "name": "GetEvidenceFileUploadUrl",
+      "methodName": "toGetEvidenceFileUploadUrl",
+      "description": "Grants permission to get a presigned Amazon S3 URL that can be used to upload a file as manual evidence",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFileUploadUrl.html"
+    },
+    {
+      "name": "GetEvidenceFolder",
+      "methodName": "toGetEvidenceFolder",
+      "description": "Grants permission to get the evidence folder from AWS Audit Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFolder.html"
+    },
+    {
+      "name": "GetEvidenceFoldersByAssessment",
+      "methodName": "toGetEvidenceFoldersByAssessment",
+      "description": "Grants permission to get the evidence folders from an assessment in AWS Audit Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFoldersByAssessment.html"
+    },
+    {
+      "name": "GetEvidenceFoldersByAssessmentControl",
+      "methodName": "toGetEvidenceFoldersByAssessmentControl",
+      "description": "Grants permission to get the evidence folders from an assessment control in AWS Audit Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFoldersByAssessmentControl.html"
+    },
+    {
+      "name": "GetInsights",
+      "methodName": "toGetInsights",
+      "description": "Grants permission to get analytics data for all active assessments",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetInsights.html"
+    },
+    {
+      "name": "GetInsightsByAssessment",
+      "methodName": "toGetInsightsByAssessment",
+      "description": "Grants permission to get analytics data for a specific active assessment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetInsightsByAssessment.html"
+    },
+    {
+      "name": "GetOrganizationAdminAccount",
+      "methodName": "toGetOrganizationAdminAccount",
+      "description": "Grants permission to get the delegated administrator account in AWS Audit Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetOrganizationAdminAccount.html"
+    },
+    {
+      "name": "GetServicesInScope",
+      "methodName": "toGetServicesInScope",
+      "description": "Grants permission to get the services in scope for an assessment in AWS Audit Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetServicesInScope.html"
+    },
+    {
+      "name": "GetSettings",
+      "methodName": "toGetSettings",
+      "description": "Grants permission to get all settings configured in AWS Audit Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetSettings.html"
+    },
+    {
+      "name": "ListAssessmentControlInsightsByControlDomain",
+      "methodName": "toListAssessmentControlInsightsByControlDomain",
+      "description": "Grants permission to list analytics data for controls in a specific control domain and active assessment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListAssessmentControlInsightsByControlDomain.html"
+    },
+    {
+      "name": "ListAssessmentFrameworkShareRequests",
+      "methodName": "toListAssessmentFrameworkShareRequests",
+      "description": "Grants permission to list all sent or received share requests for custom frameworks in AWS Audit Manager",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListAssessmentFrameworkShareRequests.html"
+    },
+    {
+      "name": "ListAssessmentFrameworks",
+      "methodName": "toListAssessmentFrameworks",
+      "description": "Grants permission to list all assessment frameworks in AWS Audit Manager",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListAssessmentFrameworks.html"
+    },
+    {
+      "name": "ListAssessmentReports",
+      "methodName": "toListAssessmentReports",
+      "description": "Grants permission to list all assessment reports in AWS Audit Manager",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListAssessmentReports.html"
+    },
+    {
+      "name": "ListAssessments",
+      "methodName": "toListAssessments",
+      "description": "Grants permission to list all assessments in AWS Audit Manager",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListAssessments.html"
+    },
+    {
+      "name": "ListControlDomainInsights",
+      "methodName": "toListControlDomainInsights",
+      "description": "Grants permission to list analytics data for control domains across all active assessments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListControlDomainInsights.html"
+    },
+    {
+      "name": "ListControlDomainInsightsByAssessment",
+      "methodName": "toListControlDomainInsightsByAssessment",
+      "description": "Grants permission to list analytics data for control domains in a specific active assessment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListControlDomainInsightsByAssessment.html"
+    },
+    {
+      "name": "ListControlInsightsByControlDomain",
+      "methodName": "toListControlInsightsByControlDomain",
+      "description": "Grants permission to list analytics data for controls in a specific control domain across all active assessments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListControlInsightsByControlDomain.html"
+    },
+    {
+      "name": "ListControls",
+      "methodName": "toListControls",
+      "description": "Grants permission to list all controls in AWS Audit Manager",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListControls.html"
+    },
+    {
+      "name": "ListKeywordsForDataSource",
+      "methodName": "toListKeywordsForDataSource",
+      "description": "Grants permission to list all the data source keywords in AWS Audit Manager",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListKeywordsForDataSource.html"
+    },
+    {
+      "name": "ListNotifications",
+      "methodName": "toListNotifications",
+      "description": "Grants permission to list all notifications in AWS Audit Manager",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListNotifications.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for an AWS Audit Manager resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RegisterAccount",
+      "methodName": "toRegisterAccount",
+      "description": "Grants permission to register an account in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html"
+    },
+    {
+      "name": "RegisterOrganizationAdminAccount",
+      "methodName": "toRegisterOrganizationAdminAccount",
+      "description": "Grants permission to register an account within the organization as the delegated administrator for AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterOrganizationAdminAccount.html"
+    },
+    {
+      "name": "StartAssessmentFrameworkShare",
+      "methodName": "toStartAssessmentFrameworkShare",
+      "description": "Grants permission to create a share request for a custom framework in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_StartAssessmentFrameworkShare.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an AWS Audit Manager resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag an AWS Audit Manager resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAssessment",
+      "methodName": "toUpdateAssessment",
+      "description": "Grants permission to update an assessment in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateAssessment.html"
+    },
+    {
+      "name": "UpdateAssessmentControl",
+      "methodName": "toUpdateAssessmentControl",
+      "description": "Grants permission to update an assessment control in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateAssessmentControl.html"
+    },
+    {
+      "name": "UpdateAssessmentControlSetStatus",
+      "methodName": "toUpdateAssessmentControlSetStatus",
+      "description": "Grants permission to update the status of an assessment control set in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateAssessmentControlSetStatus.html"
+    },
+    {
+      "name": "UpdateAssessmentFramework",
+      "methodName": "toUpdateAssessmentFramework",
+      "description": "Grants permission to update an assessment framework in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateAssessmentFramework.html"
+    },
+    {
+      "name": "UpdateAssessmentFrameworkShare",
+      "methodName": "toUpdateAssessmentFrameworkShare",
+      "description": "Grants permission to update a share request for a custom framework in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateAssessmentFrameworkShare.html"
+    },
+    {
+      "name": "UpdateAssessmentStatus",
+      "methodName": "toUpdateAssessmentStatus",
+      "description": "Grants permission to update the status of an assessment in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateAssessmentStatus.html"
+    },
+    {
+      "name": "UpdateControl",
+      "methodName": "toUpdateControl",
+      "description": "Grants permission to update a control in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateControl.html"
+    },
+    {
+      "name": "UpdateSettings",
+      "methodName": "toUpdateSettings",
+      "description": "Grants permission to update settings in AWS Audit Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateSettings.html"
+    },
+    {
+      "name": "ValidateAssessmentReportIntegrity",
+      "methodName": "toValidateAssessmentReportIntegrity",
+      "description": "Grants permission to validate the integrity of an assessment report in AWS Audit Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ValidateAssessmentReportIntegrity.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "assessment",
+      "methodName": "onAssessment",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Assessment.html",
+      "arn": "arn:${Partition}:auditmanager:${Region}:${Account}:assessment/${AssessmentId}",
+      "placeholders": [
+        {
+          "placeholder": "AssessmentId",
+          "name": "assessmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "assessmentControlSet",
+      "methodName": "onAssessmentControlSet",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_AssessmentControlSet.html",
+      "arn": "arn:${Partition}:auditmanager:${Region}:${Account}:assessment/${AssessmentId}/controlSet/${ControlSetId}",
+      "placeholders": [
+        {
+          "placeholder": "AssessmentId",
+          "name": "assessmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ControlSetId",
+          "name": "controlSetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "assessmentFramework",
+      "methodName": "onAssessmentFramework",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_AssessmentFramework.html",
+      "arn": "arn:${Partition}:auditmanager:${Region}:${Account}:assessmentFramework/${AssessmentFrameworkId}",
+      "placeholders": [
+        {
+          "placeholder": "AssessmentFrameworkId",
+          "name": "assessmentFrameworkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "control",
+      "methodName": "onControl",
+      "url": "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Control.html",
+      "arn": "arn:${Partition}:auditmanager:${Region}:${Account}:control/${ControlId}",
+      "placeholders": [
+        {
+          "placeholder": "ControlId",
+          "name": "controlId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAssessment",
+        "toCreateAssessmentFramework",
+        "toCreateControl",
+        "toDeleteAssessment",
+        "toDeleteAssessmentFramework",
+        "toDeleteControl",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateAssessmentReportEvidenceFolder",
+        "toBatchAssociateAssessmentReportEvidence",
+        "toBatchCreateDelegationByAssessment",
+        "toBatchDeleteDelegationByAssessment",
+        "toBatchDisassociateAssessmentReportEvidence",
+        "toCreateAssessment",
+        "toCreateAssessmentFramework",
+        "toCreateAssessmentReport",
+        "toCreateControl",
+        "toDeleteAssessment",
+        "toDeleteAssessmentFramework",
+        "toDeleteAssessmentReport",
+        "toDeleteControl",
+        "toDisassociateAssessmentReportEvidenceFolder",
+        "toGetAssessment",
+        "toGetAssessmentFramework",
+        "toGetAssessmentReportUrl",
+        "toGetChangeLogs",
+        "toGetControl",
+        "toGetEvidenceFoldersByAssessment",
+        "toListTagsForResource",
+        "toStartAssessmentFrameworkShare",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAssessment",
+        "toUpdateAssessmentFramework",
+        "toUpdateAssessmentFrameworkShare",
+        "toUpdateAssessmentStatus",
+        "toUpdateControl"
+      ],
+      "relatedResourceTypes": [
+        "assessment",
+        "assessmentFramework",
+        "control"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAssessment",
+        "toCreateAssessmentFramework",
+        "toCreateControl",
+        "toDeleteAssessment",
+        "toDeleteAssessmentFramework",
+        "toDeleteControl",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

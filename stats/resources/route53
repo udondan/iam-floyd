@@ -1,9 +1,0 @@
-route53:change
-route53:cidrcollection
-route53:delegationset
-route53:healthcheck
-route53:hostedzone
-route53:queryloggingconfig
-route53:trafficpolicy
-route53:trafficpolicyinstance
-route53:vpc

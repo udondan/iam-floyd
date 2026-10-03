@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "filename": "cloudhsm",
+  "className": "Cloudhsm",
+  "name": "cloudhsm",
+  "servicePrefix": "cloudhsm",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudhsm.html",
+  "accessLevelList": {
+    "Write": [
+      "CopyBackupToRegion",
+      "CreateCluster",
+      "CreateHsm",
+      "DeleteBackup",
+      "DeleteCluster",
+      "DeleteHsm",
+      "DeleteResourcePolicy",
+      "InitializeCluster",
+      "ModifyBackupAttributes",
+      "ModifyCluster",
+      "PutResourcePolicy",
+      "RestoreBackup",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "PutResourcePolicy"
+    ],
+    "Read": [
+      "DescribeBackups",
+      "DescribeClusters",
+      "GetResourcePolicy",
+      "ListTags"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CopyBackupToRegion",
+      "methodName": "toCopyBackupToRegion",
+      "description": "Grants permission to create a copy of a backup in the specified region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CopyBackupToRegion.html"
+    },
+    {
+      "name": "CreateCluster",
+      "methodName": "toCreateCluster",
+      "description": "Grants permission to create a new AWS CloudHSM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateCluster.html"
+    },
+    {
+      "name": "CreateHsm",
+      "methodName": "toCreateHsm",
+      "description": "Grants permission to create a new hardware security module (HSM) in the specified AWS CloudHSM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html"
+    },
+    {
+      "name": "DeleteBackup",
+      "methodName": "toDeleteBackup",
+      "description": "Grants permission to delete the specified CloudHSM backup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteBackup.html"
+    },
+    {
+      "name": "DeleteCluster",
+      "methodName": "toDeleteCluster",
+      "description": "Grants permission to delete the specified AWS CloudHSM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteCluster.html"
+    },
+    {
+      "name": "DeleteHsm",
+      "methodName": "toDeleteHsm",
+      "description": "Grants permission to delete the specified HSM",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteHsm.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete the policy attached to CloudHSM resources",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DescribeBackups",
+      "methodName": "toDescribeBackups",
+      "description": "Grants permission to get information about backups of AWS CloudHSM clusters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeBackups.html"
+    },
+    {
+      "name": "DescribeClusters",
+      "methodName": "toDescribeClusters",
+      "description": "Grants permission to get information about AWS CloudHSM clusters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to get information about the policy attached to a AWS CloudHSM resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "InitializeCluster",
+      "methodName": "toInitializeCluster",
+      "description": "Grants permission to claim an AWS CloudHSM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_InitializeCluster.html"
+    },
+    {
+      "name": "ListTags",
+      "methodName": "toListTags",
+      "description": "Grants permission to get a list of tags for the specified AWS CloudHSM cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_ListTags.html"
+    },
+    {
+      "name": "ModifyBackupAttributes",
+      "methodName": "toModifyBackupAttributes",
+      "description": "Grants permission to modify attributes for an AWS CloudHSM backup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_ModifyBackupAttributes.html"
+    },
+    {
+      "name": "ModifyCluster",
+      "methodName": "toModifyCluster",
+      "description": "Grants permission to modify AWS CloudHSM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_ModifyCluster.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to attach a policy to an AWS CloudHSM resource",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "RestoreBackup",
+      "methodName": "toRestoreBackup",
+      "description": "Grants permission to restore the specified CloudHSM backup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_RestoreBackup.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or overwrite one or more tags for the specified AWS CloudHSM cluster",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the specified tag or tags from the specified AWS CloudHSM cluster",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "backup",
+      "methodName": "onBackup",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/userguide/backups.html",
+      "arn": "arn:${Partition}:cloudhsm:${Region}:${Account}:backup/${CloudHsmBackupInstanceName}",
+      "placeholders": [
+        {
+          "placeholder": "CloudHsmBackupInstanceName",
+          "name": "cloudHsmBackupInstanceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cluster",
+      "methodName": "onCluster",
+      "url": "https://docs.aws.amazon.com/cloudhsm/latest/userguide/clusters.html",
+      "arn": "arn:${Partition}:cloudhsm:${Region}:${Account}:cluster/${CloudHsmClusterInstanceName}",
+      "placeholders": [
+        {
+          "placeholder": "CloudHsmClusterInstanceName",
+          "name": "cloudHsmClusterInstanceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCopyBackupToRegion",
+        "toCreateCluster",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCopyBackupToRegion",
+        "toCreateCluster",
+        "toCreateHsm",
+        "toDeleteBackup",
+        "toDeleteCluster",
+        "toDeleteResourcePolicy",
+        "toGetResourcePolicy",
+        "toInitializeCluster",
+        "toListTags",
+        "toModifyBackupAttributes",
+        "toModifyCluster",
+        "toPutResourcePolicy",
+        "toRestoreBackup",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "backup",
+        "cluster"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCopyBackupToRegion",
+        "toCreateCluster",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

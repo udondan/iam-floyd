@@ -1,9 +1,0 @@
-pricingplanmanager:ApprovePaidSubscription;Write
-pricingplanmanager:AssociateResourcesToSubscription;Write
-pricingplanmanager:CancelSubscription;Write
-pricingplanmanager:CancelSubscriptionChange;Write
-pricingplanmanager:CreateSubscription;Write
-pricingplanmanager:DisassociateResourcesFromSubscription;Write
-pricingplanmanager:GetSubscription;Read
-pricingplanmanager:ListSubscriptions;Read
-pricingplanmanager:UpdateSubscription;Write

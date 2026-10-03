@@ -1,0 +1,4008 @@
+{
+  "schemaVersion": 1,
+  "filename": "bedrock-agentcore",
+  "className": "BedrockAgentcore",
+  "name": "bedrock-agentcore",
+  "servicePrefix": "bedrock-agentcore",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_bedrock-agentcore.html",
+  "accessLevelList": {
+    "Write": [
+      "AddDatasetExamples",
+      "BatchCreateMemoryRecords",
+      "BatchDeleteMemoryRecords",
+      "BatchPutGatewayRateLimits",
+      "BatchUpdateMemoryRecords",
+      "CreateABTest",
+      "CreateAgentRuntime",
+      "CreateAgentRuntimeEndpoint",
+      "CreateApiKeyCredentialProvider",
+      "CreateBrowser",
+      "CreateBrowserProfile",
+      "CreateCapacityProvider",
+      "CreateCodeInterpreter",
+      "CreateConfigurationBundle",
+      "CreateConsentPortal",
+      "CreateDataset",
+      "CreateDatasetVersion",
+      "CreateEvaluator",
+      "CreateEvent",
+      "CreateGateway",
+      "CreateGatewayRateLimit",
+      "CreateGatewayRule",
+      "CreateGatewayTarget",
+      "CreateHarness",
+      "CreateHarnessEndpoint",
+      "CreateMemory",
+      "CreateOauth2CredentialProvider",
+      "CreateOnlineEvaluationConfig",
+      "CreatePaymentConnector",
+      "CreatePaymentCredentialProvider",
+      "CreatePaymentInstrument",
+      "CreatePaymentManager",
+      "CreatePaymentSession",
+      "CreatePolicy",
+      "CreatePolicyEngine",
+      "CreateRegistry",
+      "CreateRegistryRecord",
+      "CreateWorkloadIdentity",
+      "DeleteABTest",
+      "DeleteAgentRuntime",
+      "DeleteAgentRuntimeEndpoint",
+      "DeleteApiKeyCredentialProvider",
+      "DeleteBatchEvaluation",
+      "DeleteBrowser",
+      "DeleteBrowserProfile",
+      "DeleteCapacityProvider",
+      "DeleteCapacityProviderSession",
+      "DeleteCodeInterpreter",
+      "DeleteConfigurationBundle",
+      "DeleteConsentPortal",
+      "DeleteDataset",
+      "DeleteDatasetExamples",
+      "DeleteEvaluator",
+      "DeleteEvent",
+      "DeleteGateway",
+      "DeleteGatewayRateLimit",
+      "DeleteGatewayRule",
+      "DeleteGatewayTarget",
+      "DeleteHarness",
+      "DeleteHarnessEndpoint",
+      "DeleteMemory",
+      "DeleteMemoryRecord",
+      "DeleteOauth2CredentialProvider",
+      "DeleteOnlineEvaluationConfig",
+      "DeletePaymentConnector",
+      "DeletePaymentCredentialProvider",
+      "DeletePaymentInstrument",
+      "DeletePaymentManager",
+      "DeletePaymentSession",
+      "DeletePolicy",
+      "DeletePolicyEngine",
+      "DeleteRecommendation",
+      "DeleteRegistry",
+      "DeleteRegistryRecord",
+      "DeleteResourcePolicy",
+      "DeleteWorkloadIdentity",
+      "Evaluate",
+      "GetWorkloadAccessToken",
+      "GetWorkloadAccessTokenForJWT",
+      "GetWorkloadAccessTokenForUserId",
+      "InvokeAgentRuntime",
+      "InvokeAgentRuntimeCommand",
+      "InvokeAgentRuntimeCommandShell",
+      "InvokeAgentRuntimeForUser",
+      "InvokeAgentRuntimeWithWebSocketStream",
+      "InvokeAgentRuntimeWithWebSocketStreamForUser",
+      "InvokeCodeInterpreter",
+      "InvokeHarness",
+      "ProcessPayment",
+      "PutResourcePolicy",
+      "SaveBrowserSessionProfile",
+      "SetTokenVaultCMK",
+      "StartBatchEvaluation",
+      "StartBrowserSession",
+      "StartCodeInterpreterSession",
+      "StartMemoryExtractionJob",
+      "StartPolicyGeneration",
+      "StartRecommendation",
+      "StopBatchEvaluation",
+      "StopBrowserSession",
+      "StopCodeInterpreterSession",
+      "StopRuntimeSession",
+      "SubmitRegistryRecordForApproval",
+      "TagResource",
+      "UntagResource",
+      "UpdateABTest",
+      "UpdateAgentRuntime",
+      "UpdateAgentRuntimeEndpoint",
+      "UpdateApiKeyCredentialProvider",
+      "UpdateBrowserStream",
+      "UpdateCapacityProvider",
+      "UpdateConfigurationBundle",
+      "UpdateConsentPortal",
+      "UpdateDataset",
+      "UpdateDatasetExamples",
+      "UpdateEvaluator",
+      "UpdateGateway",
+      "UpdateGatewayRateLimit",
+      "UpdateGatewayRule",
+      "UpdateGatewayTarget",
+      "UpdateHarness",
+      "UpdateHarnessEndpoint",
+      "UpdateMemory",
+      "UpdateOauth2CredentialProvider",
+      "UpdateOnlineEvaluationConfig",
+      "UpdatePaymentConnector",
+      "UpdatePaymentCredentialProvider",
+      "UpdatePaymentManager",
+      "UpdatePolicy",
+      "UpdatePolicyEngine",
+      "UpdateRegistry",
+      "UpdateRegistryRecord",
+      "UpdateRegistryRecordStatus",
+      "UpdateWorkloadIdentity",
+      "AllowVendedLogDeliveryForResource",
+      "AuthorizeAction",
+      "GatewayAssociateWebACL",
+      "GatewayDisassociateWebACL",
+      "InvokeGateway",
+      "InvokeWebSearch",
+      "ManageAdminPolicy",
+      "ManageResourceScopedPolicy",
+      "PartiallyAuthorizeActions",
+      "PassCapacityProvider",
+      "PutSystemLogEvents",
+      "SynchronizeGatewayTargets"
+    ],
+    "Read": [
+      "CompleteResourceTokenAuth",
+      "ConnectBrowserAutomationStream",
+      "ConnectBrowserLiveViewStream",
+      "GetABTest",
+      "GetAgentCard",
+      "GetAgentRuntime",
+      "GetAgentRuntimeEndpoint",
+      "GetApiKeyCredentialProvider",
+      "GetBatchEvaluation",
+      "GetBrowser",
+      "GetBrowserProfile",
+      "GetBrowserSession",
+      "GetCapacityProvider",
+      "GetCodeInterpreter",
+      "GetCodeInterpreterSession",
+      "GetConfigurationBundle",
+      "GetConfigurationBundleVersion",
+      "GetConsentPortal",
+      "GetDataset",
+      "GetEvaluator",
+      "GetEvent",
+      "GetGateway",
+      "GetGatewayRateLimit",
+      "GetGatewayRule",
+      "GetGatewayTarget",
+      "GetHarness",
+      "GetHarnessEndpoint",
+      "GetMemory",
+      "GetMemoryRecord",
+      "GetOauth2CredentialProvider",
+      "GetOnlineEvaluationConfig",
+      "GetPaymentConnector",
+      "GetPaymentCredentialProvider",
+      "GetPaymentInstrument",
+      "GetPaymentInstrumentBalance",
+      "GetPaymentManager",
+      "GetPaymentSession",
+      "GetPolicy",
+      "GetPolicyEngine",
+      "GetPolicyEngineSummary",
+      "GetPolicyGeneration",
+      "GetPolicyGenerationSummary",
+      "GetPolicySummary",
+      "GetRecommendation",
+      "GetRegistry",
+      "GetRegistryRecord",
+      "GetResourceApiKey",
+      "GetResourceOauth2Token",
+      "GetResourcePaymentToken",
+      "GetResourcePolicy",
+      "GetTokenVault",
+      "GetWorkloadIdentity",
+      "InvokeRegistryMcp",
+      "ListApiKeyCredentialProviders",
+      "ListOauth2CredentialProviders",
+      "ListWorkloadIdentities",
+      "SearchRegistryRecords",
+      "GatewayGetWebACLForResource"
+    ],
+    "List": [
+      "ListABTests",
+      "ListActors",
+      "ListAgentRuntimeEndpoints",
+      "ListAgentRuntimeVersions",
+      "ListAgentRuntimeVersionsByCapacityProvider",
+      "ListAgentRuntimes",
+      "ListBatchEvaluations",
+      "ListBrowserProfiles",
+      "ListBrowserSessions",
+      "ListBrowsers",
+      "ListCapacityProviders",
+      "ListCodeInterpreterSessions",
+      "ListCodeInterpreters",
+      "ListConfigurationBundleVersions",
+      "ListConfigurationBundles",
+      "ListConsentPortals",
+      "ListDatasetExamples",
+      "ListDatasetVersions",
+      "ListDatasets",
+      "ListEvaluators",
+      "ListEvents",
+      "ListGatewayRateLimits",
+      "ListGatewayRules",
+      "ListGatewayTargets",
+      "ListGateways",
+      "ListHarnessEndpoints",
+      "ListHarnessVersions",
+      "ListHarnesses",
+      "ListMemories",
+      "ListMemoryExtractionJobs",
+      "ListMemoryRecords",
+      "ListOnlineEvaluationConfigs",
+      "ListPaymentConnectors",
+      "ListPaymentCredentialProviders",
+      "ListPaymentInstruments",
+      "ListPaymentManagers",
+      "ListPaymentSessions",
+      "ListPolicies",
+      "ListPolicyEngineSummaries",
+      "ListPolicyEngines",
+      "ListPolicyGenerationAssets",
+      "ListPolicyGenerationSummaries",
+      "ListPolicyGenerations",
+      "ListPolicySummaries",
+      "ListRecommendations",
+      "ListRegistries",
+      "ListRegistryRecords",
+      "ListSessions",
+      "ListTagsForResource",
+      "RetrieveMemoryRecords",
+      "GatewayListResourcesForWebACL"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "AllowVendedLogDeliveryForResource",
+      "AuthorizeAction",
+      "InvokeGateway",
+      "InvokeWebSearch",
+      "ManageAdminPolicy",
+      "ManageResourceScopedPolicy",
+      "PartiallyAuthorizeActions",
+      "SynchronizeGatewayTargets"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddDatasetExamples",
+      "methodName": "toAddDatasetExamples",
+      "description": "Grants permission to add examples to a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_AddDatasetExamples.html"
+    },
+    {
+      "name": "BatchCreateMemoryRecords",
+      "methodName": "toBatchCreateMemoryRecords",
+      "description": "Grants permission to create one or more memory records",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_BatchCreateMemoryRecords.html"
+    },
+    {
+      "name": "BatchDeleteMemoryRecords",
+      "methodName": "toBatchDeleteMemoryRecords",
+      "description": "Grants permission to delete one or more memory records",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_BatchDeleteMemoryRecords.html"
+    },
+    {
+      "name": "BatchPutGatewayRateLimits",
+      "methodName": "toBatchPutGatewayRateLimits",
+      "description": "Grants permission to batch put rate limits on a gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_BatchPutGatewayRateLimits.html"
+    },
+    {
+      "name": "BatchUpdateMemoryRecords",
+      "methodName": "toBatchUpdateMemoryRecords",
+      "description": "Grants permission to update one or more memory records",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_BatchUpdateMemoryRecords.html"
+    },
+    {
+      "name": "CompleteResourceTokenAuth",
+      "methodName": "toCompleteResourceTokenAuth",
+      "description": "Grants permission to retrieve access token with OAuth2 for 3LO flow to access external resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CompleteResourceTokenAuth.html"
+    },
+    {
+      "name": "ConnectBrowserAutomationStream",
+      "methodName": "toConnectBrowserAutomationStream",
+      "description": "Grants permission to connect to a browser automation stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ConnectBrowserAutomationStream.html"
+    },
+    {
+      "name": "ConnectBrowserLiveViewStream",
+      "methodName": "toConnectBrowserLiveViewStream",
+      "description": "Grants permission to connect to a browser live view stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ConnectBrowserLiveViewStream.html"
+    },
+    {
+      "name": "CreateABTest",
+      "methodName": "toCreateABTest",
+      "description": "Grants permission to create an A/B test",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateABTest.html"
+    },
+    {
+      "name": "CreateAgentRuntime",
+      "methodName": "toCreateAgentRuntime",
+      "description": "Grants permission to create a new agent runtime",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateAgentRuntime.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifRuntimeAuthorizerType",
+        "ifSecurityGroups",
+        "ifSubnets"
+      ]
+    },
+    {
+      "name": "CreateAgentRuntimeEndpoint",
+      "methodName": "toCreateAgentRuntimeEndpoint",
+      "description": "Grants permission to create a new agent runtime endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateAgentRuntimeEndpoint.html"
+    },
+    {
+      "name": "CreateApiKeyCredentialProvider",
+      "methodName": "toCreateApiKeyCredentialProvider",
+      "description": "Grants permission to create a new API Key Credential Provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateApiKeyCredentialProvider.html"
+    },
+    {
+      "name": "CreateBrowser",
+      "methodName": "toCreateBrowser",
+      "description": "Grants permission to create a new custom browser",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateBrowser.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifSecurityGroups",
+        "ifSubnets"
+      ]
+    },
+    {
+      "name": "CreateBrowserProfile",
+      "methodName": "toCreateBrowserProfile",
+      "description": "Grants permission to create a new browser profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateBrowserProfile.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateCapacityProvider",
+      "methodName": "toCreateCapacityProvider",
+      "description": "Grants permission to create a new capacity provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateCapacityProvider.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateCodeInterpreter",
+      "methodName": "toCreateCodeInterpreter",
+      "description": "Grants permission to create a new custom code interpreter",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateCodeInterpreter.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifSecurityGroups",
+        "ifSubnets"
+      ]
+    },
+    {
+      "name": "CreateConfigurationBundle",
+      "methodName": "toCreateConfigurationBundle",
+      "description": "Grants permission to create a new configuration bundle",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateConfigurationBundle.html"
+    },
+    {
+      "name": "CreateConsentPortal",
+      "methodName": "toCreateConsentPortal",
+      "description": "Grants permission to create a new consent portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateConsentPortal.html"
+    },
+    {
+      "name": "CreateDataset",
+      "methodName": "toCreateDataset",
+      "description": "Grants permission to create a new dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateDataset.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateDatasetVersion",
+      "methodName": "toCreateDatasetVersion",
+      "description": "Grants permission to create a new version of a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateDatasetVersion.html"
+    },
+    {
+      "name": "CreateEvaluator",
+      "methodName": "toCreateEvaluator",
+      "description": "Grants permission to create a new evaluator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateEvaluator.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateEvent",
+      "methodName": "toCreateEvent",
+      "description": "Grants permission to create an Event",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateEvent.html"
+    },
+    {
+      "name": "CreateGateway",
+      "methodName": "toCreateGateway",
+      "description": "Grants permission to create a new gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateGateway.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateGatewayRateLimit",
+      "methodName": "toCreateGatewayRateLimit",
+      "description": "Grants permission to create a rate limit on a gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateGatewayRateLimit.html"
+    },
+    {
+      "name": "CreateGatewayRule",
+      "methodName": "toCreateGatewayRule",
+      "description": "Grants permission to create a new rule in an existing gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateGatewayRule.html"
+    },
+    {
+      "name": "CreateGatewayTarget",
+      "methodName": "toCreateGatewayTarget",
+      "description": "Grants permission to create a new target in an existing gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateGatewayTarget.html"
+    },
+    {
+      "name": "CreateHarness",
+      "methodName": "toCreateHarness",
+      "description": "Grants permission to create a new harness",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateHarness.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateHarnessEndpoint",
+      "methodName": "toCreateHarnessEndpoint",
+      "description": "Grants permission to create a new harness endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateHarnessEndpoint.html"
+    },
+    {
+      "name": "CreateMemory",
+      "methodName": "toCreateMemory",
+      "description": "Grants permission to create a Memory resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateMemory.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifKmsKeyArn"
+      ]
+    },
+    {
+      "name": "CreateOauth2CredentialProvider",
+      "methodName": "toCreateOauth2CredentialProvider",
+      "description": "Grants permission to create a new Credential Provider to access external resources with OAuth2 protocol",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateOauth2CredentialProvider.html"
+    },
+    {
+      "name": "CreateOnlineEvaluationConfig",
+      "methodName": "toCreateOnlineEvaluationConfig",
+      "description": "Grants permission to create a new online evaluation configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateOnlineEvaluationConfig.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreatePaymentConnector",
+      "methodName": "toCreatePaymentConnector",
+      "description": "Grants permission to create a new payment connector under a payment manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePaymentConnector.html"
+    },
+    {
+      "name": "CreatePaymentCredentialProvider",
+      "methodName": "toCreatePaymentCredentialProvider",
+      "description": "Grants permission to create a new Payment Credential Provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePaymentCredentialProvider.html"
+    },
+    {
+      "name": "CreatePaymentInstrument",
+      "methodName": "toCreatePaymentInstrument",
+      "description": "Grants permission to create a new payment instrument",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePaymentInstrument.html"
+    },
+    {
+      "name": "CreatePaymentManager",
+      "methodName": "toCreatePaymentManager",
+      "description": "Grants permission to create a new payment manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePaymentManager.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifDiscoveryUrl"
+      ]
+    },
+    {
+      "name": "CreatePaymentSession",
+      "methodName": "toCreatePaymentSession",
+      "description": "Grants permission to create a new payment session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePaymentSession.html"
+    },
+    {
+      "name": "CreatePolicy",
+      "methodName": "toCreatePolicy",
+      "description": "Grants permission to create a new policy within a policy engine",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePolicy.html"
+    },
+    {
+      "name": "CreatePolicyEngine",
+      "methodName": "toCreatePolicyEngine",
+      "description": "Grants permission to create a new policy engine",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePolicyEngine.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateRegistry",
+      "methodName": "toCreateRegistry",
+      "description": "Grants permission to create a new registry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateRegistry.html"
+    },
+    {
+      "name": "CreateRegistryRecord",
+      "methodName": "toCreateRegistryRecord",
+      "description": "Grants permission to create a new registry record",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateRegistryRecord.html"
+    },
+    {
+      "name": "CreateWorkloadIdentity",
+      "methodName": "toCreateWorkloadIdentity",
+      "description": "Grants permission to create a new Workload Identity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateWorkloadIdentity.html"
+    },
+    {
+      "name": "DeleteABTest",
+      "methodName": "toDeleteABTest",
+      "description": "Grants permission to delete an A/B test",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteABTest.html"
+    },
+    {
+      "name": "DeleteAgentRuntime",
+      "methodName": "toDeleteAgentRuntime",
+      "description": "Grants permission to delete an agent runtime",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteAgentRuntime.html"
+    },
+    {
+      "name": "DeleteAgentRuntimeEndpoint",
+      "methodName": "toDeleteAgentRuntimeEndpoint",
+      "description": "Grants permission to delete an agent runtime endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteAgentRuntimeEndpoint.html"
+    },
+    {
+      "name": "DeleteApiKeyCredentialProvider",
+      "methodName": "toDeleteApiKeyCredentialProvider",
+      "description": "Grants permission to delete a registered API Key Credential Provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteApiKeyCredentialProvider.html"
+    },
+    {
+      "name": "DeleteBatchEvaluation",
+      "methodName": "toDeleteBatchEvaluation",
+      "description": "Grants permission to delete a batch evaluation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteBatchEvaluation.html"
+    },
+    {
+      "name": "DeleteBrowser",
+      "methodName": "toDeleteBrowser",
+      "description": "Grants permission to delete a custom browser",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteBrowser.html"
+    },
+    {
+      "name": "DeleteBrowserProfile",
+      "methodName": "toDeleteBrowserProfile",
+      "description": "Grants permission to delete a browser profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteBrowserProfile.html"
+    },
+    {
+      "name": "DeleteCapacityProvider",
+      "methodName": "toDeleteCapacityProvider",
+      "description": "Grants permission to delete a capacity provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteCapacityProvider.html"
+    },
+    {
+      "name": "DeleteCapacityProviderSession",
+      "methodName": "toDeleteCapacityProviderSession",
+      "description": "Grants permission to delete a capacity provider session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteCapacityProviderSession.html"
+    },
+    {
+      "name": "DeleteCodeInterpreter",
+      "methodName": "toDeleteCodeInterpreter",
+      "description": "Grants permission to delete a custom code interpreter",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteCodeInterpreter.html"
+    },
+    {
+      "name": "DeleteConfigurationBundle",
+      "methodName": "toDeleteConfigurationBundle",
+      "description": "Grants permission to delete a configuration bundle",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteConfigurationBundle.html"
+    },
+    {
+      "name": "DeleteConsentPortal",
+      "methodName": "toDeleteConsentPortal",
+      "description": "Grants permission to delete a consent portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteConsentPortal.html"
+    },
+    {
+      "name": "DeleteDataset",
+      "methodName": "toDeleteDataset",
+      "description": "Grants permission to delete a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteDataset.html"
+    },
+    {
+      "name": "DeleteDatasetExamples",
+      "methodName": "toDeleteDatasetExamples",
+      "description": "Grants permission to delete examples from a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteDatasetExamples.html"
+    },
+    {
+      "name": "DeleteEvaluator",
+      "methodName": "toDeleteEvaluator",
+      "description": "Grants permission to delete an evaluator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteEvaluator.html"
+    },
+    {
+      "name": "DeleteEvent",
+      "methodName": "toDeleteEvent",
+      "description": "Grants permission to delete an Event",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteEvent.html"
+    },
+    {
+      "name": "DeleteGateway",
+      "methodName": "toDeleteGateway",
+      "description": "Grants permission to delete an existing gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteGateway.html"
+    },
+    {
+      "name": "DeleteGatewayRateLimit",
+      "methodName": "toDeleteGatewayRateLimit",
+      "description": "Grants permission to delete a rate limit on a gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteGatewayRateLimit.html"
+    },
+    {
+      "name": "DeleteGatewayRule",
+      "methodName": "toDeleteGatewayRule",
+      "description": "Grants permission to delete an existing gateway rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteGatewayRule.html"
+    },
+    {
+      "name": "DeleteGatewayTarget",
+      "methodName": "toDeleteGatewayTarget",
+      "description": "Grants permission to delete an existing gateway target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteGatewayTarget.html"
+    },
+    {
+      "name": "DeleteHarness",
+      "methodName": "toDeleteHarness",
+      "description": "Grants permission to delete a harness",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteHarness.html"
+    },
+    {
+      "name": "DeleteHarnessEndpoint",
+      "methodName": "toDeleteHarnessEndpoint",
+      "description": "Grants permission to delete a harness endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteHarnessEndpoint.html"
+    },
+    {
+      "name": "DeleteMemory",
+      "methodName": "toDeleteMemory",
+      "description": "Grants permission to delete a Memory resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteMemory.html"
+    },
+    {
+      "name": "DeleteMemoryRecord",
+      "methodName": "toDeleteMemoryRecord",
+      "description": "Grants permission to delete a Memory Record",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteMemoryRecord.html"
+    },
+    {
+      "name": "DeleteOauth2CredentialProvider",
+      "methodName": "toDeleteOauth2CredentialProvider",
+      "description": "Grants permission to delete a registered OAuth2 Credential Provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteOauth2CredentialProvider.html"
+    },
+    {
+      "name": "DeleteOnlineEvaluationConfig",
+      "methodName": "toDeleteOnlineEvaluationConfig",
+      "description": "Grants permission to delete an online evaluation configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteOnlineEvaluationConfig.html"
+    },
+    {
+      "name": "DeletePaymentConnector",
+      "methodName": "toDeletePaymentConnector",
+      "description": "Grants permission to delete a payment connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePaymentConnector.html"
+    },
+    {
+      "name": "DeletePaymentCredentialProvider",
+      "methodName": "toDeletePaymentCredentialProvider",
+      "description": "Grants permission to delete a registered Payment Credential Provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePaymentCredentialProvider.html"
+    },
+    {
+      "name": "DeletePaymentInstrument",
+      "methodName": "toDeletePaymentInstrument",
+      "description": "Grants permission to delete a payment instrument",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePaymentInstrument.html"
+    },
+    {
+      "name": "DeletePaymentManager",
+      "methodName": "toDeletePaymentManager",
+      "description": "Grants permission to delete a payment manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePaymentManager.html"
+    },
+    {
+      "name": "DeletePaymentSession",
+      "methodName": "toDeletePaymentSession",
+      "description": "Grants permission to delete a payment session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePaymentSession.html"
+    },
+    {
+      "name": "DeletePolicy",
+      "methodName": "toDeletePolicy",
+      "description": "Grants permission to delete a policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePolicy.html"
+    },
+    {
+      "name": "DeletePolicyEngine",
+      "methodName": "toDeletePolicyEngine",
+      "description": "Grants permission to delete a policy engine",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePolicyEngine.html"
+    },
+    {
+      "name": "DeleteRecommendation",
+      "methodName": "toDeleteRecommendation",
+      "description": "Grants permission to delete a recommendation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteRecommendation.html"
+    },
+    {
+      "name": "DeleteRegistry",
+      "methodName": "toDeleteRegistry",
+      "description": "Grants permission to delete an existing registry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteRegistry.html"
+    },
+    {
+      "name": "DeleteRegistryRecord",
+      "methodName": "toDeleteRegistryRecord",
+      "description": "Grants permission to delete an existing registry record",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteRegistryRecord.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete the resource-based policy for a Bedrock resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteWorkloadIdentity",
+      "methodName": "toDeleteWorkloadIdentity",
+      "description": "Grants permission to delete a registered Workload Identity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteWorkloadIdentity.html"
+    },
+    {
+      "name": "Evaluate",
+      "methodName": "toEvaluate",
+      "description": "Grants permission to run an evaluation using an evaluator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_Evaluate.html"
+    },
+    {
+      "name": "GetABTest",
+      "methodName": "toGetABTest",
+      "description": "Grants permission to get details of an A/B test",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetABTest.html"
+    },
+    {
+      "name": "GetAgentCard",
+      "methodName": "toGetAgentCard",
+      "description": "Grants permission to retrieve an agent card for A2A",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetAgentCard.html"
+    },
+    {
+      "name": "GetAgentRuntime",
+      "methodName": "toGetAgentRuntime",
+      "description": "Grants permission to get details of an agent runtime",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetAgentRuntime.html"
+    },
+    {
+      "name": "GetAgentRuntimeEndpoint",
+      "methodName": "toGetAgentRuntimeEndpoint",
+      "description": "Grants permission to get details of an agent runtime endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetAgentRuntimeEndpoint.html"
+    },
+    {
+      "name": "GetApiKeyCredentialProvider",
+      "methodName": "toGetApiKeyCredentialProvider",
+      "description": "Grants permission to fetch a registered API Key Credential Provider by its name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetApiKeyCredentialProvider.html"
+    },
+    {
+      "name": "GetBatchEvaluation",
+      "methodName": "toGetBatchEvaluation",
+      "description": "Grants permission to get details of a batch evaluation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBatchEvaluation.html"
+    },
+    {
+      "name": "GetBrowser",
+      "methodName": "toGetBrowser",
+      "description": "Grants permission to get details of a browser",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetBrowser.html"
+    },
+    {
+      "name": "GetBrowserProfile",
+      "methodName": "toGetBrowserProfile",
+      "description": "Grants permission to get details of a browser profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetBrowserProfile.html"
+    },
+    {
+      "name": "GetBrowserSession",
+      "methodName": "toGetBrowserSession",
+      "description": "Grants permission to get details of a browser session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html"
+    },
+    {
+      "name": "GetCapacityProvider",
+      "methodName": "toGetCapacityProvider",
+      "description": "Grants permission to get details of a capacity provider",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetCapacityProvider.html"
+    },
+    {
+      "name": "GetCodeInterpreter",
+      "methodName": "toGetCodeInterpreter",
+      "description": "Grants permission to get details of a code interpreter",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetCodeInterpreter.html"
+    },
+    {
+      "name": "GetCodeInterpreterSession",
+      "methodName": "toGetCodeInterpreterSession",
+      "description": "Grants permission to get details of a code interpreter session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html"
+    },
+    {
+      "name": "GetConfigurationBundle",
+      "methodName": "toGetConfigurationBundle",
+      "description": "Grants permission to get details of a configuration bundle",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetConfigurationBundle.html"
+    },
+    {
+      "name": "GetConfigurationBundleVersion",
+      "methodName": "toGetConfigurationBundleVersion",
+      "description": "Grants permission to get a specific version of a configuration bundle",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetConfigurationBundleVersion.html"
+    },
+    {
+      "name": "GetConsentPortal",
+      "methodName": "toGetConsentPortal",
+      "description": "Grants permission to retrieve information about a consent portal",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetConsentPortal.html"
+    },
+    {
+      "name": "GetDataset",
+      "methodName": "toGetDataset",
+      "description": "Grants permission to get details of a dataset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetDataset.html"
+    },
+    {
+      "name": "GetEvaluator",
+      "methodName": "toGetEvaluator",
+      "description": "Grants permission to get details of an evaluator",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetEvaluator.html"
+    },
+    {
+      "name": "GetEvent",
+      "methodName": "toGetEvent",
+      "description": "Grants permission to fetch an Event",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetEvent.html"
+    },
+    {
+      "name": "GetGateway",
+      "methodName": "toGetGateway",
+      "description": "Grants permission to retrieve an existing gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetGateway.html"
+    },
+    {
+      "name": "GetGatewayRateLimit",
+      "methodName": "toGetGatewayRateLimit",
+      "description": "Grants permission to retrieve a rate limit on a gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetGatewayRateLimit.html"
+    },
+    {
+      "name": "GetGatewayRule",
+      "methodName": "toGetGatewayRule",
+      "description": "Grants permission to retrieve an existing gateway rule",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetGatewayRule.html"
+    },
+    {
+      "name": "GetGatewayTarget",
+      "methodName": "toGetGatewayTarget",
+      "description": "Grants permission to retrieve an existing gateway target",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetGatewayTarget.html"
+    },
+    {
+      "name": "GetHarness",
+      "methodName": "toGetHarness",
+      "description": "Grants permission to get details of a harness",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetHarness.html"
+    },
+    {
+      "name": "GetHarnessEndpoint",
+      "methodName": "toGetHarnessEndpoint",
+      "description": "Grants permission to get details of a harness endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetHarnessEndpoint.html"
+    },
+    {
+      "name": "GetMemory",
+      "methodName": "toGetMemory",
+      "description": "Grants permission to fetch details for a Memory resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetMemory.html"
+    },
+    {
+      "name": "GetMemoryRecord",
+      "methodName": "toGetMemoryRecord",
+      "description": "Grants permission to fetch a Memory Record",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetMemoryRecord.html"
+    },
+    {
+      "name": "GetOauth2CredentialProvider",
+      "methodName": "toGetOauth2CredentialProvider",
+      "description": "Grants permission to fetch a registered OAuth2 Credential Provider by its name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetOauth2CredentialProvider.html"
+    },
+    {
+      "name": "GetOnlineEvaluationConfig",
+      "methodName": "toGetOnlineEvaluationConfig",
+      "description": "Grants permission to get details of an online evaluation configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetOnlineEvaluationConfig.html"
+    },
+    {
+      "name": "GetPaymentConnector",
+      "methodName": "toGetPaymentConnector",
+      "description": "Grants permission to retrieve details of a payment connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentConnector.html"
+    },
+    {
+      "name": "GetPaymentCredentialProvider",
+      "methodName": "toGetPaymentCredentialProvider",
+      "description": "Grants permission to fetch a registered Payment Credential Provider by its name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentCredentialProvider.html"
+    },
+    {
+      "name": "GetPaymentInstrument",
+      "methodName": "toGetPaymentInstrument",
+      "description": "Grants permission to retrieve details of a payment instrument",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentInstrument.html"
+    },
+    {
+      "name": "GetPaymentInstrumentBalance",
+      "methodName": "toGetPaymentInstrumentBalance",
+      "description": "Grants permission to retrieve the balance of a payment instrument",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentInstrumentBalance.html"
+    },
+    {
+      "name": "GetPaymentManager",
+      "methodName": "toGetPaymentManager",
+      "description": "Grants permission to retrieve details of a payment manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentManager.html"
+    },
+    {
+      "name": "GetPaymentSession",
+      "methodName": "toGetPaymentSession",
+      "description": "Grants permission to retrieve details of a payment session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentSession.html"
+    },
+    {
+      "name": "GetPolicy",
+      "methodName": "toGetPolicy",
+      "description": "Grants permission to retrieve a policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicy.html"
+    },
+    {
+      "name": "GetPolicyEngine",
+      "methodName": "toGetPolicyEngine",
+      "description": "Grants permission to retrieve a policy engine",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyEngine.html"
+    },
+    {
+      "name": "GetPolicyEngineSummary",
+      "methodName": "toGetPolicyEngineSummary",
+      "description": "Grants permission to retrieve a summary of a policy engine",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyEngineSummary.html"
+    },
+    {
+      "name": "GetPolicyGeneration",
+      "methodName": "toGetPolicyGeneration",
+      "description": "Grants permission to retrieve status and results of a policy generation request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyGeneration.html"
+    },
+    {
+      "name": "GetPolicyGenerationSummary",
+      "methodName": "toGetPolicyGenerationSummary",
+      "description": "Grants permission to retrieve a summary of a policy generation request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyGenerationSummary.html"
+    },
+    {
+      "name": "GetPolicySummary",
+      "methodName": "toGetPolicySummary",
+      "description": "Grants permission to retrieve a summary of a policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicySummary.html"
+    },
+    {
+      "name": "GetRecommendation",
+      "methodName": "toGetRecommendation",
+      "description": "Grants permission to get details of a recommendation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetRecommendation.html"
+    },
+    {
+      "name": "GetRegistry",
+      "methodName": "toGetRegistry",
+      "description": "Grants permission to retrieve an existing registry",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetRegistry.html"
+    },
+    {
+      "name": "GetRegistryRecord",
+      "methodName": "toGetRegistryRecord",
+      "description": "Grants permission to retrieve an existing registry record",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetRegistryRecord.html"
+    },
+    {
+      "name": "GetResourceApiKey",
+      "methodName": "toGetResourceApiKey",
+      "description": "Grants permission to retrieve an API Key associated with an Api Key Credential Provider",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetResourceApiKey.html"
+    },
+    {
+      "name": "GetResourceOauth2Token",
+      "methodName": "toGetResourceOauth2Token",
+      "description": "Grants permission to retrieve access token with OAuth2 2LO or 3LO flow to access external resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetResourceOauth2Token.html"
+    },
+    {
+      "name": "GetResourcePaymentToken",
+      "methodName": "toGetResourcePaymentToken",
+      "description": "Grants permission to retrieve a payment authentication token associated with a Payment Credential Provider",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetResourcePaymentToken.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to retrieve the resource-based policy for a Bedrock resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "GetTokenVault",
+      "methodName": "toGetTokenVault",
+      "description": "Grants permission to fetch the current configuration of the TokenVault, including encryption settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetTokenVault.html"
+    },
+    {
+      "name": "GetWorkloadAccessToken",
+      "methodName": "toGetWorkloadAccessToken",
+      "description": "Grants permission to retrieve an Workload access token for agentic workloads not acting on behalf of a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetWorkloadAccessToken.html"
+    },
+    {
+      "name": "GetWorkloadAccessTokenForJWT",
+      "methodName": "toGetWorkloadAccessTokenForJWT",
+      "description": "Grants permission to retrieve an Workload access token for agentic workloads acting on behalf of user with JWT token",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetWorkloadAccessTokenForJWT.html"
+    },
+    {
+      "name": "GetWorkloadAccessTokenForUserId",
+      "methodName": "toGetWorkloadAccessTokenForUserId",
+      "description": "Grants permission to retrieve an Workload access token for agentic workloads acting on behalf of user with User Id",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetWorkloadAccessTokenForUserId.html"
+    },
+    {
+      "name": "GetWorkloadIdentity",
+      "methodName": "toGetWorkloadIdentity",
+      "description": "Grants permission to fetch details for a specific Workload identity, including its name and allowed OAuth2 return URLs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetWorkloadIdentity.html"
+    },
+    {
+      "name": "InvokeAgentRuntime",
+      "methodName": "toInvokeAgentRuntime",
+      "description": "Grants permission to invoke an agent runtime endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntime.html"
+    },
+    {
+      "name": "InvokeAgentRuntimeCommand",
+      "methodName": "toInvokeAgentRuntimeCommand",
+      "description": "Grants permission to invoke commands on an agent runtime endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntimeCommand.html"
+    },
+    {
+      "name": "InvokeAgentRuntimeCommandShell",
+      "methodName": "toInvokeAgentRuntimeCommandShell",
+      "description": "Grants permission to invoke a command shell on an agent runtime endpoint over a web socket stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntimeCommandShell.html"
+    },
+    {
+      "name": "InvokeAgentRuntimeForUser",
+      "methodName": "toInvokeAgentRuntimeForUser",
+      "description": "Grants permission to invoke an agent runtime endpoint with X-Amzn-Bedrock-AgentCore-Runtime-User-Id header",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntime.html"
+    },
+    {
+      "name": "InvokeAgentRuntimeWithWebSocketStream",
+      "methodName": "toInvokeAgentRuntimeWithWebSocketStream",
+      "description": "Grants permission to invoke an agent runtime endpoint with WebSocket stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntimeWithWebSocketStream.html"
+    },
+    {
+      "name": "InvokeAgentRuntimeWithWebSocketStreamForUser",
+      "methodName": "toInvokeAgentRuntimeWithWebSocketStreamForUser",
+      "description": "Grants permission to invoke an agent runtime endpoint with WebSocket stream and with X-Amzn-Bedrock-AgentCore-Runtime-User-Id header",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntimeWithWebSocketStream.html"
+    },
+    {
+      "name": "InvokeCodeInterpreter",
+      "methodName": "toInvokeCodeInterpreter",
+      "description": "Grants permission to invoke a code interpreter session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeCodeInterpreter.html"
+    },
+    {
+      "name": "InvokeHarness",
+      "methodName": "toInvokeHarness",
+      "description": "Grants permission to invoke a harness",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeHarness.html"
+    },
+    {
+      "name": "InvokeRegistryMcp",
+      "methodName": "toInvokeRegistryMcp",
+      "description": "Grants permission to invoke an MCP operation against an existing registry",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "ListABTests",
+      "methodName": "toListABTests",
+      "description": "Grants permission to list A/B tests",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListABTests.html"
+    },
+    {
+      "name": "ListActors",
+      "methodName": "toListActors",
+      "description": "Grants permission to list Actors",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListActors.html"
+    },
+    {
+      "name": "ListAgentRuntimeEndpoints",
+      "methodName": "toListAgentRuntimeEndpoints",
+      "description": "Grants permission to list agent runtime endpoints",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListAgentRuntimeEndpoints.html"
+    },
+    {
+      "name": "ListAgentRuntimeVersions",
+      "methodName": "toListAgentRuntimeVersions",
+      "description": "Grants permission to list agent runtime versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListAgentRuntimeVersions.html"
+    },
+    {
+      "name": "ListAgentRuntimeVersionsByCapacityProvider",
+      "methodName": "toListAgentRuntimeVersionsByCapacityProvider",
+      "description": "Grants permission to list agent runtime versions by capacity provider",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListAgentRuntimeVersionsByCapacityProvider.html"
+    },
+    {
+      "name": "ListAgentRuntimes",
+      "methodName": "toListAgentRuntimes",
+      "description": "Grants permission to list agent runtimes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListAgentRuntimes.html"
+    },
+    {
+      "name": "ListApiKeyCredentialProviders",
+      "methodName": "toListApiKeyCredentialProviders",
+      "description": "Grants permission to list all API Key Credential Providers in the Token Vault",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListApiKeyCredentialProviders.html"
+    },
+    {
+      "name": "ListBatchEvaluations",
+      "methodName": "toListBatchEvaluations",
+      "description": "Grants permission to list batch evaluations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListBatchEvaluations.html"
+    },
+    {
+      "name": "ListBrowserProfiles",
+      "methodName": "toListBrowserProfiles",
+      "description": "Grants permission to list browser profiles",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListBrowserProfiles.html"
+    },
+    {
+      "name": "ListBrowserSessions",
+      "methodName": "toListBrowserSessions",
+      "description": "Grants permission to list browser sessions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListBrowserSessions.html"
+    },
+    {
+      "name": "ListBrowsers",
+      "methodName": "toListBrowsers",
+      "description": "Grants permission to list browsers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListBrowsers.html"
+    },
+    {
+      "name": "ListCapacityProviders",
+      "methodName": "toListCapacityProviders",
+      "description": "Grants permission to list capacity providers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListCapacityProviders.html"
+    },
+    {
+      "name": "ListCodeInterpreterSessions",
+      "methodName": "toListCodeInterpreterSessions",
+      "description": "Grants permission to list code interpreter sessions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListCodeInterpreterSessions.html"
+    },
+    {
+      "name": "ListCodeInterpreters",
+      "methodName": "toListCodeInterpreters",
+      "description": "Grants permission to list code interpreters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListCodeInterpreters.html"
+    },
+    {
+      "name": "ListConfigurationBundleVersions",
+      "methodName": "toListConfigurationBundleVersions",
+      "description": "Grants permission to list versions of a configuration bundle",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListConfigurationBundleVersions.html"
+    },
+    {
+      "name": "ListConfigurationBundles",
+      "methodName": "toListConfigurationBundles",
+      "description": "Grants permission to list configuration bundles",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListConfigurationBundles.html"
+    },
+    {
+      "name": "ListConsentPortals",
+      "methodName": "toListConsentPortals",
+      "description": "Grants permission to list all of the consent portals in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListConsentPortals.html"
+    },
+    {
+      "name": "ListDatasetExamples",
+      "methodName": "toListDatasetExamples",
+      "description": "Grants permission to list examples in a dataset",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListDatasetExamples.html"
+    },
+    {
+      "name": "ListDatasetVersions",
+      "methodName": "toListDatasetVersions",
+      "description": "Grants permission to list versions of a dataset",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListDatasetVersions.html"
+    },
+    {
+      "name": "ListDatasets",
+      "methodName": "toListDatasets",
+      "description": "Grants permission to list datasets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListDatasets.html"
+    },
+    {
+      "name": "ListEvaluators",
+      "methodName": "toListEvaluators",
+      "description": "Grants permission to list evaluators",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListEvaluators.html"
+    },
+    {
+      "name": "ListEvents",
+      "methodName": "toListEvents",
+      "description": "Grants permission to list events",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListEvents.html"
+    },
+    {
+      "name": "ListGatewayRateLimits",
+      "methodName": "toListGatewayRateLimits",
+      "description": "Grants permission to list rate limits on a gateway",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListGatewayRateLimits.html"
+    },
+    {
+      "name": "ListGatewayRules",
+      "methodName": "toListGatewayRules",
+      "description": "Grants permission to list existing gateway rules",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListGatewayRules.html"
+    },
+    {
+      "name": "ListGatewayTargets",
+      "methodName": "toListGatewayTargets",
+      "description": "Grants permission to list existing gateway targets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListGatewayTargets.html"
+    },
+    {
+      "name": "ListGateways",
+      "methodName": "toListGateways",
+      "description": "Grants permission to list existing gateways",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListGateways.html"
+    },
+    {
+      "name": "ListHarnessEndpoints",
+      "methodName": "toListHarnessEndpoints",
+      "description": "Grants permission to list harness endpoints",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListHarnessEndpoints.html"
+    },
+    {
+      "name": "ListHarnessVersions",
+      "methodName": "toListHarnessVersions",
+      "description": "Grants permission to list harness versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListHarnessVersions.html"
+    },
+    {
+      "name": "ListHarnesses",
+      "methodName": "toListHarnesses",
+      "description": "Grants permission to list harnesses",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListHarnesses.html"
+    },
+    {
+      "name": "ListMemories",
+      "methodName": "toListMemories",
+      "description": "Grants permission to list memory resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListMemories.html"
+    },
+    {
+      "name": "ListMemoryExtractionJobs",
+      "methodName": "toListMemoryExtractionJobs",
+      "description": "Grants permission to list extraction jobs for this memory",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListMemoryExtractionJobs.html"
+    },
+    {
+      "name": "ListMemoryRecords",
+      "methodName": "toListMemoryRecords",
+      "description": "Grants permission to list memory records",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListMemoryRecords.html"
+    },
+    {
+      "name": "ListOauth2CredentialProviders",
+      "methodName": "toListOauth2CredentialProviders",
+      "description": "Grants permission to list all OAuth2 Credential Providers in the Token Vault",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListOauth2CredentialProviders.html"
+    },
+    {
+      "name": "ListOnlineEvaluationConfigs",
+      "methodName": "toListOnlineEvaluationConfigs",
+      "description": "Grants permission to list online evaluation configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListOnlineEvaluationConfigs.html"
+    },
+    {
+      "name": "ListPaymentConnectors",
+      "methodName": "toListPaymentConnectors",
+      "description": "Grants permission to list payment connectors under a payment manager",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPaymentConnectors.html"
+    },
+    {
+      "name": "ListPaymentCredentialProviders",
+      "methodName": "toListPaymentCredentialProviders",
+      "description": "Grants permission to list all Payment Credential Providers in the Token Vault",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPaymentCredentialProviders.html"
+    },
+    {
+      "name": "ListPaymentInstruments",
+      "methodName": "toListPaymentInstruments",
+      "description": "Grants permission to list payment instruments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPaymentInstruments.html"
+    },
+    {
+      "name": "ListPaymentManagers",
+      "methodName": "toListPaymentManagers",
+      "description": "Grants permission to list payment managers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPaymentManagers.html"
+    },
+    {
+      "name": "ListPaymentSessions",
+      "methodName": "toListPaymentSessions",
+      "description": "Grants permission to list payment sessions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPaymentSessions.html"
+    },
+    {
+      "name": "ListPolicies",
+      "methodName": "toListPolicies",
+      "description": "Grants permission to list policies within a policy engine",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicies.html"
+    },
+    {
+      "name": "ListPolicyEngineSummaries",
+      "methodName": "toListPolicyEngineSummaries",
+      "description": "Grants permission to list policy engine summaries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyEngineSummaries.html"
+    },
+    {
+      "name": "ListPolicyEngines",
+      "methodName": "toListPolicyEngines",
+      "description": "Grants permission to list policy engines",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyEngines.html"
+    },
+    {
+      "name": "ListPolicyGenerationAssets",
+      "methodName": "toListPolicyGenerationAssets",
+      "description": "Grants permission to list generated policy assets from a generation request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationAssets.html"
+    },
+    {
+      "name": "ListPolicyGenerationSummaries",
+      "methodName": "toListPolicyGenerationSummaries",
+      "description": "Grants permission to list policy generation summaries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationSummaries.html"
+    },
+    {
+      "name": "ListPolicyGenerations",
+      "methodName": "toListPolicyGenerations",
+      "description": "Grants permission to list policy generation requests",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerations.html"
+    },
+    {
+      "name": "ListPolicySummaries",
+      "methodName": "toListPolicySummaries",
+      "description": "Grants permission to list policy summaries within a policy engine",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicySummaries.html"
+    },
+    {
+      "name": "ListRecommendations",
+      "methodName": "toListRecommendations",
+      "description": "Grants permission to list recommendations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListRecommendations.html"
+    },
+    {
+      "name": "ListRegistries",
+      "methodName": "toListRegistries",
+      "description": "Grants permission to list existing registries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListRegistries.html"
+    },
+    {
+      "name": "ListRegistryRecords",
+      "methodName": "toListRegistryRecords",
+      "description": "Grants permission to list existing registry records in a registry",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListRegistryRecords.html"
+    },
+    {
+      "name": "ListSessions",
+      "methodName": "toListSessions",
+      "description": "Grants permission to list sessions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListSessions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a Bedrock-AgentCore resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWorkloadIdentities",
+      "methodName": "toListWorkloadIdentities",
+      "description": "Grants permission to list all Workload Identities in the caller's AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListWorkloadIdentities.html"
+    },
+    {
+      "name": "ProcessPayment",
+      "methodName": "toProcessPayment",
+      "description": "Grants permission to process a payment transaction",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ProcessPayment.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to create or update the resource-based policy for a Bedrock resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "RetrieveMemoryRecords",
+      "methodName": "toRetrieveMemoryRecords",
+      "description": "Grants permission to retrieve memory records through sematic query",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_RetrieveMemoryRecords.html"
+    },
+    {
+      "name": "SaveBrowserSessionProfile",
+      "methodName": "toSaveBrowserSessionProfile",
+      "description": "Grants permission to save a browser session profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SaveBrowserSessionProfile.html"
+    },
+    {
+      "name": "SearchRegistryRecords",
+      "methodName": "toSearchRegistryRecords",
+      "description": "Grants permission to search for registry records",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SearchRegistryRecords.html"
+    },
+    {
+      "name": "SetTokenVaultCMK",
+      "methodName": "toSetTokenVaultCMK",
+      "description": "Grants permission to associate a Customer Managed Key (CMK) or a Service Managed Key with a specific TokenVault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_SetTokenVaultCMK.html"
+    },
+    {
+      "name": "StartBatchEvaluation",
+      "methodName": "toStartBatchEvaluation",
+      "description": "Grants permission to start a batch evaluation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBatchEvaluation.html"
+    },
+    {
+      "name": "StartBrowserSession",
+      "methodName": "toStartBrowserSession",
+      "description": "Grants permission to start a new browser session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html"
+    },
+    {
+      "name": "StartCodeInterpreterSession",
+      "methodName": "toStartCodeInterpreterSession",
+      "description": "Grants permission to start a new code interpreter session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html"
+    },
+    {
+      "name": "StartMemoryExtractionJob",
+      "methodName": "toStartMemoryExtractionJob",
+      "description": "Grants permission to start memory extraction job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartMemoryExtractionJob.html"
+    },
+    {
+      "name": "StartPolicyGeneration",
+      "methodName": "toStartPolicyGeneration",
+      "description": "Grants permission to start an AI-powered policy generation request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_StartPolicyGeneration.html"
+    },
+    {
+      "name": "StartRecommendation",
+      "methodName": "toStartRecommendation",
+      "description": "Grants permission to start a recommendation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartRecommendation.html"
+    },
+    {
+      "name": "StopBatchEvaluation",
+      "methodName": "toStopBatchEvaluation",
+      "description": "Grants permission to stop a batch evaluation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBatchEvaluation.html"
+    },
+    {
+      "name": "StopBrowserSession",
+      "methodName": "toStopBrowserSession",
+      "description": "Grants permission to stop a browser session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html"
+    },
+    {
+      "name": "StopCodeInterpreterSession",
+      "methodName": "toStopCodeInterpreterSession",
+      "description": "Grants permission to stop a code interpreter session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopCodeInterpreterSession.html"
+    },
+    {
+      "name": "StopRuntimeSession",
+      "methodName": "toStopRuntimeSession",
+      "description": "Grants permission to stop a runtime session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopRuntimeSession.html"
+    },
+    {
+      "name": "SubmitRegistryRecordForApproval",
+      "methodName": "toSubmitRegistryRecordForApproval",
+      "description": "Grants permission to submit a registry record for approval",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_SubmitRegistryRecordForApproval.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to Tag a Bedrock-AgentCore resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to Untag a Bedrock-AgentCore resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateABTest",
+      "methodName": "toUpdateABTest",
+      "description": "Grants permission to update an A/B test",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateABTest.html"
+    },
+    {
+      "name": "UpdateAgentRuntime",
+      "methodName": "toUpdateAgentRuntime",
+      "description": "Grants permission to update an agent runtime",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateAgentRuntime.html"
+    },
+    {
+      "name": "UpdateAgentRuntimeEndpoint",
+      "methodName": "toUpdateAgentRuntimeEndpoint",
+      "description": "Grants permission to update an agent runtime endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateAgentRuntimeEndpoint.html"
+    },
+    {
+      "name": "UpdateApiKeyCredentialProvider",
+      "methodName": "toUpdateApiKeyCredentialProvider",
+      "description": "Grants permission to update an existing API Key Credential Provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateApiKeyCredentialProvider.html"
+    },
+    {
+      "name": "UpdateBrowserStream",
+      "methodName": "toUpdateBrowserStream",
+      "description": "Grants permission to update the status of browser session stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateBrowserStream.html"
+    },
+    {
+      "name": "UpdateCapacityProvider",
+      "methodName": "toUpdateCapacityProvider",
+      "description": "Grants permission to update a capacity provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateCapacityProvider.html"
+    },
+    {
+      "name": "UpdateConfigurationBundle",
+      "methodName": "toUpdateConfigurationBundle",
+      "description": "Grants permission to update a configuration bundle",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateConfigurationBundle.html"
+    },
+    {
+      "name": "UpdateConsentPortal",
+      "methodName": "toUpdateConsentPortal",
+      "description": "Grants permission to update an existing consent portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateConsentPortal.html"
+    },
+    {
+      "name": "UpdateDataset",
+      "methodName": "toUpdateDataset",
+      "description": "Grants permission to update a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateDataset.html"
+    },
+    {
+      "name": "UpdateDatasetExamples",
+      "methodName": "toUpdateDatasetExamples",
+      "description": "Grants permission to update examples in a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateDatasetExamples.html"
+    },
+    {
+      "name": "UpdateEvaluator",
+      "methodName": "toUpdateEvaluator",
+      "description": "Grants permission to update an evaluator",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateEvaluator.html"
+    },
+    {
+      "name": "UpdateGateway",
+      "methodName": "toUpdateGateway",
+      "description": "Grants permission to update an existing gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGateway.html"
+    },
+    {
+      "name": "UpdateGatewayRateLimit",
+      "methodName": "toUpdateGatewayRateLimit",
+      "description": "Grants permission to update a rate limit on a gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGatewayRateLimit.html"
+    },
+    {
+      "name": "UpdateGatewayRule",
+      "methodName": "toUpdateGatewayRule",
+      "description": "Grants permission to update an existing gateway rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGatewayRule.html"
+    },
+    {
+      "name": "UpdateGatewayTarget",
+      "methodName": "toUpdateGatewayTarget",
+      "description": "Grants permission to update an existing gateway target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGatewayTarget.html"
+    },
+    {
+      "name": "UpdateHarness",
+      "methodName": "toUpdateHarness",
+      "description": "Grants permission to update a harness",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateHarness.html"
+    },
+    {
+      "name": "UpdateHarnessEndpoint",
+      "methodName": "toUpdateHarnessEndpoint",
+      "description": "Grants permission to update harness endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateHarnessEndpoint.html"
+    },
+    {
+      "name": "UpdateMemory",
+      "methodName": "toUpdateMemory",
+      "description": "Grants permission to update a Memory resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateMemory.html"
+    },
+    {
+      "name": "UpdateOauth2CredentialProvider",
+      "methodName": "toUpdateOauth2CredentialProvider",
+      "description": "Grants permission to update an existing OAuth2 Credential Provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateOauth2CredentialProvider.html"
+    },
+    {
+      "name": "UpdateOnlineEvaluationConfig",
+      "methodName": "toUpdateOnlineEvaluationConfig",
+      "description": "Grants permission to update an online evaluation configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateOnlineEvaluationConfig.html"
+    },
+    {
+      "name": "UpdatePaymentConnector",
+      "methodName": "toUpdatePaymentConnector",
+      "description": "Grants permission to update an existing payment connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePaymentConnector.html"
+    },
+    {
+      "name": "UpdatePaymentCredentialProvider",
+      "methodName": "toUpdatePaymentCredentialProvider",
+      "description": "Grants permission to update an existing Payment Credential Provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePaymentCredentialProvider.html"
+    },
+    {
+      "name": "UpdatePaymentManager",
+      "methodName": "toUpdatePaymentManager",
+      "description": "Grants permission to update an existing payment manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePaymentManager.html"
+    },
+    {
+      "name": "UpdatePolicy",
+      "methodName": "toUpdatePolicy",
+      "description": "Grants permission to update an existing policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePolicy.html"
+    },
+    {
+      "name": "UpdatePolicyEngine",
+      "methodName": "toUpdatePolicyEngine",
+      "description": "Grants permission to update a policy engine",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePolicyEngine.html"
+    },
+    {
+      "name": "UpdateRegistry",
+      "methodName": "toUpdateRegistry",
+      "description": "Grants permission to update an existing registry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateRegistry.html"
+    },
+    {
+      "name": "UpdateRegistryRecord",
+      "methodName": "toUpdateRegistryRecord",
+      "description": "Grants permission to update an existing registry record",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateRegistryRecord.html"
+    },
+    {
+      "name": "UpdateRegistryRecordStatus",
+      "methodName": "toUpdateRegistryRecordStatus",
+      "description": "Grants permission to update the status of a registry record",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateRegistryRecordStatus.html"
+    },
+    {
+      "name": "UpdateWorkloadIdentity",
+      "methodName": "toUpdateWorkloadIdentity",
+      "description": "Grants permission to update the metadata of an existing Workload Identity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateWorkloadIdentity.html"
+    },
+    {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to configure vended telemetry for a resource",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+    },
+    {
+      "name": "AuthorizeAction",
+      "methodName": "toAuthorizeAction",
+      "description": "Grants permission to evaluate Cedar policies for authorization requests",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "GatewayAssociateWebACL",
+      "methodName": "toGatewayAssociateWebACL",
+      "description": "Grants permission to associate an AWS WAF Web ACL with an AgentCore Gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+    },
+    {
+      "name": "GatewayDisassociateWebACL",
+      "methodName": "toGatewayDisassociateWebACL",
+      "description": "Grants permission to remove the AWS WAF Web ACL association from an AgentCore Gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+    },
+    {
+      "name": "GatewayGetWebACLForResource",
+      "methodName": "toGatewayGetWebACLForResource",
+      "description": "Grants permission to retrieve the AWS WAF Web ACL ARN currently associated with an AgentCore Gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+    },
+    {
+      "name": "GatewayListResourcesForWebACL",
+      "methodName": "toGatewayListResourcesForWebACL",
+      "description": "Grants permission to list AgentCore Gateways associated with an AWS WAF Web ACL",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+    },
+    {
+      "name": "InvokeGateway",
+      "methodName": "toInvokeGateway",
+      "description": "Grants permission to invoke a gateway",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "InvokeWebSearch",
+      "methodName": "toInvokeWebSearch",
+      "description": "Grants permission to invoke a web search target",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "ManageAdminPolicy",
+      "methodName": "toManageAdminPolicy",
+      "description": "Grants permission to create or modify wildcard policies that apply to gateway resources",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "ManageResourceScopedPolicy",
+      "methodName": "toManageResourceScopedPolicy",
+      "description": "Grants permission to create or modify policies that apply to specific gateway resources",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "PartiallyAuthorizeActions",
+      "methodName": "toPartiallyAuthorizeActions",
+      "description": "Grants permission to perform partial evaluation of Cedar policies to authorize a caller to list tools they are allowed to call",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "PassCapacityProvider",
+      "methodName": "toPassCapacityProvider",
+      "description": "Grants permission to pass a capacity provider to a runtime resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "PutSystemLogEvents",
+      "methodName": "toPutSystemLogEvents",
+      "description": "Grants permission to collect system logs from the runtime instances",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "SynchronizeGatewayTargets",
+      "methodName": "toSynchronizeGatewayTargets",
+      "description": "Grants permission to enable search on gateways",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "ab-test",
+      "methodName": "onAbTest",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/abTest.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:ab-test/${ABTestId}",
+      "placeholders": [
+        {
+          "placeholder": "ABTestId",
+          "name": "aBTestId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "apikeycredentialprovider",
+      "methodName": "onApikeycredentialprovider",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/apikeycredentialprovider.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:token-vault/${TokenVaultId}/apikeycredentialprovider/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "TokenVaultId",
+          "name": "tokenVaultId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "batch-evaluate",
+      "methodName": "onBatchEvaluate",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/batchEvaluation.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:batch-evaluate/${BatchEvaluationId}",
+      "placeholders": [
+        {
+          "placeholder": "BatchEvaluationId",
+          "name": "batchEvaluationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "browser",
+      "methodName": "onBrowser",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/browser.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:aws:browser/${BrowserId}",
+      "placeholders": [
+        {
+          "placeholder": "BrowserId",
+          "name": "browserId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "browser-custom",
+      "methodName": "onBrowserCustom",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/browser.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:browser-custom/${BrowserId}",
+      "placeholders": [
+        {
+          "placeholder": "BrowserId",
+          "name": "browserId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "browser-profile",
+      "methodName": "onBrowserProfile",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/browserProfile.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:browser-profile/${BrowserProfileId}",
+      "placeholders": [
+        {
+          "placeholder": "BrowserProfileId",
+          "name": "browserProfileId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "capacity-provider",
+      "methodName": "onCapacityProvider",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/capacityProvider.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:capacity-provider/${CapacityProviderId}",
+      "placeholders": [
+        {
+          "placeholder": "CapacityProviderId",
+          "name": "capacityProviderId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "code-interpreter",
+      "methodName": "onCodeInterpreter",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/codeInterpreter.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:aws:code-interpreter/${CodeInterpreterId}",
+      "placeholders": [
+        {
+          "placeholder": "CodeInterpreterId",
+          "name": "codeInterpreterId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "code-interpreter-custom",
+      "methodName": "onCodeInterpreterCustom",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/codeInterpreter.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:code-interpreter-custom/${CodeInterpreterId}",
+      "placeholders": [
+        {
+          "placeholder": "CodeInterpreterId",
+          "name": "codeInterpreterId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "configuration-bundle",
+      "methodName": "onConfigurationBundle",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/configurationBundle.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:configuration-bundle/${ConfigurationBundleId}",
+      "placeholders": [
+        {
+          "placeholder": "ConfigurationBundleId",
+          "name": "configurationBundleId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "consent-portal",
+      "methodName": "onConsentPortal",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity-consent-portal.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:consent-portal/${ConsentPortalId}",
+      "placeholders": [
+        {
+          "placeholder": "ConsentPortalId",
+          "name": "consentPortalId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "dataset",
+      "methodName": "onDataset",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/dataset.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:dataset/${DatasetId}",
+      "placeholders": [
+        {
+          "placeholder": "DatasetId",
+          "name": "datasetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "evaluator",
+      "methodName": "onEvaluator",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/evaluator.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:evaluator/${EvaluatorId}",
+      "placeholders": [
+        {
+          "placeholder": "EvaluatorId",
+          "name": "evaluatorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "gateway",
+      "methodName": "onGateway",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/gateway.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:gateway/${GatewayId}",
+      "placeholders": [
+        {
+          "placeholder": "GatewayId",
+          "name": "gatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "harness",
+      "methodName": "onHarness",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/harness.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:harness/${HarnessId}",
+      "placeholders": [
+        {
+          "placeholder": "HarnessId",
+          "name": "harnessId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "harness-endpoint",
+      "methodName": "onHarnessEndpoint",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/harness-endpoint.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:harness/${HarnessId}/harness-endpoint/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "HarnessId",
+          "name": "harnessId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "memory",
+      "methodName": "onMemory",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/memory.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:memory/${MemoryId}",
+      "placeholders": [
+        {
+          "placeholder": "MemoryId",
+          "name": "memoryId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "oauth2credentialprovider",
+      "methodName": "onOauth2credentialprovider",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/oauth2credentialprovider.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:token-vault/${TokenVaultId}/oauth2credentialprovider/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "TokenVaultId",
+          "name": "tokenVaultId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "online-evaluation-config",
+      "methodName": "onOnlineEvaluationConfig",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/onlineEvaluationConfig.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:online-evaluation-config/${OnlineEvaluationConfigId}",
+      "placeholders": [
+        {
+          "placeholder": "OnlineEvaluationConfigId",
+          "name": "onlineEvaluationConfigId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "payment-manager",
+      "methodName": "onPaymentManager",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/paymentManager.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:payment-manager/${PaymentManagerId}",
+      "placeholders": [
+        {
+          "placeholder": "PaymentManagerId",
+          "name": "paymentManagerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "paymentcredentialprovider",
+      "methodName": "onPaymentcredentialprovider",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/paymentcredentialprovider.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:token-vault/${TokenVaultId}/paymentcredentialprovider/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "TokenVaultId",
+          "name": "tokenVaultId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "policy",
+      "methodName": "onPolicy",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/policy.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:policy-engine/${PolicyEngineId}/policy/${PolicyId}",
+      "placeholders": [
+        {
+          "placeholder": "PolicyEngineId",
+          "name": "policyEngineId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PolicyId",
+          "name": "policyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "policy-engine",
+      "methodName": "onPolicyEngine",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/policyEngine.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:policy-engine/${PolicyEngineId}",
+      "placeholders": [
+        {
+          "placeholder": "PolicyEngineId",
+          "name": "policyEngineId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "policy-generation",
+      "methodName": "onPolicyGeneration",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/policyGeneration.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:policy-engine/${PolicyEngineId}/policy-generation/${PolicyGenerationId}",
+      "placeholders": [
+        {
+          "placeholder": "PolicyEngineId",
+          "name": "policyEngineId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PolicyGenerationId",
+          "name": "policyGenerationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "recommendation",
+      "methodName": "onRecommendation",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/recommendation.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:recommendation/${RecommendationId}",
+      "placeholders": [
+        {
+          "placeholder": "RecommendationId",
+          "name": "recommendationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "registry",
+      "methodName": "onRegistry",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/registry.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:registry/${RegistryId}",
+      "placeholders": [
+        {
+          "placeholder": "RegistryId",
+          "name": "registryId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "registry-record",
+      "methodName": "onRegistryRecord",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/registryRecord.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:registry/${RegistryId}/record/${RecordId}",
+      "placeholders": [
+        {
+          "placeholder": "RegistryId",
+          "name": "registryId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RecordId",
+          "name": "recordId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "runtime",
+      "methodName": "onRuntime",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/runtime.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:runtime/${RuntimeId}",
+      "placeholders": [
+        {
+          "placeholder": "RuntimeId",
+          "name": "runtimeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "runtime-endpoint",
+      "methodName": "onRuntimeEndpoint",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/runtimeEndpoint.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:runtime/${RuntimeId}/runtime-endpoint/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "RuntimeId",
+          "name": "runtimeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "token-vault",
+      "methodName": "onTokenVault",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/tokenVault.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:token-vault/${TokenVaultId}",
+      "placeholders": [
+        {
+          "placeholder": "TokenVaultId",
+          "name": "tokenVaultId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "web-search",
+      "methodName": "onWebSearch",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/webSearch.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:tool/web-search.v1",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "workload-identity",
+      "methodName": "onWorkloadIdentity",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/workloadIdentity.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:workload-identity-directory/${DirectoryId}/workload-identity/${WorkloadIdentityName}",
+      "placeholders": [
+        {
+          "placeholder": "DirectoryId",
+          "name": "directoryId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "WorkloadIdentityName",
+          "name": "workloadIdentityName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "workload-identity-directory",
+      "methodName": "onWorkloadIdentityDirectory",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/workloadIdentityDirectory.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:workload-identity-directory/${DirectoryId}",
+      "placeholders": [
+        {
+          "placeholder": "DirectoryId",
+          "name": "directoryId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by creating requests based on the allowed set of values for each of the mandatory tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
+      "relatedActionMethods": [
+        "toCreateAgentRuntime",
+        "toCreateAgentRuntimeEndpoint",
+        "toCreateApiKeyCredentialProvider",
+        "toCreateBrowser",
+        "toCreateBrowserProfile",
+        "toCreateCapacityProvider",
+        "toCreateCodeInterpreter",
+        "toCreateConsentPortal",
+        "toCreateDataset",
+        "toCreateEvaluator",
+        "toCreateGateway",
+        "toCreateHarness",
+        "toCreateHarnessEndpoint",
+        "toCreateMemory",
+        "toCreateOauth2CredentialProvider",
+        "toCreateOnlineEvaluationConfig",
+        "toCreatePaymentCredentialProvider",
+        "toCreatePaymentManager",
+        "toCreatePolicyEngine",
+        "toCreateWorkloadIdentity",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by having actions based on the tag value associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
+      "relatedActionMethods": [
+        "toAddDatasetExamples",
+        "toBatchCreateMemoryRecords",
+        "toBatchDeleteMemoryRecords",
+        "toBatchPutGatewayRateLimits",
+        "toBatchUpdateMemoryRecords",
+        "toCompleteResourceTokenAuth",
+        "toCreateAgentRuntimeEndpoint",
+        "toCreateApiKeyCredentialProvider",
+        "toCreateCapacityProvider",
+        "toCreateConsentPortal",
+        "toCreateDataset",
+        "toCreateDatasetVersion",
+        "toCreateEvaluator",
+        "toCreateEvent",
+        "toCreateGatewayRateLimit",
+        "toCreateGatewayRule",
+        "toCreateGatewayTarget",
+        "toCreateHarnessEndpoint",
+        "toCreateOauth2CredentialProvider",
+        "toCreateOnlineEvaluationConfig",
+        "toCreatePaymentConnector",
+        "toCreatePaymentCredentialProvider",
+        "toCreatePaymentInstrument",
+        "toCreatePaymentSession",
+        "toCreatePolicy",
+        "toCreateWorkloadIdentity",
+        "toDeleteABTest",
+        "toDeleteAgentRuntime",
+        "toDeleteAgentRuntimeEndpoint",
+        "toDeleteApiKeyCredentialProvider",
+        "toDeleteBatchEvaluation",
+        "toDeleteBrowser",
+        "toDeleteBrowserProfile",
+        "toDeleteCapacityProvider",
+        "toDeleteCapacityProviderSession",
+        "toDeleteCodeInterpreter",
+        "toDeleteConfigurationBundle",
+        "toDeleteConsentPortal",
+        "toDeleteDataset",
+        "toDeleteDatasetExamples",
+        "toDeleteEvaluator",
+        "toDeleteEvent",
+        "toDeleteGateway",
+        "toDeleteGatewayRateLimit",
+        "toDeleteGatewayRule",
+        "toDeleteGatewayTarget",
+        "toDeleteHarness",
+        "toDeleteHarnessEndpoint",
+        "toDeleteMemory",
+        "toDeleteMemoryRecord",
+        "toDeleteOauth2CredentialProvider",
+        "toDeleteOnlineEvaluationConfig",
+        "toDeletePaymentConnector",
+        "toDeletePaymentCredentialProvider",
+        "toDeletePaymentInstrument",
+        "toDeletePaymentManager",
+        "toDeletePaymentSession",
+        "toDeletePolicy",
+        "toDeletePolicyEngine",
+        "toDeleteRecommendation",
+        "toDeleteResourcePolicy",
+        "toDeleteWorkloadIdentity",
+        "toEvaluate",
+        "toGetABTest",
+        "toGetAgentCard",
+        "toGetAgentRuntime",
+        "toGetAgentRuntimeEndpoint",
+        "toGetApiKeyCredentialProvider",
+        "toGetBatchEvaluation",
+        "toGetBrowser",
+        "toGetBrowserProfile",
+        "toGetBrowserSession",
+        "toGetCapacityProvider",
+        "toGetCodeInterpreter",
+        "toGetCodeInterpreterSession",
+        "toGetConfigurationBundle",
+        "toGetConfigurationBundleVersion",
+        "toGetConsentPortal",
+        "toGetDataset",
+        "toGetEvaluator",
+        "toGetEvent",
+        "toGetGateway",
+        "toGetGatewayRateLimit",
+        "toGetGatewayRule",
+        "toGetGatewayTarget",
+        "toGetHarness",
+        "toGetHarnessEndpoint",
+        "toGetMemory",
+        "toGetMemoryRecord",
+        "toGetOauth2CredentialProvider",
+        "toGetOnlineEvaluationConfig",
+        "toGetPaymentConnector",
+        "toGetPaymentCredentialProvider",
+        "toGetPaymentInstrument",
+        "toGetPaymentInstrumentBalance",
+        "toGetPaymentManager",
+        "toGetPaymentSession",
+        "toGetPolicy",
+        "toGetPolicyEngine",
+        "toGetPolicyEngineSummary",
+        "toGetPolicyGeneration",
+        "toGetPolicyGenerationSummary",
+        "toGetPolicySummary",
+        "toGetRecommendation",
+        "toGetResourceApiKey",
+        "toGetResourceOauth2Token",
+        "toGetResourcePaymentToken",
+        "toGetResourcePolicy",
+        "toGetTokenVault",
+        "toGetWorkloadAccessToken",
+        "toGetWorkloadAccessTokenForJWT",
+        "toGetWorkloadAccessTokenForUserId",
+        "toGetWorkloadIdentity",
+        "toInvokeAgentRuntime",
+        "toInvokeAgentRuntimeCommand",
+        "toInvokeAgentRuntimeCommandShell",
+        "toInvokeAgentRuntimeForUser",
+        "toInvokeAgentRuntimeWithWebSocketStream",
+        "toInvokeAgentRuntimeWithWebSocketStreamForUser",
+        "toInvokeCodeInterpreter",
+        "toInvokeHarness",
+        "toListActors",
+        "toListApiKeyCredentialProviders",
+        "toListCodeInterpreterSessions",
+        "toListConfigurationBundleVersions",
+        "toListDatasetExamples",
+        "toListDatasetVersions",
+        "toListEvents",
+        "toListGatewayRateLimits",
+        "toListGatewayRules",
+        "toListGatewayTargets",
+        "toListMemoryExtractionJobs",
+        "toListMemoryRecords",
+        "toListOauth2CredentialProviders",
+        "toListPaymentConnectors",
+        "toListPaymentCredentialProviders",
+        "toListPaymentInstruments",
+        "toListPaymentSessions",
+        "toListPolicies",
+        "toListPolicyGenerationAssets",
+        "toListPolicyGenerationSummaries",
+        "toListPolicyGenerations",
+        "toListPolicySummaries",
+        "toListSessions",
+        "toListTagsForResource",
+        "toListWorkloadIdentities",
+        "toProcessPayment",
+        "toPutResourcePolicy",
+        "toRetrieveMemoryRecords",
+        "toSaveBrowserSessionProfile",
+        "toSetTokenVaultCMK",
+        "toStartBrowserSession",
+        "toStartCodeInterpreterSession",
+        "toStartMemoryExtractionJob",
+        "toStartPolicyGeneration",
+        "toStopBatchEvaluation",
+        "toStopBrowserSession",
+        "toStopCodeInterpreterSession",
+        "toStopRuntimeSession",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateABTest",
+        "toUpdateAgentRuntime",
+        "toUpdateAgentRuntimeEndpoint",
+        "toUpdateApiKeyCredentialProvider",
+        "toUpdateBrowserStream",
+        "toUpdateCapacityProvider",
+        "toUpdateConfigurationBundle",
+        "toUpdateConsentPortal",
+        "toUpdateDataset",
+        "toUpdateDatasetExamples",
+        "toUpdateEvaluator",
+        "toUpdateGateway",
+        "toUpdateGatewayRateLimit",
+        "toUpdateGatewayRule",
+        "toUpdateGatewayTarget",
+        "toUpdateHarness",
+        "toUpdateHarnessEndpoint",
+        "toUpdateMemory",
+        "toUpdateOauth2CredentialProvider",
+        "toUpdateOnlineEvaluationConfig",
+        "toUpdatePaymentConnector",
+        "toUpdatePaymentCredentialProvider",
+        "toUpdatePaymentManager",
+        "toUpdatePolicy",
+        "toUpdatePolicyEngine",
+        "toUpdateWorkloadIdentity",
+        "toAllowVendedLogDeliveryForResource",
+        "toAuthorizeAction",
+        "toGatewayAssociateWebACL",
+        "toGatewayDisassociateWebACL",
+        "toGatewayGetWebACLForResource",
+        "toInvokeGateway",
+        "toManageResourceScopedPolicy",
+        "toPartiallyAuthorizeActions",
+        "toPassCapacityProvider",
+        "toPutSystemLogEvents",
+        "toSynchronizeGatewayTargets"
+      ],
+      "relatedResourceTypes": [
+        "ab-test",
+        "apikeycredentialprovider",
+        "batch-evaluate",
+        "browser-custom",
+        "browser-profile",
+        "capacity-provider",
+        "code-interpreter-custom",
+        "configuration-bundle",
+        "consent-portal",
+        "dataset",
+        "evaluator",
+        "gateway",
+        "harness",
+        "harness-endpoint",
+        "memory",
+        "oauth2credentialprovider",
+        "online-evaluation-config",
+        "payment-manager",
+        "paymentcredentialprovider",
+        "policy-engine",
+        "recommendation",
+        "runtime",
+        "runtime-endpoint",
+        "token-vault",
+        "workload-identity",
+        "workload-identity-directory"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by creating requests based on the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
+      "relatedActionMethods": [
+        "toCreateAgentRuntime",
+        "toCreateAgentRuntimeEndpoint",
+        "toCreateApiKeyCredentialProvider",
+        "toCreateBrowser",
+        "toCreateBrowserProfile",
+        "toCreateCapacityProvider",
+        "toCreateCodeInterpreter",
+        "toCreateConsentPortal",
+        "toCreateDataset",
+        "toCreateEvaluator",
+        "toCreateGateway",
+        "toCreateHarness",
+        "toCreateHarnessEndpoint",
+        "toCreateMemory",
+        "toCreateOauth2CredentialProvider",
+        "toCreateOnlineEvaluationConfig",
+        "toCreatePaymentCredentialProvider",
+        "toCreatePaymentManager",
+        "toCreatePolicyEngine",
+        "toCreateWorkloadIdentity",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:AllowedQueryParameters",
+      "methodName": "ifAllowedQueryParameters",
+      "description": "Filters access by the metadataConfiguration.allowedQueryParameters attribute of a gateway target",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-allowedQueryParameters",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AllowedQueryParameters",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:AllowedRequestHeaders",
+      "methodName": "ifAllowedRequestHeaders",
+      "description": "Filters access by the metadataConfiguration.allowedRequestHeaders attribute of a gateway target",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-allowedRequestHeaders",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AllowedRequestHeaders",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:AllowedResponseHeaders",
+      "methodName": "ifAllowedResponseHeaders",
+      "description": "Filters access by the metadataConfiguration.allowedResponseHeaders attribute of a gateway target",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-allowedResponseHeaders",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AllowedResponseHeaders",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:CredentialProviderScope",
+      "methodName": "ifCredentialProviderScope",
+      "description": "Filters access by the scopes attribute of an OAuth credential provider on a gateway target",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-credentialProviderScope",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CredentialProviderScope",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:CredentialProviderType",
+      "methodName": "ifCredentialProviderType",
+      "description": "Filters access by the credentialProviderConfigurations.credentialProviderType attribute of a gateway target",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-credentialProviderType",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CredentialProviderType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:DiscoveryUrl",
+      "methodName": "ifDiscoveryUrl",
+      "description": "Filters access by the authorizerConfiguration.customJWTAuthorizer.discoveryUrl attribute of a Gateway",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-discoveryUrl",
+      "relatedActionMethods": [
+        "toCreatePaymentManager",
+        "toUpdatePaymentManager"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DiscoveryUrl",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:GatewayAuthorizerType",
+      "methodName": "ifGatewayAuthorizerType",
+      "description": "Filters access by the authorizerType attribute on a Gateway",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-gatewayAuthorizerType",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "GatewayAuthorizerType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:HttpTargetConfigurationType",
+      "methodName": "ifHttpTargetConfigurationType",
+      "description": "Filters access by the HTTP target configuration type of a gateway target",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-httpTargetConfigurationType",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "HttpTargetConfigurationType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:InboundJwtClaim/aud",
+      "methodName": "ifInboundJwtClaimAud",
+      "description": "Filters access by the audience claim (aud) in the JWT passed in the request",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-aud",
+      "relatedActionMethods": [
+        "toCompleteResourceTokenAuth",
+        "toGetWorkloadAccessTokenForJWT"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InboundJwtClaim/aud",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:InboundJwtClaim/client_id",
+      "methodName": "ifInboundJwtClaimClientId",
+      "description": "Filters access by the client_id claim in the JWT passed in the request",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-client_id",
+      "relatedActionMethods": [
+        "toCompleteResourceTokenAuth",
+        "toGetWorkloadAccessTokenForJWT"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InboundJwtClaim/client_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:InboundJwtClaim/iss",
+      "methodName": "ifInboundJwtClaimIss",
+      "description": "Filters access by the issuer (iss) claim present in the JWT passed in the request",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-iss",
+      "relatedActionMethods": [
+        "toCompleteResourceTokenAuth",
+        "toGetWorkloadAccessTokenForJWT"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InboundJwtClaim/iss",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:InboundJwtClaim/scope",
+      "methodName": "ifInboundJwtClaimScope",
+      "description": "Filters access by the scope claim in the JWT passed in the request",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-scope",
+      "relatedActionMethods": [
+        "toCompleteResourceTokenAuth",
+        "toGetWorkloadAccessTokenForJWT"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InboundJwtClaim/scope",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:InboundJwtClaim/sub",
+      "methodName": "ifInboundJwtClaimSub",
+      "description": "Filters access by the subject claim (sub) in the JWT passed in the request",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-sub",
+      "relatedActionMethods": [
+        "toCompleteResourceTokenAuth",
+        "toGetWorkloadAccessTokenForJWT"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InboundJwtClaim/sub",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:InferenceTargetConfigurationType",
+      "methodName": "ifInferenceTargetConfigurationType",
+      "description": "Filters access by the inference target configuration type of a gateway target",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-inferenceTargetConfigurationType",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InferenceTargetConfigurationType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:KmsKeyArn",
+      "methodName": "ifKmsKeyArn",
+      "description": "Filters access by KMS Key arn provided",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-kmsKeyArn",
+      "relatedActionMethods": [
+        "toCreateMemory"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "KmsKeyArn",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:McpTargetConfigurationType",
+      "methodName": "ifMcpTargetConfigurationType",
+      "description": "Filters access by the MCP target configuration type of a gateway target",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-mcpTargetConfigurationType",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "McpTargetConfigurationType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:PolicyEngineArn",
+      "methodName": "ifPolicyEngineArn",
+      "description": "Filters access by the policyEngineConfiguration.arn attribute of a Gateway",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-policyEngineArn",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PolicyEngineArn",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:PolicyEngineMode",
+      "methodName": "ifPolicyEngineMode",
+      "description": "Filters access by the policyEngineConfiguration.mode attribute of a Gateway",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-policyEngineMode",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PolicyEngineMode",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:PrivateEndpointType",
+      "methodName": "ifPrivateEndpointType",
+      "description": "Filters access by the private endpoint type of a gateway target",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-privateEndpointType",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PrivateEndpointType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:ProtocolType",
+      "methodName": "ifProtocolType",
+      "description": "Filters access by the protocolType attribute of a Gateway",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-protocolType",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ProtocolType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:ResourceConfigurationIdentifier",
+      "methodName": "ifResourceConfigurationIdentifier",
+      "description": "Filters access by the resource configuration identifier of a gateway target private endpoint",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-resourceConfigurationIdentifier",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceConfigurationIdentifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:RuntimeAuthorizerType",
+      "methodName": "ifRuntimeAuthorizerType",
+      "description": "Filters access by the authorizer type configured for the AgentCore runtime",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-authorizer-type-condition-key.html",
+      "relatedActionMethods": [
+        "toCreateAgentRuntime",
+        "toUpdateAgentRuntime"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RuntimeAuthorizerType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:actorId",
+      "methodName": "ifActorId",
+      "description": "Filters access by Actor Id",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-actorId",
+      "relatedActionMethods": [
+        "toCreateEvent",
+        "toDeleteEvent",
+        "toGetEvent",
+        "toListEvents",
+        "toListSessions",
+        "toStartMemoryExtractionJob"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "actorId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:namespace",
+      "methodName": "ifNamespace",
+      "description": "Filters access by namespace",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-namespace",
+      "relatedActionMethods": [
+        "toBatchCreateMemoryRecords",
+        "toBatchUpdateMemoryRecords",
+        "toListMemoryRecords",
+        "toRetrieveMemoryRecords"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "namespace",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:runtimeSessionId",
+      "methodName": "ifRuntimeSessionId",
+      "description": "Filters access by Runtime Session Id",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-runtimeSessionId",
+      "relatedActionMethods": [
+        "toPutSystemLogEvents"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "runtimeSessionId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:securityGroups",
+      "methodName": "ifSecurityGroups",
+      "description": "Filters access by the ID of security groups configured for an AgentCore resource",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/security-vpc-condition.html",
+      "relatedActionMethods": [
+        "toCreateAgentRuntime",
+        "toCreateBrowser",
+        "toCreateCodeInterpreter",
+        "toUpdateAgentRuntime"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "securityGroups",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:sessionId",
+      "methodName": "ifSessionId",
+      "description": "Filters access by Memory Session Id",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-sessionId",
+      "relatedActionMethods": [
+        "toCreateEvent",
+        "toDeleteEvent",
+        "toGetEvent",
+        "toListEvents",
+        "toStartMemoryExtractionJob"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "sessionId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:strategyId",
+      "methodName": "ifStrategyId",
+      "description": "Filters access by Memory Strategy Id",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-strategyId",
+      "relatedActionMethods": [
+        "toListMemoryRecords",
+        "toRetrieveMemoryRecords",
+        "toStartMemoryExtractionJob"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "strategyId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:subnets",
+      "methodName": "ifSubnets",
+      "description": "Filters access by the ID of subnets configured for an AgentCore resource",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/security-vpc-condition.html",
+      "relatedActionMethods": [
+        "toCreateAgentRuntime",
+        "toCreateBrowser",
+        "toCreateCodeInterpreter",
+        "toUpdateAgentRuntime"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "subnets",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:userid",
+      "methodName": "ifUserid",
+      "description": "Filters access by the static user ID value passed in the request",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-userid",
+      "relatedActionMethods": [
+        "toCompleteResourceTokenAuth",
+        "toGetWorkloadAccessTokenForUserId"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "userid",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,3 +1,0 @@
-ecr-public:RequestTag/${TagKey}
-ecr-public:ResourceTag/${TagKey}
-ecr-public:TagKeys

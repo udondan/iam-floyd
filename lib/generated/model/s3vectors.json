@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 1,
+  "filename": "s3vectors",
+  "className": "S3vectors",
+  "name": "s3vectors",
+  "servicePrefix": "s3vectors",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3vectors.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateIndex",
+      "CreateVectorBucket",
+      "DeleteIndex",
+      "DeleteVectorBucket",
+      "DeleteVectorBucketPolicy",
+      "DeleteVectors",
+      "PutVectorBucketDefaultIndexMode",
+      "PutVectorBucketPolicy",
+      "PutVectors",
+      "TagResource",
+      "UntagResource",
+      "UpdateIndexMode"
+    ],
+    "Permissions management": [
+      "DeleteVectorBucketPolicy",
+      "PutVectorBucketPolicy"
+    ],
+    "Read": [
+      "GetIndex",
+      "GetVectorBucket",
+      "GetVectorBucketPolicy",
+      "GetVectors",
+      "QueryVectors"
+    ],
+    "List": [
+      "ListIndexes",
+      "ListTagsForResource",
+      "ListVectorBuckets",
+      "ListVectors"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateIndex",
+      "methodName": "toCreateIndex",
+      "description": "Grants permission to create a new vector index within a specified vector bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_CreateIndex.html"
+    },
+    {
+      "name": "CreateVectorBucket",
+      "methodName": "toCreateVectorBucket",
+      "description": "Grants permission to create a new vector bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_CreateVectorBucket.html"
+    },
+    {
+      "name": "DeleteIndex",
+      "methodName": "toDeleteIndex",
+      "description": "Grants permission to delete a specified vector index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteIndex.html"
+    },
+    {
+      "name": "DeleteVectorBucket",
+      "methodName": "toDeleteVectorBucket",
+      "description": "Grants permission to delete a specified vector bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteVectorBucket.html"
+    },
+    {
+      "name": "DeleteVectorBucketPolicy",
+      "methodName": "toDeleteVectorBucketPolicy",
+      "description": "Grants permission to delete the IAM resource policy from a specified vector bucket",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteVectorBucketPolicy.html"
+    },
+    {
+      "name": "DeleteVectors",
+      "methodName": "toDeleteVectors",
+      "description": "Grants permission to delete a batch of vectors from a specified vector index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteVectors.html"
+    },
+    {
+      "name": "GetIndex",
+      "methodName": "toGetIndex",
+      "description": "Grants permission to get the attributes of a specified vector index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetIndex.html"
+    },
+    {
+      "name": "GetVectorBucket",
+      "methodName": "toGetVectorBucket",
+      "description": "Grants permission to get the attributes of a specified vector bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetVectorBucket.html"
+    },
+    {
+      "name": "GetVectorBucketPolicy",
+      "methodName": "toGetVectorBucketPolicy",
+      "description": "Grants permission to get the IAM resource policy for a specific vector bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetVectorBucketPolicy.html"
+    },
+    {
+      "name": "GetVectors",
+      "methodName": "toGetVectors",
+      "description": "Grants permission to get a batch of vectors by their vector keys",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetVectors.html"
+    },
+    {
+      "name": "ListIndexes",
+      "methodName": "toListIndexes",
+      "description": "Grants permission to get a paginated list of all indexes in a specified vector bucket",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_ListIndexes.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for specified S3Vector resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_ListTagsForResource.html"
+    },
+    {
+      "name": "ListVectorBuckets",
+      "methodName": "toListVectorBuckets",
+      "description": "Grants permission to get a paginated list of all vector buckets in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_ListVectorBuckets.html"
+    },
+    {
+      "name": "ListVectors",
+      "methodName": "toListVectors",
+      "description": "Grants permission to get a paginated list of all vectors in a specified vector index",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_ListVectors.html"
+    },
+    {
+      "name": "PutVectorBucketDefaultIndexMode",
+      "methodName": "toPutVectorBucketDefaultIndexMode",
+      "description": "Grants permission to update the default index mode for a specified vector bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_PutVectorBucketDefaultIndexMode.html"
+    },
+    {
+      "name": "PutVectorBucketPolicy",
+      "methodName": "toPutVectorBucketPolicy",
+      "description": "Grants permission to add an IAM resource policy to a specified vector bucket",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_PutVectorBucketPolicy.html"
+    },
+    {
+      "name": "PutVectors",
+      "methodName": "toPutVectors",
+      "description": "Grants permission to add a batch of vectors to a specified vector index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_PutVectors.html"
+    },
+    {
+      "name": "QueryVectors",
+      "methodName": "toQueryVectors",
+      "description": "Grants permission to find approximate nearest neighbors within a specified search vector index for a given query vector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_QueryVectors.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a S3Vector resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a S3Vector resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_UntagResource.html"
+    },
+    {
+      "name": "UpdateIndexMode",
+      "methodName": "toUpdateIndexMode",
+      "description": "Grants permission to update the index mode for a specified vector index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_UpdateIndexMode.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Index",
+      "methodName": "onIndex",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-access-management.html",
+      "arn": "arn:${Partition}:s3vectors:${Region}:${Account}:bucket/${BucketName}/index/${IndexName}",
+      "placeholders": [
+        {
+          "placeholder": "BucketName",
+          "name": "bucketName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IndexName",
+          "name": "indexName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifVectorBucketTag"
+      ]
+    },
+    {
+      "name": "VectorBucket",
+      "methodName": "onVectorBucket",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-access-management.html",
+      "arn": "arn:${Partition}:s3vectors:${Region}:${Account}:bucket/${BucketName}",
+      "placeholders": [
+        {
+          "placeholder": "BucketName",
+          "name": "bucketName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifVectorBucketTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateIndex",
+        "toCreateVectorBucket",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateIndex",
+        "toCreateVectorBucket",
+        "toDeleteIndex",
+        "toDeleteVectorBucket",
+        "toDeleteVectorBucketPolicy",
+        "toDeleteVectors",
+        "toGetIndex",
+        "toGetVectorBucket",
+        "toGetVectorBucketPolicy",
+        "toGetVectors",
+        "toListIndexes",
+        "toListTagsForResource",
+        "toListVectors",
+        "toPutVectorBucketDefaultIndexMode",
+        "toPutVectorBucketPolicy",
+        "toPutVectors",
+        "toQueryVectors",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateIndexMode"
+      ],
+      "relatedResourceTypes": [
+        "Index",
+        "VectorBucket"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateIndex",
+        "toCreateVectorBucket",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3vectors:VectorBucketTag/${TagKey}",
+      "methodName": "ifVectorBucketTag",
+      "description": "Filters access by the tags associated with the vector bucket",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-access-management.html#s3-vectors-condition-keyss3-vectors-access-management.html",
+      "relatedActionMethods": [
+        "toCreateIndex",
+        "toCreateVectorBucket",
+        "toDeleteIndex",
+        "toDeleteVectorBucket",
+        "toDeleteVectorBucketPolicy",
+        "toDeleteVectors",
+        "toGetIndex",
+        "toGetVectorBucket",
+        "toGetVectorBucketPolicy",
+        "toGetVectors",
+        "toListIndexes",
+        "toListTagsForResource",
+        "toListVectors",
+        "toPutVectorBucketDefaultIndexMode",
+        "toPutVectorBucketPolicy",
+        "toPutVectors",
+        "toQueryVectors",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateIndexMode"
+      ],
+      "relatedResourceTypes": [
+        "Index",
+        "VectorBucket"
+      ],
+      "keyLiteral": "VectorBucketTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3vectors:kmsKeyArn",
+      "methodName": "ifKmsKeyArn",
+      "description": "Filters access by the AWS KMS key ARN for the key used to encrypt a vector bucket",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-access-management.html#s3-vectors-condition-keyss3-vectors-access-management.html",
+      "relatedActionMethods": [
+        "toCreateIndex",
+        "toCreateVectorBucket"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "kmsKeyArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "s3vectors:sseType",
+      "methodName": "ifSseType",
+      "description": "Filters access by server-side encryption type",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-access-management.html#s3-vectors-condition-keyss3-vectors-access-management.html",
+      "relatedActionMethods": [
+        "toCreateIndex",
+        "toCreateVectorBucket"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "sseType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

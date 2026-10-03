@@ -4,12 +4,16 @@ VERSION := $(shell cat VERSION)
 NO_COLOR=\x1b[0m
 TARGET_COLOR=\x1b[96m
 
-.PHONY: build generate package test tag untag release re-release changelog cdk docs stats
+.PHONY: build emit generate package test tag untag release re-release changelog cdk docs stats
 
-build:
+build: emit
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
 	@rm -rf *.tsbuildinfo
 	@npm run build
+
+emit:
+	@echo -e "$(TARGET_COLOR)Running emit$(NO_COLOR)"
+	@npm run emit
 
 generate:
 	@echo -e "$(TARGET_COLOR)Running generate$(NO_COLOR)"
@@ -37,9 +41,10 @@ cdk:
 
 uncdk:
 	@echo -e "$(TARGET_COLOR)Running uncdk$(NO_COLOR)"
-	@git stash -- lib/generated
+	@git stash -- lib/generated/aws-managed-policies
 	@git stash -- lib/shared
 	@git stash -- package.json
+	@$(MAKE) --no-print-directory emit
 
 test:
 	@echo -e "$(TARGET_COLOR)Running main test$(NO_COLOR)"
@@ -87,13 +92,13 @@ update-version-refs:
 docs:
 	@cd docs && $(MAKE) clean html
 
-test-typescript:
+test-typescript: emit
 	$(MAKE) --no-print-directory -f ./Test.TypeScript.Makefile test
 
-test-typescript-cdk:
+test-typescript-cdk: emit
 	$(MAKE) --no-print-directory -f ./Test.TypeScript.Makefile test-cdk
 
-regenerate-code-example-results:
+regenerate-code-example-results: emit
 	@echo "Compiling TypeScript to JS"
 	@npx tsc -p ./tsconfig.test-iam-floyd.json
 	@for f in examples/**/*.js; do \

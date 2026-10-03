@@ -1,0 +1,382 @@
+{
+  "schemaVersion": 1,
+  "filename": "networkflowmonitor",
+  "className": "Networkflowmonitor",
+  "name": "networkflowmonitor",
+  "servicePrefix": "networkflowmonitor",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_networkflowmonitor.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateMonitor",
+      "CreateScope",
+      "DeleteMonitor",
+      "DeleteScope",
+      "Publish",
+      "StartQueryMonitorTopContributors",
+      "StartQueryWorkloadInsightsTopContributors",
+      "StartQueryWorkloadInsightsTopContributorsData",
+      "StopQueryMonitorTopContributors",
+      "StopQueryWorkloadInsightsTopContributors",
+      "StopQueryWorkloadInsightsTopContributorsData",
+      "TagResource",
+      "UntagResource",
+      "UpdateMonitor",
+      "UpdateScope"
+    ],
+    "Read": [
+      "GetMonitor",
+      "GetQueryResultsMonitorTopContributors",
+      "GetQueryResultsWorkloadInsightsTopContributors",
+      "GetQueryResultsWorkloadInsightsTopContributorsData",
+      "GetQueryStatusMonitorTopContributors",
+      "GetQueryStatusWorkloadInsightsTopContributors",
+      "GetQueryStatusWorkloadInsightsTopContributorsData",
+      "GetScope",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListMonitors",
+      "ListScopes"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateMonitor",
+      "methodName": "toCreateMonitor",
+      "description": "Grants permission to create a monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_CreateMonitor.html"
+    },
+    {
+      "name": "CreateScope",
+      "methodName": "toCreateScope",
+      "description": "Grants permission to create a scope",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_CreateScope.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteMonitor",
+      "methodName": "toDeleteMonitor",
+      "description": "Grants permission to delete a monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_DeleteMonitor.html"
+    },
+    {
+      "name": "DeleteScope",
+      "methodName": "toDeleteScope",
+      "description": "Grants permission to delete a scope",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_DeleteScope.html"
+    },
+    {
+      "name": "GetMonitor",
+      "methodName": "toGetMonitor",
+      "description": "Grants permission to get information about a monitor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetMonitor.html"
+    },
+    {
+      "name": "GetQueryResultsMonitorTopContributors",
+      "methodName": "toGetQueryResultsMonitorTopContributors",
+      "description": "Grants permission to get the results of a query that retrieves top contributors data for a monitor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryResultsMonitorTopContributors.html"
+    },
+    {
+      "name": "GetQueryResultsWorkloadInsightsTopContributors",
+      "methodName": "toGetQueryResultsWorkloadInsightsTopContributors",
+      "description": "Grants permission to get the results of a query that retrieves top contributors for workload insights",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryResultsWorkloadInsightsTopContributors.html"
+    },
+    {
+      "name": "GetQueryResultsWorkloadInsightsTopContributorsData",
+      "methodName": "toGetQueryResultsWorkloadInsightsTopContributorsData",
+      "description": "Grants permission to get the results of a query that retrieves top contributors data points for workload insights",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryResultsWorkloadInsightsTopContributorsData.html"
+    },
+    {
+      "name": "GetQueryStatusMonitorTopContributors",
+      "methodName": "toGetQueryStatusMonitorTopContributors",
+      "description": "Grants permission to get the status of a query that retrieves top contributors data for a monitor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryStatusMonitorTopContributors.html"
+    },
+    {
+      "name": "GetQueryStatusWorkloadInsightsTopContributors",
+      "methodName": "toGetQueryStatusWorkloadInsightsTopContributors",
+      "description": "Grants permission to get the status of a query that retrieves top contributors for workload insights",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryStatusWorkloadInsightsTopContributors.html"
+    },
+    {
+      "name": "GetQueryStatusWorkloadInsightsTopContributorsData",
+      "methodName": "toGetQueryStatusWorkloadInsightsTopContributorsData",
+      "description": "Grants permission to get the status of a query that retrieves top contributors data points for workload insights",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryStatusWorkloadInsightsTopContributorsData.html"
+    },
+    {
+      "name": "GetScope",
+      "methodName": "toGetScope",
+      "description": "Grants permission to get information about a scope",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetScope.html"
+    },
+    {
+      "name": "ListMonitors",
+      "methodName": "toListMonitors",
+      "description": "Grants permission to list all monitors in an account and their statuses",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_ListMonitors.html"
+    },
+    {
+      "name": "ListScopes",
+      "methodName": "toListScopes",
+      "description": "Grants permission to get all scopes for an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_ListScopes.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "Publish",
+      "methodName": "toPublish",
+      "description": "Grants permission to publish a report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_Publish.html"
+    },
+    {
+      "name": "StartQueryMonitorTopContributors",
+      "methodName": "toStartQueryMonitorTopContributors",
+      "description": "Grants permission to start a query for retrieving top contributors data for a monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_StartQueryMonitorTopContributors.html"
+    },
+    {
+      "name": "StartQueryWorkloadInsightsTopContributors",
+      "methodName": "toStartQueryWorkloadInsightsTopContributors",
+      "description": "Grants permission to start a query for retrieving top contributors data for workload insights",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_StartQueryWorkloadInsightsTopContributors.html"
+    },
+    {
+      "name": "StartQueryWorkloadInsightsTopContributorsData",
+      "methodName": "toStartQueryWorkloadInsightsTopContributorsData",
+      "description": "Grants permission to start a query for retrieving top contributors data points for workload insights",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_StartQueryWorkloadInsightsTopContributorsData.html"
+    },
+    {
+      "name": "StopQueryMonitorTopContributors",
+      "methodName": "toStopQueryMonitorTopContributors",
+      "description": "Grants permission to stop a query for retrieving top contributors data for a monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_StopQueryMonitorTopContributors.html"
+    },
+    {
+      "name": "StopQueryWorkloadInsightsTopContributors",
+      "methodName": "toStopQueryWorkloadInsightsTopContributors",
+      "description": "Grants permission to stop a query for retrieving top contributors for workload insights",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_StopQueryWorkloadInsightsTopContributors.html"
+    },
+    {
+      "name": "StopQueryWorkloadInsightsTopContributorsData",
+      "methodName": "toStopQueryWorkloadInsightsTopContributorsData",
+      "description": "Grants permission to stop a query for retrieving top contributors data points for workload insights",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_StopQueryWorkloadInsightsTopContributorsData.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateMonitor",
+      "methodName": "toUpdateMonitor",
+      "description": "Grants permission to update a monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_UpdateMonitor.html"
+    },
+    {
+      "name": "UpdateScope",
+      "methodName": "toUpdateScope",
+      "description": "Grants permission to update a scope",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_UpdateScope.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "monitor",
+      "methodName": "onMonitor",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-NetworkFlowMonitor-configure-monitors.html",
+      "arn": "arn:${Partition}:networkflowmonitor:${Region}:${Account}:monitor/${MonitorName}",
+      "placeholders": [
+        {
+          "placeholder": "MonitorName",
+          "name": "monitorName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "scope",
+      "methodName": "onScope",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-NetworkFlowMonitor-organizations.html",
+      "arn": "arn:${Partition}:networkflowmonitor:${Region}:${Account}:scope/${ScopeId}",
+      "placeholders": [
+        {
+          "placeholder": "ScopeId",
+          "name": "scopeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateMonitor",
+        "toCreateScope",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateMonitor",
+        "toDeleteMonitor",
+        "toDeleteScope",
+        "toGetMonitor",
+        "toGetQueryResultsMonitorTopContributors",
+        "toGetQueryResultsWorkloadInsightsTopContributors",
+        "toGetQueryResultsWorkloadInsightsTopContributorsData",
+        "toGetQueryStatusMonitorTopContributors",
+        "toGetQueryStatusWorkloadInsightsTopContributors",
+        "toGetQueryStatusWorkloadInsightsTopContributorsData",
+        "toGetScope",
+        "toListTagsForResource",
+        "toStartQueryMonitorTopContributors",
+        "toStartQueryWorkloadInsightsTopContributors",
+        "toStartQueryWorkloadInsightsTopContributorsData",
+        "toStopQueryMonitorTopContributors",
+        "toStopQueryWorkloadInsightsTopContributors",
+        "toStopQueryWorkloadInsightsTopContributorsData",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateMonitor",
+        "toUpdateScope"
+      ],
+      "relatedResourceTypes": [
+        "monitor",
+        "scope"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateMonitor",
+        "toCreateScope",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

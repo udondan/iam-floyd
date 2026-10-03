@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "filename": "cur",
+  "className": "Cur",
+  "name": "cur",
+  "servicePrefix": "cur",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cur.html",
+  "accessLevelList": {
+    "Write": [
+      "DeleteReportDefinition",
+      "ModifyReportDefinition",
+      "PutReportDefinition",
+      "TagResource",
+      "UntagResource",
+      "PutClassicReportPreferences"
+    ],
+    "Read": [
+      "DescribeReportDefinitions",
+      "ListTagsForResource",
+      "GetClassicReport",
+      "GetClassicReportPreferences",
+      "GetUsageReport",
+      "ValidateReportDestination"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "DeleteReportDefinition",
+      "methodName": "toDeleteReportDefinition",
+      "description": "Grants permission to delete Cost and Usage Report Definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_cur_DeleteReportDefinition.html"
+    },
+    {
+      "name": "DescribeReportDefinitions",
+      "methodName": "toDescribeReportDefinitions",
+      "description": "Grants permission to get Cost and Usage Report Definitions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_cur_DescribeReportDefinitions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_cur_ListTagsForResource.html"
+    },
+    {
+      "name": "ModifyReportDefinition",
+      "methodName": "toModifyReportDefinition",
+      "description": "Grants permission to modify Cost and Usage Report Definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_cur_ModifyReportDefinition.html"
+    },
+    {
+      "name": "PutReportDefinition",
+      "methodName": "toPutReportDefinition",
+      "description": "Grants permission to write Cost and Usage Report Definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_cur_PutReportDefinition.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_cur_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_cur_UntagResource.html"
+    },
+    {
+      "name": "GetClassicReport",
+      "methodName": "toGetClassicReport",
+      "description": "Grants permission to get Bills CSV report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cur/latest/userguide/security.html#user-permissions"
+    },
+    {
+      "name": "GetClassicReportPreferences",
+      "methodName": "toGetClassicReportPreferences",
+      "description": "Grants permission to get the classic report enablement status for Usage Reports",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cur/latest/userguide/security.html#user-permissions"
+    },
+    {
+      "name": "GetUsageReport",
+      "methodName": "toGetUsageReport",
+      "description": "Grants permission to get list of AWS services, usage type and operation for the Usage Report workflow. Allows or denies download of usage reports too",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cur/latest/userguide/security.html#user-permissions"
+    },
+    {
+      "name": "PutClassicReportPreferences",
+      "methodName": "toPutClassicReportPreferences",
+      "description": "Grants permission to enable classic reports",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cur/latest/userguide/security.html#user-permissions"
+    },
+    {
+      "name": "ValidateReportDestination",
+      "methodName": "toValidateReportDestination",
+      "description": "Grants permission to validates if the s3 bucket exists with appropriate permissions for CUR delivery",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cur/latest/userguide/security.html#user-permissions"
+    }
+  ],
+  "resources": [
+    {
+      "name": "cur",
+      "methodName": "onCur",
+      "url": "https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html",
+      "arn": "arn:${Partition}:cur:${Region}:${Account}:definition/${ReportName}",
+      "placeholders": [
+        {
+          "placeholder": "ReportName",
+          "name": "reportName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toPutReportDefinition",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toListTagsForResource",
+        "toPutReportDefinition",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toPutReportDefinition",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

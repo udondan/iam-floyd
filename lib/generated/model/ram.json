@@ -1,0 +1,786 @@
+{
+  "schemaVersion": 1,
+  "filename": "ram",
+  "className": "Ram",
+  "name": "ram",
+  "servicePrefix": "ram",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ram.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptResourceShareInvitation",
+      "AssociateResourceShare",
+      "AssociateResourceSharePermission",
+      "CreatePermission",
+      "CreatePermissionVersion",
+      "CreateResourceShare",
+      "DeletePermission",
+      "DeletePermissionVersion",
+      "DeleteResourceShare",
+      "DisassociateResourceShare",
+      "DisassociateResourceSharePermission",
+      "EnableSharingWithAwsOrganization",
+      "PromotePermissionCreatedFromPolicy",
+      "PromoteResourceShareCreatedFromPolicy",
+      "RejectResourceShareInvitation",
+      "ReplacePermissionAssociations",
+      "SetDefaultPermissionVersion",
+      "TagResource",
+      "UntagResource",
+      "UpdateResourceShare"
+    ],
+    "Permissions management": [
+      "EnableSharingWithAwsOrganization"
+    ],
+    "Read": [
+      "GetPermission",
+      "GetResourcePolicies",
+      "GetResourceShareAssociations",
+      "GetResourceShareInvitations",
+      "GetResourceShares",
+      "ListPendingInvitationResources"
+    ],
+    "List": [
+      "ListPermissionAssociations",
+      "ListPermissionVersions",
+      "ListPermissions",
+      "ListPrincipals",
+      "ListReplacePermissionAssociationsWork",
+      "ListResourceSharePermissions",
+      "ListResourceTypes",
+      "ListResources",
+      "ListSourceAssociations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptResourceShareInvitation",
+      "methodName": "toAcceptResourceShareInvitation",
+      "description": "Grants permission to accept the specified resource share invitation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html"
+    },
+    {
+      "name": "AssociateResourceShare",
+      "methodName": "toAssociateResourceShare",
+      "description": "Grants permission to associate resource(s) and/or principal(s) to a resource share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceShare.html"
+    },
+    {
+      "name": "AssociateResourceSharePermission",
+      "methodName": "toAssociateResourceSharePermission",
+      "description": "Grants permission to associate a Permission with a Resource Share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceSharePermission.html"
+    },
+    {
+      "name": "CreatePermission",
+      "methodName": "toCreatePermission",
+      "description": "Grants permission to create a Permission that can be associated to a Resource Share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_CreatePermission.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifPermissionArn",
+        "ifPermissionResourceType"
+      ]
+    },
+    {
+      "name": "CreatePermissionVersion",
+      "methodName": "toCreatePermissionVersion",
+      "description": "Grants permission to create a new version of a Permission that can be associated to a Resource Share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_CreatePermissionVersion.html"
+    },
+    {
+      "name": "CreateResourceShare",
+      "methodName": "toCreateResourceShare",
+      "description": "Grants permission to create a resource share with provided resource(s) and/or principal(s)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifAllowsExternalPrincipals",
+        "ifPrincipal",
+        "ifRequestedAllowsExternalPrincipals",
+        "ifRequestedResourceType",
+        "ifResourceArn",
+        "ifRetainSharingOnAccountLeaveOrganization"
+      ]
+    },
+    {
+      "name": "DeletePermission",
+      "methodName": "toDeletePermission",
+      "description": "Grants permission to delete a specified Permission",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_DeletePermission.html"
+    },
+    {
+      "name": "DeletePermissionVersion",
+      "methodName": "toDeletePermissionVersion",
+      "description": "Grants permission to delete a specified version of a permission",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_DeletePermissionVersion.html"
+    },
+    {
+      "name": "DeleteResourceShare",
+      "methodName": "toDeleteResourceShare",
+      "description": "Grants permission to delete resource share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_DeleteResourceShare.html"
+    },
+    {
+      "name": "DisassociateResourceShare",
+      "methodName": "toDisassociateResourceShare",
+      "description": "Grants permission to disassociate resource(s) and/or principal(s) from a resource share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_DisassociateResourceShare.html"
+    },
+    {
+      "name": "DisassociateResourceSharePermission",
+      "methodName": "toDisassociateResourceSharePermission",
+      "description": "Grants permission to disassociate a Permission from a Resource Share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_DisassociateResourceSharePermission.html"
+    },
+    {
+      "name": "EnableSharingWithAwsOrganization",
+      "methodName": "toEnableSharingWithAwsOrganization",
+      "description": "Grants permission to access customer's organization and create a SLR in the customer's account",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_EnableSharingWithAwsOrganization.html"
+    },
+    {
+      "name": "GetPermission",
+      "methodName": "toGetPermission",
+      "description": "Grants permission to get the contents of an AWS RAM permission",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_GetPermission.html"
+    },
+    {
+      "name": "GetResourcePolicies",
+      "methodName": "toGetResourcePolicies",
+      "description": "Grants permission to get the policies for the specified resources that you own and have shared",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourcePolicies.html"
+    },
+    {
+      "name": "GetResourceShareAssociations",
+      "methodName": "toGetResourceShareAssociations",
+      "description": "Grants permission to get a set of resource share associations from a provided list or with a specified status of the specified type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareAssociations.html"
+    },
+    {
+      "name": "GetResourceShareInvitations",
+      "methodName": "toGetResourceShareInvitations",
+      "description": "Grants permission to get resource share invitations by the specified invitation arn or those for the resource share",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareInvitations.html"
+    },
+    {
+      "name": "GetResourceShares",
+      "methodName": "toGetResourceShares",
+      "description": "Grants permission to get a set of resource shares from a provided list or with a specified status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShares.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "ListPendingInvitationResources",
+      "methodName": "toListPendingInvitationResources",
+      "description": "Grants permission to list the resources in a resource share that is shared with you but that the invitation is still pending for",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html"
+    },
+    {
+      "name": "ListPermissionAssociations",
+      "methodName": "toListPermissionAssociations",
+      "description": "Grants permission to list information about the permission and any associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPermissionAssociations.html"
+    },
+    {
+      "name": "ListPermissionVersions",
+      "methodName": "toListPermissionVersions",
+      "description": "Grants permission to list the versions of an AWS RAM permission",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPermissionVersions.html"
+    },
+    {
+      "name": "ListPermissions",
+      "methodName": "toListPermissions",
+      "description": "Grants permission to list the AWS RAM permissions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPermissions.html"
+    },
+    {
+      "name": "ListPrincipals",
+      "methodName": "toListPrincipals",
+      "description": "Grants permission to list the principals that you have shared resources with or that have shared resources with you",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPrincipals.html"
+    },
+    {
+      "name": "ListReplacePermissionAssociationsWork",
+      "methodName": "toListReplacePermissionAssociationsWork",
+      "description": "Grants permission to retrieve the status of the asynchronous permission replacement",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ListReplacePermissionAssociationsWork.html"
+    },
+    {
+      "name": "ListResourceSharePermissions",
+      "methodName": "toListResourceSharePermissions",
+      "description": "Grants permission to list the Permissions associated with a Resource Share",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResourceSharePermissions.html"
+    },
+    {
+      "name": "ListResourceTypes",
+      "methodName": "toListResourceTypes",
+      "description": "Grants permission to list the shareable resource types supported by AWS RAM",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResourceTypes.html"
+    },
+    {
+      "name": "ListResources",
+      "methodName": "toListResources",
+      "description": "Grants permission to list the resources that you added to resource shares or the resources that are shared with you",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResources.html"
+    },
+    {
+      "name": "ListSourceAssociations",
+      "methodName": "toListSourceAssociations",
+      "description": "Grants permission to list source associations for resource shares",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ListSourceAssociations.html"
+    },
+    {
+      "name": "PromotePermissionCreatedFromPolicy",
+      "methodName": "toPromotePermissionCreatedFromPolicy",
+      "description": "Grants permission to create a separate, fully manageable customer managed permission",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_PromotePermissionCreatedFromPolicy.html"
+    },
+    {
+      "name": "PromoteResourceShareCreatedFromPolicy",
+      "methodName": "toPromoteResourceShareCreatedFromPolicy",
+      "description": "Grants permission to promote the specified resource share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html"
+    },
+    {
+      "name": "RejectResourceShareInvitation",
+      "methodName": "toRejectResourceShareInvitation",
+      "description": "Grants permission to reject the specified resource share invitation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_RejectResourceShareInvitation.html"
+    },
+    {
+      "name": "ReplacePermissionAssociations",
+      "methodName": "toReplacePermissionAssociations",
+      "description": "Grants permission to update all resource shares to a new permission",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ReplacePermissionAssociations.html"
+    },
+    {
+      "name": "SetDefaultPermissionVersion",
+      "methodName": "toSetDefaultPermissionVersion",
+      "description": "Grants permission to specify a version number as the default version for the respective customer managed permission",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_SetDefaultPermissionVersion.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag the specified resource share or permission",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag the specified resource share or permission",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateResourceShare",
+      "methodName": "toUpdateResourceShare",
+      "description": "Grants permission to update attributes of the resource share",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_UpdateResourceShare.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "customer-managed-permission",
+      "methodName": "onCustomerManagedPermission",
+      "url": "",
+      "arn": "arn:${Partition}:ram:${Region}:${Account}:permission/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifPermissionArn",
+        "ifPermissionResourceType"
+      ]
+    },
+    {
+      "name": "permission",
+      "methodName": "onPermission",
+      "url": "",
+      "arn": "arn:${Partition}:ram::${Account}:permission/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifPermissionArn",
+        "ifPermissionResourceType"
+      ]
+    },
+    {
+      "name": "resource-share",
+      "methodName": "onResourceShare",
+      "url": "",
+      "arn": "arn:${Partition}:ram:${Region}:${Account}:resource-share/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifAllowsExternalPrincipals",
+        "ifResourceShareName"
+      ]
+    },
+    {
+      "name": "resource-share-invitation",
+      "methodName": "onResourceShareInvitation",
+      "url": "",
+      "arn": "arn:${Partition}:ram:${Region}:${Account}:resource-share-invitation/${ResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ResourcePath",
+          "name": "resourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifShareOwnerAccountId"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request when creating or tagging a resource share. If users don't pass these specific tags, or if they don't specify tags at all, the request fails",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreatePermission",
+        "toCreateResourceShare",
+        "toGetResourceShares",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateResourceShare",
+        "toAssociateResourceSharePermission",
+        "toCreatePermission",
+        "toCreatePermissionVersion",
+        "toDeletePermission",
+        "toDeletePermissionVersion",
+        "toDeleteResourceShare",
+        "toDisassociateResourceShare",
+        "toDisassociateResourceSharePermission",
+        "toGetPermission",
+        "toListPermissionAssociations",
+        "toListResourceSharePermissions",
+        "toPromotePermissionCreatedFromPolicy",
+        "toPromoteResourceShareCreatedFromPolicy",
+        "toReplacePermissionAssociations",
+        "toSetDefaultPermissionVersion",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateResourceShare"
+      ],
+      "relatedResourceTypes": [
+        "customer-managed-permission",
+        "resource-share"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed when creating or tagging a resource share",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreatePermission",
+        "toCreateResourceShare",
+        "toGetResourceShares",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ram:AllowsExternalPrincipals",
+      "methodName": "ifAllowsExternalPrincipals",
+      "description": "Filters access by resource shares that allow or deny sharing with external principals. For example, specify true if the action can only be performed on resource shares that allow sharing with external principals. External principals are AWS accounts that are outside of its AWS organization",
+      "url": "https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition",
+      "relatedActionMethods": [
+        "toAssociateResourceShare",
+        "toAssociateResourceSharePermission",
+        "toCreateResourceShare",
+        "toDeleteResourceShare",
+        "toDisassociateResourceShare",
+        "toDisassociateResourceSharePermission",
+        "toListResourceSharePermissions",
+        "toPromoteResourceShareCreatedFromPolicy",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateResourceShare"
+      ],
+      "relatedResourceTypes": [
+        "resource-share"
+      ],
+      "keyLiteral": "AllowsExternalPrincipals",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "ram:PermissionArn",
+      "methodName": "ifPermissionArn",
+      "description": "Filters access by the specified Permission ARN",
+      "url": "https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition",
+      "relatedActionMethods": [
+        "toAssociateResourceSharePermission",
+        "toCreatePermission",
+        "toCreatePermissionVersion",
+        "toDeletePermission",
+        "toDeletePermissionVersion",
+        "toDisassociateResourceSharePermission",
+        "toGetPermission",
+        "toListPermissionAssociations",
+        "toPromotePermissionCreatedFromPolicy",
+        "toReplacePermissionAssociations",
+        "toSetDefaultPermissionVersion",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "customer-managed-permission",
+        "permission"
+      ],
+      "keyLiteral": "PermissionArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "ram:PermissionResourceType",
+      "methodName": "ifPermissionResourceType",
+      "description": "Filters access by permissions of specified resource type",
+      "url": "https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition",
+      "relatedActionMethods": [
+        "toAssociateResourceSharePermission",
+        "toCreatePermission",
+        "toCreatePermissionVersion",
+        "toDeletePermission",
+        "toDeletePermissionVersion",
+        "toDisassociateResourceSharePermission",
+        "toGetPermission",
+        "toListPermissionAssociations",
+        "toPromotePermissionCreatedFromPolicy",
+        "toReplacePermissionAssociations",
+        "toSetDefaultPermissionVersion",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "customer-managed-permission",
+        "permission"
+      ],
+      "keyLiteral": "PermissionResourceType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ram:Principal",
+      "methodName": "ifPrincipal",
+      "description": "Filters access by format of the specified principal",
+      "url": "https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition",
+      "relatedActionMethods": [
+        "toAssociateResourceShare",
+        "toCreateResourceShare",
+        "toDisassociateResourceShare"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Principal",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ram:RequestedAllowsExternalPrincipals",
+      "methodName": "ifRequestedAllowsExternalPrincipals",
+      "description": "Filters access by the specified value for 'allowExternalPrincipals'. External principals are AWS accounts that are outside of its AWS Organization",
+      "url": "https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition",
+      "relatedActionMethods": [
+        "toCreateResourceShare",
+        "toUpdateResourceShare"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestedAllowsExternalPrincipals",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "ram:RequestedResourceType",
+      "methodName": "ifRequestedResourceType",
+      "description": "Filters access by the specified resource type",
+      "url": "https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition",
+      "relatedActionMethods": [
+        "toAssociateResourceShare",
+        "toCreateResourceShare",
+        "toDisassociateResourceShare"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestedResourceType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ram:ResourceArn",
+      "methodName": "ifResourceArn",
+      "description": "Filters access by the specified ARN",
+      "url": "https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition",
+      "relatedActionMethods": [
+        "toAssociateResourceShare",
+        "toCreateResourceShare",
+        "toDisassociateResourceShare"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "ram:ResourceShareName",
+      "methodName": "ifResourceShareName",
+      "description": "Filters access by a resource share with the specified name",
+      "url": "https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition",
+      "relatedActionMethods": [
+        "toAcceptResourceShareInvitation",
+        "toAssociateResourceShare",
+        "toAssociateResourceSharePermission",
+        "toDeleteResourceShare",
+        "toDisassociateResourceShare",
+        "toDisassociateResourceSharePermission",
+        "toListPendingInvitationResources",
+        "toListResourceSharePermissions",
+        "toPromoteResourceShareCreatedFromPolicy",
+        "toRejectResourceShareInvitation",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateResourceShare"
+      ],
+      "relatedResourceTypes": [
+        "resource-share"
+      ],
+      "keyLiteral": "ResourceShareName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ram:ResourceTag/${TagKey}",
+      "methodName": "ifResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateResourceShare",
+        "toDeleteResourceShare",
+        "toDisassociateResourceShare",
+        "toUpdateResourceShare"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ram:RetainSharingOnAccountLeaveOrganization",
+      "methodName": "ifRetainSharingOnAccountLeaveOrganization",
+      "description": "Filters access by RetainSharingOnAccountLeaveOrganization value within ResourceShareConfiguration that is set on resource share",
+      "url": "https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition",
+      "relatedActionMethods": [
+        "toAssociateResourceShare",
+        "toCreateResourceShare",
+        "toDeleteResourceShare",
+        "toDisassociateResourceShare",
+        "toListResourceSharePermissions",
+        "toUpdateResourceShare"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RetainSharingOnAccountLeaveOrganization",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "ram:ShareOwnerAccountId",
+      "methodName": "ifShareOwnerAccountId",
+      "description": "Filters access by resource shares owned by a specific account. For example, you can use this condition key to specify which resource share invitations can be accepted or rejected based on the resource share owner's account ID",
+      "url": "https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition",
+      "relatedActionMethods": [
+        "toAcceptResourceShareInvitation",
+        "toListPendingInvitationResources",
+        "toRejectResourceShareInvitation"
+      ],
+      "relatedResourceTypes": [
+        "resource-share-invitation"
+      ],
+      "keyLiteral": "ShareOwnerAccountId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

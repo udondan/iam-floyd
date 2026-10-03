@@ -1,5 +1,0 @@
-emr-containers:ExecutionRoleArn
-emr-containers:JobTemplateArn
-emr-containers:RequestTag/${TagKey}
-emr-containers:ResourceTag/${TagKey}
-emr-containers:TagKeys

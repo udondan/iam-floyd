@@ -1,0 +1,1098 @@
+{
+  "schemaVersion": 1,
+  "filename": "cleanroomsml",
+  "className": "CleanroomsMl",
+  "name": "cleanrooms-ml",
+  "servicePrefix": "cleanrooms-ml",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cleanroomsml.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelTrainedModel",
+      "CancelTrainedModelInferenceJob",
+      "CreateAudienceModel",
+      "CreateConfiguredAudienceModel",
+      "CreateConfiguredModelAlgorithm",
+      "CreateConfiguredModelAlgorithmAssociation",
+      "CreateMLInputChannel",
+      "CreateTrainedModel",
+      "CreateTrainingDataset",
+      "DeleteAudienceGenerationJob",
+      "DeleteAudienceModel",
+      "DeleteConfiguredAudienceModel",
+      "DeleteConfiguredAudienceModelPolicy",
+      "DeleteConfiguredModelAlgorithm",
+      "DeleteConfiguredModelAlgorithmAssociation",
+      "DeleteMLConfiguration",
+      "DeleteMLInputChannelData",
+      "DeleteTrainedModelOutput",
+      "DeleteTrainingDataset",
+      "PutConfiguredAudienceModelPolicy",
+      "PutMLConfiguration",
+      "StartAudienceExportJob",
+      "StartAudienceGenerationJob",
+      "StartTrainedModelExportJob",
+      "StartTrainedModelInferenceJob",
+      "TagResource",
+      "UnTagResource",
+      "UpdateConfiguredAudienceModel"
+    ],
+    "Read": [
+      "GetAudienceGenerationJob",
+      "GetAudienceModel",
+      "GetCollaborationConfiguredModelAlgorithmAssociation",
+      "GetCollaborationMLInputChannel",
+      "GetCollaborationTrainedModel",
+      "GetConfiguredAudienceModel",
+      "GetConfiguredAudienceModelPolicy",
+      "GetConfiguredModelAlgorithm",
+      "GetConfiguredModelAlgorithmAssociation",
+      "GetMLConfiguration",
+      "GetMLInputChannel",
+      "GetTrainedModel",
+      "GetTrainedModelInferenceJob",
+      "GetTrainingDataset"
+    ],
+    "List": [
+      "ListAudienceExportJobs",
+      "ListAudienceGenerationJobs",
+      "ListAudienceModels",
+      "ListCollaborationConfiguredModelAlgorithmAssociations",
+      "ListCollaborationMLInputChannels",
+      "ListCollaborationTrainedModelExportJobs",
+      "ListCollaborationTrainedModelInferenceJobs",
+      "ListCollaborationTrainedModels",
+      "ListConfiguredAudienceModels",
+      "ListConfiguredModelAlgorithmAssociations",
+      "ListConfiguredModelAlgorithms",
+      "ListMLInputChannels",
+      "ListTagsForResource",
+      "ListTrainedModelInferenceJobs",
+      "ListTrainedModelVersions",
+      "ListTrainedModels",
+      "ListTrainingDatasets"
+    ],
+    "Permissions management": [
+      "PutConfiguredAudienceModelPolicy"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UnTagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelTrainedModel",
+      "methodName": "toCancelTrainedModel",
+      "description": "Grants permission to cancel a trained model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CancelTrainedModel.html"
+    },
+    {
+      "name": "CancelTrainedModelInferenceJob",
+      "methodName": "toCancelTrainedModelInferenceJob",
+      "description": "Grants permission to cancel a trained model inference job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CancelTrainedModelInferenceJob.html"
+    },
+    {
+      "name": "CreateAudienceModel",
+      "methodName": "toCreateAudienceModel",
+      "description": "Grants permission to create an audience model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CreateAudienceModel.html"
+    },
+    {
+      "name": "CreateConfiguredAudienceModel",
+      "methodName": "toCreateConfiguredAudienceModel",
+      "description": "Grants permission to create a configured audience model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CreateConfiguredAudienceModel.html"
+    },
+    {
+      "name": "CreateConfiguredModelAlgorithm",
+      "methodName": "toCreateConfiguredModelAlgorithm",
+      "description": "Grants permission to create a configured model algorithm",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CreateConfiguredModelAlgorithm.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateConfiguredModelAlgorithmAssociation",
+      "methodName": "toCreateConfiguredModelAlgorithmAssociation",
+      "description": "Grants permission to create a configured model algorithm association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CreateConfiguredModelAlgorithmAssociation.html"
+    },
+    {
+      "name": "CreateMLInputChannel",
+      "methodName": "toCreateMLInputChannel",
+      "description": "Grants permission to create an ML input channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CreateMLInputChannel.html"
+    },
+    {
+      "name": "CreateTrainedModel",
+      "methodName": "toCreateTrainedModel",
+      "description": "Grants permission to create a trained model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CreateTrainedModel.html"
+    },
+    {
+      "name": "CreateTrainingDataset",
+      "methodName": "toCreateTrainingDataset",
+      "description": "Grants permission to create a training dataset, or seed audience. In Clean Rooms ML, the TrainingDataset is metadata that points to a Glue table, which is read only during AudienceModel creation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_CreateTrainingDataset.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteAudienceGenerationJob",
+      "methodName": "toDeleteAudienceGenerationJob",
+      "description": "Grants permission to delete the specified audience generation job, and removes all data associated with the job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteAudienceGenerationJob.html"
+    },
+    {
+      "name": "DeleteAudienceModel",
+      "methodName": "toDeleteAudienceModel",
+      "description": "Grants permission to delete the specified audience generation job, and removes all data associated with the job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteAudienceModel.html"
+    },
+    {
+      "name": "DeleteConfiguredAudienceModel",
+      "methodName": "toDeleteConfiguredAudienceModel",
+      "description": "Grants permission to delete the specified configured audience model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteConfiguredAudienceModel.html"
+    },
+    {
+      "name": "DeleteConfiguredAudienceModelPolicy",
+      "methodName": "toDeleteConfiguredAudienceModelPolicy",
+      "description": "Grants permission to delete the specified configured audience model policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteConfiguredAudienceModelPolicy.html"
+    },
+    {
+      "name": "DeleteConfiguredModelAlgorithm",
+      "methodName": "toDeleteConfiguredModelAlgorithm",
+      "description": "Grants permission to delete a configured model algorithm",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteConfiguredModelAlgorithm.html"
+    },
+    {
+      "name": "DeleteConfiguredModelAlgorithmAssociation",
+      "methodName": "toDeleteConfiguredModelAlgorithmAssociation",
+      "description": "Grants permission to delete a configured model algorithm association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteConfiguredModelAlgorithmAssociation.html"
+    },
+    {
+      "name": "DeleteMLConfiguration",
+      "methodName": "toDeleteMLConfiguration",
+      "description": "Grants permission to delete an ML configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteMLConfiguration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteMLInputChannelData",
+      "methodName": "toDeleteMLInputChannelData",
+      "description": "Grants permission to delete all data associated with the ML input channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteMLInputChannelData.html"
+    },
+    {
+      "name": "DeleteTrainedModelOutput",
+      "methodName": "toDeleteTrainedModelOutput",
+      "description": "Grants permission to delete all output associated with the trained model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteTrainedModelOutput.html"
+    },
+    {
+      "name": "DeleteTrainingDataset",
+      "methodName": "toDeleteTrainingDataset",
+      "description": "Grants permission to delete a training dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_DeleteTrainingDataset.html"
+    },
+    {
+      "name": "GetAudienceGenerationJob",
+      "methodName": "toGetAudienceGenerationJob",
+      "description": "Grants permission to return information about an audience generation job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetAudienceGenerationJob.html"
+    },
+    {
+      "name": "GetAudienceModel",
+      "methodName": "toGetAudienceModel",
+      "description": "Grants permission to return information about an audience model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetAudienceModel.html"
+    },
+    {
+      "name": "GetCollaborationConfiguredModelAlgorithmAssociation",
+      "methodName": "toGetCollaborationConfiguredModelAlgorithmAssociation",
+      "description": "Grants permission to return information about a configured model algorithm association created by any member in the collaboration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetCollaborationConfiguredModelAlgorithmAssociation.html"
+    },
+    {
+      "name": "GetCollaborationMLInputChannel",
+      "methodName": "toGetCollaborationMLInputChannel",
+      "description": "Grants permission to return information about an ML input channel created by any member in the collaboration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetCollaborationMLInputChannel.html"
+    },
+    {
+      "name": "GetCollaborationTrainedModel",
+      "methodName": "toGetCollaborationTrainedModel",
+      "description": "Grants permission to return information about a trained model created by any member in the collaboration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetCollaborationTrainedModel.html"
+    },
+    {
+      "name": "GetConfiguredAudienceModel",
+      "methodName": "toGetConfiguredAudienceModel",
+      "description": "Grants permission to return information about a configured audience model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetConfiguredAudienceModel.html"
+    },
+    {
+      "name": "GetConfiguredAudienceModelPolicy",
+      "methodName": "toGetConfiguredAudienceModelPolicy",
+      "description": "Grants permission to return information about a configured audience model policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetConfiguredAudienceModelPolicy.html"
+    },
+    {
+      "name": "GetConfiguredModelAlgorithm",
+      "methodName": "toGetConfiguredModelAlgorithm",
+      "description": "Grants permission to return information about a configured model algorithm",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetConfiguredModelAlgorithm.html"
+    },
+    {
+      "name": "GetConfiguredModelAlgorithmAssociation",
+      "methodName": "toGetConfiguredModelAlgorithmAssociation",
+      "description": "Grants permission to return information about a configured model algorithm association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetConfiguredModelAlgorithmAssociation.html"
+    },
+    {
+      "name": "GetMLConfiguration",
+      "methodName": "toGetMLConfiguration",
+      "description": "Grants permission to return information about an ML configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetMLConfiguration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "GetMLInputChannel",
+      "methodName": "toGetMLInputChannel",
+      "description": "Grants permission to return information about an ML input channel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetMLInputChannel.html"
+    },
+    {
+      "name": "GetTrainedModel",
+      "methodName": "toGetTrainedModel",
+      "description": "Grants permission to return information about a trained model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetTrainedModel.html"
+    },
+    {
+      "name": "GetTrainedModelInferenceJob",
+      "methodName": "toGetTrainedModelInferenceJob",
+      "description": "Grants permission to return information about a trained model inference job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetTrainedModelInferenceJob.html"
+    },
+    {
+      "name": "GetTrainingDataset",
+      "methodName": "toGetTrainingDataset",
+      "description": "Grants permission to return information about a training dataset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_GetTrainingDataset.html"
+    },
+    {
+      "name": "ListAudienceExportJobs",
+      "methodName": "toListAudienceExportJobs",
+      "description": "Grants permission to return a list of the audience export jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListAudienceExportJobs.html"
+    },
+    {
+      "name": "ListAudienceGenerationJobs",
+      "methodName": "toListAudienceGenerationJobs",
+      "description": "Grants permission to return a list of audience generation jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListAudienceGenerationJobs.html"
+    },
+    {
+      "name": "ListAudienceModels",
+      "methodName": "toListAudienceModels",
+      "description": "Grants permission to return a list of audience models",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListAudienceModels.html"
+    },
+    {
+      "name": "ListCollaborationConfiguredModelAlgorithmAssociations",
+      "methodName": "toListCollaborationConfiguredModelAlgorithmAssociations",
+      "description": "Grants permission to return a list of configured model algorithms created by any member in the collaboration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListCollaborationConfiguredModelAlgorithmAssociations.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifCollaborationId"
+      ]
+    },
+    {
+      "name": "ListCollaborationMLInputChannels",
+      "methodName": "toListCollaborationMLInputChannels",
+      "description": "Grants permission to return a list of ML input channels created by any member in the collaboration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListCollaborationMLInputChannels.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifCollaborationId"
+      ]
+    },
+    {
+      "name": "ListCollaborationTrainedModelExportJobs",
+      "methodName": "toListCollaborationTrainedModelExportJobs",
+      "description": "Grants permission to return a list of trained model export jobs started by any member in the collaboration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListCollaborationTrainedModelExportJobs.html"
+    },
+    {
+      "name": "ListCollaborationTrainedModelInferenceJobs",
+      "methodName": "toListCollaborationTrainedModelInferenceJobs",
+      "description": "Grants permission to return a list of trained model inference jobs started by any member in the collaboration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListCollaborationTrainedModelInferenceJobs.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifCollaborationId"
+      ]
+    },
+    {
+      "name": "ListCollaborationTrainedModels",
+      "methodName": "toListCollaborationTrainedModels",
+      "description": "Grants permission to return a list of trained models created by any member in the collaboration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListCollaborationTrainedModels.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifCollaborationId"
+      ]
+    },
+    {
+      "name": "ListConfiguredAudienceModels",
+      "methodName": "toListConfiguredAudienceModels",
+      "description": "Grants permission to return a list of configured audience models",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListConfiguredAudienceModels.html"
+    },
+    {
+      "name": "ListConfiguredModelAlgorithmAssociations",
+      "methodName": "toListConfiguredModelAlgorithmAssociations",
+      "description": "Grants permission to return a list of configured model algorithm associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListConfiguredModelAlgorithmAssociations.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "ListConfiguredModelAlgorithms",
+      "methodName": "toListConfiguredModelAlgorithms",
+      "description": "Grants permission to return a list of configured model algorithms",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListConfiguredModelAlgorithms.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "ListMLInputChannels",
+      "methodName": "toListMLInputChannels",
+      "description": "Grants permission to return a list of ML input channels",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListMLInputChannels.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to return a list of tags for a provided resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTrainedModelInferenceJobs",
+      "methodName": "toListTrainedModelInferenceJobs",
+      "description": "Grants permission to return a list of trained model inference jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListTrainedModelInferenceJobs.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "ListTrainedModelVersions",
+      "methodName": "toListTrainedModelVersions",
+      "description": "Grants permission to return a list of trained model versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListTrainedModelVersions.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "ListTrainedModels",
+      "methodName": "toListTrainedModels",
+      "description": "Grants permission to return a list of trained models",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListTrainedModels.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "ListTrainingDatasets",
+      "methodName": "toListTrainingDatasets",
+      "description": "Grants permission to return a list of training datasets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListTrainingDatasets.html"
+    },
+    {
+      "name": "PutConfiguredAudienceModelPolicy",
+      "methodName": "toPutConfiguredAudienceModelPolicy",
+      "description": "Grants permission to create or update the resource policy for a configured audience model",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_PutConfiguredAudienceModelPolicy.html"
+    },
+    {
+      "name": "PutMLConfiguration",
+      "methodName": "toPutMLConfiguration",
+      "description": "Grants permission to put an ML configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_PutMLConfiguration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "StartAudienceExportJob",
+      "methodName": "toStartAudienceExportJob",
+      "description": "Grants permission to export an audience of a specified size after you have generated an audience",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_StartAudienceExportJob.html"
+    },
+    {
+      "name": "StartAudienceGenerationJob",
+      "methodName": "toStartAudienceGenerationJob",
+      "description": "Grants permission to start the audience generation job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_StartAudienceGenerationJob.html"
+    },
+    {
+      "name": "StartTrainedModelExportJob",
+      "methodName": "toStartTrainedModelExportJob",
+      "description": "Grants permission to start a trained model export job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_StartTrainedModelExportJob.html"
+    },
+    {
+      "name": "StartTrainedModelInferenceJob",
+      "methodName": "toStartTrainedModelInferenceJob",
+      "description": "Grants permission to start a trained model inference job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_StartTrainedModelInferenceJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a specific resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UnTagResource",
+      "methodName": "toUnTagResource",
+      "description": "Grants permission to untag a specific resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateConfiguredAudienceModel",
+      "methodName": "toUpdateConfiguredAudienceModel",
+      "description": "Grants permission to update a configured audience model.",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_UpdateConfiguredAudienceModel.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "ConfiguredModelAlgorithm",
+      "methodName": "onConfiguredModelAlgorithm",
+      "url": "",
+      "arn": "arn:${Partition}:cleanrooms-ml:${Region}:${Account}:configured-model-algorithm/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ConfiguredModelAlgorithmAssociation",
+      "methodName": "onConfiguredModelAlgorithmAssociation",
+      "url": "",
+      "arn": "arn:${Partition}:cleanrooms-ml:${Region}:${Account}:membership/${MembershipId}/configured-model-algorithm-association/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "MembershipId",
+          "name": "membershipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "MLInputChannel",
+      "methodName": "onMLInputChannel",
+      "url": "",
+      "arn": "arn:${Partition}:cleanrooms-ml:${Region}:${Account}:membership/${MembershipId}/ml-input-channel/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "MembershipId",
+          "name": "membershipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "TrainedModel",
+      "methodName": "onTrainedModel",
+      "url": "",
+      "arn": "arn:${Partition}:cleanrooms-ml:${Region}:${Account}:membership/${MembershipId}/trained-model/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "MembershipId",
+          "name": "membershipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "TrainedModelInferenceJob",
+      "methodName": "onTrainedModelInferenceJob",
+      "url": "",
+      "arn": "arn:${Partition}:cleanrooms-ml:${Region}:${Account}:membership/${MembershipId}/trained-model-inference-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "MembershipId",
+          "name": "membershipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "audiencegenerationjob",
+      "methodName": "onAudiencegenerationjob",
+      "url": "",
+      "arn": "arn:${Partition}:cleanrooms-ml:${Region}:${Account}:audience-generation-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "audiencemodel",
+      "methodName": "onAudiencemodel",
+      "url": "",
+      "arn": "arn:${Partition}:cleanrooms-ml:${Region}:${Account}:audience-model/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "configuredaudiencemodel",
+      "methodName": "onConfiguredaudiencemodel",
+      "url": "",
+      "arn": "arn:${Partition}:cleanrooms-ml:${Region}:${Account}:configured-audience-model/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "trainingdataset",
+      "methodName": "onTrainingdataset",
+      "url": "",
+      "arn": "arn:${Partition}:cleanrooms-ml:${Region}:${Account}:training-dataset/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCancelTrainedModel",
+        "toCancelTrainedModelInferenceJob",
+        "toCreateAudienceModel",
+        "toCreateConfiguredAudienceModel",
+        "toCreateConfiguredModelAlgorithm",
+        "toCreateConfiguredModelAlgorithmAssociation",
+        "toCreateMLInputChannel",
+        "toCreateTrainedModel",
+        "toCreateTrainingDataset",
+        "toDeleteAudienceGenerationJob",
+        "toDeleteAudienceModel",
+        "toDeleteConfiguredAudienceModel",
+        "toDeleteConfiguredAudienceModelPolicy",
+        "toDeleteConfiguredModelAlgorithm",
+        "toDeleteConfiguredModelAlgorithmAssociation",
+        "toDeleteMLConfiguration",
+        "toDeleteMLInputChannelData",
+        "toDeleteTrainedModelOutput",
+        "toDeleteTrainingDataset",
+        "toGetAudienceGenerationJob",
+        "toGetAudienceModel",
+        "toGetCollaborationConfiguredModelAlgorithmAssociation",
+        "toGetCollaborationMLInputChannel",
+        "toGetCollaborationTrainedModel",
+        "toGetConfiguredAudienceModel",
+        "toGetConfiguredAudienceModelPolicy",
+        "toGetConfiguredModelAlgorithm",
+        "toGetConfiguredModelAlgorithmAssociation",
+        "toGetMLConfiguration",
+        "toGetMLInputChannel",
+        "toGetTrainedModel",
+        "toGetTrainedModelInferenceJob",
+        "toGetTrainingDataset",
+        "toListAudienceExportJobs",
+        "toListAudienceGenerationJobs",
+        "toListCollaborationConfiguredModelAlgorithmAssociations",
+        "toListCollaborationMLInputChannels",
+        "toListCollaborationTrainedModelExportJobs",
+        "toListCollaborationTrainedModelInferenceJobs",
+        "toListCollaborationTrainedModels",
+        "toListConfiguredModelAlgorithmAssociations",
+        "toListConfiguredModelAlgorithms",
+        "toListMLInputChannels",
+        "toListTrainedModelInferenceJobs",
+        "toListTrainedModelVersions",
+        "toListTrainedModels",
+        "toPutMLConfiguration",
+        "toStartAudienceExportJob",
+        "toStartAudienceGenerationJob",
+        "toStartTrainedModelExportJob",
+        "toStartTrainedModelInferenceJob",
+        "toTagResource",
+        "toUpdateConfiguredAudienceModel"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCancelTrainedModel",
+        "toCancelTrainedModelInferenceJob",
+        "toCreateAudienceModel",
+        "toCreateConfiguredAudienceModel",
+        "toCreateConfiguredModelAlgorithmAssociation",
+        "toCreateMLInputChannel",
+        "toCreateTrainedModel",
+        "toDeleteAudienceGenerationJob",
+        "toDeleteAudienceModel",
+        "toDeleteConfiguredAudienceModel",
+        "toDeleteConfiguredAudienceModelPolicy",
+        "toDeleteConfiguredModelAlgorithm",
+        "toDeleteConfiguredModelAlgorithmAssociation",
+        "toDeleteMLInputChannelData",
+        "toDeleteTrainedModelOutput",
+        "toDeleteTrainingDataset",
+        "toGetAudienceGenerationJob",
+        "toGetAudienceModel",
+        "toGetCollaborationConfiguredModelAlgorithmAssociation",
+        "toGetCollaborationMLInputChannel",
+        "toGetCollaborationTrainedModel",
+        "toGetConfiguredAudienceModel",
+        "toGetConfiguredAudienceModelPolicy",
+        "toGetConfiguredModelAlgorithm",
+        "toGetConfiguredModelAlgorithmAssociation",
+        "toGetMLInputChannel",
+        "toGetTrainedModel",
+        "toGetTrainedModelInferenceJob",
+        "toGetTrainingDataset",
+        "toListAudienceExportJobs",
+        "toListAudienceGenerationJobs",
+        "toListCollaborationTrainedModelExportJobs",
+        "toListTagsForResource",
+        "toPutConfiguredAudienceModelPolicy",
+        "toStartAudienceExportJob",
+        "toStartAudienceGenerationJob",
+        "toStartTrainedModelExportJob",
+        "toStartTrainedModelInferenceJob",
+        "toTagResource",
+        "toUnTagResource",
+        "toUpdateConfiguredAudienceModel"
+      ],
+      "relatedResourceTypes": [
+        "ConfiguredModelAlgorithm",
+        "ConfiguredModelAlgorithmAssociation",
+        "MLInputChannel",
+        "TrainedModel",
+        "TrainedModelInferenceJob",
+        "audiencegenerationjob",
+        "audiencemodel",
+        "configuredaudiencemodel",
+        "trainingdataset"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCancelTrainedModel",
+        "toCancelTrainedModelInferenceJob",
+        "toCreateAudienceModel",
+        "toCreateConfiguredAudienceModel",
+        "toCreateConfiguredModelAlgorithm",
+        "toCreateConfiguredModelAlgorithmAssociation",
+        "toCreateMLInputChannel",
+        "toCreateTrainedModel",
+        "toCreateTrainingDataset",
+        "toDeleteAudienceGenerationJob",
+        "toDeleteAudienceModel",
+        "toDeleteConfiguredAudienceModel",
+        "toDeleteConfiguredAudienceModelPolicy",
+        "toDeleteConfiguredModelAlgorithm",
+        "toDeleteConfiguredModelAlgorithmAssociation",
+        "toDeleteMLConfiguration",
+        "toDeleteMLInputChannelData",
+        "toDeleteTrainedModelOutput",
+        "toDeleteTrainingDataset",
+        "toGetAudienceGenerationJob",
+        "toGetAudienceModel",
+        "toGetCollaborationConfiguredModelAlgorithmAssociation",
+        "toGetCollaborationMLInputChannel",
+        "toGetCollaborationTrainedModel",
+        "toGetConfiguredAudienceModel",
+        "toGetConfiguredAudienceModelPolicy",
+        "toGetConfiguredModelAlgorithm",
+        "toGetConfiguredModelAlgorithmAssociation",
+        "toGetMLConfiguration",
+        "toGetMLInputChannel",
+        "toGetTrainedModel",
+        "toGetTrainedModelInferenceJob",
+        "toGetTrainingDataset",
+        "toListAudienceExportJobs",
+        "toListAudienceGenerationJobs",
+        "toListCollaborationConfiguredModelAlgorithmAssociations",
+        "toListCollaborationMLInputChannels",
+        "toListCollaborationTrainedModelExportJobs",
+        "toListCollaborationTrainedModelInferenceJobs",
+        "toListCollaborationTrainedModels",
+        "toListConfiguredModelAlgorithmAssociations",
+        "toListConfiguredModelAlgorithms",
+        "toListMLInputChannels",
+        "toListTagsForResource",
+        "toListTrainedModelInferenceJobs",
+        "toListTrainedModelVersions",
+        "toListTrainedModels",
+        "toPutMLConfiguration",
+        "toStartAudienceExportJob",
+        "toStartAudienceGenerationJob",
+        "toStartTrainedModelExportJob",
+        "toStartTrainedModelInferenceJob",
+        "toTagResource",
+        "toUnTagResource",
+        "toUpdateConfiguredAudienceModel"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cleanrooms-ml:CollaborationId",
+      "methodName": "ifCollaborationId",
+      "description": "Filters access by Clean rooms collaboration id",
+      "url": "https://docs.aws.amazon.com/TBD",
+      "relatedActionMethods": [
+        "toGetCollaborationConfiguredModelAlgorithmAssociation",
+        "toGetCollaborationMLInputChannel",
+        "toGetCollaborationTrainedModel",
+        "toListCollaborationConfiguredModelAlgorithmAssociations",
+        "toListCollaborationMLInputChannels",
+        "toListCollaborationTrainedModelExportJobs",
+        "toListCollaborationTrainedModelInferenceJobs",
+        "toListCollaborationTrainedModels",
+        "toStartAudienceGenerationJob"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CollaborationId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

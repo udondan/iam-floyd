@@ -10,12 +10,13 @@ IAM Floyd is an AWS IAM policy statement generator with a fluent interface. It g
 
 ### Generated Code Structure
 
-- `lib/generated/policy-statements/` - Generated TypeScript class per AWS service (460+ files)
-- `lib/generated/index.ts` - Re-exports all service classes
-- `lib/generated/aws-managed-policies/` - Generated AWS managed policies
+- `lib/generated/model/` - Service model per AWS service (JSON, committed). The single source of truth for all generated code
+- `lib/generated/policy-statements/` - TypeScript class per AWS service, emitted from the model (not committed)
+- `lib/generated/index.ts` - Re-exports all service classes (emitted, not committed)
+- `lib/generated/aws-managed-policies/` - Generated AWS managed policies (committed)
 - `lib/shared/` - Hand-written core: `PolicyStatement`, `All`, `Operator`, `AccessLevel`
 - `lib/collection/` - Predefined policy collection utilities
-- `lib/generator/` - Scrapes AWS docs and generates `lib/generated/` via `cheerio` + `ts-morph`
+- `lib/generator/` - Scrapes AWS docs with `cheerio` into the model (`model.ts`), and emits TypeScript from the model with `ts-morph` (`emit/typescript.ts`)
 
 ### PolicyStatement Inheritance Chain
 
@@ -35,14 +36,15 @@ One codebase produces two npm packages:
 - `iam-floyd` - Standalone (uses built-in base class)
 - `cdk-iam-floyd` - Extends `aws_iam.PolicyStatement` from AWS CDK
 
-`bin/mkcdk.ts` transforms between variants by swapping `*.CDK.ts` files and rewriting constructors.
+`bin/mkcdk.ts` transforms between variants by swapping `*.CDK.ts` files and emitting the CDK variant of the service classes from the model.
 
 ## Development Commands
 
 ### Build
 
 ```bash
-make build           # tsc --build --force tsconfig.main.json
+make emit            # emit lib/generated/policy-statements/ and lib/generated/index.ts from the model
+make build           # emit + tsc --build --force tsconfig.main.json
 make package         # build + npm pack
 make clean           # remove node_modules, *.js, *.d.ts
 make install         # clean + npm i
@@ -51,10 +53,14 @@ make install         # clean + npm i
 ### Code Generation
 
 ```bash
-make generate        # generate lib/generated/ from AWS docs (25hr cache)
+make generate        # scrape AWS docs into lib/generated/model/ and emit (25hr cache)
 make generate-force  # NOCACHE=1 - ignores time-based cache
 make index-managed-policies  # regenerate AWS managed policies index
+make stats           # update the counts in README.md and docs from the model
+make changelog       # write CHANGELOG/v<VERSION>.md from the model changes since the last tag
 ```
+
+`bin/model-list <services|actions|resources|conditions>` prints those lists from the model, and `bin/model-diff [ref]` prints the differences to a git ref (default `HEAD`).
 
 ### Testing
 
@@ -97,7 +103,7 @@ make eslint          # npx eslint .
 
 ```bash
 make cdk             # transforms codebase to CDK variant (modifies lib/shared, lib/generated, package.json)
-make uncdk           # reverts via git stash (lib/generated, lib/shared, package.json)
+make uncdk           # reverts via git stash (lib/generated/aws-managed-policies, lib/shared, package.json) and re-emits
 ```
 
 ## Fixing AWS Documentation Errors (`lib/generator/fixes.ts`)
@@ -140,7 +146,7 @@ Each top-level key is the URL slug of a service's IAM docs page (e.g. `ec2`, `ss
 ## File Modification Rules
 
 **CRITICAL: Never manually edit files in `lib/generated/`.**
-They are auto-generated from AWS documentation and will be overwritten on next `make generate`.
+They are auto-generated from AWS documentation and will be overwritten on next `make generate` or `make emit`.
 
 Allowed manual edits:
 

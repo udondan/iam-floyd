@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "filename": "arc-zonal-shift",
+  "className": "ArcZonalShift",
+  "name": "arc-zonal-shift",
+  "servicePrefix": "arc-zonal-shift",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_arc-zonal-shift.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelPracticeRun",
+      "CancelZonalShift",
+      "CreatePracticeRunConfiguration",
+      "DeletePracticeRunConfiguration",
+      "StartPracticeRun",
+      "StartZonalShift",
+      "UpdateAutoshiftObserverNotificationStatus",
+      "UpdatePracticeRunConfiguration",
+      "UpdateZonalAutoshiftConfiguration",
+      "UpdateZonalShift"
+    ],
+    "Read": [
+      "GetAutoshiftObserverNotificationStatus",
+      "GetManagedResource"
+    ],
+    "List": [
+      "ListAutoshifts",
+      "ListManagedResources",
+      "ListZonalShifts"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelPracticeRun",
+      "methodName": "toCancelPracticeRun",
+      "description": "Grants permission to cancel an active practice run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_CancelPracticeRun.html"
+    },
+    {
+      "name": "CancelZonalShift",
+      "methodName": "toCancelZonalShift",
+      "description": "Grants permission to cancel an active zonal shift",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_CancelZonalShift.html"
+    },
+    {
+      "name": "CreatePracticeRunConfiguration",
+      "methodName": "toCreatePracticeRunConfiguration",
+      "description": "Grants permission to create a practice run configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_CreatePracticeRunConfiguration.html"
+    },
+    {
+      "name": "DeletePracticeRunConfiguration",
+      "methodName": "toDeletePracticeRunConfiguration",
+      "description": "Grants permission to delete a practice run configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_DeletePracticeRunConfiguration.html"
+    },
+    {
+      "name": "GetAutoshiftObserverNotificationStatus",
+      "methodName": "toGetAutoshiftObserverNotificationStatus",
+      "description": "Grants permission to get autoshift observer notification status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_GetAutoshiftObserverNotificationStatus.html"
+    },
+    {
+      "name": "GetManagedResource",
+      "methodName": "toGetManagedResource",
+      "description": "Grants permission to get information about a managed resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_GetManagedResource.html"
+    },
+    {
+      "name": "ListAutoshifts",
+      "methodName": "toListAutoshifts",
+      "description": "Grants permission to list active and completed autoshifts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_ListAutoshifts.html"
+    },
+    {
+      "name": "ListManagedResources",
+      "methodName": "toListManagedResources",
+      "description": "Grants permission to list managed resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_ListManagedResources.html"
+    },
+    {
+      "name": "ListZonalShifts",
+      "methodName": "toListZonalShifts",
+      "description": "Grants permission to list zonal shifts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_ListZonalShifts.html"
+    },
+    {
+      "name": "StartPracticeRun",
+      "methodName": "toStartPracticeRun",
+      "description": "Grants permission to start a practice run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_StartPracticeRun.html"
+    },
+    {
+      "name": "StartZonalShift",
+      "methodName": "toStartZonalShift",
+      "description": "Grants permission to start a zonal shift",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_StartZonalShift.html"
+    },
+    {
+      "name": "UpdateAutoshiftObserverNotificationStatus",
+      "methodName": "toUpdateAutoshiftObserverNotificationStatus",
+      "description": "Grants permission to update autoshift observer notification status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_UpdateAutoshiftObserverNotificationStatus.html"
+    },
+    {
+      "name": "UpdatePracticeRunConfiguration",
+      "methodName": "toUpdatePracticeRunConfiguration",
+      "description": "Grants permission to update a practice run configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_UpdatePracticeRunConfiguration.html"
+    },
+    {
+      "name": "UpdateZonalAutoshiftConfiguration",
+      "methodName": "toUpdateZonalAutoshiftConfiguration",
+      "description": "Grants permission to update a zonal autoshift status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_UpdateZonalAutoshiftConfiguration.html"
+    },
+    {
+      "name": "UpdateZonalShift",
+      "methodName": "toUpdateZonalShift",
+      "description": "Grants permission to update an existing zonal shift",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_UpdateZonalShift.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "ALB",
+      "methodName": "onALB",
+      "url": "https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.html",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}",
+      "placeholders": [
+        {
+          "placeholder": "LoadBalancerName",
+          "name": "loadBalancerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "LoadBalancerId",
+          "name": "loadBalancerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifResourceIdentifier",
+        "ifAwsResourceTag",
+        "ifElasticloadbalancingResourceTag"
+      ]
+    },
+    {
+      "name": "NLB",
+      "methodName": "onNLB",
+      "url": "https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.html",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/net/${LoadBalancerName}/${LoadBalancerId}",
+      "placeholders": [
+        {
+          "placeholder": "LoadBalancerName",
+          "name": "loadBalancerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "LoadBalancerId",
+          "name": "loadBalancerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifResourceIdentifier",
+        "ifAwsResourceTag",
+        "ifElasticloadbalancingResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "arc-zonal-shift:ResourceIdentifier",
+      "methodName": "ifResourceIdentifier",
+      "description": "Filters access by the resource identifier of the managed resource",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53applicationrecoverycontroller-zonalshift.html#amazonroute53applicationrecoverycontroller-zonalshift-policy-keys",
+      "relatedActionMethods": [
+        "toCancelPracticeRun",
+        "toCancelZonalShift",
+        "toCreatePracticeRunConfiguration",
+        "toDeletePracticeRunConfiguration",
+        "toGetManagedResource",
+        "toStartPracticeRun",
+        "toStartZonalShift",
+        "toUpdatePracticeRunConfiguration",
+        "toUpdateZonalAutoshiftConfiguration",
+        "toUpdateZonalShift"
+      ],
+      "relatedResourceTypes": [
+        "ALB",
+        "NLB"
+      ],
+      "keyLiteral": "ResourceIdentifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the managed resource",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/load-balancer-authentication-access-control.html#elb-condition-keys",
+      "relatedActionMethods": [
+        "toCancelPracticeRun",
+        "toCancelZonalShift",
+        "toCreatePracticeRunConfiguration",
+        "toDeletePracticeRunConfiguration",
+        "toGetManagedResource",
+        "toStartPracticeRun",
+        "toStartZonalShift",
+        "toUpdatePracticeRunConfiguration",
+        "toUpdateZonalAutoshiftConfiguration",
+        "toUpdateZonalShift"
+      ],
+      "relatedResourceTypes": [
+        "ALB",
+        "NLB"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticloadbalancing:ResourceTag/${TagKey}",
+      "methodName": "ifElasticloadbalancingResourceTag",
+      "description": "Filters access by the tags associated with the managed resource",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/load-balancer-authentication-access-control.html#elb-condition-keys",
+      "relatedActionMethods": [
+        "toCancelPracticeRun",
+        "toCancelZonalShift",
+        "toCreatePracticeRunConfiguration",
+        "toDeletePracticeRunConfiguration",
+        "toGetManagedResource",
+        "toStartPracticeRun",
+        "toStartZonalShift",
+        "toUpdatePracticeRunConfiguration",
+        "toUpdateZonalAutoshiftConfiguration",
+        "toUpdateZonalShift"
+      ],
+      "relatedResourceTypes": [
+        "ALB",
+        "NLB"
+      ],
+      "keyLiteral": "elasticloadbalancing:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

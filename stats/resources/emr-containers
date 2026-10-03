@@ -1,5 +1,0 @@
-emr-containers:jobRun
-emr-containers:jobTemplate
-emr-containers:managedEndpoint
-emr-containers:securityConfiguration
-emr-containers:virtualCluster

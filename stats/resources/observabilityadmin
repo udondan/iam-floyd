@@ -1,6 +1,0 @@
-observabilityadmin:dataset-integration
-observabilityadmin:organization-centralization-rule
-observabilityadmin:organization-telemetry-rule
-observabilityadmin:s3tableintegration
-observabilityadmin:telemetry-pipeline
-observabilityadmin:telemetry-rule

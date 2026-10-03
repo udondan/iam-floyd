@@ -1,0 +1,689 @@
+{
+  "schemaVersion": 1,
+  "filename": "migration-hub",
+  "className": "Mgh",
+  "name": "mgh",
+  "servicePrefix": "mgh",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_migration-hub.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptConnection",
+      "AssociateAutomationUnitRole",
+      "AssociateCreatedArtifact",
+      "AssociateDiscoveredResource",
+      "AssociateSourceResource",
+      "BatchAssociateIamRoleWithConnection",
+      "BatchDisassociateIamRoleFromConnection",
+      "CreateAutomationRun",
+      "CreateAutomationUnit",
+      "CreateHomeRegionControl",
+      "CreateProgressUpdateStream",
+      "DeleteAutomationRun",
+      "DeleteAutomationUnit",
+      "DeleteConnection",
+      "DeleteHomeRegionControl",
+      "DeleteProgressUpdateStream",
+      "DisassociateAutomationUnitRole",
+      "DisassociateCreatedArtifact",
+      "DisassociateDiscoveredResource",
+      "DisassociateSourceResource",
+      "ImportMigrationTask",
+      "NotifyApplicationState",
+      "NotifyMigrationTaskState",
+      "PutResourceAttributes",
+      "RejectConnection",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Read": [
+      "DescribeApplicationState",
+      "DescribeAutomationRun",
+      "DescribeAutomationUnit",
+      "DescribeMigrationTask",
+      "GetConnection",
+      "GetHomeRegion"
+    ],
+    "List": [
+      "DescribeHomeRegionControls",
+      "ListApplicationStates",
+      "ListAutomationRuns",
+      "ListAutomationUnits",
+      "ListConnectionRoles",
+      "ListConnections",
+      "ListCreatedArtifacts",
+      "ListDiscoveredResources",
+      "ListMigrationTaskUpdates",
+      "ListMigrationTasks",
+      "ListProgressUpdateStreams",
+      "ListSourceResources",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptConnection",
+      "methodName": "toAcceptConnection",
+      "description": "Grants permission to accept a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mhj/latest/userguide/account-connections.html"
+    },
+    {
+      "name": "AssociateAutomationUnitRole",
+      "methodName": "toAssociateAutomationUnitRole",
+      "description": "Grants permission to associate an IAM role to an automation unit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateAutomationUnitRole.html"
+    },
+    {
+      "name": "AssociateCreatedArtifact",
+      "methodName": "toAssociateCreatedArtifact",
+      "description": "Grants permission to associate a given AWS artifact to a MigrationTask",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateCreatedArtifact.html"
+    },
+    {
+      "name": "AssociateDiscoveredResource",
+      "methodName": "toAssociateDiscoveredResource",
+      "description": "Grants permission to associate a given ADS resource to a MigrationTask",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateDiscoveredResource.html"
+    },
+    {
+      "name": "AssociateSourceResource",
+      "methodName": "toAssociateSourceResource",
+      "description": "Grants permission to associate source resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateSourceResource.html"
+    },
+    {
+      "name": "BatchAssociateIamRoleWithConnection",
+      "methodName": "toBatchAssociateIamRoleWithConnection",
+      "description": "Grants permission to batch-associate IAM roles with a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mhj/latest/userguide/account-connections.html"
+    },
+    {
+      "name": "BatchDisassociateIamRoleFromConnection",
+      "methodName": "toBatchDisassociateIamRoleFromConnection",
+      "description": "Grants permission to batch-disassociate IAM roles from a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mhj/latest/userguide/account-connections.html"
+    },
+    {
+      "name": "CreateAutomationRun",
+      "methodName": "toCreateAutomationRun",
+      "description": "Grants permission to create an automation unit run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_CreateAutomationRun.html"
+    },
+    {
+      "name": "CreateAutomationUnit",
+      "methodName": "toCreateAutomationUnit",
+      "description": "Grants permission to create an automation unit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_CreateAutomationUnit.html"
+    },
+    {
+      "name": "CreateHomeRegionControl",
+      "methodName": "toCreateHomeRegionControl",
+      "description": "Grants permission to create a Migration Hub Home Region Control",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-home-region/latest/APIReference/API_CreateHomeRegionControl.html"
+    },
+    {
+      "name": "CreateProgressUpdateStream",
+      "methodName": "toCreateProgressUpdateStream",
+      "description": "Grants permission to create a ProgressUpdateStream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_CreateProgressUpdateStream.html"
+    },
+    {
+      "name": "DeleteAutomationRun",
+      "methodName": "toDeleteAutomationRun",
+      "description": "Grants permission to delete an automation unit run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_DeleteAutomationRun.html"
+    },
+    {
+      "name": "DeleteAutomationUnit",
+      "methodName": "toDeleteAutomationUnit",
+      "description": "Grants permission to delete an automation unit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_DeleteAutomationUnit.html"
+    },
+    {
+      "name": "DeleteConnection",
+      "methodName": "toDeleteConnection",
+      "description": "Grants permission to delete a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mhj/latest/userguide/account-connections.html"
+    },
+    {
+      "name": "DeleteHomeRegionControl",
+      "methodName": "toDeleteHomeRegionControl",
+      "description": "Grants permission to delete a Migration Hub Home Region Control",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-home-region/latest/APIReference/API_DeleteHomeRegionControl.html"
+    },
+    {
+      "name": "DeleteProgressUpdateStream",
+      "methodName": "toDeleteProgressUpdateStream",
+      "description": "Grants permission to delete a ProgressUpdateStream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_DeleteProgressUpdateStream.html"
+    },
+    {
+      "name": "DescribeApplicationState",
+      "methodName": "toDescribeApplicationState",
+      "description": "Grants permission to get an Application Discovery Service Application's state",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeApplicationState.html"
+    },
+    {
+      "name": "DescribeAutomationRun",
+      "methodName": "toDescribeAutomationRun",
+      "description": "Grants permission to describe an automation unit run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeAutomationRun.html"
+    },
+    {
+      "name": "DescribeAutomationUnit",
+      "methodName": "toDescribeAutomationUnit",
+      "description": "Grants permission to describe an automation unit",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeAutomationUnit.html"
+    },
+    {
+      "name": "DescribeHomeRegionControls",
+      "methodName": "toDescribeHomeRegionControls",
+      "description": "Grants permission to list Home Region Controls",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub-home-region/latest/APIReference/API_DescribeHomeRegionControls.html"
+    },
+    {
+      "name": "DescribeMigrationTask",
+      "methodName": "toDescribeMigrationTask",
+      "description": "Grants permission to describe a MigrationTask",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeMigrationTask.html"
+    },
+    {
+      "name": "DisassociateAutomationUnitRole",
+      "methodName": "toDisassociateAutomationUnitRole",
+      "description": "Grants permission to disassociate an IAM role from an automation unit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateAutomationUnitRole.html"
+    },
+    {
+      "name": "DisassociateCreatedArtifact",
+      "methodName": "toDisassociateCreatedArtifact",
+      "description": "Grants permission to disassociate a given AWS artifact from a MigrationTask",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateCreatedArtifact.html"
+    },
+    {
+      "name": "DisassociateDiscoveredResource",
+      "methodName": "toDisassociateDiscoveredResource",
+      "description": "Grants permission to disassociate a given ADS resource from a MigrationTask",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateDiscoveredResource.html"
+    },
+    {
+      "name": "DisassociateSourceResource",
+      "methodName": "toDisassociateSourceResource",
+      "description": "Grants permission to diassociate source resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateSourceResource.html"
+    },
+    {
+      "name": "GetConnection",
+      "methodName": "toGetConnection",
+      "description": "Grants permission to get a connection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mhj/latest/userguide/account-connections.html"
+    },
+    {
+      "name": "GetHomeRegion",
+      "methodName": "toGetHomeRegion",
+      "description": "Grants permission to get the Migration Hub Home Region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-home-region/latest/APIReference/API_GetHomeRegion.html"
+    },
+    {
+      "name": "ImportMigrationTask",
+      "methodName": "toImportMigrationTask",
+      "description": "Grants permission to import a MigrationTask",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_ImportMigrationTask.html"
+    },
+    {
+      "name": "ListApplicationStates",
+      "methodName": "toListApplicationStates",
+      "description": "Grants permission to list Application statuses",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListApplicationStates.html"
+    },
+    {
+      "name": "ListAutomationRuns",
+      "methodName": "toListAutomationRuns",
+      "description": "Grants permission to list automation unit runs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListAutomationRuns.html"
+    },
+    {
+      "name": "ListAutomationUnits",
+      "methodName": "toListAutomationUnits",
+      "description": "Grants permission to list automation units",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListAutomationUnits.html"
+    },
+    {
+      "name": "ListConnectionRoles",
+      "methodName": "toListConnectionRoles",
+      "description": "Grants permission to list connection roles",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mhj/latest/userguide/account-connections.html"
+    },
+    {
+      "name": "ListConnections",
+      "methodName": "toListConnections",
+      "description": "Grants permission to list connections",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mhj/latest/userguide/account-connections.html"
+    },
+    {
+      "name": "ListCreatedArtifacts",
+      "methodName": "toListCreatedArtifacts",
+      "description": "Grants permission to list associated created artifacts for a MigrationTask",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListCreatedArtifacts.html"
+    },
+    {
+      "name": "ListDiscoveredResources",
+      "methodName": "toListDiscoveredResources",
+      "description": "Grants permission to list associated ADS resources from MigrationTask",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListDiscoveredResources.html"
+    },
+    {
+      "name": "ListMigrationTaskUpdates",
+      "methodName": "toListMigrationTaskUpdates",
+      "description": "Grants permission to list migration tasks updates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListMigrationTaskUpdates.html"
+    },
+    {
+      "name": "ListMigrationTasks",
+      "methodName": "toListMigrationTasks",
+      "description": "Grants permission to list MigrationTasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListMigrationTasks.html"
+    },
+    {
+      "name": "ListProgressUpdateStreams",
+      "methodName": "toListProgressUpdateStreams",
+      "description": "Grants permission to to list ProgressUpdateStreams",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListProgressUpdateStreams.html"
+    },
+    {
+      "name": "ListSourceResources",
+      "methodName": "toListSourceResources",
+      "description": "Grants permission to list source resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListSourceResources.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListTagsForResource.html"
+    },
+    {
+      "name": "NotifyApplicationState",
+      "methodName": "toNotifyApplicationState",
+      "description": "Grants permission to update an Application Discovery Service Application's state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_NotifyApplicationState.html"
+    },
+    {
+      "name": "NotifyMigrationTaskState",
+      "methodName": "toNotifyMigrationTaskState",
+      "description": "Grants permission to notify latest MigrationTask state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_NotifyMigrationTaskState.html"
+    },
+    {
+      "name": "PutResourceAttributes",
+      "methodName": "toPutResourceAttributes",
+      "description": "Grants permission to put ResourceAttributes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html"
+    },
+    {
+      "name": "RejectConnection",
+      "methodName": "toRejectConnection",
+      "description": "Grants permission to reject a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mhj/latest/userguide/account-connections.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_TagResource.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_UntagResource.html",
+      "conditionMethods": [
+        "ifAwsTagKeys"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "AutomationRunResource",
+      "methodName": "onAutomationRunResource",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_AutomationRunResource.html",
+      "arn": "arn:${Partition}:mgh:${Region}:${Account}:automation-run/${RunID}",
+      "placeholders": [
+        {
+          "placeholder": "RunID",
+          "name": "runID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAutomationRunResourceRunID"
+      ]
+    },
+    {
+      "name": "AutomationUnitResource",
+      "methodName": "onAutomationUnitResource",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_AutomationUnitResource.html",
+      "arn": "arn:${Partition}:mgh:${Region}:${Account}:automation-unit/${AutomationUnitId}",
+      "placeholders": [
+        {
+          "placeholder": "AutomationUnitId",
+          "name": "automationUnitId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAutomationUnitResourceAutomationUnitArn"
+      ]
+    },
+    {
+      "name": "ConnectionResource",
+      "methodName": "onConnectionResource",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_ConnectionResource.html",
+      "arn": "arn:${Partition}:mgh:${Region}:${Account}:${ConnectionArn}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectionArn",
+          "name": "connectionArn",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifConnectionResourceConnectionArn"
+      ]
+    },
+    {
+      "name": "migrationTask",
+      "methodName": "onMigrationTask",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_MigrationTask.html",
+      "arn": "arn:${Partition}:mgh:${Region}:${Account}:progressUpdateStream/${Stream}/migrationTask/${Task}",
+      "placeholders": [
+        {
+          "placeholder": "Stream",
+          "name": "stream",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Task",
+          "name": "task",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "progressUpdateStream",
+      "methodName": "onProgressUpdateStream",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_ProgressUpdateStreamSummary.html",
+      "arn": "arn:${Partition}:mgh:${Region}:${Account}:progressUpdateStream/${Stream}",
+      "placeholders": [
+        {
+          "placeholder": "Stream",
+          "name": "stream",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access based on the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAcceptConnection",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access based on the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAcceptConnection",
+        "toBatchAssociateIamRoleWithConnection",
+        "toBatchDisassociateIamRoleFromConnection",
+        "toDeleteConnection",
+        "toGetConnection",
+        "toListConnectionRoles",
+        "toRejectConnection"
+      ],
+      "relatedResourceTypes": [
+        "ConnectionResource"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access based on the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAcceptConnection",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "mgh:AutomationRunResourceRunID",
+      "methodName": "ifAutomationRunResourceRunID",
+      "description": "AutomationRunResource resource runID identifier",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/ContextKeys_AutomationRunResourceRunID.html",
+      "relatedActionMethods": [
+        "toDeleteAutomationRun",
+        "toDescribeAutomationRun"
+      ],
+      "relatedResourceTypes": [
+        "AutomationRunResource"
+      ],
+      "keyLiteral": "AutomationRunResourceRunID",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "mgh:AutomationUnitResourceAutomationUnitArn",
+      "methodName": "ifAutomationUnitResourceAutomationUnitArn",
+      "description": "AutomationUnitResource resource automationUnitArn identifier",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/ContextKeys_AutomationUnitResourceAutomationUnitArn.html",
+      "relatedActionMethods": [
+        "toAssociateAutomationUnitRole",
+        "toDeleteAutomationUnit",
+        "toDescribeAutomationUnit",
+        "toDisassociateAutomationUnitRole"
+      ],
+      "relatedResourceTypes": [
+        "AutomationUnitResource"
+      ],
+      "keyLiteral": "AutomationUnitResourceAutomationUnitArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "mgh:ConnectionResourceConnectionArn",
+      "methodName": "ifConnectionResourceConnectionArn",
+      "description": "ConnectionResource resource connectionArn identifier",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/security_iam_service-with-iam-id-based-policies-conditionkeys.html#condition-connectionresourceconnectionarn",
+      "relatedActionMethods": [
+        "toAcceptConnection",
+        "toBatchAssociateIamRoleWithConnection",
+        "toBatchDisassociateIamRoleFromConnection",
+        "toDeleteConnection",
+        "toGetConnection",
+        "toListConnectionRoles",
+        "toRejectConnection"
+      ],
+      "relatedResourceTypes": [
+        "ConnectionResource"
+      ],
+      "keyLiteral": "ConnectionResourceConnectionArn",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

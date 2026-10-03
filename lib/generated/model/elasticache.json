@@ -1,0 +1,2368 @@
+{
+  "schemaVersion": 1,
+  "filename": "elasticache",
+  "className": "Elasticache",
+  "name": "elasticache",
+  "servicePrefix": "elasticache",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elasticache.html",
+  "accessLevelList": {
+    "Tagging": [
+      "AddTagsToResource",
+      "RemoveTagsFromResource"
+    ],
+    "Write": [
+      "AddTagsToResource",
+      "AuthorizeCacheSecurityGroupIngress",
+      "BatchApplyUpdateAction",
+      "BatchStopUpdateAction",
+      "CompleteMigration",
+      "Connect",
+      "CopyServerlessCacheSnapshot",
+      "CopySnapshot",
+      "CreateCacheCluster",
+      "CreateCacheParameterGroup",
+      "CreateCacheSecurityGroup",
+      "CreateCacheSubnetGroup",
+      "CreateGlobalReplicationGroup",
+      "CreateReplicationGroup",
+      "CreateServerlessCache",
+      "CreateServerlessCacheSnapshot",
+      "CreateSnapshot",
+      "CreateUser",
+      "CreateUserGroup",
+      "DecreaseNodeGroupsInGlobalReplicationGroup",
+      "DecreaseReplicaCount",
+      "DeleteCacheCluster",
+      "DeleteCacheParameterGroup",
+      "DeleteCacheSecurityGroup",
+      "DeleteCacheSubnetGroup",
+      "DeleteGlobalReplicationGroup",
+      "DeleteReplicationGroup",
+      "DeleteServerlessCache",
+      "DeleteServerlessCacheSnapshot",
+      "DeleteSnapshot",
+      "DeleteUser",
+      "DeleteUserGroup",
+      "DisassociateGlobalReplicationGroup",
+      "ExportServerlessCacheSnapshot",
+      "FailoverGlobalReplicationGroup",
+      "IncreaseNodeGroupsInGlobalReplicationGroup",
+      "IncreaseReplicaCount",
+      "ModifyCacheCluster",
+      "ModifyCacheParameterGroup",
+      "ModifyCacheSubnetGroup",
+      "ModifyGlobalReplicationGroup",
+      "ModifyReplicationGroup",
+      "ModifyReplicationGroupShardConfiguration",
+      "ModifyServerlessCache",
+      "ModifyUser",
+      "ModifyUserGroup",
+      "PurchaseReservedCacheNodesOffering",
+      "RebalanceSlotsInGlobalReplicationGroup",
+      "RebootCacheCluster",
+      "RemoveTagsFromResource",
+      "ResetCacheParameterGroup",
+      "RevokeCacheSecurityGroupIngress",
+      "StartMigration",
+      "TestFailover",
+      "TestMigration",
+      "InterruptClusterAzPower"
+    ],
+    "List": [
+      "DescribeCacheClusters",
+      "DescribeCacheEngineVersions",
+      "DescribeCacheParameterGroups",
+      "DescribeCacheParameters",
+      "DescribeCacheSecurityGroups",
+      "DescribeCacheSubnetGroups",
+      "DescribeEngineDefaultParameters",
+      "DescribeEvents",
+      "DescribeGlobalReplicationGroups",
+      "DescribeReplicationGroups",
+      "DescribeReservedCacheNodes",
+      "DescribeReservedCacheNodesOfferings",
+      "DescribeServerlessCacheSnapshots",
+      "DescribeServerlessCaches",
+      "DescribeServiceUpdates",
+      "DescribeSnapshots",
+      "DescribeUpdateActions",
+      "DescribeUserGroups",
+      "DescribeUsers",
+      "ListAllowedNodeTypeModifications"
+    ],
+    "Read": [
+      "ListTagsForResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddTagsToResource",
+      "methodName": "toAddTagsToResource",
+      "description": "Grants permission to add tags to an ElastiCache resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AddTagsToResource.html"
+    },
+    {
+      "name": "AuthorizeCacheSecurityGroupIngress",
+      "methodName": "toAuthorizeCacheSecurityGroupIngress",
+      "description": "Grants permission to authorize an EC2 security group on a ElastiCache security group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AuthorizeCacheSecurityGroupIngress.html"
+    },
+    {
+      "name": "BatchApplyUpdateAction",
+      "methodName": "toBatchApplyUpdateAction",
+      "description": "Grants permission to apply ElastiCache service updates to sets of clusters and replication groups",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_BatchApplyUpdateAction.html"
+    },
+    {
+      "name": "BatchStopUpdateAction",
+      "methodName": "toBatchStopUpdateAction",
+      "description": "Grants permission to stop ElastiCache service updates from being executed on a set of clusters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_BatchStopUpdateAction.html"
+    },
+    {
+      "name": "CompleteMigration",
+      "methodName": "toCompleteMigration",
+      "description": "Grants permission to complete an online migration of data from hosted Redis on Amazon EC2 to ElastiCache",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CompleteMigration.html"
+    },
+    {
+      "name": "Connect",
+      "methodName": "toConnect",
+      "description": "Grants permission to connect as a specified ElastiCache user to an ElastiCache Replication Group or ElastiCache serverless cache",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth-iam.html"
+    },
+    {
+      "name": "CopyServerlessCacheSnapshot",
+      "methodName": "toCopyServerlessCacheSnapshot",
+      "description": "Grants permission to make a copy of an existing serverless cache snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CopyServerlessCacheSnapshot.html"
+    },
+    {
+      "name": "CopySnapshot",
+      "methodName": "toCopySnapshot",
+      "description": "Grants permission to make a copy of an existing snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CopySnapshot.html"
+    },
+    {
+      "name": "CreateCacheCluster",
+      "methodName": "toCreateCacheCluster",
+      "description": "Grants permission to create a cache cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheCluster.html"
+    },
+    {
+      "name": "CreateCacheParameterGroup",
+      "methodName": "toCreateCacheParameterGroup",
+      "description": "Grants permission to create a parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheParameterGroup.html"
+    },
+    {
+      "name": "CreateCacheSecurityGroup",
+      "methodName": "toCreateCacheSecurityGroup",
+      "description": "Grants permission to create a cache security group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSecurityGroup.html"
+    },
+    {
+      "name": "CreateCacheSubnetGroup",
+      "methodName": "toCreateCacheSubnetGroup",
+      "description": "Grants permission to create a cache subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html"
+    },
+    {
+      "name": "CreateGlobalReplicationGroup",
+      "methodName": "toCreateGlobalReplicationGroup",
+      "description": "Grants permission to create a global replication group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateGlobalReplicationGroup.html"
+    },
+    {
+      "name": "CreateReplicationGroup",
+      "methodName": "toCreateReplicationGroup",
+      "description": "Grants permission to create a replication group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateReplicationGroup.html"
+    },
+    {
+      "name": "CreateServerlessCache",
+      "methodName": "toCreateServerlessCache",
+      "description": "Grants permission to create a serverless cache",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateServerlessCache.html"
+    },
+    {
+      "name": "CreateServerlessCacheSnapshot",
+      "methodName": "toCreateServerlessCacheSnapshot",
+      "description": "Grants permission to create a copy of a serverless cache at a specific moment in time",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateServerlessCacheSnapshot.html"
+    },
+    {
+      "name": "CreateSnapshot",
+      "methodName": "toCreateSnapshot",
+      "description": "Grants permission to create a copy of an entire Redis cluster at a specific moment in time",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateSnapshot.html"
+    },
+    {
+      "name": "CreateUser",
+      "methodName": "toCreateUser",
+      "description": "Grants permission to create a user for Redis. Users are supported from Redis 6.0 onwards",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateUser.html"
+    },
+    {
+      "name": "CreateUserGroup",
+      "methodName": "toCreateUserGroup",
+      "description": "Grants permission to create a user group for Redis. Groups are supported from Redis 6.0 onwards",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateUserGroup.html"
+    },
+    {
+      "name": "DecreaseNodeGroupsInGlobalReplicationGroup",
+      "methodName": "toDecreaseNodeGroupsInGlobalReplicationGroup",
+      "description": "Grants permission to decrease the number of node groups in global replication groups",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DecreaseNodeGroupsInGlobalReplicationGroup.html"
+    },
+    {
+      "name": "DecreaseReplicaCount",
+      "methodName": "toDecreaseReplicaCount",
+      "description": "Grants permission to decrease the number of replicas in a Redis (cluster mode disabled) replication group or the number of replica nodes in one or more node groups (shards) of a Redis (cluster mode enabled) replication group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DecreaseReplicaCount.html"
+    },
+    {
+      "name": "DeleteCacheCluster",
+      "methodName": "toDeleteCacheCluster",
+      "description": "Grants permission to delete a previously provisioned cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheCluster.html"
+    },
+    {
+      "name": "DeleteCacheParameterGroup",
+      "methodName": "toDeleteCacheParameterGroup",
+      "description": "Grants permission to delete the specified cache parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheParameterGroup.html"
+    },
+    {
+      "name": "DeleteCacheSecurityGroup",
+      "methodName": "toDeleteCacheSecurityGroup",
+      "description": "Grants permission to delete a cache security group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheSecurityGroup.html"
+    },
+    {
+      "name": "DeleteCacheSubnetGroup",
+      "methodName": "toDeleteCacheSubnetGroup",
+      "description": "Grants permission to delete a cache subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheSubnetGroup.html"
+    },
+    {
+      "name": "DeleteGlobalReplicationGroup",
+      "methodName": "toDeleteGlobalReplicationGroup",
+      "description": "Grants permission to delete an existing global replication group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteGlobalReplicationGroup.html"
+    },
+    {
+      "name": "DeleteReplicationGroup",
+      "methodName": "toDeleteReplicationGroup",
+      "description": "Grants permission to delete an existing replication group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteReplicationGroup.html"
+    },
+    {
+      "name": "DeleteServerlessCache",
+      "methodName": "toDeleteServerlessCache",
+      "description": "Grants permission to delete a serverless cache",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteServerlessCache.html"
+    },
+    {
+      "name": "DeleteServerlessCacheSnapshot",
+      "methodName": "toDeleteServerlessCacheSnapshot",
+      "description": "Grants permission to delete a serverless cache snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteServerlessCacheSnapshot.html"
+    },
+    {
+      "name": "DeleteSnapshot",
+      "methodName": "toDeleteSnapshot",
+      "description": "Grants permission to delete an existing snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteSnapshot.html"
+    },
+    {
+      "name": "DeleteUser",
+      "methodName": "toDeleteUser",
+      "description": "Grants permission to delete an existing user and thus remove it from all user groups and replication groups where it was assigned",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteUser.html"
+    },
+    {
+      "name": "DeleteUserGroup",
+      "methodName": "toDeleteUserGroup",
+      "description": "Grants permission to delete an existing user group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteUserGroup.html"
+    },
+    {
+      "name": "DescribeCacheClusters",
+      "methodName": "toDescribeCacheClusters",
+      "description": "Grants permission to list information about provisioned cache clusters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheClusters.html"
+    },
+    {
+      "name": "DescribeCacheEngineVersions",
+      "methodName": "toDescribeCacheEngineVersions",
+      "description": "Grants permission to list available cache engines and their versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheEngineVersions.html"
+    },
+    {
+      "name": "DescribeCacheParameterGroups",
+      "methodName": "toDescribeCacheParameterGroups",
+      "description": "Grants permission to list cache parameter group descriptions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheParameterGroups.html"
+    },
+    {
+      "name": "DescribeCacheParameters",
+      "methodName": "toDescribeCacheParameters",
+      "description": "Grants permission to retrieve the detailed parameter list for a particular cache parameter group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheParameters.html"
+    },
+    {
+      "name": "DescribeCacheSecurityGroups",
+      "methodName": "toDescribeCacheSecurityGroups",
+      "description": "Grants permission to list cache security group descriptions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheSecurityGroups.html"
+    },
+    {
+      "name": "DescribeCacheSubnetGroups",
+      "methodName": "toDescribeCacheSubnetGroups",
+      "description": "Grants permission to list cache subnet group descriptions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheSubnetGroups.html"
+    },
+    {
+      "name": "DescribeEngineDefaultParameters",
+      "methodName": "toDescribeEngineDefaultParameters",
+      "description": "Grants permission to retrieve the default engine and system parameter information for the specified cache engine",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEngineDefaultParameters.html"
+    },
+    {
+      "name": "DescribeEvents",
+      "methodName": "toDescribeEvents",
+      "description": "Grants permission to list events related to clusters, cache security groups, and cache parameter groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html"
+    },
+    {
+      "name": "DescribeGlobalReplicationGroups",
+      "methodName": "toDescribeGlobalReplicationGroups",
+      "description": "Grants permission to list information about global replication groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeGlobalReplicationGroups.html"
+    },
+    {
+      "name": "DescribeReplicationGroups",
+      "methodName": "toDescribeReplicationGroups",
+      "description": "Grants permission to list information about provisioned replication groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeReplicationGroups.html"
+    },
+    {
+      "name": "DescribeReservedCacheNodes",
+      "methodName": "toDescribeReservedCacheNodes",
+      "description": "Grants permission to list information about purchased reserved cache nodes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeReservedCacheNodes.html"
+    },
+    {
+      "name": "DescribeReservedCacheNodesOfferings",
+      "methodName": "toDescribeReservedCacheNodesOfferings",
+      "description": "Grants permission to list available reserved cache node offerings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeReservedCacheNodesOfferings.html"
+    },
+    {
+      "name": "DescribeServerlessCacheSnapshots",
+      "methodName": "toDescribeServerlessCacheSnapshots",
+      "description": "Grants permission to list information about serverless cache snapshots",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeServerlessCacheSnapshots.html"
+    },
+    {
+      "name": "DescribeServerlessCaches",
+      "methodName": "toDescribeServerlessCaches",
+      "description": "Grants permission to list serverless caches",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeServerlessCaches.html"
+    },
+    {
+      "name": "DescribeServiceUpdates",
+      "methodName": "toDescribeServiceUpdates",
+      "description": "Grants permission to list details of the service updates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeServiceUpdates.html"
+    },
+    {
+      "name": "DescribeSnapshots",
+      "methodName": "toDescribeSnapshots",
+      "description": "Grants permission to list information about cluster or replication group snapshots",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeSnapshots.html"
+    },
+    {
+      "name": "DescribeUpdateActions",
+      "methodName": "toDescribeUpdateActions",
+      "description": "Grants permission to list details of the update actions for a set of clusters or replication groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeUpdateActions.html"
+    },
+    {
+      "name": "DescribeUserGroups",
+      "methodName": "toDescribeUserGroups",
+      "description": "Grants permission to list information about Redis user groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeUserGroups.html"
+    },
+    {
+      "name": "DescribeUsers",
+      "methodName": "toDescribeUsers",
+      "description": "Grants permission to list information about Redis users",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeUsers.html"
+    },
+    {
+      "name": "DisassociateGlobalReplicationGroup",
+      "methodName": "toDisassociateGlobalReplicationGroup",
+      "description": "Grants permission to remove a secondary replication group from the global replication group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DisassociateGlobalReplicationGroup.html"
+    },
+    {
+      "name": "ExportServerlessCacheSnapshot",
+      "methodName": "toExportServerlessCacheSnapshot",
+      "description": "Grants permission to export a copy of a serverless cache at a specific moment in time to s3 bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ExportServerlessCacheSnapshot.html"
+    },
+    {
+      "name": "FailoverGlobalReplicationGroup",
+      "methodName": "toFailoverGlobalReplicationGroup",
+      "description": "Grants permission to failover the primary region to a selected secondary region of a global replication group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_FailoverGlobalReplicationGroup.html"
+    },
+    {
+      "name": "IncreaseNodeGroupsInGlobalReplicationGroup",
+      "methodName": "toIncreaseNodeGroupsInGlobalReplicationGroup",
+      "description": "Grants permission to increase the number of node groups in a global replication group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_IncreaseNodeGroupsInGlobalReplicationGroup.html"
+    },
+    {
+      "name": "IncreaseReplicaCount",
+      "methodName": "toIncreaseReplicaCount",
+      "description": "Grants permission to increase the number of replicas in a Redis (cluster mode disabled) replication group or the number of replica nodes in one or more node groups (shards) of a Redis (cluster mode enabled) replication group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_IncreaseReplicaCount.html"
+    },
+    {
+      "name": "ListAllowedNodeTypeModifications",
+      "methodName": "toListAllowedNodeTypeModifications",
+      "description": "Grants permission to list available node type that can be used to scale a particular Redis cluster or replication group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ListAllowedNodeTypeModifications.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for an ElastiCache resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ModifyCacheCluster",
+      "methodName": "toModifyCacheCluster",
+      "description": "Grants permission to modify settings for a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheCluster.html"
+    },
+    {
+      "name": "ModifyCacheParameterGroup",
+      "methodName": "toModifyCacheParameterGroup",
+      "description": "Grants permission to modify parameters of a cache parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html"
+    },
+    {
+      "name": "ModifyCacheSubnetGroup",
+      "methodName": "toModifyCacheSubnetGroup",
+      "description": "Grants permission to modify an existing cache subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheSubnetGroup.html"
+    },
+    {
+      "name": "ModifyGlobalReplicationGroup",
+      "methodName": "toModifyGlobalReplicationGroup",
+      "description": "Grants permission to modify settings for a global replication group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyGlobalReplicationGroup.html"
+    },
+    {
+      "name": "ModifyReplicationGroup",
+      "methodName": "toModifyReplicationGroup",
+      "description": "Grants permission to modify the settings for a replication group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroup.html"
+    },
+    {
+      "name": "ModifyReplicationGroupShardConfiguration",
+      "methodName": "toModifyReplicationGroupShardConfiguration",
+      "description": "Grants permission to add shards, remove shards, or rebalance the keyspaces among existing shards of a replication group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html"
+    },
+    {
+      "name": "ModifyServerlessCache",
+      "methodName": "toModifyServerlessCache",
+      "description": "Grants permission to modify parameters for a serverless cache",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyServerlessCache.html"
+    },
+    {
+      "name": "ModifyUser",
+      "methodName": "toModifyUser",
+      "description": "Grants permission to change Redis user password(s) and/or access string",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyUser.html"
+    },
+    {
+      "name": "ModifyUserGroup",
+      "methodName": "toModifyUserGroup",
+      "description": "Grants permission to change list of users that belong to the user group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyUserGroup.html"
+    },
+    {
+      "name": "PurchaseReservedCacheNodesOffering",
+      "methodName": "toPurchaseReservedCacheNodesOffering",
+      "description": "Grants permission to purchase a reserved cache node offering",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_PurchaseReservedCacheNodesOffering.html"
+    },
+    {
+      "name": "RebalanceSlotsInGlobalReplicationGroup",
+      "methodName": "toRebalanceSlotsInGlobalReplicationGroup",
+      "description": "Grants permission to perform a key space rebalance operation to redistribute slots and ensure uniform key distribution across existing shards in a global replication group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RebalanceSlotsInGlobalReplicationGroup.html"
+    },
+    {
+      "name": "RebootCacheCluster",
+      "methodName": "toRebootCacheCluster",
+      "description": "Grants permission to reboot some, or all, of the cache nodes within a provisioned cache cluster or replication group (cluster mode disabled)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RebootCacheCluster.html"
+    },
+    {
+      "name": "RemoveTagsFromResource",
+      "methodName": "toRemoveTagsFromResource",
+      "description": "Grants permission to remove tags from a ElastiCache resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RemoveTagsFromResource.html"
+    },
+    {
+      "name": "ResetCacheParameterGroup",
+      "methodName": "toResetCacheParameterGroup",
+      "description": "Grants permission to modify parameters of a cache parameter group back to their default values",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ResetCacheParameterGroup.html"
+    },
+    {
+      "name": "RevokeCacheSecurityGroupIngress",
+      "methodName": "toRevokeCacheSecurityGroupIngress",
+      "description": "Grants permission to remove an EC2 security group ingress from a ElastiCache security group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RevokeCacheSecurityGroupIngress.html"
+    },
+    {
+      "name": "StartMigration",
+      "methodName": "toStartMigration",
+      "description": "Grants permission to start a migration of data from hosted Redis on Amazon EC2 to ElastiCache for Redis",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_StartMigration.html"
+    },
+    {
+      "name": "TestFailover",
+      "methodName": "toTestFailover",
+      "description": "Grants permission to test automatic failover on a specified node group in a replication group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_TestFailover.html"
+    },
+    {
+      "name": "TestMigration",
+      "methodName": "toTestMigration",
+      "description": "Grants permission to test a migration of data from hosted Redis on Amazon EC2 to ElastiCache for Redis",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_TestMigration.html"
+    },
+    {
+      "name": "InterruptClusterAzPower",
+      "methodName": "toInterruptClusterAzPower",
+      "description": "Grants permission to test an AZ power interruption for an ElastiCache resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#elasticache-actions-reference"
+    }
+  ],
+  "resources": [
+    {
+      "name": "cluster",
+      "methodName": "onCluster",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.Clusters",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:cluster:${CacheClusterId}",
+      "placeholders": [
+        {
+          "placeholder": "CacheClusterId",
+          "name": "cacheClusterId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifAuthTokenEnabled",
+        "ifCacheNodeType",
+        "ifCacheParameterGroupName",
+        "ifEngineType",
+        "ifEngineVersion",
+        "ifMultiAZEnabled",
+        "ifSnapshotRetentionLimit"
+      ]
+    },
+    {
+      "name": "globalreplicationgroup",
+      "methodName": "onGlobalreplicationgroup",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html",
+      "arn": "arn:${Partition}:elasticache::${Account}:globalreplicationgroup:${GlobalReplicationGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "GlobalReplicationGroupId",
+          "name": "globalReplicationGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifAtRestEncryptionEnabled",
+        "ifAuthTokenEnabled",
+        "ifAutomaticFailoverEnabled",
+        "ifCacheNodeType",
+        "ifCacheParameterGroupName",
+        "ifClusterModeEnabled",
+        "ifEngineType",
+        "ifEngineVersion",
+        "ifKmsKeyId",
+        "ifMultiAZEnabled",
+        "ifNumNodeGroups",
+        "ifReplicasPerNodeGroup",
+        "ifSnapshotRetentionLimit",
+        "ifTransitEncryptionEnabled"
+      ]
+    },
+    {
+      "name": "parametergroup",
+      "methodName": "onParametergroup",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.ParameterGroups",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:parametergroup:${CacheParameterGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "CacheParameterGroupName",
+          "name": "cacheParameterGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifCacheParameterGroupName"
+      ]
+    },
+    {
+      "name": "replicationgroup",
+      "methodName": "onReplicationgroup",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.ReplicationGroups",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:replicationgroup:${ReplicationGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "ReplicationGroupId",
+          "name": "replicationGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifAtRestEncryptionEnabled",
+        "ifAuthTokenEnabled",
+        "ifAutomaticFailoverEnabled",
+        "ifCacheNodeType",
+        "ifCacheParameterGroupName",
+        "ifClusterModeEnabled",
+        "ifDurability",
+        "ifEngineType",
+        "ifEngineVersion",
+        "ifKmsKeyId",
+        "ifMultiAZEnabled",
+        "ifNumNodeGroups",
+        "ifReplicasPerNodeGroup",
+        "ifSnapshotRetentionLimit",
+        "ifTransitEncryptionEnabled"
+      ]
+    },
+    {
+      "name": "reserved-instance",
+      "methodName": "onReservedInstance",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/reserved-nodes.html",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:reserved-instance:${ReservedCacheNodeId}",
+      "placeholders": [
+        {
+          "placeholder": "ReservedCacheNodeId",
+          "name": "reservedCacheNodeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "securitygroup",
+      "methodName": "onSecuritygroup",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.SecurityGroups",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:securitygroup:${CacheSecurityGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "CacheSecurityGroupName",
+          "name": "cacheSecurityGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "serverlesscache",
+      "methodName": "onServerlesscache",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.html",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:serverlesscache:${ServerlessCacheName}",
+      "placeholders": [
+        {
+          "placeholder": "ServerlessCacheName",
+          "name": "serverlessCacheName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifDataStorageUnit",
+        "ifEngineType",
+        "ifEngineVersion",
+        "ifKmsKeyId",
+        "ifMaximumDataStorage",
+        "ifMaximumECPUPerSecond",
+        "ifMinimumDataStorage",
+        "ifMinimumECPUPerSecond",
+        "ifSnapshotRetentionLimit"
+      ]
+    },
+    {
+      "name": "serverlesscachesnapshot",
+      "methodName": "onServerlesscachesnapshot",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.html",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:serverlesscachesnapshot:${ServerlessCacheSnapshotName}",
+      "placeholders": [
+        {
+          "placeholder": "ServerlessCacheSnapshotName",
+          "name": "serverlessCacheSnapshotName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifKmsKeyId"
+      ]
+    },
+    {
+      "name": "snapshot",
+      "methodName": "onSnapshot",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.Snapshots",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:snapshot:${SnapshotName}",
+      "placeholders": [
+        {
+          "placeholder": "SnapshotName",
+          "name": "snapshotName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifKmsKeyId"
+      ]
+    },
+    {
+      "name": "subnetgroup",
+      "methodName": "onSubnetgroup",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.SubnetGroups",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:subnetgroup:${CacheSubnetGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "CacheSubnetGroupName",
+          "name": "cacheSubnetGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "user",
+      "methodName": "onUser",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:user:${UserId}",
+      "placeholders": [
+        {
+          "placeholder": "UserId",
+          "name": "userId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifUserAuthenticationMode"
+      ]
+    },
+    {
+      "name": "usergroup",
+      "methodName": "onUsergroup",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:usergroup:${UserGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "UserGroupId",
+          "name": "userGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters actions based on the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toAuthorizeCacheSecurityGroupIngress",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCopyServerlessCacheSnapshot",
+        "toCopySnapshot",
+        "toCreateCacheCluster",
+        "toCreateCacheParameterGroup",
+        "toCreateCacheSecurityGroup",
+        "toCreateCacheSubnetGroup",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateServerlessCache",
+        "toCreateServerlessCacheSnapshot",
+        "toCreateSnapshot",
+        "toCreateUser",
+        "toCreateUserGroup",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteCacheCluster",
+        "toDeleteCacheParameterGroup",
+        "toDeleteCacheSecurityGroup",
+        "toDeleteCacheSubnetGroup",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDeleteServerlessCache",
+        "toDeleteServerlessCacheSnapshot",
+        "toDeleteSnapshot",
+        "toDeleteUser",
+        "toDeleteUserGroup",
+        "toDescribeCacheClusters",
+        "toDescribeCacheParameterGroups",
+        "toDescribeCacheParameters",
+        "toDescribeCacheSecurityGroups",
+        "toDescribeCacheSubnetGroups",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeReservedCacheNodes",
+        "toDescribeServerlessCacheSnapshots",
+        "toDescribeServerlessCaches",
+        "toDescribeSnapshots",
+        "toDescribeUpdateActions",
+        "toDescribeUserGroups",
+        "toDescribeUsers",
+        "toDisassociateGlobalReplicationGroup",
+        "toExportServerlessCacheSnapshot",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyCacheCluster",
+        "toModifyCacheParameterGroup",
+        "toModifyCacheSubnetGroup",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toModifyServerlessCache",
+        "toModifyUser",
+        "toModifyUserGroup",
+        "toPurchaseReservedCacheNodesOffering",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRebootCacheCluster",
+        "toRemoveTagsFromResource",
+        "toResetCacheParameterGroup",
+        "toRevokeCacheSecurityGroupIngress",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "globalreplicationgroup",
+        "parametergroup",
+        "replicationgroup",
+        "reserved-instance",
+        "securitygroup",
+        "serverlesscache",
+        "serverlesscachesnapshot",
+        "snapshot",
+        "subnetgroup",
+        "user",
+        "usergroup"
+      ],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toAuthorizeCacheSecurityGroupIngress",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCopyServerlessCacheSnapshot",
+        "toCopySnapshot",
+        "toCreateCacheCluster",
+        "toCreateCacheParameterGroup",
+        "toCreateCacheSecurityGroup",
+        "toCreateCacheSubnetGroup",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateServerlessCache",
+        "toCreateServerlessCacheSnapshot",
+        "toCreateSnapshot",
+        "toCreateUser",
+        "toCreateUserGroup",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteCacheCluster",
+        "toDeleteCacheParameterGroup",
+        "toDeleteCacheSecurityGroup",
+        "toDeleteCacheSubnetGroup",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDeleteServerlessCache",
+        "toDeleteServerlessCacheSnapshot",
+        "toDeleteSnapshot",
+        "toDeleteUser",
+        "toDeleteUserGroup",
+        "toDescribeCacheClusters",
+        "toDescribeCacheParameterGroups",
+        "toDescribeCacheParameters",
+        "toDescribeCacheSecurityGroups",
+        "toDescribeCacheSubnetGroups",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeReservedCacheNodes",
+        "toDescribeServerlessCacheSnapshots",
+        "toDescribeServerlessCaches",
+        "toDescribeSnapshots",
+        "toDescribeUpdateActions",
+        "toDescribeUserGroups",
+        "toDescribeUsers",
+        "toDisassociateGlobalReplicationGroup",
+        "toExportServerlessCacheSnapshot",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyCacheCluster",
+        "toModifyCacheParameterGroup",
+        "toModifyCacheSubnetGroup",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toModifyServerlessCache",
+        "toModifyUser",
+        "toModifyUserGroup",
+        "toPurchaseReservedCacheNodesOffering",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRebootCacheCluster",
+        "toRemoveTagsFromResource",
+        "toResetCacheParameterGroup",
+        "toRevokeCacheSecurityGroupIngress",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "globalreplicationgroup",
+        "parametergroup",
+        "replicationgroup",
+        "reserved-instance",
+        "securitygroup",
+        "serverlesscache",
+        "serverlesscachesnapshot",
+        "snapshot",
+        "subnetgroup",
+        "user",
+        "usergroup"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters actions based on the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toAuthorizeCacheSecurityGroupIngress",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCopyServerlessCacheSnapshot",
+        "toCopySnapshot",
+        "toCreateCacheCluster",
+        "toCreateCacheParameterGroup",
+        "toCreateCacheSecurityGroup",
+        "toCreateCacheSubnetGroup",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateServerlessCache",
+        "toCreateServerlessCacheSnapshot",
+        "toCreateSnapshot",
+        "toCreateUser",
+        "toCreateUserGroup",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteCacheCluster",
+        "toDeleteCacheParameterGroup",
+        "toDeleteCacheSecurityGroup",
+        "toDeleteCacheSubnetGroup",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDeleteServerlessCache",
+        "toDeleteServerlessCacheSnapshot",
+        "toDeleteSnapshot",
+        "toDeleteUser",
+        "toDeleteUserGroup",
+        "toDescribeCacheClusters",
+        "toDescribeCacheParameterGroups",
+        "toDescribeCacheParameters",
+        "toDescribeCacheSecurityGroups",
+        "toDescribeCacheSubnetGroups",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeReservedCacheNodes",
+        "toDescribeServerlessCacheSnapshots",
+        "toDescribeServerlessCaches",
+        "toDescribeSnapshots",
+        "toDescribeUpdateActions",
+        "toDescribeUserGroups",
+        "toDescribeUsers",
+        "toDisassociateGlobalReplicationGroup",
+        "toExportServerlessCacheSnapshot",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyCacheCluster",
+        "toModifyCacheParameterGroup",
+        "toModifyCacheSubnetGroup",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toModifyServerlessCache",
+        "toModifyUser",
+        "toModifyUserGroup",
+        "toPurchaseReservedCacheNodesOffering",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRebootCacheCluster",
+        "toRemoveTagsFromResource",
+        "toResetCacheParameterGroup",
+        "toRevokeCacheSecurityGroupIngress",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "globalreplicationgroup",
+        "parametergroup",
+        "replicationgroup",
+        "reserved-instance",
+        "securitygroup",
+        "serverlesscache",
+        "serverlesscachesnapshot",
+        "snapshot",
+        "subnetgroup",
+        "user",
+        "usergroup"
+      ],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticache:AtRestEncryptionEnabled",
+      "methodName": "ifAtRestEncryptionEnabled",
+      "description": "Filters access by the AtRestEncryptionEnabled parameter present in the request or default false value if parameter is not present",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCreateCacheCluster",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateSnapshot",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeUpdateActions",
+        "toDisassociateGlobalReplicationGroup",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRemoveTagsFromResource",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "globalreplicationgroup",
+        "replicationgroup"
+      ],
+      "keyLiteral": "AtRestEncryptionEnabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "elasticache:AuthTokenEnabled",
+      "methodName": "ifAuthTokenEnabled",
+      "description": "Filters access by the presence of non empty AuthToken parameter in the request",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCreateCacheCluster",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateSnapshot",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteCacheCluster",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDescribeCacheClusters",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeUpdateActions",
+        "toDisassociateGlobalReplicationGroup",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyCacheCluster",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRebootCacheCluster",
+        "toRemoveTagsFromResource",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "globalreplicationgroup",
+        "replicationgroup"
+      ],
+      "keyLiteral": "AuthTokenEnabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "elasticache:AutomaticFailoverEnabled",
+      "methodName": "ifAutomaticFailoverEnabled",
+      "description": "Filters access by the AutomaticFailoverEnabled parameter in the request",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCreateCacheCluster",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateSnapshot",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeUpdateActions",
+        "toDisassociateGlobalReplicationGroup",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRemoveTagsFromResource",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "globalreplicationgroup",
+        "replicationgroup"
+      ],
+      "keyLiteral": "AutomaticFailoverEnabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "elasticache:CacheNodeType",
+      "methodName": "ifCacheNodeType",
+      "description": "Filters access by the cacheNodeType parameter present in the request. This key can be used to restrict which cache node types can be used on cluster creation or scaling operations",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCreateCacheCluster",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateSnapshot",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteCacheCluster",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDescribeCacheClusters",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeUpdateActions",
+        "toDisassociateGlobalReplicationGroup",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyCacheCluster",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRebootCacheCluster",
+        "toRemoveTagsFromResource",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "globalreplicationgroup",
+        "replicationgroup"
+      ],
+      "keyLiteral": "CacheNodeType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticache:CacheParameterGroupName",
+      "methodName": "ifCacheParameterGroupName",
+      "description": "Filters access by the CacheParameterGroupName parameter in the request",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCreateCacheCluster",
+        "toCreateCacheParameterGroup",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateSnapshot",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteCacheCluster",
+        "toDeleteCacheParameterGroup",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDescribeCacheClusters",
+        "toDescribeCacheParameterGroups",
+        "toDescribeCacheParameters",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeUpdateActions",
+        "toDisassociateGlobalReplicationGroup",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyCacheCluster",
+        "toModifyCacheParameterGroup",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRebootCacheCluster",
+        "toRemoveTagsFromResource",
+        "toResetCacheParameterGroup",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "globalreplicationgroup",
+        "parametergroup",
+        "replicationgroup"
+      ],
+      "keyLiteral": "CacheParameterGroupName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticache:ClusterModeEnabled",
+      "methodName": "ifClusterModeEnabled",
+      "description": "Filters access by the cluster mode parameter present in the request. Default value for single node group (shard) creations is false",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCreateCacheCluster",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateSnapshot",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeUpdateActions",
+        "toDisassociateGlobalReplicationGroup",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRemoveTagsFromResource",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "globalreplicationgroup",
+        "replicationgroup"
+      ],
+      "keyLiteral": "ClusterModeEnabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "elasticache:ConnectionType",
+      "methodName": "ifConnectionType",
+      "description": "Filters access by the ConnectionType parameter in the request",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toCreateServerlessCache"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ConnectionType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticache:DataStorageUnit",
+      "methodName": "ifDataStorageUnit",
+      "description": "Filters access by the CacheUsageLimits.DataStorage.Unit parameter in the CreateServerlessCache and ModifyServerlessCache request",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toConnect",
+        "toCreateServerlessCache",
+        "toCreateServerlessCacheSnapshot",
+        "toDeleteServerlessCache",
+        "toDescribeServerlessCacheSnapshots",
+        "toDescribeServerlessCaches",
+        "toListTagsForResource",
+        "toModifyServerlessCache",
+        "toRemoveTagsFromResource"
+      ],
+      "relatedResourceTypes": [
+        "serverlesscache"
+      ],
+      "keyLiteral": "DataStorageUnit",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticache:Durability",
+      "methodName": "ifDurability",
+      "description": "Filters access by the Durability parameter in the request. Valid values are default, async, sync, or disabled",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCreateCacheCluster",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateSnapshot",
+        "toDecreaseReplicaCount",
+        "toDeleteReplicationGroup",
+        "toDescribeReplicationGroups",
+        "toDescribeUpdateActions",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toRemoveTagsFromResource",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "replicationgroup"
+      ],
+      "keyLiteral": "Durability",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticache:EngineType",
+      "methodName": "ifEngineType",
+      "description": "Filters access by the engine type present in creation requests. For replication group creations, default engine 'redis' is used as key if parameter is not present",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCreateCacheCluster",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateServerlessCache",
+        "toCreateServerlessCacheSnapshot",
+        "toCreateSnapshot",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteCacheCluster",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDeleteServerlessCache",
+        "toDescribeCacheClusters",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeServerlessCacheSnapshots",
+        "toDescribeServerlessCaches",
+        "toDescribeUpdateActions",
+        "toDisassociateGlobalReplicationGroup",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyCacheCluster",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toModifyServerlessCache",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRebootCacheCluster",
+        "toRemoveTagsFromResource",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "globalreplicationgroup",
+        "replicationgroup",
+        "serverlesscache"
+      ],
+      "keyLiteral": "EngineType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticache:EngineVersion",
+      "methodName": "ifEngineVersion",
+      "description": "Filters access by the engineVersion parameter present in creation or cluster modification requests",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCreateCacheCluster",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateServerlessCache",
+        "toCreateServerlessCacheSnapshot",
+        "toCreateSnapshot",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteCacheCluster",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDeleteServerlessCache",
+        "toDescribeCacheClusters",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeServerlessCacheSnapshots",
+        "toDescribeServerlessCaches",
+        "toDescribeUpdateActions",
+        "toDisassociateGlobalReplicationGroup",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyCacheCluster",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toModifyServerlessCache",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRebootCacheCluster",
+        "toRemoveTagsFromResource",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "globalreplicationgroup",
+        "replicationgroup",
+        "serverlesscache"
+      ],
+      "keyLiteral": "EngineVersion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticache:KmsKeyId",
+      "methodName": "ifKmsKeyId",
+      "description": "Filters access by the Key ID of the KMS key",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCopyServerlessCacheSnapshot",
+        "toCopySnapshot",
+        "toCreateCacheCluster",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateServerlessCache",
+        "toCreateServerlessCacheSnapshot",
+        "toCreateSnapshot",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteCacheCluster",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDeleteServerlessCache",
+        "toDeleteServerlessCacheSnapshot",
+        "toDeleteSnapshot",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeServerlessCacheSnapshots",
+        "toDescribeServerlessCaches",
+        "toDescribeSnapshots",
+        "toDescribeUpdateActions",
+        "toDisassociateGlobalReplicationGroup",
+        "toExportServerlessCacheSnapshot",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toModifyServerlessCache",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRemoveTagsFromResource",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "globalreplicationgroup",
+        "replicationgroup",
+        "serverlesscache",
+        "serverlesscachesnapshot",
+        "snapshot"
+      ],
+      "keyLiteral": "KmsKeyId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticache:MaximumDataStorage",
+      "methodName": "ifMaximumDataStorage",
+      "description": "Filters access by the CacheUsageLimits.DataStorage.Maximum parameter in the CreateServerlessCache and ModifyServerlessCache request",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toConnect",
+        "toCreateServerlessCache",
+        "toCreateServerlessCacheSnapshot",
+        "toDeleteServerlessCache",
+        "toDescribeServerlessCacheSnapshots",
+        "toDescribeServerlessCaches",
+        "toListTagsForResource",
+        "toModifyServerlessCache",
+        "toRemoveTagsFromResource"
+      ],
+      "relatedResourceTypes": [
+        "serverlesscache"
+      ],
+      "keyLiteral": "MaximumDataStorage",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "elasticache:MaximumECPUPerSecond",
+      "methodName": "ifMaximumECPUPerSecond",
+      "description": "Filters access by the CacheUsageLimits.ECPUPerSecond.Maximum parameter in the CreateServerlessCache and ModifyServerlessCache request",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toConnect",
+        "toCreateServerlessCache",
+        "toCreateServerlessCacheSnapshot",
+        "toDeleteServerlessCache",
+        "toDescribeServerlessCacheSnapshots",
+        "toDescribeServerlessCaches",
+        "toListTagsForResource",
+        "toModifyServerlessCache",
+        "toRemoveTagsFromResource"
+      ],
+      "relatedResourceTypes": [
+        "serverlesscache"
+      ],
+      "keyLiteral": "MaximumECPUPerSecond",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "elasticache:MinimumDataStorage",
+      "methodName": "ifMinimumDataStorage",
+      "description": "Filters access by the CacheUsageLimits.DataStorage.Minimum parameter in the CreateServerlessCache and ModifyServerlessCache request",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toConnect",
+        "toCreateServerlessCache",
+        "toCreateServerlessCacheSnapshot",
+        "toDeleteServerlessCache",
+        "toDescribeServerlessCacheSnapshots",
+        "toDescribeServerlessCaches",
+        "toListTagsForResource",
+        "toModifyServerlessCache",
+        "toRemoveTagsFromResource"
+      ],
+      "relatedResourceTypes": [
+        "serverlesscache"
+      ],
+      "keyLiteral": "MinimumDataStorage",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "elasticache:MinimumECPUPerSecond",
+      "methodName": "ifMinimumECPUPerSecond",
+      "description": "Filters access by the CacheUsageLimits.ECPUPerSecond.Minimum parameter in the CreateServerlessCache and ModifyServerlessCache request",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toConnect",
+        "toCreateServerlessCache",
+        "toCreateServerlessCacheSnapshot",
+        "toDeleteServerlessCache",
+        "toDescribeServerlessCacheSnapshots",
+        "toDescribeServerlessCaches",
+        "toListTagsForResource",
+        "toModifyServerlessCache",
+        "toRemoveTagsFromResource"
+      ],
+      "relatedResourceTypes": [
+        "serverlesscache"
+      ],
+      "keyLiteral": "MinimumECPUPerSecond",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "elasticache:MultiAZEnabled",
+      "methodName": "ifMultiAZEnabled",
+      "description": "Filters access by the AZMode parameter, MultiAZEnabled parameter or the number of availability zones that the cluster or replication group can be placed in",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCreateCacheCluster",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateSnapshot",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteCacheCluster",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDescribeCacheClusters",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeUpdateActions",
+        "toDisassociateGlobalReplicationGroup",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyCacheCluster",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRebootCacheCluster",
+        "toRemoveTagsFromResource",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "globalreplicationgroup",
+        "replicationgroup"
+      ],
+      "keyLiteral": "MultiAZEnabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "elasticache:NumNodeGroups",
+      "methodName": "ifNumNodeGroups",
+      "description": "Filters access by the NumNodeGroups or NodeGroupCount parameter specified in the request. This key can be used to restrict the number of node groups (shards) clusters can have after creation or scaling operations",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCreateCacheCluster",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateSnapshot",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeUpdateActions",
+        "toDisassociateGlobalReplicationGroup",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRemoveTagsFromResource",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "globalreplicationgroup",
+        "replicationgroup"
+      ],
+      "keyLiteral": "NumNodeGroups",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "elasticache:ReplicasPerNodeGroup",
+      "methodName": "ifReplicasPerNodeGroup",
+      "description": "Filters access by the number of replicas per node group (shards) specified in creations or scaling requests",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCreateCacheCluster",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateSnapshot",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeUpdateActions",
+        "toDisassociateGlobalReplicationGroup",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRemoveTagsFromResource",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "globalreplicationgroup",
+        "replicationgroup"
+      ],
+      "keyLiteral": "ReplicasPerNodeGroup",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "elasticache:SnapshotRetentionLimit",
+      "methodName": "ifSnapshotRetentionLimit",
+      "description": "Filters access by the SnapshotRetentionLimit parameter in the request",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCreateCacheCluster",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateServerlessCache",
+        "toCreateServerlessCacheSnapshot",
+        "toCreateSnapshot",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteCacheCluster",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDeleteServerlessCache",
+        "toDescribeCacheClusters",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeServerlessCacheSnapshots",
+        "toDescribeServerlessCaches",
+        "toDescribeUpdateActions",
+        "toDisassociateGlobalReplicationGroup",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyCacheCluster",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toModifyServerlessCache",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRebootCacheCluster",
+        "toRemoveTagsFromResource",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "globalreplicationgroup",
+        "replicationgroup",
+        "serverlesscache"
+      ],
+      "keyLiteral": "SnapshotRetentionLimit",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "elasticache:TransitEncryptionEnabled",
+      "methodName": "ifTransitEncryptionEnabled",
+      "description": "Filters access by the TransitEncryptionEnabled parameter present in the request. For replication group creations, default value 'false' is used as key if parameter is not present",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toBatchApplyUpdateAction",
+        "toBatchStopUpdateAction",
+        "toCompleteMigration",
+        "toConnect",
+        "toCreateCacheCluster",
+        "toCreateGlobalReplicationGroup",
+        "toCreateReplicationGroup",
+        "toCreateSnapshot",
+        "toDecreaseNodeGroupsInGlobalReplicationGroup",
+        "toDecreaseReplicaCount",
+        "toDeleteGlobalReplicationGroup",
+        "toDeleteReplicationGroup",
+        "toDescribeGlobalReplicationGroups",
+        "toDescribeReplicationGroups",
+        "toDescribeUpdateActions",
+        "toDisassociateGlobalReplicationGroup",
+        "toFailoverGlobalReplicationGroup",
+        "toIncreaseNodeGroupsInGlobalReplicationGroup",
+        "toIncreaseReplicaCount",
+        "toListAllowedNodeTypeModifications",
+        "toListTagsForResource",
+        "toModifyGlobalReplicationGroup",
+        "toModifyReplicationGroup",
+        "toModifyReplicationGroupShardConfiguration",
+        "toRebalanceSlotsInGlobalReplicationGroup",
+        "toRemoveTagsFromResource",
+        "toStartMigration",
+        "toTestFailover",
+        "toTestMigration",
+        "toInterruptClusterAzPower"
+      ],
+      "relatedResourceTypes": [
+        "globalreplicationgroup",
+        "replicationgroup"
+      ],
+      "keyLiteral": "TransitEncryptionEnabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "elasticache:UserAuthenticationMode",
+      "methodName": "ifUserAuthenticationMode",
+      "description": "Filters access by the UserAuthenticationMode parameter in the request",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toAddTagsToResource",
+        "toConnect",
+        "toCreateUser",
+        "toCreateUserGroup",
+        "toDeleteUser",
+        "toDescribeUsers",
+        "toListTagsForResource",
+        "toModifyUser",
+        "toModifyUserGroup",
+        "toRemoveTagsFromResource"
+      ],
+      "relatedResourceTypes": [
+        "user"
+      ],
+      "keyLiteral": "UserAuthenticationMode",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

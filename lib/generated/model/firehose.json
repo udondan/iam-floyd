@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "filename": "firehose",
+  "className": "Firehose",
+  "name": "firehose",
+  "servicePrefix": "firehose",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_firehose.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateDeliveryStream",
+      "DeleteDeliveryStream",
+      "PutRecord",
+      "PutRecordBatch",
+      "StartDeliveryStreamEncryption",
+      "StopDeliveryStreamEncryption",
+      "TagDeliveryStream",
+      "UntagDeliveryStream",
+      "UpdateDestination"
+    ],
+    "Read": [
+      "DescribeDeliveryStream"
+    ],
+    "List": [
+      "ListDeliveryStreams",
+      "ListTagsForDeliveryStream"
+    ],
+    "Tagging": [
+      "TagDeliveryStream",
+      "UntagDeliveryStream"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateDeliveryStream",
+      "methodName": "toCreateDeliveryStream",
+      "description": "Grants permission to create a delivery stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html"
+    },
+    {
+      "name": "DeleteDeliveryStream",
+      "methodName": "toDeleteDeliveryStream",
+      "description": "Grants permission to delete a delivery stream and its data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_DeleteDeliveryStream.html"
+    },
+    {
+      "name": "DescribeDeliveryStream",
+      "methodName": "toDescribeDeliveryStream",
+      "description": "Grants permission to describe the specified delivery stream and gets the status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_DescribeDeliveryStream.html"
+    },
+    {
+      "name": "ListDeliveryStreams",
+      "methodName": "toListDeliveryStreams",
+      "description": "Grants permission to list your delivery streams",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_ListDeliveryStreams.html"
+    },
+    {
+      "name": "ListTagsForDeliveryStream",
+      "methodName": "toListTagsForDeliveryStream",
+      "description": "Grants permission to list the tags for the specified delivery stream",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_ListTagsForDeliveryStream.html"
+    },
+    {
+      "name": "PutRecord",
+      "methodName": "toPutRecord",
+      "description": "Grants permission to write a single data record into an Amazon Kinesis Firehose delivery stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecord.html"
+    },
+    {
+      "name": "PutRecordBatch",
+      "methodName": "toPutRecordBatch",
+      "description": "Grants permission to write multiple data records into a delivery stream in a single call, which can achieve higher throughput per producer than when writing single records",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"
+    },
+    {
+      "name": "StartDeliveryStreamEncryption",
+      "methodName": "toStartDeliveryStreamEncryption",
+      "description": "Grants permission to enable server-side encryption (SSE) for the delivery stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_StartDeliveryStreamEncryption.html"
+    },
+    {
+      "name": "StopDeliveryStreamEncryption",
+      "methodName": "toStopDeliveryStreamEncryption",
+      "description": "Grants permission to disable the specified destination of the specified delivery stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_StopDeliveryStreamEncryption.html"
+    },
+    {
+      "name": "TagDeliveryStream",
+      "methodName": "toTagDeliveryStream",
+      "description": "Grants permission to add or update tags for the specified delivery stream",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_TagDeliveryStream.html"
+    },
+    {
+      "name": "UntagDeliveryStream",
+      "methodName": "toUntagDeliveryStream",
+      "description": "Grants permission to remove tags from the specified delivery stream",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_UntagDeliveryStream.html"
+    },
+    {
+      "name": "UpdateDestination",
+      "methodName": "toUpdateDestination",
+      "description": "Grants permission to update the specified destination of the specified delivery stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_UpdateDestination.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "deliverystream",
+      "methodName": "onDeliverystream",
+      "url": "https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html",
+      "arn": "arn:${Partition}:firehose:${Region}:${Account}:deliverystream/${DeliveryStreamName}",
+      "placeholders": [
+        {
+          "placeholder": "DeliveryStreamName",
+          "name": "deliveryStreamName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDeliveryStream",
+        "toTagDeliveryStream"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateDeliveryStream",
+        "toDeleteDeliveryStream",
+        "toDescribeDeliveryStream",
+        "toListTagsForDeliveryStream",
+        "toPutRecord",
+        "toPutRecordBatch",
+        "toStartDeliveryStreamEncryption",
+        "toStopDeliveryStreamEncryption",
+        "toTagDeliveryStream",
+        "toUntagDeliveryStream",
+        "toUpdateDestination"
+      ],
+      "relatedResourceTypes": [
+        "deliverystream"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDeliveryStream",
+        "toTagDeliveryStream",
+        "toUntagDeliveryStream"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

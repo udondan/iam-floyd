@@ -4,20 +4,13 @@
 VERSION=$1
 BEFORE=$2
 
-TMP_ACTIONS_NEW="./actions-new.floyd"
-TMP_ACTIONS_REMOVED="./actions-removed.floyd"
+export LC_ALL=C
+
+TMP=$(mktemp -d)
+trap 'rm -rf "${TMP}"' EXIT
 
 function getLastTag() {
   git describe --tags --abbrev=0
-}
-
-# Get diff since last tag
-function getDiff() {
-  if [[ -n "${VERSION}" && -n "${BEFORE}" ]]; then
-    git diff --no-color "${BEFORE}..${VERSION}" -- "$1" ":!$1/.cache"
-  else
-    git diff --no-color "$(getLastTag)" -- "$1" ":!$1/.cache"
-  fi
 }
 
 function getVersion() {
@@ -28,65 +21,86 @@ function getVersion() {
   fi
 }
 
-function getNewServices() {
-  getDiff stats/services | grep '^+[^+]' | sed "s/^+/- /g" | sed "s/;.*//g" | sort
-}
+# Writes the lists of services, actions, resource types and condition keys of a git ref (or of
+# the working tree, if no ref is given) to the directory $1
+function writeLists() {
+  local out="$1"
+  local ref="${2:-}"
+  local modelDir="lib/generated/model"
+  mkdir -p "${out}"
 
-function getRemovedServices() {
-  getDiff stats/services | grep '^-[^-]' | sed "s/^-/- /g" | sed "s/;.*//g" | sort
-}
+  if [[ -n "${ref}" ]]; then
+    local src="${out}/src"
+    mkdir -p "${src}"
+    if git cat-file -e "${ref}:lib/generated/model" 2> /dev/null; then
+      git archive "${ref}" lib/generated/model | tar -x -C "${src}"
+      modelDir="${src}/lib/generated/model"
+    else
+      # releases before the service models were committed only have the stats folder
+      git archive "${ref}" stats | tar -x -C "${src}"
+      sort -u "${src}/stats/services" > "${out}/services"
+      for kind in actions resources conditions; do
+        find "${src}/stats/${kind}" -maxdepth 1 -type f -print0 |
+          xargs -0 cat | sort -u > "${out}/${kind}"
+      done
+      return
+    fi
+  fi
 
-function getNewActions() {
-  getDiff stats/actions | grep '^+[^+]' | sed "s/^+/- /g" | sed "s/;.*//g" | sort
-}
-
-function getRemovedActions() {
-  getDiff stats/actions | grep '^-[^-]' | sed "s/^-/- /g" | sed "s/;.*//g" | sort
-}
-
-function getNewResourceTypes() {
-  getDiff stats/resources | grep '^+[^+]' | sed "s/^+/- /g" | sort
-}
-
-function getRemovedResourceTypes() {
-  getDiff stats/resources | grep '^-[^-]' | sed "s/^-/- /g" | sort
-}
-
-function getNewConditions() {
-  getDiff stats/conditions | grep '^+[^+]' | sed "s/^+/- /g" | sort
-}
-
-function getRemovedConditions() {
-  getDiff stats/conditions | grep '^-[^-]' | sed "s/^-/- /g" | sort
-}
-
-function getUpdatedAccessLevels() {
-  comm -1 -2 ${TMP_ACTIONS_NEW} ${TMP_ACTIONS_REMOVED} | sed "s/^-//g" | \
-  while read -r line; do
-    getDiff stats/actions | \
-    grep "$line" | perl -0777 -pe "s/-([^;]+);(.*?)\n\+[^;]+;(.*)/- \1: \2 -> \3/gm"
+  for kind in services actions resources conditions; do
+    bin/model-list "${kind}" "${modelDir}" > "${out}/${kind}"
   done
 }
 
-# Services
-newServices=$(getNewServices)
-removedServices=$(getRemovedServices)
+if [[ -n "${VERSION}" && -n "${BEFORE}" ]]; then
+  writeLists "${TMP}/before" "${BEFORE}"
+  writeLists "${TMP}/after" "${VERSION}"
+else
+  writeLists "${TMP}/before" "$(getLastTag)"
+  writeLists "${TMP}/after"
+fi
 
-# Actions
-getNewActions > ${TMP_ACTIONS_NEW}
-getRemovedActions > ${TMP_ACTIONS_REMOVED}
-newActions=$(grep -vxFf ${TMP_ACTIONS_REMOVED} ${TMP_ACTIONS_NEW})
-removedActions=$(grep -vxFf ${TMP_ACTIONS_NEW} ${TMP_ACTIONS_REMOVED})
-updatedAccessLevels=$(getUpdatedAccessLevels)
-rm -f ${TMP_ACTIONS_NEW} ${TMP_ACTIONS_REMOVED}
+# Lines only in the new state
+function added() {
+  comm -13 "${TMP}/before/$1" "${TMP}/after/$1"
+}
+
+# Lines only in the old state
+function removed() {
+  comm -23 "${TMP}/before/$1" "${TMP}/after/$1"
+}
+
+function toList() {
+  sed "s/^/- /g"
+}
+
+# Services
+newServices=$(added services | toList)
+removedServices=$(removed services | toList)
+
+# Actions. An action with a changed access level is in both lists
+added actions > "${TMP}/actions-added"
+removed actions > "${TMP}/actions-removed"
+sed "s/;.*//g" "${TMP}/actions-added" | sort -u > "${TMP}/actions-added-names"
+sed "s/;.*//g" "${TMP}/actions-removed" | sort -u > "${TMP}/actions-removed-names"
+newActions=$(comm -23 "${TMP}/actions-added-names" "${TMP}/actions-removed-names" | toList)
+removedActions=$(comm -13 "${TMP}/actions-added-names" "${TMP}/actions-removed-names" | toList)
+updatedAccessLevels=$(
+  comm -12 "${TMP}/actions-added-names" "${TMP}/actions-removed-names" |
+    while read -r action; do
+      before=$(awk -F';' -v a="${action}" '$1 == a { print $2 }' "${TMP}/actions-removed")
+      after=$(awk -F';' -v a="${action}" '$1 == a { print $2 }' "${TMP}/actions-added")
+      echo "- ${action}: ${before} -> ${after}"
+    done
+)
 
 # Resource types
-newResourceTypes=$(getNewResourceTypes)
-removedResourceTypes=$(getRemovedResourceTypes)
+newResourceTypes=$(added resources | toList)
+removedResourceTypes=$(removed resources | toList)
 
 # Conditions
-newConditions=$(getNewConditions)
-removedConditions=$(getRemovedConditions)
+newConditions=$(added conditions | toList)
+removedConditions=$(removed conditions | toList)
 
 file="CHANGELOG/$(getVersion).md"
 hasContent=false

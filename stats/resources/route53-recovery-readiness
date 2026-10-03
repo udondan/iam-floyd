@@ -1,4 +1,0 @@
-route53-recovery-readiness:cell
-route53-recovery-readiness:readinesscheck
-route53-recovery-readiness:recoverygroup
-route53-recovery-readiness:resourceset

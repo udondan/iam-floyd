@@ -1,3 +1,0 @@
-networkflowmonitor:RequestTag/${TagKey}
-networkflowmonitor:ResourceTag/${TagKey}
-networkflowmonitor:TagKeys

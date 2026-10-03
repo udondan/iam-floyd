@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "filename": "payments",
+  "className": "Payments",
+  "name": "payments",
+  "servicePrefix": "payments",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_payments.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptFinancingApplicationTerms",
+      "CreateFinancingApplication",
+      "CreatePaymentInstrument",
+      "TagResource",
+      "UntagResource",
+      "UpdateFinancingApplication",
+      "DeletePaymentInstrument",
+      "MakePayment",
+      "UpdatePaymentInstrument",
+      "UpdatePaymentPreferences"
+    ],
+    "Read": [
+      "GetFinancingApplication",
+      "GetFinancingLine",
+      "GetFinancingLineWithdrawal",
+      "GetFinancingOption",
+      "GetPaymentStatus"
+    ],
+    "List": [
+      "GetPaymentInstrument",
+      "ListFinancingApplications",
+      "ListFinancingLineWithdrawals",
+      "ListFinancingLines",
+      "ListPaymentProgramOptions",
+      "ListPaymentProgramStatus",
+      "ListTagsForResource",
+      "ListPaymentInstruments",
+      "ListPaymentPreferences"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptFinancingApplicationTerms",
+      "methodName": "toAcceptFinancingApplicationTerms",
+      "description": "Grants permission to accept financing application terms provided by a lender",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
+    },
+    {
+      "name": "CreateFinancingApplication",
+      "methodName": "toCreateFinancingApplication",
+      "description": "Grants permission to create a financing application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
+    },
+    {
+      "name": "CreatePaymentInstrument",
+      "methodName": "toCreatePaymentInstrument",
+      "description": "Grants permission to create a payment instrument",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "GetFinancingApplication",
+      "methodName": "toGetFinancingApplication",
+      "description": "Grants permission to get information about a financing application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
+    },
+    {
+      "name": "GetFinancingLine",
+      "methodName": "toGetFinancingLine",
+      "description": "Grants permission to get information about a financing line",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
+    },
+    {
+      "name": "GetFinancingLineWithdrawal",
+      "methodName": "toGetFinancingLineWithdrawal",
+      "description": "Grants permission to get information about a financing line withdrawal",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
+    },
+    {
+      "name": "GetFinancingOption",
+      "methodName": "toGetFinancingOption",
+      "description": "Grants permission to get information about a financing option",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
+    },
+    {
+      "name": "GetPaymentInstrument",
+      "methodName": "toGetPaymentInstrument",
+      "description": "Grants permission to get information about a payment instrument",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "ListFinancingApplications",
+      "methodName": "toListFinancingApplications",
+      "description": "Grants permission to list financing application metadata",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
+    },
+    {
+      "name": "ListFinancingLineWithdrawals",
+      "methodName": "toListFinancingLineWithdrawals",
+      "description": "Grants permission to list financing line withdrawals metadata",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
+    },
+    {
+      "name": "ListFinancingLines",
+      "methodName": "toListFinancingLines",
+      "description": "Grants permission to list financing line metadata",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
+    },
+    {
+      "name": "ListPaymentProgramOptions",
+      "methodName": "toListPaymentProgramOptions",
+      "description": "Grants permission to list information about payment options",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
+    },
+    {
+      "name": "ListPaymentProgramStatus",
+      "methodName": "toListPaymentProgramStatus",
+      "description": "Grants permission to list information about payment program eligibility and enrolment status",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags on a payment resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a payment resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a payment resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "UpdateFinancingApplication",
+      "methodName": "toUpdateFinancingApplication",
+      "description": "Grants permission to update a financing application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
+    },
+    {
+      "name": "DeletePaymentInstrument",
+      "methodName": "toDeletePaymentInstrument",
+      "description": "Grants permission to delete a payment instrument",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "GetPaymentStatus",
+      "methodName": "toGetPaymentStatus",
+      "description": "Grants permission to get payment status of invoices",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "ListPaymentInstruments",
+      "methodName": "toListPaymentInstruments",
+      "description": "Grants permission to list payment instrument metadata",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "ListPaymentPreferences",
+      "methodName": "toListPaymentPreferences",
+      "description": "Grants permission to get payment preferences (preferred payment currency, preferred payment method, etc.)",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "MakePayment",
+      "methodName": "toMakePayment",
+      "description": "Grants permission to make a payment, authenticate a payment, verify a payment method, and generate a funding request document for Advance Pay",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "UpdatePaymentInstrument",
+      "methodName": "toUpdatePaymentInstrument",
+      "description": "Grants permission to update a payment instrument",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "UpdatePaymentPreferences",
+      "methodName": "toUpdatePaymentPreferences",
+      "description": "Grants permission to update payment preferences (preferred payment currency, preferred payment method, etc.)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "payment-instrument",
+      "methodName": "onPaymentInstrument",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
+      "arn": "arn:${Partition}:payments::${Account}:payment-instrument:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreatePaymentInstrument",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toGetPaymentInstrument",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "payment-instrument"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreatePaymentInstrument",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

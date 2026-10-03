@@ -1,5 +1,0 @@
-cognito-identity:AccountId
-cognito-identity:IdentityPoolArn
-cognito-identity:RequestTag/${TagKey}
-cognito-identity:ResourceTag/${TagKey}
-cognito-identity:TagKeys

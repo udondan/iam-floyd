@@ -1,6 +1,0 @@
-elasticbeanstalk:application
-elasticbeanstalk:applicationversion
-elasticbeanstalk:configurationtemplate
-elasticbeanstalk:environment
-elasticbeanstalk:platform
-elasticbeanstalk:solutionstack

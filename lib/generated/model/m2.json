@@ -1,0 +1,482 @@
+{
+  "schemaVersion": 1,
+  "filename": "m2",
+  "className": "M2",
+  "name": "m2",
+  "servicePrefix": "m2",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_m2.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelBatchJobExecution",
+      "CreateApplication",
+      "CreateDataSetExportTask",
+      "CreateDataSetImportTask",
+      "CreateDeployment",
+      "CreateEnvironment",
+      "DeleteApplication",
+      "DeleteApplicationFromEnvironment",
+      "DeleteEnvironment",
+      "StartApplication",
+      "StartBatchJob",
+      "StopApplication",
+      "TagResource",
+      "UntagResource",
+      "UpdateApplication",
+      "UpdateEnvironment"
+    ],
+    "Read": [
+      "GetApplication",
+      "GetApplicationVersion",
+      "GetBatchJobExecution",
+      "GetDataSetDetails",
+      "GetDataSetExportTask",
+      "GetDataSetImportTask",
+      "GetDeployment",
+      "GetEnvironment",
+      "GetSignedBluinsightsUrl",
+      "ListApplicationVersions",
+      "ListBatchJobDefinitions",
+      "ListBatchJobExecutions",
+      "ListBatchJobRestartPoints",
+      "ListDataSetExportHistory",
+      "ListDataSetImportHistory",
+      "ListDataSets",
+      "ListDeployments",
+      "ListEngineVersions",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListApplications",
+      "ListEnvironments"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelBatchJobExecution",
+      "methodName": "toCancelBatchJobExecution",
+      "description": "Grants permission to cancel the execution of a batch job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_CancelBatchJobExecution.html"
+    },
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to create an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_CreateApplication.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateDataSetExportTask",
+      "methodName": "toCreateDataSetExportTask",
+      "description": "Grants permission to create a data set export task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_CreateDataSetExportTask.html"
+    },
+    {
+      "name": "CreateDataSetImportTask",
+      "methodName": "toCreateDataSetImportTask",
+      "description": "Grants permission to create a data set import task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_CreateDataSetImportTask.html"
+    },
+    {
+      "name": "CreateDeployment",
+      "methodName": "toCreateDeployment",
+      "description": "Grants permission to create a deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_CreateDeployment.html"
+    },
+    {
+      "name": "CreateEnvironment",
+      "methodName": "toCreateEnvironment",
+      "description": "Grants permission to Create an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_CreateEnvironment.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_DeleteApplication.html"
+    },
+    {
+      "name": "DeleteApplicationFromEnvironment",
+      "methodName": "toDeleteApplicationFromEnvironment",
+      "description": "Grants permission to delete an application from a runtime environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_DeleteApplicationFromEnvironment.html"
+    },
+    {
+      "name": "DeleteEnvironment",
+      "methodName": "toDeleteEnvironment",
+      "description": "Grants permission to delete a runtime environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_DeleteEnvironment.html"
+    },
+    {
+      "name": "GetApplication",
+      "methodName": "toGetApplication",
+      "description": "Grants permission to retrieve an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_GetApplication.html"
+    },
+    {
+      "name": "GetApplicationVersion",
+      "methodName": "toGetApplicationVersion",
+      "description": "Grants permission to retrieve an application version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_GetApplicationVersion.html"
+    },
+    {
+      "name": "GetBatchJobExecution",
+      "methodName": "toGetBatchJobExecution",
+      "description": "Grants permission to retrieve a batch job execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_GetBatchJobExecution.html"
+    },
+    {
+      "name": "GetDataSetDetails",
+      "methodName": "toGetDataSetDetails",
+      "description": "Grants permission to retrieve data set details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_GetDataSetDetails.html"
+    },
+    {
+      "name": "GetDataSetExportTask",
+      "methodName": "toGetDataSetExportTask",
+      "description": "Grants permission to export a data set at the specified S3 location",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_GetDataSetExportTask.html"
+    },
+    {
+      "name": "GetDataSetImportTask",
+      "methodName": "toGetDataSetImportTask",
+      "description": "Grants permission to retrieve a data set import task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_GetDataSetImportTask.html"
+    },
+    {
+      "name": "GetDeployment",
+      "methodName": "toGetDeployment",
+      "description": "Grants permission to retrieve a deployment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_GetDeployment.html"
+    },
+    {
+      "name": "GetEnvironment",
+      "methodName": "toGetEnvironment",
+      "description": "Grants permission to retrieve a runtime environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_GetEnvironment.html"
+    },
+    {
+      "name": "GetSignedBluinsightsUrl",
+      "methodName": "toGetSignedBluinsightsUrl",
+      "description": "Grants permission to create a signed Bluinsights url",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_GetSignedBluinsightsUrl.html"
+    },
+    {
+      "name": "ListApplicationVersions",
+      "methodName": "toListApplicationVersions",
+      "description": "Grants permission to list the versions of an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_ListApplicationVersions.html"
+    },
+    {
+      "name": "ListApplications",
+      "methodName": "toListApplications",
+      "description": "Grants permission to list applications",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_ListApplications.html"
+    },
+    {
+      "name": "ListBatchJobDefinitions",
+      "methodName": "toListBatchJobDefinitions",
+      "description": "Grants permission to list batch job definitions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_ListBatchJobDefinitions.html"
+    },
+    {
+      "name": "ListBatchJobExecutions",
+      "methodName": "toListBatchJobExecutions",
+      "description": "Grants permission to list executions for a batch job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_ListBatchJobExecutions.html"
+    },
+    {
+      "name": "ListBatchJobRestartPoints",
+      "methodName": "toListBatchJobRestartPoints",
+      "description": "Grants permission to retrieve a batch job execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_ListBatchJobRestartPoints.html"
+    },
+    {
+      "name": "ListDataSetExportHistory",
+      "methodName": "toListDataSetExportHistory",
+      "description": "Grants permission to list data set export history",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_ListDataSetExportHistory.html"
+    },
+    {
+      "name": "ListDataSetImportHistory",
+      "methodName": "toListDataSetImportHistory",
+      "description": "Grants permission to list data set import history",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_ListDataSetImportHistory.html"
+    },
+    {
+      "name": "ListDataSets",
+      "methodName": "toListDataSets",
+      "description": "Grants permission to list data sets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_ListDataSets.html"
+    },
+    {
+      "name": "ListDeployments",
+      "methodName": "toListDeployments",
+      "description": "Grants permission to list deployments",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_ListDeployments.html"
+    },
+    {
+      "name": "ListEngineVersions",
+      "methodName": "toListEngineVersions",
+      "description": "Grants permission to list engine versions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_ListEngineVersions.html"
+    },
+    {
+      "name": "ListEnvironments",
+      "methodName": "toListEnvironments",
+      "description": "Grants permission to list runtime environments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_ListEnvironments.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "StartApplication",
+      "methodName": "toStartApplication",
+      "description": "Grants permission to start an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_StartApplication.html"
+    },
+    {
+      "name": "StartBatchJob",
+      "methodName": "toStartBatchJob",
+      "description": "Grants permission to start a batch job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_StartBatchJob.html"
+    },
+    {
+      "name": "StopApplication",
+      "methodName": "toStopApplication",
+      "description": "Grants permission to stop an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_StopApplication.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateApplication",
+      "methodName": "toUpdateApplication",
+      "description": "Grants permission to update an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_UpdateApplication.html"
+    },
+    {
+      "name": "UpdateEnvironment",
+      "methodName": "toUpdateEnvironment",
+      "description": "Grants permission to update a runtime environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/m2/latest/APIReference/API_UpdateEnvironment.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/m2/latest/userguide/concept-m2.html#application-concept",
+      "arn": "arn:${Partition}:m2:${Region}:${Account}:app/${ApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Environment",
+      "methodName": "onEnvironment",
+      "url": "https://docs.aws.amazon.com/m2/latest/userguide/concept-m2.html#environment-concept",
+      "arn": "arn:${Partition}:m2:${Region}:${Account}:env/${EnvironmentId}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateEnvironment",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCancelBatchJobExecution",
+        "toCreateDataSetExportTask",
+        "toCreateDataSetImportTask",
+        "toCreateDeployment",
+        "toDeleteApplication",
+        "toDeleteApplicationFromEnvironment",
+        "toDeleteEnvironment",
+        "toGetApplication",
+        "toGetApplicationVersion",
+        "toGetBatchJobExecution",
+        "toGetDataSetDetails",
+        "toGetDataSetExportTask",
+        "toGetDataSetImportTask",
+        "toGetDeployment",
+        "toGetEnvironment",
+        "toListApplicationVersions",
+        "toListBatchJobDefinitions",
+        "toListBatchJobExecutions",
+        "toListBatchJobRestartPoints",
+        "toListDataSetExportHistory",
+        "toListDataSetImportHistory",
+        "toListDataSets",
+        "toListDeployments",
+        "toStartApplication",
+        "toStartBatchJob",
+        "toStopApplication",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateApplication",
+        "toUpdateEnvironment"
+      ],
+      "relatedResourceTypes": [
+        "Application",
+        "Environment"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateEnvironment",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

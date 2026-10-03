@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 1,
+  "filename": "private-networks",
+  "className": "PrivateNetworks",
+  "name": "private-networks",
+  "servicePrefix": "private-networks",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_private-networks.html",
+  "accessLevelList": {
+    "Write": [
+      "AcknowledgeOrderReceipt",
+      "ActivateDeviceIdentifier",
+      "ActivateNetworkSite",
+      "ConfigureAccessPoint",
+      "CreateNetwork",
+      "CreateNetworkSite",
+      "DeactivateDeviceIdentifier",
+      "DeleteNetwork",
+      "DeleteNetworkSite",
+      "StartNetworkResourceUpdate",
+      "TagResource",
+      "UntagResource",
+      "UpdateNetworkSite",
+      "UpdateNetworkSitePlan"
+    ],
+    "Read": [
+      "GetDeviceIdentifier",
+      "GetNetwork",
+      "GetNetworkResource",
+      "GetNetworkSite",
+      "GetOrder",
+      "Ping"
+    ],
+    "List": [
+      "ListDeviceIdentifiers",
+      "ListNetworkResources",
+      "ListNetworkSites",
+      "ListNetworks",
+      "ListOrders",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcknowledgeOrderReceipt",
+      "methodName": "toAcknowledgeOrderReceipt",
+      "description": "Grants permission to acknowledge that an order has been received",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_AcknowledgeOrderReceipt.html"
+    },
+    {
+      "name": "ActivateDeviceIdentifier",
+      "methodName": "toActivateDeviceIdentifier",
+      "description": "Grants permission to activate a device identifier",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_ActivateDeviceIdentifier.html"
+    },
+    {
+      "name": "ActivateNetworkSite",
+      "methodName": "toActivateNetworkSite",
+      "description": "Grants permission to activate a network site",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_ActivateNetworkSite.html"
+    },
+    {
+      "name": "ConfigureAccessPoint",
+      "methodName": "toConfigureAccessPoint",
+      "description": "Grants permission to configure an access point",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_ConfigureAccessPoint.html"
+    },
+    {
+      "name": "CreateNetwork",
+      "methodName": "toCreateNetwork",
+      "description": "Grants permission to create a network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_CreateNetwork.html"
+    },
+    {
+      "name": "CreateNetworkSite",
+      "methodName": "toCreateNetworkSite",
+      "description": "Grants permission to create a network site",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_CreateNetworkSite.html"
+    },
+    {
+      "name": "DeactivateDeviceIdentifier",
+      "methodName": "toDeactivateDeviceIdentifier",
+      "description": "Grants permission to deactivate a device identifier",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_DeactivateDeviceIdentifier.html"
+    },
+    {
+      "name": "DeleteNetwork",
+      "methodName": "toDeleteNetwork",
+      "description": "Grants permission to delete a network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_DeleteNetwork.html"
+    },
+    {
+      "name": "DeleteNetworkSite",
+      "methodName": "toDeleteNetworkSite",
+      "description": "Grants permission to delete a network site",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_DeleteNetworkSite.html"
+    },
+    {
+      "name": "GetDeviceIdentifier",
+      "methodName": "toGetDeviceIdentifier",
+      "description": "Grants permission to get a device identifier",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_GetDeviceIdentifier.html"
+    },
+    {
+      "name": "GetNetwork",
+      "methodName": "toGetNetwork",
+      "description": "Grants permission to get a network",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_GetNetwork.html"
+    },
+    {
+      "name": "GetNetworkResource",
+      "methodName": "toGetNetworkResource",
+      "description": "Grants permission to get a network resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_GetNetworkResource.html"
+    },
+    {
+      "name": "GetNetworkSite",
+      "methodName": "toGetNetworkSite",
+      "description": "Grants permission to get a network site",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_GetNetworkSite.html"
+    },
+    {
+      "name": "GetOrder",
+      "methodName": "toGetOrder",
+      "description": "Grants permission to get a network order",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_GetOrder.html"
+    },
+    {
+      "name": "ListDeviceIdentifiers",
+      "methodName": "toListDeviceIdentifiers",
+      "description": "Grants permission to list device identifiers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_ListDeviceIdentifiers.html"
+    },
+    {
+      "name": "ListNetworkResources",
+      "methodName": "toListNetworkResources",
+      "description": "Grants permission to list network resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_ListNetworkResources.html"
+    },
+    {
+      "name": "ListNetworkSites",
+      "methodName": "toListNetworkSites",
+      "description": "Grants permission to list network sites",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_ListNetworkSites.html"
+    },
+    {
+      "name": "ListNetworks",
+      "methodName": "toListNetworks",
+      "description": "Grants permission to list networks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_ListNetworks.html"
+    },
+    {
+      "name": "ListOrders",
+      "methodName": "toListOrders",
+      "description": "Grants permission to list network orders",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_ListOrders.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to return a list of tags for a resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "Ping",
+      "methodName": "toPing",
+      "description": "Grants permission to check the health of the service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_Ping.html"
+    },
+    {
+      "name": "StartNetworkResourceUpdate",
+      "methodName": "toStartNetworkResourceUpdate",
+      "description": "Grants permission to start an update on the specified network resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to adds tags to the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to removes tags from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateNetworkSite",
+      "methodName": "toUpdateNetworkSite",
+      "description": "Grants permission to update a network site",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_UpdateNetworkSite.html"
+    },
+    {
+      "name": "UpdateNetworkSitePlan",
+      "methodName": "toUpdateNetworkSitePlan",
+      "description": "Grants permission to update a plan at a network site",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/APIReference/API_UpdateNetworkSitePlan.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "device-identifier",
+      "methodName": "onDeviceIdentifier",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/userguide/identity-access-management.html",
+      "arn": "arn:${Partition}:private-networks:${Region}:${Account}:device-identifier/${NetworkName}/${DeviceId}",
+      "placeholders": [
+        {
+          "placeholder": "NetworkName",
+          "name": "networkName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DeviceId",
+          "name": "deviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "network",
+      "methodName": "onNetwork",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/userguide/identity-access-management.html",
+      "arn": "arn:${Partition}:private-networks:${Region}:${Account}:network/${NetworkName}",
+      "placeholders": [
+        {
+          "placeholder": "NetworkName",
+          "name": "networkName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "network-resource",
+      "methodName": "onNetworkResource",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/userguide/identity-access-management.html",
+      "arn": "arn:${Partition}:private-networks:${Region}:${Account}:network-resource/${NetworkName}/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "NetworkName",
+          "name": "networkName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "network-site",
+      "methodName": "onNetworkSite",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/userguide/identity-access-management.html",
+      "arn": "arn:${Partition}:private-networks:${Region}:${Account}:network-site/${NetworkName}/${NetworkSiteName}",
+      "placeholders": [
+        {
+          "placeholder": "NetworkName",
+          "name": "networkName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "NetworkSiteName",
+          "name": "networkSiteName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "order",
+      "methodName": "onOrder",
+      "url": "https://docs.aws.amazon.com/private-networks/latest/userguide/identity-access-management.html",
+      "arn": "arn:${Partition}:private-networks:${Region}:${Account}:order/${NetworkName}/${OrderId}",
+      "placeholders": [
+        {
+          "placeholder": "NetworkName",
+          "name": "networkName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "OrderId",
+          "name": "orderId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by checking the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toActivateNetworkSite",
+        "toCreateNetwork",
+        "toCreateNetworkSite",
+        "toStartNetworkResourceUpdate",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by checking tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAcknowledgeOrderReceipt",
+        "toActivateDeviceIdentifier",
+        "toActivateNetworkSite",
+        "toConfigureAccessPoint",
+        "toCreateNetwork",
+        "toCreateNetworkSite",
+        "toDeactivateDeviceIdentifier",
+        "toDeleteNetwork",
+        "toDeleteNetworkSite",
+        "toGetDeviceIdentifier",
+        "toGetNetwork",
+        "toGetNetworkResource",
+        "toGetNetworkSite",
+        "toGetOrder",
+        "toListDeviceIdentifiers",
+        "toListNetworkResources",
+        "toListNetworkSites",
+        "toListOrders",
+        "toStartNetworkResourceUpdate",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateNetworkSite",
+        "toUpdateNetworkSitePlan"
+      ],
+      "relatedResourceTypes": [
+        "device-identifier",
+        "network",
+        "network-resource",
+        "network-site",
+        "order"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toActivateNetworkSite",
+        "toCreateNetwork",
+        "toCreateNetworkSite",
+        "toStartNetworkResourceUpdate",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,714 @@
+{
+  "schemaVersion": 1,
+  "filename": "opensearchserverless",
+  "className": "Aoss",
+  "name": "aoss",
+  "servicePrefix": "aoss",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html",
+  "accessLevelList": {
+    "Write": [
+      "APIAccessAll",
+      "AddCollectionToCollectionGroup",
+      "CreateAccessPolicy",
+      "CreateCollection",
+      "CreateCollectionGroup",
+      "CreateIndex",
+      "CreateLifecyclePolicy",
+      "CreateSecurityConfig",
+      "CreateSecurityPolicy",
+      "CreateVpcEndpoint",
+      "DashboardsAccessAll",
+      "DeleteAccessPolicy",
+      "DeleteCollection",
+      "DeleteCollectionGroup",
+      "DeleteIndex",
+      "DeleteLifecyclePolicy",
+      "DeleteSecurityConfig",
+      "DeleteSecurityPolicy",
+      "DeleteVpcEndpoint",
+      "TagResource",
+      "UntagResource",
+      "UpdateAccessPolicy",
+      "UpdateAccountSettings",
+      "UpdateCollection",
+      "UpdateCollectionGroup",
+      "UpdateIndex",
+      "UpdateLifecyclePolicy",
+      "UpdateSecurityConfig",
+      "UpdateSecurityPolicy",
+      "UpdateVpcEndpoint"
+    ],
+    "Read": [
+      "BatchGetCollection",
+      "BatchGetCollectionGroup",
+      "BatchGetEffectiveLifecyclePolicy",
+      "BatchGetLifecyclePolicy",
+      "BatchGetVpcEndpoint",
+      "GetAccessPolicy",
+      "GetAccountSettings",
+      "GetIndex",
+      "GetPoliciesStats",
+      "GetSecurityConfig",
+      "GetSecurityPolicy"
+    ],
+    "List": [
+      "ListAccessPolicies",
+      "ListCollectionGroups",
+      "ListCollections",
+      "ListLifecyclePolicies",
+      "ListSecurityConfigs",
+      "ListSecurityPolicies",
+      "ListTagsForResource",
+      "ListVpcEndpoints"
+    ]
+  },
+  "actions": [
+    {
+      "name": "APIAccessAll",
+      "methodName": "toAPIAccessAll",
+      "description": "Grant permission to all the supported Opensearch APIs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_APIAccessAll.html"
+    },
+    {
+      "name": "AddCollectionToCollectionGroup",
+      "methodName": "toAddCollectionToCollectionGroup",
+      "description": "Grants permission to add a serverless collection to a specified collection group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateCollection.html"
+    },
+    {
+      "name": "BatchGetCollection",
+      "methodName": "toBatchGetCollection",
+      "description": "Grants permission to get attributes for one or more collections",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_BatchGetCollection.html",
+      "conditionMethods": [
+        "ifCollection"
+      ]
+    },
+    {
+      "name": "BatchGetCollectionGroup",
+      "methodName": "toBatchGetCollectionGroup",
+      "description": "Grants permission to get attributes for one or more collection groups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_BatchGetCollectionGroup.html",
+      "conditionMethods": [
+        "ifCollectionGroup"
+      ]
+    },
+    {
+      "name": "BatchGetEffectiveLifecyclePolicy",
+      "methodName": "toBatchGetEffectiveLifecyclePolicy",
+      "description": "Grants permission to get the information about a lifecycle policy applied to one or more AOSS resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_BatchGetEffectiveLifecyclePolicy.html"
+    },
+    {
+      "name": "BatchGetLifecyclePolicy",
+      "methodName": "toBatchGetLifecyclePolicy",
+      "description": "Grants permission to get information about one or more lifecycle policies",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_BatchGetLifecyclePolicy.html"
+    },
+    {
+      "name": "BatchGetVpcEndpoint",
+      "methodName": "toBatchGetVpcEndpoint",
+      "description": "Grants permission to get attributes for one or more VPC endpoints",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_BatchGetVpcEndpoint.html"
+    },
+    {
+      "name": "CreateAccessPolicy",
+      "methodName": "toCreateAccessPolicy",
+      "description": "Grants permission to create a data access policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateAccessPolicy.html",
+      "conditionMethods": [
+        "ifCollection",
+        "ifIndex"
+      ]
+    },
+    {
+      "name": "CreateCollection",
+      "methodName": "toCreateCollection",
+      "description": "Grants permission to create a serverless collection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateCollection.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateCollectionGroup",
+      "methodName": "toCreateCollectionGroup",
+      "description": "Grants permission to create a serverless collection group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateCollectionGroup.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateIndex",
+      "methodName": "toCreateIndex",
+      "description": "Grants permission to create an opensearch index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateIndex.html"
+    },
+    {
+      "name": "CreateLifecyclePolicy",
+      "methodName": "toCreateLifecyclePolicy",
+      "description": "Grants permission to create a lifecycle policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateLifecyclePolicy.html",
+      "conditionMethods": [
+        "ifIndex"
+      ]
+    },
+    {
+      "name": "CreateSecurityConfig",
+      "methodName": "toCreateSecurityConfig",
+      "description": "Grants permission to create a serverless security configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateSecurityConfig.html"
+    },
+    {
+      "name": "CreateSecurityPolicy",
+      "methodName": "toCreateSecurityPolicy",
+      "description": "Grants permission to create a network or encryption policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateSecurityPolicy.html",
+      "conditionMethods": [
+        "ifCollection"
+      ]
+    },
+    {
+      "name": "CreateVpcEndpoint",
+      "methodName": "toCreateVpcEndpoint",
+      "description": "Grants permission to create an OpenSearch-Serverless-managed interface VPC endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateVpcEndpoint.html"
+    },
+    {
+      "name": "DashboardsAccessAll",
+      "methodName": "toDashboardsAccessAll",
+      "description": "Grants permission to Opensearch Serverless Dashboards",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DashboardsAccessAll.html"
+    },
+    {
+      "name": "DeleteAccessPolicy",
+      "methodName": "toDeleteAccessPolicy",
+      "description": "Grants permission to delete a data access policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteAccessPolicy.html",
+      "conditionMethods": [
+        "ifCollection",
+        "ifIndex"
+      ]
+    },
+    {
+      "name": "DeleteCollection",
+      "methodName": "toDeleteCollection",
+      "description": "Grants permission to delete a serverless collection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteCollection.html"
+    },
+    {
+      "name": "DeleteCollectionGroup",
+      "methodName": "toDeleteCollectionGroup",
+      "description": "Grants permission to delete a serverless collection group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteCollectionGroup.html"
+    },
+    {
+      "name": "DeleteIndex",
+      "methodName": "toDeleteIndex",
+      "description": "Grants permission to delete an opensearch index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteIndex.html"
+    },
+    {
+      "name": "DeleteLifecyclePolicy",
+      "methodName": "toDeleteLifecyclePolicy",
+      "description": "Grants permission to delete a lifecycle policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteLifecyclePolicy.html",
+      "conditionMethods": [
+        "ifIndex"
+      ]
+    },
+    {
+      "name": "DeleteSecurityConfig",
+      "methodName": "toDeleteSecurityConfig",
+      "description": "Grants permission to delete a security configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteSecurityConfig.html"
+    },
+    {
+      "name": "DeleteSecurityPolicy",
+      "methodName": "toDeleteSecurityPolicy",
+      "description": "Grants permission to delete a security policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteSecurityPolicy.html",
+      "conditionMethods": [
+        "ifCollection"
+      ]
+    },
+    {
+      "name": "DeleteVpcEndpoint",
+      "methodName": "toDeleteVpcEndpoint",
+      "description": "Grants permission to delete an OpenSearch Serverless-managed interface VPC endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteVpcEndpoint.html"
+    },
+    {
+      "name": "GetAccessPolicy",
+      "methodName": "toGetAccessPolicy",
+      "description": "Grants permission to get information about a data access policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_GetAccessPolicy.html",
+      "conditionMethods": [
+        "ifCollection",
+        "ifIndex"
+      ]
+    },
+    {
+      "name": "GetAccountSettings",
+      "methodName": "toGetAccountSettings",
+      "description": "Grants permission to get account settings, including capacity settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_GetAccountSettings.html"
+    },
+    {
+      "name": "GetIndex",
+      "methodName": "toGetIndex",
+      "description": "Grants permission to get an opensearch index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_GetIndex.html"
+    },
+    {
+      "name": "GetPoliciesStats",
+      "methodName": "toGetPoliciesStats",
+      "description": "Grants permission to get statistis about the security policies in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_GetPoliciesStats.html"
+    },
+    {
+      "name": "GetSecurityConfig",
+      "methodName": "toGetSecurityConfig",
+      "description": "Grants permission to get information about a serverless security configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_GetSecurityConfig.html"
+    },
+    {
+      "name": "GetSecurityPolicy",
+      "methodName": "toGetSecurityPolicy",
+      "description": "Grants permission to get information about a security policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_GetSecurityPolicy.html",
+      "conditionMethods": [
+        "ifCollection"
+      ]
+    },
+    {
+      "name": "ListAccessPolicies",
+      "methodName": "toListAccessPolicies",
+      "description": "Grants permission to list data access policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListAccessPolicies.html"
+    },
+    {
+      "name": "ListCollectionGroups",
+      "methodName": "toListCollectionGroups",
+      "description": "Grants permission to list collection groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollectionGroups.html"
+    },
+    {
+      "name": "ListCollections",
+      "methodName": "toListCollections",
+      "description": "Grants permission to list collections",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html"
+    },
+    {
+      "name": "ListLifecyclePolicies",
+      "methodName": "toListLifecyclePolicies",
+      "description": "Grants permission to list lifecycle policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListLifecyclePolicies.html"
+    },
+    {
+      "name": "ListSecurityConfigs",
+      "methodName": "toListSecurityConfigs",
+      "description": "Grants permission to list security configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListSecurityConfigs.html"
+    },
+    {
+      "name": "ListSecurityPolicies",
+      "methodName": "toListSecurityPolicies",
+      "description": "Grants permission to list security policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListSecurityPolicies.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a collection",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListVpcEndpoints",
+      "methodName": "toListVpcEndpoints",
+      "description": "Grants permission to list OpenSearch Serverless-managed VPC endpoints",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListVpcEndpoints.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a serverless collection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_TagResource.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a collection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UntagResource.html",
+      "conditionMethods": [
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "UpdateAccessPolicy",
+      "methodName": "toUpdateAccessPolicy",
+      "description": "Grants permission to update a data access policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateAccessPolicy.html",
+      "conditionMethods": [
+        "ifCollection",
+        "ifIndex"
+      ]
+    },
+    {
+      "name": "UpdateAccountSettings",
+      "methodName": "toUpdateAccountSettings",
+      "description": "Grants permission to update account settings, including capacity settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateAccountSettings.html"
+    },
+    {
+      "name": "UpdateCollection",
+      "methodName": "toUpdateCollection",
+      "description": "Grants permission to update a collection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateCollection.html"
+    },
+    {
+      "name": "UpdateCollectionGroup",
+      "methodName": "toUpdateCollectionGroup",
+      "description": "Grants permission to update a collection group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateCollectionGroup.html"
+    },
+    {
+      "name": "UpdateIndex",
+      "methodName": "toUpdateIndex",
+      "description": "Grants permission to update an opensearch index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateIndex.html"
+    },
+    {
+      "name": "UpdateLifecyclePolicy",
+      "methodName": "toUpdateLifecyclePolicy",
+      "description": "Grants permission to update a lifecycle policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateLifecyclePolicy.html",
+      "conditionMethods": [
+        "ifIndex"
+      ]
+    },
+    {
+      "name": "UpdateSecurityConfig",
+      "methodName": "toUpdateSecurityConfig",
+      "description": "Grants permission to update a security configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateSecurityConfig.html"
+    },
+    {
+      "name": "UpdateSecurityPolicy",
+      "methodName": "toUpdateSecurityPolicy",
+      "description": "Grants permission to update a security policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateSecurityPolicy.html",
+      "conditionMethods": [
+        "ifCollection"
+      ]
+    },
+    {
+      "name": "UpdateVpcEndpoint",
+      "methodName": "toUpdateVpcEndpoint",
+      "description": "Grants permission to update an OpenSearch Serverless-managed VPC endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateVpcEndpoint.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Collection",
+      "methodName": "onCollection",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html",
+      "arn": "arn:${Partition}:aoss:${Region}:${Account}:collection/${CollectionId}",
+      "placeholders": [
+        {
+          "placeholder": "CollectionId",
+          "name": "collectionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "CollectionGroup",
+      "methodName": "onCollectionGroup",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html",
+      "arn": "arn:${Partition}:aoss:${Region}:${Account}:collection-group/${CollectionGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "CollectionGroupId",
+          "name": "collectionGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Dashboards",
+      "methodName": "onDashboards",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html",
+      "arn": "arn:${Partition}:aoss:${Region}:${Account}:dashboards/default",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aoss:CollectionId",
+      "methodName": "ifCollectionId",
+      "description": "Filters access by the identifier of the collection",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-serverless.html#security_iam_serverless-conditionkeys",
+      "relatedActionMethods": [
+        "toAPIAccessAll",
+        "toDashboardsAccessAll"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CollectionId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aoss:collection",
+      "methodName": "ifCollection",
+      "description": "Filters access by the collection name",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-serverless.html#security_iam_serverless-conditionkeys",
+      "relatedActionMethods": [
+        "toAPIAccessAll",
+        "toBatchGetCollection",
+        "toCreateAccessPolicy",
+        "toCreateSecurityPolicy",
+        "toDashboardsAccessAll",
+        "toDeleteAccessPolicy",
+        "toDeleteSecurityPolicy",
+        "toGetAccessPolicy",
+        "toGetSecurityPolicy",
+        "toUpdateAccessPolicy",
+        "toUpdateSecurityPolicy"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "collection",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aoss:collection-group",
+      "methodName": "ifCollectionGroup",
+      "description": "Filters access by the collection group name",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-serverless.html#security_iam_serverless-conditionkeys",
+      "relatedActionMethods": [
+        "toAddCollectionToCollectionGroup",
+        "toBatchGetCollectionGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "collection-group",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aoss:index",
+      "methodName": "ifIndex",
+      "description": "Filters access by the index",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-serverless.html#security_iam_serverless-conditionkeys",
+      "relatedActionMethods": [
+        "toCreateAccessPolicy",
+        "toCreateLifecyclePolicy",
+        "toDeleteAccessPolicy",
+        "toDeleteLifecyclePolicy",
+        "toGetAccessPolicy",
+        "toUpdateAccessPolicy",
+        "toUpdateLifecyclePolicy"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "index",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access based on the tags that are passed in the request",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateCollection",
+        "toCreateCollectionGroup",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access based on the tags associated with the resource",
+      "url": "",
+      "relatedActionMethods": [
+        "toAPIAccessAll",
+        "toAddCollectionToCollectionGroup",
+        "toCreateCollection",
+        "toDeleteCollection",
+        "toDeleteCollectionGroup",
+        "toTagResource",
+        "toUpdateCollection",
+        "toUpdateCollectionGroup"
+      ],
+      "relatedResourceTypes": [
+        "Collection",
+        "CollectionGroup"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access based on the tag keys that are passed in the request",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateCollection",
+        "toCreateCollectionGroup",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "filename": "finspace-data",
+  "className": "FinspaceApi",
+  "name": "finspace-api",
+  "servicePrefix": "finspace-api",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_finspace-data.html",
+  "accessLevelList": {
+    "Read": [
+      "GetProgrammaticAccessCredentials"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetProgrammaticAccessCredentials",
+      "methodName": "toGetProgrammaticAccessCredentials",
+      "description": "Grants permission to retrieve FinSpace programmatic access credentials",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finspace/latest/data-api/API_GetProgrammaticAccessCredentials.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "credential",
+      "methodName": "onCredential",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html",
+      "arn": "arn:${Partition}:finspace-api:${Region}:${Account}:/credentials/programmatic",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

@@ -1,4 +1,0 @@
-lookoutequipment:IsImportingData
-lookoutequipment:RequestTag/${TagKey}
-lookoutequipment:ResourceTag/${TagKey}
-lookoutequipment:TagKeys

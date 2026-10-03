@@ -1,0 +1,790 @@
+{
+  "schemaVersion": 1,
+  "filename": "connectcases",
+  "className": "Cases",
+  "name": "cases",
+  "servicePrefix": "cases",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_connectcases.html",
+  "accessLevelList": {
+    "Read": [
+      "BatchGetCaseRule",
+      "BatchGetField",
+      "GetCase",
+      "GetCaseAuditEvents",
+      "GetCaseEventConfiguration",
+      "GetDomain",
+      "GetLayout",
+      "GetTemplate",
+      "ListTagsForResource",
+      "SearchAllRelatedItems",
+      "SearchCases",
+      "SearchRelatedItems"
+    ],
+    "Write": [
+      "BatchPutFieldOptions",
+      "CreateCase",
+      "CreateCaseRule",
+      "CreateDomain",
+      "CreateField",
+      "CreateLayout",
+      "CreateRelatedItem",
+      "CreateTemplate",
+      "DeleteCase",
+      "DeleteCaseRule",
+      "DeleteDomain",
+      "DeleteField",
+      "DeleteLayout",
+      "DeleteRelatedItem",
+      "DeleteTemplate",
+      "PutCaseEventConfiguration",
+      "TagResource",
+      "UntagResource",
+      "UpdateCase",
+      "UpdateCaseRule",
+      "UpdateField",
+      "UpdateLayout",
+      "UpdateRelatedItem",
+      "UpdateTemplate"
+    ],
+    "List": [
+      "ListCaseRules",
+      "ListCasesForContact",
+      "ListDomains",
+      "ListFieldOptions",
+      "ListFields",
+      "ListLayouts",
+      "ListTemplates"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchGetCaseRule",
+      "methodName": "toBatchGetCaseRule",
+      "description": "Grants permission to retrieve information about the case rules in the case domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_BatchGetCaseRule.html"
+    },
+    {
+      "name": "BatchGetField",
+      "methodName": "toBatchGetField",
+      "description": "Grants permission to retrieve information about the fields in the case domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_BatchGetField.html"
+    },
+    {
+      "name": "BatchPutFieldOptions",
+      "methodName": "toBatchPutFieldOptions",
+      "description": "Grants permission to update the field options in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_BatchPutFieldOptions.html"
+    },
+    {
+      "name": "CreateCase",
+      "methodName": "toCreateCase",
+      "description": "Grants permission to create a case in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_CreateCase.html"
+    },
+    {
+      "name": "CreateCaseRule",
+      "methodName": "toCreateCaseRule",
+      "description": "Grants permission to create a case rule in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_CreateCaseRule.html"
+    },
+    {
+      "name": "CreateDomain",
+      "methodName": "toCreateDomain",
+      "description": "Grants permission to create a new case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_CreateDomain.html"
+    },
+    {
+      "name": "CreateField",
+      "methodName": "toCreateField",
+      "description": "Grants permission to create a field in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_CreateField.html"
+    },
+    {
+      "name": "CreateLayout",
+      "methodName": "toCreateLayout",
+      "description": "Grants permission to create a layout in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_CreateLayout.html"
+    },
+    {
+      "name": "CreateRelatedItem",
+      "methodName": "toCreateRelatedItem",
+      "description": "Grants permission to create a related item associated to a case in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_CreateRelatedItem.html"
+    },
+    {
+      "name": "CreateTemplate",
+      "methodName": "toCreateTemplate",
+      "description": "Grants permission to create a template in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_CreateTemplate.html"
+    },
+    {
+      "name": "DeleteCase",
+      "methodName": "toDeleteCase",
+      "description": "Grants permission to delete the case in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_DeleteCase.html"
+    },
+    {
+      "name": "DeleteCaseRule",
+      "methodName": "toDeleteCaseRule",
+      "description": "Grants permission to delete the case rule in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_DeleteCaseRule.html"
+    },
+    {
+      "name": "DeleteDomain",
+      "methodName": "toDeleteDomain",
+      "description": "Grants permission to delete the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_DeleteDomain.html"
+    },
+    {
+      "name": "DeleteField",
+      "methodName": "toDeleteField",
+      "description": "Grants permission to delete the field in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_DeleteField.html"
+    },
+    {
+      "name": "DeleteLayout",
+      "methodName": "toDeleteLayout",
+      "description": "Grants permission to delete the layout in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_DeleteLayout.html"
+    },
+    {
+      "name": "DeleteRelatedItem",
+      "methodName": "toDeleteRelatedItem",
+      "description": "Grants permission to delete the related item associated to the case in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_DeleteRelatedItem.html"
+    },
+    {
+      "name": "DeleteTemplate",
+      "methodName": "toDeleteTemplate",
+      "description": "Grants permission to delete the template in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_DeleteTemplate.html"
+    },
+    {
+      "name": "GetCase",
+      "methodName": "toGetCase",
+      "description": "Grants permission to retrieve information about a case in the case domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_GetCase.html"
+    },
+    {
+      "name": "GetCaseAuditEvents",
+      "methodName": "toGetCaseAuditEvents",
+      "description": "Grants permission to view audit history of a case",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_GetCaseAuditEvents.html"
+    },
+    {
+      "name": "GetCaseEventConfiguration",
+      "methodName": "toGetCaseEventConfiguration",
+      "description": "Grants permission to retrieve information about the case event configuraton in the case domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_GetCaseEventConfiguration.html"
+    },
+    {
+      "name": "GetDomain",
+      "methodName": "toGetDomain",
+      "description": "Grants permission to retrieve information about the case domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_GetDomain.html"
+    },
+    {
+      "name": "GetLayout",
+      "methodName": "toGetLayout",
+      "description": "Grants permission to retrieve information about the layout in the case domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_GetLayout.html"
+    },
+    {
+      "name": "GetTemplate",
+      "methodName": "toGetTemplate",
+      "description": "Grants permission to retrieve information about the template in the case domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_GetTemplate.html"
+    },
+    {
+      "name": "ListCaseRules",
+      "methodName": "toListCaseRules",
+      "description": "Grants permission to list case rules in the case domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_ListCaseRules.html"
+    },
+    {
+      "name": "ListCasesForContact",
+      "methodName": "toListCasesForContact",
+      "description": "Grants permission to list cases for a specific contact in the case domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_ListCasesForContact.html"
+    },
+    {
+      "name": "ListDomains",
+      "methodName": "toListDomains",
+      "description": "Grants permission to list all domains in the aws account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_ListDomains.html"
+    },
+    {
+      "name": "ListFieldOptions",
+      "methodName": "toListFieldOptions",
+      "description": "Grants permission to list field options for a single select field in the case domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_ListFieldOptions.html"
+    },
+    {
+      "name": "ListFields",
+      "methodName": "toListFields",
+      "description": "Grants permission to list fields in the case domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_ListFields.html"
+    },
+    {
+      "name": "ListLayouts",
+      "methodName": "toListLayouts",
+      "description": "Grants permission to list layouts in the case domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_ListLayouts.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for the specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTemplates",
+      "methodName": "toListTemplates",
+      "description": "Grants permission to list templates in the case domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_ListTemplates.html"
+    },
+    {
+      "name": "PutCaseEventConfiguration",
+      "methodName": "toPutCaseEventConfiguration",
+      "description": "Grants permission to insert or update the case event configuration in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_PutCaseEventConfiguration.html"
+    },
+    {
+      "name": "SearchAllRelatedItems",
+      "methodName": "toSearchAllRelatedItems",
+      "description": "Grants permission to search for related items in the case domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_SearchAllRelatedItems.html"
+    },
+    {
+      "name": "SearchCases",
+      "methodName": "toSearchCases",
+      "description": "Grants permission to search for cases in the case domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_SearchCases.html"
+    },
+    {
+      "name": "SearchRelatedItems",
+      "methodName": "toSearchRelatedItems",
+      "description": "Grants permission to search for related items associated to the case in the case domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_SearchRelatedItems.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add the specified tags to the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the specified tags from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateCase",
+      "methodName": "toUpdateCase",
+      "description": "Grants permission to update the field values on the case in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_UpdateCase.html"
+    },
+    {
+      "name": "UpdateCaseRule",
+      "methodName": "toUpdateCaseRule",
+      "description": "Grants permission to update the case rule in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_UpdateCaseRule.html"
+    },
+    {
+      "name": "UpdateField",
+      "methodName": "toUpdateField",
+      "description": "Grants permission to update the field in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_UpdateField.html"
+    },
+    {
+      "name": "UpdateLayout",
+      "methodName": "toUpdateLayout",
+      "description": "Grants permission to update the layout in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_UpdateLayout.html"
+    },
+    {
+      "name": "UpdateRelatedItem",
+      "methodName": "toUpdateRelatedItem",
+      "description": "Grants permission to update a related item associated to a case in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_UpdateRelatedItem.html"
+    },
+    {
+      "name": "UpdateTemplate",
+      "methodName": "toUpdateTemplate",
+      "description": "Grants permission to update the template in the case domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_UpdateTemplate.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Case",
+      "methodName": "onCase",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/cases.html",
+      "arn": "arn:${Partition}:cases:${Region}:${Account}:domain/${DomainId}/case/${CaseId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CaseId",
+          "name": "caseId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "CaseRule",
+      "methodName": "onCaseRule",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/case-rules.html",
+      "arn": "arn:${Partition}:cases:${Region}:${Account}:domain/${DomainId}/case-rule/${CaseRuleId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CaseRuleId",
+          "name": "caseRuleId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Domain",
+      "methodName": "onDomain",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/cases.html",
+      "arn": "arn:${Partition}:cases:${Region}:${Account}:domain/${DomainId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Field",
+      "methodName": "onField",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html",
+      "arn": "arn:${Partition}:cases:${Region}:${Account}:domain/${DomainId}/field/${FieldId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FieldId",
+          "name": "fieldId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Layout",
+      "methodName": "onLayout",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/case-layouts.html",
+      "arn": "arn:${Partition}:cases:${Region}:${Account}:domain/${DomainId}/layout/${LayoutId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "LayoutId",
+          "name": "layoutId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "RelatedItem",
+      "methodName": "onRelatedItem",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/associatecontactandcase.html",
+      "arn": "arn:${Partition}:cases:${Region}:${Account}:domain/${DomainId}/case/${CaseId}/related-item/${RelatedItemId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CaseId",
+          "name": "caseId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RelatedItemId",
+          "name": "relatedItemId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifCreatedBy",
+        "ifRelatedItemType"
+      ]
+    },
+    {
+      "name": "Template",
+      "methodName": "onTemplate",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/case-templates.html",
+      "arn": "arn:${Partition}:cases:${Region}:${Account}:domain/${DomainId}/template/${TemplateId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TemplateId",
+          "name": "templateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchGetCaseRule",
+        "toBatchGetField",
+        "toBatchPutFieldOptions",
+        "toCreateCase",
+        "toCreateCaseRule",
+        "toCreateField",
+        "toCreateLayout",
+        "toCreateRelatedItem",
+        "toCreateTemplate",
+        "toDeleteCase",
+        "toDeleteCaseRule",
+        "toDeleteDomain",
+        "toDeleteField",
+        "toDeleteLayout",
+        "toDeleteRelatedItem",
+        "toDeleteTemplate",
+        "toGetCase",
+        "toGetCaseAuditEvents",
+        "toGetCaseEventConfiguration",
+        "toGetDomain",
+        "toGetLayout",
+        "toGetTemplate",
+        "toListCaseRules",
+        "toListCasesForContact",
+        "toListFieldOptions",
+        "toListFields",
+        "toListLayouts",
+        "toListTemplates",
+        "toPutCaseEventConfiguration",
+        "toSearchAllRelatedItems",
+        "toSearchCases",
+        "toSearchRelatedItems",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateCase",
+        "toUpdateCaseRule",
+        "toUpdateField",
+        "toUpdateLayout",
+        "toUpdateRelatedItem",
+        "toUpdateTemplate"
+      ],
+      "relatedResourceTypes": [
+        "Case",
+        "CaseRule",
+        "Domain",
+        "Field",
+        "Layout",
+        "RelatedItem",
+        "Template"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cases:CreatedBy",
+      "methodName": "ifCreatedBy",
+      "description": "Filters access by who created the the resource (user ARN or custom entity)",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateRelatedItem",
+        "toDeleteRelatedItem",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateRelatedItem"
+      ],
+      "relatedResourceTypes": [
+        "RelatedItem"
+      ],
+      "keyLiteral": "CreatedBy",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cases:RelatedItemType",
+      "methodName": "ifRelatedItemType",
+      "description": "Filters access by the type of related item. Possible values: Contact, Comment, File, Sla, ConnectCase, Custom",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateRelatedItem",
+        "toDeleteRelatedItem",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateRelatedItem"
+      ],
+      "relatedResourceTypes": [
+        "RelatedItem"
+      ],
+      "keyLiteral": "RelatedItemType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "connect:UserArn",
+      "methodName": "ifConnectUserArn",
+      "description": "Filters access by connect's UserArn",
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_User.html",
+      "relatedActionMethods": [
+        "toCreateCase",
+        "toCreateRelatedItem",
+        "toUpdateCase"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "connect:UserArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

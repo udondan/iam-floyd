@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "filename": "evs",
+  "className": "Evs",
+  "name": "evs",
+  "servicePrefix": "evs",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_evs.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateEipToVlan",
+      "CreateEntitlement",
+      "CreateEnvironment",
+      "CreateEnvironmentConnector",
+      "CreateEnvironmentHost",
+      "DeleteEntitlement",
+      "DeleteEnvironment",
+      "DeleteEnvironmentConnector",
+      "DeleteEnvironmentHost",
+      "DisassociateEipFromVlan",
+      "PutAccountSettings",
+      "TagResource",
+      "UntagResource",
+      "UpdateEnvironmentConnector"
+    ],
+    "Read": [
+      "GetAccountSettings",
+      "GetDepotUrl",
+      "GetEnvironment",
+      "GetVersions",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListEnvironmentConnectors",
+      "ListEnvironmentHosts",
+      "ListEnvironmentVlans",
+      "ListEnvironments",
+      "ListVmEntitlements"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateEipToVlan",
+      "methodName": "toAssociateEipToVlan",
+      "description": "Grants permission to associate an Elastic IP address (EIP) with a public VLAN in an Amazon EVS environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_AssociateEipToVlan.html"
+    },
+    {
+      "name": "CreateEntitlement",
+      "methodName": "toCreateEntitlement",
+      "description": "Grants permission to create an entitlement in an Amazon EVS environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_CreateEntitlement.html"
+    },
+    {
+      "name": "CreateEnvironment",
+      "methodName": "toCreateEnvironment",
+      "description": "Grants permission to create an Amazon EVS environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_CreateEnvironment.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateEnvironmentConnector",
+      "methodName": "toCreateEnvironmentConnector",
+      "description": "Grants permission to create a connector in an Amazon EVS environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_CreateEnvironmentConnector.html"
+    },
+    {
+      "name": "CreateEnvironmentHost",
+      "methodName": "toCreateEnvironmentHost",
+      "description": "Grants permission to add host to an Amazon EVS environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_CreateEnvironmentHost.html"
+    },
+    {
+      "name": "DeleteEntitlement",
+      "methodName": "toDeleteEntitlement",
+      "description": "Grants permission to delete an entitlement from an Amazon EVS environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_DeleteEntitlement.html"
+    },
+    {
+      "name": "DeleteEnvironment",
+      "methodName": "toDeleteEnvironment",
+      "description": "Grants permission to delete an Amazon EVS environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_DeleteEnvironment.html"
+    },
+    {
+      "name": "DeleteEnvironmentConnector",
+      "methodName": "toDeleteEnvironmentConnector",
+      "description": "Grants permission to delete a connector from an Amazon EVS environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_DeleteEnvironmentConnector.html"
+    },
+    {
+      "name": "DeleteEnvironmentHost",
+      "methodName": "toDeleteEnvironmentHost",
+      "description": "Grants permission to delete a host from an Amazon EVS environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_DeleteEnvironmentHost.html"
+    },
+    {
+      "name": "DisassociateEipFromVlan",
+      "methodName": "toDisassociateEipFromVlan",
+      "description": "Grants permission to disassociate an Elastic IP address (EIP) from a public VLAN in an Amazon EVS environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_DisassociateEipFromVlan.html"
+    },
+    {
+      "name": "GetAccountSettings",
+      "methodName": "toGetAccountSettings",
+      "description": "Grants permission to get EVS account settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_GetAccountSettings.html"
+    },
+    {
+      "name": "GetDepotUrl",
+      "methodName": "toGetDepotUrl",
+      "description": "Grants permission to get an Amazon EVS environment depot url",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_GetDepotUrl.html"
+    },
+    {
+      "name": "GetEnvironment",
+      "methodName": "toGetEnvironment",
+      "description": "Grants permission to get an Amazon EVS environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_GetEnvironment.html"
+    },
+    {
+      "name": "GetVersions",
+      "methodName": "toGetVersions",
+      "description": "Grants permission to get versions provided for launch by Amazon EVS",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_GetVersions.html"
+    },
+    {
+      "name": "ListEnvironmentConnectors",
+      "methodName": "toListEnvironmentConnectors",
+      "description": "Grants permission to retrieve a list of connectors associated with an Amazon EVS environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_ListEnvironmentConnectors.html"
+    },
+    {
+      "name": "ListEnvironmentHosts",
+      "methodName": "toListEnvironmentHosts",
+      "description": "Grants permission to retrieve a list of hosts associated with an Amazon EVS environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_ListEnvironmentHosts.html"
+    },
+    {
+      "name": "ListEnvironmentVlans",
+      "methodName": "toListEnvironmentVlans",
+      "description": "Grants permission to retrieve a list of Amazon EVS environment VLANs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_ListEnvironmentVlans.html"
+    },
+    {
+      "name": "ListEnvironments",
+      "methodName": "toListEnvironments",
+      "description": "Grants permission to retrieve a list of Amazon EVS environments in an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_ListEnvironments.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags on a specified resource ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListVmEntitlements",
+      "methodName": "toListVmEntitlements",
+      "description": "Grants permission to retrieve a list of entitlements associated with an Amazon EVS environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_ListVmEntitlements.html"
+    },
+    {
+      "name": "PutAccountSettings",
+      "methodName": "toPutAccountSettings",
+      "description": "Grants permission to get EVS account settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_PutAccountSettings.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a specified resource ARN",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a specified resource ARN",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateEnvironmentConnector",
+      "methodName": "toUpdateEnvironmentConnector",
+      "description": "Grants permission to update a connector in an Amazon EVS environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_UpdateEnvironmentConnector.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "environment",
+      "methodName": "onEnvironment",
+      "url": "https://docs.aws.amazon.com/evs/latest/userguide/concepts.html#concepts-evs-virt-env",
+      "arn": "arn:${Partition}:evs:${Region}:${Account}:environment/${EnvironmentIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentIdentifier",
+          "name": "environmentIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/evs/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateEnvironment",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/evs/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toAssociateEipToVlan",
+        "toCreateEntitlement",
+        "toCreateEnvironmentConnector",
+        "toCreateEnvironmentHost",
+        "toDeleteEntitlement",
+        "toDeleteEnvironment",
+        "toDeleteEnvironmentConnector",
+        "toDeleteEnvironmentHost",
+        "toDisassociateEipFromVlan",
+        "toGetDepotUrl",
+        "toGetEnvironment",
+        "toListEnvironmentConnectors",
+        "toListEnvironmentHosts",
+        "toListEnvironmentVlans",
+        "toListTagsForResource",
+        "toListVmEntitlements",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateEnvironmentConnector"
+      ],
+      "relatedResourceTypes": [
+        "environment"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/evs/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateEnvironment",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,700 @@
+{
+  "schemaVersion": 1,
+  "filename": "ce",
+  "className": "Ce",
+  "name": "ce",
+  "servicePrefix": "ce",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ce.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateAnomalyMonitor",
+      "CreateAnomalySubscription",
+      "CreateCostCategoryDefinition",
+      "DeleteAnomalyMonitor",
+      "DeleteAnomalySubscription",
+      "DeleteCostCategoryDefinition",
+      "ProvideAnomalyFeedback",
+      "StartCommitmentPurchaseAnalysis",
+      "StartCostAllocationTagBackfill",
+      "StartSavingsPlansPurchaseRecommendationGeneration",
+      "TagResource",
+      "UntagResource",
+      "UpdateAnomalyMonitor",
+      "UpdateAnomalySubscription",
+      "UpdateCostAllocationTagsStatus",
+      "UpdateCostCategoryDefinition",
+      "CreateNotificationSubscription",
+      "CreateReport",
+      "DeleteNotificationSubscription",
+      "DeleteReport",
+      "UpdateConsoleActionSetEnforced",
+      "UpdateNotificationSubscription",
+      "UpdatePreferences",
+      "UpdateReport"
+    ],
+    "Read": [
+      "DescribeCostCategoryDefinition",
+      "GetAnomalies",
+      "GetAnomalyMonitors",
+      "GetAnomalySubscriptions",
+      "GetApproximateUsageRecords",
+      "GetCommitmentPurchaseAnalysis",
+      "GetCostAndUsage",
+      "GetCostAndUsageComparisons",
+      "GetCostAndUsageWithResources",
+      "GetCostCategories",
+      "GetCostComparisonDrivers",
+      "GetCostForecast",
+      "GetDimensionValues",
+      "GetReservationCoverage",
+      "GetReservationPurchaseRecommendation",
+      "GetReservationUtilization",
+      "GetRightsizingRecommendation",
+      "GetSavingsPlanPurchaseRecommendationDetails",
+      "GetSavingsPlansCoverage",
+      "GetSavingsPlansPurchaseRecommendation",
+      "GetSavingsPlansUtilization",
+      "GetSavingsPlansUtilizationDetails",
+      "GetTags",
+      "GetUsageForecast",
+      "ListTagsForResource",
+      "DescribeNotificationSubscription",
+      "DescribeReport",
+      "GetConsoleActionSetEnforced",
+      "GetPreferences"
+    ],
+    "List": [
+      "ListCommitmentPurchaseAnalyses",
+      "ListCostAllocationTagBackfillHistory",
+      "ListCostAllocationTags",
+      "ListCostCategoryDefinitions",
+      "ListCostCategoryResourceAssociations",
+      "ListSavingsPlansPurchaseRecommendationGeneration"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateAnomalyMonitor",
+      "methodName": "toCreateAnomalyMonitor",
+      "description": "Grants permission to create a new Anomaly Monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateAnomalyMonitor.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAnomalySubscription",
+      "methodName": "toCreateAnomalySubscription",
+      "description": "Grants permission to create a new Anomaly Subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateAnomalySubscription.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateCostCategoryDefinition",
+      "methodName": "toCreateCostCategoryDefinition",
+      "description": "Grants permission to create a new Cost Category with the requested name and rules",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateCostCategoryDefinition.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteAnomalyMonitor",
+      "methodName": "toDeleteAnomalyMonitor",
+      "description": "Grants permission to delete an Anomaly Monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteAnomalyMonitor.html"
+    },
+    {
+      "name": "DeleteAnomalySubscription",
+      "methodName": "toDeleteAnomalySubscription",
+      "description": "Grants permission to delete an Anomaly Subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteAnomalySubscription.html"
+    },
+    {
+      "name": "DeleteCostCategoryDefinition",
+      "methodName": "toDeleteCostCategoryDefinition",
+      "description": "Grants permission to delete a Cost Category",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteCostCategoryDefinition.html"
+    },
+    {
+      "name": "DescribeCostCategoryDefinition",
+      "methodName": "toDescribeCostCategoryDefinition",
+      "description": "Grants permission to retrieve descriptions such as the name, ARN, rules, definition, and effective dates of a Cost Category",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeCostCategoryDefinition.html"
+    },
+    {
+      "name": "GetAnomalies",
+      "methodName": "toGetAnomalies",
+      "description": "Grants permission to retrieve anomalies",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalies.html"
+    },
+    {
+      "name": "GetAnomalyMonitors",
+      "methodName": "toGetAnomalyMonitors",
+      "description": "Grants permission to query Anomaly Monitors",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalyMonitors.html"
+    },
+    {
+      "name": "GetAnomalySubscriptions",
+      "methodName": "toGetAnomalySubscriptions",
+      "description": "Grants permission to query Anomaly Subscriptions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalySubscriptions.html"
+    },
+    {
+      "name": "GetApproximateUsageRecords",
+      "methodName": "toGetApproximateUsageRecords",
+      "description": "Grants permission to retrieve approximate usage record count for the chosen resource, level, and hourly granularity preferences, derived from the past month's usage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "GetCommitmentPurchaseAnalysis",
+      "methodName": "toGetCommitmentPurchaseAnalysis",
+      "description": "Grants permission to retrieve the commitment purchase analysis for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCommitmentPurchaseAnalysis.html"
+    },
+    {
+      "name": "GetCostAndUsage",
+      "methodName": "toGetCostAndUsage",
+      "description": "Grants permission to retrieve the cost and usage metrics for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html"
+    },
+    {
+      "name": "GetCostAndUsageComparisons",
+      "methodName": "toGetCostAndUsageComparisons",
+      "description": "Grants permission to retrieve the cost and usage comparisons for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsageComparisons.html"
+    },
+    {
+      "name": "GetCostAndUsageWithResources",
+      "methodName": "toGetCostAndUsageWithResources",
+      "description": "Grants permission to retrieve the cost and usage metrics with resources for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsageWithResources.html"
+    },
+    {
+      "name": "GetCostCategories",
+      "methodName": "toGetCostCategories",
+      "description": "Grants permission to query Cost Catagory names and values for a specified time period",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostCategories.html"
+    },
+    {
+      "name": "GetCostComparisonDrivers",
+      "methodName": "toGetCostComparisonDrivers",
+      "description": "Grants permission to retrieve the cost drivers for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostComparisonDrivers.html"
+    },
+    {
+      "name": "GetCostForecast",
+      "methodName": "toGetCostForecast",
+      "description": "Grants permission to retrieve a cost forecast for a forecast time period",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostForecast.html"
+    },
+    {
+      "name": "GetDimensionValues",
+      "methodName": "toGetDimensionValues",
+      "description": "Grants permission to retrieve all available filter values for a filter for a period of time",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
+    },
+    {
+      "name": "GetReservationCoverage",
+      "methodName": "toGetReservationCoverage",
+      "description": "Grants permission to retrieve the reservation coverage for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationCoverage.html"
+    },
+    {
+      "name": "GetReservationPurchaseRecommendation",
+      "methodName": "toGetReservationPurchaseRecommendation",
+      "description": "Grants permission to retrieve the reservation recommendations for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationPurchaseRecommendation.html"
+    },
+    {
+      "name": "GetReservationUtilization",
+      "methodName": "toGetReservationUtilization",
+      "description": "Grants permission to retrieve the reservation utilization for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationUtilization.html"
+    },
+    {
+      "name": "GetRightsizingRecommendation",
+      "methodName": "toGetRightsizingRecommendation",
+      "description": "Grants permission to retrieve the rightsizing recommendations for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetRightsizingRecommendation.html"
+    },
+    {
+      "name": "GetSavingsPlanPurchaseRecommendationDetails",
+      "methodName": "toGetSavingsPlanPurchaseRecommendationDetails",
+      "description": "Grants permission to retrieve the Savings Plan recommendation details for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlanPurchaseRecommendationDetails.html"
+    },
+    {
+      "name": "GetSavingsPlansCoverage",
+      "methodName": "toGetSavingsPlansCoverage",
+      "description": "Grants permission to retrieve the Savings Plans coverage for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansCoverage.html"
+    },
+    {
+      "name": "GetSavingsPlansPurchaseRecommendation",
+      "methodName": "toGetSavingsPlansPurchaseRecommendation",
+      "description": "Grants permission to retrieve the Savings Plans recommendations for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansPurchaseRecommendation.html"
+    },
+    {
+      "name": "GetSavingsPlansUtilization",
+      "methodName": "toGetSavingsPlansUtilization",
+      "description": "Grants permission to retrieve the Savings Plans utilization for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilization.html"
+    },
+    {
+      "name": "GetSavingsPlansUtilizationDetails",
+      "methodName": "toGetSavingsPlansUtilizationDetails",
+      "description": "Grants permission to retrieve the Savings Plans utilization details for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilizationDetails.html"
+    },
+    {
+      "name": "GetTags",
+      "methodName": "toGetTags",
+      "description": "Grants permission to query tags for a specified time period",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTags.html"
+    },
+    {
+      "name": "GetUsageForecast",
+      "methodName": "toGetUsageForecast",
+      "description": "Grants permission to retrieve a usage forecast for a forecast time period",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetUsageForecast.html"
+    },
+    {
+      "name": "ListCommitmentPurchaseAnalyses",
+      "methodName": "toListCommitmentPurchaseAnalyses",
+      "description": "Grants permission to retrieve a list of your historical commitment purchase analyses",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCommitmentPurchaseAnalyses.html"
+    },
+    {
+      "name": "ListCostAllocationTagBackfillHistory",
+      "methodName": "toListCostAllocationTagBackfillHistory",
+      "description": "Grants permission to list Cost Allocation Tag backfill history",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCostAllocationTagBackfillHistory.html"
+    },
+    {
+      "name": "ListCostAllocationTags",
+      "methodName": "toListCostAllocationTags",
+      "description": "Grants permission to list Cost Allocation Tags",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCostAllocationTags.html"
+    },
+    {
+      "name": "ListCostCategoryDefinitions",
+      "methodName": "toListCostCategoryDefinitions",
+      "description": "Grants permission to retrieve names, ARN, and effective dates for all Cost Categories",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCostCategoryDefinitions.html"
+    },
+    {
+      "name": "ListCostCategoryResourceAssociations",
+      "methodName": "toListCostCategoryResourceAssociations",
+      "description": "Grants permission to retrieve resource associations of all Cost Categories defined in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCostCategoryResourceAssociations.html"
+    },
+    {
+      "name": "ListSavingsPlansPurchaseRecommendationGeneration",
+      "methodName": "toListSavingsPlansPurchaseRecommendationGeneration",
+      "description": "Grants permission to retrieve a list of your historical recommendation generations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListSavingsPlansPurchaseRecommendationGeneration.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a Cost Explorer resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ProvideAnomalyFeedback",
+      "methodName": "toProvideAnomalyFeedback",
+      "description": "Grants permission to provide feedback on detected anomalies",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProvideAnomalyFeedback.html"
+    },
+    {
+      "name": "StartCommitmentPurchaseAnalysis",
+      "methodName": "toStartCommitmentPurchaseAnalysis",
+      "description": "Grants permission to request a commitment purchase analysis",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_StartCommitmentPurchaseAnalysis.html"
+    },
+    {
+      "name": "StartCostAllocationTagBackfill",
+      "methodName": "toStartCostAllocationTagBackfill",
+      "description": "Grants permission to request a Cost Allocation Tag backfill",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_StartCostAllocationTagBackfill.html"
+    },
+    {
+      "name": "StartSavingsPlansPurchaseRecommendationGeneration",
+      "methodName": "toStartSavingsPlansPurchaseRecommendationGeneration",
+      "description": "Grants permission to request a Savings Plans recommendation generation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_StartSavingsPlansPurchaseRecommendationGeneration.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a Cost Explorer resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a Cost Explorer resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAnomalyMonitor",
+      "methodName": "toUpdateAnomalyMonitor",
+      "description": "Grants permission to update an existing Anomaly Monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalyMonitor.html"
+    },
+    {
+      "name": "UpdateAnomalySubscription",
+      "methodName": "toUpdateAnomalySubscription",
+      "description": "Grants permission to update an existing Anomaly Subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalySubscription.html"
+    },
+    {
+      "name": "UpdateCostAllocationTagsStatus",
+      "methodName": "toUpdateCostAllocationTagsStatus",
+      "description": "Grants permission to update existing Cost Allocation Tags status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateCostAllocationTagsStatus.html"
+    },
+    {
+      "name": "UpdateCostCategoryDefinition",
+      "methodName": "toUpdateCostCategoryDefinition",
+      "description": "Grants permission to update an existing Cost Category",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateCostCategoryDefinition.html"
+    },
+    {
+      "name": "CreateNotificationSubscription",
+      "methodName": "toCreateNotificationSubscription",
+      "description": "Grants permission to create Reservation expiration alerts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "CreateReport",
+      "methodName": "toCreateReport",
+      "description": "Grants permission to create Cost Explorer Reports",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "DeleteNotificationSubscription",
+      "methodName": "toDeleteNotificationSubscription",
+      "description": "Grants permission to delete Reservation expiration alerts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "DeleteReport",
+      "methodName": "toDeleteReport",
+      "description": "Grants permission to delete Cost Explorer Reports",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "DescribeNotificationSubscription",
+      "methodName": "toDescribeNotificationSubscription",
+      "description": "Grants permission to view Reservation expiration alerts",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "DescribeReport",
+      "methodName": "toDescribeReport",
+      "description": "Grants permission to view Cost Explorer Reports page",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "GetConsoleActionSetEnforced",
+      "methodName": "toGetConsoleActionSetEnforced",
+      "description": "Grants permission to view whether existing or fine-grained IAM actions are being used to control authorization to Billing, Cost Management, and Account consoles",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "GetPreferences",
+      "methodName": "toGetPreferences",
+      "description": "Grants permission to view Cost Explorer Preferences page",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "UpdateConsoleActionSetEnforced",
+      "methodName": "toUpdateConsoleActionSetEnforced",
+      "description": "Grants permission to change whether existing or fine-grained IAM actions will be used to control authorization to Billing, Cost Management, and Account consoles",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "UpdateNotificationSubscription",
+      "methodName": "toUpdateNotificationSubscription",
+      "description": "Grants permission to update Reservation expiration alerts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "UpdatePreferences",
+      "methodName": "toUpdatePreferences",
+      "description": "Grants permission to edit Cost Explorer Preferences page",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "UpdateReport",
+      "methodName": "toUpdateReport",
+      "description": "Grants permission to update Cost Explorer Reports",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "anomalymonitor",
+      "methodName": "onAnomalymonitor",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html",
+      "arn": "arn:${Partition}:ce::${Account}:anomalymonitor/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "anomalysubscription",
+      "methodName": "onAnomalysubscription",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html",
+      "arn": "arn:${Partition}:ce::${Account}:anomalysubscription/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "billingview",
+      "methodName": "onBillingview",
+      "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/",
+      "arn": "arn:${Partition}:billing::${Account}:billingview/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "costcategory",
+      "methodName": "onCostcategory",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html",
+      "arn": "arn:${Partition}:ce::${Account}:costcategory/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAnomalyMonitor",
+        "toCreateAnomalySubscription",
+        "toCreateCostCategoryDefinition",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toDeleteAnomalyMonitor",
+        "toDeleteAnomalySubscription",
+        "toDeleteCostCategoryDefinition",
+        "toDescribeCostCategoryDefinition",
+        "toGetAnomalies",
+        "toGetAnomalyMonitors",
+        "toGetAnomalySubscriptions",
+        "toGetCostAndUsage",
+        "toGetCostAndUsageComparisons",
+        "toGetCostAndUsageWithResources",
+        "toGetCostCategories",
+        "toGetCostComparisonDrivers",
+        "toGetCostForecast",
+        "toGetDimensionValues",
+        "toGetTags",
+        "toGetUsageForecast",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAnomalyMonitor",
+        "toUpdateAnomalySubscription",
+        "toUpdateCostCategoryDefinition"
+      ],
+      "relatedResourceTypes": [
+        "anomalymonitor",
+        "anomalysubscription",
+        "billingview",
+        "costcategory"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAnomalyMonitor",
+        "toCreateAnomalySubscription",
+        "toCreateCostCategoryDefinition",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

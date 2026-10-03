@@ -1,0 +1,381 @@
+{
+  "schemaVersion": 1,
+  "filename": "osis",
+  "className": "Osis",
+  "name": "osis",
+  "servicePrefix": "osis",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_osis.html",
+  "accessLevelList": {
+    "Write": [
+      "CreatePipeline",
+      "CreatePipelineEndpoint",
+      "DeletePipeline",
+      "DeletePipelineEndpoint",
+      "DeleteResourcePolicy",
+      "Ingest",
+      "PutResourcePolicy",
+      "RevokePipelineEndpointConnections",
+      "StartPipeline",
+      "StopPipeline",
+      "TagResource",
+      "UntagResource",
+      "UpdatePipeline"
+    ],
+    "Read": [
+      "GetPipeline",
+      "GetPipelineBlueprint",
+      "GetPipelineChangeProgress",
+      "GetResourcePolicy",
+      "ListTagsForResource",
+      "ValidatePipeline"
+    ],
+    "List": [
+      "ListPipelineBlueprints",
+      "ListPipelineEndpointConnections",
+      "ListPipelineEndpoints",
+      "ListPipelines"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreatePipeline",
+      "methodName": "toCreatePipeline",
+      "description": "Grants permission to create an OpenSearch Ingestion pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_CreatePipeline.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreatePipelineEndpoint",
+      "methodName": "toCreatePipelineEndpoint",
+      "description": "Grants permission to create an OpenSearch Ingestion pipeline endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_CreatePipelineEndpoint.html"
+    },
+    {
+      "name": "DeletePipeline",
+      "methodName": "toDeletePipeline",
+      "description": "Grants permission to delete an OpenSearch Ingestion pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_DeletePipeline.html"
+    },
+    {
+      "name": "DeletePipelineEndpoint",
+      "methodName": "toDeletePipelineEndpoint",
+      "description": "Grants permission to delete an OpenSearch Ingestion pipeline endpoint in the current account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_DeletePipelineEndpoint.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete a resource policy for an OpenSearch Ingestion resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "GetPipeline",
+      "methodName": "toGetPipeline",
+      "description": "Grants permission to retrieve configuration information for an OpenSearch Ingestion pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_GetPipeline.html"
+    },
+    {
+      "name": "GetPipelineBlueprint",
+      "methodName": "toGetPipelineBlueprint",
+      "description": "Grants permission to get the contents of an OpenSearch Ingestion pipeline blueprint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_GetPipelineBlueprint.html"
+    },
+    {
+      "name": "GetPipelineChangeProgress",
+      "methodName": "toGetPipelineChangeProgress",
+      "description": "Grants permission to get granular information about the status of an OpenSearch Ingestion pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_GetPipelineChangeProgress.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to get a resource policy for an OpenSearch Ingestion resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_GetResourcePolicy.html"
+    },
+    {
+      "name": "Ingest",
+      "methodName": "toIngest",
+      "description": "Grants permission to ingest data through an OpenSearch Ingestion pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configure-client.html"
+    },
+    {
+      "name": "ListPipelineBlueprints",
+      "methodName": "toListPipelineBlueprints",
+      "description": "Grants permission to list the names of available blueprints for an OpenSearch Ingestion pipeline configuration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_ListPipelineBlueprints.html"
+    },
+    {
+      "name": "ListPipelineEndpointConnections",
+      "methodName": "toListPipelineEndpointConnections",
+      "description": "Grants permission to list OpenSearch Ingestion pipeline endpoint connections to pipelines in the current account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_ListPipelineEndpointConnections.html"
+    },
+    {
+      "name": "ListPipelineEndpoints",
+      "methodName": "toListPipelineEndpoints",
+      "description": "Grants permission to list OpenSearch Ingestion pipeline endpoints in the current account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_ListPipelineEndpoints.html"
+    },
+    {
+      "name": "ListPipelines",
+      "methodName": "toListPipelines",
+      "description": "Grants permission to list basic configuration for each OpenSearch Ingestion pipeline in the current account and Region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_ListPipelines.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all resource tags associated with an OpenSearch Ingestion pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_ListTagsForResource.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to put a resource policy for an OpenSearch Ingestion resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_PutResourcePolicy.html"
+    },
+    {
+      "name": "RevokePipelineEndpointConnections",
+      "methodName": "toRevokePipelineEndpointConnections",
+      "description": "Grants permission to revoke an OpenSearch Ingestion pipeline endpoint connection from a pipeline in the current account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_RevokePipelineEndpointConnections.html"
+    },
+    {
+      "name": "StartPipeline",
+      "methodName": "toStartPipeline",
+      "description": "Grants permission to start an OpenSearch Ingestion pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_StartPipeline.html"
+    },
+    {
+      "name": "StopPipeline",
+      "methodName": "toStopPipeline",
+      "description": "Grants permission to stop an OpenSearch Ingestion pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_StopPipeline.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to attach resource tags to an OpenSearch Ingestion pipeline",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove resource tags from an OpenSearch Ingestion Service pipeline",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_UntagResource.html"
+    },
+    {
+      "name": "UpdatePipeline",
+      "methodName": "toUpdatePipeline",
+      "description": "Grants permission to modify the configuration of an OpenSearch Ingestion pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_UpdatePipeline.html"
+    },
+    {
+      "name": "ValidatePipeline",
+      "methodName": "toValidatePipeline",
+      "description": "Grants permission to validate the configuration of an OpenSearch Ingestion pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_ValidatePipeline.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "pipeline",
+      "methodName": "onPipeline",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_Pipeline.html",
+      "arn": "arn:${Partition}:osis:${Region}:${Account}:pipeline/${PipelineName}",
+      "placeholders": [
+        {
+          "placeholder": "PipelineName",
+          "name": "pipelineName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "pipeline-blueprint",
+      "methodName": "onPipelineBlueprint",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_PipelineBlueprint.html",
+      "arn": "arn:${Partition}:osis:${Region}:${Account}:blueprint/${BlueprintName}",
+      "placeholders": [
+        {
+          "placeholder": "BlueprintName",
+          "name": "blueprintName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "pipeline-endpoint",
+      "methodName": "onPipelineEndpoint",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_PipelineEndpoint.html",
+      "arn": "arn:${Partition}:osis:${Region}:${Account}:endpoint/${EndpointId}",
+      "placeholders": [
+        {
+          "placeholder": "EndpointId",
+          "name": "endpointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreatePipeline",
+        "toCreatePipelineEndpoint",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreatePipelineEndpoint",
+        "toDeletePipeline",
+        "toDeletePipelineEndpoint",
+        "toDeleteResourcePolicy",
+        "toGetPipeline",
+        "toGetPipelineChangeProgress",
+        "toGetResourcePolicy",
+        "toIngest",
+        "toListTagsForResource",
+        "toPutResourcePolicy",
+        "toRevokePipelineEndpointConnections",
+        "toStartPipeline",
+        "toStopPipeline",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdatePipeline"
+      ],
+      "relatedResourceTypes": [
+        "pipeline",
+        "pipeline-endpoint"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreatePipeline",
+        "toCreatePipelineEndpoint",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

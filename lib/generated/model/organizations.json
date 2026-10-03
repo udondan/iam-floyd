@@ -1,0 +1,1067 @@
+{
+  "schemaVersion": 1,
+  "filename": "organizations",
+  "className": "Organizations",
+  "name": "organizations",
+  "servicePrefix": "organizations",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_organizations.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptHandshake",
+      "AttachPolicy",
+      "CancelHandshake",
+      "CloseAccount",
+      "CreateAccount",
+      "CreateGovCloudAccount",
+      "CreateOrganization",
+      "CreateOrganizationalUnit",
+      "CreatePolicy",
+      "DeclineHandshake",
+      "DeleteOrganization",
+      "DeleteOrganizationalUnit",
+      "DeletePolicy",
+      "DeleteResourcePolicy",
+      "DeregisterDelegatedAdministrator",
+      "DetachPolicy",
+      "DisableAWSServiceAccess",
+      "DisablePolicyType",
+      "EnableAWSServiceAccess",
+      "EnableAllFeatures",
+      "EnablePolicyType",
+      "InviteAccountToOrganization",
+      "InviteOrganizationToTransferResponsibility",
+      "LeaveOrganization",
+      "MoveAccount",
+      "PutResourcePolicy",
+      "RegisterDelegatedAdministrator",
+      "RemoveAccountFromOrganization",
+      "TagResource",
+      "TerminateResponsibilityTransfer",
+      "UntagResource",
+      "UpdateOrganizationalUnit",
+      "UpdatePolicy",
+      "UpdateResponsibilityTransfer"
+    ],
+    "Permissions management": [
+      "AttachPolicy",
+      "DeleteResourcePolicy",
+      "DetachPolicy",
+      "PutResourcePolicy",
+      "UpdatePolicy"
+    ],
+    "Read": [
+      "DescribeAccount",
+      "DescribeCreateAccountStatus",
+      "DescribeEffectivePolicy",
+      "DescribeHandshake",
+      "DescribeOrganization",
+      "DescribeOrganizationalUnit",
+      "DescribePolicy",
+      "DescribeResourcePolicy",
+      "DescribeResponsibilityTransfer"
+    ],
+    "List": [
+      "ListAWSServiceAccessForOrganization",
+      "ListAccounts",
+      "ListAccountsForParent",
+      "ListAccountsWithInvalidEffectivePolicy",
+      "ListChildren",
+      "ListCreateAccountStatus",
+      "ListDelegatedAdministrators",
+      "ListDelegatedServicesForAccount",
+      "ListEffectivePolicyValidationErrors",
+      "ListHandshakesForAccount",
+      "ListHandshakesForOrganization",
+      "ListInboundResponsibilityTransfers",
+      "ListOrganizationalUnitsForParent",
+      "ListOutboundResponsibilityTransfers",
+      "ListParents",
+      "ListPolicies",
+      "ListPoliciesForTarget",
+      "ListRoots",
+      "ListTagsForResource",
+      "ListTargetsForPolicy"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptHandshake",
+      "methodName": "toAcceptHandshake",
+      "description": "Grants permission to send a response to the originator of a handshake agreeing to the action proposed by the handshake request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_AcceptHandshake.html"
+    },
+    {
+      "name": "AttachPolicy",
+      "methodName": "toAttachPolicy",
+      "description": "Grants permission to attach a policy to a root, an organizational unit, or an individual account",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_AttachPolicy.html"
+    },
+    {
+      "name": "CancelHandshake",
+      "methodName": "toCancelHandshake",
+      "description": "Grants permission to cancel a handshake",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_CancelHandshake.html"
+    },
+    {
+      "name": "CloseAccount",
+      "methodName": "toCloseAccount",
+      "description": "Grants permission to close an AWS account that is now a part of an Organizations, either created within the organization, or invited to join the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_CloseAccount.html"
+    },
+    {
+      "name": "CreateAccount",
+      "methodName": "toCreateAccount",
+      "description": "Grants permission to create an AWS account that is automatically a member of the organization with the credentials that made the request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateAccount.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateGovCloudAccount",
+      "methodName": "toCreateGovCloudAccount",
+      "description": "Grants permission to create an AWS GovCloud (US) account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateGovCloudAccount.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateOrganization",
+      "methodName": "toCreateOrganization",
+      "description": "Grants permission to create an organization. The account with the credentials that calls the CreateOrganization operation automatically becomes the management account of the new organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateOrganization.html"
+    },
+    {
+      "name": "CreateOrganizationalUnit",
+      "methodName": "toCreateOrganizationalUnit",
+      "description": "Grants permission to create an organizational unit (OU) within a root or parent OU",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateOrganizationalUnit.html"
+    },
+    {
+      "name": "CreatePolicy",
+      "methodName": "toCreatePolicy",
+      "description": "Grants permission to create a policy that you can attach to a root, an organizational unit (OU), or an individual AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreatePolicy.html"
+    },
+    {
+      "name": "DeclineHandshake",
+      "methodName": "toDeclineHandshake",
+      "description": "Grants permission to decline a handshake request. This sets the handshake state to DECLINED and effectively deactivates the request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeclineHandshake.html"
+    },
+    {
+      "name": "DeleteOrganization",
+      "methodName": "toDeleteOrganization",
+      "description": "Grants permission to delete the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeleteOrganization.html"
+    },
+    {
+      "name": "DeleteOrganizationalUnit",
+      "methodName": "toDeleteOrganizationalUnit",
+      "description": "Grants permission to delete an organizational unit from a root or another OU",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeleteOrganizationalUnit.html"
+    },
+    {
+      "name": "DeletePolicy",
+      "methodName": "toDeletePolicy",
+      "description": "Grants permission to delete a policy from your organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeletePolicy.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete a resource policy from your organization",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeregisterDelegatedAdministrator",
+      "methodName": "toDeregisterDelegatedAdministrator",
+      "description": "Grants permission to deregister the specified member AWS account as a delegated administrator for the AWS service that is specified by ServicePrincipal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeregisterDelegatedAdministrator.html"
+    },
+    {
+      "name": "DescribeAccount",
+      "methodName": "toDescribeAccount",
+      "description": "Grants permission to retrieve Organizations-related details about the specified account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeAccount.html"
+    },
+    {
+      "name": "DescribeCreateAccountStatus",
+      "methodName": "toDescribeCreateAccountStatus",
+      "description": "Grants permission to retrieve the current status of an asynchronous request to create an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeCreateAccountStatus.html"
+    },
+    {
+      "name": "DescribeEffectivePolicy",
+      "methodName": "toDescribeEffectivePolicy",
+      "description": "Grants permission to retrieve the effective policy for an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeEffectivePolicy.html"
+    },
+    {
+      "name": "DescribeHandshake",
+      "methodName": "toDescribeHandshake",
+      "description": "Grants permission to retrieve details about a previously requested handshake",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeHandshake.html"
+    },
+    {
+      "name": "DescribeOrganization",
+      "methodName": "toDescribeOrganization",
+      "description": "Grants permission to retrieve details about the organization that the calling credentials belong to",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeOrganization.html"
+    },
+    {
+      "name": "DescribeOrganizationalUnit",
+      "methodName": "toDescribeOrganizationalUnit",
+      "description": "Grants permission to retrieve details about an organizational unit (OU)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeOrganizationalUnit.html"
+    },
+    {
+      "name": "DescribePolicy",
+      "methodName": "toDescribePolicy",
+      "description": "Grants permission to retrieve details about a policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribePolicy.html"
+    },
+    {
+      "name": "DescribeResourcePolicy",
+      "methodName": "toDescribeResourcePolicy",
+      "description": "Grants permission to retrieve information about a resource policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeResourcePolicy.html"
+    },
+    {
+      "name": "DescribeResponsibilityTransfer",
+      "methodName": "toDescribeResponsibilityTransfer",
+      "description": "Grants permission to retrieve details about a previously responsibility transfer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeResponsibilityTransfer.html"
+    },
+    {
+      "name": "DetachPolicy",
+      "methodName": "toDetachPolicy",
+      "description": "Grants permission to detach a policy from a target root, organizational unit, or account",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DetachPolicy.html"
+    },
+    {
+      "name": "DisableAWSServiceAccess",
+      "methodName": "toDisableAWSServiceAccess",
+      "description": "Grants permission to disable integration of an AWS service (the service that is specified by ServicePrincipal) with AWS Organizations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DisableAWSServiceAccess.html",
+      "conditionMethods": [
+        "ifServicePrincipal"
+      ]
+    },
+    {
+      "name": "DisablePolicyType",
+      "methodName": "toDisablePolicyType",
+      "description": "Grants permission to disable an organization policy type in a root",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DisablePolicyType.html"
+    },
+    {
+      "name": "EnableAWSServiceAccess",
+      "methodName": "toEnableAWSServiceAccess",
+      "description": "Grants permission to enable integration of an AWS service (the service that is specified by ServicePrincipal) with AWS Organizations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html",
+      "conditionMethods": [
+        "ifServicePrincipal"
+      ]
+    },
+    {
+      "name": "EnableAllFeatures",
+      "methodName": "toEnableAllFeatures",
+      "description": "Grants permission to start the process to enable all features in an organization, upgrading it from supporting only Consolidated Billing features",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAllFeatures.html"
+    },
+    {
+      "name": "EnablePolicyType",
+      "methodName": "toEnablePolicyType",
+      "description": "Grants permission to enable a policy type in a root",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnablePolicyType.html"
+    },
+    {
+      "name": "InviteAccountToOrganization",
+      "methodName": "toInviteAccountToOrganization",
+      "description": "Grants permission to send an invitation to another AWS account, asking it to join your organization as a member account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_InviteAccountToOrganization.html"
+    },
+    {
+      "name": "InviteOrganizationToTransferResponsibility",
+      "methodName": "toInviteOrganizationToTransferResponsibility",
+      "description": "Grants permission to send an invitation to another AWS account, asking it to transfer a particular responsibility to your organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_InviteOrganizationToTransferResponsibility.html"
+    },
+    {
+      "name": "LeaveOrganization",
+      "methodName": "toLeaveOrganization",
+      "description": "Grants permission to remove a member account from its parent organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_LeaveOrganization.html"
+    },
+    {
+      "name": "ListAWSServiceAccessForOrganization",
+      "methodName": "toListAWSServiceAccessForOrganization",
+      "description": "Grants permission to retrieve the list of the AWS services for which you enabled integration with your organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListAWSServiceAccessForOrganization.html"
+    },
+    {
+      "name": "ListAccounts",
+      "methodName": "toListAccounts",
+      "description": "Grants permission to list all of the accounts in the organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListAccounts.html"
+    },
+    {
+      "name": "ListAccountsForParent",
+      "methodName": "toListAccountsForParent",
+      "description": "Grants permission to list the accounts in an organization that are contained by a root or organizational unit (OU)",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListAccountsForParent.html"
+    },
+    {
+      "name": "ListAccountsWithInvalidEffectivePolicy",
+      "methodName": "toListAccountsWithInvalidEffectivePolicy",
+      "description": "Grants permission to list accounts that have invalid effective policies for a specified policy type",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListAccountsWithInvalidEffectivePolicy.html",
+      "conditionMethods": [
+        "ifPolicyType"
+      ]
+    },
+    {
+      "name": "ListChildren",
+      "methodName": "toListChildren",
+      "description": "Grants permission to list all of the OUs or accounts that are contained in a parent OU or root",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListChildren.html"
+    },
+    {
+      "name": "ListCreateAccountStatus",
+      "methodName": "toListCreateAccountStatus",
+      "description": "Grants permission to list the asynchronous account creation requests that are currently being tracked for the organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListCreateAccountStatus.html"
+    },
+    {
+      "name": "ListDelegatedAdministrators",
+      "methodName": "toListDelegatedAdministrators",
+      "description": "Grants permission to list the AWS accounts that are designated as delegated administrators in this organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListDelegatedAdministrators.html",
+      "conditionMethods": [
+        "ifServicePrincipal"
+      ]
+    },
+    {
+      "name": "ListDelegatedServicesForAccount",
+      "methodName": "toListDelegatedServicesForAccount",
+      "description": "Grants permission to list the AWS services for which the specified account is a delegated administrator in this organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListDelegatedServicesForAccount.html"
+    },
+    {
+      "name": "ListEffectivePolicyValidationErrors",
+      "methodName": "toListEffectivePolicyValidationErrors",
+      "description": "Grants permission to list validation errors found in the effective policy for a specific account and policy type",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListEffectivePolicyValidationErrors.html"
+    },
+    {
+      "name": "ListHandshakesForAccount",
+      "methodName": "toListHandshakesForAccount",
+      "description": "Grants permission to list all of the handshakes that are associated with an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListHandshakesForAccount.html"
+    },
+    {
+      "name": "ListHandshakesForOrganization",
+      "methodName": "toListHandshakesForOrganization",
+      "description": "Grants permission to list the handshakes that are associated with the organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListHandshakesForOrganization.html"
+    },
+    {
+      "name": "ListInboundResponsibilityTransfers",
+      "methodName": "toListInboundResponsibilityTransfers",
+      "description": "Grants permission to list all responsibilities of a particular type transfered to your organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListInboundResponsibilityTransfers.html",
+      "conditionMethods": [
+        "ifTransferDirection",
+        "ifTransferType"
+      ]
+    },
+    {
+      "name": "ListOrganizationalUnitsForParent",
+      "methodName": "toListOrganizationalUnitsForParent",
+      "description": "Grants permission to list all of the organizational units (OUs) in a parent organizational unit or root",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListOrganizationalUnitsForParent.html"
+    },
+    {
+      "name": "ListOutboundResponsibilityTransfers",
+      "methodName": "toListOutboundResponsibilityTransfers",
+      "description": "Grants permission to list all responsibilities of a particular type transfered to another organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListOutboundResponsibilityTransfers.html",
+      "conditionMethods": [
+        "ifTransferDirection",
+        "ifTransferType"
+      ]
+    },
+    {
+      "name": "ListParents",
+      "methodName": "toListParents",
+      "description": "Grants permission to list the root or organizational units (OUs) that serve as the immediate parent of a child OU or account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListParents.html"
+    },
+    {
+      "name": "ListPolicies",
+      "methodName": "toListPolicies",
+      "description": "Grants permission to list all of the policies in an organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListPolicies.html",
+      "conditionMethods": [
+        "ifPolicyType"
+      ]
+    },
+    {
+      "name": "ListPoliciesForTarget",
+      "methodName": "toListPoliciesForTarget",
+      "description": "Grants permission to list all of the policies that are directly attached to a root, organizational unit (OU), or account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListPoliciesForTarget.html"
+    },
+    {
+      "name": "ListRoots",
+      "methodName": "toListRoots",
+      "description": "Grants permission to list all of the roots that are defined in the organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags for the specified resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTargetsForPolicy",
+      "methodName": "toListTargetsForPolicy",
+      "description": "Grants permission to list all the roots, OUs, and accounts to which a policy is attached",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListTargetsForPolicy.html"
+    },
+    {
+      "name": "MoveAccount",
+      "methodName": "toMoveAccount",
+      "description": "Grants permission to move an account from its current root or OU to another parent root or OU",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_MoveAccount.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to create or update a resource policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "RegisterDelegatedAdministrator",
+      "methodName": "toRegisterDelegatedAdministrator",
+      "description": "Grants permission to register the specified member account to administer the Organizations features of the AWS service that is specified by ServicePrincipal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_RegisterDelegatedAdministrator.html"
+    },
+    {
+      "name": "RemoveAccountFromOrganization",
+      "methodName": "toRemoveAccountFromOrganization",
+      "description": "Grants permission to remove the specified account from the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_RemoveAccountFromOrganization.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add one or more tags to the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "TerminateResponsibilityTransfer",
+      "methodName": "toTerminateResponsibilityTransfer",
+      "description": "Grants permission to end the transfer for a responsibility to or from your organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_TerminateResponsibilityTransfer.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove one or more tags from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateOrganizationalUnit",
+      "methodName": "toUpdateOrganizationalUnit",
+      "description": "Grants permission to rename an organizational unit (OU)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_UpdateOrganizationalUnit.html"
+    },
+    {
+      "name": "UpdatePolicy",
+      "methodName": "toUpdatePolicy",
+      "description": "Grants permission to update an existing policy with a new name, description, or content",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_UpdatePolicy.html"
+    },
+    {
+      "name": "UpdateResponsibilityTransfer",
+      "methodName": "toUpdateResponsibilityTransfer",
+      "description": "Grants permission to rename a responsibility transfer to or from your organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_UpdateResponsibilityTransfer.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "account",
+      "methodName": "onAccount",
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html",
+      "arn": "arn:${Partition}:organizations::${Account}:account/o-${OrganizationId}/${AccountId}",
+      "placeholders": [
+        {
+          "placeholder": "OrganizationId",
+          "name": "organizationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "awspolicy",
+      "methodName": "onAwspolicy",
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html",
+      "arn": "arn:${Partition}:organizations::aws:policy/${PolicyType}/p-${PolicyId}",
+      "placeholders": [
+        {
+          "placeholder": "PolicyType",
+          "name": "policyType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PolicyId",
+          "name": "policyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "handshake",
+      "methodName": "onHandshake",
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html",
+      "arn": "arn:${Partition}:organizations::${Account}:handshake/o-${OrganizationId}/${HandshakeType}/h-${HandshakeId}",
+      "placeholders": [
+        {
+          "placeholder": "OrganizationId",
+          "name": "organizationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "HandshakeType",
+          "name": "handshakeType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "HandshakeId",
+          "name": "handshakeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "organization",
+      "methodName": "onOrganization",
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html",
+      "arn": "arn:${Partition}:organizations::${Account}:organization/o-${OrganizationId}",
+      "placeholders": [
+        {
+          "placeholder": "OrganizationId",
+          "name": "organizationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "organizationalunit",
+      "methodName": "onOrganizationalunit",
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html",
+      "arn": "arn:${Partition}:organizations::${Account}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}",
+      "placeholders": [
+        {
+          "placeholder": "OrganizationId",
+          "name": "organizationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "OrganizationalUnitId",
+          "name": "organizationalUnitId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "policy",
+      "methodName": "onPolicy",
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html",
+      "arn": "arn:${Partition}:organizations::${Account}:policy/o-${OrganizationId}/${PolicyType}/p-${PolicyId}",
+      "placeholders": [
+        {
+          "placeholder": "OrganizationId",
+          "name": "organizationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PolicyType",
+          "name": "policyType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PolicyId",
+          "name": "policyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "resourcepolicy",
+      "methodName": "onResourcepolicy",
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html",
+      "arn": "arn:${Partition}:organizations::${Account}:resourcepolicy/o-${OrganizationId}/rp-${ResourcePolicyId}",
+      "placeholders": [
+        {
+          "placeholder": "OrganizationId",
+          "name": "organizationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourcePolicyId",
+          "name": "resourcePolicyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "responsibilitytransfer",
+      "methodName": "onResponsibilitytransfer",
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html",
+      "arn": "arn:${Partition}:organizations::${Account}:transfer/o-${OrganizationId}/${TransferType}/${TransferDirection}/rt-${ResponsibilityTransferId}",
+      "placeholders": [
+        {
+          "placeholder": "OrganizationId",
+          "name": "organizationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TransferType",
+          "name": "transferType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TransferDirection",
+          "name": "transferDirection",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResponsibilityTransferId",
+          "name": "responsibilityTransferId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "root",
+      "methodName": "onRoot",
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html",
+      "arn": "arn:${Partition}:organizations::${Account}:root/o-${OrganizationId}/r-${RootId}",
+      "placeholders": [
+        {
+          "placeholder": "OrganizationId",
+          "name": "organizationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RootId",
+          "name": "rootId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAccount",
+        "toCreateGovCloudAccount",
+        "toCreateOrganizationalUnit",
+        "toCreatePolicy",
+        "toInviteAccountToOrganization",
+        "toPutResourcePolicy",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAttachPolicy",
+        "toCloseAccount",
+        "toCreateAccount",
+        "toCreateGovCloudAccount",
+        "toCreateOrganizationalUnit",
+        "toCreatePolicy",
+        "toDeleteOrganizationalUnit",
+        "toDeletePolicy",
+        "toDeregisterDelegatedAdministrator",
+        "toDescribeAccount",
+        "toDescribeEffectivePolicy",
+        "toDescribeOrganizationalUnit",
+        "toDescribePolicy",
+        "toDescribeResponsibilityTransfer",
+        "toDetachPolicy",
+        "toDisablePolicyType",
+        "toEnablePolicyType",
+        "toInviteAccountToOrganization",
+        "toInviteOrganizationToTransferResponsibility",
+        "toListAccountsForParent",
+        "toListChildren",
+        "toListDelegatedServicesForAccount",
+        "toListEffectivePolicyValidationErrors",
+        "toListOrganizationalUnitsForParent",
+        "toListParents",
+        "toListPoliciesForTarget",
+        "toListTagsForResource",
+        "toListTargetsForPolicy",
+        "toMoveAccount",
+        "toPutResourcePolicy",
+        "toRegisterDelegatedAdministrator",
+        "toRemoveAccountFromOrganization",
+        "toTagResource",
+        "toTerminateResponsibilityTransfer",
+        "toUntagResource",
+        "toUpdateOrganizationalUnit",
+        "toUpdatePolicy",
+        "toUpdateResponsibilityTransfer"
+      ],
+      "relatedResourceTypes": [
+        "account",
+        "organizationalunit",
+        "policy",
+        "resourcepolicy",
+        "responsibilitytransfer",
+        "root"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAccount",
+        "toCreateGovCloudAccount",
+        "toCreateOrganizationalUnit",
+        "toCreatePolicy",
+        "toInviteAccountToOrganization",
+        "toPutResourcePolicy",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "organizations:PolicyType",
+      "methodName": "ifPolicyType",
+      "description": "Filters access by the specified policy type names",
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys",
+      "relatedActionMethods": [
+        "toAttachPolicy",
+        "toCreatePolicy",
+        "toDeletePolicy",
+        "toDescribeEffectivePolicy",
+        "toDescribePolicy",
+        "toDetachPolicy",
+        "toDisablePolicyType",
+        "toEnablePolicyType",
+        "toListAccountsWithInvalidEffectivePolicy",
+        "toListEffectivePolicyValidationErrors",
+        "toListPolicies",
+        "toListPoliciesForTarget",
+        "toListTagsForResource",
+        "toListTargetsForPolicy",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdatePolicy"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PolicyType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "organizations:ServicePrincipal",
+      "methodName": "ifServicePrincipal",
+      "description": "Filters access by the specified service principal names",
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys",
+      "relatedActionMethods": [
+        "toDeregisterDelegatedAdministrator",
+        "toDisableAWSServiceAccess",
+        "toEnableAWSServiceAccess",
+        "toListDelegatedAdministrators",
+        "toRegisterDelegatedAdministrator"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ServicePrincipal",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "organizations:TransferDirection",
+      "methodName": "ifTransferDirection",
+      "description": "Filters access by the specified responsibility transfer by the direction",
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys",
+      "relatedActionMethods": [
+        "toDescribeResponsibilityTransfer",
+        "toInviteOrganizationToTransferResponsibility",
+        "toListInboundResponsibilityTransfers",
+        "toListOutboundResponsibilityTransfers",
+        "toListTagsForResource",
+        "toTagResource",
+        "toTerminateResponsibilityTransfer",
+        "toUntagResource",
+        "toUpdateResponsibilityTransfer"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TransferDirection",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "organizations:TransferType",
+      "methodName": "ifTransferType",
+      "description": "Filters access by the specified responsibility transfer type names",
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys",
+      "relatedActionMethods": [
+        "toDescribeResponsibilityTransfer",
+        "toInviteOrganizationToTransferResponsibility",
+        "toListInboundResponsibilityTransfers",
+        "toListOutboundResponsibilityTransfers",
+        "toListTagsForResource",
+        "toTagResource",
+        "toTerminateResponsibilityTransfer",
+        "toUntagResource",
+        "toUpdateResponsibilityTransfer"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TransferType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

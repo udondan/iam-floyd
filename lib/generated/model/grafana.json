@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "filename": "grafana",
+  "className": "Grafana",
+  "name": "grafana",
+  "servicePrefix": "grafana",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_grafana.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateLicense",
+      "CreateWorkspace",
+      "CreateWorkspaceApiKey",
+      "CreateWorkspaceServiceAccount",
+      "CreateWorkspaceServiceAccountToken",
+      "DeleteWorkspace",
+      "DeleteWorkspaceApiKey",
+      "DeleteWorkspaceServiceAccount",
+      "DeleteWorkspaceServiceAccountToken",
+      "DisassociateLicense",
+      "TagResource",
+      "UntagResource",
+      "UpdatePermissions",
+      "UpdateWorkspace",
+      "UpdateWorkspaceAuthentication",
+      "UpdateWorkspaceConfiguration"
+    ],
+    "Read": [
+      "DescribeWorkspace",
+      "DescribeWorkspaceAuthentication",
+      "DescribeWorkspaceConfiguration",
+      "ListTagsForResource",
+      "ListWorkspaceServiceAccountTokens",
+      "ListWorkspaceServiceAccounts",
+      "ListWorkspaces"
+    ],
+    "List": [
+      "ListPermissions",
+      "ListVersions"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "UpdatePermissions"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateLicense",
+      "methodName": "toAssociateLicense",
+      "description": "Grants permission to upgrade a workspace with a license",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "CreateWorkspace",
+      "methodName": "toCreateWorkspace",
+      "description": "Grants permission to create a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateWorkspaceApiKey",
+      "methodName": "toCreateWorkspaceApiKey",
+      "description": "Grants permission to create API keys for a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "CreateWorkspaceServiceAccount",
+      "methodName": "toCreateWorkspaceServiceAccount",
+      "description": "Grants permission to create service accounts for a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "CreateWorkspaceServiceAccountToken",
+      "methodName": "toCreateWorkspaceServiceAccountToken",
+      "description": "Grants permission to create service account tokens for a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "DeleteWorkspace",
+      "methodName": "toDeleteWorkspace",
+      "description": "Grants permission to delete a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "DeleteWorkspaceApiKey",
+      "methodName": "toDeleteWorkspaceApiKey",
+      "description": "Grants permission to delete API keys from a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "DeleteWorkspaceServiceAccount",
+      "methodName": "toDeleteWorkspaceServiceAccount",
+      "description": "Grants permission to delete service accounts for a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "DeleteWorkspaceServiceAccountToken",
+      "methodName": "toDeleteWorkspaceServiceAccountToken",
+      "description": "Grants permission to delete service account tokens for a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "DescribeWorkspace",
+      "methodName": "toDescribeWorkspace",
+      "description": "Grants permission to describe a workspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "DescribeWorkspaceAuthentication",
+      "methodName": "toDescribeWorkspaceAuthentication",
+      "description": "Grants permission to describe authentication providers on a workspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "DescribeWorkspaceConfiguration",
+      "methodName": "toDescribeWorkspaceConfiguration",
+      "description": "Grants permission to describe the current configuration string for the given workspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/grafana/latest/APIReference/API_DescribeWorkspaceConfiguration.html"
+    },
+    {
+      "name": "DisassociateLicense",
+      "methodName": "toDisassociateLicense",
+      "description": "Grants permission to remove a license from a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "ListPermissions",
+      "methodName": "toListPermissions",
+      "description": "Grants permission to list the permissions on a wokspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags associated with a workspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListVersions",
+      "methodName": "toListVersions",
+      "description": "Grants permission to list all available supported Grafana versions. Optionally, include a workspace to list the versions to which it can be upgraded",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html"
+    },
+    {
+      "name": "ListWorkspaceServiceAccountTokens",
+      "methodName": "toListWorkspaceServiceAccountTokens",
+      "description": "Grants permission to list service account tokens for a workspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "ListWorkspaceServiceAccounts",
+      "methodName": "toListWorkspaceServiceAccounts",
+      "description": "Grants permission to list service accounts for a workspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "ListWorkspaces",
+      "methodName": "toListWorkspaces",
+      "description": "Grants permission to list workspaces",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to, or update tag values of, a workspace",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a workspace",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdatePermissions",
+      "methodName": "toUpdatePermissions",
+      "description": "Grants permission to modify the permissions on a workspace",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "UpdateWorkspace",
+      "methodName": "toUpdateWorkspace",
+      "description": "Grants permission to modify a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "UpdateWorkspaceAuthentication",
+      "methodName": "toUpdateWorkspaceAuthentication",
+      "description": "Grants permission to modify authentication providers on a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+    },
+    {
+      "name": "UpdateWorkspaceConfiguration",
+      "methodName": "toUpdateWorkspaceConfiguration",
+      "description": "Grants permission to update the configuration string for the given workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceConfiguration.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "workspace",
+      "methodName": "onWorkspace",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:grafana:${Region}:${Account}:/workspaces/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by actions based on the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toCreateWorkspace",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by actions based on tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toAssociateLicense",
+        "toCreateWorkspaceApiKey",
+        "toCreateWorkspaceServiceAccount",
+        "toCreateWorkspaceServiceAccountToken",
+        "toDeleteWorkspace",
+        "toDeleteWorkspaceApiKey",
+        "toDeleteWorkspaceServiceAccount",
+        "toDeleteWorkspaceServiceAccountToken",
+        "toDescribeWorkspace",
+        "toDescribeWorkspaceAuthentication",
+        "toDescribeWorkspaceConfiguration",
+        "toDisassociateLicense",
+        "toListPermissions",
+        "toListTagsForResource",
+        "toListVersions",
+        "toListWorkspaceServiceAccountTokens",
+        "toListWorkspaceServiceAccounts",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdatePermissions",
+        "toUpdateWorkspace",
+        "toUpdateWorkspaceAuthentication",
+        "toUpdateWorkspaceConfiguration"
+      ],
+      "relatedResourceTypes": [
+        "workspace"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by actions based on the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/grafana/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toCreateWorkspace",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

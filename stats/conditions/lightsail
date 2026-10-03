@@ -1,3 +1,0 @@
-lightsail:RequestTag/${TagKey}
-lightsail:ResourceTag/${TagKey}
-lightsail:TagKeys

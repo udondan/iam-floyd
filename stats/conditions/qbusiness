@@ -1,5 +1,0 @@
-qbusiness:GroupId
-qbusiness:RequestTag/${TagKey}
-qbusiness:ResourceTag/${TagKey}
-qbusiness:TagKeys
-qbusiness:UserId

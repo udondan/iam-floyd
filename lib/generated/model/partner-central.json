@@ -1,0 +1,2403 @@
+{
+  "schemaVersion": 1,
+  "filename": "partner-central",
+  "className": "Partnercentral",
+  "name": "partnercentral",
+  "servicePrefix": "partnercentral",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partner-central.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptChannelHandshake",
+      "AcceptConnectionInvitation",
+      "AcceptEngagementInvitation",
+      "AmendBenefitApplication",
+      "AssignOpportunity",
+      "AssociateAwsTrainingCertificationEmailDomain",
+      "AssociateBenefitApplicationResource",
+      "AssociateOpportunity",
+      "CancelBenefitApplication",
+      "CancelChannelHandshake",
+      "CancelConnection",
+      "CancelConnectionInvitation",
+      "CancelProfileUpdateTask",
+      "CreateBenefitApplication",
+      "CreateChannelHandshake",
+      "CreateConnectionInvitation",
+      "CreateEngagement",
+      "CreateEngagementContext",
+      "CreateEngagementInvitation",
+      "CreateMarketplaceRevenueShare",
+      "CreateMarketplaceRevenueShareAllocation",
+      "CreateOpportunity",
+      "CreatePartner",
+      "CreateProgramManagementAccount",
+      "CreateRelationship",
+      "CreateResourceSnapshot",
+      "CreateResourceSnapshotJob",
+      "CreateRevenueAttribution",
+      "DeleteProgramManagementAccount",
+      "DeleteRelationship",
+      "DeleteResourceSnapshotJob",
+      "DisassociateAwsTrainingCertificationEmailDomain",
+      "DisassociateBenefitApplicationResource",
+      "DisassociateOpportunity",
+      "PutAllianceLeadContact",
+      "PutProfileVisibility",
+      "PutSellingSystemSettings",
+      "RecallBenefitApplication",
+      "RejectChannelHandshake",
+      "RejectConnectionInvitation",
+      "RejectEngagementInvitation",
+      "SendEmailVerificationCode",
+      "StartEngagementByAcceptingInvitationTask",
+      "StartEngagementFromOpportunityTask",
+      "StartOpportunityFromEngagementTask",
+      "StartProfileUpdateTask",
+      "StartProspectingFromEngagementTask",
+      "StartQualificationsAssociationTask",
+      "StartQualificationsDisassociationTask",
+      "StartResourceSnapshotJob",
+      "StartRevenueAttributionAllocationsTask",
+      "StartVerification",
+      "StopResourceSnapshotJob",
+      "SubmitBenefitApplication",
+      "SubmitOpportunity",
+      "TagResource",
+      "UntagResource",
+      "UpdateBenefitApplication",
+      "UpdateConnectionPreferences",
+      "UpdateEngagementContext",
+      "UpdateMarketplaceRevenueShareAllocation",
+      "UpdateOpportunity",
+      "UpdateProgramManagementAccount",
+      "UpdateRelationship",
+      "UpdateRevenueAttribution",
+      "CreateBusinessPlan",
+      "CreateCollaborationChannelMembers",
+      "CreateCollaborationChannelRequest",
+      "EnrollInPartnerPath",
+      "PutBusinessPlan",
+      "UseSession"
+    ],
+    "Read": [
+      "GetAllianceLeadContact",
+      "GetAwsOpportunitySummary",
+      "GetBenefit",
+      "GetBenefitAllocation",
+      "GetBenefitApplication",
+      "GetConnection",
+      "GetConnectionInvitation",
+      "GetConnectionPreferences",
+      "GetEngagement",
+      "GetEngagementInvitation",
+      "GetMarketplaceRevenueShare",
+      "GetMarketplaceRevenueShareAllocation",
+      "GetOpportunity",
+      "GetPartner",
+      "GetPartnerDashboard",
+      "GetProfileUpdateTask",
+      "GetProfileVisibility",
+      "GetProspectingFromEngagementTask",
+      "GetQualificationsAssociationDetails",
+      "GetQualificationsAssociationTask",
+      "GetQualificationsDisassociationTask",
+      "GetRelationship",
+      "GetResourceSnapshot",
+      "GetResourceSnapshotJob",
+      "GetRevenueAttribution",
+      "GetRevenueAttributionAllocation",
+      "GetRevenueAttributionAllocationsTask",
+      "GetSellingSystemSettings",
+      "GetVerification",
+      "ListEngagementMembers",
+      "ListEngagementResourceAssociations",
+      "ListTagsForResource",
+      "GetBusinessPlan",
+      "GetCollaborationChannel",
+      "GetPartnerProfile",
+      "GetProgramManagementAccount"
+    ],
+    "List": [
+      "ListBenefitAllocations",
+      "ListBenefitApplications",
+      "ListBenefits",
+      "ListChannelHandshakes",
+      "ListConnectionInvitations",
+      "ListConnections",
+      "ListEngagementByAcceptingInvitationTasks",
+      "ListEngagementFromOpportunityTasks",
+      "ListEngagementInvitations",
+      "ListEngagements",
+      "ListMarketplaceRevenueShareAllocations",
+      "ListMarketplaceRevenueShares",
+      "ListOpportunities",
+      "ListOpportunityFromEngagementTasks",
+      "ListPartners",
+      "ListProgramManagementAccounts",
+      "ListProspectingFromEngagementTasks",
+      "ListRelationships",
+      "ListResourceSnapshotJobs",
+      "ListResourceSnapshots",
+      "ListRevenueAttributionAllocations",
+      "ListRevenueAttributions",
+      "ListSolutions",
+      "ListBusinessPlans",
+      "ListCollaborationChannels",
+      "ListPartnerPaths",
+      "SearchPartnerProfiles"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptChannelHandshake",
+      "methodName": "toAcceptChannelHandshake",
+      "description": "Grants permission to accept channel handshakes in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_AcceptChannelHandshake.html"
+    },
+    {
+      "name": "AcceptConnectionInvitation",
+      "methodName": "toAcceptConnectionInvitation",
+      "description": "Grants permission to accept connection invitations in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_AcceptConnectionInvitation.html"
+    },
+    {
+      "name": "AcceptEngagementInvitation",
+      "methodName": "toAcceptEngagementInvitation",
+      "description": "Grants permission to accept Engagement Invitations on AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AcceptEngagementInvitation.html"
+    },
+    {
+      "name": "AmendBenefitApplication",
+      "methodName": "toAmendBenefitApplication",
+      "description": "Grants permission to amend benefit applications in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_AmendBenefitApplication.html"
+    },
+    {
+      "name": "AssignOpportunity",
+      "methodName": "toAssignOpportunity",
+      "description": "Grants permission to assign Opportunities on AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AssignOpportunity.html"
+    },
+    {
+      "name": "AssociateAwsTrainingCertificationEmailDomain",
+      "methodName": "toAssociateAwsTrainingCertificationEmailDomain",
+      "description": "Grants permission to associate AWS Training and Certification email domains in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_AssociateAwsTrainingCertificationEmailDomain.html"
+    },
+    {
+      "name": "AssociateBenefitApplicationResource",
+      "methodName": "toAssociateBenefitApplicationResource",
+      "description": "Grants permission to associate benefit application resources in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_AssociateBenefitApplicationResource.html"
+    },
+    {
+      "name": "AssociateOpportunity",
+      "methodName": "toAssociateOpportunity",
+      "description": "Grants permission to associate Opportunities on AWS Partner Central with other entities",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AssociateOpportunity.html"
+    },
+    {
+      "name": "CancelBenefitApplication",
+      "methodName": "toCancelBenefitApplication",
+      "description": "Grants permission to cancel benefit applications in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_CancelBenefitApplication.html"
+    },
+    {
+      "name": "CancelChannelHandshake",
+      "methodName": "toCancelChannelHandshake",
+      "description": "Grants permission to cancel channel handshakes in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_CancelChannelHandshake.html"
+    },
+    {
+      "name": "CancelConnection",
+      "methodName": "toCancelConnection",
+      "description": "Grants permission to cancel connections in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CancelConnection.html"
+    },
+    {
+      "name": "CancelConnectionInvitation",
+      "methodName": "toCancelConnectionInvitation",
+      "description": "Grants permission to cancel connection invitations in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CancelConnectionInvitation.html"
+    },
+    {
+      "name": "CancelProfileUpdateTask",
+      "methodName": "toCancelProfileUpdateTask",
+      "description": "Grants permission to cancel profile update tasks in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CancelProfileUpdateTask.html"
+    },
+    {
+      "name": "CreateBenefitApplication",
+      "methodName": "toCreateBenefitApplication",
+      "description": "Grants permission to create benefit applications in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_CreateBenefitApplication.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifCatalog",
+        "ifFulfillmentTypes",
+        "ifPrograms"
+      ]
+    },
+    {
+      "name": "CreateChannelHandshake",
+      "methodName": "toCreateChannelHandshake",
+      "description": "Grants permission to create channel handshakes in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_CreateChannelHandshake.html"
+    },
+    {
+      "name": "CreateConnectionInvitation",
+      "methodName": "toCreateConnectionInvitation",
+      "description": "Grants permission to create connection invitations in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CreateConnectionInvitation.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "CreateEngagement",
+      "methodName": "toCreateEngagement",
+      "description": "Grants permission to creating engagements in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateEngagement.html"
+    },
+    {
+      "name": "CreateEngagementContext",
+      "methodName": "toCreateEngagementContext",
+      "description": "Grants permission to create engagement contexts in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateEngagementContext.html"
+    },
+    {
+      "name": "CreateEngagementInvitation",
+      "methodName": "toCreateEngagementInvitation",
+      "description": "Grants permission to creating engagement invitations in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateEngagementInvitation.html"
+    },
+    {
+      "name": "CreateMarketplaceRevenueShare",
+      "methodName": "toCreateMarketplaceRevenueShare",
+      "description": "Grants permission to create marketplace revenue shares in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_CreateMarketplaceRevenueShare.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "CreateMarketplaceRevenueShareAllocation",
+      "methodName": "toCreateMarketplaceRevenueShareAllocation",
+      "description": "Grants permission to create marketplace revenue share allocations in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_CreateMarketplaceRevenueShareAllocation.html"
+    },
+    {
+      "name": "CreateOpportunity",
+      "methodName": "toCreateOpportunity",
+      "description": "Grants permission to create new Opportunities on AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateOpportunity.html"
+    },
+    {
+      "name": "CreatePartner",
+      "methodName": "toCreatePartner",
+      "description": "Grants permission to create partners in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CreatePartner.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "CreateProgramManagementAccount",
+      "methodName": "toCreateProgramManagementAccount",
+      "description": "Grants permission to create program management accounts in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_CreateProgramManagementAccount.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "CreateRelationship",
+      "methodName": "toCreateRelationship",
+      "description": "Grants permission to create relationships in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_CreateRelationship.html"
+    },
+    {
+      "name": "CreateResourceSnapshot",
+      "methodName": "toCreateResourceSnapshot",
+      "description": "Grants permission to creating resource snapshots in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateResourceSnapshot.html"
+    },
+    {
+      "name": "CreateResourceSnapshotJob",
+      "methodName": "toCreateResourceSnapshotJob",
+      "description": "Grants permission to creating resource snapshot jobs in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateResourceSnapshotJob.html"
+    },
+    {
+      "name": "CreateRevenueAttribution",
+      "methodName": "toCreateRevenueAttribution",
+      "description": "Grants permission to create revenue attributions in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_CreateRevenueAttribution.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "DeleteProgramManagementAccount",
+      "methodName": "toDeleteProgramManagementAccount",
+      "description": "Grants permission to delete program management accounts in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_DeleteProgramManagementAccount.html"
+    },
+    {
+      "name": "DeleteRelationship",
+      "methodName": "toDeleteRelationship",
+      "description": "Grants permission to delete relationships in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_DeleteRelationship.html"
+    },
+    {
+      "name": "DeleteResourceSnapshotJob",
+      "methodName": "toDeleteResourceSnapshotJob",
+      "description": "Grants permission to deleting resource snapshot jobs on AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DeleteResourceSnapshotJob.html"
+    },
+    {
+      "name": "DisassociateAwsTrainingCertificationEmailDomain",
+      "methodName": "toDisassociateAwsTrainingCertificationEmailDomain",
+      "description": "Grants permission to disassociate AWS Training and Certification email domains in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_DisassociateAwsTrainingCertificationEmailDomain.html"
+    },
+    {
+      "name": "DisassociateBenefitApplicationResource",
+      "methodName": "toDisassociateBenefitApplicationResource",
+      "description": "Grants permission to disassociate benefit application resources in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_DisassociateBenefitApplicationResource.html"
+    },
+    {
+      "name": "DisassociateOpportunity",
+      "methodName": "toDisassociateOpportunity",
+      "description": "Grants permission to disassociate Opportunities on AWS Partner Central from other entities",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DisassociateOpportunity.html"
+    },
+    {
+      "name": "GetAllianceLeadContact",
+      "methodName": "toGetAllianceLeadContact",
+      "description": "Grants permission to retrieve alliance lead contact information in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetAllianceLeadContact.html"
+    },
+    {
+      "name": "GetAwsOpportunitySummary",
+      "methodName": "toGetAwsOpportunitySummary",
+      "description": "Grants permission to retrieve AWS Opportunity Summaries for Opportunities on AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetAwsOpportunitySummary.html"
+    },
+    {
+      "name": "GetBenefit",
+      "methodName": "toGetBenefit",
+      "description": "Grants permission to retrieve benefit details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_GetBenefit.html"
+    },
+    {
+      "name": "GetBenefitAllocation",
+      "methodName": "toGetBenefitAllocation",
+      "description": "Grants permission to retrieve benefit allocation details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_GetBenefitAllocation.html"
+    },
+    {
+      "name": "GetBenefitApplication",
+      "methodName": "toGetBenefitApplication",
+      "description": "Grants permission to retrieve benefit application details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_GetBenefitApplication.html"
+    },
+    {
+      "name": "GetConnection",
+      "methodName": "toGetConnection",
+      "description": "Grants permission to retrieve connection details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetConnection.html"
+    },
+    {
+      "name": "GetConnectionInvitation",
+      "methodName": "toGetConnectionInvitation",
+      "description": "Grants permission to retrieve connection invitation details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetConnectionInvitation.html"
+    },
+    {
+      "name": "GetConnectionPreferences",
+      "methodName": "toGetConnectionPreferences",
+      "description": "Grants permission to retrieve connection preferences in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetConnectionPreferences.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "GetEngagement",
+      "methodName": "toGetEngagement",
+      "description": "Grants permission to retrieval of engagement details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetEngagement.html"
+    },
+    {
+      "name": "GetEngagementInvitation",
+      "methodName": "toGetEngagementInvitation",
+      "description": "Grants permission to retrieve details of Engagement Invitations on AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetEngagementInvitation.html"
+    },
+    {
+      "name": "GetMarketplaceRevenueShare",
+      "methodName": "toGetMarketplaceRevenueShare",
+      "description": "Grants permission to retrieve marketplace revenue share details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_GetMarketplaceRevenueShare.html"
+    },
+    {
+      "name": "GetMarketplaceRevenueShareAllocation",
+      "methodName": "toGetMarketplaceRevenueShareAllocation",
+      "description": "Grants permission to retrieve marketplace revenue share allocation details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_GetMarketplaceRevenueShareAllocation.html"
+    },
+    {
+      "name": "GetOpportunity",
+      "methodName": "toGetOpportunity",
+      "description": "Grants permission to retrieve details of Opportunities on AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetOpportunity.html"
+    },
+    {
+      "name": "GetPartner",
+      "methodName": "toGetPartner",
+      "description": "Grants permission to retrieve partner details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetPartner.html"
+    },
+    {
+      "name": "GetPartnerDashboard",
+      "methodName": "toGetPartnerDashboard",
+      "description": "Grants permission to retrieve partner dashboard information in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetProfileUpdateTask",
+      "methodName": "toGetProfileUpdateTask",
+      "description": "Grants permission to retrieve profile update task details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetProfileUpdateTask.html"
+    },
+    {
+      "name": "GetProfileVisibility",
+      "methodName": "toGetProfileVisibility",
+      "description": "Grants permission to retrieve profile visibility settings in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetProfileVisibility.html"
+    },
+    {
+      "name": "GetProspectingFromEngagementTask",
+      "methodName": "toGetProspectingFromEngagementTask",
+      "description": "Grants permission to retrieve prospecting from engagement task details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetProspectingFromEngagementTask.html"
+    },
+    {
+      "name": "GetQualificationsAssociationDetails",
+      "methodName": "toGetQualificationsAssociationDetails",
+      "description": "Grants permission to retrieve qualifications association details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetQualificationsAssociationDetails.html"
+    },
+    {
+      "name": "GetQualificationsAssociationTask",
+      "methodName": "toGetQualificationsAssociationTask",
+      "description": "Grants permission to retrieve qualifications association task details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetQualificationsAssociationTask.html"
+    },
+    {
+      "name": "GetQualificationsDisassociationTask",
+      "methodName": "toGetQualificationsDisassociationTask",
+      "description": "Grants permission to retrieve qualifications disassociation task details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetQualificationsDisassociationTask.html"
+    },
+    {
+      "name": "GetRelationship",
+      "methodName": "toGetRelationship",
+      "description": "Grants permission to retrieve relationship details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_GetRelationship.html"
+    },
+    {
+      "name": "GetResourceSnapshot",
+      "methodName": "toGetResourceSnapshot",
+      "description": "Grants permission to retrieving resource snapshot details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetResourceSnapshot.html"
+    },
+    {
+      "name": "GetResourceSnapshotJob",
+      "methodName": "toGetResourceSnapshotJob",
+      "description": "Grants permission to retrieving resource snapshot job details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetResourceSnapshotJob.html"
+    },
+    {
+      "name": "GetRevenueAttribution",
+      "methodName": "toGetRevenueAttribution",
+      "description": "Grants permission to retrieve revenue attribution details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_GetRevenueAttribution.html"
+    },
+    {
+      "name": "GetRevenueAttributionAllocation",
+      "methodName": "toGetRevenueAttributionAllocation",
+      "description": "Grants permission to retrieve revenue attribution allocation details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_GetRevenueAttributionAllocation.html"
+    },
+    {
+      "name": "GetRevenueAttributionAllocationsTask",
+      "methodName": "toGetRevenueAttributionAllocationsTask",
+      "description": "Grants permission to retrieve revenue attribution allocations task details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_GetRevenueAttributionAllocationsTask.html"
+    },
+    {
+      "name": "GetSellingSystemSettings",
+      "methodName": "toGetSellingSystemSettings",
+      "description": "Grants permission to retrieving selling system settings in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetSellingSystemSettings.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "GetVerification",
+      "methodName": "toGetVerification",
+      "description": "Grants permission to retrieve verification details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetVerification.html",
+      "conditionMethods": [
+        "ifCatalog",
+        "ifVerificationType"
+      ]
+    },
+    {
+      "name": "ListBenefitAllocations",
+      "methodName": "toListBenefitAllocations",
+      "description": "Grants permission to list benefit allocations in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_ListBenefitAllocations.html"
+    },
+    {
+      "name": "ListBenefitApplications",
+      "methodName": "toListBenefitApplications",
+      "description": "Grants permission to list benefit applications in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_ListBenefitApplications.html"
+    },
+    {
+      "name": "ListBenefits",
+      "methodName": "toListBenefits",
+      "description": "Grants permission to list benefits in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_ListBenefits.html"
+    },
+    {
+      "name": "ListChannelHandshakes",
+      "methodName": "toListChannelHandshakes",
+      "description": "Grants permission to list channel handshakes in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_ListChannelHandshakes.html"
+    },
+    {
+      "name": "ListConnectionInvitations",
+      "methodName": "toListConnectionInvitations",
+      "description": "Grants permission to list connection invitations in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_ListConnectionInvitations.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListConnections",
+      "methodName": "toListConnections",
+      "description": "Grants permission to list connections in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_ListConnections.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListEngagementByAcceptingInvitationTasks",
+      "methodName": "toListEngagementByAcceptingInvitationTasks",
+      "description": "Grants permission to listing engagements by accepting invitation tasks in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListEngagementByAcceptingInvitationTasks.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListEngagementFromOpportunityTasks",
+      "methodName": "toListEngagementFromOpportunityTasks",
+      "description": "Grants permission to listing engagements from opportunity tasks in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListEngagementFromOpportunityTasks.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListEngagementInvitations",
+      "methodName": "toListEngagementInvitations",
+      "description": "Grants permission to list Engagement Invitations on AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListEngagementInvitations.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListEngagementMembers",
+      "methodName": "toListEngagementMembers",
+      "description": "Grants permission to listing engagement members in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListEngagementMembers.html"
+    },
+    {
+      "name": "ListEngagementResourceAssociations",
+      "methodName": "toListEngagementResourceAssociations",
+      "description": "Grants permission to listing engagement resource associations in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListEngagementResourceAssociations.html"
+    },
+    {
+      "name": "ListEngagements",
+      "methodName": "toListEngagements",
+      "description": "Grants permission to listing engagements in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListEngagements.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListMarketplaceRevenueShareAllocations",
+      "methodName": "toListMarketplaceRevenueShareAllocations",
+      "description": "Grants permission to list marketplace revenue share allocations in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_ListMarketplaceRevenueShareAllocations.html"
+    },
+    {
+      "name": "ListMarketplaceRevenueShares",
+      "methodName": "toListMarketplaceRevenueShares",
+      "description": "Grants permission to list marketplace revenue shares in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_ListMarketplaceRevenueShares.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListOpportunities",
+      "methodName": "toListOpportunities",
+      "description": "Grants permission to list Opportunities on AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListOpportunities.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListOpportunityFromEngagementTasks",
+      "methodName": "toListOpportunityFromEngagementTasks",
+      "description": "Grants permission to list opportunity from engagement tasks in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListOpportunityFromEngagementTasks.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListPartners",
+      "methodName": "toListPartners",
+      "description": "Grants permission to list partners in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_ListPartners.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListProgramManagementAccounts",
+      "methodName": "toListProgramManagementAccounts",
+      "description": "Grants permission to list program management accounts in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_ListProgramManagementAccounts.html"
+    },
+    {
+      "name": "ListProspectingFromEngagementTasks",
+      "methodName": "toListProspectingFromEngagementTasks",
+      "description": "Grants permission to list prospecting from engagement tasks in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListProspectingFromEngagementTasks.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListRelationships",
+      "methodName": "toListRelationships",
+      "description": "Grants permission to list relationships in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_ListRelationships.html"
+    },
+    {
+      "name": "ListResourceSnapshotJobs",
+      "methodName": "toListResourceSnapshotJobs",
+      "description": "Grants permission to listing resource snapshot jobs in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListResourceSnapshotJobs.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListResourceSnapshots",
+      "methodName": "toListResourceSnapshots",
+      "description": "Grants permission to listing resource snapshots in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListResourceSnapshots.html"
+    },
+    {
+      "name": "ListRevenueAttributionAllocations",
+      "methodName": "toListRevenueAttributionAllocations",
+      "description": "Grants permission to list revenue attribution allocations in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_ListRevenueAttributionAllocations.html"
+    },
+    {
+      "name": "ListRevenueAttributions",
+      "methodName": "toListRevenueAttributions",
+      "description": "Grants permission to list revenue attributions in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_ListRevenueAttributions.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListSolutions",
+      "methodName": "toListSolutions",
+      "description": "Grants permission to list Solutions on AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListSolutions.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListTagsForResource.html",
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifCatalog",
+        "ifFulfillmentTypes",
+        "ifPrograms"
+      ]
+    },
+    {
+      "name": "PutAllianceLeadContact",
+      "methodName": "toPutAllianceLeadContact",
+      "description": "Grants permission to set alliance lead contact information in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_PutAllianceLeadContact.html"
+    },
+    {
+      "name": "PutProfileVisibility",
+      "methodName": "toPutProfileVisibility",
+      "description": "Grants permission to set profile visibility in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_PutProfileVisibility.html"
+    },
+    {
+      "name": "PutSellingSystemSettings",
+      "methodName": "toPutSellingSystemSettings",
+      "description": "Grants permission to put selling system settings in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_PutSellingSystemSettings.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "RecallBenefitApplication",
+      "methodName": "toRecallBenefitApplication",
+      "description": "Grants permission to recall benefit applications in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_RecallBenefitApplication.html"
+    },
+    {
+      "name": "RejectChannelHandshake",
+      "methodName": "toRejectChannelHandshake",
+      "description": "Grants permission to reject channel handshakes in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_RejectChannelHandshake.html"
+    },
+    {
+      "name": "RejectConnectionInvitation",
+      "methodName": "toRejectConnectionInvitation",
+      "description": "Grants permission to reject connection invitations in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_RejectConnectionInvitation.html"
+    },
+    {
+      "name": "RejectEngagementInvitation",
+      "methodName": "toRejectEngagementInvitation",
+      "description": "Grants permission to reject Engagement Invitations on AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_RejectEngagementInvitation.html"
+    },
+    {
+      "name": "SendEmailVerificationCode",
+      "methodName": "toSendEmailVerificationCode",
+      "description": "Grants permission to send email verification codes in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_SendEmailVerificationCode.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "StartEngagementByAcceptingInvitationTask",
+      "methodName": "toStartEngagementByAcceptingInvitationTask",
+      "description": "Grants permission to initiate tasks that start Engagements on AWS Partner Central by accepting an Engagement Invitation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartEngagementByAcceptingInvitationTask.html"
+    },
+    {
+      "name": "StartEngagementFromOpportunityTask",
+      "methodName": "toStartEngagementFromOpportunityTask",
+      "description": "Grants permission to initiate tasks that start Engagements from Opportunities on AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartEngagementFromOpportunityTask.html"
+    },
+    {
+      "name": "StartOpportunityFromEngagementTask",
+      "methodName": "toStartOpportunityFromEngagementTask",
+      "description": "Grants permission to initiate tasks that start Opportunities from Engagements on AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartOpportunityFromEngagementTask.html"
+    },
+    {
+      "name": "StartProfileUpdateTask",
+      "methodName": "toStartProfileUpdateTask",
+      "description": "Grants permission to start profile update tasks in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_StartProfileUpdateTask.html"
+    },
+    {
+      "name": "StartProspectingFromEngagementTask",
+      "methodName": "toStartProspectingFromEngagementTask",
+      "description": "Grants permission to initiate tasks that start prospecting from an engagement in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartProspectingFromEngagementTask.html"
+    },
+    {
+      "name": "StartQualificationsAssociationTask",
+      "methodName": "toStartQualificationsAssociationTask",
+      "description": "Grants permission to initiate tasks that start qualifications association in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_StartQualificationsAssociationTask.html"
+    },
+    {
+      "name": "StartQualificationsDisassociationTask",
+      "methodName": "toStartQualificationsDisassociationTask",
+      "description": "Grants permission to initiate tasks that start qualifications disassociation in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_StartQualificationsDisassociationTask.html"
+    },
+    {
+      "name": "StartResourceSnapshotJob",
+      "methodName": "toStartResourceSnapshotJob",
+      "description": "Grants permission to starting resource snapshot jobs in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartResourceSnapshotJob.html"
+    },
+    {
+      "name": "StartRevenueAttributionAllocationsTask",
+      "methodName": "toStartRevenueAttributionAllocationsTask",
+      "description": "Grants permission to initiate tasks that manage revenue attribution allocations in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_StartRevenueAttributionAllocationsTask.html"
+    },
+    {
+      "name": "StartVerification",
+      "methodName": "toStartVerification",
+      "description": "Grants permission to start verification processes in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_StartVerification.html",
+      "conditionMethods": [
+        "ifCatalog",
+        "ifVerificationType"
+      ]
+    },
+    {
+      "name": "StopResourceSnapshotJob",
+      "methodName": "toStopResourceSnapshotJob",
+      "description": "Grants permission to stopping resource snapshot jobs in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StopResourceSnapshotJob.html"
+    },
+    {
+      "name": "SubmitBenefitApplication",
+      "methodName": "toSubmitBenefitApplication",
+      "description": "Grants permission to submit benefit applications in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_SubmitBenefitApplication.html"
+    },
+    {
+      "name": "SubmitOpportunity",
+      "methodName": "toSubmitOpportunity",
+      "description": "Grants permission to submit Opportunities on AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_SubmitOpportunity.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add new tags to a resource. Supported resource: ResourceSnapshotJob",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource. Supported resource: ResourceSnapshotJob",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateBenefitApplication",
+      "methodName": "toUpdateBenefitApplication",
+      "description": "Grants permission to update benefit applications in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_UpdateBenefitApplication.html"
+    },
+    {
+      "name": "UpdateConnectionPreferences",
+      "methodName": "toUpdateConnectionPreferences",
+      "description": "Grants permission to update connection preferences in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_UpdateConnectionPreferences.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "UpdateEngagementContext",
+      "methodName": "toUpdateEngagementContext",
+      "description": "Grants permission to update engagement contexts in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateEngagementContext.html"
+    },
+    {
+      "name": "UpdateMarketplaceRevenueShareAllocation",
+      "methodName": "toUpdateMarketplaceRevenueShareAllocation",
+      "description": "Grants permission to update marketplace revenue share allocations in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_UpdateMarketplaceRevenueShareAllocation.html"
+    },
+    {
+      "name": "UpdateOpportunity",
+      "methodName": "toUpdateOpportunity",
+      "description": "Grants permission to update Opportunities on AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateOpportunity.html"
+    },
+    {
+      "name": "UpdateProgramManagementAccount",
+      "methodName": "toUpdateProgramManagementAccount",
+      "description": "Grants permission to update program management accounts in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_UpdateProgramManagementAccount.html"
+    },
+    {
+      "name": "UpdateRelationship",
+      "methodName": "toUpdateRelationship",
+      "description": "Grants permission to update relationships in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_UpdateRelationship.html"
+    },
+    {
+      "name": "UpdateRevenueAttribution",
+      "methodName": "toUpdateRevenueAttribution",
+      "description": "Grants permission to update revenue attributions in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_UpdateRevenueAttribution.html"
+    },
+    {
+      "name": "CreateBusinessPlan",
+      "methodName": "toCreateBusinessPlan",
+      "description": "Grants permission to create business plans in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateCollaborationChannelMembers",
+      "methodName": "toCreateCollaborationChannelMembers",
+      "description": "Grants permission to create collaboration channel members in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateCollaborationChannelRequest",
+      "methodName": "toCreateCollaborationChannelRequest",
+      "description": "Grants permission to create collaboration channel requests in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "EnrollInPartnerPath",
+      "methodName": "toEnrollInPartnerPath",
+      "description": "Grants permission to enroll in partner paths in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "GetBusinessPlan",
+      "methodName": "toGetBusinessPlan",
+      "description": "Grants permission to retrieve business plan details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetCollaborationChannel",
+      "methodName": "toGetCollaborationChannel",
+      "description": "Grants permission to retrieve collaboration channel details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetPartnerProfile",
+      "methodName": "toGetPartnerProfile",
+      "description": "Grants permission to retrieve public partner profile details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetProgramManagementAccount",
+      "methodName": "toGetProgramManagementAccount",
+      "description": "Grants permission to retrieve program management account details in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListBusinessPlans",
+      "methodName": "toListBusinessPlans",
+      "description": "Grants permission to list business plans in AWS Partner Central",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListCollaborationChannels",
+      "methodName": "toListCollaborationChannels",
+      "description": "Grants permission to list collaboration channels in AWS Partner Central",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListPartnerPaths",
+      "methodName": "toListPartnerPaths",
+      "description": "Grants permission to list partner paths in AWS Partner Central",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "PutBusinessPlan",
+      "methodName": "toPutBusinessPlan",
+      "description": "Grants permission to update business plans in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "SearchPartnerProfiles",
+      "methodName": "toSearchPartnerProfiles",
+      "description": "Grants permission to search public partner profiles in AWS Partner Central",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "UseSession",
+      "methodName": "toUseSession",
+      "description": "Grants permission to use Partner Central Agents sessions in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "Benefit",
+      "methodName": "onBenefit",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/using-the-benefits-api.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/benefit/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "BenefitAllocation",
+      "methodName": "onBenefitAllocation",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-benefit-allocations.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/benefit-allocation/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "BenefitApplication",
+      "methodName": "onBenefitApplication",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-benefit-applications.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/benefit-application/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ChannelHandshake",
+      "methodName": "onChannelHandshake",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-channel-management.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/channel-handshake/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Connection",
+      "methodName": "onConnection",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-account-connections.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/connection/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "ConnectionInvitation",
+      "methodName": "onConnectionInvitation",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-account-connections.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/connection-invitation/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "ConnectionPreferences",
+      "methodName": "onConnectionPreferences",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-account-connections.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/connection-preferences",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "Dashboard",
+      "methodName": "onDashboard",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/partner-analytics.html",
+      "arn": "arn:${Partition}:partnercentral::${Account}:catalog/${Catalog}/ReportingData/${TableId}/Dashboard/${DashboardId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TableId",
+          "name": "tableId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DashboardId",
+          "name": "dashboardId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "Engagement",
+      "methodName": "onEngagement",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-multi-partner-opportunities.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/engagement/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "MarketplaceRevenueShare",
+      "methodName": "onMarketplaceRevenueShare",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-marketplace-revenue-share.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/marketplace-revenue-share/${MarketplaceProductId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "MarketplaceProductId",
+          "name": "marketplaceProductId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Opportunity",
+      "methodName": "onOpportunity",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-your-opportunities.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/opportunity/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "OpportunityFromEngagementTask",
+      "methodName": "onOpportunityFromEngagementTask",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-multi-partner-opportunities.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/opportunity-from-engagement-task/${TaskId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TaskId",
+          "name": "taskId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "Partner",
+      "methodName": "onPartner",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-partner-registration.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/partner/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ProgramManagementAccount",
+      "methodName": "onProgramManagementAccount",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-channel-management.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/program-management-account/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ProspectingFromEngagementTask",
+      "methodName": "onProspectingFromEngagementTask",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-your-leads.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/prospecting-from-engagement-task/${TaskIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TaskIdentifier",
+          "name": "taskIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "Relationship",
+      "methodName": "onRelationship",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-channel-management.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/program-management-account/${ProgramManagementAccountId}/relationship/${RelationshipId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProgramManagementAccountId",
+          "name": "programManagementAccountId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RelationshipId",
+          "name": "relationshipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ResourceSnapshot",
+      "methodName": "onResourceSnapshot",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-multi-partner-opportunities.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/engagement/${EngagementIdentifier}/resource/${ResourceType}/${ResourceIdentifier}/template/${TemplateIdentifier}/resource-snapshot/${SnapshotRevision}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EngagementIdentifier",
+          "name": "engagementIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceType",
+          "name": "resourceType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceIdentifier",
+          "name": "resourceIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TemplateIdentifier",
+          "name": "templateIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SnapshotRevision",
+          "name": "snapshotRevision",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "RevenueAttribution",
+      "methodName": "onRevenueAttribution",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-revenue-attribution.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/revenue-attribution/${RevenueAttributionId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RevenueAttributionId",
+          "name": "revenueAttributionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Solution",
+      "methodName": "onSolution",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListSolutions.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/solution/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "engagement-by-accepting-invitation-task",
+      "methodName": "onEngagementByAcceptingInvitationTask",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-multi-partner-opportunities.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/engagement-by-accepting-invitation-task/${TaskId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TaskId",
+          "name": "taskId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "engagement-from-opportunity-task",
+      "methodName": "onEngagementFromOpportunityTask",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-multi-partner-opportunities.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/engagement-from-opportunity-task/${TaskId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TaskId",
+          "name": "taskId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "engagement-invitation",
+      "methodName": "onEngagementInvitation",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-multi-partner-opportunities.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/engagement-invitation/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "resource-snapshot-job",
+      "methodName": "onResourceSnapshotJob",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-multi-partner-opportunities.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/resource-snapshot-job/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateBenefitApplication",
+        "toCreateChannelHandshake",
+        "toCreateMarketplaceRevenueShare",
+        "toCreateOpportunity",
+        "toCreatePartner",
+        "toCreateProgramManagementAccount",
+        "toCreateRelationship",
+        "toCreateResourceSnapshotJob",
+        "toCreateRevenueAttribution",
+        "toStartEngagementByAcceptingInvitationTask",
+        "toStartEngagementFromOpportunityTask",
+        "toStartOpportunityFromEngagementTask",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAcceptChannelHandshake",
+        "toAmendBenefitApplication",
+        "toAssignOpportunity",
+        "toAssociateAwsTrainingCertificationEmailDomain",
+        "toAssociateBenefitApplicationResource",
+        "toAssociateOpportunity",
+        "toCancelBenefitApplication",
+        "toCancelChannelHandshake",
+        "toCancelProfileUpdateTask",
+        "toCreateBenefitApplication",
+        "toCreateChannelHandshake",
+        "toCreateMarketplaceRevenueShareAllocation",
+        "toCreateOpportunity",
+        "toCreatePartner",
+        "toCreateProgramManagementAccount",
+        "toCreateRelationship",
+        "toCreateResourceSnapshotJob",
+        "toDeleteProgramManagementAccount",
+        "toDeleteRelationship",
+        "toDeleteResourceSnapshotJob",
+        "toDisassociateAwsTrainingCertificationEmailDomain",
+        "toDisassociateBenefitApplicationResource",
+        "toDisassociateOpportunity",
+        "toGetAllianceLeadContact",
+        "toGetAwsOpportunitySummary",
+        "toGetBenefit",
+        "toGetBenefitAllocation",
+        "toGetBenefitApplication",
+        "toGetMarketplaceRevenueShare",
+        "toGetMarketplaceRevenueShareAllocation",
+        "toGetOpportunity",
+        "toGetPartner",
+        "toGetProfileUpdateTask",
+        "toGetProfileVisibility",
+        "toGetQualificationsAssociationDetails",
+        "toGetQualificationsAssociationTask",
+        "toGetQualificationsDisassociationTask",
+        "toGetRelationship",
+        "toGetResourceSnapshotJob",
+        "toGetRevenueAttribution",
+        "toGetRevenueAttributionAllocation",
+        "toGetRevenueAttributionAllocationsTask",
+        "toListBenefitApplications",
+        "toListChannelHandshakes",
+        "toListMarketplaceRevenueShareAllocations",
+        "toListProgramManagementAccounts",
+        "toListRelationships",
+        "toListRevenueAttributionAllocations",
+        "toListTagsForResource",
+        "toPutAllianceLeadContact",
+        "toPutProfileVisibility",
+        "toRecallBenefitApplication",
+        "toRejectChannelHandshake",
+        "toStartEngagementByAcceptingInvitationTask",
+        "toStartEngagementFromOpportunityTask",
+        "toStartOpportunityFromEngagementTask",
+        "toStartProfileUpdateTask",
+        "toStartQualificationsAssociationTask",
+        "toStartQualificationsDisassociationTask",
+        "toStartResourceSnapshotJob",
+        "toStartRevenueAttributionAllocationsTask",
+        "toStopResourceSnapshotJob",
+        "toSubmitBenefitApplication",
+        "toSubmitOpportunity",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateBenefitApplication",
+        "toUpdateMarketplaceRevenueShareAllocation",
+        "toUpdateOpportunity",
+        "toUpdateProgramManagementAccount",
+        "toUpdateRelationship",
+        "toUpdateRevenueAttribution"
+      ],
+      "relatedResourceTypes": [
+        "BenefitApplication",
+        "ChannelHandshake",
+        "MarketplaceRevenueShare",
+        "Opportunity",
+        "Partner",
+        "ProgramManagementAccount",
+        "Relationship",
+        "RevenueAttribution",
+        "resource-snapshot-job"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateBenefitApplication",
+        "toCreateChannelHandshake",
+        "toCreateMarketplaceRevenueShare",
+        "toCreateOpportunity",
+        "toCreatePartner",
+        "toCreateProgramManagementAccount",
+        "toCreateRelationship",
+        "toCreateResourceSnapshotJob",
+        "toCreateRevenueAttribution",
+        "toListTagsForResource",
+        "toStartEngagementByAcceptingInvitationTask",
+        "toStartEngagementFromOpportunityTask",
+        "toStartOpportunityFromEngagementTask",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "partnercentral:Catalog",
+      "methodName": "ifCatalog",
+      "description": "Filters access by a specific Catalog",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-aws-partner-central.html#condition-keys-for-aws-partner-central",
+      "relatedActionMethods": [
+        "toAcceptChannelHandshake",
+        "toAcceptConnectionInvitation",
+        "toAcceptEngagementInvitation",
+        "toAmendBenefitApplication",
+        "toAssignOpportunity",
+        "toAssociateAwsTrainingCertificationEmailDomain",
+        "toAssociateBenefitApplicationResource",
+        "toAssociateOpportunity",
+        "toCancelBenefitApplication",
+        "toCancelChannelHandshake",
+        "toCancelConnection",
+        "toCancelConnectionInvitation",
+        "toCancelProfileUpdateTask",
+        "toCreateBenefitApplication",
+        "toCreateChannelHandshake",
+        "toCreateConnectionInvitation",
+        "toCreateEngagement",
+        "toCreateEngagementContext",
+        "toCreateEngagementInvitation",
+        "toCreateMarketplaceRevenueShare",
+        "toCreateMarketplaceRevenueShareAllocation",
+        "toCreateOpportunity",
+        "toCreatePartner",
+        "toCreateProgramManagementAccount",
+        "toCreateRelationship",
+        "toCreateResourceSnapshot",
+        "toCreateResourceSnapshotJob",
+        "toCreateRevenueAttribution",
+        "toDeleteProgramManagementAccount",
+        "toDeleteRelationship",
+        "toDeleteResourceSnapshotJob",
+        "toDisassociateAwsTrainingCertificationEmailDomain",
+        "toDisassociateBenefitApplicationResource",
+        "toDisassociateOpportunity",
+        "toGetAllianceLeadContact",
+        "toGetAwsOpportunitySummary",
+        "toGetBenefit",
+        "toGetBenefitAllocation",
+        "toGetBenefitApplication",
+        "toGetConnection",
+        "toGetConnectionInvitation",
+        "toGetConnectionPreferences",
+        "toGetEngagement",
+        "toGetEngagementInvitation",
+        "toGetMarketplaceRevenueShare",
+        "toGetMarketplaceRevenueShareAllocation",
+        "toGetOpportunity",
+        "toGetPartner",
+        "toGetPartnerDashboard",
+        "toGetProfileUpdateTask",
+        "toGetProfileVisibility",
+        "toGetProspectingFromEngagementTask",
+        "toGetQualificationsAssociationDetails",
+        "toGetQualificationsAssociationTask",
+        "toGetQualificationsDisassociationTask",
+        "toGetRelationship",
+        "toGetResourceSnapshot",
+        "toGetResourceSnapshotJob",
+        "toGetRevenueAttribution",
+        "toGetRevenueAttributionAllocation",
+        "toGetRevenueAttributionAllocationsTask",
+        "toGetSellingSystemSettings",
+        "toGetVerification",
+        "toListBenefitAllocations",
+        "toListBenefitApplications",
+        "toListBenefits",
+        "toListChannelHandshakes",
+        "toListConnectionInvitations",
+        "toListConnections",
+        "toListEngagementByAcceptingInvitationTasks",
+        "toListEngagementFromOpportunityTasks",
+        "toListEngagementInvitations",
+        "toListEngagementMembers",
+        "toListEngagementResourceAssociations",
+        "toListEngagements",
+        "toListMarketplaceRevenueShareAllocations",
+        "toListMarketplaceRevenueShares",
+        "toListOpportunities",
+        "toListOpportunityFromEngagementTasks",
+        "toListPartners",
+        "toListProgramManagementAccounts",
+        "toListProspectingFromEngagementTasks",
+        "toListRelationships",
+        "toListResourceSnapshotJobs",
+        "toListResourceSnapshots",
+        "toListRevenueAttributionAllocations",
+        "toListRevenueAttributions",
+        "toListSolutions",
+        "toListTagsForResource",
+        "toPutAllianceLeadContact",
+        "toPutProfileVisibility",
+        "toPutSellingSystemSettings",
+        "toRecallBenefitApplication",
+        "toRejectChannelHandshake",
+        "toRejectConnectionInvitation",
+        "toRejectEngagementInvitation",
+        "toSendEmailVerificationCode",
+        "toStartEngagementByAcceptingInvitationTask",
+        "toStartEngagementFromOpportunityTask",
+        "toStartOpportunityFromEngagementTask",
+        "toStartProfileUpdateTask",
+        "toStartProspectingFromEngagementTask",
+        "toStartQualificationsAssociationTask",
+        "toStartQualificationsDisassociationTask",
+        "toStartResourceSnapshotJob",
+        "toStartRevenueAttributionAllocationsTask",
+        "toStartVerification",
+        "toStopResourceSnapshotJob",
+        "toSubmitBenefitApplication",
+        "toSubmitOpportunity",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateBenefitApplication",
+        "toUpdateConnectionPreferences",
+        "toUpdateEngagementContext",
+        "toUpdateMarketplaceRevenueShareAllocation",
+        "toUpdateOpportunity",
+        "toUpdateProgramManagementAccount",
+        "toUpdateRelationship",
+        "toUpdateRevenueAttribution",
+        "toGetProgramManagementAccount",
+        "toUseSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Catalog",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "partnercentral:ChannelHandshakeType",
+      "methodName": "ifChannelHandshakeType",
+      "description": "Filters access by channel handshake types",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-aws-partner-central.html#condition-keys-for-aws-partner-central",
+      "relatedActionMethods": [
+        "toAcceptChannelHandshake",
+        "toCancelChannelHandshake",
+        "toCreateChannelHandshake",
+        "toListChannelHandshakes",
+        "toRejectChannelHandshake"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ChannelHandshakeType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "partnercentral:FulfillmentTypes",
+      "methodName": "ifFulfillmentTypes",
+      "description": "Filters access by benefit fulfillment types",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-aws-partner-central.html#condition-keys-for-aws-partner-central",
+      "relatedActionMethods": [
+        "toAmendBenefitApplication",
+        "toAssociateBenefitApplicationResource",
+        "toCancelBenefitApplication",
+        "toCreateBenefitApplication",
+        "toDisassociateBenefitApplicationResource",
+        "toGetBenefit",
+        "toGetBenefitAllocation",
+        "toGetBenefitApplication",
+        "toListBenefitAllocations",
+        "toListBenefitApplications",
+        "toListBenefits",
+        "toListTagsForResource",
+        "toRecallBenefitApplication",
+        "toSubmitBenefitApplication",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateBenefitApplication"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FulfillmentTypes",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "partnercentral:Programs",
+      "methodName": "ifPrograms",
+      "description": "Filters access by program",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-aws-partner-central.html#condition-keys-for-aws-partner-central",
+      "relatedActionMethods": [
+        "toAmendBenefitApplication",
+        "toAssociateBenefitApplicationResource",
+        "toCancelBenefitApplication",
+        "toCreateBenefitApplication",
+        "toDisassociateBenefitApplicationResource",
+        "toGetBenefit",
+        "toGetBenefitApplication",
+        "toListBenefitApplications",
+        "toListBenefits",
+        "toListTagsForResource",
+        "toRecallBenefitApplication",
+        "toSubmitBenefitApplication",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateBenefitApplication"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Programs",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "partnercentral:RelatedEntityType",
+      "methodName": "ifRelatedEntityType",
+      "description": "Filters access by entity types for Opportunity association",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-aws-partner-central.html#condition-keys-for-aws-partner-central",
+      "relatedActionMethods": [
+        "toAssociateOpportunity",
+        "toDisassociateOpportunity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RelatedEntityType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "partnercentral:VerificationType",
+      "methodName": "ifVerificationType",
+      "description": "Filters access by the type of verification being performed",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-aws-partner-central.html#condition-keys-for-aws-partner-central",
+      "relatedActionMethods": [
+        "toGetVerification",
+        "toStartVerification"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "VerificationType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

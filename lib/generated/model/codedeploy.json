@@ -1,0 +1,622 @@
+{
+  "schemaVersion": 1,
+  "filename": "codedeploy",
+  "className": "Codedeploy",
+  "name": "codedeploy",
+  "servicePrefix": "codedeploy",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_codedeploy.html",
+  "accessLevelList": {
+    "Tagging": [
+      "AddTagsToOnPremisesInstances",
+      "RemoveTagsFromOnPremisesInstances",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Write": [
+      "AddTagsToOnPremisesInstances",
+      "ContinueDeployment",
+      "CreateApplication",
+      "CreateDeployment",
+      "CreateDeploymentConfig",
+      "CreateDeploymentGroup",
+      "DeleteApplication",
+      "DeleteDeploymentConfig",
+      "DeleteDeploymentGroup",
+      "DeleteGitHubAccountToken",
+      "DeleteResourcesByExternalId",
+      "DeregisterOnPremisesInstance",
+      "PutLifecycleEventHookExecutionStatus",
+      "RegisterApplicationRevision",
+      "RegisterOnPremisesInstance",
+      "RemoveTagsFromOnPremisesInstances",
+      "SkipWaitTimeForInstanceTermination",
+      "StopDeployment",
+      "TagResource",
+      "UntagResource",
+      "UpdateApplication",
+      "UpdateDeploymentGroup",
+      "CreateCloudFormationDeployment"
+    ],
+    "Read": [
+      "BatchGetApplicationRevisions",
+      "BatchGetApplications",
+      "BatchGetDeploymentGroups",
+      "BatchGetDeploymentInstances",
+      "BatchGetDeploymentTargets",
+      "BatchGetDeployments",
+      "BatchGetOnPremisesInstances",
+      "GetDeploymentTarget"
+    ],
+    "List": [
+      "GetApplication",
+      "GetApplicationRevision",
+      "GetDeployment",
+      "GetDeploymentConfig",
+      "GetDeploymentGroup",
+      "GetDeploymentInstance",
+      "GetOnPremisesInstance",
+      "ListApplicationRevisions",
+      "ListApplications",
+      "ListDeploymentConfigs",
+      "ListDeploymentGroups",
+      "ListDeploymentInstances",
+      "ListDeploymentTargets",
+      "ListDeployments",
+      "ListGitHubAccountTokenNames",
+      "ListOnPremisesInstances",
+      "ListTagsForResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddTagsToOnPremisesInstances",
+      "methodName": "toAddTagsToOnPremisesInstances",
+      "description": "Grants permission to add tags to one or more on-premises instances",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_AddTagsToOnPremisesInstances.html"
+    },
+    {
+      "name": "BatchGetApplicationRevisions",
+      "methodName": "toBatchGetApplicationRevisions",
+      "description": "Grants permission to get information about one or more application revisions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetApplicationRevisions.html"
+    },
+    {
+      "name": "BatchGetApplications",
+      "methodName": "toBatchGetApplications",
+      "description": "Grants permission to get information about multiple applications associated with the IAM user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetApplications.html"
+    },
+    {
+      "name": "BatchGetDeploymentGroups",
+      "methodName": "toBatchGetDeploymentGroups",
+      "description": "Grants permission to get information about one or more deployment groups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeploymentGroups.html"
+    },
+    {
+      "name": "BatchGetDeploymentInstances",
+      "methodName": "toBatchGetDeploymentInstances",
+      "description": "Grants permission to get information about one or more instance that are part of a deployment group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeploymentInstances.html"
+    },
+    {
+      "name": "BatchGetDeploymentTargets",
+      "methodName": "toBatchGetDeploymentTargets",
+      "description": "Grants permission to return an array of one or more targets associated with a deployment. This method works with all compute types and should be used instead of the deprecated BatchGetDeploymentInstances. The maximum number of targets that can be returned is 25",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeploymentTargets.html"
+    },
+    {
+      "name": "BatchGetDeployments",
+      "methodName": "toBatchGetDeployments",
+      "description": "Grants permission to get information about multiple deployments associated with the IAM user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeployments.html"
+    },
+    {
+      "name": "BatchGetOnPremisesInstances",
+      "methodName": "toBatchGetOnPremisesInstances",
+      "description": "Grants permission to get information about one or more on-premises instances",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetOnPremisesInstances.html"
+    },
+    {
+      "name": "ContinueDeployment",
+      "methodName": "toContinueDeployment",
+      "description": "Grants permission to start the process of rerouting traffic from instances in the original environment to instances in thereplacement environment without waiting for a specified wait time to elapse",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ContinueDeployment.html"
+    },
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to create an application associated with the IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateApplication.html"
+    },
+    {
+      "name": "CreateDeployment",
+      "methodName": "toCreateDeployment",
+      "description": "Grants permission to create a deployment for an application associated with the IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html"
+    },
+    {
+      "name": "CreateDeploymentConfig",
+      "methodName": "toCreateDeploymentConfig",
+      "description": "Grants permission to create a custom deployment configuration associated with the IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentConfig.html"
+    },
+    {
+      "name": "CreateDeploymentGroup",
+      "methodName": "toCreateDeploymentGroup",
+      "description": "Grants permission to create a deployment group for an application associated with the IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentGroup.html"
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete an application associated with the IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteApplication.html"
+    },
+    {
+      "name": "DeleteDeploymentConfig",
+      "methodName": "toDeleteDeploymentConfig",
+      "description": "Grants permission to delete a custom deployment configuration associated with the IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteDeploymentConfig.html"
+    },
+    {
+      "name": "DeleteDeploymentGroup",
+      "methodName": "toDeleteDeploymentGroup",
+      "description": "Grants permission to delete a deployment group for an application associated with the IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteDeploymentGroup.html"
+    },
+    {
+      "name": "DeleteGitHubAccountToken",
+      "methodName": "toDeleteGitHubAccountToken",
+      "description": "Grants permission to delete a GitHub account connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteGitHubAccountToken.html"
+    },
+    {
+      "name": "DeleteResourcesByExternalId",
+      "methodName": "toDeleteResourcesByExternalId",
+      "description": "Grants permission to delete resources associated with the given external Id",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteResourcesByExternalId.html"
+    },
+    {
+      "name": "DeregisterOnPremisesInstance",
+      "methodName": "toDeregisterOnPremisesInstance",
+      "description": "Grants permission to deregister an on-premises instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeregisterOnPremisesInstance.html"
+    },
+    {
+      "name": "GetApplication",
+      "methodName": "toGetApplication",
+      "description": "Grants permission to get information about a single application associated with the IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetApplication.html"
+    },
+    {
+      "name": "GetApplicationRevision",
+      "methodName": "toGetApplicationRevision",
+      "description": "Grants permission to get information about a single application revision for an application associated with the IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetApplicationRevision.html"
+    },
+    {
+      "name": "GetDeployment",
+      "methodName": "toGetDeployment",
+      "description": "Grants permission to get information about a single deployment to a deployment group for an application associated with the IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeployment.html"
+    },
+    {
+      "name": "GetDeploymentConfig",
+      "methodName": "toGetDeploymentConfig",
+      "description": "Grants permission to get information about a single deployment configuration associated with the IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentConfig.html"
+    },
+    {
+      "name": "GetDeploymentGroup",
+      "methodName": "toGetDeploymentGroup",
+      "description": "Grants permission to get information about a single deployment group for an application associated with the IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentGroup.html"
+    },
+    {
+      "name": "GetDeploymentInstance",
+      "methodName": "toGetDeploymentInstance",
+      "description": "Grants permission to get information about a single instance in a deployment associated with the IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentInstance.html"
+    },
+    {
+      "name": "GetDeploymentTarget",
+      "methodName": "toGetDeploymentTarget",
+      "description": "Grants permission to return information about a deployment target",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentTarget.html"
+    },
+    {
+      "name": "GetOnPremisesInstance",
+      "methodName": "toGetOnPremisesInstance",
+      "description": "Grants permission to get information about a single on-premises instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetOnPremisesInstance.html"
+    },
+    {
+      "name": "ListApplicationRevisions",
+      "methodName": "toListApplicationRevisions",
+      "description": "Grants permission to get information about all application revisions for an application associated with the IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListApplicationRevisions.html"
+    },
+    {
+      "name": "ListApplications",
+      "methodName": "toListApplications",
+      "description": "Grants permission to get information about all applications associated with the IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListApplications.html"
+    },
+    {
+      "name": "ListDeploymentConfigs",
+      "methodName": "toListDeploymentConfigs",
+      "description": "Grants permission to get information about all deployment configurations associated with the IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentConfigs.html"
+    },
+    {
+      "name": "ListDeploymentGroups",
+      "methodName": "toListDeploymentGroups",
+      "description": "Grants permission to get information about all deployment groups for an application associated with the IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentGroups.html"
+    },
+    {
+      "name": "ListDeploymentInstances",
+      "methodName": "toListDeploymentInstances",
+      "description": "Grants permission to get information about all instances in a deployment associated with the IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentInstances.html"
+    },
+    {
+      "name": "ListDeploymentTargets",
+      "methodName": "toListDeploymentTargets",
+      "description": "Grants permission to return an array of target IDs that are associated a deployment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentTargets.html"
+    },
+    {
+      "name": "ListDeployments",
+      "methodName": "toListDeployments",
+      "description": "Grants permission to get information about all deployments to a deployment group associated with the IAM user, or to get all deployments associated with the IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeployments.html"
+    },
+    {
+      "name": "ListGitHubAccountTokenNames",
+      "methodName": "toListGitHubAccountTokenNames",
+      "description": "Grants permission to list the names of stored connections to GitHub accounts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListGitHubAccountTokenNames.html"
+    },
+    {
+      "name": "ListOnPremisesInstances",
+      "methodName": "toListOnPremisesInstances",
+      "description": "Grants permission to get a list of one or more on-premises instance names",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListOnPremisesInstances.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to return a list of tags for the resource identified by a specified ARN. Tags are used to organize and categorize your CodeDeploy resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutLifecycleEventHookExecutionStatus",
+      "methodName": "toPutLifecycleEventHookExecutionStatus",
+      "description": "Grants permission to notify a lifecycle event hook execution status for associated deployment with the IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_PutLifecycleEventHookExecutionStatus.html"
+    },
+    {
+      "name": "RegisterApplicationRevision",
+      "methodName": "toRegisterApplicationRevision",
+      "description": "Grants permission to register information about an application revision for an application associated with the IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RegisterApplicationRevision.html"
+    },
+    {
+      "name": "RegisterOnPremisesInstance",
+      "methodName": "toRegisterOnPremisesInstance",
+      "description": "Grants permission to register an on-premises instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RegisterOnPremisesInstance.html"
+    },
+    {
+      "name": "RemoveTagsFromOnPremisesInstances",
+      "methodName": "toRemoveTagsFromOnPremisesInstances",
+      "description": "Grants permission to remove tags from one or more on-premises instances",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RemoveTagsFromOnPremisesInstances.html"
+    },
+    {
+      "name": "SkipWaitTimeForInstanceTermination",
+      "methodName": "toSkipWaitTimeForInstanceTermination",
+      "description": "Grants permission to override any specified wait time and starts terminating instances immediately after the traffic routing is complete. This action applies to blue-green deployments only",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_SkipWaitTimeForInstanceTermination.html"
+    },
+    {
+      "name": "StopDeployment",
+      "methodName": "toStopDeployment",
+      "description": "Grants permission to stop a deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_StopDeployment.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to associate the list of tags in the input Tags parameter with the resource identified by the ResourceArn input parameter",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to disassociate a resource from a list of tags. The resource is identified by the ResourceArn input parameter. The tags are identfied by the list of keys in the TagKeys input parameter",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateApplication",
+      "methodName": "toUpdateApplication",
+      "description": "Grants permission to update an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UpdateApplication.html"
+    },
+    {
+      "name": "UpdateDeploymentGroup",
+      "methodName": "toUpdateDeploymentGroup",
+      "description": "Grants permission to change information about a single deployment group for an application associated with the IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UpdateDeploymentGroup.html"
+    },
+    {
+      "name": "CreateCloudFormationDeployment",
+      "methodName": "toCreateCloudFormationDeployment",
+      "description": "Grants permission to create CloudFormation deployment to cooperate ochestration for a CloudFormation stack update",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/codedeploy/latest/userguide/deployments-create-ecs-cfn.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/auth-and-access-control-permissions-reference.html",
+      "arn": "arn:${Partition}:codedeploy:${Region}:${Account}:application:${ApplicationName}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationName",
+          "name": "applicationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "deploymentconfig",
+      "methodName": "onDeploymentconfig",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/auth-and-access-control-permissions-reference.html",
+      "arn": "arn:${Partition}:codedeploy:${Region}:${Account}:deploymentconfig:${DeploymentConfigurationName}",
+      "placeholders": [
+        {
+          "placeholder": "DeploymentConfigurationName",
+          "name": "deploymentConfigurationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "deploymentgroup",
+      "methodName": "onDeploymentgroup",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/auth-and-access-control-permissions-reference.html",
+      "arn": "arn:${Partition}:codedeploy:${Region}:${Account}:deploymentgroup:${ApplicationName}/${DeploymentGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationName",
+          "name": "applicationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DeploymentGroupName",
+          "name": "deploymentGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "instance",
+      "methodName": "onInstance",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/auth-and-access-control-permissions-reference.html",
+      "arn": "arn:${Partition}:codedeploy:${Region}:${Account}:instance:${InstanceName}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceName",
+          "name": "instanceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters actions based on the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateDeploymentGroup",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchGetApplicationRevisions",
+        "toBatchGetApplications",
+        "toBatchGetDeploymentGroups",
+        "toBatchGetDeploymentInstances",
+        "toBatchGetDeployments",
+        "toCreateApplication",
+        "toCreateDeployment",
+        "toCreateDeploymentGroup",
+        "toDeleteApplication",
+        "toDeleteDeploymentGroup",
+        "toGetApplication",
+        "toGetApplicationRevision",
+        "toGetDeployment",
+        "toGetDeploymentGroup",
+        "toGetDeploymentInstance",
+        "toListApplicationRevisions",
+        "toListDeploymentGroups",
+        "toListDeploymentInstances",
+        "toListDeployments",
+        "toListTagsForResource",
+        "toRegisterApplicationRevision",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateApplication",
+        "toUpdateDeploymentGroup"
+      ],
+      "relatedResourceTypes": [
+        "application",
+        "deploymentgroup"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters actions based on the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateDeploymentGroup",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

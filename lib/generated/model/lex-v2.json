@@ -1,0 +1,1295 @@
+{
+  "schemaVersion": 1,
+  "filename": "lex-v2",
+  "className": "LexV2",
+  "name": "lex-v2",
+  "servicePrefix": "lex",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lex-v2.html",
+  "accessLevelList": {
+    "Write": [
+      "BatchCreateCustomVocabularyItem",
+      "BatchDeleteCustomVocabularyItem",
+      "BatchUpdateCustomVocabularyItem",
+      "BuildBotLocale",
+      "CreateBot",
+      "CreateBotAlias",
+      "CreateBotLocale",
+      "CreateBotReplica",
+      "CreateBotVersion",
+      "CreateExport",
+      "CreateIntent",
+      "CreateResourcePolicy",
+      "CreateResourcePolicyStatement",
+      "CreateSlot",
+      "CreateSlotType",
+      "CreateTestSetDiscrepancyReport",
+      "CreateUploadUrl",
+      "DeleteBot",
+      "DeleteBotAlias",
+      "DeleteBotAnalyzerRecommendation",
+      "DeleteBotLocale",
+      "DeleteBotReplica",
+      "DeleteBotVersion",
+      "DeleteCustomVocabulary",
+      "DeleteExport",
+      "DeleteImport",
+      "DeleteIntent",
+      "DeleteResourcePolicy",
+      "DeleteResourcePolicyStatement",
+      "DeleteSession",
+      "DeleteSlot",
+      "DeleteSlotType",
+      "DeleteTestSet",
+      "DeleteUtterances",
+      "PutSession",
+      "RecognizeText",
+      "RecognizeUtterance",
+      "StartBotAnalyzer",
+      "StartBotRecommendation",
+      "StartBotResourceGeneration",
+      "StartConversation",
+      "StartImport",
+      "StartTestExecution",
+      "StartTestSetGeneration",
+      "StopBotAnalyzer",
+      "StopBotRecommendation",
+      "TagResource",
+      "UntagResource",
+      "UpdateBot",
+      "UpdateBotAlias",
+      "UpdateBotLocale",
+      "UpdateBotRecommendation",
+      "UpdateExport",
+      "UpdateIntent",
+      "UpdateResourcePolicy",
+      "UpdateSlot",
+      "UpdateSlotType",
+      "UpdateTestSet",
+      "CreateBotChannel",
+      "CreateCustomVocabulary",
+      "CreateTestSet",
+      "DeleteBotChannel",
+      "UpdateCustomVocabulary"
+    ],
+    "Read": [
+      "DescribeBot",
+      "DescribeBotAlias",
+      "DescribeBotAnalyzerRecommendation",
+      "DescribeBotLocale",
+      "DescribeBotRecommendation",
+      "DescribeBotReplica",
+      "DescribeBotResourceGeneration",
+      "DescribeBotVersion",
+      "DescribeCustomVocabularyMetadata",
+      "DescribeExport",
+      "DescribeImport",
+      "DescribeIntent",
+      "DescribeResourcePolicy",
+      "DescribeSlot",
+      "DescribeSlotType",
+      "DescribeTestExecution",
+      "DescribeTestSet",
+      "DescribeTestSetDiscrepancyReport",
+      "DescribeTestSetGeneration",
+      "GenerateBotElement",
+      "GetSession",
+      "GetTestExecutionArtifactsUrl",
+      "ListTagsForResource",
+      "ListTestExecutionResultItems",
+      "ListTestSetRecords",
+      "DescribeBotChannel",
+      "DescribeCustomVocabulary"
+    ],
+    "List": [
+      "ListAggregatedUtterances",
+      "ListBotAliasReplicas",
+      "ListBotAliases",
+      "ListBotAnalyzerRecommendations",
+      "ListBotLocales",
+      "ListBotRecommendations",
+      "ListBotReplicas",
+      "ListBotResourceGenerations",
+      "ListBotVersionReplicas",
+      "ListBotVersions",
+      "ListBots",
+      "ListBuiltInIntents",
+      "ListBuiltInSlotTypes",
+      "ListCustomVocabularyItems",
+      "ListExports",
+      "ListImports",
+      "ListIntentMetrics",
+      "ListIntentPaths",
+      "ListIntentStageMetrics",
+      "ListIntents",
+      "ListRecommendedIntents",
+      "ListSessionAnalyticsData",
+      "ListSessionMetrics",
+      "ListSlotTypes",
+      "ListSlots",
+      "ListTestExecutions",
+      "ListTestSets",
+      "SearchAssociatedTranscripts",
+      "ListBotChannels"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchCreateCustomVocabularyItem",
+      "methodName": "toBatchCreateCustomVocabularyItem",
+      "description": "Grants permission to create new items in an existing custom vocabulary",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_BatchCreateCustomVocabularyItem.html"
+    },
+    {
+      "name": "BatchDeleteCustomVocabularyItem",
+      "methodName": "toBatchDeleteCustomVocabularyItem",
+      "description": "Grants permission to delete existing items in an existing custom vocabulary",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_BatchDeleteCustomVocabularyItem.html"
+    },
+    {
+      "name": "BatchUpdateCustomVocabularyItem",
+      "methodName": "toBatchUpdateCustomVocabularyItem",
+      "description": "Grants permission to update existing items in an existing custom vocabulary",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_BatchUpdateCustomVocabularyItem.html"
+    },
+    {
+      "name": "BuildBotLocale",
+      "methodName": "toBuildBotLocale",
+      "description": "Grants permission to build an existing bot locale in a bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_BuildBotLocale.html"
+    },
+    {
+      "name": "CreateBot",
+      "methodName": "toCreateBot",
+      "description": "Grants permission to create a new bot and a test bot alias pointing to the DRAFT bot version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html"
+    },
+    {
+      "name": "CreateBotAlias",
+      "methodName": "toCreateBotAlias",
+      "description": "Grants permission to create a new bot alias in a bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBotAlias.html"
+    },
+    {
+      "name": "CreateBotLocale",
+      "methodName": "toCreateBotLocale",
+      "description": "Grants permission to create a new bot locale in an existing bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBotLocale.html"
+    },
+    {
+      "name": "CreateBotReplica",
+      "methodName": "toCreateBotReplica",
+      "description": "Grants permission to create bot replica for a bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBotReplica.html"
+    },
+    {
+      "name": "CreateBotVersion",
+      "methodName": "toCreateBotVersion",
+      "description": "Grants permission to create a new version of an existing bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBotVersion.html"
+    },
+    {
+      "name": "CreateExport",
+      "methodName": "toCreateExport",
+      "description": "Grants permission to create an export for an existing resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateExport.html"
+    },
+    {
+      "name": "CreateIntent",
+      "methodName": "toCreateIntent",
+      "description": "Grants permission to create a new intent in an existing bot locale",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateIntent.html"
+    },
+    {
+      "name": "CreateResourcePolicy",
+      "methodName": "toCreateResourcePolicy",
+      "description": "Grants permission to create a new resource policy for a Lex resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateResourcePolicy.html"
+    },
+    {
+      "name": "CreateResourcePolicyStatement",
+      "methodName": "toCreateResourcePolicyStatement",
+      "description": "Grants permission to create a new resource policy statement for a Lex resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateResourcePolicyStatement.html"
+    },
+    {
+      "name": "CreateSlot",
+      "methodName": "toCreateSlot",
+      "description": "Grants permission to create a new slot in an intent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateSlot.html"
+    },
+    {
+      "name": "CreateSlotType",
+      "methodName": "toCreateSlotType",
+      "description": "Grants permission to create a new slot type in an existing bot locale",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateSlotType.html"
+    },
+    {
+      "name": "CreateTestSetDiscrepancyReport",
+      "methodName": "toCreateTestSetDiscrepancyReport",
+      "description": "Grants permission to create a test set discrepancy report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateTestSetDiscrepancyReport.html"
+    },
+    {
+      "name": "CreateUploadUrl",
+      "methodName": "toCreateUploadUrl",
+      "description": "Grants permission to create an upload url for import file",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html"
+    },
+    {
+      "name": "DeleteBot",
+      "methodName": "toDeleteBot",
+      "description": "Grants permission to delete an existing bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBot.html"
+    },
+    {
+      "name": "DeleteBotAlias",
+      "methodName": "toDeleteBotAlias",
+      "description": "Grants permission to delete an existing bot alias in a bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBotAlias.html"
+    },
+    {
+      "name": "DeleteBotAnalyzerRecommendation",
+      "methodName": "toDeleteBotAnalyzerRecommendation",
+      "description": "Grants permission to delete a bot analyzer recommendation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBotAnalyzerRecommendation.html"
+    },
+    {
+      "name": "DeleteBotLocale",
+      "methodName": "toDeleteBotLocale",
+      "description": "Grants permission to delete an existing bot locale in a bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBotLocale.html"
+    },
+    {
+      "name": "DeleteBotReplica",
+      "methodName": "toDeleteBotReplica",
+      "description": "Grants permission to delete an existing bot replica",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBotReplica.html"
+    },
+    {
+      "name": "DeleteBotVersion",
+      "methodName": "toDeleteBotVersion",
+      "description": "Grants permission to delete an existing bot version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBotVersion.html"
+    },
+    {
+      "name": "DeleteCustomVocabulary",
+      "methodName": "toDeleteCustomVocabulary",
+      "description": "Grants permission to delete an existing custom vocabulary in a bot locale",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteCustomVocabulary.html"
+    },
+    {
+      "name": "DeleteExport",
+      "methodName": "toDeleteExport",
+      "description": "Grants permission to delete an existing export",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteExport.html"
+    },
+    {
+      "name": "DeleteImport",
+      "methodName": "toDeleteImport",
+      "description": "Grants permission to delete an existing import",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteImport.html"
+    },
+    {
+      "name": "DeleteIntent",
+      "methodName": "toDeleteIntent",
+      "description": "Grants permission to delete an existing intent in a bot locale",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteIntent.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete an existing resource policy for a Lex resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteResourcePolicyStatement",
+      "methodName": "toDeleteResourcePolicyStatement",
+      "description": "Grants permission to delete an existing resource policy statement for a Lex resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteResourcePolicyStatement.html"
+    },
+    {
+      "name": "DeleteSession",
+      "methodName": "toDeleteSession",
+      "description": "Grants permission to delete session information for a bot alias and user ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_DeleteSession.html"
+    },
+    {
+      "name": "DeleteSlot",
+      "methodName": "toDeleteSlot",
+      "description": "Grants permission to delete an existing slot in an intent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteSlot.html"
+    },
+    {
+      "name": "DeleteSlotType",
+      "methodName": "toDeleteSlotType",
+      "description": "Grants permission to delete an existing slot type in a bot locale",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteSlotType.html"
+    },
+    {
+      "name": "DeleteTestSet",
+      "methodName": "toDeleteTestSet",
+      "description": "Grants permission to delete an existing test set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteTestSet.html"
+    },
+    {
+      "name": "DeleteUtterances",
+      "methodName": "toDeleteUtterances",
+      "description": "Grants permission to delete utterance data for a bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteUtterances.html"
+    },
+    {
+      "name": "DescribeBot",
+      "methodName": "toDescribeBot",
+      "description": "Grants permission to retrieve an existing bot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBot.html"
+    },
+    {
+      "name": "DescribeBotAlias",
+      "methodName": "toDescribeBotAlias",
+      "description": "Grants permission to retrieve an existing bot alias",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotAlias.html"
+    },
+    {
+      "name": "DescribeBotAnalyzerRecommendation",
+      "methodName": "toDescribeBotAnalyzerRecommendation",
+      "description": "Grants permission to describe a bot analyzer recommendation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotAnalyzerRecommendation.html"
+    },
+    {
+      "name": "DescribeBotLocale",
+      "methodName": "toDescribeBotLocale",
+      "description": "Grants permission to retrieve an existing bot locale",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotLocale.html"
+    },
+    {
+      "name": "DescribeBotRecommendation",
+      "methodName": "toDescribeBotRecommendation",
+      "description": "Grants permission to retrieve metadata information about a bot recommendation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotRecommendation.html"
+    },
+    {
+      "name": "DescribeBotReplica",
+      "methodName": "toDescribeBotReplica",
+      "description": "Grants permission to retrieve an existing bot replica",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotReplica.html"
+    },
+    {
+      "name": "DescribeBotResourceGeneration",
+      "methodName": "toDescribeBotResourceGeneration",
+      "description": "Grants permission to retrieve metadata information for a bot resource generation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotResourceGeneration.html"
+    },
+    {
+      "name": "DescribeBotVersion",
+      "methodName": "toDescribeBotVersion",
+      "description": "Grants permission to retrieve an existing bot version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotVersion.html"
+    },
+    {
+      "name": "DescribeCustomVocabularyMetadata",
+      "methodName": "toDescribeCustomVocabularyMetadata",
+      "description": "Grants permission to retrieve metadata of an existing custom vocabulary",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeCustomVocabularyMetadata.html"
+    },
+    {
+      "name": "DescribeExport",
+      "methodName": "toDescribeExport",
+      "description": "Grants permission to retrieve an existing export",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html"
+    },
+    {
+      "name": "DescribeImport",
+      "methodName": "toDescribeImport",
+      "description": "Grants permission to retrieve an existing import",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeImport.html"
+    },
+    {
+      "name": "DescribeIntent",
+      "methodName": "toDescribeIntent",
+      "description": "Grants permission to retrieve an existing intent",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeIntent.html"
+    },
+    {
+      "name": "DescribeResourcePolicy",
+      "methodName": "toDescribeResourcePolicy",
+      "description": "Grants permission to retrieve an existing resource policy for a Lex resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeResourcePolicy.html"
+    },
+    {
+      "name": "DescribeSlot",
+      "methodName": "toDescribeSlot",
+      "description": "Grants permission to retrieve an existing slot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeSlot.html"
+    },
+    {
+      "name": "DescribeSlotType",
+      "methodName": "toDescribeSlotType",
+      "description": "Grants permission to retrieve an existing slot type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeSlotType.html"
+    },
+    {
+      "name": "DescribeTestExecution",
+      "methodName": "toDescribeTestExecution",
+      "description": "Grants permission to retrieve test execution metadata",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeTestExecution.html"
+    },
+    {
+      "name": "DescribeTestSet",
+      "methodName": "toDescribeTestSet",
+      "description": "Grants permission to retrieve an existing test set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeTestSet.html"
+    },
+    {
+      "name": "DescribeTestSetDiscrepancyReport",
+      "methodName": "toDescribeTestSetDiscrepancyReport",
+      "description": "Grants permission to retrieve test set discrepancy report metadata",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeTestSetDiscrepancyReport.html"
+    },
+    {
+      "name": "DescribeTestSetGeneration",
+      "methodName": "toDescribeTestSetGeneration",
+      "description": "Grants permission to retrieve test set generation metadata",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeTestSetGeneration.html"
+    },
+    {
+      "name": "GenerateBotElement",
+      "methodName": "toGenerateBotElement",
+      "description": "Grants permission to generate supported fields or elements for a bot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_GenerateBotElement.html"
+    },
+    {
+      "name": "GetSession",
+      "methodName": "toGetSession",
+      "description": "Grants permission to retrieve session information for a bot alias and user ID",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_GetSession.html"
+    },
+    {
+      "name": "GetTestExecutionArtifactsUrl",
+      "methodName": "toGetTestExecutionArtifactsUrl",
+      "description": "Grants permission to retrieve artifacts URL for a test execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_GetTestExecutionArtifactsUrl.html"
+    },
+    {
+      "name": "ListAggregatedUtterances",
+      "methodName": "toListAggregatedUtterances",
+      "description": "Grants permission to list utterances and statistics for a bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html"
+    },
+    {
+      "name": "ListBotAliasReplicas",
+      "methodName": "toListBotAliasReplicas",
+      "description": "Grants permission to list alias replicas in a bot replica",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotAliasReplicas.html"
+    },
+    {
+      "name": "ListBotAliases",
+      "methodName": "toListBotAliases",
+      "description": "Grants permission to list bot aliases in an bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotAliases.html"
+    },
+    {
+      "name": "ListBotAnalyzerRecommendations",
+      "methodName": "toListBotAnalyzerRecommendations",
+      "description": "Grants permission to list bot analyzer recommendations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotAnalyzerRecommendations.html"
+    },
+    {
+      "name": "ListBotLocales",
+      "methodName": "toListBotLocales",
+      "description": "Grants permission to list bot locales in a bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotLocales.html"
+    },
+    {
+      "name": "ListBotRecommendations",
+      "methodName": "toListBotRecommendations",
+      "description": "Grants permission to get a list of bot recommendations that meet the specified criteria",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotRecommendations.html"
+    },
+    {
+      "name": "ListBotReplicas",
+      "methodName": "toListBotReplicas",
+      "description": "Grants permission to list replicas of a bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotReplicas.html"
+    },
+    {
+      "name": "ListBotResourceGenerations",
+      "methodName": "toListBotResourceGenerations",
+      "description": "Grants permission to list the resource generations for a bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotResourceGenerations.html"
+    },
+    {
+      "name": "ListBotVersionReplicas",
+      "methodName": "toListBotVersionReplicas",
+      "description": "Grants permission to list version replicas in a bot replica",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotVersionReplicas.html"
+    },
+    {
+      "name": "ListBotVersions",
+      "methodName": "toListBotVersions",
+      "description": "Grants permission to list existing bot versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotVersions.html"
+    },
+    {
+      "name": "ListBots",
+      "methodName": "toListBots",
+      "description": "Grants permission to list existing bots",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBots.html"
+    },
+    {
+      "name": "ListBuiltInIntents",
+      "methodName": "toListBuiltInIntents",
+      "description": "Grants permission to list built-in intents",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBuiltInIntents.html"
+    },
+    {
+      "name": "ListBuiltInSlotTypes",
+      "methodName": "toListBuiltInSlotTypes",
+      "description": "Grants permission to list built-in slot types",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBuiltInSlotTypes.html"
+    },
+    {
+      "name": "ListCustomVocabularyItems",
+      "methodName": "toListCustomVocabularyItems",
+      "description": "Grants permission to list items of an existing custom vocabulary",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListCustomVocabularyItems.html"
+    },
+    {
+      "name": "ListExports",
+      "methodName": "toListExports",
+      "description": "Grants permission to list existing exports",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html"
+    },
+    {
+      "name": "ListImports",
+      "methodName": "toListImports",
+      "description": "Grants permission to list existing imports",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListImports.html"
+    },
+    {
+      "name": "ListIntentMetrics",
+      "methodName": "toListIntentMetrics",
+      "description": "Grants permission to list intent analytics metrics for a bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListIntentMetrics.html"
+    },
+    {
+      "name": "ListIntentPaths",
+      "methodName": "toListIntentPaths",
+      "description": "Grants permission to list intent path analytics for a bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListIntentPaths.html"
+    },
+    {
+      "name": "ListIntentStageMetrics",
+      "methodName": "toListIntentStageMetrics",
+      "description": "Grants permission to list intentStage analytics metrics for a bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListIntentStageMetrics.html"
+    },
+    {
+      "name": "ListIntents",
+      "methodName": "toListIntents",
+      "description": "Grants permission to list intents in a bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListIntents.html"
+    },
+    {
+      "name": "ListRecommendedIntents",
+      "methodName": "toListRecommendedIntents",
+      "description": "Grants permission to get a list of recommended intents provided by the bot recommendation",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListRecommendedIntents.html"
+    },
+    {
+      "name": "ListSessionAnalyticsData",
+      "methodName": "toListSessionAnalyticsData",
+      "description": "Grants permission to list session analytics data for a bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListSessionAnalyticsData.html"
+    },
+    {
+      "name": "ListSessionMetrics",
+      "methodName": "toListSessionMetrics",
+      "description": "Grants permission to list session analytics metrics for a bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListSessionMetrics.html"
+    },
+    {
+      "name": "ListSlotTypes",
+      "methodName": "toListSlotTypes",
+      "description": "Grants permission to list slot types in a bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListSlotTypes.html"
+    },
+    {
+      "name": "ListSlots",
+      "methodName": "toListSlots",
+      "description": "Grants permission to list slots in an intent",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListSlots.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to lists tags for a Lex resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTestExecutionResultItems",
+      "methodName": "toListTestExecutionResultItems",
+      "description": "Grants permission to retrieve test results data for a test execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListTestExecutionResultItems.html"
+    },
+    {
+      "name": "ListTestExecutions",
+      "methodName": "toListTestExecutions",
+      "description": "Grants permission to list test executions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListTestExecutions.html"
+    },
+    {
+      "name": "ListTestSetRecords",
+      "methodName": "toListTestSetRecords",
+      "description": "Grants permission to retrieve records inside an existing test set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListTestSetRecords.html"
+    },
+    {
+      "name": "ListTestSets",
+      "methodName": "toListTestSets",
+      "description": "Grants permission to list test sets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListTestSets.html"
+    },
+    {
+      "name": "PutSession",
+      "methodName": "toPutSession",
+      "description": "Grants permission to create a new session or modify an existing session for a bot alias and user ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_PutSession.html"
+    },
+    {
+      "name": "RecognizeText",
+      "methodName": "toRecognizeText",
+      "description": "Grants permission to send user input (text-only) to an bot alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeText.html"
+    },
+    {
+      "name": "RecognizeUtterance",
+      "methodName": "toRecognizeUtterance",
+      "description": "Grants permission to send user input (text or speech) to an bot alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeUtterance.html"
+    },
+    {
+      "name": "SearchAssociatedTranscripts",
+      "methodName": "toSearchAssociatedTranscripts",
+      "description": "Grants permission to search for associated transcripts that meet the specified criteria",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_SearchAssociatedTranscripts.html"
+    },
+    {
+      "name": "StartBotAnalyzer",
+      "methodName": "toStartBotAnalyzer",
+      "description": "Grants permission to start a bot analyzer for an existing bot locale",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartBotAnalyzer.html"
+    },
+    {
+      "name": "StartBotRecommendation",
+      "methodName": "toStartBotRecommendation",
+      "description": "Grants permission to start a bot recommendation for an existing bot locale",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartBotRecommendation.html"
+    },
+    {
+      "name": "StartBotResourceGeneration",
+      "methodName": "toStartBotResourceGeneration",
+      "description": "Grants permission to start a resource generation for an existing bot locale",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartBotResourceGeneration.html"
+    },
+    {
+      "name": "StartConversation",
+      "methodName": "toStartConversation",
+      "description": "Grants permission to stream user input (speech/text/DTMF) to a bot alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_StartConversation.html"
+    },
+    {
+      "name": "StartImport",
+      "methodName": "toStartImport",
+      "description": "Grants permission to start a new import with the uploaded import file",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html"
+    },
+    {
+      "name": "StartTestExecution",
+      "methodName": "toStartTestExecution",
+      "description": "Grants permission to start a test execution using a test set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartTestExecution.html"
+    },
+    {
+      "name": "StartTestSetGeneration",
+      "methodName": "toStartTestSetGeneration",
+      "description": "Grants permission to generate a test set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartTestSetGeneration.html"
+    },
+    {
+      "name": "StopBotAnalyzer",
+      "methodName": "toStopBotAnalyzer",
+      "description": "Grants permission to stop a bot analyzer for an existing bot locale",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StopBotAnalyzer.html"
+    },
+    {
+      "name": "StopBotRecommendation",
+      "methodName": "toStopBotRecommendation",
+      "description": "Grants permission to stop a bot recommendation for an existing bot locale",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StopBotRecommendation.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or overwrite tags of a Lex resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a Lex resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateBot",
+      "methodName": "toUpdateBot",
+      "description": "Grants permission to update an existing bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBot.html"
+    },
+    {
+      "name": "UpdateBotAlias",
+      "methodName": "toUpdateBotAlias",
+      "description": "Grants permission to update an existing bot alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html"
+    },
+    {
+      "name": "UpdateBotLocale",
+      "methodName": "toUpdateBotLocale",
+      "description": "Grants permission to update an existing bot locale",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotLocale.html"
+    },
+    {
+      "name": "UpdateBotRecommendation",
+      "methodName": "toUpdateBotRecommendation",
+      "description": "Grants permission to update an existing bot recommendation request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotRecommendation.html"
+    },
+    {
+      "name": "UpdateExport",
+      "methodName": "toUpdateExport",
+      "description": "Grants permission to update an existing export",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateExport.html"
+    },
+    {
+      "name": "UpdateIntent",
+      "methodName": "toUpdateIntent",
+      "description": "Grants permission to update an existing intent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateIntent.html"
+    },
+    {
+      "name": "UpdateResourcePolicy",
+      "methodName": "toUpdateResourcePolicy",
+      "description": "Grants permission to update an existing resource policy for a Lex resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateResourcePolicy.html"
+    },
+    {
+      "name": "UpdateSlot",
+      "methodName": "toUpdateSlot",
+      "description": "Grants permission to update an existing slot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateSlot.html"
+    },
+    {
+      "name": "UpdateSlotType",
+      "methodName": "toUpdateSlotType",
+      "description": "Grants permission to update an existing slot type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateSlotType.html"
+    },
+    {
+      "name": "UpdateTestSet",
+      "methodName": "toUpdateTestSet",
+      "description": "Grants permission to update an existing test set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateTestSet.html"
+    },
+    {
+      "name": "CreateBotChannel",
+      "methodName": "toCreateBotChannel",
+      "description": "Grants permission to create a bot channel in an existing bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/dg/deploying-messaging-platform.html"
+    },
+    {
+      "name": "CreateCustomVocabulary",
+      "methodName": "toCreateCustomVocabulary",
+      "description": "Grants permission to create a new custom vocabulary in an existing bot locale",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/dg/vocab.html"
+    },
+    {
+      "name": "CreateTestSet",
+      "methodName": "toCreateTestSet",
+      "description": "Grants permission to import a new test-set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/dg/create-test-set-from-CSV.html"
+    },
+    {
+      "name": "DeleteBotChannel",
+      "methodName": "toDeleteBotChannel",
+      "description": "Grants permission to delete an existing bot channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/dg/deploying-messaging-platform.html"
+    },
+    {
+      "name": "DescribeBotChannel",
+      "methodName": "toDescribeBotChannel",
+      "description": "Grants permission to retrieve an existing bot channel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/dg/deploying-messaging-platform.html"
+    },
+    {
+      "name": "DescribeCustomVocabulary",
+      "methodName": "toDescribeCustomVocabulary",
+      "description": "Grants permission to retrieve an existing custom vocabulary",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/dg/vocab.html"
+    },
+    {
+      "name": "ListBotChannels",
+      "methodName": "toListBotChannels",
+      "description": "Grants permission to list bot channels",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/dg/deploying-messaging-platform.html"
+    },
+    {
+      "name": "UpdateCustomVocabulary",
+      "methodName": "toUpdateCustomVocabulary",
+      "description": "Grants permission to update an existing custom vocabulary",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/dg/vocab.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "bot",
+      "methodName": "onBot",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/dg/how-it-works.html",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:bot/${BotId}, arn:${Partition2}:lex:${Region2}:${Account2}:bot:${BotName}",
+      "placeholders": [
+        {
+          "placeholder": "BotId",
+          "name": "botId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition2",
+          "name": "partition2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region2",
+          "name": "region2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account2",
+          "name": "account2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "BotName",
+          "name": "botName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "bot alias",
+      "methodName": "onBotAlias",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/dg/how-it-works.html",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:bot-alias/${BotId}/${BotAliasId}, arn:${Partition2}:lex:${Region2}:${Account2}:bot:${BotName}:${BotAlias}",
+      "placeholders": [
+        {
+          "placeholder": "BotId",
+          "name": "botId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "BotAliasId",
+          "name": "botAliasId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition2",
+          "name": "partition2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region2",
+          "name": "region2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account2",
+          "name": "account2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "BotName",
+          "name": "botName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "BotAlias",
+          "name": "botAlias",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "test set",
+      "methodName": "onTestSet",
+      "url": "https://docs.aws.amazon.com/lexv2/latest/dg/test-workbench.html",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:test-set/${TestSetId}",
+      "placeholders": [
+        {
+          "placeholder": "TestSetId",
+          "name": "testSetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateBot",
+        "toCreateBotAlias",
+        "toStartImport",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags attached to a Lex resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchCreateCustomVocabularyItem",
+        "toBatchDeleteCustomVocabularyItem",
+        "toBatchUpdateCustomVocabularyItem",
+        "toBuildBotLocale",
+        "toCreateBot",
+        "toCreateBotAlias",
+        "toCreateBotLocale",
+        "toCreateBotReplica",
+        "toCreateBotVersion",
+        "toCreateExport",
+        "toCreateIntent",
+        "toCreateResourcePolicy",
+        "toCreateResourcePolicyStatement",
+        "toCreateSlot",
+        "toCreateSlotType",
+        "toCreateTestSetDiscrepancyReport",
+        "toDeleteBot",
+        "toDeleteBotAlias",
+        "toDeleteBotAnalyzerRecommendation",
+        "toDeleteBotLocale",
+        "toDeleteBotReplica",
+        "toDeleteBotVersion",
+        "toDeleteCustomVocabulary",
+        "toDeleteExport",
+        "toDeleteImport",
+        "toDeleteIntent",
+        "toDeleteResourcePolicy",
+        "toDeleteResourcePolicyStatement",
+        "toDeleteSession",
+        "toDeleteSlot",
+        "toDeleteSlotType",
+        "toDeleteTestSet",
+        "toDeleteUtterances",
+        "toDescribeBot",
+        "toDescribeBotAlias",
+        "toDescribeBotAnalyzerRecommendation",
+        "toDescribeBotLocale",
+        "toDescribeBotRecommendation",
+        "toDescribeBotReplica",
+        "toDescribeBotResourceGeneration",
+        "toDescribeBotVersion",
+        "toDescribeCustomVocabularyMetadata",
+        "toDescribeExport",
+        "toDescribeImport",
+        "toDescribeIntent",
+        "toDescribeResourcePolicy",
+        "toDescribeSlot",
+        "toDescribeSlotType",
+        "toDescribeTestExecution",
+        "toDescribeTestSet",
+        "toDescribeTestSetDiscrepancyReport",
+        "toDescribeTestSetGeneration",
+        "toGenerateBotElement",
+        "toGetSession",
+        "toGetTestExecutionArtifactsUrl",
+        "toListAggregatedUtterances",
+        "toListBotAliasReplicas",
+        "toListBotAliases",
+        "toListBotAnalyzerRecommendations",
+        "toListBotLocales",
+        "toListBotRecommendations",
+        "toListBotReplicas",
+        "toListBotResourceGenerations",
+        "toListBotVersionReplicas",
+        "toListBotVersions",
+        "toListCustomVocabularyItems",
+        "toListIntentMetrics",
+        "toListIntentPaths",
+        "toListIntentStageMetrics",
+        "toListIntents",
+        "toListRecommendedIntents",
+        "toListSessionAnalyticsData",
+        "toListSessionMetrics",
+        "toListSlotTypes",
+        "toListSlots",
+        "toListTagsForResource",
+        "toListTestExecutionResultItems",
+        "toListTestSetRecords",
+        "toPutSession",
+        "toRecognizeText",
+        "toRecognizeUtterance",
+        "toSearchAssociatedTranscripts",
+        "toStartBotAnalyzer",
+        "toStartBotRecommendation",
+        "toStartBotResourceGeneration",
+        "toStartConversation",
+        "toStartImport",
+        "toStartTestExecution",
+        "toStartTestSetGeneration",
+        "toStopBotAnalyzer",
+        "toStopBotRecommendation",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateBot",
+        "toUpdateBotAlias",
+        "toUpdateBotLocale",
+        "toUpdateBotRecommendation",
+        "toUpdateExport",
+        "toUpdateIntent",
+        "toUpdateResourcePolicy",
+        "toUpdateSlot",
+        "toUpdateSlotType",
+        "toUpdateTestSet",
+        "toCreateBotChannel",
+        "toCreateCustomVocabulary",
+        "toDeleteBotChannel",
+        "toDescribeBotChannel",
+        "toDescribeCustomVocabulary",
+        "toListBotChannels",
+        "toUpdateCustomVocabulary"
+      ],
+      "relatedResourceTypes": [
+        "bot",
+        "bot alias",
+        "test set"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the set of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateBot",
+        "toCreateBotAlias",
+        "toStartImport",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

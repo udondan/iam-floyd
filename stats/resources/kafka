@@ -1,8 +1,0 @@
-kafka:channel
-kafka:cluster
-kafka:configuration
-kafka:group
-kafka:replicator
-kafka:topic
-kafka:transactional-id
-kafka:vpc-connection

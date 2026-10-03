@@ -1,0 +1,532 @@
+{
+  "schemaVersion": 1,
+  "filename": "greengrassv2",
+  "className": "GreengrassV2",
+  "name": "greengrass-v2",
+  "servicePrefix": "greengrass",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_greengrassv2.html",
+  "accessLevelList": {
+    "Permissions management": [
+      "AssociateServiceRoleToAccount"
+    ],
+    "Write": [
+      "AssociateServiceRoleToAccount",
+      "BatchAssociateClientDeviceWithCoreDevice",
+      "BatchDisassociateClientDeviceFromCoreDevice",
+      "CancelDeployment",
+      "CreateComponentVersion",
+      "CreateDeployment",
+      "DeleteComponent",
+      "DeleteCoreDevice",
+      "DeleteDeployment",
+      "DisassociateServiceRoleFromAccount",
+      "TagResource",
+      "UntagResource",
+      "UpdateConnectivityInfo"
+    ],
+    "Read": [
+      "DescribeComponent",
+      "GetComponent",
+      "GetComponentVersionArtifact",
+      "GetConnectivityInfo",
+      "GetCoreDevice",
+      "GetDeployment",
+      "GetServiceRoleForAccount",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListClientDevicesAssociatedWithCoreDevice",
+      "ListComponentVersions",
+      "ListComponents",
+      "ListCoreDevices",
+      "ListDeployments",
+      "ListEffectiveDeployments",
+      "ListInstalledComponents",
+      "ResolveComponentCandidates"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateServiceRoleToAccount",
+      "methodName": "toAssociateServiceRoleToAccount",
+      "description": "Grants permission to associate a role with your account. AWS IoT Greengrass uses this role to access your Lambda functions and AWS IoT resources",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_AssociateServiceRoleToAccount.html"
+    },
+    {
+      "name": "BatchAssociateClientDeviceWithCoreDevice",
+      "methodName": "toBatchAssociateClientDeviceWithCoreDevice",
+      "description": "Grants permission to associate a list of client devices with a core device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchAssociateClientDeviceWithCoreDevice.html"
+    },
+    {
+      "name": "BatchDisassociateClientDeviceFromCoreDevice",
+      "methodName": "toBatchDisassociateClientDeviceFromCoreDevice",
+      "description": "Grants permission to disassociate a list of client devices from a core device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchDisassociateClientDeviceFromCoreDevice.html"
+    },
+    {
+      "name": "CancelDeployment",
+      "methodName": "toCancelDeployment",
+      "description": "Grants permission to cancel a deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_CancelDeployment.html"
+    },
+    {
+      "name": "CreateComponentVersion",
+      "methodName": "toCreateComponentVersion",
+      "description": "Grants permission to create a component",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_CreateComponentVersion.html"
+    },
+    {
+      "name": "CreateDeployment",
+      "methodName": "toCreateDeployment",
+      "description": "Grants permission to create a deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_CreateDeployment.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteComponent",
+      "methodName": "toDeleteComponent",
+      "description": "Grants permission to delete a component",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_DeleteComponent.html"
+    },
+    {
+      "name": "DeleteCoreDevice",
+      "methodName": "toDeleteCoreDevice",
+      "description": "Grants permission to delete a AWS IoT Greengrass core device, which is an AWS IoT thing. This operation removes the core device from the list of core devices. This operation doesn't delete the AWS IoT thing",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_DeleteCoreDevice.html"
+    },
+    {
+      "name": "DeleteDeployment",
+      "methodName": "toDeleteDeployment",
+      "description": "Grants permission to delete a deployment. To delete an active deployment, it needs to be cancelled first",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_DeleteDeployment.html"
+    },
+    {
+      "name": "DescribeComponent",
+      "methodName": "toDescribeComponent",
+      "description": "Grants permission to retrieve metadata for a version of a component",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_DescribeComponent.html"
+    },
+    {
+      "name": "DisassociateServiceRoleFromAccount",
+      "methodName": "toDisassociateServiceRoleFromAccount",
+      "description": "Grants permission to disassociate the service role from an account. Without a service role, deployments will not work",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_DisassociateServiceRoleFromAccount.html"
+    },
+    {
+      "name": "GetComponent",
+      "methodName": "toGetComponent",
+      "description": "Grants permission to get the recipe for a version of a component",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html"
+    },
+    {
+      "name": "GetComponentVersionArtifact",
+      "methodName": "toGetComponentVersionArtifact",
+      "description": "Grants permission to get the pre-signed URL to download a public component artifact",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponentVersionArtifact.html"
+    },
+    {
+      "name": "GetConnectivityInfo",
+      "methodName": "toGetConnectivityInfo",
+      "description": "Grants permission to retrieve the connectivity information for a Greengrass core device",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetConnectivityInfo.html"
+    },
+    {
+      "name": "GetCoreDevice",
+      "methodName": "toGetCoreDevice",
+      "description": "Grants permission to retrieves metadata for a AWS IoT Greengrass core device",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetCoreDevice.html"
+    },
+    {
+      "name": "GetDeployment",
+      "methodName": "toGetDeployment",
+      "description": "Grants permission to get a deployment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetDeployment.html"
+    },
+    {
+      "name": "GetServiceRoleForAccount",
+      "methodName": "toGetServiceRoleForAccount",
+      "description": "Grants permission to retrieve the service role that is attached to an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetServiceRoleForAccount.html"
+    },
+    {
+      "name": "ListClientDevicesAssociatedWithCoreDevice",
+      "methodName": "toListClientDevicesAssociatedWithCoreDevice",
+      "description": "Grants permission to retrieve a paginated list of client devices associated to a AWS IoT Greengrass core device",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_ListClientDevicesAssociatedWithCoreDevice.html"
+    },
+    {
+      "name": "ListComponentVersions",
+      "methodName": "toListComponentVersions",
+      "description": "Grants permission to retrieve a paginated list of all versions for a component",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_ListComponentVersions.html"
+    },
+    {
+      "name": "ListComponents",
+      "methodName": "toListComponents",
+      "description": "Grants permission to retrieve a paginated list of component summaries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_ListComponents.html"
+    },
+    {
+      "name": "ListCoreDevices",
+      "methodName": "toListCoreDevices",
+      "description": "Grants permission to retrieve a paginated list of AWS IoT Greengrass core devices",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_ListCoreDevices.html"
+    },
+    {
+      "name": "ListDeployments",
+      "methodName": "toListDeployments",
+      "description": "Grants permission to retrieves a paginated list of deployments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_ListDeployments.html"
+    },
+    {
+      "name": "ListEffectiveDeployments",
+      "methodName": "toListEffectiveDeployments",
+      "description": "Grants permission to retrieves a paginated list of deployment jobs that AWS IoT Greengrass sends to AWS IoT Greengrass core devices",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_ListEffectiveDeployments.html"
+    },
+    {
+      "name": "ListInstalledComponents",
+      "methodName": "toListInstalledComponents",
+      "description": "Grants permission to retrieve a paginated list of the components that a AWS IoT Greengrass core device runs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_ListInstalledComponents.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ResolveComponentCandidates",
+      "methodName": "toResolveComponentCandidates",
+      "description": "Grants permission to list components that meet the component, version, and platform requirements of a deployment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_ResolveComponentCandidates.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateConnectivityInfo",
+      "methodName": "toUpdateConnectivityInfo",
+      "description": "Grants permission to update the connectivity information for a Greengrass core. Any devices that belong to the group that has this core will receive this information in order to find the location of the core and connect to it",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_UpdateConnectivityInfo.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "component",
+      "methodName": "onComponent",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_Component.html",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:components:${ComponentName}",
+      "placeholders": [
+        {
+          "placeholder": "ComponentName",
+          "name": "componentName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "componentVersion",
+      "methodName": "onComponentVersion",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_Component.html",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:components:${ComponentName}:versions:${ComponentVersion}",
+      "placeholders": [
+        {
+          "placeholder": "ComponentName",
+          "name": "componentName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ComponentVersion",
+          "name": "componentVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "connectivityInfo",
+      "methodName": "onConnectivityInfo",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_ConnectivityInfo.html",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/things/${ThingName}/connectivityInfo",
+      "placeholders": [
+        {
+          "placeholder": "ThingName",
+          "name": "thingName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "coreDevice",
+      "methodName": "onCoreDevice",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_CoreDevice.html",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:coreDevices:${CoreDeviceThingName}",
+      "placeholders": [
+        {
+          "placeholder": "CoreDeviceThingName",
+          "name": "coreDeviceThingName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "deployment",
+      "methodName": "onDeployment",
+      "url": "https://docs.aws.amazon.com/greengrass/v2/APIReference/API_Deployment.html",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/deployments/${DeploymentId}, arn:${Partition2}:greengrass:${Region2}:${Account2}:deployments:${DeploymentId2}",
+      "placeholders": [
+        {
+          "placeholder": "GroupId",
+          "name": "groupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DeploymentId",
+          "name": "deploymentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition2",
+          "name": "partition2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region2",
+          "name": "region2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account2",
+          "name": "account2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DeploymentId2",
+          "name": "deploymentId2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by checking tag key/value pairs included in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateComponentVersion",
+        "toCreateDeployment",
+        "toListTagsForResource",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by checking tag key/value pairs associated with a specific resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchAssociateClientDeviceWithCoreDevice",
+        "toBatchDisassociateClientDeviceFromCoreDevice",
+        "toCancelDeployment",
+        "toCreateComponentVersion",
+        "toDeleteComponent",
+        "toDeleteCoreDevice",
+        "toDeleteDeployment",
+        "toDescribeComponent",
+        "toGetComponent",
+        "toGetComponentVersionArtifact",
+        "toGetCoreDevice",
+        "toGetDeployment",
+        "toListClientDevicesAssociatedWithCoreDevice",
+        "toListComponentVersions",
+        "toListEffectiveDeployments",
+        "toListInstalledComponents",
+        "toListTagsForResource",
+        "toResolveComponentCandidates",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "component",
+        "componentVersion",
+        "coreDevice",
+        "deployment"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by checking tag keys passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateComponentVersion",
+        "toCreateDeployment",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

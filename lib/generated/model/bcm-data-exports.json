@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "filename": "bcm-data-exports",
+  "className": "BcmDataExports",
+  "name": "bcm-data-exports",
+  "servicePrefix": "bcm-data-exports",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_bcm-data-exports.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateExport",
+      "DeleteExport",
+      "TagResource",
+      "UntagResource",
+      "UpdateExport"
+    ],
+    "Read": [
+      "GetExecution",
+      "GetExport",
+      "GetTable",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListExecutions",
+      "ListExports",
+      "ListTables"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateExport",
+      "methodName": "toCreateExport",
+      "description": "Grants permission to create an export",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_CreateExport.html"
+    },
+    {
+      "name": "DeleteExport",
+      "methodName": "toDeleteExport",
+      "description": "Grants permission to delete an export",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_DeleteExport.html"
+    },
+    {
+      "name": "GetExecution",
+      "methodName": "toGetExecution",
+      "description": "Grants permission to get the execution of an export",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_GetExecution.html"
+    },
+    {
+      "name": "GetExport",
+      "methodName": "toGetExport",
+      "description": "Grants permission to get an export",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_GetExport.html"
+    },
+    {
+      "name": "GetTable",
+      "methodName": "toGetTable",
+      "description": "Grants permission to get the details of a table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_GetTable.html"
+    },
+    {
+      "name": "ListExecutions",
+      "methodName": "toListExecutions",
+      "description": "Grants permission to list all executions of an export",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_ListExecutions.html"
+    },
+    {
+      "name": "ListExports",
+      "methodName": "toListExports",
+      "description": "Grants permission to list all exports",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_ListExports.html"
+    },
+    {
+      "name": "ListTables",
+      "methodName": "toListTables",
+      "description": "Grants permission to list all available tables",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_ListTables.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_ListTagsForResource.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_UntagResource.html"
+    },
+    {
+      "name": "UpdateExport",
+      "methodName": "toUpdateExport",
+      "description": "Grants permission to update an export",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_UpdateExport.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "billingview",
+      "methodName": "onBillingview",
+      "url": "https://docs.aws.amazon.com/cur/latest/userguide/",
+      "arn": "arn:${Partition}:billing::${Account}:billingview/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "export",
+      "methodName": "onExport",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_Export.html",
+      "arn": "arn:${Partition}:bcm-data-exports:${Region}:${Account}:export/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "table",
+      "methodName": "onTable",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_Table.html",
+      "arn": "arn:${Partition}:bcm-data-exports:${Region}:${Account}:table/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateExport",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateExport",
+        "toDeleteExport",
+        "toGetExecution",
+        "toGetExport",
+        "toListExecutions",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateExport"
+      ],
+      "relatedResourceTypes": [
+        "billingview",
+        "export"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateExport",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

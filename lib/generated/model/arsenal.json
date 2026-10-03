@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "arsenal",
+  "className": "Arsenal",
+  "name": "arsenal",
+  "servicePrefix": "arsenal",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_arsenal.html",
+  "accessLevelList": {
+    "Write": [
+      "RegisterOnPremisesAgent"
+    ]
+  },
+  "actions": [
+    {
+      "name": "RegisterOnPremisesAgent",
+      "methodName": "toRegisterOnPremisesAgent",
+      "description": "Grants permission to register AWS provided data collectors to the Application Discovery Service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

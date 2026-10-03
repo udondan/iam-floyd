@@ -1,4 +1,0 @@
-a2c:GetContainerizationJobDetails;Read
-a2c:GetDeploymentJobDetails;Read
-a2c:StartContainerizationJob;Write
-a2c:StartDeploymentJob;Write

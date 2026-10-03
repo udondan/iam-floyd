@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "filename": "tnb",
+  "className": "Tnb",
+  "name": "tnb",
+  "servicePrefix": "tnb",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_tnb.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelSolNetworkOperation",
+      "CreateSolFunctionPackage",
+      "CreateSolNetworkInstance",
+      "CreateSolNetworkPackage",
+      "DeleteSolFunctionPackage",
+      "DeleteSolNetworkInstance",
+      "DeleteSolNetworkPackage",
+      "InstantiateSolNetworkInstance",
+      "PutSolFunctionPackageContent",
+      "PutSolNetworkPackageContent",
+      "TagResource",
+      "TerminateSolNetworkInstance",
+      "UntagResource",
+      "UpdateSolFunctionPackage",
+      "UpdateSolNetworkInstance",
+      "UpdateSolNetworkPackage",
+      "ValidateSolFunctionPackageContent",
+      "ValidateSolNetworkPackageContent"
+    ],
+    "Read": [
+      "GetSolFunctionInstance",
+      "GetSolFunctionPackage",
+      "GetSolFunctionPackageContent",
+      "GetSolFunctionPackageDescriptor",
+      "GetSolNetworkInstance",
+      "GetSolNetworkOperation",
+      "GetSolNetworkPackage",
+      "GetSolNetworkPackageContent",
+      "GetSolNetworkPackageDescriptor"
+    ],
+    "List": [
+      "ListSolFunctionInstances",
+      "ListSolFunctionPackages",
+      "ListSolNetworkInstances",
+      "ListSolNetworkOperations",
+      "ListSolNetworkPackages",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelSolNetworkOperation",
+      "methodName": "toCancelSolNetworkOperation",
+      "description": "Grants permission to cancel a network operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_CancelSolNetworkOperation.html"
+    },
+    {
+      "name": "CreateSolFunctionPackage",
+      "methodName": "toCreateSolFunctionPackage",
+      "description": "Grants permission to create a function package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_CreateSolFunctionPackage.html"
+    },
+    {
+      "name": "CreateSolNetworkInstance",
+      "methodName": "toCreateSolNetworkInstance",
+      "description": "Grants permission to create a network instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_CreateSolNetworkInstance.html"
+    },
+    {
+      "name": "CreateSolNetworkPackage",
+      "methodName": "toCreateSolNetworkPackage",
+      "description": "Grants permission to create a network package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_CreateSolNetworkPackage.html"
+    },
+    {
+      "name": "DeleteSolFunctionPackage",
+      "methodName": "toDeleteSolFunctionPackage",
+      "description": "Grants permission to delete a function package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_DeleteSolFunctionPackage.html"
+    },
+    {
+      "name": "DeleteSolNetworkInstance",
+      "methodName": "toDeleteSolNetworkInstance",
+      "description": "Grants permission to delete a network instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_DeleteSolNetworkInstance.html"
+    },
+    {
+      "name": "DeleteSolNetworkPackage",
+      "methodName": "toDeleteSolNetworkPackage",
+      "description": "Grants permission to delete a network package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_DeleteSolNetworkPackage.html"
+    },
+    {
+      "name": "GetSolFunctionInstance",
+      "methodName": "toGetSolFunctionInstance",
+      "description": "Grants permission to get a function instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_GetSolFunctionInstance.html"
+    },
+    {
+      "name": "GetSolFunctionPackage",
+      "methodName": "toGetSolFunctionPackage",
+      "description": "Grants permission to get a function package",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_GetSolFunctionPackage.html"
+    },
+    {
+      "name": "GetSolFunctionPackageContent",
+      "methodName": "toGetSolFunctionPackageContent",
+      "description": "Grants permission to get a function package contents",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_GetSolFunctionPackageContent.html"
+    },
+    {
+      "name": "GetSolFunctionPackageDescriptor",
+      "methodName": "toGetSolFunctionPackageDescriptor",
+      "description": "Grants permission to get a function package descriptor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_GetSolFunctionPackageDescriptor.html"
+    },
+    {
+      "name": "GetSolNetworkInstance",
+      "methodName": "toGetSolNetworkInstance",
+      "description": "Grants permission to get a network instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_GetSolNetworkInstance.html"
+    },
+    {
+      "name": "GetSolNetworkOperation",
+      "methodName": "toGetSolNetworkOperation",
+      "description": "Grants permission to get a network operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_GetSolNetworkOperation.html"
+    },
+    {
+      "name": "GetSolNetworkPackage",
+      "methodName": "toGetSolNetworkPackage",
+      "description": "Grants permission to get a network package",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_GetSolNetworkPackage.html"
+    },
+    {
+      "name": "GetSolNetworkPackageContent",
+      "methodName": "toGetSolNetworkPackageContent",
+      "description": "Grants permission to get a network package contents",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_GetSolNetworkPackageContent.html"
+    },
+    {
+      "name": "GetSolNetworkPackageDescriptor",
+      "methodName": "toGetSolNetworkPackageDescriptor",
+      "description": "Grants permission to get a network package descriptor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_GetSolNetworkPackageDescriptor.html"
+    },
+    {
+      "name": "InstantiateSolNetworkInstance",
+      "methodName": "toInstantiateSolNetworkInstance",
+      "description": "Grants permission to instantiate a network instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_InstantiateSolNetworkInstance.html"
+    },
+    {
+      "name": "ListSolFunctionInstances",
+      "methodName": "toListSolFunctionInstances",
+      "description": "Grants permission to list function instances",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_ListSolFunctionInstances.html"
+    },
+    {
+      "name": "ListSolFunctionPackages",
+      "methodName": "toListSolFunctionPackages",
+      "description": "Grants permission to list function packages",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_ListSolFunctionPackages.html"
+    },
+    {
+      "name": "ListSolNetworkInstances",
+      "methodName": "toListSolNetworkInstances",
+      "description": "Grants permission to list network instances",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_ListSolNetworkInstances.html"
+    },
+    {
+      "name": "ListSolNetworkOperations",
+      "methodName": "toListSolNetworkOperations",
+      "description": "Grants permission to list network operations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_ListSolNetworkOperations.html"
+    },
+    {
+      "name": "ListSolNetworkPackages",
+      "methodName": "toListSolNetworkPackages",
+      "description": "Grants permission to list network packages",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_ListSolNetworkPackages.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to return a list of tags for a resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutSolFunctionPackageContent",
+      "methodName": "toPutSolFunctionPackageContent",
+      "description": "Grants permission to upload function package content",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolFunctionPackageContent.html"
+    },
+    {
+      "name": "PutSolNetworkPackageContent",
+      "methodName": "toPutSolNetworkPackageContent",
+      "description": "Grants permission to upload network package content",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolNetworkPackageContent.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "TerminateSolNetworkInstance",
+      "methodName": "toTerminateSolNetworkInstance",
+      "description": "Grants permission to terminate a network instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_TerminateSolNetworkInstance.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateSolFunctionPackage",
+      "methodName": "toUpdateSolFunctionPackage",
+      "description": "Grants permission to update a function package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_UpdateSolFunctionPackage.html"
+    },
+    {
+      "name": "UpdateSolNetworkInstance",
+      "methodName": "toUpdateSolNetworkInstance",
+      "description": "Grants permission to update a network instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_UpdateSolNetworkInstance.html"
+    },
+    {
+      "name": "UpdateSolNetworkPackage",
+      "methodName": "toUpdateSolNetworkPackage",
+      "description": "Grants permission to update a network package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_UpdateSolNetworkPackage.html"
+    },
+    {
+      "name": "ValidateSolFunctionPackageContent",
+      "methodName": "toValidateSolFunctionPackageContent",
+      "description": "Grants permission to validate function package content",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_ValidateSolFunctionPackageContent.html"
+    },
+    {
+      "name": "ValidateSolNetworkPackageContent",
+      "methodName": "toValidateSolNetworkPackageContent",
+      "description": "Grants permission to validate network package content",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tnb/latest/APIReference/API_ValidateSolNetworkPackageContent.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "function-instance",
+      "methodName": "onFunctionInstance",
+      "url": "https://docs.aws.amazon.com/tnb/latest/ug/function-packages.html",
+      "arn": "arn:${Partition}:tnb:${Region}:${Account}:function-instance/${FunctionInstanceId}",
+      "placeholders": [
+        {
+          "placeholder": "FunctionInstanceId",
+          "name": "functionInstanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "function-package",
+      "methodName": "onFunctionPackage",
+      "url": "https://docs.aws.amazon.com/tnb/latest/ug/function-packages.html",
+      "arn": "arn:${Partition}:tnb:${Region}:${Account}:function-package/${FunctionPackageId}",
+      "placeholders": [
+        {
+          "placeholder": "FunctionPackageId",
+          "name": "functionPackageId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "network-instance",
+      "methodName": "onNetworkInstance",
+      "url": "https://docs.aws.amazon.com/tnb/latest/ug/network-instances.html",
+      "arn": "arn:${Partition}:tnb:${Region}:${Account}:network-instance/${NetworkInstanceId}",
+      "placeholders": [
+        {
+          "placeholder": "NetworkInstanceId",
+          "name": "networkInstanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "network-operation",
+      "methodName": "onNetworkOperation",
+      "url": "https://docs.aws.amazon.com/tnb/latest/ug/network-operations.html",
+      "arn": "arn:${Partition}:tnb:${Region}:${Account}:network-operation/${NetworkOperationId}",
+      "placeholders": [
+        {
+          "placeholder": "NetworkOperationId",
+          "name": "networkOperationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "network-package",
+      "methodName": "onNetworkPackage",
+      "url": "https://docs.aws.amazon.com/tnb/latest/ug/network-packages.html",
+      "arn": "arn:${Partition}:tnb:${Region}:${Account}:network-package/${NetworkPackageId}",
+      "placeholders": [
+        {
+          "placeholder": "NetworkPackageId",
+          "name": "networkPackageId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by checking the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateSolFunctionPackage",
+        "toCreateSolNetworkInstance",
+        "toCreateSolNetworkPackage",
+        "toInstantiateSolNetworkInstance",
+        "toTagResource",
+        "toTerminateSolNetworkInstance",
+        "toUpdateSolNetworkInstance"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by checking tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCancelSolNetworkOperation",
+        "toCreateSolFunctionPackage",
+        "toCreateSolNetworkInstance",
+        "toCreateSolNetworkPackage",
+        "toDeleteSolFunctionPackage",
+        "toDeleteSolNetworkInstance",
+        "toDeleteSolNetworkPackage",
+        "toGetSolFunctionInstance",
+        "toGetSolFunctionPackage",
+        "toGetSolFunctionPackageContent",
+        "toGetSolFunctionPackageDescriptor",
+        "toGetSolNetworkInstance",
+        "toGetSolNetworkOperation",
+        "toGetSolNetworkPackage",
+        "toGetSolNetworkPackageContent",
+        "toGetSolNetworkPackageDescriptor",
+        "toInstantiateSolNetworkInstance",
+        "toListSolFunctionInstances",
+        "toListSolFunctionPackages",
+        "toListSolNetworkInstances",
+        "toListSolNetworkOperations",
+        "toListSolNetworkPackages",
+        "toPutSolFunctionPackageContent",
+        "toPutSolNetworkPackageContent",
+        "toTagResource",
+        "toTerminateSolNetworkInstance",
+        "toUntagResource",
+        "toUpdateSolFunctionPackage",
+        "toUpdateSolNetworkInstance",
+        "toUpdateSolNetworkPackage",
+        "toValidateSolFunctionPackageContent",
+        "toValidateSolNetworkPackageContent"
+      ],
+      "relatedResourceTypes": [
+        "function-instance",
+        "function-package",
+        "network-instance",
+        "network-operation",
+        "network-package"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateSolFunctionPackage",
+        "toCreateSolNetworkInstance",
+        "toCreateSolNetworkPackage",
+        "toInstantiateSolNetworkInstance",
+        "toTagResource",
+        "toTerminateSolNetworkInstance",
+        "toUntagResource",
+        "toUpdateSolNetworkInstance"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

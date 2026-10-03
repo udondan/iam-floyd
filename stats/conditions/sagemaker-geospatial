@@ -1,3 +1,0 @@
-sagemaker-geospatial:RequestTag/${TagKey}
-sagemaker-geospatial:ResourceTag/${TagKey}
-sagemaker-geospatial:TagKeys

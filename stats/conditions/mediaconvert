@@ -1,6 +1,0 @@
-mediaconvert:HttpInputsAllowed
-mediaconvert:HttpsInputsAllowed
-mediaconvert:RequestTag/${TagKey}
-mediaconvert:ResourceTag/${TagKey}
-mediaconvert:S3InputsAllowed
-mediaconvert:TagKeys
