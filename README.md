@@ -2,7 +2,7 @@
 
 [![Source](https://img.shields.io/github/stars/udondan/iam-floyd?logo=github&label=GitHub%20Stars)][source]
 [![iam-floyd](https://img.shields.io/github/v/release/udondan/iam-floyd)][source]
-[![libraries.io](https://img.shields.io/badge/packages-libraries.io-yellow)][libraries.io]
+[![Packages](https://img.shields.io/badge/Packages-npm%20%7C%20PyPI%20%7C%20Maven%20%7C%20NuGet%20%7C%20Go-yellow)][packages]
 [![Documentation](https://img.shields.io/badge/Documentation-Read%20the%20Docs-orange)][documentation]
 [![GitHub](https://img.shields.io/github/license/udondan/iam-floyd)][license]
 
@@ -39,7 +39,11 @@ There are two different package variants available:
   **Starting with version 0.300.0, the packages are compatible with CDK v2.** For CDK v1 you can use any version up to:<br>
   [![npm CDK v1](https://img.shields.io/badge/npm-0.286.0-yellow)](https://www.npmjs.com/package/cdk-iam-floyd/v/0.286.0)
 
-  Find them all on [libraries.io].
+  cdk-iam-floyd is also available for Python, Java, .NET and Go:<br>
+  [![PyPI](https://img.shields.io/pypi/v/cdk-iam-floyd?label=PyPI)](https://pypi.org/project/cdk-iam-floyd/)
+  [![Maven Central](https://img.shields.io/maven-central/v/com.udondan/cdk-iam-floyd?label=Maven%20Central)](https://central.sonatype.com/artifact/com.udondan/cdk-iam-floyd)
+  [![NuGet](https://img.shields.io/nuget/v/CDK.IAM.Floyd?label=NuGet)](https://www.nuget.org/packages/CDK.IAM.Floyd)
+  `go get udondan.github.io/iam-floyd/go/cdkiamfloyd`
 
 ## CDK Compatibility Matrix
 
@@ -71,5 +75,5 @@ IAM Floyd is licensed under [Apache License 2.0][license]. Dependencies might be
    [npm]: https://www.npmjs.com/package/iam-floyd
    [license]: https://github.com/udondan/iam-floyd/blob/main/LICENSE
    [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
-   [libraries.io]: https://libraries.io/search?q=iam-floyd
+   [packages]: https://iam-floyd.readthedocs.io/en/latest/packages.html
    [AWS CDK]: https://aws.amazon.com/cdk/
