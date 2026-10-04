@@ -6,11 +6,13 @@ TARGET_COLOR=\x1b[96m
 # Languages of package-jsii and test-jsii. TypeScript needs no package, it is the baseline of test-jsii
 LANGUAGES ?= typescript python java dotnet go
 JSII_TARGETS := $(filter-out typescript,$(LANGUAGES))
+# The languages of the transpiled core
+TRANSPILE_LANGUAGES := $(filter python,$(LANGUAGES))
 EMPTY :=
 SPACE := $(EMPTY) $(EMPTY)
 COMMA := ,
 
-.PHONY: build emit generate package package-jsii test-jsii changelog cdk docs stats lint lint-fix lint-cdk
+.PHONY: build emit generate package package-jsii test-jsii test-transpile changelog cdk docs stats lint lint-fix lint-cdk
 
 build: emit
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
@@ -73,6 +75,10 @@ cdk-all: cdk install build cdk-test
 test-jsii:
 	@echo -e "$(TARGET_COLOR)Running jsii test$(NO_COLOR)"
 	@test/jsii/run.sh $(LANGUAGES)
+
+test-transpile:
+	@echo -e "$(TARGET_COLOR)Running transpile test$(NO_COLOR)"
+	@test/transpile/run.sh $(TRANSPILE_LANGUAGES)
 
 changelog:
 	@echo -e "$(TARGET_COLOR)Running changelog$(NO_COLOR)"

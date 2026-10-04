@@ -21,10 +21,9 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
    * The resources of the statement without duplicates
    */
   protected uniqueResources(): string[] {
-    const self = this;
-    return this.floydResources.filter((elem, pos) => {
-      return self.floydResources.indexOf(elem) == pos;
-    });
+    return this.floydResources.filter(
+      (elem, pos) => this.floydResources.indexOf(elem) == pos,
+    );
   }
 
   /**

@@ -18,3 +18,6 @@ test/package-lock.json
 /.jsii.gz
 /dist
 lint/target/
+__pycache__/
+/python/iam_floyd/_shared.py
+/test/transpile/out

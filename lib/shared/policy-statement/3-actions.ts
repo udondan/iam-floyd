@@ -28,11 +28,8 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
     if (this.isCompact) {
       this.compactActions();
     }
-    const self = this;
     return this.floydActions
-      .filter((elem, pos) => {
-        return self.floydActions.indexOf(elem) == pos;
-      })
+      .filter((elem, pos) => this.floydActions.indexOf(elem) == pos)
       .sort();
   }
 
@@ -167,10 +164,8 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
   }
 
   private addAccessLevel(accessLevel: AccessLevel) {
-    if (accessLevel in this.accessLevelList) {
-      this.accessLevelList[accessLevel]?.forEach((action) => {
-        this.to(`${this.servicePrefix}:${action}`);
-      });
+    for (const action of this.accessLevelList[accessLevel] ?? []) {
+      this.to(`${this.servicePrefix}:${action}`);
     }
     return this;
   }

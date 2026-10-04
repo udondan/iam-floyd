@@ -128,19 +128,11 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     value: Date | string | (Date | string)[],
     operator?: Operator | string,
   ) {
-    if (typeof (value as Date).getMonth === 'function') {
-      value = (value as Date).toISOString();
-    } else if (Array.isArray(value)) {
-      value = value.map((item) => {
-        if (typeof (item as Date).getMonth === 'function') {
-          item = (item as Date).toISOString();
-        }
-        return item;
-      });
-    }
     return this.if(
       'aws:CurrentTime',
-      value,
+      Array.isArray(value)
+        ? value.map((item) => dateToString(item))
+        : dateToString(value),
       operator ?? Operator.dateLessThanEquals,
     );
   }
@@ -203,19 +195,11 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     value: number | Date | string | (number | Date | string)[],
     operator?: Operator | string,
   ) {
-    if (typeof (value as Date).getMonth === 'function') {
-      value = (value as Date).toISOString();
-    } else if (Array.isArray(value)) {
-      value = value.map((item) => {
-        if (typeof (item as Date).getMonth === 'function') {
-          item = (item as Date).toISOString();
-        }
-        return item;
-      });
-    }
     return this.if(
       'aws:EpochTime',
-      value,
+      Array.isArray(value)
+        ? value.map((item) => dateToString(item))
+        : dateToString(value),
       operator ?? Operator.dateLessThanEquals,
     );
   }
@@ -909,8 +893,5 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
 }
 
 function dateToString(value: Date | string | number): string | number {
-  if (typeof (value as Date).getMonth === 'function') {
-    value = (value as Date).toISOString();
-  }
-  return value as string;
+  return value instanceof Date ? value.toISOString() : value;
 }

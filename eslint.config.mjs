@@ -13,7 +13,6 @@ const cdkFiles = [
   'lib/**/*-CDK.ts',
   'examples/**/*.cdk.ts',
   'test/cdk.ts',
-  'test/main.ts',
   'test/jsii/consumer/**/*.ts',
 ];
 const isCdk =

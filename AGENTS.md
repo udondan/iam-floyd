@@ -46,6 +46,12 @@ One codebase produces two npm packages:
 
 Publishing: the npm package of `cdk-iam-floyd` includes the `.jsii` (`make package-jsii publish LANGUAGES=typescript`), Python goes to PyPI and .NET to NuGet (both trusted publishing), Java to Maven Central (`bin/publish-maven`, signed bundle via the Central Portal API). Go has no registry: `bin/go-proxy` writes the module zip, which is attached to the GitHub release, and a static Go module proxy for the newest 30 releases, served by GitHub Pages under `udondan.github.io/iam-floyd/go`.
 
+### Native Packages (transpiled core)
+
+The standalone `iam-floyd` is being built natively for other languages, without jsii and without Node.js. The hand-written core in `lib/shared/` is transpiled with ts-morph by `lib/generator/transpile/` (`index.ts` collects the core files in import order, one backend per language, currently `python.ts`). The transpiler supports only a narrow subset of TypeScript: anything else fails with file and line, so rewrite the core in supported constructs rather than extending the transpiler for single cases. `bin/transpile.ts` writes `python/iam_floyd/_shared.py` (not committed). `python/iam_floyd/_js.py` is the hand-written runtime for JavaScript semantics (number formatting, `toISOString`, sorting by UTF-16 code units, regular expressions).
+
+`test/transpile/` runs the scenarios of `scenarios.json` against the TypeScript core (the baseline) and the transpiled core of each language, and diffs the output.
+
 ## Development Commands
 
 ### Build
@@ -80,6 +86,7 @@ make test-typescript-cdk # after `make cdk`: same for the CDK examples (examples
 make cdk-test            # CDK test: real deploy + destroy via AWS CDK
 make cdk-all             # cdk + install + build + cdk-test
 make test-jsii           # test the packages of `make package-jsii` against TypeScript; LANGUAGES=python limits the languages
+make test-transpile      # transpile the core and compare the scenarios of test/transpile/ with TypeScript
 ```
 
 **Run a single example test manually:**

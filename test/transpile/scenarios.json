@@ -1,0 +1,355 @@
+[
+  { "name": "empty", "calls": [] },
+  {
+    "name": "sid",
+    "sid": "MySid",
+    "calls": [["allow"], ["to", "s3:GetObject"]]
+  },
+  { "name": "deny", "calls": [["deny"], ["to", "s3:GetObject"]] },
+  {
+    "name": "allow after deny",
+    "calls": [["deny"], ["allow"], ["to", "s3:GetObject"]]
+  },
+  {
+    "name": "actions without prefix",
+    "service": "s3",
+    "calls": [
+      ["to", "GetObject"],
+      ["to", "PutObject"],
+      ["to", "GetObject"]
+    ]
+  },
+  {
+    "name": "actions with other prefix",
+    "service": "s3",
+    "calls": [
+      ["to", "ec2:StartInstances"],
+      ["to", "GetObject"]
+    ]
+  },
+  {
+    "name": "actions are sorted by code units",
+    "calls": [
+      ["to", "s3:b"],
+      ["to", "s3:B"],
+      ["to", "s3:a"],
+      ["to", "s3:_"],
+      ["to", "s3:Z"]
+    ]
+  },
+  {
+    "name": "all actions of service",
+    "service": "sqs",
+    "calls": [["allActions"]]
+  },
+  { "name": "all actions of all services", "calls": [["allActions"]] },
+  {
+    "name": "not action",
+    "service": "sqs",
+    "calls": [["notAction"], ["to", "SendMessage"]]
+  },
+  { "name": "list actions", "service": "s3", "calls": [["allListActions"]] },
+  { "name": "read actions", "service": "sqs", "calls": [["allReadActions"]] },
+  { "name": "write actions", "service": "sqs", "calls": [["allWriteActions"]] },
+  {
+    "name": "permission management actions",
+    "service": "s3",
+    "calls": [["allPermissionManagementActions"]]
+  },
+  {
+    "name": "tagging actions",
+    "service": "iam",
+    "calls": [["allTaggingActions"]]
+  },
+  {
+    "name": "access level without actions",
+    "service": "sqs",
+    "calls": [["allTaggingActions"], ["allPermissionManagementActions"]]
+  },
+  {
+    "name": "matching actions",
+    "service": "ec2",
+    "calls": [["allMatchingActions", "/vpn/i", "^DescribeVpcE", "/^start/"]]
+  },
+  {
+    "name": "matching actions with groups",
+    "service": "s3",
+    "calls": [["allMatchingActions", "/(Get|Put)Object(Acl|Tagging)$/"]]
+  },
+  {
+    "name": "matching actions sticky",
+    "service": "sqs",
+    "calls": [["allMatchingActions", "/Message/y", "/queue/iy"]]
+  },
+  {
+    "name": "matching actions with slashes",
+    "service": "sqs",
+    "calls": [["allMatchingActions", "/", "//", "a/b", "/Send/g"]]
+  },
+  {
+    "name": "matching actions empty",
+    "service": "sqs",
+    "calls": [["allMatchingActions", ""]]
+  },
+  {
+    "name": "compact s3 read",
+    "service": "s3",
+    "calls": [["allReadActions"], ["compact"]]
+  },
+  {
+    "name": "compact ec2 vpn",
+    "service": "ec2",
+    "calls": [["allMatchingActions", "/vpn/i"], ["compact"]]
+  },
+  {
+    "name": "compact ec2 list and read",
+    "service": "ec2",
+    "calls": [["allListActions"], ["allReadActions"], ["compact"]]
+  },
+  {
+    "name": "compact keeps unknown actions",
+    "service": "sqs",
+    "calls": [
+      ["to", "SendMessage"],
+      ["to", "SendMessageBatch"],
+      ["to", "Unknown"],
+      ["to", "s3:GetObject"],
+      ["to", "sqs:*"],
+      ["compact"]
+    ]
+  },
+  {
+    "name": "compact single action",
+    "service": "sqs",
+    "calls": [["to", "SendMessage"], ["compact"]]
+  },
+  {
+    "name": "compact all actions",
+    "service": "sqs",
+    "calls": [
+      ["allReadActions"],
+      ["allWriteActions"],
+      ["allListActions"],
+      ["allPermissionManagementActions"],
+      ["allTaggingActions"],
+      ["compact"]
+    ]
+  },
+  {
+    "name": "resources",
+    "calls": [
+      ["on", "arn:a", "arn:b", "arn:a"],
+      ["on", "arn:c"]
+    ]
+  },
+  { "name": "single resource", "calls": [["on", "arn:a"]] },
+  { "name": "all resources", "calls": [["onAllResources"]] },
+  { "name": "not resource", "calls": [["notResource"], ["on", "arn:a"]] },
+  {
+    "name": "condition default operator",
+    "calls": [["if", "aws:SomeKey", "value"]]
+  },
+  {
+    "name": "condition prefix of service",
+    "service": "s3",
+    "calls": [
+      ["if", "prefix", "home/"],
+      ["if", "aws:SourceVpc", "vpc-1"]
+    ]
+  },
+  {
+    "name": "condition values",
+    "calls": [
+      ["if", "k:bool", true, "Bool"],
+      ["if", "k:false", false, "Bool"],
+      ["if", "k:int", 3600, "NumericLessThan"],
+      ["if", "k:float", 1.5, "NumericLessThan"],
+      ["if", "k:small", 0.0000001, "NumericLessThan"],
+      ["if", "k:negative", -2, "NumericLessThan"],
+      ["if", "k:list", ["a", "b"]],
+      ["if", "k:bools", [true, false]],
+      ["if", "k:empty", ""]
+    ]
+  },
+  {
+    "name": "condition same operator and key",
+    "calls": [
+      ["if", "k:a", "1"],
+      ["if", "k:b", "2"],
+      ["if", "k:a", "3"]
+    ]
+  },
+  {
+    "name": "operators",
+    "calls": [
+      ["if", "k:a", "v", { "operator": ["stringEquals"] }],
+      ["if", "k:b", "v", { "operator": ["stringNotLike", "ifExists"] }],
+      [
+        "if",
+        "k:c",
+        "v",
+        { "operator": ["forAllValues", "stringEqualsIgnoreCase"] }
+      ],
+      [
+        "if",
+        "k:d",
+        "v",
+        { "operator": ["forAnyValue", "arnLike", "ifExists"] }
+      ],
+      ["if", "k:e", "v", { "operator": ["numericGreaterThanEquals"] }],
+      ["if", "k:f", "v", { "operator": ["dateNotEquals"] }],
+      ["if", "k:g", "v", { "operator": ["binaryEquals"] }],
+      ["if", "k:h", "v", { "operator": ["notIpAddress"] }],
+      ["if", "k:i", "v", "Null"],
+      ["if", "k:j", "v", "ForAnyValue:StringLike"]
+    ]
+  },
+  {
+    "name": "operator set twice",
+    "calls": [
+      ["if", "k:a", "v", { "operator": ["stringEquals", "stringLike"] }]
+    ]
+  },
+  {
+    "name": "operator not set",
+    "calls": [["if", "k:a", "v", { "operator": ["ifExists"] }]]
+  },
+  {
+    "name": "global conditions",
+    "calls": [
+      ["ifAwsCalledVia", "athena.amazonaws.com"],
+      ["ifAwsCalledViaFirst", "a"],
+      ["ifAwsCalledViaLast", ["a", "b"]],
+      ["ifAwsEc2InstanceSourceVpc", "vpc-1"],
+      ["ifAwsEc2InstanceSourcePrivateIPv4", "10.0.0.1"],
+      ["ifAwsFederatedProvider", "cognito"],
+      ["ifAwsMultiFactorAuthAge", 3600],
+      ["ifAwsMultiFactorAuthPresent"],
+      ["ifAwsPrincipalAccount", "123"],
+      ["ifAwsPrincipalArn", "arn:aws:iam::123:role/x"],
+      ["ifAwsPrincipalIsAWSService", false],
+      ["ifAwsPrincipalOrgID", "o-1"],
+      ["ifAwsPrincipalOrgPaths", "o-1/r-1/"],
+      ["ifAwsPrincipalServiceName", "s"],
+      ["ifAwsPrincipalServiceNamesList", ["s"]],
+      ["ifAwsPrincipalTag", "team", "a"],
+      ["ifAwsPrincipalType", "User"],
+      ["ifAwsReferer", "https://example.com"],
+      ["ifAwsRequestedRegion", "eu-west-1"],
+      ["ifAwsRequestTag", "team", ["a", "b"]],
+      ["ifAwsResourceAccount", "123"],
+      ["ifAwsResourceOrgID", "o-1"],
+      ["ifAwsResourceOrgPaths", "o-1/"],
+      ["ifAwsResourceTag", "team", "a", { "operator": ["stringEquals"] }],
+      ["ifAwsSecureTransport"],
+      ["ifAwsSourceAccount", "123"],
+      ["ifAwsSourceArn", "arn:a"],
+      ["ifAwsSourceIdentity", "id"],
+      ["ifAwsSourceIp", ["1.2.3.4/32", "5.6.7.8"]],
+      ["ifAwsSourceVpc", "vpc-1"],
+      ["ifAwsSourceVpce", "vpce-1"],
+      ["ifAwsTagKeys", ["a"]],
+      ["ifAwsUserAgent", "agent"],
+      ["ifAwsUserid", "AIDA"],
+      ["ifAwsUsername", "me"],
+      ["ifAwsViaAWSService", true],
+      ["ifAwsVpcSourceIp", "10.0.0.0/8"]
+    ]
+  },
+  {
+    "name": "date conditions",
+    "calls": [
+      ["ifAwsCurrentTime", { "date": "2024-02-29T13:14:15.678Z" }],
+      [
+        "ifAwsEpochTime",
+        [1700000000, { "date": "1999-12-31T23:59:59Z" }, "2020-01-01"],
+        "DateGreaterThan"
+      ],
+      ["ifAwsTokenIssueTime", { "date": "2020-04-01T00:00:00.001Z" }]
+    ]
+  },
+  {
+    "name": "date conditions with strings",
+    "calls": [
+      ["ifAwsCurrentTime", ["2020-04-01T00:00:00Z", "2020-05-01T00:00:00Z"]],
+      ["ifAwsEpochTime", 1700000000],
+      [
+        "ifAwsTokenIssueTime",
+        "2020-04-01T00:00:00Z",
+        { "operator": ["dateLessThan"] }
+      ]
+    ]
+  },
+  {
+    "name": "principals",
+    "calls": [
+      ["for", "arn:aws:iam::123:root"],
+      ["for", "cognito-identity.amazonaws.com", "Federated"],
+      ["forAccount", "111", "222"],
+      ["forFederated", "accounts.example.com"],
+      ["forFederatedCognito"],
+      ["forFederatedAmazon"],
+      ["forFederatedFacebook"],
+      ["forFederatedGoogle"],
+      ["forCanonicalUser", "abc", "def"],
+      ["forSaml", "123", "provider1", "provider2"],
+      ["forUser", "123", "alice", "bob"],
+      ["forRole", "123", "role1"],
+      ["forAssumedRoleSession", "123", "role", "s1", "s2"],
+      ["forService", "lambda.amazonaws.com", "ec2.amazonaws.com"],
+      ["forPublic"],
+      ["to", "sts:AssumeRole"]
+    ]
+  },
+  {
+    "name": "principals with resource",
+    "calls": [["forPublic"], ["to", "s3:GetObject"], ["on", "arn:aws:s3:::b/*"]]
+  },
+  {
+    "name": "not principal",
+    "calls": [["notPrincipal"], ["forAccount", "123"]]
+  },
+  {
+    "name": "partition of principals",
+    "calls": [
+      ["inPartition", "aws-cn"],
+      ["forAccount", "123"],
+      ["forUser", "123", "u"]
+    ]
+  },
+  {
+    "name": "arn defaults",
+    "calls": [
+      ["in", "123", "eu-west-1", "aws-us-gov"],
+      ["forRole", "456", "r"],
+      ["inRegion", "us-east-1"],
+      ["inAccount", "789"],
+      ["forSaml", "1", "p"]
+    ]
+  },
+  {
+    "name": "arn defaults with empty values",
+    "calls": [
+      ["in", "", "", ""],
+      ["forAccount", "1"],
+      ["in", "2"],
+      ["forAccount", "3"]
+    ]
+  },
+  {
+    "name": "everything",
+    "service": "s3",
+    "sid": "Everything",
+    "calls": [
+      ["deny"],
+      ["notAction"],
+      ["allMatchingActions", "/^Get/"],
+      ["compact"],
+      ["notResource"],
+      ["on", "arn:aws:s3:::bucket"],
+      ["ifAwsSecureTransport", false],
+      ["notPrincipal"],
+      ["forAccount", "123"]
+    ]
+  }
+]
