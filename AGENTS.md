@@ -48,15 +48,19 @@ Publishing: the npm package of `cdk-iam-floyd` includes the `.jsii` (`make packa
 
 ### Native Packages (transpiled core)
 
-The standalone `iam-floyd` is being built natively for other languages, without jsii and without Node.js. The hand-written code in `lib/shared/` (the core) and `lib/collection/`, and the names of the AWS managed policies (`lib/generated/aws-managed-policies/iam-floyd.ts`), are transpiled with ts-morph by `lib/generator/transpile/` (`index.ts` collects the files of a module in import order, one backend per language: `python.ts`, `java.ts`). The only imports from outside a module are the generated service classes, imported from their file (e.g. `../generated/policy-statements/ec2`). The transpiler supports only a narrow subset of TypeScript: anything else fails with file and line, so rewrite the code in supported constructs rather than extending the transpiler for single cases. The service classes are emitted from the model by `lib/generator/emit/python.ts`, with the jsii naming rules (snake_case, `if_`, `in_`), into the package `statement/`, which imports a service on first access. `bin/transpile.ts` writes `python/iam_floyd/_shared.py`, `_collection.py`, `_aws_managed_policies.py` and `statement/` (not committed). The package imports the collection and the managed policies on first access. `python/iam_floyd/_js.py` is the hand-written runtime for JavaScript semantics (number formatting, `toISOString`, sorting by UTF-16 code units, regular expressions).
+The standalone `iam-floyd` is being built natively for other languages, without jsii and without Node.js. The hand-written code in `lib/shared/` (the core) and `lib/collection/`, and the names of the AWS managed policies (`lib/generated/aws-managed-policies/iam-floyd.ts`), are transpiled with ts-morph by `lib/generator/transpile/` (`index.ts` collects the files of a module in import order, one backend per language: `python.ts`, `java.ts`, `csharp.ts`). The only imports from outside a module are the generated service classes, imported from their file (e.g. `../generated/policy-statements/ec2`). The transpiler supports only a narrow subset of TypeScript: anything else fails with file and line, so rewrite the code in supported constructs rather than extending the transpiler for single cases. The service classes are emitted from the model by `lib/generator/emit/python.ts`, with the jsii naming rules (snake_case, `if_`, `in_`), into the package `statement/`, which imports a service on first access. `bin/transpile.ts` writes `python/iam_floyd/_shared.py`, `_collection.py`, `_aws_managed_policies.py` and `statement/` (not committed). The package imports the collection and the managed policies on first access. `python/iam_floyd/_js.py` is the hand-written runtime for JavaScript semantics (number formatting, `toISOString`, sorting by UTF-16 code units, regular expressions).
 
 Java: the core, the collection and `AwsManagedPolicy` go to the package `com.udondan.iamFloyd`, the service classes (emitted by `lib/generator/emit/java.ts`) and `All` to `com.udondan.iamFloyd.statement`, in `java/src/main/java/` (not committed, except the hand-written runtime `Js.java` and `Json.java`, which writes the JSON like `JSON.stringify`). The classes of the statement are generic (`PolicyStatement<T extends PolicyStatement<T>>`, `Ec2 extends PolicyStatement<Ec2>`), so the fluent methods return the class itself. Optional parameters and union types become overloads, reserved words get a prefix (`doIf`, `doFor`), static properties become constants (`Operator.STRING_EQUALS`).
 
-`test/transpile/` runs the scenarios against TypeScript (the baseline) and each language, and diffs the output: those of `scenarios.json`, which test the core, and those that `services.ts` builds from the model, which call every method of every service. Then it runs the examples of the docs (`examples/<name>/<name>.{py,java}`) with the native package, through `python/examples.py`, which runs them with `iam_floyd` in place of `cdk_iam_floyd`, and `java/Examples.java`, which compiles them with `com.udondan.iamFloyd` and a stand-in of the `PolicyDocument` of the AWS CDK (`java/stubs/`), and compares them to the `.result` files with `test/jsii/examples/compare.py --standalone`, which skips the `*.cdk` examples. Last, it compares the AWS managed policies with those of TypeScript.
+C#: the core, the collection and `AwsManagedPolicy` go to the namespace `IAM.Floyd`, the service classes (emitted by `lib/generator/emit/csharp.ts`) and `All` to `IAM.Floyd.Statement`, in `dotnet/src/IAM.Floyd/` (not committed, except the project `IAM.Floyd.csproj` and the hand-written runtime `Js.cs` and `Json.cs`). Like in Java, the classes of the statement are generic (`PolicyStatement<T> where T : PolicyStatement<T>`, `Ec2 : PolicyStatement<Ec2>`), optional parameters and union types become overloads and static properties constants. Names are PascalCase (`If`, `For`, `ToJSON`), public fields become properties (`Sid`), and the service classes hide methods of the core with the same name with `new` (e.g. `IfAwsRequestTag`).
+
+`test/transpile/` runs the scenarios against TypeScript (the baseline) and each language, and diffs the output: those of `scenarios.json`, which test the core, and those that `services.ts` builds from the model, which call every method of every service. Then it runs the examples of the docs (`examples/<name>/<name>.{py,java,cs}`) with the native package, through `python/examples.py`, which runs them with `iam_floyd` in place of `cdk_iam_floyd`, `java/Examples.java`, which compiles them with `com.udondan.iamFloyd` and a stand-in of the `PolicyDocument` of the AWS CDK (`java/stubs/`), and `dotnet/` (`run.sh` rewrites them for `IAM.Floyd`, the project compiles them with a stand-in of the `PolicyDocument` in `Stubs.cs`), and compares them to the `.result` files with `test/jsii/examples/compare.py --standalone`, which skips the `*.cdk` examples. Last, it compares the AWS managed policies with those of TypeScript.
 
 The Python package is built with hatchling from `python/pyproject.toml`; `bin/transpile.ts` writes the version of package.json into `iam_floyd/_version.py`. It supports Python 3.9 and newer, and has no dependencies at runtime. CI builds it and tests the wheel with the oldest and the newest supported Python; for a release, the tested wheel and sdist go to PyPI as `iam-floyd` (trusted publishing, job `publish-iam-floyd-python`).
 
 The Java package is built with Maven from `java/pom.xml` (`-Drevision=<version of package.json>`), with `--release 11`, into the Maven repository `dist/iam-floyd/java`. CI builds it with the newest Java LTS and tests the jar with Java 11 and the newest LTS; for a release, `bin/publish-maven dist/iam-floyd/java` publishes it to Maven Central as `com.udondan:iam-floyd` (job `publish-iam-floyd-java`).
+
+The .NET package is built with `dotnet pack` from `dotnet/src/IAM.Floyd/IAM.Floyd.csproj` (`-p:Version=<version of package.json>`), for .NET 8, into `dist/iam-floyd/dotnet`. CI builds it with the newest .NET SDK and tests the package with .NET 8 and the newest .NET (`DOTNET_PACKAGES`, `DOTNET_FRAMEWORK`); for a release, it goes to NuGet as `IAM.Floyd` (trusted publishing, job `publish-iam-floyd-dotnet`).
 
 ## Development Commands
 
@@ -66,7 +70,7 @@ The Java package is built with Maven from `java/pom.xml` (`-Drevision=<version o
 make emit            # emit lib/generated/policy-statements/ and lib/generated/index.ts from the model
 make build           # emit + tsc --build --force tsconfig.main.json tsconfig.types.json
 make package         # build + npm pack
-make package-native  # transpile and build the native packages of iam-floyd into dist/iam-floyd/ (Python: uv build, Java: mvn); LANGUAGES=python limits the languages
+make package-native  # transpile and build the native packages of iam-floyd into dist/iam-floyd/ (Python: uv build, Java: mvn, .NET: dotnet pack); LANGUAGES=python limits the languages
 make clean           # remove node_modules, *.js, *.d.ts
 make install         # clean + npm i
 ```
@@ -93,7 +97,7 @@ make test-typescript-cdk # after `make cdk`: same for the CDK examples (examples
 make cdk-test            # CDK test: real deploy + destroy via AWS CDK
 make cdk-all             # cdk + install + build + cdk-test
 make test-jsii           # test the packages of `make package-jsii` against TypeScript; LANGUAGES=python limits the languages
-make test-transpile      # transpile, compare the scenarios of test/transpile/ with TypeScript and run the examples; PYTHON_WHEEL=<wheel> and JAVA_JAR=<jar> test the built packages
+make test-transpile      # transpile, compare the scenarios of test/transpile/ with TypeScript and run the examples; PYTHON_WHEEL=<wheel>, JAVA_JAR=<jar> and DOTNET_PACKAGES=<dir of the nupkg> test the built packages
 ```
 
 **Run a single example test manually:**
@@ -123,20 +127,20 @@ make lint-cdk        # after `make cdk`: eslint on the CDK variant
 
 `bin/lint` runs:
 
-| Linter                       | Files                                                 |
-| ---------------------------- | ----------------------------------------------------- |
-| eslint (`eslint.config.mjs`) | TypeScript and JavaScript, with types                 |
-| prettier                     | everything prettier knows, except `.prettierignore`   |
-| markdownlint-cli2            | Markdown                                              |
-| exact versions               | the dependencies of all `package.json` files          |
-| ruff, ruff format            | Python (`ruff.toml`, the examples are not formatted)  |
-| yamllint                     | YAML (`.yamllint.yaml`)                               |
-| doc8                         | reStructuredText in `docs/source` (`doc8.ini`)        |
-| zizmor, actionlint           | GitHub workflows                                      |
-| shellcheck, shfmt            | shell scripts, found by their shebang                 |
-| gofmt                        | Go                                                    |
-| dotnet format whitespace     | C# in `examples/` and `test/jsii/`                    |
-| checkstyle (Google style)    | Java in `examples/` and `test/jsii/` (`lint/pom.xml`) |
+| Linter                       | Files                                                   |
+| ---------------------------- | ------------------------------------------------------- |
+| eslint (`eslint.config.mjs`) | TypeScript and JavaScript, with types                   |
+| prettier                     | everything prettier knows, except `.prettierignore`     |
+| markdownlint-cli2            | Markdown                                                |
+| exact versions               | the dependencies of all `package.json` files            |
+| ruff, ruff format            | Python (`ruff.toml`, the examples are not formatted)    |
+| yamllint                     | YAML (`.yamllint.yaml`)                                 |
+| doc8                         | reStructuredText in `docs/source` (`doc8.ini`)          |
+| zizmor, actionlint           | GitHub workflows                                        |
+| shellcheck, shfmt            | shell scripts, found by their shebang                   |
+| gofmt                        | Go                                                      |
+| dotnet format whitespace     | C# in `examples/`, `test/` and the runtime of `dotnet/` |
+| checkstyle (Google style)    | Java in `examples/` and `test/jsii/` (`lint/pom.xml`)   |
 
 The versions of the linters are pinned, so Renovate updates them: npm packages in `package.json`, Python tools in `lint/requirements.txt` (run with `uv`), Go tools in `lint/go.mod` (`go tool`) and checkstyle in `lint/pom.xml`. Locally, linters whose runtime (uv, Go, .NET, Maven) is missing are skipped; in CI they fail. In the CDK variant, eslint uses `tsconfig.lint-cdk.json`, which resolves `cdk-iam-floyd` to `lib/`, and prettier is off because `mkcdk` writes unformatted code.
 
@@ -295,6 +299,6 @@ Follow conventional commits:
 - `index-managed-policies.yml` - Weekly on Sunday: updates managed policies, opens a `feat:` PR with `automerge` label
 - `release-please.yml` - On push to main: release-please maintains the release PR (version in `package.json` and `docs/source/conf.py`, `CHANGELOG.md`). After each run, `bin/changelog-add-iam-changes` adds the changes of the managed policies and the model since the last release to the new changelog entry of the PR. Merging the PR creates the tag and a draft release, and starts `test-and-publish.yml` with the tag
 - `automerge-schedule.yml` - Weekly on Monday: merges the release PR
-- `test-and-publish.yml` - On PR: `make install lint` (job `lint`), `make install test-typescript` + `make lint-cdk` + CDK deploy test + `make package-jsii test-jsii` per language + `make package-native test-transpile` against the built Python and Java packages. Started by `release-please.yml` with a tag: builds the packages from the tag, publishes to npm, PyPI, NuGet, Maven Central and the Go module proxy on GitHub Pages, sets the notes of the release from `CHANGELOG.md` and publishes the release
+- `test-and-publish.yml` - On PR: `make install lint` (job `lint`), `make install test-typescript` + `make lint-cdk` + CDK deploy test + `make package-jsii test-jsii` per language + `make package-native test-transpile` against the built Python, Java and .NET packages. Started by `release-please.yml` with a tag: builds the packages from the tag, publishes to npm, PyPI, NuGet, Maven Central and the Go module proxy on GitHub Pages, sets the notes of the release from `CHANGELOG.md` and publishes the release
 - `automerge.yml` - Auto-merges PRs labeled `automerge` after tests pass
 - `test-docs.yml` - Builds Sphinx docs on `docs/**` changes

@@ -7,7 +7,7 @@ TARGET_COLOR=\x1b[96m
 LANGUAGES ?= typescript python java dotnet go
 JSII_TARGETS := $(filter-out typescript,$(LANGUAGES))
 # The languages of the native packages of iam-floyd, with the transpiled core
-TRANSPILE_LANGUAGES := $(filter python java,$(LANGUAGES))
+TRANSPILE_LANGUAGES := $(filter python java dotnet,$(LANGUAGES))
 EMPTY :=
 SPACE := $(EMPTY) $(EMPTY)
 COMMA := ,
@@ -42,7 +42,7 @@ package: build
 	@echo -e "$(TARGET_COLOR)Running package$(NO_COLOR)"
 	@npm pack
 
-# The native packages of iam-floyd in dist/iam-floyd/: Python and Java (a Maven repository).
+# The native packages of iam-floyd in dist/iam-floyd/: Python, Java (a Maven repository) and .NET.
 # Set LANGUAGES to build only some of them, e.g. `make package-native LANGUAGES=python`
 package-native: emit
 	@echo -e "$(TARGET_COLOR)Running package-native$(NO_COLOR)"
@@ -52,6 +52,9 @@ package-native: emit
 	$(if $(filter python,$(LANGUAGES)),@uv build --quiet python --out-dir dist/iam-floyd/python)
 	$(if $(filter java,$(LANGUAGES)),@mvn --batch-mode --quiet -f java/pom.xml clean deploy -Drevision=$(VERSION) \
 		-DaltDeploymentRepository=local::file://$(CURDIR)/dist/iam-floyd/java)
+	$(if $(filter dotnet,$(LANGUAGES)),@dotnet pack dotnet/src/IAM.Floyd/IAM.Floyd.csproj --nologo -v quiet -c Release -p:Version=$(VERSION) \
+		--artifacts-path dist/iam-floyd/dotnet-build -p:PackageOutputPath=$(CURDIR)/dist/iam-floyd/dotnet)
+	$(if $(filter dotnet,$(LANGUAGES)),@rm -rf dist/iam-floyd/dotnet-build)
 
 # Python, Java, .NET and Go packages of cdk-iam-floyd in dist/, run after `make cdk`.
 # Set LANGUAGES to build only some of them, e.g. `make package-jsii LANGUAGES=python`

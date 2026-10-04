@@ -88,8 +88,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }} # zizmor checks the actions online
 
-  # Also runs for a release: the packages that publish-iam-floyd-python and publish-iam-floyd-java
-  # publish are built and tested here. Each package is built once, with the newest version, and
+  # Also runs for a release: the packages that publish-iam-floyd-python, publish-iam-floyd-java and
+  # publish-iam-floyd-dotnet publish are built and tested here. Each package is built once, with the newest version, and
   # tested with the oldest and the newest supported version.
   test-transpile:
     name: Test native iam-floyd in ${{ matrix.name }} ${{ matrix.version }}
@@ -114,6 +114,14 @@ jobs:
             name: Java
             version: "25"
             newest: true
+          - language: dotnet
+            name: .NET
+            version: "8"
+            newest: false
+          - language: dotnet
+            name: .NET
+            version: "10"
+            newest: true
     steps:
       - name: Set up Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -137,6 +145,15 @@ jobs:
           distribution: temurin
           java-version: 25
 
+      # The SDK of the newest version builds, and the test runs with the framework of the matrix
+      - name: Set up .NET
+        if: matrix.language == 'dotnet'
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: |
+            ${{ matrix.version }}.x
+            10.x
+
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -159,12 +176,15 @@ jobs:
 
       - name: Test
         run: |
-          export PYTHON_WHEEL JAVA_JAR
+          export PYTHON_WHEEL JAVA_JAR DOTNET_PACKAGES DOTNET_FRAMEWORK
           PYTHON_WHEEL="$(find dist/iam-floyd -name '*.whl')"
           JAVA_JAR="$(find dist/iam-floyd -name 'iam-floyd-*[0-9].jar')"
+          DOTNET_PACKAGES=dist/iam-floyd/dotnet
+          DOTNET_FRAMEWORK="net${VERSION}.0"
           make test-transpile LANGUAGES="$LANGUAGE"
         env:
           LANGUAGE: ${{ matrix.language }}
+          VERSION: ${{ matrix.version }}
 
       # Signs, but does not upload without the Maven Central credentials
       - name: Build Maven Central bundle
@@ -467,6 +487,41 @@ jobs:
           MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
           MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
 
+  publish-iam-floyd-dotnet:
+    name: Publish iam-floyd to NuGet
+    needs:
+      - release
+      - test-transpile
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for NuGet
+    steps:
+      - name: Set up .NET
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: 10.x
+
+      - name: Fetch packages
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: packages-iam-floyd-dotnet
+          path: dist/iam-floyd/dotnet
+
+      - name: Log in to NuGet
+        id: nuget
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
+        with:
+          user: udondan
+
+      - name: Publish to NuGet
+        run: |
+          dotnet nuget push dist/iam-floyd/dotnet/*.nupkg \
+            --api-key "$NUGET_API_KEY" \
+            --source https://api.nuget.org/v3/index.json
+        env:
+          NUGET_API_KEY: ${{ steps.nuget.outputs.NUGET_API_KEY }}
+
   publish-cdk-iam-floyd:
     name: Publish cdk-iam-floyd
     needs:
@@ -651,6 +706,7 @@ jobs:
       - publish-iam-floyd
       - publish-iam-floyd-python
       - publish-iam-floyd-java
+      - publish-iam-floyd-dotnet
       - publish-cdk-iam-floyd
       - publish-cdk-iam-floyd-python
       - publish-cdk-iam-floyd-dotnet

@@ -81,7 +81,7 @@ while IFS= read -r file; do
   GO_FILES+=("${file}")
 done < <(git ls-files '*.go')
 
-DOTNET_FOLDERS=(examples test/jsii)
+DOTNET_FOLDERS=(examples test/jsii test/transpile/dotnet dotnet/src/IAM.Floyd/Js.cs dotnet/src/IAM.Floyd/Json.cs)
 
 if [[ ! -d tooter/node_modules ]]; then
   # The types of the tooter dependencies are needed for linting

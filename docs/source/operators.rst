@@ -42,6 +42,10 @@ Operators
 
       .. code-block:: csharp
 
+         // for use without AWS CDK use the iam-floyd package
+         using IAM.Floyd;
+
+         // for use with CDK use the cdk-iam-floyd package
          using CDK.IAM.Floyd;
 
    .. group-tab:: Go
@@ -50,7 +54,7 @@ Operators
 
          import "udondan.github.io/iam-floyd/go/cdkiamfloyd"
 
-Operators can be simple strings such as ``StringEquals`` or get complex with modifiers such as ``ForAnyValue`` or ``IfExists``. For simple operators you can use the static properties of the ``Operator`` class in TypeScript, and its constants in the native packages of ``iam-floyd`` for Python and Java, like ``Operator.STRING_LIKE``. The other languages have no such static properties, there you call the method of the same name on a new ``Operator``:
+Operators can be simple strings such as ``StringEquals`` or get complex with modifiers such as ``ForAnyValue`` or ``IfExists``. For simple operators you can use the static properties of the ``Operator`` class in TypeScript, and its constants in the native packages of ``iam-floyd`` for Python, Java and .NET, like ``Operator.STRING_LIKE``. The other languages have no such static properties, there you call the method of the same name on a new ``Operator``:
 
 .. example:: conditions-operator-simple
 
