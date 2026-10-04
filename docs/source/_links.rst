@@ -1,27 +1,27 @@
 ..
    Badges of the packages, used as |iam-floyd-npm|_
 
-.. |iam-floyd-npm| image:: https://img.shields.io/npm/v/iam-floyd?label=npm
+.. |iam-floyd-npm| image:: https://img.shields.io/npm/v/iam-floyd?label=npm&color=3178C6&logo=typescript&logoColor=white
 .. _iam-floyd-npm: https://www.npmjs.com/package/iam-floyd
-.. |iam-floyd-pypi| image:: https://img.shields.io/pypi/v/iam-floyd?label=PyPI
+.. |iam-floyd-pypi| image:: https://img.shields.io/pypi/v/iam-floyd?label=PyPI&color=3776AB&logo=python&logoColor=white
 .. _iam-floyd-pypi: https://pypi.org/project/iam-floyd/
-.. |iam-floyd-maven| image:: https://img.shields.io/maven-central/v/com.udondan/iam-floyd?label=Maven%20Central
+.. |iam-floyd-maven| image:: https://img.shields.io/maven-central/v/com.udondan/iam-floyd?label=Maven%20Central&color=ED8B00&logo=openjdk&logoColor=white
 .. _iam-floyd-maven: https://central.sonatype.com/artifact/com.udondan/iam-floyd
-.. |iam-floyd-nuget| image:: https://img.shields.io/nuget/v/IAM.Floyd?label=NuGet
+.. |iam-floyd-nuget| image:: https://img.shields.io/nuget/v/IAM.Floyd?label=NuGet&color=512BD4&logo=dotnet&logoColor=white
 .. _iam-floyd-nuget: https://www.nuget.org/packages/IAM.Floyd
 
-.. |cdk-iam-floyd-npm| image:: https://img.shields.io/npm/v/cdk-iam-floyd?label=npm
+.. |cdk-iam-floyd-npm| image:: https://img.shields.io/npm/v/cdk-iam-floyd?label=npm&color=3178C6&logo=typescript&logoColor=white
 .. _cdk-iam-floyd-npm: https://www.npmjs.com/package/cdk-iam-floyd
-.. |cdk-iam-floyd-pypi| image:: https://img.shields.io/pypi/v/cdk-iam-floyd?label=PyPI
+.. |cdk-iam-floyd-pypi| image:: https://img.shields.io/pypi/v/cdk-iam-floyd?label=PyPI&color=3776AB&logo=python&logoColor=white
 .. _cdk-iam-floyd-pypi: https://pypi.org/project/cdk-iam-floyd/
-.. |cdk-iam-floyd-maven| image:: https://img.shields.io/maven-central/v/com.udondan/cdk-iam-floyd?label=Maven%20Central
+.. |cdk-iam-floyd-maven| image:: https://img.shields.io/maven-central/v/com.udondan/cdk-iam-floyd?label=Maven%20Central&color=ED8B00&logo=openjdk&logoColor=white
 .. _cdk-iam-floyd-maven: https://central.sonatype.com/artifact/com.udondan/cdk-iam-floyd
-.. |cdk-iam-floyd-nuget| image:: https://img.shields.io/nuget/v/CDK.IAM.Floyd?label=NuGet
+.. |cdk-iam-floyd-nuget| image:: https://img.shields.io/nuget/v/CDK.IAM.Floyd?label=NuGet&color=512BD4&logo=dotnet&logoColor=white
 .. _cdk-iam-floyd-nuget: https://www.nuget.org/packages/CDK.IAM.Floyd
 
-.. |iam-floyd-go| image:: https://img.shields.io/github/v/release/udondan/iam-floyd?label=Go
+.. |iam-floyd-go| image:: https://img.shields.io/github/v/release/udondan/iam-floyd?label=Go&color=00ADD8&logo=go&logoColor=white
 .. _iam-floyd-go: https://pkg.go.dev/udondan.github.io/iam-floyd/go/iamfloyd
-.. |cdk-iam-floyd-go| image:: https://img.shields.io/github/v/release/udondan/iam-floyd?label=Go
+.. |cdk-iam-floyd-go| image:: https://img.shields.io/github/v/release/udondan/iam-floyd?label=Go&color=00ADD8&logo=go&logoColor=white
 .. _cdk-iam-floyd-go: https://pkg.go.dev/udondan.github.io/iam-floyd/go/cdkiamfloyd
 
 ..
