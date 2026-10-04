@@ -18,10 +18,13 @@
         "ses:CreateContact",
         "cloudsearch:document",
         "rds-db:connect",
-        "unknown-service:DoSomething",
-        "ec2:Describe?nstances"
+        "unknown-service:DoSomething"
       ],
       "Resource": ["arn:aws:s3:::bucket/*", "*"]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:Describe?nstances"
     },
     {
       "Effect": "Deny",

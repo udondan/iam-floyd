@@ -271,11 +271,31 @@ function writeExample(name: string, policy: Json) {
   }
 }
 
+// aws-cdk-lib rejects actions that IAM allows, e.g. with ?
+const cdkAction = /^(\*|[a-zA-Z0-9-]+:[a-zA-Z0-9*]+)$/;
+
+/**
+ * Removes the statements with actions that the variant doesn't support
+ */
+function supported(policy: Json): Json {
+  if (!cdk) {
+    return policy;
+  }
+  return {
+    ...policy,
+    Statement: (list(policy.Statement) as Json[]).filter((statement) =>
+      list(statement.Action ?? statement.NotAction).every((action) =>
+        cdkAction.test(String(action)),
+      ),
+    ),
+  };
+}
+
 const policies: Record<string, Json> = {};
 for (const file of fs.readdirSync(policiesDir).sort()) {
-  policies[file.replace(/\.json$/, '')] = JSON.parse(
-    fs.readFileSync(`${policiesDir}/${file}`, 'utf8'),
-  ) as Json;
+  policies[file.replace(/\.json$/, '')] = supported(
+    JSON.parse(fs.readFileSync(`${policiesDir}/${file}`, 'utf8')) as Json,
+  );
 }
 const managed: Record<string, Json> = {};
 for (const file of fs.readdirSync(managedPoliciesDir).sort()) {
