@@ -19,7 +19,12 @@ import re
 import sys
 
 EXTENSIONS = {'python': 'py', 'java': 'java', 'dotnet': 'cs', 'go': 'go'}
-PSEUDO_PARAMETERS = {'AWS::Partition': 'aws', 'AWS::Region': '*', 'AWS::AccountId': '*'}
+PSEUDO_PARAMETERS = {
+    'AWS::Partition': 'aws',
+    'AWS::Region': '*',
+    'AWS::AccountId': '*',
+    'AWS::URLSuffix': 'amazonaws.com',
+}
 
 
 def read_results(path):

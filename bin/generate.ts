@@ -4,10 +4,12 @@ import {
   emitTypeScriptFromModels,
   getAwsServices,
 } from '../lib/generator';
+import { emitConverterIndex } from '../lib/generator/emit/converter';
 
 getAwsServices()
   .then(createModules)
   .then(() => emitTypeScriptFromModels())
+  .then(() => emitConverterIndex())
   .then(() => {
     console.log('ALL DONE');
   })

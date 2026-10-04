@@ -50,6 +50,9 @@ sys.modules['cdk_iam_floyd'] = iam_floyd
 def resolve(result):
     if isinstance(result, PolicyDocument):
         return result.to_json()
+    # a policy of the policy converter
+    if isinstance(result, dict):
+        return result
     if not isinstance(result, list):
         result = [result]
     return [statement.to_json() for statement in result]

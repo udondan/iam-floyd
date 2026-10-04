@@ -5,8 +5,8 @@ def example():
     # doc-start
     statement = (
         Statement.Ec2()
-        .deny()
-        .all_matching_actions('/vpn/i')
+            .deny()
+            .all_matching_actions('/vpn/i')
     )
     # doc-end
     return statement

@@ -16,7 +16,7 @@ IAM Floyd is an AWS IAM policy statement generator with a fluent interface. It g
 - `lib/generated/aws-managed-policies/` - Generated AWS managed policies (committed)
 - `lib/shared/` - Hand-written core: `PolicyStatement`, `All`, `Operator`, `AccessLevel`
 - `lib/collection/` - Predefined policy collection utilities
-- `lib/generator/` - Scrapes AWS docs with `cheerio` into the model (`model.ts`), and emits TypeScript from the model with `ts-morph` (`emit/typescript.ts`)
+- `lib/generator/` - Scrapes AWS docs with `cheerio` into the model (`model.ts`), and emits TypeScript from the model with `ts-morph` (`emit/typescript.ts`), and the index of the policy converter (`emit/converter.ts`)
 
 ### PolicyStatement Inheritance Chain
 
@@ -65,6 +65,12 @@ The Java package is built with Maven from `java/pom.xml` (`-Drevision=<version o
 The .NET package is built with `dotnet pack` from `dotnet/src/IAM.Floyd/IAM.Floyd.csproj` (`-p:Version=<version of package.json>`), for .NET 8, into `dist/iam-floyd/dotnet`. CI builds it with the newest .NET SDK and tests the package with .NET 8 and the newest .NET (`DOTNET_PACKAGES`, `DOTNET_FRAMEWORK`); for a release, it goes to NuGet as `IAM.Floyd` (trusted publishing, job `publish-iam-floyd-dotnet`).
 
 The Go module is zipped by `bin/go-proxy zip` into `dist/iam-floyd/go`, with the LICENSE. It supports Go 1.21 and newer, and has no dependencies. CI tests the zip with Go 1.21 and the newest Go (`GO_MODULE`); for a release, the zip is attached to the GitHub release (job `publish-iam-floyd-go`) and served by the Go module proxy.
+
+### Policy Converter
+
+The policy converter of the docs (`docs/source/policy-converter.rst`) converts an IAM policy to IAM Floyd code in TypeScript, JavaScript, Python, Java, C# and Go, for both variants. The conversion is in `docs/source/_static/js/converter.js`, without dependencies, which runs in the browser and in Node.js; `policy-converter.js` is the UI. It knows the classes and actions from `docs/source/_static/policy-converter/services.json`, which `lib/generator/emit/converter.ts` writes from the model on `make emit` and `make generate` (committed, as Read the Docs builds the docs without Node.js).
+
+`test/converter/cases.ts` converts the policies of `test/converter/policies/` and all AWS managed policies to JavaScript, runs the code against `lib/` and checks that the policy allows and denies the same as the input. Then it writes the code of the other languages as examples (`converter-<name>`) with their `.result` into a copy of `examples/`, which `test/transpile/run.sh` (Standalone) and `test/jsii/run.sh` (CDK) run with the other examples.
 
 ## Development Commands
 

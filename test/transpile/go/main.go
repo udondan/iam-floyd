@@ -286,6 +286,9 @@ func runExample(name string) (result string) {
 	switch r := examples[name]().(type) {
 	case *awsiam.PolicyDocument:
 		return toJSON(r.ToJSON())
+	// a policy of the policy converter
+	case map[string]interface{}:
+		return toJSON(r)
 	default:
 		value := reflect.ValueOf(r)
 		if value.Kind() != reflect.Slice {

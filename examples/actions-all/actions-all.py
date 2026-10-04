@@ -5,8 +5,8 @@ def example():
     # doc-start
     statement = (
         Statement.Ec2()
-        .allow()
-        .all_actions()
+            .allow()
+            .all_actions()
     )
     # doc-end
     return statement
