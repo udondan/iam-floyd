@@ -1,6 +1,6 @@
 .. meta::
-   :description: AWS IAM policy statement generator with fluent interface
-   :keywords: aws, iam, policy, statement, generator, cdk, aws-cdk, iam-floyd, floyd
+   :description: AWS IAM policy statement generator with a fluent interface, for TypeScript, JavaScript, Python, Java, C# and Go
+   :keywords: aws, iam, policy, statement, generator, cdk, aws-cdk, iam-floyd, floyd, typescript, python, java, csharp, dotnet, go
 
 .. toctree::
    :maxdepth: 3
@@ -23,7 +23,13 @@ IAM Floyd
 .. include:: _warning.rst
 .. include:: _links.rst
 
-AWS IAM policy statement generator with fluent interface.
+**AWS IAM policy statement generator with a fluent interface, for TypeScript, JavaScript, Python, Java, C# and Go.**
+
+IAM Floyd has a class for every AWS service, with a method for every action, resource type and condition key. Your IDE completes them and shows their documentation, so you neither look up action names and ARN formats, nor deploy policies with typos.
+
+It comes in two variants: ``iam-floyd`` creates statements as JSON, for the AWS SDKs or anything else that takes an IAM policy, and ``cdk-iam-floyd`` creates statements of the `AWS CDK`_. See :doc:`packages` to choose and install one, and :doc:`getting-started` for the first steps.
+
+.. example:: full-ec2-stop-by-owner
 
 ..
    stats

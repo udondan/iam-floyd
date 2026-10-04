@@ -17,50 +17,50 @@ First import the ``Collection`` provider:
 
       .. code-block:: ts
 
-         // for use without AWS CDK use the iam-floyd package
+         // iam-floyd
          import { Collection } from 'iam-floyd';
 
-         // for use with CDK use the cdk-iam-floyd package
+         // cdk-iam-floyd
          import { Collection } from 'cdk-iam-floyd';
 
    .. group-tab:: Python
 
       .. code-block:: python
 
-         # for use without AWS CDK use the iam-floyd package
+         # iam-floyd
          from iam_floyd import Collection
 
-         # for use with CDK use the cdk-iam-floyd package
+         # cdk-iam-floyd
          from cdk_iam_floyd import Collection
 
    .. group-tab:: Java
 
       .. code-block:: java
 
-         // for use without AWS CDK use the iam-floyd package
+         // iam-floyd
          import com.udondan.iamFloyd.Collection;
 
-         // for use with CDK use the cdk-iam-floyd package
+         // cdk-iam-floyd
          import com.udondan.iamFloyd.cdk.Collection;
 
    .. group-tab:: C#
 
       .. code-block:: csharp
 
-         // for use without AWS CDK use the iam-floyd package
+         // iam-floyd
          using IAM.Floyd;
 
-         // for use with CDK use the cdk-iam-floyd package
+         // cdk-iam-floyd
          using CDK.IAM.Floyd;
 
    .. group-tab:: Go
 
       .. code-block:: go
 
-         // for use without AWS CDK use the iam-floyd package
+         // iam-floyd
          import "udondan.github.io/iam-floyd/go/iamfloyd/collection"
 
-         // for use with CDK use the cdk-iam-floyd package
+         // cdk-iam-floyd
          import "udondan.github.io/iam-floyd/go/cdkiamfloyd"
 
 Collections then can be called via:

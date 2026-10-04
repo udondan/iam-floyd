@@ -8,7 +8,7 @@ The ``AwsManagedPolicy`` class provides an up-to-date collection of AWS managed 
 
 The package ``cdk-iam-floyd`` provides methods for directly creating ``aws_iam.IManagedPolicy`` objects.
 
-In TypeScript and JavaScript, the class additionally provides the **names** of the policies as static properties, and the native packages of ``iam-floyd`` for Python, Java, .NET and Go as constants, like ``AwsManagedPolicy.READ_ONLY_ACCESS`` (``iamfloyd.AwsManagedPolicy_READ_ONLY_ACCESS`` in Go). If you instead need the ARN, prefix the string with ``arn:aws:iam::aws:policy/``. The static names are not available in ``cdk-iam-floyd`` for Python, Java, C# and Go, because they share their names with the methods.
+The class also provides the **names** of the policies, like ``AwsManagedPolicy.READ_ONLY_ACCESS``: as static properties in TypeScript and JavaScript, and as constants in ``iam-floyd`` for Python, Java, C# and Go (``iamfloyd.AwsManagedPolicy_READ_ONLY_ACCESS`` in Go). For the ARN, prefix the name with ``arn:aws:iam::aws:policy/``. ``cdk-iam-floyd`` for Python, Java, C# and Go has no names, because they would share their names with the methods.
 
 First import ``AwsManagedPolicy``:
 
@@ -18,50 +18,50 @@ First import ``AwsManagedPolicy``:
 
       .. code-block:: ts
 
-         // for use without AWS CDK use the iam-floyd package
+         // iam-floyd
          import { AwsManagedPolicy } from 'iam-floyd';
 
-         // for use with CDK use the cdk-iam-floyd package
+         // cdk-iam-floyd
          import { AwsManagedPolicy } from 'cdk-iam-floyd';
 
    .. group-tab:: Python
 
       .. code-block:: python
 
-         # for use without AWS CDK use the iam-floyd package
+         # iam-floyd
          from iam_floyd import AwsManagedPolicy
 
-         # for use with CDK use the cdk-iam-floyd package
+         # cdk-iam-floyd
          from cdk_iam_floyd import AwsManagedPolicy
 
    .. group-tab:: Java
 
       .. code-block:: java
 
-         // for use without AWS CDK use the iam-floyd package
+         // iam-floyd
          import com.udondan.iamFloyd.AwsManagedPolicy;
 
-         // for use with CDK use the cdk-iam-floyd package
+         // cdk-iam-floyd
          import com.udondan.iamFloyd.cdk.AwsManagedPolicy;
 
    .. group-tab:: C#
 
       .. code-block:: csharp
 
-         // for use without AWS CDK use the iam-floyd package
+         // iam-floyd
          using IAM.Floyd;
 
-         // for use with CDK use the cdk-iam-floyd package
+         // cdk-iam-floyd
          using CDK.IAM.Floyd;
 
    .. group-tab:: Go
 
       .. code-block:: go
 
-         // for use without AWS CDK use the iam-floyd package
+         // iam-floyd
          import "udondan.github.io/iam-floyd/go/iamfloyd"
 
-         // for use with CDK use the cdk-iam-floyd package
+         // cdk-iam-floyd
          import "udondan.github.io/iam-floyd/go/cdkiamfloyd"
 
 Usage in AWS CDK:
