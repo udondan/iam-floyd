@@ -16,56 +16,6 @@ export type Conditions = Record<string, Condition>;
  */
 export class PolicyStatementWithCondition extends PolicyStatementBase {
   protected floydConditions: Conditions = {};
-  private cdkConditionsApplied = false;
-
-  /**
-   * Injects conditions into the statement.
-   *
-   * Only relevant for the main package. In CDK mode this only calls super.
-   */
-  public toJSON(): any {
-    // @ts-ignore only available after swapping 1-base
-    if (typeof this.addResources == 'function') {
-      this.cdkApplyConditions();
-      return super.toJSON();
-    }
-    const statement = super.toJSON();
-
-    if (this.hasConditions()) {
-      statement.Condition = this.floydConditions;
-    }
-
-    return statement;
-  }
-
-  public toStatementJson(): any {
-    this.cdkApplyConditions();
-    // @ts-ignore only available after swapping 1-base
-    return super.toStatementJson();
-  }
-
-  public freeze() {
-    // @ts-ignore only available after swapping 1-base
-    if (!this.frozen) {
-      this.cdkApplyConditions();
-    }
-    // @ts-ignore only available after swapping 1-base
-    return super.freeze();
-  }
-
-  private cdkApplyConditions() {
-    if (this.hasConditions() && !this.cdkConditionsApplied) {
-      Object.keys(this.floydConditions).forEach((operator) => {
-        Object.keys(this.floydConditions[operator]).forEach((key) => {
-          const condition: any = {};
-          condition[key] = this.floydConditions[operator][key];
-          // @ts-ignore only available after swapping 1-base
-          this.addCondition(operator, condition);
-        });
-      });
-      this.cdkConditionsApplied = true;
-    }
-  }
 
   /**
    * Checks weather a condition was applied to the policy.

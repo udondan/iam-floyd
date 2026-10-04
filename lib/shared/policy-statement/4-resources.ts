@@ -13,65 +13,18 @@ export interface ResourceType {
  * Adds "resource" functionality to the Policy Statement
  */
 export class PolicyStatementWithResources extends PolicyStatementWithActions {
-  private useNotResource = false;
+  protected useNotResource = false;
   protected floydResources: string[] = [];
   protected skipAutoResource = false;
-  private cdkResourcesApplied = false;
 
   /**
-   * Injects resources into the statement.
-   *
-   * Only relevant for the main package. In CDK mode this only calls super.
+   * The resources of the statement without duplicates
    */
-  public toJSON(): any {
-    // @ts-ignore only available after swapping 1-base
-    if (typeof this.addResources == 'function') {
-      this.cdkApplyResources();
-      return super.toJSON();
-    }
-    const mode = this.useNotResource ? 'NotResource' : 'Resource';
-    const statement = super.toJSON();
+  protected uniqueResources(): string[] {
     const self = this;
-
-    this.ensureResource();
-
-    if (this.floydResources.length) {
-      const resources = this.floydResources.filter((elem, pos) => {
-        return self.floydResources.indexOf(elem) == pos;
-      });
-      statement[mode] = resources.length > 1 ? resources : resources[0];
-    }
-
-    return statement;
-  }
-
-  public toStatementJson(): any {
-    this.ensureResource();
-    this.cdkApplyResources();
-    // @ts-ignore only available after swapping 1-base
-    return super.toStatementJson();
-  }
-
-  public freeze() {
-    // @ts-ignore only available after swapping 1-base
-    if (!this.frozen) {
-      this.ensureResource();
-      this.cdkApplyResources();
-    }
-    return super.freeze();
-  }
-
-  private cdkApplyResources() {
-    if (!this.cdkResourcesApplied) {
-      const mode = this.useNotResource ? 'addNotResources' : 'addResources';
-      const self = this;
-      const uniqueResources = this.floydResources.filter((elem, pos) => {
-        return self.floydResources.indexOf(elem) == pos;
-      });
-      // @ts-ignore only available after swapping 1-base
-      this[mode](...uniqueResources);
-      this.cdkResourcesApplied = true;
-    }
+    return this.floydResources.filter((elem, pos) => {
+      return self.floydResources.indexOf(elem) == pos;
+    });
   }
 
   /**
@@ -109,13 +62,9 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
     return this;
   }
 
-  private ensureResource() {
+  protected ensureResource() {
     if (this.hasResources()) return;
-    // @ts-ignore only available after swapping 1-base
-    if (this.hasResource) return;
-    // @ts-ignore only available after swapping 1-base
-    if (this.hasPrincipal) return; //assume policies may not have resources
-    if (this.skipAutoResource) return;
+    if (this.skipAutoResource) return; // statements with principals may not have resources
 
     // a statement requires resources. if none was added, we assume the user wants all resources
     this.onAllResources();

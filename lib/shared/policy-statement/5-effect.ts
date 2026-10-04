@@ -15,21 +15,6 @@ export class PolicyStatementWithEffect extends PolicyStatementWithResources {
   public effect = Effect.allow;
 
   /**
-   * Injects effect into the statement.
-   *
-   * Only relevant for the main package. In CDK mode this only calls super.
-   */
-  public toJSON(): any {
-    // @ts-ignore only available after swapping 1-base
-    if (typeof this.addResources == 'function') {
-      return super.toJSON();
-    }
-    const statement = super.toJSON();
-    statement.Effect = this.effect;
-    return statement;
-  }
-
-  /**
    * Allow the actions in this statement
    */
   public allow() {

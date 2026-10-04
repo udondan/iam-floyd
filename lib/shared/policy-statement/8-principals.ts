@@ -20,46 +20,6 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithArnDefaults
   protected myPrincipals: Principals = {};
 
   /**
-   * Injects principals into the statement.
-   *
-   * Only relevant for the main package. In CDK mode this only calls super.
-   */
-  public toJSON(): any {
-    // @ts-ignore only available after swapping 1-base
-    if (typeof this.addResources == 'function') {
-      this.cdkApplyPrincipals();
-      return super.toJSON();
-    }
-
-    const mode = this.useNotPrincipal ? 'NotPrincipal' : 'Principal';
-    const statement = super.toJSON();
-
-    if (this.hasPrincipals()) {
-      statement[mode] = this.myPrincipals;
-    }
-
-    return statement;
-  }
-
-  public toStatementJson(): any {
-    this.cdkApplyPrincipals();
-    // @ts-ignore only available after swapping 1-base
-    return super.toStatementJson();
-  }
-
-  public freeze() {
-    // @ts-ignore only available after swapping 1-base
-    if (!this.frozen) {
-      this.cdkApplyPrincipals();
-    }
-    return super.freeze();
-  }
-
-  protected cdkApplyPrincipals() {
-    // implemented by the CDK variant
-  }
-
-  /**
    * Switches the statement to use [`notPrincipal`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notprincipal.html).
    */
   public notPrincipal() {
