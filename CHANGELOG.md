@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.849.0](https://github.com/udondan/iam-floyd/compare/v0.848.0...v0.849.0) (2026-10-04)
+
+
+### Features
+
+* native .NET package of iam-floyd ([#2306](https://github.com/udondan/iam-floyd/issues/2306)) ([16a70f7](https://github.com/udondan/iam-floyd/commit/16a70f76e1fc248bb2e832156643b0a2e4a53b2d))
+* native Go package of iam-floyd ([#2309](https://github.com/udondan/iam-floyd/issues/2309)) ([614ecad](https://github.com/udondan/iam-floyd/commit/614ecad9af6382a548860a427b276c073b4c5df7))
+* native Java package of iam-floyd ([#2305](https://github.com/udondan/iam-floyd/issues/2305)) ([e2e13ea](https://github.com/udondan/iam-floyd/commit/e2e13ea054a0598fac883dc0149c460fac0df772))
+* policy converter for Python, Java, C# and Go ([#2310](https://github.com/udondan/iam-floyd/issues/2310)) ([be41289](https://github.com/udondan/iam-floyd/commit/be41289b83a3c7b2c819a4b469869758c84aaea1))
+
+
+### Dependencies
+
+* **deps:** update actions/setup-python action to v7 ([#2303](https://github.com/udondan/iam-floyd/issues/2303)) ([ec4d89f](https://github.com/udondan/iam-floyd/commit/ec4d89fbe94cbba8bc29d26a256ea031a8b60aa2))
+* **deps:** update aws-sdk-js-v3 monorepo to v3.1144.0 ([#2307](https://github.com/udondan/iam-floyd/issues/2307)) ([65b61b7](https://github.com/udondan/iam-floyd/commit/65b61b74cc79b3886e1eff282ec04140a4e5ad72))
+* **deps:** update aws-sdk-js-v3 monorepo to v3.1145.0 ([#2311](https://github.com/udondan/iam-floyd/issues/2311)) ([91c9793](https://github.com/udondan/iam-floyd/commit/91c97937def1da0fe60682bb4095dce12db303b9))
+* **deps:** update dependency aws-cdk-lib to v2.272.0 ([#2308](https://github.com/udondan/iam-floyd/issues/2308)) ([0ef196d](https://github.com/udondan/iam-floyd/commit/0ef196de6b34dd9a689282d8318ed8d50781c742))
+* **deps:** update swc monorepo ([#2302](https://github.com/udondan/iam-floyd/issues/2302)) ([1ab2245](https://github.com/udondan/iam-floyd/commit/1ab224585198a2b2640e68930e7f3ffc6108fbd5))
+
 ## [0.848.0](https://github.com/udondan/iam-floyd/compare/v0.847.0...v0.848.0) (2026-10-04)
 
 
