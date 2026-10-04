@@ -76,7 +76,7 @@ test-jsii:
 	@echo -e "$(TARGET_COLOR)Running jsii test$(NO_COLOR)"
 	@test/jsii/run.sh $(LANGUAGES)
 
-test-transpile:
+test-transpile: emit
 	@echo -e "$(TARGET_COLOR)Running transpile test$(NO_COLOR)"
 	@test/transpile/run.sh $(TRANSPILE_LANGUAGES)
 

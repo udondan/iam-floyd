@@ -27,7 +27,7 @@
     "composite": false
   },
   "include": ["**/*.ts"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "transpile"],
   "ts-node": {
     "swc": true
   }

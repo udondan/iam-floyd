@@ -1,16 +1,32 @@
 #!/usr/bin/env node
+/**
+ * Writes the generated sources of the native packages: the core transpiled from lib/shared/ and
+ * the services emitted from the model
+ */
 import * as fs from 'fs';
 
-import { coreSourceFiles, TranspileError } from '../lib/generator/transpile';
+import { emitPythonFromModels } from '../lib/generator/emit/python';
+import {
+  collectionSourceFiles,
+  coreSourceFiles,
+  TranspileError,
+} from '../lib/generator/transpile';
 import { PythonTranspiler } from '../lib/generator/transpile/python';
 
-const header = 'Transpiled from lib/shared/ by bin/transpile.ts. Do not edit.';
+const header = (dir: string) =>
+  `Transpiled from ${dir} by bin/transpile.ts. Do not edit.`;
 
 try {
-  const files = coreSourceFiles();
   fs.writeFileSync(
     'python/iam_floyd/_shared.py',
-    new PythonTranspiler().transpile(files, header),
+    new PythonTranspiler().transpile(coreSourceFiles(), header('lib/shared/')),
+  );
+  fs.writeFileSync(
+    'python/iam_floyd/_collection.py',
+    new PythonTranspiler().transpile(
+      collectionSourceFiles(),
+      header('lib/collection/'),
+    ),
   );
 } catch (err) {
   if (err instanceof TranspileError) {
@@ -19,3 +35,4 @@ try {
   }
   throw err;
 }
+emitPythonFromModels();

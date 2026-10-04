@@ -19,5 +19,7 @@ test/package-lock.json
 /dist
 lint/target/
 __pycache__/
+/python/iam_floyd/_collection.py
 /python/iam_floyd/_shared.py
 /test/transpile/out
+/python/iam_floyd/statement

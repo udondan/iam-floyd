@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / 'python'))
 
-from iam_floyd import Operator, PolicyStatement  # noqa: E402
+from iam_floyd import Operator, PolicyStatement, Statement  # noqa: E402
 
 KEYWORDS = {'if', 'in', 'for'}
 
@@ -55,7 +55,9 @@ def decode(arg):
 
 def run(scenario):
     try:
-        if 'service' in scenario:
+        if 'class' in scenario:
+            statement = getattr(Statement, scenario['class'])(scenario.get('sid'))
+        elif 'service' in scenario:
             model = json.loads(
                 (ROOT / 'lib/generated/model' / f'{scenario["service"]}.json').read_text()
             )

@@ -9,6 +9,7 @@ import {
   Expression,
   ForStatement,
   FunctionDeclaration,
+  ImportDeclaration,
   JSDocableNode,
   MethodDeclaration,
   Node,
@@ -24,7 +25,14 @@ import {
   VariableDeclarationKind,
 } from 'ts-morph';
 
-import { fail } from './index';
+import { fail, isServiceFile } from './index';
+
+/**
+ * The Python module of a service, from the name of its file
+ */
+export function pythonServiceModule(filename: string): string {
+  return `_${filename.replace(/-/g, '_')}`;
+}
 
 /**
  * Python precedence levels, from loosest to tightest binding
@@ -115,7 +123,27 @@ export function pythonConstantName(name: string): string {
   return snakeCase(name).toUpperCase();
 }
 
-function pyString(value: string): string {
+/**
+ * The lines of a docstring with the given text
+ */
+export function docstring(text: string[]): string[] {
+  // a quote must not start a triple quote, which would end the docstring
+  const escaped = text.map((line) =>
+    line
+      .trimEnd()
+      .replace(/\\/g, '\\\\')
+      .replace(/"(?="")/g, '\\"'),
+  );
+  if (escaped.length == 1) {
+    return [`"""${escaped[0].replace(/"$/, '\\"')}"""`];
+  }
+  return [`"""${escaped[0]}`, ...escaped.slice(1), '"""'];
+}
+
+/**
+ * A Python string literal
+ */
+export function pyString(value: string): string {
   let out = '';
   for (const char of value) {
     const code = char.codePointAt(0)!;
@@ -225,6 +253,7 @@ export class PythonTranspiler {
   private depth = 0;
   private imports = new Set<string>();
   private names = new Map<string, string>();
+  private serviceImports = new Map<string, Set<string>>();
 
   /**
    * Transpiles the source files into one Python module, in the given order
@@ -242,17 +271,31 @@ export class PythonTranspiler {
     if (this.imports.has('re')) {
       imports.push('import re as _re');
     }
-    const typing = ['TYPE_CHECKING'];
+    const code = body.join('\n');
+    const usesSelf = /\bSelf\b/.test(code);
+    const typing = usesSelf ? ['TYPE_CHECKING'] : [];
     if (this.imports.has('Any')) {
       typing.push('Any');
     }
-    imports.push(`from typing import ${typing.join(', ')}`);
-    imports.push('');
-    // the hand-written runtime with the JavaScript semantics that Python lacks
-    imports.push('from . import _js');
-    imports.push('');
-    imports.push('if TYPE_CHECKING:');
-    imports.push('    from typing_extensions import Self');
+    if (typing.length) {
+      imports.push(`from typing import ${typing.join(', ')}`);
+      imports.push('');
+    }
+    if (/\b_js\./.test(code)) {
+      // the hand-written runtime with the JavaScript semantics that Python lacks
+      imports.push('from . import _js');
+    }
+    // sorted like isort does
+    for (const [module, names] of [...this.serviceImports].sort(([a], [b]) =>
+      a < b ? -1 : 1,
+    )) {
+      imports.push(`from ${module} import ${[...names].sort().join(', ')}`);
+    }
+    if (usesSelf) {
+      imports.push('');
+      imports.push('if TYPE_CHECKING:');
+      imports.push('    from typing_extensions import Self');
+    }
 
     return `${[`# ${header}`, ...imports, ...body].join('\n').replace(/\n{4,}/g, '\n\n\n')}\n`;
   }
@@ -284,10 +327,38 @@ export class PythonTranspiler {
     return name;
   }
 
+  /**
+   * Imports of the generated service classes become imports of the emitted modules
+   */
+  private importDeclaration(declaration: ImportDeclaration) {
+    const target = declaration.getModuleSpecifierSourceFile();
+    if (target === undefined || !isServiceFile(target)) {
+      return;
+    }
+    if (
+      declaration.getDefaultImport() !== undefined ||
+      declaration.getNamespaceImport() !== undefined
+    ) {
+      fail(declaration, 'Only named imports of services are supported');
+    }
+    const module = `.statement.${pythonServiceModule(target.getBaseNameWithoutExtension())}`;
+    const names = this.serviceImports.get(module) ?? new Set<string>();
+    for (const specifier of declaration.getNamedImports()) {
+      if (specifier.getAliasNode() !== undefined) {
+        fail(specifier, 'Aliased imports are not supported');
+      }
+      names.add(specifier.getName());
+    }
+    this.serviceImports.set(module, names);
+  }
+
   private sourceFile(file: SourceFile) {
     for (const statement of file.getStatements()) {
+      if (Node.isImportDeclaration(statement)) {
+        this.importDeclaration(statement);
+        continue;
+      }
       if (
-        Node.isImportDeclaration(statement) ||
         Node.isExportDeclaration(statement) ||
         Node.isInterfaceDeclaration(statement) ||
         Node.isTypeAliasDeclaration(statement)
@@ -352,18 +423,9 @@ export class PythonTranspiler {
       }
       text.push(...tags);
     }
-    const escaped = text.map((line) =>
-      line.trimEnd().replace(/\\/g, '\\\\').replace(/"""/g, '\\"\\"\\"'),
-    );
-    if (escaped.length == 1) {
-      this.emit(`"""${escaped[0]}"""`);
-      return;
-    }
-    this.emit(`"""${escaped[0]}`);
-    for (const line of escaped.slice(1)) {
+    for (const line of docstring(text)) {
       this.emit(line);
     }
-    this.emit('"""');
   }
 
   private enumDeclaration(declaration: EnumDeclaration) {

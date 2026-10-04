@@ -1,6 +1,9 @@
 """Compares the results of the examples of the docs in each language to their .result files.
 
-Usage: compare.py <examples directory> <result.txt>...
+Usage: compare.py [--standalone] <examples directory> <result.txt>...
+
+With --standalone, the results are of the native iam-floyd packages, and the examples of the CDK
+variant, *.cdk, are skipped.
 
 A result file has one line per example: the name, a tab and the statements or the policy document
 as JSON (or FAIL), like test/jsii/compare.py. Every example needs a file in every language, e.g.
@@ -78,11 +81,16 @@ def normalize(value):
     return value
 
 
-examples_path, *result_paths = sys.argv[1:]
+args = sys.argv[1:]
+standalone = '--standalone' in args
+if standalone:
+    args.remove('--standalone')
+examples_path, *result_paths = args
 names = sorted(
     name
     for name in os.listdir(examples_path)
     if os.path.isfile(os.path.join(examples_path, name, f'{name}.result'))
+    and not (standalone and name.endswith('.cdk'))
 )
 
 failed = False

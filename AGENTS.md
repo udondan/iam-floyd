@@ -48,9 +48,9 @@ Publishing: the npm package of `cdk-iam-floyd` includes the `.jsii` (`make packa
 
 ### Native Packages (transpiled core)
 
-The standalone `iam-floyd` is being built natively for other languages, without jsii and without Node.js. The hand-written core in `lib/shared/` is transpiled with ts-morph by `lib/generator/transpile/` (`index.ts` collects the core files in import order, one backend per language, currently `python.ts`). The transpiler supports only a narrow subset of TypeScript: anything else fails with file and line, so rewrite the core in supported constructs rather than extending the transpiler for single cases. `bin/transpile.ts` writes `python/iam_floyd/_shared.py` (not committed). `python/iam_floyd/_js.py` is the hand-written runtime for JavaScript semantics (number formatting, `toISOString`, sorting by UTF-16 code units, regular expressions).
+The standalone `iam-floyd` is being built natively for other languages, without jsii and without Node.js. The hand-written code in `lib/shared/` (the core) and `lib/collection/` is transpiled with ts-morph by `lib/generator/transpile/` (`index.ts` collects the files of a module in import order, one backend per language, currently `python.ts`). The only imports from outside a module are the generated service classes, imported from their file (e.g. `../generated/policy-statements/ec2`). The transpiler supports only a narrow subset of TypeScript: anything else fails with file and line, so rewrite the code in supported constructs rather than extending the transpiler for single cases. The service classes are emitted from the model by `lib/generator/emit/python.ts`, with the jsii naming rules (snake_case, `if_`, `in_`), into the package `statement/`, which imports a service on first access. `bin/transpile.ts` writes `python/iam_floyd/_shared.py`, `_collection.py` and `statement/` (not committed). `python/iam_floyd/_js.py` is the hand-written runtime for JavaScript semantics (number formatting, `toISOString`, sorting by UTF-16 code units, regular expressions).
 
-`test/transpile/` runs the scenarios of `scenarios.json` against the TypeScript core (the baseline) and the transpiled core of each language, and diffs the output.
+`test/transpile/` runs the scenarios against TypeScript (the baseline) and each language, and diffs the output: those of `scenarios.json`, which test the core, and those that `services.ts` builds from the model, which call every method of every service. Then it runs the examples of the docs (`examples/<name>/<name>.py`) with the native package, through `python/examples.py`, which runs them with `iam_floyd` in place of `cdk_iam_floyd`, and compares them to the `.result` files with `test/jsii/examples/compare.py --standalone`, which skips the `*.cdk` examples.
 
 ## Development Commands
 
@@ -86,7 +86,7 @@ make test-typescript-cdk # after `make cdk`: same for the CDK examples (examples
 make cdk-test            # CDK test: real deploy + destroy via AWS CDK
 make cdk-all             # cdk + install + build + cdk-test
 make test-jsii           # test the packages of `make package-jsii` against TypeScript; LANGUAGES=python limits the languages
-make test-transpile      # transpile the core and compare the scenarios of test/transpile/ with TypeScript
+make test-transpile      # transpile, compare the scenarios of test/transpile/ with TypeScript and run the examples
 ```
 
 **Run a single example test manually:**

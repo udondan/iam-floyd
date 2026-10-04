@@ -9,9 +9,17 @@ import * as fs from 'fs';
 import { AccessLevelList } from '../../../lib/shared/access-level';
 import { Operator } from '../../../lib/shared/operators';
 import { PolicyStatement } from '../../../lib/shared/policy-statement';
+import * as Statement from '../../../lib/statements';
 
 interface Scenario {
   name: string;
+  /**
+   * A class of `Statement`
+   */
+  class?: string;
+  /**
+   * A service of the model, for a statement with the service prefix and the access levels
+   */
   service?: string;
   sid?: string;
   calls: [string, ...unknown[]][];
@@ -23,6 +31,8 @@ interface Model {
 }
 
 type Methods = Record<string, (...args: unknown[]) => unknown>;
+
+type Classes = Record<string, new (sid?: string) => PolicyStatement>;
 
 /**
  * A service class like the generated ones, built from the model
@@ -60,18 +70,24 @@ function decode(arg: unknown): unknown {
 
 function run(scenario: Scenario): string {
   try {
-    const statement =
-      scenario.service === undefined
-        ? new PolicyStatement(scenario.sid)
-        : new Service(
-            JSON.parse(
-              fs.readFileSync(
-                `lib/generated/model/${scenario.service}.json`,
-                'utf8',
-              ),
-            ) as Model,
-            scenario.sid,
-          );
+    let statement: PolicyStatement;
+    if (scenario.class !== undefined) {
+      statement = new (Statement as unknown as Classes)[scenario.class](
+        scenario.sid,
+      );
+    } else if (scenario.service !== undefined) {
+      statement = new Service(
+        JSON.parse(
+          fs.readFileSync(
+            `lib/generated/model/${scenario.service}.json`,
+            'utf8',
+          ),
+        ) as Model,
+        scenario.sid,
+      );
+    } else {
+      statement = new PolicyStatement(scenario.sid);
+    }
     for (const [method, ...args] of scenario.calls) {
       (statement as unknown as Methods)[method](
         ...args.map((arg) => decode(arg)),

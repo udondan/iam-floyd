@@ -16,15 +16,28 @@ export function fail(node: Node, message: string): never {
 }
 
 /**
- * Loads the standalone core: the files reachable from `lib/shared/index.ts`, dependencies first
+ * The generated service classes, which the transpiled modules import from the emitted package
  */
-export function coreSourceFiles(): SourceFile[] {
+export function isServiceFile(file: SourceFile): boolean {
+  return path
+    .relative(process.cwd(), file.getFilePath())
+    .startsWith(
+      `lib${path.sep}generated${path.sep}policy-statements${path.sep}`,
+    );
+}
+
+/**
+ * Loads the files reachable from the entry, dependencies first. Imports of the generated service
+ * classes are not followed, all others must be part of the transpiled module.
+ */
+function sourceFiles(entryPath: string): SourceFile[] {
   const project = new Project({
     tsConfigFilePath: 'tsconfig.json',
     skipAddingFilesFromTsConfig: true,
   });
-  const entry = project.addSourceFileAtPath('lib/shared/index.ts');
+  const entry = project.addSourceFileAtPath(entryPath);
   project.resolveSourceFileDependencies();
+  const root = entry.getDirectoryPath();
 
   const ordered: SourceFile[] = [];
   const visiting = new Set<SourceFile>();
@@ -42,7 +55,13 @@ export function coreSourceFiles(): SourceFile[] {
     ]) {
       const target = declaration.getModuleSpecifierSourceFile();
       if (target === undefined) {
-        fail(declaration, 'Imports are supported only from the core');
+        fail(declaration, 'Unresolved import');
+      }
+      if (isServiceFile(target)) {
+        continue;
+      }
+      if (!target.getFilePath().startsWith(`${root}/`)) {
+        fail(declaration, 'Imports are supported only from the same module');
       }
       visit(target);
     }
@@ -50,4 +69,18 @@ export function coreSourceFiles(): SourceFile[] {
   };
   visit(entry);
   return ordered;
+}
+
+/**
+ * Loads the standalone core: the files reachable from `lib/shared/index.ts`, dependencies first
+ */
+export function coreSourceFiles(): SourceFile[] {
+  return sourceFiles('lib/shared/index.ts');
+}
+
+/**
+ * Loads the collection: the files reachable from `lib/collection/index.ts`, dependencies first
+ */
+export function collectionSourceFiles(): SourceFile[] {
+  return sourceFiles('lib/collection/index.ts');
 }
