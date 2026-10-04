@@ -48,7 +48,12 @@ If you believe something is missing, please report it through the feedback funct
 How often will there be updates to reflect IAM changes?
 -------------------------------------------------------
 
-Once per day, at 2am UTC, the `AWS Documentation`_ is checked for updates. If anything changes, a new package will be released immediately.
+Every Sunday, the `AWS Documentation`_ and the AWS managed policies are checked for changes, and every Monday, a new version is released with them.
+
+Do I need Node.js?
+------------------
+
+Not for ``iam-floyd``: the packages for Python, Java, .NET and Go are native and have no dependencies. The packages of ``cdk-iam-floyd`` for these languages are built with `jsii`_, like the AWS CDK itself, and need Node.js just like the AWS CDK does.
 
 Do you release new packages when a new CDK version is released?
 ---------------------------------------------------------------
@@ -70,7 +75,7 @@ It has been observed that IAM actions have been `deleted <https://github.com/udo
 How can I set a statement SID?
 ------------------------------
 
-The SID can be passed as parameter to the constructor. With ``cdk-iam-floyd``, the constructor takes the props of `iam.PolicyStatement`_ instead:
+With ``iam-floyd``, the constructor takes the SID. With ``cdk-iam-floyd``, it takes the props of `iam.PolicyStatement`_. The examples in TypeScript use ``iam-floyd``, the others ``cdk-iam-floyd``:
 
 .. example:: sid
 

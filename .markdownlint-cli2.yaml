@@ -1,9 +1,12 @@
 config:
   # Long lines are wrapped by the reader
   MD013: false
-  # Line breaks in lists, like the packages in README.md
+  # Line breaks in tables and the collapsible examples per language in README.md
   MD033:
-    allowed_elements: [br]
+    allowed_elements: [br, details, summary]
+  # gofmt indents with tabs
+  MD010:
+    ignore_code_languages: [go]
 globs:
   - "**/*.md"
 ignores:

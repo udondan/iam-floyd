@@ -4,84 +4,158 @@ Packages
 .. include:: _warning.rst
 .. include:: _links.rst
 
-There are two different package variants available:
+IAM Floyd comes in two variants, for TypeScript, JavaScript, Python, Java, C# and Go. Both have the same API, are generated from the same model of the `AWS Documentation`_ and are released together, with the same version number in every language.
 
-**iam-floyd**:
-   | Can be used in AWS SDK, Boto 3 or for whatever you need an IAM policy statement for:
-   | |iam-floyd-npm|_ |iam-floyd-pypi|_ |iam-floyd-maven|_ |iam-floyd-nuget|_
+Which Variant?
+--------------
 
-**cdk-iam-floyd**:
-   | Integrates into `AWS CDK`_ and extends `iam.PolicyStatement`_:
-   | |cdk-iam-floyd-npm|_ |cdk-iam-floyd-pypi|_ |cdk-iam-floyd-maven|_ |cdk-iam-floyd-nuget|_
+``iam-floyd``
+   Creates statements as JSON, for the AWS SDKs, CloudFormation, Terraform or anything else that takes an IAM policy. The packages have no dependencies.
 
-   | **Starting with version 0.300.0, the packages are compatible with CDK v2.** For CDK v1 you can use any version up to:
-   | |cdk-iam-floyd-npm-v1|_
+``cdk-iam-floyd``
+   Creates statements of the `AWS CDK`_ v2: every statement is an `iam.PolicyStatement`_, which you can pass to roles, policies and grants. The ARN defaults are the partition, region and account of the stack.
 
-Other Languages
----------------
-
-``iam-floyd`` is also available as a native package for Python, Java, .NET and Go, with the same version as on npm:
+iam-floyd
+---------
 
 .. list-table::
    :header-rows: 1
+   :widths: 20 30 50
 
    * - Language
      - Package
      - Requires
+   * - TypeScript / JavaScript
+     - |iam-floyd-npm|_
+     - Node.js
    * - Python
-     - `iam-floyd on PyPI <https://pypi.org/project/iam-floyd/>`_
+     - |iam-floyd-pypi|_
      - Python 3.9
    * - Java
-     - `com.udondan:iam-floyd on Maven Central <https://central.sonatype.com/artifact/com.udondan/iam-floyd>`_
+     - |iam-floyd-maven|_
      - Java 11
-   * - .NET
-     - `IAM.Floyd on NuGet <https://www.nuget.org/packages/IAM.Floyd>`_
+   * - C# / .NET
+     - |iam-floyd-nuget|_
      - .NET 8
    * - Go
-     - ``udondan.github.io/iam-floyd/go/iamfloyd``
+     - |iam-floyd-go|_
      - Go 1.21
 
-The native packages have no dependencies and do not need Node.js. Their code is generated from the same sources as the npm package, and every release is tested to produce the same policies as TypeScript. The API is the one of ``cdk-iam-floyd`` in these languages, with a few differences, see `Language Specifics <getting-started.html#language-specifics>`_.
+The packages for Python, Java, .NET and Go are native: their code is generated from the TypeScript code and the model, they do not need Node.js and have no dependencies. Every release is tested to create the same policies in every language.
 
-``cdk-iam-floyd`` is also available for Python, Java, .NET and Go, with the same version as on npm:
+cdk-iam-floyd
+-------------
 
 .. list-table::
    :header-rows: 1
+   :widths: 20 30 50
 
    * - Language
      - Package
+     - Requires
+   * - TypeScript / JavaScript
+     - |cdk-iam-floyd-npm|_
+     - ``aws-cdk-lib`` 2 and ``constructs`` 10
    * - Python
-     - `cdk-iam-floyd on PyPI <https://pypi.org/project/cdk-iam-floyd/>`_
+     - |cdk-iam-floyd-pypi|_
+     - The AWS CDK of the language, and Node.js
    * - Java
-     - `com.udondan:cdk-iam-floyd on Maven Central <https://central.sonatype.com/artifact/com.udondan/cdk-iam-floyd>`_
-   * - .NET
-     - `CDK.IAM.Floyd on NuGet <https://www.nuget.org/packages/CDK.IAM.Floyd>`_
+     - |cdk-iam-floyd-maven|_
+     - The AWS CDK of the language, and Node.js
+   * - C# / .NET
+     - |cdk-iam-floyd-nuget|_
+     - The AWS CDK of the language, and Node.js
    * - Go
-     - ``udondan.github.io/iam-floyd/go/cdkiamfloyd``
+     - |cdk-iam-floyd-go|_
+     - The AWS CDK of the language, and Node.js
 
-These packages are built with `jsii <https://aws.github.io/jsii/>`_, like AWS CDK itself, and run the JavaScript code of the npm package in Node.js, which must be installed. The API reference for every language is on `Construct Hub <https://constructs.dev/packages/cdk-iam-floyd>`_.
+The packages for Python, Java, .NET and Go are built with `jsii`_, like the AWS CDK itself, and run the code of the npm package in Node.js. The API reference for every language is on `Construct Hub`_.
 
-CDK Compatibility Matrix
-------------------------
+Installation
+------------
+
+Pin the exact version, as long as IAM Floyd has not reached 1.0.0.
+
+.. tabs::
+
+   .. group-tab:: TypeScript
+
+      .. code-block:: bash
+
+         npm install iam-floyd
+         npm install cdk-iam-floyd
+
+   .. group-tab:: Python
+
+      .. code-block:: bash
+
+         pip install iam-floyd
+         pip install cdk-iam-floyd
+
+   .. group-tab:: Java
+
+      Maven:
+
+      .. code-block:: xml
+
+         <dependency>
+           <groupId>com.udondan</groupId>
+           <artifactId>iam-floyd</artifactId> <!-- or cdk-iam-floyd -->
+           <version>VERSION</version>
+         </dependency>
+
+      Gradle:
+
+      .. code-block:: groovy
+
+         implementation 'com.udondan:iam-floyd:VERSION' // or cdk-iam-floyd
+
+   .. group-tab:: C#
+
+      .. code-block:: bash
+
+         dotnet add package IAM.Floyd
+         dotnet add package CDK.IAM.Floyd
+
+   .. group-tab:: Go
+
+      .. code-block:: bash
+
+         go get udondan.github.io/iam-floyd/go/iamfloyd
+         go get udondan.github.io/iam-floyd/go/cdkiamfloyd
+
+      The Go modules are not on GitHub, but on a module proxy under ``udondan.github.io/iam-floyd/go``, which keeps the newest 30 releases. ``go get`` finds it without any configuration.
+
+How to import the packages is described in :doc:`getting-started`.
+
+Releases
+--------
+
+A new version is released every Monday with the changes of the week: updates of the `AWS Documentation`_ and the AWS managed policies, new features and fixes. The changes of each release are in the `changelog <https://github.com/udondan/iam-floyd/blob/main/CHANGELOG.md>`_.
+
+CDK Compatibility
+-----------------
+
+``cdk-iam-floyd`` requires AWS CDK v2. These versions of the AWS CDK need these versions of ``cdk-iam-floyd``:
 
 .. list-table::
    :header-rows: 1
 
-   * - CDK
+   * - AWS CDK
      - cdk-iam-floyd
-   * - <= 1.151.0
-     - <= 0.285.0
-   * - >= 1.152.0
-     - 0.286.0
-   * - >= 1.158.0
-     - **No compatible version!**
-   * - >= 2.0.0
-     - >= 0.300.0
-   * - >= 2.20.0
-     - >= 0.351.0
-   * - >= 2.26.0
-     - >= 0.377.0
-   * - 2.29.x
-     - **No compatible version!**
    * - >= 2.30.0
      - >= 0.391.0
+   * - 2.29.x
+     - **No compatible version**
+   * - >= 2.26.0
+     - >= 0.377.0
+   * - >= 2.20.0
+     - >= 0.351.0
+   * - >= 2.0.0
+     - >= 0.300.0
+   * - >= 1.158.0
+     - **No compatible version**
+   * - >= 1.152.0
+     - 0.286.0
+   * - <= 1.151.0
+     - <= 0.285.0

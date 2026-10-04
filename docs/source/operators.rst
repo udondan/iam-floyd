@@ -12,53 +12,53 @@ Operators
 
       .. code-block:: ts
 
-         // for use without AWS CDK use the iam-floyd package
+         // iam-floyd
          import { Operator, Statement } from 'iam-floyd';
 
-         // for use with CDK use the cdk-iam-floyd package
+         // cdk-iam-floyd
          import { Operator, Statement } from 'cdk-iam-floyd';
 
    .. group-tab:: Python
 
       .. code-block:: python
 
-         # for use without AWS CDK use the iam-floyd package
+         # iam-floyd
          from iam_floyd import Operator, Statement
 
-         # for use with CDK use the cdk-iam-floyd package
+         # cdk-iam-floyd
          from cdk_iam_floyd import Operator, Statement
 
    .. group-tab:: Java
 
       .. code-block:: java
 
-         // for use without AWS CDK use the iam-floyd package
+         // iam-floyd
          import com.udondan.iamFloyd.Operator;
 
-         // for use with CDK use the cdk-iam-floyd package
+         // cdk-iam-floyd
          import com.udondan.iamFloyd.cdk.Operator;
 
    .. group-tab:: C#
 
       .. code-block:: csharp
 
-         // for use without AWS CDK use the iam-floyd package
+         // iam-floyd
          using IAM.Floyd;
 
-         // for use with CDK use the cdk-iam-floyd package
+         // cdk-iam-floyd
          using CDK.IAM.Floyd;
 
    .. group-tab:: Go
 
       .. code-block:: go
 
-         // for use without AWS CDK use the iam-floyd package
+         // iam-floyd
          import "udondan.github.io/iam-floyd/go/iamfloyd"
 
-         // for use with CDK use the cdk-iam-floyd package
+         // cdk-iam-floyd
          import "udondan.github.io/iam-floyd/go/cdkiamfloyd"
 
-Operators can be simple strings such as ``StringEquals`` or get complex with modifiers such as ``ForAnyValue`` or ``IfExists``. For simple operators you can use the static properties of the ``Operator`` class in TypeScript, and its constants in the native packages of ``iam-floyd`` for Python, Java, .NET and Go, like ``Operator.STRING_LIKE`` (``iamfloyd.Operator_STRING_LIKE`` in Go). The other languages have no such static properties, there you call the method of the same name on a new ``Operator``:
+Operators can be simple strings such as ``StringEquals`` or get complex with modifiers such as ``ForAnyValue`` or ``IfExists``. For simple operators, the ``Operator`` class has constants like ``Operator.STRING_LIKE``: static properties in TypeScript, and constants in ``iam-floyd`` for Python, Java, C# and Go (``iamfloyd.Operator_STRING_LIKE`` in Go). In ``cdk-iam-floyd`` for Python, Java, C# and Go, you call the method of the same name on a new ``Operator`` instead:
 
 .. example:: conditions-operator-simple
 

@@ -7,83 +7,51 @@ Getting Started
 .. NOTE::
    Use the online `policy converter <https://iam-floyd.readthedocs.io/en/latest/policy-converter.html>`__ to migrate any JSON policy to Floyd code!
 
-Depending on your scenario, you need to either install/import ``iam-floyd`` or ``cdk-iam-floyd``. Python, Java, .NET and Go are supported by both:
+Install ``iam-floyd``, or ``cdk-iam-floyd`` for the AWS CDK, as described in :doc:`packages`. Then import the statement providers:
 
 .. tabs::
 
    .. group-tab:: TypeScript
 
-      .. code-block:: bash
-
-         # for use without AWS CDK use the iam-floyd package
-         npm install iam-floyd
-
-         # for use with CDK use the cdk-iam-floyd package
-         npm install cdk-iam-floyd
-
       .. code-block:: ts
 
-         // for use without AWS CDK use the iam-floyd package
+         // iam-floyd
          import { Statement } from 'iam-floyd';
 
-         // for use with CDK use the cdk-iam-floyd package
+         // cdk-iam-floyd
          import { Statement } from 'cdk-iam-floyd';
 
       Or in JavaScript:
 
       .. code-block:: js
 
-         // for use without AWS CDK use the iam-floyd package
+         // iam-floyd
          const { Statement } = require('iam-floyd');
 
-         // for use with CDK use the cdk-iam-floyd package
+         // cdk-iam-floyd
          const { Statement } = require('cdk-iam-floyd');
 
    .. group-tab:: Python
 
-      .. code-block:: bash
-
-         # for use without AWS CDK use the iam-floyd package
-         pip install iam-floyd
-
-         # for use with CDK use the cdk-iam-floyd package
-         pip install cdk-iam-floyd
-
       .. code-block:: python
 
-         # for use without AWS CDK use the iam-floyd package
+         # iam-floyd
          from iam_floyd import Statement
 
-         # for use with CDK use the cdk-iam-floyd package
+         # cdk-iam-floyd
          from cdk_iam_floyd import Statement
 
    .. group-tab:: Java
 
-      .. code-block:: xml
-
-         <!-- for use without AWS CDK use the iam-floyd package -->
-         <dependency>
-           <groupId>com.udondan</groupId>
-           <artifactId>iam-floyd</artifactId>
-           <version>VERSION</version>
-         </dependency>
-
-         <!-- for use with CDK use the cdk-iam-floyd package -->
-         <dependency>
-           <groupId>com.udondan</groupId>
-           <artifactId>cdk-iam-floyd</artifactId>
-           <version>VERSION</version>
-         </dependency>
-
       .. code-block:: java
 
-         // for use without AWS CDK use the iam-floyd package:
+         // iam-floyd
          // the statement providers, e.g. Ec2
          import com.udondan.iamFloyd.statement.Ec2;
          // Operator, Collection and Json
          import com.udondan.iamFloyd.*;
 
-         // for use with CDK use the cdk-iam-floyd package:
+         // cdk-iam-floyd
          // the statement providers, e.g. Ec2
          import com.udondan.iamFloyd.cdk.statement.Ec2;
          // Operator and Collection
@@ -91,23 +59,15 @@ Depending on your scenario, you need to either install/import ``iam-floyd`` or `
 
    .. group-tab:: C#
 
-      .. code-block:: bash
-
-         # for use without AWS CDK use the iam-floyd package
-         dotnet add package IAM.Floyd
-
-         # for use with CDK use the cdk-iam-floyd package
-         dotnet add package CDK.IAM.Floyd
-
       .. code-block:: csharp
 
-         // for use without AWS CDK use the iam-floyd package:
+         // iam-floyd
          // the statement providers, e.g. Statement.Ec2
          using Statement = IAM.Floyd.Statement;
          // Operator, Collection and Json
          using IAM.Floyd;
 
-         // for use with CDK use the cdk-iam-floyd package:
+         // cdk-iam-floyd
          // the statement providers, e.g. Statement.Ec2
          using Statement = CDK.IAM.Floyd.Statement;
          // Operator and Collection
@@ -115,29 +75,21 @@ Depending on your scenario, you need to either install/import ``iam-floyd`` or `
 
    .. group-tab:: Go
 
-      .. code-block:: bash
-
-         # for use without AWS CDK use the iam-floyd package
-         go get udondan.github.io/iam-floyd/go/iamfloyd
-
-         # for use with CDK use the cdk-iam-floyd package
-         go get udondan.github.io/iam-floyd/go/cdkiamfloyd
-
       .. code-block:: go
 
-         // for use without AWS CDK use the iam-floyd package
+         // iam-floyd
          import (
              // the statement providers, e.g. statement.NewEc2
              "udondan.github.io/iam-floyd/go/iamfloyd/statement"
 
-             // Operator, AwsManagedPolicy and String, Number, Bool
+             // Operator, AwsManagedPolicy and String, Strings, Number, Bool
              "udondan.github.io/iam-floyd/go/iamfloyd"
 
              // Collection
              "udondan.github.io/iam-floyd/go/iamfloyd/collection"
          )
 
-         // for use with CDK use the cdk-iam-floyd package
+         // cdk-iam-floyd
          import (
              // the statement providers, e.g. statement.NewEc2
              "udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
@@ -146,7 +98,9 @@ Depending on your scenario, you need to either install/import ``iam-floyd`` or `
              "udondan.github.io/iam-floyd/go/cdkiamfloyd"
          )
 
-The examples in TypeScript use ``iam-floyd``, the others ``cdk-iam-floyd``. The Python examples work the same with ``iam_floyd``, except those that use AWS CDK. With ``cdk-iam-floyd``, the statements are an `iam.PolicyStatement`_ and the ARN defaults are references to the partition, region and account of the stack. The results show the policies of ``iam-floyd``. For the differences between the languages, see `Language Specifics <language-specifics_>`_.
+The code of the examples is the same for both variants, apart from the imports. The examples in TypeScript are written for ``iam-floyd``, those in the other languages for ``cdk-iam-floyd``, so they show the AWS CDK where the variants differ, for example the props of `iam.PolicyStatement`_ to set the SID. In Go, ``iam-floyd`` has its own helpers for pointers: ``iamfloyd.String()`` instead of ``jsii.String()``. All differences are listed in `Differences Between the Variants`_.
+
+The results show the policies of ``iam-floyd``. With ``cdk-iam-floyd``, the ARN defaults are references to the partition, region and account of the stack.
 
 Both packages contain a statement provider for each AWS service, e.g. ``Ec2``. A statement provider is a class with methods for each and every available action, resource type and condition. Calling such method will add the action/resource/condition to the statement:
 
@@ -260,9 +214,9 @@ To invert the policy you can use ``notAction()``, ``notResource()`` and ``notPri
 Language Specifics
 ------------------
 
-The packages for Python, Java, .NET and Go are generated by `jsii <https://aws.github.io/jsii/>`_, which adapts the API to each language, just like it does for AWS CDK. The `API reference on Construct Hub <https://constructs.dev/packages/cdk-iam-floyd>`_ shows the exact names in every language. The native packages of ``iam-floyd`` have the same names as ``cdk-iam-floyd``, see `Native Packages`_.
+The API is the same in every language, with the names adapted to the conventions of the language. ``cdk-iam-floyd`` follows the naming rules of `jsii`_, and ``iam-floyd`` uses the same names. The API reference of ``cdk-iam-floyd`` on `Construct Hub`_ shows the exact names in every language.
 
-**Method names** follow the conventions of each language:
+**Method names**:
 
 .. list-table::
    :header-rows: 1
@@ -309,24 +263,45 @@ The packages for Python, Java, .NET and Go are generated by `jsii <https://aws.g
      - ``In()``
      - ``In()``
 
-**Static properties** of ``Operator`` and ``AwsManagedPolicy`` exist in TypeScript and in the native packages of ``iam-floyd``, as constants like ``Operator.STRING_LIKE``. In the other languages, use the methods of the same name instead, see :doc:`operators` and :doc:`aws-managed-policies`.
-
-**Values that can be a string or a list**, like most condition values, take a list of the language: ``['a', 'b']`` in Python, ``List.of("a", "b")`` in Java, ``new[] { "a", "b" }`` in C# and ``&[]*string{jsii.String("a"), jsii.String("b")}`` in Go.
+**Values that can be a string or a list**, like most condition values, take a list of the language: ``['a', 'b']`` in Python, ``List.of("a", "b")`` in Java, ``new[] { "a", "b" }`` in C# and ``iamfloyd.Strings("a", "b")`` or ``&[]*string{jsii.String("a"), jsii.String("b")}`` in Go.
 
 **Go** has no optional arguments and works with pointers:
 
-- Constructors take the props of `iam.PolicyStatement`_, or ``nil``: ``statement.NewEc2(nil)``.
-- Every optional argument must be passed, as ``nil`` if not needed: ``OnTable(jsii.String("Thread"), nil, nil, nil)``.
-- Strings, numbers and booleans are passed as pointers via ``jsii.String()``, ``jsii.Number()`` and ``jsii.Bool()`` of ``github.com/aws/jsii-runtime-go``.
+- The constructors take the SID, or with ``cdk-iam-floyd`` the props of `iam.PolicyStatement`_, or ``nil``: ``statement.NewEc2(nil)``.
+- Every optional argument must be passed, as ``nil`` if not needed: ``OnTable(iamfloyd.String("Thread"), nil, nil, nil)``.
+- Strings, numbers and booleans are passed as pointers. ``iam-floyd`` creates them with ``iamfloyd.String()``, ``iamfloyd.Strings()``, ``iamfloyd.Number()`` and ``iamfloyd.Bool()``, ``cdk-iam-floyd`` with ``jsii.String()``, ``jsii.Number()`` and ``jsii.Bool()`` of ``github.com/aws/jsii-runtime-go``.
 
-Native Packages
-^^^^^^^^^^^^^^^
+Differences Between the Variants
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The native packages of ``iam-floyd`` for Python, Java, .NET and Go have the same names as ``cdk-iam-floyd``, with these differences:
+.. list-table::
+   :header-rows: 1
+   :widths: 20 40 40
 
-- The statement provider takes the SID: ``Statement.Ec2('MYSID')`` in Python, ``new Ec2("MYSID")`` in Java, ``new Statement.Ec2("MYSID")`` in C# and ``statement.NewEc2(iamfloyd.String("MYSID"))`` in Go.
-- The static properties of ``Operator`` and ``AwsManagedPolicy`` are constants: ``Operator.STRING_EQUALS``, ``AwsManagedPolicy.READ_ONLY_ACCESS``, in Go ``iamfloyd.Operator_STRING_EQUALS``, ``iamfloyd.AwsManagedPolicy_READ_ONLY_ACCESS``. ``AwsManagedPolicy`` has the names of the policies only.
-- The statement as JSON: ``to_json()`` returns a ``dict`` in Python, ``toJSON()`` a ``Map`` in Java, ``ToJSON()`` a ``Dictionary`` in C# and a map in Go. ``Json.stringify(statement)`` in Java, ``Json.Stringify(statement)`` in C# and ``json.Marshal(statement)`` in Go return the JSON, of a statement or a list of statements.
-- Dates are a ``datetime`` in Python, an ``Instant`` in Java, a ``DateTime`` in C# and a ``time.Time`` in Go, or a string in all of them.
-- In Go, the pointers are created with ``iamfloyd.String()``, ``iamfloyd.Number()`` and ``iamfloyd.Bool()`` instead of those of ``jsii``, the collection is in the package ``collection`` and returns a slice: ``collection.NewCollection().AllowEc2InstanceDeleteByOwner()`` returns ``[]*statement.Ec2``.
-- In Java and C#, the statement providers are generic: ``new Collection().allowEc2InstanceDeleteByOwner()`` returns a ``List<Ec2>``, and a list of several statement providers is a ``List<? extends PolicyStatement<?>>`` in Java and, for example, a ``List<PolicyStatementBase>`` in C#.
+   * -
+     - ``iam-floyd``
+     - ``cdk-iam-floyd``
+   * - Statement
+     - A statement of IAM Floyd
+     - An `iam.PolicyStatement`_ of the AWS CDK
+   * - Constructor
+     - The SID: ``new Statement.Ec2('MYSID')`` in TypeScript, ``Statement.Ec2('MYSID')`` in Python, ``new Ec2("MYSID")`` in Java, ``new Statement.Ec2("MYSID")`` in C#, ``statement.NewEc2(iamfloyd.String("MYSID"))`` in Go
+     - The props of `iam.PolicyStatement`_, which include the SID
+   * - ARN defaults
+     - ``aws``, ``*`` and ``*`` for partition, region and account
+     - References to the partition, region and account of the stack
+   * - Static properties of ``Operator`` and ``AwsManagedPolicy``
+     - Constants: ``Operator.STRING_EQUALS``, ``AwsManagedPolicy.READ_ONLY_ACCESS``, in Go ``iamfloyd.Operator_STRING_EQUALS``, ``iamfloyd.AwsManagedPolicy_READ_ONLY_ACCESS``
+     - In TypeScript static properties, in the other languages methods of the same name, see :doc:`operators` and :doc:`aws-managed-policies`
+   * - ``AwsManagedPolicy``
+     - The names of the policies
+     - The names of the policies, and methods that create an ``iam.IManagedPolicy``
+   * - JSON
+     - ``toJSON()`` returns a ``dict`` in Python, a ``Map`` in Java, a ``Dictionary`` in C# and a map in Go. ``Json.stringify(statement)`` in Java, ``Json.Stringify(statement)`` in C# and ``json.Marshal(statement)`` in Go return the JSON of a statement or a list of statements
+     - Rendered by the AWS CDK, e.g. in a ``PolicyDocument``
+   * - Dates
+     - A ``datetime`` in Python, an ``Instant`` in Java, a ``DateTime`` in C# and a ``time.Time`` in Go, or a string
+     - In TypeScript a ``Date`` or a string, in the other languages a string in ISO 8601
+   * - Collection
+     - In Java and C#, the statement providers are generic: ``new Collection().allowEc2InstanceDeleteByOwner()`` returns a ``List<Ec2>``, and a list of several statement providers is a ``List<? extends PolicyStatement<?>>`` in Java and, for example, a ``List<PolicyStatementBase>`` in C#. In Go, the collection is in the package ``collection`` and returns a slice: ``collection.NewCollection().AllowEc2InstanceDeleteByOwner()`` returns ``[]*statement.Ec2``
+     - Lists of the statement providers, which are an `iam.PolicyStatement`_
