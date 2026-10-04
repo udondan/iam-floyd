@@ -116,8 +116,11 @@ jobs:
         with:
           persist-credentials: false
 
+      # hatchling needs a newer Python than the package
       - name: Build
         run: make install package-native
+        env:
+          UV_PYTHON: '3.14'
 
       - name: Test
         run: PYTHON_WHEEL="$(echo dist/iam-floyd/python/*.whl)" make test-transpile
