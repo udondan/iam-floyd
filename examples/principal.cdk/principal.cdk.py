@@ -6,12 +6,12 @@ def example():
     # doc-start
     statement = (
         Statement.Sts()
-        .allow()
-        .to_assume_role()
-        .for_cdk_principal(
-            iam.ServicePrincipal('sns.amazonaws.com'),
-            iam.ServicePrincipal('lambda.amazonaws.com'),
-        )
+            .allow()
+            .to_assume_role()
+            .for_cdk_principal(
+                iam.ServicePrincipal('sns.amazonaws.com'),
+                iam.ServicePrincipal('lambda.amazonaws.com'),
+            )
     )
     # doc-end
     return statement

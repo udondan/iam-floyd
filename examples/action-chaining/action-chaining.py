@@ -5,8 +5,8 @@ def example():
     # doc-start
     statement = (
         Statement.Ec2()
-        .to_start_instances()
-        .to_stop_instances()
+            .to_start_instances()
+            .to_stop_instances()
     )
     # doc-end
     return statement

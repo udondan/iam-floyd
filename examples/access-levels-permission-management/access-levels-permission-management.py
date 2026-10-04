@@ -5,8 +5,8 @@ def example():
     # doc-start
     statement = (
         Statement.S3()
-        .allow()
-        .all_permission_management_actions()
+            .allow()
+            .all_permission_management_actions()
     )
     # doc-end
     return statement
