@@ -411,7 +411,7 @@ var PolicyConverter = (function () {
         statement.calls,
         method,
         args,
-        '',
+        '    ',
       );
     },
     policy(statements, context) {
