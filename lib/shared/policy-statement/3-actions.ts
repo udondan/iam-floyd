@@ -1,8 +1,6 @@
-import substrings from '@udondan/common-substrings';
-import RegexParser = require('regex-parser');
-
 import { AccessLevel } from '../access-level';
 import { AccessLevelList } from '../access-level';
+import { compactActionNames } from '../compact';
 import { PolicyStatementWithCondition } from './2-conditions';
 
 export interface Action {
@@ -141,12 +139,14 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    * ```typescript
    * allMatchingActions('/vpn/i')
    * ```
+   * Of the flags, only `i` (ignore case) and `y` (match at the start of the action name) have an effect, others are ignored. Without `i`, the match is case-sensitive. A string without slashes is used as the pattern itself.
    */
   public allMatchingActions(...expressions: string[]) {
     expressions.forEach((expression) => {
+      const regex = parseRegex(expression);
       for (const [_, actions] of Object.entries(this.accessLevelList)) {
         actions.forEach((action) => {
-          if (action.match(RegexParser(expression))) {
+          if (regex.test(action)) {
             this.to(`${this.servicePrefix}:${action}`);
           }
         });
@@ -235,86 +235,71 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
     return this;
   }
 
+  /**
+   * Replaces the actions of this service by wildcard patterns. Other actions, like `ec2:*` or actions of other services, are kept as they are.
+   */
   private compactActions() {
-    // actions that will be included, service prefix is removed
-    const includeActions = this.floydActions.map((elem) => {
-      return elem.substring(elem.indexOf(':') + 1);
-    });
-
-    // actions that will not be included, the opposite of includeActions
-    const excludeActions: string[] = [];
+    const prefix = `${this.servicePrefix}:`;
+    const known = new Set<string>();
     for (const [_, actions] of Object.entries(this.accessLevelList)) {
-      actions.forEach((action) => {
-        if (!includeActions.includes(action)) {
-          excludeActions.push(`^${action}$`);
-        }
-      });
+      for (const action of actions) {
+        known.add(action);
+      }
     }
 
-    // will contain the index of elements that are covered by substrings
-    let covered: number[] = [];
-
-    const subs = substrings(
-      includeActions.map((action) => {
-        return `^${action}$`;
-      }),
-      {
-        minLength: 3,
-        minOccurrence: 2,
-      },
-    )
-      .filter((sub) => {
-        // remove all substrings, that match an action we have not selected
-        for (const action of excludeActions) {
-          if (action.includes(sub.name)) {
-            return false;
-          }
+    const selected: string[] = [];
+    const selectedSet = new Set<string>();
+    const kept: string[] = [];
+    for (const action of this.floydActions) {
+      const name = action.substring(prefix.length);
+      if (action.startsWith(prefix) && known.has(name)) {
+        if (!selectedSet.has(name)) {
+          selected.push(name);
+          selectedSet.add(name);
         }
-        return true;
-      })
-      .sort((a, b) => {
-        // sort list by the number of matches
-        if (a.source.length < b.source.length) return 1;
-        if (a.source.length > b.source.length) return -1;
-        return 0;
-      })
-      .filter((sub) => {
-        // removes substrings, that have already been covered by other substrings
-        const sources = sub.source.filter((source) => {
-          return !covered.includes(source);
-        });
-        if (sources.length > 1) {
-          //add list of sources to the global list of covered actions
-          covered = covered.concat(sources);
-          return true;
-        }
-        return false;
-      });
+      } else {
+        kept.push(action);
+      }
+    }
 
-    // stores the list of patterns
-    const compactActionList: string[] = [];
-    subs.forEach((sub) => {
-      compactActionList.push(
-        `${this.servicePrefix}:*${sub.name}*`
-          .replace('*^', '')
-          .replace('$*', ''),
-      );
-      sub.source.forEach((source) => {
-        includeActions[source] = ''; // invalidate, will be filtered later
-      });
-    });
+    const excluded: string[] = [];
+    for (const name of known) {
+      if (!selectedSet.has(name)) {
+        excluded.push(name);
+      }
+    }
 
-    includeActions
-      .filter((action) => {
-        // remove elements that have been covered by patterns, we invalidated them above
-        return action.length > 0;
-      })
-      .forEach((action) => {
-        // add actions that have not been covered by patterns to the new action list
-        compactActionList.push(`${this.servicePrefix}:${action}`);
-      });
-
-    // we're done. override action list
-    this.floydActions = compactActionList;
+    for (const pattern of compactActionNames(selected, excluded)) {
+      kept.push(`${prefix}${pattern}`);
+    }
+    this.floydActions = kept;
   }
+}
+
+/**
+ * Parses a regular expression in literal style, e.g. `/vpn/i`. Input without slashes is used as pattern.
+ *
+ * Of the flags, only `i` (ignore case) and `y` (match at the start) have an effect on action names.
+ */
+function parseRegex(expression: string): RegExp {
+  if (expression.length == 0) {
+    throw new Error('Invalid regular expression format.');
+  }
+  let pattern = expression;
+  let flags = '';
+  const end = expression.lastIndexOf('/');
+  if (expression.startsWith('/') && end > 1) {
+    pattern = expression.substring(1, end);
+    for (let i = end + 1; i < expression.length; i++) {
+      const char = expression.substring(i, i + 1);
+      if (!'abcdefghijklmnopqrstuvwxyz'.includes(char.toLowerCase())) {
+        break;
+      }
+      flags = `${flags}${char}`;
+    }
+  }
+  if (flags.includes('y')) {
+    pattern = `^(?:${pattern})`;
+  }
+  return new RegExp(pattern, flags.includes('i') ? 'i' : '');
 }

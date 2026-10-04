@@ -76,7 +76,8 @@ run_typescript() {
 
 run_python() {
   python3 -m venv "${OUT}/venv"
-  "${OUT}/venv/bin/pip" install --quiet --find-links "${ROOT}/dist/python" --find-links "${CONSUMER}/python" floyd-consumer
+  # the wheel is passed as file, otherwise pip can take the same version from PyPI
+  "${OUT}/venv/bin/pip" install --quiet --find-links "${CONSUMER}/python" "${ROOT}"/dist/python/cdk_iam_floyd-*.whl floyd-consumer
   "${OUT}/venv/bin/python" "${TEST}/python/scenarios.py"
 }
 
@@ -101,6 +102,18 @@ run_dotnet() {
     <add key="floyd-consumer" value="${CONSUMER}/dotnet" />
     <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
   </packageSources>
+  <!-- otherwise NuGet can take the same version from nuget.org -->
+  <packageSourceMapping>
+    <packageSource key="cdk-iam-floyd">
+      <package pattern="CDK.IAM.Floyd" />
+    </packageSource>
+    <packageSource key="floyd-consumer">
+      <package pattern="Floyd.Consumer" />
+    </packageSource>
+    <packageSource key="nuget.org">
+      <package pattern="*" />
+    </packageSource>
+  </packageSourceMapping>
 </configuration>
 EOF
   dotnet run --verbosity quiet

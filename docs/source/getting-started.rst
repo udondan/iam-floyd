@@ -167,7 +167,7 @@ You can work with `access levels <access-levels_>`_. For every access level ther
 To add actions based on regular expressions, use the method ``allMatchingActions()``.
 
 .. IMPORTANT::
-   No matter in which language you use the package, the regular expressions need to be in `Perl/JavaScript literal style <regex_>`_ and need to be passed as strings!
+   No matter in which language you use the package, the regular expressions need to be in `Perl/JavaScript literal style <regex_>`_ and need to be passed as strings! Of the flags, only ``i`` and ``y`` have an effect, see :doc:`vocabulary`.
 
 .. example:: actions-matching
 

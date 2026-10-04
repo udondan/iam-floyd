@@ -51,6 +51,14 @@ The regular expressions need to be in `Perl/JavaScript literal style <regex_>`_ 
 
 .. example:: actions-matching
 
+.. NOTE::
+   Of the flags after the closing slash, only these have an effect:
+
+   - ``i``: ignore case. Without it, the expression is matched case-sensitively against the action names as written in the AWS documentation, e.g. ``CreateVpnConnection``.
+   - ``y``: the match has to start at the beginning of the action name, the same as a leading ``^``.
+
+   Other flags (``g``, ``m``, ``s``, ``u``) are ignored. A string without slashes is used as the pattern itself.
+
 Access levels
 ^^^^^^^^^^^^^
 

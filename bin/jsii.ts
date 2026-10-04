@@ -4,7 +4,6 @@
  * packages from the npm package and its jsii assembly. Run after `make cdk build`.
  *
  * - sets the jsii targets in package.json
- * - bundles the dependencies, as other languages only install the npm tarball
  * - writes the jsii assembly (`.jsii`) from the service models
  * - appends the jsii runtime type information to `lib/index.js`
  */
@@ -47,7 +46,6 @@ packageJson.jsii = {
     },
   },
 };
-packageJson.bundleDependencies = Object.keys(packageJson.dependencies);
 fs.writeFileSync('package.json', `${JSON.stringify(packageJson, null, 2)}\n`);
 
 const models = fs
