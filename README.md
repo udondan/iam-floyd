@@ -40,10 +40,10 @@ from iam_floyd import Statement
 
 statement = (
     Statement.Ec2()
-    .allow()
-    .to_start_instances()
-    .to_stop_instances()
-    .if_resource_tag('Owner', '${aws:username}')
+        .allow()
+        .to_start_instances()
+        .to_stop_instances()
+        .if_resource_tag('Owner', '${aws:username}')
 )
 ```
 
