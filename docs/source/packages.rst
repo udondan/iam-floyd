@@ -8,7 +8,7 @@ There are two different package variants available:
 
 **iam-floyd**:
    | Can be used in AWS SDK, Boto 3 or for whatever you need an IAM policy statement for:
-   | |iam-floyd-npm|_ |iam-floyd-pypi|_
+   | |iam-floyd-npm|_ |iam-floyd-pypi|_ |iam-floyd-maven|_
 
 **cdk-iam-floyd**:
    | Integrates into `AWS CDK`_ and extends `iam.PolicyStatement`_:
@@ -20,7 +20,22 @@ There are two different package variants available:
 Other Languages
 ---------------
 
-``iam-floyd`` is also available as a native package for Python, with the same version as on npm: `iam-floyd on PyPI <https://pypi.org/project/iam-floyd/>`_. It doesn't need Node.js and has no dependencies. It supports Python 3.9 and newer.
+``iam-floyd`` is also available as a native package for Python and Java, with the same version as on npm:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Language
+     - Package
+     - Requires
+   * - Python
+     - `iam-floyd on PyPI <https://pypi.org/project/iam-floyd/>`_
+     - Python 3.9
+   * - Java
+     - `com.udondan:iam-floyd on Maven Central <https://central.sonatype.com/artifact/com.udondan/iam-floyd>`_
+     - Java 11
+
+The native packages have no dependencies and do not need Node.js. Their code is generated from the same sources as the npm package, and every release is tested to produce the same policies as TypeScript. The API is the one of ``cdk-iam-floyd`` in these languages, with a few differences, see `Language Specifics <getting-started.html#language-specifics>`_.
 
 ``cdk-iam-floyd`` is also available for Python, Java, .NET and Go, with the same version as on npm:
 

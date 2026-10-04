@@ -26,3 +26,9 @@ __pycache__/
 /python/iam_floyd/_version.py
 /test/transpile/out
 /python/iam_floyd/statement
+# the Java sources are written by bin/transpile.ts, except the runtime
+/java/src/main/java/com/udondan/iamFloyd/*
+!/java/src/main/java/com/udondan/iamFloyd/Js.java
+!/java/src/main/java/com/udondan/iamFloyd/Json.java
+/java/target
+/java/.flattened-pom.xml

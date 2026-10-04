@@ -7,6 +7,9 @@
 .. _iam-floyd-pypi: https://pypi.org/project/iam-floyd/
 .. |iam-floyd-pypi| image:: https://img.shields.io/pypi/v/iam-floyd?label=PyPI
 
+.. _iam-floyd-maven: https://central.sonatype.com/artifact/com.udondan/iam-floyd
+.. |iam-floyd-maven| image:: https://img.shields.io/maven-central/v/com.udondan/iam-floyd?label=Maven%20Central
+
 .. _cdk-iam-floyd-npm: https://www.npmjs.com/package/cdk-iam-floyd
 .. |cdk-iam-floyd-npm| image:: https://img.shields.io/npm/dt/cdk-iam-floyd?label=npm&color=orange
 

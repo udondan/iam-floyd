@@ -4,7 +4,7 @@ import { PolicyStatementBase } from './1-base';
 /**
  * A Condition
  */
-export type Condition = Record<string, string>;
+export type Condition = Record<string, any>;
 
 /**
  * A collection of Condition's

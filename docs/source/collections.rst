@@ -37,6 +37,10 @@ First import the ``Collection`` provider:
 
       .. code-block:: java
 
+         // for use without AWS CDK use the iam-floyd package
+         import com.udondan.iamFloyd.Collection;
+
+         // for use with CDK use the cdk-iam-floyd package
          import com.udondan.iamFloyd.cdk.Collection;
 
    .. group-tab:: C#

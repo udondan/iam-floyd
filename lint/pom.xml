@@ -30,6 +30,8 @@
             <sourceDirectory>${project.basedir}/../examples</sourceDirectory>
             <sourceDirectory>${project.basedir}/../test/jsii/java/src</sourceDirectory>
             <sourceDirectory>${project.basedir}/../test/jsii/examples/java/src</sourceDirectory>
+            <sourceDirectory>${project.basedir}/../test/transpile/java</sourceDirectory>
+            <sourceDirectory>${project.basedir}/../java/src</sourceDirectory>
           </sourceDirectories>
           <includes>**/*.java</includes>
           <consoleOutput>true</consoleOutput>
