@@ -6,11 +6,13 @@ TARGET_COLOR=\x1b[96m
 # Languages of package-jsii and test-jsii. TypeScript needs no package, it is the baseline of test-jsii
 LANGUAGES ?= typescript python java dotnet go
 JSII_TARGETS := $(filter-out typescript,$(LANGUAGES))
+# The languages of the transpiled core
+TRANSPILE_LANGUAGES := $(filter python,$(LANGUAGES))
 EMPTY :=
 SPACE := $(EMPTY) $(EMPTY)
 COMMA := ,
 
-.PHONY: build emit generate package package-jsii test-jsii changelog cdk docs stats lint lint-fix lint-cdk
+.PHONY: build emit generate package package-native package-jsii test-jsii test-transpile changelog cdk docs stats lint lint-fix lint-cdk
 
 build: emit
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
@@ -39,6 +41,14 @@ index-managed-policies:
 package: build
 	@echo -e "$(TARGET_COLOR)Running package$(NO_COLOR)"
 	@npm pack
+
+# The native packages of iam-floyd in dist/iam-floyd/, currently Python
+package-native: emit
+	@echo -e "$(TARGET_COLOR)Running package-native$(NO_COLOR)"
+	@npx ts-node bin/transpile.ts
+	@cp LICENSE python/LICENSE
+	@rm -rf dist/iam-floyd
+	@uv build --quiet python --out-dir dist/iam-floyd/python
 
 # Python, Java, .NET and Go packages of cdk-iam-floyd in dist/, run after `make cdk`.
 # Set LANGUAGES to build only some of them, e.g. `make package-jsii LANGUAGES=python`
@@ -73,6 +83,10 @@ cdk-all: cdk install build cdk-test
 test-jsii:
 	@echo -e "$(TARGET_COLOR)Running jsii test$(NO_COLOR)"
 	@test/jsii/run.sh $(LANGUAGES)
+
+test-transpile: emit
+	@echo -e "$(TARGET_COLOR)Running transpile test$(NO_COLOR)"
+	@test/transpile/run.sh $(TRANSPILE_LANGUAGES)
 
 changelog:
 	@echo -e "$(TARGET_COLOR)Running changelog$(NO_COLOR)"

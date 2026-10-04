@@ -16,20 +16,4 @@ export class PolicyStatementBase {
       this.sid = sid;
     }
   }
-
-  /**
-   * JSON-ify the policy statement
-   *
-   * Used when JSON.stringify() is called
-   */
-
-  public toJSON(): any {
-    const statement: any = {};
-
-    if (this.sid.length) {
-      statement.Sid = this.sid;
-    }
-
-    return statement;
-  }
 }

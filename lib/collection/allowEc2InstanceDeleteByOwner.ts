@@ -1,4 +1,4 @@
-import { Statement } from '..';
+import { Ec2 } from '../generated/policy-statements/ec2';
 
 /**
  * Allows stopping EC2 instance only for the user who started them
@@ -6,14 +6,14 @@ import { Statement } from '..';
  * @param tag The tag name, where the user information will be stored - default: `Owner`
  */
 
-export function allowEc2InstanceDeleteByOwner(tag?: string) {
+export function allowEc2InstanceDeleteByOwner(tag?: string): Ec2[] {
   const tagName = tag ?? 'Owner';
   return [
-    new Statement.Ec2()
+    new Ec2()
       .allow()
       .toStartInstances()
       .ifAwsRequestTag(tagName, '${aws:username}'),
-    new Statement.Ec2()
+    new Ec2()
       .allow()
       .toStopInstances()
       .ifResourceTag(tagName, '${aws:username}'),

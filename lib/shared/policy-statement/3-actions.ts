@@ -17,71 +17,20 @@ export interface Action {
  */
 export class PolicyStatementWithActions extends PolicyStatementWithCondition {
   protected accessLevelList: AccessLevelList = {};
-  private useNotAction = false;
+  protected useNotAction = false;
   protected floydActions: string[] = [];
-  private cdkActionsApplied = false;
   private isCompact = false;
 
   /**
-   * Injects actions into the statement.
-   *
-   * Only relevant for the main package. In CDK mode this only calls super.
+   * The actions of the statement, compacted if `compact()` was called, without duplicates and sorted
    */
-  public toJSON(): any {
-    // @ts-ignore only available after swapping 1-base
-    if (typeof this.addResources == 'function') {
-      this.cdkApplyActions();
-      return super.toJSON();
+  protected uniqueActions(): string[] {
+    if (this.isCompact) {
+      this.compactActions();
     }
-    const mode = this.useNotAction ? 'NotAction' : 'Action';
-    const statement = super.toJSON();
-    const self = this;
-
-    if (this.hasActions()) {
-      if (this.isCompact) {
-        this.compactActions();
-      }
-      const actions = this.floydActions
-        .filter((elem, pos) => {
-          return self.floydActions.indexOf(elem) == pos;
-        })
-        .sort();
-      statement[mode] = actions.length > 1 ? actions : actions[0];
-    }
-
-    return statement;
-  }
-
-  public toStatementJson(): any {
-    this.cdkApplyActions();
-    // @ts-ignore only available after swapping 1-base
-    return super.toStatementJson();
-  }
-
-  public freeze() {
-    // @ts-ignore only available after swapping 1-base
-    if (!this.frozen) {
-      this.cdkApplyActions();
-    }
-    return super.freeze();
-  }
-
-  private cdkApplyActions() {
-    if (!this.cdkActionsApplied) {
-      const mode = this.useNotAction ? 'addNotActions' : 'addActions';
-      const self = this;
-      if (this.isCompact) {
-        this.compactActions();
-      }
-      const uniqueActions = this.floydActions
-        .filter((elem, pos) => {
-          return self.floydActions.indexOf(elem) == pos;
-        })
-        .sort();
-      // @ts-ignore only available after swapping 1-base
-      this[mode](...uniqueActions);
-    }
-    this.cdkActionsApplied = true;
+    return this.floydActions
+      .filter((elem, pos) => this.floydActions.indexOf(elem) == pos)
+      .sort();
   }
 
   /**
@@ -215,10 +164,8 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
   }
 
   private addAccessLevel(accessLevel: AccessLevel) {
-    if (accessLevel in this.accessLevelList) {
-      this.accessLevelList[accessLevel]?.forEach((action) => {
-        this.to(`${this.servicePrefix}:${action}`);
-      });
+    for (const action of this.accessLevelList[accessLevel] ?? []) {
+      this.to(`${this.servicePrefix}:${action}`);
     }
     return this;
   }

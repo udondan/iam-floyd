@@ -46,6 +46,14 @@ One codebase produces two npm packages:
 
 Publishing: the npm package of `cdk-iam-floyd` includes the `.jsii` (`make package-jsii publish LANGUAGES=typescript`), Python goes to PyPI and .NET to NuGet (both trusted publishing), Java to Maven Central (`bin/publish-maven`, signed bundle via the Central Portal API). Go has no registry: `bin/go-proxy` writes the module zip, which is attached to the GitHub release, and a static Go module proxy for the newest 30 releases, served by GitHub Pages under `udondan.github.io/iam-floyd/go`.
 
+### Native Packages (transpiled core)
+
+The standalone `iam-floyd` is being built natively for other languages, without jsii and without Node.js. The hand-written code in `lib/shared/` (the core) and `lib/collection/`, and the names of the AWS managed policies (`lib/generated/aws-managed-policies/iam-floyd.ts`), are transpiled with ts-morph by `lib/generator/transpile/` (`index.ts` collects the files of a module in import order, one backend per language, currently `python.ts`). The only imports from outside a module are the generated service classes, imported from their file (e.g. `../generated/policy-statements/ec2`). The transpiler supports only a narrow subset of TypeScript: anything else fails with file and line, so rewrite the code in supported constructs rather than extending the transpiler for single cases. The service classes are emitted from the model by `lib/generator/emit/python.ts`, with the jsii naming rules (snake_case, `if_`, `in_`), into the package `statement/`, which imports a service on first access. `bin/transpile.ts` writes `python/iam_floyd/_shared.py`, `_collection.py`, `_aws_managed_policies.py` and `statement/` (not committed). The package imports the collection and the managed policies on first access. `python/iam_floyd/_js.py` is the hand-written runtime for JavaScript semantics (number formatting, `toISOString`, sorting by UTF-16 code units, regular expressions).
+
+`test/transpile/` runs the scenarios against TypeScript (the baseline) and each language, and diffs the output: those of `scenarios.json`, which test the core, and those that `services.ts` builds from the model, which call every method of every service. Then it runs the examples of the docs (`examples/<name>/<name>.py`) with the native package, through `python/examples.py`, which runs them with `iam_floyd` in place of `cdk_iam_floyd`, and compares them to the `.result` files with `test/jsii/examples/compare.py --standalone`, which skips the `*.cdk` examples. Last, it compares the AWS managed policies with those of TypeScript.
+
+The Python package is built with hatchling from `python/pyproject.toml`; `bin/transpile.ts` writes the version of package.json into `iam_floyd/_version.py`. It supports Python 3.9 and newer, and has no dependencies at runtime. CI builds it and tests the wheel with the oldest and the newest supported Python; for a release, the tested wheel and sdist go to PyPI as `iam-floyd` (trusted publishing, job `publish-iam-floyd-python`).
+
 ## Development Commands
 
 ### Build
@@ -54,6 +62,7 @@ Publishing: the npm package of `cdk-iam-floyd` includes the `.jsii` (`make packa
 make emit            # emit lib/generated/policy-statements/ and lib/generated/index.ts from the model
 make build           # emit + tsc --build --force tsconfig.main.json tsconfig.types.json
 make package         # build + npm pack
+make package-native  # transpile and build the native packages of iam-floyd into dist/iam-floyd/ (Python: uv build)
 make clean           # remove node_modules, *.js, *.d.ts
 make install         # clean + npm i
 ```
@@ -80,6 +89,7 @@ make test-typescript-cdk # after `make cdk`: same for the CDK examples (examples
 make cdk-test            # CDK test: real deploy + destroy via AWS CDK
 make cdk-all             # cdk + install + build + cdk-test
 make test-jsii           # test the packages of `make package-jsii` against TypeScript; LANGUAGES=python limits the languages
+make test-transpile      # transpile, compare the scenarios of test/transpile/ with TypeScript and run the examples; PYTHON_WHEEL=<wheel> tests the built package
 ```
 
 **Run a single example test manually:**
@@ -281,6 +291,6 @@ Follow conventional commits:
 - `index-managed-policies.yml` - Weekly on Sunday: updates managed policies, opens a `feat:` PR with `automerge` label
 - `release-please.yml` - On push to main: release-please maintains the release PR (version in `package.json` and `docs/source/conf.py`, `CHANGELOG.md`). After each run, `bin/changelog-add-iam-changes` adds the changes of the managed policies and the model since the last release to the new changelog entry of the PR. Merging the PR creates the tag and a draft release, and starts `test-and-publish.yml` with the tag
 - `automerge-schedule.yml` - Weekly on Monday: merges the release PR
-- `test-and-publish.yml` - On PR: `make install lint` (job `lint`), `make install test-typescript` + `make lint-cdk` + CDK deploy test + `make package-jsii test-jsii` per language. Started by `release-please.yml` with a tag: builds the packages from the tag, publishes to npm, PyPI, NuGet, Maven Central and the Go module proxy on GitHub Pages, sets the notes of the release from `CHANGELOG.md` and publishes the release
+- `test-and-publish.yml` - On PR: `make install lint` (job `lint`), `make install test-typescript` + `make lint-cdk` + CDK deploy test + `make package-jsii test-jsii` per language + `make package-native test-transpile` against the built Python package. Started by `release-please.yml` with a tag: builds the packages from the tag, publishes to npm, PyPI, NuGet, Maven Central and the Go module proxy on GitHub Pages, sets the notes of the release from `CHANGELOG.md` and publishes the release
 - `automerge.yml` - Auto-merges PRs labeled `automerge` after tests pass
 - `test-docs.yml` - Builds Sphinx docs on `docs/**` changes
