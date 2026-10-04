@@ -47,7 +47,7 @@
     "@swc/core": "1.16.13",
     "@swc/helpers": "0.5.23",
     "@types/node": "24.19.0",
-    "aws-cdk-lib": "2.271.0",
+    "aws-cdk-lib": "2.272.0",
     "cheerio": "1.2.0",
     "colors": "1.4.0",
     "eslint": "10.11.0",
