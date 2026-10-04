@@ -8,8 +8,8 @@
     "build": "npx tsc"
   },
   "devDependencies": {
-    "@swc/core": "1.15.30",
-    "@swc/helpers": "0.5.21",
+    "@swc/core": "1.16.13",
+    "@swc/helpers": "0.5.23",
     "@types/aws-lambda": "8.10.164",
     "regenerator-runtime": "0.14.1"
   },
