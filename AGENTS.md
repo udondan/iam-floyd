@@ -52,7 +52,7 @@ The standalone `iam-floyd` is being built natively for other languages, without 
 
 `test/transpile/` runs the scenarios against TypeScript (the baseline) and each language, and diffs the output: those of `scenarios.json`, which test the core, and those that `services.ts` builds from the model, which call every method of every service. Then it runs the examples of the docs (`examples/<name>/<name>.py`) with the native package, through `python/examples.py`, which runs them with `iam_floyd` in place of `cdk_iam_floyd`, and compares them to the `.result` files with `test/jsii/examples/compare.py --standalone`, which skips the `*.cdk` examples. Last, it compares the AWS managed policies with those of TypeScript.
 
-The Python package is built with hatchling from `python/pyproject.toml`; `bin/transpile.ts` writes the version of package.json into `iam_floyd/_version.py`. It supports Python 3.9 and newer, and has no dependencies at runtime. CI builds it and tests the wheel with the oldest and the newest supported Python.
+The Python package is built with hatchling from `python/pyproject.toml`; `bin/transpile.ts` writes the version of package.json into `iam_floyd/_version.py`. It supports Python 3.9 and newer, and has no dependencies at runtime. CI builds it and tests the wheel with the oldest and the newest supported Python; for a release, the tested wheel and sdist go to PyPI as `iam-floyd` (trusted publishing, job `publish-iam-floyd-python`).
 
 ## Development Commands
 
