@@ -4,7 +4,7 @@ Legal
 .. include:: _warning.rst
 .. include:: _links.rst
 
-The service models in the `lib/generated/model <https://github.com/udondan/iam-floyd/tree/main/lib/generated/model>`_ folder, and the code generated from them, are derived from the `AWS documentation <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html>`_. The class- and function-names and their description therefore are property of AWS.
+The service models in the `lib/generated/model <https://github.com/udondan/iam-floyd/tree/main/lib/generated/model>`_ folder, and the code generated from them, are derived from the `AWS Documentation`_. The class- and function-names and their description therefore are property of AWS.
 
 AWS and their services are trademarks, registered trademarks or trade dress of AWS in the U.S. and/or other countries.
 

@@ -177,7 +177,7 @@ Since these methods set defaults for consecutively added resources, you can also
 -------------------
 
 .. NOTE::
-   If you use the CDK variant of the package, don't attempt to create an assume policy with this package. Assume policies have to be of type ``IPrincipal`` and can easily be created with the `iam <https://docs.aws.amazon.com/cdk/api/latest/docs/aws-iam-readme.html>`_ package.
+   With ``cdk-iam-floyd``, don't attempt to create an assume policy with this package. Assume policies have to be of type ``IPrincipal`` and can easily be created with the `aws_iam <https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_iam-readme.html>`_ module of the AWS CDK.
 
 Every possible `principal <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html>`_ is represented by a distinct method. These methods start with ``for``. You allow/deny something **for** a specific principal.
 
@@ -187,7 +187,7 @@ Some of the ``for*`` methods accept multiple values at once:
 
 .. example:: principal-multiple
 
-The CDK variant of the package has an additional method ``forCdkPrincipal``, which takes any number of `iam.IPrincipal <https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.IPrincipal.html>`_ objects:
+``cdk-iam-floyd`` has an additional method ``forCdkPrincipal``, which takes any number of `iam.IPrincipal <https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_iam.IPrincipal.html>`_ objects:
 
 .. example:: principal.cdk
 
