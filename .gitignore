@@ -37,3 +37,8 @@ __pycache__/
 !/dotnet/src/IAM.Floyd/IAM.Floyd.csproj
 !/dotnet/src/IAM.Floyd/Js.cs
 !/dotnet/src/IAM.Floyd/Json.cs
+# the Go sources are written by bin/transpile.ts, except the helpers and the runtime
+/go/iamfloyd/*
+!/go/iamfloyd/go.mod
+!/go/iamfloyd/helpers.go
+!/go/iamfloyd/internal

@@ -44,13 +44,14 @@ export function compactActionNames(
         let indexes = sources.get(key);
         if (indexes === undefined) {
           indexes = [];
-          sources.set(key, indexes);
           spellings.set(key, marked.substring(start, end));
         }
         // the same substring can occur multiple times in one action
         if (indexes.length == 0 || indexes[indexes.length - 1] != index) {
           indexes.push(index);
         }
+        // set after the push, for the languages in which appending returns a new list
+        sources.set(key, indexes);
       }
     }
   }

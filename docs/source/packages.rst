@@ -20,7 +20,7 @@ There are two different package variants available:
 Other Languages
 ---------------
 
-``iam-floyd`` is also available as a native package for Python, Java and .NET, with the same version as on npm:
+``iam-floyd`` is also available as a native package for Python, Java, .NET and Go, with the same version as on npm:
 
 .. list-table::
    :header-rows: 1
@@ -37,6 +37,9 @@ Other Languages
    * - .NET
      - `IAM.Floyd on NuGet <https://www.nuget.org/packages/IAM.Floyd>`_
      - .NET 8
+   * - Go
+     - ``udondan.github.io/iam-floyd/go/iamfloyd``
+     - Go 1.21
 
 The native packages have no dependencies and do not need Node.js. Their code is generated from the same sources as the npm package, and every release is tested to produce the same policies as TypeScript. The API is the one of ``cdk-iam-floyd`` in these languages, with a few differences, see `Language Specifics <getting-started.html#language-specifics>`_.
 

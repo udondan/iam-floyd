@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-Builds the Go module of cdk-iam-floyd as a static Go module proxy, served by GitHub Pages.
+Builds the Go modules of iam-floyd and cdk-iam-floyd as a static Go module proxy, served by GitHub
+Pages.
 
-The module path is udondan.github.io/iam-floyd/go/cdkiamfloyd. The page at that path has a
-go-import meta tag pointing to the proxy at https://udondan.github.io/iam-floyd/go, which serves
-the files of the GOPROXY protocol (@v/list, .info, .mod, .zip).
+The module paths are udondan.github.io/iam-floyd/go/iamfloyd and .../go/cdkiamfloyd. The pages at
+these paths have a go-import meta tag pointing to the proxy at https://udondan.github.io/iam-floyd/go,
+which serves the files of the GOPROXY protocol (@v/list, .info, .mod, .zip).
 
   go-proxy zip <module dir> <version> <zip>   writes the module zip of a version
   go-proxy site <out dir> <zip>...            writes the proxy and the go-import pages for zips
@@ -19,19 +20,27 @@ import zipfile
 from datetime import datetime, timezone
 from html import escape
 
-MODULE = 'udondan.github.io/iam-floyd/go/cdkiamfloyd'
+# the modules by the name of the npm package, which is the prefix of the zip names
+MODULES = {
+    'iam-floyd': 'udondan.github.io/iam-floyd/go/iamfloyd',
+    'cdk-iam-floyd': 'udondan.github.io/iam-floyd/go/cdkiamfloyd',
+}
 PROXY = 'https://udondan.github.io/iam-floyd/go'
 DOCS = 'https://iam-floyd.readthedocs.io/'
-ZIP_NAME = re.compile(r'cdk-iam-floyd-go-module-(v\d+\.\d+\.\d+)\.zip$')
+ZIP_NAME = re.compile(r'(?:^|/)((?:cdk-)?iam-floyd)-go-module-(v\d+\.\d+\.\d+)\.zip$')
 
 
 def write_zip(module_dir, version, path):
     """Writes the module zip in the layout the go command expects: `<module>@<version>/<file>`"""
     if not version.startswith('v'):
         version = f'v{version}'
+    match = ZIP_NAME.search(path)
+    if not match:
+        sys.exit(f'Not the name of a Go module zip: {path}')
+    module = MODULES[match.group(1)]
     with open(os.path.join(module_dir, 'go.mod'), encoding='utf-8') as file:
-        if f'module {MODULE}\n' not in file.read():
-            sys.exit(f'{module_dir}/go.mod is not the module {MODULE}')
+        if f'module {module}\n' not in file.read():
+            sys.exit(f'{module_dir}/go.mod is not the module {module}')
     # all files share one timestamp, which is also the version time in the .info file
     timestamp = datetime.now(timezone.utc).timetuple()[:6]
     files = []
@@ -45,7 +54,7 @@ def write_zip(module_dir, version, path):
     with zipfile.ZipFile(path, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for file in files:
             name = os.path.relpath(file, module_dir).replace(os.sep, '/')
-            info = zipfile.ZipInfo(f'{MODULE}@{version}/{name}', timestamp)
+            info = zipfile.ZipInfo(f'{module}@{version}/{name}', timestamp)
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o644 << 16
             with open(file, 'rb') as content:
@@ -53,17 +62,17 @@ def write_zip(module_dir, version, path):
     print(f'Wrote {path}: {len(files)} files, {os.path.getsize(path)} bytes')
 
 
-def go_import_page(path):
+def go_import_page(module, path):
     title = escape(path)
     return f'''<!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="go-import" content="{MODULE} mod {PROXY}">
+    <meta name="go-import" content="{module} mod {PROXY}">
     <title>{title}</title>
   </head>
   <body>
-    <p><code>go get {MODULE}</code></p>
+    <p><code>go get {module}</code></p>
     <p><a href="{DOCS}">IAM Floyd documentation</a></p>
   </body>
 </html>
@@ -71,48 +80,51 @@ def go_import_page(path):
 
 
 def write_site(out_dir, zips):
-    versions = []
-    packages = set()
-    proxy_dir = os.path.join(out_dir, 'go', MODULE, '@v')
-    os.makedirs(proxy_dir, exist_ok=True)
+    versions = {}
+    packages = {}
     for path in zips:
-        match = ZIP_NAME.search(os.path.basename(path))
+        match = ZIP_NAME.search(path)
         if not match:
-            sys.exit(f'Not a Go module zip of cdk-iam-floyd: {path}')
-        version = match.group(1)
-        prefix = f'{MODULE}@{version}/'
+            sys.exit(f'Not a Go module zip of iam-floyd or cdk-iam-floyd: {path}')
+        module = MODULES[match.group(1)]
+        version = match.group(2)
+        prefix = f'{module}@{version}/'
         with zipfile.ZipFile(path) as archive:
             names = archive.namelist()
             if any(not name.startswith(prefix) for name in names):
                 sys.exit(f'{path} has files outside of {prefix}')
             mod = archive.read(f'{prefix}go.mod')
             time = datetime(*archive.getinfo(f'{prefix}go.mod').date_time, tzinfo=timezone.utc)
-            packages.update(
+            packages.setdefault(module, set()).update(
                 os.path.dirname(name[len(prefix) :]) for name in names if name.endswith('.go')
             )
+        proxy_dir = os.path.join(out_dir, 'go', module, '@v')
+        os.makedirs(proxy_dir, exist_ok=True)
         with open(os.path.join(proxy_dir, f'{version}.mod'), 'wb') as file:
             file.write(mod)
         with open(os.path.join(proxy_dir, f'{version}.info'), 'w', encoding='utf-8') as file:
             json.dump({'Version': version, 'Time': time.strftime('%Y-%m-%dT%H:%M:%SZ')}, file)
         with open(path, 'rb') as source, open(os.path.join(proxy_dir, f'{version}.zip'), 'wb') as target:
             target.write(source.read())
-        versions.append(version)
+        versions.setdefault(module, []).append(version)
 
-    with open(os.path.join(proxy_dir, 'list'), 'w', encoding='utf-8') as file:
-        file.writelines(f'{version}\n' for version in versions)
+    for module, module_versions in versions.items():
+        with open(os.path.join(out_dir, 'go', module, '@v', 'list'), 'w', encoding='utf-8') as file:
+            file.writelines(f'{version}\n' for version in module_versions)
 
-    # go-import pages for the module and every package in it, under the module path
-    module_page_dir = os.path.join(out_dir, os.path.relpath(MODULE, 'udondan.github.io/iam-floyd'))
-    for package in sorted(packages):
-        page_dir = os.path.join(module_page_dir, package)
-        os.makedirs(page_dir, exist_ok=True)
-        with open(os.path.join(page_dir, 'index.html'), 'w', encoding='utf-8') as file:
-            file.write(go_import_page(f'{MODULE}/{package}'.rstrip('/')))
+        # go-import pages for the module and every package in it, under the module path
+        module_page_dir = os.path.join(out_dir, os.path.relpath(module, 'udondan.github.io/iam-floyd'))
+        for package in sorted(packages[module]):
+            page_dir = os.path.join(module_page_dir, package)
+            os.makedirs(page_dir, exist_ok=True)
+            with open(os.path.join(page_dir, 'index.html'), 'w', encoding='utf-8') as file:
+                file.write(go_import_page(module, f'{module}/{package}'.rstrip('/')))
 
     with open(os.path.join(out_dir, 'index.html'), 'w', encoding='utf-8') as file:
         file.write(f'<!doctype html>\n<meta http-equiv="refresh" content="0; url={DOCS}">\n')
     open(os.path.join(out_dir, '.nojekyll'), 'w').close()
-    print(f'Wrote the Go module proxy for {len(versions)} versions to {out_dir}')
+    for module, module_versions in versions.items():
+        print(f'Wrote the Go module proxy of {module} for {len(module_versions)} versions to {out_dir}')
 
 
 def main():

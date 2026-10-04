@@ -6,12 +6,13 @@
 # of the docs in each language and compares them to the .result files, and compares the AWS managed
 # policies.
 #
-# Usage: test/transpile/run.sh [languages, default: python java dotnet]
+# Usage: test/transpile/run.sh [languages, default: python java dotnet go]
 #
 # The languages run against the generated sources, or against the built packages when they are set:
 # PYTHON_WHEEL=<wheel of make package-native>, JAVA_JAR=<jar of make package-native>,
-# DOTNET_PACKAGES=<directory of the nupkg of make package-native>. DOTNET_FRAMEWORK sets the target
-# framework of the .NET test, default: that of the installed SDK
+# DOTNET_PACKAGES=<directory of the nupkg of make package-native>, GO_MODULE=<zip of the module of
+# make package-native>. DOTNET_FRAMEWORK sets the target framework of the .NET test, default: that
+# of the installed SDK
 
 set -euo pipefail
 
@@ -20,7 +21,7 @@ OUT="${TEST}/out"
 if [[ $# -gt 0 ]]; then
   LANGUAGES=("$@")
 else
-  LANGUAGES=(python java dotnet)
+  LANGUAGES=(python java dotnet go)
 fi
 
 rm -rf "${OUT}"
@@ -87,6 +88,52 @@ if [[ " ${LANGUAGES[*]} " == *" dotnet "* ]]; then
   echo "Testing .NET with ${DOTNET_FRAMEWORK}"
 fi
 
+# the Go test in test/transpile/go/, with the examples rewritten for the native package and the
+# registry of the classes and constants
+if [[ " ${LANGUAGES[*]} " == *" go "* ]]; then
+  GO_DIR="${OUT}/go"
+  cp -R "${TEST}/go" "${GO_DIR}"
+  rm "${GO_DIR}/registry.ts"
+  npx ts-node "${TEST}/go/registry.ts" "${OUT}/managed-policies.json" "${GO_DIR}/registry.go"
+  for example in examples/*/*.go; do
+    name="$(basename "$(dirname "${example}")")"
+    if [[ "${name}" == *.cdk ]]; then
+      continue
+    fi
+    rewrite=(-e 's#"github.com/aws/jsii-runtime-go"#jsii "udondan.github.io/iam-floyd/go/iamfloyd"#'
+      -e 's#"github.com/aws/aws-cdk-go/awscdk/v2/awsiam"#"floydtest/awsiam"#'
+      -e 's#&awsiam\.PolicyStatementProps{Sid: \([^}]*\)}#\1#')
+    if grep -q NewCollection "${example}"; then
+      # the collection is in its own package, and returns a slice
+      rewrite+=(-e 's#"udondan.github.io/iam-floyd/go/cdkiamfloyd"#"udondan.github.io/iam-floyd/go/iamfloyd/collection"#'
+        -e 's#\*\{0,1\}cdkiamfloyd\.NewCollection()#collection.NewCollection()#'
+        -e 's#return \*statements#return statements#')
+    fi
+    rewrite+=(-e 's#go/cdkiamfloyd#go/iamfloyd#' -e 's#cdkiamfloyd\.#iamfloyd.#g')
+    sed "${rewrite[@]}" "${example}" > "${OUT}/example.go"
+    # without the props of the statement, some examples no longer use awsiam
+    if grep -q 'awsiam\.' "${OUT}/example.go"; then
+      mv "${OUT}/example.go" "${GO_DIR}/example-${name}.go"
+    else
+      grep -v '"floydtest/awsiam"' "${OUT}/example.go" > "${GO_DIR}/example-${name}.go"
+      rm "${OUT}/example.go"
+    fi
+  done
+  if [[ -n "${GO_MODULE:-}" ]]; then
+    unzip -q "${GO_MODULE}" -d "${OUT}/go-module"
+    # Go 1.21 takes the @ of the directory in the zip for a version
+    mv "${OUT}"/go-module/udondan.github.io/iam-floyd/go/iamfloyd@* "${OUT}/go-module/iamfloyd"
+    GO_MODULE_DIR="$(cd "${OUT}/go-module/iamfloyd" && pwd)"
+    go -C "${GO_DIR}" mod edit -replace "udondan.github.io/iam-floyd/go/iamfloyd=${GO_MODULE_DIR}"
+  else
+    go -C "${GO_DIR}" mod edit -replace "udondan.github.io/iam-floyd/go/iamfloyd=$(pwd)/go/iamfloyd"
+  fi
+  go -C "${GO_DIR}" vet ./...
+  go -C "${GO_DIR}" build -o test .
+  GO_TEST=("${GO_DIR}/test")
+  echo "Testing Go with $(go version)"
+fi
+
 FAILED=()
 for language in "${LANGUAGES[@]}"; do
   echo "Testing ${language}"
@@ -95,6 +142,7 @@ for language in "${LANGUAGES[@]}"; do
       python) "${PYTHON}" "${TEST}/python/run.py" "${scenarios}" >> "${OUT}/python.txt" ;;
       java) java -cp "${JAVA_CP}" Run "${scenarios}" >> "${OUT}/java.txt" ;;
       dotnet) "${DOTNET_TEST[@]}" scenarios "${scenarios}" >> "${OUT}/dotnet.txt" ;;
+      go) "${GO_TEST[@]}" scenarios "${scenarios}" >> "${OUT}/go.txt" ;;
       *)
         echo "Unknown language: ${language}" >&2
         exit 1
@@ -113,6 +161,7 @@ for language in "${LANGUAGES[@]}"; do
     python) "${PYTHON}" "${TEST}/python/examples.py" examples > "${OUT}/examples-python.txt" ;;
     java) java -cp "${JAVA_CP}" Examples examples "${OUT}/java/examples" > "${OUT}/examples-java.txt" ;;
     dotnet) "${DOTNET_TEST[@]}" examples "${OUT}/dotnet/examples" > "${OUT}/examples-dotnet.txt" ;;
+    go) "${GO_TEST[@]}" examples > "${OUT}/examples-go.txt" ;;
   esac
   if python3 test/jsii/examples/compare.py --standalone examples "${OUT}/examples-${language}.txt" > "${OUT}/examples-${language}.log"; then
     echo "All $(wc -l < "${OUT}/examples-${language}.log" | tr -d ' ') examples passed"
@@ -125,6 +174,7 @@ for language in "${LANGUAGES[@]}"; do
     python) managed_policies=("${PYTHON}" "${TEST}/python/managed_policies.py") ;;
     java) managed_policies=(java -cp "${JAVA_CP}" ManagedPolicies) ;;
     dotnet) managed_policies=("${DOTNET_TEST[@]}" managed-policies) ;;
+    go) managed_policies=("${GO_TEST[@]}" managed-policies) ;;
   esac
   if ! "${managed_policies[@]}" "${OUT}/managed-policies.json"; then
     FAILED+=("${language} managed policies")
