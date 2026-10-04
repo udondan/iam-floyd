@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling==1.32.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "iam-floyd"
+dynamic = ["version"]
+description = "AWS IAM policy statement generator with fluent interface"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+authors = [{ name = "Daniel Schroeder" }]
+keywords = ["aws", "iam", "policy", "iam-floyd"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/udondan/iam-floyd"
+Documentation = "https://iam-floyd.readthedocs.io/"
+Changelog = "https://github.com/udondan/iam-floyd/blob/main/CHANGELOG.md"
+
+# The version is the one of package.json, written by bin/transpile.ts
+[tool.hatch.version]
+path = "iam_floyd/_version.py"
+
+# Most of the package is generated and not committed, so .gitignore must not exclude it
+[tool.hatch.build]
+ignore-vcs = true
+exclude = ["__pycache__"]
+
+[tool.hatch.build.targets.sdist]
+only-include = ["iam_floyd", "LICENSE", "README.md"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["iam_floyd"]

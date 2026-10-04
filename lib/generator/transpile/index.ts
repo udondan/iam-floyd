@@ -84,3 +84,10 @@ export function coreSourceFiles(): SourceFile[] {
 export function collectionSourceFiles(): SourceFile[] {
   return sourceFiles('lib/collection/index.ts');
 }
+
+/**
+ * Loads the names of the AWS managed policies of the standalone package
+ */
+export function managedPoliciesSourceFiles(): SourceFile[] {
+  return sourceFiles('lib/generated/aws-managed-policies/iam-floyd.ts');
+}

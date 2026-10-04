@@ -19,7 +19,10 @@ test/package-lock.json
 /dist
 lint/target/
 __pycache__/
+/python/LICENSE
+/python/iam_floyd/_aws_managed_policies.py
 /python/iam_floyd/_collection.py
 /python/iam_floyd/_shared.py
+/python/iam_floyd/_version.py
 /test/transpile/out
 /python/iam_floyd/statement

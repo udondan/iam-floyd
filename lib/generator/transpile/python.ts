@@ -272,7 +272,7 @@ export class PythonTranspiler {
       imports.push('import re as _re');
     }
     const code = body.join('\n');
-    const usesSelf = /\bSelf\b/.test(code);
+    const usesSelf = this.imports.has('Self');
     const typing = usesSelf ? ['TYPE_CHECKING'] : [];
     if (this.imports.has('Any')) {
       typing.push('Any');
@@ -715,6 +715,7 @@ export class PythonTranspiler {
       case SyntaxKind.UndefinedKeyword:
         return 'None';
       case SyntaxKind.ThisType:
+        this.imports.add('Self');
         return 'Self';
     }
     if (Node.isArrayTypeNode(node)) {
@@ -772,6 +773,7 @@ export class PythonTranspiler {
 
   private typeHintFromType(type: Type, node: Node): string {
     if (type.getText() == 'this') {
+      this.imports.add('Self');
       return 'Self';
     }
     if (type.isVoid() || type.isUndefined()) {

@@ -7,12 +7,15 @@ Usage: run.py <scenarios.json>
 
 import datetime
 import json
+import os
 import re
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-sys.path.insert(0, str(ROOT / 'python'))
+# the package in python/, unless run.sh installed the built package
+if 'IAM_FLOYD_INSTALLED' not in os.environ:
+    sys.path.insert(0, str(ROOT / 'python'))
 
 from iam_floyd import Operator, PolicyStatement, Statement  # noqa: E402
 
