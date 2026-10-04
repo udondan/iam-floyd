@@ -19,6 +19,7 @@
 
 import os
 import sys
+
 project = 'IAM Floyd'
 copyright = '2020, Daniel Schroeder'
 author = 'Daniel Schroeder'
@@ -37,7 +38,7 @@ extensions = ['sphinx_rtd_theme', 'sphinx_tabs.tabs', 'example']
 # Clicking the active tab keeps it open instead of hiding its content
 sphinx_tabs_disable_tab_closing = True
 
-html_theme = "sphinx_rtd_theme"
+html_theme = 'sphinx_rtd_theme'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

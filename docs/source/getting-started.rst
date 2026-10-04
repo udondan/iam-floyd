@@ -89,11 +89,11 @@ Depending on your scenario, you need to either install/import ``iam-floyd`` or `
       .. code-block:: go
 
          import (
-         	// the statement providers, e.g. statement.NewEc2
-         	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+             // the statement providers, e.g. statement.NewEc2
+             "udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
 
-         	// Operator and Collection
-         	"udondan.github.io/iam-floyd/go/cdkiamfloyd"
+             // Operator and Collection
+             "udondan.github.io/iam-floyd/go/cdkiamfloyd"
          )
 
 The examples in TypeScript use ``iam-floyd``, the others ``cdk-iam-floyd``. With ``cdk-iam-floyd``, the statements are an `iam.PolicyStatement`_ and the ARN defaults are references to the partition, region and account of the stack. The results show the policies of ``iam-floyd``. For the differences between the languages, see `Language Specifics <language-specifics_>`_.

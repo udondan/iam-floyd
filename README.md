@@ -13,12 +13,14 @@
 **AWS [IAM policy statement][statement] generator with fluent interface.**
 
 <!-- stats -->
+
 Support for:
 
 - 455 Services
 - 22036 Actions
 - 2329 Resource Types
 - 2484 Condition keys
+
 <!-- /stats -->
 
 ![EXPERIMENTAL](https://img.shields.io/badge/stability-experimantal-orange?style=for-the-badge)**<br>This is an early version of the package. The API will change while I implement new features. Therefore make sure you use an exact version in your `package.json` before it reaches 1.0.0.**
@@ -70,10 +72,9 @@ This project is not affiliated, funded, or in any way associated with AWS.
 
 IAM Floyd is licensed under [Apache License 2.0][license]. Dependencies might be released under different licenses.
 
-   [source]: https://github.com/udondan/iam-floyd
-   [documentation]: https://iam-floyd.readthedocs.io/en/latest/
-   [npm]: https://www.npmjs.com/package/iam-floyd
-   [license]: https://github.com/udondan/iam-floyd/blob/main/LICENSE
-   [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
-   [packages]: https://iam-floyd.readthedocs.io/en/latest/packages.html
-   [AWS CDK]: https://aws.amazon.com/cdk/
+[source]: https://github.com/udondan/iam-floyd
+[documentation]: https://iam-floyd.readthedocs.io/en/latest/
+[license]: https://github.com/udondan/iam-floyd/blob/main/LICENSE
+[statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
+[packages]: https://iam-floyd.readthedocs.io/en/latest/packages.html
+[AWS CDK]: https://aws.amazon.com/cdk/

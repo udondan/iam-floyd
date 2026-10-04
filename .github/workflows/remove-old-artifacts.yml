@@ -9,8 +9,10 @@ on:
 jobs:
   delete-artifacts:
     runs-on: ubuntu-latest
+    permissions:
+      actions: write # delete artifacts
     steps:
-      - uses: kolpav/purge-artifacts-action@v1
+      - uses: kolpav/purge-artifacts-action@04c636a505f26ebc82f8d070b202fb87ff572b10 # v1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           expire-in: 3days

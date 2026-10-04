@@ -22,7 +22,7 @@ IAM Floyd is an AWS IAM policy statement generator with a fluent interface. It g
 
 Built in 10 numbered layers (`lib/shared/policy-statement/`):
 
-```
+```text
 1-base → 2-conditions → 3-actions → 4-resources → 5-effect
        → 6-arn-defaults → 8-principals → 10-final (PolicyStatement)
 ```
@@ -75,11 +75,11 @@ make changelog       # print the changes of the managed policies and the model s
 The project has **no unit test framework**. Tests are integration-style: TypeScript examples are compiled, run, and their output is diffed against stored `.result` files.
 
 ```bash
-make test            # compile examples/ + diff against *.result files (standalone)
-make test-typescript # same, via Test.TypeScript.Makefile
-make cdk-test        # CDK test: real deploy + destroy via AWS CDK
-make cdk-all         # cdk + install + build + cdk-test
-make test-jsii       # test the packages of `make package-jsii` against TypeScript; LANGUAGES=python limits the languages
+make test-typescript     # compile examples/ + diff against *.result files (standalone)
+make test-typescript-cdk # after `make cdk`: same for the CDK examples (examples/**/*.cdk.ts)
+make cdk-test            # CDK test: real deploy + destroy via AWS CDK
+make cdk-all             # cdk + install + build + cdk-test
+make test-jsii           # test the packages of `make package-jsii` against TypeScript; LANGUAGES=python limits the languages
 ```
 
 **Run a single example test manually:**
@@ -91,9 +91,6 @@ npx tsc -p tsconfig.test-iam-floyd.json
 # 2. Run and compare output
 node examples/allow/allow.js > /tmp/out.txt
 diff /tmp/out.txt examples/allow/allow.result
-
-# Or run the integration test harness directly:
-npx ts-node test/main.ts
 ```
 
 **Regenerate expected results** (after intentional changes):
@@ -105,8 +102,31 @@ make regenerate-code-example-results
 ### Linting
 
 ```bash
-make eslint          # npx eslint .
+make lint            # emit + bin/lint: all linters, must pass in CI
+make lint-fix        # emit + bin/lint --fix: fixes what can be fixed
+make lint-cdk        # after `make cdk`: eslint on the CDK variant
 ```
+
+`bin/lint` runs:
+
+| Linter                       | Files                                                 |
+| ---------------------------- | ----------------------------------------------------- |
+| eslint (`eslint.config.mjs`) | TypeScript and JavaScript, with types                 |
+| prettier                     | everything prettier knows, except `.prettierignore`   |
+| markdownlint-cli2            | Markdown                                              |
+| exact versions               | the dependencies of all `package.json` files          |
+| ruff, ruff format            | Python (`ruff.toml`, the examples are not formatted)  |
+| yamllint                     | YAML (`.yamllint.yaml`)                               |
+| doc8                         | reStructuredText in `docs/source` (`doc8.ini`)        |
+| zizmor, actionlint           | GitHub workflows                                      |
+| shellcheck, shfmt            | shell scripts, found by their shebang                 |
+| gofmt                        | Go                                                    |
+| dotnet format whitespace     | C# in `examples/` and `test/jsii/`                    |
+| checkstyle (Google style)    | Java in `examples/` and `test/jsii/` (`lint/pom.xml`) |
+
+The versions of the linters are pinned, so Renovate updates them: npm packages in `package.json`, Python tools in `lint/requirements.txt` (run with `uv`), Go tools in `lint/go.mod` (`go tool`) and checkstyle in `lint/pom.xml`. Locally, linters whose runtime (uv, Go, .NET, Maven) is missing are skipped; in CI they fail. In the CDK variant, eslint uses `tsconfig.lint-cdk.json`, which resolves `cdk-iam-floyd` to `lib/`, and prettier is off because `mkcdk` writes unformatted code.
+
+The actions in the workflows are pinned to commit SHAs with the version as comment.
 
 ### CDK Variant
 
@@ -177,13 +197,13 @@ Allowed manual edits:
 - **No trailing whitespace**
 - Line endings: LF (`\n`)
 
-Run `make eslint` to check; Prettier is enforced via `eslint-plugin-prettier`.
+Run `make lint` to check; Prettier is enforced via `eslint-plugin-prettier` and for the other files by `bin/lint`. `.editorconfig` sets 4 spaces for Python and C#, and tabs for Go.
 
 ### TypeScript
 
 Strict settings enforced in `tsconfig.json`:
 
-```
+```text
 strict: true
 noImplicitAny: true
 strictNullChecks: true
@@ -198,7 +218,7 @@ target: ES2020, module: CommonJS
 - **Unused vars**: Prefix with `_` to suppress (`argsIgnorePattern: ^_`).
 - **Naming conventions**: Enforced via `@typescript-eslint/naming-convention`. Use `camelCase` for variables/functions, `PascalCase` for classes/interfaces.
 - **Template literals**: Prefer `` `${x}` `` over `'a' + x` (`prefer-template: error`).
-- **Deprecated APIs**: `deprecation/deprecation` rule is set to `error` — do not use deprecated APIs.
+- **Deprecated APIs**: `@typescript-eslint/no-deprecated` rule is set to `error` — do not use deprecated APIs.
 - **No `require()`**: Use ES `import`/`export`.
 
 ### Imports
@@ -261,6 +281,6 @@ Follow conventional commits:
 - `index-managed-policies.yml` - Weekly on Sunday: updates managed policies, opens a `feat:` PR with `automerge` label
 - `release-please.yml` - On push to main: release-please maintains the release PR (version in `package.json` and `docs/source/conf.py`, `CHANGELOG.md`). After each run, `bin/changelog-add-iam-changes` adds the changes of the managed policies and the model since the last release to the new changelog entry of the PR. Merging the PR creates the tag and a draft release, and starts `test-and-publish.yml` with the tag
 - `automerge-schedule.yml` - Weekly on Monday: merges the release PR
-- `test-and-publish.yml` - On PR: `make install test-typescript` + CDK deploy test + `make package-jsii test-jsii` per language. Started by `release-please.yml` with a tag: builds the packages from the tag, publishes to npm, PyPI, NuGet, Maven Central and the Go module proxy on GitHub Pages, sets the notes of the release from `CHANGELOG.md` and publishes the release
+- `test-and-publish.yml` - On PR: `make install lint` (job `lint`), `make install test-typescript` + `make lint-cdk` + CDK deploy test + `make package-jsii test-jsii` per language. Started by `release-please.yml` with a tag: builds the packages from the tag, publishes to npm, PyPI, NuGet, Maven Central and the Go module proxy on GitHub Pages, sets the notes of the release from `CHANGELOG.md` and publishes the release
 - `automerge.yml` - Auto-merges PRs labeled `automerge` after tests pass
 - `test-docs.yml` - Builds Sphinx docs on `docs/**` changes

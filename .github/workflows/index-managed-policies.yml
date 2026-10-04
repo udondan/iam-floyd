@@ -19,12 +19,12 @@ jobs:
 
     steps:
       - name: Setup node
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 24.x
 
       - name: Checkout code
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
           fetch-depth: 0
@@ -44,7 +44,7 @@ jobs:
           set -xuo pipefail # we intentionally do not use -e here, as rc=1 means we have changes
           git diff
           git diff --quiet || CHANGED=$?
-          echo "CHANGED=${CHANGED:-0}" >> $GITHUB_OUTPUT
+          echo "CHANGED=${CHANGED:-0}" >> "$GITHUB_OUTPUT"
 
       - name: Configure git
         run: |
@@ -57,11 +57,11 @@ jobs:
         run: |
           set -xeuo pipefail
           rm -rf package-lock.json node_modules &&
-          git add *
+          git add -- *
         if: steps.changes.outputs.CHANGED == '1'
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v8
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           token: ${{ secrets.OVERRIDE_TOKEN }}
           commit-message: "feat: update AWS managed policies"

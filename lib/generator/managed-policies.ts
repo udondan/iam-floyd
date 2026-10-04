@@ -226,7 +226,7 @@ async function getPolicyDocument(
   }
 }
 
-async function getIAMPolicyDescription(policyArn) {
+async function getIAMPolicyDescription(policyArn: string) {
   const response = await iamClient.send(
     new GetPolicyCommand({ PolicyArn: policyArn }),
   );

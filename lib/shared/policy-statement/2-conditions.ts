@@ -82,7 +82,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param operator [Operator](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html) of the condition. **Default:** `StringLike`
    */
   public if(key: string, value: any, operator?: Operator | string) {
-    if (this.servicePrefix.length && key.indexOf(':') < 0) {
+    if (this.servicePrefix.length && !key.includes(':')) {
       key = `${this.servicePrefix}:${key}`;
     }
 
@@ -90,12 +90,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
       operator = Operator.stringLike;
     }
 
-    let op = '';
-    if (typeof operator === 'string') {
-      op = operator;
-    } else {
-      op = operator.toString();
-    }
+    const op = typeof operator === 'string' ? operator : operator.toString();
 
     // For boolean/number operators, IAM accepts both, booleans/numbers and
     // their string representation. To be consistent with how the IAM console

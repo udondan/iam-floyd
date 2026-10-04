@@ -17,6 +17,7 @@ import {
 import { gunzipSync, gzipSync } from 'zlib';
 
 import { ServiceModel } from '../model';
+import { PackageJson } from '../package-json';
 
 /**
  * Subset of the jsii assembly spec (`@jsii/spec`, schema `jsii/0.10.0`) we emit
@@ -961,24 +962,28 @@ class SharedExtractor {
 /**
  * Loads a jsii assembly from an installed package, following `.jsii.gz` redirects
  */
-function loadInstalledAssembly(pkg: string): {
+interface InstalledAssembly {
   name: string;
   targets?: Record<string, unknown>;
   submodules?: Record<string, { targets?: Record<string, unknown> }>;
   dependencies?: Record<string, string>;
-} {
+}
+
+function loadInstalledAssembly(pkg: string): InstalledAssembly {
   const dir = path.dirname(require.resolve(`${pkg}/package.json`));
   const file = path.join(dir, '.jsii');
-  const content = JSON.parse(fs.readFileSync(file, 'utf8'));
-  if (content.schema == 'jsii/file-redirect') {
+  const content = JSON.parse(fs.readFileSync(file, 'utf8')) as
+    | InstalledAssembly
+    | { schema: 'jsii/file-redirect'; filename: string; compression?: string };
+  if ('schema' in content && content.schema == 'jsii/file-redirect') {
     const buffer = fs.readFileSync(path.join(dir, content.filename));
     return JSON.parse(
       (content.compression == 'gzip' ? gunzipSync(buffer) : buffer).toString(
         'utf8',
       ),
-    );
+    ) as InstalledAssembly;
   }
-  return content;
+  return content as InstalledAssembly;
 }
 
 /**
@@ -1013,7 +1018,9 @@ function dependencyClosure(
  */
 export function emitJsii(models: ServiceModel[], options: JsiiOptions) {
   const { variant, version, outDir } = options;
-  const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+  const packageJson = JSON.parse(
+    fs.readFileSync('package.json', 'utf8'),
+  ) as PackageJson;
 
   const name = variant == 'cdk' ? 'cdk-iam-floyd' : 'iam-floyd';
   const description =

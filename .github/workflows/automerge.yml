@@ -3,7 +3,8 @@ name: Automerge
 
 concurrency: automerge
 
-on:
+# Doesn't check out or run code of the PR, and only runs for PRs of udondan
+on: # zizmor: ignore[dangerous-triggers]
   pull_request_target:
     types: [labeled, synchronize]
 
@@ -11,6 +12,8 @@ jobs:
   automerge_ci:
     name: Automerge CI
     runs-on: ubuntu-latest
+    permissions:
+      checks: read # wait for the tests, the merge uses OVERRIDE_TOKEN
     if: |
       github.actor == 'udondan' &&
       contains(github.event.pull_request.labels.*.name, 'automerge')

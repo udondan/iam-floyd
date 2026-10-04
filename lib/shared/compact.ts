@@ -64,10 +64,7 @@ export function compactActionNames(
     const shorter = [key.substring(1), key.substring(0, key.length - 1)];
     for (const candidate of shorter) {
       const candidateIndexes = sources.get(candidate);
-      if (
-        candidateIndexes !== undefined &&
-        candidateIndexes.length == indexes.length
-      ) {
+      if (candidateIndexes?.length == indexes.length) {
         redundant.add(candidate);
       }
     }

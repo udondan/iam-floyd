@@ -94,7 +94,7 @@ function convertInputPolicy() {
   }
   try {
     var parsed = JSON.parse(input);
-  } catch (e) {
+  } catch {
     setError('Invalid input policy');
     return;
   }
@@ -109,7 +109,7 @@ function setError(value) {
 }
 
 function convert(convertTarget, data) {
-  if (!data.hasOwnProperty('Statement')) {
+  if (!Object.hasOwn(data, 'Statement')) {
     setError('Policy has no statements');
     return;
   }
@@ -198,7 +198,7 @@ function convert(convertTarget, data) {
 }
 
 function getEffect(statement) {
-  if (!statement.hasOwnProperty('Effect')) {
+  if (!Object.hasOwn(statement, 'Effect')) {
     return 'Allow';
   }
   return statement.Effect;
@@ -207,9 +207,9 @@ function getEffect(statement) {
 function getResourceKey(statement, searchKey, required = false) {
   let key = '';
 
-  if (statement.hasOwnProperty(searchKey)) {
+  if (Object.hasOwn(statement, searchKey)) {
     key = searchKey;
-  } else if (statement.hasOwnProperty('Not' + searchKey)) {
+  } else if (Object.hasOwn(statement, 'Not' + searchKey)) {
     key = 'Not' + searchKey;
   }
 
@@ -258,7 +258,7 @@ function getPrincipals(statement) {
 }
 
 function getConditions(statement) {
-  if (!statement.hasOwnProperty('Condition')) {
+  if (!Object.hasOwn(statement, 'Condition')) {
     return {};
   }
 
@@ -281,7 +281,7 @@ function splitActionsByService(actions) {
       service = split[0];
     }
 
-    if (!serviceActions.hasOwnProperty(service)) {
+    if (!Object.hasOwn(serviceActions, service)) {
       serviceActions[service] = [];
     }
 
@@ -411,17 +411,6 @@ function camelCase(input, includingFirst) {
         : match.toUpperCase();
     })
     .replace('-', '');
-}
-
-function snakeCase(input) {
-  return camelCase(input)
-    .replace(/[A-Z][a-z]/g, function (match) {
-      return '_' + match.toLowerCase();
-    })
-    .replace(/[A-Z]+/, function (match) {
-      // same regex. we first need to replace all patterns above, before we can run this one again, to replace multiple uppercase letters such as AWS
-      return '_' + match.toLowerCase();
-    });
 }
 
 function makeMethodCall(method, params = []) {

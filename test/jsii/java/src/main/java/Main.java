@@ -18,7 +18,8 @@ import software.amazon.awscdk.services.iam.Role;
 import software.amazon.awscdk.services.iam.ServicePrincipal;
 
 /**
- * cdk-iam-floyd used directly and through a jsii library (floyd-consumer).
+ * Runs the scenarios of cdk-iam-floyd, used directly and through a jsii library
+ * (floyd-consumer).
  *
  * <p>Prints one line per scenario: the name, a tab and the IAM policies of the stack as JSON (or
  * FAIL).
@@ -57,6 +58,7 @@ public class Main {
     }
   }
 
+  /** Runs all scenarios. */
   public static void main(String[] args) {
     scenario(
         "a direct use",

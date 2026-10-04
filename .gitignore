@@ -17,3 +17,4 @@ test/package-lock.json
 /.jsii
 /.jsii.gz
 /dist
+lint/target/

@@ -1,0 +1,150 @@
+#!/usr/bin/env bash
+# Runs all linters. Fixes what can be fixed with `--fix`.
+#
+# Needs Node.js, uv, Go, the .NET SDK and Maven. The versions of the linters are pinned in
+# package.json and lint/. Locally, linters whose runtime is missing are skipped, in CI they fail.
+
+set -uo pipefail
+
+FIX=false
+if [[ "${1:-}" == "--fix" ]]; then
+  FIX=true
+fi
+
+FAILED=()
+SKIPPED=()
+
+function run() {
+  local name="$1"
+  shift
+  echo -e "\033[0;36m${name}\033[0m"
+  if ! "$@"; then
+    FAILED+=("${name}")
+  fi
+}
+
+# Checks that the runtime of a linter is installed
+function has() {
+  if command -v "$1" > /dev/null; then
+    return 0
+  fi
+  if [[ -n "${CI:-}" ]]; then
+    echo "$1 is missing" >&2
+    FAILED+=("$1")
+  else
+    SKIPPED+=("$1")
+  fi
+  return 1
+}
+
+# The Python linters, installed by uv from lint/requirements.txt
+function py() {
+  uv run --quiet --isolated --no-project --with-requirements lint/requirements.txt -- "$@"
+}
+
+# Path of a Go linter from lint/go.mod
+function gotool() {
+  go -C lint tool -n "$1"
+}
+
+# The dependencies in package.json files have exact versions
+function exactVersions() {
+  local ranges
+  ranges="$(git ls-files 'package.json' '**/package.json' | xargs jq -r '
+    (.dependencies // {}) + (.devDependencies // {}) | to_entries[]
+    | select(.value | test("^[0-9]+\\.[0-9]+\\.[0-9]+(-[0-9A-Za-z.-]+)?$") | not)
+    | "\(input_filename): \(.key) \(.value)"')"
+  if [[ -n "${ranges}" ]]; then
+    echo "${ranges}"
+    echo "Use exact versions" >&2
+    return 1
+  fi
+}
+
+function gofmtCheck() {
+  local files
+  files="$(gofmt -l "$@")"
+  if [[ -n "${files}" ]]; then
+    echo "${files}"
+    return 1
+  fi
+}
+
+# All shell scripts, by their shebang
+SCRIPTS=()
+while IFS= read -r script; do
+  SCRIPTS+=("${script}")
+done < <(git ls-files -z | xargs -0 grep -lE '^#!.*\b(ba)?sh\b' 2> /dev/null)
+
+GO_FILES=()
+while IFS= read -r file; do
+  GO_FILES+=("${file}")
+done < <(git ls-files '*.go')
+
+DOTNET_FOLDERS=(examples test/jsii)
+
+if [[ ! -d tooter/node_modules ]]; then
+  # The types of the tooter dependencies are needed for linting
+  npm ci --prefix tooter --no-audit --no-fund > /dev/null
+fi
+
+if ${FIX}; then
+  run eslint npx eslint --fix .
+  run prettier npx prettier --log-level warn --write .
+  run markdownlint npx markdownlint-cli2 --fix
+else
+  run eslint npx eslint .
+  run prettier npx prettier --log-level warn --check .
+  run markdownlint npx markdownlint-cli2
+fi
+run 'exact versions' exactVersions
+
+if has uv; then
+  if ${FIX}; then
+    run ruff py ruff check --fix .
+    run 'ruff format' py ruff format .
+  else
+    run ruff py ruff check .
+    run 'ruff format' py ruff format --check .
+  fi
+  run yamllint py yamllint --strict .
+  run doc8 py doc8 --quiet docs/source
+  run zizmor py zizmor --quiet .github/workflows
+  run shellcheck py shellcheck "${SCRIPTS[@]}"
+fi
+
+if has go; then
+  if ${FIX}; then
+    run shfmt "$(gotool shfmt)" -i 2 -ci -sr -w "${SCRIPTS[@]}"
+    run gofmt gofmt -w "${GO_FILES[@]}"
+  else
+    run shfmt "$(gotool shfmt)" -i 2 -ci -sr -d "${SCRIPTS[@]}"
+    run gofmt gofmtCheck "${GO_FILES[@]}"
+  fi
+  # Runs in the Python env, which has shellcheck for the scripts of the workflows
+  if has uv; then
+    run actionlint py "$(gotool actionlint)"
+  fi
+fi
+
+if has dotnet; then
+  if ${FIX}; then
+    run 'dotnet format' dotnet format whitespace --folder . --include "${DOTNET_FOLDERS[@]}"
+  else
+    run 'dotnet format' dotnet format whitespace --folder . --include "${DOTNET_FOLDERS[@]}" \
+      --verify-no-changes
+  fi
+fi
+
+if has mvn; then
+  run checkstyle mvn --quiet --file lint/pom.xml checkstyle:check
+fi
+
+if [[ ${#SKIPPED[@]} -gt 0 ]]; then
+  echo -e "\033[0;33mSkipped, not installed: ${SKIPPED[*]}\033[0m"
+fi
+if [[ ${#FAILED[@]} -gt 0 ]]; then
+  echo -e "\033[0;31mFailed: ${FAILED[*]}\033[0m"
+  exit 1
+fi
+echo -e "\033[0;32mAll linters passed\033[0m"

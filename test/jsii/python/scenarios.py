@@ -7,10 +7,9 @@ import json
 import traceback
 
 import aws_cdk as cdk
+import floyd_consumer
 from aws_cdk import aws_iam as iam
 from aws_cdk.assertions import Template
-
-import floyd_consumer
 from cdk_iam_floyd import Statement
 
 

@@ -25,36 +25,38 @@ export class PolicyStatementWithCDKPrincipal extends PolicyStatementWithPrincipa
       // @ts-ignore only available after swapping 1-base
       this[mode](...this.cdkPrincipals);
       if (this.hasPrincipals()) {
-        Object.keys(this.myPrincipals).forEach((prefix) => {
-          switch (prefix) {
-            case PrincipalType.aws:
-              this.myPrincipals[prefix]?.forEach((arn) => {
-                // @ts-ignore only available after swapping 1-base
-                this[mode](new iam.ArnPrincipal(arn));
-              });
-              break;
-            case PrincipalType.canonicalUser:
-              this.myPrincipals[prefix]?.forEach((userId) => {
-                // @ts-ignore only available after swapping 1-base
-                this[mode](new iam.CanonicalUserPrincipal(userId));
-              });
-              break;
-            case PrincipalType.federated:
-              this.myPrincipals[prefix]?.forEach((provider) => {
-                // @ts-ignore only available after swapping 1-base
-                this[mode](new iam.FederatedPrincipal(provider, {}));
-              });
-              break;
-            case PrincipalType.service:
-              this.myPrincipals[prefix]?.forEach((service) => {
-                // @ts-ignore only available after swapping 1-base
-                this[mode](new iam.ServicePrincipal(service));
-              });
-              break;
-            default:
-              throw Error(`Unhandled principal type: ${prefix}`);
-          }
-        });
+        (Object.keys(this.myPrincipals) as PrincipalType[]).forEach(
+          (prefix) => {
+            switch (prefix) {
+              case PrincipalType.aws:
+                this.myPrincipals[prefix]?.forEach((arn) => {
+                  // @ts-ignore only available after swapping 1-base
+                  this[mode](new iam.ArnPrincipal(arn));
+                });
+                break;
+              case PrincipalType.canonicalUser:
+                this.myPrincipals[prefix]?.forEach((userId) => {
+                  // @ts-ignore only available after swapping 1-base
+                  this[mode](new iam.CanonicalUserPrincipal(userId));
+                });
+                break;
+              case PrincipalType.federated:
+                this.myPrincipals[prefix]?.forEach((provider) => {
+                  // @ts-ignore only available after swapping 1-base
+                  this[mode](new iam.FederatedPrincipal(provider, {}));
+                });
+                break;
+              case PrincipalType.service:
+                this.myPrincipals[prefix]?.forEach((service) => {
+                  // @ts-ignore only available after swapping 1-base
+                  this[mode](new iam.ServicePrincipal(service));
+                });
+                break;
+              default:
+                throw Error(`Unhandled principal type: ${prefix as string}`);
+            }
+          },
+        );
       }
       this.cdkPrincipalsApplied = true;
     }

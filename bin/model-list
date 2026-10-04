@@ -17,6 +17,7 @@ export LC_ALL=C
 KIND="${1:?Usage: bin/model-list <services|actions|resources|conditions> [model dir]}"
 DIR="${2:-lib/generated/model}"
 
+# shellcheck disable=SC2016 # $p is a jq variable
 case "${KIND}" in
   services)
     filter='.servicePrefix'

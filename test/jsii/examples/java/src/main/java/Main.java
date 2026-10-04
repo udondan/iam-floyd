@@ -16,6 +16,7 @@ import software.amazon.awscdk.services.iam.PolicyStatement;
  * JSON (or FAIL).
  */
 public class Main {
+  /** Runs all examples. */
   public static void main(String[] args) throws Exception {
     Stack stack = new Stack(new App(), "Stack");
     ObjectMapper mapper = new ObjectMapper();

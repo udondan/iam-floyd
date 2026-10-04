@@ -8,15 +8,18 @@
  * - appends the jsii runtime type information to `lib/index.js`
  */
 import * as fs from 'fs';
-import { loadAssemblyFromFile } from '@jsii/spec';
+import { loadAssemblyFromFile, TypeKind } from '@jsii/spec';
 
 import { emitJsii } from '../lib/generator/emit/jsii';
 import { ServiceModel } from '../lib/generator/model';
+import { PackageJson } from '../lib/generator/package-json';
 
 const modelDir = 'lib/generated/model';
 
-const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-const version: string = packageJson.version;
+const packageJson = JSON.parse(
+  fs.readFileSync('package.json', 'utf8'),
+) as PackageJson;
+const version = packageJson.version;
 if (packageJson.name !== 'cdk-iam-floyd') {
   console.error('Run `make cdk` first');
   process.exit(1);
@@ -75,7 +78,7 @@ function appendRtti() {
   const assembly = loadAssemblyFromFile('.jsii');
   const prefix = `${assembly.name}.`;
   const entries = Object.values(assembly.types ?? {})
-    .filter((type) => type.kind === 'class')
+    .filter((type) => type.kind === TypeKind.Class)
     .map((type) => [type.fqn.slice(prefix.length).split('.'), type.fqn]);
 
   const code = `

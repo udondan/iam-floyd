@@ -3,7 +3,6 @@ import 'colors';
 import * as cheerio from 'cheerio';
 import * as fs from 'fs';
 import * as glob from 'glob';
-import * as request from 'request';
 
 import { ResourceTypes } from '../shared';
 import { Conditions } from './condition';
@@ -13,6 +12,7 @@ import {
   conditionKeyFixer,
   fixes,
   serviceFixer,
+  ServiceFixes,
 } from './fixes';
 import { buildServiceModel, ServiceModel } from './model';
 
@@ -37,7 +37,7 @@ export interface Module {
   url?: string;
   actionList?: Actions;
   resourceTypes?: ResourceTypes;
-  fixes?: Record<string, any>;
+  fixes?: ServiceFixes;
   conditions?: Conditions;
 }
 
@@ -61,117 +61,93 @@ export function getAwsServices(): Promise<string[]> {
   return getAwsServicesFromIamDocs();
 }
 
-function getAwsServicesFromIamDocs(): Promise<string[]> {
+async function getAwsServicesFromIamDocs(): Promise<string[]> {
   const skipServices = Object.keys(fixes).filter(
-    (key) => fixes[key].ignore === true,
+    (key) => fixes[key]?.ignore === true,
   );
 
-  return new Promise((resolve, reject) => {
-    const url =
-      'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html';
-    requestWithRetry(url)
-      .then((body) => {
-        const re = /href="\.\/list_(.*?)\.html"/g;
-        let match: RegExpExecArray;
-        const services: string[] = [];
-        do {
-          match = re.exec(body)!;
-          if (match && !skipServices.includes(match[1])) {
-            services.push(match[1]);
-          }
-        } while (match);
-        if (!services.length) {
-          return reject(`Unable to find services on ${url}`);
-        }
+  const url =
+    'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html';
+  const body = await requestWithRetry(url);
+  const services: string[] = [];
+  for (const match of body.matchAll(/href="\.\/list_(.*?)\.html"/g)) {
+    if (!skipServices.includes(match[1])) {
+      services.push(match[1]);
+    }
+  }
+  if (!services.length) {
+    throw new Error(`Unable to find services on ${url}`);
+  }
 
-        // set env `SERVICE` to generate only a single service for testing purpose
-        const testOverride = process.env.SERVICE;
-        if (testOverride?.length) {
-          return resolve([testOverride]);
-        }
+  // set env `SERVICE` to generate only a single service for testing purpose
+  const testOverride = process.env.SERVICE;
+  if (testOverride?.length) {
+    return [testOverride];
+  }
 
-        const unique = services.filter((elem, pos) => {
-          return services.indexOf(elem) == pos;
-        });
-
-        resolve(unique.sort());
-      })
-      .catch((err: Error) => {
-        reject(err);
-      });
+  const unique = services.filter((elem, pos) => {
+    return services.indexOf(elem) == pos;
   });
+
+  return unique.sort();
 }
 
-export function getContent(service: string): Promise<Module> {
+export async function getContent(service: string): Promise<Module> {
   service = serviceFixer(service);
   process.stdout.write(`${service}: `.white);
   process.stdout.write('Fetching '.grey);
 
-  const urlPattern =
-    'https://docs.aws.amazon.com/service-authorization/latest/reference/list_%s.html';
-  return new Promise(async (resolve, reject) => {
-    const shortName = service.replace(/^(amazon|aws)-?/, '');
-    const serviceFixes = fixes[shortName];
-    const filenameBase =
-      serviceFixes && 'name' in serviceFixes ? serviceFixes.name : shortName;
+  const shortName = service.replace(/^(amazon|aws)-?/, '');
+  const serviceFixes = fixes[shortName];
+  const filenameBase = serviceFixes?.name ?? shortName;
 
-    try {
-      let module: Module = {
-        filename: filenameBase.replace(/[^a-z0-9-]/i, '-'),
-      };
+  const module: Module = {
+    filename: filenameBase.replace(/[^a-z0-9-]/i, '-'),
+  };
 
-      const url = urlPattern.replace('%s', service);
+  const url = `https://docs.aws.amazon.com/service-authorization/latest/reference/list_${service}.html`;
 
-      const cachedModel = `${modelDir}/.cache/${module.filename}.json`;
-      if (fs.existsSync(cachedModel)) {
-        const lastModified = await getLastModified(url);
-        if (lastModified < timeThreshold) {
-          console.log(`Skipping, last modified on ${lastModified}`.green);
-          return resolve(module);
-        }
-      }
-      requestWithRetry(url)
-        .then((body) => {
-          process.stdout.write('Parsing '.blue);
-
-          const $ = cheerio.load(body);
-          const servicePrefix = $('code').first().text().trim();
-
-          if (servicePrefix == '') {
-            console.error(`PREFIX NOT FOUND FOR ${service} / ${url}`.red.bold);
-          }
-
-          module.name = servicePrefix;
-          module.servicePrefix = servicePrefix;
-          module.url = url;
-
-          if (serviceFixes) {
-            module.fixes = serviceFixes;
-          }
-
-          module = addConditions($, module);
-          module = addActions($, module);
-          module = addResourceTypes($, module);
-
-          resolve(module);
-        })
-        .catch((err: Error) => {
-          reject(err);
-        });
-    } catch (error: Error) {
-      reject(error);
+  const cachedModel = `${modelDir}/.cache/${module.filename}.json`;
+  if (fs.existsSync(cachedModel)) {
+    const lastModified = await getLastModified(url);
+    if (lastModified < timeThreshold) {
+      console.log(
+        `Skipping, last modified on ${lastModified.toString()}`.green,
+      );
+      return module;
     }
-  });
+  }
+
+  const body = await requestWithRetry(url);
+  process.stdout.write('Parsing '.blue);
+
+  const $ = cheerio.load(body);
+  const servicePrefix = $('code').first().text().trim();
+
+  if (servicePrefix == '') {
+    console.error(`PREFIX NOT FOUND FOR ${service} / ${url}`.red);
+  }
+
+  module.name = servicePrefix;
+  module.servicePrefix = servicePrefix;
+  module.url = url;
+
+  if (serviceFixes) {
+    module.fixes = serviceFixes;
+  }
+
+  addConditions($, module);
+  addActions($, module);
+  addResourceTypes($, module);
+
+  return module;
 }
 
-export function createModules(services: string[]): Promise<void> {
+export async function createModules(services: string[]): Promise<void> {
   createCache();
-  return new Promise(async (resolve, reject) => {
-    for (const service of services) {
-      await getContent(service).then(createModule).catch(reject);
-    }
-    resolve();
-  });
+  for (const service of services) {
+    createModule(await getContent(service));
+  }
 }
 
 export const modelDir = 'lib/generated/model';
@@ -183,16 +159,16 @@ function writeServiceModel(model: ServiceModel) {
   );
 }
 
-export function createModule(module: Module): Promise<void> {
+export function createModule(module: Module) {
   if (typeof module.name === 'undefined') {
     //it was skipped, restore from cache
     restoreFileFromCache(`${modelDir}/${module.filename}.json`);
-    return Promise.resolve();
+    return;
   }
 
   process.stdout.write(`Generating `.cyan);
 
-  if (module.fixes && 'name' in module.fixes) {
+  if (module.fixes?.name) {
     module.name = module.fixes.name;
   } else if (
     module.filename.endsWith('v2') &&
@@ -203,7 +179,6 @@ export function createModule(module: Module): Promise<void> {
 
   writeServiceModel(buildServiceModel(module));
   console.log('Done'.green);
-  return Promise.resolve();
 }
 
 function cleanDescription(description: string): string {
@@ -242,23 +217,13 @@ function restoreFileFromCache(filename: string) {
   fs.renameSync(cachedFile, filename);
 }
 
-function getLastModified(url: string): Promise<Date> {
-  return new Promise((resolve, reject) => {
-    requestWithRetry(url, { method: 'HEAD' })
-      .then((lastModified: string) => {
-        let mod = new Date();
-        if (lastModified !== '') {
-          mod = new Date(lastModified);
-        }
-        resolve(mod);
-      })
-      .catch((err: Error) => {
-        reject(err);
-      });
-  });
+async function getLastModified(url: string): Promise<Date> {
+  const response = await fetchWithRetry(url, 'HEAD');
+  const lastModified = response.headers.get('last-modified');
+  return lastModified ? new Date(lastModified) : new Date();
 }
 
-function getTable($: cheerio.Root, title: string) {
+function getTable($: cheerio.CheerioAPI, title: string) {
   const table = $('.table-container table')
     .toArray()
     .filter((element) => {
@@ -271,7 +236,7 @@ function getTable($: cheerio.Root, title: string) {
 // main actions table plus a separate "permission-only actions" table. Both
 // tables share the same `<th>Actions</th>` header, so all of them need to be
 // collected and merged, not just the first match.
-function getTables($: cheerio.Root, title: string) {
+function getTables($: cheerio.CheerioAPI, title: string) {
   return $('.table-container table')
     .toArray()
     .filter((element) => {
@@ -280,7 +245,7 @@ function getTables($: cheerio.Root, title: string) {
     .map((element) => $(element));
 }
 
-function addActions($: cheerio.Root, module: Module): Module {
+function addActions($: cheerio.CheerioAPI, module: Module) {
   const actions: Actions = {};
   const tablesActions = getTables($, 'Actions');
 
@@ -325,7 +290,7 @@ function addActions($: cheerio.Root, module: Module): Module {
 
       const conditions: string[] = [];
       if (conditionKeys.length) {
-        conditionKeys.each((_: unknown, conditionKey: string) => {
+        conditionKeys.each((_, conditionKey) => {
           const condition = conditionKeyFixer(
             module.servicePrefix!,
             cleanDescription($(conditionKey).text()),
@@ -352,7 +317,7 @@ function addActions($: cheerio.Root, module: Module): Module {
           actions[action].resourceTypes = {};
         }
 
-        if (resourceType.indexOf('*') >= 0) {
+        if (resourceType.includes('*')) {
           resourceType = resourceType.slice(0, -1);
           required = true;
         }
@@ -369,10 +334,9 @@ function addActions($: cheerio.Root, module: Module): Module {
     });
   });
   module.actionList = actions;
-  return module;
 }
 
-function addResourceTypes($: cheerio.Root, module: Module): Module {
+function addResourceTypes($: cheerio.CheerioAPI, module: Module) {
   const resourceTypes: ResourceTypes = {};
   const tableResourceTypes = getTable($, 'Resource types');
   tableResourceTypes.find('tr').each((_, element) => {
@@ -414,10 +378,9 @@ function addResourceTypes($: cheerio.Root, module: Module): Module {
     }
   });
   module.resourceTypes = resourceTypes;
-  return module;
 }
 
-function addConditions($: cheerio.Root, module: Module): Module {
+function addConditions($: cheerio.CheerioAPI, module: Module) {
   const conditions: Conditions = {};
   const table = getTable($, 'Condition keys');
   table.find('tr').each((_, element) => {
@@ -440,17 +403,14 @@ function addConditions($: cheerio.Root, module: Module): Module {
     }
   });
   module.conditions = conditions;
-  return module;
 }
 
-function validateUrl(url: string) {
+function validateUrl(url: string | undefined) {
   if (typeof url == 'undefined') {
     return '';
   }
 
-  try {
-    new URL(url);
-  } catch (_: any) {
+  if (!URL.canParse(url)) {
     console.warn(`Removed invalid URL ${url}`.red);
     return '';
   }
@@ -458,49 +418,44 @@ function validateUrl(url: string) {
   return url;
 }
 
-function requestWithRetry(
+async function requestWithRetry(url: string): Promise<string> {
+  const response = await fetchWithRetry(url, 'GET');
+  return response.text();
+}
+
+async function fetchWithRetry(
   url: string,
-  options: request.CoreOptions = {},
+  method: 'GET' | 'HEAD',
   retries = 3,
   backoff = 300,
-): Promise<any> {
-  options.headers = {
-    'User-Agent':
-      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
-    'Accept-Language': 'en-US,en;q=0.9',
-  };
-  return new Promise((resolve, reject) => {
-    const retry = (retries: number, backoff: number) => {
-      request(url, options, (err, response, body) => {
-        const failure =
-          err ||
-          (response && response.statusCode >= 400
-            ? new Error(
-                `Request to ${url} failed with status ${response.statusCode}`,
-              )
-            : undefined);
-        if (failure) {
-          const failDetails =
-            retries > 0 ? `Retry in ${backoff * 2}` : 'Giving up';
-          console.log(`Failed to fetch ${url} - ${failure} - ${failDetails}`);
-          if (retries > 0) {
-            setTimeout(() => {
-              retry(--retries, backoff * 2);
-            }, backoff);
-          } else {
-            reject(failure);
-          }
-        } else {
-          if ('method' in options && options.method == 'HEAD') {
-            if ('last-modified' in response.headers) {
-              resolve(response.headers['last-modified']);
-            } else resolve('');
-          } else {
-            resolve(body);
-          }
-        }
+): Promise<Response> {
+  for (;;) {
+    let failure: Error;
+    try {
+      const response = await fetch(url, {
+        method,
+        headers: {
+          'User-Agent':
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+          'Accept-Language': 'en-US,en;q=0.9',
+        },
       });
-    };
-    retry(retries, backoff);
-  });
+      if (response.status < 400) {
+        return response;
+      }
+      failure = new Error(
+        `Request to ${url} failed with status ${response.status}`,
+      );
+    } catch (err) {
+      failure = err instanceof Error ? err : new Error(String(err));
+    }
+    const failDetails = retries > 0 ? `Retry in ${backoff}` : 'Giving up';
+    console.log(`Failed to fetch ${url} - ${failure.message} - ${failDetails}`);
+    if (retries <= 0) {
+      throw failure;
+    }
+    await new Promise((resolve) => setTimeout(resolve, backoff));
+    retries--;
+    backoff *= 2;
+  }
 }
