@@ -64,7 +64,8 @@ npx jsii
 if [[ ${#TARGETS[@]} -gt 0 ]]; then
   # jsii-pacmak builds against the outputs of dependencies in `<package>/dist/<language>`
   cp -R "${ROOT}/dist" node_modules/cdk-iam-floyd/dist
-  npx jsii-pacmak --targets "$(IFS=,; echo "${TARGETS[*]}")"
+  targets="${TARGETS[*]}"
+  npx jsii-pacmak --targets "${targets// /,}"
 fi
 CONSUMER="${OUT}/consumer/dist"
 

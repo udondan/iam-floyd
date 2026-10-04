@@ -1,5 +1,3 @@
-//import * as cdk from 'aws-cdk-lib';
-//import iam = require('aws-cdk-lib/aws-iam');
 import {
   CreatePolicyCommand,
   CreateRoleCommand,
@@ -46,145 +44,98 @@ export function out(statements: PolicyStatement[]) {
   });
 }
 
-export async function deploy(statements: PolicyStatement[], type = 'policy') {
-  try {
-    if (type == 'policy') {
-      await deployPolicy(statements);
-    } else if (type == 'assume') {
-      await deployAssume(statements);
-    } else if (type == 'access') {
-      await deployAccess(statements);
-      // } else if (type == 'cdk') {
-      //   deployCdk(statements);
-    } else {
-      throw new Error(`Unknown deploy type: ${type}`);
-    }
-  } catch (error) {
+/**
+ * Creates and deletes the statements in AWS, as a policy, as trust policy of a role or as bucket
+ * policy. Exits on failure.
+ */
+export function deploy(statements: PolicyStatement[], type = 'policy') {
+  deployByType(statements, type).catch((error: unknown) => {
     console.error(error);
     process.exit(1);
+  });
+}
+
+async function deployByType(statements: PolicyStatement[], type: string) {
+  if (type == 'policy') {
+    await deployPolicy(statements);
+  } else if (type == 'assume') {
+    await deployAssume(statements);
+  } else if (type == 'access') {
+    await deployAccess(statements);
+  } else {
+    throw new Error(`Unknown deploy type: ${type}`);
   }
 }
 
-function deployPolicy(statements: PolicyStatement[]): Promise<void> {
-  return new Promise(async function (resolve, reject) {
-    const policyName = newRandomName();
+async function deployPolicy(statements: PolicyStatement[]) {
+  const policyName = newRandomName();
 
-    log(`Creating test policy ${policyName}...`);
+  log(`Creating test policy ${policyName}...`);
 
-    const document = makePolicyDocument(statements);
+  const data = await iamClient.send(
+    new CreatePolicyCommand({
+      PolicyName: policyName,
+      PolicyDocument: makePolicyDocument(statements),
+      Description: 'Testing policy creation',
+    }),
+  );
 
-    try {
-      const data = await iamClient.send(
-        new CreatePolicyCommand({
-          PolicyName: policyName,
-          PolicyDocument: document,
-          Description: 'Testing policy creation',
-        }),
-      );
+  log(`Deleting test policy ${policyName}`);
 
-      log(`Deleting test policy ${policyName}`);
-
-      await iamClient.send(
-        new DeletePolicyCommand({
-          PolicyArn: data.Policy?.Arn,
-        }),
-      );
-      resolve();
-    } catch (err) {
-      log(err);
-      reject(err);
-    }
-  });
+  await iamClient.send(
+    new DeletePolicyCommand({
+      PolicyArn: data.Policy?.Arn,
+    }),
+  );
 }
 
-function deployAssume(statements: any[]): Promise<void> {
-  return new Promise(async function (resolve, reject) {
-    const roleName = newRandomName();
+async function deployAssume(statements: PolicyStatement[]) {
+  const roleName = newRandomName();
 
-    log(`Creating test role ${roleName}...`);
+  log(`Creating test role ${roleName}...`);
 
-    const document = makePolicyDocument(statements);
+  const data = await iamClient.send(
+    new CreateRoleCommand({
+      RoleName: roleName,
+      AssumeRolePolicyDocument: makePolicyDocument(statements),
+      Description: 'Testing policy creation',
+    }),
+  );
 
-    try {
-      const data = await iamClient.send(
-        new CreateRoleCommand({
-          RoleName: roleName,
-          AssumeRolePolicyDocument: document,
-          Description: 'Testing policy creation',
-        }),
-      );
+  log(`Deleting test role ${roleName}`);
 
-      log(`Deleting test role ${roleName}`);
-
-      await iamClient.send(
-        new DeleteRoleCommand({
-          RoleName: data.Role?.RoleName,
-        }),
-      );
-      resolve();
-    } catch (err) {
-      log(err);
-      reject(err);
-    }
-  });
+  await iamClient.send(
+    new DeleteRoleCommand({
+      RoleName: data.Role?.RoleName,
+    }),
+  );
 }
 
-function deployAccess(statements: any[]): Promise<void> {
-  return new Promise(async function (resolve, reject) {
-    const bucketName = `random-bucket-for-floyd-${newRandomName().toLowerCase()}`;
+async function deployAccess(statements: PolicyStatement[]) {
+  const bucketName = `random-bucket-for-floyd-${newRandomName().toLowerCase()}`;
 
-    log(`Creating test bucket ${bucketName}...`);
+  log(`Creating test bucket ${bucketName}...`);
 
-    const document = makePolicyDocument(statements);
+  await s3Client.send(new CreateBucketCommand({ Bucket: bucketName }));
 
-    try {
-      await s3Client.send(new CreateBucketCommand({ Bucket: bucketName }));
+  log('Attaching bucket policy...');
 
-      log('Attaching bucket policy...');
+  await s3Client.send(
+    new PutBucketPolicyCommand({
+      Bucket: bucketName,
+      Policy: makePolicyDocument(statements),
+    }),
+  );
 
-      await s3Client.send(
-        new PutBucketPolicyCommand({
-          Bucket: bucketName,
-          Policy: document,
-        }),
-      );
+  log(`Deleting test bucket ${bucketName}`);
 
-      log(`Deleting test bucket ${bucketName}`);
-
-      await s3Client.send(new DeleteBucketCommand({ Bucket: bucketName }));
-      resolve();
-    } catch (err) {
-      log(err);
-      reject(err);
-    }
-  });
+  await s3Client.send(new DeleteBucketCommand({ Bucket: bucketName }));
 }
-//
-//interface StackProps extends cdk.StackProps {
-//  statements: iam.PolicyStatement[];
-//}
-//
-//class Stack extends cdk.Stack {
-//  constructor(scope: Construct, id: string, props: StackProps) {
-//    super(scope, id, props);
-//    new iam.Policy(this, 'Policy', {
-//      statements: props.statements,
-//    });
-//  }
-//}
-//
-//function deployCdk(statements: iam.PolicyStatement[]) {
-//  const app = new cdk.App();
-//  new Stack(app, 'TestStack' + newRandomName(), {
-//    statements: statements,
-//  });
-//  app.synth();
-//}
 
-function makePolicyDocument(statements: any[]) {
+function makePolicyDocument(statements: PolicyStatement[]) {
   const j = {
     Version: '2012-10-17',
-    Statement: statements.map((s) => s.toJSON()),
+    Statement: statements.map((s) => s.toJSON() as unknown),
   };
 
   return JSON.stringify(j, null, 4);
@@ -194,6 +145,6 @@ function newRandomName() {
   return randomBytes(10).toString('hex');
 }
 
-function log(msg: any) {
+function log(msg: string) {
   console.error(msg);
 }

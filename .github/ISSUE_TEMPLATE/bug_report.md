@@ -6,7 +6,7 @@ labels: bug
 assignees: udondan
 ---
 
-**I'm using the package**
+## I'm using the package
 
 - [ ] iam-floyd
 - [ ] cdk-iam-floyd

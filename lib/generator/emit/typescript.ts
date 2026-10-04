@@ -168,7 +168,7 @@ export function emitTypeScript(
       } else {
         paramDocs += `\n@param ${name} - Identifier for the ${name}.`;
       }
-      arn = arn.replace(`\$\{${placeholder}\}`, `\$\{${name}${orDefault}\}`);
+      arn = arn.replace(`\${${placeholder}}`, `\${${name}${orDefault}}`);
     });
 
     let desc = `\nAdds a resource of type ${resource.name} to the statement`;
@@ -242,7 +242,7 @@ export function emitTypeScript(
       if (types.length > 1) {
         types.push(`(${types.join('|')})[]`);
       } else {
-        types.push(`${types}[]`);
+        types.push(`${types.join(',')}[]`);
       }
 
       desc += `\n@param value The value(s) to check`;

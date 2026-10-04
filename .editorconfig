@@ -11,3 +11,9 @@ insert_final_newline = true
 [Makefile]
 indent_style = tab
 tab_width = 4
+
+[*.{cs,py}]
+indent_size = 4
+
+[*.go]
+indent_style = tab

@@ -1,5 +1,3 @@
-import { get } from 'lodash';
-
 import { Operator } from '../shared';
 import { AccessLevelList } from '../shared/access-level';
 import { fixes } from './fixes';
@@ -250,10 +248,8 @@ export function buildServiceModel(module: Module): ServiceModel {
 
     // Check for custom method name in fixes
     const keyWithoutPrefix = parts[parts.length - 1];
-    const customMethodName = get(
-      fixes,
-      `${module.filename}.conditions.${keyWithoutPrefix}.methodName`,
-    );
+    const customMethodName =
+      fixes[module.filename]?.conditions?.[keyWithoutPrefix]?.methodName;
     if (typeof customMethodName !== 'undefined') {
       methodName = customMethodName;
     } else {
@@ -267,7 +263,7 @@ export function buildServiceModel(module: Module): ServiceModel {
     }
 
     // Handle parameterized conditions that conflict with non-parameterized ones
-    const conflictingKeys = conditionBaseNames.get(methodName) || [];
+    const conflictingKeys = conditionBaseNames.get(methodName) ?? [];
     if (conflictingKeys.length > 1 && name.length > 1 && name[1].length) {
       // This is a parameterized condition that conflicts with others
       const paramPart = name[1]
@@ -319,7 +315,9 @@ export function buildServiceModel(module: Module): ServiceModel {
         conditionTypeDefaults[type].default.toString();
       conditionModel.operatorUrl = conditionTypeDefaults[type].url;
     } else if (type != 'boolean') {
-      throw new Error(`Unexpected condition type: ${type} for ${name}`);
+      throw new Error(
+        `Unexpected condition type: ${type} for ${name.join('/')}`,
+      );
     }
 
     conditionModels.push(conditionModel);

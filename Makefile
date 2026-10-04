@@ -10,7 +10,7 @@ EMPTY :=
 SPACE := $(EMPTY) $(EMPTY)
 COMMA := ,
 
-.PHONY: build emit generate package package-jsii test test-jsii changelog cdk docs stats
+.PHONY: build emit generate package package-jsii test-jsii changelog cdk docs stats lint lint-fix lint-cdk
 
 build: emit
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
@@ -63,10 +63,6 @@ uncdk:
 	@git stash -- lib/shared
 	@git stash -- package.json
 	@$(MAKE) --no-print-directory emit
-
-test:
-	@echo -e "$(TARGET_COLOR)Running main test$(NO_COLOR)"
-	@cd test && $(MAKE) --no-print-directory -f Makefile test
 
 cdk-test:
 	@echo -e "$(TARGET_COLOR)Running CDK test$(NO_COLOR)"
@@ -140,7 +136,15 @@ publish:
 		npm publish; \
 	fi
 
-eslint:
-	@echo "Running eslint $$(npx eslint --version)..."; \
-	npx eslint .; \
-	echo "Passed"
+# The TypeScript is linted with types, which need the emitted service classes
+lint: emit
+	@bin/lint
+
+lint-fix: emit
+	@bin/lint --fix
+
+# After `make cdk`: the CDK variant of the TypeScript code, the other files are the same
+lint-cdk:
+	@echo -e "$(TARGET_COLOR)Running eslint on the CDK variant$(NO_COLOR)"
+	@[ -d tooter/node_modules ] || npm ci --prefix tooter --no-audit --no-fund
+	@npx eslint .

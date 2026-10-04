@@ -1,11 +1,32 @@
-import { get } from 'lodash';
+import * as colors from 'colors/safe';
 
 import { Condition } from './condition';
 
-const colors = require('colors/safe');
-
 colors.enable();
-type Fixes = Record<string, any>;
+
+export interface ConditionFix {
+  /** Rewrites the condition key */
+  key?: string;
+  /** Overrides the name of the `if*()` method */
+  methodName?: string;
+  operator?: {
+    /** Overrides the inferred operator type */
+    type?: string;
+    /** Sets `typeOverride` on the condition */
+    override?: string[];
+  };
+}
+
+export interface ServiceFixes {
+  /** Skips the service */
+  ignore?: boolean;
+  /** Rewrites the filename and class name */
+  name?: string;
+  /** Rewrites the service prefix */
+  service?: string;
+  resourceTypes?: Record<string, { arn: string }>;
+  conditions?: Record<string, ConditionFix>;
+}
 
 /**
  * Global definition of fixes we apply to the AWS docs
@@ -17,7 +38,7 @@ type Fixes = Record<string, any>;
  * name: rewrites the filename and class name. This is needed, because, in some cases, the docs have split up the documentation for the same service prefix on multiple pages
  * resourceTypes.$name.arn: Fixes ARN of the given resource type
  */
-export const fixes: Fixes = {
+export const fixes: Record<string, ServiceFixes | undefined> = {
   'awsiot1-click': {
     ignore: true, // is EOL. the page exists but doesn't have the expected content format
   },
@@ -209,19 +230,14 @@ export function conditionFixer(
   const keySplit = condition.key.split(':');
   const keyWithoutPrefix = keySplit[keySplit.length - 1];
 
-  const operatorType = get(
-    fixes,
-    `${service}.conditions.${keyWithoutPrefix}.operator.type`,
-  );
+  const conditionFix = fixes[service]?.conditions?.[keyWithoutPrefix];
+  const operatorType = conditionFix?.operator?.type;
   if (typeof operatorType !== 'undefined') {
     fixed = 2;
     condition.type = operatorType;
   }
 
-  const operatorTypeOverride = get(
-    fixes,
-    `${service}.conditions.${keyWithoutPrefix}.operator.override`,
-  );
+  const operatorTypeOverride = conditionFix?.operator?.override;
   if (typeof operatorTypeOverride !== 'undefined') {
     fixed = 2;
     condition.typeOverride = operatorTypeOverride;
@@ -239,7 +255,7 @@ export function conditionKeyFixer(service: string, key: string): string {
   const split = key.split(':');
   key = split[1];
 
-  const keyOverride = get(fixes, `${service}.conditions.${key}.key`);
+  const keyOverride = fixes[service]?.conditions?.[key]?.key;
   if (typeof keyOverride !== 'undefined') {
     return `${split[0]}:${keyOverride}`;
   }
@@ -261,14 +277,14 @@ export function arnFixer(
   });
 
   // fix ARNs that have wildcards instead of identifiers
-  if (arn.match(/(:|\/)[a-zA-Z-]+(:|\/)\*$/)) {
+  if (/(:|\/)[a-zA-Z-]+(:|\/)\*$/.test(arn)) {
     arn = `${arn.slice(0, -1)}\${ResourceName}`;
     fixed = 2;
   }
 
   // Rekognition has a duplicate parameter in the ARN. here we append a number to duplicate parameter names
   const duplicates: Record<string, number> = {};
-  arn = arn.replace(/\$\{([A-Za-z]+)\}/g, (_, param): string => {
+  arn = arn.replace(/\$\{([A-Za-z]+)\}/g, (_, param: string): string => {
     if (!duplicates[param]) {
       duplicates[param] = 1;
     } else {
@@ -282,7 +298,7 @@ export function arnFixer(
   });
 
   // fix ARNs specified in the global fixes object above
-  const value = get(fixes, `${service}.resourceTypes.${resource}.arn`);
+  const value = fixes[service]?.resourceTypes?.[resource]?.arn;
   if (typeof value !== 'undefined') {
     fixed = 3;
     arn = value;
@@ -308,17 +324,18 @@ export function arnFixer(
   ];
   if (
     !notMatchingButValid.includes(`${service}:${resource}`) &&
-    !arn.match(re)
+    !re.test(arn)
   ) {
     const message = `\nARN for ${service}:${resource} did not match allowed pattern, possibly error in documentation: ${arn}`;
-    console.warn(colors.bgYellow.black(message));
+    console.warn(colors.black(colors.bgYellow(message)));
   }
   return arn;
 }
 
 export function serviceFixer(service: string): string {
-  if (service in fixes && 'service' in fixes[service]) {
-    service = fixes[service].service;
+  const override = fixes[service]?.service;
+  if (override) {
+    service = override;
   }
   return service;
 }

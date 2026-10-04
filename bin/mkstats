@@ -23,5 +23,5 @@ Support for:
 - $(getNoConditions) Condition keys
 EOF
 
-perl -0777 -pi -e "s/^(<!-- stats -->)[\s\n\w*-:\d<>]+(<!-- \/stats -->)/\\1\\n${stats}\\n\\2/gm" README.md
+perl -0777 -pi -e "s/^(<!-- stats -->)[\s\n\w*-:\d<>]+(<!-- \/stats -->)/\\1\\n\\n${stats}\\n\\n\\2/gm" README.md
 perl -0777 -pi -e "s/^(..\\n   stats\\n)[\s\n\w*-:\d<>]+(\\n..\\n   \/stats)/\\1\\n${stats}\\n\\2/gm" docs/source/index.rst

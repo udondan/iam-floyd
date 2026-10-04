@@ -1,0 +1,11 @@
+target-version = "py39"
+line-length = 100
+
+[lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+
+[format]
+quote-style = "single"
+# The formatter puts the chained calls in the examples on one line, which is hard to read in the
+# docs
+exclude = ["examples/**"]

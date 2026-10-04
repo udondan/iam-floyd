@@ -5,10 +5,9 @@ import { Project } from 'ts-morph';
 
 import { emitTypeScriptFromModels } from '../lib/generator/emit/typescript';
 import { formatCode } from '../lib/generator/format';
+import { PackageJson } from '../lib/generator/package-json';
 
 const lib = path.join(__dirname, '../lib');
-
-type Packages = Record<string, string>;
 
 async function run() {
   const args = process.argv.slice(2);
@@ -128,14 +127,17 @@ function fixManagedPolicy(project: Project) {
 
 function preparePackageJson() {
   const file = path.join(__dirname, '../package.json');
-  const jsonData = require(file);
+  const jsonData = JSON.parse(fs.readFileSync(file, 'utf8')) as PackageJson;
 
   jsonData.name = 'cdk-iam-floyd';
   jsonData.description += ' for AWS CDK';
-  (jsonData.keywords as string[]).push('cdk', 'aws-cdk');
+  jsonData.keywords.push('cdk', 'aws-cdk');
 
-  (jsonData.devDependencies as Packages)['aws-cdk-lib'] = '^2.0.0';
-  (jsonData.devDependencies as Packages).constructs = '^10.0.0';
+  jsonData.devDependencies = {
+    ...jsonData.devDependencies,
+    'aws-cdk-lib': '^2.0.0',
+    constructs: '^10.0.0',
+  };
   jsonData.peerDependencies = {
     'aws-cdk-lib': '^2.0.0',
     constructs: '^10.0.0',
@@ -164,16 +166,16 @@ function swapFile(src: string, dest: string) {
 function deleteFile(path: string) {
   try {
     fs.unlinkSync(path);
-  } catch (err: any) {
-    exit(err);
+  } catch (err) {
+    exit(err as Error);
   }
 }
 
 function renameFile(src: string, dest: string) {
   try {
     fs.renameSync(src, dest);
-  } catch (err: any) {
-    exit(err);
+  } catch (err) {
+    exit(err as Error);
   }
 }
 

@@ -48,7 +48,7 @@ const { Statement } = require('iam-floyd');
 
 Every statement follows this readable pattern:
 
-```
+```text
 new Statement.<Service>()  // pick the AWS service
   .allow() | .deny()       // effect  (allow is the default)
   .toXxx()                 // actions  ("to do something")
@@ -458,9 +458,10 @@ const policy = {
 - **`Statement.All`** is a special class that produces `Action: "*"` — useful for
   "allow anything called via CloudFormation" style statements.
 - **Policy Converter**: if you have an existing JSON policy, use the online converter
-  at https://iam-floyd.readthedocs.io/en/latest/policy-converter.html to get the
+  at <https://iam-floyd.readthedocs.io/en/latest/policy-converter.html> to get the
   equivalent iam-floyd code.
 - **Non-chaining style** is supported if you prefer it:
+
   ```typescript
   const s = new Statement.Ec2();
   s.allow();
@@ -469,4 +470,4 @@ const policy = {
 
 ## API reference
 
-Full documentation: https://iam-floyd.readthedocs.io/en/latest/
+Full documentation: <https://iam-floyd.readthedocs.io/en/latest/>

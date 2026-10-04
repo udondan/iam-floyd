@@ -1,22 +1,20 @@
 import os
+
 from docutils import nodes
 from docutils.statemachine import ViewList
 from sphinx.util.docutils import SphinxDirective
 from sphinx.util.nodes import nested_parse_with_titles
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
-with open('{}/example.rst.tmpl'.format(dir_path), 'r') as f:
+with open(f'{dir_path}/example.rst.tmpl') as f:
     lines = f.readlines()
 
 
 def make_example(dir):
-    path = '../../examples/{0}/{0}'.format(dir)
+    path = f'../../examples/{dir}/{dir}'
     rst = ViewList()
-    line_no = 0
-    for line in lines:
-        line_no += 1
-        line = line.format(path).rstrip()
-        rst.append(line, 'example.rst', line_no)
+    for line_no, line in enumerate(lines, start=1):
+        rst.append(line.format(path).rstrip(), 'example.rst', line_no)
     return rst
 
 

@@ -14,7 +14,7 @@ import {
   Tags,
 } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import path = require('path');
+import * as path from 'path';
 
 const project = 'Floyd Tweeter';
 const projectId = 'floyd-tweeter';
@@ -73,7 +73,7 @@ export class Stack extends CdkStack {
         queue: mastodonQueue.queueUrl,
         credentials: mastodonCredentials.secretArn,
       },
-      runtime: aws_lambda.Runtime.NODEJS_16_X,
+      runtime: aws_lambda.Runtime.NODEJS_24_X,
       timeout: Duration.seconds(10),
       logRetention: aws_logs.RetentionDays.ONE_WEEK,
     });

@@ -55,7 +55,9 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithArnDefaults
     return super.freeze();
   }
 
-  protected cdkApplyPrincipals() {}
+  protected cdkApplyPrincipals() {
+    // implemented by the CDK variant
+  }
 
   /**
    * Switches the statement to use [`notPrincipal`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notprincipal.html).

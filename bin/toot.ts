@@ -13,22 +13,15 @@ function getChangelog() {
   return changelog.replace(/^---$/gm, '');
 }
 
-function enqueueToot(content: string) {
-  return new Promise(async (resolve, reject) => {
-    const params = {
+async function enqueueToot(content: string) {
+  const data = await sqsClient.send(
+    new SendMessageCommand({
       MessageBody: content,
       QueueUrl: process.env.AWS_SQS_URL!,
       MessageGroupId: 'Default',
-    };
-
-    try {
-      const data = await sqsClient.send(new SendMessageCommand(params));
-      console.log(data);
-      resolve(data);
-    } catch (err) {
-      reject(err);
-    }
-  });
+    }),
+  );
+  console.log(data);
 }
 
 async function main() {
@@ -37,7 +30,7 @@ async function main() {
   const toots: string[] = [];
   const split = changelog
     .split(/^(?=(?::warning: )?\*\*)/gm)
-    .filter((content) => content.match(/^(?::warning: )?\*\*/));
+    .filter((content) => /^(?::warning: )?\*\*/.test(content));
 
   split.forEach((content) => {
     content = content.trim().split('**').join('').split(':warning:').join('⚠️');
@@ -66,12 +59,12 @@ async function main() {
   for (const content of toots) {
     console.log('tooting:');
     console.log(content);
-    await enqueueToot(content).catch((err: Error) => {
-      console.error(err);
-      process.exit(1);
-    });
+    await enqueueToot(content);
     console.log('--------------');
   }
 }
 
-main();
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

@@ -1,0 +1,13 @@
+extends: default
+
+ignore-from-file: .gitignore
+
+rules:
+  # Prettier formats the files and wraps long lines where it can
+  line-length: disable
+  comments:
+    min-spaces-from-content: 1
+  document-start: disable
+  truthy:
+    # `on` is a key in GitHub workflows
+    check-keys: false

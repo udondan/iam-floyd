@@ -8,7 +8,7 @@ export function lowerFirst(str: string): string {
 
 export function camelCase(str: string) {
   return str
-    .split(/[_\-\s\./${}]/)
+    .split(/[_\-\s./${}]/)
     .map((str) => {
       return upperFirst(str);
     })

@@ -87,7 +87,7 @@ Usage in AWS CDK:
       .. code-block:: go
 
          readOnlyRole.AddManagedPolicy(
-         	cdkiamfloyd.NewAwsManagedPolicy().ReadOnlyAccess(),
+             cdkiamfloyd.NewAwsManagedPolicy().ReadOnlyAccess(),
          )
 
 Usage in the AWS SDK for JavaScript v3 (TypeScript and JavaScript only):

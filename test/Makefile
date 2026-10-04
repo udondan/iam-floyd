@@ -14,7 +14,3 @@ test-cdk: install
 	@npx cdk deploy --require-approval never
 	@npx cdk destroy --force
 	@cat cdk.out/IAM-Floyd-Test.template.json
-
-test:
-	@rm -f main.js
-	@npx ts-node test/main.ts
