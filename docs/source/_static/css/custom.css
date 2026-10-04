@@ -138,16 +138,28 @@ input.labelauty[class^='image'] + label > span[class$='-image']::before {
   line-height: 1;
 }
 
-input.labelauty.iconJs + label > span[class$='-image']::before {
-  content: '\e845';
+input.labelauty.iconTs + label > span[class$='-image']::before {
+  content: '\ec63';
 }
 
-input.labelauty.iconTs + label > span[class$='-image']::before {
-  content: '\e920';
+input.labelauty.iconJs + label > span[class$='-image']::before {
+  content: '\ea81';
 }
 
 input.labelauty.iconPy + label > span[class$='-image']::before {
-  content: '\eb89';
+  content: '\eb9c';
+}
+
+input.labelauty.iconJava + label > span[class$='-image']::before {
+  content: '\ea7f';
+}
+
+input.labelauty.iconCs + label > span[class$='-image']::before {
+  content: '\e9a0';
+}
+
+input.labelauty.iconGo + label > span[class$='-image']::before {
+  content: '\ea3d';
 }
 
 input.labelauty.imageOtter + label > span[class$='-image']::before {

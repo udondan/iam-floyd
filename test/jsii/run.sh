@@ -45,6 +45,11 @@ log() {
 rm -rf "${OUT}"
 mkdir -p "${OUT}"
 
+log "Writing the examples of the policy converter"
+EXAMPLES_DIR="${OUT}/examples"
+rsync -a --exclude "*.ts" --exclude "*.js" "${ROOT}/examples/" "${EXAMPLES_DIR}"
+npx ts-node test/converter/cases.ts CDK "${EXAMPLES_DIR}"
+
 if [[ " ${LANGUAGES[*]} " == *" typescript "* ]]; then
   log "Rendering the API docs, like Construct Hub"
   mkdir -p "${OUT}/docs"
@@ -143,33 +148,34 @@ run_go() {
   go run .
 }
 
-# The examples of the docs, examples/*/*.{py,java,cs,go}, run after the scenarios and reuse their setup
+# The examples of the docs, examples/*/*.{py,java,cs,go}, and those of the policy converter
+# (test/converter/cases.ts) run after the scenarios and reuse their setup
 
 examples_python() {
-  "${OUT}/venv/bin/python" "${TEST}/examples/python/examples.py" "${ROOT}/examples"
+  "${OUT}/venv/bin/python" "${TEST}/examples/python/examples.py" "${EXAMPLES_DIR}"
 }
 
 examples_java() {
   cp -R "${TEST}/examples/java" "${OUT}/examples-java"
-  cp "${ROOT}"/examples/*/*.java "${OUT}/examples-java/src/main/java/"
+  cp "${EXAMPLES_DIR}"/*/*.java "${OUT}/examples-java/src/main/java/"
   cd "${OUT}/examples-java"
   mvn --quiet --batch-mode compile exec:java \
     "-Dmaven.repo.local=${OUT}/m2" \
     "-Dfloyd.repo=${ROOT}/dist/java" \
     "-Dfloyd.version=${VERSION}" \
-    "-Dexec.args=${ROOT}/examples"
+    "-Dexec.args=${EXAMPLES_DIR}"
 }
 
 examples_dotnet() {
   cp -R "${TEST}/examples/dotnet" "${OUT}/examples-dotnet"
   cp "${OUT}/dotnet/nuget.config" "${OUT}/examples-dotnet/"
   cd "${OUT}/examples-dotnet"
-  dotnet run --verbosity quiet "-p:FloydVersion=${VERSION}" "-p:Examples=${ROOT}/examples" -- "${ROOT}/examples"
+  dotnet run --verbosity quiet "-p:FloydVersion=${VERSION}" "-p:Examples=${EXAMPLES_DIR}" -- "${EXAMPLES_DIR}"
 }
 
 examples_go() {
   cp -R "${TEST}/examples/go" "${OUT}/examples-go"
-  cp "${ROOT}"/examples/*/*.go "${OUT}/examples-go/"
+  cp "${EXAMPLES_DIR}"/*/*.go "${OUT}/examples-go/"
   # the proxy written by run_go
   export GOPROXY="file://${OUT}/go-proxy/go,https://proxy.golang.org" GONOSUMDB=udondan.github.io GODEBUG=goindex=0
   cd "${OUT}/examples-go"
@@ -204,5 +210,5 @@ log "Comparing results"
 python3 "${TEST}/compare.py" "${TEST}/expected.json" "${RESULTS[@]}"
 if [[ ${#EXAMPLES[@]} -gt 0 ]]; then
   log "Comparing the results of the examples"
-  python3 "${TEST}/examples/compare.py" "${ROOT}/examples" "${EXAMPLES[@]}"
+  python3 "${TEST}/examples/compare.py" "${EXAMPLES_DIR}" "${EXAMPLES[@]}"
 fi

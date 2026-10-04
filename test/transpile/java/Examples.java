@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.tools.JavaCompiler;
@@ -52,6 +53,10 @@ public final class Examples {
   static Object resolve(Object result) {
     if (result instanceof PolicyDocument) {
       return ((PolicyDocument) result).toJSON();
+    }
+    // a policy of the policy converter
+    if (result instanceof Map) {
+      return result;
     }
     List<?> statements =
         result instanceof List ? (List<?>) result : Collections.singletonList(result);

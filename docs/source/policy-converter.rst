@@ -24,6 +24,10 @@ Use this tool to convert any IAM policy in JSON format to IAM Floyd code.
           <strong>Language</strong>
           <input type="radio" name="policyConverterLanguage" value="TypeScript" data-labelauty="TypeScript" class="iconTs" checked="checked">
           <input type="radio" name="policyConverterLanguage" value="JavaScript" data-labelauty="JavaScript" class="iconJs">
+          <input type="radio" name="policyConverterLanguage" value="Python" data-labelauty="Python" class="iconPy">
+          <input type="radio" name="policyConverterLanguage" value="Java" data-labelauty="Java" class="iconJava">
+          <input type="radio" name="policyConverterLanguage" value="C#" data-labelauty="C#" class="iconCs">
+          <input type="radio" name="policyConverterLanguage" value="Go" data-labelauty="Go" class="iconGo">
         </div>
 
         <div class="policyConverterOptionsSection">
@@ -46,6 +50,7 @@ Use this tool to convert any IAM policy in JSON format to IAM Floyd code.
         <textarea id="policyConverterOutput"></textarea>
       </p>
     </fieldset>
+    <script src="_static/js/converter.js"></script>
     <script src="_static/js/policy-converter.js"></script>
 
 Limitations
@@ -55,4 +60,6 @@ This converter produces working code, though not necessarily ideal code. Current
 
 - **Resource ARNs are not parsed and converted** to the corresponding methods. Instead all resources ARNs are simply put into ``on`` methods. So when you see something like ``.on('arn:aws:es:*:*:domain/foo')`` it could be manually improved to ``onDomain('foo')``
 - **No reduction to access levels.** If a policy contains all actions with access level *write*, the generated code will not simply have ``.allWriteActions()``, but instead all individual action methods, like ``.toCreateFoo()``, ``.toUpdateFoo()``, ``.toDeleteFoo()`` etc
-- **Wildcards are not resolved.** If the input policy contains actions with wildcards, e.g. ``es:Create*``, the generated code as well will contain ``.to('es:Create*')`` instead of the methods ``.toCreateElasticsearchDomain()``, ``.toCreateElasticsearchServiceRole()``, ``.toCreateOutboundCrossClusterSearchConnection()``
+- **Wildcards are not resolved.** If the input policy contains actions with wildcards, e.g. ``es:Create*``, the generated code as well will contain ``.to('Create*')`` instead of the methods ``.toCreateElasticsearchDomain()``, ``.toCreateElasticsearchServiceRole()``, ``.toCreateOutboundCrossClusterSearchConnection()``
+- **Conditions are added with** ``if``, not with the methods of the condition keys. So ``.if('s3:prefix', 'home/', 'StringLike')`` could be manually improved to ``.ifPrefix('home/', 'StringLike')``
+- **Actions of services that IAM Floyd doesn't know** are added to a statement of ``All`` with ``.to('service:Action')``

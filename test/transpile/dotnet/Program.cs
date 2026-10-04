@@ -299,6 +299,8 @@ static class Examples
                 object json = result switch
                 {
                     Amazon.CDK.AWS.IAM.PolicyDocument document => document.ToJSON(),
+                    // a policy of the policy converter
+                    IDictionary<string, object> policy => policy,
                     IEnumerable statements => statements,
                     _ => new[] { result },
                 };

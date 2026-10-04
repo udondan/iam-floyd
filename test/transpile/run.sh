@@ -3,8 +3,8 @@
 # Tests the native packages: runs the scenarios against TypeScript, the baseline, and against each
 # language, and compares the results. The scenarios are those of scenarios.json, which test the
 # core, plus those of services.ts, which call every method of every service. Then runs the examples
-# of the docs in each language and compares them to the .result files, and compares the AWS managed
-# policies.
+# of the docs in each language and compares them to the .result files, together with the policies
+# of the policy converter (test/converter/cases.ts), and compares the AWS managed policies.
 #
 # Usage: test/transpile/run.sh [languages, default: python java dotnet go]
 #
@@ -27,6 +27,10 @@ fi
 rm -rf "${OUT}"
 mkdir -p "${OUT}"
 npx ts-node bin/transpile.ts
+# the examples of the docs and those of the policy converter
+EXAMPLES_DIR="${OUT}/examples"
+rsync -a --exclude "*.ts" --exclude "*.js" examples/ "${EXAMPLES_DIR}"
+npx ts-node test/converter/cases.ts Standalone "${EXAMPLES_DIR}"
 npx ts-node "${TEST}/services.ts" > "${OUT}/services.json"
 SCENARIOS=("${TEST}/scenarios.json" "${OUT}/services.json")
 
@@ -63,7 +67,7 @@ fi
 # the .NET test in test/transpile/dotnet/, with the examples rewritten for the native package
 if [[ " ${LANGUAGES[*]} " == *" dotnet "* ]]; then
   mkdir -p "${OUT}/dotnet/examples"
-  for example in examples/*/*.cs; do
+  for example in "${EXAMPLES_DIR}"/*/*.cs; do
     name="$(basename "$(dirname "${example}")")"
     if [[ "${name}" == *.cdk ]]; then
       continue
@@ -95,7 +99,7 @@ if [[ " ${LANGUAGES[*]} " == *" go "* ]]; then
   cp -R "${TEST}/go" "${GO_DIR}"
   rm "${GO_DIR}/registry.ts"
   npx ts-node "${TEST}/go/registry.ts" "${OUT}/managed-policies.json" "${GO_DIR}/registry.go"
-  for example in examples/*/*.go; do
+  for example in "${EXAMPLES_DIR}"/*/*.go; do
     name="$(basename "$(dirname "${example}")")"
     if [[ "${name}" == *.cdk ]]; then
       continue
@@ -158,12 +162,12 @@ for language in "${LANGUAGES[@]}"; do
   fi
 
   case "${language}" in
-    python) "${PYTHON}" "${TEST}/python/examples.py" examples > "${OUT}/examples-python.txt" ;;
-    java) java -cp "${JAVA_CP}" Examples examples "${OUT}/java/examples" > "${OUT}/examples-java.txt" ;;
+    python) "${PYTHON}" "${TEST}/python/examples.py" "${EXAMPLES_DIR}" > "${OUT}/examples-python.txt" ;;
+    java) java -cp "${JAVA_CP}" Examples "${EXAMPLES_DIR}" "${OUT}/java/examples" > "${OUT}/examples-java.txt" ;;
     dotnet) "${DOTNET_TEST[@]}" examples "${OUT}/dotnet/examples" > "${OUT}/examples-dotnet.txt" ;;
     go) "${GO_TEST[@]}" examples > "${OUT}/examples-go.txt" ;;
   esac
-  if python3 test/jsii/examples/compare.py --standalone examples "${OUT}/examples-${language}.txt" > "${OUT}/examples-${language}.log"; then
+  if python3 test/jsii/examples/compare.py --standalone "${EXAMPLES_DIR}" "${OUT}/examples-${language}.txt" > "${OUT}/examples-${language}.log"; then
     echo "All $(wc -l < "${OUT}/examples-${language}.log" | tr -d ' ') examples passed"
   else
     grep -v ': OK$' "${OUT}/examples-${language}.log"

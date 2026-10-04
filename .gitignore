@@ -14,6 +14,7 @@ test/package-lock.json
 **/*.d.ts
 **/*.d.ts.map
 **/*.js
+!/docs/source/_static/js/*.js
 /.jsii
 /.jsii.gz
 /dist
