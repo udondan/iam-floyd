@@ -4,6 +4,9 @@
 .. _iam-floyd-npm: https://www.npmjs.com/package/iam-floyd
 .. |iam-floyd-npm| image:: https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet
 
+.. _iam-floyd-pypi: https://pypi.org/project/iam-floyd/
+.. |iam-floyd-pypi| image:: https://img.shields.io/pypi/v/iam-floyd?label=PyPI
+
 .. _cdk-iam-floyd-npm: https://www.npmjs.com/package/cdk-iam-floyd
 .. |cdk-iam-floyd-npm| image:: https://img.shields.io/npm/dt/cdk-iam-floyd?label=npm&color=orange
 

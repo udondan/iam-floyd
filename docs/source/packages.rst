@@ -8,7 +8,7 @@ There are two different package variants available:
 
 **iam-floyd**:
    | Can be used in AWS SDK, Boto 3 or for whatever you need an IAM policy statement for:
-   | |iam-floyd-npm|_
+   | |iam-floyd-npm|_ |iam-floyd-pypi|_
 
 **cdk-iam-floyd**:
    | Integrates into `AWS CDK`_ and extends `iam.PolicyStatement`_:
@@ -19,6 +19,8 @@ There are two different package variants available:
 
 Other Languages
 ---------------
+
+``iam-floyd`` is also available as a native package for Python, with the same version as on npm: `iam-floyd on PyPI <https://pypi.org/project/iam-floyd/>`_. It doesn't need Node.js and has no dependencies. It supports Python 3.9 and newer.
 
 ``cdk-iam-floyd`` is also available for Python, Java, .NET and Go, with the same version as on npm:
 
@@ -36,7 +38,7 @@ Other Languages
    * - Go
      - ``udondan.github.io/iam-floyd/go/cdkiamfloyd``
 
-The packages are built with `jsii <https://aws.github.io/jsii/>`_, like AWS CDK itself, and run the JavaScript code of the npm package in Node.js, which must be installed. The API reference for every language is on `Construct Hub <https://constructs.dev/packages/cdk-iam-floyd>`_.
+These packages are built with `jsii <https://aws.github.io/jsii/>`_, like AWS CDK itself, and run the JavaScript code of the npm package in Node.js, which must be installed. The API reference for every language is on `Construct Hub <https://constructs.dev/packages/cdk-iam-floyd>`_.
 
 CDK Compatibility Matrix
 ------------------------
