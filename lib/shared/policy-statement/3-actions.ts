@@ -139,6 +139,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    * ```typescript
    * allMatchingActions('/vpn/i')
    * ```
+   * Of the flags, only `i` (ignore case) and `y` (match at the start of the action name) have an effect, others are ignored. Without `i`, the match is case-sensitive. A string without slashes is used as the pattern itself.
    */
   public allMatchingActions(...expressions: string[]) {
     expressions.forEach((expression) => {
