@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.848.0](https://github.com/udondan/iam-floyd/compare/v0.847.0...v0.848.0) (2026-10-04)
+
+
+### Features
+
+* native Python package of iam-floyd ([#2300](https://github.com/udondan/iam-floyd/issues/2300)) ([5f88262](https://github.com/udondan/iam-floyd/commit/5f8826203d1d5a34a0a1fa8c7f73a3e1ce619e67))
+
+
+### Bug Fixes
+
+* compact() matches only the selected actions of the service ([#2297](https://github.com/udondan/iam-floyd/issues/2297)) ([2f47ebf](https://github.com/udondan/iam-floyd/commit/2f47ebfd58a22a3a1edad49edef6a3b291b90400))
+
 ## [0.847.0](https://github.com/udondan/iam-floyd/compare/v0.846.0...v0.847.0) (2026-10-03)
 
 
