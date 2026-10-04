@@ -37,10 +37,11 @@ There are two different package variants available:
 
 - **iam-floyd**: Can be used in AWS SDK or for whatever you need an IAM policy statement for <br>[![npm](https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet)](https://www.npmjs.com/package/iam-floyd)
 
-  iam-floyd is also available as a native package for Python, Java and .NET, without Node.js and without dependencies:<br>
+  iam-floyd is also available as a native package for Python, Java, .NET and Go, without Node.js and without dependencies:<br>
   [![PyPI](https://img.shields.io/pypi/v/iam-floyd?label=PyPI)](https://pypi.org/project/iam-floyd/)
   [![Maven Central](https://img.shields.io/maven-central/v/com.udondan/iam-floyd?label=Maven%20Central)](https://central.sonatype.com/artifact/com.udondan/iam-floyd)
   [![NuGet](https://img.shields.io/nuget/v/IAM.Floyd?label=NuGet)](https://www.nuget.org/packages/IAM.Floyd)
+  `go get udondan.github.io/iam-floyd/go/iamfloyd`
 
 - **cdk-iam-floyd**: Integrates into [AWS CDK] and extends [`iam.PolicyStatement`](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.PolicyStatement.html)<br>[![npm](https://img.shields.io/npm/dt/cdk-iam-floyd?label=npm&color=orange)](https://www.npmjs.com/package/cdk-iam-floyd)
 

@@ -52,9 +52,13 @@ Operators
 
       .. code-block:: go
 
+         // for use without AWS CDK use the iam-floyd package
+         import "udondan.github.io/iam-floyd/go/iamfloyd"
+
+         // for use with CDK use the cdk-iam-floyd package
          import "udondan.github.io/iam-floyd/go/cdkiamfloyd"
 
-Operators can be simple strings such as ``StringEquals`` or get complex with modifiers such as ``ForAnyValue`` or ``IfExists``. For simple operators you can use the static properties of the ``Operator`` class in TypeScript, and its constants in the native packages of ``iam-floyd`` for Python, Java and .NET, like ``Operator.STRING_LIKE``. The other languages have no such static properties, there you call the method of the same name on a new ``Operator``:
+Operators can be simple strings such as ``StringEquals`` or get complex with modifiers such as ``ForAnyValue`` or ``IfExists``. For simple operators you can use the static properties of the ``Operator`` class in TypeScript, and its constants in the native packages of ``iam-floyd`` for Python, Java, .NET and Go, like ``Operator.STRING_LIKE`` (``iamfloyd.Operator_STRING_LIKE`` in Go). The other languages have no such static properties, there you call the method of the same name on a new ``Operator``:
 
 .. example:: conditions-operator-simple
 

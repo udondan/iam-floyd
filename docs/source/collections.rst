@@ -57,6 +57,10 @@ First import the ``Collection`` provider:
 
       .. code-block:: go
 
+         // for use without AWS CDK use the iam-floyd package
+         import "udondan.github.io/iam-floyd/go/iamfloyd/collection"
+
+         // for use with CDK use the cdk-iam-floyd package
          import "udondan.github.io/iam-floyd/go/cdkiamfloyd"
 
 Collections then can be called via:
