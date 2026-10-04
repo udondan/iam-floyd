@@ -1,5 +1,4 @@
 import {
-  ArrowFunction,
   BinaryExpression,
   CallExpression,
   ClassDeclaration,
@@ -22,10 +21,18 @@ import {
   SyntaxKind,
   Type,
   TypeNode,
+  TypeOfExpression,
   VariableDeclarationKind,
 } from 'ts-morph';
 
-import { fail, isServiceFile } from './index';
+import {
+  arrowFunction,
+  fail,
+  isPure,
+  isServiceFile,
+  kindOf,
+  resolve,
+} from './index';
 
 /**
  * The Python module of a service, from the name of its file
@@ -174,78 +181,6 @@ function membership(element: string, container: string): Expr {
 
 function wrap(expr: Expr, min: Prec): string {
   return expr.prec < min ? `(${expr.code})` : expr.code;
-}
-
-type Kind =
-  | 'any'
-  | 'string'
-  | 'number'
-  | 'boolean'
-  | 'array'
-  | 'map'
-  | 'set'
-  | 'record'
-  | 'date'
-  | 'regexp'
-  | 'class'
-  | 'undefined'
-  | 'mixed';
-
-/**
- * What a value is at runtime, which decides how operations on it are translated
- */
-function kindOf(type: Type): Kind {
-  if (type.isAny()) {
-    return 'any';
-  }
-  if (type.isUndefined() || type.isNull()) {
-    return 'undefined';
-  }
-  type = type.getNonNullableType();
-  if (type.isUnion()) {
-    const kinds = new Set(type.getUnionTypes().map((part) => kindOf(part)));
-    return kinds.size == 1 ? [...kinds][0] : 'mixed';
-  }
-  if (
-    type.isString() ||
-    type.isStringLiteral() ||
-    type.isTemplateLiteral() ||
-    type.isEnum() ||
-    type.isEnumLiteral()
-  ) {
-    return 'string';
-  }
-  if (type.isNumber() || type.isNumberLiteral()) {
-    return 'number';
-  }
-  if (type.isBoolean() || type.isBooleanLiteral()) {
-    return 'boolean';
-  }
-  if (type.isArray() || type.isTuple()) {
-    return 'array';
-  }
-  const symbol = type.getSymbol();
-  switch (symbol?.getName()) {
-    case 'Map':
-      return 'map';
-    case 'Set':
-      return 'set';
-    case 'Date':
-      return 'date';
-    case 'RegExp':
-      return 'regexp';
-  }
-  if (
-    symbol
-      ?.getDeclarations()
-      .some((declaration) => Node.isClassDeclaration(declaration))
-  ) {
-    return 'class';
-  }
-  if (type.isObject() && !type.isInterface()) {
-    return 'record';
-  }
-  return 'mixed';
 }
 
 export class PythonTranspiler {
@@ -1707,11 +1642,7 @@ export class PythonTranspiler {
             ? [left, right]
             : [right, left];
           const value = wrap(
-            this.expression(
-              (
-                typeOf as Node as { getExpression(): Expression }
-              ).getExpression(),
-            ),
+            this.expression((typeOf as TypeOfExpression).getExpression()),
             Prec.comparison + 1,
           );
           const type = (literal as Node).getText().slice(1, -1);
@@ -1833,55 +1764,6 @@ export class PythonTranspiler {
     }
     return fail(node, `Unsupported operator ${operator}`);
   }
-}
-
-function arrowFunction(node: Node): ArrowFunction {
-  if (!Node.isArrowFunction(node)) {
-    return fail(node, 'Callbacks must be arrow functions');
-  }
-  if (node.isAsync()) {
-    fail(node, 'Async callbacks are not supported');
-  }
-  return node;
-}
-
-/**
- * Whether an expression can be evaluated twice
- */
-function isPure(node: Node): boolean {
-  if (
-    Node.isIdentifier(node) ||
-    Node.isStringLiteral(node) ||
-    Node.isNumericLiteral(node) ||
-    node.getKind() == SyntaxKind.ThisKeyword
-  ) {
-    return true;
-  }
-  if (
-    Node.isPropertyAccessExpression(node) ||
-    Node.isNonNullExpression(node) ||
-    Node.isParenthesizedExpression(node)
-  ) {
-    return isPure(node.getExpression());
-  }
-  if (Node.isElementAccessExpression(node)) {
-    return (
-      isPure(node.getExpression()) &&
-      isPure(node.getArgumentExpressionOrThrow())
-    );
-  }
-  return false;
-}
-
-/**
- * The declarations of an identifier, following imports
- */
-function resolve(node: Node): Node[] {
-  const symbol = node.getSymbol();
-  if (symbol === undefined) {
-    return [];
-  }
-  return (symbol.getAliasedSymbol() ?? symbol).getDeclarations();
 }
 
 function memberName(member: PropertyDeclaration | MethodDeclaration): string {

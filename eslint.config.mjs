@@ -32,6 +32,7 @@ export default defineConfig(
       'tooter/**/*.js',
       'lib/generated/',
       'dist/',
+      'java/target/',
       'docs/build/',
     ],
   },

@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-# Publishes the Maven repository written by jsii-pacmak in dist/java to Maven Central, through the
-# Publisher API of the Central Portal: signs every file, uploads them as one bundle and waits until
-# the deployment is validated.
+# Publishes a Maven repository to Maven Central, through the Publisher API of the Central Portal:
+# signs every file, uploads them as one bundle and waits until the deployment is validated.
+#
+# Usage: bin/publish-maven [repository, default: dist/java]
+#
+# The repositories are dist/java, written by jsii-pacmak for cdk-iam-floyd, and dist/iam-floyd/java,
+# written by `make package-native` for iam-floyd.
 #
 # Environment:
 #   MAVEN_GPG_PRIVATE_KEY              armored private key to sign with
@@ -14,14 +18,18 @@
 
 set -euo pipefail
 
-REPO=dist/java
+REPO=${1:-dist/java}
 API=https://central.sonatype.com/api/v1/publisher
-BUNDLE=$(pwd)/dist/maven-central-bundle.zip
 
 if [[ ! -d "${REPO}" ]]; then
-  echo "Run \`make package-jsii\` first" >&2
+  echo "${REPO} does not exist, run \`make package-jsii\` or \`make package-native\` first" >&2
   exit 1
 fi
+
+# e.g. com/udondan/iam-floyd/0.848.0/iam-floyd-0.848.0.pom: iam-floyd-0.848.0
+POM=$(find "${REPO}" -name '*.pom' | head -1)
+NAME=$(basename "$(dirname "$(dirname "${POM}")")")-$(basename "$(dirname "${POM}")")
+BUNDLE=$(pwd)/dist/maven-central-${NAME}.zip
 
 if [[ -n "${MAVEN_GPG_PRIVATE_KEY:-}" ]]; then
   export GNUPGHOME
@@ -50,11 +58,10 @@ if [[ -z "${MAVEN_CENTRAL_USERNAME:-}" ]]; then
 fi
 
 AUTH="Authorization: Bearer $(printf '%s:%s' "${MAVEN_CENTRAL_USERNAME}" "${MAVEN_CENTRAL_PASSWORD}" | base64 | tr -d '\n')"
-NAME=$(basename "$(dirname "$(find "${REPO}" -name '*.pom' | head -1)")")
 
 DEPLOYMENT=$(curl --fail-with-body --silent --show-error -H "${AUTH}" \
   -F "bundle=@${BUNDLE};type=application/octet-stream" \
-  "${API}/upload?publishingType=AUTOMATIC&name=cdk-iam-floyd-${NAME}")
+  "${API}/upload?publishingType=AUTOMATIC&name=${NAME}")
 echo "Deployment ${DEPLOYMENT}"
 
 # Validation takes a few minutes. Once it passes, the release to Maven Central can't fail anymore.

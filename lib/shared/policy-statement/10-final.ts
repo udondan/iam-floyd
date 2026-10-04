@@ -8,7 +8,7 @@ export class PolicyStatement extends PolicyStatementWithPrincipal {
    * JSON-ify the policy statement
    */
   public toJSON(): any {
-    const statement: any = {};
+    const statement: Record<string, any> = {};
 
     if (this.sid.length) {
       statement.Sid = this.sid;
