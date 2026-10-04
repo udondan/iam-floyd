@@ -47,6 +47,10 @@ First import the ``Collection`` provider:
 
       .. code-block:: csharp
 
+         // for use without AWS CDK use the iam-floyd package
+         using IAM.Floyd;
+
+         // for use with CDK use the cdk-iam-floyd package
          using CDK.IAM.Floyd;
 
    .. group-tab:: Go

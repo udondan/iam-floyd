@@ -32,3 +32,8 @@ __pycache__/
 !/java/src/main/java/com/udondan/iamFloyd/Json.java
 /java/target
 /java/.flattened-pom.xml
+# the C# sources are written by bin/transpile.ts, except the runtime
+/dotnet/src/IAM.Floyd/*
+!/dotnet/src/IAM.Floyd/IAM.Floyd.csproj
+!/dotnet/src/IAM.Floyd/Js.cs
+!/dotnet/src/IAM.Floyd/Json.cs

@@ -6,10 +6,12 @@
 # of the docs in each language and compares them to the .result files, and compares the AWS managed
 # policies.
 #
-# Usage: test/transpile/run.sh [languages, default: python java]
+# Usage: test/transpile/run.sh [languages, default: python java dotnet]
 #
 # The languages run against the generated sources, or against the built packages when they are set:
-# PYTHON_WHEEL=<wheel of make package-native>, JAVA_JAR=<jar of make package-native>
+# PYTHON_WHEEL=<wheel of make package-native>, JAVA_JAR=<jar of make package-native>,
+# DOTNET_PACKAGES=<directory of the nupkg of make package-native>. DOTNET_FRAMEWORK sets the target
+# framework of the .NET test, default: that of the installed SDK
 
 set -euo pipefail
 
@@ -18,7 +20,7 @@ OUT="${TEST}/out"
 if [[ $# -gt 0 ]]; then
   LANGUAGES=("$@")
 else
-  LANGUAGES=(python java)
+  LANGUAGES=(python java dotnet)
 fi
 
 rm -rf "${OUT}"
@@ -57,6 +59,34 @@ if [[ " ${LANGUAGES[*]} " == *" java "* ]]; then
   echo "Testing Java with $(java -version 2>&1 | head -1)"
 fi
 
+# the .NET test in test/transpile/dotnet/, with the examples rewritten for the native package
+if [[ " ${LANGUAGES[*]} " == *" dotnet "* ]]; then
+  mkdir -p "${OUT}/dotnet/examples"
+  for example in examples/*/*.cs; do
+    name="$(basename "$(dirname "${example}")")"
+    if [[ "${name}" == *.cdk ]]; then
+      continue
+    fi
+    mkdir -p "${OUT}/dotnet/examples/${name}"
+    sed -e 's/CDK\.IAM\.Floyd/IAM.Floyd/' \
+      -e 's/new PolicyStatement\[\]/new object[]/' \
+      -e 's/new PolicyStatementProps { Sid = \([^}]*\) }/\1/' \
+      "${example}" > "${OUT}/dotnet/examples/${name}/${name}.cs"
+  done
+  DOTNET_FRAMEWORK="${DOTNET_FRAMEWORK:-net$(dotnet --version | cut -d. -f1).0}"
+  DOTNET_BUILD=(-p:TestFramework="${DOTNET_FRAMEWORK}" -p:Examples="$(pwd)/${OUT}/dotnet/examples")
+  if [[ -n "${DOTNET_PACKAGES:-}" ]]; then
+    # restored into out/, so that a package rebuilt with the same version is not taken from the cache
+    DOTNET_BUILD+=(-p:RestorePackagesPath="$(pwd)/${OUT}/dotnet/packages")
+    DOTNET_BUILD+=(-p:FloydPackages="$(cd "${DOTNET_PACKAGES}" && pwd)")
+    DOTNET_BUILD+=(-p:FloydVersion="$(node -p "require('./package.json').version")")
+  fi
+  dotnet build "${TEST}/dotnet/Test.csproj" --nologo -v quiet -c Release \
+    --artifacts-path "${OUT}/dotnet/artifacts" "${DOTNET_BUILD[@]}"
+  DOTNET_TEST=(dotnet "${OUT}/dotnet/artifacts/bin/Test/release/Test.dll")
+  echo "Testing .NET with ${DOTNET_FRAMEWORK}"
+fi
+
 FAILED=()
 for language in "${LANGUAGES[@]}"; do
   echo "Testing ${language}"
@@ -64,6 +94,7 @@ for language in "${LANGUAGES[@]}"; do
     case "${language}" in
       python) "${PYTHON}" "${TEST}/python/run.py" "${scenarios}" >> "${OUT}/python.txt" ;;
       java) java -cp "${JAVA_CP}" Run "${scenarios}" >> "${OUT}/java.txt" ;;
+      dotnet) "${DOTNET_TEST[@]}" scenarios "${scenarios}" >> "${OUT}/dotnet.txt" ;;
       *)
         echo "Unknown language: ${language}" >&2
         exit 1
@@ -81,6 +112,7 @@ for language in "${LANGUAGES[@]}"; do
   case "${language}" in
     python) "${PYTHON}" "${TEST}/python/examples.py" examples > "${OUT}/examples-python.txt" ;;
     java) java -cp "${JAVA_CP}" Examples examples "${OUT}/java/examples" > "${OUT}/examples-java.txt" ;;
+    dotnet) "${DOTNET_TEST[@]}" examples "${OUT}/dotnet/examples" > "${OUT}/examples-dotnet.txt" ;;
   esac
   if python3 test/jsii/examples/compare.py --standalone examples "${OUT}/examples-${language}.txt" > "${OUT}/examples-${language}.log"; then
     echo "All $(wc -l < "${OUT}/examples-${language}.log" | tr -d ' ') examples passed"
@@ -92,6 +124,7 @@ for language in "${LANGUAGES[@]}"; do
   case "${language}" in
     python) managed_policies=("${PYTHON}" "${TEST}/python/managed_policies.py") ;;
     java) managed_policies=(java -cp "${JAVA_CP}" ManagedPolicies) ;;
+    dotnet) managed_policies=("${DOTNET_TEST[@]}" managed-policies) ;;
   esac
   if ! "${managed_policies[@]}" "${OUT}/managed-policies.json"; then
     FAILED+=("${language} managed policies")

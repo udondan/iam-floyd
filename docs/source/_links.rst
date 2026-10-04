@@ -10,6 +10,9 @@
 .. _iam-floyd-maven: https://central.sonatype.com/artifact/com.udondan/iam-floyd
 .. |iam-floyd-maven| image:: https://img.shields.io/maven-central/v/com.udondan/iam-floyd?label=Maven%20Central
 
+.. _iam-floyd-nuget: https://www.nuget.org/packages/IAM.Floyd
+.. |iam-floyd-nuget| image:: https://img.shields.io/nuget/v/IAM.Floyd?label=NuGet
+
 .. _cdk-iam-floyd-npm: https://www.npmjs.com/package/cdk-iam-floyd
 .. |cdk-iam-floyd-npm| image:: https://img.shields.io/npm/dt/cdk-iam-floyd?label=npm&color=orange
 
