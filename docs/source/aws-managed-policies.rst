@@ -8,7 +8,7 @@ The ``AwsManagedPolicy`` class provides an up-to-date collection of AWS managed 
 
 The package ``cdk-iam-floyd`` provides methods for directly creating ``aws_iam.IManagedPolicy`` objects.
 
-In TypeScript and JavaScript, the class additionally provides the **names** of the policies as static properties. If you instead need the ARN, prefix the string with ``arn:aws:iam::aws:policy/``. The static names are not available in Python, Java, C# and Go, because they share their names with the methods.
+In TypeScript and JavaScript, the class additionally provides the **names** of the policies as static properties, and the native Python package ``iam-floyd`` as constants, like ``AwsManagedPolicy.READ_ONLY_ACCESS``. If you instead need the ARN, prefix the string with ``arn:aws:iam::aws:policy/``. The static names are not available in ``cdk-iam-floyd`` for Python, Java, C# and Go, because they share their names with the methods.
 
 First import ``AwsManagedPolicy``:
 
@@ -28,6 +28,10 @@ First import ``AwsManagedPolicy``:
 
       .. code-block:: python
 
+         # for use without AWS CDK use the iam-floyd package
+         from iam_floyd import AwsManagedPolicy
+
+         # for use with CDK use the cdk-iam-floyd package
          from cdk_iam_floyd import AwsManagedPolicy
 
    .. group-tab:: Java

@@ -22,6 +22,10 @@ Operators
 
       .. code-block:: python
 
+         # for use without AWS CDK use the iam-floyd package
+         from iam_floyd import Operator, Statement
+
+         # for use with CDK use the cdk-iam-floyd package
          from cdk_iam_floyd import Operator, Statement
 
    .. group-tab:: Java
@@ -42,7 +46,7 @@ Operators
 
          import "udondan.github.io/iam-floyd/go/cdkiamfloyd"
 
-Operators can be simple strings such as ``StringEquals`` or get complex with modifiers such as ``ForAnyValue`` or ``IfExists``. For simple operators you can use the static properties of the ``Operator`` class in TypeScript. The other languages have no such static properties, there you call the method of the same name on a new ``Operator``:
+Operators can be simple strings such as ``StringEquals`` or get complex with modifiers such as ``ForAnyValue`` or ``IfExists``. For simple operators you can use the static properties of the ``Operator`` class in TypeScript, and its constants in the native Python package ``iam-floyd``, like ``Operator.STRING_LIKE``. The other languages have no such static properties, there you call the method of the same name on a new ``Operator``:
 
 .. example:: conditions-operator-simple
 

@@ -27,6 +27,10 @@ First import the ``Collection`` provider:
 
       .. code-block:: python
 
+         # for use without AWS CDK use the iam-floyd package
+         from iam_floyd import Collection
+
+         # for use with CDK use the cdk-iam-floyd package
          from cdk_iam_floyd import Collection
 
    .. group-tab:: Java

@@ -36,6 +36,10 @@ Find the documentation at [Read the Docs][documentation].
 There are two different package variants available:
 
 - **iam-floyd**: Can be used in AWS SDK or for whatever you need an IAM policy statement for <br>[![npm](https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet)](https://www.npmjs.com/package/iam-floyd)
+
+  iam-floyd is also available as a native package for Python, without Node.js and without dependencies:<br>
+  [![PyPI](https://img.shields.io/pypi/v/iam-floyd?label=PyPI)](https://pypi.org/project/iam-floyd/)
+
 - **cdk-iam-floyd**: Integrates into [AWS CDK] and extends [`iam.PolicyStatement`](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.PolicyStatement.html)<br>[![npm](https://img.shields.io/npm/dt/cdk-iam-floyd?label=npm&color=orange)](https://www.npmjs.com/package/cdk-iam-floyd)
 
   **Starting with version 0.300.0, the packages are compatible with CDK v2.** For CDK v1 you can use any version up to:<br>
