@@ -701,11 +701,20 @@ jobs:
 
   # The Go modules of iam-floyd and cdk-iam-floyd are served by GitHub Pages as a static Go module
   # proxy. The module zips of every version are release assets; the proxy serves the newest of them.
+  # It needs all publish jobs, so they are grouped by package in the graph of the workflow.
   publish-go-proxy:
     name: Publish Go module proxy
     needs:
       - release
+      - publish-iam-floyd
+      - publish-iam-floyd-python
+      - publish-iam-floyd-java
+      - publish-iam-floyd-dotnet
       - publish-iam-floyd-go
+      - publish-cdk-iam-floyd
+      - publish-cdk-iam-floyd-python
+      - publish-cdk-iam-floyd-dotnet
+      - publish-cdk-iam-floyd-java
       - publish-cdk-iam-floyd-go
     runs-on: ubuntu-latest
     permissions:
@@ -745,21 +754,12 @@ jobs:
         id: deploy
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
 
-  # The release stays a draft until everything is published and all assets are attached
+  # The release stays a draft until everything is published and all assets are attached, after
+  # publish-go-proxy, which needs all publish jobs
   publish-release:
     name: Publish release
     needs:
       - release
-      - publish-iam-floyd
-      - publish-iam-floyd-python
-      - publish-iam-floyd-java
-      - publish-iam-floyd-dotnet
-      - publish-iam-floyd-go
-      - publish-cdk-iam-floyd
-      - publish-cdk-iam-floyd-python
-      - publish-cdk-iam-floyd-dotnet
-      - publish-cdk-iam-floyd-java
-      - publish-cdk-iam-floyd-go
       - publish-go-proxy
     runs-on: ubuntu-latest
     steps:

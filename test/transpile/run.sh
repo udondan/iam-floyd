@@ -121,7 +121,9 @@ if [[ " ${LANGUAGES[*]} " == *" go "* ]]; then
   done
   if [[ -n "${GO_MODULE:-}" ]]; then
     unzip -q "${GO_MODULE}" -d "${OUT}/go-module"
-    GO_MODULE_DIR="$(cd "${OUT}"/go-module/udondan.github.io/iam-floyd/go/iamfloyd@* && pwd)"
+    # Go 1.21 takes the @ of the directory in the zip for a version
+    mv "${OUT}"/go-module/udondan.github.io/iam-floyd/go/iamfloyd@* "${OUT}/go-module/iamfloyd"
+    GO_MODULE_DIR="$(cd "${OUT}/go-module/iamfloyd" && pwd)"
     go -C "${GO_DIR}" mod edit -replace "udondan.github.io/iam-floyd/go/iamfloyd=${GO_MODULE_DIR}"
   else
     go -C "${GO_DIR}" mod edit -replace "udondan.github.io/iam-floyd/go/iamfloyd=$(pwd)/go/iamfloyd"
