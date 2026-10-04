@@ -59,6 +59,7 @@ const pseudoParameters: Record<string, string> = {
   'AWS::Partition': 'aws',
   'AWS::Region': '*',
   'AWS::AccountId': '*',
+  'AWS::URLSuffix': 'amazonaws.com',
 };
 
 const [variant, examplesDir] = process.argv.slice(2);
