@@ -346,7 +346,7 @@ jobs:
     name: Publish iam-floyd
     needs:
       - release
-      - test-cdk-iam-floyd-jsii
+      - test-transpile
     runs-on: ubuntu-latest
     permissions:
       contents: read
