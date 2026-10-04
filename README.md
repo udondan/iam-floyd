@@ -2,7 +2,7 @@
 
 [![Release](https://img.shields.io/github/v/release/udondan/iam-floyd?label=release)](https://github.com/udondan/iam-floyd/releases)
 [![Documentation](https://img.shields.io/readthedocs/iam-floyd?label=docs)](https://iam-floyd.readthedocs.io/en/latest/)
-[![Construct Hub](https://constructs.dev/badge?package=cdk-iam-floyd)](https://constructs.dev/packages/cdk-iam-floyd)
+[![Construct Hub](https://img.shields.io/badge/Construct%20Hub-cdk--iam--floyd-blue)](https://constructs.dev/packages/cdk-iam-floyd)
 [![License](https://img.shields.io/github/license/udondan/iam-floyd)](https://github.com/udondan/iam-floyd/blob/main/LICENSE)
 
 **AWS [IAM policy statement][statement] generator with a fluent interface, for TypeScript, JavaScript, Python, Java, C# and Go.**
@@ -183,21 +183,21 @@ IAM Floyd is licensed under [Apache License 2.0][license]. Dependencies might be
 [converter]: https://iam-floyd.readthedocs.io/en/latest/policy-converter.html
 [license]: https://github.com/udondan/iam-floyd/blob/main/LICENSE
 [npm]: https://www.npmjs.com/package/iam-floyd
-[npm-badge]: https://img.shields.io/npm/v/iam-floyd?label=npm
+[npm-badge]: https://img.shields.io/npm/v/iam-floyd?label=npm&color=3178C6&logo=typescript&logoColor=white
 [pypi]: https://pypi.org/project/iam-floyd/
-[pypi-badge]: https://img.shields.io/pypi/v/iam-floyd?label=PyPI
+[pypi-badge]: https://img.shields.io/pypi/v/iam-floyd?label=PyPI&color=3776AB&logo=python&logoColor=white
 [maven]: https://central.sonatype.com/artifact/com.udondan/iam-floyd
-[maven-badge]: https://img.shields.io/maven-central/v/com.udondan/iam-floyd?label=Maven%20Central
+[maven-badge]: https://img.shields.io/maven-central/v/com.udondan/iam-floyd?label=Maven%20Central&color=ED8B00&logo=openjdk&logoColor=white
 [nuget]: https://www.nuget.org/packages/IAM.Floyd
-[nuget-badge]: https://img.shields.io/nuget/v/IAM.Floyd?label=NuGet
+[nuget-badge]: https://img.shields.io/nuget/v/IAM.Floyd?label=NuGet&color=512BD4&logo=dotnet&logoColor=white
 [cdk-npm]: https://www.npmjs.com/package/cdk-iam-floyd
-[cdk-npm-badge]: https://img.shields.io/npm/v/cdk-iam-floyd?label=npm
+[cdk-npm-badge]: https://img.shields.io/npm/v/cdk-iam-floyd?label=npm&color=3178C6&logo=typescript&logoColor=white
 [cdk-pypi]: https://pypi.org/project/cdk-iam-floyd/
-[cdk-pypi-badge]: https://img.shields.io/pypi/v/cdk-iam-floyd?label=PyPI
+[cdk-pypi-badge]: https://img.shields.io/pypi/v/cdk-iam-floyd?label=PyPI&color=3776AB&logo=python&logoColor=white
 [cdk-maven]: https://central.sonatype.com/artifact/com.udondan/cdk-iam-floyd
-[cdk-maven-badge]: https://img.shields.io/maven-central/v/com.udondan/cdk-iam-floyd?label=Maven%20Central
+[cdk-maven-badge]: https://img.shields.io/maven-central/v/com.udondan/cdk-iam-floyd?label=Maven%20Central&color=ED8B00&logo=openjdk&logoColor=white
 [cdk-nuget]: https://www.nuget.org/packages/CDK.IAM.Floyd
-[cdk-nuget-badge]: https://img.shields.io/nuget/v/CDK.IAM.Floyd?label=NuGet
+[cdk-nuget-badge]: https://img.shields.io/nuget/v/CDK.IAM.Floyd?label=NuGet&color=512BD4&logo=dotnet&logoColor=white
 [go]: https://pkg.go.dev/udondan.github.io/iam-floyd/go/iamfloyd
 [cdk-go]: https://pkg.go.dev/udondan.github.io/iam-floyd/go/cdkiamfloyd
-[go-badge]: https://img.shields.io/github/v/release/udondan/iam-floyd?label=Go
+[go-badge]: https://img.shields.io/github/v/release/udondan/iam-floyd?label=Go&color=00ADD8&logo=go&logoColor=white
