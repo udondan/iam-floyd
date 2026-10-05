@@ -334,12 +334,12 @@
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "ArchiveAgeInDays",
-      "valueKind": "string",
-      "defaultOperator": "StringLike",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
       "valueTypes": [
-        "string"
+        "number"
       ],
-      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
     },
     {
       "key": "glacier:ResourceTag/",

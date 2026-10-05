@@ -63,9 +63,41 @@ export const fixes: Record<string, ServiceFixes | undefined> = {
   },
   ec2: {
     conditions: {
+      ReplayWindowSizePackets: {
+        operator: {
+          type: 'numeric', // number of packets, like the other numeric options of VPN tunnels
+        },
+      },
       SnapshotTime: {
         operator: {
           type: 'date',
+        },
+      },
+    },
+  },
+  glacier: {
+    conditions: {
+      ArchiveAgeInDays: {
+        operator: {
+          type: 'numeric', // AWS examples use NumericLessThanEquals
+        },
+      },
+    },
+  },
+  iam: {
+    conditions: {
+      DelegationDuration: {
+        operator: {
+          type: 'numeric', // the IAM docs: works with numeric operators
+        },
+      },
+    },
+  },
+  redshift: {
+    conditions: {
+      DurationSeconds: {
+        operator: {
+          type: 'numeric', // number of seconds until the credentials expire
         },
       },
     },
