@@ -150,6 +150,15 @@ const conditionTypeDefaults: Record<
   },
 };
 
+/**
+ * Default operators of the multivalued global condition keys in the service
+ * docs, which need a set operator. Same as the methods in
+ * `lib/shared/policy-statement/2-conditions.ts`.
+ */
+const multivaluedDefaults: Record<string, string> = {
+  'aws:TagKeys': new Operator().forAnyValue().stringLike().toString(),
+};
+
 function unique<T>(list: T[]): T[] {
   return list.filter((elem, pos) => list.indexOf(elem) == pos);
 }
@@ -312,7 +321,9 @@ export function buildServiceModel(module: Module): ServiceModel {
         ...conditionTypeDefaults[type].type,
       ];
       conditionModel.defaultOperator =
-        conditionTypeDefaults[type].default.toString();
+        key in multivaluedDefaults
+          ? multivaluedDefaults[key]
+          : conditionTypeDefaults[type].default.toString();
       conditionModel.operatorUrl = conditionTypeDefaults[type].url;
     } else if (type != 'boolean') {
       throw new Error(

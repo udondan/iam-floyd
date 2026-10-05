@@ -58,6 +58,23 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
   }
 
   /**
+   * Check whether the request was made using [AssumeRoot](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoot.html). `AssumeRoot` returns short term credentials for a privileged root user session you can use to take privileged actions on member accounts in your organization. For more information, see [Centrally manage root access for member accounts](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management).
+   *
+   * **Availability:** This key is included in the request context only when the principal uses credentials from `AssumeRoot` to make the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-assumedroot
+   *
+   * @param value Whether the request was made using `AssumeRoot`. **Default:** `true`
+   */
+  public ifAwsAssumedRoot(value?: boolean) {
+    return this.if(
+      `aws:AssumedRoot`,
+      typeof value !== 'undefined' ? value : true,
+      Operator.bool,
+    );
+  }
+
+  /**
    * Compare the services with the services that made requests on behalf of the IAM principal (user or role). When a principal makes a request to an AWS service, that service might use the principal's credentials to make subsequent requests to other services.
    *
    * The `aws:CalledVia` key contains an ordered list of each service in the chain that made requests on the principal's behalf.
@@ -112,6 +129,40 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     operator?: Operator | string,
   ) {
     return this.if('aws:CalledViaLast', value, operator);
+  }
+
+  /**
+   * Compare the services with the AWS MCP services that made requests on behalf of the IAM principal (user or role). When a principal makes a request to an AWS MCP service, that service uses the principal's credentials to make subsequent requests to other services. The `aws:CalledViaAWSMCP` key contains the service principal name of the MCP service that made requests on the principal's behalf.
+   *
+   * **Availability:** This key is present in the request when an AWS MCP service uses the credentials of an IAM principal to make a request to an AWS service. This key is not present when the principal makes the call directly.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-calledviaawasmcp
+   *
+   * @param value The service principal name(s) of the MCP service, e.g. `aws-mcp.amazonaws.com`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsCalledViaAWSMCP(
+    value: string | string[],
+    operator?: Operator | string,
+  ) {
+    return this.if('aws:CalledViaAWSMCP', value, operator);
+  }
+
+  /**
+   * Compare the source chat configuration ARN set by the principal to the chat configuration ARN you specify in the policy of the IAM role associated with your channel configuration. You can authorize requests based on the assume role session initiated by Amazon Q Developer in chat applications.
+   *
+   * **Availability:** This key is included in the request context by the Amazon Q Developer in chat applications service whenever a role session is assumed. The key value is the chat configuration ARN, such as when you run an AWS CLI command from a chat channel.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-chatbotsourcearn
+   *
+   * @param value The chat configuration ARN(s), e.g. `arn:aws:chatbot::123456789021:chat-configuration/slack-channel/private_channel`
+   * @param operator Works with [ARN operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN) and [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ArnLike`
+   */
+  public ifAwsChatbotSourceArn(
+    value: string | string[],
+    operator?: Operator | string,
+  ) {
+    return this.if('aws:ChatbotSourceArn', value, operator ?? Operator.arnLike);
   }
 
   /**
@@ -219,6 +270,23 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     operator?: Operator | string,
   ) {
     return this.if('aws:FederatedProvider', value, operator);
+  }
+
+  /**
+   * Check whether the action being authorized is an MCP service action. This key does not refer to actions taken by the MCP service to other AWS services.
+   *
+   * **Availability:** This key is included in the request context and set to `true` only when the MCP service is authorizing an MCP service action.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-ismcpserviceaction
+   *
+   * @param value Whether the action is an MCP service action. **Default:** `true`
+   */
+  public ifAwsIsMcpServiceAction(value?: boolean) {
+    return this.if(
+      `aws:IsMcpServiceAction`,
+      typeof value !== 'undefined' ? value : true,
+      Operator.bool,
+    );
   }
 
   /**
@@ -349,13 +417,17 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principalorgpaths
    *
    * @param value Organization path(s) in the format of `o-xxxxxxxxxxx/r-xxxxxxxxxx/ou-xxxx-xxxxxxxx/ou-xxxx-xxxxxxxx/`
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ForAnyValue:StringLike`
    */
   public ifAwsPrincipalOrgPaths(
     value: string | string[],
     operator?: Operator | string,
   ) {
-    return this.if('aws:PrincipalOrgPaths', value, operator);
+    return this.if(
+      'aws:PrincipalOrgPaths',
+      value,
+      operator ?? new Operator().forAnyValue().stringLike(),
+    );
   }
 
   /**
@@ -599,13 +671,17 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourceorgpaths
    *
    * @param value The path of an organization
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ForAnyValue:StringLike`
    */
   public ifAwsResourceOrgPaths(
     value: string | string[],
     operator?: Operator | string,
   ) {
-    return this.if('aws:ResourceOrgPaths', value, operator);
+    return this.if(
+      'aws:ResourceOrgPaths',
+      value,
+      operator ?? new Operator().forAnyValue().stringLike(),
+    );
   }
 
   /**
@@ -642,6 +718,25 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
       typeof value !== 'undefined' ? value : true,
       Operator.bool,
     );
+  }
+
+  /**
+   * Compare the AWS Sign-In OAuth session with the session that you specify. When you use an OAuth-based flow such as AWS CLI login (`aws login`) or AWS MCP Server, AWS Sign-In includes a sign-in session ARN in the issued credentials and propagates it to subsequent requests made using OAuth access tokens. With this key, you can correlate API activity with the originating sign-in session and apply IAM policies to individual sessions.
+   *
+   * For interactive OAuth flows, the refresh token determines the lifecycle of the sign-in session ARN: a new access token issued during a refresh carries the same sign-in session ARN. For non-interactive OAuth flows, each new access token contains a new sign-in session ARN.
+   *
+   * **Availability:** This key is included in the request context when the request originates from an AWS Sign-In OAuth session. This key is not available for console sessions.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-signinsessionarn
+   *
+   * @param value The sign-in session ARN(s), e.g. `arn:aws:signin:us-east-1:111122223333:session/session-id`
+   * @param operator Works with [ARN operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN) and [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ArnLike`
+   */
+  public ifAwsSignInSessionArn(
+    value: string | string[],
+    operator?: Operator | string,
+  ) {
+    return this.if('aws:SignInSessionArn', value, operator ?? Operator.arnLike);
   }
 
   /**
@@ -724,6 +819,48 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
   }
 
   /**
+   * Compare the organization ID of the resource making a service-to-service request with the organization ID that you specify, but only when the request is made by an AWS [service principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services). When you add and remove accounts to an organization in AWS Organizations, policies that include the `aws:SourceOrgID` key automatically include the correct accounts and you don't have to manually update the policies.
+   *
+   * **Availability:** This key is included in the request context only when the call to your resource is being made directly by an AWS service principal on behalf of a resource owned by an account which is a member of an organization. The calling service passes the organization ID of the original resource to the called service.
+   *
+   * **Note:** This key provides a uniform mechanism for enforcing cross-service confused deputy control across AWS services. However, not all service integrations require the use of this global condition key. See the documentation of the AWS services you use for more information about service-specific mechanisms for mitigating cross-service confused deputy risks.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceorgid
+   *
+   * @param value Organization ID(s) in format `o-xxxxxxxxxxx`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsSourceOrgID(
+    value: string | string[],
+    operator?: Operator | string,
+  ) {
+    return this.if('aws:SourceOrgID', value, operator);
+  }
+
+  /**
+   * Compare the AWS Organizations path of the resource making a service-to-service request with the path that you specify, but only when the request is made by an AWS [service principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services). An AWS Organizations path is a text representation of the structure of an Organizations entity. For more information about using and understanding paths, see [Understand the AWS Organizations entity path](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_last-accessed-view-data-orgs.html#access_policies_last-accessed-viewing-orgs-entity-path).
+   *
+   * `aws:SourceOrgPaths` is a multivalued condition key. Multivalued keys can have multiple values in the request context. You must use the `ForAnyValue` or `ForAllValues` set operators with [string condition operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String) for this key. For more information about multivalued condition keys, see [Set operators for multivalued context keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-single-vs-multi-valued-context-keys.html#reference_policies_condition-multi-valued-context-keys).
+   *
+   * **Availability:** This key is included in the request context only when the call to your resource is being made directly by an AWS service principal on behalf of a resource owned by an account which is a member of an organization. The calling service passes the organization path of the original resource to the called service.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceorgpaths
+   *
+   * @param value Organization path(s) in the format of `o-xxxxxxxxxxx/r-xxxxxxxxxx/ou-xxxx-xxxxxxxx/ou-xxxx-xxxxxxxx/`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ForAnyValue:StringLike`
+   */
+  public ifAwsSourceOrgPaths(
+    value: string | string[],
+    operator?: Operator | string,
+  ) {
+    return this.if(
+      'aws:SourceOrgPaths',
+      value,
+      operator ?? new Operator().forAnyValue().stringLike(),
+    );
+  }
+
+  /**
    * Check whether the request comes from the VPC that you specify. In a policy, you can use this condition to allow access to only a specific VPC. For more information, see [Restricting Access to a Specific VPC](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies-vpc-endpoint.html#example-bucket-policies-restrict-access-vpc) in the *Amazon Simple Storage Service Developer Guide*.
    *
    * **Availability:** This key is included in the request context only if the requester uses a VPC endpoint to make the request.
@@ -738,6 +875,23 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     operator?: Operator | string,
   ) {
     return this.if('aws:SourceVpc', value, operator);
+  }
+
+  /**
+   * Compare the ARN of the VPC that a request passed through using a VPC endpoint with the ARN that you specify. This key returns the ARN of the VPC to which the VPC endpoint is attached.
+   *
+   * **Availability:** This key is included in the request context for supported services when a request is made through a VPC endpoint. The key is not included for requests made through public service endpoints. For the list of services that support this key, see the documentation of the key.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcevpcarn
+   *
+   * @param value The VPC ARN(s), e.g. `arn:aws:ec2:us-east-1:123456789012:vpc/vpc-0e9801d129EXAMPLE`
+   * @param operator Works with [ARN operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN) and [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ArnLike`
+   */
+  public ifAwsSourceVpcArn(
+    value: string | string[],
+    operator?: Operator | string,
+  ) {
+    return this.if('aws:SourceVpcArn', value, operator ?? Operator.arnLike);
   }
 
   /**
@@ -769,10 +923,14 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * @param value The tag key(s)
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ForAnyValue:StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if('aws:TagKeys', value, operator);
+    return this.if(
+      'aws:TagKeys',
+      value,
+      operator ?? new Operator().forAnyValue().stringLike(),
+    );
   }
 
   /**
@@ -873,6 +1031,42 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
   }
 
   /**
+   * Check whether an AWS MCP service makes a request to another AWS service on your behalf using [forward access sessions (FAS)](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_forward_access_sessions.html).
+   *
+   * The request context key returns `true` when an AWS MCP service forwards a request to an AWS service on behalf of the original IAM principal. The request context key returns `false` when the principal makes the call directly.
+   *
+   * **Availability:** This key is included in the request context when an AWS MCP server makes a request to a downstream AWS service on behalf of an IAM principal.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-viaawsmcpservice
+   *
+   * @param value Whether a request was made by an AWS MCP service. **Default:** `true`
+   */
+  public ifAwsViaAWSMCPService(value?: boolean) {
+    return this.if(
+      `aws:ViaAWSMCPService`,
+      typeof value !== 'undefined' ? value : true,
+      Operator.bool,
+    );
+  }
+
+  /**
+   * Check whether a principal made a request by using credentials obtained from Temporary Access Delegation (TAD). When a partner or vendor obtains temporary credentials through a TAD token exchange, the key is set to the account identifier of the requesting partner. Use this key to scope access controls specifically to sessions that temporary access delegation established, without affecting your own sessions. For example, you can use this key to revoke only delegation-based sessions while preserving direct console access.
+   *
+   * **Availability:** This key is present in the request context when a principal uses credentials obtained through a TAD token exchange.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-viacustomerdomain
+   *
+   * @param value The account ID(s) of the partner
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsViaCustomerDomain(
+    value: string | string[],
+    operator?: Operator | string,
+  ) {
+    return this.if('aws:ViaCustomerDomain', value, operator);
+  }
+
+  /**
    * Compare the IP address from which a request was made with the IP address that you specify. In a policy, the key matches only if the request originates from the specified IP address and it goes through a VPC endpoint.
    *
    * **Availability:** This key is included in the request context only if the request is made using a VPC endpoint.
@@ -889,6 +1083,63 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     operator?: Operator | string,
   ) {
     return this.if('aws:VpcSourceIp', value, operator ?? Operator.ipAddress);
+  }
+
+  /**
+   * Compare the AWS account ID that owns the VPC endpoint through which the request was made with the account ID that you specify. This condition key helps you establish [network perimeter controls](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_data-perimeters.html) by ensuring requests come through VPC endpoints owned by specific accounts.
+   *
+   * **Availability:** This key is included in the request context for supported services when a request is made through a VPC endpoint. The key is not included for requests made through public service endpoints. For the list of services that support this key, see the documentation of the key.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-vpceaccount
+   *
+   * @param value The account ID(s)
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsVpceAccount(
+    value: string | string[],
+    operator?: Operator | string,
+  ) {
+    return this.if('aws:VpceAccount', value, operator);
+  }
+
+  /**
+   * Compare the identifier of the organization in AWS Organizations that owns the VPC endpoint from which the request was made with the identifier that you specify. This condition key provides the most scalable approach to [network perimeter controls](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_data-perimeters.html), automatically including all VPC endpoints owned by accounts within your organization.
+   *
+   * **Availability:** This key is included in the request context for supported services when a request is made through a VPC endpoint and the VPC endpoint owner account is a member of an organization. The key is not included for requests made through other network paths or when the VPC endpoint owner account is not part of an organization. For the list of services that support this key, see the documentation of the key.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-vpceorgid
+   *
+   * @param value Organization ID(s) in format `o-xxxxxxxxxxx`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsVpceOrgID(
+    value: string | string[],
+    operator?: Operator | string,
+  ) {
+    return this.if('aws:VpceOrgID', value, operator);
+  }
+
+  /**
+   * Compare the AWS Organizations path for the VPC endpoint from which the request was made with the path that you specify. This condition key enables you to implement [network perimeter controls](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_data-perimeters.html) at the organizational unit (OU) level, automatically scaling with your VPC endpoint usage as you add new endpoints within the specified OUs.
+   *
+   * `aws:VpceOrgPaths` is a multivalued condition key. Multivalued keys can have multiple values in the request context. You must use the `ForAnyValue` or `ForAllValues` set operators with [string condition operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String) for this key. For more information about multivalued condition keys, see [Set operators for multivalued context keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-single-vs-multi-valued-context-keys.html#reference_policies_condition-multi-valued-context-keys).
+   *
+   * **Availability:** This key is included in the request context for supported services when a request is made through a VPC endpoint and the VPC endpoint owner account is a member of an organization. The key is not included for requests made through other network paths or when the VPC endpoint owner account is not part of an organization. For the list of services that support this key, see the documentation of the key.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-vpceorgpaths
+   *
+   * @param value Organization path(s) in the format of `o-xxxxxxxxxxx/r-xxxxxxxxxx/ou-xxxx-xxxxxxxx/ou-xxxx-xxxxxxxx/`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ForAnyValue:StringLike`
+   */
+  public ifAwsVpceOrgPaths(
+    value: string | string[],
+    operator?: Operator | string,
+  ) {
+    return this.if(
+      'aws:VpceOrgPaths',
+      value,
+      operator ?? new Operator().forAnyValue().stringLike(),
+    );
   }
 }
 
