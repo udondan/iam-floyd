@@ -2,14 +2,14 @@
 name: iam-floyd-usage
 description: >
   Expert guidance for using the iam-floyd and cdk-iam-floyd libraries to generate
-  AWS IAM policy statements with a fluent, type-safe interface in Node.js/TypeScript
-  projects. Use this skill whenever a user asks how to write IAM policies with
+  AWS IAM policy statements with a fluent, type-safe interface in TypeScript,
+  JavaScript, Python, Java, C#/.NET and Go projects. Use this skill whenever a user asks how to write IAM policies with
   iam-floyd, wants to allow or deny AWS actions, needs to scope policies to specific
   resources, wants to add conditions to IAM statements, is working on least-privilege
   IAM in AWS CDK, or is trying to understand the library's API (toXxx, onXxx, ifXxx,
   allow/deny, allActions, etc.). Also trigger for questions about semantic policy
-  classes, subclassing Statement providers, using Collections, or converting JSON
-  policies to iam-floyd code.
+  classes, subclassing Statement providers, using Collections, policy documents
+  with size limits and splitting, or converting JSON policies to iam-floyd code.
 ---
 
 # Using iam-floyd / cdk-iam-floyd
@@ -18,18 +18,36 @@ IAM Floyd is a **fluent, type-safe AWS IAM policy statement generator**. Instead
 writing error-prone JSON, you call strongly-typed methods and let the library build
 the correct policy structure.
 
+It comes in two variants with the same API, released together with the same
+version number in every language:
+
+- **`iam-floyd`** (standalone) creates statements as JSON, for the AWS SDKs,
+  CloudFormation, Terraform or anything else that takes an IAM policy. The packages
+  for Python, Java, .NET and Go are native: no Node.js, no dependencies.
+- **`cdk-iam-floyd`** creates AWS CDK v2 statements: every statement is an
+  `iam.PolicyStatement`. The packages for Python, Java, .NET and Go are built with
+  jsii, like the AWS CDK itself, and need Node.js.
+
+The examples in this skill are TypeScript. The API is the same in every language,
+with names adapted to the language, see [Other languages](#other-languages).
+
 ## Installation
 
-```bash
-# Standalone (no CDK)
-npm install iam-floyd
+| Language                | `iam-floyd`                                      | `cdk-iam-floyd`                                     |
+| ----------------------- | ------------------------------------------------ | --------------------------------------------------- |
+| TypeScript / JavaScript | `npm install iam-floyd`                          | `npm install cdk-iam-floyd`                         |
+| Python (3.9+)           | `pip install iam-floyd`                          | `pip install cdk-iam-floyd`                         |
+| Java (11+)              | Maven `com.udondan:iam-floyd`                    | Maven `com.udondan:cdk-iam-floyd`                   |
+| C# / .NET (8+)          | `dotnet add package IAM.Floyd`                   | `dotnet add package CDK.IAM.Floyd`                  |
+| Go (1.21+)              | `go get udondan.github.io/iam-floyd/go/iamfloyd` | `go get udondan.github.io/iam-floyd/go/cdkiamfloyd` |
 
-# With AWS CDK
-npm install cdk-iam-floyd
-```
-
-> Pin the version in `package.json` (e.g. `"iam-floyd": "0.762.0"`) — the package
-> is pre-1.0.0 and the API may change. CDK v2 requires `cdk-iam-floyd >= 0.300.0`.
+> **Pin the exact version** (e.g. `"iam-floyd": "0.850.0"` in `package.json`,
+> `iam-floyd==0.850.0` for pip) — the package is pre-1.0.0 and the API may change.
+> A new version is released every Monday. CDK v2 requires `cdk-iam-floyd >= 0.300.0`.
+>
+> The Go modules are not on GitHub, but on a module proxy under
+> `udondan.github.io/iam-floyd/go`, which keeps the newest 30 releases. `go get`
+> finds it without any configuration.
 
 ## Basic import
 
@@ -41,6 +59,20 @@ import { Statement } from 'cdk-iam-floyd'; // CDK variant
 // CommonJS
 const { Statement } = require('iam-floyd');
 ```
+
+The statement providers (`Ec2`, `S3`, ...) live in a sub-package or namespace
+`statement`. The core classes (`Operator`, `Collection`, the policy documents,
+`AwsManagedPolicy`) live in the package itself:
+
+| Language | `iam-floyd`                                                           | `cdk-iam-floyd`                                                             |
+| -------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Python   | `from iam_floyd import Statement`                                     | `from cdk_iam_floyd import Statement`                                       |
+| Java     | `com.udondan.iamFloyd.statement.Ec2`, core `com.udondan.iamFloyd.*`   | `com.udondan.iamFloyd.cdk.statement.Ec2`, core `com.udondan.iamFloyd.cdk.*` |
+| C#       | `using Statement = IAM.Floyd.Statement;`, core `using IAM.Floyd;`     | `using Statement = CDK.IAM.Floyd.Statement;`, core `using CDK.IAM.Floyd;`   |
+| Go       | `.../go/iamfloyd/statement`, core `.../go/iamfloyd`, `.../collection` | `.../go/cdkiamfloyd/statement`, core and collection `.../go/cdkiamfloyd`    |
+
+In Go, both imports are needed: `statement.NewEc2(nil)` and
+`iamfloyd.NewManagedPolicyDocument(...)`.
 
 ---
 
@@ -481,7 +513,8 @@ const policy = new ManagedPolicyDocument(
   "allow anything called via CloudFormation" style statements.
 - **Policy Converter**: if you have an existing JSON policy, use the online converter
   at <https://iam-floyd.readthedocs.io/en/latest/policy-converter.html> to get the
-  equivalent iam-floyd code.
+  equivalent code in TypeScript, JavaScript, Python, Java, C# or Go, for both
+  `iam-floyd` and `cdk-iam-floyd`.
 - **Non-chaining style** is supported if you prefer it:
 
   ```typescript
@@ -489,6 +522,150 @@ const policy = new ManagedPolicyDocument(
   s.allow();
   s.toStartInstances();
   ```
+
+## Other languages
+
+The API is the same in every language, with names adapted to the language.
+`cdk-iam-floyd` follows the naming rules of jsii, and `iam-floyd` uses the same
+names. The API reference of `cdk-iam-floyd` on Construct Hub shows the exact names
+in every language.
+
+| TypeScript                      | Python                         | Java                            | C#                              | Go                                      |
+| ------------------------------- | ------------------------------ | ------------------------------- | ------------------------------- | --------------------------------------- |
+| `new Statement.Ec2()`           | `Statement.Ec2()`              | `new Ec2()`                     | `new Statement.Ec2()`           | `statement.NewEc2(nil)`                 |
+| `toStartInstances()`            | `to_start_instances()`         | `toStartInstances()`            | `ToStartInstances()`            | `ToStartInstances()`                    |
+| `if()`, `for()`, `in()`         | `if_()`, `for_()`, `in_()`     | `doIf()`, `doFor()`, `in()`     | `If()`, `For()`, `In()`         | `If()`, `For()`, `In()`                 |
+| `['a', 'b']`                    | `['a', 'b']`                   | `List.of("a", "b")`             | `new[] { "a", "b" }`            | `iamfloyd.Strings("a", "b")`            |
+| `new Operator().stringEquals()` | `Operator().string_equals()`   | `new Operator().stringEquals()` | `new Operator().StringEquals()` | `iamfloyd.NewOperator().StringEquals()` |
+| `JSON.stringify(policy)`        | `json.dumps(policy.to_json())` | `Json.stringify(policy)`        | `Json.Stringify(policy)`        | `json.Marshal(policy)`                  |
+
+- **Static properties** like `Operator.stringEquals` and
+  `AwsManagedPolicy.ReadOnlyAccess` are constants in the native `iam-floyd`
+  packages (`Operator.STRING_EQUALS`, in Go `iamfloyd.Operator_STRING_EQUALS`) and
+  methods of the same name in the jsii packages of `cdk-iam-floyd`.
+  `new Operator().stringEquals()` works everywhere.
+- **Go** has no optional arguments and works with pointers: every optional argument
+  must be passed, as `nil` if not needed
+  (`OnTable(iamfloyd.String("Thread"), nil, nil, nil)`). `iam-floyd` creates
+  pointers with `iamfloyd.String()`, `Strings()`, `Number()` and `Bool()`,
+  `cdk-iam-floyd` with `jsii.String()`, `jsii.Number()` and `jsii.Bool()` of
+  `github.com/aws/jsii-runtime-go`.
+- **Constructor**: with `iam-floyd` the statement provider takes the SID, with
+  `cdk-iam-floyd` the props of `iam.PolicyStatement`, which include the SID.
+- **Collection**: in the native Java and C# packages it returns a list of the
+  statement provider (`List<Ec2>`). In Go, `iam-floyd` has it in the package
+  `collection` (`collection.NewCollection()`), and it returns a slice.
+- **Regular expressions** for `allMatchingActions()` are passed as strings in
+  JavaScript literal style (`'/vpn/i'`) in every language.
+
+### Complete example per language (`iam-floyd`)
+
+For `cdk-iam-floyd`, swap the imports as shown in [Basic import](#basic-import),
+and in Go use `jsii.String()`.
+
+Python:
+
+```python
+import json
+
+from iam_floyd import ManagedPolicyDocument, Operator, Statement
+
+policy = ManagedPolicyDocument(
+    Statement.Ec2()
+        .allow()
+        .to_start_instances()
+        .if_aws_request_tag('Owner', '${aws:username}'),
+    Statement.Ec2()
+        .deny()
+        .to_stop_instances()
+        .if_resource_tag('Owner', '${aws:username}', Operator().string_not_equals()),
+    Statement.Ec2()
+        .allow()
+        .all_list_actions()
+        .all_read_actions(),
+)
+policy.validate()
+print(json.dumps(policy.to_json(), indent=2))
+```
+
+Java:
+
+```java
+import com.udondan.iamFloyd.Json;
+import com.udondan.iamFloyd.ManagedPolicyDocument;
+import com.udondan.iamFloyd.Operator;
+import com.udondan.iamFloyd.statement.Ec2;
+
+ManagedPolicyDocument policy = new ManagedPolicyDocument(
+    new Ec2()
+        .allow()
+        .toStartInstances()
+        .ifAwsRequestTag("Owner", "${aws:username}"),
+    new Ec2()
+        .deny()
+        .toStopInstances()
+        .ifResourceTag("Owner", "${aws:username}", new Operator().stringNotEquals()),
+    new Ec2()
+        .allow()
+        .allListActions()
+        .allReadActions());
+policy.validate();
+System.out.println(Json.stringify(policy));
+```
+
+C#:
+
+```csharp
+using IAM.Floyd;
+using Statement = IAM.Floyd.Statement;
+
+var policy = new ManagedPolicyDocument(
+    new Statement.Ec2()
+        .Allow()
+        .ToStartInstances()
+        .IfAwsRequestTag("Owner", "${aws:username}"),
+    new Statement.Ec2()
+        .Deny()
+        .ToStopInstances()
+        .IfResourceTag("Owner", "${aws:username}", new Operator().StringNotEquals()),
+    new Statement.Ec2()
+        .Allow()
+        .AllListActions()
+        .AllReadActions());
+policy.Validate();
+Console.WriteLine(Json.Stringify(policy));
+```
+
+Go:
+
+```go
+import (
+	"encoding/json"
+	"fmt"
+
+	"udondan.github.io/iam-floyd/go/iamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
+)
+
+policy := iamfloyd.NewManagedPolicyDocument(
+	statement.NewEc2(nil).
+		Allow().
+		ToStartInstances().
+		IfAwsRequestTag(iamfloyd.String("Owner"), iamfloyd.String("${aws:username}"), nil),
+	statement.NewEc2(nil).
+		Deny().
+		ToStopInstances().
+		IfResourceTag(iamfloyd.String("Owner"), iamfloyd.String("${aws:username}"),
+			iamfloyd.NewOperator().StringNotEquals()),
+	statement.NewEc2(nil).
+		Allow().
+		AllListActions().
+		AllReadActions(),
+)
+policy.Validate()
+out, _ := json.Marshal(policy)
+fmt.Println(string(out))
+```
 
 ## API reference
 
