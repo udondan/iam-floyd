@@ -490,5 +490,952 @@
       ["notPrincipal"],
       ["forAccount", "123"]
     ]
+  },
+  {
+    "name": "policy empty",
+    "policy": {},
+    "statements": []
+  },
+  {
+    "name": "policy statements",
+    "policy": {},
+    "statements": [
+      {
+        "sid": "Read",
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["to", "s3:ListBucket"],
+          ["on", "arn:aws:s3:::bucket", "arn:aws:s3:::bucket/*"]
+        ]
+      },
+      {
+        "calls": [["deny"], ["to", "s3:DeleteObject"], ["onAllResources"]]
+      }
+    ]
+  },
+  {
+    "name": "policy add statements",
+    "policy": {
+      "add": true
+    },
+    "statements": [
+      {
+        "sid": "Read",
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["to", "s3:ListBucket"],
+          ["on", "arn:aws:s3:::bucket", "arn:aws:s3:::bucket/*"]
+        ]
+      },
+      {
+        "calls": [["deny"], ["to", "s3:DeleteObject"], ["onAllResources"]]
+      }
+    ]
+  },
+  {
+    "name": "policy not action and not resource",
+    "policy": {},
+    "statements": [
+      {
+        "calls": [
+          ["deny"],
+          ["notAction"],
+          ["to", "iam:*"],
+          ["notResource"],
+          ["on", "arn:aws:iam::123456789012:role/admin"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy principals",
+    "policy": {},
+    "statements": [
+      {
+        "calls": [
+          ["to", "sts:AssumeRole"],
+          ["forAccount", "123456789012", "210987654321"],
+          ["forService", "lambda.amazonaws.com"]
+        ]
+      },
+      {
+        "calls": [
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"],
+          ["forPublic"]
+        ]
+      },
+      {
+        "calls": [
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"],
+          ["notPrincipal"],
+          ["forUser", "123456789012", "alice"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy principals with ARN estimate",
+    "policy": {
+      "arnSizeEstimate": 60
+    },
+    "statements": [
+      {
+        "calls": [
+          ["to", "sts:AssumeRole"],
+          ["forAccount", "123456789012", "210987654321"],
+          ["forService", "lambda.amazonaws.com"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy conditions",
+    "policy": {},
+    "statements": [
+      {
+        "calls": [
+          ["to", "s3:GetObject"],
+          ["on", "*"],
+          ["if", "aws:SourceIp", ["10.0.0.0/8", "192.168.0.0/16"], "IpAddress"],
+          ["if", "k:bool", true, "Bool"],
+          ["if", "k:number", 3600, "NumericLessThan"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy escaping",
+    "policy": {},
+    "statements": [
+      {
+        "sid": "Escaping",
+        "calls": [
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/a\"b\\c"],
+          ["if", "s3:prefix", "home/Jürgen/<docs>&\"quoted\"\\"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy class ManagedPolicyDocument",
+    "policy": {
+      "class": "ManagedPolicyDocument"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy class InlineUserPolicyDocument",
+    "policy": {
+      "class": "InlineUserPolicyDocument"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy class InlineGroupPolicyDocument",
+    "policy": {
+      "class": "InlineGroupPolicyDocument"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy class InlineRolePolicyDocument",
+    "policy": {
+      "class": "InlineRolePolicyDocument"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy class TrustPolicyDocument",
+    "policy": {
+      "class": "TrustPolicyDocument"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy class SessionPolicyDocument",
+    "policy": {
+      "class": "SessionPolicyDocument"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy class ServiceControlPolicyDocument",
+    "policy": {
+      "class": "ServiceControlPolicyDocument"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy class ResourceControlPolicyDocument",
+    "policy": {
+      "class": "ResourceControlPolicyDocument"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy class S3BucketPolicyDocument",
+    "policy": {
+      "class": "S3BucketPolicyDocument"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy class KmsKeyPolicyDocument",
+    "policy": {
+      "class": "KmsKeyPolicyDocument"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy class SqsQueuePolicyDocument",
+    "policy": {
+      "class": "SqsQueuePolicyDocument"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy class SnsTopicPolicyDocument",
+    "policy": {
+      "class": "SnsTopicPolicyDocument"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy class SecretsManagerSecretPolicyDocument",
+    "policy": {
+      "class": "SecretsManagerSecretPolicyDocument"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy class LambdaFunctionPolicyDocument",
+    "policy": {
+      "class": "LambdaFunctionPolicyDocument"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy custom maximum",
+    "policy": {
+      "maximumSize": 8192
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy custom maximum add statements",
+    "policy": {
+      "maximumSize": 1000,
+      "add": true
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy exceeds maximum",
+    "policy": {
+      "maximumSize": 150
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      },
+      {
+        "calls": [
+          ["deny"],
+          ["to", "s3:DeleteObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy split",
+    "policy": {},
+    "statements": [
+      {
+        "sid": "First",
+        "calls": [
+          ["to", "s3:GetObject"],
+          [
+            "on",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/000/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/001/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/002/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/003/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/004/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/005/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/006/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/007/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/008/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/009/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/010/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/011/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/012/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/013/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/014/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/015/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/016/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/017/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/018/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/019/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/020/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/021/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/022/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/023/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/024/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/025/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/026/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/027/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/028/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/029/*"
+          ]
+        ]
+      },
+      {
+        "sid": "Second",
+        "calls": [
+          ["to", "s3:PutObject"],
+          [
+            "on",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/000/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/001/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/002/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/003/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/004/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/005/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/006/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/007/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/008/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/009/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/010/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/011/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/012/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/013/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/014/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/015/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/016/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/017/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/018/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/019/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/020/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/021/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/022/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/023/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/024/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/025/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/026/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/027/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/028/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/029/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/030/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/031/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/032/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/033/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/034/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/035/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/036/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/037/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/038/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/039/*"
+          ]
+        ]
+      },
+      {
+        "sid": "Third",
+        "calls": [
+          ["to", "sqs:SendMessage"],
+          ["on", "*"]
+        ]
+      },
+      {
+        "sid": "Fourth",
+        "calls": [
+          ["to", "s3:DeleteObject"],
+          [
+            "on",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/000/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/001/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/002/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/003/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/004/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/005/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/006/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/007/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/008/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/009/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/010/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/011/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/012/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/013/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/014/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/015/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/016/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/017/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/018/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/019/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/020/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/021/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/022/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/023/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/024/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/025/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/026/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/027/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/028/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/029/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/030/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/031/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/032/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/033/*",
+            "arn:aws:s3:::fourth-bucket-with-a-long-name/objects/034/*"
+          ]
+        ]
+      },
+      {
+        "sid": "Fifth",
+        "calls": [
+          ["to", "ec2:DescribeInstances"],
+          ["on", "*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy split SCP",
+    "policy": {
+      "class": "ServiceControlPolicyDocument"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["deny"],
+          ["to", "s3:DeleteObject"],
+          [
+            "on",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/000/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/001/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/002/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/003/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/004/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/005/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/006/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/007/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/008/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/009/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/010/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/011/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/012/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/013/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/014/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/015/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/016/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/017/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/018/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/019/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/020/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/021/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/022/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/023/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/024/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/025/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/026/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/027/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/028/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/029/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/030/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/031/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/032/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/033/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/034/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/035/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/036/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/037/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/038/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/039/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/040/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/041/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/042/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/043/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/044/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/045/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/046/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/047/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/048/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/049/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/050/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/051/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/052/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/053/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/054/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/055/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/056/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/057/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/058/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/059/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/060/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/061/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/062/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/063/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/064/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/065/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/066/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/067/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/068/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/069/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/070/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/071/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/072/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/073/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/074/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/075/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/076/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/077/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/078/*",
+            "arn:aws:s3:::first-bucket-with-a-long-name/objects/079/*"
+          ]
+        ]
+      },
+      {
+        "calls": [
+          ["deny"],
+          ["to", "s3:PutObject"],
+          [
+            "on",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/000/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/001/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/002/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/003/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/004/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/005/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/006/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/007/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/008/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/009/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/010/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/011/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/012/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/013/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/014/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/015/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/016/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/017/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/018/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/019/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/020/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/021/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/022/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/023/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/024/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/025/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/026/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/027/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/028/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/029/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/030/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/031/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/032/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/033/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/034/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/035/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/036/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/037/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/038/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/039/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/040/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/041/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/042/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/043/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/044/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/045/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/046/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/047/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/048/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/049/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/050/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/051/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/052/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/053/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/054/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/055/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/056/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/057/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/058/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/059/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/060/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/061/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/062/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/063/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/064/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/065/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/066/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/067/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/068/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/069/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/070/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/071/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/072/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/073/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/074/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/075/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/076/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/077/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/078/*",
+            "arn:aws:s3:::second-bucket-with-a-long-name/objects/079/*"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy split RCP with ARN estimate",
+    "policy": {
+      "class": "ResourceControlPolicyDocument",
+      "arnSizeEstimate": 100
+    },
+    "statements": [
+      {
+        "calls": [
+          ["to", "sts:AssumeRole"],
+          [
+            "forAccount",
+            "100000000000",
+            "100000000001",
+            "100000000002",
+            "100000000003",
+            "100000000004",
+            "100000000005",
+            "100000000006",
+            "100000000007",
+            "100000000008",
+            "100000000009",
+            "100000000010",
+            "100000000011",
+            "100000000012",
+            "100000000013",
+            "100000000014",
+            "100000000015",
+            "100000000016",
+            "100000000017",
+            "100000000018",
+            "100000000019"
+          ]
+        ]
+      },
+      {
+        "calls": [
+          ["to", "sts:AssumeRole"],
+          ["forService", "ec2.amazonaws.com", "lambda.amazonaws.com"]
+        ]
+      },
+      {
+        "calls": [
+          ["to", "sts:TagSession"],
+          [
+            "forAccount",
+            "200000000000",
+            "200000000001",
+            "200000000002",
+            "200000000003",
+            "200000000004",
+            "200000000005",
+            "200000000006",
+            "200000000007",
+            "200000000008",
+            "200000000009",
+            "200000000010",
+            "200000000011",
+            "200000000012",
+            "200000000013",
+            "200000000014",
+            "200000000015",
+            "200000000016",
+            "200000000017",
+            "200000000018",
+            "200000000019",
+            "200000000020",
+            "200000000021",
+            "200000000022",
+            "200000000023",
+            "200000000024",
+            "200000000025",
+            "200000000026",
+            "200000000027",
+            "200000000028",
+            "200000000029"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy split statement too large",
+    "policy": {},
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          [
+            "on",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/000/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/001/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/002/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/003/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/004/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/005/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/006/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/007/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/008/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/009/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/010/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/011/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/012/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/013/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/014/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/015/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/016/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/017/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/018/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/019/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/020/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/021/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/022/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/023/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/024/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/025/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/026/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/027/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/028/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/029/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/030/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/031/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/032/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/033/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/034/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/035/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/036/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/037/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/038/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/039/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/040/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/041/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/042/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/043/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/044/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/045/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/046/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/047/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/048/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/049/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/050/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/051/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/052/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/053/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/054/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/055/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/056/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/057/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/058/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/059/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/060/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/061/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/062/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/063/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/064/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/065/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/066/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/067/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/068/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/069/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/070/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/071/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/072/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/073/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/074/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/075/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/076/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/077/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/078/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/079/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/080/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/081/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/082/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/083/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/084/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/085/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/086/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/087/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/088/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/089/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/090/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/091/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/092/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/093/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/094/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/095/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/096/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/097/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/098/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/099/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/100/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/101/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/102/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/103/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/104/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/105/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/106/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/107/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/108/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/109/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/110/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/111/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/112/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/113/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/114/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/115/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/116/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/117/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/118/*",
+            "arn:aws:s3:::large-bucket-with-a-long-name/objects/119/*"
+          ]
+        ]
+      }
+    ]
   }
 ]

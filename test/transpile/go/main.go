@@ -19,8 +19,6 @@ import (
 	"strings"
 	"time"
 
-	"floydtest/awsiam"
-
 	"udondan.github.io/iam-floyd/go/iamfloyd"
 )
 
@@ -104,15 +102,101 @@ func newService(name string, sid *string) *Service {
 }
 
 type scenario struct {
-	Name    string              `json:"name"`
-	Sid     *string             `json:"sid"`
-	Class   *string             `json:"class"`
-	Service *string             `json:"service"`
-	Calls   [][]json.RawMessage `json:"calls"`
+	Name       string              `json:"name"`
+	Sid        *string             `json:"sid"`
+	Class      *string             `json:"class"`
+	Service    *string             `json:"service"`
+	Calls      [][]json.RawMessage `json:"calls"`
+	Policy     *policyOptions      `json:"policy"`
+	Statements []scenario          `json:"statements"`
+}
+
+type policyOptions struct {
+	Class           *string  `json:"class"`
+	MaximumSize     *float64 `json:"maximumSize"`
+	ArnSizeEstimate *int     `json:"arnSizeEstimate"`
+	Add             bool     `json:"add"`
+}
+
+// policyClass creates a policy document of a class: the document itself and the PolicyDocument it
+// embeds
+type policyClass func(statements ...iamfloyd.IPolicyStatement) (any, *iamfloyd.PolicyDocument)
+
+// policyClasses are the classes of the policy documents by name, as Go cannot look up classes by
+// name
+var policyClasses = map[string]policyClass{
+	"ManagedPolicyDocument": func(statements ...iamfloyd.IPolicyStatement) (any, *iamfloyd.PolicyDocument) {
+		policy := iamfloyd.NewManagedPolicyDocument(statements...)
+		return policy, &policy.PolicyDocument
+	},
+	"InlineUserPolicyDocument": func(statements ...iamfloyd.IPolicyStatement) (any, *iamfloyd.PolicyDocument) {
+		policy := iamfloyd.NewInlineUserPolicyDocument(statements...)
+		return policy, &policy.PolicyDocument
+	},
+	"InlineGroupPolicyDocument": func(statements ...iamfloyd.IPolicyStatement) (any, *iamfloyd.PolicyDocument) {
+		policy := iamfloyd.NewInlineGroupPolicyDocument(statements...)
+		return policy, &policy.PolicyDocument
+	},
+	"InlineRolePolicyDocument": func(statements ...iamfloyd.IPolicyStatement) (any, *iamfloyd.PolicyDocument) {
+		policy := iamfloyd.NewInlineRolePolicyDocument(statements...)
+		return policy, &policy.PolicyDocument
+	},
+	"TrustPolicyDocument": func(statements ...iamfloyd.IPolicyStatement) (any, *iamfloyd.PolicyDocument) {
+		policy := iamfloyd.NewTrustPolicyDocument(statements...)
+		return policy, &policy.PolicyDocument
+	},
+	"SessionPolicyDocument": func(statements ...iamfloyd.IPolicyStatement) (any, *iamfloyd.PolicyDocument) {
+		policy := iamfloyd.NewSessionPolicyDocument(statements...)
+		return policy, &policy.PolicyDocument
+	},
+	"ServiceControlPolicyDocument": func(statements ...iamfloyd.IPolicyStatement) (any, *iamfloyd.PolicyDocument) {
+		policy := iamfloyd.NewServiceControlPolicyDocument(statements...)
+		return policy, &policy.PolicyDocument
+	},
+	"ResourceControlPolicyDocument": func(statements ...iamfloyd.IPolicyStatement) (any, *iamfloyd.PolicyDocument) {
+		policy := iamfloyd.NewResourceControlPolicyDocument(statements...)
+		return policy, &policy.PolicyDocument
+	},
+	"S3BucketPolicyDocument": func(statements ...iamfloyd.IPolicyStatement) (any, *iamfloyd.PolicyDocument) {
+		policy := iamfloyd.NewS3BucketPolicyDocument(statements...)
+		return policy, &policy.PolicyDocument
+	},
+	"KmsKeyPolicyDocument": func(statements ...iamfloyd.IPolicyStatement) (any, *iamfloyd.PolicyDocument) {
+		policy := iamfloyd.NewKmsKeyPolicyDocument(statements...)
+		return policy, &policy.PolicyDocument
+	},
+	"SqsQueuePolicyDocument": func(statements ...iamfloyd.IPolicyStatement) (any, *iamfloyd.PolicyDocument) {
+		policy := iamfloyd.NewSqsQueuePolicyDocument(statements...)
+		return policy, &policy.PolicyDocument
+	},
+	"SnsTopicPolicyDocument": func(statements ...iamfloyd.IPolicyStatement) (any, *iamfloyd.PolicyDocument) {
+		policy := iamfloyd.NewSnsTopicPolicyDocument(statements...)
+		return policy, &policy.PolicyDocument
+	},
+	"SecretsManagerSecretPolicyDocument": func(statements ...iamfloyd.IPolicyStatement) (any, *iamfloyd.PolicyDocument) {
+		policy := iamfloyd.NewSecretsManagerSecretPolicyDocument(statements...)
+		return policy, &policy.PolicyDocument
+	},
+	"LambdaFunctionPolicyDocument": func(statements ...iamfloyd.IPolicyStatement) (any, *iamfloyd.PolicyDocument) {
+		policy := iamfloyd.NewLambdaFunctionPolicyDocument(statements...)
+		return policy, &policy.PolicyDocument
+	},
+}
+
+// splitter is a policy document with split
+type splitter interface {
+	Split() []*iamfloyd.PolicyDocument
+}
+
+// document is a policy document, of any class
+type document interface {
+	EstimateSize() int
 }
 
 // runScenarios prints one line per scenario: the name, a tab and the statement as JSON (or ERROR
-// and the message)
+// and the message). For a scenario with a policy of statements: the maximum size, the estimated
+// size, the result of validate (OK or the error), the policy as JSON and the policies of split as
+// JSON array (or the error, or - for a class without split), separated by tabs
 func runScenarios(path string) {
 	data, err := os.ReadFile(path)
 	if err != nil {
@@ -127,12 +211,75 @@ func runScenarios(path string) {
 	}
 }
 
-func runScenario(s scenario) (result string) {
+func runScenario(s scenario) string {
+	return attempt(func() string {
+		if s.Policy != nil {
+			return runPolicy(s)
+		}
+		return toJSON(build(s))
+	})
+}
+
+// attempt returns the result of a function, or ERROR and the message if it panics
+func attempt(fn func() string) (result string) {
 	defer func() {
 		if r := recover(); r != nil {
 			result = "ERROR " + message(r)
 		}
 	}()
+	return fn()
+}
+
+func runPolicy(s scenario) string {
+	statements := []iamfloyd.IPolicyStatement{}
+	for _, statement := range s.Statements {
+		statements = append(statements, build(statement).(iamfloyd.IPolicyStatement))
+	}
+	given := statements
+	if s.Policy.Add {
+		given = nil
+	}
+	var value any
+	var policy *iamfloyd.PolicyDocument
+	switch {
+	case s.Policy.MaximumSize != nil:
+		policy = iamfloyd.NewPolicyDocument(s.Policy.MaximumSize, given...)
+		value = policy
+	case s.Policy.Class != nil:
+		value, policy = policyClasses[*s.Policy.Class](given...)
+	default:
+		value, policy = policyClasses["ManagedPolicyDocument"](given...)
+	}
+	if s.Policy.ArnSizeEstimate != nil {
+		policy.ArnSizeEstimate = *s.Policy.ArnSizeEstimate
+	}
+	if s.Policy.Add {
+		policy.AddStatements(statements...)
+	}
+	validate := attempt(func() string {
+		policy.Validate()
+		return "OK"
+	})
+	split := "-"
+	if splittable, ok := value.(splitter); ok {
+		split = attempt(func() string {
+			parts := []string{}
+			for _, part := range splittable.Split() {
+				parts = append(parts, toJSON(part))
+			}
+			return "[" + strings.Join(parts, ",") + "]"
+		})
+	}
+	return strings.Join([]string{
+		fmt.Sprint(policy.MaximumSize),
+		fmt.Sprint(policy.EstimateSize()),
+		validate,
+		toJSON(value),
+		split,
+	}, "\t")
+}
+
+func build(s scenario) any {
 	var statement any
 	switch {
 	case s.Class != nil:
@@ -153,7 +300,7 @@ func runScenario(s scenario) (result string) {
 		}
 		invoke(statement, name, args)
 	}
-	return toJSON(statement)
+	return statement
 }
 
 // decode decodes an argument into the types of the public API: pointers, lists of pointers, and
@@ -264,8 +411,8 @@ func invoke(target any, name string, args []any) any {
 	return results[0].Interface()
 }
 
-// runExamples prints one line per example: the name, a tab and the statements or the policy
-// document as JSON (or FAIL)
+// runExamples prints one line per example: the name, a tab and the statements, the policy or the
+// policies as JSON (or FAIL)
 func runExamples() {
 	names := make([]string, 0, len(examples))
 	for name := range examples {
@@ -284,11 +431,9 @@ func runExample(name string) (result string) {
 		}
 	}()
 	switch r := examples[name]().(type) {
-	case *awsiam.PolicyDocument:
-		return toJSON(r.ToJSON())
-	// a policy of the policy converter
-	case map[string]interface{}:
+	case document:
 		return toJSON(r)
+	// statements, or the policies of a split
 	default:
 		value := reflect.ValueOf(r)
 		if value.Kind() != reflect.Slice {

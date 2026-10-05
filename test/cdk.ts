@@ -6,7 +6,11 @@ import {
   Stack,
   StackProps,
 } from 'aws-cdk-lib';
-import { AwsManagedPolicy, Statement } from 'cdk-iam-floyd';
+import {
+  AwsManagedPolicy,
+  ManagedPolicyDocument,
+  Statement,
+} from 'cdk-iam-floyd';
 import { Construct } from 'constructs';
 
 export class TestStack extends Stack {
@@ -42,6 +46,21 @@ export class TestStack extends Stack {
       ],
     });
 
+    const statements = [
+      new Statement.Sqs({ sid: 'Queue' })
+        .allow()
+        .toSendMessage()
+        .toReceiveMessage()
+        .onQueue(`${this.stackName}-queue`),
+      new Statement.Ec2().deny().allActions().ifAwsRequestedRegion('eu-west-1'),
+    ];
+    const document = new ManagedPolicyDocument(...statements);
+    checkEstimate(document, statements);
+    new aws_iam.ManagedPolicy(this, 'Document', {
+      managedPolicyName: `${this.stackName}-testdocument`,
+      document,
+    });
+
     const role = new aws_iam.Role(this, 'Role', {
       roleName: `${this.stackName}-test-role`,
       description: 'Test Role',
@@ -63,6 +82,37 @@ export class TestStack extends Stack {
         .onObject(bucket.bucketName, '*')
         .forAccount(this.account)
         .forCdkPrincipal(role),
+    );
+  }
+}
+
+/**
+ * The size of a policy is estimated like in the AWS CDK, plus what the AWS CDK leaves out: the
+ * document, the braces and commas, the Sid and the key of the conditions. Fails if the estimate of
+ * the AWS CDK changes, as the estimate of the policy must then be adjusted.
+ */
+function checkEstimate(
+  document: ManagedPolicyDocument,
+  statements: aws_iam.PolicyStatement[],
+) {
+  // first, as it applies the values of the statements to the AWS CDK
+  const floydEstimate = document.estimateSize();
+  let cdkEstimate = 0;
+  for (const statement of statements) {
+    cdkEstimate += (
+      statement as unknown as {
+        _estimateSize(options: {
+          actionEstimate: number;
+          arnEstimate: number;
+        }): number;
+      }
+    )._estimateSize({ actionEstimate: 20, arnEstimate: 150 });
+  }
+  const expected = { cdk: 339, floyd: 408 };
+  const actual = { cdk: cdkEstimate, floyd: floydEstimate };
+  if (JSON.stringify(actual) != JSON.stringify(expected)) {
+    throw new Error(
+      `Estimated size ${JSON.stringify(actual)}, expected ${JSON.stringify(expected)}`,
     );
   }
 }

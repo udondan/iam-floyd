@@ -459,14 +459,16 @@ class SharedExtractor {
    */
   private applyCdkSwap() {
     const dir = 'lib/shared/policy-statement';
-    for (const file of fs.readdirSync(dir)) {
-      if (!file.endsWith('.CDK.ts')) continue;
-      const target = path.join(dir, file.replace('.CDK.ts', '.ts'));
-      this.project.createSourceFile(
-        target,
-        fs.readFileSync(path.join(dir, file), 'utf8'),
-        { overwrite: true },
-      );
+    for (const swapDir of [dir, 'lib/shared/policy']) {
+      for (const file of fs.readdirSync(swapDir)) {
+        if (!file.endsWith('.CDK.ts')) continue;
+        const target = path.join(swapDir, file.replace('.CDK.ts', '.ts'));
+        this.project.createSourceFile(
+          target,
+          fs.readFileSync(path.join(swapDir, file), 'utf8'),
+          { overwrite: true },
+        );
+      }
     }
     const principals = this.project.addSourceFileAtPath(
       `${dir}/8-principals.ts`,

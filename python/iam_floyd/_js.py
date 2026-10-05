@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import datetime
 import decimal
+import json
 import math
 import re
 from typing import Any
@@ -102,3 +103,32 @@ def reg_exp(pattern: str, flags: str) -> re.Pattern[str]:
 def test(pattern: re.Pattern[str], value: str) -> bool:
     """`RegExp.test()`."""
     return pattern.search(value) is not None
+
+
+def stringify(value: Any) -> str:
+    """`JSON.stringify()` without indentation."""
+    if value is None:
+        return 'null'
+    if isinstance(value, bool):
+        return 'true' if value else 'false'
+    if isinstance(value, (int, float)):
+        if math.isnan(value) or math.isinf(value):
+            return 'null'
+        return to_string(value)
+    if isinstance(value, str):
+        return json.dumps(value, ensure_ascii=False)
+    if isinstance(value, datetime.datetime):
+        return stringify(to_iso_string(value))
+    if isinstance(value, (list, tuple)):
+        return f'[{",".join("null" if item is None else stringify(item) for item in value)}]'
+    if isinstance(value, dict):
+        items = (
+            f'{stringify(str(key))}:{stringify(item)}'
+            for key, item in value.items()
+            if item is not None
+        )
+        return f'{{{",".join(items)}}}'
+    to_json = getattr(value, 'to_json', None)
+    if callable(to_json):
+        return stringify(to_json())
+    return stringify(to_string(value))

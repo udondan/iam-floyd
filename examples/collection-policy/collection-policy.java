@@ -1,13 +1,13 @@
 import com.udondan.iamFloyd.cdk.Collection;
-import java.util.ArrayList;
-import software.amazon.awscdk.services.iam.PolicyDocument;
+import com.udondan.iamFloyd.cdk.ManagedPolicyDocument;
+import com.udondan.iamFloyd.cdk.PolicyStatement;
 
 class ExampleCollectionPolicy {
   static Object example() {
     // doc-start
-    PolicyDocument policy = PolicyDocument.Builder.create()
-        .statements(new ArrayList<>(new Collection().allowEc2InstanceDeleteByOwner()))
-        .build();
+    ManagedPolicyDocument policy =
+        new ManagedPolicyDocument(
+            new Collection().allowEc2InstanceDeleteByOwner().toArray(new PolicyStatement[0]));
     // doc-end
     return policy;
   }

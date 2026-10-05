@@ -1,10 +1,9 @@
 """Runs the Python examples of the docs, examples/*/*.py, against the native package.
 
-The examples are written for cdk-iam-floyd. They run with iam_floyd in place of cdk_iam_floyd and a
-stand-in for aws_cdk.aws_iam.PolicyDocument, which builds the policy document like the TypeScript
-examples of iam-floyd do. The examples of the CDK variant, *.cdk, are skipped.
+The examples are written for cdk-iam-floyd. They run with iam_floyd in place of cdk_iam_floyd. The
+examples of the CDK variant, *.cdk, are skipped.
 
-Prints one line per example: the name, a tab and the statements or the policy document as JSON
+Prints one line per example: the name, a tab and the statements, the policy or the policies as JSON
 (or FAIL), like test/jsii/examples/python/examples.py.
 
 Usage: examples.py <examples directory>
@@ -15,7 +14,6 @@ import json
 import os
 import sys
 import traceback
-import types
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -25,37 +23,16 @@ if 'IAM_FLOYD_INSTALLED' not in os.environ:
 
 import iam_floyd  # noqa: E402
 
-
-class PolicyDocument:
-    """The part of aws_cdk.aws_iam.PolicyDocument that the examples use."""
-
-    def __init__(self, statements):
-        self.statements = statements
-
-    def to_json(self):
-        return {
-            'Version': '2012-10-17',
-            'Statement': [statement.to_json() for statement in self.statements],
-        }
-
-
-aws_cdk = types.ModuleType('aws_cdk')
-aws_cdk.aws_iam = types.ModuleType('aws_cdk.aws_iam')
-aws_cdk.aws_iam.PolicyDocument = PolicyDocument
-sys.modules['aws_cdk'] = aws_cdk
-sys.modules['aws_cdk.aws_iam'] = aws_cdk.aws_iam
 sys.modules['cdk_iam_floyd'] = iam_floyd
 
 
 def resolve(result):
-    if isinstance(result, PolicyDocument):
+    if isinstance(result, iam_floyd.PolicyDocument):
         return result.to_json()
-    # a policy of the policy converter
-    if isinstance(result, dict):
-        return result
     if not isinstance(result, list):
         result = [result]
-    return [statement.to_json() for statement in result]
+    # statements, or the policies of a split
+    return [item.to_json() for item in result]
 
 
 for path in sorted(Path(sys.argv[1]).glob('*/*.py')):

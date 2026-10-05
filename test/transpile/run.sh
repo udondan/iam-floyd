@@ -48,7 +48,7 @@ if [[ -n "${PYTHON_WHEEL:-}" ]]; then
   echo "Testing ${PYTHON_WHEEL} with $("${PYTHON}" --version)"
 fi
 
-# the Java runners in test/transpile/java/ and the stand-ins of the examples in stubs/
+# the Java runners in test/transpile/java/
 JAVA_CP=
 if [[ " ${LANGUAGES[*]} " == *" java "* ]]; then
   if [[ -n "${JAVA_JAR:-}" ]]; then
@@ -73,7 +73,8 @@ if [[ " ${LANGUAGES[*]} " == *" dotnet "* ]]; then
       continue
     fi
     mkdir -p "${OUT}/dotnet/examples/${name}"
-    sed -e 's/CDK\.IAM\.Floyd/IAM.Floyd/' \
+    sed -e '/^using Amazon\.CDK\.AWS\.IAM;$/d' \
+      -e 's/CDK\.IAM\.Floyd/IAM.Floyd/' \
       -e 's/new PolicyStatement\[\]/new object[]/' \
       -e 's/new PolicyStatementProps { Sid = \([^}]*\) }/\1/' \
       "${example}" > "${OUT}/dotnet/examples/${name}/${name}.cs"
@@ -109,7 +110,11 @@ if [[ " ${LANGUAGES[*]} " == *" go "* ]]; then
       -e 's#&awsiam\.PolicyStatementProps{Sid: \([^}]*\)}#\1#')
     if grep -q NewCollection "${example}"; then
       # the collection is in its own package, and returns a slice
-      rewrite+=(-e 's#"udondan.github.io/iam-floyd/go/cdkiamfloyd"#"udondan.github.io/iam-floyd/go/iamfloyd/collection"#'
+      imports='"udondan.github.io/iam-floyd/go/iamfloyd/collection"'
+      if grep -q "PolicyDocument(" "${example}"; then
+        imports="\"udondan.github.io/iam-floyd/go/cdkiamfloyd\"; ${imports}"
+      fi
+      rewrite+=(-e "s#\"udondan.github.io/iam-floyd/go/cdkiamfloyd\"#${imports}#"
         -e 's#\*\{0,1\}cdkiamfloyd\.NewCollection()#collection.NewCollection()#'
         -e 's#return \*statements#return statements#')
     fi

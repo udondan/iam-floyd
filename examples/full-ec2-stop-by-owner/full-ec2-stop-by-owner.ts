@@ -1,25 +1,22 @@
-import { Statement } from '../../lib';
+import { ManagedPolicyDocument, Statement } from '../../lib';
 
 function getPolicy() {
   function wrap() {
     // doc-start
-    const policy = {
-      Version: '2012-10-17',
-      Statement: [
-        new Statement.Ec2()
-          .allow()
-          .toStartInstances()
-          .ifAwsRequestTag('Owner', '${aws:username}'),
-        new Statement.Ec2()
-          .allow()
-          .toStopInstances()
-          .ifResourceTag('Owner', '${aws:username}'),
-        new Statement.Ec2() //
-          .allow()
-          .allListActions()
-          .allReadActions(),
-      ],
-    };
+    const policy = new ManagedPolicyDocument(
+      new Statement.Ec2()
+        .allow()
+        .toStartInstances()
+        .ifAwsRequestTag('Owner', '${aws:username}'),
+      new Statement.Ec2()
+        .allow()
+        .toStopInstances()
+        .ifResourceTag('Owner', '${aws:username}'),
+      new Statement.Ec2() //
+        .allow()
+        .allListActions()
+        .allReadActions(),
+    );
     // doc-end
     return policy;
   }

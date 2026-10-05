@@ -206,5 +206,119 @@
         "Resource": "*"
       }
     ]
+  },
+  "i policy used as document": {
+    "Document7E43FA9A": [
+      {
+        "Action": "s3:GetObject",
+        "Effect": "Allow",
+        "Resource": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":s3:::bucket/*"
+            ]
+          ]
+        }
+      },
+      {
+        "Action": "sqs:SendMessage",
+        "Effect": "Allow",
+        "Resource": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":sqs:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":queue"
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "j policies of split used as documents": {
+    "Part0C024CB30": [
+      {
+        "Action": "s3:GetObject",
+        "Effect": "Allow",
+        "Resource": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":s3:::bucket/*"
+            ]
+          ]
+        }
+      },
+      {
+        "Action": "sqs:SendMessage",
+        "Effect": "Allow",
+        "Resource": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":sqs:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":queue"
+            ]
+          ]
+        }
+      }
+    ],
+    "Part132EC7262": [
+      {
+        "Action": "dynamodb:GetItem",
+        "Effect": "Allow",
+        "Resource": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":dynamodb:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":table/table"
+            ]
+          ]
+        }
+      }
+    ]
   }
 }

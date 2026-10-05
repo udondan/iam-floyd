@@ -16,9 +16,9 @@ import * as fs from 'fs';
 import { createRequire } from 'module';
 import * as vm from 'vm';
 
-import { App, aws_iam, Stack } from 'aws-cdk-lib';
+import { App, Stack } from 'aws-cdk-lib';
 
-import { Statement } from '../../lib';
+import { ManagedPolicyDocument, Statement } from '../../lib';
 
 interface Result {
   imports: string;
@@ -71,7 +71,7 @@ if (!['CDK', 'Standalone'].includes(variant)) {
 }
 const cdk = variant === 'CDK';
 const stack = cdk ? new Stack(new App(), 'Stack') : undefined;
-const context = vm.createContext({ Statement, aws_iam });
+const context = vm.createContext({ ManagedPolicyDocument, Statement });
 
 /**
  * Converts the policy to JavaScript and returns the policy of the code
@@ -88,12 +88,11 @@ function run(policy: unknown): Json {
   const value = vm.runInContext(
     `(() => {\n${result.code}\nreturn policy;\n})()`,
     context,
-  ) as unknown;
+  ) as ManagedPolicyDocument;
   if (stack) {
-    const document = value as aws_iam.PolicyDocument;
-    return unresolve(stack.resolve(document.toJSON())) as Json;
+    return unresolve(stack.resolve(value.toJSON())) as Json;
   }
-  return value as Json;
+  return value.toJSON() as Json;
 }
 
 function unresolve(value: unknown): unknown {

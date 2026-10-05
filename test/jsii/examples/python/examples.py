@@ -1,6 +1,6 @@
 """Runs the Python examples of the docs, examples/*/*.py.
 
-Prints one line per example: the name, a tab and the statements or the policy document as JSON
+Prints one line per example: the name, a tab and the statements, the policy or the policies as JSON
 (or FAIL).
 
 Usage: examples.py <examples directory>
@@ -23,7 +23,13 @@ def resolve(result):
         return stack.resolve(result.to_json())
     if not isinstance(result, list):
         result = [result]
-    return [stack.resolve(statement.to_statement_json()) for statement in result]
+    # statements, or the policies of a split
+    return [
+        stack.resolve(item.to_json())
+        if isinstance(item, iam.PolicyDocument)
+        else stack.resolve(item.to_statement_json())
+        for item in result
+    ]
 
 
 for path in sorted(Path(sys.argv[1]).glob('*/*.py')):

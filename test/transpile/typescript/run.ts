@@ -2,12 +2,16 @@
  * Runs the scenarios of test/transpile/scenarios.json against the TypeScript core, which is the baseline for the
  * transpiled languages.
  *
- * Prints one line per scenario: the name, a tab and the statement as JSON (or ERROR and the message).
+ * Prints one line per scenario: the name, a tab and the statement as JSON (or ERROR and the message). For a
+ * scenario with a policy of statements: the maximum size, the estimated size, the result of validate (OK or the
+ * error), the policy as JSON and the policies of split as JSON array (or the error, or - for a class without
+ * split), separated by tabs.
  */
 import * as fs from 'fs';
 
 import { AccessLevelList } from '../../../lib/shared/access-level';
 import { Operator } from '../../../lib/shared/operators';
+import * as Policies from '../../../lib/shared/policy';
 import { PolicyStatement } from '../../../lib/shared/policy-statement';
 import * as Statement from '../../../lib/statements';
 
@@ -23,6 +27,18 @@ interface Scenario {
   service?: string;
   sid?: string;
   calls: [string, ...unknown[]][];
+  /**
+   * A policy of the statements: a class of the policy documents (default `ManagedPolicyDocument`), or a
+   * `PolicyDocument` with a maximum size. The statements are passed to the constructor, or with `add`
+   * to `addStatements`.
+   */
+  policy?: {
+    class?: string;
+    maximumSize?: number;
+    arnSizeEstimate?: number;
+    add?: boolean;
+  };
+  statements?: Scenario[];
 }
 
 interface Model {
@@ -33,6 +49,11 @@ interface Model {
 type Methods = Record<string, (...args: unknown[]) => unknown>;
 
 type Classes = Record<string, new (sid?: string) => PolicyStatement>;
+
+type PolicyClasses = Record<
+  string,
+  new (...statements: PolicyStatement[]) => Policies.PolicyDocument
+>;
 
 /**
  * A service class like the generated ones, built from the model
@@ -68,35 +89,85 @@ function decode(arg: unknown): unknown {
   return arg;
 }
 
-function run(scenario: Scenario): string {
+function build(scenario: Scenario): PolicyStatement {
+  let statement: PolicyStatement;
+  if (scenario.class !== undefined) {
+    statement = new (Statement as unknown as Classes)[scenario.class](
+      scenario.sid,
+    );
+  } else if (scenario.service !== undefined) {
+    statement = new Service(
+      JSON.parse(
+        fs.readFileSync(`lib/generated/model/${scenario.service}.json`, 'utf8'),
+      ) as Model,
+      scenario.sid,
+    );
+  } else {
+    statement = new PolicyStatement(scenario.sid);
+  }
+  for (const [method, ...args] of scenario.calls) {
+    (statement as unknown as Methods)[method](
+      ...args.map((arg) => decode(arg)),
+    );
+  }
+  return statement;
+}
+
+function attempt(fn: () => string): string {
   try {
-    let statement: PolicyStatement;
-    if (scenario.class !== undefined) {
-      statement = new (Statement as unknown as Classes)[scenario.class](
-        scenario.sid,
-      );
-    } else if (scenario.service !== undefined) {
-      statement = new Service(
-        JSON.parse(
-          fs.readFileSync(
-            `lib/generated/model/${scenario.service}.json`,
-            'utf8',
-          ),
-        ) as Model,
-        scenario.sid,
-      );
-    } else {
-      statement = new PolicyStatement(scenario.sid);
-    }
-    for (const [method, ...args] of scenario.calls) {
-      (statement as unknown as Methods)[method](
-        ...args.map((arg) => decode(arg)),
-      );
-    }
-    return JSON.stringify(statement.toJSON());
+    return fn();
   } catch (err) {
     return `ERROR ${(err as Error).message}`;
   }
+}
+
+function runPolicy(scenario: Scenario): string {
+  const options = scenario.policy ?? {};
+  const statements = (scenario.statements ?? []).map((statement) =>
+    build(statement),
+  );
+  const given = options.add ? [] : statements;
+  const policy =
+    options.maximumSize !== undefined
+      ? new Policies.PolicyDocument(options.maximumSize, ...given)
+      : new (Policies as unknown as PolicyClasses)[
+          options.class ?? 'ManagedPolicyDocument'
+        ](...given);
+  if (options.arnSizeEstimate !== undefined) {
+    policy.arnSizeEstimate = options.arnSizeEstimate;
+  }
+  if (options.add) {
+    policy.addStatements(...statements);
+  }
+  const validate = attempt(() => {
+    policy.validate();
+    return 'OK';
+  });
+  const splittable = policy as Partial<Policies.ManagedPolicyDocument>;
+  const split =
+    splittable.split === undefined
+      ? '-'
+      : attempt(
+          () =>
+            `[${splittable.split!()
+              .map((part) => JSON.stringify(part.toJSON()))
+              .join(',')}]`,
+        );
+  return [
+    policy.maximumSize,
+    policy.estimateSize(),
+    validate,
+    JSON.stringify(policy.toJSON()),
+    split,
+  ].join('\t');
+}
+
+function run(scenario: Scenario): string {
+  return attempt(() =>
+    scenario.policy !== undefined
+      ? runPolicy(scenario)
+      : JSON.stringify(build(scenario).toJSON()),
+  );
 }
 
 const scenarios = JSON.parse(

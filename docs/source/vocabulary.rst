@@ -70,7 +70,7 @@ To add all actions of a certain `access level <access-levels_>`_ to the statemen
 .. NOTE::
    When working with access levels the policy size limits may be exceeded quickly, just because there are so many actions available for some services like EC2.
 
-   In these cases you should use the `compact`_ method, to compile the action list to a list of wildcard patterns.
+   In these cases you should use the `compact`_ method, to compile the action list to a list of wildcard patterns. A policy document, see :doc:`policy`, estimates its size and validates it against the maximum size of its type.
 
 allListActions
 """"""""""""""

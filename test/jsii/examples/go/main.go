@@ -1,7 +1,7 @@
 // Runs the Go examples of the docs, examples/*/*.go, which are copied next to this file.
 //
-// Prints one line per example: the name, a tab and the statements or the policy document as JSON
-// (or FAIL).
+// Prints one line per example: the name, a tab and the statements, the policy or the policies as
+// JSON (or FAIL).
 package main
 
 import (
@@ -25,14 +25,18 @@ func resolve(stack awscdk.Stack, result any) any {
 	case awsiam.PolicyDocument:
 		return stack.Resolve(r.ToJSON())
 	}
-	// a slice of statements
-	value := reflect.ValueOf(result)
-	statements := []any{}
+	// a slice of statements, or the policies of a split, which returns a pointer to the slice
+	value := reflect.Indirect(reflect.ValueOf(result))
+	items := []any{}
 	for i := 0; i < value.Len(); i++ {
-		statement := value.Index(i).Interface().(awsiam.PolicyStatement)
-		statements = append(statements, stack.Resolve(statement.ToStatementJson()))
+		switch item := value.Index(i).Interface().(type) {
+		case awsiam.PolicyDocument:
+			items = append(items, stack.Resolve(item.ToJSON()))
+		default:
+			items = append(items, stack.Resolve(item.(awsiam.PolicyStatement).ToStatementJson()))
+		}
 	}
-	return statements
+	return items
 }
 
 func run(stack awscdk.Stack, name string) {

@@ -580,6 +580,28 @@ export class GoTranspiler {
   }
 
   /**
+   * The methods of the interface of the last class with a type parameter in the chain, by which it
+   * can be referenced: its public methods without parameters that do not return `this`
+   */
+  private interfaceMethods(declaration: ClassDeclaration): MethodDeclaration[] {
+    if (
+      !this.isGeneric(declaration) ||
+      declaration.getDerivedClasses().some((derived) => this.isGeneric(derived))
+    ) {
+      return [];
+    }
+    return declaration
+      .getMethods()
+      .filter(
+        (method) =>
+          method.getScope() == Scope.Public &&
+          !method.isStatic() &&
+          method.getParameters().length == 0 &&
+          method.getReturnType().getText() != 'this',
+      );
+  }
+
+  /**
    * Whether a class has only static properties, which become constants
    */
   private isConstantsOnly(declaration: ClassDeclaration): boolean {
@@ -599,7 +621,17 @@ export class GoTranspiler {
       if (declaration === this.classDecl) {
         return 'T';
       }
-      return fail(node, 'Classes with subclasses cannot be referenced');
+      if (this.interfaceMethods(declaration).length) {
+        return this.qualify(
+          node,
+          declaration,
+          `I${this.className(declaration)}`,
+        );
+      }
+      return fail(
+        node,
+        'Classes with subclasses cannot be referenced, except the last class with a type parameter, by its public methods without parameters',
+      );
     }
     return `*${this.qualify(node, declaration, this.className(declaration))}`;
   }
@@ -747,6 +779,24 @@ export class GoTranspiler {
       this.constants(() => {
         for (const property of statics) {
           this.staticProperty(property, name);
+        }
+      });
+    }
+
+    const interfaceMethods = this.interfaceMethods(declaration);
+    if (interfaceMethods.length) {
+      const interfaceName = `I${name}`;
+      this.declareName(declaration, interfaceName);
+      this.emit('');
+      this.emit(
+        `// ${interfaceName} has the methods of ${name}, by which it can be referenced`,
+      );
+      this.braces(`type ${interfaceName} interface`, () => {
+        for (const method of interfaceMethods) {
+          const returnType = this.returnType(method);
+          this.emit(
+            `${this.callable(method).name}()${returnType == 'void' ? '' : ` ${returnType}`}`,
+          );
         }
       });
     }
@@ -1492,6 +1542,9 @@ export class GoTranspiler {
       if (to == '[]interface{}') {
         return primary(`js.ToList(${expr.code})`, to);
       }
+      if (to == '*js.Record[interface{}]') {
+        return primary(`js.ToRecord(${expr.code})`, to);
+      }
       if (to == 'int') {
         return primary(`int(${wrap(expr, Prec.primary)}.(float64))`, to);
       }
@@ -1505,6 +1558,9 @@ export class GoTranspiler {
     }
     if (from == 'float64' && to == 'int') {
       return primary(`int(${expr.code})`, to);
+    }
+    if (from == '*float64' && to == 'int') {
+      return this.convert(this.value(expr), to, node);
     }
     if (from.startsWith('[]') && to == `*[]*${from.slice(2)}`) {
       return primary(`js.Ptr(js.Ptrs(${expr.code}))`, to);
@@ -2552,6 +2608,9 @@ export class GoTranspiler {
         `${wrap(this.expression(args[0]), Prec.primary)}.Keys()`,
         '[]string',
       );
+    }
+    if (text == 'JSON.stringify' && args.length == 1) {
+      return primary(`js.Stringify(${this.raw(args[0]).code})`, 'string');
     }
     if (text == 'Array.isArray') {
       return primary(`js.IsArray(${this.raw(args[0]).code})`, 'bool');

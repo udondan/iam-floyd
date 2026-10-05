@@ -12,8 +12,8 @@ import software.amazon.awscdk.services.iam.PolicyStatement;
 /**
  * Runs the Java examples of the docs, examples/*&#47;*.java, which are compiled with this class.
  *
- * <p>Prints one line per example: the name, a tab and the statements or the policy document as
- * JSON (or FAIL).
+ * <p>Prints one line per example: the name, a tab and the statements, the policy or the policies
+ * as JSON (or FAIL).
  */
 public class Main {
   /** Runs all examples. */
@@ -39,10 +39,15 @@ public class Main {
         if (result instanceof PolicyDocument document) {
           json = stack.resolve(document.toJSON());
         } else {
-          List<?> statements = result instanceof List<?> list ? list : List.of(result);
+          // statements, or the policies of a split
+          List<?> items = result instanceof List<?> list ? list : List.of(result);
           json =
-              statements.stream()
-                  .map(statement -> stack.resolve(((PolicyStatement) statement).toStatementJson()))
+              items.stream()
+                  .map(
+                      item ->
+                          item instanceof PolicyDocument document
+                              ? stack.resolve(document.toJSON())
+                              : stack.resolve(((PolicyStatement) item).toStatementJson()))
                   .toList();
         }
         System.out.println(name + "\t" + mapper.writeValueAsString(json));

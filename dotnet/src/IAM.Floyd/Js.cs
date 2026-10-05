@@ -43,6 +43,19 @@ internal static class Js
     }
 
     /// <summary>
+    /// A dictionary as dictionary of objects, for reading.
+    /// </summary>
+    public static Dictionary<string, object> ToRecord(object value)
+    {
+        var result = new Dictionary<string, object>();
+        foreach (DictionaryEntry entry in (IDictionary)value)
+        {
+            result[(string)entry.Key] = entry.Value;
+        }
+        return result;
+    }
+
+    /// <summary>
     /// The result of the typeof operator of JavaScript.
     /// </summary>
     public static string Typeof(object value)

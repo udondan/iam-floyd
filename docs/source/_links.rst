@@ -30,6 +30,7 @@
 .. _AWS CDK: https://aws.amazon.com/cdk/
 .. _AWS Documentation: https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html
 .. _iam.PolicyStatement: https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_iam.PolicyStatement.html
+.. _iam.PolicyDocument: https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_iam.PolicyDocument.html
 .. _jsii: https://aws.github.io/jsii/
 .. _Construct Hub: https://constructs.dev/packages/cdk-iam-floyd
 .. _access-levels: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_understand-policy-summary-access-level-summaries.html#access_policies_access-level
