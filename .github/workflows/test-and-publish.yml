@@ -731,28 +731,39 @@ jobs:
           persist-credentials: false
           ref: ${{ inputs.tag }}
 
-      # Pages sites are limited to 1 GB and the module zips of a release have about 11 MB
+      # Pages sites are limited to 1 GB and the module zips of a release have about 11 MB. The
+      # release of this version and the newest 29 published releases make 30; releases before the
+      # Go modules have no zips.
       - name: Fetch module zips of the newest releases
         run: |
+          set -euo pipefail
           mkdir zips
-          for tag in $(gh release list --limit 30 --json tagName --jq '.[].tagName'); do
-            gh release download "${tag}" --pattern '*iam-floyd-go-module-*.zip' --dir zips || true
+          gh release download "v${VERSION}" --pattern '*iam-floyd-go-module-*.zip' --dir zips
+          for tag in $(gh release list --exclude-drafts --limit 30 --json tagName --jq '.[].tagName' | grep -v -x -F "v${VERSION}" | head -n 29); do
+            if gh release view "${tag}" --json assets --jq '.assets[].name' | grep -q -- '-go-module-'; then
+              gh release download "${tag}" --pattern '*iam-floyd-go-module-*.zip' --dir zips
+            fi
           done
           ls -l zips
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.OVERRIDE_TOKEN }} # the release of this version is a draft, which needs write access
+          VERSION: ${{ needs.release.outputs.version }}
 
       - name: Build Go module proxy
         run: bin/go-proxy site site zips/*.zip
 
+      # A re-run uploads to the same run, where deploy-pages fails if two artifacts have its name
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
+          name: github-pages-${{ github.run_attempt }}
           path: site
 
       - name: Deploy to GitHub Pages
         id: deploy
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
 
   # The release stays a draft until everything is published and all assets are attached, after
   # publish-go-proxy, which needs all publish jobs
@@ -792,6 +803,29 @@ jobs:
           gh release edit "v${VERSION}" --repo "${GITHUB_REPOSITORY}" --draft=false --latest
         env:
           GH_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
+          VERSION: ${{ needs.release.outputs.version }}
+
+  # Fetching the modules through proxy.golang.org caches them there and adds them to the index of
+  # the Go modules, from which pkg.go.dev adds the documentation
+  seed-go-proxy:
+    name: Seed Go module cache
+    needs:
+      - release
+      - publish-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: stable
+          cache: false
+
+      - name: Fetch the modules
+        run: |
+          go mod init seed
+          go get "udondan.github.io/iam-floyd/go/iamfloyd@v${VERSION}" "udondan.github.io/iam-floyd/go/cdkiamfloyd@v${VERSION}"
+        env:
+          GOPROXY: https://proxy.golang.org
           VERSION: ${{ needs.release.outputs.version }}
 
   # The only test check the ruleset requires.
