@@ -383,7 +383,7 @@
       ],
       "keyLiteral": "aws:TagKeys",
       "valueKind": "string",
-      "defaultOperator": "StringLike",
+      "defaultOperator": "ForAnyValue:StringLike",
       "valueTypes": [
         "string"
       ],

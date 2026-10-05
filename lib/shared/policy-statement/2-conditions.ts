@@ -417,13 +417,17 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principalorgpaths
    *
    * @param value Organization path(s) in the format of `o-xxxxxxxxxxx/r-xxxxxxxxxx/ou-xxxx-xxxxxxxx/ou-xxxx-xxxxxxxx/`
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ForAnyValue:StringLike`
    */
   public ifAwsPrincipalOrgPaths(
     value: string | string[],
     operator?: Operator | string,
   ) {
-    return this.if('aws:PrincipalOrgPaths', value, operator);
+    return this.if(
+      'aws:PrincipalOrgPaths',
+      value,
+      operator ?? new Operator().forAnyValue().stringLike(),
+    );
   }
 
   /**
@@ -667,13 +671,17 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourceorgpaths
    *
    * @param value The path of an organization
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ForAnyValue:StringLike`
    */
   public ifAwsResourceOrgPaths(
     value: string | string[],
     operator?: Operator | string,
   ) {
-    return this.if('aws:ResourceOrgPaths', value, operator);
+    return this.if(
+      'aws:ResourceOrgPaths',
+      value,
+      operator ?? new Operator().forAnyValue().stringLike(),
+    );
   }
 
   /**
@@ -915,10 +923,14 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * @param value The tag key(s)
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ForAnyValue:StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if('aws:TagKeys', value, operator);
+    return this.if(
+      'aws:TagKeys',
+      value,
+      operator ?? new Operator().forAnyValue().stringLike(),
+    );
   }
 
   /**
