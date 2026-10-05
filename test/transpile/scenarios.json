@@ -1,11 +1,17 @@
 [
-  { "name": "empty", "calls": [] },
+  {
+    "name": "empty",
+    "calls": []
+  },
   {
     "name": "sid",
     "sid": "MySid",
     "calls": [["allow"], ["to", "s3:GetObject"]]
   },
-  { "name": "deny", "calls": [["deny"], ["to", "s3:GetObject"]] },
+  {
+    "name": "deny",
+    "calls": [["deny"], ["to", "s3:GetObject"]]
+  },
   {
     "name": "allow after deny",
     "calls": [["deny"], ["allow"], ["to", "s3:GetObject"]]
@@ -42,15 +48,30 @@
     "service": "sqs",
     "calls": [["allActions"]]
   },
-  { "name": "all actions of all services", "calls": [["allActions"]] },
+  {
+    "name": "all actions of all services",
+    "calls": [["allActions"]]
+  },
   {
     "name": "not action",
     "service": "sqs",
     "calls": [["notAction"], ["to", "SendMessage"]]
   },
-  { "name": "list actions", "service": "s3", "calls": [["allListActions"]] },
-  { "name": "read actions", "service": "sqs", "calls": [["allReadActions"]] },
-  { "name": "write actions", "service": "sqs", "calls": [["allWriteActions"]] },
+  {
+    "name": "list actions",
+    "service": "s3",
+    "calls": [["allListActions"]]
+  },
+  {
+    "name": "read actions",
+    "service": "sqs",
+    "calls": [["allReadActions"]]
+  },
+  {
+    "name": "write actions",
+    "service": "sqs",
+    "calls": [["allWriteActions"]]
+  },
   {
     "name": "permission management actions",
     "service": "s3",
@@ -142,9 +163,18 @@
       ["on", "arn:c"]
     ]
   },
-  { "name": "single resource", "calls": [["on", "arn:a"]] },
-  { "name": "all resources", "calls": [["onAllResources"]] },
-  { "name": "not resource", "calls": [["notResource"], ["on", "arn:a"]] },
+  {
+    "name": "single resource",
+    "calls": [["on", "arn:a"]]
+  },
+  {
+    "name": "all resources",
+    "calls": [["onAllResources"]]
+  },
+  {
+    "name": "not resource",
+    "calls": [["notResource"], ["on", "arn:a"]]
+  },
   {
     "name": "condition default operator",
     "calls": [["if", "aws:SomeKey", "value"]]
@@ -164,7 +194,7 @@
       ["if", "k:false", false, "Bool"],
       ["if", "k:int", 3600, "NumericLessThan"],
       ["if", "k:float", 1.5, "NumericLessThan"],
-      ["if", "k:small", 0.0000001, "NumericLessThan"],
+      ["if", "k:small", 1e-7, "NumericLessThan"],
       ["if", "k:negative", -2, "NumericLessThan"],
       ["if", "k:list", ["a", "b"]],
       ["if", "k:bools", [true, false]],
@@ -182,24 +212,70 @@
   {
     "name": "operators",
     "calls": [
-      ["if", "k:a", "v", { "operator": ["stringEquals"] }],
-      ["if", "k:b", "v", { "operator": ["stringNotLike", "ifExists"] }],
+      [
+        "if",
+        "k:a",
+        "v",
+        {
+          "operator": ["stringEquals"]
+        }
+      ],
+      [
+        "if",
+        "k:b",
+        "v",
+        {
+          "operator": ["stringNotLike", "ifExists"]
+        }
+      ],
       [
         "if",
         "k:c",
         "v",
-        { "operator": ["forAllValues", "stringEqualsIgnoreCase"] }
+        {
+          "operator": ["forAllValues", "stringEqualsIgnoreCase"]
+        }
       ],
       [
         "if",
         "k:d",
         "v",
-        { "operator": ["forAnyValue", "arnLike", "ifExists"] }
+        {
+          "operator": ["forAnyValue", "arnLike", "ifExists"]
+        }
       ],
-      ["if", "k:e", "v", { "operator": ["numericGreaterThanEquals"] }],
-      ["if", "k:f", "v", { "operator": ["dateNotEquals"] }],
-      ["if", "k:g", "v", { "operator": ["binaryEquals"] }],
-      ["if", "k:h", "v", { "operator": ["notIpAddress"] }],
+      [
+        "if",
+        "k:e",
+        "v",
+        {
+          "operator": ["numericGreaterThanEquals"]
+        }
+      ],
+      [
+        "if",
+        "k:f",
+        "v",
+        {
+          "operator": ["dateNotEquals"]
+        }
+      ],
+      [
+        "if",
+        "k:g",
+        "v",
+        {
+          "operator": ["binaryEquals"]
+        }
+      ],
+      [
+        "if",
+        "k:h",
+        "v",
+        {
+          "operator": ["notIpAddress"]
+        }
+      ],
       ["if", "k:i", "v", "Null"],
       ["if", "k:j", "v", "ForAnyValue:StringLike"]
     ]
@@ -207,22 +283,45 @@
   {
     "name": "operator set twice",
     "calls": [
-      ["if", "k:a", "v", { "operator": ["stringEquals", "stringLike"] }]
+      [
+        "if",
+        "k:a",
+        "v",
+        {
+          "operator": ["stringEquals", "stringLike"]
+        }
+      ]
     ]
   },
   {
     "name": "operator not set",
-    "calls": [["if", "k:a", "v", { "operator": ["ifExists"] }]]
+    "calls": [
+      [
+        "if",
+        "k:a",
+        "v",
+        {
+          "operator": ["ifExists"]
+        }
+      ]
+    ]
   },
   {
     "name": "global conditions",
     "calls": [
+      ["ifAwsAssumedRoot"],
       ["ifAwsCalledVia", "athena.amazonaws.com"],
       ["ifAwsCalledViaFirst", "a"],
       ["ifAwsCalledViaLast", ["a", "b"]],
+      ["ifAwsCalledViaAWSMCP", "aws-mcp.amazonaws.com"],
+      [
+        "ifAwsChatbotSourceArn",
+        "arn:aws:chatbot::*:chat-configuration/slack-channel/*"
+      ],
       ["ifAwsEc2InstanceSourceVpc", "vpc-1"],
       ["ifAwsEc2InstanceSourcePrivateIPv4", "10.0.0.1"],
       ["ifAwsFederatedProvider", "cognito"],
+      ["ifAwsIsMcpServiceAction", false],
       ["ifAwsMultiFactorAuthAge", 3600],
       ["ifAwsMultiFactorAuthPresent"],
       ["ifAwsPrincipalAccount", "123"],
@@ -240,32 +339,70 @@
       ["ifAwsResourceAccount", "123"],
       ["ifAwsResourceOrgID", "o-1"],
       ["ifAwsResourceOrgPaths", "o-1/"],
-      ["ifAwsResourceTag", "team", "a", { "operator": ["stringEquals"] }],
+      [
+        "ifAwsResourceTag",
+        "team",
+        "a",
+        {
+          "operator": ["stringEquals"]
+        }
+      ],
       ["ifAwsSecureTransport"],
+      ["ifAwsSignInSessionArn", "arn:aws:signin:us-east-1:123:session/s"],
       ["ifAwsSourceAccount", "123"],
       ["ifAwsSourceArn", "arn:a"],
       ["ifAwsSourceIdentity", "id"],
       ["ifAwsSourceIp", ["1.2.3.4/32", "5.6.7.8"]],
+      ["ifAwsSourceOrgID", "o-1"],
+      ["ifAwsSourceOrgPaths", ["o-1/r-1/", "o-1/r-2/"]],
       ["ifAwsSourceVpc", "vpc-1"],
+      ["ifAwsSourceVpcArn", "arn:aws:ec2:us-east-1:123:vpc/vpc-1"],
       ["ifAwsSourceVpce", "vpce-1"],
       ["ifAwsTagKeys", ["a"]],
       ["ifAwsUserAgent", "agent"],
       ["ifAwsUserid", "AIDA"],
       ["ifAwsUsername", "me"],
       ["ifAwsViaAWSService", true],
-      ["ifAwsVpcSourceIp", "10.0.0.0/8"]
+      ["ifAwsViaAWSMCPService"],
+      ["ifAwsViaCustomerDomain", "123"],
+      ["ifAwsVpcSourceIp", "10.0.0.0/8"],
+      ["ifAwsVpceAccount", "123"],
+      ["ifAwsVpceOrgID", "o-1"],
+      [
+        "ifAwsVpceOrgPaths",
+        "o-1/r-1/",
+        {
+          "operator": ["forAllValues", "stringEquals"]
+        }
+      ]
     ]
   },
   {
     "name": "date conditions",
     "calls": [
-      ["ifAwsCurrentTime", { "date": "2024-02-29T13:14:15.678Z" }],
+      [
+        "ifAwsCurrentTime",
+        {
+          "date": "2024-02-29T13:14:15.678Z"
+        }
+      ],
       [
         "ifAwsEpochTime",
-        [1700000000, { "date": "1999-12-31T23:59:59Z" }, "2020-01-01"],
+        [
+          1700000000,
+          {
+            "date": "1999-12-31T23:59:59Z"
+          },
+          "2020-01-01"
+        ],
         "DateGreaterThan"
       ],
-      ["ifAwsTokenIssueTime", { "date": "2020-04-01T00:00:00.001Z" }]
+      [
+        "ifAwsTokenIssueTime",
+        {
+          "date": "2020-04-01T00:00:00.001Z"
+        }
+      ]
     ]
   },
   {
@@ -276,7 +413,9 @@
       [
         "ifAwsTokenIssueTime",
         "2020-04-01T00:00:00Z",
-        { "operator": ["dateLessThan"] }
+        {
+          "operator": ["dateLessThan"]
+        }
       ]
     ]
   },
