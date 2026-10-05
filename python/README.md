@@ -8,7 +8,10 @@ This is the standalone Python package, without dependencies. For use with AWS CD
 from iam_floyd import Statement
 
 statement = (
-    Statement.Ec2().allow().to_start_instances().if_aws_request_tag('Owner', '${aws:username}')
+    Statement.Ec2()
+        .allow()
+        .to_start_instances()
+        .if_aws_request_tag('Owner', '${aws:username}')
 )
 print(statement.to_json())
 ```
