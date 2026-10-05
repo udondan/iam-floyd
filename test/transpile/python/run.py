@@ -1,6 +1,9 @@
 """Runs the scenarios of test/transpile/scenarios.json against the transpiled Python core.
 
-Prints one line per scenario: the name, a tab and the statement as JSON (or ERROR and the message).
+Prints one line per scenario: the name, a tab and the statement as JSON (or ERROR and the
+message). For a scenario with a policy of statements: the maximum size, the estimated size, the
+result of validate (OK or the error), the policy as JSON and the policies of split as JSON array
+(or the error), separated by tabs.
 
 Usage: run.py <scenarios.json>
 """
@@ -17,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[3]
 if 'IAM_FLOYD_INSTALLED' not in os.environ:
     sys.path.insert(0, str(ROOT / 'python'))
 
-from iam_floyd import Operator, PolicyStatement, Statement  # noqa: E402
+from iam_floyd import Operator, Policy, PolicyStatement, Statement  # noqa: E402
 
 KEYWORDS = {'if', 'in', 'for'}
 
@@ -56,22 +59,58 @@ def decode(arg):
     return arg
 
 
-def run(scenario):
+def build(scenario):
+    if 'class' in scenario:
+        statement = getattr(Statement, scenario['class'])(scenario.get('sid'))
+    elif 'service' in scenario:
+        model = json.loads(
+            (ROOT / 'lib/generated/model' / f'{scenario["service"]}.json').read_text()
+        )
+        statement = Service(model, scenario.get('sid'))
+    else:
+        statement = PolicyStatement(scenario.get('sid'))
+    for method, *args in scenario['calls']:
+        getattr(statement, python_name(method))(*[decode(arg) for arg in args])
+    return statement
+
+
+def to_json(value):
+    return json.dumps(value, separators=(',', ':'), ensure_ascii=False)
+
+
+def attempt(fn):
     try:
-        if 'class' in scenario:
-            statement = getattr(Statement, scenario['class'])(scenario.get('sid'))
-        elif 'service' in scenario:
-            model = json.loads(
-                (ROOT / 'lib/generated/model' / f'{scenario["service"]}.json').read_text()
-            )
-            statement = Service(model, scenario.get('sid'))
-        else:
-            statement = PolicyStatement(scenario.get('sid'))
-        for method, *args in scenario['calls']:
-            getattr(statement, python_name(method))(*[decode(arg) for arg in args])
-        return json.dumps(statement.to_json(), separators=(',', ':'), ensure_ascii=False)
+        return fn()
     except Exception as e:  # noqa: BLE001
         return f'ERROR {e}'
+
+
+def validate(policy):
+    policy.validate()
+    return 'OK'
+
+
+def run_policy(scenario):
+    options = scenario['policy']
+    policy = Policy(options.get('type'), options.get('maximumSize'))
+    if 'arnSizeEstimate' in options:
+        policy.arn_size_estimate = options['arnSizeEstimate']
+    for statement in scenario['statements']:
+        policy.add_statements(build(statement))
+    parts = [
+        policy.maximum_size,
+        policy.estimate_size(),
+        attempt(lambda: validate(policy)),
+        to_json(policy.to_json()),
+        attempt(lambda: f'[{",".join(to_json(part.to_json()) for part in policy.split())}]'),
+    ]
+    return '\t'.join(str(part) for part in parts)
+
+
+def run(scenario):
+    if 'policy' in scenario:
+        return attempt(lambda: run_policy(scenario))
+    return attempt(lambda: to_json(build(scenario).to_json()))
 
 
 for scenario in json.loads(Path(sys.argv[1]).read_text()):

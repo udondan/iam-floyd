@@ -38,7 +38,7 @@ def read_results(path):
 
 
 def read_expected(path):
-    """A .result file has the statements one after another, or a policy document."""
+    """A .result file has the statements or the policies one after another, or a policy document."""
     with open(path) as file:
         # Tokens of TypeScript examples, like `${Token[sns.amazonaws.com.9]}`
         text = re.sub(r'\$\{Token\[(.+?)\.\d+\]\}', r'\1', file.read())

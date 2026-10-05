@@ -116,6 +116,7 @@ Support for:
 - **Resources**: build ARNs with a method per resource type, e.g. `onBucket('example-bucket')`, with defaults for partition, region and account
 - **Conditions**: a method per condition key, with operators like `ForAnyValue:StringEquals` or `IfExists`
 - **AWS CDK**: `cdk-iam-floyd` statements are an [`iam.PolicyStatement`][cdk-policy-statement] of the AWS CDK
+- **Policies**: a policy document that knows the maximum size of its type, validates its estimated size and splits itself into several policies
 - **Collections** of common statements, and the names of all AWS managed policies
 - **Policy converter**: turn an existing JSON policy into IAM Floyd code with the [online converter][converter]
 

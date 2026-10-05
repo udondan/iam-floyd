@@ -290,32 +290,40 @@ new Statement.Ec2('AllowEC2ReadOnly').allow().allReadActions();
 
 ## Building a complete policy
 
+`Policy` renders the policy document (`Version` and `Statement`). Its type sets the
+maximum size: `managed` (default, 6,144 characters), `inlineUser` (2,048),
+`inlineGroup` (5,120), `inlineRole` (10,240), `trust` (2,048), `session` (2,048),
+`scp` (10,240), `rcp` (5,120). A second constructor argument overrides the maximum.
+
 ### Standalone (iam-floyd)
 
 ```typescript
-import { Statement, Operator } from 'iam-floyd';
+import { Operator, Policy, PolicyType, Statement } from 'iam-floyd';
 
-const policy = {
-  Version: '2012-10-17',
-  Statement: [
-    new Statement.Ec2()
-      .allow()
-      .toStartInstances()
-      .ifAwsRequestTag('Owner', '${aws:username}'),
-    // deny stop for anyone who is NOT the owner (note: StringNotEquals, not default StringLike)
-    new Statement.Ec2()
-      .deny()
-      .toStopInstances()
-      .ifResourceTag('Owner', '${aws:username}', Operator.stringNotEquals),
-    new Statement.Ec2().allow().allListActions().allReadActions(),
-  ],
-};
+const policy = new Policy(PolicyType.managed);
+policy.addStatements(
+  new Statement.Ec2()
+    .allow()
+    .toStartInstances()
+    .ifAwsRequestTag('Owner', '${aws:username}'),
+  // deny stop for anyone who is NOT the owner (note: StringNotEquals, not default StringLike)
+  new Statement.Ec2()
+    .deny()
+    .toStopInstances()
+    .ifResourceTag('Owner', '${aws:username}', Operator.stringNotEquals),
+  new Statement.Ec2().allow().allListActions().allReadActions(),
+);
+policy.validate(); // throws if the estimated size exceeds the maximum
+const json = policy.toJSON();
+
+policy.estimateSize(); // characters without white space
+const policies = policy.split(); // first fit, each within the maximum size
 ```
 
 ### CDK (cdk-iam-floyd)
 
 ```typescript
-import { Statement } from 'cdk-iam-floyd';
+import { Policy, PolicyType, Statement } from 'cdk-iam-floyd';
 import * as iam from 'aws-cdk-lib/aws-iam';
 
 const policy = new iam.ManagedPolicy(this, 'Policy', {
@@ -328,6 +336,14 @@ const policy = new iam.ManagedPolicy(this, 'Policy', {
     new Statement.S3().allow().toListBucket().onBucket('my-bucket'),
   ],
 });
+
+// Policy is an iam.PolicyDocument, with size checks:
+const document = new Policy(PolicyType.managed);
+document.addStatements(
+  new Statement.S3().allow().toGetObject().onObject('my-bucket', '*'),
+);
+document.validate(); // ARNs with tokens count as 150 characters, like the AWS CDK
+new iam.ManagedPolicy(this, 'Document', { document });
 
 // Or attach to a role:
 role.addToPolicy(
@@ -345,13 +361,11 @@ role.addToPolicy(
 Collections are pre-built groups of statements for common scenarios:
 
 ```typescript
-import { Collection } from 'iam-floyd'; // or 'cdk-iam-floyd'
+import { Collection, Policy } from 'iam-floyd'; // or 'cdk-iam-floyd'
 
 // Spread into a policy:
-const policy = {
-  Version: '2012-10-17',
-  Statement: [...new Collection().allowEc2InstanceDeleteByOwner()],
-};
+const policy = new Policy();
+policy.addStatements(...new Collection().allowEc2InstanceDeleteByOwner());
 ```
 
 Currently available: `allowEc2InstanceDeleteByOwner` (allows start/stop EC2
@@ -411,32 +425,30 @@ class AppBucket extends Statement.S3 {
 ## Real-world CDK example: CFN deployment role
 
 ```typescript
-import { Statement } from 'cdk-iam-floyd';
+import { Policy, Statement } from 'cdk-iam-floyd';
 
-const policy = {
-  Version: '2012-10-17',
-  Statement: [
-    new Statement.Cloudformation() // allow all CFN actions
-      .allow()
-      .allActions(),
-    new Statement.All() // allow everything triggered via CFN
-      .allow()
-      .allActions()
-      .ifAwsCalledVia('cloudformation.amazonaws.com'),
-    new Statement.S3() // allow CDK staging bucket
-      .allow()
-      .allActions()
-      .on('arn:aws:s3:::cdktoolkit-stagingbucket-*'),
-    new Statement.Account() // block account-level changes
-      .deny()
-      .allPermissionManagementActions()
-      .allWriteActions(),
-    new Statement.Organizations() // block org-level changes
-      .deny()
-      .allPermissionManagementActions()
-      .allWriteActions(),
-  ],
-};
+const policy = new Policy();
+policy.addStatements(
+  new Statement.Cloudformation() // allow all CFN actions
+    .allow()
+    .allActions(),
+  new Statement.All() // allow everything triggered via CFN
+    .allow()
+    .allActions()
+    .ifAwsCalledVia('cloudformation.amazonaws.com'),
+  new Statement.S3() // allow CDK staging bucket
+    .allow()
+    .allActions()
+    .on('arn:aws:s3:::cdktoolkit-stagingbucket-*'),
+  new Statement.Account() // block account-level changes
+    .deny()
+    .allPermissionManagementActions()
+    .allWriteActions(),
+  new Statement.Organizations() // block org-level changes
+    .deny()
+    .allPermissionManagementActions()
+    .allWriteActions(),
+);
 ```
 
 ---
@@ -454,7 +466,10 @@ const policy = {
   `iam.PolicyDocument` with a proper principal type works better with CDK grants.
 - **Policy size limits**: `allWriteActions()` on services like EC2 can produce very
   large action lists. Use `.compact()` to compress them to wildcard patterns, or be
-  more specific with `to*()` calls.
+  more specific with `to*()` calls. `Policy.validate()` checks the estimated size, and
+  `Policy.split()` distributes the statements into several policies. The limits of
+  inline policies apply to all inline policies of a user, group or role together, so
+  split into managed policies.
 - **`Statement.All`** is a special class that produces `Action: "*"` — useful for
   "allow anything called via CloudFormation" style statements.
 - **Policy Converter**: if you have an existing JSON policy, use the online converter

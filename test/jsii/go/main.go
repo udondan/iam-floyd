@@ -12,6 +12,7 @@ import (
 	"github.com/aws/aws-cdk-go/awscdk/v2/assertions"
 	"github.com/aws/aws-cdk-go/awscdk/v2/awsiam"
 	"github.com/aws/jsii-runtime-go"
+	"udondan.github.io/iam-floyd/go/cdkiamfloyd"
 	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
 )
 
@@ -93,5 +94,34 @@ func main() {
 
 	scenario("h statement passed as floyd base class", func(stack awscdk.Stack) {
 		role(stack).AddToPolicy(floydconsumer.Helpers_Denied(statement.NewS3(nil).ToGetObject()))
+	})
+
+	scenario("i policy used as document", func(stack awscdk.Stack) {
+		policy := cdkiamfloyd.NewPolicy(cdkiamfloyd.PolicyType_INLINE_ROLE, nil)
+		policy.AddStatements(
+			statement.NewS3(nil).Allow().ToGetObject().OnObject(jsii.String("bucket"), jsii.String("*"), nil),
+			statement.NewSqs(nil).Allow().ToSendMessage().OnQueue(jsii.String("queue"), nil, nil, nil),
+		)
+		policy.Validate()
+		awsiam.NewPolicy(stack, jsii.String("Document"), &awsiam.PolicyProps{
+			Document: policy,
+			Roles:    &[]awsiam.IRole{role(stack)},
+		})
+	})
+
+	scenario("j policies of split used as documents", func(stack awscdk.Stack) {
+		policy := cdkiamfloyd.NewPolicy(cdkiamfloyd.PolicyType_MANAGED, jsii.Number(500))
+		policy.AddStatements(
+			statement.NewS3(nil).Allow().ToGetObject().OnObject(jsii.String("bucket"), jsii.String("*"), nil),
+			statement.NewSqs(nil).Allow().ToSendMessage().OnQueue(jsii.String("queue"), nil, nil, nil),
+			statement.NewDynamodb(nil).Allow().ToGetItem().OnTable(jsii.String("table"), nil, nil, nil),
+		)
+		roles := &[]awsiam.IRole{role(stack)}
+		for index, part := range *policy.Split() {
+			awsiam.NewPolicy(stack, jsii.String(fmt.Sprintf("Part%d", index)), &awsiam.PolicyProps{
+				Document: part,
+				Roles:    roles,
+			})
+		}
 	})
 }

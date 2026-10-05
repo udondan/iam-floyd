@@ -647,7 +647,16 @@ export class CSharpTranspiler {
       if (declaration === this.classDecl) {
         return `${this.className(declaration)}<T>`;
       }
-      return fail(node, 'Classes with subclasses cannot be referenced');
+      if (this.interfaceMethods(declaration).length) {
+        return this.reference(
+          `I${this.className(declaration)}`,
+          this.options.namespaceOf(declaration.getSourceFile()),
+        );
+      }
+      return fail(
+        node,
+        'Classes with subclasses cannot be referenced, except the last class with a type parameter, by its public methods without parameters',
+      );
     }
     const name = Node.isClassDeclaration(declaration)
       ? this.className(declaration)
@@ -672,6 +681,28 @@ export class CSharpTranspiler {
       this.generics.set(declaration, generic);
     }
     return generic;
+  }
+
+  /**
+   * The methods of the interface of the last class with a type parameter in the chain, by which it
+   * can be referenced: its public methods without parameters that do not return `this`
+   */
+  private interfaceMethods(declaration: ClassDeclaration): MethodDeclaration[] {
+    if (
+      !this.isGeneric(declaration) ||
+      declaration.getDerivedClasses().some((derived) => this.isGeneric(derived))
+    ) {
+      return [];
+    }
+    return declaration
+      .getMethods()
+      .filter(
+        (method) =>
+          method.getScope() == Scope.Public &&
+          !method.isStatic() &&
+          method.getParameters().length == 0 &&
+          method.getReturnType().getText() != 'this',
+      );
   }
 
   private returnsThis(declaration: ClassDeclaration): boolean {
@@ -789,6 +820,10 @@ export class CSharpTranspiler {
         header += `<${generic ? 'T' : name}>`;
       }
     }
+    const interfaceMethods = this.interfaceMethods(declaration);
+    if (interfaceMethods.length) {
+      header += `${base ? ',' : ' :'} I${name}`;
+    }
     if (generic) {
       header += ` where T : ${name}<T>`;
     }
@@ -799,6 +834,21 @@ export class CSharpTranspiler {
       }
     }
     this.publicMethods.set(name, methods);
+    if (interfaceMethods.length) {
+      this.emitLines(
+        xmlDoc([
+          `The methods of <see cref="${name}{T}"/>, by which it can be referenced`,
+        ]),
+      );
+      this.braces(`public interface I${name}`, () => {
+        for (const method of interfaceMethods) {
+          this.emit(
+            `${this.returnType(method)} ${csharpMethodName(method.getName())}();`,
+          );
+        }
+      });
+      this.emit('');
+    }
     this.docs(declaration);
     this.braces(header, () => {
       this.checkMemberNames(declaration);
@@ -1674,11 +1724,20 @@ export class CSharpTranspiler {
         const initializer = declaration.getInitializer();
         const name = csharpLocalName(declaration.getName());
         const type = this.declaredType(declaration);
-        this.emit(
-          initializer
-            ? `${type} ${name} = ${this.typed(initializer, type).code};`
-            : `${type} ${name};`,
-        );
+        if (initializer === undefined) {
+          this.emit(`${type} ${name};`);
+        } else if (type != 'object' && initializer.getType().isAny()) {
+          // a value of type any, assigned to a variable with a type. Dictionaries are copied, as
+          // their values can have another type.
+          const value = this.expression(initializer);
+          this.emit(
+            type == 'Dictionary<string, object>'
+              ? `${type} ${name} = Js.ToRecord(${value.code});`
+              : `${type} ${name} = (${type})${wrap(value, Prec.unary)};`,
+          );
+        } else {
+          this.emit(`${type} ${name} = ${this.typed(initializer, type).code};`);
+        }
       }
     } else if (Node.isExpressionStatement(node)) {
       this.expressionStatement(node.getExpression());
@@ -1931,6 +1990,10 @@ export class CSharpTranspiler {
     const target = this.target(left);
     const declaration = this.declarationOf(left);
     const type = declaration ? this.declaredType(declaration) : 'object';
+    if (type == 'int' && ['double', 'double?'].includes(this.exprType(right))) {
+      // a number of a public parameter, assigned to an internal number
+      return `${target} ${operator} (int)${wrap(this.expression(right), Prec.unary)}`;
+    }
     return `${target} ${operator} ${this.typed(right, type).code}`;
   }
 
@@ -2443,6 +2506,9 @@ export class CSharpTranspiler {
       return primary(
         `new List<string>(${wrap(this.expression(args[0]), Prec.primary)}.Keys)`,
       );
+    }
+    if (text == 'JSON.stringify' && args.length == 1) {
+      return primary(`Json.Stringify(${this.expression(args[0]).code})`);
     }
     if (text == 'Array.isArray') {
       return primary(`Js.IsArray(${this.expression(args[0]).code})`);

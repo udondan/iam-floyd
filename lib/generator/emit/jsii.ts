@@ -459,14 +459,16 @@ class SharedExtractor {
    */
   private applyCdkSwap() {
     const dir = 'lib/shared/policy-statement';
-    for (const file of fs.readdirSync(dir)) {
-      if (!file.endsWith('.CDK.ts')) continue;
-      const target = path.join(dir, file.replace('.CDK.ts', '.ts'));
-      this.project.createSourceFile(
-        target,
-        fs.readFileSync(path.join(dir, file), 'utf8'),
-        { overwrite: true },
-      );
+    for (const swapDir of [dir, 'lib/shared/policy']) {
+      for (const file of fs.readdirSync(swapDir)) {
+        if (!file.endsWith('.CDK.ts')) continue;
+        const target = path.join(swapDir, file.replace('.CDK.ts', '.ts'));
+        this.project.createSourceFile(
+          target,
+          fs.readFileSync(path.join(swapDir, file), 'utf8'),
+          { overwrite: true },
+        );
+      }
     }
     const principals = this.project.addSourceFileAtPath(
       `${dir}/8-principals.ts`,
@@ -823,6 +825,20 @@ class SharedExtractor {
       const enumDeclaration = type.getSymbol()?.getDeclarations()[0];
       if (enumDeclaration && Node.isEnumDeclaration(enumDeclaration)) {
         return this.namedReference(enumDeclaration, type, context);
+      }
+      // with undefined, e.g. of an optional parameter, the union has the members of the enum
+      const memberEnums = new Set(
+        members.map((t) =>
+          t.isEnumLiteral()
+            ? t.getSymbol()?.getDeclarations()[0]?.getParent()
+            : undefined,
+        ),
+      );
+      if (memberEnums.size == 1) {
+        const [memberEnum] = memberEnums;
+        if (memberEnum && Node.isEnumDeclaration(memberEnum)) {
+          return this.namedReference(memberEnum, type, context);
+        }
       }
       const refs: TypeReference[] = [];
       for (const member of members) {

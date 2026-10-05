@@ -147,14 +147,18 @@ function preparePackageJson() {
 }
 
 function swapFiles() {
-  const dir = `${lib}/shared/policy-statement`;
-  const files = fs.readdirSync(dir);
-  files.forEach((file) => {
-    if (!file.endsWith('.CDK.ts')) return;
-    const parts = file.split('.');
-    parts.splice(1, 1);
-    swapFile(`${dir}/${file}`, `${dir}/${parts.join('.')}`);
-  });
+  for (const dir of [
+    `${lib}/shared/policy-statement`,
+    `${lib}/shared/policy`,
+  ]) {
+    const files = fs.readdirSync(dir);
+    files.forEach((file) => {
+      if (!file.endsWith('.CDK.ts')) return;
+      const parts = file.split('.');
+      parts.splice(1, 1);
+      swapFile(`${dir}/${file}`, `${dir}/${parts.join('.')}`);
+    });
+  }
 }
 
 function swapFile(src: string, dest: string) {

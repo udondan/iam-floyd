@@ -1,0 +1,28 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::example-bucket/*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": "sqs:SendMessage",
+            "Resource": "arn:aws:sqs:us-east-1:123456789012:example-queue",
+            "Effect": "Allow"
+        }
+    ]
+}
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "dynamodb:GetItem",
+                "dynamodb:Query"
+            ],
+            "Resource": "arn:aws:dynamodb:us-east-1:123456789012:table/example-table",
+            "Effect": "Allow"
+        }
+    ]
+}

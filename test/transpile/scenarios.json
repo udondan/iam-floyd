@@ -490,5 +490,377 @@
       ["notPrincipal"],
       ["forAccount", "123"]
     ]
+  },
+  {
+    "name": "policy empty",
+    "policy": {},
+    "statements": []
+  },
+  {
+    "name": "policy statements",
+    "policy": {},
+    "statements": [
+      {
+        "sid": "Read",
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["to", "s3:ListBucket"],
+          ["on", "arn:aws:s3:::bucket", "arn:aws:s3:::bucket/*"]
+        ]
+      },
+      {
+        "calls": [["deny"], ["to", "s3:DeleteObject"], ["onAllResources"]]
+      }
+    ]
+  },
+  {
+    "name": "policy not action and not resource",
+    "policy": {},
+    "statements": [
+      {
+        "calls": [
+          ["deny"],
+          ["notAction"],
+          ["to", "iam:*"],
+          ["notResource"],
+          ["on", "arn:aws:iam::123456789012:role/admin"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy principals",
+    "policy": {},
+    "statements": [
+      {
+        "calls": [
+          ["to", "sts:AssumeRole"],
+          ["forAccount", "123456789012", "210987654321"],
+          ["forService", "lambda.amazonaws.com"]
+        ]
+      },
+      {
+        "calls": [
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"],
+          ["forPublic"]
+        ]
+      },
+      {
+        "calls": [
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"],
+          ["notPrincipal"],
+          ["forUser", "123456789012", "alice"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy principals with ARN estimate",
+    "policy": {
+      "arnSizeEstimate": 60
+    },
+    "statements": [
+      {
+        "calls": [
+          ["to", "sts:AssumeRole"],
+          ["forAccount", "123456789012", "210987654321"],
+          ["forService", "lambda.amazonaws.com"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy conditions",
+    "policy": {},
+    "statements": [
+      {
+        "calls": [
+          ["to", "s3:GetObject"],
+          ["on", "*"],
+          ["if", "aws:SourceIp", ["10.0.0.0/8", "192.168.0.0/16"], "IpAddress"],
+          ["if", "k:bool", true, "Bool"],
+          ["if", "k:number", 3600, "NumericLessThan"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy escaping",
+    "policy": {},
+    "statements": [
+      {
+        "sid": "Escaping",
+        "calls": [
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/a\"b\\c"],
+          ["if", "s3:prefix", "home/Jürgen/<docs>&\"quoted\"\\"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy type managed",
+    "policy": {
+      "type": "managed"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy type inlineUser",
+    "policy": {
+      "type": "inlineUser"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy type inlineGroup",
+    "policy": {
+      "type": "inlineGroup"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy type inlineRole",
+    "policy": {
+      "type": "inlineRole"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy type trust",
+    "policy": {
+      "type": "trust"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy type session",
+    "policy": {
+      "type": "session"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy type scp",
+    "policy": {
+      "type": "scp"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy type rcp",
+    "policy": {
+      "type": "rcp"
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy custom maximum",
+    "policy": {
+      "type": "trust",
+      "maximumSize": 8192
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy maximum without type",
+    "policy": {
+      "maximumSize": 1000
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy exceeds maximum",
+    "policy": {
+      "maximumSize": 150
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      },
+      {
+        "calls": [
+          ["deny"],
+          ["to", "s3:DeleteObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy split",
+    "policy": {
+      "maximumSize": 300
+    },
+    "statements": [
+      {
+        "sid": "First",
+        "calls": [
+          ["to", "s3:GetObject"],
+          ["to", "s3:PutObject"],
+          ["on", "arn:aws:s3:::first-bucket/*"]
+        ]
+      },
+      {
+        "sid": "Second",
+        "calls": [
+          ["to", "s3:GetObject"],
+          ["to", "s3:PutObject"],
+          ["to", "s3:DeleteObject"],
+          ["on", "arn:aws:s3:::second-bucket/*"]
+        ]
+      },
+      {
+        "sid": "Third",
+        "calls": [
+          ["to", "sqs:SendMessage"],
+          ["on", "*"]
+        ]
+      },
+      {
+        "sid": "Fourth",
+        "calls": [
+          ["to", "sns:Publish"],
+          ["to", "sns:Subscribe"],
+          ["on", "arn:aws:sns:us-east-1:123456789012:topic-with-a-long-name"]
+        ]
+      },
+      {
+        "sid": "Fifth",
+        "calls": [
+          ["to", "ec2:DescribeInstances"],
+          ["on", "*"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy split with ARN estimate",
+    "policy": {
+      "maximumSize": 400,
+      "arnSizeEstimate": 100
+    },
+    "statements": [
+      {
+        "calls": [
+          ["to", "sts:AssumeRole"],
+          ["forAccount", "123456789012"]
+        ]
+      },
+      {
+        "calls": [
+          ["to", "sts:AssumeRole"],
+          ["forService", "ec2.amazonaws.com", "lambda.amazonaws.com"]
+        ]
+      },
+      {
+        "calls": [
+          ["to", "sts:TagSession"],
+          ["forAccount", "210987654321"]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "policy split statement too large",
+    "policy": {
+      "maximumSize": 100
+    },
+    "statements": [
+      {
+        "calls": [
+          ["allow"],
+          ["to", "s3:GetObject"],
+          ["on", "arn:aws:s3:::bucket/*"]
+        ]
+      }
+    ]
   }
 ]

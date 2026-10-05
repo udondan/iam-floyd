@@ -66,11 +66,6 @@ var PolicyConverter = (function () {
     for (const statement of ensureList(policy.Statement)) {
       statements.push(...convertStatement(statement, services, errors));
     }
-    if (!cdk) {
-      for (const statement of statements) {
-        statement.calls.push(call('toJSON'));
-      }
-    }
 
     const context = { cdk, helperUsed: false, classes: new Set() };
     const code = lang.policy(
@@ -376,19 +371,13 @@ var PolicyConverter = (function () {
         '  ',
       );
     },
-    policy(statements, context) {
-      const list = indent(statements.join(',\n'), '    ');
-      if (context.cdk) {
-        return `const policy = new aws_iam.PolicyDocument({\n  statements: [\n${list},\n  ],\n});`;
-      }
-      return `const policy = {\n  Version: '2012-10-17',\n  Statement: [\n${list},\n  ],\n};`;
+    policy(statements) {
+      const list = indent(statements.join(',\n'), '  ');
+      return `const policy = new Policy();\npolicy.addStatements(\n${list},\n);`;
     },
     imports(context) {
       const pkg = context.cdk ? 'cdk-iam-floyd' : 'iam-floyd';
-      return [
-        ...(context.cdk ? [declaration('aws_iam', 'aws-cdk-lib')] : []),
-        declaration('Statement', pkg),
-      ].join('\n');
+      return declaration('Policy, Statement', pkg);
     },
   });
 
@@ -414,19 +403,13 @@ var PolicyConverter = (function () {
         '    ',
       );
     },
-    policy(statements, context) {
-      if (context.cdk) {
-        const list = indent(statements.join(',\n'), '        ');
-        return `policy = iam.PolicyDocument(\n    statements=[\n${list},\n    ],\n)`;
-      }
-      const list = indent(statements.join(',\n'), '        ');
-      return `policy = {\n    'Version': '2012-10-17',\n    'Statement': [\n${list},\n    ],\n}`;
+    policy(statements) {
+      const list = indent(statements.join(',\n'), '    ');
+      return `policy = Policy()\npolicy.add_statements(\n${list},\n)`;
     },
     imports(context) {
-      if (context.cdk) {
-        return 'from aws_cdk import aws_iam as iam\nfrom cdk_iam_floyd import Statement';
-      }
-      return 'from iam_floyd import Statement';
+      const pkg = context.cdk ? 'cdk_iam_floyd' : 'iam_floyd';
+      return `from ${pkg} import Policy, Statement`;
     },
   };
 
@@ -445,6 +428,11 @@ var PolicyConverter = (function () {
       context.classes.add(className);
       const method = (m) =>
         ['if', 'for'].includes(m) ? `do${upperFirst(m)}` : m;
+      if (
+        statement.calls.some((c) => c.args.some((a) => a.type === 'strings'))
+      ) {
+        context.listUsed = true;
+      }
       return chain(
         `new ${className}()`,
         statement.calls,
@@ -453,24 +441,19 @@ var PolicyConverter = (function () {
         '    ',
       );
     },
-    policy(statements, context) {
-      const list = indent(statements.join(',\n'), '        ');
-      if (context.cdk) {
-        return `PolicyDocument policy = PolicyDocument.Builder.create()\n    .statements(List.of(\n${list}))\n    .build();`;
-      }
-      return `Map<String, Object> policy = Map.of(\n    "Version", "2012-10-17",\n    "Statement", List.of(\n${list}));`;
+    policy(statements) {
+      const list = indent(statements.join(',\n'), '    ');
+      return `Policy policy = new Policy();\npolicy.addStatements(\n${list});`;
     },
     imports(context) {
       const pkg = context.cdk
-        ? 'com.udondan.iamFloyd.cdk.statement'
-        : 'com.udondan.iamFloyd.statement';
-      const imports = [...context.classes].map((c) => `${pkg}.${c}`);
-      imports.push('java.util.List');
-      imports.push(
-        context.cdk
-          ? 'software.amazon.awscdk.services.iam.PolicyDocument'
-          : 'java.util.Map',
-      );
+        ? 'com.udondan.iamFloyd.cdk'
+        : 'com.udondan.iamFloyd';
+      const imports = [...context.classes].map((c) => `${pkg}.statement.${c}`);
+      imports.push(`${pkg}.Policy`);
+      if (context.listUsed) {
+        imports.push('java.util.List');
+      }
       return imports
         .sort()
         .map((i) => `import ${i};`)
@@ -498,18 +481,13 @@ var PolicyConverter = (function () {
         '    ',
       );
     },
-    policy(statements, context) {
-      const list = indent(statements.join(',\n'), '        ');
-      if (context.cdk) {
-        return `var policy = new PolicyDocument(new PolicyDocumentProps\n{\n    Statements = new PolicyStatement[]\n    {\n${list},\n    },\n});`;
-      }
-      return `var policy = new Dictionary<string, object>\n{\n    ["Version"] = "2012-10-17",\n    ["Statement"] = new object[]\n    {\n${list},\n    },\n};`;
+    policy(statements) {
+      const list = indent(statements.join(',\n'), '    ');
+      return `var policy = new Policy();\npolicy.AddStatements(\n${list});`;
     },
     imports(context) {
-      if (context.cdk) {
-        return 'using Amazon.CDK.AWS.IAM;\nusing Statement = CDK.IAM.Floyd.Statement;';
-      }
-      return 'using System.Collections.Generic;\nusing Statement = IAM.Floyd.Statement;';
+      const namespace = context.cdk ? 'CDK.IAM.Floyd' : 'IAM.Floyd';
+      return `using Policy = ${namespace}.Policy;\nusing Statement = ${namespace}.Statement;`;
     },
   };
 
@@ -537,23 +515,21 @@ var PolicyConverter = (function () {
       ].join('.\n');
     },
     policy(statements, context) {
-      const list = indent(statements.join(',\n'), '\t\t');
-      if (context.cdk) {
-        return `policy := awsiam.NewPolicyDocument(&awsiam.PolicyDocumentProps{\n\tStatements: &[]awsiam.PolicyStatement{\n${list},\n\t},\n})`;
-      }
-      return `policy := map[string]interface{}{\n\t"Version": "2012-10-17",\n\t"Statement": []interface{}{\n${list},\n\t},\n}`;
+      const list = indent(statements.join(',\n'), '\t');
+      const constructor = context.cdk
+        ? 'cdkiamfloyd.NewPolicy("", nil)'
+        : 'iamfloyd.NewPolicy(nil, nil)';
+      return `policy := ${constructor}\npolicy.AddStatements(\n${list},\n)`;
     },
     imports(context) {
       const imports = context.cdk
         ? [
-            'github.com/aws/aws-cdk-go/awscdk/v2/awsiam',
             ...(context.helperUsed ? ['github.com/aws/jsii-runtime-go'] : []),
+            'udondan.github.io/iam-floyd/go/cdkiamfloyd',
             'udondan.github.io/iam-floyd/go/cdkiamfloyd/statement',
           ]
         : [
-            ...(context.helperUsed
-              ? ['udondan.github.io/iam-floyd/go/iamfloyd']
-              : []),
+            'udondan.github.io/iam-floyd/go/iamfloyd',
             'udondan.github.io/iam-floyd/go/iamfloyd/statement',
           ];
       return `import (\n${imports.map((i) => `\t"${i}"`).join('\n')}\n)`;

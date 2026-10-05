@@ -1,6 +1,6 @@
 // Runs the .NET examples of the docs, examples/*/*.cs, which are compiled into this project.
 //
-// Prints one line per example: the name, a tab and the statements or the policy document as JSON
+// Prints one line per example: the name, a tab and the statements, the policy or the policies as JSON
 // (or FAIL).
 
 using System;
@@ -29,7 +29,10 @@ foreach (var directory in Directory.GetDirectories(args[0]).OrderBy(d => d, Stri
         {
             PolicyDocument document => stack.Resolve(document.ToJSON()),
             PolicyStatement statement => new[] { stack.Resolve(statement.ToStatementJson()) },
-            System.Collections.IEnumerable statements => statements.Cast<PolicyStatement>().Select(s => stack.Resolve(s.ToStatementJson())).ToArray(),
+            // statements, or the policies of a split
+            System.Collections.IEnumerable items => items.Cast<object>().Select(item => item is PolicyDocument document
+                ? stack.Resolve(document.ToJSON())
+                : stack.Resolve(((PolicyStatement)item).ToStatementJson())).ToArray(),
             _ => throw new ArgumentException($"Unexpected result {result}"),
         };
         Console.WriteLine($"{name}\t{JsonSerializer.Serialize(json)}");

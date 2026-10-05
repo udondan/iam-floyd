@@ -61,7 +61,9 @@ class Service : PolicyStatement<Service>
 /// Runs the scenarios of test/transpile/scenarios.json against the native package.
 ///
 /// Prints one line per scenario: the name, a tab and the statement as JSON (or ERROR and the
-/// message). The methods are called by reflection: of the overloads that accept the arguments, the
+/// message). For a scenario with a policy of statements: the maximum size, the estimated size, the
+/// result of validate (OK or the error), the policy as JSON and the policies of split as JSON array
+/// (or the error), separated by tabs. The methods are called by reflection: of the overloads that accept the arguments, the
 /// one whose parameters match the arguments best, without params arrays if possible.
 /// </summary>
 static class Scenarios
@@ -77,30 +79,64 @@ static class Scenarios
 
     static string RunScenario(JsonElement scenario)
     {
+        return Attempt(() => scenario.TryGetProperty("policy", out var policy)
+            ? RunPolicy(policy, scenario.GetProperty("statements"))
+            : Json.Stringify(Build(scenario)));
+    }
+
+    static IPolicyStatement Build(JsonElement scenario)
+    {
+        var sid = scenario.TryGetProperty("sid", out var sidElement) ? sidElement.GetString() : null;
+        object statement;
+        if (scenario.TryGetProperty("class", out var className))
+        {
+            var type = typeof(Json).Assembly.GetType($"IAM.Floyd.Statement.{className.GetString()}");
+            statement = Activator.CreateInstance(type, sid);
+        }
+        else if (scenario.TryGetProperty("service", out var service))
+        {
+            using var model = JsonDocument.Parse(File.ReadAllText($"lib/generated/model/{service.GetString()}.json"));
+            statement = new Service(model.RootElement, sid);
+        }
+        else
+        {
+            statement = new Plain(sid);
+        }
+        foreach (var call in scenario.GetProperty("calls").EnumerateArray())
+        {
+            var items = call.EnumerateArray().ToList();
+            Invoke(statement, items[0].GetString(), items.Skip(1).Select(Decode).ToList());
+        }
+        return (IPolicyStatement)statement;
+    }
+
+    static string RunPolicy(JsonElement options, JsonElement statements)
+    {
+        var policy = new Policy(
+            options.TryGetProperty("type", out var type) ? type.GetString() : null,
+            options.TryGetProperty("maximumSize", out var maximumSize) ? maximumSize.GetDouble() : null);
+        if (options.TryGetProperty("arnSizeEstimate", out var arnSizeEstimate))
+        {
+            policy.ArnSizeEstimate = arnSizeEstimate.GetInt32();
+        }
+        foreach (var statement in statements.EnumerateArray())
+        {
+            policy.AddStatements(Build(statement));
+        }
+        var validate = Attempt(() =>
+        {
+            policy.Validate();
+            return "OK";
+        });
+        var split = Attempt(() => $"[{string.Join(",", policy.Split().Select(part => Json.Stringify(part)))}]");
+        return string.Join("\t", policy.MaximumSize, policy.EstimateSize(), validate, Json.Stringify(policy), split);
+    }
+
+    static string Attempt(Func<string> fn)
+    {
         try
         {
-            var sid = scenario.TryGetProperty("sid", out var sidElement) ? sidElement.GetString() : null;
-            object statement;
-            if (scenario.TryGetProperty("class", out var className))
-            {
-                var type = typeof(Json).Assembly.GetType($"IAM.Floyd.Statement.{className.GetString()}");
-                statement = Activator.CreateInstance(type, sid);
-            }
-            else if (scenario.TryGetProperty("service", out var service))
-            {
-                using var model = JsonDocument.Parse(File.ReadAllText($"lib/generated/model/{service.GetString()}.json"));
-                statement = new Service(model.RootElement, sid);
-            }
-            else
-            {
-                statement = new Plain(sid);
-            }
-            foreach (var call in scenario.GetProperty("calls").EnumerateArray())
-            {
-                var items = call.EnumerateArray().ToList();
-                Invoke(statement, items[0].GetString(), items.Skip(1).Select(Decode).ToList());
-            }
-            return Json.Stringify(statement);
+            return fn();
         }
         catch (Exception e)
         {
@@ -277,7 +313,7 @@ static class Scenarios
 /// Runs the C# examples of the docs, examples/*/*.cs, which run.sh rewrote for the native package
 /// and compiled into this project.
 ///
-/// Prints one line per example: the name, a tab and the statements or the policy document as JSON
+/// Prints one line per example: the name, a tab and the statements, the policy or the policies as JSON
 /// (or FAIL), like test/jsii/examples/dotnet.
 /// </summary>
 static class Examples
@@ -298,10 +334,9 @@ static class Examples
                 var result = Type.GetType(className).GetMethod("Example").Invoke(null, null);
                 object json = result switch
                 {
-                    Amazon.CDK.AWS.IAM.PolicyDocument document => document.ToJSON(),
-                    // a policy of the policy converter
-                    IDictionary<string, object> policy => policy,
-                    IEnumerable statements => statements,
+                    Policy policy => policy,
+                    // statements, or the policies of a split
+                    IEnumerable items => items,
                     _ => new[] { result },
                 };
                 Console.WriteLine($"{name}\t{Json.Stringify(json)}");

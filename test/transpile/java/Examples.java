@@ -1,4 +1,5 @@
 import com.udondan.iamFloyd.Json;
+import com.udondan.iamFloyd.Policy;
 import com.udondan.iamFloyd.PolicyStatement;
 import java.io.ByteArrayOutputStream;
 import java.io.FileDescriptor;
@@ -17,25 +18,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;
-import software.amazon.awscdk.services.iam.PolicyDocument;
 
 /**
  * Runs the Java examples of the docs, examples/*&#47;*.java, against the native package.
  *
  * <p>The examples are written for cdk-iam-floyd. They are compiled with com.udondan.iamFloyd in
- * place of com.udondan.iamFloyd.cdk and a stand-in for the PolicyDocument of the AWS CDK (in
- * stubs/, compiled with this class). Two parts of them are rewritten: the statements of the
+ * place of com.udondan.iamFloyd.cdk. Two parts of them are rewritten: the statements of the
  * collection are services, which extend the generic PolicyStatement, and the sid is passed to the
  * constructor instead of PolicyStatementProps. The examples of the CDK variant, *.cdk, are
  * skipped.
  *
- * <p>Prints one line per example: the name, a tab and the statements or the policy document as
- * JSON (or FAIL), like test/jsii/examples/java.
+ * <p>Prints one line per example: the name, a tab and the statements, the policy or the policies
+ * as JSON (or FAIL), like test/jsii/examples/java.
  *
  * <p>Usage: Examples &lt;examples directory&gt; &lt;working directory&gt;
  */
@@ -51,18 +49,15 @@ public final class Examples {
   }
 
   static Object resolve(Object result) {
-    if (result instanceof PolicyDocument) {
-      return ((PolicyDocument) result).toJSON();
+    if (result instanceof Policy) {
+      return ((Policy) result).toJSON();
     }
-    // a policy of the policy converter
-    if (result instanceof Map) {
-      return result;
-    }
-    List<?> statements =
-        result instanceof List ? (List<?>) result : Collections.singletonList(result);
+    // statements, or the policies of a split
+    List<?> items = result instanceof List ? (List<?>) result : Collections.singletonList(result);
     List<Object> json = new ArrayList<>();
-    for (Object statement : statements) {
-      json.add(((PolicyStatement<?>) statement).toJSON());
+    for (Object item : items) {
+      json.add(
+          item instanceof Policy ? ((Policy) item).toJSON() : ((PolicyStatement<?>) item).toJSON());
     }
     return json;
   }

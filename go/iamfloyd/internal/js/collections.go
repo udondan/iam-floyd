@@ -114,6 +114,28 @@ func (r *Record[V]) Entries() []Entry[string, V] {
 	return entries
 }
 
+// anyRecord is a record with values of any type
+type anyRecord interface {
+	toRecord() *Record[interface{}]
+}
+
+func (r *Record[V]) toRecord() *Record[interface{}] {
+	record := NewRecord[interface{}]()
+	for _, key := range r.keys {
+		record.Set(key, r.values[key])
+	}
+	return record
+}
+
+// ToRecord returns a record as record of interface{}: the record itself if its values are of type
+// interface{}, otherwise a copy
+func ToRecord(value interface{}) *Record[interface{}] {
+	if record, ok := value.(*Record[interface{}]); ok {
+		return record
+	}
+	return value.(anyRecord).toRecord()
+}
+
 // MarshalJSON writes the record like JSON.stringify
 func (r *Record[V]) MarshalJSON() ([]byte, error) {
 	return []byte(Stringify(r)), nil

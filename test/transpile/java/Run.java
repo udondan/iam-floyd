@@ -1,5 +1,6 @@
 import com.udondan.iamFloyd.Json;
 import com.udondan.iamFloyd.Operator;
+import com.udondan.iamFloyd.Policy;
 import com.udondan.iamFloyd.PolicyStatement;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
@@ -20,8 +21,11 @@ import java.util.Map;
  * Runs the scenarios of test/transpile/scenarios.json against the native Java package.
  *
  * <p>Prints one line per scenario: the name, a tab and the statement as JSON (or ERROR and the
- * message). The methods are called by reflection: of the overloads that accept the arguments, the
- * one with the fewest parameters of type Object, without varargs if possible.
+ * message). For a scenario with a policy of statements: the maximum size, the estimated size, the
+ * result of validate (OK or the error), the policy as JSON and the policies of split as JSON array
+ * (or the error), separated by tabs. The methods are called by reflection: of the overloads that
+ * accept the arguments, the one with the fewest parameters of type Object, without varargs if
+ * possible.
  *
  * <p>Usage: Run &lt;scenarios.json&gt;
  */
@@ -166,37 +170,89 @@ public final class Run {
   }
 
   @SuppressWarnings({"rawtypes", "unchecked"})
-  static String run(Map<String, Object> scenario) {
+  static PolicyStatement<?> build(Map<String, Object> scenario) throws Exception {
+    String sid = (String) scenario.get("sid");
+    Object statement;
+    if (scenario.containsKey("class")) {
+      statement =
+          Class.forName("com.udondan.iamFloyd.statement." + scenario.get("class"))
+              .getConstructor(String.class)
+              .newInstance(sid);
+    } else if (scenario.containsKey("service")) {
+      String model =
+          new String(
+              Files.readAllBytes(
+                  Paths.get("lib/generated/model", scenario.get("service") + ".json")),
+              StandardCharsets.UTF_8);
+      statement = new Service((Map<String, Object>) JsonParser.parse(model), sid);
+    } else {
+      statement = new PolicyStatement(sid);
+    }
+    for (Object call : (List<Object>) scenario.get("calls")) {
+      List<Object> list = (List<Object>) call;
+      List<Object> args = new ArrayList<>();
+      for (Object arg : list.subList(1, list.size())) {
+        args.add(decode(arg));
+      }
+      invoke(statement, (String) list.get(0), args);
+    }
+    return (PolicyStatement<?>) statement;
+  }
+
+  /** A function that can throw, for {@link #attempt}. */
+  interface Result {
+    String get() throws Exception;
+  }
+
+  static String attempt(Result result) {
     try {
-      String sid = (String) scenario.get("sid");
-      Object statement;
-      if (scenario.containsKey("class")) {
-        statement =
-            Class.forName("com.udondan.iamFloyd.statement." + scenario.get("class"))
-                .getConstructor(String.class)
-                .newInstance(sid);
-      } else if (scenario.containsKey("service")) {
-        String model =
-            new String(
-                Files.readAllBytes(
-                    Paths.get("lib/generated/model", scenario.get("service") + ".json")),
-                StandardCharsets.UTF_8);
-        statement = new Service((Map<String, Object>) JsonParser.parse(model), sid);
-      } else {
-        statement = new PolicyStatement(sid);
-      }
-      for (Object call : (List<Object>) scenario.get("calls")) {
-        List<Object> list = (List<Object>) call;
-        List<Object> args = new ArrayList<>();
-        for (Object arg : list.subList(1, list.size())) {
-          args.add(decode(arg));
-        }
-        invoke(statement, (String) list.get(0), args);
-      }
-      return Json.stringify(((PolicyStatement) statement).toJSON());
+      return result.get();
     } catch (Exception e) {
       return "ERROR " + e.getMessage();
     }
+  }
+
+  @SuppressWarnings("unchecked")
+  static String runPolicy(Map<String, Object> scenario) throws Exception {
+    Map<String, Object> options = (Map<String, Object>) scenario.get("policy");
+    Policy policy =
+        new Policy((String) options.get("type"), (Number) options.get("maximumSize"));
+    if (options.containsKey("arnSizeEstimate")) {
+      policy.arnSizeEstimate = ((Number) options.get("arnSizeEstimate")).intValue();
+    }
+    for (Object statement : (List<Object>) scenario.get("statements")) {
+      policy.addStatements(build((Map<String, Object>) statement));
+    }
+    String validate =
+        attempt(
+            () -> {
+              policy.validate();
+              return "OK";
+            });
+    String split =
+        attempt(
+            () -> {
+              List<String> parts = new ArrayList<>();
+              for (Policy part : policy.split()) {
+                parts.add(Json.stringify(part.toJSON()));
+              }
+              return "[" + String.join(",", parts) + "]";
+            });
+    return String.join(
+        "\t",
+        String.valueOf(policy.maximumSize),
+        String.valueOf(policy.estimateSize()),
+        validate,
+        Json.stringify(policy.toJSON()),
+        split);
+  }
+
+  static String run(Map<String, Object> scenario) {
+    return attempt(
+        () ->
+            scenario.containsKey("policy")
+                ? runPolicy(scenario)
+                : Json.stringify(build(scenario).toJSON()));
   }
 
   /** Runs the scenarios. */

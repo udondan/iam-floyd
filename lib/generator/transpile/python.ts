@@ -1399,6 +1399,11 @@ export class PythonTranspiler {
           return result(`isinstance(${arg(0)}, list)`);
         }
         return fail(node, 'Unsupported Array method');
+      case 'JSON':
+        if (method == 'stringify' && args.length == 1) {
+          return result(`_js.stringify(${arg(0)})`);
+        }
+        return fail(node, 'Unsupported JSON method');
     }
 
     const kind = kindOf(receiver.getType());

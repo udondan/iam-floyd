@@ -6,7 +6,7 @@ import importlib
 from typing import TYPE_CHECKING, Any
 
 from . import statement as Statement  # noqa: N812
-from ._shared import Operator, PolicyStatement
+from ._shared import Operator, Policy, PolicyStatement, PolicyType
 from ._version import __version__
 
 if TYPE_CHECKING:
@@ -23,7 +23,9 @@ __all__ = [
     'AwsManagedPolicy',
     'Collection',
     'Operator',
+    'Policy',
     'PolicyStatement',
+    'PolicyType',
     'Statement',
     '__version__',
 ]

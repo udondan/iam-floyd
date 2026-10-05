@@ -10,6 +10,7 @@
    getting-started
    vocabulary
    operators
+   policy
    examples
    collections
    aws-managed-policies

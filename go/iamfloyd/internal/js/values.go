@@ -98,9 +98,9 @@ func TypeOf(value interface{}) string {
 	return "object"
 }
 
-// IsArray returns whether a normalized value is a list
+// IsArray returns whether a value is a list
 func IsArray(value interface{}) bool {
-	_, ok := value.([]interface{})
+	_, ok := Normalize(value).([]interface{})
 	return ok
 }
 
@@ -110,9 +110,9 @@ func IsDate(value interface{}) bool {
 	return ok
 }
 
-// ToList returns a normalized value as list
+// ToList returns a value as list
 func ToList(value interface{}) []interface{} {
-	list, _ := value.([]interface{})
+	list, _ := Normalize(value).([]interface{})
 	return list
 }
 

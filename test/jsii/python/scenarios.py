@@ -10,7 +10,7 @@ import aws_cdk as cdk
 import floyd_consumer
 from aws_cdk import aws_iam as iam
 from aws_cdk.assertions import Template
-from cdk_iam_floyd import Statement
+from cdk_iam_floyd import Policy, PolicyType, Statement
 
 
 def scenario(name):
@@ -85,3 +85,27 @@ def _(stack):
 @scenario('h statement passed as floyd base class')
 def _(stack):
     role(stack).add_to_policy(floyd_consumer.Helpers.denied(Statement.S3().to_get_object()))
+
+
+@scenario('i policy used as document')
+def _(stack):
+    policy = Policy(PolicyType.INLINE_ROLE)
+    policy.add_statements(
+        Statement.S3().allow().to_get_object().on_object('bucket', '*'),
+        Statement.Sqs().allow().to_send_message().on_queue('queue'),
+    )
+    policy.validate()
+    iam.Policy(stack, 'Document', document=policy, roles=[role(stack)])
+
+
+@scenario('j policies of split used as documents')
+def _(stack):
+    policy = Policy(PolicyType.MANAGED, 500)
+    policy.add_statements(
+        Statement.S3().allow().to_get_object().on_object('bucket', '*'),
+        Statement.Sqs().allow().to_send_message().on_queue('queue'),
+        Statement.Dynamodb().allow().to_get_item().on_table('table'),
+    )
+    roles = [role(stack)]
+    for index, part in enumerate(policy.split()):
+        iam.Policy(stack, f'Part{index}', document=part, roles=roles)

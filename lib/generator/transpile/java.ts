@@ -1512,11 +1512,16 @@ export class JavaTranspiler {
         const initializer = declaration.getInitializer();
         const name = javaLocalName(declaration.getName());
         const type = this.declaredType(declaration);
-        this.emit(
-          initializer
-            ? `${type} ${name} = ${this.expression(initializer).code};`
-            : `${type} ${name};`,
-        );
+        if (initializer === undefined) {
+          this.emit(`${type} ${name};`);
+        } else if (type != 'Object' && initializer.getType().isAny()) {
+          // a value of type any, assigned to a variable with a type
+          this.emit(
+            `@SuppressWarnings("unchecked") ${type} ${name} = (${type}) ${wrap(this.expression(initializer), Prec.unary)};`,
+          );
+        } else {
+          this.emit(`${type} ${name} = ${this.expression(initializer).code};`);
+        }
       }
     } else if (Node.isExpressionStatement(node)) {
       this.expressionStatement(node.getExpression());
@@ -1777,6 +1782,15 @@ export class JavaTranspiler {
         fail(node, 'Unsupported assignment');
       }
       return `${wrap(this.expression(left.getExpression()), Prec.primary)}.put(${javaString(left.getName())}, ${this.expression(right).code})`;
+    }
+    const declaration = this.declarationOf(left);
+    if (
+      declaration &&
+      this.declaredType(declaration) == 'int' &&
+      ['double', 'Number'].includes(this.exprType(right))
+    ) {
+      // a number of a public parameter, assigned to an internal number
+      return `${this.target(left)} ${operator} ${wrap(this.expression(right), Prec.primary)}.intValue()`;
     }
     return `${this.target(left)} ${operator} ${this.expression(right).code}`;
   }
@@ -2227,6 +2241,9 @@ export class JavaTranspiler {
       return primary(
         `new ArrayList<>(${wrap(this.expression(args[0]), Prec.primary)}.keySet())`,
       );
+    }
+    if (text == 'JSON.stringify' && args.length == 1) {
+      return primary(`Json.stringify(${this.expression(args[0]).code})`);
     }
     if (text == 'Array.isArray') {
       return {

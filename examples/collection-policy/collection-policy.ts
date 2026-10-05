@@ -1,13 +1,11 @@
 import { deploy } from '../../helper/typescript/typescript_test';
-import { Collection } from '../../lib';
+import { Collection, Policy } from '../../lib';
 
 function getPolicy() {
   function wrap() {
     // doc-start
-    const policy = {
-      Version: '2012-10-17',
-      Statement: [...new Collection().allowEc2InstanceDeleteByOwner()],
-    };
+    const policy = new Policy();
+    policy.addStatements(...new Collection().allowEc2InstanceDeleteByOwner());
     // doc-end
     return policy;
   }
@@ -18,4 +16,4 @@ const policy = getPolicy();
 const str = JSON.stringify(policy, null, 4);
 console.log(str);
 
-deploy(policy.Statement);
+deploy(new Collection().allowEc2InstanceDeleteByOwner());

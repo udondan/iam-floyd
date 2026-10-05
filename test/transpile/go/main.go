@@ -19,8 +19,6 @@ import (
 	"strings"
 	"time"
 
-	"floydtest/awsiam"
-
 	"udondan.github.io/iam-floyd/go/iamfloyd"
 )
 
@@ -104,15 +102,25 @@ func newService(name string, sid *string) *Service {
 }
 
 type scenario struct {
-	Name    string              `json:"name"`
-	Sid     *string             `json:"sid"`
-	Class   *string             `json:"class"`
-	Service *string             `json:"service"`
-	Calls   [][]json.RawMessage `json:"calls"`
+	Name       string              `json:"name"`
+	Sid        *string             `json:"sid"`
+	Class      *string             `json:"class"`
+	Service    *string             `json:"service"`
+	Calls      [][]json.RawMessage `json:"calls"`
+	Policy     *policyOptions      `json:"policy"`
+	Statements []scenario          `json:"statements"`
+}
+
+type policyOptions struct {
+	Type            *string  `json:"type"`
+	MaximumSize     *float64 `json:"maximumSize"`
+	ArnSizeEstimate *int     `json:"arnSizeEstimate"`
 }
 
 // runScenarios prints one line per scenario: the name, a tab and the statement as JSON (or ERROR
-// and the message)
+// and the message). For a scenario with a policy of statements: the maximum size, the estimated
+// size, the result of validate (OK or the error), the policy as JSON and the policies of split as
+// JSON array (or the error), separated by tabs
 func runScenarios(path string) {
 	data, err := os.ReadFile(path)
 	if err != nil {
@@ -127,12 +135,54 @@ func runScenarios(path string) {
 	}
 }
 
-func runScenario(s scenario) (result string) {
+func runScenario(s scenario) string {
+	return attempt(func() string {
+		if s.Policy != nil {
+			return runPolicy(s)
+		}
+		return toJSON(build(s))
+	})
+}
+
+// attempt returns the result of a function, or ERROR and the message if it panics
+func attempt(fn func() string) (result string) {
 	defer func() {
 		if r := recover(); r != nil {
 			result = "ERROR " + message(r)
 		}
 	}()
+	return fn()
+}
+
+func runPolicy(s scenario) string {
+	policy := iamfloyd.NewPolicy(s.Policy.Type, s.Policy.MaximumSize)
+	if s.Policy.ArnSizeEstimate != nil {
+		policy.ArnSizeEstimate = *s.Policy.ArnSizeEstimate
+	}
+	for _, statement := range s.Statements {
+		policy.AddStatements(build(statement).(iamfloyd.IPolicyStatement))
+	}
+	validate := attempt(func() string {
+		policy.Validate()
+		return "OK"
+	})
+	split := attempt(func() string {
+		parts := []string{}
+		for _, part := range policy.Split() {
+			parts = append(parts, toJSON(part))
+		}
+		return "[" + strings.Join(parts, ",") + "]"
+	})
+	return strings.Join([]string{
+		fmt.Sprint(policy.MaximumSize),
+		fmt.Sprint(policy.EstimateSize()),
+		validate,
+		toJSON(policy),
+		split,
+	}, "\t")
+}
+
+func build(s scenario) any {
 	var statement any
 	switch {
 	case s.Class != nil:
@@ -153,7 +203,7 @@ func runScenario(s scenario) (result string) {
 		}
 		invoke(statement, name, args)
 	}
-	return toJSON(statement)
+	return statement
 }
 
 // decode decodes an argument into the types of the public API: pointers, lists of pointers, and
@@ -264,8 +314,8 @@ func invoke(target any, name string, args []any) any {
 	return results[0].Interface()
 }
 
-// runExamples prints one line per example: the name, a tab and the statements or the policy
-// document as JSON (or FAIL)
+// runExamples prints one line per example: the name, a tab and the statements, the policy or the
+// policies as JSON (or FAIL)
 func runExamples() {
 	names := make([]string, 0, len(examples))
 	for name := range examples {
@@ -284,11 +334,9 @@ func runExample(name string) (result string) {
 		}
 	}()
 	switch r := examples[name]().(type) {
-	case *awsiam.PolicyDocument:
-		return toJSON(r.ToJSON())
-	// a policy of the policy converter
-	case map[string]interface{}:
+	case *iamfloyd.Policy:
 		return toJSON(r)
+	// statements, or the policies of a split
 	default:
 		value := reflect.ValueOf(r)
 		if value.Kind() != reflect.Slice {

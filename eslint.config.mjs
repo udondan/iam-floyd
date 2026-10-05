@@ -88,8 +88,8 @@ export default defineConfig(
   },
   {
     // The layers call methods of the base class of the variant, which the standalone variant
-    // doesn't have
-    files: ['lib/shared/policy-statement/*.ts'],
+    // doesn't have, and handle the JSON of statements, which is any in the CDK variant
+    files: ['lib/shared/policy-statement/*.ts', 'lib/shared/policy/*.ts'],
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-this-alias': 'off',
