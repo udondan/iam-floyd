@@ -6,8 +6,7 @@ static class ExampleFullCdkPolicy
     public static object Example()
     {
         // doc-start
-        var policy = new ManagedPolicyDocument();
-        policy.AddStatements(
+        var policy = new ManagedPolicyDocument(
             // allow all CFN actions
             new Statement.Cloudformation()
                 .Allow()

@@ -4,8 +4,7 @@ import com.udondan.iamFloyd.cdk.statement.Ec2;
 class ExampleFullEc2StopByOwner {
   static Object example() {
     // doc-start
-    ManagedPolicyDocument policy = new ManagedPolicyDocument();
-    policy.addStatements(
+    ManagedPolicyDocument policy = new ManagedPolicyDocument(
         new Ec2()
             .allow()
             .toStartInstances()

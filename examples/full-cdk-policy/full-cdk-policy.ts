@@ -3,8 +3,7 @@ import { ManagedPolicyDocument, Statement } from '../../lib';
 function getPolicy() {
   function wrap() {
     // doc-start
-    const policy = new ManagedPolicyDocument();
-    policy.addStatements(
+    const policy = new ManagedPolicyDocument(
       new Statement.Cloudformation() // allow all CFN actions
         .allow()
         .allActions(),

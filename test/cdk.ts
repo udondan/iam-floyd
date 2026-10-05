@@ -46,7 +46,6 @@ export class TestStack extends Stack {
       ],
     });
 
-    const document = new ManagedPolicyDocument();
     const statements = [
       new Statement.Sqs({ sid: 'Queue' })
         .allow()
@@ -55,7 +54,7 @@ export class TestStack extends Stack {
         .onQueue(`${this.stackName}-queue`),
       new Statement.Ec2().deny().allActions().ifAwsRequestedRegion('eu-west-1'),
     ];
-    document.addStatements(...statements);
+    const document = new ManagedPolicyDocument(...statements);
     checkEstimate(document, statements);
     new aws_iam.ManagedPolicy(this, 'Document', {
       managedPolicyName: `${this.stackName}-testdocument`,

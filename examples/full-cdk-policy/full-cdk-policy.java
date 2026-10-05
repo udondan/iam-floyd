@@ -8,8 +8,7 @@ import com.udondan.iamFloyd.cdk.statement.S3;
 class ExampleFullCdkPolicy {
   static Object example() {
     // doc-start
-    ManagedPolicyDocument policy = new ManagedPolicyDocument();
-    policy.addStatements(
+    ManagedPolicyDocument policy = new ManagedPolicyDocument(
         // allow all CFN actions
         new Cloudformation()
             .allow()

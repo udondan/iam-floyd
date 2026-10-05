@@ -9,8 +9,7 @@ import (
 func init() {
 	examples["full-cdk-policy"] = func() any {
 		// doc-start
-		policy := cdkiamfloyd.NewManagedPolicyDocument()
-		policy.AddStatements(
+		policy := cdkiamfloyd.NewManagedPolicyDocument(
 			// allow all CFN actions
 			statement.NewCloudformation(nil).
 				Allow().

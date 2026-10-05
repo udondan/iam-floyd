@@ -1,3 +1,4 @@
+using System.Linq;
 using CDK.IAM.Floyd;
 
 static class ExampleCollectionPolicy
@@ -5,11 +6,8 @@ static class ExampleCollectionPolicy
     public static object Example()
     {
         // doc-start
-        var policy = new ManagedPolicyDocument();
-        foreach (var statement in new Collection().AllowEc2InstanceDeleteByOwner())
-        {
-            policy.AddStatements(statement);
-        }
+        var policy = new ManagedPolicyDocument(
+            new Collection().AllowEc2InstanceDeleteByOwner().ToArray());
         // doc-end
         return policy;
     }

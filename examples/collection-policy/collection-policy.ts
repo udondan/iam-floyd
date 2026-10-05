@@ -4,8 +4,9 @@ import { Collection, ManagedPolicyDocument } from '../../lib';
 function getPolicy() {
   function wrap() {
     // doc-start
-    const policy = new ManagedPolicyDocument();
-    policy.addStatements(...new Collection().allowEc2InstanceDeleteByOwner());
+    const policy = new ManagedPolicyDocument(
+      ...new Collection().allowEc2InstanceDeleteByOwner(),
+    );
     // doc-end
     return policy;
   }

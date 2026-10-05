@@ -3,8 +3,7 @@ from cdk_iam_floyd import ManagedPolicyDocument, Statement
 
 def example():
     # doc-start
-    policy = ManagedPolicyDocument()
-    policy.add_statements(
+    policy = ManagedPolicyDocument(
         Statement.Ec2()
             .allow()
             .to_start_instances()
