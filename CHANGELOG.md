@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.850.0](https://github.com/udondan/iam-floyd/compare/v0.849.0...v0.850.0) (2026-10-05)
+
+
+### Features
+
+* methods for the global condition keys added to the AWS docs ([#2317](https://github.com/udondan/iam-floyd/issues/2317)) ([3659867](https://github.com/udondan/iam-floyd/commit/3659867a86c8ce651372b489f69df6308cdd90ff))
+
 ## [0.849.0](https://github.com/udondan/iam-floyd/compare/v0.848.0...v0.849.0) (2026-10-04)
 
 
