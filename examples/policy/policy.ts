@@ -1,14 +1,15 @@
-import { Policy, PolicyType, Statement } from '../../lib';
+import { InlineRolePolicyDocument, Statement } from '../../lib';
 
 function getPolicy() {
   function wrap() {
     // doc-start
-    const policy = new Policy(PolicyType.inlineRole);
-    policy.addStatements(
+    const policy = new InlineRolePolicyDocument(
       new Statement.S3() //
         .allow()
         .toGetObject()
         .on('arn:aws:s3:::example-bucket/*'),
+    );
+    policy.addStatements(
       new Statement.Sqs()
         .allow()
         .toSendMessage()

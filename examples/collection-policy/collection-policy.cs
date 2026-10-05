@@ -5,7 +5,7 @@ static class ExampleCollectionPolicy
     public static object Example()
     {
         // doc-start
-        var policy = new Policy();
+        var policy = new ManagedPolicyDocument();
         foreach (var statement in new Collection().AllowEc2InstanceDeleteByOwner())
         {
             policy.AddStatements(statement);

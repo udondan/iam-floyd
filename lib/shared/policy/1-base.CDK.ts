@@ -1,8 +1,11 @@
 // This file is used in the CDK variant of the package: cdk-iam-floyd
 import { aws_iam as iam, Token } from 'aws-cdk-lib';
 
+// the type of the statements, which is the PolicyStatement of iam-floyd in the base variant
+export { PolicyStatement } from 'aws-cdk-lib/aws-iam';
+
 /**
- * Base class for the Policy
+ * Base class for the PolicyDocument
  */
 export class PolicyBase extends iam.PolicyDocument {
   /**

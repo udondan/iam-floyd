@@ -1,10 +1,10 @@
-import com.udondan.iamFloyd.cdk.Policy;
+import com.udondan.iamFloyd.cdk.ManagedPolicyDocument;
 import com.udondan.iamFloyd.cdk.statement.Ec2;
 
 class ExampleFullEc2StopByOwner {
   static Object example() {
     // doc-start
-    Policy policy = new Policy();
+    ManagedPolicyDocument policy = new ManagedPolicyDocument();
     policy.addStatements(
         new Ec2()
             .allow()

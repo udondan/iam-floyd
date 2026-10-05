@@ -18,7 +18,7 @@ import * as vm from 'vm';
 
 import { App, Stack } from 'aws-cdk-lib';
 
-import { Policy, Statement } from '../../lib';
+import { ManagedPolicyDocument, Statement } from '../../lib';
 
 interface Result {
   imports: string;
@@ -71,7 +71,7 @@ if (!['CDK', 'Standalone'].includes(variant)) {
 }
 const cdk = variant === 'CDK';
 const stack = cdk ? new Stack(new App(), 'Stack') : undefined;
-const context = vm.createContext({ Policy, Statement });
+const context = vm.createContext({ ManagedPolicyDocument, Statement });
 
 /**
  * Converts the policy to JavaScript and returns the policy of the code
@@ -88,7 +88,7 @@ function run(policy: unknown): Json {
   const value = vm.runInContext(
     `(() => {\n${result.code}\nreturn policy;\n})()`,
     context,
-  ) as Policy;
+  ) as ManagedPolicyDocument;
   if (stack) {
     return unresolve(stack.resolve(value.toJSON())) as Json;
   }

@@ -6,7 +6,25 @@ import importlib
 from typing import TYPE_CHECKING, Any
 
 from . import statement as Statement  # noqa: N812
-from ._shared import Operator, Policy, PolicyStatement, PolicyType
+from ._shared import (
+    InlineGroupPolicyDocument,
+    InlineRolePolicyDocument,
+    InlineUserPolicyDocument,
+    KmsKeyPolicyDocument,
+    LambdaFunctionPolicyDocument,
+    ManagedPolicyDocument,
+    Operator,
+    PolicyDocument,
+    PolicyStatement,
+    ResourceControlPolicyDocument,
+    S3BucketPolicyDocument,
+    SecretsManagerSecretPolicyDocument,
+    ServiceControlPolicyDocument,
+    SessionPolicyDocument,
+    SnsTopicPolicyDocument,
+    SqsQueuePolicyDocument,
+    TrustPolicyDocument,
+)
 from ._version import __version__
 
 if TYPE_CHECKING:
@@ -22,11 +40,24 @@ _MODULES = {
 __all__ = [
     'AwsManagedPolicy',
     'Collection',
+    'InlineGroupPolicyDocument',
+    'InlineRolePolicyDocument',
+    'InlineUserPolicyDocument',
+    'KmsKeyPolicyDocument',
+    'LambdaFunctionPolicyDocument',
+    'ManagedPolicyDocument',
     'Operator',
-    'Policy',
+    'PolicyDocument',
     'PolicyStatement',
-    'PolicyType',
+    'ResourceControlPolicyDocument',
+    'S3BucketPolicyDocument',
+    'SecretsManagerSecretPolicyDocument',
+    'ServiceControlPolicyDocument',
+    'SessionPolicyDocument',
+    'SnsTopicPolicyDocument',
+    'SqsQueuePolicyDocument',
     'Statement',
+    'TrustPolicyDocument',
     '__version__',
 ]
 

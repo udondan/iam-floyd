@@ -1,3 +1,4 @@
+using System.Linq;
 using CDK.IAM.Floyd;
 using Statement = CDK.IAM.Floyd.Statement;
 
@@ -6,22 +7,25 @@ static class ExamplePolicySplit
     public static object Example()
     {
         // doc-start
-        var policy = new Policy(PolicyType.MANAGED, 300);
-        policy.AddStatements(
+        var buckets = Enumerable.Range(1, 50).Select(i => $"arn:aws:s3:::example-bucket-{i}/*").ToArray();
+        var policy = new ManagedPolicyDocument(
             new Statement.S3()
                 .Allow()
                 .ToGetObject()
-                .On("arn:aws:s3:::example-bucket/*"),
-            new Statement.Sqs()
+                .On(buckets),
+            new Statement.S3()
                 .Allow()
-                .ToSendMessage()
-                .On("arn:aws:sqs:us-east-1:123456789012:example-queue"),
-            new Statement.Dynamodb()
+                .ToPutObject()
+                .On(buckets),
+            new Statement.S3()
                 .Allow()
-                .ToGetItem()
-                .ToQuery()
-                .On("arn:aws:dynamodb:us-east-1:123456789012:table/example-table"));
-        var policies = policy.Split(); // two policies of at most 300 characters each
+                .ToDeleteObject()
+                .On(buckets),
+            new Statement.S3()
+                .Allow()
+                .ToGetObjectTagging()
+                .On(buckets));
+        var policies = policy.Split(); // two policies of at most 6,144 characters each
         // doc-end
         return policies;
     }

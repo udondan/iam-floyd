@@ -6,7 +6,7 @@ static class ExampleFullEc2StopByOwner
     public static object Example()
     {
         // doc-start
-        var policy = new Policy();
+        var policy = new ManagedPolicyDocument();
         policy.AddStatements(
             new Statement.Ec2()
                 .Allow()

@@ -27,7 +27,7 @@ sys.modules['cdk_iam_floyd'] = iam_floyd
 
 
 def resolve(result):
-    if isinstance(result, iam_floyd.Policy):
+    if isinstance(result, iam_floyd.PolicyDocument):
         return result.to_json()
     if not isinstance(result, list):
         result = [result]

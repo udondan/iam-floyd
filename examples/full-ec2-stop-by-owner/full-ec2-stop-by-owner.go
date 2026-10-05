@@ -9,7 +9,7 @@ import (
 func init() {
 	examples["full-ec2-stop-by-owner"] = func() any {
 		// doc-start
-		policy := cdkiamfloyd.NewPolicy(cdkiamfloyd.PolicyType_MANAGED, nil)
+		policy := cdkiamfloyd.NewManagedPolicyDocument()
 		policy.AddStatements(
 			statement.NewEc2(nil).
 				Allow().

@@ -1,10 +1,10 @@
 import com.udondan.iamFloyd.cdk.Collection;
-import com.udondan.iamFloyd.cdk.Policy;
+import com.udondan.iamFloyd.cdk.ManagedPolicyDocument;
 
 class ExampleCollectionPolicy {
   static Object example() {
     // doc-start
-    Policy policy = new Policy();
+    ManagedPolicyDocument policy = new ManagedPolicyDocument();
     for (var statement : new Collection().allowEc2InstanceDeleteByOwner()) {
       policy.addStatements(statement);
     }

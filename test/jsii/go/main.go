@@ -97,9 +97,10 @@ func main() {
 	})
 
 	scenario("i policy used as document", func(stack awscdk.Stack) {
-		policy := cdkiamfloyd.NewPolicy(cdkiamfloyd.PolicyType_INLINE_ROLE, nil)
-		policy.AddStatements(
+		policy := cdkiamfloyd.NewInlineRolePolicyDocument(
 			statement.NewS3(nil).Allow().ToGetObject().OnObject(jsii.String("bucket"), jsii.String("*"), nil),
+		)
+		policy.AddStatements(
 			statement.NewSqs(nil).Allow().ToSendMessage().OnQueue(jsii.String("queue"), nil, nil, nil),
 		)
 		policy.Validate()
@@ -110,12 +111,13 @@ func main() {
 	})
 
 	scenario("j policies of split used as documents", func(stack awscdk.Stack) {
-		policy := cdkiamfloyd.NewPolicy(cdkiamfloyd.PolicyType_MANAGED, jsii.Number(500))
-		policy.AddStatements(
+		policy := cdkiamfloyd.NewManagedPolicyDocument(
 			statement.NewS3(nil).Allow().ToGetObject().OnObject(jsii.String("bucket"), jsii.String("*"), nil),
 			statement.NewSqs(nil).Allow().ToSendMessage().OnQueue(jsii.String("queue"), nil, nil, nil),
 			statement.NewDynamodb(nil).Allow().ToGetItem().OnTable(jsii.String("table"), nil, nil, nil),
 		)
+		// two statements per policy
+		policy.SetArnSizeEstimate(jsii.Number(2500))
 		roles := &[]awsiam.IRole{role(stack)}
 		for index, part := range *policy.Split() {
 			awsiam.NewPolicy(stack, jsii.String(fmt.Sprintf("Part%d", index)), &awsiam.PolicyProps{

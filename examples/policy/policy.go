@@ -9,12 +9,13 @@ import (
 func init() {
 	examples["policy"] = func() any {
 		// doc-start
-		policy := cdkiamfloyd.NewPolicy(cdkiamfloyd.PolicyType_INLINE_ROLE, nil)
-		policy.AddStatements(
+		policy := cdkiamfloyd.NewInlineRolePolicyDocument(
 			statement.NewS3(nil).
 				Allow().
 				ToGetObject().
 				On(jsii.String("arn:aws:s3:::example-bucket/*")),
+		)
+		policy.AddStatements(
 			statement.NewSqs(nil).
 				Allow().
 				ToSendMessage().

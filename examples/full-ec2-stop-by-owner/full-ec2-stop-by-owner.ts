@@ -1,9 +1,9 @@
-import { Policy, Statement } from '../../lib';
+import { ManagedPolicyDocument, Statement } from '../../lib';
 
 function getPolicy() {
   function wrap() {
     // doc-start
-    const policy = new Policy();
+    const policy = new ManagedPolicyDocument();
     policy.addStatements(
       new Statement.Ec2()
         .allow()

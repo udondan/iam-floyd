@@ -4,8 +4,9 @@ import com.example.floydconsumer.ReaderRole;
 import com.example.floydconsumer.ReaderRoleProps;
 import com.example.floydconsumer.Statements;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.udondan.iamFloyd.cdk.Policy;
-import com.udondan.iamFloyd.cdk.PolicyType;
+import com.udondan.iamFloyd.cdk.InlineRolePolicyDocument;
+import com.udondan.iamFloyd.cdk.ManagedPolicyDocument;
+import com.udondan.iamFloyd.cdk.PolicyDocument;
 import com.udondan.iamFloyd.cdk.statement.Dynamodb;
 import com.udondan.iamFloyd.cdk.statement.S3;
 import com.udondan.iamFloyd.cdk.statement.Sqs;
@@ -113,10 +114,9 @@ public class Main {
     scenario(
         "i policy used as document",
         stack -> {
-          Policy policy = new Policy(PolicyType.INLINE_ROLE);
-          policy.addStatements(
-              new S3().allow().toGetObject().onObject("bucket", "*"),
-              new Sqs().allow().toSendMessage().onQueue("queue"));
+          InlineRolePolicyDocument policy =
+              new InlineRolePolicyDocument(new S3().allow().toGetObject().onObject("bucket", "*"));
+          policy.addStatements(new Sqs().allow().toSendMessage().onQueue("queue"));
           policy.validate();
           new software.amazon.awscdk.services.iam.Policy(
               stack,
@@ -127,13 +127,15 @@ public class Main {
     scenario(
         "j policies of split used as documents",
         stack -> {
-          Policy policy = new Policy(PolicyType.MANAGED, 500);
-          policy.addStatements(
-              new S3().allow().toGetObject().onObject("bucket", "*"),
-              new Sqs().allow().toSendMessage().onQueue("queue"),
-              new Dynamodb().allow().toGetItem().onTable("table"));
+          ManagedPolicyDocument policy =
+              new ManagedPolicyDocument(
+                  new S3().allow().toGetObject().onObject("bucket", "*"),
+                  new Sqs().allow().toSendMessage().onQueue("queue"),
+                  new Dynamodb().allow().toGetItem().onTable("table"));
+          // two statements per policy
+          policy.setArnSizeEstimate(2500);
           List<IRole> roles = List.of(role(stack));
-          List<Policy> parts = policy.split();
+          List<PolicyDocument> parts = policy.split();
           for (int index = 0; index < parts.size(); index++) {
             new software.amazon.awscdk.services.iam.Policy(
                 stack,

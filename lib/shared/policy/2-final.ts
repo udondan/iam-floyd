@@ -1,69 +1,19 @@
-import { PolicyBase } from './1-base';
+import { PolicyBase, PolicyStatement } from './1-base';
 
 /**
- * Types of policies, which have different maximum sizes
+ * Represents an IAM policy document with a maximum size
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length
- */
-export enum PolicyType {
-  /**
-   * Customer managed policy, also used as permissions boundary: 6,144 characters
-   */
-  managed = 'managed',
-
-  /**
-   * Inline policies of a user: 2,048 characters, for all inline policies of the user together
-   */
-  inlineUser = 'inlineUser',
-
-  /**
-   * Inline policies of a group: 5,120 characters, for all inline policies of the group together
-   */
-  inlineGroup = 'inlineGroup',
-
-  /**
-   * Inline policies of a role: 10,240 characters, for all inline policies of the role together
-   */
-  inlineRole = 'inlineRole',
-
-  /**
-   * Trust policy of a role: 2,048 characters. The quota can be increased up to 8,192 characters,
-   * pass the increased quota as maximum size.
-   */
-  trust = 'trust',
-
-  /**
-   * Session policy: 2,048 characters, together with the ARNs of the passed managed policies
-   */
-  session = 'session',
-
-  /**
-   * Service control policy (SCP) of AWS Organizations: 10,240 characters
-   */
-  scp = 'scp',
-
-  /**
-   * Resource control policy (RCP) of AWS Organizations: 5,120 characters
-   */
-  rcp = 'rcp',
-}
-
-/**
- * Represents an IAM policy document
+ * The classes of the types of policies, like `ManagedPolicyDocument`, know their maximum size. Use
+ * this class for a maximum size of your own, e.g. for a raised quota of a trust policy.
  *
  * The size of the policy is estimated in the same way as the AWS CDK does, as the values can contain
  * tokens, which are only resolved on deployment. White space is not counted, like in IAM.
  */
-export class Policy extends PolicyBase {
-  /**
-   * The type of the policy, which defines the default of the maximum size
-   */
-  public policyType = PolicyType.managed;
-
+export class PolicyDocument extends PolicyBase {
   /**
    * The maximum size of the policy in characters
    */
-  public maximumSize = 6144;
+  public maximumSize = 0;
 
   /**
    * The estimated size of an ARN (or principal) that contains tokens, which are only resolved on
@@ -82,17 +32,14 @@ export class Policy extends PolicyBase {
   private documentSize = 39;
 
   /**
-   * @param policyType The type of the policy, which defines the maximum size. **Default:** `managed`
-   * @param maximumSize The maximum size of the policy in characters. **Default:** the maximum size of the policy type
+   * @param maximumSize The maximum size of the policy in characters
+   * @param statements The statements of the policy
    */
-  constructor(policyType?: PolicyType, maximumSize?: number) {
+  constructor(maximumSize: number, ...statements: PolicyStatement[]) {
     super();
-    if (typeof policyType !== 'undefined') {
-      this.policyType = policyType;
-    }
-    this.maximumSize = this.defaultMaximumSize();
-    if (typeof maximumSize !== 'undefined') {
-      this.maximumSize = maximumSize;
+    this.maximumSize = maximumSize;
+    for (const statement of statements) {
+      this.addStatements(statement);
     }
   }
 
@@ -130,14 +77,10 @@ export class Policy extends PolicyBase {
    * Splits the statements into as many policies as needed to stay within the maximum size
    *
    * Each statement is added to the first policy that has enough space left, like in the AWS CDK.
-   * The policies have the same type and maximum size as this policy.
-   *
-   * Note that the maximum size of inline policies applies to all inline policies of a user, group or
-   * role together, so splitting them into several inline policies does not help. Use managed
-   * policies instead.
+   * The policies have the same maximum size as this policy.
    */
-  public split(): Policy[] {
-    const policies: Policy[] = [];
+  protected splitDocument(): PolicyDocument[] {
+    const policies: PolicyDocument[] = [];
     let index = 0;
     for (const statement of this.statementList()) {
       index++;
@@ -155,7 +98,7 @@ export class Policy extends PolicyBase {
         }
       }
       if (!added) {
-        const policy = new Policy(this.policyType, this.maximumSize);
+        const policy = new PolicyDocument(this.maximumSize);
         policy.inherit(this);
         policy.addStatements(statement);
         policies.push(policy);
@@ -167,33 +110,8 @@ export class Policy extends PolicyBase {
   /**
    * Takes the settings of the policy that is split
    */
-  private inherit(policy: Policy) {
+  private inherit(policy: PolicyDocument) {
     this.arnSizeEstimate = policy.arnSizeEstimate;
-  }
-
-  private defaultMaximumSize(): number {
-    if (this.policyType == PolicyType.inlineUser) {
-      return 2048;
-    }
-    if (this.policyType == PolicyType.inlineGroup) {
-      return 5120;
-    }
-    if (this.policyType == PolicyType.inlineRole) {
-      return 10240;
-    }
-    if (this.policyType == PolicyType.trust) {
-      return 2048;
-    }
-    if (this.policyType == PolicyType.session) {
-      return 2048;
-    }
-    if (this.policyType == PolicyType.scp) {
-      return 10240;
-    }
-    if (this.policyType == PolicyType.rcp) {
-      return 5120;
-    }
-    return 6144;
   }
 
   /**

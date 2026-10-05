@@ -1,4 +1,4 @@
-import com.udondan.iamFloyd.cdk.Policy;
+import com.udondan.iamFloyd.cdk.ManagedPolicyDocument;
 import com.udondan.iamFloyd.cdk.statement.Account;
 import com.udondan.iamFloyd.cdk.statement.All;
 import com.udondan.iamFloyd.cdk.statement.Cloudformation;
@@ -8,7 +8,7 @@ import com.udondan.iamFloyd.cdk.statement.S3;
 class ExampleFullCdkPolicy {
   static Object example() {
     // doc-start
-    Policy policy = new Policy();
+    ManagedPolicyDocument policy = new ManagedPolicyDocument();
     policy.addStatements(
         // allow all CFN actions
         new Cloudformation()

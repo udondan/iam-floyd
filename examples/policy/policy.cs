@@ -6,12 +6,12 @@ static class ExamplePolicy
     public static object Example()
     {
         // doc-start
-        var policy = new Policy(PolicyType.INLINE_ROLE);
-        policy.AddStatements(
+        var policy = new InlineRolePolicyDocument(
             new Statement.S3()
                 .Allow()
                 .ToGetObject()
-                .On("arn:aws:s3:::example-bucket/*"),
+                .On("arn:aws:s3:::example-bucket/*"));
+        policy.AddStatements(
             new Statement.Sqs()
                 .Allow()
                 .ToSendMessage()

@@ -1,25 +1,31 @@
-import { Policy, PolicyType, Statement } from '../../lib';
+import { ManagedPolicyDocument, Statement } from '../../lib';
 
 function getPolicies() {
   function wrap() {
     // doc-start
-    const policy = new Policy(PolicyType.managed, 300);
-    policy.addStatements(
-      new Statement.S3() //
+    const buckets: string[] = [];
+    for (let i = 1; i <= 50; i++) {
+      buckets.push(`arn:aws:s3:::example-bucket-${i}/*`);
+    }
+    const policy = new ManagedPolicyDocument(
+      new Statement.S3()
         .allow()
         .toGetObject()
-        .on('arn:aws:s3:::example-bucket/*'),
-      new Statement.Sqs()
+        .on(...buckets),
+      new Statement.S3()
         .allow()
-        .toSendMessage()
-        .on('arn:aws:sqs:us-east-1:123456789012:example-queue'),
-      new Statement.Dynamodb()
+        .toPutObject()
+        .on(...buckets),
+      new Statement.S3()
         .allow()
-        .toGetItem()
-        .toQuery()
-        .on('arn:aws:dynamodb:us-east-1:123456789012:table/example-table'),
+        .toDeleteObject()
+        .on(...buckets),
+      new Statement.S3()
+        .allow()
+        .toGetObjectTagging()
+        .on(...buckets),
     );
-    const policies = policy.split(); // two policies of at most 300 characters each
+    const policies = policy.split(); // two policies of at most 6,144 characters each
     // doc-end
     return policies;
   }

@@ -6,7 +6,11 @@ import {
   Stack,
   StackProps,
 } from 'aws-cdk-lib';
-import { AwsManagedPolicy, Policy, Statement } from 'cdk-iam-floyd';
+import {
+  AwsManagedPolicy,
+  ManagedPolicyDocument,
+  Statement,
+} from 'cdk-iam-floyd';
 import { Construct } from 'constructs';
 
 export class TestStack extends Stack {
@@ -42,7 +46,7 @@ export class TestStack extends Stack {
       ],
     });
 
-    const document = new Policy();
+    const document = new ManagedPolicyDocument();
     const statements = [
       new Statement.Sqs({ sid: 'Queue' })
         .allow()
@@ -89,7 +93,7 @@ export class TestStack extends Stack {
  * the AWS CDK changes, as the estimate of the policy must then be adjusted.
  */
 function checkEstimate(
-  document: Policy,
+  document: ManagedPolicyDocument,
   statements: aws_iam.PolicyStatement[],
 ) {
   // first, as it applies the values of the statements to the AWS CDK

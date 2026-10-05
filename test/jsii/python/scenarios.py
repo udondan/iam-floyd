@@ -10,7 +10,7 @@ import aws_cdk as cdk
 import floyd_consumer
 from aws_cdk import aws_iam as iam
 from aws_cdk.assertions import Template
-from cdk_iam_floyd import Policy, PolicyType, Statement
+from cdk_iam_floyd import InlineRolePolicyDocument, ManagedPolicyDocument, Statement
 
 
 def scenario(name):
@@ -89,9 +89,10 @@ def _(stack):
 
 @scenario('i policy used as document')
 def _(stack):
-    policy = Policy(PolicyType.INLINE_ROLE)
-    policy.add_statements(
+    policy = InlineRolePolicyDocument(
         Statement.S3().allow().to_get_object().on_object('bucket', '*'),
+    )
+    policy.add_statements(
         Statement.Sqs().allow().to_send_message().on_queue('queue'),
     )
     policy.validate()
@@ -100,12 +101,13 @@ def _(stack):
 
 @scenario('j policies of split used as documents')
 def _(stack):
-    policy = Policy(PolicyType.MANAGED, 500)
-    policy.add_statements(
+    policy = ManagedPolicyDocument(
         Statement.S3().allow().to_get_object().on_object('bucket', '*'),
         Statement.Sqs().allow().to_send_message().on_queue('queue'),
         Statement.Dynamodb().allow().to_get_item().on_table('table'),
     )
+    # two statements per policy
+    policy.arn_size_estimate = 2500
     roles = [role(stack)]
     for index, part in enumerate(policy.split()):
         iam.Policy(stack, f'Part{index}', document=part, roles=roles)

@@ -1,10 +1,10 @@
 import { deploy } from '../../helper/typescript/typescript_test';
-import { Collection, Policy } from '../../lib';
+import { Collection, ManagedPolicyDocument } from '../../lib';
 
 function getPolicy() {
   function wrap() {
     // doc-start
-    const policy = new Policy();
+    const policy = new ManagedPolicyDocument();
     policy.addStatements(...new Collection().allowEc2InstanceDeleteByOwner());
     // doc-end
     return policy;

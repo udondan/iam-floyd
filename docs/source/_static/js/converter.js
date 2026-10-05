@@ -373,11 +373,11 @@ var PolicyConverter = (function () {
     },
     policy(statements) {
       const list = indent(statements.join(',\n'), '  ');
-      return `const policy = new Policy();\npolicy.addStatements(\n${list},\n);`;
+      return `const policy = new ManagedPolicyDocument(\n${list},\n);`;
     },
     imports(context) {
       const pkg = context.cdk ? 'cdk-iam-floyd' : 'iam-floyd';
-      return declaration('Policy, Statement', pkg);
+      return declaration('ManagedPolicyDocument, Statement', pkg);
     },
   });
 
@@ -405,11 +405,11 @@ var PolicyConverter = (function () {
     },
     policy(statements) {
       const list = indent(statements.join(',\n'), '    ');
-      return `policy = Policy()\npolicy.add_statements(\n${list},\n)`;
+      return `policy = ManagedPolicyDocument(\n${list},\n)`;
     },
     imports(context) {
       const pkg = context.cdk ? 'cdk_iam_floyd' : 'iam_floyd';
-      return `from ${pkg} import Policy, Statement`;
+      return `from ${pkg} import ManagedPolicyDocument, Statement`;
     },
   };
 
@@ -443,14 +443,14 @@ var PolicyConverter = (function () {
     },
     policy(statements) {
       const list = indent(statements.join(',\n'), '    ');
-      return `Policy policy = new Policy();\npolicy.addStatements(\n${list});`;
+      return `ManagedPolicyDocument policy = new ManagedPolicyDocument(\n${list});`;
     },
     imports(context) {
       const pkg = context.cdk
         ? 'com.udondan.iamFloyd.cdk'
         : 'com.udondan.iamFloyd';
       const imports = [...context.classes].map((c) => `${pkg}.statement.${c}`);
-      imports.push(`${pkg}.Policy`);
+      imports.push(`${pkg}.ManagedPolicyDocument`);
       if (context.listUsed) {
         imports.push('java.util.List');
       }
@@ -483,11 +483,11 @@ var PolicyConverter = (function () {
     },
     policy(statements) {
       const list = indent(statements.join(',\n'), '    ');
-      return `var policy = new Policy();\npolicy.AddStatements(\n${list});`;
+      return `var policy = new ManagedPolicyDocument(\n${list});`;
     },
     imports(context) {
       const namespace = context.cdk ? 'CDK.IAM.Floyd' : 'IAM.Floyd';
-      return `using Policy = ${namespace}.Policy;\nusing Statement = ${namespace}.Statement;`;
+      return `using ${namespace};\nusing Statement = ${namespace}.Statement;`;
     },
   };
 
@@ -516,10 +516,8 @@ var PolicyConverter = (function () {
     },
     policy(statements, context) {
       const list = indent(statements.join(',\n'), '\t');
-      const constructor = context.cdk
-        ? 'cdkiamfloyd.NewPolicy("", nil)'
-        : 'iamfloyd.NewPolicy(nil, nil)';
-      return `policy := ${constructor}\npolicy.AddStatements(\n${list},\n)`;
+      const pkg = context.cdk ? 'cdkiamfloyd' : 'iamfloyd';
+      return `policy := ${pkg}.NewManagedPolicyDocument(\n${list},\n)`;
     },
     imports(context) {
       const imports = context.cdk

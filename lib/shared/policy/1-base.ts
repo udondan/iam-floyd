@@ -1,8 +1,11 @@
 // This file is used in the base variant of the package: iam-floyd
 import { PolicyStatement } from '../policy-statement';
 
+// the type of the statements, which is aws_iam.PolicyStatement in the CDK variant
+export { PolicyStatement } from '../policy-statement';
+
 /**
- * Base class for the Policy
+ * Base class for the PolicyDocument
  */
 export class PolicyBase {
   private floydStatements: PolicyStatement[] = [];

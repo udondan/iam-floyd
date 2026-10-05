@@ -1,24 +1,27 @@
-from cdk_iam_floyd import Policy, PolicyType, Statement
+from cdk_iam_floyd import ManagedPolicyDocument, Statement
 
 
 def example():
     # doc-start
-    policy = Policy(PolicyType.MANAGED, 300)
-    policy.add_statements(
+    buckets = [f'arn:aws:s3:::example-bucket-{i}/*' for i in range(1, 51)]
+    policy = ManagedPolicyDocument(
         Statement.S3()
             .allow()
             .to_get_object()
-            .on('arn:aws:s3:::example-bucket/*'),
-        Statement.Sqs()
+            .on(*buckets),
+        Statement.S3()
             .allow()
-            .to_send_message()
-            .on('arn:aws:sqs:us-east-1:123456789012:example-queue'),
-        Statement.Dynamodb()
+            .to_put_object()
+            .on(*buckets),
+        Statement.S3()
             .allow()
-            .to_get_item()
-            .to_query()
-            .on('arn:aws:dynamodb:us-east-1:123456789012:table/example-table'),
+            .to_delete_object()
+            .on(*buckets),
+        Statement.S3()
+            .allow()
+            .to_get_object_tagging()
+            .on(*buckets),
     )
-    policies = policy.split()  # two policies of at most 300 characters each
+    policies = policy.split()  # two policies of at most 6,144 characters each
     # doc-end
     return policies

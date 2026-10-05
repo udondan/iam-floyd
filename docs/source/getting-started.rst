@@ -299,8 +299,8 @@ Differences Between the Variants
    * - JSON
      - ``toJSON()`` returns a ``dict`` in Python, a ``Map`` in Java, a ``Dictionary`` in C# and a map in Go. ``Json.stringify(statement)`` in Java, ``Json.Stringify(statement)`` in C# and ``json.Marshal(statement)`` in Go return the JSON of a statement or a list of statements
      - Rendered by the AWS CDK, e.g. in a ``Policy``, which is an `iam.PolicyDocument`_
-   * - Policy
-     - A policy of IAM Floyd. In Go, the type is a string: ``iamfloyd.NewPolicy(iamfloyd.String(iamfloyd.PolicyType_MANAGED), nil)``
+   * - Policy document
+     - A policy document of IAM Floyd, see :doc:`policy`
      - An `iam.PolicyDocument`_ of the AWS CDK, see :doc:`policy`
    * - Dates
      - A ``datetime`` in Python, an ``Instant`` in Java, a ``DateTime`` in C# and a ``time.Time`` in Go, or a string

@@ -1,5 +1,5 @@
 import com.udondan.iamFloyd.Json;
-import com.udondan.iamFloyd.Policy;
+import com.udondan.iamFloyd.PolicyDocument;
 import com.udondan.iamFloyd.PolicyStatement;
 import java.io.ByteArrayOutputStream;
 import java.io.FileDescriptor;
@@ -49,15 +49,17 @@ public final class Examples {
   }
 
   static Object resolve(Object result) {
-    if (result instanceof Policy) {
-      return ((Policy) result).toJSON();
+    if (result instanceof PolicyDocument) {
+      return ((PolicyDocument) result).toJSON();
     }
     // statements, or the policies of a split
     List<?> items = result instanceof List ? (List<?>) result : Collections.singletonList(result);
     List<Object> json = new ArrayList<>();
     for (Object item : items) {
       json.add(
-          item instanceof Policy ? ((Policy) item).toJSON() : ((PolicyStatement<?>) item).toJSON());
+          item instanceof PolicyDocument
+              ? ((PolicyDocument) item).toJSON()
+              : ((PolicyStatement<?>) item).toJSON());
     }
     return json;
   }

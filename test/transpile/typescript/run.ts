@@ -4,13 +4,14 @@
  *
  * Prints one line per scenario: the name, a tab and the statement as JSON (or ERROR and the message). For a
  * scenario with a policy of statements: the maximum size, the estimated size, the result of validate (OK or the
- * error), the policy as JSON and the policies of split as JSON array (or the error), separated by tabs.
+ * error), the policy as JSON and the policies of split as JSON array (or the error, or - for a class without
+ * split), separated by tabs.
  */
 import * as fs from 'fs';
 
 import { AccessLevelList } from '../../../lib/shared/access-level';
 import { Operator } from '../../../lib/shared/operators';
-import { Policy, PolicyType } from '../../../lib/shared/policy';
+import * as Policies from '../../../lib/shared/policy';
 import { PolicyStatement } from '../../../lib/shared/policy-statement';
 import * as Statement from '../../../lib/statements';
 
@@ -27,12 +28,15 @@ interface Scenario {
   sid?: string;
   calls: [string, ...unknown[]][];
   /**
-   * A policy of the statements
+   * A policy of the statements: a class of the policy documents (default `ManagedPolicyDocument`), or a
+   * `PolicyDocument` with a maximum size. The statements are passed to the constructor, or with `add`
+   * to `addStatements`.
    */
   policy?: {
-    type?: PolicyType;
+    class?: string;
     maximumSize?: number;
     arnSizeEstimate?: number;
+    add?: boolean;
   };
   statements?: Scenario[];
 }
@@ -45,6 +49,11 @@ interface Model {
 type Methods = Record<string, (...args: unknown[]) => unknown>;
 
 type Classes = Record<string, new (sid?: string) => PolicyStatement>;
+
+type PolicyClasses = Record<
+  string,
+  new (...statements: PolicyStatement[]) => Policies.PolicyDocument
+>;
 
 /**
  * A service class like the generated ones, built from the model
@@ -114,24 +123,36 @@ function attempt(fn: () => string): string {
 
 function runPolicy(scenario: Scenario): string {
   const options = scenario.policy ?? {};
-  const policy = new Policy(options.type, options.maximumSize);
+  const statements = (scenario.statements ?? []).map((statement) =>
+    build(statement),
+  );
+  const given = options.add ? [] : statements;
+  const policy =
+    options.maximumSize !== undefined
+      ? new Policies.PolicyDocument(options.maximumSize, ...given)
+      : new (Policies as unknown as PolicyClasses)[
+          options.class ?? 'ManagedPolicyDocument'
+        ](...given);
   if (options.arnSizeEstimate !== undefined) {
     policy.arnSizeEstimate = options.arnSizeEstimate;
   }
-  for (const statement of scenario.statements ?? []) {
-    policy.addStatements(build(statement));
+  if (options.add) {
+    policy.addStatements(...statements);
   }
   const validate = attempt(() => {
     policy.validate();
     return 'OK';
   });
-  const split = attempt(
-    () =>
-      `[${policy
-        .split()
-        .map((part) => JSON.stringify(part.toJSON()))
-        .join(',')}]`,
-  );
+  const splittable = policy as Partial<Policies.ManagedPolicyDocument>;
+  const split =
+    splittable.split === undefined
+      ? '-'
+      : attempt(
+          () =>
+            `[${splittable.split!()
+              .map((part) => JSON.stringify(part.toJSON()))
+              .join(',')}]`,
+        );
   return [
     policy.maximumSize,
     policy.estimateSize(),

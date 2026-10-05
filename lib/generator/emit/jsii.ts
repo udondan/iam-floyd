@@ -826,20 +826,6 @@ class SharedExtractor {
       if (enumDeclaration && Node.isEnumDeclaration(enumDeclaration)) {
         return this.namedReference(enumDeclaration, type, context);
       }
-      // with undefined, e.g. of an optional parameter, the union has the members of the enum
-      const memberEnums = new Set(
-        members.map((t) =>
-          t.isEnumLiteral()
-            ? t.getSymbol()?.getDeclarations()[0]?.getParent()
-            : undefined,
-        ),
-      );
-      if (memberEnums.size == 1) {
-        const [memberEnum] = memberEnums;
-        if (memberEnum && Node.isEnumDeclaration(memberEnum)) {
-          return this.namedReference(memberEnum, type, context);
-        }
-      }
       const refs: TypeReference[] = [];
       for (const member of members) {
         const ref = this.typeReference(member, self, context);

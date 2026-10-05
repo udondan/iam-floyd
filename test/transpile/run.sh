@@ -107,13 +107,11 @@ if [[ " ${LANGUAGES[*]} " == *" go "* ]]; then
     fi
     rewrite=(-e 's#"github.com/aws/jsii-runtime-go"#jsii "udondan.github.io/iam-floyd/go/iamfloyd"#'
       -e 's#"github.com/aws/aws-cdk-go/awscdk/v2/awsiam"#"floydtest/awsiam"#'
-      -e 's#&awsiam\.PolicyStatementProps{Sid: \([^}]*\)}#\1#'
-      # the type of the policy is a string
-      -e 's#NewPolicy(cdkiamfloyd\.PolicyType_\([A-Z_]*\)#NewPolicy(cdkiamfloyd.String(cdkiamfloyd.PolicyType_\1)#')
+      -e 's#&awsiam\.PolicyStatementProps{Sid: \([^}]*\)}#\1#')
     if grep -q NewCollection "${example}"; then
       # the collection is in its own package, and returns a slice
       imports='"udondan.github.io/iam-floyd/go/iamfloyd/collection"'
-      if grep -q NewPolicy "${example}"; then
+      if grep -q "PolicyDocument(" "${example}"; then
         imports="\"udondan.github.io/iam-floyd/go/cdkiamfloyd\"; ${imports}"
       fi
       rewrite+=(-e "s#\"udondan.github.io/iam-floyd/go/cdkiamfloyd\"#${imports}#"

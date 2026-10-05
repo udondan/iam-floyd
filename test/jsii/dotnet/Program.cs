@@ -11,8 +11,8 @@ using Amazon.CDK.AWS.IAM;
 using Floyd.Consumer;
 using IamPolicy = Amazon.CDK.AWS.IAM.Policy;
 using IamPolicyStatement = Amazon.CDK.AWS.IAM.PolicyStatement;
-using Policy = CDK.IAM.Floyd.Policy;
-using PolicyType = CDK.IAM.Floyd.PolicyType;
+using InlineRolePolicyDocument = CDK.IAM.Floyd.InlineRolePolicyDocument;
+using ManagedPolicyDocument = CDK.IAM.Floyd.ManagedPolicyDocument;
 using Statement = CDK.IAM.Floyd.Statement;
 
 static Role NewRole(Stack stack) => new Role(stack, "Role", new RoleProps
@@ -83,9 +83,9 @@ Scenario("h statement passed as floyd base class", stack =>
 
 Scenario("i policy used as document", stack =>
 {
-    var policy = new Policy(PolicyType.INLINE_ROLE);
+    var policy = new InlineRolePolicyDocument(
+        new Statement.S3().Allow().ToGetObject().OnObject("bucket", "*"));
     policy.AddStatements(
-        new Statement.S3().Allow().ToGetObject().OnObject("bucket", "*"),
         new Statement.Sqs().Allow().ToSendMessage().OnQueue("queue"));
     policy.Validate();
     new IamPolicy(stack, "Document", new PolicyProps { Document = policy, Roles = new[] { NewRole(stack) } });
@@ -93,11 +93,12 @@ Scenario("i policy used as document", stack =>
 
 Scenario("j policies of split used as documents", stack =>
 {
-    var policy = new Policy(PolicyType.MANAGED, 500);
-    policy.AddStatements(
+    var policy = new ManagedPolicyDocument(
         new Statement.S3().Allow().ToGetObject().OnObject("bucket", "*"),
         new Statement.Sqs().Allow().ToSendMessage().OnQueue("queue"),
         new Statement.Dynamodb().Allow().ToGetItem().OnTable("table"));
+    // two statements per policy
+    policy.ArnSizeEstimate = 2500;
     var roles = new[] { NewRole(stack) };
     var parts = policy.Split();
     for (var index = 0; index < parts.Length; index++)

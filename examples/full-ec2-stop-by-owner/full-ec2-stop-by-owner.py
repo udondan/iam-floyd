@@ -1,9 +1,9 @@
-from cdk_iam_floyd import Policy, Statement
+from cdk_iam_floyd import ManagedPolicyDocument, Statement
 
 
 def example():
     # doc-start
-    policy = Policy()
+    policy = ManagedPolicyDocument()
     policy.add_statements(
         Statement.Ec2()
             .allow()

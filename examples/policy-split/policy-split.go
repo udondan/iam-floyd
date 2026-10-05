@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/aws/jsii-runtime-go"
 	"udondan.github.io/iam-floyd/go/cdkiamfloyd"
 	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
@@ -9,23 +11,29 @@ import (
 func init() {
 	examples["policy-split"] = func() any {
 		// doc-start
-		policy := cdkiamfloyd.NewPolicy(cdkiamfloyd.PolicyType_MANAGED, jsii.Number(300))
-		policy.AddStatements(
+		buckets := []*string{}
+		for i := 1; i <= 50; i++ {
+			buckets = append(buckets, jsii.String(fmt.Sprintf("arn:aws:s3:::example-bucket-%d/*", i)))
+		}
+		policy := cdkiamfloyd.NewManagedPolicyDocument(
 			statement.NewS3(nil).
 				Allow().
 				ToGetObject().
-				On(jsii.String("arn:aws:s3:::example-bucket/*")),
-			statement.NewSqs(nil).
+				On(buckets...),
+			statement.NewS3(nil).
 				Allow().
-				ToSendMessage().
-				On(jsii.String("arn:aws:sqs:us-east-1:123456789012:example-queue")),
-			statement.NewDynamodb(nil).
+				ToPutObject().
+				On(buckets...),
+			statement.NewS3(nil).
 				Allow().
-				ToGetItem().
-				ToQuery().
-				On(jsii.String("arn:aws:dynamodb:us-east-1:123456789012:table/example-table")),
+				ToDeleteObject().
+				On(buckets...),
+			statement.NewS3(nil).
+				Allow().
+				ToGetObjectTagging().
+				On(buckets...),
 		)
-		policies := policy.Split() // two policies of at most 300 characters each
+		policies := policy.Split() // two policies of at most 6,144 characters each
 		// doc-end
 		return policies
 	}

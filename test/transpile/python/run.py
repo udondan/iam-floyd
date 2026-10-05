@@ -3,7 +3,7 @@
 Prints one line per scenario: the name, a tab and the statement as JSON (or ERROR and the
 message). For a scenario with a policy of statements: the maximum size, the estimated size, the
 result of validate (OK or the error), the policy as JSON and the policies of split as JSON array
-(or the error), separated by tabs.
+(or the error, or - for a class without split), separated by tabs.
 
 Usage: run.py <scenarios.json>
 """
@@ -20,7 +20,8 @@ ROOT = Path(__file__).resolve().parents[3]
 if 'IAM_FLOYD_INSTALLED' not in os.environ:
     sys.path.insert(0, str(ROOT / 'python'))
 
-from iam_floyd import Operator, Policy, PolicyStatement, Statement  # noqa: E402
+import iam_floyd  # noqa: E402
+from iam_floyd import Operator, PolicyDocument, PolicyStatement, Statement  # noqa: E402
 
 KEYWORDS = {'if', 'in', 'for'}
 
@@ -92,17 +93,25 @@ def validate(policy):
 
 def run_policy(scenario):
     options = scenario['policy']
-    policy = Policy(options.get('type'), options.get('maximumSize'))
+    statements = [build(statement) for statement in scenario.get('statements', [])]
+    given = [] if options.get('add') else statements
+    if 'maximumSize' in options:
+        policy = PolicyDocument(options['maximumSize'], *given)
+    else:
+        policy = getattr(iam_floyd, options.get('class', 'ManagedPolicyDocument'))(*given)
     if 'arnSizeEstimate' in options:
         policy.arn_size_estimate = options['arnSizeEstimate']
-    for statement in scenario['statements']:
-        policy.add_statements(build(statement))
+    if options.get('add'):
+        policy.add_statements(*statements)
+    split = '-'
+    if hasattr(policy, 'split'):
+        split = attempt(lambda: f'[{",".join(to_json(part.to_json()) for part in policy.split())}]')
     parts = [
         policy.maximum_size,
         policy.estimate_size(),
         attempt(lambda: validate(policy)),
         to_json(policy.to_json()),
-        attempt(lambda: f'[{",".join(to_json(part.to_json()) for part in policy.split())}]'),
+        split,
     ]
     return '\t'.join(str(part) for part in parts)
 

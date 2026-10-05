@@ -290,18 +290,26 @@ new Statement.Ec2('AllowEC2ReadOnly').allow().allReadActions();
 
 ## Building a complete policy
 
-`Policy` renders the policy document (`Version` and `Statement`). Its type sets the
-maximum size: `managed` (default, 6,144 characters), `inlineUser` (2,048),
-`inlineGroup` (5,120), `inlineRole` (10,240), `trust` (2,048), `session` (2,048),
-`scp` (10,240), `rcp` (5,120). A second constructor argument overrides the maximum.
+A policy document renders the policy (`Version` and `Statement`). There is one
+class per type of policy, which sets the maximum size: `ManagedPolicyDocument`
+(6,144 characters), `InlineUserPolicyDocument` (2,048), `InlineGroupPolicyDocument`
+(5,120), `InlineRolePolicyDocument` (10,240), `TrustPolicyDocument` (2,048),
+`SessionPolicyDocument` (2,048), `ServiceControlPolicyDocument` (10,240),
+`ResourceControlPolicyDocument` (5,120), `S3BucketPolicyDocument` (20,480),
+`KmsKeyPolicyDocument` (32,768), `SqsQueuePolicyDocument` (8,192),
+`SnsTopicPolicyDocument` (30,720), `SecretsManagerSecretPolicyDocument` (20,480),
+`LambdaFunctionPolicyDocument` (20,480). The constructor takes the statements.
+For any other maximum (e.g. a raised trust policy quota), use the base class:
+`new PolicyDocument(8192, ...statements)`. Only `ManagedPolicyDocument`,
+`ServiceControlPolicyDocument` and `ResourceControlPolicyDocument` have `split()`;
+inline limits apply to all inline policies of an identity together.
 
 ### Standalone (iam-floyd)
 
 ```typescript
-import { Operator, Policy, PolicyType, Statement } from 'iam-floyd';
+import { ManagedPolicyDocument, Operator, Statement } from 'iam-floyd';
 
-const policy = new Policy(PolicyType.managed);
-policy.addStatements(
+const policy = new ManagedPolicyDocument(
   new Statement.Ec2()
     .allow()
     .toStartInstances()
@@ -317,13 +325,13 @@ policy.validate(); // throws if the estimated size exceeds the maximum
 const json = policy.toJSON();
 
 policy.estimateSize(); // characters without white space
-const policies = policy.split(); // first fit, each within the maximum size
+const policies = policy.split(); // PolicyDocument[], first fit, each within the maximum size
 ```
 
 ### CDK (cdk-iam-floyd)
 
 ```typescript
-import { Policy, PolicyType, Statement } from 'cdk-iam-floyd';
+import { ManagedPolicyDocument, Statement } from 'cdk-iam-floyd';
 import * as iam from 'aws-cdk-lib/aws-iam';
 
 const policy = new iam.ManagedPolicy(this, 'Policy', {
@@ -337,9 +345,8 @@ const policy = new iam.ManagedPolicy(this, 'Policy', {
   ],
 });
 
-// Policy is an iam.PolicyDocument, with size checks:
-const document = new Policy(PolicyType.managed);
-document.addStatements(
+// ManagedPolicyDocument is an iam.PolicyDocument, with size checks:
+const document = new ManagedPolicyDocument(
   new Statement.S3().allow().toGetObject().onObject('my-bucket', '*'),
 );
 document.validate(); // ARNs with tokens count as 150 characters, like the AWS CDK
@@ -361,11 +368,12 @@ role.addToPolicy(
 Collections are pre-built groups of statements for common scenarios:
 
 ```typescript
-import { Collection, Policy } from 'iam-floyd'; // or 'cdk-iam-floyd'
+import { Collection, ManagedPolicyDocument } from 'iam-floyd'; // or 'cdk-iam-floyd'
 
 // Spread into a policy:
-const policy = new Policy();
-policy.addStatements(...new Collection().allowEc2InstanceDeleteByOwner());
+const policy = new ManagedPolicyDocument(
+  ...new Collection().allowEc2InstanceDeleteByOwner(),
+);
 ```
 
 Currently available: `allowEc2InstanceDeleteByOwner` (allows start/stop EC2
@@ -425,10 +433,9 @@ class AppBucket extends Statement.S3 {
 ## Real-world CDK example: CFN deployment role
 
 ```typescript
-import { Policy, Statement } from 'cdk-iam-floyd';
+import { ManagedPolicyDocument, Statement } from 'cdk-iam-floyd';
 
-const policy = new Policy();
-policy.addStatements(
+const policy = new ManagedPolicyDocument(
   new Statement.Cloudformation() // allow all CFN actions
     .allow()
     .allActions(),
@@ -466,10 +473,10 @@ policy.addStatements(
   `iam.PolicyDocument` with a proper principal type works better with CDK grants.
 - **Policy size limits**: `allWriteActions()` on services like EC2 can produce very
   large action lists. Use `.compact()` to compress them to wildcard patterns, or be
-  more specific with `to*()` calls. `Policy.validate()` checks the estimated size, and
-  `Policy.split()` distributes the statements into several policies. The limits of
-  inline policies apply to all inline policies of a user, group or role together, so
-  split into managed policies.
+  more specific with `to*()` calls. `validate()` of a policy document checks the estimated
+  size, and `split()` of `ManagedPolicyDocument` distributes the statements into
+  several policies. The limits of inline policies apply to all inline policies of a
+  user, group or role together, so split into managed policies.
 - **`Statement.All`** is a special class that produces `Action: "*"` — useful for
   "allow anything called via CloudFormation" style statements.
 - **Policy Converter**: if you have an existing JSON policy, use the online converter

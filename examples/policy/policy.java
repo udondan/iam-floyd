@@ -1,17 +1,17 @@
-import com.udondan.iamFloyd.cdk.Policy;
-import com.udondan.iamFloyd.cdk.PolicyType;
+import com.udondan.iamFloyd.cdk.InlineRolePolicyDocument;
 import com.udondan.iamFloyd.cdk.statement.S3;
 import com.udondan.iamFloyd.cdk.statement.Sqs;
 
 class ExamplePolicy {
   static Object example() {
     // doc-start
-    Policy policy = new Policy(PolicyType.INLINE_ROLE);
+    InlineRolePolicyDocument policy =
+        new InlineRolePolicyDocument(
+            new S3()
+                .allow()
+                .toGetObject()
+                .on("arn:aws:s3:::example-bucket/*"));
     policy.addStatements(
-        new S3()
-            .allow()
-            .toGetObject()
-            .on("arn:aws:s3:::example-bucket/*"),
         new Sqs()
             .allow()
             .toSendMessage()

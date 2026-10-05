@@ -10,7 +10,7 @@ import floyd from 'cdk-iam-floyd';
 import consumer from './lib/index.js';
 
 const { App, Stack, assertions, aws_iam: iam } = cdk;
-const { Policy, PolicyType, Statement } = floyd;
+const { InlineRolePolicyDocument, ManagedPolicyDocument, Statement } = floyd;
 
 function scenario(name: string, fn: (stack: StackType) => void) {
   const stack = new Stack(new App(), 'Stack');
@@ -102,9 +102,10 @@ scenario('h statement passed as floyd base class', (stack) => {
 });
 
 scenario('i policy used as document', (stack) => {
-  const policy = new Policy(PolicyType.inlineRole);
-  policy.addStatements(
+  const policy = new InlineRolePolicyDocument(
     new Statement.S3().allow().toGetObject().onObject('bucket', '*'),
+  );
+  policy.addStatements(
     new Statement.Sqs().allow().toSendMessage().onQueue('queue'),
   );
   policy.validate();
@@ -112,12 +113,13 @@ scenario('i policy used as document', (stack) => {
 });
 
 scenario('j policies of split used as documents', (stack) => {
-  const policy = new Policy(PolicyType.managed, 500);
-  policy.addStatements(
+  const policy = new ManagedPolicyDocument(
     new Statement.S3().allow().toGetObject().onObject('bucket', '*'),
     new Statement.Sqs().allow().toSendMessage().onQueue('queue'),
     new Statement.Dynamodb().allow().toGetItem().onTable('table'),
   );
+  // two statements per policy
+  policy.arnSizeEstimate = 2500;
   const roles = [role(stack)];
   policy.split().forEach((part, index) => {
     new iam.Policy(stack, `Part${index}`, { document: part, roles });
