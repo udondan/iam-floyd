@@ -546,7 +546,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iottwinmaker",
+        "interface": "IWorkspaceRef",
+        "property": "workspaceRef",
+        "arn": "workspaceArn"
+      }
     }
   ],
   "conditions": [

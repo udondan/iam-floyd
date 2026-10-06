@@ -322,7 +322,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_identitystore",
+        "interface": "IGroupRef",
+        "property": "groupRef",
+        "id": "groupId"
+      }
     },
     {
       "name": "GroupMembership",
@@ -341,7 +347,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_identitystore",
+        "interface": "IGroupMembershipRef",
+        "property": "groupMembershipRef",
+        "id": "membershipId"
+      }
     },
     {
       "name": "Identitystore",
@@ -384,7 +396,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_identitystore",
+        "interface": "IUserRef",
+        "property": "userRef",
+        "arn": "userArn"
+      }
     }
   ],
   "conditions": [

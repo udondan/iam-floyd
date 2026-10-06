@@ -300,7 +300,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_braket",
+        "interface": "ISpendingLimitRef",
+        "property": "spendingLimitRef",
+        "arn": "spendingLimitArn"
+      }
     }
   ],
   "conditions": [

@@ -2880,7 +2880,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IActionConnectorRef",
+        "property": "actionConnectorRef",
+        "arn": "actionConnectorArn"
+      }
     },
     {
       "name": "agent",
@@ -2909,7 +2915,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IAgentRef",
+        "property": "agentRef",
+        "arn": "agentArn"
+      }
     },
     {
       "name": "analysis",
@@ -2940,7 +2952,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IAnalysisRef",
+        "property": "analysisRef",
+        "arn": "analysisArn"
+      }
     },
     {
       "name": "app",
@@ -3000,7 +3018,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IApprovalPolicyRef",
+        "property": "approvalPolicyRef",
+        "arn": "policyArn"
+      }
     },
     {
       "name": "assetBundleExportJob",
@@ -3246,7 +3270,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "ICustomizationRef",
+        "property": "customizationRef",
+        "arn": "customizationArn"
+      }
     },
     {
       "name": "custompermissions",
@@ -3277,7 +3307,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "ICustomPermissionsRef",
+        "property": "customPermissionsRef",
+        "arn": "customPermissionsArn"
+      }
     },
     {
       "name": "dashboard",
@@ -3308,7 +3344,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IDashboardRef",
+        "property": "dashboardRef",
+        "arn": "dashboardArn"
+      }
     },
     {
       "name": "dashboardSnapshotJob",
@@ -3375,7 +3417,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IDataSetRef",
+        "property": "dataSetRef",
+        "arn": "dataSetArn"
+      }
     },
     {
       "name": "datasource",
@@ -3406,7 +3454,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IDataSourceRef",
+        "property": "dataSourceRef",
+        "arn": "dataSourceArn"
+      }
     },
     {
       "name": "dlpSetting",
@@ -3437,7 +3491,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IDLPSettingRef",
+        "property": "dlpSettingRef",
+        "arn": "dlpSettingArn"
+      }
     },
     {
       "name": "emailCustomizationTemplate",
@@ -3557,7 +3617,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IFlowRef",
+        "property": "flowRef",
+        "arn": "flowArn"
+      }
     },
     {
       "name": "folder",
@@ -3588,7 +3654,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IFolderRef",
+        "property": "folderRef",
+        "arn": "folderArn"
+      }
     },
     {
       "name": "group",
@@ -3684,7 +3756,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IKnowledgeBaseRef",
+        "property": "knowledgeBaseRef",
+        "arn": "knowledgeBaseArn"
+      }
     },
     {
       "name": "limitsProfile",
@@ -3713,7 +3791,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "ILimitsProfileRef",
+        "property": "limitsProfileRef",
+        "arn": "limitsProfileArn"
+      }
     },
     {
       "name": "namespace",
@@ -3775,7 +3859,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IOAuthClientApplicationRef",
+        "property": "oAuthClientApplicationRef",
+        "arn": "oAuthClientApplicationArn"
+      }
     },
     {
       "name": "refreshschedule",
@@ -3838,7 +3928,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "ISpaceRef",
+        "property": "spaceRef",
+        "arn": "spaceArn"
+      }
     },
     {
       "name": "template",
@@ -3869,7 +3965,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "ITemplateRef",
+        "property": "templateRef",
+        "arn": "templateArn"
+      }
     },
     {
       "name": "theme",
@@ -3900,7 +4002,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IThemeRef",
+        "property": "themeRef",
+        "arn": "themeArn"
+      }
     },
     {
       "name": "topic",
@@ -3931,7 +4039,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "ITopicRef",
+        "property": "topicRef",
+        "arn": "topicArn"
+      }
     },
     {
       "name": "user",
@@ -3993,7 +4107,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IVPCConnectionRef",
+        "property": "vpcConnectionRef",
+        "arn": "vpcConnectionArn"
+      }
     }
   ],
   "conditions": [

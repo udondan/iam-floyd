@@ -257,7 +257,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_apptest",
+        "interface": "ITestCaseRef",
+        "property": "testCaseRef",
+        "arn": "testCaseArn"
+      }
     },
     {
       "name": "TestConfiguration",

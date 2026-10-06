@@ -225,7 +225,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_elementalinference",
+        "interface": "IDictionaryRef",
+        "property": "dictionaryRef",
+        "arn": "dictionaryArn"
+      }
     },
     {
       "name": "feed",
@@ -256,7 +262,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_elementalinference",
+        "interface": "IFeedRef",
+        "property": "feedRef",
+        "arn": "feedArn"
+      }
     }
   ],
   "conditions": [

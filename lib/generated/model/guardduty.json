@@ -965,7 +965,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_guardduty",
+        "interface": "IDetectorRef",
+        "property": "detectorRef",
+        "id": "detectorId"
+      }
     },
     {
       "name": "filter",
@@ -1068,7 +1074,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_guardduty",
+        "interface": "IMalwareProtectionPlanRef",
+        "property": "malwareProtectionPlanRef",
+        "arn": "malwareProtectionPlanArn"
+      }
     },
     {
       "name": "publishingDestination",

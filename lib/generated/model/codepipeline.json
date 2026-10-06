@@ -488,7 +488,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_codepipeline",
+        "interface": "IPipelineRef",
+        "property": "pipelineRef",
+        "arn": "pipelineArn"
+      }
     },
     {
       "name": "stage",
@@ -555,7 +561,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_codepipeline",
+        "interface": "IWebhookRef",
+        "property": "webhookRef",
+        "id": "webhookName"
+      }
     }
   ],
   "conditions": [

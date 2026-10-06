@@ -2539,7 +2539,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_glue",
+        "interface": "IBlueprintRef",
+        "property": "blueprintRef",
+        "arn": "blueprintArn"
+      }
     },
     {
       "name": "catalog",
@@ -2570,7 +2576,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_glue",
+        "interface": "ICatalogRef",
+        "property": "catalogRef",
+        "arn": "resourceArn"
+      }
     },
     {
       "name": "completion",
@@ -2630,7 +2642,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_glue",
+        "interface": "IConnectionRef",
+        "property": "connectionRef",
+        "id": "connectionName"
+      }
     },
     {
       "name": "connectionType",
@@ -2661,7 +2679,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_glue",
+        "interface": "IConnectionTypeRef",
+        "property": "connectionTypeRef",
+        "arn": "connectionTypeArn"
+      }
     },
     {
       "name": "crawler",
@@ -2692,7 +2716,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_glue",
+        "interface": "ICrawlerRef",
+        "property": "crawlerRef",
+        "id": "crawlerName"
+      }
     },
     {
       "name": "customEntityType",
@@ -2785,7 +2815,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_glue",
+        "interface": "IDatabaseRef",
+        "property": "databaseRef",
+        "id": "databaseName"
+      }
     },
     {
       "name": "devendpoint",
@@ -2847,7 +2883,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_glue",
+        "interface": "IIntegrationRef",
+        "property": "integrationRef",
+        "arn": "integrationArn"
+      }
     },
     {
       "name": "integrationResourceProperty",
@@ -2914,7 +2956,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_glue",
+        "interface": "IJobRef",
+        "property": "jobRef",
+        "id": "jobName"
+      }
     },
     {
       "name": "mlTransform",
@@ -2945,7 +2993,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_glue",
+        "interface": "IMLTransformRef",
+        "property": "mlTransformRef",
+        "id": "transformId"
+      }
     },
     {
       "name": "registry",
@@ -2976,7 +3030,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_glue",
+        "interface": "IRegistryRef",
+        "property": "registryRef",
+        "arn": "registryArn"
+      }
     },
     {
       "name": "rootcatalog",
@@ -3031,7 +3091,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_glue",
+        "interface": "ISchemaRef",
+        "property": "schemaRef",
+        "arn": "schemaArn"
+      }
     },
     {
       "name": "session",
@@ -3062,7 +3128,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_glue",
+        "interface": "ISessionRef",
+        "property": "sessionRef",
+        "arn": "sessionArn"
+      }
     },
     {
       "name": "table",
@@ -3170,7 +3242,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_glue",
+        "interface": "ITriggerRef",
+        "property": "triggerRef",
+        "id": "triggerName"
+      }
     },
     {
       "name": "usageProfile",
@@ -3268,7 +3346,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_glue",
+        "interface": "IWorkflowRef",
+        "property": "workflowRef",
+        "id": "workflowName"
+      }
     }
   ],
   "conditions": [

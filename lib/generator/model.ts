@@ -70,6 +70,27 @@ export interface ResourceModel {
    */
   placeholders: ArnPlaceholder[];
   conditionMethods: string[];
+  /**
+   * Reference interface of `aws-cdk-lib/interfaces`, which the `on*()` method of the CDK variant
+   * accepts in place of the required placeholder. Set by `lib/generator/cdk-refs.ts`.
+   */
+  cdkRef?: CdkRef;
+}
+
+export interface CdkRef {
+  /** Module of `aws-cdk-lib/interfaces`, e.g. `aws_lambda` */
+  module: string;
+  /** Reference interface, e.g. `IFunctionRef` */
+  interface: string;
+  /** Property of the interface with the reference, e.g. `functionRef` */
+  property: string;
+  /** Field of the reference with the ARN, e.g. `functionArn` */
+  arn?: string;
+  /**
+   * Field of the reference with the identifier, e.g. `distributionId`, which replaces the required
+   * placeholder in the ARN. Only set if the reference has no ARN.
+   */
+  id?: string;
 }
 
 export type ConditionValueKind =

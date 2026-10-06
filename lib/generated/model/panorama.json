@@ -349,7 +349,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_panorama",
+        "interface": "IApplicationInstanceRef",
+        "property": "applicationInstanceRef",
+        "arn": "applicationInstanceArn"
+      }
     },
     {
       "name": "device",
@@ -411,7 +417,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_panorama",
+        "interface": "IPackageRef",
+        "property": "packageRef",
+        "arn": "packageArn"
+      }
     }
   ],
   "conditions": [

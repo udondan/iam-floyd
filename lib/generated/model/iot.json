@@ -2416,7 +2416,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "IAuthorizerRef",
+        "property": "authorizerRef",
+        "arn": "authorizerArn"
+      }
     },
     {
       "name": "billinggroup",
@@ -2447,7 +2453,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "IBillingGroupRef",
+        "property": "billingGroupRef",
+        "arn": "billingGroupArn"
+      }
     },
     {
       "name": "cacert",
@@ -2538,7 +2550,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "ICertificateProviderRef",
+        "property": "certificateProviderRef",
+        "arn": "certificateProviderArn"
+      }
     },
     {
       "name": "client",
@@ -2598,7 +2616,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "ICommandRef",
+        "property": "commandRef",
+        "arn": "commandArn"
+      }
     },
     {
       "name": "custommetric",
@@ -2629,7 +2653,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "ICustomMetricRef",
+        "property": "customMetricRef",
+        "id": "metricName"
+      }
     },
     {
       "name": "destination",
@@ -2694,7 +2724,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "IDimensionRef",
+        "property": "dimensionRef",
+        "arn": "dimensionArn"
+      }
     },
     {
       "name": "domainconfiguration",
@@ -2852,7 +2888,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "IJobRef",
+        "property": "jobRef",
+        "arn": "jobArn"
+      }
     },
     {
       "name": "jobtemplate",
@@ -2883,7 +2925,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "IJobTemplateRef",
+        "property": "jobTemplateRef",
+        "arn": "jobTemplateArn"
+      }
     },
     {
       "name": "mitigationaction",
@@ -2914,7 +2962,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "IMitigationActionRef",
+        "property": "mitigationActionRef",
+        "arn": "mitigationActionArn"
+      }
     },
     {
       "name": "otaupdate",
@@ -3043,7 +3097,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "IPolicyRef",
+        "property": "policyRef",
+        "arn": "policyArn"
+      }
     },
     {
       "name": "provisioningtemplate",
@@ -3105,7 +3165,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "IRoleAliasRef",
+        "property": "roleAliasRef",
+        "arn": "roleAliasArn"
+      }
     },
     {
       "name": "rule",
@@ -3167,7 +3233,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "IScheduledAuditRef",
+        "property": "scheduledAuditRef",
+        "arn": "scheduledAuditArn"
+      }
     },
     {
       "name": "securityprofile",
@@ -3198,7 +3270,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "ISecurityProfileRef",
+        "property": "securityProfileRef",
+        "arn": "securityProfileArn"
+      }
     },
     {
       "name": "stream",
@@ -3229,7 +3307,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "IStreamRef",
+        "property": "streamRef",
+        "arn": "streamArn"
+      }
     },
     {
       "name": "thing",
@@ -3258,7 +3342,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "IThingRef",
+        "property": "thingRef",
+        "arn": "thingArn"
+      }
     },
     {
       "name": "thinggroup",
@@ -3289,7 +3379,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "IThingGroupRef",
+        "property": "thingGroupRef",
+        "arn": "thingGroupArn"
+      }
     },
     {
       "name": "thingtype",
@@ -3320,7 +3416,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "IThingTypeRef",
+        "property": "thingTypeRef",
+        "arn": "thingTypeArn"
+      }
     },
     {
       "name": "topic",

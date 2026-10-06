@@ -1654,7 +1654,13 @@
         "ifAwsRequestTag",
         "ifAwsResourceTag",
         "ifAwsTagKeys"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_s3",
+        "interface": "IAccessGrantRef",
+        "property": "accessGrantRef",
+        "arn": "accessGrantArn"
+      }
     },
     {
       "name": "accessgrantsinstance",
@@ -1715,7 +1721,13 @@
         "ifAwsRequestTag",
         "ifAwsResourceTag",
         "ifAwsTagKeys"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_s3",
+        "interface": "IAccessGrantsLocationRef",
+        "property": "accessGrantsLocationRef",
+        "arn": "accessGrantsLocationArn"
+      }
     },
     {
       "name": "accesspoint",
@@ -1750,7 +1762,13 @@
         "ifAccessPointTag",
         "ifDataAccessPointAccount",
         "ifDataAccessPointArn"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_s3",
+        "interface": "IAccessPointRef",
+        "property": "accessPointRef",
+        "arn": "accessPointArn"
+      }
     },
     {
       "name": "accesspointobject",
@@ -1813,7 +1831,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifBucketTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_s3",
+        "interface": "IBucketRef",
+        "property": "bucketRef",
+        "arn": "bucketArn"
+      }
     },
     {
       "name": "job",
@@ -2021,7 +2045,13 @@
         "ifAwsRequestTag",
         "ifAwsResourceTag",
         "ifAwsTagKeys"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_s3",
+        "interface": "IStorageLensGroupRef",
+        "property": "storageLensGroupRef",
+        "arn": "storageLensGroupArn"
+      }
     }
   ],
   "conditions": [

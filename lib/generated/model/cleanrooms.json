@@ -941,7 +941,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cleanrooms",
+        "interface": "ICollaborationRef",
+        "property": "collaborationRef",
+        "arn": "collaborationArn"
+      }
     },
     {
       "name": "configuredaudiencemodelassociation",
@@ -1008,7 +1014,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cleanrooms",
+        "interface": "IConfiguredTableRef",
+        "property": "configuredTableRef",
+        "arn": "configuredTableArn"
+      }
     },
     {
       "name": "configuredtableassociation",
@@ -1183,7 +1195,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cleanrooms",
+        "interface": "IMembershipRef",
+        "property": "membershipRef",
+        "arn": "membershipArn"
+      }
     },
     {
       "name": "privacybudgettemplate",

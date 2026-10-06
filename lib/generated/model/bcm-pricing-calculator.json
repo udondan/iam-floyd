@@ -365,7 +365,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bcmpricingcalculator",
+        "interface": "IBillScenarioRef",
+        "property": "billScenarioRef",
+        "arn": "billScenarioArn"
+      }
     },
     {
       "name": "workload-estimate",
@@ -391,7 +397,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bcmpricingcalculator",
+        "interface": "IWorkloadEstimateRef",
+        "property": "workloadEstimateRef",
+        "arn": "workloadEstimateArn"
+      }
     }
   ],
   "conditions": [

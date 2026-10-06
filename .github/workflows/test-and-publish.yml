@@ -304,6 +304,15 @@ jobs:
           make test-typescript-cdk
           make cdk-test
 
+      # The steps above test the newest aws-cdk-lib (devDependency), this one the minimum of the
+      # peer dependency, which has all reference interfaces the on*() methods accept. The exact
+      # version is the one of lib/generated/cdk-refs.json.
+      - name: Test with the minimum version of aws-cdk-lib
+        run: | # zizmor: ignore[adhoc-packages]
+          npm i --no-save --no-audit --no-fund "aws-cdk-lib@$(jq -r '."aws-cdk-lib"' lib/generated/cdk-refs.json)"
+          node -p "require('aws-cdk-lib/package.json').version"
+          make build test-typescript-cdk
+
   # Python, Java, .NET and Go packages of cdk-iam-floyd, built with jsii-pacmak. One job per
   # language for speed; TypeScript is the baseline the others are compared to. When publishing,
   # the packages are only built, the PR tested them, and the publish jobs publish them.

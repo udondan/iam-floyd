@@ -7480,7 +7480,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IApplicationStatusCheckRef",
+        "property": "applicationStatusCheckRef",
+        "arn": "applicationStatusCheckArn"
+      }
     },
     {
       "name": "capacity-block",
@@ -7554,7 +7560,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ICapacityManagerDataExportRef",
+        "property": "capacityManagerDataExportRef",
+        "id": "capacityManagerDataExportId"
+      }
     },
     {
       "name": "capacity-reservation",
@@ -7615,7 +7627,13 @@
         "ifSourceCapacityReservationId",
         "ifTargetInstanceCount",
         "ifTenancy"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ICapacityReservationRef",
+        "property": "capacityReservationRef",
+        "arn": "capacityReservationArn"
+      }
     },
     {
       "name": "capacity-reservation-cancellation-quote",
@@ -7689,7 +7707,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ICapacityReservationFleetRef",
+        "property": "capacityReservationFleetRef",
+        "id": "capacityReservationFleetId"
+      }
     },
     {
       "name": "carrier-gateway",
@@ -7726,7 +7750,13 @@
         "ifResourceTag",
         "ifTenancy",
         "ifVpc"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ICarrierGatewayRef",
+        "property": "carrierGatewayRef",
+        "id": "carrierGatewayId"
+      }
     },
     {
       "name": "certificate",
@@ -7798,7 +7828,13 @@
         "ifResourceTag",
         "ifSamlProviderArn",
         "ifServerCertificateArn"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IClientVpnEndpointRef",
+        "property": "clientVpnEndpointRef",
+        "id": "clientVpnEndpointId"
+      }
     },
     {
       "name": "coip-pool",
@@ -7868,7 +7904,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ICustomerGatewayRef",
+        "property": "customerGatewayRef",
+        "id": "customerGatewayId"
+      }
     },
     {
       "name": "declarative-policies-report",
@@ -7983,7 +8025,13 @@
         "ifDhcpOptionsID",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IDHCPOptionsRef",
+        "property": "dhcpOptionsRef",
+        "id": "dhcpOptionsId"
+      }
     },
     {
       "name": "egress-only-internet-gateway",
@@ -8018,7 +8066,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IEgressOnlyInternetGatewayRef",
+        "property": "egressOnlyInternetGatewayRef",
+        "id": "egressOnlyInternetGatewayId"
+      }
     },
     {
       "name": "elastic-gpu",
@@ -8271,7 +8325,13 @@
         "ifPublic",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IFpgaImageRef",
+        "property": "fpgaImageRef",
+        "arn": "fpgaImageArn"
+      }
     },
     {
       "name": "group",
@@ -8539,7 +8599,13 @@
         "ifResourceTag",
         "ifRootDeviceType",
         "ifTenancy"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IInstanceRef",
+        "property": "instanceRef",
+        "id": "instanceId"
+      }
     },
     {
       "name": "instance-connect-endpoint",
@@ -8577,7 +8643,13 @@
         "ifRegion",
         "ifResourceTag",
         "ifSubnetID"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IInstanceConnectEndpointRef",
+        "property": "instanceConnectEndpointRef",
+        "arn": "instanceConnectEndpointArn"
+      }
     },
     {
       "name": "instance-event-window",
@@ -8614,7 +8686,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IInstanceEventWindowRef",
+        "property": "instanceEventWindowRef",
+        "arn": "instanceEventWindowArn"
+      }
     },
     {
       "name": "internet-gateway",
@@ -8650,7 +8728,13 @@
         "ifInternetGatewayID",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IInternetGatewayRef",
+        "property": "internetGatewayRef",
+        "id": "internetGatewayId"
+      }
     },
     {
       "name": "ipam",
@@ -8682,7 +8766,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IIPAMRef",
+        "property": "ipamRef",
+        "arn": "ipamArn"
+      }
     },
     {
       "name": "ipam-external-resource-verification-token",
@@ -8714,7 +8804,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IIpamExternalResourceVerificationTokenRef",
+        "property": "ipamExternalResourceVerificationTokenRef",
+        "arn": "ipamExternalResourceVerificationTokenArn"
+      }
     },
     {
       "name": "ipam-internet-registry-association",
@@ -8810,7 +8906,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IIPAMPoolRef",
+        "property": "ipamPoolRef",
+        "arn": "ipamPoolArn"
+      }
     },
     {
       "name": "ipam-pool-allocation",
@@ -8879,7 +8981,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IIPAMPrefixListResolverRef",
+        "property": "ipamPrefixListResolverRef",
+        "arn": "ipamPrefixListResolverArn"
+      }
     },
     {
       "name": "ipam-prefix-list-resolver-target",
@@ -8911,7 +9019,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IIPAMPrefixListResolverTargetRef",
+        "property": "ipamPrefixListResolverTargetRef",
+        "arn": "ipamPrefixListResolverTargetArn"
+      }
     },
     {
       "name": "ipam-resource-discovery",
@@ -8943,7 +9057,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IIPAMResourceDiscoveryRef",
+        "property": "ipamResourceDiscoveryRef",
+        "arn": "ipamResourceDiscoveryArn"
+      }
     },
     {
       "name": "ipam-resource-discovery-association",
@@ -8973,7 +9093,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IIPAMResourceDiscoveryAssociationRef",
+        "property": "ipamResourceDiscoveryAssociationRef",
+        "arn": "ipamResourceDiscoveryAssociationArn"
+      }
     },
     {
       "name": "ipam-scope",
@@ -9005,7 +9131,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IIPAMScopeRef",
+        "property": "ipamScopeRef",
+        "arn": "ipamScopeArn"
+      }
     },
     {
       "name": "ipv4pool-ec2",
@@ -9154,7 +9286,13 @@
         "ifManagedResourceOperator",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ILaunchTemplateRef",
+        "property": "launchTemplateRef",
+        "id": "launchTemplateId"
+      }
     },
     {
       "name": "license-configuration",
@@ -9254,7 +9392,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ILocalGatewayRouteTableRef",
+        "property": "localGatewayRouteTableRef",
+        "arn": "localGatewayRouteTableArn"
+      }
     },
     {
       "name": "local-gateway-route-table-virtual-interface-group-association",
@@ -9289,7 +9433,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ILocalGatewayRouteTableVirtualInterfaceGroupAssociationRef",
+        "property": "localGatewayRouteTableVirtualInterfaceGroupAssociationRef",
+        "id": "localGatewayRouteTableVirtualInterfaceGroupAssociationId"
+      }
     },
     {
       "name": "local-gateway-route-table-vpc-association",
@@ -9324,7 +9474,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ILocalGatewayRouteTableVPCAssociationRef",
+        "property": "localGatewayRouteTableVpcAssociationRef",
+        "id": "localGatewayRouteTableVpcAssociationId"
+      }
     },
     {
       "name": "local-gateway-virtual-interface",
@@ -9359,7 +9515,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ILocalGatewayVirtualInterfaceRef",
+        "property": "localGatewayVirtualInterfaceRef",
+        "id": "localGatewayVirtualInterfaceId"
+      }
     },
     {
       "name": "local-gateway-virtual-interface-group",
@@ -9394,7 +9556,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ILocalGatewayVirtualInterfaceGroupRef",
+        "property": "localGatewayVirtualInterfaceGroupRef",
+        "arn": "localGatewayVirtualInterfaceGroupArn"
+      }
     },
     {
       "name": "mac-modification-task",
@@ -9465,7 +9633,13 @@
         "ifRegion",
         "ifResourceTag",
         "ifVpc"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "INatGatewayRef",
+        "property": "natGatewayRef",
+        "id": "natGatewayId"
+      }
     },
     {
       "name": "network-acl",
@@ -9537,7 +9711,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "INetworkInsightsAccessScopeRef",
+        "property": "networkInsightsAccessScopeRef",
+        "arn": "networkInsightsAccessScopeArn"
+      }
     },
     {
       "name": "network-insights-access-scope-analysis",
@@ -9572,7 +9752,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "INetworkInsightsAccessScopeAnalysisRef",
+        "property": "networkInsightsAccessScopeAnalysisRef",
+        "arn": "networkInsightsAccessScopeAnalysisArn"
+      }
     },
     {
       "name": "network-insights-analysis",
@@ -9607,7 +9793,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "INetworkInsightsAnalysisRef",
+        "property": "networkInsightsAnalysisRef",
+        "arn": "networkInsightsAnalysisArn"
+      }
     },
     {
       "name": "network-insights-path",
@@ -9642,7 +9834,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "INetworkInsightsPathRef",
+        "property": "networkInsightsPathRef",
+        "arn": "networkInsightsPathArn"
+      }
     },
     {
       "name": "network-interface",
@@ -9690,7 +9888,13 @@
         "ifResourceTag",
         "ifSubnet",
         "ifVpc"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "INetworkInterfaceRef",
+        "property": "networkInterfaceRef",
+        "id": "networkInterfaceId"
+      }
     },
     {
       "name": "outpost-lag",
@@ -9802,7 +10006,13 @@
         "ifIpamPrefixListResolverTargetId",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IPrefixListRef",
+        "property": "prefixListRef",
+        "arn": "prefixListArn"
+      }
     },
     {
       "name": "replace-root-volume-task",
@@ -9937,7 +10147,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IRouteServerRef",
+        "property": "routeServerRef",
+        "arn": "routeServerArn"
+      }
     },
     {
       "name": "route-server-endpoint",
@@ -9973,7 +10189,13 @@
         "ifAvailabilityZone",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IRouteServerEndpointRef",
+        "property": "routeServerEndpointRef",
+        "arn": "routeServerEndpointArn"
+      }
     },
     {
       "name": "route-server-peer",
@@ -10009,7 +10231,13 @@
         "ifAvailabilityZone",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IRouteServerPeerRef",
+        "property": "routeServerPeerRef",
+        "arn": "routeServerPeerArn"
+      }
     },
     {
       "name": "route-table",
@@ -10046,7 +10274,13 @@
         "ifResourceTag",
         "ifRouteTableID",
         "ifVpc"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IRouteTableRef",
+        "property": "routeTableRef",
+        "id": "routeTableId"
+      }
     },
     {
       "name": "secondary-interface",
@@ -10194,7 +10428,13 @@
         "ifResourceTag",
         "ifSecurityGroupID",
         "ifVpc"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ISecurityGroupRef",
+        "property": "securityGroupRef",
+        "id": "securityGroupId"
+      }
     },
     {
       "name": "security-group-rule",
@@ -10399,7 +10639,13 @@
         "ifResourceTag",
         "ifSubnetID",
         "ifVpc"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ISubnetRef",
+        "property": "subnetRef",
+        "id": "subnetId"
+      }
     },
     {
       "name": "subnet-cidr-reservation",
@@ -10434,7 +10680,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ISubnetCidrReservationRef",
+        "property": "subnetCidrReservationRef",
+        "arn": "subnetCidrReservationArn"
+      }
     },
     {
       "name": "traffic-mirror-filter",
@@ -10471,7 +10723,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ITrafficMirrorFilterRef",
+        "property": "trafficMirrorFilterRef",
+        "id": "trafficMirrorFilterId"
+      }
     },
     {
       "name": "traffic-mirror-filter-rule",
@@ -10508,7 +10766,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ITrafficMirrorFilterRuleRef",
+        "property": "trafficMirrorFilterRuleRef",
+        "id": "trafficMirrorFilterRuleId"
+      }
     },
     {
       "name": "traffic-mirror-session",
@@ -10545,7 +10809,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ITrafficMirrorSessionRef",
+        "property": "trafficMirrorSessionRef",
+        "id": "trafficMirrorSessionId"
+      }
     },
     {
       "name": "traffic-mirror-target",
@@ -10580,7 +10850,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ITrafficMirrorTargetRef",
+        "property": "trafficMirrorTargetRef",
+        "id": "trafficMirrorTargetId"
+      }
     },
     {
       "name": "transit-gateway",
@@ -10618,7 +10894,13 @@
         "ifRegion",
         "ifResourceTag",
         "ifTransitGatewayId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ITransitGatewayRef",
+        "property": "transitGatewayRef",
+        "arn": "transitGatewayArn"
+      }
     },
     {
       "name": "transit-gateway-attachment",
@@ -10656,7 +10938,13 @@
         "ifRegion",
         "ifResourceTag",
         "ifTransitGatewayAttachmentId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ITransitGatewayAttachmentRef",
+        "property": "transitGatewayAttachmentRef",
+        "id": "transitGatewayAttachmentId"
+      }
     },
     {
       "name": "transit-gateway-connect-peer",
@@ -10692,7 +10980,13 @@
         "ifRegion",
         "ifResourceTag",
         "ifTransitGatewayConnectPeerId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ITransitGatewayConnectPeerRef",
+        "property": "transitGatewayConnectPeerRef",
+        "id": "transitGatewayConnectPeerId"
+      }
     },
     {
       "name": "transit-gateway-metering-policy",
@@ -10729,7 +11023,13 @@
         "ifRegion",
         "ifResourceTag",
         "ifTransitGatewayMeteringPolicyId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ITransitGatewayMeteringPolicyRef",
+        "property": "transitGatewayMeteringPolicyRef",
+        "id": "transitGatewayMeteringPolicyId"
+      }
     },
     {
       "name": "transit-gateway-multicast-domain",
@@ -10765,7 +11065,13 @@
         "ifRegion",
         "ifResourceTag",
         "ifTransitGatewayMulticastDomainId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ITransitGatewayMulticastDomainRef",
+        "property": "transitGatewayMulticastDomainRef",
+        "arn": "transitGatewayMulticastDomainArn"
+      }
     },
     {
       "name": "transit-gateway-policy-table",
@@ -10801,7 +11107,13 @@
         "ifRegion",
         "ifResourceTag",
         "ifTransitGatewayPolicyTableId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ITransitGatewayPolicyTableRef",
+        "property": "transitGatewayPolicyTableRef",
+        "id": "transitGatewayPolicyTableId"
+      }
     },
     {
       "name": "transit-gateway-route-table",
@@ -10839,7 +11151,13 @@
         "ifRegion",
         "ifResourceTag",
         "ifTransitGatewayRouteTableId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ITransitGatewayRouteTableRef",
+        "property": "transitGatewayRouteTableRef",
+        "id": "transitGatewayRouteTableId"
+      }
     },
     {
       "name": "transit-gateway-route-table-announcement",
@@ -10911,7 +11229,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IVerifiedAccessEndpointRef",
+        "property": "verifiedAccessEndpointRef",
+        "id": "verifiedAccessEndpointId"
+      }
     },
     {
       "name": "verified-access-endpoint-target",
@@ -10983,7 +11307,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IVerifiedAccessGroupRef",
+        "property": "verifiedAccessGroupRef",
+        "arn": "verifiedAccessGroupArn"
+      }
     },
     {
       "name": "verified-access-instance",
@@ -11020,7 +11350,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IVerifiedAccessInstanceRef",
+        "property": "verifiedAccessInstanceRef",
+        "id": "verifiedAccessInstanceId"
+      }
     },
     {
       "name": "verified-access-policy",
@@ -11092,7 +11428,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IVerifiedAccessTrustProviderRef",
+        "property": "verifiedAccessTrustProviderRef",
+        "id": "verifiedAccessTrustProviderId"
+      }
     },
     {
       "name": "volume",
@@ -11144,7 +11486,13 @@
         "ifVolumeSize",
         "ifVolumeThroughput",
         "ifVolumeType"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IVolumeRef",
+        "property": "volumeRef",
+        "id": "volumeId"
+      }
     },
     {
       "name": "vpc",
@@ -11185,7 +11533,13 @@
         "ifResourceTag",
         "ifTenancy",
         "ifVpcID"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IVPCRef",
+        "property": "vpcRef",
+        "id": "vpcId"
+      }
     },
     {
       "name": "vpc-block-public-access-exclusion",
@@ -11258,7 +11612,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IVPCEncryptionControlRef",
+        "property": "vpcEncryptionControlRef",
+        "id": "vpcEncryptionControlId"
+      }
     },
     {
       "name": "vpc-endpoint",
@@ -11301,7 +11661,13 @@
         "ifVpceServiceName",
         "ifVpceServiceOwner",
         "ifVpceServiceRegion"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IVPCEndpointRef",
+        "property": "vpcEndpointRef",
+        "id": "vpcEndpointId"
+      }
     },
     {
       "name": "vpc-endpoint-connection",
@@ -11487,7 +11853,13 @@
         "ifRequesterVpc",
         "ifResourceTag",
         "ifVpcPeeringConnectionID"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IVPCPeeringConnectionRef",
+        "property": "vpcPeeringConnectionRef",
+        "id": "vpcPeeringConnectionId"
+      }
     },
     {
       "name": "vpn-concentrator",
@@ -11522,7 +11894,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IVPNConcentratorRef",
+        "property": "vpnConcentratorRef",
+        "id": "vpnConcentratorId"
+      }
     },
     {
       "name": "vpn-connection",
@@ -11577,7 +11955,13 @@
         "ifReplayWindowSizePackets",
         "ifResourceTag",
         "ifRoutingType"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IVPNConnectionRef",
+        "property": "vpnConnectionRef",
+        "id": "vpnConnectionId"
+      }
     },
     {
       "name": "vpn-connection-device-type",
@@ -11643,7 +12027,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IVPNGatewayRef",
+        "property": "vpnGatewayRef",
+        "id": "vpnGatewayId"
+      }
     }
   ],
   "conditions": [

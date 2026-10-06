@@ -733,7 +733,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_inspectorv2",
+        "interface": "ICodeSecurityIntegrationRef",
+        "property": "codeSecurityIntegrationRef",
+        "arn": "codeSecurityIntegrationArn"
+      }
     },
     {
       "name": "Code Security Scan Configuration",
@@ -800,7 +806,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_inspectorv2",
+        "interface": "IConnectorRef",
+        "property": "connectorRef",
+        "arn": "connectorArn"
+      }
     },
     {
       "name": "Filter",

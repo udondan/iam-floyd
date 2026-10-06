@@ -525,7 +525,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_finspace",
+        "interface": "IEnvironmentRef",
+        "property": "environmentRef",
+        "arn": "environmentArn"
+      }
     },
     {
       "name": "kxCluster",

@@ -225,7 +225,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53profiles",
+        "interface": "IProfileRef",
+        "property": "profileRef",
+        "arn": "profileArn"
+      }
     },
     {
       "name": "profile-association",
@@ -256,7 +262,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53profiles",
+        "interface": "IProfileAssociationRef",
+        "property": "profileAssociationRef",
+        "id": "profileAssociationId"
+      }
     }
   ],
   "conditions": [

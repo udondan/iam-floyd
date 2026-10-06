@@ -577,7 +577,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudtrail",
+        "interface": "IChannelRef",
+        "property": "channelRef",
+        "arn": "channelArn"
+      }
     },
     {
       "name": "dashboard",
@@ -608,7 +614,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudtrail",
+        "interface": "IDashboardRef",
+        "property": "dashboardRef",
+        "arn": "dashboardArn"
+      }
     },
     {
       "name": "eventdatastore",
@@ -639,7 +651,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudtrail",
+        "interface": "IEventDataStoreRef",
+        "property": "eventDataStoreRef",
+        "arn": "eventDataStoreArn"
+      }
     },
     {
       "name": "trail",
@@ -670,7 +688,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudtrail",
+        "interface": "ITrailRef",
+        "property": "trailRef",
+        "arn": "trailArn"
+      }
     }
   ],
   "conditions": [

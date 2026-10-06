@@ -983,7 +983,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotwireless",
+        "interface": "IDestinationRef",
+        "property": "destinationRef",
+        "arn": "destinationArn"
+      }
     },
     {
       "name": "DeviceProfile",
@@ -1014,7 +1020,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotwireless",
+        "interface": "IDeviceProfileRef",
+        "property": "deviceProfileRef",
+        "arn": "deviceProfileArn"
+      }
     },
     {
       "name": "FuotaTask",
@@ -1045,7 +1057,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotwireless",
+        "interface": "IFuotaTaskRef",
+        "property": "fuotaTaskRef",
+        "arn": "fuotaTaskArn"
+      }
     },
     {
       "name": "ImportTask",
@@ -1107,7 +1125,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotwireless",
+        "interface": "IMulticastGroupRef",
+        "property": "multicastGroupRef",
+        "arn": "multicastGroupArn"
+      }
     },
     {
       "name": "NetworkAnalyzerConfiguration",
@@ -1138,7 +1162,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotwireless",
+        "interface": "INetworkAnalyzerConfigurationRef",
+        "property": "networkAnalyzerConfigurationRef",
+        "arn": "networkAnalyzerConfigurationArn"
+      }
     },
     {
       "name": "ServiceProfile",
@@ -1169,7 +1199,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotwireless",
+        "interface": "IServiceProfileRef",
+        "property": "serviceProfileRef",
+        "arn": "serviceProfileArn"
+      }
     },
     {
       "name": "SidewalkAccount",
@@ -1231,7 +1267,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotwireless",
+        "interface": "IWirelessDeviceRef",
+        "property": "wirelessDeviceRef",
+        "arn": "wirelessDeviceArn"
+      }
     },
     {
       "name": "WirelessGateway",
@@ -1262,7 +1304,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotwireless",
+        "interface": "IWirelessGatewayRef",
+        "property": "wirelessGatewayRef",
+        "arn": "wirelessGatewayArn"
+      }
     },
     {
       "name": "WirelessGatewayTaskDefinition",

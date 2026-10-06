@@ -390,7 +390,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockmantle",
+        "interface": "IProjectRef",
+        "property": "projectRef",
+        "arn": "projectArn"
+      }
     },
     {
       "name": "reservation",

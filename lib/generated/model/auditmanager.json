@@ -555,7 +555,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_auditmanager",
+        "interface": "IAssessmentRef",
+        "property": "assessmentRef",
+        "arn": "assessmentArn"
+      }
     },
     {
       "name": "assessmentControlSet",
@@ -620,7 +626,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_auditmanager",
+        "interface": "IAssessmentFrameworkRef",
+        "property": "assessmentFrameworkRef",
+        "arn": "assessmentFrameworkArn"
+      }
     },
     {
       "name": "control",

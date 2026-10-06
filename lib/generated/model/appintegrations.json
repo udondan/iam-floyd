@@ -329,7 +329,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appintegrations",
+        "interface": "IApplicationRef",
+        "property": "applicationRef",
+        "arn": "applicationArn"
+      }
     },
     {
       "name": "application-association",
@@ -396,7 +402,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appintegrations",
+        "interface": "IDataIntegrationRef",
+        "property": "dataIntegrationRef",
+        "arn": "dataIntegrationArn"
+      }
     },
     {
       "name": "data-integration-association",
@@ -463,7 +475,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appintegrations",
+        "interface": "IEventIntegrationRef",
+        "property": "eventIntegrationRef",
+        "arn": "eventIntegrationArn"
+      }
     },
     {
       "name": "event-integration-association",

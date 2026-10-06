@@ -998,7 +998,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_storagegateway",
+        "interface": "ITapeRef",
+        "property": "tapeRef",
+        "arn": "tapeArn"
+      }
     },
     {
       "name": "tapepool",
@@ -1029,7 +1035,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_storagegateway",
+        "interface": "ITapePoolRef",
+        "property": "tapePoolRef",
+        "arn": "poolArn"
+      }
     },
     {
       "name": "target",

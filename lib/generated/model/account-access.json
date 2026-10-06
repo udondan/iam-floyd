@@ -141,7 +141,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_accountaccess",
+        "interface": "IApplicationRef",
+        "property": "applicationRef",
+        "arn": "applicationArn"
+      }
     }
   ],
   "conditions": [

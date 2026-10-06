@@ -329,7 +329,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_billing",
+        "interface": "IBillingViewRef",
+        "property": "billingViewRef",
+        "arn": "billingViewArn"
+      }
     }
   ],
   "conditions": [

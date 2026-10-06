@@ -149,7 +149,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_supportauthz",
+        "interface": "ISupportPermitRef",
+        "property": "supportPermitRef",
+        "arn": "supportPermitArn"
+      }
     },
     {
       "name": "supportpermitrequest",

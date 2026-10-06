@@ -529,7 +529,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appconfig",
+        "interface": "IApplicationRef",
+        "property": "applicationRef",
+        "id": "applicationId"
+      }
     },
     {
       "name": "configuration",
@@ -678,7 +684,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appconfig",
+        "interface": "IDeploymentStrategyRef",
+        "property": "deploymentStrategyRef",
+        "id": "deploymentStrategyId"
+      }
     },
     {
       "name": "environment",
@@ -858,7 +870,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appconfig",
+        "interface": "IExtensionAssociationRef",
+        "property": "extensionAssociationRef",
+        "arn": "extensionAssociationArn"
+      }
     },
     {
       "name": "hostedconfigurationversion",

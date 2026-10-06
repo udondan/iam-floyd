@@ -357,7 +357,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_resourceexplorer2",
+        "interface": "IIndexRef",
+        "property": "indexRef",
+        "arn": "indexArn"
+      }
     },
     {
       "name": "managed-view",

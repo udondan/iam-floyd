@@ -452,7 +452,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_observabilityadmin",
+        "interface": "IOrganizationCentralizationRuleRef",
+        "property": "organizationCentralizationRuleRef",
+        "arn": "ruleArn"
+      }
     },
     {
       "name": "organization-telemetry-rule",
@@ -483,7 +489,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_observabilityadmin",
+        "interface": "IOrganizationTelemetryRuleRef",
+        "property": "organizationTelemetryRuleRef",
+        "arn": "ruleArn"
+      }
     },
     {
       "name": "s3tableintegration",
@@ -514,7 +526,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_observabilityadmin",
+        "interface": "IS3TableIntegrationRef",
+        "property": "s3TableIntegrationRef",
+        "arn": "s3TableIntegrationArn"
+      }
     },
     {
       "name": "telemetry-pipeline",
@@ -576,7 +594,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_observabilityadmin",
+        "interface": "ITelemetryRuleRef",
+        "property": "telemetryRuleRef",
+        "arn": "ruleArn"
+      }
     }
   ],
   "conditions": [

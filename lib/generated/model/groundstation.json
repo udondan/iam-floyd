@@ -495,7 +495,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifDataflowEndpointGroupId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_groundstation",
+        "interface": "IDataflowEndpointGroupRef",
+        "property": "dataflowEndpointGroupRef",
+        "arn": "dataflowEndpointGroupArn"
+      }
     },
     {
       "name": "EphemerisItem",
@@ -590,7 +596,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifMissionProfileId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_groundstation",
+        "interface": "IMissionProfileRef",
+        "property": "missionProfileRef",
+        "arn": "missionProfileArn"
+      }
     },
     {
       "name": "Satellite",

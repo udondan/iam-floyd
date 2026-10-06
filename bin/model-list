@@ -3,18 +3,19 @@
 # Prints a sorted, unique list of services, actions, resource types or condition keys from the
 # service models.
 #
-# Usage: bin/model-list <services|actions|resources|conditions> [model dir]
+# Usage: bin/model-list <services|actions|resources|conditions|cdk-refs> [model dir]
 #
 # Line formats:
 #   services:   <prefix>
 #   actions:    <prefix>:<action>;<access level>
 #   resources:  <prefix>:<resource type>
 #   conditions: <prefix>:<condition key without prefix>
+#   cdk-refs:   <prefix>:<resource type>;<module>.<interface>.<property>.<field with ARN or id>
 
 set -euo pipefail
 export LC_ALL=C
 
-KIND="${1:?Usage: bin/model-list <services|actions|resources|conditions> [model dir]}"
+KIND="${1:?Usage: bin/model-list <services|actions|resources|conditions|cdk-refs> [model dir]}"
 DIR="${2:-lib/generated/model}"
 
 # shellcheck disable=SC2016 # $p is a jq variable
@@ -30,6 +31,9 @@ case "${KIND}" in
     ;;
   conditions)
     filter='.servicePrefix as $p | .conditions[] | "\($p):\(.key | split(":")[1])"'
+    ;;
+  cdk-refs)
+    filter='.servicePrefix as $p | .resources[] | select(.cdkRef) | "\($p):\(.name);\(.cdkRef.module).\(.cdkRef.interface).\(.cdkRef.property).\(.cdkRef.arn // "id:\(.cdkRef.id)")"'
     ;;
   *)
     echo "Unknown kind: ${KIND}" >&2

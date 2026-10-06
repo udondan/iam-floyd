@@ -1127,7 +1127,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_servicecatalog",
+        "interface": "IPortfolioRef",
+        "property": "portfolioRef",
+        "id": "portfolioId"
+      }
     },
     {
       "name": "Product",

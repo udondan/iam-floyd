@@ -353,7 +353,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_m2",
+        "interface": "IApplicationRef",
+        "property": "applicationRef",
+        "arn": "applicationArn"
+      }
     },
     {
       "name": "Environment",
@@ -384,7 +390,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_m2",
+        "interface": "IEnvironmentRef",
+        "property": "environmentRef",
+        "arn": "environmentArn"
+      }
     }
   ],
   "conditions": [

@@ -1101,7 +1101,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_opensearchservice",
+        "interface": "IApplicationRef",
+        "property": "applicationRef",
+        "arn": "applicationArn"
+      }
     },
     {
       "name": "datasource",
@@ -1163,7 +1169,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_opensearchservice",
+        "interface": "IDomainRef",
+        "property": "domainRef",
+        "arn": "domainArn"
+      }
     },
     {
       "name": "es_role",

@@ -342,7 +342,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_detective",
+        "interface": "IGraphRef",
+        "property": "graphRef",
+        "arn": "graphArn"
+      }
     }
   ],
   "conditions": [

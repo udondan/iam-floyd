@@ -431,7 +431,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53globalresolver",
+        "interface": "IAccessSourceRef",
+        "property": "accessSourceRef",
+        "arn": "accessSourceArn"
+      }
     },
     {
       "name": "access-token",
@@ -457,7 +463,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53globalresolver",
+        "interface": "IAccessTokenRef",
+        "property": "accessTokenRef",
+        "arn": "accessTokenArn"
+      }
     },
     {
       "name": "dns-view",
@@ -483,7 +495,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53globalresolver",
+        "interface": "IDnsViewRef",
+        "property": "dnsViewRef",
+        "arn": "dnsViewArn"
+      }
     },
     {
       "name": "firewall-domain-list",
@@ -509,7 +527,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53globalresolver",
+        "interface": "IFirewallDomainListRef",
+        "property": "firewallDomainListRef",
+        "arn": "firewallDomainListArn"
+      }
     },
     {
       "name": "global-resolver",
@@ -535,7 +559,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53globalresolver",
+        "interface": "IGlobalResolverRef",
+        "property": "globalResolverRef",
+        "arn": "globalResolverArn"
+      }
     }
   ],
   "conditions": [

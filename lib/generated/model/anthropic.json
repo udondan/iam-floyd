@@ -669,7 +669,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_awsexternalanthropic",
+        "interface": "IWorkspaceRef",
+        "property": "workspaceRef",
+        "arn": "workspaceArn"
+      }
     }
   ],
   "conditions": [

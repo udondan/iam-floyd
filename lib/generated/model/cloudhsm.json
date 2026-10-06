@@ -226,7 +226,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudhsm",
+        "interface": "IClusterRef",
+        "property": "clusterRef",
+        "arn": "clusterArn"
+      }
     }
   ],
   "conditions": [

@@ -357,7 +357,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mediapackagev2",
+        "interface": "IChannelGroupRef",
+        "property": "channelGroupRef",
+        "arn": "channelGroupArn"
+      }
     },
     {
       "name": "ChannelPolicy",

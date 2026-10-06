@@ -430,7 +430,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_certificatemanager",
+        "interface": "IAcmeEndpointRef",
+        "property": "acmeEndpointRef",
+        "arn": "acmeEndpointArn"
+      }
     },
     {
       "name": "acme-external-account-binding",
@@ -497,7 +503,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_certificatemanager",
+        "interface": "ICertificateRef",
+        "property": "certificateRef",
+        "arn": "certificateArn"
+      }
     }
   ],
   "conditions": [

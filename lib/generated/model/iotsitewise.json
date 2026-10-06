@@ -1286,7 +1286,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IAccessPolicyRef",
+        "property": "accessPolicyRef",
+        "arn": "accessPolicyArn"
+      }
     },
     {
       "name": "application",
@@ -1353,7 +1359,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IAssetRef",
+        "property": "assetRef",
+        "arn": "assetArn"
+      }
     },
     {
       "name": "asset-model",
@@ -1384,7 +1396,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IAssetModelRef",
+        "property": "assetModelRef",
+        "arn": "assetModelArn"
+      }
     },
     {
       "name": "computation-model",
@@ -1415,7 +1433,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IComputationModelRef",
+        "property": "computationModelRef",
+        "arn": "computationModelArn"
+      }
     },
     {
       "name": "dashboard",
@@ -1446,7 +1470,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IDashboardRef",
+        "property": "dashboardRef",
+        "arn": "dashboardArn"
+      }
     },
     {
       "name": "dataset",
@@ -1477,7 +1507,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IDatasetRef",
+        "property": "datasetRef",
+        "arn": "datasetArn"
+      }
     },
     {
       "name": "gateway",
@@ -1508,7 +1544,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IGatewayRef",
+        "property": "gatewayRef",
+        "id": "gatewayId"
+      }
     },
     {
       "name": "pipeline",
@@ -1575,7 +1617,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IPortalRef",
+        "property": "portalRef",
+        "arn": "portalArn"
+      }
     },
     {
       "name": "project",
@@ -1606,7 +1654,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IProjectRef",
+        "property": "projectRef",
+        "arn": "projectArn"
+      }
     },
     {
       "name": "task",
@@ -1704,7 +1758,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IWorkspaceRef",
+        "property": "workspaceRef",
+        "arn": "workspaceArn"
+      }
     }
   ],
   "conditions": [

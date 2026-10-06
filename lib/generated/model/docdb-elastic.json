@@ -208,7 +208,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_docdbelastic",
+        "interface": "IClusterRef",
+        "property": "clusterRef",
+        "arn": "clusterArn"
+      }
     },
     {
       "name": "cluster-snapshot",
@@ -239,7 +245,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_docdbelastic",
+        "interface": "IClusterSnapshotRef",
+        "property": "clusterSnapshotRef",
+        "arn": "snapshotArn"
+      }
     }
   ],
   "conditions": [

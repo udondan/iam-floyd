@@ -465,7 +465,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cases",
+        "interface": "IDomainRef",
+        "property": "domainRef",
+        "arn": "domainArn"
+      }
     },
     {
       "name": "Field",

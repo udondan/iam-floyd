@@ -185,7 +185,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ivschat",
+        "interface": "ILoggingConfigurationRef",
+        "property": "loggingConfigurationRef",
+        "arn": "loggingConfigurationArn"
+      }
     },
     {
       "name": "Room",
@@ -216,7 +222,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ivschat",
+        "interface": "IRoomRef",
+        "property": "roomRef",
+        "arn": "roomArn"
+      }
     }
   ],
   "conditions": [

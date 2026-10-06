@@ -1657,7 +1657,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_redshift",
+        "interface": "IIntegrationRef",
+        "property": "integrationRef",
+        "arn": "integrationArn"
+      }
     },
     {
       "name": "namespace",
@@ -1746,7 +1752,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_redshift",
+        "interface": "IQEV2IdcApplicationRef",
+        "property": "qev2IdcApplicationRef",
+        "arn": "qev2IdcApplicationArn"
+      }
     },
     {
       "name": "redshiftidcapplication",
@@ -1960,7 +1972,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_redshift",
+        "interface": "ISnapshotCopyGrantRef",
+        "property": "snapshotCopyGrantRef",
+        "arn": "snapshotCopyGrantArn"
+      }
     },
     {
       "name": "snapshotschedule",
@@ -1991,7 +2009,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_redshift",
+        "interface": "ISnapshotScheduleRef",
+        "property": "snapshotScheduleRef",
+        "arn": "snapshotScheduleArn"
+      }
     },
     {
       "name": "subnetgroup",
@@ -2053,7 +2077,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_redshift",
+        "interface": "IUsageLimitRef",
+        "property": "usageLimitRef",
+        "arn": "usageLimitArn"
+      }
     }
   ],
   "conditions": [

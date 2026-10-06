@@ -1057,7 +1057,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifFarmMembershipLevels"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_deadline",
+        "interface": "IFarmRef",
+        "property": "farmRef",
+        "arn": "farmArn"
+      }
     },
     {
       "name": "fleet",
@@ -1170,7 +1176,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_deadline",
+        "interface": "ILicenseEndpointRef",
+        "property": "licenseEndpointRef",
+        "arn": "licenseEndpointArn"
+      }
     },
     {
       "name": "monitor",
@@ -1201,7 +1213,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_deadline",
+        "interface": "IMonitorRef",
+        "property": "monitorRef",
+        "arn": "monitorArn"
+      }
     },
     {
       "name": "queue",

@@ -1144,7 +1144,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lambda",
+        "interface": "ICapacityProviderRef",
+        "property": "capacityProviderRef",
+        "arn": "capacityProviderArn"
+      }
     },
     {
       "name": "code signing config",
@@ -1175,7 +1181,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lambda",
+        "interface": "ICodeSigningConfigRef",
+        "property": "codeSigningConfigRef",
+        "arn": "codeSigningConfigArn"
+      }
     },
     {
       "name": "durable execution",
@@ -1252,7 +1264,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lambda",
+        "interface": "IEventSourceMappingRef",
+        "property": "eventSourceMappingRef",
+        "arn": "eventSourceMappingArn"
+      }
     },
     {
       "name": "function",
@@ -1283,7 +1301,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lambda",
+        "interface": "IFunctionRef",
+        "property": "functionRef",
+        "arn": "functionArn"
+      }
     },
     {
       "name": "function alias",
@@ -1449,7 +1473,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lambda",
+        "interface": "IMicrovmImageRef",
+        "property": "microvmImageRef",
+        "arn": "imageArn"
+      }
     },
     {
       "name": "networkConnector",
@@ -1480,7 +1510,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lambda",
+        "interface": "INetworkConnectorRef",
+        "property": "networkConnectorRef",
+        "arn": "networkConnectorArn"
+      }
     },
     {
       "name": "webFunction",

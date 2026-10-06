@@ -117,7 +117,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotfleethub",
+        "interface": "IApplicationRef",
+        "property": "applicationRef",
+        "arn": "applicationArn"
+      }
     }
   ],
   "conditions": [

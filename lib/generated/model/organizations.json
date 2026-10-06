@@ -593,7 +593,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_organizations",
+        "interface": "IAccountRef",
+        "property": "accountRef",
+        "arn": "accountArn"
+      }
     },
     {
       "name": "awspolicy",
@@ -675,7 +681,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_organizations",
+        "interface": "IOrganizationRef",
+        "property": "organizationRef",
+        "arn": "organizationArn"
+      }
     },
     {
       "name": "organizationalunit",

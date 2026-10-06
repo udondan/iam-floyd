@@ -245,7 +245,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_internetmonitor",
+        "interface": "IMonitorRef",
+        "property": "monitorRef",
+        "arn": "monitorArn"
+      }
     }
   ],
   "conditions": [

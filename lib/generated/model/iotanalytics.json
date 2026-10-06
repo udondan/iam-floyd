@@ -323,7 +323,13 @@
         "ifAwsRequestTag",
         "ifAwsTagKeys",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotanalytics",
+        "interface": "IChannelRef",
+        "property": "channelRef",
+        "id": "channelName"
+      }
     },
     {
       "name": "dataset",
@@ -356,7 +362,13 @@
         "ifAwsRequestTag",
         "ifAwsTagKeys",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotanalytics",
+        "interface": "IDatasetRef",
+        "property": "datasetRef",
+        "id": "datasetName"
+      }
     },
     {
       "name": "datastore",
@@ -389,7 +401,13 @@
         "ifAwsRequestTag",
         "ifAwsTagKeys",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotanalytics",
+        "interface": "IDatastoreRef",
+        "property": "datastoreRef",
+        "id": "datastoreName"
+      }
     },
     {
       "name": "pipeline",
@@ -422,7 +440,13 @@
         "ifAwsRequestTag",
         "ifAwsTagKeys",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotanalytics",
+        "interface": "IPipelineRef",
+        "property": "pipelineRef",
+        "id": "pipelineName"
+      }
     }
   ],
   "conditions": [

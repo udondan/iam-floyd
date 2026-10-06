@@ -298,7 +298,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53recoveryreadiness",
+        "interface": "ICellRef",
+        "property": "cellRef",
+        "arn": "cellArn"
+      }
     },
     {
       "name": "readinesscheck",
@@ -324,7 +330,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53recoveryreadiness",
+        "interface": "IReadinessCheckRef",
+        "property": "readinessCheckRef",
+        "arn": "readinessCheckArn"
+      }
     },
     {
       "name": "recoverygroup",
@@ -350,7 +362,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53recoveryreadiness",
+        "interface": "IRecoveryGroupRef",
+        "property": "recoveryGroupRef",
+        "arn": "recoveryGroupArn"
+      }
     },
     {
       "name": "resourceset",
@@ -376,7 +394,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53recoveryreadiness",
+        "interface": "IResourceSetRef",
+        "property": "resourceSetRef",
+        "arn": "resourceSetArn"
+      }
     }
   ],
   "conditions": [

@@ -129,7 +129,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_pipes",
+        "interface": "IPipeRef",
+        "property": "pipeRef",
+        "arn": "pipeArn"
+      }
     }
   ],
   "conditions": [

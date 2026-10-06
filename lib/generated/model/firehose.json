@@ -145,7 +145,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_kinesisfirehose",
+        "interface": "IDeliveryStreamRef",
+        "property": "deliveryStreamRef",
+        "arn": "deliveryStreamArn"
+      }
     }
   ],
   "conditions": [

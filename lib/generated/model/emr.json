@@ -769,7 +769,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_emr",
+        "interface": "IClusterRef",
+        "property": "clusterRef",
+        "id": "clusterId"
+      }
     },
     {
       "name": "editor",
@@ -902,7 +908,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_emr",
+        "interface": "IStudioRef",
+        "property": "studioRef",
+        "arn": "studioArn"
+      }
     }
   ],
   "conditions": [

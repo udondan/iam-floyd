@@ -302,7 +302,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_backupgateway",
+        "interface": "IHypervisorRef",
+        "property": "hypervisorRef",
+        "arn": "hypervisorArn"
+      }
     },
     {
       "name": "virtualmachine",

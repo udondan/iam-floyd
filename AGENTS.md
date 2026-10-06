@@ -40,6 +40,10 @@ One codebase produces two npm packages:
 
 `bin/mkcdk.ts` transforms between variants by swapping `*.CDK.ts` files and emitting the CDK variant of the service classes from the model.
 
+### CDK Constructs in `on*()` Methods
+
+In the CDK variant, the `on*()` method of a resource type with a single required placeholder also takes a construct, if aws-cdk-lib has a reference interface for it (`aws-cdk-lib/interfaces`, e.g. `onFunction(fn)` with `interfaces.aws_lambda.IFunctionRef`). The method then uses the ARN of the reference (`fn.functionRef.functionArn`), or, if the reference has no ARN, its identifier in place of the placeholder. `lib/generator/cdk-refs.ts` matches the resource types of the model with the reference interfaces of the installed aws-cdk-lib (service prefix ↔ module, resource type ↔ interface) and writes them as `cdkRef` into the model; it runs with `make generate` and alone with `make cdk-refs`. `lib/generated/cdk-refs.json` (committed) has the interfaces in use and the minimum version of aws-cdk-lib, the peer dependency of `cdk-iam-floyd`, which is raised to the installed version only when interfaces are added. Wrong matches are fixed in `fixes.ts` (`cdkModule`, `resourceTypes.<name>.cdkRef`).
+
 ### Other Languages (jsii)
 
 `cdk-iam-floyd` is also packaged for Python, Java, .NET and Go with `jsii-pacmak`. The jsii compiler is not used: `lib/generator/emit/jsii.ts` writes the `.jsii` assembly from the model, and `bin/jsii.ts` adds the `jsii` targets to package.json, writes the assembly and appends the jsii type info to `lib/index.js`. The same `.jsii` is what Construct Hub renders the API docs from. jsii-pacmak runs with `--no-runtime-type-checking` and `bin/jsii-pack.ts` as pack command, which embeds an npm tarball without docs and `.d.ts` files in the packages.
@@ -93,11 +97,12 @@ make install         # clean + npm i
 make generate        # scrape AWS docs into lib/generated/model/ and emit (25hr cache)
 make generate-force  # NOCACHE=1 - ignores time-based cache
 make index-managed-policies  # regenerate AWS managed policies index
+make cdk-refs        # match the resource types of the model with the CDK reference interfaces
 make stats           # update the counts in README.md and docs from the model
 make changelog       # print the changes of the managed policies and the model since the last tag
 ```
 
-`bin/model-list <services|actions|resources|conditions>` prints those lists from the model, and `bin/model-diff [ref]` prints the differences to a git ref (default `HEAD`).
+`bin/model-list <services|actions|resources|conditions|cdk-refs>` prints those lists from the model, and `bin/model-diff [ref]` prints the differences to a git ref (default `HEAD`).
 
 ### Testing
 
@@ -174,16 +179,18 @@ The generator scrapes live AWS docs, which sometimes contain errors or inconsist
 
 Each top-level key is the URL slug of a service's IAM docs page (e.g. `ec2`, `ssm`, `'neptune-db'`). Supported sub-keys:
 
-| Sub-key                              | Effect                                                                                                                                                        |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ignore: true`                       | Skip generating this service entirely (used for EOL services)                                                                                                 |
-| `name: 'slug'`                       | Override the generated filename and class name (needed when the same service prefix spans multiple doc pages, e.g. `pinpointemailservice` → `ses-pinpoint`)   |
-| `service: 'prefix'`                  | Override the IAM service prefix used in the generated code                                                                                                    |
-| `resourceTypes.<name>.arn`           | Replace the ARN template for a resource type with a corrected one                                                                                             |
-| `conditions.<key>.key`               | Rewrite the condition key string (used when docs have a concrete example key like `RequestTag/tag-key` instead of the parametric form `RequestTag/${TagKey}`) |
-| `conditions.<key>.methodName`        | Override the generated `ifXxx()` method name for a condition                                                                                                  |
-| `conditions.<key>.operator.type`     | Override the inferred operator type (e.g. force `date` instead of `string`)                                                                                   |
-| `conditions.<key>.operator.override` | Set `typeOverride` on the condition (used for custom operator generation)                                                                                     |
+| Sub-key                              | Effect                                                                                                                                                                          |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ignore: true`                       | Skip generating this service entirely (used for EOL services)                                                                                                                   |
+| `name: 'slug'`                       | Override the generated filename and class name (needed when the same service prefix spans multiple doc pages, e.g. `pinpointemailservice` → `ses-pinpoint`)                     |
+| `service: 'prefix'`                  | Override the IAM service prefix used in the generated code                                                                                                                      |
+| `resourceTypes.<name>.arn`           | Replace the ARN template for a resource type with a corrected one                                                                                                               |
+| `conditions.<key>.key`               | Rewrite the condition key string (used when docs have a concrete example key like `RequestTag/tag-key` instead of the parametric form `RequestTag/${TagKey}`)                   |
+| `conditions.<key>.methodName`        | Override the generated `ifXxx()` method name for a condition                                                                                                                    |
+| `conditions.<key>.operator.type`     | Override the inferred operator type (e.g. force `date` instead of `string`)                                                                                                     |
+| `conditions.<key>.operator.override` | Set `typeOverride` on the condition (used for custom operator generation)                                                                                                       |
+| `cdkModule: 'module'`                | Module of `aws-cdk-lib/interfaces` with the reference interfaces of the service, if its name differs from the service prefix (e.g. `aws_stepfunctions` for `states`)            |
+| `resourceTypes.<name>.cdkRef`        | Set the reference interface the `on*()` method accepts in the CDK variant (`{ interface, arn }` or `{ interface, id }`), or `false` for none, when the automatic match is wrong |
 
 ### Exported fixer functions
 
@@ -311,6 +318,6 @@ Follow conventional commits:
 - `index-managed-policies.yml` - Weekly on Sunday: updates managed policies, opens a `feat:` PR with `automerge` label
 - `release-please.yml` - On push to main: release-please maintains the release PR (version in `package.json` and `docs/source/conf.py`, `CHANGELOG.md`). After each run, `bin/changelog-add-iam-changes` adds the changes of the managed policies and the model since the last release to the new changelog entry of the PR. Merging the PR creates the tag and a draft release, and starts `test-and-publish.yml` with the tag
 - `automerge-schedule.yml` - Weekly on Monday: merges the release PR
-- `test-and-publish.yml` - On PR: `make install lint` (job `lint`), `make install test-typescript` + `make lint-cdk` + CDK deploy test + `make package-jsii test-jsii` per language + `make package-native test-transpile` against the built Python, Java, .NET and Go packages. Started by `release-please.yml` with a tag: builds the packages from the tag, publishes to npm, PyPI, NuGet, Maven Central and the Go module proxy on GitHub Pages, sets the notes of the release from `CHANGELOG.md` and publishes the release
+- `test-and-publish.yml` - On PR: `make install lint` (job `lint`), `make install test-typescript` + `make lint-cdk` + CDK deploy test + `make build test-typescript-cdk` with the minimum aws-cdk-lib of `lib/generated/cdk-refs.json` + `make package-jsii test-jsii` per language + `make package-native test-transpile` against the built Python, Java, .NET and Go packages. Started by `release-please.yml` with a tag: builds the packages from the tag, publishes to npm, PyPI, NuGet, Maven Central and the Go module proxy on GitHub Pages, sets the notes of the release from `CHANGELOG.md` and publishes the release
 - `automerge.yml` - Auto-merges PRs labeled `automerge` after tests pass
 - `test-docs.yml` - Builds Sphinx docs on `docs/**` changes

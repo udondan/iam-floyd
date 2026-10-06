@@ -435,7 +435,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_codedeploy",
+        "interface": "IApplicationRef",
+        "property": "applicationRef",
+        "id": "applicationName"
+      }
     },
     {
       "name": "deploymentconfig",

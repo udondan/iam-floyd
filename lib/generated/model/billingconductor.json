@@ -323,7 +323,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_billingconductor",
+        "interface": "IBillingGroupRef",
+        "property": "billingGroupRef",
+        "arn": "billingGroupArn"
+      }
     },
     {
       "name": "customlineitem",
@@ -349,7 +355,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_billingconductor",
+        "interface": "ICustomLineItemRef",
+        "property": "customLineItemRef",
+        "arn": "customLineItemArn"
+      }
     },
     {
       "name": "pricingplan",
@@ -375,7 +387,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_billingconductor",
+        "interface": "IPricingPlanRef",
+        "property": "pricingPlanRef",
+        "arn": "pricingPlanArn"
+      }
     },
     {
       "name": "pricingrule",
@@ -401,7 +419,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_billingconductor",
+        "interface": "IPricingRuleRef",
+        "property": "pricingRuleRef",
+        "arn": "pricingRuleArn"
+      }
     }
   ],
   "conditions": [

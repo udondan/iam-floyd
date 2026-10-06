@@ -330,7 +330,13 @@
       "conditionMethods": [
         "ifAwsRequestTag",
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_securitylake",
+        "interface": "ISubscriberRef",
+        "property": "subscriberRef",
+        "arn": "subscriberArn"
+      }
     }
   ],
   "conditions": [

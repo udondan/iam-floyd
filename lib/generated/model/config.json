@@ -906,7 +906,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_config",
+        "interface": "IConfigRuleRef",
+        "property": "configRuleRef",
+        "arn": "configRuleArn"
+      }
     },
     {
       "name": "ConfigurationAggregator",
@@ -937,7 +943,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_config",
+        "interface": "IConfigurationAggregatorRef",
+        "property": "configurationAggregatorRef",
+        "arn": "configurationAggregatorArn"
+      }
     },
     {
       "name": "ConfigurationRecorder",
@@ -1081,7 +1093,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_config",
+        "interface": "IOrganizationConfigRuleRef",
+        "property": "organizationConfigRuleRef",
+        "id": "organizationConfigRuleId"
+      }
     },
     {
       "name": "OrganizationConformancePack",
@@ -1112,7 +1130,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_config",
+        "interface": "IOrganizationConformancePackRef",
+        "property": "organizationConformancePackRef",
+        "arn": "organizationConformancePackArn"
+      }
     },
     {
       "name": "RemediationConfiguration",

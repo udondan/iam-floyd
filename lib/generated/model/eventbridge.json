@@ -674,7 +674,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_events",
+        "interface": "IApiDestinationRef",
+        "property": "apiDestinationRef",
+        "arn": "apiDestinationArn"
+      }
     },
     {
       "name": "archive",
@@ -703,7 +709,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_events",
+        "interface": "IArchiveRef",
+        "property": "archiveRef",
+        "arn": "archiveArn"
+      }
     },
     {
       "name": "connection",
@@ -732,7 +744,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_events",
+        "interface": "IConnectionRef",
+        "property": "connectionRef",
+        "arn": "connectionArn"
+      }
     },
     {
       "name": "create-snapshot",
@@ -785,7 +803,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_events",
+        "interface": "IEndpointRef",
+        "property": "endpointRef",
+        "arn": "endpointArn"
+      }
     },
     {
       "name": "event-bus",
@@ -816,7 +840,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_events",
+        "interface": "IEventBusRef",
+        "property": "eventBusRef",
+        "arn": "eventBusArn"
+      }
     },
     {
       "name": "event-busv2",

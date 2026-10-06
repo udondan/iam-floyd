@@ -538,7 +538,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_fsx",
+        "interface": "IBackupRef",
+        "property": "backupRef",
+        "arn": "resourceArn"
+      }
     },
     {
       "name": "file-cache",
@@ -569,7 +575,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_fsx",
+        "interface": "IFileCacheRef",
+        "property": "fileCacheRef",
+        "arn": "resourceArn"
+      }
     },
     {
       "name": "file-system",
@@ -600,7 +612,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_fsx",
+        "interface": "IFileSystemRef",
+        "property": "fileSystemRef",
+        "id": "fileSystemId"
+      }
     },
     {
       "name": "snapshot",

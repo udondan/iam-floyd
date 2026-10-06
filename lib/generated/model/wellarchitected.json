@@ -841,7 +841,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_wellarchitected",
+        "interface": "IAgentProfileRef",
+        "property": "agentProfileRef",
+        "arn": "agentProfileArn"
+      }
     },
     {
       "name": "agent-recommendation",
@@ -903,7 +909,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_wellarchitected",
+        "interface": "ILensRef",
+        "property": "lensRef",
+        "arn": "lensArn"
+      }
     },
     {
       "name": "profile",
@@ -934,7 +946,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_wellarchitected",
+        "interface": "IProfileRef",
+        "property": "profileRef",
+        "arn": "profileArn"
+      }
     },
     {
       "name": "review-template",
@@ -965,7 +983,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_wellarchitected",
+        "interface": "IReviewTemplateRef",
+        "property": "reviewTemplateRef",
+        "arn": "templateArn"
+      }
     },
     {
       "name": "workload",
@@ -996,7 +1020,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_wellarchitected",
+        "interface": "IWorkloadRef",
+        "property": "workloadRef",
+        "arn": "workloadArn"
+      }
     }
   ],
   "conditions": [

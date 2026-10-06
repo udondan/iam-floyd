@@ -535,7 +535,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_notifications",
+        "interface": "INotificationConfigurationRef",
+        "property": "notificationConfigurationRef",
+        "arn": "notificationConfigurationArn"
+      }
     },
     {
       "name": "NotificationEvent",

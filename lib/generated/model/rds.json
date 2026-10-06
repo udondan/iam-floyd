@@ -1607,7 +1607,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifClusterSnapshotTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_rds",
+        "interface": "IClusterSnapshotRef",
+        "property": "clusterSnapshotRef",
+        "arn": "dbClusterSnapshotArn"
+      }
     },
     {
       "name": "db",
@@ -1767,7 +1773,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_rds",
+        "interface": "IIntegrationRef",
+        "property": "integrationRef",
+        "arn": "integrationArn"
+      }
     },
     {
       "name": "og",

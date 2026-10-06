@@ -130,8 +130,15 @@ export function emitTypeScript(
   });
 
   const methods: OptionalKind<MethodDeclarationStructure>[] = [];
+  let hasCdkRefs = false;
 
   for (const resource of model.resources) {
+    // the CDK variant takes a construct in place of the required placeholder
+    const cdkRef = options.cdk ? resource.cdkRef : undefined;
+    const cdkRefType = cdkRef
+      ? `interfaces.${cdkRef.module}.${cdkRef.interface}`
+      : undefined;
+    const statements: string[] = [];
     const requiredParameters: OptionalKind<ParameterDeclarationStructure>[] =
       [];
     const optionalParameters: OptionalKind<ParameterDeclarationStructure>[] =
@@ -146,9 +153,22 @@ export function emitTypeScript(
       } else {
         requiredParameters.push({
           name: placeholder.name,
-          type: 'string',
+          type: cdkRefType ? `string | ${cdkRefType}` : 'string',
           hasQuestionToken: false,
         });
+        if (cdkRef?.arn) {
+          statements.push(
+            `if (typeof ${placeholder.name} !== 'string') {`,
+            `  return this.on(${placeholder.name}.${cdkRef.property}.${cdkRef.arn});`,
+            '}',
+          );
+        } else if (cdkRef?.id) {
+          statements.push(
+            `if (typeof ${placeholder.name} !== 'string') {`,
+            `  ${placeholder.name} = ${placeholder.name}.${cdkRef.property}.${cdkRef.id};`,
+            '}',
+          );
+        }
       }
     });
 
@@ -165,6 +185,10 @@ export function emitTypeScript(
       } else if (kind == 'account') {
         orDefault = ` ?? this.defaultAccount`;
         paramDocs += `\n@param ${name} - Account of the resource; defaults to \`*\`, unless using the CDK, where the default is the current Stack's account.`;
+      } else if (cdkRef?.arn) {
+        paramDocs += `\n@param ${name} - Identifier for the ${name}, or a construct that implements \`${cdkRefType}\`, whose ARN is used. Then the partition, region and account are ignored.`;
+      } else if (cdkRef?.id) {
+        paramDocs += `\n@param ${name} - Identifier for the ${name}, or a construct that implements \`${cdkRefType}\`.`;
       } else {
         paramDocs += `\n@param ${name} - Identifier for the ${name}.`;
       }
@@ -183,11 +207,16 @@ export function emitTypeScript(
       });
     }
 
+    if (cdkRef) {
+      hasCdkRefs = true;
+    }
+    statements.push(`return this.on(\`${arn}\`);`);
+
     methods.push({
       name: resource.methodName,
       scope: Scope.Public,
       parameters: [...requiredParameters, ...optionalParameters],
-      statements: `return this.on(\`${arn}\`);`,
+      statements,
       docs: [{ description: desc }],
     });
   }
@@ -312,7 +341,9 @@ export function emitTypeScript(
 
   if (options.cdk) {
     sourceFile.addImportDeclaration({
-      namedImports: ['aws_iam as iam'],
+      namedImports: hasCdkRefs
+        ? ['aws_iam as iam', 'interfaces']
+        : ['aws_iam as iam'],
       moduleSpecifier: 'aws-cdk-lib',
     });
   }

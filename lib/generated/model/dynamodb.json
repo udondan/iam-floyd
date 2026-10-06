@@ -751,7 +751,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_dynamodb",
+        "interface": "IGlobalTableRef",
+        "property": "globalTableRef",
+        "arn": "globalTableArn"
+      }
     },
     {
       "name": "import",
@@ -888,7 +894,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_dynamodb",
+        "interface": "ITableRef",
+        "property": "tableRef",
+        "arn": "tableArn"
+      }
     }
   ],
   "conditions": [

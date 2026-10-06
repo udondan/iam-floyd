@@ -1521,7 +1521,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudfront",
+        "interface": "IConnectionFunctionRef",
+        "property": "connectionFunctionRef",
+        "arn": "connectionFunctionArn"
+      }
     },
     {
       "name": "connection-group",
@@ -1547,7 +1553,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudfront",
+        "interface": "IConnectionGroupRef",
+        "property": "connectionGroupRef",
+        "arn": "connectionGroupArn"
+      }
     },
     {
       "name": "continuous-deployment-policy",
@@ -1597,7 +1609,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudfront",
+        "interface": "IDistributionRef",
+        "property": "distributionRef",
+        "id": "distributionId"
+      }
     },
     {
       "name": "distribution-tenant",
@@ -1623,7 +1641,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudfront",
+        "interface": "IDistributionTenantRef",
+        "property": "distributionTenantRef",
+        "arn": "distributionTenantArn"
+      }
     },
     {
       "name": "field-level-encryption-config",
@@ -1671,7 +1695,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_cloudfront",
+        "interface": "IFieldLevelEncryptionProfileRef",
+        "property": "fieldLevelEncryptionProfileRef",
+        "arn": "fieldLevelEncryptionProfileArn"
+      }
     },
     {
       "name": "function",
@@ -1697,7 +1727,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudfront",
+        "interface": "IFunctionRef",
+        "property": "functionRef",
+        "arn": "functionArn"
+      }
     },
     {
       "name": "key-value-store",
@@ -1723,7 +1759,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudfront",
+        "interface": "IKeyValueStoreRef",
+        "property": "keyValueStoreRef",
+        "arn": "keyValueStoreArn"
+      }
     },
     {
       "name": "origin-access-control",
@@ -1819,7 +1861,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_cloudfront",
+        "interface": "IRealtimeLogConfigRef",
+        "property": "realtimeLogConfigRef",
+        "arn": "realtimeLogConfigArn"
+      }
     },
     {
       "name": "response-headers-policy",
@@ -1895,7 +1943,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudfront",
+        "interface": "ITrustStoreRef",
+        "property": "trustStoreRef",
+        "arn": "trustStoreArn"
+      }
     },
     {
       "name": "vpcorigin",
@@ -1921,7 +1975,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudfront",
+        "interface": "IVpcOriginRef",
+        "property": "vpcOriginRef",
+        "arn": "vpcOriginArn"
+      }
     }
   ],
   "conditions": [

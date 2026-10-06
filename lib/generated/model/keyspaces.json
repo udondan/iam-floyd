@@ -219,7 +219,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cassandra",
+        "interface": "IKeyspaceRef",
+        "property": "keyspaceRef",
+        "id": "keyspaceName"
+      }
     },
     {
       "name": "stream",

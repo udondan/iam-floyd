@@ -1003,7 +1003,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mediaconnect",
+        "interface": "IRouterInputRef",
+        "property": "routerInputRef",
+        "arn": "routerInputArn"
+      }
     },
     {
       "name": "RouterNetworkInterface",
@@ -1034,7 +1040,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mediaconnect",
+        "interface": "IRouterNetworkInterfaceRef",
+        "property": "routerNetworkInterfaceRef",
+        "arn": "routerNetworkInterfaceArn"
+      }
     },
     {
       "name": "RouterOutput",
@@ -1065,7 +1077,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mediaconnect",
+        "interface": "IRouterOutputRef",
+        "property": "routerOutputRef",
+        "arn": "routerOutputArn"
+      }
     },
     {
       "name": "Source",

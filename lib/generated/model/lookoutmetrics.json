@@ -289,7 +289,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lookoutmetrics",
+        "interface": "IAlertRef",
+        "property": "alertRef",
+        "arn": "alertArn"
+      }
     },
     {
       "name": "AnomalyDetector",
@@ -320,7 +326,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lookoutmetrics",
+        "interface": "IAnomalyDetectorRef",
+        "property": "anomalyDetectorRef",
+        "arn": "anomalyDetectorArn"
+      }
     },
     {
       "name": "MetricSet",

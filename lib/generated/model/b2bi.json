@@ -297,7 +297,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_b2bi",
+        "interface": "ICapabilityRef",
+        "property": "capabilityRef",
+        "arn": "capabilityArn"
+      }
     },
     {
       "name": "partnership",
@@ -328,7 +334,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_b2bi",
+        "interface": "IPartnershipRef",
+        "property": "partnershipRef",
+        "arn": "partnershipArn"
+      }
     },
     {
       "name": "profile",
@@ -359,7 +371,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_b2bi",
+        "interface": "IProfileRef",
+        "property": "profileRef",
+        "arn": "profileArn"
+      }
     },
     {
       "name": "transformer",
@@ -390,7 +408,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_b2bi",
+        "interface": "ITransformerRef",
+        "property": "transformerRef",
+        "arn": "transformerArn"
+      }
     }
   ],
   "conditions": [

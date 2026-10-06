@@ -559,7 +559,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_licensemanager",
+        "interface": "IGrantRef",
+        "property": "grantRef",
+        "arn": "grantArn"
+      }
     },
     {
       "name": "license",
@@ -585,7 +591,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_licensemanager",
+        "interface": "ILicenseRef",
+        "property": "licenseRef",
+        "arn": "licenseArn"
+      }
     },
     {
       "name": "license-asset-group",
@@ -616,7 +628,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_licensemanager",
+        "interface": "ILicenseAssetGroupRef",
+        "property": "licenseAssetGroupRef",
+        "arn": "licenseAssetGroupArn"
+      }
     },
     {
       "name": "license-asset-ruleset",
@@ -647,7 +665,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_licensemanager",
+        "interface": "ILicenseAssetRuleSetRef",
+        "property": "licenseAssetRuleSetRef",
+        "arn": "licenseAssetRulesetArn"
+      }
     },
     {
       "name": "license-configuration",

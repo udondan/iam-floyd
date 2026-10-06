@@ -229,7 +229,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_agentregistry",
+        "interface": "IRegistryRef",
+        "property": "registryRef",
+        "arn": "registryArn"
+      }
     },
     {
       "name": "registry-record",

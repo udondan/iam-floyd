@@ -522,7 +522,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_transcribe",
+        "interface": "ICallAnalyticsCategoryRef",
+        "property": "callAnalyticsCategoryRef",
+        "arn": "callAnalyticsCategoryArn"
+      }
     },
     {
       "name": "callanalyticsjob",
@@ -677,7 +683,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_transcribe",
+        "interface": "IMedicalVocabularyRef",
+        "property": "medicalVocabularyRef",
+        "arn": "medicalVocabularyArn"
+      }
     },
     {
       "name": "transcriptionjob",
@@ -739,7 +751,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_transcribe",
+        "interface": "IVocabularyRef",
+        "property": "vocabularyRef",
+        "arn": "vocabularyArn"
+      }
     },
     {
       "name": "vocabularyfilter",
@@ -770,7 +788,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_transcribe",
+        "interface": "IVocabularyFilterRef",
+        "property": "vocabularyFilterRef",
+        "arn": "vocabularyFilterArn"
+      }
     }
   ],
   "conditions": [

@@ -241,7 +241,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_codeguruprofiler",
+        "interface": "IProfilingGroupRef",
+        "property": "profilingGroupRef",
+        "arn": "profilingGroupArn"
+      }
     }
   ],
   "conditions": [

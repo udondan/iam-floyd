@@ -293,7 +293,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_dsql",
+        "interface": "IClusterRef",
+        "property": "clusterRef",
+        "id": "identifier"
+      }
     },
     {
       "name": "Stream",

@@ -708,7 +708,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_devopsagent",
+        "interface": "IAgentSpaceRef",
+        "property": "agentSpaceRef",
+        "arn": "agentSpaceArn"
+      }
     },
     {
       "name": "asset",
@@ -807,7 +813,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_devopsagent",
+        "interface": "IPrivateConnectionRef",
+        "property": "privateConnectionRef",
+        "arn": "privateConnectionArn"
+      }
     },
     {
       "name": "service",
@@ -838,7 +850,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_devopsagent",
+        "interface": "IServiceRef",
+        "property": "serviceRef",
+        "arn": "serviceArn"
+      }
     },
     {
       "name": "trigger",

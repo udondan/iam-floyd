@@ -382,7 +382,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sns",
+        "interface": "ITopicRef",
+        "property": "topicRef",
+        "arn": "topicArn"
+      }
     }
   ],
   "conditions": [

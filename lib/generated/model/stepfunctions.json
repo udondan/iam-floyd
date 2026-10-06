@@ -361,7 +361,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_stepfunctions",
+        "interface": "IActivityRef",
+        "property": "activityRef",
+        "arn": "activityArn"
+      }
     },
     {
       "name": "execution",
@@ -589,7 +595,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_stepfunctions",
+        "interface": "IStateMachineRef",
+        "property": "stateMachineRef",
+        "arn": "stateMachineArn"
+      }
     },
     {
       "name": "statemachinealias",

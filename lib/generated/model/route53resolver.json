@@ -668,7 +668,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53resolver",
+        "interface": "IFirewallDomainListRef",
+        "property": "firewallDomainListRef",
+        "arn": "firewallDomainListArn"
+      }
     },
     {
       "name": "firewall-rule-group",
@@ -699,7 +705,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53resolver",
+        "interface": "IFirewallRuleGroupRef",
+        "property": "firewallRuleGroupRef",
+        "arn": "firewallRuleGroupArn"
+      }
     },
     {
       "name": "firewall-rule-group-association",
@@ -730,7 +742,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53resolver",
+        "interface": "IFirewallRuleGroupAssociationRef",
+        "property": "firewallRuleGroupAssociationRef",
+        "arn": "firewallRuleGroupAssociationArn"
+      }
     },
     {
       "name": "outpost-resolver",
@@ -761,7 +779,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53resolver",
+        "interface": "IOutpostResolverRef",
+        "property": "outpostResolverRef",
+        "arn": "outpostResolverArn"
+      }
     },
     {
       "name": "resolver-config",
@@ -852,7 +876,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53resolver",
+        "interface": "IResolverEndpointRef",
+        "property": "resolverEndpointRef",
+        "arn": "resolverEndpointArn"
+      }
     },
     {
       "name": "resolver-query-log-config",
@@ -914,7 +944,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53resolver",
+        "interface": "IResolverRuleRef",
+        "property": "resolverRuleRef",
+        "arn": "resolverRuleArn"
+      }
     }
   ],
   "conditions": [

@@ -297,7 +297,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_emrcontainers",
+        "interface": "IJobTemplateRef",
+        "property": "jobTemplateRef",
+        "arn": "jobTemplateArn"
+      }
     },
     {
       "name": "managedEndpoint",
@@ -364,7 +370,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_emrcontainers",
+        "interface": "ISecurityConfigurationRef",
+        "property": "securityConfigurationRef",
+        "arn": "securityConfigurationArn"
+      }
     },
     {
       "name": "virtualCluster",
@@ -395,7 +407,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_emrcontainers",
+        "interface": "IVirtualClusterRef",
+        "property": "virtualClusterRef",
+        "arn": "virtualClusterArn"
+      }
     }
   ],
   "conditions": [

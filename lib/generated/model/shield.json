@@ -388,7 +388,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_shield",
+        "interface": "IProtectionRef",
+        "property": "protectionRef",
+        "arn": "protectionArn"
+      }
     },
     {
       "name": "protection-group",
@@ -414,7 +420,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_shield",
+        "interface": "IProtectionGroupRef",
+        "property": "protectionGroupRef",
+        "arn": "protectionGroupArn"
+      }
     }
   ],
   "conditions": [

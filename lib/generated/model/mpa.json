@@ -262,7 +262,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mpa",
+        "interface": "IApprovalTeamRef",
+        "property": "approvalTeamRef",
+        "arn": "approvalTeamArn"
+      }
     },
     {
       "name": "identity-source",
@@ -293,7 +299,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mpa",
+        "interface": "IIdentitySourceRef",
+        "property": "identitySourceRef",
+        "arn": "identitySourceArn"
+      }
     },
     {
       "name": "session",

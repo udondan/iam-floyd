@@ -229,7 +229,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesthinclient",
+        "interface": "IEnvironmentRef",
+        "property": "environmentRef",
+        "arn": "environmentArn"
+      }
     },
     {
       "name": "softwareset",

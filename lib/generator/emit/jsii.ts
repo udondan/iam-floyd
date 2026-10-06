@@ -16,6 +16,7 @@ import {
 } from 'ts-morph';
 import { gunzipSync, gzipSync } from 'zlib';
 
+import { cdkMinVersion } from '../cdk-refs';
 import { ServiceModel } from '../model';
 import { PackageJson } from '../package-json';
 
@@ -235,6 +236,11 @@ function serviceType(
   for (const resource of model.resources) {
     const required: Parameter[] = [];
     const optional: Parameter[] = [];
+    // the CDK variant takes a construct in place of the required placeholder
+    const cdkRef = variant == 'cdk' ? resource.cdkRef : undefined;
+    const cdkRefFqn = cdkRef
+      ? `aws-cdk-lib.interfaces.${cdkRef.module}.${cdkRef.interface}`
+      : undefined;
     for (const { name, kind } of resource.placeholders) {
       let doc: string;
       if (kind == 'partition') {
@@ -243,12 +249,19 @@ function serviceType(
         doc = `Region of the resource; defaults to \`*\`, unless using the CDK, where the default is the current Stack's region.`;
       } else if (kind == 'account') {
         doc = `Account of the resource; defaults to \`*\`, unless using the CDK, where the default is the current Stack's account.`;
+      } else if (cdkRef?.arn) {
+        doc = `Identifier for the ${name}, or a construct that implements \`${cdkRef.interface}\`, whose ARN is used. Then the partition, region and account are ignored.`;
+      } else if (cdkRef?.id) {
+        doc = `Identifier for the ${name}, or a construct that implements \`${cdkRef.interface}\`.`;
       } else {
         doc = `Identifier for the ${name}.`;
       }
       const parameter: Parameter = {
         name,
-        type: primitive('string'),
+        type:
+          kind == 'required' && cdkRefFqn
+            ? unionOf([primitive('string'), { fqn: cdkRefFqn }])
+            : primitive('string'),
         docs: { summary: doc },
       };
       if (kind == 'required') {
@@ -1032,7 +1045,9 @@ export function emitJsii(models: ServiceModel[], options: JsiiOptions) {
   const keywords: string[] = [...packageJson.keywords];
   if (variant == 'cdk') keywords.push('cdk', 'aws-cdk');
   const dependencies: Record<string, string> =
-    variant == 'cdk' ? { 'aws-cdk-lib': '^2.0.0', constructs: '^10.0.0' } : {};
+    variant == 'cdk'
+      ? { 'aws-cdk-lib': `^${cdkMinVersion()}`, constructs: '^10.0.0' }
+      : {};
 
   const pythonModule = name.replace(/-/g, '_');
 

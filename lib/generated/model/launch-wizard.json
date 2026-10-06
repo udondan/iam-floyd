@@ -369,7 +369,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_launchwizard",
+        "interface": "IDeploymentRef",
+        "property": "deploymentRef",
+        "arn": "deploymentArn"
+      }
     }
   ],
   "conditions": [

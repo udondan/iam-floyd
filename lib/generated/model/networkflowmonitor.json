@@ -261,7 +261,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networkflowmonitor",
+        "interface": "IMonitorRef",
+        "property": "monitorRef",
+        "arn": "monitorArn"
+      }
     },
     {
       "name": "scope",
@@ -292,7 +298,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networkflowmonitor",
+        "interface": "IScopeRef",
+        "property": "scopeRef",
+        "arn": "scopeArn"
+      }
     }
   ],
   "conditions": [

@@ -628,7 +628,13 @@
         "ifMultiRegion",
         "ifMultiRegionKeyType",
         "ifResourceAliases"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_kms",
+        "interface": "IKeyRef",
+        "property": "keyRef",
+        "arn": "keyArn"
+      }
     }
   ],
   "conditions": [

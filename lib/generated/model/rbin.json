@@ -130,7 +130,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_rbin",
+        "interface": "IRuleRef",
+        "property": "ruleRef",
+        "arn": "ruleArn"
+      }
     }
   ],
   "conditions": [

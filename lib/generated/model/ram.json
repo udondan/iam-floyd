@@ -382,7 +382,13 @@
       "conditionMethods": [
         "ifPermissionArn",
         "ifPermissionResourceType"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ram",
+        "interface": "IPermissionRef",
+        "property": "permissionRef",
+        "arn": "permissionArn"
+      }
     },
     {
       "name": "resource-share",
@@ -415,7 +421,13 @@
         "ifAwsResourceTag",
         "ifAllowsExternalPrincipals",
         "ifResourceShareName"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ram",
+        "interface": "IResourceShareRef",
+        "property": "resourceShareRef",
+        "arn": "resourceShareArn"
+      }
     },
     {
       "name": "resource-share-invitation",

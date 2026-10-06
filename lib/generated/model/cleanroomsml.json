@@ -588,7 +588,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cleanroomsml",
+        "interface": "IConfiguredModelAlgorithmRef",
+        "property": "configuredModelAlgorithmRef",
+        "arn": "configuredModelAlgorithmArn"
+      }
     },
     {
       "name": "ConfiguredModelAlgorithmAssociation",
@@ -856,7 +862,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cleanroomsml",
+        "interface": "ITrainingDatasetRef",
+        "property": "trainingDatasetRef",
+        "arn": "trainingDatasetArn"
+      }
     }
   ],
   "conditions": [

@@ -1098,7 +1098,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IConfigurationSetRef",
+        "property": "configurationSetRef",
+        "id": "configurationSetName"
+      }
     },
     {
       "name": "contact-list",
@@ -1129,7 +1135,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IContactListRef",
+        "property": "contactListRef",
+        "id": "contactListName"
+      }
     },
     {
       "name": "custom-verification-email-template",
@@ -1160,7 +1172,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "ICustomVerificationEmailTemplateRef",
+        "property": "customVerificationEmailTemplateRef",
+        "id": "templateName"
+      }
     },
     {
       "name": "dedicated-ip-pool",
@@ -1342,7 +1360,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IMailManagerArchiveRef",
+        "property": "mailManagerArchiveRef",
+        "arn": "archiveArn"
+      }
     },
     {
       "name": "multi-region-endpoint",
@@ -1371,7 +1395,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IMultiRegionEndpointRef",
+        "property": "multiRegionEndpointRef",
+        "id": "endpointName"
+      }
     },
     {
       "name": "reputation-policy",

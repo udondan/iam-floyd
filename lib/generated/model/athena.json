@@ -697,7 +697,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_athena",
+        "interface": "ICapacityReservationRef",
+        "property": "capacityReservationRef",
+        "arn": "capacityReservationArn"
+      }
     },
     {
       "name": "datacatalog",
@@ -728,7 +734,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_athena",
+        "interface": "IDataCatalogRef",
+        "property": "dataCatalogRef",
+        "id": "dataCatalogName"
+      }
     },
     {
       "name": "session",
@@ -795,7 +807,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_athena",
+        "interface": "IWorkGroupRef",
+        "property": "workGroupRef",
+        "id": "workGroupName"
+      }
     }
   ],
   "conditions": [

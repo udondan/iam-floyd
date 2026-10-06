@@ -145,7 +145,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mwaa",
+        "interface": "IEnvironmentRef",
+        "property": "environmentRef",
+        "arn": "environmentArn"
+      }
     },
     {
       "name": "rbac-role",

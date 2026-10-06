@@ -251,7 +251,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_textract",
+        "interface": "IAdapterRef",
+        "property": "adapterRef",
+        "arn": "adapterArn"
+      }
     },
     {
       "name": "adapterversion",

@@ -375,7 +375,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mediaconvert",
+        "interface": "IJobTemplateRef",
+        "property": "jobTemplateRef",
+        "arn": "jobTemplateArn"
+      }
     },
     {
       "name": "Preset",
@@ -406,7 +412,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mediaconvert",
+        "interface": "IPresetRef",
+        "property": "presetRef",
+        "arn": "presetArn"
+      }
     },
     {
       "name": "Queue",
@@ -437,7 +449,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mediaconvert",
+        "interface": "IQueueRef",
+        "property": "queueRef",
+        "arn": "queueArn"
+      }
     }
   ],
   "conditions": [

@@ -528,7 +528,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ce",
+        "interface": "IAnomalyMonitorRef",
+        "property": "anomalyMonitorRef",
+        "arn": "monitorArn"
+      }
     },
     {
       "name": "anomalysubscription",
@@ -554,7 +560,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ce",
+        "interface": "IAnomalySubscriptionRef",
+        "property": "anomalySubscriptionRef",
+        "arn": "subscriptionArn"
+      }
     },
     {
       "name": "billingview",
@@ -606,7 +618,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ce",
+        "interface": "ICostCategoryRef",
+        "property": "costCategoryRef",
+        "arn": "costCategoryArn"
+      }
     }
   ],
   "conditions": [

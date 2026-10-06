@@ -285,7 +285,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_s3files",
+        "interface": "IFileSystemRef",
+        "property": "fileSystemRef",
+        "arn": "fileSystemArn"
+      }
     }
   ],
   "conditions": [

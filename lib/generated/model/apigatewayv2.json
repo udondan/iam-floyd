@@ -1551,7 +1551,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_apigateway",
+        "interface": "IVpcLinkRef",
+        "property": "vpcLinkRef",
+        "id": "vpcLinkId"
+      }
     },
     {
       "name": "VpcLinks",

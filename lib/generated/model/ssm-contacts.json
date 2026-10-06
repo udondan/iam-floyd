@@ -372,7 +372,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ssmcontacts",
+        "interface": "IContactRef",
+        "property": "contactRef",
+        "arn": "contactArn"
+      }
     },
     {
       "name": "contactchannel",
@@ -505,7 +511,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ssmcontacts",
+        "interface": "IRotationRef",
+        "property": "rotationRef",
+        "arn": "rotationArn"
+      }
     }
   ],
   "conditions": [

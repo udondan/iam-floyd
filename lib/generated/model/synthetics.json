@@ -239,7 +239,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_synthetics",
+        "interface": "ICanaryRef",
+        "property": "canaryRef",
+        "id": "canaryName"
+      }
     },
     {
       "name": "group",

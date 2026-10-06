@@ -185,7 +185,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_pcaconnectorscep",
+        "interface": "IConnectorRef",
+        "property": "connectorRef",
+        "arn": "connectorArn"
+      }
     }
   ],
   "conditions": [

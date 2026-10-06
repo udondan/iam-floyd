@@ -1150,7 +1150,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_logs",
+        "interface": "IDeliveryRef",
+        "property": "deliveryRef",
+        "arn": "deliveryArn"
+      }
     },
     {
       "name": "delivery-destination",
@@ -1181,7 +1187,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_logs",
+        "interface": "IDeliveryDestinationRef",
+        "property": "deliveryDestinationRef",
+        "arn": "deliveryDestinationArn"
+      }
     },
     {
       "name": "delivery-source",
@@ -1212,7 +1224,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_logs",
+        "interface": "IDeliverySourceRef",
+        "property": "deliverySourceRef",
+        "arn": "deliverySourceArn"
+      }
     },
     {
       "name": "destination",
@@ -1243,7 +1261,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_logs",
+        "interface": "IDestinationRef",
+        "property": "destinationRef",
+        "arn": "destinationArn"
+      }
     },
     {
       "name": "log-group",
@@ -1274,7 +1298,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_logs",
+        "interface": "ILogGroupRef",
+        "property": "logGroupRef",
+        "arn": "logGroupArn"
+      }
     },
     {
       "name": "log-stream",
@@ -1372,7 +1402,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_logs",
+        "interface": "IScheduledQueryRef",
+        "property": "scheduledQueryRef",
+        "arn": "scheduledQueryArn"
+      }
     }
   ],
   "conditions": [

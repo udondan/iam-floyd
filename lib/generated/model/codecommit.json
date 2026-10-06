@@ -777,7 +777,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_codecommit",
+        "interface": "IRepositoryRef",
+        "property": "repositoryRef",
+        "arn": "repositoryArn"
+      }
     }
   ],
   "conditions": [

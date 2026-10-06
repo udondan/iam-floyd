@@ -171,7 +171,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bcmdataexports",
+        "interface": "IExportRef",
+        "property": "exportRef",
+        "arn": "exportArn"
+      }
     },
     {
       "name": "table",

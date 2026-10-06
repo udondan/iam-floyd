@@ -696,7 +696,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IChannelRef",
+        "property": "channelRef",
+        "arn": "channelArn"
+      }
     },
     {
       "name": "Composition",
@@ -758,7 +764,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IEncoderConfigurationRef",
+        "property": "encoderConfigurationRef",
+        "arn": "encoderConfigurationArn"
+      }
     },
     {
       "name": "Ingest-Configuration",
@@ -789,7 +801,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IIngestConfigurationRef",
+        "property": "ingestConfigurationRef",
+        "arn": "ingestConfigurationArn"
+      }
     },
     {
       "name": "Playback-Key-Pair",
@@ -820,7 +838,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IPlaybackKeyPairRef",
+        "property": "playbackKeyPairRef",
+        "arn": "playbackKeyPairArn"
+      }
     },
     {
       "name": "Playback-Restriction-Policy",
@@ -851,7 +875,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IPlaybackRestrictionPolicyRef",
+        "property": "playbackRestrictionPolicyRef",
+        "arn": "playbackRestrictionPolicyArn"
+      }
     },
     {
       "name": "Public-Key",
@@ -882,7 +912,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IPublicKeyRef",
+        "property": "publicKeyRef",
+        "arn": "publicKeyArn"
+      }
     },
     {
       "name": "Recording-Configuration",
@@ -913,7 +949,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IRecordingConfigurationRef",
+        "property": "recordingConfigurationRef",
+        "arn": "recordingConfigurationArn"
+      }
     },
     {
       "name": "Stage",
@@ -944,7 +986,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IStageRef",
+        "property": "stageRef",
+        "arn": "stageArn"
+      }
     },
     {
       "name": "Storage-Configuration",
@@ -975,7 +1023,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IStorageConfigurationRef",
+        "property": "storageConfigurationRef",
+        "arn": "storageConfigurationArn"
+      }
     },
     {
       "name": "Stream-Key",
@@ -1006,7 +1060,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IStreamKeyRef",
+        "property": "streamKeyRef",
+        "arn": "streamKeyArn"
+      }
     }
   ],
   "conditions": [

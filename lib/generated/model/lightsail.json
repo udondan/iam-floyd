@@ -1383,7 +1383,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IAlarmRef",
+        "property": "alarmRef",
+        "arn": "alarmArn"
+      }
     },
     {
       "name": "Bucket",
@@ -1414,7 +1420,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IBucketRef",
+        "property": "bucketRef",
+        "arn": "bucketArn"
+      }
     },
     {
       "name": "Certificate",
@@ -1445,7 +1457,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "ICertificateRef",
+        "property": "certificateRef",
+        "arn": "certificateArn"
+      }
     },
     {
       "name": "CloudFormationStackRecord",
@@ -1505,7 +1523,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IContactMethodRef",
+        "property": "contactMethodRef",
+        "arn": "contactMethodArn"
+      }
     },
     {
       "name": "ContainerService",
@@ -1567,7 +1591,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IDiskRef",
+        "property": "diskRef",
+        "arn": "diskArn"
+      }
     },
     {
       "name": "DiskSnapshot",
@@ -1598,7 +1628,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IDiskSnapshotRef",
+        "property": "diskSnapshotRef",
+        "arn": "diskSnapshotArn"
+      }
     },
     {
       "name": "Distribution",
@@ -1629,7 +1665,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IDistributionRef",
+        "property": "distributionRef",
+        "arn": "distributionArn"
+      }
     },
     {
       "name": "Domain",
@@ -1660,7 +1702,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IDomainRef",
+        "property": "domainRef",
+        "arn": "domainArn"
+      }
     },
     {
       "name": "ExportSnapshotRecord",
@@ -1720,7 +1768,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IInstanceRef",
+        "property": "instanceRef",
+        "arn": "instanceArn"
+      }
     },
     {
       "name": "InstanceSnapshot",
@@ -1751,7 +1805,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IInstanceSnapshotRef",
+        "property": "instanceSnapshotRef",
+        "arn": "instanceSnapshotArn"
+      }
     },
     {
       "name": "KeyPair",
@@ -1782,7 +1842,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IKeyPairRef",
+        "property": "keyPairRef",
+        "arn": "keyPairArn"
+      }
     },
     {
       "name": "LoadBalancer",
@@ -1813,7 +1879,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "ILoadBalancerRef",
+        "property": "loadBalancerRef",
+        "arn": "loadBalancerArn"
+      }
     },
     {
       "name": "LoadBalancerTlsCertificate",
@@ -1842,7 +1914,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "ILoadBalancerTlsCertificateRef",
+        "property": "loadBalancerTlsCertificateRef",
+        "arn": "loadBalancerTlsCertificateArn"
+      }
     },
     {
       "name": "RelationalDatabase",
@@ -1935,7 +2013,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IStaticIpRef",
+        "property": "staticIpRef",
+        "arn": "staticIpArn"
+      }
     }
   ],
   "conditions": [

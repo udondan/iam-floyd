@@ -1510,7 +1510,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudwatch",
+        "interface": "IAlarmRef",
+        "property": "alarmRef",
+        "arn": "alarmArn"
+      }
     },
     {
       "name": "alarm-mute-rule",
@@ -1541,7 +1547,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudwatch",
+        "interface": "IAlarmMuteRuleRef",
+        "property": "alarmMuteRuleRef",
+        "arn": "alarmMuteRuleArn"
+      }
     },
     {
       "name": "alert",
@@ -1598,7 +1610,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudwatch",
+        "interface": "IDashboardRef",
+        "property": "dashboardRef",
+        "id": "dashboardName"
+      }
     },
     {
       "name": "dataset",
@@ -1727,7 +1745,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudwatch",
+        "interface": "IInsightRuleRef",
+        "property": "insightRuleRef",
+        "arn": "insightRuleArn"
+      }
     },
     {
       "name": "integration",
@@ -1789,7 +1813,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudwatch",
+        "interface": "IMetricStreamRef",
+        "property": "metricStreamRef",
+        "arn": "metricStreamArn"
+      }
     },
     {
       "name": "omni-dashboard",

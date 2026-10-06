@@ -283,7 +283,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_lookoutvision",
+        "interface": "IProjectRef",
+        "property": "projectRef",
+        "arn": "projectArn"
+      }
     }
   ],
   "conditions": [

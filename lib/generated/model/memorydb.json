@@ -436,7 +436,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_memorydb",
+        "interface": "IACLRef",
+        "property": "aclRef",
+        "arn": "aclArn"
+      }
     },
     {
       "name": "cluster",
@@ -467,7 +473,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_memorydb",
+        "interface": "IClusterRef",
+        "property": "clusterRef",
+        "arn": "clusterArn"
+      }
     },
     {
       "name": "multiregioncluster",
@@ -494,7 +506,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifTLSEnabled"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_memorydb",
+        "interface": "IMultiRegionClusterRef",
+        "property": "multiRegionClusterRef",
+        "arn": "multiRegionClusterArn"
+      }
     },
     {
       "name": "multiregionparametergroup",
@@ -549,7 +567,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_memorydb",
+        "interface": "IParameterGroupRef",
+        "property": "parameterGroupRef",
+        "arn": "parameterGroupArn"
+      }
     },
     {
       "name": "reservednode",
@@ -611,7 +635,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_memorydb",
+        "interface": "ISnapshotRef",
+        "property": "snapshotRef",
+        "arn": "snapshotArn"
+      }
     },
     {
       "name": "subnetgroup",
@@ -642,7 +672,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_memorydb",
+        "interface": "ISubnetGroupRef",
+        "property": "subnetGroupRef",
+        "arn": "subnetGroupArn"
+      }
     },
     {
       "name": "user",
@@ -673,7 +709,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_memorydb",
+        "interface": "IUserRef",
+        "property": "userRef",
+        "arn": "userArn"
+      }
     }
   ],
   "conditions": [

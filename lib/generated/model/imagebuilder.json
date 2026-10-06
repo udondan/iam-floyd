@@ -855,7 +855,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_imagebuilder",
+        "interface": "IDistributionConfigurationRef",
+        "property": "distributionConfigurationRef",
+        "arn": "distributionConfigurationArn"
+      }
     },
     {
       "name": "image",
@@ -927,7 +933,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_imagebuilder",
+        "interface": "IImagePipelineRef",
+        "property": "imagePipelineRef",
+        "arn": "imagePipelineArn"
+      }
     },
     {
       "name": "imageRecipe",
@@ -1030,7 +1042,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_imagebuilder",
+        "interface": "IInfrastructureConfigurationRef",
+        "property": "infrastructureConfigurationRef",
+        "arn": "infrastructureConfigurationArn"
+      }
     },
     {
       "name": "lifecycleExecution",
@@ -1090,7 +1108,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_imagebuilder",
+        "interface": "ILifecyclePolicyRef",
+        "property": "lifecyclePolicyRef",
+        "arn": "lifecyclePolicyArn"
+      }
     },
     {
       "name": "workflow",

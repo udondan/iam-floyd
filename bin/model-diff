@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Prints the services, actions, resource types and condition keys that differ between a git ref
+# Prints the services, actions, resource types, condition keys and CDK references that differ between a git ref
 # and the working tree. Lines are prefixed with `-` (only in the ref) or `+` (only in the working
 # tree). Changes of descriptions or URLs are ignored.
 #
@@ -20,7 +20,7 @@ fi
 
 git archive "${REF}" lib/generated/model | tar -x -C "${TMP}"
 
-for kind in services actions resources conditions; do
+for kind in services actions resources conditions cdk-refs; do
   bin/model-list "${kind}" "${TMP}/lib/generated/model" > "${TMP}/before"
   bin/model-list "${kind}" > "${TMP}/after"
   comm -3 "${TMP}/before" "${TMP}/after" |

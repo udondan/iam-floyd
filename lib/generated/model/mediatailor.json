@@ -425,7 +425,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mediatailor",
+        "interface": "IChannelRef",
+        "property": "channelRef",
+        "arn": "channelArn"
+      }
     },
     {
       "name": "liveSource",
@@ -492,7 +498,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mediatailor",
+        "interface": "IPlaybackConfigurationRef",
+        "property": "playbackConfigurationRef",
+        "arn": "playbackConfigurationArn"
+      }
     },
     {
       "name": "prefetchSchedule",
@@ -521,7 +533,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_mediatailor",
+        "interface": "IPrefetchScheduleRef",
+        "property": "prefetchScheduleRef",
+        "arn": "prefetchScheduleArn"
+      }
     },
     {
       "name": "program",
@@ -586,7 +604,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mediatailor",
+        "interface": "ISourceLocationRef",
+        "property": "sourceLocationRef",
+        "arn": "sourceLocationArn"
+      }
     },
     {
       "name": "vodSource",
