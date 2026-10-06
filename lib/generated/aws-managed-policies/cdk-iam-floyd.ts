@@ -5924,6 +5924,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSecretsManagerClientReadOnlyAccess);
     }
 
+    /** Grants the permissions required to run AWS Security Agent continuous scoped penetration tests from a CI/CD pipeline. Attached to a customer-created IAM role that a 3P CI/CD pipeline assumes via OIDC */
+    public AWSSecurityAgentContinuousPentestPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSecurityAgentContinuousPentestPolicy);
+    }
+
     /** Allows AWS Security Agent to manage resources on your behalf. */
     public AWSSecurityAgentServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSecurityAgentServiceRolePolicy);
