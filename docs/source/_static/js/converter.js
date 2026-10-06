@@ -37,7 +37,8 @@ var PolicyConverter = (function () {
     Service: [['forService', /^(.*)$/]],
   };
 
-  const pythonKeywords = ['for', 'if', 'in'];
+  // the Python keywords that are names of methods or constants
+  const pythonKeywords = ['for', 'if', 'in', 'lambda'];
 
   /**
    * Converts the policy. Returns the imports, the code that assigns the policy to the variable
@@ -366,12 +367,12 @@ var PolicyConverter = (function () {
   /**
    * The arguments of a call. A constant is `Class.NAME`, the class is added to the imports
    */
-  function renderArgs(c, context, strings, string) {
+  function renderArgs(c, context, strings, string, constantName = (n) => n) {
     return c.args
       .map((a) => {
         if (a.type === 'constant') {
           context.constants.add(a.className);
-          return `${a.className}.${a.name}`;
+          return `${a.className}.${constantName(a.name)}`;
         }
         return a.type === 'strings' ? strings(a.value) : string(a.value);
       })
@@ -428,8 +429,11 @@ var PolicyConverter = (function () {
         const snake = snakeCase(m);
         return pythonKeywords.includes(snake) ? `${snake}_` : snake;
       };
+      // like jsii-pacmak, a keyword gets a `_`, e.g. `AwsServicePrincipal.LAMBDA_`
+      const constantName = (n) =>
+        pythonKeywords.includes(n.toLowerCase()) ? `${n}_` : n;
       const args = (c) =>
-        renderArgs(c, context, singleQuotedList, singleQuoted);
+        renderArgs(c, context, singleQuotedList, singleQuoted, constantName);
       return chain(
         `Statement.${statement.className || 'All'}()`,
         statement.calls,

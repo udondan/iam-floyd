@@ -124,10 +124,11 @@ export function pythonName(name: string): string {
 }
 
 /**
- * Python name of a static property, an enum member or a module constant
+ * Python name of a static property, an enum member or a module constant. Like jsii-pacmak, a
+ * keyword gets a `_` before the upper case, e.g. `AwsServicePrincipal.LAMBDA_`
  */
 export function pythonConstantName(name: string): string {
-  return snakeCase(name).toUpperCase();
+  return pythonName(name).toUpperCase();
 }
 
 /**

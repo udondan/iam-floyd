@@ -7,6 +7,7 @@ import { cdkMinVersion } from '../lib/generator/cdk-refs';
 import { emitTypeScriptFromModels } from '../lib/generator/emit/typescript';
 import { formatCode } from '../lib/generator/format';
 import { PackageJson } from '../lib/generator/package-json';
+import { emitServicePrincipals } from '../lib/generator/service-principals';
 
 const lib = path.join(__dirname, '../lib');
 
@@ -38,6 +39,8 @@ async function run() {
   if (doFixModule) {
     console.log('Emitting CDK variant of the statement providers');
     await emitTypeScriptFromModels({ cdk: true });
+    // the same in both variants, emitted here as `make cdk` runs without `make emit`
+    emitServicePrincipals();
   }
   console.log('done');
 }

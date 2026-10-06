@@ -556,7 +556,8 @@ in every language.
   packages (`Operator.STRING_EQUALS`, in Go `iamfloyd.Operator_STRING_EQUALS`) and
   methods of the same name in the jsii packages of `cdk-iam-floyd`, except
   `AwsServicePrincipal`, which has constants there too (in Go functions:
-  `cdkiamfloyd.AwsServicePrincipal_LAMBDA()`).
+  `cdkiamfloyd.AwsServicePrincipal_LAMBDA()`). In Python, `lambda` is a keyword:
+  `AwsServicePrincipal.LAMBDA_` in both packages.
   `new Operator().stringEquals()` works everywhere.
 - **Go** has no optional arguments and works with pointers: every optional argument
   must be passed, as `nil` if not needed

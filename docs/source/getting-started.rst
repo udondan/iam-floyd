@@ -292,7 +292,7 @@ Differences Between the Variants
      - References to the partition, region and account of the stack
    * - Static properties of ``Operator``, ``AwsManagedPolicy`` and ``AwsServicePrincipal``
      - Constants: ``Operator.STRING_EQUALS``, ``AwsManagedPolicy.READ_ONLY_ACCESS``, in Go ``iamfloyd.Operator_STRING_EQUALS``, ``iamfloyd.AwsManagedPolicy_READ_ONLY_ACCESS``
-     - In TypeScript static properties, in the other languages methods of the same name, see :doc:`operators` and :doc:`aws-managed-policies`. ``AwsServicePrincipal`` has constants like in ``iam-floyd``, in Go functions: ``cdkiamfloyd.AwsServicePrincipal_LAMBDA()``
+     - In TypeScript static properties, in the other languages methods of the same name, see :doc:`operators` and :doc:`aws-managed-policies`. ``AwsServicePrincipal`` has constants like in ``iam-floyd``, in Go functions: ``cdkiamfloyd.AwsServicePrincipal_LAMBDA()``. In Python, ``lambda`` is a keyword: ``AwsServicePrincipal.LAMBDA_`` in both packages
    * - ``AwsManagedPolicy``
      - The names of the policies
      - The names of the policies, and methods that create an ``iam.IManagedPolicy``

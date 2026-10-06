@@ -7,7 +7,7 @@ def example():
         Statement.Sts()
             .allow()
             .to_assume_role()
-            .for_service(AwsServicePrincipal.LAMBDA)
+            .for_service(AwsServicePrincipal.LAMBDA_)
     )
 
     s2 = (
