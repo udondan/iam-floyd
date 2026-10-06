@@ -110,6 +110,7 @@ The project has **no unit test framework**. Tests are integration-style: TypeScr
 
 ```bash
 make test-typescript     # compile examples/ + diff against *.result files (standalone)
+make clean-test-resources # delete the test policies (path /iam-floyd-test/) and buckets of test-typescript older than an hour
 make test-typescript-cdk # after `make cdk`: same for the CDK examples (examples/**/*.cdk.ts)
 make cdk-test            # CDK test: real deploy + destroy via AWS CDK
 make cdk-all             # cdk + install + build + cdk-test

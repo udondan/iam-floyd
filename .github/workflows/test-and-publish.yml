@@ -246,6 +246,7 @@ jobs:
           fetch-depth: 0
 
       - name: Configure AWS credentials
+        id: aws-credentials
         uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
         with:
           role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
@@ -253,6 +254,11 @@ jobs:
 
       - name: Test npm package
         run: make install test-typescript
+
+      # A cancelled run can leave a test policy behind, the next run deletes it
+      - name: Clean up test resources
+        if: ${{ always() && steps.aws-credentials.outcome == 'success' }}
+        run: make clean-test-resources
 
       - name: Dry run npm publish
         run: make build publish
